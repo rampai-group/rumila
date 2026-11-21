@@ -58,6 +58,10 @@ export function PwaSetup() {
     if (ke) router.replace(ke);
   }, [router]);
   useEffect(() => {
+    // iOS (Safari 17+/app): Web Audio (backsound, efek suara) ikut bisu saat tombol senyap aktif.
+    // Sesi "playback" membuat suara tetap terdengar seperti video, mengikuti tombol volume.
+    const sesi = (navigator as Navigator & { audioSession?: { type: string } }).audioSession;
+    if (sesi) sesi.type = "playback";
     const ua = navigator.userAgent;
     // iPadOS 13+ mengaku "Macintosh"; bedakan lewat layar sentuh.
     const ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
