@@ -1,21 +1,19 @@
 "use client";
 
-import { KartuKampus, PetaKampus, useGedungKampus } from "@/components/kampus";
+import { KampusDunia } from "@/components/kampus-dunia";
 import { AppIcon, BALOO } from "@/components/launcher";
 import { useLastTool } from "@/components/kid";
 import { useOpenTool } from "@/components/shell";
 import { Icon } from "@/components/ui";
-import { can, useMe } from "@/lib/store";
+import { useMe } from "@/lib/store";
 
 const INK = "#0b2545";
 
-/** Beranda = gerbang Kampus RINOYA: Gedung Utama (Ruang Kelas) lalu gedung-gedung lain di peta kampus. */
+/** Beranda = satu lingkungan Kampus RINOYA utuh; ketuk gedung untuk masuk (Gedung Utama = Academy). */
 export default function Beranda() {
   const me = useMe();
   const openTool = useOpenTool();
   const last = useLastTool();
-  const kelas = can(me, "edukasi");
-  const gedung = useGedungKampus(me);
 
   return (
     <>
@@ -37,9 +35,7 @@ export default function Beranda() {
         </button>
       )}
 
-      {kelas && <KartuKampus me={me} />}
-      <PetaKampus me={me} />
-      {!kelas && gedung.length === 0 && <p className="text-[15px] font-bold text-ink-3">Kampus belum dibuka untukmu. Minta ayah atau ibu membukanya, ya.</p>}
+      <KampusDunia me={me} />
 
     </>
   );

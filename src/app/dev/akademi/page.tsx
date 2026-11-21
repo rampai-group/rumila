@@ -21,7 +21,8 @@ import { LayarUjian } from "@/components/akademi/ujian";
 import { ProfilBerpikirOrtu, TesBerpikir } from "@/components/ortu/profil-berpikir";
 import { RuangOrangTua } from "@/components/ortu/ruang";
 import { useMe, useRumila, type Member } from "@/lib/store";
-import { GedungView, KartuKampus, PetaKampus } from "@/components/kampus";
+import { GedungView } from "@/components/kampus";
+import { KampusDunia } from "@/components/kampus-dunia";
 import { GEDUNG } from "@/lib/kampus";
 
 function KampusDev() {
@@ -34,8 +35,7 @@ function KampusDev() {
   }, [q]);
   return (
     <>
-      <KartuKampus me={me} />
-      <PetaKampus me={me} />
+      <KampusDunia me={me} />
       <GedungView g={GEDUNG[0]} />
     </>
   );
