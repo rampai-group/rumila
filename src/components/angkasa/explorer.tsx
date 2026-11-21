@@ -3,6 +3,7 @@
 // Layout Jelajah Angkasa 3D. Desktop: daftar objek kiri · viewer dominan · panel belajar kanan (gambar konsep).
 // Ponsel: viewer penuh lebar, daftar dalam drawer, panel dalam bottom sheet (ringkas/setengah/penuh).
 
+import { muatUlang } from "@/lib/mode-app";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Avatar, Icon } from "@/components/ui";
@@ -555,7 +556,7 @@ function ViewportOverlay({
           <Icon name="cloud_off" size={18} /> {st.assetErrors.length} tekstur
           gagal dimuat.
           <button
-            onClick={() => location.reload()}
+            onClick={() => muatUlang()}
             className="ak-btn min-h-8 px-2 py-0 text-xs"
           >
             Coba lagi
@@ -703,7 +704,7 @@ function NoWebGL() {
         Materi, daftar benda langit, dan penjelasan di panel tetap bisa dibaca.
         Tampilan 3D tidak sedang aktif.
       </p>
-      <Btn variant="primary" icon="refresh" onClick={() => location.reload()}>
+      <Btn variant="primary" icon="refresh" onClick={() => muatUlang()}>
         Coba lagi
       </Btn>
     </div>

@@ -3,6 +3,7 @@
 // Ruang Orang Tua → Anggota & PIN: daftarkan anak, ganti avatar, buat/ubah/reset PIN (angka atau gambar),
 // kunci tablet ini ke satu anak, dan buka pengaturan lengkap (izin menu, jenjang, peran).
 
+import { muatUlang } from "@/lib/mode-app";
 import { useEffect, useState, type ReactNode } from "react";
 import { ACTIVE_LEVELS, levelMeta, type LevelId } from "@akademi/schema";
 import { PilihAvatar } from "@/components/avatar-karakter";
@@ -364,7 +365,7 @@ function KonfirmasiHapusAkun({ onBatal }: { onBatal: () => void }) {
         localStorage.clear();
       } catch {}
       await signOutAccount().catch(() => {});
-      window.location.replace("/masuk");
+      muatUlang("/masuk");
     } catch (e) {
       setErr((e as Error).message);
       setProses(false);

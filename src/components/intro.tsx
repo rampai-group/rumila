@@ -76,9 +76,6 @@ export function IntroRinoya() {
           <span />
         </span>
       </div>
-      <button type="button" className="rn-intro__lewati" onClick={() => setTahap("keluar")}>
-        Lewati
-      </button>
     </div>
   );
 }
