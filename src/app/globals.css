@@ -98,6 +98,12 @@ body {
   font-family: var(--font-jakarta), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
+  /* Layar hanya bisa digeser atas-bawah: tidak ada geser/pantul kiri-kanan maupun cubit-zoom.
+     Elemen yang memang bergulir ke samping (karusel, peta) adalah wadah gulir sendiri, jadi tetap jalan. */
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 
 @layer base {
