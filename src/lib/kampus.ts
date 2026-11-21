@@ -78,7 +78,7 @@ export const GEDUNG: Gedung[] = [
   },
   {
     id: "musala",
-    nama: "Musala",
+    nama: "Mushola",
     peran: "Karakter & Agama",
     desc: "Belajar ibadah dan doa sehari-hari.",
     href: "/akademi/musala",

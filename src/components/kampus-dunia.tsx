@@ -2,7 +2,7 @@
 
 // Beranda = satu lingkungan Kampus RINOYA yang utuh. Anak masuk lewat gerbang di bawah, berjalan di jalan
 // kampus, lalu mengetuk gedung untuk masuk: Gedung Utama (Academy / Ruang Kelas), Laboratorium 3D,
-// Lab Komputer, Taman Bermain, Musala, Kantor Guru (Rapor), dan Pos Satpam (Kartu Pelajar).
+// Lab Komputer, Taman Bermain, Mushola, Kantor Guru (Rapor), dan Pos Satpam (Kartu Pelajar).
 // Dua tata letak dengan koordinat sendiri: potret (HP) dan lanskap (tablet/desktop). Gedung digambar dengan
 // SVG kode yang sama dengan halaman gedung; posisinya dihitung dari koordinat viewBox medan.
 
