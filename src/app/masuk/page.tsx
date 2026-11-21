@@ -9,7 +9,7 @@ import { useHydrated, useRumila, type Member, type Theme } from "@/lib/store";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { AccountStage, SetupStage } from "./account";
 import { PilihProfil } from "./pilih-profil";
-import { LatarKampus, TINGGI_KAMPUS } from "./latar-kampus";
+import { LatarMasuk } from "./latar-masuk";
 import { bukaProfil, profilTerbuka } from "@/lib/profil";
 
 // Layar masuk: akun rumah → "Siapa yang belajar?" → PIN profil → beranda.
@@ -52,15 +52,15 @@ function Masuk() {
 
   return (
     <div
-      className={`fixed inset-0 z-30 flex overflow-y-auto px-5 ${ready && play ? "bg-[#cdeeff]" : "bg-page"}`}
+      className={`fixed inset-0 z-30 flex overflow-y-auto px-5 ${ready && play ? "bg-[#eef6ff]" : "bg-page"}`}
       style={{
         fontFamily: play ? NUNITO : PJ,
-        // Isi berada di langit: di bawah status bar, di atas gedung kampus (tidak saling menimpa).
+        // Isi di tengah, aman dari status bar dan home indicator.
         paddingTop: "calc(env(safe-area-inset-top) + 20px)",
-        paddingBottom: play ? `calc(${TINGGI_KAMPUS} + 16px)` : "32px",
+        paddingBottom: "calc(env(safe-area-inset-bottom) + 24px)",
       }}
     >
-      {ready && (play ? <LatarKampus /> : (
+      {ready && (play ? <LatarMasuk /> : (
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-[220px] -left-[200px] size-[560px] rounded-full bg-[#FF7F67] opacity-[.14] blur-[100px]" />
           <div className="absolute -right-[180px] -bottom-[180px] size-[520px] rounded-full bg-[#52B8A8] opacity-[.15] blur-[100px]" />
