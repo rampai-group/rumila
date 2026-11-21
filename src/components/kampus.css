@@ -76,3 +76,36 @@
   .kampus-awan, .kampus-bendera, .kampus-ayun, .kampus-kelip, .kampus-lampu { animation: none; }
   .kampus-kavling .kampus-gedung { transition: none; }
 }
+
+/* ---------- Kampus utuh di beranda (kampus-dunia.tsx) ---------- */
+.kd-kamera {
+  transition: transform 0.45s cubic-bezier(0.5, 0, 0.75, 0), opacity 0.45s ease-in;
+  will-change: transform;
+}
+.kd-tempat { z-index: 1; -webkit-tap-highlight-color: transparent; }
+.kd-tempat .kd-gambar {
+  transition: transform 0.28s cubic-bezier(0.3, 1.6, 0.5, 1);
+  transform-origin: 50% 100%;
+}
+.kd-tempat:hover .kd-gambar,
+.kd-tempat:focus-visible .kd-gambar { transform: translateY(-4px) scale(1.04); }
+.kd-tempat:active .kd-gambar { transform: scale(0.95); }
+.kd-tempat:focus-visible { outline: 3px solid #0b2545; outline-offset: 4px; border-radius: 12px; }
+.kd-tempat .kd-label { z-index: 2; animation: kd-ambang 3.2s ease-in-out infinite; }
+.kd-tutup .kd-gambar { filter: grayscale(0.85) brightness(1.05); opacity: 0.75; }
+.kd-tutup .kd-label { opacity: 0.85; animation: none; }
+@keyframes kd-ambang { 50% { transform: translateY(-4px); } }
+.kd-ajak { animation: kd-denyut 1.8s ease-in-out infinite; }
+@keyframes kd-denyut { 50% { box-shadow: 0 2px 0 #c85400, 0 0 0 5px rgba(253, 134, 29, 0.25); } }
+
+.kd-awan { animation: kd-awan 40s linear infinite alternate; }
+@keyframes kd-awan { to { transform: translateX(60px); } }
+.kd-burung { animation: kd-burung 26s linear infinite; }
+@keyframes kd-burung { from { transform: translateX(-200px); } to { transform: translateX(1100px); } }
+.kd-air { animation: kd-air 0.9s ease-in-out infinite alternate; }
+@keyframes kd-air { to { transform: translateY(-4px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .kd-kamera, .kd-tempat .kd-gambar { transition: none; }
+  .kd-tempat .kd-label, .kd-ajak, .kd-awan, .kd-burung, .kd-air { animation: none; }
+}
