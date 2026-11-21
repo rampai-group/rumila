@@ -18,10 +18,43 @@ const WARNA_STATUS: Record<KompetensiPraktik["status"], { teks: string; bg: stri
   belum: { teks: "Belum", bg: "#f3ece2", fg: "#76695a" },
 };
 
-/** `rinci` = tampilkan daftar kompetensi per gedung (Rapor orang tua). */
-export function KartuPraktikKampus({ events, level, rinci = false }: { events: GameEvent[]; level: LevelId; rinci?: boolean }) {
+/** `rinci` = tampilkan daftar kompetensi per gedung (Rapor orang tua).
+ *  `kunci` = misi jenjang belum semua selesai: kartu tampil terkunci (praktik dibuka setelah semua misi tuntas). */
+export function KartuPraktikKampus({
+  events,
+  level,
+  rinci = false,
+  kunci,
+}: {
+  events: GameEvent[];
+  level: LevelId;
+  rinci?: boolean;
+  kunci?: { selesai: number; total: number };
+}) {
   const p = useMemo(() => penilaianKampus(events, KOMPETENSI, level), [events, level]);
   if (p.nilai === null) return null;
+  if (kunci && kunci.selesai < kunci.total)
+    return (
+      <section aria-label="Penilaian Praktik Kampus: terkunci" className="rounded-[24px] bg-white/80 p-4 shadow-[0_4px_0_rgba(11,37,69,.06)] sm:p-5">
+        <div className="flex items-center gap-3">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-[16px] bg-[#e9e3d9] text-[#8a7f70]">
+            <Icon name="lock" size={26} />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block leading-tight" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>
+              Penilaian Praktik Kampus
+            </span>
+            <span className="block text-[12.5px] font-extrabold text-ink-3">Terbuka setelah semua misi selesai</span>
+          </span>
+          <span className="shrink-0 rounded-full bg-[#f3ece2] px-3 py-1 text-[13px] font-black tabular-nums text-[#76695a]">
+            {kunci.selesai}/{kunci.total}
+          </span>
+        </div>
+        <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#f3ece2]" aria-label={`${kunci.selesai} dari ${kunci.total} misi selesai`}>
+          <div style={{ width: `${kunci.total ? (kunci.selesai / kunci.total) * 100 : 0}%`, background: "#b7ab98", height: "100%" }} />
+        </div>
+      </section>
+    );
   return (
     <section aria-label={`Penilaian Praktik Kampus: nilai ${p.nilai}`} className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.08)] sm:p-5">
       <div className="flex items-center gap-3">
