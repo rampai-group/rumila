@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { PwaSetup } from "@/components/pwa";
+import { PullToRefresh, PwaSetup } from "@/components/pwa";
 import { INTRO_SKRIP, IntroRinoya } from "@/components/intro";
 
 // Font ditanam dari repo (src/fonts/app, subset latin, lisensi SIL OFL) — build tidak bergantung pada unduhan
@@ -32,6 +32,9 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  // tanpa cubit-zoom: zoom membuat layar bisa tergeser kiri-kanan
+  maximumScale: 1,
+  userScalable: false,
   themeColor: "#fff8ee",
   viewportFit: "cover",
 };
@@ -53,6 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <IntroRinoya />
         {children}
         <PwaSetup />
+        <PullToRefresh />
       </body>
     </html>
   );

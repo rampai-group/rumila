@@ -110,9 +110,10 @@ function IosHelp() {
   );
 }
 
-/** Tarik ke bawah dari puncak halaman untuk memuat ulang — hanya saat dibuka sebagai aplikasi. */
+/** Tarik ke bawah dari puncak halaman untuk memuat ulang, di semua halaman. Hanya saat dibuka sebagai aplikasi
+ *  (layar utama / app toko); di browser biasa sudah ada tarik-muat-ulang bawaan. Dipasang sekali di root layout. */
 export function PullToRefresh() {
-  const standalone = usePwa((s) => s.standalone);
+  const aktif = usePwa((s) => s.standalone || s.appToko);
   const [pull, setPull] = useState(0);
   const [loading, setLoading] = useState(false);
   const start = useRef<number | null>(null);
@@ -120,9 +121,9 @@ export function PullToRefresh() {
   const TRIGGER = 80;
 
   useEffect(() => {
-    if (!standalone) return;
+    if (!aktif) return;
     const onStart = (e: TouchEvent) => {
-      start.current = window.scrollY <= 0 && e.touches.length === 1 ? e.touches[0].clientY : null;
+      start.current = window.scrollY <= 0 && e.touches.length === 1 && bolehTarik(e.target) ? e.touches[0].clientY : null;
     };
     const onMove = (e: TouchEvent) => {
       if (start.current === null) return;
@@ -156,9 +157,9 @@ export function PullToRefresh() {
       window.removeEventListener("touchend", onEnd);
       window.removeEventListener("touchcancel", onEnd);
     };
-  }, [standalone]);
+  }, [aktif]);
 
-  if (!standalone || (pull === 0 && !loading)) return null;
+  if (!aktif || (pull === 0 && !loading)) return null;
   const ready = pull >= TRIGGER || loading;
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-[80] flex justify-center" style={{ transform: `translateY(${Math.max(0, pull - 44)}px)`, paddingTop: "env(safe-area-inset-top)" }}>
@@ -170,4 +171,16 @@ export function PullToRefresh() {
       </span>
     </div>
   );
+}
+
+/** Tarik-muat-ulang hanya bila sentuhan tidak di dalam permainan/kanvas, dan tak ada wadah gulir di atasnya yang
+ *  sedang tidak di puncak (mis. daftar panjang di modal atau layar penuh yang bergulir sendiri). */
+function bolehTarik(t: EventTarget | null): boolean {
+  let el = t instanceof Element ? t : null;
+  if (el?.closest("canvas, [data-tanpa-tarik]")) return false;
+  while (el && el !== document.body) {
+    if (el.scrollTop > 0) return false;
+    el = el.parentElement;
+  }
+  return true;
 }
