@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: process.cwd(),
+  // Versi build (commit) dibenamkan ke klien; dibandingkan dengan /api/versi untuk pembaruan otomatis.
+  env: { NEXT_PUBLIC_VERSI: process.env.VERCEL_GIT_COMMIT_SHA ?? "dev" },
   distDir: process.env.RUMILA_DIST_DIR || ".next",
   // Izinkan membuka dev server dari perangkat lain di jaringan lokal (tablet/HP), mis. http://192.168.1.8:3000
   allowedDevOrigins: ["192.168.*.*", "10.*.*.*", "*.local"],

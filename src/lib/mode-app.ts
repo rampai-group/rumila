@@ -42,13 +42,16 @@ export function appIos(): boolean {
  *  Safari. Jadi di app iOS, muat ulang lewat alamat awal + `ke` (halaman tujuan), lalu PwaSetup membawa kembali. */
 const AWAL_IOS = "/beranda?mode=app";
 
-/** Muat ulang penuh (atau pindah penuh ke `tujuan`) tanpa terlempar ke Safari saat di app iOS. */
-export function muatUlang(tujuan?: string) {
+/** Muat ulang penuh (atau pindah penuh ke `tujuan`) tanpa terlempar ke Safari saat di app iOS.
+ *  `segar` = tambah penanda `_v` supaya cache WebView tidak dipakai. */
+export function muatUlang(tujuan?: string, segar = false) {
   const ke = tujuan ?? location.pathname + location.search;
+  const v = segar ? `_v=${Date.now()}` : "";
   if (appIos()) {
-    location.href = `${location.origin}${AWAL_IOS}&ke=${encodeURIComponent(ke)}`;
+    location.href = `${location.origin}${AWAL_IOS}${v ? `&${v}` : ""}&ke=${encodeURIComponent(ke)}`;
     return;
   }
+  if (v) return location.replace(ke + (ke.includes("?") ? "&" : "?") + v);
   if (tujuan) location.replace(tujuan);
   else location.reload();
 }
