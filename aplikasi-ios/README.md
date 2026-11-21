@@ -3,7 +3,7 @@
 Pembungkus iOS yang membuka `https://kampus.pulaurinoya.com/beranda?mode=app`. Isi aplikasi mengikuti web, jadi
 update konten cukup deploy web. `?mode=app` menyembunyikan harga & pembayaran (aturan App Store, lihat `src/lib/mode-app.ts`).
 
-- Bundle ID: `com.pulaurinoya.academy` · nama di layar: **RINOYA** · iPhone (versi 1)
+- Bundle ID: `com.pulaurinoya.academy` · nama di layar: **RINOYA** · iPhone & iPad (universal sejak build 22 Nov 2026; App Store butuh screenshot iPad 13")
 - Tanpa internet: `www/offline.html` ("Belum tersambung" + Coba lagi)
 - Screenshot App Store (iPhone 6,9"): `store/iphone-6.9/`
 
