@@ -4,7 +4,6 @@
 // iOS: panduan Bagikan → Tambah ke Layar Utama), dan tarik-untuk-memuat-ulang saat dibuka dari layar utama
 // (mode aplikasi di Android & iOS tidak punya pull-to-refresh bawaan).
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { create } from "zustand";
 import { Icon } from "@/components/ui";
@@ -23,18 +22,20 @@ interface PwaState {
   standalone: boolean;
   ios: boolean;
   iosHelp: boolean;
+  /** Dibuka dari app toko (Android TWA / app iOS): sudah terpasang, jangan tawari pasang. */
+  appToko: boolean;
 }
 
-export const usePwa = create<PwaState>(() => ({ prompt: null, standalone: false, ios: false, iosHelp: false }));
+export const usePwa = create<PwaState>(() => ({ prompt: null, standalone: false, ios: false, iosHelp: false, appToko: false }));
 
 const isStandalone = () =>
   typeof window !== "undefined" &&
   (window.matchMedia("(display-mode: standalone)").matches || (navigator as Navigator & { standalone?: boolean }).standalone === true);
 
-/** Bisa ditawari pemasangan (belum terpasang, dan Android punya prompt / perangkat iOS). */
+/** Bisa ditawari pemasangan (belum terpasang, dan Android punya prompt / perangkat iOS). Tidak pernah di app toko. */
 export function useCanInstall() {
-  const { prompt, standalone, ios } = usePwa();
-  return !standalone && (!!prompt || ios);
+  const { prompt, standalone, ios, appToko } = usePwa();
+  return !standalone && !appToko && (!!prompt || ios);
 }
 
 export async function installApp() {
@@ -50,11 +51,12 @@ export async function installApp() {
 export function PwaSetup() {
   const iosHelp = usePwa((s) => s.iosHelp);
   useEffect(() => {
-    modeApp(); // tangkap tanda app toko dari referrer halaman pertama
     const ua = navigator.userAgent;
     // iPadOS 13+ mengaku "Macintosh"; bedakan lewat layar sentuh.
     const ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
-    usePwa.setState({ standalone: isStandalone(), ios });
+    // App iOS (WKWebView) tidak membawa token "Safari/" di user agent, beda dengan Safari & Chrome iOS.
+    const webviewIos = ios && !/Safari\//.test(ua);
+    usePwa.setState({ standalone: isStandalone(), ios, appToko: modeApp() || webviewIos });
     const onPrompt = (e: Event) => {
       e.preventDefault(); // simpan, tampilkan lewat tombol kita sendiri
       usePwa.setState({ prompt: e as InstallPrompt });
@@ -104,46 +106,6 @@ function IosHelp() {
         </ol>
         <p className="mt-3 text-[13px] font-semibold text-[#5b6b85]">Di Chrome iPad/iPhone, tombol Bagikan ada di kanan atas bilah alamat.</p>
       </div>
-    </div>
-  );
-}
-
-/** Kartu ajakan pasang di beranda (bisa ditutup, diingat di perangkat ini). */
-export function InstallBanner() {
-  const can = useCanInstall();
-  const [hidden, setHidden] = useState(true);
-  useEffect(() => {
-    try {
-      setHidden(localStorage.getItem("rumila-install-dismissed") === "1");
-    } catch {
-      setHidden(false);
-    }
-  }, []);
-  if (!can || hidden) return null;
-  return (
-    <div className="flex items-center gap-3 rounded-[22px] bg-white p-2.5 pr-3 shadow-[0_4px_0_rgba(11,37,69,.06)]">
-      <Image src="/icons/r-icon-192.png" alt="" width={48} height={48} className="size-12 rounded-[14px]" />
-      <span className="min-w-0 flex-1">
-        <span className="block" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK, lineHeight: 1.15 }}>
-          Pasang RINOYA Academy di layar utama
-        </span>
-        <span className="block text-[12px] font-bold text-[#5b6b85]">Buka seperti aplikasi, layar penuh.</span>
-      </span>
-      <button onClick={() => void installApp()} className="rounded-full px-4 py-2 text-[14px] font-extrabold text-[#0b2545]" style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
-        Pasang
-      </button>
-      <button
-        onClick={() => {
-          setHidden(true);
-          try {
-            localStorage.setItem("rumila-install-dismissed", "1");
-          } catch {}
-        }}
-        aria-label="Tutup"
-        className="flex size-9 items-center justify-center rounded-full text-[#5b6b85]"
-      >
-        <Icon name="close" size={20} />
-      </button>
     </div>
   );
 }

@@ -3,7 +3,6 @@
 import { KartuKampus, PetaKampus, useGedungKampus } from "@/components/kampus";
 import { AppIcon, BALOO } from "@/components/launcher";
 import { useLastTool } from "@/components/kid";
-import { InstallBanner } from "@/components/pwa";
 import { useOpenTool } from "@/components/shell";
 import { Icon } from "@/components/ui";
 import { can, useMe } from "@/lib/store";
@@ -20,7 +19,6 @@ export default function Beranda() {
 
   return (
     <>
-      <InstallBanner />
       {last && (
         <button
           onClick={() => openTool(last)}
