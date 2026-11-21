@@ -1,7 +1,7 @@
 "use client";
 
 // Pratinjau KHUSUS DEVELOPMENT: layar pilih profil, PIN pad, tab Anggota, dan pemilih avatar dengan data demo.
-// ?p=pilih | kampus | pin | gambar | anggota | avatar. (kampus = persis layar /masuk dengan latar kampus) Di produksi halaman ini 404.
+// ?p=pilih | kampus | pin | gambar | anggota | avatar. (kampus = persis layar /masuk dengan latarnya) Di produksi halaman ini 404.
 
 import { notFound, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -10,7 +10,7 @@ import { AnggotaRumah } from "@/components/ortu/anggota";
 import { MasukPin } from "@/components/pin-pad";
 import { SheetHost } from "@/components/sheets";
 import { PilihProfil } from "@/app/masuk/pilih-profil";
-import { LatarKampus, TINGGI_KAMPUS } from "@/app/masuk/latar-kampus";
+import { LatarMasuk } from "@/app/masuk/latar-masuk";
 import type { Member } from "@/lib/store";
 
 const DEMO: Member[] = [
@@ -26,10 +26,10 @@ function Preview() {
   if (p === "kampus")
     return (
       <div
-        className="fixed inset-0 z-30 flex overflow-y-auto bg-[#cdeeff] px-5"
-        style={{ fontFamily: "var(--ff-nunito)", paddingTop: "calc(env(safe-area-inset-top) + 20px)", paddingBottom: `calc(${TINGGI_KAMPUS} + 16px)` }}
+        className="fixed inset-0 z-30 flex overflow-y-auto bg-[#eef6ff] px-5"
+        style={{ fontFamily: "var(--ff-nunito)", paddingTop: "calc(env(safe-area-inset-top) + 20px)", paddingBottom: "calc(env(safe-area-inset-bottom) + 24px)" }}
       >
-        <LatarKampus />
+        <LatarMasuk />
         <div className="relative m-auto flex w-full justify-center">
           <PilihProfil
             members={[
