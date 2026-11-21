@@ -130,7 +130,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
           ),
         )}
         <Gerbang peta={peta} berikut={berikut} />
-        <KartuPraktikKampus events={events} level={level} />
+        <KartuPraktikKampus events={events} level={level} kunci={{ selesai: peta.selesai, total: peta.total }} />
       </div>
 
       <div className="flex flex-col gap-2 lg:hidden">
