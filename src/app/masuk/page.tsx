@@ -9,7 +9,7 @@ import { useHydrated, useRumila, type Member, type Theme } from "@/lib/store";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { AccountStage, SetupStage } from "./account";
 import { PilihProfil } from "./pilih-profil";
-import { LatarKampus } from "./latar-kampus";
+import { LatarKampus, TINGGI_KAMPUS } from "./latar-kampus";
 import { bukaProfil, profilTerbuka } from "@/lib/profil";
 
 // Layar masuk: akun rumah → "Siapa yang belajar?" → PIN profil → beranda.
@@ -52,8 +52,13 @@ function Masuk() {
 
   return (
     <div
-      className={`fixed inset-0 z-30 flex items-center justify-center overflow-y-auto px-5 py-8 ${ready && play ? "bg-[#cdeeff]" : "bg-page"}`}
-      style={{ fontFamily: play ? NUNITO : PJ }}
+      className={`fixed inset-0 z-30 flex overflow-y-auto px-5 ${ready && play ? "bg-[#cdeeff]" : "bg-page"}`}
+      style={{
+        fontFamily: play ? NUNITO : PJ,
+        // Isi berada di langit: di bawah status bar, di atas gedung kampus (tidak saling menimpa).
+        paddingTop: "calc(env(safe-area-inset-top) + 20px)",
+        paddingBottom: play ? `calc(${TINGGI_KAMPUS} + 16px)` : "32px",
+      }}
     >
       {ready && (play ? <LatarKampus /> : (
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -63,6 +68,7 @@ function Masuk() {
         </div>
       ))}
 
+      <div className="relative m-auto flex w-full justify-center">
       {!ready ? null : cloud.status === "noSession" ? (
         <AccountStage theme={theme} />
       ) : cloud.status === "noFamily" ? (
@@ -81,6 +87,7 @@ function Masuk() {
       ) : members.length ? (
         <PilihProfil members={members} onMasuk={pilih} />
       ) : null}
+      </div>
     </div>
   );
 }

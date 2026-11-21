@@ -1,7 +1,7 @@
 "use client";
 
 // Pratinjau KHUSUS DEVELOPMENT: layar pilih profil, PIN pad, tab Anggota, dan pemilih avatar dengan data demo.
-// ?p=pilih | pin | gambar | anggota | avatar. Di produksi halaman ini 404.
+// ?p=pilih | kampus | pin | gambar | anggota | avatar. (kampus = persis layar /masuk dengan latar kampus) Di produksi halaman ini 404.
 
 import { notFound, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -10,6 +10,7 @@ import { AnggotaRumah } from "@/components/ortu/anggota";
 import { MasukPin } from "@/components/pin-pad";
 import { SheetHost } from "@/components/sheets";
 import { PilihProfil } from "@/app/masuk/pilih-profil";
+import { LatarKampus, TINGGI_KAMPUS } from "@/app/masuk/latar-kampus";
 import type { Member } from "@/lib/store";
 
 const DEMO: Member[] = [
@@ -22,6 +23,25 @@ const DEMO: Member[] = [
 
 function Preview() {
   const p = useSearchParams().get("p") ?? "pilih";
+  if (p === "kampus")
+    return (
+      <div
+        className="fixed inset-0 z-30 flex overflow-y-auto bg-[#cdeeff] px-5"
+        style={{ fontFamily: "var(--ff-nunito)", paddingTop: "calc(env(safe-area-inset-top) + 20px)", paddingBottom: `calc(${TINGGI_KAMPUS} + 16px)` }}
+      >
+        <LatarKampus />
+        <div className="relative m-auto flex w-full justify-center">
+          <PilihProfil
+            members={[
+              { ...DEMO[1], name: "Mecca", pin: undefined },
+              { ...DEMO[0], name: "AGAM ZAKY ALFATIH" },
+              { ...DEMO[3], name: "Agam" },
+            ]}
+            onMasuk={() => {}}
+          />
+        </div>
+      </div>
+    );
   return (
     <div className="bg-dots flex min-h-dvh items-center justify-center p-6" style={{ fontFamily: "var(--ff-nunito)" }}>
       {p === "pilih" && <PilihProfil members={DEMO} onMasuk={() => {}} />}

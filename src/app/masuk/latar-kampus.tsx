@@ -2,6 +2,9 @@
 
 // Latar layar masuk: Kampus Rinoya. Langit di atas (area isi tetap lapang), gedung kampus dengan menara jam,
 // papan nama, tiang bendera, pepohonan, dan halaman rumput di bawah.
+// Tinggi kampus = TINGGI_KAMPUS; layar masuk memberi jarak bawah sebesar ini agar isi tidak menimpa gedung.
+
+export const TINGGI_KAMPUS = "clamp(120px, 22vh, 330px)";
 
 const BADAN = "#fff4dc";
 const GENTENG = "#e0734f";
@@ -15,13 +18,13 @@ export function LatarKampus() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
       <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,#9fd8ff 0%,#cdeeff 50%,#eef9ff 75%)" }} />
-      <div className="absolute top-[6%] right-[7%] size-20 rounded-full" style={{ background: "#ffd23f", boxShadow: "0 0 0 22px rgba(255,210,63,.25)" }} />
-      <Awan className="top-[10%] left-[5%] w-[150px]" />
+      <div className="absolute right-[6%] size-12 rounded-full sm:size-20" style={{ top: "calc(env(safe-area-inset-top) + 5vh)", background: "#ffd23f", boxShadow: "0 0 0 14px rgba(255,210,63,.25)" }} />
+      <Awan className="top-[calc(env(safe-area-inset-top)+9vh)] -left-[7%] w-[84px] opacity-90 sm:left-[5%] sm:w-[150px]" />
       <Awan className="top-[22%] right-[16%] hidden w-[120px] opacity-80 md:block" />
       <Awan className="top-[30%] left-[22%] hidden w-[90px] opacity-70 lg:block" />
 
       {/* kampus: sepertiga bawah layar */}
-      <div className="absolute inset-x-0 bottom-0 h-[34%] min-h-[210px] max-h-[330px]">
+      <div className="absolute inset-x-0 bottom-0" style={{ height: TINGGI_KAMPUS }}>
         {/* bukit jauh */}
         <div className="absolute -inset-x-[10%] bottom-[14%] h-[40%] rounded-[50%_50%_0_0/100%_100%_0_0]" style={{ background: "#bfe6a6" }} />
         {/* sayap gedung */}
