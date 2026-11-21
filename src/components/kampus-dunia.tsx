@@ -9,7 +9,7 @@
 import { useRouter } from "next/navigation";
 import { useState, type CSSProperties, type ReactNode } from "react";
 import { JendelaKartuPelajar } from "@/components/akademi/kartu-pelajar";
-import { GedungUtama, IlustrasiGedung } from "@/components/kampus-gedung";
+import { GedungUtama, IlustrasiGedung, KantorGuru, PosSatpam, RASIO_GEDUNG } from "@/components/kampus-gedung";
 import { keteranganGedung, useGedungKampus, useKelasHariIni, useLab } from "@/components/kampus";
 import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
@@ -23,29 +23,37 @@ type TempatId = "utama" | GedungId | "kantor" | "pos";
 /** [kiri, alas (garis tanah), lebar] dalam koordinat viewBox medan */
 type Letak = Record<TempatId, [number, number, number]>;
 
-const RASIO: Record<TempatId, number> = { utama: 172 / 240, lab: 140 / 160, komputer: 140 / 160, taman: 140 / 160, musala: 140 / 160, kantor: 100 / 120, pos: 100 / 120 };
+const RASIO: Record<TempatId, number> = {
+  utama: RASIO_GEDUNG.utama,
+  lab: RASIO_GEDUNG.biasa,
+  komputer: RASIO_GEDUNG.biasa,
+  taman: RASIO_GEDUNG.biasa,
+  musala: RASIO_GEDUNG.biasa,
+  kantor: RASIO_GEDUNG.kecil,
+  pos: RASIO_GEDUNG.kecil,
+};
 
-const POTRET = { w: 400, h: 1100 };
+const POTRET = { w: 400, h: 1010 };
 const LANSKAP = { w: 1000, h: 640 };
 
 const LETAK_POTRET: Letak = {
-  utama: [70, 340, 260],
-  lab: [14, 660, 172],
-  komputer: [214, 660, 172],
-  taman: [14, 900, 172],
-  musala: [214, 900, 172],
-  kantor: [22, 1040, 116],
-  pos: [262, 1040, 116],
+  utama: [56, 318, 288],
+  lab: [8, 610, 184],
+  komputer: [208, 610, 184],
+  taman: [8, 820, 184],
+  musala: [208, 820, 184],
+  kantor: [14, 950, 132],
+  pos: [262, 950, 132],
 };
 
 const LETAK_LANSKAP: Letak = {
-  utama: [370, 282, 260],
-  lab: [80, 300, 170],
-  komputer: [750, 300, 170],
-  taman: [80, 500, 170],
-  musala: [750, 500, 170],
-  kantor: [285, 470, 112],
-  pos: [603, 470, 112],
+  utama: [356, 292, 288],
+  lab: [64, 300, 200],
+  komputer: [736, 300, 200],
+  taman: [64, 510, 200],
+  musala: [736, 510, 200],
+  kantor: [292, 482, 128],
+  pos: [584, 482, 128],
 };
 
 interface Tempat {
@@ -97,11 +105,11 @@ export function KampusDunia({ me }: { me: Member }) {
       id: "kantor",
       nama: "Kantor Guru",
       ket: "Rapor",
-      gambar: <KantorGuru />,
+      gambar: <KantorGuru className="block h-full w-full" />,
       href: "/akademi/rapor",
       tutup: kelas ? undefined : "Kantor Guru dibuka bersama Ruang Kelas.",
     },
-    { id: "pos", nama: "Pos Satpam", ket: "Kartu Pelajar", gambar: <PosSatpam />, onPilih: () => setKartu(true), tutup: kelas ? undefined : "Kartu Pelajar dibuka bersama Ruang Kelas." },
+    { id: "pos", nama: "Pos Satpam", ket: "Kartu Pelajar", gambar: <PosSatpam className="block h-full w-full" />, onPilih: () => setKartu(true), tutup: kelas ? undefined : "Kartu Pelajar dibuka bersama Ruang Kelas." },
   ];
 
   const masuk = (t: Tempat, letak: Letak, uk: { w: number; h: number }) => {
@@ -135,7 +143,12 @@ export function KampusDunia({ me }: { me: Member }) {
             style={gaya}
           >
             <span className="kd-gambar absolute inset-0">{t.gambar}</span>
-            <Label t={t} />
+            {t.tutup && (
+              <span className="absolute top-[8%] right-[6%] z-10 flex size-8 items-center justify-center rounded-full border-2 border-white bg-[#5b6b85] text-white shadow-[0_2px_0_rgba(11,37,69,.2)]">
+                <Icon name="lock" size={17} />
+              </span>
+            )}
+            {t.utama && !t.tutup && <AjakanKelas tugas={t.utama} />}
           </button>
         );
       })}
@@ -156,29 +169,20 @@ export function KampusDunia({ me }: { me: Member }) {
   );
 }
 
-/** Papan nama melayang di atas gedung. Gedung Utama membawa tombol kelas hari ini. */
-function Label({ t }: { t: Tempat }) {
+/** Tombol kelas hari ini yang melayang di atas Gedung Utama (satu-satunya tulisan di luar pelang gedung). */
+function AjakanKelas({ tugas }: { tugas: { judul: string; sub: string; ikon: string } }) {
   return (
-    <span className="kd-label pointer-events-none absolute bottom-full left-1/2 flex -translate-x-1/2 flex-col items-center">
-      <span className="flex flex-col items-center rounded-[14px] bg-white px-2.5 py-1 whitespace-nowrap shadow-[0_3px_0_rgba(11,37,69,.14)]">
-        <span className="flex items-center gap-1 leading-tight" style={{ fontFamily: BALOO, fontSize: t.utama ? 16 : 13.5, fontWeight: 800, color: INK }}>
-          {t.tutup && <Icon name="lock" size={13} />}
-          {t.nama}
+    <span className="kd-label pointer-events-none absolute bottom-[96%] left-1/2 z-10 flex -translate-x-1/2 flex-col items-center">
+      <span
+        className="kd-ajak flex items-center gap-1.5 rounded-full py-1 pr-3 pl-1 text-[12.5px] font-black whitespace-nowrap text-[#0b2545]"
+        style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}
+      >
+        <span className="flex size-6 items-center justify-center rounded-full bg-white">
+          <Icon name={tugas.ikon} size={17} />
         </span>
-        <span className="text-[10.5px] leading-tight font-extrabold text-[#5b6b85]">{t.ket}</span>
-        {t.utama && !t.tutup && (
-          <span
-            className="kd-ajak mt-1 mb-0.5 flex items-center gap-1 rounded-full py-1 pr-2.5 pl-1 text-[12px] font-black text-[#0b2545]"
-            style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 2px 0 #c85400" }}
-          >
-            <span className="flex size-5 items-center justify-center rounded-full bg-white">
-              <Icon name={t.utama.ikon} size={15} />
-            </span>
-            {t.utama.judul} · {t.utama.sub}
-          </span>
-        )}
+        {tugas.judul} · {tugas.sub}
       </span>
-      <span className="-mt-px h-2 w-3 bg-white" style={{ clipPath: "polygon(0 0,100% 0,50% 100%)" }} />
+      <span className="-mt-px h-2 w-3" style={{ background: "#f39a35", clipPath: "polygon(0 0,100% 0,50% 100%)" }} />
     </span>
   );
 }
@@ -200,49 +204,6 @@ function Papan({ info }: { info: ReturnType<typeof useKelasHariIni> }) {
         <span className="block text-[12px] text-[#0b2545]">{info.lv.pangkat}</span>
       </span>
     </div>
-  );
-}
-
-/* ---------------- gedung kecil ---------------- */
-
-function KantorGuru() {
-  return (
-    <svg viewBox="0 0 120 100" className="block h-full w-full" aria-hidden>
-      <polygon points="8,40 60,14 112,40" fill="#e0734f" />
-      <rect x="8" y="38" width="104" height="6" rx="2" fill="#b9553a" />
-      <rect x="16" y="44" width="88" height="56" fill="#fff4dc" />
-      <rect x="24" y="52" width="20" height="16" rx="3" fill="#9fd3ff" />
-      <rect x="76" y="52" width="20" height="16" rx="3" fill="#9fd3ff" />
-      <rect x="48" y="66" width="24" height="34" rx="3" fill="#a5642f" />
-      <circle cx="67" cy="84" r="1.8" fill="#fdb724" />
-      <rect x="38" y="24" width="44" height="12" rx="3" fill="#ffffff" />
-      <text x="60" y="33" textAnchor="middle" fontFamily="var(--ff-baloo), system-ui" fontWeight="800" fontSize="8" fill="#b9553a">
-        KANTOR
-      </text>
-      <rect x="22" y="76" width="22" height="16" rx="2" fill="#ffffff" stroke="#e3c896" />
-      <rect x="25" y="80" width="12" height="2" fill="#0786eb" />
-      <rect x="25" y="85" width="16" height="2" fill="#5b6b85" />
-    </svg>
-  );
-}
-
-function PosSatpam() {
-  return (
-    <svg viewBox="0 0 120 100" className="block h-full w-full" aria-hidden>
-      <rect x="22" y="30" width="76" height="8" rx="3" fill="#0567c2" />
-      <rect x="28" y="38" width="64" height="62" fill="#eef5fc" />
-      <rect x="36" y="46" width="48" height="22" rx="3" fill="#9fd3ff" />
-      <rect x="36" y="56" width="48" height="2" fill="#ffffff" opacity=".8" />
-      <rect x="28" y="72" width="64" height="6" fill="#0786eb" />
-      <rect x="52" y="78" width="16" height="22" rx="2" fill="#135385" />
-      <rect x="40" y="14" width="40" height="14" rx="4" fill="#ffffff" stroke="#0567c2" strokeWidth="2" />
-      <text x="60" y="24.5" textAnchor="middle" fontFamily="var(--ff-baloo), system-ui" fontWeight="800" fontSize="8.5" fill="#0567c2">
-        POS
-      </text>
-      {/* palang gerbang */}
-      <rect x="98" y="70" width="5" height="30" fill="#5b6b85" />
-      <rect x="100" y="70" width="20" height="5" fill="#e8232f" />
-    </svg>
   );
 }
 
@@ -420,37 +381,35 @@ function MedanPotret() {
   const { w, h } = POTRET;
   return (
     <svg viewBox={`0 0 ${w} ${h}`} className="absolute inset-0 h-full w-full" aria-hidden>
-      <Langit w={w} h={h} tanah={250} />
-      <Awan x={90} y={70} s={1} lama={44} />
-      <Awan x={250} y={120} s={0.75} lama={36} />
-      <Burung x={150} y={46} />
-      <Burung x={176} y={58} />
+      <Langit w={w} h={h} tanah={230} />
+      <Awan x={70} y={92} s={0.9} lama={44} />
+      <Awan x={300} y={130} s={0.7} lama={36} />
+      <Burung x={160} y={60} />
+      <Burung x={186} y={72} />
       {/* pepohonan belakang */}
-      <Cemara x={34} y={300} s={1.1} />
-      <Cemara x={366} y={300} s={1.1} />
-      <Pohon x={58} y={330} s={0.9} />
-      <Pohon x={344} y={330} s={0.9} />
+      <Cemara x={26} y={280} s={1.1} />
+      <Cemara x={374} y={280} s={1.1} />
+      <Pohon x={40} y={318} s={0.8} />
+      <Pohon x={360} y={318} s={0.8} />
       {/* jalan utama dari gerbang ke Gedung Utama */}
-      <Jalan x={182} y={330} w={36} h={1060 - 330} />
-      <Jalan x={96} y={660} w={208} h={26} />
-      <Jalan x={96} y={900} w={208} h={26} />
-      <AirMancur x={200} y={420} r={30} />
-      <Bangku x={124} y={436} />
-      <Bangku x={276} y={436} />
-      <Lampu x={168} y={560} />
-      <Lampu x={232} y={560} />
-      <Lampu x={168} y={800} />
-      <Lampu x={232} y={800} />
-      <Pohon x={30} y={470} s={0.85} />
-      <Pohon x={370} y={470} s={0.85} />
-      <Bunga x={122} y={362} />
-      <Bunga x={278} y={362} />
-      <Pohon x={196 - 60} y={600} s={0.7} />
-      <Pohon x={196 + 68} y={600} s={0.7} />
-      {/* pagar & gerbang */}
-      <JalanRaya y={1060} w={w} h={h} />
-      <Pagar y={1052} dari={0} sampai={w} celah={[160, 240]} />
-      <Gerbang x={200} y={1052} lebar={56} />
+      <Jalan x={182} y={314} w={36} h={966 - 314} />
+      <Jalan x={96} y={610} w={208} h={26} />
+      <Jalan x={96} y={820} w={208} h={26} />
+      <AirMancur x={200} y={392} r={28} />
+      <Bangku x={120} y={410} />
+      <Bangku x={280} y={410} />
+      <Bunga x={110} y={360} />
+      <Bunga x={290} y={360} />
+      <Pohon x={34} y={452} s={0.75} />
+      <Pohon x={366} y={452} s={0.75} />
+      <Lampu x={170} y={690} />
+      <Lampu x={230} y={690} />
+      <Lampu x={170} y={900} />
+      <Lampu x={230} y={900} />
+      {/* pagar, gerbang, jalan raya */}
+      <JalanRaya y={966} w={w} h={h} />
+      <Pagar y={958} dari={0} sampai={w} celah={[160, 240]} />
+      <Gerbang x={200} y={958} lebar={56} />
     </svg>
   );
 }
@@ -459,36 +418,30 @@ function MedanLanskap() {
   const { w, h } = LANSKAP;
   return (
     <svg viewBox={`0 0 ${w} ${h}`} className="absolute inset-0 h-full w-full" aria-hidden>
-      <Langit w={w} h={h} tanah={190} />
-      <Awan x={240} y={56} s={1.1} lama={50} />
-      <Awan x={760} y={44} s={0.9} lama={42} />
+      <Langit w={w} h={h} tanah={180} />
+      <Awan x={240} y={60} s={1.1} lama={50} />
+      <Awan x={780} y={48} s={0.9} lama={42} />
       <Burung x={640} y={60} />
       <Burung x={664} y={72} />
-      <Cemara x={30} y={240} s={1.2} />
-      <Cemara x={970} y={240} s={1.2} />
-      <Pohon x={320} y={250} />
-      <Pohon x={680} y={250} />
-      <Cemara x={300} y={236} s={0.8} />
-      <Cemara x={702} y={236} s={0.8} />
+      <Cemara x={28} y={236} s={1.2} />
+      <Cemara x={972} y={236} s={1.2} />
+      <Pohon x={316} y={262} />
+      <Pohon x={684} y={262} />
       {/* jalan */}
-      <Jalan x={482} y={282} w={36} h={600 - 282} />
+      <Jalan x={482} y={288} w={36} h={600 - 288} />
       <Jalan x={160} y={300} w={680} h={26} />
-      <Jalan x={160} y={500} w={680} h={26} />
-      <AirMancur x={500} y={410} r={30} />
-      <Bangku x={420} y={428} />
-      <Bangku x={580} y={428} />
-      <Lampu x={468} y={300} />
-      <Lampu x={532} y={300} />
-      <Lampu x={468} y={500} />
-      <Lampu x={532} y={500} />
-      <Pohon x={40} y={420} />
-      <Pohon x={960} y={420} />
-      <Pohon x={290} y={560} s={0.85} />
-      <Pohon x={710} y={560} s={0.85} />
-      <Bunga x={400} y={560} />
-      <Bunga x={600} y={560} />
-      <Bunga x={60} y={560} />
-      <Bunga x={940} y={560} />
+      <Jalan x={160} y={510} w={680} h={26} />
+      <AirMancur x={500} y={410} r={28} />
+      <Bangku x={430} y={448} />
+      <Bangku x={570} y={448} />
+      <Lampu x={468} y={370} />
+      <Lampu x={532} y={370} />
+      <Pohon x={34} y={440} />
+      <Pohon x={966} y={440} />
+      <Bunga x={300} y={576} />
+      <Bunga x={700} y={576} />
+      <Bunga x={70} y={576} />
+      <Bunga x={930} y={576} />
       <JalanRaya y={600} w={w} h={h} />
       <Pagar y={596} dari={0} sampai={w} celah={[460, 540]} />
       <Gerbang x={500} y={596} lebar={56} />
