@@ -219,7 +219,7 @@ function GedungTaman({ className }: Props) {
   );
 }
 
-/** Musala: kubah hijau, menara, pintu lengkung, dan pelang MUSALA di atas pintu. */
+/** Mushola: kubah hijau, menara, pintu lengkung, dan pelang MUSHOLA di atas pintu. */
 function GedungMusala({ className }: Props) {
   return (
     <svg viewBox="0 0 200 170" className={className} aria-hidden>
@@ -239,7 +239,7 @@ function GedungMusala({ className }: Props) {
       {/* badan */}
       <rect x="22" y="84" width="140" height="9" rx="2" fill="#15803d" />
       <rect x="28" y="93" width="128" height="75" fill="#fffaf0" />
-      <Pelang x={58} y={98} w={68} h={20} teks="MUSALA" bg="#15803d" bingkai="#fde68a" ukuran={12.5} />
+      <Pelang x={52} y={98} w={80} h={20} teks="MUSHOLA" bg="#15803d" bingkai="#fde68a" ukuran={12.5} />
       {/* jendela lengkung */}
       {[36, 130].map((x) => (
         <path key={x} d={`M${x} 150 V132 a9 9 0 0 1 18 0 V150 Z`} fill="#5eead4" stroke="#0f766e" strokeWidth="2" />

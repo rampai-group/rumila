@@ -432,12 +432,12 @@ function security(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[
 function concourse(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[], names: Names, chapter: string, departure: boolean): void {
   const { r } = k;
   // Shopfronts along both sides, including the prayer room.
-  const shops = departure ? ['DUTY FREE', 'KOPI NUSANTARA', 'BATIK & OLEH-OLEH', 'MUSALA', 'TOKO BUKU', 'APOTEK'] : ['MUSALA', 'TOILET', 'PENUKARAN UANG', 'SIM CARD', 'INFORMASI', 'KAFE'];
+  const shops = departure ? ['DUTY FREE', 'KOPI NUSANTARA', 'BATIK & OLEH-OLEH', 'MUSHOLA', 'TOKO BUKU', 'APOTEK'] : ['MUSHOLA', 'TOILET', 'PENUKARAN UANG', 'SIM CARD', 'INFORMASI', 'KAFE'];
   shops.forEach((name, i) => {
     const side = i % 2 ? 1 : -1, z = -48 - Math.floor(i / 2) * 14;
     r.box(group, [8, 4.4, 12], [side * 41.5, 2.2, z], color(k, 'shop-' + i, ['#f5efe4', '#3d2f28', '#6b2f2b', '#1f5a4a', '#28405a', '#e9e9e9'][i], { roughness: .6 }));
     r.box(group, [.1, 3.2, 10.4], [side * 37.45, 1.7, z], k.r.mat.glass);
-    const sign = textPlate(k, group, name, [side * 37.38, 4.05, z], 6, '#ffffff', name === 'MUSALA' ? '#1f6b4f' : '#2b3036'); sign.rotation.y = -side * Math.PI / 2;
+    const sign = textPlate(k, group, name, [side * 37.38, 4.05, z], 6, '#ffffff', name === 'MUSHOLA' ? '#1f6b4f' : '#2b3036'); sign.rotation.y = -side * Math.PI / 2;
     blockers.push({ minX: side > 0 ? 37.3 : -46, maxX: side > 0 ? 46 : -37.3, minZ: z - 6, maxZ: z + 6 });
   });
   // Moving walkways down the middle.
