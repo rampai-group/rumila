@@ -32,3 +32,29 @@ export function useModeApp(): boolean {
   useEffect(() => setApp(modeApp()), []);
   return app;
 }
+
+/** Dibuka di dalam app iOS (Capacitor, user agent ditambah "RinoyaApp-iOS"). */
+export function appIos(): boolean {
+  return typeof navigator !== "undefined" && /RinoyaApp-iOS/.test(navigator.userAgent);
+}
+
+/** Alamat awal app iOS. Capacitor hanya menahan pemuatan penuh yang diawali alamat ini; selain itu dibuka di
+ *  Safari. Jadi di app iOS, muat ulang lewat alamat awal + `ke` (halaman tujuan), lalu PwaSetup membawa kembali. */
+const AWAL_IOS = "/beranda?mode=app";
+
+/** Muat ulang penuh (atau pindah penuh ke `tujuan`) tanpa terlempar ke Safari saat di app iOS. */
+export function muatUlang(tujuan?: string) {
+  const ke = tujuan ?? location.pathname + location.search;
+  if (appIos()) {
+    location.href = `${location.origin}${AWAL_IOS}&ke=${encodeURIComponent(ke)}`;
+    return;
+  }
+  if (tujuan) location.replace(tujuan);
+  else location.reload();
+}
+
+/** `ke` yang aman (jalur internal saja) dari alamat sekarang, atau null. */
+export function ambilKe(): string | null {
+  const ke = new URLSearchParams(location.search).get("ke");
+  return ke && ke.startsWith("/") && !ke.startsWith("//") ? ke : null;
+}

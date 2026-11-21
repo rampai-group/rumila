@@ -7,7 +7,8 @@
 import { useEffect, useRef, useState } from "react";
 import { create } from "zustand";
 import { Icon } from "@/components/ui";
-import { modeApp } from "@/lib/mode-app";
+import { useRouter } from "next/navigation";
+import { ambilKe, appIos, modeApp, muatUlang } from "@/lib/mode-app";
 
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 const INK = "#0b2545";
@@ -50,12 +51,18 @@ export async function installApp() {
 /** Dipasang sekali di root layout. */
 export function PwaSetup() {
   const iosHelp = usePwa((s) => s.iosHelp);
+  const router = useRouter();
+  useEffect(() => {
+    // kembali ke halaman semula setelah muat ulang lewat alamat awal app iOS (lihat muatUlang)
+    const ke = ambilKe();
+    if (ke) router.replace(ke);
+  }, [router]);
   useEffect(() => {
     const ua = navigator.userAgent;
     // iPadOS 13+ mengaku "Macintosh"; bedakan lewat layar sentuh.
     const ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
     // App iOS (WKWebView) tidak membawa token "Safari/" di user agent, beda dengan Safari & Chrome iOS.
-    const webviewIos = ios && !/Safari\//.test(ua);
+    const webviewIos = appIos() || (ios && !/Safari\//.test(ua));
     usePwa.setState({ standalone: isStandalone(), ios, appToko: modeApp() || webviewIos });
     const onPrompt = (e: Event) => {
       e.preventDefault(); // simpan, tampilkan lewat tombol kita sendiri
@@ -142,7 +149,7 @@ export function PullToRefresh() {
       if (pullRef.current >= TRIGGER) {
         setLoading(true);
         setPull(TRIGGER);
-        window.setTimeout(() => location.reload(), 150);
+        window.setTimeout(() => muatUlang(), 150);
       } else setPull(0);
       pullRef.current = 0;
       start.current = null;

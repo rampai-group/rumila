@@ -1,5 +1,6 @@
 "use client";
 
+import { muatUlang } from "@/lib/mode-app";
 import { useRouter } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { BALOO, MemberAvatar, NUNITO, PJ } from "@/components/launcher";
@@ -78,7 +79,7 @@ function Masuk() {
           <Icon name="cloud_off" size={40} />
           <p className="font-bold">Belum bisa terhubung ke server.</p>
           <p className="text-sm opacity-70">{cloud.error}</p>
-          <button onClick={() => location.reload()} className="mt-1 rounded-xl bg-ink px-5 py-3 font-bold text-white">
+          <button onClick={() => muatUlang()} className="mt-1 rounded-xl bg-ink px-5 py-3 font-bold text-white">
             Coba lagi
           </button>
         </div>
