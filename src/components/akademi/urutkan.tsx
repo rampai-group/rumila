@@ -237,6 +237,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
           const disorot = hint?.kartu === s.id;
           return (
             <KartuBenda
+              penuh
               key={s.id}
               v={visual(s, t)}
               size={ukuranKartu}

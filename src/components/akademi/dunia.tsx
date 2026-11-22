@@ -70,6 +70,52 @@ function useSkalaTablet() {
   }, []);
 }
 
+/**
+ * Jendela sempit (Slide Over, HP): sebagian soal lebih tinggi dari panggung. Anak diberi tombol panah selama masih ada
+ * isi di bawah, supaya tombol jawab di ujung bawah tetap ketemu. Hilang begitu sampai bawah.
+ */
+function GulirLagi({ wadah }: { wadah: React.RefObject<HTMLDivElement | null> }) {
+  const [ada, setAda] = useState(false);
+  useEffect(() => {
+    const el = wadah.current;
+    if (!el) return;
+    let tunggu = 0;
+    const cek = () => {
+      cancelAnimationFrame(tunggu);
+      tunggu = requestAnimationFrame(() => setAda(el.scrollHeight - el.clientHeight - el.scrollTop > 12));
+    };
+    const ro = new ResizeObserver(cek);
+    const amati = () => {
+      ro.disconnect();
+      ro.observe(el);
+      for (const anak of el.children) ro.observe(anak);
+      cek();
+    };
+    const mo = new MutationObserver(amati);
+    mo.observe(el, { childList: true, subtree: true });
+    amati();
+    el.addEventListener("scroll", cek, { passive: true });
+    return () => {
+      cancelAnimationFrame(tunggu);
+      ro.disconnect();
+      mo.disconnect();
+      el.removeEventListener("scroll", cek);
+    };
+  }, [wadah]);
+  if (!ada) return null;
+  return (
+    <button
+      type="button"
+      data-gulir-lagi
+      aria-label="Lihat ke bawah"
+      onClick={() => wadah.current?.scrollTo({ top: wadah.current.scrollHeight, behavior: "smooth" })}
+      className="absolute bottom-1 left-1/2 z-10 flex size-11 -translate-x-1/2 items-center justify-center rounded-full border-[3px] border-white bg-[#fdb724] text-[#0b2545] shadow-[0_3px_0_#c98a00] active:scale-90"
+    >
+      <Icon name="expand_more" size={28} />
+    </button>
+  );
+}
+
 /** Kerangka layar aktivitas: kembali · judul & progres · instruksi (bisa diputar ulang) · isi. */
 /**
  * Panggung = area isi di bawah instruksi. Presenter membaca ukurannya untuk membesarkan kartu/wadah di layar lebar
@@ -180,12 +226,13 @@ export function LayarAktivitas({
         </div>
         <Instruksi teks={instruksi} onUcap={onUcap} />
         {/* panggung: mengisi sisa tinggi layar; presenter yang sudah "penuh layar" memakai flex-1, sisanya ditengahkan */}
-        <div className="flex min-h-0 flex-1 flex-col rounded-[26px] p-1.5" style={{ background: pilar.dasar }}>
+        <div className="relative flex min-h-0 flex-1 flex-col rounded-[26px] p-1.5" style={{ background: pilar.dasar }}>
         <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
           <PanggungCtx.Provider value={panggung}>
             <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>
           </PanggungCtx.Provider>
         </div>
+        <GulirLagi wadah={panggungRef} />
         </div>
       </div>
     </div>
