@@ -42,10 +42,11 @@ const GAP_ROOT = 12;
  * ke beberapa baris (4 → 2×2) supaya kartu besar, bukan empat kolom sempit di tengah layar kosong.
  * `blok` = lebar pembungkus, supaya jumlah kolomnya persis walau sel sudah mentok `maks`.
  */
-function selMuat(lebar: number, n: number, min: number, maks: number, gap: number, tinggi = 0, rasio?: number): { s: number; baris: number; blok?: number } {
+function selMuat(lebar: number, n: number, min: number, maks: number, gap: number, tinggi = 0, rasio?: number, barisMaks = n): { s: number; baris: number; blok?: number } {
   if (lebar <= 0 || n <= 0) return { s: min, baris: 1 };
   const muat = Math.max(1, Math.min(n, Math.floor((lebar + gap) / (min + gap))));
-  const perBaris = tinggi > 0 ? kolomTerbaik(lebar, tinggi, n, muat, gap, rasio) : muat;
+  const terbaik = tinggi > 0 ? kolomTerbaik(lebar, tinggi, n, muat, gap, rasio) : muat;
+  const perBaris = Math.min(muat, Math.max(terbaik, Math.ceil(n / barisMaks)));
   const s = Math.floor(Math.max(min, Math.min(maks, (lebar - gap * (perBaris - 1)) / perBaris)));
   return { s, baris: Math.ceil(n / perBaris), blok: perBaris * s + gap * (perBaris - 1) + 2 };
 }
@@ -178,7 +179,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
   const lebarDalam = w > 0 ? w - 2 * pad - 6 : 0;
   const tinggi = h > 0 ? h - tinggiKepala(sk) - 2 * GAP_ROOT : 0;
   // rak & baki masing-masing separuh panggung: kartu melebar (0,75) lebih terbaca daripada kolom sempit
-  const sel = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 300 : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75);
+  const sel = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 300 : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75, 2);
   // layar tegak (HP): sel sempit tapi tinggi longgar → slot/kartu boleh lebih jangkung dan bendanya lebih besar
   const tegak = w > 0 && h > w;
   const rasio = tegak ? 1.6 : 1.15;
@@ -187,9 +188,9 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
   // benda berskala (mis. planet besar) dibagi skala terbesarnya supaya tidak meluap dari kartu/slot
   const skalaMaks = Math.max(1, ...shown.map((x) => skalaLebar(visual(x, t))));
   const ukuran = batas(base * sk, Math.min(tinggiSlot * 0.6, sel.s * isiLebar), 170) / skalaMaks;
-  const kar = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 300 : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75);
+  const kar = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 300 : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75, 2);
   const tinggiKartu = (tinggi * 0.45 - 2 * pad - gap * (kar.baris - 1)) / kar.baris;
-  const ukuranKartu = batas((base + 8) * sk, Math.min(tinggiKartu * 0.5, kar.s * (tegak ? 0.68 : 0.58)), 160) / skalaMaks;
+  const ukuranKartu = batas((kar.baris >= 3 ? 40 : base + 8) * sk, Math.min(tinggiKartu * 0.5, kar.s * (tegak ? 0.68 : 0.58)), 160) / skalaMaks;
   // di layar tegak kartu ikut meninggi mengisi baki (mendatar tetap setinggi isinya)
   const tinggiMinKartu = tegak ? batas(84 * sk, Math.min(tinggiKartu, kar.s * 1.6), 400) : 84 * sk;
 
@@ -338,7 +339,8 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
   const tinggiKartu = batas(96 * sk, Math.min(sel.s * (tegak ? 1.9 : 1.2), (tinggi - gap * (sel.baris - 1)) / sel.baris), 420);
   const skalaMaks = Math.max(1, ...urutan.map((id) => skalaLebar(visual(langkah(id), t))));
   // kalimat panjang: gambar mengalah supaya semua kartu + tombol tetap satu layar
-  const kalimatPanjang = urutan.some((id) => t(langkah(id).labelKey).length > 50);
+  // berlaku juga untuk ≥ 3 baris (6–8 kartu di jendela sempit): tiap baris cuma kebagian sedikit tinggi
+  const kalimatPanjang = sel.baris >= 3 || urutan.some((id) => t(langkah(id).labelKey).length > 50);
   const ukuran = batas((kalimatPanjang ? 44 : base) * sk, Math.min(tinggiKartu * (kalimatPanjang ? 0.3 : 0.55), sel.s * (tegak ? 0.72 : 0.6)), 170) / skalaMaks;
 
   return (
