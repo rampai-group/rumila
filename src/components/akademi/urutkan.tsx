@@ -190,7 +190,8 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
   const ukuran = batas(base * sk, Math.min(tinggiSlot * 0.6, sel.s * isiLebar), 170) / skalaMaks;
   const kar = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 300 : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75, 2);
   const tinggiKartu = (tinggi * 0.45 - 2 * pad - gap * (kar.baris - 1)) / kar.baris;
-  const ukuranKartu = batas((kar.baris >= 3 ? 40 : base + 8) * sk, Math.min(tinggiKartu * 0.5, kar.s * (tegak ? 0.68 : 0.58)), 160) / skalaMaks;
+  const padat = kar.baris >= 2 && shown.some((x) => t(x.labelKey).length > 50);
+  const ukuranKartu = batas((padat || kar.baris >= 3 ? 36 : base + 8) * sk, Math.min(tinggiKartu * (padat ? 0.24 : 0.5), kar.s * (tegak ? 0.68 : 0.58)), 160) / skalaMaks;
   // di layar tegak kartu ikut meninggi mengisi baki (mendatar tetap setinggi isinya)
   const tinggiMinKartu = tegak ? batas(84 * sk, Math.min(tinggiKartu, kar.s * 1.6), 400) : 84 * sk;
 
