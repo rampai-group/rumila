@@ -356,7 +356,9 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const tinggiBaris = h > 0 ? (h - 90 * sk - 14 * sk * (baris - 1)) / baris : 0;
   const lebarKartu = w > 0 ? (w - 14 * sk * (jmlKolom - 1)) / jmlKolom : Infinity;
   const skalaMaks = Math.max(1, ...choices.map(skalaLebar));
-  const ukuran = Math.round(Math.min(200, Math.max((n <= 2 ? 110 : n <= 4 ? 92 : 76) * sk, tinggiBaris * (tulisLabel ? 0.4 : 0.5)), (lebarKartu * 0.8) / skalaMaks));
+  // gambar + kalimat panjang: gambar mengalah dan kartu boleh lebih tinggi supaya kalimatnya tetap di dalam kartu
+  const labelPanjang = tulisLabel && choices.some((c) => (c.emoji || c.shape) && t(c.labelKey).length > 34);
+  const ukuran = Math.round(Math.min(200, Math.max((n <= 2 ? 110 : n <= 4 ? 92 : 76) * sk, tinggiBaris * (tulisLabel ? 0.4 : 0.5)), (lebarKartu * (labelPanjang ? 0.55 : 0.8)) / skalaMaks));
 
   return (
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
@@ -375,7 +377,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
         style={{
           gap: 14 * sk, gridAutoRows: sk > 1 ? `minmax(${Math.round(120 * sk)}px, 1fr)` : undefined,
           // layar tegak: kartu jangan jadi kolom tinggi kosong; maksimal ±1,5× lebarnya, kelompok di tengah panggung
-          maxHeight: Number.isFinite(lebarKartu) ? baris * Math.max(170 * sk, lebarKartu * 1.5) + 14 * sk * (baris - 1) : undefined,
+          maxHeight: Number.isFinite(lebarKartu) ? baris * Math.max(170 * sk, lebarKartu * (labelPanjang ? 2.1 : 1.5)) + 14 * sk * (baris - 1) : undefined,
         }}
       >
         {choices.map((c, i) => {
