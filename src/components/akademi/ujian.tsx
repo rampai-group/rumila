@@ -90,7 +90,7 @@ function sesiTertunda(memberId: string, jenis: JenisUjian, level: LevelId, riway
 
 function Bingkai({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#e4f1fd,#fff6e8)", fontFamily: BALOO, color: INK }}>
+    <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#0786eb,#135385)", fontFamily: BALOO, color: INK }}>
       <div className="akademi-pop w-full max-w-[440px] rounded-[28px] bg-white p-6 text-center shadow-[0_8px_0_rgba(11,37,69,.12)]">{children}</div>
     </div>
   );
@@ -104,7 +104,7 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
   const [menyerahkan, setMenyerahkan] = useState(false);
   const aturan = sekali
     ? [`${jumlah} soal dari seluruh materi ${lv.pangkat}`, "Tanpa tombol Bantu", "HANYA SEKALI — tidak bisa diulang", "Nilai apa adanya tertulis di sertifikat", "Keluar di tengah jalan = soal sisa dihitung salah"]
-    : [`${jumlah} soal dari permainan yang sudah kamu latih`, "Tanpa tombol Bantu", `Lulus bila nilai minimal ${AMBANG[jenis]}`, jenis === "penempatan" ? "Hasilnya menentukan jenjang awalmu" : "Belum lulus? Ulangi materinya, coba lagi besok"];
+    : [jenis === "penempatan" ? `${jumlah} soal untuk menemukan titik mulaimu` : `${jumlah} soal dari permainan yang sudah kamu latih`, "Tanpa tombol Bantu", `Lulus bila nilai minimal ${AMBANG[jenis]}`, jenis === "penempatan" ? "Hasilnya menentukan jenjang awalmu" : "Belum lulus? Ulangi materinya, coba lagi besok"];
   const serahkanTertunda = async () => {
     if (!tertunda) return;
     setMenyerahkan(true);
@@ -118,13 +118,13 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
       <span className="mx-auto flex size-16 items-center justify-center rounded-[20px] bg-[#e4f1fd] text-[#0567c2]">
         <Icon name={jenis === "kuis" ? "quiz" : jenis === "penempatan" ? "explore" : "workspace_premium"} size={36} />
       </span>
-      <p className="mt-3 text-[13px] font-black tracking-[0.12em] text-[#fd861d] uppercase">
+      <p className="mt-3 text-[13px] font-black tracking-[0.12em] text-[#a34a00] uppercase">
         {NAMA_UJIAN[jenis]} · {lv.pangkat}
       </p>
       <h1 className="mt-1 text-[28px] leading-tight font-extrabold">{judul}</h1>
       <ul className="mt-4 flex flex-col gap-2 text-left text-[15px] font-bold" style={{ fontFamily: "var(--ff-nunito), system-ui, sans-serif" }}>
         {aturan.map((a) => (
-          <li key={a} className="flex items-center gap-2 rounded-[14px] bg-[#f6f8fb] px-3 py-2">
+          <li key={a} className="flex items-center gap-2 rounded-[14px] bg-[#d6ecff] px-3 py-2">
             <Icon name="check_circle" size={20} className="text-[#22a06b]" /> {a}
           </li>
         ))}
@@ -143,8 +143,8 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
           <button onClick={onLatihan} className="mt-5 w-full rounded-[18px] bg-[#efe7d6] py-3 text-[17px] font-extrabold active:translate-y-0.5">
             Latihan dulu (tidak dinilai)
           </button>
-          <label className="mt-4 flex items-center gap-2 text-left text-[14px] font-bold" style={{ fontFamily: "var(--ff-nunito), system-ui, sans-serif" }} htmlFor="siap-ujian-akhir">
-            <input id="siap-ujian-akhir" type="checkbox" checked={siap} onChange={(e) => setSiap(e.target.checked)} className="size-5" />
+          <label className="mt-4 flex min-h-11 items-center gap-3 text-left text-[15px] font-bold" style={{ fontFamily: "var(--ff-nunito), system-ui, sans-serif" }} htmlFor="siap-ujian-akhir">
+            <input id="siap-ujian-akhir" type="checkbox" checked={siap} onChange={(e) => setSiap(e.target.checked)} className="size-7 shrink-0" />
             Aku sudah siap. Ujian Akhir hanya sekali.
           </label>
           <button onClick={onMulai} disabled={!siap} className="mt-3 w-full rounded-[18px] py-3.5 text-[20px] font-extrabold text-white active:translate-y-0.5 disabled:opacity-45" style={{ background: "linear-gradient(155deg,#ff8a5c,#e8590c 65%)", boxShadow: "0 5px 0 #b8460a" }}>
@@ -152,13 +152,13 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
           </button>
         </>
       ) : izin.boleh ? (
-        <button onClick={onMulai} className="mt-5 w-full rounded-[18px] py-3.5 text-[20px] font-extrabold text-white active:translate-y-0.5" style={{ background: "linear-gradient(155deg,#5fb8ff,#0786eb 65%)", boxShadow: "0 5px 0 #0567c2" }}>
+        <button onClick={onMulai} className="mt-5 w-full rounded-[18px] py-3.5 text-[20px] font-extrabold text-white active:translate-y-0.5" style={{ background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 5px 0 #044a8f" }}>
           Mulai {NAMA_UJIAN[jenis].toLowerCase()}
         </button>
       ) : (
         <p className="mt-5 rounded-[14px] bg-[#fff4e5] px-3 py-3 text-[15px] font-bold text-[#a34a00]">{izin.sekali ? "Ujian Akhir sudah dikerjakan. Hasilnya ada di sertifikat." : izin.besok ? "Kamu sudah mencoba hari ini. Ulangi materinya dulu, lalu coba lagi besok, ya." : "Ujian ini sudah lulus."}</p>
       )}
-      <Link href={kembaliKe} className="mt-3 inline-block text-[14px] font-extrabold text-[#6b7a90]">
+      <Link href={kembaliKe} className="mt-2 inline-flex min-h-11 min-w-24 items-center justify-center text-[15px] font-extrabold text-[#4a5a75]">
         Kembali
       </Link>
     </Bingkai>
@@ -281,19 +281,19 @@ function LayarNilai({ h, judul, kembaliKe, latihan }: { h: HasilUjian | null; ju
   const pred = predikat(h.nilai, h.jenis);
   return (
     <Bingkai>
-      <p className="text-[13px] font-black tracking-[0.12em] text-[#fd861d] uppercase">
+      <p className="text-[13px] font-black tracking-[0.12em] text-[#a34a00] uppercase">
         {latihan ? "Latihan · tidak dinilai" : `${NAMA_UJIAN[h.jenis]} · ${judul}`}
       </p>
       <div className="mx-auto mt-3 flex size-36 flex-col items-center justify-center rounded-full border-[10px]" style={{ borderColor: h.lulus ? "#22a06b" : "#fd861d" }}>
         <span className="text-[52px] leading-none font-extrabold">{h.nilai}</span>
-        <span className="text-[13px] font-black text-[#6b7a90]">
+        <span className="text-[13px] font-black text-[#4a5a75]">
           {h.benar}/{h.total} benar
         </span>
       </div>
       <p className="mt-3 text-[26px] font-extrabold" style={{ color: h.lulus ? "#13794a" : "#a34a00" }}>
         {latihan ? (h.lulus ? "Siap ujian!" : "Latihan lagi, yuk") : SEKALI.has(h.jenis) ? pred : h.lulus ? pred : "Belum lulus"}
       </p>
-      <p className="mt-1 text-[15px] font-bold text-[#6b7a90]">
+      <p className="mt-1 text-[15px] font-bold text-[#4a5a75]">
         {latihan
           ? "Nilai latihan tidak disimpan. Ulangi materi yang masih salah, lalu ikuti Ujian Akhir."
           : SEKALI.has(h.jenis)
@@ -303,7 +303,7 @@ function LayarNilai({ h, judul, kembaliKe, latihan }: { h: HasilUjian | null; ju
               : `Butuh nilai ${AMBANG[h.jenis]}. Ulangi materinya, lalu coba besok.`}
         {h.pending && " Nilai menunggu sinkron."}
       </p>
-      <button onClick={() => router.push(kembaliKe)} className="mt-5 w-full rounded-[18px] bg-[#22b573] py-3.5 text-[19px] font-extrabold text-white shadow-[0_5px_0_#16804f] active:translate-y-0.5">
+      <button onClick={() => router.push(kembaliKe)} className="mt-5 w-full rounded-[18px] bg-[#12803f] py-3.5 text-[19px] font-extrabold text-white shadow-[0_5px_0_#16804f] active:translate-y-0.5">
         Kembali ke peta
       </button>
     </Bingkai>

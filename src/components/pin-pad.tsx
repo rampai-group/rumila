@@ -103,7 +103,7 @@ export function MasukPin({ m, judul, onBenar, kiri, onLupa }: { m: Member; judul
       </p>
       <PapanPin jenis={jenis} onTekan={(d) => setPinVal((p) => (p.length < 4 ? p + d : p))} onHapus={() => setPinVal((p) => p.slice(0, -1))} kiri={kiri} />
       {onLupa && (
-        <button type="button" onClick={onLupa} className="text-[14px] font-extrabold text-[#0567c2] underline-offset-2 hover:underline">
+        <button type="button" onClick={onLupa} className="min-h-11 px-3 text-[14px] font-extrabold text-[#0567c2] underline-offset-2 hover:underline">
           Lupa PIN?
         </button>
       )}
@@ -214,7 +214,7 @@ export function LupaPin({ m, onSelesai, onBatal }: { m: Member; onSelesai: () =>
       <button disabled={!sandi || sibuk} className="h-12 rounded-[16px] bg-[#0567c2] text-[16px] font-extrabold text-white disabled:opacity-50">
         {sibuk ? "Memeriksa…" : "Lanjut buat PIN baru"}
       </button>
-      <button type="button" onClick={onBatal} className="h-10 text-[14px] font-extrabold text-[#0567c2]">
+      <button type="button" onClick={onBatal} className="h-11 text-[14px] font-extrabold text-[#0567c2]">
         Kembali
       </button>
       <p className="text-[12px] font-bold text-ink-3">Kata sandi akun rumah adalah yang dipakai saat pertama kali masuk di perangkat ini.</p>

@@ -34,9 +34,9 @@ export function LauncherBackdrop() {
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
       {play ? (
         <>
-          <div className="absolute -top-[140px] -left-[120px] size-[420px] rounded-full bg-[#ffd23f] opacity-55 blur-[40px]" />
-          <div className="absolute top-[120px] -right-[100px] size-[360px] rounded-full bg-[#7ad7ff] opacity-50 blur-[40px]" />
-          <div className="absolute -bottom-[220px] left-[35%] size-[420px] rounded-full bg-[#ff8fc7] opacity-40 blur-[50px]" />
+          <div className="absolute -top-[140px] -left-[120px] size-[420px] rounded-full bg-[#a8ecff] opacity-70 blur-[40px]" />
+          <div className="absolute top-[120px] -right-[100px] size-[360px] rounded-full bg-[#8f7cff] opacity-30 blur-[40px]" />
+          <div className="absolute -bottom-[220px] left-[35%] size-[420px] rounded-full bg-[#ff8fc7] opacity-55 blur-[50px]" />
         </>
       ) : (
         <>
@@ -441,7 +441,7 @@ export function LauncherNav({ active }: { active: string | null }) {
           <button
             onClick={() => setQuery("")}
             aria-label="Hapus pencarian"
-            className="flex size-10 items-center justify-center rounded-[14px]"
+            className="flex size-11 items-center justify-center rounded-[14px]"
             style={{ background: play ? "#fff0e4" : "#F3F1ED", color: play ? "#ff7a45" : NV }}
           >
             <Icon name="close" />

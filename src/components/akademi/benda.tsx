@@ -5,11 +5,17 @@
 
 import { createContext, useContext, useMemo, type CSSProperties, type ReactNode } from "react";
 import { BALOO, INK, NUNITO, PILAR_CSS, bayangKartu } from "./jenis";
+import type { Adegan } from "@akademi/schema";
+import { GambarAdegan } from "./adegan-gambar";
 
 /** Huruf terpanjang satu kata (untuk ukuran huruf yang tidak memotong kata di tengah). */
-const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+/).map((k) => k.length));
+const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+|(?<=-)/).map((k) => k.length));
+/** Lebar gambar terbesar relatif ukuran dasar: emoji memakai scaleX(width) yang tidak ikut dihitung tata letak. */
+export const skalaLebar = (v: { scale?: number; emoji?: string; width?: number }) => (v.scale ?? 1) * Math.max(1, v.emoji ? v.width ?? 1 : 1);
 
 export interface VisualSpec {
+  /** keadaan benda digambar kode (lihat adegan-gambar.tsx) */
+  adegan?: Adegan;
   emoji?: string;
   color?: string;
   scale?: number;
@@ -226,8 +232,9 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
   const bedaWarna = useContext(LatarWarna);
   const berlatar = !!v.emoji && !!v.color && (v.latar ?? bedaWarna.has(v.emoji));
   const satu = (k: number): ReactNode => {
+    if (v.adegan) return <GambarAdegan key={k} adegan={v.adegan} emoji={v.emoji} s={s} />;
     if (v.emoji) {
-      const font = n > 1 ? Math.max(18, s / Math.max(v.kolom ?? 0, Math.ceil(Math.sqrt(n))) * 0.9) : s * 0.86;
+      const font = n > 1 ? Math.max(n > 12 ? 11 : 18, s / Math.max(v.kolom ?? 0, Math.ceil(Math.sqrt(n))) * 0.9) : s * 0.86;
       const gambar = (
         <span key={k} style={{ fontSize: berlatar ? font * 0.78 : font, lineHeight: 1, display: "inline-block", transform: v.width && v.width !== 1 ? `scaleX(${v.width})` : undefined, transformOrigin: "center" }}>
           {v.emoji}
@@ -257,20 +264,22 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
       const besar = s * 0.5;
       return (
         <span key={k} className="flex flex-col items-center text-center" style={{ gap: 2, maxWidth: Math.max(s * 2.4, 120) }}>
-          <span style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1, color: v.color ?? PILAR_CSS, fontSize: `min(${besar}px, 30cqi)` }}>{jam[1]}</span>
+          <span style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1, color: v.color ?? "var(--pilar-tua, #083e73)", fontSize: `min(${besar}px, 30cqi)` }}>{jam[1]}</span>
           <span className="text-balance" style={{ fontFamily: NUNITO, fontWeight: 800, lineHeight: 1.2, color: INK, fontSize: `min(${Math.max(15, besar * 0.55)}px, ${(158 / kataTerpanjang(jam[2])).toFixed(1)}cqi)`, overflowWrap: "break-word" }}>{jam[2]}</span>
         </span>
       );
     }
     const kalimat = tulisan.length > 6 && /\s/.test(tulisan);
     const px = s * 0.6 * kecil * (kalimat ? 0.82 : 1);
+    // angka + satuan pendek ("45 m²", "8 cm") selalu satu baris: diukur dari seluruh tulisannya
+    const sebaris = tulisan.length <= 6;
     return (
       <span
         key={k}
         className="text-center text-balance"
         style={{
           fontFamily: kalimat ? NUNITO : BALOO, fontWeight: kalimat ? 800 : 900, color: v.color ?? INK, lineHeight: kalimat ? 1.2 : 1.1,
-          fontSize: `min(${px}px, ${(158 / kataTerpanjang(tulisan)).toFixed(1)}cqi)`, overflowWrap: "break-word", hyphens: "manual", maxWidth: Math.max(s * 2.4, 120),
+          whiteSpace: sebaris ? "nowrap" : undefined, fontSize: `max(12px, min(${kalimat ? Math.max(15, px) : px}px, ${(158 / (sebaris ? Math.max(1, tulisan.length) : kataTerpanjang(tulisan))).toFixed(1)}cqi))`, overflowWrap: "break-word", hyphens: "manual", maxWidth: `min(100%, ${Math.max(s * 2.4, kalimat ? 170 : 120)}px)`,
         }}
       >
         {tulisan}
@@ -279,7 +288,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
   };
   if (n === 1)
     return (
-      <span className={`inline-flex items-center justify-center ${className}`} style={{ minWidth: s, minHeight: s, ...style }}>
+      <span className={`inline-flex items-center justify-center ${className}`} style={{ minWidth: s, minHeight: s, ...(!v.emoji && !v.shape ? { maxWidth: "100%" } : {}), ...style }}>
         {satu(0)}
       </span>
     );
@@ -324,7 +333,7 @@ export function KartuBenda({
       <Benda v={v} size={size} />
       {teks && (
         <span
-          style={{ fontFamily: NUNITO, fontSize: `min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi)`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: Math.max(96, size * 2.6), overflowWrap: "break-word" }}
+          style={{ fontFamily: NUNITO, fontSize: `max(12px, min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi))`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: Math.max(96, size * 2.6), overflowWrap: "break-word" }}
           className="text-center text-balance"
         >
           {teks}

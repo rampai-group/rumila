@@ -46,23 +46,23 @@ function recording() {
   return { n, audio, factory };
 }
 
-describe('rekaman Algenib kontinu', () => {
+describe('rekaman kontinu', () => {
   it('langsung memakai rekaman dan menunggu metadata sebelum seek', () => {
     const {n,audio}=recording();
     expect(n.source).toBe('rekaman');
     audio.readyState=0; n.load(TUR_LAUT[9]); n.play();
-    expect(n.tick(0)).toMatchObject({time:305,line:0,loading:true});
+    expect(n.tick(0)).toMatchObject({time:305.16,line:0,loading:true});
     expect(audio.currentTime).toBe(0);
     audio.readyState=4; audio.onloadedmetadata!();
-    expect(audio.currentTime).toBe(305);
+    expect(audio.currentTime).toBe(305.16);
     expect(n.tick(0).loading).toBe(false); n.dispose();
   });
   it('adegan dan teks hanya maju mengikuti currentTime, termasuk buffering', () => {
     const {n,audio}=recording(); n.play();
     n.tick(100); expect(n.tick(0).progress).toBe(0);
-    audio.currentTime=10; expect(n.tick(0).line).toBe(1);
+    audio.currentTime=11; expect(n.tick(0).line).toBe(1);
     audio.readyState=1;
-    expect(n.tick(3)).toMatchObject({time:10,line:1,loading:true});
+    expect(n.tick(3)).toMatchObject({time:11,line:1,loading:true});
     audio.readyState=4; audio.currentTime=22;
     expect(n.tick(0)).toMatchObject({time:22,line:2,loading:false}); n.dispose();
   });
@@ -89,11 +89,11 @@ describe('rekaman Algenib kontinu', () => {
   it('jeda, lompat bab, seek balik, dan bisu menjaga jam rekaman', () => {
     const {n,audio}=recording(); n.play(); audio.currentTime=25; n.tick(0); n.pause();
     expect(n.tick(200).time).toBe(25);
-    n.load(TUR_LAUT[9]); expect(audio.currentTime).toBe(305);
-    n.seek(324); expect(n.tick(0)).toMatchObject({line:2,time:324});
-    n.seek(312); expect(n.tick(0)).toMatchObject({line:1,time:312});
+    n.load(TUR_LAUT[9]); expect(audio.currentTime).toBe(305.16);
+    n.seek(328); expect(n.tick(0)).toMatchObject({line:2,time:328});
+    n.seek(315); expect(n.tick(0)).toMatchObject({line:1,time:315});
     n.setMuted(true); expect(audio.muted).toBe(true); n.play();
-    audio.currentTime=337; expect(n.tick(0)).toMatchObject({line:3,time:337});
+    audio.currentTime=341; expect(n.tick(0)).toMatchObject({line:3,time:341});
     n.setMuted(false); expect(audio.muted).toBe(false);
     n.load(TUR_LAUT[0]); expect(n.tick(0)).toMatchObject({time:0,line:0,progress:0}); n.dispose();
   });
@@ -105,7 +105,7 @@ describe('rekaman Algenib kontinu', () => {
   });
   it('menunggu sisa padding decoder pada akhir rekaman, tanpa memotong kata terakhir', () => {
     const {n,audio}=recording(); n.load(TUR_LAUT.at(-1)!);
-    audio.duration=598.869333; audio.currentTime=598.8;
+    audio.duration=SEA_RECORDING.duration+.094; audio.currentTime=SEA_RECORDING.duration+.05;
     expect(n.tick(0).ended).toBe(false);
     audio.currentTime=audio.duration; audio.ended=true;
     expect(n.tick(0).ended).toBe(true); n.dispose();

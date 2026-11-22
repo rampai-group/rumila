@@ -141,7 +141,7 @@ export class SeaNarration {
     const start = this.track?.start ?? 0;
     // Some AAC decoders expose encoder padding in duration. Let the final word finish on that
     // decoder's media clock rather than cutting the recording at the original PCM frame count.
-    const finalRecording = this.track?.src === SEA_RECORDING.src && this.track?.end === SEA_RECORDING.duration;
+    const finalRecording = this.track?.src === SEA_RECORDING.src && Math.abs((this.track?.end ?? -1) - SEA_RECORDING.duration) < 0.02; // manifest: end dibulatkan 0,01 dtk
     const duration = finalRecording && Number.isFinite(this.audio?.duration) ? this.audio!.duration - start
       : this.track?.end !== undefined ? this.track.end - start
       : Number.isFinite(this.audio?.duration) ? this.audio!.duration : this.stop.lines.reduce((n,l)=>n+lineDuration(l),0);

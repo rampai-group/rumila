@@ -48,17 +48,17 @@ export default function AkademiPage() {
       {perluPenempatan && (
         <Link
           href="/akademi/penempatan"
-          className="flex items-center gap-3 rounded-[24px] bg-white p-3 pr-4 shadow-[0_4px_0_rgba(11,37,69,.08)] transition-transform active:scale-[.98]"
+          className="flex items-center gap-3 rounded-[24px] bg-[#fdb724] p-3 pr-4 shadow-[0_4px_0_#c98a00] transition-transform active:scale-[.98]"
           style={{ color: "#0b2545" }}
         >
-          <span className="flex size-12 shrink-0 items-center justify-center rounded-[16px] bg-[#e4f1fd] text-[#0567c2]">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-[16px] bg-white text-[#0567c2]">
             <Icon name="explore" size={28} />
           </span>
           <span className="min-w-0 flex-1">
             <span className="block leading-none" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800 }}>
               Tes Penempatan
             </span>
-            <span className="mt-1 block text-[13px] font-bold text-ink-3">10 soal untuk menentukan jenjang awal</span>
+            <span className="mt-1 block text-[13px] font-bold text-[#0b2545]">10 soal untuk menentukan jenjang awal</span>
           </span>
           <Icon name="arrow_forward" size={26} />
         </Link>

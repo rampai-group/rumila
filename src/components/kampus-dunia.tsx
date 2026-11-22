@@ -199,7 +199,7 @@ function Papan({ info }: { info: ReturnType<typeof useKelasHariIni> }) {
           <span className="block h-full rounded-full bg-[#0786eb]" style={{ width: `${Math.max(4, info.persen)}%` }} />
         </span>
       </span>
-      <span className="rounded-[10px] bg-[#fff3d1] px-2 py-1 text-center text-[9.5px] leading-tight font-extrabold text-[#8a6a2b]">
+      <span className="rounded-[10px] bg-[#fff3d1] px-2 py-1 text-center text-[11px] leading-tight font-extrabold text-[#8a6a2b]">
         Pangkat
         <span className="block text-[12px] text-[#0b2545]">{info.lv.pangkat}</span>
       </span>

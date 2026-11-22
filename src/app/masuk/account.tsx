@@ -347,7 +347,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
                   aria-checked={c === k}
                   aria-label={`Warna ${k}`}
                   onClick={() => setC(k)}
-                  className="size-9 rounded-full"
+                  className="size-11 rounded-full"
                   style={{ background: main, boxShadow: c === k ? `0 0 0 3px #fff, 0 0 0 5px ${main}` : "none" }}
                 />
               );

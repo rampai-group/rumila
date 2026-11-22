@@ -20,11 +20,11 @@ import { tanggalPanjang } from "./sertifikat";
 
 const NAVY = "#14233f";
 const NAVY2 = "#1d3157";
-const GOLD = "#b8892b";
+const GOLD = "#86601a";
 const GOLD_TERANG = "#e9c46a";
 const KERTAS = "#fbf7ec";
 const TINTA = "#2f3a4d";
-const MUTED = "#7a7466";
+const MUTED = "#5f5a4f";
 const SERIF = 'var(--ff-sert-serif), Baskerville, Georgia, serif';
 const SKRIP = 'var(--ff-sert-skrip), "Snell Roundhand", cursive';
 const SANS = '"Avenir Next", Avenir, "Helvetica Neue", "Segoe UI", Arial, sans-serif';

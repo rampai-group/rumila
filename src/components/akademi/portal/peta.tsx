@@ -143,7 +143,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
 }
 
 function TautanBawah() {
-  const kelas = "inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[14px] font-extrabold text-[#3d4b63] shadow-[0_3px_0_rgba(11,37,69,.1)] transition-transform active:scale-95";
+  const kelas = "inline-flex min-h-11 items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[14px] font-extrabold text-[#3d4b63] shadow-[0_3px_0_rgba(11,37,69,.1)] transition-transform active:scale-95";
   return (
     <div className="flex flex-wrap justify-center gap-2">
       <Link href="/akademi/piagam" className={kelas}>
@@ -167,12 +167,12 @@ function KartuJenjang({ peta, streak, onHadiah }: { peta: PetaJenjang; streak: n
   const R = 44;
   const kel = 2 * Math.PI * R;
   return (
-    <section className={`${KARTU} relative flex flex-col gap-3 overflow-hidden p-4`} aria-label={`Jenjang ${lv.pangkat}, misi ${peta.selesai} dari ${peta.total}, target pangkat ${lv.pangkat}`}>
+    <section className={`${KARTU} relative flex flex-col gap-3 overflow-hidden p-4`} style={{ backgroundColor: `color-mix(in srgb, ${warna[0]} 45%, #fff)` }} aria-label={`Jenjang ${lv.pangkat}, misi ${peta.selesai} dari ${peta.total}, target pangkat ${lv.pangkat}`}>
       <div className="relative flex items-center gap-4">
         <span aria-hidden className="absolute -left-10 -top-12 size-40 rounded-full" style={{ background: `${warna[0]}33` }} />
         <span className="relative shrink-0" style={{ width: 104, height: 104 }}>
           <svg width={104} height={104} viewBox="0 0 104 104" aria-hidden className="absolute inset-0 -rotate-90">
-            <circle cx={52} cy={52} r={R} fill="none" stroke="#fff0da" strokeWidth={9} />
+            <circle cx={52} cy={52} r={R} fill="none" stroke="#dbeafb" strokeWidth={9} />
             {progres > 0 && <circle cx={52} cy={52} r={R} fill="none" stroke={warna[1]} strokeWidth={9} strokeLinecap="round" strokeDasharray={`${Math.max(progres * kel, 6)} ${kel}`} />}
           </svg>
           <span
@@ -189,7 +189,7 @@ function KartuJenjang({ peta, streak, onHadiah }: { peta: PetaJenjang; streak: n
           <h2 className="mt-1 leading-none" style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK }}>
             {lv.pangkat}
           </h2>
-          <p className="mt-1.5 leading-none" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: warna[1] }}>
+          <p className="mt-1.5 leading-none" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}>
             {peta.selesai}/{peta.total} <span className="text-[13px] text-ink-3">misi</span>
           </p>
         </div>
@@ -251,7 +251,7 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: Unit
       <div className="relative">
       <div
         className="flex items-center gap-3 rounded-[22px] px-4 py-3"
-        style={{ background: `linear-gradient(135deg, ${l}, ${m} 70%)`, boxShadow: `0 4px 0 ${d}`, color: tinta }}
+        style={{ background: `linear-gradient(135deg, ${tinta === "#fff" ? m : l}, ${tinta === "#fff" ? d : m} 70%)`, boxShadow: `0 4px 0 ${d}`, color: tinta }}
       >
         <Icon name={TRACK_IKON[u.track]} size={30} />
         <span className="min-w-0 flex-1">
@@ -335,7 +335,7 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
     : m.sekarang
       ? { background: `linear-gradient(155deg, ${l}, ${mm} 65%)`, boxShadow: `0 7px 0 ${d}`, color: "#fff" }
       : m.terkunci
-        ? { background: "#ece4d8", boxShadow: "0 5px 0 #d6cbbb", color: "#a99c8a" }
+        ? { background: "#dbe7f5", boxShadow: "0 5px 0 #a9c0dc", color: "#3d4f66" }
         : { background: "#fff", boxShadow: `0 5px 0 ${l}`, border: `3px solid ${l}`, color: mm };
   const label = `Misi ${m.nomor}, ${judul}: ${pernyataan(m, bahasa)}. ${m.selesai ? "Selesai, main lagi" : m.terkunci ? "Terkunci" : persen ? `Sudah ${persen}%` : "Belum dimainkan"}`;
   const kelas = "relative flex items-center justify-center rounded-full transition-transform active:translate-y-1 active:scale-95 group-active:translate-y-1 group-active:scale-95";
@@ -345,14 +345,14 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
       {m.selesai ? (
         <span className="flex flex-col items-center leading-none">
           <Icon name="star" size={26} />
-          <span className="mt-0.5 text-[10px] font-black text-[#7a5200]">100%</span>
+          <span className="mt-0.5 text-[11px] font-black text-[#7a5200]">100%</span>
         </span>
       ) : m.sekarang ? (
         <Icon name="play_arrow" size={44} />
       ) : (
         <span className="flex flex-col items-center leading-none">
           <span style={{ fontFamily: BALOO, fontSize: persen ? 20 : 24, fontWeight: 800 }}>{m.nomor}</span>
-          {persen > 0 && <span className="mt-0.5 text-[10px] font-black text-[#c2410c]">{persen}%</span>}
+          {persen > 0 && <span className="mt-0.5 text-[11px] font-black text-[#c2410c]">{persen}%</span>}
         </span>
       )}
       {m.terkunci && (
@@ -424,7 +424,7 @@ function KartuUjian({ u, bahasa }: { u: NonNullable<PetaJenjang["ujian"]>; bahas
       href={`/akademi/ujian?jenis=${u.jenis}&ruang=${encodeURIComponent(u.ruang)}`}
       aria-label={`${NAMA_UJIAN[u.jenis]}: ${judul}`}
       className="flex items-center gap-3 rounded-[28px] p-3 pr-5 text-white transition-transform active:scale-[.98]"
-      style={{ background: "linear-gradient(155deg,#5fb8ff,#0786eb 60%)", boxShadow: "0 6px 0 #0567c2" }}
+      style={{ background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 6px 0 #044a8f" }}
     >
       <span className="relative flex size-16 shrink-0 items-center justify-center rounded-full bg-white text-[#0567c2]">
         <span aria-hidden className="akademi-denyut absolute inset-0 rounded-full" />
@@ -447,7 +447,7 @@ function KepalaSemester({ sm, aktif, ujianLulus }: { sm: SemesterPeta; aktif: bo
   const status = sm.tuntas && ujianLulus ? { teks: "Lulus", bg: "#e3f6ec", fg: "#13794a", ikon: "verified" } : sm.tuntas ? { teks: "Ujian", bg: "#fff1e0", fg: "#c2410c", ikon: "workspace_premium" } : sm.terkunci ? { teks: "Tuntas", bg: "#e3f6ec", fg: "#13794a", ikon: "verified" } : sm.terkunci ? { teks: "Terkunci", bg: "#efe8de", fg: "#8a7d6b", ikon: "lock" } : { teks: "Berjalan", bg: "#e4f1fd", fg: "#0567c2", ikon: "school" };
   const persen = sm.total ? Math.round((sm.selesai / sm.total) * 100) : 0;
   return (
-    <div className={`${KARTU} flex items-center gap-3 px-4 py-3 ${aktif ? "ring-2 ring-[#0786eb]/40" : ""}`} aria-label={`Semester ${sm.ke}: ${status.teks}, ${sm.selesai} dari ${sm.total} misi`}>
+    <div className={`${KARTU} flex items-center gap-3 px-4 py-3 ${aktif ? "ring-4 ring-[#0567c2]" : ""}`} style={aktif ? { backgroundColor: "#d3ebff" } : undefined} aria-label={`Semester ${sm.ke}: ${status.teks}, ${sm.selesai} dari ${sm.total} misi`}>
       <span className="flex size-11 shrink-0 items-center justify-center rounded-[14px]" style={{ background: status.bg, color: status.fg }}>
         <Icon name={status.ikon} size={24} />
       </span>
@@ -480,8 +480,8 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
   const gaya: React.CSSProperties = peta.lulusJenjang
     ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 7px 0 #c88a00", color: INK }
     : terbuka
-      ? { background: "linear-gradient(155deg,#5fb8ff,#0786eb 65%)", boxShadow: "0 7px 0 #0567c2", color: "#fff" }
-      : { background: "#ece4d8", boxShadow: "0 6px 0 #d6cbbb", color: "#a99c8a" };
+      ? { background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 7px 0 #044a8f", color: "#fff" }
+      : { background: "#dbe7f5", boxShadow: "0 6px 0 #a9c0dc", color: "#3d4f66" };
   const isi = (
     <>
       <span className="flex size-24 items-center justify-center rounded-[30px]" style={gaya}>

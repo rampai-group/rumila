@@ -45,7 +45,7 @@ export function KartuPelajar({ me, level }: { me: Member; level: LevelId }) {
       aria-label={`Kartu Pelajar ${me.name}, nomor induk ${nis}, IPK ${formatIpk(ipk.nilai)}`}
     >
       {/* pita atas */}
-      <div className="flex items-center gap-[2cqw] px-[4cqw]" style={{ height: "19%", background: `linear-gradient(90deg, ${NAVY}, #0786eb)` }}>
+      <div className="flex items-center gap-[2cqw] px-[4cqw]" style={{ height: "19%", background: `linear-gradient(90deg, ${NAVY}, #0567c2)` }}>
         <span className="flex aspect-square h-[70%] items-center justify-center rounded-[1.6cqw] bg-white">
           <Image src="/brand/rinoya-mark-r.png" alt="" width={40} height={40} className="h-[80%] w-auto" />
         </span>
@@ -53,7 +53,7 @@ export function KartuPelajar({ me, level }: { me: Member; level: LevelId }) {
           <span className="block" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: "4.4cqw", letterSpacing: ".06em" }}>
             RINOYA ACADEMY
           </span>
-          <span className="block font-extrabold opacity-85" style={{ fontSize: "2.4cqw", letterSpacing: ".18em" }}>
+          <span className="block font-extrabold" style={{ fontSize: "2.4cqw", letterSpacing: ".18em" }}>
             KARTU PELAJAR
           </span>
         </span>

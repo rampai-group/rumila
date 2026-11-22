@@ -18,8 +18,8 @@ import { KodeQR } from "./qr";
 import { tanggalPanjang } from "./sertifikat";
 
 const NAVY = "#14233f";
-const GOLD = "#b8892b";
-const MUTED = "#7a7466";
+const GOLD = "#946b1a";
+const MUTED = "#5f5a4f";
 const SERIF = 'var(--ff-sert-serif), Baskerville, Georgia, serif';
 const SCRIPT = 'var(--ff-sert-skrip), "Snell Roundhand", cursive';
 const SANS = '"Avenir Next", Avenir, "Helvetica Neue", "Segoe UI", Arial, sans-serif';
@@ -36,7 +36,7 @@ export function PiagamModulKartu({ nama, p, className = "" }: { nama: string; p:
       <div aria-hidden className="absolute" style={{ inset: "5.6%", border: "0.35cqw dashed #fdb724", borderRadius: "1.8cqw" }} />
       <div className="absolute grid items-center" style={{ inset: "9% 9%", gridTemplateColumns: "1fr 27%", gap: "3cqw" }}>
         <div className="min-w-0">
-          <p style={{ fontFamily: SANS, fontWeight: 800, fontSize: "1.9cqw", letterSpacing: "0.2em", color: "#fd861d" }}>PIAGAM MODUL · {namaTrack(p.track).toUpperCase()}</p>
+          <p style={{ fontFamily: SANS, fontWeight: 800, fontSize: "1.9cqw", letterSpacing: "0.2em", color: "#b0500a" }}>PIAGAM MODUL · {namaTrack(p.track).toUpperCase()}</p>
           <p style={{ fontFamily: BALOO, fontWeight: 800, fontSize: "6cqw", lineHeight: 1.02, color: "#135385", marginTop: "0.8cqw" }}>{p.nama.id}</p>
           <p style={{ fontFamily: BALOO, fontWeight: 800, fontSize: "5cqw", lineHeight: 1.05, color: "#0786eb", marginTop: "1.4cqw" }}>{nama}</p>
           <p style={{ fontFamily: SANS, fontWeight: 600, fontSize: "2.2cqw", color: "#4b6178", marginTop: "1cqw", lineHeight: 1.35 }}>
@@ -227,7 +227,7 @@ export function TranskripJenjang({ nama, level, kode, nomor, issuedAt, snapshot 
           </ul>
         </div>
       ))}
-      <p style={{ fontSize: 10.5, color: MUTED, marginTop: 18, lineHeight: 1.5 }}>
+      <p style={{ fontSize: 11, color: MUTED, marginTop: 18, lineHeight: 1.5 }}>
         RINOYA Academy adalah program belajar non-formal pendamping sekolah; dokumen ini bukan ijazah. Keaslian dapat diperiksa dengan kode {kode}.
       </p>
     </div>

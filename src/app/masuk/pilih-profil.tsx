@@ -69,7 +69,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
       <Image src="/brand/rinoya-logo-r.png" alt="RINOYA Academy" width={1137} height={800} priority className="h-auto w-[96px] sm:w-[150px] [@media(max-height:820px)]:w-[80px]" />
       <div className="flex flex-col items-center gap-1.5">
         <h1 className="text-balance" style={{ fontFamily: BALOO, fontSize: "clamp(26px, 5vw, 44px)", fontWeight: 800, color: INK, lineHeight: 1.05 }}>Siapa yang belajar hari ini?</h1>
-        <p className="text-[14px] font-bold text-[#3d5675] sm:text-[17px]">Ketuk kartumu untuk mulai</p>
+        <p className="text-[14px] font-extrabold text-[#0b2545] sm:text-[17px]">Ketuk kartumu untuk mulai</p>
       </div>
       {anak.length > 0 && (
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
@@ -89,7 +89,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
               type="button"
               onClick={() => pilih(m)}
               aria-label={`${m.name}, pakai PIN`}
-              className="flex items-center gap-2 rounded-full bg-[#f1f5fb] py-1 pr-3 pl-1 transition-transform active:scale-95"
+              className="flex min-h-11 items-center gap-2 rounded-full bg-[#f1f5fb] py-1 pr-3 pl-1 transition-transform active:scale-95"
             >
               <MemberAvatar m={m} size={34} theme="playful" />
               <span className="max-w-[120px] truncate" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, color: INK }}>{m.name}</span>
@@ -104,7 +104,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
           await signOutAccount();
           router.replace("/masuk");
         }}
-        className="-mt-1 inline-flex items-center gap-1 px-3 py-1 text-[13px] font-extrabold text-[#3d5675]/80 underline-offset-2 hover:underline"
+        className="-mt-1 inline-flex min-h-11 items-center gap-1 px-3 py-1 text-[13px] font-extrabold text-[#0b2545] underline-offset-2 hover:underline"
       >
         <Icon name="logout" size={16} /> Keluar akun rumah
       </button>
@@ -114,17 +114,17 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
 
 /** Kartu anak: kartu tegak berwarna profil, avatar di lingkaran putih (gembok kecil bila ber-PIN), nama, tombol "Ayo belajar". */
 function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
-  const [l, mm, d] = PLAY[m.c];
+  const [, mm, d] = PLAY[m.c];
   // Nama panjang diperkecil supaya tetap terbaca utuh, tidak terpotong "…".
   const panjang = m.name.length;
-  const ukuranNama = panjang > 12 ? "text-[17px] sm:text-[22px]" : panjang > 8 ? "text-[20px] sm:text-[24px]" : "text-[24px] sm:text-[28px]";
+  const ukuranNama = panjang > 12 ? "text-[15px] sm:text-[21px]" : panjang > 8 ? "text-[17px] sm:text-[23px]" : "text-[24px] sm:text-[28px]";
   return (
     <button
       type="button"
       onClick={onPilih}
       aria-label={`${m.name}${m.pin ? ", pakai PIN" : ""}`}
       className="group relative flex w-[156px] flex-col items-center gap-2.5 overflow-hidden rounded-[28px] px-3 pt-5 pb-4 transition-transform hover:-translate-y-1 active:translate-y-1 sm:w-[230px] sm:gap-3 sm:rounded-[32px] sm:pt-8 sm:pb-5 sm:[@media(max-height:820px)]:pt-5"
-      style={{ background: `linear-gradient(165deg, ${l} 0%, ${mm} 70%)`, boxShadow: `0 6px 0 ${d}, 0 14px 26px rgba(11,37,69,.16)` }}
+      style={{ background: `linear-gradient(165deg, ${mm} 0%, ${d} 100%)`, boxShadow: `0 6px 0 ${d}, 0 14px 26px rgba(11,37,69,.16)` }}
     >
       <span aria-hidden className="absolute -top-8 -right-8 size-24 rounded-full bg-white/20" />
       <span className="relative rounded-full bg-white p-1.5 shadow-[0_4px_0_rgba(0,0,0,.12)]">
@@ -138,12 +138,12 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
         ) : null}
       </span>
       <span
-        className={`relative flex h-[28px] max-w-full items-center px-1 text-white sm:h-[34px] ${ukuranNama}`}
-        style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1.1, textShadow: `0 2px 0 ${d}` }}
+        className={`relative flex h-[34px] max-w-full items-center rounded-full px-2 sm:px-3 text-white sm:h-[38px] ${ukuranNama}`}
+        style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1.1, background: `color-mix(in srgb, ${d} 62%, #000)` }}
       >
         <span className="truncate">{m.name}</span>
       </span>
-      <span className="relative flex items-center gap-0.5 rounded-full bg-white py-1.5 pr-3 pl-4 text-[14px] font-black whitespace-nowrap sm:text-[15px]" style={{ color: d }}>
+      <span className="relative flex items-center gap-0.5 rounded-full bg-white py-1.5 pr-3 pl-4 text-[14px] font-black whitespace-nowrap sm:text-[15px]" style={{ color: `color-mix(in srgb, ${d} 72%, #000)` }}>
         Ayo belajar <Icon name="play_arrow" size={18} />
       </span>
     </button>

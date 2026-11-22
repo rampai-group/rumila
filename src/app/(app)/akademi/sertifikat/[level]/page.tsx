@@ -36,7 +36,7 @@ export default function SertifikatLevelPage() {
 
 function Kerangka({ children }: { children: React.ReactNode }) {
   return (
-    <div className="sertifikat-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
+    <div className="sertifikat-root min-h-dvh latar-biru" style={{ fontFamily: NUNITO, color: INK }}>
       <style>{SERTIFIKAT_PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[1040px] flex-col gap-5 px-4 py-4 sm:px-6 sm:py-6" style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: "max(32px, env(safe-area-inset-bottom))" }}>
         {children}
@@ -48,7 +48,7 @@ function Kerangka({ children }: { children: React.ReactNode }) {
 function Kepala({ judul, sub }: { judul: string; sub: string }) {
   return (
     <header className="no-print flex items-center gap-3">
-      <Link href="/akademi" aria-label="Kembali" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
+      <Link href="/akademi" aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
         <Icon name="arrow_back" size={22} />
       </Link>
       <div className="min-w-0 flex-1">

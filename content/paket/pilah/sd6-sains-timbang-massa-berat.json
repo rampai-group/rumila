@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-timbang-massa-berat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.MASSA-BERAT.01"
@@ -181,20 +181,17 @@
     {
       "id": "n50",
       "labelKey": "i-n50",
-      "bin": "pilihan",
-      "emoji": "🔢"
+      "bin": "pilihan"
     },
     {
       "id": "n5",
       "labelKey": "i-n5",
-      "bin": "pilihan",
-      "emoji": "🔢"
+      "bin": "pilihan"
     },
     {
       "id": "n500",
       "labelKey": "i-n500",
-      "bin": "pilihan",
-      "emoji": "🔢"
+      "bin": "pilihan"
     },
     {
       "id": "kurang50",

@@ -70,7 +70,7 @@ export function ProfilBerpikirOrtu({ anak }: { anak: Member }) {
           <h2 style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800 }}>Profil Kemampuan Berpikir</h2>
           <p className="text-[13px] font-bold text-ink-3">4 permainan singkat (±10 menit): pola, memori, spasial, kecepatan. Dampingi anak, jangan bantu menjawab.</p>
         </div>
-        <Link href={`/orang-tua/berpikir?anak=${anak.id}`} className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#5fb8ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
+        <Link href={`/orang-tua/berpikir?anak=${anak.id}`} className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "#0567c2", boxShadow: "0 3px 0 #0567c2" }}>
           <Icon name="play_arrow" size={20} /> {akhir ? "Tes ulang" : "Mulai tes"}
         </Link>
       </section>
@@ -169,9 +169,9 @@ export function TesBerpikir({ anak, kembaliKe }: { anak: Member; kembaliKe: stri
   }, [tahap, usia, anak.id]);
 
   return (
-    <div className="flex min-h-dvh flex-col items-center px-4 py-5" style={{ background: "linear-gradient(180deg,#e4f1fd,#fff6e8)", color: INK, fontFamily: BALOO }}>
+    <div className="flex min-h-dvh flex-col items-center px-4 py-5" style={{ background: "linear-gradient(180deg,#0786eb,#135385)", color: INK, fontFamily: BALOO }}>
       <div className="flex w-full max-w-[560px] items-center gap-2">
-        <Link href={kembaliKe} aria-label="Keluar" className="flex size-10 items-center justify-center rounded-full bg-white">
+        <Link href={kembaliKe} aria-label="Keluar" className="flex size-11 items-center justify-center rounded-full bg-white">
           <Icon name="close" size={22} />
         </Link>
         <div className="flex flex-1 gap-1">
@@ -185,12 +185,12 @@ export function TesBerpikir({ anak, kembaliKe }: { anak: Member; kembaliKe: stri
           <div className={`${KARTU} p-6 text-center`}>
             <Icon name="psychology" size={48} className="text-[#0786eb]" />
             <h1 className="mt-2 text-[26px] font-extrabold">Profil Berpikir {anak.name}</h1>
-            <p className="mt-1 text-[15px] font-bold text-[#6b7a90]" style={{ fontFamily: "var(--ff-nunito), system-ui" }}>
+            <p className="mt-1 text-[15px] font-bold text-[#56657a]" style={{ fontFamily: "var(--ff-nunito), system-ui" }}>
               4 permainan: pola, memori, bentuk diputar, dan sama-beda cepat. Orang tua mendampingi, anak yang menjawab.
             </p>
             <label className="mt-4 flex items-center justify-center gap-2 text-[15px] font-bold" htmlFor="usia-anak">
               Usia anak
-              <select id="usia-anak" value={usia} onChange={(e) => setUsia(Number(e.target.value))} className="rounded-[12px] border border-[#dbe4ef] bg-white px-3 py-1.5">
+              <select id="usia-anak" value={usia} onChange={(e) => setUsia(Number(e.target.value))} className="min-h-11 rounded-[12px] border border-[#dbe4ef] bg-white px-3 py-1.5">
                 {Array.from({ length: 10 }, (_, i) => i + 3).map((u) => (
                   <option key={u} value={u}>
                     {u} tahun
@@ -209,7 +209,7 @@ export function TesBerpikir({ anak, kembaliKe }: { anak: Member; kembaliKe: stri
           <div className={`${KARTU} p-6 text-center`}>
             <Icon name="celebration" size={52} className="text-[#fd861d]" />
             <h1 className="mt-2 text-[26px] font-extrabold">Selesai, hebat!</h1>
-            <p className="mt-1 text-[15px] font-bold text-[#6b7a90]">Hasil lengkap ada di Ruang Orang Tua.</p>
+            <p className="mt-1 text-[15px] font-bold text-[#56657a]">Hasil lengkap ada di Ruang Orang Tua.</p>
             <Link href={kembaliKe} className="mt-5 block rounded-[18px] bg-[#22b573] py-3.5 text-[19px] font-extrabold text-white shadow-[0_5px_0_#16804f]">
               Lihat hasil
             </Link>
@@ -222,7 +222,7 @@ export function TesBerpikir({ anak, kembaliKe }: { anak: Member; kembaliKe: stri
 
 function TombolUtama({ onClick, children, disabled }: { onClick: () => void; children: React.ReactNode; disabled?: boolean }) {
   return (
-    <button onClick={onClick} disabled={disabled} className="mt-5 w-full rounded-[18px] py-3.5 text-[20px] font-extrabold text-white active:translate-y-0.5 disabled:opacity-50" style={{ background: "linear-gradient(155deg,#5fb8ff,#0786eb 65%)", boxShadow: "0 5px 0 #0567c2" }}>
+    <button onClick={onClick} disabled={disabled} className="mt-5 w-full rounded-[18px] py-3.5 text-[20px] font-extrabold text-white active:translate-y-0.5 disabled:opacity-50" style={{ background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 5px 0 #044a8f" }}>
       {children}
     </button>
   );
@@ -232,7 +232,7 @@ function Judul({ teks, sub }: { teks: string; sub: string }) {
   return (
     <div className="mb-4 text-center">
       <h2 className="text-[24px] leading-tight font-extrabold">{teks}</h2>
-      <p className="text-[14px] font-bold text-[#6b7a90]">{sub}</p>
+      <p className="text-[14px] font-bold text-[#56657a]">{sub}</p>
     </div>
   );
 }
@@ -423,7 +423,7 @@ function BagianKecepatan({ seed, onSelesai }: { seed: number; onSelesai: (benar:
         <>
           <div className={`${KARTU} flex items-center justify-around p-5 text-[40px] tracking-[0.15em]`} style={{ fontFamily: "system-ui" }}>
             <span>{q.kiri}</span>
-            <span className="text-[20px] text-[#6b7a90]">|</span>
+            <span className="text-[20px] text-[#56657a]">|</span>
             <span>{q.kanan}</span>
           </div>
           <div className="mt-4 grid grid-cols-2 gap-3">

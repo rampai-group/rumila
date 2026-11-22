@@ -45,17 +45,17 @@
 .umroh-babak div { display:flex; flex-direction:column; gap:5px; min-width:0; }
 .umroh-babak i { display:block; height:4px; border-radius:9px; background:rgba(255,255,255,.22); overflow:hidden; }
 .umroh-babak b { display:block; height:100%; border-radius:9px; background:linear-gradient(90deg,#ffe08a,#fdb724); transition:width .5s ease; }
-.umroh-babak span { font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--glass-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.umroh-babak span { font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--glass-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .umroh-babak .aktif span { color:#fff; }
 .umroh-babak .lewat b { background:rgba(255,255,255,.85); }
 
 /* menu ⋯ */
 .umroh-menu { position:absolute; z-index:6; top:calc(env(safe-area-inset-top, 0px) + 66px); right:max(16px, env(safe-area-inset-right, 0px)); width:min(340px, calc(100% - 32px)); max-height:calc(100% - 180px); overflow-y:auto; border-radius:22px; padding:14px; display:flex; flex-direction:column; gap:8px; background:var(--glass-strong); animation:umroh-pop .18s ease-out; }
-.umroh-menu-label { font-size:10.5px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--glass-muted); margin-top:4px; }
+.umroh-menu-label { font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--glass-muted); margin-top:4px; }
 .umroh-chips { display:flex; flex-wrap:wrap; gap:6px; }
-.umroh-chips button { display:inline-flex; align-items:center; gap:6px; min-height:38px; padding:0 13px; border-radius:999px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#fff; font-size:13px; font-weight:800; }
+.umroh-chips button { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:0 13px; border-radius:999px; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.08); color:#fff; font-size:13px; font-weight:800; }
 .umroh-chips button[aria-pressed=true] { background:#fff; color:var(--u-ink); border-color:#fff; }
-.umroh-chips-sm button { min-height:32px; padding:0 11px; font-size:12px; }
+.umroh-chips-sm button { min-height:44px; padding:0 11px; font-size:12px; }
 .umroh-chips-light button { border-color:var(--u-line); background:#fff; color:var(--u-muted); }
 .umroh-chips-light button[aria-pressed=true] { background:var(--u-accent-tint); color:var(--u-accent-deep); border-color:var(--u-accent); }
 .umroh-menu-rows { display:flex; flex-direction:column; margin-top:6px; border-top:1px solid rgba(255,255,255,.14); padding-top:6px; }
@@ -79,7 +79,7 @@
 /* kartu keterangan bawah */
 .umroh-caption { position:absolute; z-index:3; left:50%; bottom:calc(env(safe-area-inset-bottom, 0px) + 16px); transform:translateX(-50%); width:min(760px, calc(100% - 32px)); display:flex; align-items:center; gap:14px; padding:14px 14px 14px 20px; border-radius:24px; }
 .umroh-cap-text { flex:1; min-width:0; }
-.umroh-cap-eyebrow { display:block; font-size:10.5px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-soft); }
+.umroh-cap-eyebrow { display:block; font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-soft); }
 .umroh-caption h2 { margin:2px 0 0; font-family:var(--ff-baloo),sans-serif; font-size:clamp(19px, 2.4vw, 24px); font-weight:800; line-height:1.2; color:#fff; outline:none; }
 .umroh-cap-line, .umroh-cap-step { margin:4px 0 0; font-size:13.5px; font-weight:700; line-height:1.4; color:var(--glass-muted); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
 .umroh-cap-step { color:#fff; display:flex; align-items:center; gap:10px; -webkit-line-clamp:unset; }
@@ -119,8 +119,8 @@
 .umroh-sheet-top { display:flex; align-items:center; gap:12px; margin-bottom:4px; }
 .umroh-sheet-top > div { flex:1; min-width:0; }
 .umroh-sheet-top h3 { margin:2px 0 0; font-family:var(--ff-baloo),sans-serif; font-size:22px; font-weight:800; line-height:1.2; }
-.umroh-sheet .umroh-eyebrow { font-size:10.5px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--u-muted); }
-.umroh-icon-btn { width:40px; height:40px; flex:none; border:1px solid var(--u-line); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:#fff; color:var(--u-accent-deep); }
+.umroh-sheet .umroh-eyebrow { font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--u-muted); }
+.umroh-icon-btn { width:44px; height:44px; flex:none; border:1px solid var(--u-line); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:#fff; color:var(--u-accent-deep); }
 .umroh-steps { list-style:none; margin:6px 0 14px; padding:0; display:grid; gap:6px; }
 .umroh-steps li { display:flex; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--u-muted); }
 .umroh-steps li > span { width:24px; height:24px; flex:none; border-radius:50%; display:grid; place-items:center; background:var(--u-accent-tint); color:var(--u-accent-deep); font-size:12px; font-weight:900; }
@@ -130,7 +130,7 @@
 .umroh-primary { width:100%; display:flex; align-items:center; justify-content:center; gap:9px; border:0; border-radius:16px; background:var(--u-accent-deep); color:#fff; box-shadow:0 4px 0 var(--academy-navy); padding:12px 15px; font-weight:800; font-size:14px; text-decoration:none; min-height:46px; }
 .umroh-outline-btn { min-height:44px; display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:8px 14px; border:1px solid var(--u-line); border-radius:16px; background:#fff; font-size:14px; font-weight:800; color:var(--u-accent-deep); }
 .umroh-secondary-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-.umroh-secondary-actions button { display:flex; align-items:center; gap:6px; min-height:40px; padding:0 4px; border:0; background:transparent; font-size:13.5px; font-weight:800; color:var(--u-accent-deep); }
+.umroh-secondary-actions button { display:flex; align-items:center; gap:6px; min-height:44px; padding:0 4px; border:0; background:transparent; font-size:13.5px; font-weight:800; color:var(--u-accent-deep); }
 .umroh-save-note { font-size:12px; line-height:1.6; color:var(--u-muted); margin-top:10px; }
 .umroh-panel-actions { margin-top:18px; border-top:1px solid var(--u-line); padding-top:10px; }
 
@@ -141,7 +141,7 @@
 .umroh-visit-button { display:flex; align-items:center; gap:9px; width:100%; padding:11px 10px; margin:13px 0; border:1px solid var(--u-accent); border-radius:16px; background:var(--u-accent-tint); color:var(--u-accent-deep); text-align:left; }
 .umroh-visit-button>span:not(.ms) { flex:1; }
 .umroh-visit-button strong { display:block; font-size:11px; font-weight:800; }
-.umroh-visit-button small { display:block; margin-top:4px; color:var(--u-muted); font-size:9px; line-height:1.45; }
+.umroh-visit-button small { display:block; margin-top:4px; color:var(--u-muted); font-size:11px; line-height:1.45; }
 .umroh-boarding-pass { margin:14px 0; border-radius:16px; overflow:hidden; background:#fff; border:1px solid var(--u-line); box-shadow:0 6px 18px #0d3b5a1a; }
 .umroh-bp-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; padding:10px 13px; background:#0d5f7e; color:#fff; font-weight:800; font-size:12px; }
 .umroh-bp-head small { font-size:8px; letter-spacing:.08em; opacity:.85; }
@@ -149,13 +149,13 @@
 .umroh-bp-route div { display:grid; }
 .umroh-bp-route div:last-child { text-align:right; }
 .umroh-bp-route strong { font-size:22px; line-height:1; color:var(--u-ink); }
-.umroh-bp-route small { font-size:10px; font-weight:700; color:var(--u-muted); }
+.umroh-bp-route small { font-size:11px; font-weight:700; color:var(--u-muted); }
 .umroh-boarding-pass dl { display:grid; grid-template-columns:1.6fr 1fr; gap:7px 12px; padding:8px 15px 10px; margin:0; }
 .umroh-boarding-pass dt { font-size:8px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--u-muted); }
 .umroh-boarding-pass dd { margin:0; font-size:11px; font-weight:800; color:var(--u-ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .umroh-bp-foot { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:9px 15px 11px; border-top:1px dashed var(--u-line); }
 .umroh-bp-code { width:96px; height:24px; background:repeating-linear-gradient(90deg,#1c2a33 0 2px,transparent 2px 4px,#1c2a33 4px 5px,transparent 5px 8px); border-radius:2px; }
-.umroh-bp-foot em { font-style:normal; font-size:10px; font-weight:800; color:var(--u-muted); }
+.umroh-bp-foot em { font-style:normal; font-size:11px; font-weight:800; color:var(--u-muted); }
 .umroh-bp-foot em.boarding { color:#178a4c; }
 .umroh-note { display:flex; align-items:flex-start; gap:9px; padding:12px; background:var(--star-gold-tint); border:1px solid #f1d69e; border-radius:16px; margin:16px 0; color:#725015; }
 .umroh-note>.ms { flex-shrink:0; margin-top:2px; color:var(--brand-orange-deep); }
@@ -174,16 +174,16 @@
 .umroh-laps>span.done { background:var(--u-accent-deep); border-color:var(--u-accent-deep); color:#ffffff; }
 .umroh-laps>span.current { border-color:var(--u-warm); color:var(--brand-orange-deep); background:var(--u-warm-tint); }
 .umroh-practice p { font-size:12px; line-height:1.7; font-weight:600; margin:14px 0 7px; }
-.umroh-sim-note { display:block; font-size:10px; line-height:1.6; color:var(--u-muted); }
+.umroh-sim-note { display:block; font-size:11px; line-height:1.6; color:var(--u-muted); }
 .umroh-speed-control { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:14px 0 10px; }
-.umroh-speed-control>span { font-size:10px; color:var(--u-muted); }
-.umroh-speed-control .umroh-segmented button { font-size:10px; min-height:30px; padding:5px 8px; }
+.umroh-speed-control>span { font-size:11px; color:var(--u-muted); }
+.umroh-speed-control .umroh-segmented button { font-size:11px; min-height:44px; padding:5px 8px; }
 .umroh-panel-actions { margin-top:19px; border-top:1px solid var(--u-line); padding-top:13px; }
 .umroh-primary { width:100%; display:flex; align-items:center; justify-content:center; gap:9px; border:1px solid var(--u-accent-deep); border-radius:16px; background:var(--u-accent-deep); color:#ffffff; box-shadow:0 4px 0 var(--academy-navy); padding:12px 15px; font-weight:800; font-size:12px; text-decoration:none; min-height:44px; text-align:center; transition:background .15s; }
 .umroh-primary:hover:not(:disabled) { background:#0459a8; }
 .umroh-secondary-actions { display:flex; align-items:center; justify-content:space-between; gap:7px; flex-wrap:wrap; }
-.umroh-secondary-actions button { display:flex; align-items:center; gap:5px; padding:6px 0; min-height:32px; font-size:10px; font-weight:700; color:var(--u-accent-deep); }
-.umroh-save-note { font-size:9px; line-height:1.6; color:var(--u-muted); margin-top:12px; }
+.umroh-secondary-actions button { display:flex; align-items:center; gap:5px; padding:6px 0; min-height:44px; font-size:11px; font-weight:700; color:var(--u-accent-deep); }
+.umroh-save-note { font-size:11px; line-height:1.6; color:var(--u-muted); margin-top:12px; }
 .umroh-complete { padding:17px; margin-top:18px; border-radius:14px; background:var(--u-accent-tint); border:1px solid #b8d9f4; text-align:center; color:var(--u-accent-deep); }
 .umroh-complete strong { display:block; margin:9px 0; font-family:var(--ff-baloo),sans-serif; font-size:17px; font-weight:800; }
 .umroh-complete p { font-size:12px; line-height:1.7; }
@@ -194,16 +194,16 @@
 .umroh-dialog h2 { font-family:var(--ff-baloo),sans-serif; font-weight:800; font-size:21px; line-height:1.3; }
 .umroh-dialog p { font-size:13px; line-height:1.75; margin:14px 0; color:var(--u-muted); }
 .umroh-dialog a:not(.umroh-primary) { display:block; color:var(--u-accent-deep); text-decoration:underline; text-underline-offset:3px; font-size:12px; font-weight:700; margin-top:14px; }
-.umroh-dialog p.umroh-asset-note { padding-top:14px; border-top:1px solid var(--u-line); font-size:10px; color:var(--u-muted); }
-.umroh-dialog .umroh-asset-note a { font-size:10px; margin-top:6px; }
-.umroh-dialog-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:var(--u-accent-deep); margin:23px 0 12px; font-weight:800; }
+.umroh-dialog p.umroh-asset-note { padding-top:14px; border-top:1px solid var(--u-line); font-size:11px; color:var(--u-muted); }
+.umroh-dialog .umroh-asset-note a { font-size:11px; margin-top:6px; }
+.umroh-dialog-label { font-size:11px; text-transform:uppercase; letter-spacing:1.2px; color:var(--u-accent-deep); margin:23px 0 12px; font-weight:800; }
 .umroh-full { width:100%; margin-top:12px; }
 .umroh-map-list { display:grid; gap:4px; list-style:none; padding:0; }
 .umroh-map-list li { display:flex; align-items:center; gap:12px; padding:8px 9px; border-radius:12px; }
 .umroh-map-list li.active { background:var(--u-accent-tint); box-shadow:inset 0 0 0 1px #badbf5; }
 .umroh-map-list li>span { display:flex; align-items:center; justify-content:center; border-radius:10px; width:27px; height:27px; background:var(--u-accent-tint); font-size:11px; font-weight:800; color:var(--u-accent-deep); }
 .umroh-map-list strong { display:block; font-size:12px; font-weight:700; }
-.umroh-map-list small { display:block; color:var(--u-muted); font-size:10px; margin-top:2px; }
+.umroh-map-list small { display:block; color:var(--u-muted); font-size:11px; margin-top:2px; }
 .umroh-landmark-list { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
 .umroh-landmark-list button { display:flex; align-items:center; gap:6px; border:1px solid var(--u-line); background:#ffffff; border-radius:12px; padding:11px 9px; color:var(--u-ink); text-align:left; font-size:11px; min-height:44px; }
 .umroh-landmark-list button>span:not(.ms) { flex:1; }
@@ -219,10 +219,10 @@
 .umroh-step-icon { width:44px; height:44px; border-radius:14px; }
 
 @media (max-width:760px) {
-  .umroh-loc { height:40px; font-size:12.5px; padding:0 12px; }
-  .umroh-glass-btn { width:40px; height:40px; }
+  .umroh-loc { height:44px; font-size:12.5px; padding:0 12px; }
+  .umroh-glass-btn { width:44px; height:44px; }
   .umroh-babak { top:calc(env(safe-area-inset-top, 0px) + 62px); padding:8px 12px 6px; gap:8px; }
-  .umroh-babak span { font-size:9.5px; letter-spacing:.06em; }
+  .umroh-babak span { font-size:11px; letter-spacing:.02em; }
   .umroh-hud { top:calc(env(safe-area-inset-top, 0px) + 112px); }
   .umroh-caption { flex-wrap:wrap; gap:10px; padding:12px 12px 12px 16px; border-radius:22px; }
   .umroh-cap-text { flex-basis:100%; }
@@ -242,7 +242,7 @@
   .umroh-app *, .umroh-app *::before { animation:none !important; transition:none !important; }
   .umroh-hint { display:none; }
 }
-.umroh-sheet .umroh-secondary-actions button { font-size:14px; min-height:40px; }
+.umroh-sheet .umroh-secondary-actions button { font-size:14px; min-height:44px; }
 .umroh-sheet .umroh-save-note { font-size:12px; }
 .umroh-sheet .umroh-laps > span { height:34px; font-size:13px; }
 
@@ -265,7 +265,7 @@
 .umroh-film-track { position:relative; flex:1; min-width:0; height:44px; }
 .umroh-film-rail { position:absolute; left:0; right:0; top:12px; height:5px; border-radius:9px; background:rgba(255,255,255,.22); overflow:hidden; }
 .umroh-film-rail b { display:block; height:100%; background:linear-gradient(90deg,#ffe08a,#fdb724); }
-.umroh-film-mark { position:absolute; top:4px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:5px; padding:0 2px; border:0; background:transparent; color:rgba(255,255,255,.62); font-size:10.5px; font-weight:800; white-space:nowrap; }
+.umroh-film-mark { position:absolute; top:4px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:5px; padding:0 2px; border:0; background:transparent; color:rgba(255,255,255,.62); font-size:11px; font-weight:800; white-space:nowrap; }
 .umroh-film-mark i { width:3px; height:21px; border-radius:2px; background:rgba(255,255,255,.55); }
 .umroh-film-mark:hover, .umroh-film-mark.now { color:#fff; }
 .umroh-film-mark.now i { background:#fdb724; }
@@ -315,7 +315,7 @@
 .umroh-tiket-isi { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px 12px; }
 .umroh-tiket-medan { display:flex; flex-direction:column; gap:2px; padding:6px 8px; margin:-6px -8px; border:2px solid transparent; border-radius:12px; background:transparent; text-align:left; color:inherit; min-width:0; }
 .umroh-tiket-medan.lebar { grid-column:1 / -1; }
-.umroh-tiket-medan .k, .umroh-tiket-sobek small { font-size:10.5px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#5b6b85; }
+.umroh-tiket-medan .k, .umroh-tiket-sobek small { font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:#5b6b85; }
 .umroh-tiket-medan .v { font-size:16px; font-weight:900; color:#0b2545; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .umroh-tiket-medan.lebar .v { font-size:19px; }
 .umroh-tiket-sobek { width:150px; flex:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; padding:14px 10px; border:0; border-left:2px dashed #d8cdbb; background:#fff5e6; color:#0b2545; position:relative; }
@@ -329,7 +329,7 @@
 .umroh-dicek { border-color:#1fbf62 !important; background:#e8f8ee !important; }
 @keyframes umroh-denyut { 50% { box-shadow:0 0 0 6px rgba(253,134,29,.18); } }
 .umroh-tiket-cek { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; color:#fff; font-size:14px; font-weight:800; }
-.umroh-tiket-cek button { display:inline-flex; align-items:center; gap:5px; min-height:38px; padding:0 12px; border-radius:999px; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:#fff; font-weight:800; font-size:13px; }
+.umroh-tiket-cek button { display:inline-flex; align-items:center; gap:5px; min-height:44px; padding:0 12px; border-radius:999px; border:1px solid rgba(255,255,255,.3); background:rgba(255,255,255,.1); color:#fff; font-weight:800; font-size:13px; }
 .umroh-tiket-cek button[aria-pressed=true] { background:#1fbf62; border-color:#1fbf62; }
 @media (max-width:560px) {
   .umroh-tiket-badan { flex-direction:column; }

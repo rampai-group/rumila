@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-perbaiki-algoritma",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -185,7 +185,11 @@
         {
           "id": "jus-3",
           "labelKey": "jus-3",
-          "emoji": "🥤"
+          "emoji": "🥤",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "jus-4",
@@ -195,7 +199,11 @@
         {
           "id": "jus-5",
           "labelKey": "jus-5",
-          "emoji": "🥤"
+          "emoji": "🥤",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🫗"
+          }
         },
         {
           "id": "jus-6",
@@ -283,12 +291,20 @@
         {
           "id": "senter-2",
           "labelKey": "senter-2",
-          "emoji": "🔋"
+          "emoji": "🔋",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬆️"
+          }
         },
         {
           "id": "senter-3",
           "labelKey": "senter-3",
-          "emoji": "🔋"
+          "emoji": "🔋",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "senter-4",
@@ -350,12 +366,20 @@
         {
           "id": "kue-2",
           "labelKey": "kue-2",
-          "emoji": "🥣"
+          "emoji": "🥣",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🥄"
+          }
         },
         {
           "id": "kue-3",
           "labelKey": "kue-3",
-          "emoji": "🥣"
+          "emoji": "🥣",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🧁"
+          }
         },
         {
           "id": "kue-4",

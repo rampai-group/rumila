@@ -168,7 +168,7 @@ export function Segmented<T extends string>({ value, options, onChange }: { valu
             role="tab"
             aria-selected={on}
             onClick={() => onChange(id)}
-            className={`rounded-[9px] px-3 py-[7px] text-[13px] font-semibold transition-colors ${on ? "bg-white text-ink shadow-[0_1px_2px_rgba(31,48,68,.1)]" : "text-ink-3"}`}
+            className={`min-h-11 rounded-[9px] px-3 py-[7px] text-[13px] font-semibold transition-colors ${on ? "bg-white text-ink shadow-[0_1px_2px_rgba(31,48,68,.1)]" : "text-ink-3"}`}
           >
             {label}
           </button>
@@ -219,7 +219,7 @@ export function Modal({ open, onClose, title, children, width = 520 }: { open: b
             <button
               onClick={onClose}
               aria-label="Tutup"
-              className="flex size-10 items-center justify-center rounded-xl"
+              className="flex size-11 items-center justify-center rounded-xl"
               style={{ background: play ? "#fff0da" : "#f1f2f4", color: ink }}
             >
               <Icon name="close" />

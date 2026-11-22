@@ -248,7 +248,7 @@ function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: Conte
     return () => t.forEach(clearTimeout);
   }, [bintang]);
   return (
-    <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#bfe9ff,#d8f3c4)", fontFamily: BALOO, color: INK }}>
+    <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#0786eb,#22b573)", fontFamily: BALOO, color: INK }}>
       {bintang >= 2 && <HujanKonfeti jumlah={bintang >= 3 ? 60 : 36} />}
       <div className="akademi-pop w-full max-w-[380px] rounded-[28px] bg-white p-6 text-center shadow-[0_8px_0_rgba(11,37,69,.12)]">
         <div className="flex justify-center gap-1">
@@ -265,7 +265,7 @@ function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: Conte
         </p>
         <div className="mt-5 flex gap-2">
           <button onClick={onLagi} className="flex-1 rounded-[16px] bg-[#efe7d6] py-3 text-[16px] font-extrabold active:translate-y-0.5">Main lagi</button>
-          <button onClick={onKembali} className="flex-1 rounded-[16px] bg-[#22b573] py-3 text-[16px] font-extrabold text-white shadow-[0_4px_0_#16804f] active:translate-y-0.5">Selesai</button>
+          <button onClick={onKembali} className="flex-1 rounded-[16px] bg-[#12803f] py-3 text-[16px] font-extrabold text-white shadow-[0_4px_0_#16804f] active:translate-y-0.5">Selesai</button>
         </div>
       </div>
     </div>

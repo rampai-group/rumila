@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lampu-menyala",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.LISTRIK.01"
@@ -74,37 +74,61 @@
       "id": "utuh",
       "labelKey": "i-utuh",
       "bin": "menyala",
-      "emoji": "🔋"
+      "emoji": "🔋",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "⭕"
+      }
     },
     {
       "id": "sakelartutup",
       "labelKey": "i-sakelartutup",
       "bin": "menyala",
-      "emoji": "🔘"
+      "emoji": "🔘",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔒"
+      }
     },
     {
       "id": "duabaterai",
       "labelKey": "i-duabaterai",
       "bin": "menyala",
-      "emoji": "🔋"
+      "emoji": "🔋",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "2️⃣"
+      }
     },
     {
       "id": "kabelbaru",
       "labelKey": "i-kabelbaru",
       "bin": "menyala",
-      "emoji": "🔌"
+      "emoji": "🔌",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔋"
+      }
     },
     {
       "id": "lepas",
       "labelKey": "i-lepas",
       "bin": "padam",
-      "emoji": "🔋"
+      "emoji": "🔋",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "✂️"
+      }
     },
     {
       "id": "sakelarbuka",
       "labelKey": "i-sakelarbuka",
       "bin": "padam",
-      "emoji": "🔘"
+      "emoji": "🔘",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔓"
+      }
     },
     {
       "id": "potong",
@@ -122,13 +146,21 @@
       "id": "kutubsama",
       "labelKey": "i-kutubsama",
       "bin": "padam",
-      "emoji": "🔋"
+      "emoji": "🔋",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "↩️"
+      }
     },
     {
       "id": "tanpabaterai",
       "labelKey": "i-tanpabaterai",
       "bin": "padam",
-      "emoji": "🔌"
+      "emoji": "🔌",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🪫"
+      }
     }
   ],
   "pilihan": []

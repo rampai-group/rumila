@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-perbaiki",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -208,7 +208,11 @@
         {
           "id": "biji",
           "labelKey": "padi-biji",
-          "emoji": "🌾"
+          "emoji": "🌾",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "kecambah",
@@ -233,7 +237,11 @@
         {
           "id": "buah",
           "labelKey": "padi-buah",
-          "emoji": "🌾"
+          "emoji": "🌾",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🟡"
+          }
         },
         {
           "id": "baru",
@@ -285,7 +293,11 @@
         {
           "id": "biji",
           "labelKey": "kacangpanjang-biji",
-          "emoji": "🥜"
+          "emoji": "🥜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "kecambah",
@@ -310,7 +322,11 @@
         {
           "id": "buah",
           "labelKey": "kacangpanjang-buah",
-          "emoji": "🥜"
+          "emoji": "🥜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🫛"
+          }
         }
       ]
     },
@@ -405,7 +421,11 @@
         {
           "id": "biji",
           "labelKey": "rambutan-biji",
-          "emoji": "🌰"
+          "emoji": "🌰",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "kecambah",
@@ -435,7 +455,11 @@
         {
           "id": "baru",
           "labelKey": "rambutan-baru",
-          "emoji": "🌰"
+          "emoji": "🌰",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🔴"
+          }
         }
       ]
     },
@@ -446,7 +470,11 @@
         {
           "id": "biji",
           "labelKey": "durian-biji",
-          "emoji": "🌰"
+          "emoji": "🌰",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "kecambah",
@@ -476,7 +504,11 @@
         {
           "id": "baru",
           "labelKey": "durian-baru",
-          "emoji": "🌰"
+          "emoji": "🌰",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🟢"
+          }
         }
       ]
     },
@@ -528,7 +560,11 @@
         {
           "id": "biji",
           "labelKey": "buncis-biji",
-          "emoji": "🥜"
+          "emoji": "🥜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "kecambah",
@@ -553,7 +589,11 @@
         {
           "id": "buah",
           "labelKey": "buncis-buah",
-          "emoji": "🥜"
+          "emoji": "🥜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🫛"
+          }
         }
       ]
     },
@@ -600,7 +640,11 @@
         {
           "id": "biji",
           "labelKey": "nangka-biji",
-          "emoji": "🌰"
+          "emoji": "🌰",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "kecambah",
@@ -630,7 +674,11 @@
         {
           "id": "baru",
           "labelKey": "nangka-baru",
-          "emoji": "🌰"
+          "emoji": "🌰",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🟡"
+          }
         }
       ]
     }

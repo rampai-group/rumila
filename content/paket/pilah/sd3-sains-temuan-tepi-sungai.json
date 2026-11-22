@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-temuan-tepi-sungai",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -76,7 +76,11 @@
       "id": "gigihiu",
       "labelKey": "i-gigihiu",
       "bin": "fosil",
-      "emoji": "🦷"
+      "emoji": "🦷",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🦈"
+      }
     },
     {
       "id": "kayubatu",
@@ -84,7 +88,11 @@
       "bin": "fosil",
       "emoji": "🪵",
       "color": "#8d6e63",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🪨"
+      }
     },
     {
       "id": "pakis",
@@ -119,7 +127,11 @@
       "id": "gigisusu",
       "labelKey": "i-gigisusu",
       "bin": "bukan",
-      "emoji": "🦷"
+      "emoji": "🦷",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "👦"
+      }
     },
     {
       "id": "ranting",
@@ -127,7 +139,11 @@
       "bin": "bukan",
       "emoji": "🪵",
       "color": "#8d6e63",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🍂"
+      }
     },
     {
       "id": "pakissegar",

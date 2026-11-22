@@ -130,7 +130,7 @@ function useSkMeja() {
 function Keterangan({ children, className = "" }: { children: ReactNode; className?: string }) {
   const sk = useSk();
   return (
-    <span className={`flex-1 rounded-full bg-white/95 px-3 py-1.5 text-center font-bold shadow-[0_3px_0_rgba(11,37,69,.1)] ${className}`} style={{ fontSize: 14 * sk, color: INK }}>
+    <span className={`flex-1 rounded-full bg-white/95 px-3 py-1.5 text-center font-bold shadow-[0_3px_0_rgba(11,37,69,.1)] ${className}`} style={{ fontSize: 17 * sk, color: INK }}>
       {children}
     </span>
   );
@@ -207,14 +207,20 @@ function Pembeli({
   );
 }
 
+/** Kalimat tanya di balon: gambar & angka saja tidak memberi tahu anak apa yang diminta. */
+function Tanya({ children, sebaris }: { children: ReactNode; sebaris?: boolean }) {
+  const sk = useSk();
+  return <div className={sebaris ? "shrink-0" : "w-full text-balance"} style={{ ...Tebal, fontSize: 18 * sk, lineHeight: 1.2 }}>{children}</div>;
+}
+
 /** Baris pesanan di balon: emoji diulang qty kali + angka kecil. */
-function BarisPesanan({ v, qty, label }: { v: VisualSpec; qty: number; label: string }) {
+function BarisPesanan({ v, qty, label, tampilLabel }: { v: VisualSpec; qty: number; label: string; tampilLabel?: boolean }) {
   const sk = useSk();
   return (
     <div className="flex flex-wrap items-center gap-1">
       {Array.from({ length: qty }, (_, k) => <Benda key={k} v={v} size={Math.round(30 * sk)} />)}
       <span className="ml-1 rounded-full px-2" style={{ ...Tebal, fontSize: 16 * sk, background: "#fff1c2" }}>{qty}</span>
-      <span className="sr-only">{label}</span>
+      <span className={tampilLabel ? "font-bold" : "sr-only"} style={{ fontSize: 16 * sk }}>{label}</span>
     </div>
   );
 }
@@ -348,14 +354,16 @@ function Laci({ laci, dipakai, onAmbil, sorot, disabled, penuh }: { laci: number
     return [...m.entries()].sort((a, b) => a[0] - b[0]);
   }, [laci]);
   const terpakai = (nilai: number) => dipakai.filter((x) => x === nilai).length;
-  const { skala: sk } = usePanggung();
+  const { skala: sk, h } = usePanggung();
+  // banyak pecahan di layar miring pendek: kartu uang dirapatkan (tetap ≥ 56 px) supaya tombol jawab kelihatan
+  const padat = kelompok.length >= 6 && h > 0 && h < 580;
   return (
     // laci kasir: badan kayu/warna wadah dunia, sekat-sekat pecahan di dalam, gagang di depan
     <div className={`relative flex flex-col rounded-[20px] bg-white ${penuh ? "flex-1" : "shrink-0"}`} style={{ boxShadow: bayangKartu(), padding: 10 * sk }}>
       <div className="mb-1.5 flex w-fit items-center gap-2 px-1" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 15 * sk, color: INK }}>
         <Icon name="point_of_sale" size={Math.round(20 * sk)} /> Laci uang
       </div>
-      <div className={`flex flex-wrap content-center justify-center rounded-[14px] ${penuh ? "flex-1" : ""}`} style={{ gap: 8 * sk, padding: 6 * sk, background: "#f6f8fb" }}>
+      <div className={`flex flex-wrap content-center justify-center rounded-[14px] ${penuh ? "flex-1" : ""}`} style={{ gap: 8 * sk, padding: 6 * sk, background: "#dcecff" }}>
         {kelompok.map(([nilai, jumlah]) => {
           const sisa = jumlah - terpakai(nilai);
           const v = visualUang(nilai);
@@ -363,14 +371,14 @@ function Laci({ laci, dipakai, onAmbil, sorot, disabled, penuh }: { laci: number
             <KartuBenda
               key={nilai}
               v={v}
-              size={Math.round(44 * sk)}
+              size={Math.round((padat ? 26 : 44) * sk)}
               label={v.label}
               labelSize={Math.round(13 * sk)}
               dim={sisa <= 0}
               selected={sorot === nilai}
               onClick={() => { if (!disabled && sisa > 0) onAmbil(nilai); }}
-              className={`relative min-h-16 min-w-[72px] ${sorot === nilai ? "akademi-bounce" : ""}`}
-              style={{ minHeight: 64 * sk, minWidth: 72 * sk, background: `linear-gradient(180deg,#fff,${v.color}33)`, ...(disabled || sisa <= 0 ? { pointerEvents: "none" } : {}) }}
+              className={`relative ${padat ? "min-h-14 min-w-[64px] !p-1" : "min-h-16 min-w-[72px]"} ${sorot === nilai ? "akademi-bounce" : ""}`}
+              style={{ minHeight: (padat ? 56 : 64) * sk, minWidth: (padat ? 64 : 72) * sk, background: `linear-gradient(180deg,#fff,${v.color}33)`, ...(disabled || sisa <= 0 ? { pointerEvents: "none" } : {}) }}
             />
           );
         })}
@@ -392,7 +400,7 @@ function Nampan({ uang, onAmbil, judul = "Nampan", sorot, kosong = "Ketuk uang d
         <span className="ml-auto rounded-full px-3" style={{ fontSize: 15 * sk, background: "#fff1c2" }}>{rupiah(total)}</span>
       </div>
       <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ minHeight: 64 * sk, gap: 8 * sk, padding: 8 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }}>
-        {uang.length === 0 && <span className="w-full text-center font-bold" style={{ fontSize: 14 * sk, color: "#4a5a6e" }}>{kosong}</span>}
+        {uang.length === 0 && <span className="w-full text-center font-bold" style={{ fontSize: 14 * sk, color: "#2f4260" }}>{kosong}</span>}
         {uang.map((nilai, i) => {
           const v = visualUang(nilai);
           return <KartuBenda key={`${i}-${nilai}`} v={v} size={Math.round(36 * sk)} label={v.label} labelSize={Math.round(13 * sk)} onClick={onAmbil ? () => onAmbil(i) : undefined} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />;
@@ -506,7 +514,7 @@ function ModeAmbil(c: Ctx) {
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli
         wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} bahasa={bahasa}
-        balon={<div className="flex flex-col gap-1">{ronde.pesanan.map((p) => <BarisPesanan key={p.goodId} v={visual(p.goodId)} qty={p.qty} label={nama(p.goodId)} />)}</div>}
+        balon={<div className="flex flex-wrap items-center gap-x-3 gap-y-1"><Tanya sebaris>{bahasa === "en" ? "I want:" : "Aku mau:"}</Tanya>{ronde.pesanan.map((p) => <BarisPesanan key={p.goodId} tampilLabel v={visual(p.goodId)} qty={p.qty} label={nama(p.goodId)} />)}</div>}
         jawabanBenar={ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(" + ")}
       />
       <Lapak>
@@ -664,7 +672,7 @@ function ModeHitung(c: Ctx) {
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
-      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex items-center gap-2"><Benda v={visual(id0)} size={Math.round(34 * sk)} /><span style={{ ...Tebal, fontSize: 24 * sk }}>?</span><span className="font-bold" style={{ fontSize: 14 * sk, color: "#4a5a6e" }}>Ada berapa?</span></div>} jawabanBenar={`${ronde.target} ${nama(id0)}`} />
+      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex items-center gap-2"><Benda v={visual(id0)} size={Math.round(34 * sk)} /><span style={{ ...Tebal, fontSize: 18 * sk }}>Ada berapa {nama(id0)}?</span></div>} jawabanBenar={`${ronde.target} ${nama(id0)}`} />
       <Lapak>
         {/* meja hitung mengisi sisa tinggi; benda tersebar di seluruh meja */}
         <div className="relative w-full flex-1" style={{ minHeight: tinggi * sk, margin: lebar ? `${bulat / 2}px 0` : undefined }} role="group" aria-label="Benda untuk dihitung">
@@ -733,9 +741,9 @@ function ModeBayar(c: Ctx) {
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
-      <Pembeli wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} balon={rincian
+      <Pembeli wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} balon={<div className="flex flex-col gap-1"><Tanya>{rincian ? "Berapa totalnya? Bayar pas." : "Bayar pas seharga ini:"}</Tanya>{rincian
         ? <RincianHarga baris={rincian} nama={nama} visual={visual} total={ronde.harga} buka={hint || !!hasil} />
-        : <Harga harga={ronde.harga} priceLabel={ronde.priceLabel} barang={barang.map((p) => ({ ...visual(p.goodId), count: p.qty }))} />} jawabanBenar={ronde.priceLabel === "koin" ? `${Math.round(ronde.harga / KOIN)} koin` : rupiah(ronde.harga)} />
+        : <Harga harga={ronde.harga} priceLabel={ronde.priceLabel} barang={barang.map((p) => ({ ...visual(p.goodId), count: p.qty }))} />}</div>} jawabanBenar={ronde.priceLabel === "koin" ? `${Math.round(ronde.harga / KOIN)} koin` : rupiah(ronde.harga)} />
       <Lapak><div className="flex flex-wrap justify-center" style={{ gap: 8 * sk }}>{barang.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={Math.round(52 * meja)} label={nama(p.goodId)} labelSize={Math.round(14 * sk)} className="min-h-14 min-w-14" />)}</div></Lapak>
     </>} kanan={<>
       <Nampan uang={uang} onAmbil={kembalikan} judul="Nampan bayar" sorot={hint && total === ronde.harga} />
@@ -770,13 +778,15 @@ function ModeKembalian(c: Ctx) {
         wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil}
         balon={rincian ? (
           <div className="flex flex-col gap-1.5">
+            <Tanya>Berapa kembaliannya?</Tanya>
             <div className="flex items-center gap-2"><Benda v={vBayar} size={Math.round(40 * sk)} /><span style={{ ...Tebal, fontSize: 20 * sk }}>{rupiah(ronde.dibayar)}</span></div>
             <RincianHarga baris={rincian} nama={nama} visual={visual} total={ronde.harga} buka={hint || !!hasil} />
           </div>
         ) : (
           <div className="flex flex-wrap items-center gap-2">
+            <Tanya>Berapa kembaliannya?</Tanya>
             <Benda v={vBayar} size={Math.round(40 * sk)} /><span style={{ ...Tebal, fontSize: 20 * sk }}>{rupiah(ronde.dibayar)}</span>
-            <span style={{ ...Tebal, fontSize: 20 * sk, color: "#6b7a8a" }}>→</span>
+            <span style={{ ...Tebal, fontSize: 20 * sk, color: "#2f4260" }}>→</span>
             {ronde.pesanan.map((p) => <Benda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={Math.round(36 * sk)} />)}
             <span style={{ ...Tebal, fontSize: 18 * sk, color: "#0567c2" }}>{rupiah(ronde.harga)}</span>
           </div>
@@ -822,7 +832,7 @@ function ModeTukar(c: Ctx) {
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
-      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex flex-wrap items-center gap-2">{lembar.map((v, i) => <Benda key={i} v={visualUang(v)} size={Math.round(36 * sk)} />)}<span style={{ ...Tebal, fontSize: 20 * sk }}>{rupiah(ronde.dibayar)}</span><span style={{ ...Tebal, fontSize: 20 * sk, color: "#6b7a8a" }}>→</span><span style={{ fontSize: 28 * sk }}>🪙</span><span style={{ ...Tebal, fontSize: 22 * sk }}>?</span></div>} jawabanBenar={`${slot} koin`} />
+      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex flex-wrap items-center gap-2"><Tanya>Tukar jadi berapa koin seribu?</Tanya>{lembar.map((v, i) => <Benda key={i} v={visualUang(v)} size={Math.round(36 * sk)} />)}<span style={{ ...Tebal, fontSize: 20 * sk }}>{rupiah(ronde.dibayar)}</span><span style={{ ...Tebal, fontSize: 20 * sk, color: "#2f4260" }}>→</span><span style={{ fontSize: 28 * sk }}>🪙</span><span style={{ ...Tebal, fontSize: 22 * sk }}>?</span></div>} jawabanBenar={`${slot} koin`} />
       <Lapak>
         {/* mesin tukar: badan logam terang + bingkai warna aksen dunia */}
         <div className="flex flex-1 flex-col justify-center rounded-[18px]" style={{ padding: 12 * sk, background: "linear-gradient(180deg,#f4f7fb,#dfe6ef)", boxShadow: `inset 0 3px 0 rgba(0,0,0,.08), 0 0 0 4px ${tema.aksen}` }}>
@@ -885,12 +895,13 @@ function ModeLengkapi(c: Ctx) {
         wajah={wajah} teksUcap={teks} hasil={hasil}
         balon={
           <div className="flex flex-wrap items-center gap-2">
+            <Tanya>Koinnya kurang berapa?</Tanya>
             {tampil ? (
               <span className="akademi-pop flex flex-wrap gap-0.5" aria-label={`${ditunjukkan} koin`}>{Array.from({ length: ditunjukkan }, (_, k) => <span key={k} style={{ fontSize: 26 * sk, lineHeight: 1 }}>🪙</span>)}</span>
             ) : (
-              <span className="flex items-center gap-1"><span style={{ fontSize: 40 * sk, lineHeight: 1 }}>✊</span><span style={{ ...Tebal, fontSize: 24 * sk, color: "#6b7a8a" }}>…</span></span>
+              <span className="flex items-center gap-1"><span style={{ fontSize: 40 * sk, lineHeight: 1 }}>✊</span><span style={{ ...Tebal, fontSize: 24 * sk, color: "#2f4260" }}>…</span></span>
             )}
-            <span className="font-bold" style={{ fontSize: 14 * sk, color: "#4a5a6e" }}>Harga {totalKoin} koin</span>
+            <span className="font-bold" style={{ fontSize: 14 * sk, color: "#2f4260" }}>Harga {totalKoin} koin</span>
           </div>
         }
         jawabanBenar={`Kurang ${ronde.target} koin`}
@@ -1024,7 +1035,7 @@ function ModeSisa(c: Ctx) {
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli
         wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil}
-        balon={<div className="flex flex-wrap items-center gap-1"><BarisPesanan v={vBenda} qty={awal} label={nb} /><span style={{ ...Tebal, fontSize: 20 * sk }}>−</span><BarisPesanan v={{ emoji: tema.ditangkap }} qty={diambil} label={tema.kerja} /><span style={{ ...Tebal, fontSize: 20 * sk }}>= ?</span></div>}
+        balon={<div className="flex flex-wrap items-center gap-1"><Tanya>Berapa yang tersisa?</Tanya><BarisPesanan v={vBenda} qty={awal} label={nb} /><span style={{ ...Tebal, fontSize: 20 * sk }}>−</span><BarisPesanan v={{ emoji: tema.ditangkap }} qty={diambil} label={tema.kerja} /><span style={{ ...Tebal, fontSize: 20 * sk }}>= ?</span></div>}
         jawabanBenar={`${awal} − ${diambil} = ${ronde.target} ${nb}`}
       />
       <Lapak>

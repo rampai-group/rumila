@@ -144,9 +144,9 @@ export function LanggananKeluarga() {
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>Pilih lama langganan</h2>
             {periodeAda.length > 1 && (
-              <div className="flex gap-1 rounded-full bg-[#f4f7fb] p-1" role="tablist" aria-label="Periode">
+              <div className="flex gap-1 rounded-full bg-[#d6ecff] p-1" role="tablist" aria-label="Periode">
                 {periodeAda.map(([id, label]) => (
-                  <button key={id} role="tab" aria-selected={periode === id} onClick={() => setPeriode(id)} className="h-9 rounded-full px-3.5 text-[13px] font-extrabold" style={{ background: periode === id ? INK : "transparent", color: periode === id ? "#fff" : INK }}>
+                  <button key={id} role="tab" aria-selected={periode === id} onClick={() => setPeriode(id)} className="h-11 rounded-full px-3.5 text-[13px] font-extrabold" style={{ background: periode === id ? INK : "transparent", color: periode === id ? "#fff" : INK }}>
                     {label}
                   </button>
                 ))}
@@ -180,12 +180,12 @@ export function LanggananKeluarga() {
                   {p.maks_anak > 1 && (
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="text-[13.5px] font-extrabold">Jumlah anak</span>
-                      <div className="flex items-center gap-1 rounded-full bg-[#f4f7fb] p-1">
-                        <button aria-label="Kurangi anak" disabled={anak <= 1} onClick={() => setAnak(anak - 1)} className="flex size-9 items-center justify-center rounded-full bg-white disabled:opacity-40">
+                      <div className="flex items-center gap-1 rounded-full bg-[#d6ecff] p-1">
+                        <button aria-label="Kurangi anak" disabled={anak <= 1} onClick={() => setAnak(anak - 1)} className="flex size-11 items-center justify-center rounded-full bg-white disabled:opacity-40">
                           <Icon name="remove" size={18} />
                         </button>
                         <span className="w-8 text-center text-[16px] font-extrabold tabular-nums">{anak}</span>
-                        <button aria-label="Tambah anak" disabled={anak >= p.maks_anak || (anak > 1 && !t.tambah) || (anak === 1 && !t.tambah)} onClick={() => setAnak(anak + 1)} className="flex size-9 items-center justify-center rounded-full bg-white disabled:opacity-40">
+                        <button aria-label="Tambah anak" disabled={anak >= p.maks_anak || (anak > 1 && !t.tambah) || (anak === 1 && !t.tambah)} onClick={() => setAnak(anak + 1)} className="flex size-11 items-center justify-center rounded-full bg-white disabled:opacity-40">
                           <Icon name="add" size={18} />
                         </button>
                       </div>
@@ -211,7 +211,7 @@ export function LanggananKeluarga() {
                   ) : (
                     <p className="text-[13px] font-bold text-ink-3">Tidak tersedia untuk periode ini.</p>
                   )}
-                  <button disabled={!tot} onClick={() => setPilih({ paket: p, periode, anak })} className={`${TOMBOL} mt-auto text-white`} style={{ background: "#0786eb" }}>
+                  <button disabled={!tot} onClick={() => setPilih({ paket: p, periode, anak })} className={`${TOMBOL} mt-auto text-white`} style={{ background: "#0567c2" }}>
                     Langganan {namaPeriode(periode).toLowerCase()}
                   </button>
                 </div>
@@ -257,7 +257,7 @@ function Rekening({ atur, jumlah }: { atur: Atur | null; jumlah: number }) {
   };
   if (!atur?.no_rekening) return <p className="text-[14px] font-bold text-[#c0283a]">Rekening tujuan belum diatur. Hubungi kampus@pulaurinoya.com.</p>;
   return (
-    <div className="flex flex-col gap-2 rounded-[16px] bg-[#f4f7fb] p-4">
+    <div className="flex flex-col gap-2 rounded-[16px] bg-[#d6ecff] p-4">
       <Baris label="Jumlah transfer" nilai={rupiah(jumlah)} besar onSalin={() => kopi(String(jumlah), "jumlah")} tersalin={salin === "jumlah"} />
       <Baris label={`Bank ${atur.bank}`} nilai={atur.no_rekening} onSalin={() => kopi(atur.no_rekening.replace(/\D/g, ""), "rek")} tersalin={salin === "rek"} />
       <Baris label="Atas nama" nilai={atur.atas_nama} />
@@ -277,7 +277,7 @@ function Baris({ label, nilai, besar, onSalin, tersalin }: { label: string; nila
         </p>
       </div>
       {onSalin && (
-        <button onClick={onSalin} className="inline-flex h-9 items-center gap-1 rounded-full bg-white px-3 text-[13px] font-extrabold text-[#0567c2]">
+        <button onClick={onSalin} className="inline-flex h-11 items-center gap-1 rounded-full bg-white px-3 text-[13px] font-extrabold text-[#0567c2]">
           <Icon name={tersalin ? "check" : "content_copy"} size={16} /> {tersalin ? "Tersalin" : "Salin"}
         </button>
       )}
@@ -307,10 +307,10 @@ function Konfirmasi({ pilihan, atur, familyId, onBatal, onTerkirim }: { pilihan:
       <Rekening atur={atur} jumlah={harga + kode} />
       {err && <p className="text-[13px] font-bold text-[#c0283a]">{err}</p>}
       <div className="flex flex-wrap gap-2">
-        <button onClick={buat} disabled={busy} className={`${TOMBOL} text-white`} style={{ background: "#0786eb" }}>
+        <button onClick={buat} disabled={busy} className={`${TOMBOL} text-white`} style={{ background: "#0567c2" }}>
           {busy ? "Menyimpan…" : "Saya akan transfer"}
         </button>
-        <button onClick={onBatal} className={`${TOMBOL} bg-[#f4f7fb]`} style={{ color: INK }}>
+        <button onClick={onBatal} className={`${TOMBOL} bg-[#d6ecff]`} style={{ color: INK }}>
           Ganti paket
         </button>
       </div>
@@ -364,11 +364,11 @@ function Tagihan({ bayar, atur, paket, familyId, onBerubah }: { bayar: Bayar; at
       <Rekening atur={atur} jumlah={bayar.jumlah} />
       {err && <p className="text-[13px] font-bold text-[#c0283a]">{err}</p>}
       <div className="flex flex-wrap gap-2">
-        <label className={`${TOMBOL} cursor-pointer text-white`} style={{ background: "#0786eb", opacity: busy ? 0.5 : 1 }}>
+        <label className={`${TOMBOL} cursor-pointer text-white`} style={{ background: "#0567c2", opacity: busy ? 0.5 : 1 }}>
           <Icon name="upload" size={18} /> {busy ? "Mengirim…" : bayar.bukti_path ? "Ganti bukti transfer" : "Kirim bukti transfer"}
           <input type="file" accept="image/*" className="hidden" disabled={busy} onChange={(e) => kirimBukti(e.target.files?.[0])} />
         </label>
-        <button onClick={batal} disabled={busy} className={`${TOMBOL} bg-[#f4f7fb]`} style={{ color: INK }}>
+        <button onClick={batal} disabled={busy} className={`${TOMBOL} bg-[#d6ecff]`} style={{ color: INK }}>
           Batalkan
         </button>
       </div>

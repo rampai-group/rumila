@@ -489,13 +489,36 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   const tanah = TANAH[tema.id];
   const mendatar = pw >= 760 && ph > 0 && pw / ph >= 1.2;
   const adaMini = grids.length > 1;
-  const tinggiMini = adaMini ? Math.round(72 * sk) + 22 : 0;
-  const lebarKanan = Math.round(Math.min(600, Math.max(340, pw * 0.42)));
+  // program panjang (banyak slot, ulangi, palet > 4 blok): kendali dirapatkan supaya Jalan selalu kelihatan
+  const panjang = ronde.execMode === "program" && (!!ronde.debug || slotMaks > 6 || palet.length > 4);
+  // Slide Over / jendela sempit: kendali bertumpuk dan membungkus baris, jadi ikut dirapatkan
+  const rapat = panjang || (ph > 0 && ph < 560) || (!mendatar && pw > 0 && pw < 460);
+  const ukMini = Math.round((rapat ? 48 : 72) * sk);
+  const tinggiMini = adaMini ? Math.max(56, ukMini + 8) + 16 : 0;
+  const lebarKanan = Math.round(Math.min(600, Math.max(340, pw * (panjang ? 0.52 : 0.42))));
+  // petak 44 px hanya wajib bila diketuk; peta tontonan boleh lebih kecil
+  const petakMin = modeBendera || (ronde.execMode === "langkah" && ronde.prediksi) ? PETAK_MIN : 30;
   // ukuran petak dihitung dari ruang panggung (px), bukan tetap
   const petakDatar = mendatar
-    ? Math.floor(Math.max(PETAK_MIN, Math.min(PETAK_PLAFON, (pw - lebarKanan - 16 - 28) / grid.w, (ph - 28 - tinggiMini) / grid.h)))
+    ? Math.floor(Math.max(petakMin, Math.min(PETAK_PLAFON, (pw - lebarKanan - 16 - 28) / grid.w, (ph - 28 - tinggiMini) / grid.h)))
     : 0;
-  const petakTegak = Math.round(ph > 0 ? Math.min(PETAK_MAKS * sk, Math.max(64, (ph * 0.55 - tinggiMini) / grid.h)) : PETAK_MAKS);
+  // tegak: peta memakai sisa tinggi sesudah rak + palet + tombol Jalan, supaya tombol itu tidak terdorong ke bawah layar
+  const kendaliRef = useRef<HTMLDivElement>(null);
+  const [tinggiKendali, setTinggiKendali] = useState(0);
+  useEffect(() => {
+    const el = kendaliRef.current;
+    if (!el) return;
+    const ukur = () => setTinggiKendali(el.offsetHeight);
+    ukur();
+    const ro = new ResizeObserver(ukur);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [mendatar]);
+  const sisaPeta = ph - tinggiKendali - 12 - 16 * sk - 16 - tinggiMini - (adaMini ? 24 : 0);
+  const petakTegak = Math.round(
+    ph > 0 && tinggiKendali > 0 ? Math.min(PETAK_MAKS * sk, Math.max(petakMin, sisaPeta / grid.h))
+      : ph > 0 ? Math.min(PETAK_MAKS * sk, Math.max(64, (ph * 0.55 - tinggiMini) / grid.h)) : PETAK_MAKS,
+  );
 
   const kartuPeta = {
     background: tema.panel,
@@ -517,6 +540,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
         tanah={tanah}
         petak={mendatar ? petakDatar : undefined}
         petakMaks={petakTegak}
+        petakMin={petakMin}
       />
       {adaMini && (
         <div className="mt-2 flex flex-wrap items-center justify-center gap-2" aria-label="Semua kebun">
@@ -528,7 +552,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
               style={{ outline: i === aktif ? "3px solid #fd861d" : "3px solid transparent", minWidth: 56, minHeight: 56 }}
               aria-label={`Kebun ${i + 1}${statusGrid[i] ? `, ${statusGrid[i] === "✓" ? "berhasil" : "gagal"}` : ""}`}
             >
-              <Mini grid={g} tanah={tanah} ukuran={Math.round(72 * sk)} />
+              <Mini grid={g} tanah={tanah} ukuran={ukMini} />
               {statusGrid[i] && (
                 <span className="absolute -top-2 -right-2 flex size-6 items-center justify-center rounded-full text-[13px] font-black text-white" style={{ background: statusGrid[i] === "✓" ? BENAR : SALAH }}>
                   {statusGrid[i]}
@@ -545,7 +569,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   const kendali = (
     <>
       {/* pesan */}
-      <div className="rounded-full text-center font-extrabold" style={{ minHeight: 28 * skt, fontSize: 17 * skt, color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0, background: "#ffffff", padding: "4px 12px" }} aria-live="polite">
+      <div className={`rounded-full text-center font-extrabold ${!pesan && rapat ? "sr-only" : ""}`} style={{ minHeight: 28 * skt, fontSize: 17 * skt, color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0, background: "#ffffff", padding: "4px 12px" }} aria-live="polite">
         {pesan || "·"}
       </div>
 
@@ -554,7 +578,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
         <>
           <div className="flex items-center justify-center gap-2 font-bold" style={{ fontSize: 14 * skt }}>
             <span className="rounded-full bg-white px-3 py-1 shadow-[0_3px_0_rgba(11,37,69,.12)]">{efektif.length} langkah</span>
-            <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-60" style={{ minHeight: 36 * skt }}>
+            <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-60" style={{ minHeight: Math.max(44, 36 * skt) }}>
               ↺ Ulang dari awal
             </button>
           </div>
@@ -577,13 +601,13 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
               onKetuk={(i) => ketukRak(0, i)} onN={(i) => putarN(0, i)} onHapusIsi={(i, j) => hapusIsiUlangi(0, i, j)}
             />
           )}
-          <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} penuh={mendatar} />
+          <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} penuh={mendatar} rapat={rapat} />
           <div className="flex gap-2">
             <button
               onClick={jalan}
               disabled={sibuk || terkunci}
-              className="flex-1 rounded-[20px] bg-[#16804f] py-4 text-white shadow-[0_6px_0_#0e5a37] active:translate-y-1 disabled:opacity-60"
-              style={{ fontSize: 24 * skt, fontWeight: 900, minHeight: 64 * skt }}
+              className="flex-1 rounded-[20px] bg-[#16804f] py-2 text-white shadow-[0_6px_0_#0e5a37] active:translate-y-1 disabled:opacity-60"
+              style={{ fontSize: 24 * skt, fontWeight: 900, minHeight: (rapat ? 52 : 64) * skt }}
             >
               Jalan ▶
             </button>
@@ -631,7 +655,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     return (
       <div className="flex min-h-0 flex-1 flex-row items-stretch gap-4" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
         {peta}
-        <div className="flex min-h-0 shrink-0 flex-col justify-center gap-3 overflow-y-auto rounded-[24px] p-3" style={{ width: lebarKanan, background: tema.panel, boxShadow: bayangKartu() }}>
+        <div className={`flex min-h-0 shrink-0 flex-col overflow-y-auto rounded-[24px] [justify-content:safe_center] ${rapat ? "gap-2 p-2" : "gap-3 p-3"}`} style={{ width: lebarKanan, background: tema.panel, boxShadow: bayangKartu() }}>
           {kendali}
         </div>
       </div>
@@ -641,20 +665,23 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   return (
     <div className="flex flex-col gap-3" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
       {peta}
-      {kendali}
+      <div ref={kendaliRef} className={`flex flex-col ${rapat ? "gap-2" : "gap-3"}`}>
+        {kendali}
+      </div>
     </div>
   );
 }
 
 /* ---------------- panggung ---------------- */
 
-function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tanah, petak, petakMaks }: {
+function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tanah, petak, petakMaks, petakMin }: {
   grid: NavGrid; agam: Agam; bendera: { x: number; y: number } | null; sorot: Set<string>; tebakan: { x: number; y: number } | null;
   bisaKetuk: boolean; onKetuk: (x: number, y: number) => void; menang: boolean;
   tanah: [string, string];
   /** ukuran petak tetap (px) di tata letak mendatar; kosong = lebar penuh dengan batas `petakMaks` */
   petak?: number;
   petakMaks: number;
+  petakMin: number;
 }) {
   const { rintangan } = usePanggung();
   // petak rintangan: cokelat tanah untuk tumbuhan, abu-abu batu untuk benda buatan/es
@@ -692,7 +719,7 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
   }
   const ukuranSvg = petak
     ? { width: grid.w * petak, height: grid.h * petak }
-    : { width: "100%", minWidth: grid.w * PETAK_MIN, maxWidth: grid.w * Math.max(PETAK_MIN, petakMaks) };
+    : { width: "100%", minWidth: grid.w * petakMin, maxWidth: grid.w * Math.max(petakMin, petakMaks) };
   return (
     <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: "touch" }}>
       <svg
@@ -741,10 +768,12 @@ function Mini({ grid, tanah, ukuran = 72 }: { grid: NavGrid; tanah: [string, str
 
 /* ---------------- palet & rak ---------------- */
 
-function Palet({ commands, onTekan, nonaktif, besar, penuh }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean; penuh?: boolean }) {
-  const { skala: sk } = usePanggung();
+function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean; penuh?: boolean; rapat?: boolean }) {
+  const { skala: sk, w } = usePanggung();
   const skt = Math.min(sk, 1.35);
-  const kolom = Math.min(commands.length, 4);
+  // tablet: semua blok sebaris; HP: paling banyak 4 sebaris
+  const kolom = w >= 460 ? Math.min(commands.length, 6) : Math.min(commands.length, 4);
+  const sesak = kolom > 4;
   // di kolom kanan (mendatar) tombol mengisi lebar kolom; di HP/tegak lebar tombol ikut skala
   const lebar = penuh ? "1fr" : `${Math.round((besar ? 160 : 140) * sk)}px`;
   return (
@@ -754,12 +783,12 @@ function Palet({ commands, onTekan, nonaktif, besar, penuh }: { commands: NavCom
           key={c}
           onClick={() => onTekan(c)}
           disabled={nonaktif}
-          className="koding-block flex flex-col items-center justify-center gap-0.5 px-2 py-2 disabled:opacity-70"
-          style={{ background: muka(BLOK[c].c), border: `3px solid ${BLOK[c].c}`, boxShadow: `0 5px 0 ${BLOK[c].d}`, color: BLOK[c].d, minHeight: (besar ? 76 : 64) * sk }}
+          className={`koding-block flex flex-col items-center justify-center gap-0.5 disabled:opacity-70 ${sesak ? "px-0.5 py-1" : "px-2 py-2"}`}
+          style={{ background: muka(BLOK[c].c), border: `3px solid ${BLOK[c].c}`, boxShadow: `0 5px 0 ${BLOK[c].d}`, color: BLOK[c].d, minHeight: (besar ? 76 : rapat ? 56 : 64) * sk }}
           aria-label={BLOK[c].label}
         >
-          {BLOK[c].ikon(Math.round(30 * sk))}
-          <span style={{ fontFamily: BALOO, fontSize: (c === "kalau" ? 13 : 15) * skt, fontWeight: 800, lineHeight: 1.1, textAlign: "center", color: INK }}>{BLOK[c].label}</span>
+          {BLOK[c].ikon(Math.round((rapat ? 24 : 30) * sk))}
+          <span style={{ fontFamily: BALOO, fontSize: (c === "kalau" ? (sesak ? 11.5 : 13) : sesak ? 13 : 15) * skt, fontWeight: 800, lineHeight: 1.1, textAlign: "center", color: INK }}>{BLOK[c].label}</span>
         </button>
       ))}
     </div>
@@ -770,8 +799,9 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, onPilihRak, onKetuk, onN
   judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean;
   onPilihRak?: () => void; onKetuk?: (i: number) => void; onN?: (i: number) => void; onHapusIsi?: (i: number, j: number) => void;
 }) {
-  const { tema, skala: sk } = usePanggung();
+  const { tema, skala: sk, w } = usePanggung();
   const skt = Math.min(sk, 1.35);
+  const sempit = w > 0 && w < 460 && slot >= 4; // petunjuk akan turun baris dan mendorong tombol Jalan
   const terpakai = hitungBlok(blok);
   const kosong = Math.max(0, slot - terpakai);
   const sorotRak = aktif && onPilihRak;
@@ -794,7 +824,7 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, onPilihRak, onKetuk, onN
         {Array.from({ length: kosong }, (_, k) => (
           <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56 * sk, height: 56 * sk, border: `3px dashed ${tema.wadahGelap}`, background: `${tema.wadahWarna}1f` }} aria-hidden />
         ))}
-        {blok.length === 0 && !bacaSaja && <span className="ml-1 self-center font-bold" style={{ fontSize: 14 * skt, color: "#3d4f66" }}>Ketuk blok di bawah</span>}
+        {blok.length === 0 && !bacaSaja && !sempit && <span className="ml-1 self-center font-bold" style={{ fontSize: 14 * skt, color: "#3d4f66" }}>Ketuk blok di bawah</span>}
       </div>
     </div>
   );

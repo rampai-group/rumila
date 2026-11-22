@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-potongan-pizza-senilai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -113,14 +113,22 @@
       "labelKey": "i3",
       "bin": "setengah",
       "emoji": "🍕",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.5
+      }
     },
     {
       "id": "setengah-4",
       "labelKey": "i4",
       "bin": "setengah",
       "emoji": "🍕",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.5
+      }
     },
     {
       "id": "seperempat-5",
@@ -133,7 +141,11 @@
       "labelKey": "i6",
       "bin": "seperempat",
       "emoji": "🍕",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.25
+      }
     },
     {
       "id": "tigaperempat-7",
@@ -146,7 +158,11 @@
       "labelKey": "i8",
       "bin": "tigaperempat",
       "emoji": "🍕",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.75
+      }
     },
     {
       "id": "sepertiga-9",
@@ -159,7 +175,11 @@
       "labelKey": "i10",
       "bin": "sepertiga",
       "emoji": "🍕",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.3333
+      }
     },
     {
       "id": "duapertiga-11",
@@ -172,7 +192,11 @@
       "labelKey": "i12",
       "bin": "duapertiga",
       "emoji": "🍕",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.6667
+      }
     }
   ]
 }

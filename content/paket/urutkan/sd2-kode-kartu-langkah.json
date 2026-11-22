@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-langkah",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -357,7 +357,11 @@
         {
           "id": "mi-3",
           "labelKey": "mi-3",
-          "emoji": "🍜"
+          "emoji": "🍜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "mi-4",
@@ -367,7 +371,11 @@
         {
           "id": "mi-5",
           "labelKey": "mi-5",
-          "emoji": "🍜"
+          "emoji": "🍜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "💧"
+          }
         },
         {
           "id": "mi-6",

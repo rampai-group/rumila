@@ -23,7 +23,7 @@ const KUNCI_KOLEKSI = (memberId: string) => `rumila-akademi-koleksi-${memberId}`
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
 
 const LENCANA_WARNA: Record<StatusLencana, { bg: string; tepi: string; fg: string; label: string }> = {
-  terkunci: { bg: "#fff0da", tepi: "#f0e4d2", fg: "#b3a6c4", label: "Terkunci" },
+  terkunci: { bg: "#dbeafb", tepi: "#a9c0dc", fg: "#3d4f66", label: "Terkunci" },
   perunggu: { bg: "#cd7f32", tepi: "#a9652a", fg: "#fff", label: "Perunggu" },
   perak: { bg: "#b8c0cc", tepi: "#8f99a8", fg: "#fff", label: "Perak" },
   emas: { bg: "#f2b705", tepi: "#c99200", fg: "#fff", label: "Emas" },
@@ -280,15 +280,15 @@ function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) 
           {p.nama} {p.tercapai && <span aria-label="Tercapai">🎖️</span>}
         </p>
         <div className="mt-1.5 flex flex-wrap gap-1">
-          {jenjangAnak && <span className="rounded-full bg-[#e4f8ec] px-2.5 py-0.5 text-[11px] font-black text-[#12904a]">Jenjangmu</span>}
+          {jenjangAnak && <span className="rounded-full bg-[#a9ecc4] px-2.5 py-0.5 text-[11px] font-black text-[#0b5c30]">Jenjangmu</span>}
           {p.tercapai ? (
-            <span className="rounded-full bg-[#fff4d1] px-2.5 py-0.5 text-[11px] font-black text-[#b07a00]">Tercapai</span>
+            <span className="rounded-full bg-[#ffdc7a] px-2.5 py-0.5 text-[11px] font-black text-[#7a5200]">Tercapai</span>
           ) : p.progres > 0 ? (
             <span className="rounded-full bg-[#e3f1fd] px-2.5 py-0.5 text-[11px] font-black text-[#0567c2]">Sedang dikejar</span>
           ) : null}
         </div>
         {p.tercapai && (
-          <Link href={`/akademi/sertifikat/${levelMeta(p.level).slug}`} className="mt-2 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-[#0b2545] transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
+          <Link href={`/akademi/sertifikat/${levelMeta(p.level).slug}`} className="mt-2 inline-flex h-11 items-center gap-1.5 rounded-full px-4 text-[#0b2545] transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
             Lihat sertifikat 🎓
           </Link>
         )}
@@ -307,7 +307,7 @@ function CincinPangkat({ progres, tercapai, warna, size = 64 }: { progres: numbe
   const isi = Math.max(0, Math.min(1, progres)) * keliling;
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden className="relative shrink-0">
-      <circle cx={c} cy={c} r={r} fill="none" stroke="#fff0da" strokeWidth={tebal} />
+      <circle cx={c} cy={c} r={r} fill="none" stroke="#dbeafb" strokeWidth={tebal} />
       {isi > 0 && <circle cx={c} cy={c} r={r} fill="none" stroke={tercapai ? "#f2b705" : m} strokeWidth={tebal} strokeDasharray={`${isi} ${keliling}`} transform={`rotate(-90 ${c} ${c})`} strokeLinecap="round" />}
       <text x={c} y={c + 1} textAnchor="middle" dominantBaseline="central" fontSize={size * 0.42} fill={tercapai ? d : "#c9bfd8"} fontFamily="Material Symbols Rounded">
         {tercapai ? "star" : "military_tech"}

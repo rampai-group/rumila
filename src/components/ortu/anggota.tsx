@@ -20,7 +20,9 @@ import { useRumila, useUI, type Member } from "@/lib/store";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.06)]";
-const TOMBOL = "inline-flex h-9 items-center gap-1.5 rounded-full bg-[#e3f1fd] px-3 text-[13px] font-extrabold text-[#0567c2] transition-transform active:scale-95";
+const TOMBOL_DASAR = "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-[14px] px-2 py-1 text-center text-[13px] leading-tight font-extrabold transition-transform active:scale-95";
+const TOMBOL = `${TOMBOL_DASAR} bg-[#d6ecff] text-[#083e73]`;
+const TOMBOL_UTAMA = `${TOMBOL_DASAR} bg-[#0567c2] text-white`;
 
 /** Jendela di tengah layar, muat di layar kecil (isi bisa digulir). */
 function Jendela({ judul, onTutup, children }: { judul: string; onTutup: () => void; children: ReactNode }) {
@@ -36,7 +38,7 @@ function Jendela({ judul, onTutup, children }: { judul: string; onTutup: () => v
           <h2 className="flex-1" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, color: INK }}>
             {judul}
           </h2>
-          <button onClick={onTutup} aria-label="Tutup" className="flex size-10 items-center justify-center rounded-full bg-white">
+          <button onClick={onTutup} aria-label="Tutup" className="flex size-11 items-center justify-center rounded-full bg-white">
             <Icon name="close" size={22} />
           </button>
         </div>
@@ -131,7 +133,7 @@ function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
         <span className="text-[12px] font-black text-ink-2">Warna profil</span>
         <div className="flex flex-wrap gap-2">
           {MEMBER_COLORS.map((x) => (
-            <button key={x} type="button" aria-label={x} aria-pressed={c === x} onClick={() => setC(x)} className="size-10 rounded-full" style={{ background: PLAY[x][1], outline: c === x ? `3px solid ${INK}` : "none", outlineOffset: 2 }} />
+            <button key={x} type="button" aria-label={x} aria-pressed={c === x} onClick={() => setC(x)} className="size-11 rounded-full" style={{ background: PLAY[x][1], outline: c === x ? `3px solid ${INK}` : "none", outlineOffset: 2 }} />
           ))}
         </div>
         <span className="text-[12px] font-black text-ink-2">Jenis PIN</span>
@@ -206,7 +208,7 @@ function BarisAnggota({ m, onAvatar, onPin }: { m: Member; onAvatar: () => void;
   const ortu = isOrangTua(m);
   const keterangan = [ortu ? (m.admin ? "Orang tua · admin" : "Orang tua") : `Anak · ${levelMeta(level).pangkat}`, m.pin ? (m.jenisPin === "gambar" ? "PIN gambar" : "PIN angka") : "Belum ada PIN"].join(" · ");
   return (
-    <li className="flex flex-wrap items-center gap-3 rounded-[18px] bg-[#f4f7fb] p-3">
+    <li className="flex flex-wrap items-center gap-3 border-t border-[#d6ecff] pt-3 pb-1 first:border-t-0 first:pt-0">
       <button onClick={onAvatar} aria-label={`Ganti avatar ${m.name}`} className="relative transition-transform active:scale-95">
         <MemberAvatar m={m} size={52} theme="playful" />
         <span className="absolute -right-1 -bottom-1 flex size-6 items-center justify-center rounded-full bg-white text-[#0567c2] shadow">
@@ -215,12 +217,12 @@ function BarisAnggota({ m, onAvatar, onPin }: { m: Member; onAvatar: () => void;
       </button>
       <span className="min-w-[150px] flex-1">
         <span className="block truncate text-[15px] font-extrabold">{m.name}</span>
-        <span className="block text-[12.5px] font-bold" style={{ color: m.pin ? "#5b6b85" : "#a34a00" }}>
+        <span className="block text-[12.5px] font-bold" style={{ color: m.pin ? "#3d4f66" : "#8a3f00" }}>
           {keterangan}
         </span>
       </span>
-      <span className="flex w-full flex-wrap gap-1.5 md:w-auto">
-        <button onClick={onPin} className={TOMBOL}>
+      <span className={`grid w-full gap-2 ${ortu ? "grid-cols-2" : "grid-cols-3"}`}>
+        <button onClick={onPin} className={TOMBOL_UTAMA}>
           <Icon name="pin" size={18} /> {m.pin ? (ortu ? "Ubah PIN" : "Reset PIN") : "Buat PIN"}
         </button>
         {!ortu && (
@@ -274,15 +276,17 @@ export function AnggotaRumah() {
       )}
       <button
         onClick={() => setJendela({ kind: "daftar" })}
-        className="inline-flex h-14 items-center justify-center gap-2 rounded-[20px] bg-[#0786eb] text-white shadow-[0_4px_0_#0567c2] transition-transform active:scale-[.98]"
+        className="inline-flex h-14 items-center justify-center gap-2 rounded-[20px] bg-[#0567c2] text-white shadow-[0_4px_0_#0567c2] transition-transform active:scale-[.98]"
         style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800 }}
       >
         <Icon name="person_add" size={24} /> Daftarkan anak
       </button>
       <p className="text-[13px] font-bold text-ink-3">PIN anak dipakai di layar &quot;Siapa yang belajar?&quot;. Tablet yang dikunci ke satu anak langsung menampilkan PIN anak itu.</p>
 
-      <section className={`${KARTU} flex flex-col gap-2 p-4`}>
-        <h2 style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800 }}>Hapus akun</h2>
+      <details className={`${KARTU} p-4`}>
+        <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 [&::-webkit-details-marker]:hidden" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
+          Hapus akun <Icon name="expand_more" size={24} />
+        </summary>
         <p className="text-[13.5px] font-bold text-ink-3">
           Menghapus akun rumah ini beserta semua profil anak, progres belajar, rapor, sertifikat, dan data langganan. Tidak bisa dibatalkan.{" "}
           <a href="/privasi" className="underline underline-offset-2">
@@ -291,11 +295,11 @@ export function AnggotaRumah() {
         </p>
         <button
           onClick={() => setJendela({ kind: "hapus" })}
-          className="inline-flex h-11 items-center justify-center gap-1.5 self-start rounded-full bg-[#fdecee] px-5 text-[14px] font-extrabold text-[#c0283a] transition-transform active:scale-95"
+          className="mt-3 inline-flex h-11 items-center justify-center gap-1.5 self-start rounded-full bg-[#fdecee] px-5 text-[14px] font-extrabold text-[#c0283a] transition-transform active:scale-95"
         >
           <Icon name="delete_forever" size={20} /> Hapus akun
         </button>
-      </section>
+      </details>
       {jendela?.kind === "hapus" && (
         <Jendela judul="Hapus akun?" onTutup={tutup}>
           <KonfirmasiHapusAkun onBatal={tutup} />
@@ -391,7 +395,7 @@ function KonfirmasiHapusAkun({ onBatal }: { onBatal: () => void }) {
       </label>
       {err && <p className="text-[13px] font-bold text-[#c0283a]">{err}</p>}
       <div className="flex flex-wrap gap-2">
-        <button onClick={onBatal} className="inline-flex h-11 items-center rounded-full bg-[#f4f7fb] px-5 text-[14px] font-extrabold text-ink">
+        <button onClick={onBatal} className="inline-flex h-11 items-center rounded-full bg-[#d6ecff] px-5 text-[14px] font-extrabold text-ink">
           Batal
         </button>
         <button

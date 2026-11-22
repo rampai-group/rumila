@@ -109,7 +109,7 @@ export function GedungView({ g }: { g: Gedung }) {
       <div className="kampus-langit relative flex items-end overflow-hidden rounded-[28px] shadow-[0_5px_0_rgba(11,37,69,.08)]">
         <Awan />
         <div className="relative z-10 flex min-w-0 flex-1 flex-col gap-2 self-center p-4 sm:p-5">
-          <span className="self-start rounded-full px-3 py-0.5 text-[11px] font-black tracking-[0.1em] text-white uppercase" style={{ background: m, boxShadow: `0 2px 0 ${d}` }}>
+          <span className="self-start rounded-full px-3 py-0.5 text-[11px] font-black tracking-[0.1em] text-white uppercase" style={{ background: `color-mix(in srgb, ${d} 72%, #000)`, boxShadow: `0 2px 0 ${m}` }}>
             {g.peran}
           </span>
           <h1 style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, lineHeight: 1.05, color: INK }}>{g.nama}</h1>

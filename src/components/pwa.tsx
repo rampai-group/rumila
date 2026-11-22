@@ -104,7 +104,7 @@ function IosHelp() {
       <div className="w-full max-w-[420px] rounded-[28px] bg-white p-5" onClick={(e) => e.stopPropagation()} style={{ color: INK }}>
         <div className="flex items-center justify-between">
           <h2 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>Pasang RINOYA Academy</h2>
-          <button onClick={close} aria-label="Tutup" className="flex size-10 items-center justify-center rounded-xl bg-[#fff0da]">
+          <button onClick={close} aria-label="Tutup" className="flex size-11 items-center justify-center rounded-xl bg-[#fff0da]">
             <Icon name="close" />
           </button>
         </div>

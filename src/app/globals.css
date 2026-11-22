@@ -107,6 +107,15 @@ body {
 }
 
 @layer base {
+  /* iPad: ketukan beruntun cepat (PIN, hitung benda) jangan dianggap ketuk dua kali untuk zoom lalu hilang.
+     Area seret tetap menang lewat utility touch-none / gaya inline-nya. */
+  button,
+  a,
+  summary,
+  label,
+  [role="button"] {
+    touch-action: manipulation;
+  }
   input::placeholder {
     color: var(--ink-4);
   }
@@ -203,11 +212,11 @@ body {
 
 /* Tema "anak" RINOYA: krem hangat, teks navy, huruf tebal */
 .theme-play {
-  --page: #fff8ee;
+  --page: #5cb8f8;
   --ink: #0b2545;
-  --ink-2: #4a5a75;
-  --ink-3: #5b6b85;
-  --ink-4: #7d8da6;
+  --ink-2: #1c2f4b;
+  --ink-3: #22354f;
+  --ink-4: #40536e;
   --fill: #fff0da;
   --line: #f0e4d2;
   --line-soft: #fff0da;
@@ -222,11 +231,20 @@ body {
   box-shadow: 0 2px 0 rgba(11,37,69, 0.1);
 }
 
-/* Latar titik-titik tema anak (biru RINOYA) */
+/* Latar titik-titik tema anak: biru langit RINOYA penuh. Tulisan langsung di atasnya selalu tinta gelap (≥ 4,5:1). */
 .bg-dots {
-  background-color: #fff8ee;
-  background-image: radial-gradient(rgba(255, 140, 60, 0.18) 2px, transparent 2px);
+  --ink-2: #1c2f4b;
+  --ink-3: #22354f;
+  background-color: #5cb8f8;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.28) 2px, transparent 2px);
   background-size: 26px 26px;
+}
+
+/* Ruang Orang Tua, rapor, dan halaman sertifikat: biru tegas, kartu putih */
+.latar-biru {
+  --ink-2: #1c2f4b;
+  --ink-3: #22354f;
+  background: #7cc6fa;
 }
 
 @keyframes shake {
@@ -271,4 +289,11 @@ body {
 .truncate {
   padding-block: 0.2em;
   margin-block: -0.2em;
+}
+
+/* cetak (rapor, sertifikat): menu & tombol tidak ikut, juga saat rapor dibuka dari Ruang Orang Tua */
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }

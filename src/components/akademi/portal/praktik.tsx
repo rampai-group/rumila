@@ -13,8 +13,8 @@ import { NAMA_GEDUNG_PRAKTIK, penilaianKampus, type KompetensiPraktik } from "@/
 import { INK } from "./bersama";
 
 const WARNA_STATUS: Record<KompetensiPraktik["status"], { teks: string; bg: string; fg: string }> = {
-  dikuasai: { teks: "Dikuasai", bg: "#e4f8ec", fg: "#12904a" },
-  berkembang: { teks: "Berkembang", bg: "#fff4d1", fg: "#b07a00" },
+  dikuasai: { teks: "Dikuasai", bg: "#a9ecc4", fg: "#0b5c30" },
+  berkembang: { teks: "Berkembang", bg: "#ffdc7a", fg: "#6b4700" },
   belum: { teks: "Belum", bg: "#f3ece2", fg: "#76695a" },
 };
 
@@ -46,11 +46,11 @@ export function KartuPraktikKampus({
             </span>
             <span className="block text-[12.5px] font-extrabold text-ink-3">Terbuka setelah semua misi selesai</span>
           </span>
-          <span className="shrink-0 rounded-full bg-[#f3ece2] px-3 py-1 text-[13px] font-black tabular-nums text-[#76695a]">
+          <span className="shrink-0 rounded-full bg-[#e6eef7] px-3 py-1 text-[13px] font-black tabular-nums text-[#3d4f66]">
             {kunci.selesai}/{kunci.total}
           </span>
         </div>
-        <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#f3ece2]" aria-label={`${kunci.selesai} dari ${kunci.total} misi selesai`}>
+        <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#e6eef7]" aria-label={`${kunci.selesai} dari ${kunci.total} misi selesai`}>
           <div style={{ width: `${kunci.total ? (kunci.selesai / kunci.total) * 100 : 0}%`, background: "#b7ab98", height: "100%" }} />
         </div>
       </section>
@@ -77,7 +77,7 @@ export function KartuPraktikKampus({
           const g = NAMA_GEDUNG_PRAKTIK[k.gedung];
           const belumDicoba = k.kompetensi.filter((x) => x.percobaan === 0).length;
           return (
-            <li key={k.gedung} className="rounded-[18px] bg-[#fffaf2] p-3" style={{ boxShadow: "inset 0 0 0 1.5px #fff0da" }}>
+            <li key={k.gedung} className="rounded-[18px] bg-[#d6ecff] p-3">
               <div className="flex items-center gap-2.5">
                 <Icon name={g.icon} size={22} className="shrink-0 text-[#3a4670]" />
                 <span className="min-w-0 flex-1">
@@ -87,11 +87,11 @@ export function KartuPraktikKampus({
                   </span>
                 </span>
                 <span className="shrink-0 text-[17px] font-black tabular-nums" style={{ color: INK }}>{k.nilai}</span>
-                <Link href={g.href} aria-label={`Buka ${g.nama}`} className="flex size-10 shrink-0 items-center justify-center rounded-full text-white transition-transform active:scale-95" style={{ background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 2px 0 #0567c2" }}>
+                <Link href={g.href} aria-label={`Buka ${g.nama}`} className="flex size-11 shrink-0 items-center justify-center rounded-full text-white transition-transform active:scale-95" style={{ background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 2px 0 #0567c2" }}>
                   <Icon name="arrow_forward" size={22} />
                 </Link>
               </div>
-              <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#f3ece2]">
+              <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e6eef7]">
                 <div style={{ width: `${k.nilai}%`, background: "#3a9b3a", height: "100%" }} />
               </div>
               {rinci && (

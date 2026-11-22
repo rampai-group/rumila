@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-rangkaian-di-rumah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,61 +72,101 @@
       "id": "senteron",
       "labelKey": "i-senteron",
       "bin": "menyala",
-      "emoji": "🔦"
+      "emoji": "🔦",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "👆"
+      }
     },
     {
       "id": "mobilon",
       "labelKey": "i-mobilon",
       "bin": "menyala",
-      "emoji": "🚗"
+      "emoji": "🚗",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔋"
+      }
     },
     {
       "id": "lenteraon",
       "labelKey": "i-lenteraon",
       "bin": "menyala",
-      "emoji": "🏮"
+      "emoji": "🏮",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔋"
+      }
     },
     {
       "id": "mejaon",
       "labelKey": "i-mejaon",
       "bin": "menyala",
-      "emoji": "🔋"
+      "emoji": "🔋",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔧"
+      }
     },
     {
       "id": "pisauon",
       "labelKey": "i-pisauon",
       "bin": "menyala",
-      "emoji": "🔘"
+      "emoji": "🔘",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "⬇️"
+      }
     },
     {
       "id": "senteroff",
       "labelKey": "i-senteroff",
       "bin": "padam",
-      "emoji": "🔦"
+      "emoji": "🔦",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "👇"
+      }
     },
     {
       "id": "mobilputus",
       "labelKey": "i-mobilputus",
       "bin": "padam",
-      "emoji": "🚗"
+      "emoji": "🚗",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "✂️"
+      }
     },
     {
       "id": "lenterakosong",
       "labelKey": "i-lenterakosong",
       "bin": "padam",
-      "emoji": "🏮"
+      "emoji": "🏮",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🪫"
+      }
     },
     {
       "id": "mejalepas",
       "labelKey": "i-mejalepas",
       "bin": "padam",
-      "emoji": "🔋"
+      "emoji": "🔋",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "✂️"
+      }
     },
     {
       "id": "pisauoff",
       "labelKey": "i-pisauoff",
       "bin": "padam",
-      "emoji": "🔘"
+      "emoji": "🔘",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "⬆️"
+      }
     }
   ],
   "pilihan": []

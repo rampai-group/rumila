@@ -143,7 +143,7 @@ export function LevelMap({
           </button>
           <div className="flex-1">
             <div className="text-[13px] font-extrabold opacity-60">Coding Agam</div>
-            <h1 style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 900, lineHeight: 1, color: accent }}>{title}</h1>
+            <h1 style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 900, lineHeight: 1, color: `color-mix(in srgb, ${accent} 62%, #000)` }}>{title}</h1>
           </div>
           <div className="koding-round flex items-center gap-1 rounded-full px-3 py-2 font-extrabold" style={{ fontFamily: BALOO }}>
             <Icon name="star" size={20} className="text-[#f2b705]" /> {starTotal}
