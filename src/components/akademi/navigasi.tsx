@@ -491,7 +491,8 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   const adaMini = grids.length > 1;
   // program panjang (banyak slot, ulangi, palet > 4 blok): kendali dirapatkan supaya Jalan selalu kelihatan
   const panjang = ronde.execMode === "program" && (!!ronde.debug || slotMaks > 6 || palet.length > 4);
-  const rapat = panjang || (ph > 0 && ph < 560);
+  // Slide Over / jendela sempit: kendali bertumpuk dan membungkus baris, jadi ikut dirapatkan
+  const rapat = panjang || (ph > 0 && ph < 560) || (!mendatar && pw > 0 && pw < 460);
   const ukMini = Math.round((rapat ? 48 : 72) * sk);
   const tinggiMini = adaMini ? Math.max(56, ukMini + 8) + 16 : 0;
   const lebarKanan = Math.round(Math.min(600, Math.max(340, pw * (panjang ? 0.52 : 0.42))));
@@ -798,8 +799,9 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, onPilihRak, onKetuk, onN
   judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean;
   onPilihRak?: () => void; onKetuk?: (i: number) => void; onN?: (i: number) => void; onHapusIsi?: (i: number, j: number) => void;
 }) {
-  const { tema, skala: sk } = usePanggung();
+  const { tema, skala: sk, w } = usePanggung();
   const skt = Math.min(sk, 1.35);
+  const sempit = w > 0 && w < 460 && slot >= 4; // petunjuk akan turun baris dan mendorong tombol Jalan
   const terpakai = hitungBlok(blok);
   const kosong = Math.max(0, slot - terpakai);
   const sorotRak = aktif && onPilihRak;
@@ -822,7 +824,7 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, onPilihRak, onKetuk, onN
         {Array.from({ length: kosong }, (_, k) => (
           <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56 * sk, height: 56 * sk, border: `3px dashed ${tema.wadahGelap}`, background: `${tema.wadahWarna}1f` }} aria-hidden />
         ))}
-        {blok.length === 0 && !bacaSaja && <span className="ml-1 self-center font-bold" style={{ fontSize: 14 * skt, color: "#3d4f66" }}>Ketuk blok di bawah</span>}
+        {blok.length === 0 && !bacaSaja && !sempit && <span className="ml-1 self-center font-bold" style={{ fontSize: 14 * skt, color: "#3d4f66" }}>Ketuk blok di bawah</span>}
       </div>
     </div>
   );
