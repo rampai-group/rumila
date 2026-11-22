@@ -2,7 +2,7 @@
 
 // Presenter mekanik navigasi (Agam ke bintang) — tiga mode eksekusi:
 //   langsung : tiap tombol palet dijalankan seketika (PAUD), tanpa rak
-//   program  : blok disusun di rak berslot, lalu "Jalan ▶" (TK A ke atas; debug = rak terisi, perbaiki tepat N blok;
+//   program  : blok disusun di rak berslot, lalu "Jalan ▶" (TK A ke atas; debug = rak terisi, perbaiki paling banyak N blok;
 //              bendera = dekomposisi dua rak; semuaGrid = satu program lolos semua grid satu group)
 //   langkah  : rak terisi, anak menebak petak tujuan lalu "Langkah" menjalankan satu blok (prediksi)
 // Semantik blok mengikuti docs/akademi/mekanik-navigasi.md; eksekusi memakai jalankan() dari mesin, presenter hanya
@@ -11,7 +11,7 @@
 import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { NavCommand, PaketNavigasi } from "@akademi/schema";
-import { hitungBlok, jalankan, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
+import { hitungBlok, jalankan, kapasitasRakNavigasi, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
 import { TombolBantu } from "./bantu";
 import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
@@ -32,7 +32,6 @@ const PETAK_MIN = 44;
 const PETAK_MAKS = 112;
 const GARIS = "rgba(11,37,69,.28)"; // garis tepi petak, jelas di semua warna tanah
 const PETAK_PLAFON = 210; // batas petak di tablet mendatar supaya peta 3×3 tidak raksasa
-const SLOT_DEFAULT = 8;
 const DEG: Record<Arah, number> = { N: 0, E: 90, S: 180, W: 270 };
 const DELTA: Record<Arah, { dx: number; dy: number }> = { N: { dx: 0, dy: -1 }, E: { dx: 1, dy: 0 }, S: { dx: 0, dy: 1 }, W: { dx: -1, dy: 0 } };
 const PUTAR: Record<Arah, { kiri: Arah; kanan: Arah }> = { N: { kiri: "W", kanan: "E" }, E: { kiri: "N", kanan: "S" }, S: { kiri: "E", kanan: "W" }, W: { kiri: "S", kanan: "N" } };
@@ -147,7 +146,7 @@ interface Agam extends NavState {
 export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   const ujian = useModeUjian();
   const grids = ronde.grids;
-  const slotMaks = ronde.rackSlots ?? SLOT_DEFAULT;
+  const slotMaks = kapasitasRakNavigasi(ronde);
   const modeBendera = ronde.execMode === "program" && ronde.commands.includes("bendera");
   const palet = useMemo(() => ronde.commands.filter((c) => c !== "bendera"), [ronde.commands]);
 
@@ -357,21 +356,22 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     }
   };
 
-  const jalan = async () => {
+  const jalan = async (pratinjau = false) => {
     if (sibuk || terkunci) return;
-    const program: NavBlock[] = modeBendera ? [...rak, { cmd: "bendera" }, ...rak2] : rak;
+    const program: NavBlock[] = pratinjau ? ronde.program : modeBendera ? [...rak, { cmd: "bendera" }, ...rak2] : rak;
     if (!program.length || (modeBendera && !rak.length && !rak2.length)) { sfxAkademi.tolak(); setPesan("Susun perintah dulu: ketuk blok di bawah"); return; }
     if (modeBendera && !bendera) { sfxAkademi.tolak(); setPesan("Ketuk petak di kebun untuk menaruh 🚩 dulu"); return; }
     const id = ++jalanId.current;
     const r = runs + 1;
-    setRuns(r);
+    if (!pratinjau) setRuns(r);
     setSibuk(true);
     setSel(null);
     setSorot([]);
-    setPesan("");
+    setPesan(pratinjau ? "Agam menjalankan program awal" : "");
     setStatusGrid(grids.map(() => null));
     sfx.open();
 
+    let gagalPeta = 0;
     for (let gi = 0; gi < grids.length; gi++) {
       const g = grids[gi];
       setAktif(gi);
@@ -401,9 +401,14 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
       }
 
       if (outcome !== "bintang") {
+        gagalPeta++;
         setStatusGrid((s) => s.map((v, i) => (i === gi ? "✗" : v)));
-        setPesan(pesanKhusus ?? pesanGagal(outcome));
+        setPesan(grids.length > 1 ? `Jalur ${gi + 1}: ${pesanKhusus ?? pesanGagal(outcome)}` : pesanKhusus ?? pesanGagal(outcome));
         if (outcome === "meleset") sfx.bounceBack();
+        if (ronde.debug && gi + 1 < grids.length) {
+          await tunggu(450);
+          continue;
+        }
         setSibuk(false);
         return;
       }
@@ -413,8 +418,12 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
       await tunggu(gi < grids.length - 1 ? 450 : 150);
     }
     if (jalanId.current !== id) return;
-    setAgam((a) => ({ ...a, senang: true, wajah: "🎉" }));
     setSibuk(false);
+    if (pratinjau || gagalPeta > 0) {
+      setPesan(gagalPeta > 0 ? `Agam belum sampai di ${gagalPeta} jalur` : "Program awal sudah dijalankan");
+      return;
+    }
+    setAgam((a) => ({ ...a, senang: true, wajah: "🎉" }));
     if (modeBendera && bendera) kirim({ program, bendera: { x: bendera.x, y: bendera.y, bagian: [rak, rak2] }, runs: r });
     else kirim({ program, edits: ronde.debug ? hitungEdits(ronde.program, rak) : undefined, runs: r });
   };
@@ -476,7 +485,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     setSorot(jalur);
     if (ronde.execMode === "langsung") setPesan(jalur.length ? "Ikuti petak yang menyala" : "Coba putar Agam dulu");
     else if (ronde.execMode === "langkah") setPesan("Lihat blok berikutnya, ke mana Agam akan pergi?");
-    else setPesan(modeBendera && !bendera ? "Taruh 🚩 di tengah jalur, lalu susun dua bagian" : ronde.debug ? `Ubah tepat ${ronde.fixes ?? 1} blok supaya Agam lewat petak yang menyala` : "Susun blok supaya Agam lewat petak yang menyala");
+    else setPesan(modeBendera && !bendera ? "Taruh 🚩 di tengah jalur, lalu susun dua bagian" : ronde.debug ? `Ubah paling banyak ${ronde.fixes ?? 1} blok supaya Agam lewat petak yang menyala` : "Susun blok supaya Agam lewat petak yang menyala");
     window.setTimeout(() => setSorot([]), 3500);
   };
 
@@ -492,8 +501,8 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
       return;
     }
     const d = hasil.detail as { outcome?: NavRun["outcome"]; edits?: number; blocks?: number };
-    if (ronde.debug && ronde.fixes !== undefined && d.edits !== undefined && d.edits !== ronde.fixes) setPesan(`Ubah tepat ${ronde.fixes} blok ya`);
-    else if (ronde.rackSlots !== undefined && !modeBendera && (d.blocks ?? 0) > ronde.rackSlots) setPesan("Rak tidak muat");
+    if (ronde.debug && ronde.fixes !== undefined && d.edits !== undefined && d.edits > ronde.fixes) setPesan(`Ubah paling banyak ${ronde.fixes} blok ya`);
+    else if ((ronde.debug || ronde.rackSlots !== undefined) && !modeBendera && (d.blocks ?? 0) > slotMaks) setPesan("Rak tidak muat");
     else if (ronde.prediksi && d.outcome === "bintang") setPesan("Agam sampai, tapi tebakanmu masih banyak meleset. Coba lagi!");
     else if (d.outcome) setPesan(pesanGagal(d.outcome));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -630,16 +639,26 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
             </div>
           ) : (
             <Rak
-              judul={ronde.debug ? `Perbaiki tepat ${ronde.fixes ?? 1} blok` : `Program Agam · ${hitungBlok(rak)}/${slotMaks} blok`}
+              judul={ronde.debug ? `Ubah paling banyak ${ronde.fixes ?? 1} blok` : `Program Agam · ${hitungBlok(rak)}/${slotMaks} blok`}
               blok={rak} slot={slotMaks} aktif sel={sel?.rak === 0 ? sel.i : null}
               onKetuk={(i) => ketukRak(0, i)} onN={(i) => putarN(0, i)} onHapusIsi={(i, j) => hapusIsiUlangi(0, i, j)}
             />
           )}
           <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} penuh={mendatar} rapat={rapat} />
+          {ujian && ronde.debug && ronde.program.length > 0 && !modeBendera && (
+            <button
+              type="button"
+              onClick={() => void jalan(true)}
+              disabled={sibuk || terkunci}
+              className="min-h-11 rounded-2xl bg-white px-3 py-1.5 text-sm font-extrabold text-[#0b2545] shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-60"
+            >
+              ▶ Lihat program awal
+            </button>
+          )}
           <AksiBawah aktif={!mendatar}>
           <div className="flex gap-2">
             <button
-              onClick={ujian ? kirimProgramUjian : jalan}
+              onClick={ujian ? kirimProgramUjian : () => void jalan()}
               disabled={sibuk || terkunci || (ujian && (!rak.length || (modeBendera && (!rak2.length || !bendera))))}
               className="flex-1 rounded-[20px] bg-[#16804f] py-2 text-white shadow-[0_6px_0_#0e5a37] active:translate-y-1 disabled:opacity-60"
               style={{ fontSize: 24 * skt, fontWeight: 900, minHeight: (rapat ? 52 : 64) * skt }}

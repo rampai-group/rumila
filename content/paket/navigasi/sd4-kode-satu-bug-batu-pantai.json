@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Dua Keping Salah di Pantai",
-      "instruksi": "Robot belum sampai ke bintang di pantai berbatu: cari dua keping yang salah, angka ulangan, isi ulangi, atau belokan, lalu ganti dua keping itu saja."
+      "instruksi": "Di pantai berbatu, periksa angka pada blok Ulangi, isinya, dan belokannya. Ubah paling banyak dua blok agar robot sampai."
     },
     "en": {
       "judul": "Two Wrong Pieces at the Beach",
-      "instruksi": "The robot hasn't reached the star on the rocky beach: find the two wrong pieces, a repeat number, the inside of a repeat, or a turn, and change only those two pieces."
+      "instruksi": "On the rocky beach, check the repeat counts, their contents, and the turns. Change up to two blocks so the robot reaches the star."
     }
   },
   "knobs": {

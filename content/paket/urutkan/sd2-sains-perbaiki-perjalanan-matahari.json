@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-perbaiki-perjalanan-matahari",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -25,10 +25,10 @@
       "kegiatan-sekolah": "berangkat sekolah, Matahari masih rendah",
       "kegiatan-makansiang": "makan siang, Matahari di atas",
       "kegiatan-pulang": "pulang bermain, Matahari terbenam",
-      "s-bunga": "Bunga matahari menghadap Matahari",
-      "bunga-timur": "bunga menghadap timur",
-      "bunga-atas": "bunga menghadap ke atas",
-      "bunga-barat": "bunga menghadap barat",
+      "s-bunga": "Tunas bunga matahari muda mengikuti arah cahaya",
+      "bunga-timur": "tunas muda menghadap timur",
+      "bunga-atas": "tunas muda menghadap ke atas",
+      "bunga-barat": "tunas muda menghadap barat",
       "t-petani": "Petani dan Matahari",
       "petani-1": "petani berangkat, Matahari baru terbit",
       "petani-2": "petani menanam padi, Matahari masih rendah",
@@ -77,10 +77,10 @@
       "kegiatan-sekolah": "off to school, the Sun is still low",
       "kegiatan-makansiang": "lunch, the Sun is overhead",
       "kegiatan-pulang": "home from play as the Sun sets",
-      "s-bunga": "A sunflower faces the Sun",
-      "bunga-timur": "flower facing east",
-      "bunga-atas": "flower facing up",
-      "bunga-barat": "flower facing west",
+      "s-bunga": "A young sunflower bud follows the light",
+      "bunga-timur": "young bud facing east",
+      "bunga-atas": "young bud facing up",
+      "bunga-barat": "young bud facing west",
       "t-petani": "The farmer and the Sun",
       "petani-1": "the farmer sets off as the Sun rises",
       "petani-2": "the farmer plants rice, the Sun is still low",
@@ -221,28 +221,25 @@
         {
           "id": "timur",
           "labelKey": "bunga-timur",
-          "emoji": "🌻",
           "adegan": {
-            "jenis": "hadap",
-            "t": 0
+            "jenis": "ilustrasi",
+            "varian": "awal-tunas-timur"
           }
         },
         {
           "id": "atas",
           "labelKey": "bunga-atas",
-          "emoji": "🌻",
           "adegan": {
-            "jenis": "hadap",
-            "t": 0.5
+            "jenis": "ilustrasi",
+            "varian": "awal-tunas-atas"
           }
         },
         {
           "id": "barat",
           "labelKey": "bunga-barat",
-          "emoji": "🌻",
           "adegan": {
-            "jenis": "hadap",
-            "t": 1
+            "jenis": "ilustrasi",
+            "varian": "awal-tunas-barat"
           }
         }
       ]

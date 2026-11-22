@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -177,7 +177,10 @@
       "id": "karang",
       "labelKey": "i-karang",
       "bin": "laut",
-      "emoji": "🐠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-karang"
+      }
     },
     {
       "id": "gurita",

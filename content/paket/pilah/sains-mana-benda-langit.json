@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-benda-langit",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -102,9 +102,12 @@
       "id": "mars",
       "labelKey": "i-mars",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#d84315",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-mars",
+        "t": 0
+      }
     },
     {
       "id": "bintang",

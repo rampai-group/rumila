@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Dua Ulangi yang Keliru",
-      "instruksi": "Program empat ruas ini punya dua bagian yang salah: angka ulangan, isi ulangi, atau belokan. Cari keduanya lalu ganti dua bagian itu saja."
+      "instruksi": "Periksa angka pada blok Ulangi, isinya, dan belokannya. Ubah paling banyak dua blok agar robot sampai ke bintang."
     },
     "en": {
       "judul": "Two Wrong Repeats",
-      "instruksi": "This four-part program has two wrong parts: a repeat number, what is inside a repeat, or a turn. Find both and change only those two parts."
+      "instruksi": "Check the repeat counts, their contents, and the turns. Change up to two blocks so the robot reaches the star."
     }
   },
   "knobs": {

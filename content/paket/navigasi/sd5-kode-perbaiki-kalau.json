@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Lolos di Satu, Gagal di Lain",
-      "instruksi": "Program ini belum lolos di ketiga jalur: jalankan, lihat jalur mana yang gagal, lalu ganti tepat satu bagian."
+      "instruksi": "Jalankan program awal dan amati jalur yang gagal. Ubah paling banyak satu blok agar robot lolos di ketiga jalur."
     },
     "en": {
       "judul": "Passes One, Fails Another",
-      "instruksi": "This program does not pass all three paths yet: run it, see which path fails, then change exactly one part."
+      "instruksi": "Run the starting program and see which paths fail. Change up to one block so the robot passes all three paths."
     }
   },
   "knobs": {

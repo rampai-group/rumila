@@ -1,6 +1,6 @@
 {
   "id": "telusur-angka-peti-pantai",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,12 +10,12 @@
   "locale": {
     "id": {
       "judul": "Angka Pembuka Koper Pantai",
-      "instruksi": "Ada koper terdampar di pantai. Telusuri angka kuncinya dengan jarimu mengikuti panah supaya koper terbuka.",
+      "instruksi": "Telusuri bentuk angka dengan jarimu sampai selesai untuk membuka koper di pantai.",
       "koper": "koper"
     },
     "en": {
       "judul": "Beach Suitcase Numbers",
-      "instruksi": "A suitcase washed up on the beach. Trace its lock number with your finger, following the arrows, to open it.",
+      "instruksi": "Trace the shape of the number with your finger to unlock the suitcase on the beach.",
       "koper": "suitcase"
     }
   },

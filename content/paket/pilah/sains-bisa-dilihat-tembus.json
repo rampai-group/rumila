@@ -1,6 +1,6 @@
 {
   "id": "sains-bisa-dilihat-tembus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bisa Kulihat Tembus?",
-      "instruksi": "Coba lihat lewat tiap benda. Taruh ke rak tembus pandang atau tidak.",
+      "instruksi": "Lihat titik di balik benda. Jika titik terlihat jelas melalui benda, pilih rak tembus pandang.",
       "b-tembus": "tembus pandang",
       "b-tidak": "tidak tembus pandang",
       "i-lup": "kaca pembesar",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Can I See Through It?",
-      "instruksi": "Try to look through each thing. Put it on the see-through shelf or the not see-through shelf.",
+      "instruksi": "Look at the dots behind each object. If they show clearly through it, choose see-through.",
       "b-tembus": "see-through",
       "b-tidak": "not see-through",
       "i-lup": "magnifying glass",
@@ -51,7 +51,7 @@
       "max": 6,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah benda per putaran: 3 → 6; benda laboratorium berbeda dari paket Intip: Tembus Pandang?"
+      "keterangan": "jumlah gambar percobaan per putaran: 3 sampai 6"
     }
   },
   "assets": [],
@@ -76,7 +76,11 @@
       "id": "lup",
       "labelKey": "i-lup",
       "bin": "tembus",
-      "emoji": "🔍"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-lup",
+        "t": 0
+      }
     },
     {
       "id": "gelas",
@@ -84,7 +88,7 @@
       "bin": "tembus",
       "adegan": {
         "jenis": "ilustrasi",
-        "varian": "awal-gelas",
+        "varian": "tk-bahan-gelas",
         "t": 0
       }
     },
@@ -92,63 +96,101 @@
       "id": "goggle",
       "labelKey": "i-goggle",
       "bin": "tembus",
-      "emoji": "🥽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-goggle",
+        "t": 0
+      }
     },
     {
       "id": "es",
       "labelKey": "i-es",
       "bin": "tembus",
-      "emoji": "🧊",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-es",
+        "t": 0
+      }
     },
     {
       "id": "bohlam",
       "labelKey": "i-bohlam",
       "bin": "tembus",
-      "emoji": "💡"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-bohlam",
+        "t": 0
+      }
     },
     {
       "id": "mika",
       "labelKey": "i-mika",
       "bin": "tembus",
-      "shape": "rect",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-plastik",
+        "t": 0
+      }
     },
     {
       "id": "wajan",
       "labelKey": "i-wajan",
       "bin": "tidak",
-      "emoji": "🍳"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-wajan",
+        "t": 0
+      }
     },
     {
       "id": "kaleng",
       "labelKey": "i-kaleng",
       "bin": "tidak",
-      "emoji": "🥫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-kaleng",
+        "t": 0
+      }
     },
     {
       "id": "batu",
       "labelKey": "i-batu",
       "bin": "tidak",
-      "emoji": "🪨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-batu",
+        "t": 0
+      }
     },
     {
       "id": "cangkir",
       "labelKey": "i-cangkir",
       "bin": "tidak",
-      "emoji": "☕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-cangkir",
+        "t": 0
+      }
     },
     {
       "id": "kotakjus",
       "labelKey": "i-kotakjus",
       "bin": "tidak",
-      "emoji": "🧃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-jus",
+        "t": 0
+      }
     },
     {
       "id": "topi",
       "labelKey": "i-topi",
       "bin": "tidak",
-      "emoji": "🧢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-topi",
+        "t": 0
+      }
     }
   ],
   "pilihan": []

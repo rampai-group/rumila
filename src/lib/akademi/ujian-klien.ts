@@ -12,6 +12,8 @@ import { useCloud } from "@/lib/supabase/family";
 import { kirimAntrean } from "./jejak";
 import { setLevelAnak } from "./konten";
 import type { HasilUjian, JenisUjian } from "./ujian";
+import { KOMPETENSI, TRACK_AKTIF } from "./katalog";
+import { normalisasiHasilUjian } from "./modul";
 
 const PREFIX = "rumila-akademi-ujian-";
 const EVENT = "rumila:akademi-ujian";
@@ -22,7 +24,7 @@ export function ujianAnak(memberId: string): HasilUjian[] {
   if (!adaWindow()) return [];
   try {
     const arr = JSON.parse(localStorage.getItem(PREFIX + memberId) ?? "[]") as unknown;
-    return Array.isArray(arr) ? (arr as HasilUjian[]).filter((h) => h && typeof h.sessionId === "string") : [];
+    return Array.isArray(arr) ? normalisasiHasilUjian((arr as HasilUjian[]).filter((h) => h && typeof h.sessionId === "string"), KOMPETENSI, TRACK_AKTIF) : [];
   } catch {
     return [];
   }
@@ -31,7 +33,7 @@ export function ujianAnak(memberId: string): HasilUjian[] {
 function simpan(memberId: string, daftar: HasilUjian[]) {
   if (!adaWindow()) return;
   try {
-    localStorage.setItem(PREFIX + memberId, JSON.stringify(daftar));
+    localStorage.setItem(PREFIX + memberId, JSON.stringify(normalisasiHasilUjian(daftar, KOMPETENSI, TRACK_AKTIF)));
   } catch {}
   window.dispatchEvent(new CustomEvent(EVENT, { detail: memberId }));
 }
@@ -72,7 +74,7 @@ export async function ambilUjian(memberId: string): Promise<HasilUjian[]> {
   const server: HasilUjian[] = (data ?? []).map((r) => ({ jenis: r.jenis as JenisUjian, level: r.level as LevelId, ruang: r.ruang, sessionId: r.session_id, benar: r.benar, total: r.total, nilai: r.nilai, lulus: r.lulus, at: r.created_at }));
   const pending = ujianAnak(memberId).filter((h) => h.pending);
   // Minta tanggapan API walau baris nilai sudah terlihat: efek jenjang/semester mungkin masih harus diselesaikan.
-  const terkonfirmasi = [...server.filter((s) => !pending.some((h) => h.sessionId === s.sessionId)), ...pending];
+  const terkonfirmasi = normalisasiHasilUjian([...server.filter((s) => !pending.some((h) => h.sessionId === s.sessionId)), ...pending], KOMPETENSI, TRACK_AKTIF);
   simpan(memberId, terkonfirmasi);
   if (pending.length) void kirimTertunda(memberId);
   return terkonfirmasi;

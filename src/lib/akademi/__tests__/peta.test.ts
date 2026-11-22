@@ -151,7 +151,7 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
 
   it("modul selesai tapi kuis belum → Kuis Modul terbuka, modul berikut terkunci", () => {
     const pt = petaJenjang({}, new Set([M1, M2]), KOMP, "PAUD", TRACKS, new Map(), []);
-    expect(pt.ujian).toMatchObject({ jenis: "kuis", ruang: "BILANGAN" });
+    expect(pt.ujian).toMatchObject({ jenis: "kuis", ruang: "MAT:BILANGAN" });
     expect(pt.sekarang).toBeUndefined();
     expect(kode(pt)).toBe("SSKKK");
   });
@@ -159,8 +159,8 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
   it("tautan ujian hanya membuka tahap berikutnya yang ada di peta", () => {
     const selesai = new Set([M1, M2]);
     const awal = petaJenjang({}, selesai, KOMP, "PAUD", TRACKS, new Map(), []);
-    expect(ujianTerbuka(awal, "kuis", "BILANGAN")).toBe(true);
-    expect(ujianTerbuka(awal, "kuis", "URUTAN")).toBe(false);
+    expect(ujianTerbuka(awal, "kuis", "MAT:BILANGAN")).toBe(true);
+    expect(ujianTerbuka(awal, "kuis", "KODE:URUTAN")).toBe(false);
     expect(ujianTerbuka(awal, "semester", "S1")).toBe(false);
     expect(ujianTerbuka(awal, "kenaikan", "")).toBe(false);
     const lanjut = petaJenjang({}, selesai, KOMP, "PAUD", TRACKS, new Map(), [h("kuis", "BILANGAN")]);
@@ -184,6 +184,7 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
     expect(pt.ujian).toMatchObject({ jenis: "semester", ruang: "S1" });
     expect(kode(pt)).toBe("SSKKK");
     expect(pt.semesterAktif).toBe(1);
+    expect(pt.semester[1].terkunci).toBe(true);
   });
 
   it("Ujian Semester 1 lulus → semester 2 terbuka", () => {
@@ -191,6 +192,14 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
     expect(pt.ujian).toBeUndefined();
     expect(kode(pt)).toBe("SSN-K");
     expect(pt.semesterAktif).toBe(2);
+    expect(pt.semester[1].terkunci).toBe(false);
+  });
+
+  it("membuka ujian semester 1 dulu meski semua misi dan kuis telah tersinkron", () => {
+    const kuis = [h("kuis", "BILANGAN"), h("kuis", "URUTAN"), h("kuis", "BENTUK")];
+    const pt = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), kuis);
+    expect(pt.ujian).toMatchObject({ jenis: "semester", ruang: "S1" });
+    expect(pt.semester[1].terkunci).toBe(true);
   });
 
   it("semua tuntas + inti dikuasai → Ujian Akhir; sudah dikerjakan (nilai berapa pun) → jenjang tuntas", () => {

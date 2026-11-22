@@ -9,7 +9,8 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { LEVELS, TRACKS, type LevelId } from "@akademi/schema";
-import { KOMPETENSI } from "@/lib/akademi/katalog";
+import { KOMPETENSI, TRACK_AKTIF } from "@/lib/akademi/katalog";
+import { modulDariRuang } from "@/lib/akademi/modul";
 import { tahunAjaran } from "@/lib/akademi/piagam";
 import { URL_VERIFIKASI, type SnapshotKompetensi, type SnapshotSertifikat } from "@/lib/akademi/sertifikat-inti";
 import { NAMA_UJIAN, type JenisUjian } from "@/lib/akademi/ujian";
@@ -323,7 +324,7 @@ function LembarSertifikat({ p, footer }: { p: BukuSertifikatProps; footer: React
 /* ---------------- 3. hasil belajar ---------------- */
 
 const LABEL_UJIAN = (jenis: string, ruang: string, level: LevelId) => {
-  if (jenis === "kuis") return KOMPETENSI.find((c) => c.level === level && c.unit.id === ruang)?.unit.nama.id ?? ruang;
+  if (jenis === "kuis") return modulDariRuang(level, ruang, KOMPETENSI, TRACK_AKTIF)?.isi[0].unit.nama.id ?? ruang;
   if (jenis === "semester") return `Semester ${ruang.slice(1)}`;
   return "Seluruh jenjang";
 };
@@ -331,7 +332,7 @@ const LABEL_UJIAN = (jenis: string, ruang: string, level: LevelId) => {
 function LembarHasil({ p, footer }: { p: BukuSertifikatProps; footer: ReactNode }) {
   const ujian = p.snapshot.ujian ?? [];
   const besar = ujian.filter((u) => u.jenis !== "kuis").sort((a, b) => (a.jenis === "kenaikan" ? 1 : 0) - (b.jenis === "kenaikan" ? 1 : 0) || a.ruang.localeCompare(b.ruang));
-  const trackDari = (ruang: string) => KOMPETENSI.find((c) => c.level === p.level && c.unit.id === ruang)?.track;
+  const trackDari = (ruang: string) => modulDariRuang(p.level, ruang, KOMPETENSI, TRACK_AKTIF)?.track;
   const perPelajaran = TRACKS.map((t) => ({ t, rows: ujian.filter((u) => u.jenis === "kuis" && trackDari(u.ruang) === t.id) })).filter((g) => g.rows.length);
   const rata = (xs: { nilai: number }[]) => Math.round(xs.reduce((n, x) => n + x.nilai, 0) / Math.max(1, xs.length));
   return (

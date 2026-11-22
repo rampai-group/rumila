@@ -113,6 +113,8 @@ export const PaketPilahObj = z.object({
   mechanic: z.literal("pilah"),
   /** kelompok: seret tiap item ke bin-nya · pilih: sentuh satu pilihan yang benar */
   mode: z.enum(["kelompok", "pilih"]).default("kelompok"),
+  /** Susun isi setiap wadah dari bawah untuk soal piktogram. */
+  layoutBin: z.literal("piktogram").optional(),
   bins: z.array(PilahBin).min(1).max(10),
   items: z.array(PilahItem).min(2),
   pilihan: z.array(PilahRonde).default([]),
@@ -126,6 +128,7 @@ function refinePilah(p: z.infer<typeof PaketPilahObj>, ctx: z.RefinementCtx) {
     if (p.items.length < 4) ctx.addIssue({ code: "custom", path: ["items"], message: "mode kelompok butuh minimal 4 item" });
     for (const i of p.items) if (!bins.has(i.bin)) ctx.addIssue({ code: "custom", path: ["items"], message: `item ${i.id} menunjuk bin ${i.bin} yang tidak ada` });
   } else {
+    if (p.layoutBin) ctx.addIssue({ code: "custom", path: ["layoutBin"], message: "piktogram hanya digunakan dalam mode kelompok" });
     if (p.pilihan.length < 1) ctx.addIssue({ code: "custom", path: ["pilihan"], message: "mode pilih butuh minimal 1 ronde pilihan" });
     for (const r of p.pilihan) {
       for (const c of r.choices) if (!items.has(c)) ctx.addIssue({ code: "custom", path: ["pilihan"], message: `ronde ${r.id}: pilihan ${c} bukan item` });

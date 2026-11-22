@@ -1,6 +1,6 @@
 {
   "id": "sains-urutkan-matahari-bumi-bulan",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -9,19 +9,19 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Susun Model Tata Surya",
-      "instruksi": "Susun model tata surya kecil: siapa di tengah, siapa mengitari siapa. Ikuti petunjuk di atas gambar.",
-      "s-tengah": "Dari tengah ke luar",
-      "s-luar": "Dari luar ke tengah",
+      "judul": "Pusat dan Lintasan di Tata Surya",
+      "instruksi": "Lihat modelnya. Bumi mengitari Matahari. Bulan mengitari Bumi. Susun kartu dari penanda pertama ke penanda terakhir sesuai petunjuk.",
+      "s-tengah": "Mulai dari pusat Matahari, lalu Bumi, dan terakhir Bulan.",
+      "s-luar": "Mulai dari Bulan, lalu Bumi, dan terakhir pusat Matahari.",
       "matahari": "Matahari",
       "bumi": "Bumi",
       "bulan": "Bulan"
     },
     "en": {
-      "judul": "Build a Small Solar System",
-      "instruksi": "Build a small solar system model: who is in the middle, and who goes around whom. Follow the hint above the pictures.",
-      "s-tengah": "From the middle outward",
-      "s-luar": "From the outside in",
+      "judul": "The Sun and the Two Orbits",
+      "instruksi": "Look at the model. Earth orbits the Sun, and the Moon orbits Earth. Put the cards in the order the clue gives.",
+      "s-tengah": "Start at the Sun, then go to Earth, and finally to the Moon.",
+      "s-luar": "Start at the Moon, then go to Earth, and finally back to the Sun.",
       "matahari": "the Sun",
       "bumi": "Earth",
       "bulan": "the Moon"
@@ -33,7 +33,7 @@
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "selalu tiga benda: Matahari di tengah, Bumi mengitari Matahari, Bulan mengitari Bumi; arah susun (dari tengah atau dari luar) ditunjukkan judul"
+      "keterangan": "tiga penanda pada diagram yang sama: pusat Matahari, Bumi di orbit Matahari, Bulan di orbit Bumi"
     }
   },
   "assets": [],
@@ -49,22 +49,29 @@
         {
           "id": "matahari",
           "labelKey": "matahari",
-          "emoji": "☀️",
-          "scale": 2
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-orbit-matahari",
+            "t": 0
+          }
         },
         {
           "id": "bumi",
           "labelKey": "bumi",
-          "emoji": "🌍",
-          "scale": 1
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-orbit-bumi",
+            "t": 0
+          }
         },
         {
           "id": "bulan",
           "labelKey": "bulan",
-          "emoji": "🌕",
-          "scale": 0.5,
-          "color": "#263238",
-          "latar": true
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-orbit-bulan",
+            "t": 0
+          }
         }
       ]
     },
@@ -75,22 +82,29 @@
         {
           "id": "bulan",
           "labelKey": "bulan",
-          "emoji": "🌕",
-          "scale": 0.5,
-          "color": "#263238",
-          "latar": true
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-orbit-bulan",
+            "t": 0
+          }
         },
         {
           "id": "bumi",
           "labelKey": "bumi",
-          "emoji": "🌍",
-          "scale": 1
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-orbit-bumi",
+            "t": 0
+          }
         },
         {
           "id": "matahari",
           "labelKey": "matahari",
-          "emoji": "☀️",
-          "scale": 2
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-orbit-matahari",
+            "t": 0
+          }
         }
       ]
     }

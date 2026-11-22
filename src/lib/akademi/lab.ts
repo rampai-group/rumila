@@ -7,6 +7,8 @@
 
 import { levelIndex, levelMeta, type Competency, type LevelId } from "@akademi/schema";
 import { sudahLulus, type HasilUjian } from "./ujian";
+import { normalisasiHasilUjian, ruangKuis } from "./modul";
+import { TRACK_AKTIF } from "./katalog";
 
 export interface SyaratLab {
   level: LevelId;
@@ -38,6 +40,6 @@ export function keadaanLab(
   if (levelIndex(o.level) > levelIndex(s.level)) return { terbuka: true };
   const isi = o.kompetensi.filter((c) => c.track === "SAINS" && c.level === s.level && c.unit.id === s.unit);
   if (!isi.length) return { terbuka: true };
-  const tuntas = isi.every((c) => o.selesai.has(c.id)) || sudahLulus(o.ujian, "kuis", s.level, s.unit);
+  const tuntas = isi.every((c) => o.selesai.has(c.id)) || sudahLulus(normalisasiHasilUjian(o.ujian, o.kompetensi, TRACK_AKTIF), "kuis", s.level, ruangKuis("SAINS", s.unit));
   return tuntas ? { terbuka: true } : { terbuka: false, syarat: `Sains · ${levelMeta(s.level).pangkat} · ${isi[0].unit.nama.id}` };
 }

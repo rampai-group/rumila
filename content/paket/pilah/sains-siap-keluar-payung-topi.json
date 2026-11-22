@@ -1,6 +1,6 @@
 {
   "id": "sains-siap-keluar-payung-topi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Siap ke Taman: Payung atau Topi",
-      "instruksi": "Lihat langitnya. Hujan? Taruh ke payung. Cerah? Taruh ke topi.",
+      "instruksi": "Lihat langitnya. Hujan biasa? Taruh ke payung. Cerah? Taruh ke topi.",
       "b-payung": "bawa payung",
       "b-topi": "pakai topi",
       "i-terik": "matahari terik di langit biru",
@@ -19,13 +19,13 @@
       "i-panas": "siang panas sekali",
       "i-pantai": "pantai cerah dan panas",
       "i-hujan": "hujan turun",
-      "i-petir": "hujan dan petir",
       "i-tetes": "tetes hujan jatuh",
-      "i-gerimis": "gerimis rintik-rintik"
+      "i-gerimis": "gerimis rintik-rintik",
+      "i-awan-hujan": "hujan biasa, tanpa petir"
     },
     "en": {
       "judul": "Ready for the Park: Umbrella or Hat",
-      "instruksi": "Look at the sky. Rainy? Put it with the umbrella. Sunny? Put it with the hat.",
+      "instruksi": "Look at the sky. Rain with no lightning? Put it with the umbrella. Sunny? Put it with the hat.",
       "b-payung": "take an umbrella",
       "b-topi": "wear a hat",
       "i-terik": "hot sun in a blue sky",
@@ -34,9 +34,9 @@
       "i-panas": "a very hot afternoon",
       "i-pantai": "a sunny, hot beach",
       "i-hujan": "rain is falling",
-      "i-petir": "rain and lightning",
       "i-tetes": "raindrops falling",
-      "i-gerimis": "light drizzle"
+      "i-gerimis": "light drizzle",
+      "i-awan-hujan": "rain without lightning"
     }
   },
   "knobs": {
@@ -103,10 +103,11 @@
       "emoji": "🌧️"
     },
     {
-      "id": "petir",
-      "labelKey": "i-petir",
+      "id": "awan-hujan",
+      "labelKey": "i-awan-hujan",
       "bin": "payung",
-      "emoji": "⛈️"
+      "emoji": "🌧️",
+      "color": "#405780"
     },
     {
       "id": "tetes",

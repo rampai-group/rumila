@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kubus atau Persegi?",
-      "instruksi": "Bilangan kubik = bilangan dikali dirinya tiga kali (2 × 2 × 2 = 8). Taruh tiap bilangan di raknya.",
+      "instruksi": "Bilangan kubik adalah hasil kali tiga faktor yang sama (2 × 2 × 2 = 8). Taruh tiap bilangan di raknya.",
       "b-kuadrat": "kuadrat",
       "b-kubik": "kubik",
       "b-bukan": "bukan keduanya",
@@ -37,7 +37,7 @@
     },
     "en": {
       "judul": "Cube or Square?",
-      "instruksi": "A cube number is a number multiplied by itself three times (2 × 2 × 2 = 8). Put each number on its shelf.",
+      "instruksi": "A cube number is the product of three equal factors (2 × 2 × 2 = 8). Put each number on its shelf.",
       "b-kuadrat": "square",
       "b-kubik": "cube",
       "b-bukan": "neither",

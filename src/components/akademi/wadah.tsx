@@ -132,18 +132,24 @@ export interface WadahProps extends Omit<HTMLAttributes<HTMLDivElement>, "childr
   minIsi?: number;
   /** paksa bentuk wadah (mis. label menyebut "rak"); kosong = bentuk dari panggung */
   bentuk?: BentukWadah;
-  /** "baris" = label di kiri, isi di kanan (HP dengan ≥ 3 wadah: kolom terlalu sempit untuk nama + ciri) */
-  arah?: "kolom" | "baris";
+  /** Pada piktogram, penempatan pertama menjadi dasar tumpukan. */
+  arah?: "kolom" | "baris" | "piktogram";
+  /** Isi wadah kelompok tetap dekat label ketika wadah tetangga bertambah tinggi. */
+  isiDariAtas?: boolean;
 }
 
 /** Wadah bertema dunia: label di atas, area isi terang di dalam badan wadah. */
-export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, warnaKategori, minIsi = 56, bentuk: _bentuk, arah = "kolom", className = "", style, ...rest }, ref) {
+export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, warnaKategori, minIsi = 56, bentuk: _bentuk, arah = "kolom", isiDariAtas, className = "", style, ...rest }, ref) {
   // Gaya bersih (artifact "Gaya Soal RINOYA"): semua wadah = kartu putih bertepi abu + bayangan bawah; bentuk dunia
   // (keranjang/pot/peti) tidak lagi digambar di layar soal. `badan()` dipertahankan untuk layar dunia lain.
   void _bentuk;
   const { skala } = usePanggung();
   const baris = arah === "baris";
+  const piktogram = arah === "piktogram";
   const aktif = ring && ring !== "transparent";
+  const tataIsi = piktogram
+    ? "flex-col-reverse items-center justify-start px-0.5"
+    : `flex-wrap items-center justify-center px-1.5 ${isiDariAtas ? "content-start" : "content-center"}`;
   return (
     <div
       ref={ref}
@@ -151,19 +157,19 @@ export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ lab
       className={`relative flex rounded-[18px] bg-white transition-transform ${baris ? "flex-row items-stretch" : "flex-col"} ${className}`}
       style={{
         boxShadow: `${warnaKategori ? `inset 0 5px 0 ${warnaKategori}, ` : ""}0 0 0 ${aktif ? 3 : 2}px ${aktif ? ring : GARIS}, 0 4px 0 ${GARIS_BAWAH}`,
-        padding: 8 * skala,
-        gap: 8 * skala,
+        padding: (piktogram ? 5 : 8) * skala,
+        gap: (piktogram ? 6 : 8) * skala,
         ...style,
       }}
     >
       <div
-        className={`flex items-center px-1.5 py-1 text-[#14223a] ${baris ? "w-[42%] max-w-[180px] shrink-0 justify-start" : "max-w-full justify-center self-center"}`}
+        className={`flex items-center py-1 text-[#14223a] ${piktogram ? "px-0.5" : "px-1.5"} ${baris ? "w-[42%] max-w-[180px] shrink-0 justify-start" : "w-full justify-center"}`}
         style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16 * skala, lineHeight: 1.1 }}
       >
         {label}
       </div>
       <div
-        className="flex min-w-0 flex-1 flex-wrap content-center items-center justify-center gap-1.5 rounded-[12px] px-1.5 py-1"
+        className={`flex min-w-0 flex-1 gap-1.5 rounded-[12px] py-1 ${tataIsi}`}
         style={{ minHeight: minIsi * skala, background: warnaKategori ? `${warnaKategori}30` : hijau ? "#e6f8ef" : aktif ? "color-mix(in srgb, var(--pilar, #0786eb) 7%, #fff)" : "color-mix(in srgb, var(--pilar, #0786eb) 13%, #fff)", border: `2px dashed ${warnaKategori ?? (hijau ? "#22b573" : aktif ? "var(--pilar, #0786eb)" : "#c9d2df")}` }}
       >
         {children}

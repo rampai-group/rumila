@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-dapur",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -151,7 +151,11 @@
       "id": "toples",
       "labelKey": "i-toples",
       "bin": "kaca",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-toples",
+        "t": 0
+      }
     },
     {
       "id": "sumpit",

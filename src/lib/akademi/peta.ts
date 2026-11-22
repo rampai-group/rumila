@@ -16,6 +16,7 @@ import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEven
 import { AMBANG_STIKER, statusLencana, type StatusLencana } from "./koleksi";
 import { proyeksi, type Penguasaan } from "./mastery";
 import { sudahDikerjakan, sudahLulus, ruangSemester, type HasilUjian, type JenisUjian } from "./ujian";
+import { normalisasiHasilUjian, ruangKuis, urutModul } from "./modul";
 
 export interface MisiPeta {
   /** nomor urut di jalur jenjang, mulai 1 */
@@ -46,7 +47,7 @@ export interface UnitPeta {
 /** Ujian yang sedang terbuka di jalur jenjang. */
 export interface UjianPeta {
   jenis: Exclude<JenisUjian, "penempatan">;
-  /** kuis: id unit · semester: "S1"/"S2" · kenaikan: "" */
+  /** kuis: pelajaran:id unit · semester: "S1"/"S2" · kenaikan: "" */
   ruang: string;
   kompetensiIds: string[];
   unit?: UnitPeta;
@@ -153,21 +154,14 @@ export function petaJenjang(
   /** hasil ujian anak; tanpa ini peta berjalan seperti sebelum Tahap 3 (tanpa kuis/ujian) */
   ujian?: HasilUjian[],
 ): PetaJenjang {
-  // unit per pelajaran, urut kemunculan
-  const perTrack = tracks.map((track) => {
-    const map = new Map<string, Competency[]>();
-    for (const c of kompetensi) if (c.level === level && c.track === track) (map.get(c.unit.id) ?? map.set(c.unit.id, []).get(c.unit.id)!).push(c);
-    return [...map.values()].map((isi, i) => ({ track, ke: i + 1, isi }));
-  });
-  const terbanyak = Math.max(0, ...perTrack.map((u) => u.length));
-  const urutUnit = [];
-  for (let i = 0; i < terbanyak; i++) for (const u of perTrack) if (u[i]) urutUnit.push(u[i]);
+  const urutUnit = urutModul(kompetensi, level, tracks);
+  const hasilUjian = ujian ? normalisasiHasilUjian(ujian, kompetensi, tracks) : [];
 
   let nomor = 0;
   let jumlahSelesai = 0;
   const inti: Hitungan = { dikuasai: 0, total: 0 };
   const pakaiUjian = !!ujian;
-  const lulus = (jenis: JenisUjian, ruang: string) => !pakaiUjian || sudahLulus(ujian!, jenis, level, ruang);
+  const lulus = (jenis: JenisUjian, ruang: string) => !pakaiUjian || sudahLulus(hasilUjian, jenis, level, ruang);
   const unit: UnitPeta[] = urutUnit.map(({ track, ke, isi }) => {
     const misi = isi.map((c) => {
       const dikuasai = peng[c.id]?.status === "dikuasai";
@@ -181,16 +175,18 @@ export function petaJenjang(
       return m;
     });
     const id = isi[0].unit.id;
-    return { id, track, ke, semester: 1 as 1 | 2, nama: isi[0].unit.nama, misi, kuisLulus: lulus("kuis", id), lencana: statusLencana(misi.filter((m) => m.kompetensi.core).map((m) => (m.dikuasai ? "dikuasai" : m.selesai ? "berkembang" : "belum"))) };
+    return { id, track, ke, semester: 1 as 1 | 2, nama: isi[0].unit.nama, misi, kuisLulus: lulus("kuis", ruangKuis(track, id)), lencana: statusLencana(misi.filter((m) => m.kompetensi.core).map((m) => (m.dikuasai ? "dikuasai" : m.selesai ? "berkembang" : "belum"))) };
   });
 
   const semester = bagiSemester(unit);
   const semesterLulus: [boolean, boolean] = [lulus("semester", ruangSemester(1)), lulus("semester", ruangSemester(2))];
+  const adaS2 = (semester[1]?.total ?? 0) > 0;
+  const terbukaS2 = adaS2 && semester[0].tuntas && semester[0].unit.every((u) => u.kuisLulus) && semesterLulus[0];
+  if (adaS2) semester[1].terkunci = !terbukaS2;
   // Ujian Akhir sekali-jalan: selesai dikerjakan = tuntas, berapa pun nilainya
   const kenaikanSelesai = !pakaiUjian || sudahDikerjakan(ujian!, "kenaikan", level, "");
   const tercapai = inti.total > 0 && inti.dikuasai === inti.total;
   const idsDari = (us: UnitPeta[]) => us.flatMap((u) => u.misi.map((m) => m.kompetensi.id));
-  const adaS2 = (semester[1]?.total ?? 0) > 0;
 
   // unit aktif = unit pertama yang belum tuntas (misi belum selesai, atau Kuis Modul belum lulus)
   const aktif = unit.findIndex((u) => !u.misi.every((m) => m.selesai) || !u.kuisLulus);
@@ -203,10 +199,10 @@ export function petaJenjang(
       ujianBerikut = { jenis: "semester", ruang: ruangSemester(1), kompetensiIds: idsDari(semester[0].unit), semester: 1 };
       batas = aktif - 1;
     } else if (u.misi.every((m) => m.selesai)) {
-      ujianBerikut = { jenis: "kuis", ruang: u.id, kompetensiIds: idsDari([u]), unit: u };
+      ujianBerikut = { jenis: "kuis", ruang: ruangKuis(u.track, u.id), kompetensiIds: idsDari([u]), unit: u };
     }
   } else if (pakaiUjian && unit.length) {
-    const ke: 1 | 2 = adaS2 ? 2 : 1;
+    const ke: 1 | 2 = terbukaS2 ? 2 : 1;
     if (!semesterLulus[ke - 1]) ujianBerikut = { jenis: "semester", ruang: ruangSemester(ke), kompetensiIds: idsDari(semester[ke - 1].unit), semester: ke };
     else if (!kenaikanSelesai && tercapai) ujianBerikut = { jenis: "kenaikan", ruang: "", kompetensiIds: idsDari(unit) };
   }
@@ -214,7 +210,7 @@ export function petaJenjang(
 
   const sekarang = aktif >= 0 && batas >= aktif ? unit[aktif].misi.find((m) => !m.selesai) : undefined;
   if (sekarang) sekarang.sekarang = true;
-  const semesterAktif: 1 | 2 = semester[0]?.tuntas && semesterLulus[0] && adaS2 ? 2 : 1;
+  const semesterAktif: 1 | 2 = terbukaS2 ? 2 : 1;
 
   const pemantapan = !sekarang && !tercapai && (!ujianBerikut || ujianBerikut.jenis === "kenaikan") && (aktif < 0 || !pakaiUjian) ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
   return { level, unit, semester, semesterAktif, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan, ujian: ujianBerikut, semesterLulus, kenaikanSelesai, lulusJenjang: tercapai && kenaikanSelesai };

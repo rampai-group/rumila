@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Dua Bug di Jalur Meteor",
-      "instruksi": "Program penjelajah tiga bagian ini punya dua kesalahan berbeda jenis: uji di ketiga jalur meteor, telusuri bagian mana yang menjadi penyebab, lalu perbaiki tepat dua keping."
+      "instruksi": "Jalankan program awal di ketiga jalur meteor. Cari penyebab kegagalan, lalu ubah paling banyak dua blok agar robot lolos di semua jalur."
     },
     "en": {
       "judul": "Two Bugs on the Meteor Route",
-      "instruksi": "This three-part rover program has two different kinds of mistakes: test it on all three meteor routes, trace which part causes the trouble, then fix exactly two pieces."
+      "instruksi": "Run the starting program on all three meteor routes. Find the cause of each failure, then change up to two blocks to pass every route."
     }
   },
   "knobs": {},

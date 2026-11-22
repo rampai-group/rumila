@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Meleset Dua Kali",
-      "instruksi": "Program ini meleset dua kali: jalankan, perhatikan, lalu perbaiki tepat dua blok."
+      "instruksi": "Jalankan program awal dan lihat dua kesalahannya. Ubah paling banyak dua blok."
     },
     "en": {
       "judul": "Missed Twice",
-      "instruksi": "This program goes wrong twice: run it, watch closely, then fix exactly two blocks."
+      "instruksi": "Run the starter program and spot two mistakes. Change up to two blocks."
     }
   },
   "knobs": {

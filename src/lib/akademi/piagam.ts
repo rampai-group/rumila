@@ -8,6 +8,7 @@ import { levelIndex, levelMeta, type Competency, type LevelId, type TrackId } fr
 import { TRACK_AKTIF } from "./katalog";
 import { petaJenjang } from "./peta";
 import { terbaik, type HasilUjian } from "./ujian";
+import { normalisasiHasilUjian, ruangKuis } from "./modul";
 
 export interface PiagamModul {
   level: LevelId;
@@ -46,10 +47,10 @@ const urutWaktu = <T extends { at: string }>(a: T, b: T) => (a.at < b.at ? -1 : 
 export function piagamModul(hasil: HasilUjian[], kompetensi: Competency[]): PiagamModul[] {
   const out: PiagamModul[] = [];
   const cache = new Map<LevelId, ReturnType<typeof petaJenjang>>();
-  for (const h of terbaik(hasil).values()) {
+  for (const h of terbaik(normalisasiHasilUjian(hasil, kompetensi, TRACK_AKTIF)).values()) {
     if (h.jenis !== "kuis" || !h.lulus) continue;
     const peta = cache.get(h.level) ?? cache.set(h.level, petaJenjang({}, new Set(), kompetensi, h.level, TRACK_AKTIF)).get(h.level)!;
-    const u = peta.unit.find((x) => x.id === h.ruang);
+    const u = peta.unit.find((x) => ruangKuis(x.track, x.id) === h.ruang);
     if (!u) continue;
     out.push({ level: h.level, unitId: u.id, track: u.track, ke: u.ke, nama: u.nama, nilai: h.nilai, at: h.at, sessionId: h.sessionId });
   }
@@ -58,7 +59,7 @@ export function piagamModul(hasil: HasilUjian[], kompetensi: Competency[]): Piag
 
 /** Semua Sertifikat Semester anak (Ujian Semester lulus), lengkap nilai per pelajaran dari Kuis Modul. */
 export function sertifikatSemester(hasil: HasilUjian[], kompetensi: Competency[]): SertifikatSemester[] {
-  const terbaikMap = terbaik(hasil);
+  const terbaikMap = terbaik(normalisasiHasilUjian(hasil, kompetensi, TRACK_AKTIF));
   const out: SertifikatSemester[] = [];
   for (const h of terbaikMap.values()) {
     if (h.jenis !== "semester" || !h.lulus) continue;
@@ -67,7 +68,7 @@ export function sertifikatSemester(hasil: HasilUjian[], kompetensi: Competency[]
     const unit = peta.semester[ke - 1]?.unit ?? [];
     const perTrack = new Map<TrackId, number[]>();
     for (const u of unit) {
-      const kuis = terbaikMap.get(`kuis|${h.level}|${u.id}`);
+      const kuis = terbaikMap.get(`kuis|${h.level}|${ruangKuis(u.track, u.id)}`);
       if (kuis?.lulus) (perTrack.get(u.track) ?? perTrack.set(u.track, []).get(u.track)!).push(kuis.nilai);
     }
     const perPelajaran = TRACK_AKTIF.filter((t) => perTrack.has(t)).map((t) => {

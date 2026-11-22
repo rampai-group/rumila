@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Dua Bug di Tiga Jalur",
-      "instruksi": "Program tiga bagian ini punya dua kesalahan: uji di ketiga jalur, cari penyebabnya, lalu perbaiki tepat dua bagian."
+      "instruksi": "Jalankan program awal di ketiga jalur. Cari penyebab kegagalan, lalu ubah paling banyak dua blok agar robot lolos di semua jalur."
     },
     "en": {
       "judul": "Two Bugs, Three Paths",
-      "instruksi": "This three-part program has two mistakes: test it on all three paths, find the causes, then fix exactly two parts."
+      "instruksi": "Run the starting program on all three paths. Find the cause of each failure, then change up to two blocks to pass every path."
     }
   },
   "knobs": {

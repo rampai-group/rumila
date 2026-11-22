@@ -34,15 +34,7 @@
       "planet-neptunus": "Neptune"
     }
   },
-  "knobs": {
-    "steps": {
-      "min": 4,
-      "max": 8,
-      "default": 4,
-      "step": 1,
-      "keterangan": "jumlah planet yang disusun: 4 → 8; tiap ronde memakai pilihan planet berbeda, tetap urut dari Matahari"
-    }
-  },
+  "knobs": {},
   "assets": [],
   "generatif": true,
   "rounds": 10,

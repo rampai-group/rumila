@@ -1,6 +1,6 @@
 {
   "id": "sains-bagian-tumbuhan-di-taman",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -99,8 +99,11 @@
       "id": "akarrumput",
       "labelKey": "i-akarrumput",
       "bin": "pilihan",
-      "color": "#bcaaa4",
-      "shape": "akar"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-akar-serabut",
+        "t": 0
+      }
     },
     {
       "id": "batangpohon",
@@ -112,7 +115,11 @@
       "id": "batangbambu",
       "labelKey": "i-batangbambu",
       "bin": "pilihan",
-      "emoji": "🎋"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-batang-bambu",
+        "t": 0
+      }
     },
     {
       "id": "daunhijau",

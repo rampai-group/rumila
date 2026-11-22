@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-hitung-kaki-hewan-lain",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -151,7 +151,10 @@
       "id": "tikus",
       "labelKey": "i-tikus",
       "bin": "k4",
-      "emoji": "🐭"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-tikus-utuh"
+      }
     },
     {
       "id": "kecoak",

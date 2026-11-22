@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Detektif Segi Empat",
-      "instruksi": "Baca petunjuk sifatnya, lalu sentuh segi empat yang cocok.",
+      "instruksi": "Baca sifat bangunnya, lalu pilih nama segi empat yang paling khusus.",
       "q1": "4 sisi sama panjang dan 4 sudut siku-siku.",
       "c1": "persegi",
       "c2": "belah ketupat",
@@ -24,15 +24,15 @@
       "q5": "Dua pasang sisi sejajar, tidak ada sudut siku-siku, dan sisi tidak semua sama.",
       "q6": "Dua pasang sisi berdampingan sama panjang dan tidak ada sisi yang sejajar.",
       "q7": "Diagonalnya sama panjang dan berpotongan tegak lurus di tengah.",
-      "q8": "Diagonalnya sama panjang tetapi tidak tegak lurus.",
+      "q8": "Diagonalnya sama panjang, saling membagi dua, dan tidak tegak lurus.",
       "q9": "Memiliki 4 garis simetri.",
-      "q10": "Hanya 1 garis simetri dan diagonalnya tegak lurus.",
+      "q10": "Hanya 1 garis simetri, diagonalnya tegak lurus, dan tidak ada sisi sejajar.",
       "q11": "Tidak punya garis simetri, tetapi punya dua pasang sisi sejajar.",
       "pilihan": "pilihan"
     },
     "en": {
       "judul": "Quadrilateral Detective",
-      "instruksi": "Read the clues about its properties, then touch the matching quadrilateral.",
+      "instruksi": "Read the properties, then choose the most specific name for the quadrilateral.",
       "q1": "4 equal sides and 4 right angles.",
       "c1": "square",
       "c2": "rhombus",
@@ -46,9 +46,9 @@
       "q5": "Two pairs of parallel sides, no right angles, and not all sides equal.",
       "q6": "Two pairs of equal adjacent sides and no parallel sides.",
       "q7": "Its diagonals are equal and cross at right angles in the middle.",
-      "q8": "Its diagonals are equal but not perpendicular.",
+      "q8": "Its diagonals are equal, bisect each other, and are not perpendicular.",
       "q9": "It has 4 lines of symmetry.",
-      "q10": "Only 1 line of symmetry, and its diagonals are perpendicular.",
+      "q10": "Only 1 line of symmetry, perpendicular diagonals, and no parallel sides.",
       "q11": "No lines of symmetry, but two pairs of parallel sides.",
       "pilihan": "choices"
     }

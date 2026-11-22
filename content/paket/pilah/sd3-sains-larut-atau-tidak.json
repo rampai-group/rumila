@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-larut-atau-tidak",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,7 @@
       "i-gula": "gula pasir",
       "i-garam": "garam",
       "i-gulabatu": "gula batu",
-      "i-susububuk": "susu bubuk",
+      "i-susububuk": "gula pasir digiling halus",
       "i-sirup": "bubuk minuman rasa jeruk",
       "i-pasir": "pasir",
       "i-kerikil": "kerikil",
@@ -33,7 +33,7 @@
       "i-gula": "sugar",
       "i-garam": "salt",
       "i-gulabatu": "rock sugar",
-      "i-susububuk": "milk powder",
+      "i-susububuk": "finely ground pure sugar",
       "i-sirup": "orange drink powder",
       "i-pasir": "sand",
       "i-kerikil": "gravel",
@@ -98,7 +98,10 @@
       "id": "susububuk",
       "labelKey": "i-susububuk",
       "bin": "larut",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gula-halus"
+      }
     },
     {
       "id": "sirup",
@@ -135,7 +138,10 @@
       "id": "kacanghijau",
       "labelKey": "i-kacanghijau",
       "bin": "tidak",
-      "emoji": "🥜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kacang-hijau"
+      }
     },
     {
       "id": "serbukkayu",

@@ -345,7 +345,10 @@
         {
           "id": "d",
           "labelKey": "botol-d",
-          "emoji": "🥛"
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "botol-air"
+          }
         }
       ]
     },

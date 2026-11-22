@@ -1,6 +1,6 @@
 {
   "id": "piktogram-sayur-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -166,5 +166,6 @@
       "bin": "tomat",
       "emoji": "🍅"
     }
-  ]
+  ],
+  "layoutBin": "piktogram"
 }

@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ukur-kubus-temuan-kebun",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD1",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -16,7 +16,7 @@
       "bulu": "bulu burung",
       "cacing": "cacing tanah",
       "ranting": "ranting kecil",
-      "buncis": "buncis",
+      "buncis": "mentimun",
       "jagung": "jagung",
       "daunpisang": "sobekan daun pisang"
     },
@@ -28,7 +28,7 @@
       "bulu": "bird feather",
       "cacing": "earthworm",
       "ranting": "small twig",
-      "buncis": "green bean",
+      "buncis": "cucumber",
       "jagung": "corn cob",
       "daunpisang": "strip of banana leaf"
     }

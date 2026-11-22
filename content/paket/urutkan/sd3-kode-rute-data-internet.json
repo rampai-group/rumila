@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-rute-data-internet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -582,5 +582,6 @@
         }
       ]
     }
-  ]
+  ],
+  "potong": "tengah"
 }

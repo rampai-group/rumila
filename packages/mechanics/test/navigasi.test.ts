@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { ContentPack, type PaketNavigasi } from "@akademi/schema";
-import { buatRonde, buatRondeNavigasi, hitungBlok, jalankan, knobDefaults, nilai, nilaiNavigasi, optimal, type NavBlock, type NavGrid } from "../src";
+import { buatRonde, buatRondeNavigasi, hitungBlok, jalankan, kapasitasRakNavigasi, knobDefaults, nilai, nilaiNavigasi, optimal, type NavBlock, type NavGrid } from "../src";
 import lurus from "../../../content/golden/paket-robot-ke-bintang-lurus.json";
+import putarSeperempat from "../../../content/paket/navigasi/sd2-mat-putar-robot-seperempat.json";
+import debugTigaJalur from "../../../content/paket/navigasi/sd5-kode-perbaiki-kalau.json";
 
 const grid = (over: Partial<NavGrid> = {}): NavGrid => ({
   id: "g", w: 5, h: 3, start: { x: 0, y: 1, dir: "E" }, goal: { x: 3, y: 1 }, walls: [], rocks: [], optimal: 3, ...over,
@@ -125,10 +127,36 @@ describe("buatRondeNavigasi + nilaiNavigasi", () => {
     expect(nilaiNavigasi({ ...r, rackSlots: 2 }, { program: [M, M, M] }).benar).toBe(false);
     expect(nilaiNavigasi({ ...r, rackSlots: 2 }, { program: [{ cmd: "ulangi", n: 3, body: [M] }] }).benar).toBe(true);
   });
+  it("rak peta belok SD2 menampung sembilan blok yang dibutuhkan", () => {
+    const paket = ContentPack.parse(putarSeperempat) as PaketNavigasi;
+    const r = buatRondeNavigasi({ ...paket, grids: paket.grids.filter(g => g.id === "kanan-kanan-kiri") }, {}, 0);
+    const kiri: NavBlock = { cmd: "kiri" };
+    const program = [kiri, M, M, M, kiri, M, M, M, M];
+    expect(optimal(r.grids[0], r.commands)).toBe(9);
+    expect(kapasitasRakNavigasi(r)).toBe(hitungBlok(program));
+    expect(nilaiNavigasi(r, { program }).benar).toBe(true);
+  });
   it("debug: edits ≠ fixes → salah", () => {
     const r = { ...buatRondeNavigasi(p, { distance: 3 }, 1), debug: true, fixes: 1 };
     expect(nilaiNavigasi(r, { program: [M, M, M], edits: 2 }).benar).toBe(false);
     expect(nilaiNavigasi(r, { program: [M, M, M], edits: 1 }).benar).toBe(true);
+  });
+  it("rak debug tanpa batas eksplisit menampung perbaikan di program awal yang panjang", () => {
+    const paket = ContentPack.parse(debugTigaJalur) as PaketNavigasi;
+    const group = paket.grids[0].group;
+    const r = buatRondeNavigasi({ ...paket, grids: paket.grids.filter(g => g.group === group) }, {}, 0);
+
+    expect(r.grids).toHaveLength(3);
+    expect(r.rackSlots).toBeUndefined();
+    expect(hitungBlok(r.program)).toBe(11);
+    expect(kapasitasRakNavigasi(r)).toBe(11);
+    expect(nilaiNavigasi(r, { program: r.program, edits: 0 }).benar).toBe(false);
+
+    const program: NavBlock[] = [...r.program.slice(0, -1), { cmd: "ulangi", n: 3, body: [{ cmd: "kalau" }] }];
+    expect(hitungBlok(program)).toBe(kapasitasRakNavigasi(r));
+    expect(nilaiNavigasi(r, { program, edits: 1 })).toMatchObject({ benar: true, detail: { outcomes: ["bintang", "bintang", "bintang"] } });
+    expect(nilaiNavigasi({ ...r, rackSlots: 8 }, { program, edits: 1 }).benar).toBe(false);
+    expect(nilaiNavigasi(r, { program: [...program, M], edits: 1 }).benar).toBe(false);
   });
   it("mode langsung memakai j.langsung", () => {
     const r = { ...buatRondeNavigasi(p, { distance: 2 }, 1), execMode: "langsung" as const };

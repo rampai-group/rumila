@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gerak-taman-kota",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,7 @@
       "b-putar": "berputar di tempat",
       "i-tenis": "bola tenis menuruni jalan miring",
       "i-kaleng": "kaleng bulat menuruni papan miring",
-      "i-semangka": "semangka jatuh di jalan menurun",
+      "i-semangka": "semangka utuh jatuh di jalan menurun",
       "i-boling": "bola boling di lintasan",
       "i-seluncur": "anak berseluncur di arena es",
       "i-keretaluncur": "anak duduk di kardus, meluncur di rumput miring",
@@ -35,7 +35,7 @@
       "b-putar": "spins on the spot",
       "i-tenis": "a tennis ball going down a ramp",
       "i-kaleng": "a round can going down a sloping board",
-      "i-semangka": "a watermelon on a downhill path",
+      "i-semangka": "a whole watermelon falling onto a sloping path",
       "i-boling": "a bowling ball on the lane",
       "i-seluncur": "a child skating on an ice rink",
       "i-keretaluncur": "a child sitting on cardboard, sliding down a grassy slope",
@@ -102,7 +102,10 @@
       "id": "semangka",
       "labelKey": "i-semangka",
       "bin": "gelinding",
-      "emoji": "🍉"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-semangka-utuh"
+      }
     },
     {
       "id": "boling",

@@ -1,6 +1,6 @@
 {
   "id": "sains-darat-air-udara-safari",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,36 +9,36 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Hewan Jauh, Tempat Mana?",
-      "instruksi": "Robot bertemu hewan dari jauh: antar tiap hewan ke tempat hidupnya.",
-      "darat": "darat",
-      "air": "air",
-      "udara": "udara",
-      "i-gajah": "gajah",
-      "i-zebra": "zebra",
-      "i-kuda": "kuda",
-      "i-hiu": "hiu",
-      "i-lumba": "lumba-lumba",
-      "i-udang": "udang",
-      "i-elang": "elang",
-      "i-burunghantu": "burung hantu",
-      "i-lebah": "lebah"
+      "judul": "Cara Bergerak Hewan Safari",
+      "instruksi": "Dengarkan gerak hewan safari, lalu pilih rak berjalan, berenang, atau terbang.",
+      "darat": "berjalan",
+      "air": "berenang",
+      "udara": "terbang",
+      "i-gajah": "gajah sedang berjalan",
+      "i-zebra": "zebra sedang berjalan",
+      "i-kuda": "kuda sedang berjalan",
+      "i-hiu": "hiu sedang berenang",
+      "i-lumba": "lumba-lumba sedang berenang",
+      "i-udang": "udang sedang berenang",
+      "i-elang": "elang sedang terbang",
+      "i-burunghantu": "burung hantu sedang terbang",
+      "i-lebah": "lebah sedang terbang"
     },
     "en": {
-      "judul": "Faraway Animals, Which Home?",
-      "instruksi": "Robot meets animals from far away: take each animal to where it lives.",
-      "darat": "land",
-      "air": "water",
-      "udara": "sky",
-      "i-gajah": "elephant",
-      "i-zebra": "zebra",
-      "i-kuda": "horse",
-      "i-hiu": "shark",
-      "i-lumba": "dolphin",
-      "i-udang": "shrimp",
-      "i-elang": "eagle",
-      "i-burunghantu": "owl",
-      "i-lebah": "bee"
+      "judul": "How Safari Animals Move",
+      "instruksi": "Listen to how each safari animal moves, then choose walking, swimming, or flying.",
+      "darat": "walking",
+      "air": "swimming",
+      "udara": "flying",
+      "i-gajah": "An elephant is walking",
+      "i-zebra": "A zebra is walking",
+      "i-kuda": "A horse is walking",
+      "i-hiu": "A shark is swimming",
+      "i-lumba": "A dolphin is swimming",
+      "i-udang": "A shrimp is swimming",
+      "i-elang": "An eagle is flying",
+      "i-burunghantu": "An owl is flying",
+      "i-lebah": "A bee is flying"
     }
   },
   "knobs": {
@@ -47,7 +47,7 @@
       "max": 3,
       "default": 2,
       "step": 1,
-      "keterangan": "jumlah tempat: 2 (darat, air) → 3 (tambah udara)"
+      "keterangan": "jumlah cara: 2 (berjalan, berenang) sampai 3 (tambah terbang)"
     },
     "itemCount": {
       "min": 4,
@@ -66,7 +66,7 @@
     {
       "id": "darat",
       "labelKey": "darat",
-      "emoji": "🌾",
+      "emoji": "🐾",
       "color": "#c5e1a5"
     },
     {
@@ -78,7 +78,7 @@
     {
       "id": "udara",
       "labelKey": "udara",
-      "emoji": "☁️",
+      "emoji": "🐦",
       "color": "#e3f2fd"
     }
   ],

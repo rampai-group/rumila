@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-kupu-kupu",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -69,8 +69,12 @@
         {
           "id": "telur",
           "labelKey": "kupu-telur",
-          "emoji": "🥚",
-          "scale": 0.6
+          "scale": 0.6,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -80,10 +84,12 @@
         {
           "id": "kepompong",
           "labelKey": "kupu-kepompong",
-          "color": "#8d6e63",
-          "shape": "rect",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -100,8 +106,12 @@
         {
           "id": "telur",
           "labelKey": "gemuk-telur",
-          "emoji": "🥚",
-          "scale": 0.6
+          "scale": 0.6,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "gemuk",
@@ -112,10 +122,12 @@
         {
           "id": "kepompong",
           "labelKey": "gemuk-kepompong",
-          "color": "#8d6e63",
-          "shape": "rect",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -132,8 +144,12 @@
         {
           "id": "telur",
           "labelKey": "bunga-telur",
-          "emoji": "🥚",
-          "scale": 0.6
+          "scale": 0.6,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -143,10 +159,12 @@
         {
           "id": "kepompong",
           "labelKey": "bunga-kepompong",
-          "color": "#8d6e63",
-          "shape": "rect",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",

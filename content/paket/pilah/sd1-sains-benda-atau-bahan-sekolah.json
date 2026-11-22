@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-benda-atau-bahan-sekolah",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -82,8 +82,10 @@
       "id": "meja",
       "labelKey": "i-meja",
       "bin": "benda",
-      "emoji": "🪑",
-      "color": "#a1887f"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-meja"
+      }
     },
     {
       "id": "kayu",

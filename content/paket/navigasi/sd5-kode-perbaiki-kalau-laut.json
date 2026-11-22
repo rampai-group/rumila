@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Robot Tersangkut di Laut",
-      "instruksi": "Program robot lolos di satu jalur laut tetapi tersangkut di jalur lain: jalankan di ketiga jalur, cari penyebabnya, lalu ganti tepat satu keping."
+      "instruksi": "Jalankan program awal di ketiga jalur laut. Amati yang gagal, lalu ubah paling banyak satu blok agar robot lolos di semua jalur."
     },
     "en": {
       "judul": "The Robot Stuck at Sea",
-      "instruksi": "The robot's program works on one sea route but gets stuck on another: run it on all three routes, find the cause, then change exactly one piece."
+      "instruksi": "Run the starting program on all three sea routes. See which paths fail, then change up to one block to pass every route."
     }
   },
   "knobs": {
