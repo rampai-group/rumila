@@ -15,4 +15,9 @@ describe("viewport tablet", () => {
     expect(viewportTablet({ w: 744, h: 1133 }, false)).toBeNull();
     expect(viewportTablet(ipad, true)).toContain("width=1007");
   });
+  it("bilah Safari mengurangi ruang, jadi tidak boleh ikut diperbesar", () => {
+    expect(viewportTablet({ w: 744, h: 1133 }, true, 611)).toBeNull();
+    expect(viewportTablet(ipad, true, 687)).toBeNull();
+    expect(viewportTablet(ipad, true, 776)).toContain("width=1064");
+  });
 });

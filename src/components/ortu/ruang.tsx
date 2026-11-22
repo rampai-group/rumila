@@ -127,11 +127,11 @@ function PinPad({ members, onBuka }: { members: Member[]; onBuka: () => void }) 
       </div>
     );
   return (
-    <div className="mx-auto mt-6 flex w-full max-w-[360px] flex-col items-center gap-5 text-center">
+    <div className="mx-auto mt-6 flex w-full max-w-[360px] flex-col items-center gap-5 text-center [@media(max-height:760px)]:mt-1 [@media(max-height:760px)]:gap-1.5">
       <Link href="/beranda" className="inline-flex min-h-11 min-w-11 items-center self-start px-1 text-[14px] font-extrabold text-ink-3">
         ← Kembali
       </Link>
-      <span className="flex size-16 items-center justify-center rounded-[20px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.08)]">
+      <span className="flex size-16 items-center justify-center rounded-[20px] [@media(max-height:760px)]:hidden bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.08)]">
         <Icon name="lock" size={34} />
       </span>
       <div>
@@ -142,13 +142,13 @@ function PinPad({ members, onBuka }: { members: Member[]; onBuka: () => void }) 
         <>
           <div className="flex gap-3" aria-label={`${pin.length} dari 4 angka`}>
             {[0, 1, 2, 3].map((i) => (
-              <span key={i} className="size-4 rounded-full" style={{ background: i < pin.length ? INK : "#e6dccd" }} />
+              <span key={i} className="size-4 rounded-full" style={{ background: i < pin.length ? INK : "#fff" }} />
             ))}
           </div>
           <p className="min-h-5 text-[13px] font-bold text-[#c2410c]" aria-live="polite">
             {pesan}
           </p>
-          <div className="grid w-full grid-cols-3 gap-3">
+          <div className="grid w-full grid-cols-3 gap-3 [@media(max-height:760px)]:gap-2">
             {["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "⌫"].map((d, i) =>
               d === "" ? (
                 <span key={i} />
@@ -157,7 +157,7 @@ function PinPad({ members, onBuka }: { members: Member[]; onBuka: () => void }) 
                   key={i}
                   onClick={() => (d === "⌫" ? setPin((p) => p.slice(0, -1)) : tekan(d))}
                   aria-label={d === "⌫" ? "Hapus" : d}
-                  className="h-16 rounded-[20px] bg-white text-[26px] font-extrabold shadow-[0_4px_0_rgba(11,37,69,.08)] active:translate-y-0.5"
+                  className="h-16 rounded-[20px] [@media(max-height:760px)]:h-14 bg-white text-[26px] font-extrabold shadow-[0_4px_0_rgba(11,37,69,.08)] active:translate-y-0.5"
                   style={{ fontFamily: BALOO }}
                 >
                   {d}

@@ -107,6 +107,15 @@ body {
 }
 
 @layer base {
+  /* iPad: ketukan beruntun cepat (PIN, hitung benda) jangan dianggap ketuk dua kali untuk zoom lalu hilang.
+     Area seret tetap menang lewat utility touch-none / gaya inline-nya. */
+  button,
+  a,
+  summary,
+  label,
+  [role="button"] {
+    touch-action: manipulation;
+  }
   input::placeholder {
     color: var(--ink-4);
   }
@@ -280,4 +289,11 @@ body {
 .truncate {
   padding-block: 0.2em;
   margin-block: -0.2em;
+}
+
+/* cetak (rapor, sertifikat): menu & tombol tidak ikut, juga saat rapor dibuka dari Ruang Orang Tua */
+@media print {
+  .no-print {
+    display: none !important;
+  }
 }

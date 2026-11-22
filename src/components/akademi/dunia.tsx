@@ -17,10 +17,12 @@ import { SlotBantuProvider } from "./mode-ujian";
  * banyak ruang kosong. Lebar viewport diatur ulang supaya peramban sendiri yang memperbesar halaman; koordinat
  * sentuh, drag, dan elemen fixed tetap konsisten (berbeda dengan CSS zoom/transform). HP dan desktop tidak berubah.
  */
-export function viewportTablet(layar: { w: number; h: number }, landscape: boolean): string | null {
+export function viewportTablet(layar: { w: number; h: number }, landscape: boolean, tinggiTerlihat = 0): string | null {
   const w = landscape ? Math.max(layar.w, layar.h) : Math.min(layar.w, layar.h);
-  const h = landscape ? Math.min(layar.w, layar.h) : Math.max(layar.w, layar.h);
-  if (Math.min(w, h) < 600) return null;
+  const tinggiLayar = landscape ? Math.min(layar.w, layar.h) : Math.max(layar.w, layar.h);
+  if (Math.min(w, tinggiLayar) < 600) return null;
+  // yang dipakai tinggi terlihat: bilah tab & alamat Safari mengambil ±130 px di iPad miring
+  const h = tinggiTerlihat > 0 ? Math.min(tinggiLayar, tinggiTerlihat) : tinggiLayar;
   // patokan desain: landscape ±960×700, potret ±720×1000 CSS px. Patokan lama (900×620) menyisakan ±400 px untuk
   // isi soal sesudah kepala + bilah status, sehingga tombol jawab terdorong ke bawah layar di iPad miring.
   const skala = landscape ? Math.min(w / 960, h / 700, 1.6) : Math.min(w / 720, h / 1000, 1.6);
@@ -37,6 +39,13 @@ export function jendelaPenuh(layar: { w: number; h: number }, lebarJendela: numb
   return !lebarJendela || Math.abs(lebarJendela - layar.w) < 24 || Math.abs(lebarJendela - layar.h) < 24;
 }
 
+/** Tinggi jendela dalam px layar; hasilnya sama sebelum dan sesudah viewport diperbesar, jadi tidak bolak-balik. */
+function tinggiTerlihat(layar: { w: number; h: number }, landscape: boolean): number {
+  if (!window.innerWidth) return 0;
+  const lebarLayar = landscape ? Math.max(layar.w, layar.h) : Math.min(layar.w, layar.h);
+  return Math.round((window.innerHeight * lebarLayar) / window.innerWidth);
+}
+
 function useSkalaTablet() {
   useEffect(() => {
     const meta = document.querySelector<HTMLMetaElement>('meta[name="viewport"]');
@@ -45,7 +54,8 @@ function useSkalaTablet() {
     // ukuran layar fisik (CSS px); jendela awal dipakai bila screen.* lebih kecil (mis. WebView/emulator)
     const layar = { w: Math.max(window.screen.width, window.innerWidth), h: Math.max(window.screen.height, window.innerHeight) };
     const atur = () => {
-      const isi = jendelaPenuh(layar, window.outerWidth) ? viewportTablet(layar, window.matchMedia("(orientation: landscape)").matches) : null;
+      const landscape = window.matchMedia("(orientation: landscape)").matches;
+      const isi = jendelaPenuh(layar, window.outerWidth) ? viewportTablet(layar, landscape, tinggiTerlihat(layar, landscape)) : null;
       const baru = isi ?? asli;
       if (meta.content !== baru) meta.content = baru;
     };
