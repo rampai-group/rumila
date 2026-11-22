@@ -88,7 +88,7 @@ function JudulJenjang({ lv, jenjangAnak }: { lv: LevelId; jenjangAnak: boolean }
       <h2 className="leading-none" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK }}>
         {meta.pangkat}
       </h2>
-      {jenjangAnak && <span className="rounded-full bg-[#e4f8ec] px-2.5 py-0.5 text-[11px] font-black text-[#12904a]">Jenjangmu</span>}
+      {jenjangAnak && <span className="rounded-full bg-[#a9ecc4] px-2.5 py-0.5 text-[11px] font-black text-[#0b5c30]">Jenjangmu</span>}
     </div>
   );
 }
@@ -167,7 +167,7 @@ function BarisKompetensi({ c, peng, selesai, terakhir, bahasa, akses }: { c: Com
         <IkonStatus status={status} />
         <p className="min-w-0 flex-1 pt-[3px] text-[15px] leading-snug font-bold" style={{ color: INK }}>
           {c.statement[bahasa] ?? c.statement.id}
-          {c.core && <span className="ml-1.5 inline-block rounded-full bg-[#fff4d1] px-2 py-px align-middle text-[11px] font-black text-[#b07a00]">inti</span>}
+          {c.core && <span className="ml-1.5 inline-block rounded-full bg-[#ffdc7a] px-2 py-px align-middle text-[11px] font-black text-[#7a5200]">inti</span>}
           {prasyaratBelum && <span aria-label="Ada kompetensi sebelumnya yang belum berkembang" title="Ada kompetensi sebelumnya yang belum berkembang" className="ml-1.5 inline-block size-2 rounded-full bg-[#c9bfd8] align-middle" />}
         </p>
       </div>

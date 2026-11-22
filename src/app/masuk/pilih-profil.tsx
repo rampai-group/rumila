@@ -69,7 +69,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
       <Image src="/brand/rinoya-logo-r.png" alt="RINOYA Academy" width={1137} height={800} priority className="h-auto w-[96px] sm:w-[150px] [@media(max-height:820px)]:w-[80px]" />
       <div className="flex flex-col items-center gap-1.5">
         <h1 className="text-balance" style={{ fontFamily: BALOO, fontSize: "clamp(26px, 5vw, 44px)", fontWeight: 800, color: INK, lineHeight: 1.05 }}>Siapa yang belajar hari ini?</h1>
-        <p className="text-[14px] font-bold text-[#3d5675] sm:text-[17px]">Ketuk kartumu untuk mulai</p>
+        <p className="text-[14px] font-extrabold text-[#0b2545] sm:text-[17px]">Ketuk kartumu untuk mulai</p>
       </div>
       {anak.length > 0 && (
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
@@ -89,7 +89,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
               type="button"
               onClick={() => pilih(m)}
               aria-label={`${m.name}, pakai PIN`}
-              className="flex items-center gap-2 rounded-full bg-[#f1f5fb] py-1 pr-3 pl-1 transition-transform active:scale-95"
+              className="flex min-h-11 items-center gap-2 rounded-full bg-[#f1f5fb] py-1 pr-3 pl-1 transition-transform active:scale-95"
             >
               <MemberAvatar m={m} size={34} theme="playful" />
               <span className="max-w-[120px] truncate" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, color: INK }}>{m.name}</span>
@@ -104,7 +104,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
           await signOutAccount();
           router.replace("/masuk");
         }}
-        className="-mt-1 inline-flex items-center gap-1 px-3 py-1 text-[13px] font-extrabold text-[#3d5675]/80 underline-offset-2 hover:underline"
+        className="-mt-1 inline-flex min-h-11 items-center gap-1 px-3 py-1 text-[13px] font-extrabold text-[#0b2545] underline-offset-2 hover:underline"
       >
         <Icon name="logout" size={16} /> Keluar akun rumah
       </button>
@@ -139,7 +139,7 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
       </span>
       <span
         className={`relative flex h-[28px] max-w-full items-center px-1 text-white sm:h-[34px] ${ukuranNama}`}
-        style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1.1, textShadow: `0 2px 0 ${d}` }}
+        style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1.1, textShadow: `0 2px 0 ${d}, 0 0 3px ${d}` }}
       >
         <span className="truncate">{m.name}</span>
       </span>

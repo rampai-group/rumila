@@ -49,7 +49,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
         <style>{satuJenjang ? BUKU_PRINT_CSS : SERTIFIKAT_PRINT_CSS}</style>
         <div className="mx-auto flex max-w-[1040px] flex-col gap-4 px-4 py-5">
           <div className="no-print flex items-center gap-2">
-            <button onClick={() => onLihat(null)} aria-label="Kembali ke lemari" className="flex size-10 items-center justify-center rounded-full bg-white">
+            <button onClick={() => onLihat(null)} aria-label="Kembali ke lemari" className="flex size-11 items-center justify-center rounded-full bg-white">
               <Icon name="arrow_back" size={22} />
             </button>
             <h1 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>{satuModul ? "Piagam Modul" : satuSemester ? "Sertifikat Semester" : "Sertifikat Kenaikan Jenjang"}</h1>

@@ -25,10 +25,10 @@ function Bagian({ judul, children }: { judul: string; children: React.ReactNode 
 
 export default function KebijakanPrivasi() {
   return (
-    <main className="min-h-screen bg-[#FFF8EE] px-4 py-8 sm:py-12" style={{ fontFamily: "var(--ff-nunito), system-ui, sans-serif", color: "#0b2545" }}>
+    <main className="min-h-screen bg-[#7cc6fa] px-4 py-8 sm:py-12" style={{ fontFamily: "var(--ff-nunito), system-ui, sans-serif", color: "#0b2545" }}>
       <article className="mx-auto flex max-w-[760px] flex-col gap-6 rounded-[28px] bg-white px-5 py-7 shadow-[0_6px_0_rgba(11,37,69,.06)] sm:px-9 sm:py-10">
         <header className="flex flex-col gap-1">
-          <p className="text-[13px] font-extrabold tracking-wide text-[#0786eb] uppercase">RINOYA Academy</p>
+          <p className="text-[13px] font-extrabold tracking-wide text-[#0567c2] uppercase">RINOYA Academy</p>
           <h1 className="text-[30px] leading-tight font-extrabold" style={{ fontFamily: "var(--ff-baloo), system-ui, sans-serif" }}>
             Kebijakan Privasi
           </h1>
@@ -118,7 +118,7 @@ export default function KebijakanPrivasi() {
             <li>meminta salinan data, perbaikan data, atau penghapusan seluruh akun beserta data anak.</li>
           </ul>
           <p>
-            Untuk meminta salinan atau penghapusan akun, kirim email ke <a className="font-bold text-[#0786eb] underline" href={`mailto:${KONTAK}`}>{KONTAK}</a>{" "}
+            Untuk meminta salinan atau penghapusan akun, kirim email ke <a className="font-bold text-[#0567c2] underline" href={`mailto:${KONTAK}`}>{KONTAK}</a>{" "}
             dari email akun atau sebutkan nama pengguna akun. Kami memprosesnya paling lambat 30 hari.
           </p>
         </Bagian>
@@ -131,12 +131,12 @@ export default function KebijakanPrivasi() {
 
         <Bagian judul="8. Hubungi kami">
           <p>
-            Pertanyaan tentang privasi: <a className="font-bold text-[#0786eb] underline" href={`mailto:${KONTAK}`}>{KONTAK}</a>.
+            Pertanyaan tentang privasi: <a className="font-bold text-[#0567c2] underline" href={`mailto:${KONTAK}`}>{KONTAK}</a>.
           </p>
         </Bagian>
 
         <footer className="border-t border-[#f0e4d2] pt-4 text-[13px] font-bold text-[#6b7c93]">
-          <Link href="/masuk" className="text-[#0786eb] underline">
+          <Link href="/masuk" className="text-[#0567c2] underline">
             Kembali ke RINOYA Academy
           </Link>
         </footer>

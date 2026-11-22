@@ -21,11 +21,20 @@ export function viewportTablet(layar: { w: number; h: number }, landscape: boole
   const w = landscape ? Math.max(layar.w, layar.h) : Math.min(layar.w, layar.h);
   const h = landscape ? Math.min(layar.w, layar.h) : Math.max(layar.w, layar.h);
   if (Math.min(w, h) < 600) return null;
-  // patokan desain: landscape ±900×620, potret ±720×900 CSS px
-  const skala = landscape ? Math.min(w / 900, h / 620, 1.6) : Math.min(w / 720, h / 900, 1.6);
+  // patokan desain: landscape ±960×700, potret ±720×1000 CSS px. Patokan lama (900×620) menyisakan ±400 px untuk
+  // isi soal sesudah kepala + bilah status, sehingga tombol jawab terdorong ke bawah layar di iPad miring.
+  const skala = landscape ? Math.min(w / 960, h / 700, 1.6) : Math.min(w / 720, h / 1000, 1.6);
   if (skala <= 1.05) return null;
   const lebar = Math.round(w / skala);
   return `width=${lebar}, initial-scale=${(w / lebar).toFixed(3)}, viewport-fit=cover`;
+}
+
+/**
+ * Pembesaran hanya untuk jendela selebar layar. Di Split View / Slide Over / Stage Manager jendelanya lebih sempit,
+ * jadi viewport selebar layar akan memotong permainan ke samping. lebarJendela 0 = tidak diketahui (anggap penuh).
+ */
+export function jendelaPenuh(layar: { w: number; h: number }, lebarJendela: number): boolean {
+  return !lebarJendela || Math.abs(lebarJendela - layar.w) < 24 || Math.abs(lebarJendela - layar.h) < 24;
 }
 
 function useSkalaTablet() {
@@ -36,13 +45,16 @@ function useSkalaTablet() {
     // ukuran layar fisik (CSS px); jendela awal dipakai bila screen.* lebih kecil (mis. WebView/emulator)
     const layar = { w: Math.max(window.screen.width, window.innerWidth), h: Math.max(window.screen.height, window.innerHeight) };
     const atur = () => {
-      const isi = viewportTablet(layar, window.matchMedia("(orientation: landscape)").matches);
-      meta.content = isi ?? asli;
+      const isi = jendelaPenuh(layar, window.outerWidth) ? viewportTablet(layar, window.matchMedia("(orientation: landscape)").matches) : null;
+      const baru = isi ?? asli;
+      if (meta.content !== baru) meta.content = baru;
     };
     atur();
     window.addEventListener("orientationchange", atur);
+    window.addEventListener("resize", atur); // Split View & Stage Manager tidak mengirim orientationchange
     return () => {
       window.removeEventListener("orientationchange", atur);
+      window.removeEventListener("resize", atur);
       meta.content = asli;
     };
   }, []);
@@ -108,26 +120,32 @@ export function LayarAktivitas({
   return (
     <div
       className="relative min-h-dvh"
-      style={{ fontFamily: NUNITO, color: INK, background: pilar.dasar, ["--pilar" as string]: pilar.warna, ["--pilar-tua" as string]: pilar.tua, ["--pilar-dasar" as string]: pilar.dasar } as React.CSSProperties}
+      style={{ fontFamily: NUNITO, color: INK, background: `linear-gradient(180deg,${pilar.warna},${pilar.tua})`, ["--pilar" as string]: pilar.warna, ["--pilar-tua" as string]: pilar.tua, ["--pilar-dasar" as string]: pilar.dasar } as React.CSSProperties}
     >
       <div
-        className="relative mx-auto flex h-dvh max-w-[1100px] flex-col gap-2.5 px-3 sm:px-6"
+        className="relative mx-auto flex h-dvh max-w-[1100px] flex-col gap-2 px-3 sm:px-6"
         style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(14px, env(safe-area-inset-bottom))" }}
       >
         <header className="flex items-center gap-2">
           <button type="button" onClick={kembali} aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-[14px] bg-white active:translate-y-0.5" style={{ ...kotakIkon, color: INK }}>
             <Icon name="arrow_back" size={24} />
           </button>
+          <h1
+            className="m-0 hidden min-w-0 max-w-[48%] shrink-0 truncate px-1 [@media(min-width:760px)_and_(max-height:820px)]:block"
+            style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, lineHeight: 1.4, color: "#fff" }}
+          >
+            {judul}
+          </h1>
           <div
             className="h-3.5 min-w-0 flex-1 overflow-hidden rounded-full"
-            style={{ background: "#dde3ec" }}
+            style={{ background: "rgba(0,0,0,.28)" }}
             role="progressbar"
             aria-valuemin={0}
             aria-valuemax={total}
             aria-valuenow={ronde}
             aria-label={`Ronde ${ronde} dari ${total}`}
           >
-            <div className="h-full rounded-full transition-[width] duration-500" style={{ width: `${Math.max(6, (ronde / Math.max(1, total)) * 100)}%`, background: pilar.warna, boxShadow: "inset 0 -4px 0 rgba(0,0,0,.14)" }} />
+            <div className="h-full rounded-full transition-[width] duration-500" style={{ width: `${Math.max(6, (ronde / Math.max(1, total)) * 100)}%`, background: "#fdb724", boxShadow: "inset 0 -4px 0 rgba(0,0,0,.14)" }} />
           </div>
           {musik && (
             <button
@@ -144,15 +162,20 @@ export function LayarAktivitas({
           {/* tombol Bantu presenter dipasang ke sini (lihat bantu.tsx) */}
           <div ref={setSlotBantu} className="flex shrink-0 empty:hidden" />
         </header>
-        <h1 className="m-0 px-0.5" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.12, textWrap: "balance", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-          {judul}
-        </h1>
+        {/* layar miring pendek: judul pindah ke baris kepala supaya panggung dapat tambahan tinggi */}
+        <div className="[@media(min-width:760px)_and_(max-height:820px)]:hidden">
+          <h1 className="m-0 px-0.5" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.2, color: "#fff", textWrap: "balance", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+            {judul}
+          </h1>
+        </div>
         <Instruksi teks={instruksi} onUcap={onUcap} />
         {/* panggung: mengisi sisa tinggi layar; presenter yang sudah "penuh layar" memakai flex-1, sisanya ditengahkan */}
+        <div className="flex min-h-0 flex-1 flex-col rounded-[26px] p-1.5" style={{ background: pilar.dasar }}>
         <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
           <PanggungCtx.Provider value={panggung}>
             <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>
           </PanggungCtx.Provider>
+        </div>
         </div>
       </div>
     </div>
@@ -179,7 +202,7 @@ function Instruksi({ teks, onUcap }: { teks: string; onUcap: () => void }) {
   }, [teks, buka]);
   return (
     <div className="flex items-start gap-2.5 px-0.5">
-      <button type="button" onClick={onUcap} aria-label="Dengarkan instruksi" className="flex size-9 shrink-0 items-center justify-center rounded-full text-white active:scale-95" style={{ background: "var(--pilar)", boxShadow: "0 3px 0 var(--pilar-tua)" }}>
+      <button type="button" onClick={onUcap} aria-label="Dengarkan instruksi" className="flex size-11 shrink-0 items-center justify-center rounded-full text-[#0b2545] active:scale-95" style={{ background: "#fdb724", boxShadow: "0 3px 0 #c98a00" }}>
         <Icon name="volume_up" size={20} />
       </button>
       <span
@@ -187,7 +210,7 @@ function Instruksi({ teks, onUcap }: { teks: string; onUcap: () => void }) {
         onClick={onUcap}
         className="min-w-0 flex-1 cursor-pointer self-center"
         style={{
-          fontFamily: NUNITO, fontSize: 16, fontWeight: 700, lineHeight: "22px", textWrap: "pretty",
+          fontFamily: NUNITO, fontSize: 16.5, fontWeight: 800, color: "#fff", lineHeight: "22px", textWrap: "pretty",
           ...(buka ? {} : { display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }),
         }}
       >
@@ -199,7 +222,7 @@ function Instruksi({ teks, onUcap }: { teks: string; onUcap: () => void }) {
           onClick={() => setBuka((b) => !b)}
           aria-expanded={buka}
           aria-label={buka ? "Ringkas instruksi" : "Baca instruksi lengkap"}
-          className="flex h-9 shrink-0 items-center self-center rounded-full bg-white px-1.5 active:scale-95"
+          className="flex size-11 shrink-0 items-center justify-center self-center rounded-full bg-white active:scale-95"
           style={{ color: "var(--pilar)", boxShadow: `0 0 0 2px ${GARIS}` }}
         >
           <Icon name={buka ? "expand_less" : "expand_more"} size={22} />

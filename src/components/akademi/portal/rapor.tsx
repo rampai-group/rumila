@@ -2,6 +2,7 @@
 
 // Portal wali: Rapor per anak — layar penuh, gaya tenang (putih, ink #0b2545), bisa dicetak.
 
+import { flushSync } from "react-dom";
 import { KartuPraktikKampus } from "./praktik";
 import { tintaPada } from "@/lib/brand";
 import Link from "next/link";
@@ -60,10 +61,10 @@ export function RaporView() {
           <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Rapor</h1>
           <p className="text-[13px] font-bold text-ink-3">Portal wali · RINOYA Academy</p>
         </div>
-        <Link href="/akademi/telemetri" className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+        <Link href="/akademi/telemetri" className="inline-flex h-11 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
           <Icon name="monitoring" size={18} /> Telemetri
         </Link>
-        <button onClick={() => window.print()} className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+        <button onClick={() => window.print()} className="inline-flex h-11 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
           <Icon name="print" size={18} /> Cetak
         </button>
       </header>
@@ -99,7 +100,7 @@ export function RaporView() {
 
 function Kerangka({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rapor-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
+    <div className="rapor-root min-h-dvh latar-biru" style={{ fontFamily: NUNITO, color: INK }}>
       <style>{PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[960px] flex-col gap-5 px-4 py-4 sm:px-6 sm:py-6" style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: "max(32px, env(safe-area-inset-bottom))" }}>
         {children}
@@ -110,7 +111,7 @@ function Kerangka({ children }: { children: React.ReactNode }) {
 
 function TombolKembali({ ikon }: { ikon?: boolean }) {
   return ikon ? (
-    <Link href="/akademi" aria-label="Kembali" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
+    <Link href="/akademi" aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
       <Icon name="arrow_back" size={22} />
     </Link>
   ) : (
@@ -148,7 +149,7 @@ export function RaporAnak({ anak }: { anak: Member }) {
       {/* identitas */}
       <section className="rapor-card flex flex-wrap items-center gap-4 rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)] sm:p-5">
         <MemberAvatar m={anak} size={56} theme="playful" />
-        <div className="min-w-0 flex-1">
+        <div className="min-w-[160px] flex-1 break-words">
           <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1.1 }}>{anak.name}</h2>
           <p className="text-[13px] font-bold text-ink-3">
             Pangkat {lv.pangkat}
@@ -186,12 +187,12 @@ export function RaporAnak({ anak }: { anak: Member }) {
                 </div>
               </div>
               <div className="mt-3 grid grid-cols-3 gap-2 text-center">
-                <Angka label="Dikuasai" n={r.dikuasai} c="#12904a" bg="#e4f8ec" />
-                <Angka label="Berkembang" n={r.berkembang} c="#b07a00" bg="#fff4d1" />
-                <Angka label="Belum" n={r.belum} c="#5b6b85" bg="#fff0da" />
+                <Angka label="Dikuasai" n={r.dikuasai} c="#0b5c30" bg="#a9ecc4" />
+                <Angka label="Berkembang" n={r.berkembang} c="#6b4700" bg="#ffdc7a" />
+                <Angka label="Belum" n={r.belum} c="#22354f" bg="#cfe0f0" />
               </div>
               {r.total > 0 && (
-                <div className="mt-3 flex h-2 overflow-hidden rounded-full bg-[#fff0da]">
+                <div className="mt-3 flex h-2 overflow-hidden rounded-full bg-[#d6ecff]">
                   <div style={{ width: `${(r.dikuasai / r.total) * 100}%`, background: "#1fbf62" }} />
                   <div style={{ width: `${(r.berkembang / r.total) * 100}%`, background: "#ffbe0b" }} />
                 </div>
@@ -253,12 +254,33 @@ function Angka({ label, n, c, bg }: { label: string; n: number; c: string; bg: s
 function DaftarTrack({ track, level, peng, bahasa }: { track: TrackId; level: LevelId; peng: Record<string, Penguasaan>; bahasa: BahasaAnak }) {
   const unit = unitUntuk(track, level, KOMPETENSI, bahasa);
   const [, m] = PLAY[TRACK_WARNA[track]];
+  // rincian panjang dilipat di layar; saat dicetak selalu terbuka
+  const [buka, setBuka] = useState(false);
+  useEffect(() => {
+    const saatCetak = () => flushSync(() => setBuka(true));
+    window.addEventListener("beforeprint", saatCetak);
+    return () => window.removeEventListener("beforeprint", saatCetak);
+  }, []);
   return (
     <section className="flex flex-col gap-3">
-      <h3 className="flex items-center gap-2" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>
-        <span className="inline-block size-3 rounded-full" style={{ background: m }} />
-        {trackMeta(track).nama[bahasa]} · {levelMeta(level).pangkat}
+      <h3>
+        <button
+          type="button"
+          aria-expanded={buka}
+          onClick={() => setBuka((v) => !v)}
+          className="flex min-h-[60px] w-full flex-wrap items-center gap-x-2 rounded-[20px] bg-white px-4 py-2 text-left"
+          style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}
+        >
+          <span className="inline-block size-4 shrink-0 rounded-full" style={{ background: m }} />
+          <span className="min-w-0 flex-1">
+            {trackMeta(track).nama[bahasa]} · {levelMeta(level).pangkat}
+          </span>
+          <span className="no-print flex items-center gap-1 text-[13px] text-[#0567c2]">
+            {buka ? "Tutup rincian" : "Lihat rincian"} <Icon name={buka ? "expand_less" : "expand_more"} size={22} />
+          </span>
+        </button>
       </h3>
+      {!buka ? null : (<>
       {unit.length === 0 ? (
         <p className="rapor-card rounded-[20px] bg-white p-4 text-[14px] font-bold text-ink-3">Kurikulum jenjang ini belum tersedia.</p>
       ) : (
@@ -275,6 +297,7 @@ function DaftarTrack({ track, level, peng, bahasa }: { track: TrackId; level: Le
           </div>
         ))
       )}
+      </>)}
     </section>
   );
 }
@@ -286,7 +309,7 @@ function BarisKompetensi({ c, p, bahasa }: { c: Competency; p?: Penguasaan; baha
       <div className="min-w-0 flex-1">
         <p className="text-[14px] leading-snug font-extrabold" style={{ color: INK }}>
           {c.statement[bahasa] ?? c.statement.id}
-          {c.core && <span className="ml-1.5 rounded-full bg-[#fff0da] px-1.5 py-0.5 align-middle text-[10px] font-black text-ink-3">INTI</span>}
+          {c.core && <span className="ml-1.5 rounded-full bg-[#fff0da] px-1.5 py-0.5 align-middle text-[11px] font-black text-ink-3">INTI</span>}
         </p>
         <p className="mt-0.5 text-[12px] font-bold text-ink-3">
           {p && p.success > 0 ? `${p.success} bukti · terakhir ${tanggalLokal(p.lastAt)}` : "Belum ada bukti"}

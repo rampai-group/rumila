@@ -70,7 +70,7 @@ export function ProfilBerpikirOrtu({ anak }: { anak: Member }) {
           <h2 style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800 }}>Profil Kemampuan Berpikir</h2>
           <p className="text-[13px] font-bold text-ink-3">4 permainan singkat (±10 menit): pola, memori, spasial, kecepatan. Dampingi anak, jangan bantu menjawab.</p>
         </div>
-        <Link href={`/orang-tua/berpikir?anak=${anak.id}`} className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#5fb8ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
+        <Link href={`/orang-tua/berpikir?anak=${anak.id}`} className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "#0567c2", boxShadow: "0 3px 0 #0567c2" }}>
           <Icon name="play_arrow" size={20} /> {akhir ? "Tes ulang" : "Mulai tes"}
         </Link>
       </section>
@@ -169,9 +169,9 @@ export function TesBerpikir({ anak, kembaliKe }: { anak: Member; kembaliKe: stri
   }, [tahap, usia, anak.id]);
 
   return (
-    <div className="flex min-h-dvh flex-col items-center px-4 py-5" style={{ background: "linear-gradient(180deg,#e4f1fd,#fff6e8)", color: INK, fontFamily: BALOO }}>
+    <div className="flex min-h-dvh flex-col items-center px-4 py-5" style={{ background: "linear-gradient(180deg,#0786eb,#135385)", color: INK, fontFamily: BALOO }}>
       <div className="flex w-full max-w-[560px] items-center gap-2">
-        <Link href={kembaliKe} aria-label="Keluar" className="flex size-10 items-center justify-center rounded-full bg-white">
+        <Link href={kembaliKe} aria-label="Keluar" className="flex size-11 items-center justify-center rounded-full bg-white">
           <Icon name="close" size={22} />
         </Link>
         <div className="flex flex-1 gap-1">
@@ -190,7 +190,7 @@ export function TesBerpikir({ anak, kembaliKe }: { anak: Member; kembaliKe: stri
             </p>
             <label className="mt-4 flex items-center justify-center gap-2 text-[15px] font-bold" htmlFor="usia-anak">
               Usia anak
-              <select id="usia-anak" value={usia} onChange={(e) => setUsia(Number(e.target.value))} className="rounded-[12px] border border-[#dbe4ef] bg-white px-3 py-1.5">
+              <select id="usia-anak" value={usia} onChange={(e) => setUsia(Number(e.target.value))} className="min-h-11 rounded-[12px] border border-[#dbe4ef] bg-white px-3 py-1.5">
                 {Array.from({ length: 10 }, (_, i) => i + 3).map((u) => (
                   <option key={u} value={u}>
                     {u} tahun

@@ -384,7 +384,7 @@ function IntroOverlay() {
             sfx.tap();
             st.set({ intro: "choose" });
           }}
-          className="pointer-events-auto flex items-center gap-1 rounded-full bg-black/45 py-2 pr-3 pl-4 text-white backdrop-blur active:scale-95"
+          className="pointer-events-auto flex min-h-11 items-center gap-1 rounded-full bg-black/45 py-2 pr-3 pl-4 text-white backdrop-blur active:scale-95"
           style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}
         >
           Lewati <Icon name="skip_next" size={24} />

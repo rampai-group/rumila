@@ -80,7 +80,7 @@ function Sheet({ title, emoji, children, onClose }: { title: string; emoji: stri
           <span className="text-white" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, textShadow: '0 2px 0 rgba(0,0,0,.3)' }}>
             {emoji} {title}
           </span>
-          <button onClick={onClose} aria-label="Tutup" className="flex size-10 items-center justify-center rounded-full bg-[#e0402a] text-white shadow-[0_3px_0_#a02a1a] active:scale-90">
+          <button onClick={onClose} aria-label="Tutup" className="flex size-11 items-center justify-center rounded-full bg-[#e0402a] text-white shadow-[0_3px_0_#a02a1a] active:scale-90">
             <Icon name="close" size={24} />
           </button>
         </div>
@@ -496,7 +496,7 @@ export function RestoGame() {
         </div>
         <div className="pointer-events-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
           {/* HP: reputasi & kas dalam satu pil; layar lebar: dua pil */}
-          <button onClick={() => setPanel('uang')} className="flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[14px] shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-95 sm:hidden" title="Reputasi & kas">
+          <button onClick={() => setPanel('uang')} className="min-h-11 flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[14px] shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-95 sm:hidden" title="Reputasi & kas">
             <span>❤️</span>
             <b style={{ fontFamily: BALOO }}>{g.reputation}</b>
             <span className="ml-1">🪙</span>
@@ -506,11 +506,11 @@ export function RestoGame() {
             <span>❤️</span>
             <b style={{ fontFamily: BALOO }}>{g.reputation}</b>
           </div>
-          <button onClick={() => setPanel('uang')} className="hidden items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-95 sm:flex">
+          <button onClick={() => setPanel('uang')} className="hidden min-h-11 items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-95 sm:flex">
             <span>🪙</span>
             <b style={{ fontFamily: BALOO, fontSize: 17 }}>{n(g.cash)}</b>
           </button>
-          <button aria-label="Petunjuk" onClick={() => setIntro(true)} className="flex size-10 items-center justify-center rounded-full bg-white shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-90 sm:size-11">
+          <button aria-label="Petunjuk" onClick={() => setIntro(true)} className="flex size-11 items-center justify-center rounded-full bg-white shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-90 sm:size-11">
             <Icon name="help" size={24} />
           </button>
         </div>
@@ -536,11 +536,11 @@ export function RestoGame() {
               {String(hh).padStart(2, '0')}.{String(mm).padStart(2, '0')}
             </span>
             {[0, 1, 2].map((sp) => (
-              <button key={sp} onClick={() => setSpeed(sp)} className="flex h-9 min-w-9 items-center justify-center rounded-full px-2 font-extrabold active:scale-90" style={{ background: speed === sp ? '#ffc050' : 'rgba(255,255,255,.25)', color: speed === sp ? INK : '#fff' }}>
+              <button key={sp} onClick={() => setSpeed(sp)} className="flex h-11 min-w-9 items-center justify-center rounded-full px-2 font-extrabold active:scale-90" style={{ background: speed === sp ? '#ffc050' : 'rgba(255,255,255,.25)', color: speed === sp ? INK : '#fff' }}>
                 {sp === 0 ? <Icon name="pause" size={20} /> : `${sp}×`}
               </button>
             ))}
-            <button aria-label={musicOn ? 'Matikan jingle' : 'Nyalakan jingle'} title={musicOn ? 'Matikan jingle' : 'Nyalakan jingle'} onClick={toggleMusic} className="ml-auto flex size-9 items-center justify-center rounded-full active:scale-90" style={{ background: musicOn ? '#ffc050' : 'rgba(255,255,255,.25)', color: musicOn ? INK : '#fff' }}>
+            <button aria-label={musicOn ? 'Matikan jingle' : 'Nyalakan jingle'} title={musicOn ? 'Matikan jingle' : 'Nyalakan jingle'} onClick={toggleMusic} className="ml-auto flex size-11 items-center justify-center rounded-full active:scale-90" style={{ background: musicOn ? '#ffc050' : 'rgba(255,255,255,.25)', color: musicOn ? INK : '#fff' }}>
               <Icon name={musicOn ? 'music_note' : 'music_off'} size={20} />
             </button>
           </div>
@@ -603,7 +603,7 @@ export function RestoGame() {
             }
           }}
           onPointerCancel={() => (setPeg(null), scene.current?.povHover(-1, -1))}
-          className="flex size-10 touch-none items-center justify-center rounded-full text-white shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90 sm:size-11"
+          className="flex size-11 touch-none items-center justify-center rounded-full text-white shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90 sm:size-11"
           style={{ background: '#f29a1a', cursor: peg ? 'grabbing' : 'grab', opacity: peg ? 0.4 : 1 }}
         >
           <Icon name="man" size={26} />
@@ -628,7 +628,7 @@ export function RestoGame() {
             aria-label={label}
             title={label}
             onClick={() => (sfx.tap(), fn())}
-            className="flex size-10 items-center justify-center rounded-full bg-white/90 text-[#3a2416] shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90 sm:size-11"
+            className="flex size-11 items-center justify-center rounded-full bg-white/90 text-[#3a2416] shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90 sm:size-11"
           >
             <Icon name={icon} size={24} />
           </button>
@@ -688,7 +688,7 @@ export function RestoGame() {
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5">
                     {[0, 1, 2].map((sp) => (
-                      <button key={sp} onClick={() => (sfx.tap(), setSpeed(sp))} aria-label={sp === 0 ? 'Jeda' : `Kecepatan ${sp}×`} className="flex h-8 min-w-8 items-center justify-center rounded-full px-2 text-[14px] font-extrabold active:scale-90" style={{ background: speed === sp ? '#ffc050' : 'rgba(255,255,255,.25)', color: speed === sp ? INK : '#fff' }}>
+                      <button key={sp} onClick={() => (sfx.tap(), setSpeed(sp))} aria-label={sp === 0 ? 'Jeda' : `Kecepatan ${sp}×`} className="flex h-11 min-w-8 items-center justify-center rounded-full px-2 text-[14px] font-extrabold active:scale-90" style={{ background: speed === sp ? '#ffc050' : 'rgba(255,255,255,.25)', color: speed === sp ? INK : '#fff' }}>
                         {sp === 0 ? <Icon name="pause" size={18} /> : `${sp}×`}
                       </button>
                     ))}
@@ -726,7 +726,7 @@ export function RestoGame() {
                   style={{ background: CREAM, boxShadow: '0 3px 0 #c9a27a' }}
                 >
                   <span className="text-[24px] leading-none sm:text-[28px]">{e}</span>
-                  <span className="max-w-full truncate text-[10px] font-extrabold sm:text-[12px]">{label}</span>
+                  <span className="max-w-full truncate text-[11px] font-extrabold sm:text-[12px]">{label}</span>
                 </button>
               ))}
             </div>

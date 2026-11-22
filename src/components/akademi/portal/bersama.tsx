@@ -212,15 +212,15 @@ export function TombolAktivitas({ p, selesai = false, kunci }: { p: ContentPack;
     return (
       <div
         aria-label={`${judulPaket(p, bahasa)}: terkunci. ${kunci}`}
-        className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-[#f6f1e9] py-2 pr-2.5 pl-2.5"
+        className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-[#e2e7ee] py-2 pr-2.5 pl-2.5"
         style={{ boxShadow: "inset 0 0 0 1.5px #ece4d8" }}
       >
         <span className="opacity-50"><IkonMekanik mekanik={p.mechanic} /></span>
         <span className="min-w-0 flex-1">
-          <span className="block truncate leading-tight" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: "#8a7d6b" }}>
+          <span className="block leading-tight text-pretty" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: "#3d4f66" }}>
             {judulPaket(p, bahasa)}
           </span>
-          <span className="mt-0.5 block text-[12px] font-extrabold text-[#8a7d6b]">{kunci}</span>
+          <span className="mt-0.5 block text-[12px] font-extrabold text-[#3d4f66]">{kunci}</span>
         </span>
         <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ece4d8] text-[#a99c8a]">
           <Icon name="lock" size={20} />
@@ -230,13 +230,13 @@ export function TombolAktivitas({ p, selesai = false, kunci }: { p: ContentPack;
   return (
     <Link
       href={`/akademi/main/${p.id}`}
-      className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-white py-2 pr-2.5 pl-2.5 transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.98]"
-      style={{ boxShadow: "0 3px 0 rgba(11,37,69,.08), inset 0 0 0 1.5px #fff0da" }}
+      className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-[#cfe9ff] py-2 pr-2.5 pl-2.5 transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.98]"
+      style={{ boxShadow: "0 3px 0 #8fc4ee" }}
     >
       <IkonMekanik mekanik={p.mechanic} />
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-1.5">
-          <span className="truncate leading-tight" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
+          <span className="min-w-0 leading-tight text-pretty" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
             {judulPaket(p, bahasa)}
           </span>
           {selesai && (
@@ -258,7 +258,7 @@ export function TombolAktivitas({ p, selesai = false, kunci }: { p: ContentPack;
 export function KepalaWarna({ c, icon, judul, sub, kembali = "/akademi", right }: { c: ColorKey; icon: string; judul: string; sub?: string; kembali?: string; right?: ReactNode }) {
   const [l, m, d] = PLAY[c];
   return (
-    <div className="relative flex items-center gap-3 overflow-hidden rounded-[24px] p-3.5 sm:p-4" style={{ color: tintaPada(c), background: `linear-gradient(155deg, ${l} 0%, ${m} 60%)`, boxShadow: `0 5px 0 ${d}` }}>
+    <div className="relative flex items-center gap-3 overflow-hidden rounded-[24px] p-3.5 sm:p-4" style={{ color: tintaPada(c), background: `linear-gradient(155deg, ${tintaPada(c) === "#fff" ? m : l} 0%, ${tintaPada(c) === "#fff" ? d : m} 60%)`, boxShadow: `0 5px 0 ${d}` }}>
       <div aria-hidden className="absolute -right-12 -bottom-16 size-48 rounded-full bg-white/20" />
       <Link href={kembali} aria-label="Kembali" className="relative flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white transition-transform active:scale-95" style={{ color: d, boxShadow: `0 4px 0 ${d}55` }}>
         <Icon name="arrow_back" size={24} />

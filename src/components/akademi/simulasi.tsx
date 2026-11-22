@@ -153,7 +153,7 @@ function Tata({ atas, adegan, kendali, samping: boleh = true, lebar = 0.36 }: { 
   );
 }
 
-function TombolBesar({ children, onClick, disabled, warna = "#22b573", bayang = "#16804f", className = "" }: { children: ReactNode; onClick: () => void; disabled?: boolean; warna?: string; bayang?: string; className?: string }) {
+function TombolBesar({ children, onClick, disabled, warna = "#12803f", bayang = "#0b5c30", className = "" }: { children: ReactNode; onClick: () => void; disabled?: boolean; warna?: string; bayang?: string; className?: string }) {
   const { skala } = usePanggung();
   const st = useSkalaTeks();
   return (
@@ -296,7 +296,8 @@ function JamDinding({
   const ukuran = ukuranTetap ?? Math.max(240, Math.min(340, lebar || 300));
   const k = Math.max(1, ukuran / 300); // skala angka & tombol
   const r = ukuran / 2;
-  const rAngka = r - 34 * k;
+  // angka di dalam lingkar garis menit (garis jam berakhir di r=80 dari 100), tidak menindihnya
+  const rAngka = r - 48 * k;
   const sudutJam = ((jam % 12) * 30) % 360;
   const pendek = warna ? MERAH_JARUM : INK;
   const panjang = warna ? BIRU_JARUM : INK;
@@ -316,7 +317,7 @@ function JamDinding({
             <line x1="100" y1="100" x2="100" y2="58" stroke={BENAR} strokeWidth="7" strokeLinecap="round" strokeDasharray="4 6" style={{ transform: `rotate(${((bayangJam % 12) * 30) % 360}deg)`, transformOrigin: "100px 100px", transformBox: "view-box" }} />
           )}
           {/* jarum panjang di 12 */}
-          <line x1="100" y1="106" x2="100" y2="34" stroke={panjang} strokeWidth="5" strokeLinecap="round" />
+          <line x1="100" y1="106" x2="100" y2="48" stroke={panjang} strokeWidth="5" strokeLinecap="round" />
           {/* jarum pendek */}
           <line
             x1="100" y1="108" x2="100" y2="56" stroke={pendek} strokeWidth="9" strokeLinecap="round"
@@ -339,7 +340,7 @@ function JamDinding({
             boxShadow: sorot ? `0 0 0 4px ${KUNING}` : undefined,
           };
           if (!onKetukAngka) return <span key={n} aria-hidden className={`absolute flex items-center justify-center rounded-full ${sorot ? "akademi-bounce" : ""}`} style={gaya}>{n}</span>;
-          const dt = 56 * k;
+          const dt = 52 * k; // jarak antar-angka 52,8k: tombol tidak saling menindih
           return (
             <button key={n} type="button" disabled={terkunci} onClick={() => onKetukAngka(n)} aria-label={`Angka ${n}`} className={`absolute flex items-center justify-center rounded-full active:scale-90 ${sorot ? "akademi-bounce" : ""}`} style={{ ...gaya, width: dt, height: dt, marginLeft: -dt / 2, marginTop: -dt / 2 }}>
               {n}
@@ -958,7 +959,7 @@ function ModeTaksir(c: Ctx) {
 
   const lihatLagi = () => { c.onHint?.(); flash(); };
   const teks = KS.taksir;
-  const tinggi = ronde.target <= 8 ? 160 : ronde.target <= 14 ? 200 : 240;
+  const tinggi = ronde.target <= 8 ? 140 : ronde.target <= 14 ? 170 : 205;
   const { cols, rows } = kisiBenda(ronde.target);
 
   return (
@@ -973,12 +974,14 @@ function ModeTaksir(c: Ctx) {
             const lencana = Math.round(28 * Math.max(1, ub / 56));
             return (
               <div className="absolute inset-0" aria-label={tampil ? `${ronde.target} benda di keranjang` : "Keranjang tertutup kain"}>
+                <div className="absolute" style={{ inset: Math.round(ub * 0.22) }}>
                 {Array.from({ length: ronde.target }, (_, i) => (
                   <span key={i} className="absolute -translate-x-1/2 -translate-y-1/2" style={pos[i]}>
                     <Benda v={v} size={ub} />
                     {hasil && i < terhitung && <span className="akademi-pop absolute -top-2 -right-2 flex items-center justify-center rounded-full text-white" style={{ ...Tebal, width: lencana, height: lencana, color: "#fff", fontSize: lencana / 2, background: UNGU }}>{i + 1}</span>}
                   </span>
                 ))}
+                </div>
                 {hasil && terhitung > 0 && <span className="akademi-pop absolute right-3 bottom-2 rounded-full bg-white px-3" style={{ ...Tebal, fontSize: 24 * st, boxShadow: BAYANG }}>{terhitung}</span>}
                 <div className="absolute inset-0 transition-transform duration-500 ease-in-out" style={{ transform: tampil ? "translateY(-104%)" : "translateY(0)", background: "repeating-linear-gradient(135deg,#f0a7b8 0 14px,#f6c6d1 14px 28px)", boxShadow: "0 6px 0 rgba(0,0,0,.1)", borderRadius: 18 }} aria-hidden>
                   <div className="flex h-full items-center justify-center">
@@ -1274,7 +1277,7 @@ function ModeBagi(c: Ctx) {
         className={kurang ? "akademi-bounce" : ""}
         ring={aktifIni ? KUNING : "transparent"}
         minIsi={72}
-        style={{ minHeight: 150 * skala }}
+        style={{ minHeight: 132 * skala }}
         label={
           <button type="button" disabled={terkunci} onClick={() => { sfx.tap(); setAktif(sisi); }} aria-label={`Pilih piring ${sisi}${aktifIni ? " (aktif)" : ""}, ${n} ikan`} aria-pressed={aktifIni} className="flex min-h-14 items-center justify-center gap-2 rounded-full px-2 active:scale-95" style={{ minHeight: 52 * skala, background: aktifIni ? "#fff1c2" : undefined }}>
             <span style={{ fontSize: 40 * st, lineHeight: 1 }} aria-hidden>{sisi === "kiri" ? "🐱" : "🐈"}</span>

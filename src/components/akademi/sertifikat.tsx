@@ -154,7 +154,7 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
   const url = URL_VERIFIKASI(kode);
   const kelompok = unitDikuasai(snapshot);
   const pelajaran = TRACKS.filter((t) => snapshot.kompetensi.some((k) => k.track === t.id)).map((t) => t.nama.id);
-  const nameSize = nama.length > 24 ? "clamp(24px, 4cqw, 48px)" : nama.length > 16 ? "clamp(28px, 5cqw, 60px)" : "clamp(32px, 6.2cqw, 76px)";
+  const nameSize = nama.length > 24 ? "min(4cqw, 48px)" : nama.length > 16 ? "min(5cqw, 60px)" : "min(6.2cqw, 76px)";
   return (
     <div
       className={`sertifikat-card relative w-full max-w-[1000px] overflow-hidden rounded-[6px] shadow-[0_18px_50px_rgba(20,35,63,.22)] ${KELAS_FONT_SERTIFIKAT} ${className}`}
@@ -178,29 +178,29 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
       <Sudut posisi="kiri-bawah" />
       <Sudut posisi="kanan-bawah" />
       {terverifikasi && (
-        <div className="absolute left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-white" style={{ top: "3.2%", background: "#12904a", fontFamily: SANS, fontSize: "clamp(9px, 1.2cqw, 13px)", fontWeight: 700, letterSpacing: 2 }}>
+        <div className="absolute left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-white" style={{ top: "3.2%", background: "#12904a", fontFamily: SANS, fontSize: "min(1.2cqw, 13px)", fontWeight: 700, letterSpacing: 2 }}>
           SERTIFIKAT SAH · TERVERIFIKASI
         </div>
       )}
       {pending && (
-        <div className="no-print absolute right-[9%] rounded-full px-3 py-1" style={{ top: "9%", background: "#fff4d1", color: "#b07a00", fontFamily: SANS, fontSize: "clamp(8px, 1.1cqw, 12px)", fontWeight: 700, letterSpacing: 1.5 }}>
+        <div className="no-print absolute right-[9%] rounded-full px-3 py-1" style={{ top: "9%", background: "#fff4d1", color: "#b07a00", fontFamily: SANS, fontSize: "min(1.1cqw, 12px)", fontWeight: 700, letterSpacing: 1.5 }}>
           MENUNGGU SINKRON
         </div>
       )}
       <div className="absolute flex flex-col items-center text-center" style={{ inset: "8.6% 10.5% 10.5% 10.5%" }}>
         <div className="flex items-center gap-[1.2cqw]">
-          <Image src="/brand/rinoya-mark-r.png" alt="" width={64} height={64} priority style={{ width: "clamp(26px, 4.4cqw, 56px)", height: "auto" }} />
-          <span style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.4cqw, 17px)", fontWeight: 600, color: NAVY, letterSpacing: "0.55em" }}>RINOYA ACADEMY</span>
+          <Image src="/brand/rinoya-mark-r.png" alt="" width={64} height={64} priority style={{ width: "min(4.4cqw, 56px)", height: "auto" }} />
+          <span style={{ fontFamily: SANS, fontSize: "min(1.4cqw, 17px)", fontWeight: 600, color: NAVY, letterSpacing: "0.55em" }}>RINOYA ACADEMY</span>
         </div>
-        <h1 className="leading-none" style={{ marginTop: "1.2cqw", fontFamily: DISPLAY, fontSize: "clamp(28px, 5.8cqw, 72px)", fontWeight: 700, color: NAVY, letterSpacing: "0.16em" }}>
+        <h1 className="leading-none" style={{ marginTop: "1.2cqw", fontFamily: DISPLAY, fontSize: "min(5.8cqw, 72px)", fontWeight: 700, color: NAVY, letterSpacing: "0.16em" }}>
           SERTIFIKAT
         </h1>
         <div className="flex items-center gap-[1cqw]" style={{ marginTop: "0.6cqw" }}>
           <span style={{ width: "7cqw", height: 1.5, background: GOLD_GRAD }} />
-          <span style={{ fontFamily: SANS, fontSize: "clamp(8px, 1.3cqw, 16px)", fontWeight: 700, color: GOLD, letterSpacing: "0.38em" }}>KENAIKAN JENJANG</span>
+          <span style={{ fontFamily: SANS, fontSize: "min(1.3cqw, 16px)", fontWeight: 700, color: GOLD, letterSpacing: "0.38em" }}>KENAIKAN JENJANG</span>
           <span style={{ width: "7cqw", height: 1.5, background: GOLD_GRAD }} />
         </div>
-        <p style={{ marginTop: "1.6cqw", fontStyle: "italic", fontSize: "clamp(11px, 1.75cqw, 22px)", color: MUTED }}>Dengan bangga diberikan kepada</p>
+        <p style={{ marginTop: "1.6cqw", fontStyle: "italic", fontSize: "min(1.75cqw, 22px)", color: MUTED }}>Dengan bangga diberikan kepada</p>
         <p className="leading-none" style={{ marginTop: "0.4cqw", fontFamily: SCRIPT, fontSize: nameSize, color: NAVY }}>
           {nama}
         </p>
@@ -208,20 +208,20 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
           <span className="absolute inset-x-0 top-1/2 block h-[2px] -translate-y-1/2" style={{ background: GOLD_GRAD, maskImage: "linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent)" }} />
           <span className="absolute left-1/2 top-1/2 block size-[9px] -translate-x-1/2 -translate-y-1/2 rotate-45" style={{ background: GOLD_GRAD }} />
         </div>
-        <p style={{ marginTop: "1.2cqw", fontSize: "clamp(11px, 1.7cqw, 21px)", color: INK, lineHeight: 1.35, maxWidth: "80%" }}>
+        <p style={{ marginTop: "1.2cqw", fontSize: "min(1.7cqw, 21px)", color: INK, lineHeight: 1.35, maxWidth: "80%" }}>
           yang telah lulus dan meraih pangkat <b style={{ color: NAVY }}>{pangkat}</b>, dengan menguasai <b style={{ color: NAVY }}>{snapshot.dikuasai} dari {snapshot.total}</b> kompetensi inti
           {pelajaran.length > 0 && <> pada pelajaran {gabung(pelajaran)}</>}.
         </p>
         {typeof snapshot.nilai === "number" && (
-          <p className="rounded-full text-white" style={{ marginTop: "1cqw", padding: "0.45cqw 1.6cqw", background: NAVY, fontFamily: SANS, fontSize: "clamp(8px, 1.15cqw, 14px)", fontWeight: 700, letterSpacing: "0.22em" }}>
+          <p className="rounded-full text-white" style={{ marginTop: "1cqw", padding: "0.45cqw 1.6cqw", background: NAVY, fontFamily: SANS, fontSize: "min(1.15cqw, 14px)", fontWeight: 700, letterSpacing: "0.22em" }}>
             {(snapshot.predikat ?? "").toUpperCase()} · NILAI AKHIR {snapshot.nilai}
           </p>
         )}
-        <p style={{ marginTop: "0.7cqw", fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", color: MUTED, letterSpacing: "0.1em" }}>
+        <p style={{ marginTop: "0.7cqw", fontFamily: SANS, fontSize: "min(1cqw, 12px)", color: MUTED, letterSpacing: "0.1em" }}>
           Program non-formal pendamping sekolah
         </p>
         {kelompok.length > 0 && typeof snapshot.nilai !== "number" && (
-          <div className="flex w-full flex-wrap justify-center" style={{ marginTop: "1cqw", gap: "0.5cqw 2.2cqw", fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", color: INK }}>
+          <div className="flex w-full flex-wrap justify-center" style={{ marginTop: "1cqw", gap: "0.5cqw 2.2cqw", fontFamily: SANS, fontSize: "min(1cqw, 12px)", color: INK }}>
             {kelompok.map((g) => (
               <div key={g.track.id} className="flex items-baseline gap-[0.6cqw]">
                 <span style={{ color: GOLD, fontWeight: 700, letterSpacing: "0.1em" }}>{g.track.nama.id.toUpperCase()}</span>
@@ -233,23 +233,23 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
         {/* tanda tangan · segel · tanda tangan */}
         <div className="mt-auto grid w-full items-end" style={{ gridTemplateColumns: "1fr auto 1fr", gap: "2cqw" }}>
           <TandaTangan p={PENANDATANGAN[0]} />
-          <div style={{ width: "clamp(56px, 9cqw, 114px)", height: "clamp(76px, 12.2cqw, 155px)", marginBottom: "-1.2cqw" }}>
+          <div style={{ width: "min(9cqw, 114px)", height: "min(12.2cqw, 155px)", marginBottom: "-1.2cqw" }}>
             <Segel pangkat={pangkat} />
           </div>
           <TandaTangan p={PENANDATANGAN[1]} />
         </div>
       </div>
       {/* baris dokumen: nomor & tanggal · kode & QR */}
-      <div className="absolute flex items-center justify-between" style={{ left: "8.4%", right: "8.4%", bottom: "2.6%", fontFamily: SANS, fontSize: "clamp(6.5px, 0.95cqw, 11px)", fontWeight: 600, color: MUTED, letterSpacing: "0.06em" }}>
+      <div className="absolute flex items-center justify-between" style={{ left: "8.4%", right: "8.4%", bottom: "2.6%", fontFamily: SANS, fontSize: "min(0.95cqw, 11px)", fontWeight: 600, color: MUTED, letterSpacing: "0.06em" }}>
         <span>
           {nomor ? `No. ${nomor}` : pending ? "Nomor terbit setelah sinkron" : `No. RA/SJ/${pangkat.toUpperCase()}/${kode}`} · Terbit {tanggalPanjang(issuedAt)}
         </span>
         <span className="flex items-center gap-[0.8cqw]">
           <span className="text-right">
             <span className="block" style={{ fontWeight: 700, color: NAVY, letterSpacing: "0.18em" }}>KODE VERIFIKASI</span>
-            <span className="block" style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.35cqw, 17px)", fontWeight: 700, color: NAVY, letterSpacing: "0.18em", lineHeight: 1.15, fontVariantNumeric: "lining-nums tabular-nums" }}>{kode}</span>
+            <span className="block" style={{ fontFamily: SANS, fontSize: "min(1.35cqw, 17px)", fontWeight: 700, color: NAVY, letterSpacing: "0.18em", lineHeight: 1.15, fontVariantNumeric: "lining-nums tabular-nums" }}>{kode}</span>
           </span>
-          <KodeQR teks={url} ukuran="clamp(34px, 5.4cqw, 66px)" />
+          <KodeQR teks={url} ukuran="min(5.4cqw, 66px)" />
         </span>
       </div>
     </div>
@@ -264,14 +264,14 @@ function gabung(daftar: string[]) {
 function TandaTangan({ p }: { p: (typeof PENANDATANGAN)[number] }) {
   return (
     <div className="flex flex-col items-center" style={{ fontFamily: SANS, paddingBottom: "0.6cqw" }}>
-      <div className="flex items-end justify-center" style={{ height: "clamp(22px, 3.8cqw, 46px)" }}>
+      <div className="flex items-end justify-center" style={{ height: "min(3.8cqw, 46px)" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {p.ttd && <img src={p.ttd} alt="" style={{ maxHeight: "100%", width: "auto" }} />}
       </div>
       <div style={{ width: "78%", height: 1.2, background: NAVY }} />
-      {p.nama && <p style={{ marginTop: "0.4cqw", fontSize: "clamp(8px, 1.15cqw, 14px)", fontWeight: 700, color: NAVY }}>{p.nama}</p>}
-      <p style={{ marginTop: p.nama ? "0.1cqw" : "0.5cqw", fontSize: "clamp(7px, 1cqw, 12px)", fontWeight: 700, color: MUTED, letterSpacing: "0.16em" }}>{p.jabatan.toUpperCase()}</p>
-      <p style={{ fontSize: "clamp(6px, 0.85cqw, 10px)", color: MUTED, letterSpacing: "0.12em" }}>RINOYA ACADEMY</p>
+      {p.nama && <p style={{ marginTop: "0.4cqw", fontSize: "min(1.15cqw, 14px)", fontWeight: 700, color: NAVY }}>{p.nama}</p>}
+      <p style={{ marginTop: p.nama ? "0.1cqw" : "0.5cqw", fontSize: "min(1cqw, 12px)", fontWeight: 700, color: MUTED, letterSpacing: "0.16em" }}>{p.jabatan.toUpperCase()}</p>
+      <p style={{ fontSize: "min(0.85cqw, 10px)", color: MUTED, letterSpacing: "0.12em" }}>RINOYA ACADEMY</p>
     </div>
   );
 }

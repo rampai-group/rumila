@@ -59,7 +59,7 @@ export default function VerifikasiSertifikatPage() {
   const meta = hasil.status === "sah" || hasil.status === "dicabut" ? LEVELS.find((l) => l.id === hasil.level) : undefined;
 
   return (
-    <main className="sertifikat-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
+    <main className="sertifikat-root min-h-dvh latar-biru" style={{ fontFamily: NUNITO, color: INK }}>
       <style>{SERTIFIKAT_PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[1040px] flex-col gap-5 px-4 py-6 sm:px-6 sm:py-8">
         <header className="no-print flex flex-col items-center gap-1 text-center">
@@ -92,7 +92,7 @@ export default function VerifikasiSertifikatPage() {
         )}
 
         <footer className="no-print flex justify-center">
-          <Link href="/" className="text-[13px] font-extrabold text-ink-3 underline-offset-4 hover:underline">
+          <Link href="/" className="inline-flex min-h-11 items-center px-2 text-[13px] font-extrabold text-ink-3 underline-offset-4 hover:underline">
             Tentang RINOYA Academy
           </Link>
         </footer>

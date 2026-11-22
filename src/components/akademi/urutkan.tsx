@@ -13,7 +13,7 @@ import type { Tema } from "@/lib/akademi/tema-dunia";
 import { KALIMAT_URUTKAN, KATA_URUTAN, kalimatUrutkan } from "@/lib/akademi/kalimat-suara";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
-import { KartuBenda, type VisualSpec } from "./benda";
+import { KartuBenda, skalaLebar, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
 import { BALOO, BENAR, INK, NUNITO, SALAH, type PresenterProps } from "./jenis";
@@ -71,7 +71,7 @@ function Kepala({ judul, onBantu, kunci, tanpaBantu }: { judul: string; onBantu:
   const { skala: sk } = usePanggung();
   return (
     <div className="flex items-center gap-2">
-      <div className="flex-1 px-1 text-center" style={{ fontFamily: BALOO, fontSize: 21 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar)" }}>
+      <div className="flex-1 px-1 text-center" style={{ fontFamily: BALOO, fontSize: 21 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar-tua)" }}>
         {judul}
       </div>
       {!tanpaBantu && <TombolBantu onClick={onBantu} disabled={kunci} />}
@@ -181,7 +181,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
   const isiLebar = tegak ? 0.68 : 0.6;
   const tinggiSlot = batas(96 * sk, Math.min(sel.s * rasio, (tinggi * 0.55 - 2 * pad - gap * (sel.baris - 1)) / sel.baris), 400);
   // benda berskala (mis. planet besar) dibagi skala terbesarnya supaya tidak meluap dari kartu/slot
-  const skalaMaks = Math.max(1, ...shown.map((x) => visual(x, t).scale ?? 1));
+  const skalaMaks = Math.max(1, ...shown.map((x) => skalaLebar(visual(x, t))));
   const ukuran = batas(base * sk, Math.min(tinggiSlot * 0.6, sel.s * isiLebar), 170) / skalaMaks;
   const kar = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 200 : 140) * sk, gap);
   const tinggiKartu = (tinggi * 0.45 - 2 * pad - gap * (kar.baris - 1)) / kar.baris;
@@ -240,7 +240,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
               key={s.id}
               v={visual(s, t)}
               size={ukuranKartu}
-              labelSize={Math.round(Math.min(20, 13 * Math.max(sk, ukuranKartu / 72)))}
+              labelSize={Math.round(Math.min(20, 13 * Math.max(sk, (ukuranKartu * skalaMaks) / 72)))}
               selected={dipilih}
               onClick={() => ketukKartu(s.id)}
               className={disorot ? "akademi-bounce" : ""}
@@ -331,13 +331,14 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
   const sel = selMuat(lebarDalam, n, (teksSaja && kataPanjang > 6 ? 132 : 84) * sk, (w >= 600 ? 230 : 160) * sk, gap);
   const tegak = w > 0 && h > w;
   const tinggiKartu = batas(96 * sk, Math.min(sel.s * (tegak ? 1.9 : 1.2), (tinggi - gap * (sel.baris - 1)) / sel.baris), 420);
-  const ukuran = batas(base * sk, Math.min(tinggiKartu * 0.55, sel.s * (tegak ? 0.72 : 0.6)), 170);
+  const skalaMaks = Math.max(1, ...urutan.map((id) => skalaLebar(visual(langkah(id), t))));
+  const ukuran = batas(base * sk, Math.min(tinggiKartu * 0.55, sel.s * (tegak ? 0.72 : 0.6)), 170) / skalaMaks;
 
   return (
     <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
       <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
       <div className="flex flex-1 flex-col items-center justify-center text-center" style={{ ...gayaRak(tema, sk), gap: 14 * sk }}>
-        <div style={{ fontFamily: NUNITO, fontSize: 13.5 * Math.min(sk, 1.3), fontWeight: 800, color: "#6b7790" }}>Ketuk dua kartu untuk menukar tempatnya</div>
+        <div style={{ fontFamily: NUNITO, fontSize: 13.5 * Math.min(sk, 1.3), fontWeight: 800, color: "#2f4260" }}>Ketuk dua kartu untuk menukar tempatnya</div>
         <div className="flex flex-wrap justify-center" style={{ gap }}>
           {urutan.map((id, i) => {
             const benar = !!hasil && id === correct[i];
@@ -353,7 +354,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
                   penuh
                   v={visual(langkah(id), t)}
                   size={ukuran}
-                  labelSize={Math.round(Math.min(20, 13 * Math.max(sk, ukuran / 64)))}
+                  labelSize={Math.round(Math.min(20, 13 * Math.max(sk, (ukuran * skalaMaks) / 64)))}
                   selected={dipilih}
                   right={benar}
                   wrong={salah}
@@ -380,7 +381,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
           type="button"
           onClick={selesai}
           disabled={kunci}
-          className="flex-1 rounded-[20px] bg-[#22b573] py-4 text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60"
+          className="flex-1 rounded-[20px] bg-[#12803f] py-4 text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60"
           style={{ fontFamily: BALOO, fontSize: 22 * Math.min(sk, 1.3), fontWeight: 900, minHeight: 60 * Math.min(sk, 1.3) }}
         >
           Sudah benar ✓
@@ -643,7 +644,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
         type="button"
         onClick={ceritakan}
         disabled={kunci || !lengkap}
-        className="flex items-center justify-center gap-2 rounded-[20px] bg-[#22b573] py-3 text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60"
+        className="flex items-center justify-center gap-2 rounded-[20px] bg-[#12803f] py-3 text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60"
         style={{ fontFamily: BALOO, fontSize: 22 * Math.min(sk, 1.3), fontWeight: 900, minHeight: 60 * Math.min(sk, 1.3) }}
       >
         {cerita && !cerita.selesai ? <><Icon name="volume_up" size={26} /> Robot bercerita…</> : <>Ceritakan <Icon name="play_arrow" size={28} /></>}

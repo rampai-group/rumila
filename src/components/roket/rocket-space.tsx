@@ -150,7 +150,7 @@ function FlightOverlay({ engine }: { engine: RocketEngine }) {
         {MISI.map((m, i) => <span key={m.id} className="h-1 flex-1 rounded-full" style={{ background: i < stop ? "rgba(255,255,255,.85)" : i === stop ? "#ffbe0b" : "rgba(255,255,255,.2)" }} />)}
       </div>
       <div className="absolute left-3 right-24 top-6 max-w-sm rounded-2xl bg-[#112b40]/85 p-3 text-white shadow-lg backdrop-blur-md sm:left-5">
-        <label htmlFor="rocket-chapter" className="block text-[10px] font-extrabold tracking-[.16em] text-[#9de4eb]">MISI ROKET · {String(stop + 1).padStart(2, "0")} / {MISI.length}</label>
+        <label htmlFor="rocket-chapter" className="block text-[11px] font-extrabold tracking-[.16em] text-[#9de4eb]">MISI ROKET · {String(stop + 1).padStart(2, "0")} / {MISI.length}</label>
         <select id="rocket-chapter" aria-label="Pilih bagian misi" value={stop} onChange={e => engine.go(Number(e.target.value))} className="pointer-events-auto mt-1 min-h-8 w-full rounded-lg bg-transparent text-base font-extrabold focus-visible:outline-2 focus-visible:outline-[#ffbe0b] sm:text-lg" style={{ fontFamily: BALOO }}>
           {MISI.map((m, i) => <option key={m.id} value={i} className="bg-[#112b40]">{i + 1}. {m.title}</option>)}
         </select>
@@ -167,7 +167,7 @@ function FlightOverlay({ engine }: { engine: RocketEngine }) {
         <div key={cue.key} role="status" aria-live="polite" aria-atomic="true" data-mission-cue={cue.key} className="anim-fade flex items-start gap-3 rounded-[24px] border-2 border-white bg-white/95 p-3 shadow-[0_5px_0_rgba(11,37,69,.25)] backdrop-blur-md motion-reduce:animate-none sm:p-4">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#eee7ff] text-[#6c45e8] sm:size-12"><Icon name={cue.icon} size={27} /></span>
           <div className="min-w-0">
-            <p className="text-[9px] font-extrabold tracking-[.14em] text-[#7b62b5] sm:text-[10px]">{finished ? "MISI SELESAI" : "YANG SEDANG KITA JELAJAHI"}</p>
+            <p className="text-[11px] font-extrabold tracking-[.14em] text-[#7b62b5] sm:text-[11px]">{finished ? "MISI SELESAI" : "YANG SEDANG KITA JELAJAHI"}</p>
             <h2 className="mt-0.5 text-xl leading-tight font-extrabold text-[#0b2545] sm:text-2xl" style={{ fontFamily: BALOO }}>{cue.title}</h2>
             <p className="mt-1 text-[13px] leading-snug font-bold text-[#675a7e] sm:text-[15px]">{cue.info}</p>
           </div>
@@ -175,7 +175,7 @@ function FlightOverlay({ engine }: { engine: RocketEngine }) {
         {showCaption && <p className="pointer-events-auto max-h-[16vh] overflow-y-auto rounded-2xl bg-[#092537]/95 px-4 py-3 text-center text-xs leading-relaxed font-bold text-white sm:text-sm" aria-label="Teks narasi">{cue.caption}</p>}
         {audioError && <p role="alert" className="rounded-xl bg-white px-3 py-2 text-center text-xs font-bold text-[#973b19]">Suara belum bisa diputar. Tekan Lanjut untuk mencoba lagi.</p>}
         <div className="pointer-events-auto rounded-[24px] border border-white/20 bg-[#112b40]/95 px-3 pb-2 pt-2 text-white backdrop-blur-md">
-          <div className="flex items-center gap-2 px-2 text-[10px] font-bold tabular-nums text-[#b6e0e6]">
+          <div className="flex items-center gap-2 px-2 text-[11px] font-bold tabular-nums text-[#b6e0e6]">
             <span>{stamp(seconds)}</span>
             <input type="range" aria-label="Posisi narasi bagian ini" aria-valuetext={`${stamp(seconds)} dari ${stamp(duration)}`} min={0} max={duration} step={0.1} value={Math.min(seconds, duration)} onChange={e => engine.seek(Number(e.target.value))} className="h-6 min-w-0 flex-1 cursor-pointer accent-[#ffbe0b]" />
             <span>{stamp(duration)}</span>
@@ -235,7 +235,7 @@ export function RocketSpace() {
               />
               <div className="pointer-events-auto flex flex-wrap justify-center gap-1 rounded-2xl bg-[#142825]/70 p-1.5 text-white shadow-lg backdrop-blur-md sm:gap-2" aria-label="Sudut pandang lingkungan">
                 {([['landasan', 'rocket_launch', 'Landasan'], ['pesisir', 'waves', 'Pesisir'], ['hutan', 'forest', 'Hutan']] as const).map(([id, icon, label]) => (
-                  <button key={id} onClick={() => engine.viewSite(id)} className="flex min-h-10 items-center gap-1.5 rounded-xl px-2 text-xs font-extrabold transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-white sm:px-3 sm:text-sm">
+                  <button key={id} onClick={() => engine.viewSite(id)} className="flex min-h-11 items-center gap-1.5 rounded-xl px-2 text-xs font-extrabold transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-white sm:px-3 sm:text-sm">
                     <Icon name={icon} size={18} /><span>{label}</span>
                   </button>
                 ))}

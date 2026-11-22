@@ -771,7 +771,7 @@ function Guide({ onClose }: { onClose: () => void }) {
           <button
             onClick={onClose}
             aria-label="Tutup"
-            className="flex size-10 items-center justify-center rounded-xl bg-fill"
+            className="flex size-11 items-center justify-center rounded-xl bg-fill"
           >
             <Icon name="close" />
           </button>

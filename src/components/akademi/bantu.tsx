@@ -19,7 +19,7 @@ export function TombolBantu({ onClick, disabled, label = "Bantu", ikon = "lightb
       onClick={onClick}
       disabled={disabled || sisa === 0}
       aria-label={sisa === null ? label : `${label}, sisa ${sisa}`}
-      className="relative flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-[16px] bg-[#ffd23f] px-2.5 text-[#0b2545] shadow-[0_4px_0_#d9a90b] active:translate-y-0.5 disabled:opacity-45"
+      className="relative flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-[16px] bg-[#ffd23f] pr-4 pl-2.5 text-[#0b2545] shadow-[0_4px_0_#d9a90b] active:translate-y-0.5 disabled:opacity-45"
       style={{ fontFamily: NUNITO, fontSize: 15, fontWeight: 800, minWidth: 44 }}
     >
       <Icon name={ikon} size={22} />

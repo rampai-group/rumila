@@ -44,7 +44,7 @@ export default function VerifikasiSemesterPage() {
   }, [sesi]);
 
   return (
-    <main className="sertifikat-root min-h-dvh" style={{ background: "#fff0da", color: "#0b2545" }}>
+    <main className="sertifikat-root min-h-dvh latar-biru" style={{ color: "#0b2545" }}>
       <style>{SERTIFIKAT_PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[1040px] flex-col items-center gap-4 px-4 py-6">
         <header className="no-print text-center">
@@ -55,7 +55,7 @@ export default function VerifikasiSemesterPage() {
         {hasil === "tidak-ada" && <p className="rounded-[20px] bg-white p-6 text-center font-bold">Sertifikat tidak ditemukan. Periksa kembali tautan atau QR-nya.</p>}
         {hasil === "galat" && <p className="rounded-[20px] bg-white p-6 text-center font-bold">Tidak bisa memeriksa sekarang. Coba muat ulang.</p>}
         {typeof hasil === "object" && <SertifikatSemesterKartu nama={hasil.nama} s={hasil.s} terverifikasi />}
-        <Link href="/" className="no-print text-[13px] font-extrabold text-ink-3">
+        <Link href="/" className="no-print inline-flex min-h-11 items-center px-2 text-[13px] font-extrabold text-ink-3">
           Tentang RINOYA Academy
         </Link>
       </div>

@@ -253,7 +253,7 @@ function AddSheet() {
               aria-label={`Warna ${k}`}
               aria-pressed={c === k}
               onClick={() => setC(k)}
-              className="size-9 rounded-full"
+              className="size-11 rounded-full"
               style={{ background: CAT[k][1], boxShadow: c === k ? `0 0 0 3px #fff, 0 0 0 5px ${CAT[k][1]}` : "none" }}
             />
           ))}
@@ -311,7 +311,7 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
               <Icon name="lock" size={16} />
               <span className="flex-1">
                 {LEVELS.find((l) => l.id === level)?.pangkat}
-                <span className="block text-[10px] font-semibold text-ink-3">Terkunci. Naik jenjang lewat kelulusan di Academy.</span>
+                <span className="block text-[11px] font-semibold text-ink-3">Terkunci. Naik jenjang lewat kelulusan di Academy.</span>
               </span>
             </div>
           ) : (
@@ -327,7 +327,7 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
                   className={`rounded-[12px] px-2 py-2 text-[12px] font-bold ${level === l.id ? "bg-ink text-white" : "bg-white text-ink"}`}
                 >
                   {l.pangkat}
-                  <span className="block text-[10px] font-semibold opacity-70">{l.usia[0]}–{l.usia[1]} tahun</span>
+                  <span className="block text-[11px] font-semibold opacity-70">{l.usia[0]}–{l.usia[1]} tahun</span>
                 </button>
               ))}
             </div>
@@ -440,7 +440,7 @@ function EditSheet({ memberId }: { memberId: string }) {
               </button>
             </div>
           ) : (
-            <button onClick={() => setConfirmRemove(true)} className="h-10 text-sm font-semibold text-negative">
+            <button onClick={() => setConfirmRemove(true)} className="h-11 text-sm font-semibold text-negative">
               Keluarkan dari rumah
             </button>
           )}

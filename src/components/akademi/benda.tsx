@@ -7,7 +7,9 @@ import { createContext, useContext, useMemo, type CSSProperties, type ReactNode 
 import { BALOO, INK, NUNITO, PILAR_CSS, bayangKartu } from "./jenis";
 
 /** Huruf terpanjang satu kata (untuk ukuran huruf yang tidak memotong kata di tengah). */
-const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+/).map((k) => k.length));
+const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+|(?<=-)/).map((k) => k.length));
+/** Lebar gambar terbesar relatif ukuran dasar: emoji memakai scaleX(width) yang tidak ikut dihitung tata letak. */
+export const skalaLebar = (v: { scale?: number; emoji?: string; width?: number }) => (v.scale ?? 1) * Math.max(1, v.emoji ? v.width ?? 1 : 1);
 
 export interface VisualSpec {
   emoji?: string;
@@ -227,7 +229,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
   const berlatar = !!v.emoji && !!v.color && (v.latar ?? bedaWarna.has(v.emoji));
   const satu = (k: number): ReactNode => {
     if (v.emoji) {
-      const font = n > 1 ? Math.max(18, s / Math.max(v.kolom ?? 0, Math.ceil(Math.sqrt(n))) * 0.9) : s * 0.86;
+      const font = n > 1 ? Math.max(n > 12 ? 11 : 18, s / Math.max(v.kolom ?? 0, Math.ceil(Math.sqrt(n))) * 0.9) : s * 0.86;
       const gambar = (
         <span key={k} style={{ fontSize: berlatar ? font * 0.78 : font, lineHeight: 1, display: "inline-block", transform: v.width && v.width !== 1 ? `scaleX(${v.width})` : undefined, transformOrigin: "center" }}>
           {v.emoji}
@@ -270,7 +272,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
         className="text-center text-balance"
         style={{
           fontFamily: kalimat ? NUNITO : BALOO, fontWeight: kalimat ? 800 : 900, color: v.color ?? INK, lineHeight: kalimat ? 1.2 : 1.1,
-          fontSize: `min(${px}px, ${(158 / kataTerpanjang(tulisan)).toFixed(1)}cqi)`, overflowWrap: "break-word", hyphens: "manual", maxWidth: Math.max(s * 2.4, 120),
+          fontSize: `max(12px, min(${kalimat ? Math.max(15, px) : px}px, ${(158 / kataTerpanjang(tulisan)).toFixed(1)}cqi))`, overflowWrap: "break-word", hyphens: "manual", maxWidth: `min(100%, ${Math.max(s * 2.4, kalimat ? 170 : 120)}px)`,
         }}
       >
         {tulisan}
@@ -279,7 +281,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
   };
   if (n === 1)
     return (
-      <span className={`inline-flex items-center justify-center ${className}`} style={{ minWidth: s, minHeight: s, ...style }}>
+      <span className={`inline-flex items-center justify-center ${className}`} style={{ minWidth: s, minHeight: s, ...(!v.emoji && !v.shape ? { maxWidth: "100%" } : {}), ...style }}>
         {satu(0)}
       </span>
     );
@@ -324,7 +326,7 @@ export function KartuBenda({
       <Benda v={v} size={size} />
       {teks && (
         <span
-          style={{ fontFamily: NUNITO, fontSize: `min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi)`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: Math.max(96, size * 2.6), overflowWrap: "break-word" }}
+          style={{ fontFamily: NUNITO, fontSize: `max(12px, min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi))`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: Math.max(96, size * 2.6), overflowWrap: "break-word" }}
           className="text-center text-balance"
         >
           {teks}

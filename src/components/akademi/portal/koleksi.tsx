@@ -280,15 +280,15 @@ function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) 
           {p.nama} {p.tercapai && <span aria-label="Tercapai">🎖️</span>}
         </p>
         <div className="mt-1.5 flex flex-wrap gap-1">
-          {jenjangAnak && <span className="rounded-full bg-[#e4f8ec] px-2.5 py-0.5 text-[11px] font-black text-[#12904a]">Jenjangmu</span>}
+          {jenjangAnak && <span className="rounded-full bg-[#a9ecc4] px-2.5 py-0.5 text-[11px] font-black text-[#0b5c30]">Jenjangmu</span>}
           {p.tercapai ? (
-            <span className="rounded-full bg-[#fff4d1] px-2.5 py-0.5 text-[11px] font-black text-[#b07a00]">Tercapai</span>
+            <span className="rounded-full bg-[#ffdc7a] px-2.5 py-0.5 text-[11px] font-black text-[#7a5200]">Tercapai</span>
           ) : p.progres > 0 ? (
             <span className="rounded-full bg-[#e3f1fd] px-2.5 py-0.5 text-[11px] font-black text-[#0567c2]">Sedang dikejar</span>
           ) : null}
         </div>
         {p.tercapai && (
-          <Link href={`/akademi/sertifikat/${levelMeta(p.level).slug}`} className="mt-2 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-[#0b2545] transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
+          <Link href={`/akademi/sertifikat/${levelMeta(p.level).slug}`} className="mt-2 inline-flex h-11 items-center gap-1.5 rounded-full px-4 text-[#0b2545] transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
             Lihat sertifikat 🎓
           </Link>
         )}

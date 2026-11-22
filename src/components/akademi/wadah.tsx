@@ -24,7 +24,7 @@ export function LabelWadah({ teks, gambar, rata = "tengah" }: { teks: string; ga
       {gambar && <span className="flex shrink-0 items-center justify-center">{gambar}</span>}
       <span className="flex min-w-0 flex-col" style={{ alignItems: kiri ? "flex-start" : "center" }}>
         <span style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16.5 * skala, lineHeight: 1.1, color: INK, textWrap: "balance", overflowWrap: "break-word" }}>{nama}</span>
-        {ciri && <span style={{ fontFamily: NUNITO, fontWeight: 700, fontSize: 12.5 * skala, lineHeight: 1.2, color: "#6b7790", marginTop: 2, textWrap: "balance" }}>{ciri}</span>}
+        {ciri && <span style={{ fontFamily: NUNITO, fontWeight: 700, fontSize: 12.5 * skala, lineHeight: 1.2, color: "#2f4260", marginTop: 2, textWrap: "balance" }}>{ciri}</span>}
       </span>
     </span>
   );
@@ -162,7 +162,7 @@ export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ lab
       </div>
       <div
         className="flex min-w-0 flex-1 flex-wrap content-center items-center justify-center gap-1.5 rounded-[12px] px-1.5 py-1"
-        style={{ minHeight: minIsi * skala, background: hijau ? "#e6f8ef" : aktif ? "color-mix(in srgb, var(--pilar, #0786eb) 7%, #fff)" : "#f6f8fb", border: `2px dashed ${hijau ? "#22b573" : aktif ? "var(--pilar, #0786eb)" : "#c9d2df"}` }}
+        style={{ minHeight: minIsi * skala, background: hijau ? "#e6f8ef" : aktif ? "color-mix(in srgb, var(--pilar, #0786eb) 7%, #fff)" : "color-mix(in srgb, var(--pilar, #0786eb) 13%, #fff)", border: `2px dashed ${hijau ? "#22b573" : aktif ? "var(--pilar, #0786eb)" : "#c9d2df"}` }}
       >
         {children}
       </div>

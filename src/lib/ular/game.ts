@@ -140,7 +140,7 @@ export function makeBoard(r: Rand = secureRandom): Board {
 export function classicBoard(): Board {
   const pairs: [number, number][] = [
     [4, 14], [9, 31], [21, 42], [28, 84], [36, 44], [51, 67], [71, 91], [80, 99],
-    [16, 6], [47, 26], [49, 11], [56, 53], [62, 19], [64, 60], [87, 24], [93, 73], [95, 75], [98, 78],
+    [16, 6], [47, 26], [49, 11], [56, 45], [62, 19], [64, 60], [87, 24], [93, 73], [95, 75], [98, 78],
   ];
   const jumps = pairs.map(([from, to]) => ({ from, to, kind: to > from ? ('ladder' as const) : ('snake' as const) }));
   const map: Record<number, number> = {};

@@ -16,7 +16,7 @@
       { "name": "star-gold", "value": "#fdb724", "usage": "Bintang di logo. Hanya untuk bintang, lencana, dan pangkat. Teks `ink` di atasnya (8,8:1)." },
       { "name": "star-gold-tint", "value": "#fff3d1", "usage": "Latar koleksi stiker dan lencana." },
       { "name": "academy-navy", "value": "#135385", "usage": "Biru dongker tulisan ACADEMY di logo. Untuk label resmi: sertifikat, kop rapor. Putih di atasnya 8,1:1." },
-      { "name": "page", "value": { "anak": "#fff8ee", "wali": "#f4f7fb" }, "usage": "Latar halaman. Anak: krem hangat. Wali: putih kebiruan yang tenang." },
+      { "name": "page", "value": { "anak": "#5cb8f8", "wali": "#f4f7fb" }, "usage": "Latar halaman. Anak: biru langit penuh (keputusan owner 22 Nov 2026: warna dipertegas). Ruang Orang Tua memakai #7cc6fa dengan kartu putih." },
       { "name": "surface", "value": { "anak": "#ffffff", "wali": "#ffffff" }, "usage": "Kartu, lembar, dan panel di atas `page`." },
       { "name": "fill", "value": { "anak": "#fff0da", "wali": "#eaf0f7" }, "usage": "Isian lembut: lintasan bilah progres, kolom input, ubin kosong." },
       { "name": "line", "value": { "anak": "#f0e4d2", "wali": "#d8e3f0" }, "usage": "Garis pemisah dekoratif. Bukan untuk tepi kontrol." },

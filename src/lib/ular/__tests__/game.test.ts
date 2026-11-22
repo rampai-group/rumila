@@ -11,7 +11,7 @@ describe('Ular Tangga', () => {
 
   it('papan acak adil: ujung unik, tanpa rantai, pindah baris, tidak di 1/100', () => {
     for (let t = 0; t < 200; t++) {
-      const b = makeBoard();
+      const b = t === 0 ? classicBoard() : makeBoard();
       const ends = b.jumps.flatMap((j) => [j.from, j.to]);
       expect(new Set(ends).size).toBe(ends.length);
       expect(ends).not.toContain(1);

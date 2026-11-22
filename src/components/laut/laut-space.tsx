@@ -21,7 +21,7 @@ function DepthMeter() {
   const k = (i + Math.min(1, (depth-zone.min)/(zone.max-zone.min))) / ZONA_LAUT.length;
   return <aside className="pointer-events-none absolute right-3 top-28 hidden flex-col items-end gap-2 text-white sm:flex sm:right-5" aria-label={`Kedalaman ${fmt(depth)} meter, ${zone.name}`}>
     <div className="rounded-2xl border border-white/15 bg-[#061d32]/65 px-4 py-3 backdrop-blur-md">
-      <div className="text-[10px] font-extrabold uppercase tracking-[.18em] text-cyan-200">Kedalaman</div>
+      <div className="text-[11px] font-extrabold uppercase tracking-[.18em] text-cyan-200">Kedalaman</div>
       <div className="text-[30px] leading-tight" style={{fontFamily:BALOO,fontWeight:800}}>{fmt(depth)} <span className="text-sm text-cyan-100">m</span></div>
       <div className="mt-1 text-xs font-bold text-cyan-100">{zone.name}</div>
     </div>
@@ -29,7 +29,7 @@ function DepthMeter() {
       {ZONA_LAUT.map(z => <div key={z.name} className="h-1/5" style={{background:z.color}} />)}
       <span className="absolute -left-1 h-4 w-4 -translate-y-1/2 rounded-full border-[3px] border-white bg-orange-400 shadow-lg" style={{top:`${k*100}%`}} />
     </div>
-    <span className="text-[10px] text-white/60">Skema zona · bukan skala jarak</span>
+    <span className="text-[11px] text-white/60">Skema zona · bukan skala jarak</span>
   </aside>;
 }
 
@@ -72,7 +72,7 @@ function TourOverlay({engine}:{engine:LautEngine}) {
       {TUR_LAUT.map((c,i)=><div key={c.id} className="h-1 flex-1 overflow-hidden rounded-full bg-white/15"><div className="h-full bg-[#ffd15c]" style={{width:i<stop?'100%':i===stop?`${progress*100}%`:'0%'}}/></div>)}
     </div>
     <header className="absolute inset-x-0 top-6 flex items-start justify-between gap-3 px-4 sm:px-6">
-      <div className="min-w-0 drop-shadow-lg"><p className="text-[10px] font-extrabold uppercase tracking-[.2em] text-cyan-100">Ekspedisi laut · {String(stop+1).padStart(2,'0')} / {TUR_LAUT.length}</p><h1 className="mt-1 max-w-[70vw] text-[23px] leading-tight sm:text-[32px]" style={{fontFamily:BALOO,fontWeight:800}}>{s.title}</h1><p className="mt-1 text-xs font-bold text-cyan-100 sm:text-sm"><span className="hidden sm:inline">{s.label}</span><span className="sm:hidden">{s.set==='kapal'?'Di atas kapal':`${zoneAtDepth(depth).name} · ${fmt(depth)} m`}</span></p></div>
+      <div className="min-w-0 drop-shadow-lg"><p className="text-[11px] font-extrabold uppercase tracking-[.2em] text-cyan-100">Ekspedisi laut · {String(stop+1).padStart(2,'0')} / {TUR_LAUT.length}</p><h1 className="mt-1 max-w-[70vw] text-[23px] leading-tight sm:text-[32px]" style={{fontFamily:BALOO,fontWeight:800}}>{s.title}</h1><p className="mt-1 text-xs font-bold text-cyan-100 sm:text-sm"><span className="hidden sm:inline">{s.label}</span><span className="sm:hidden">{s.set==='kapal'?'Di atas kapal':`${zoneAtDepth(depth).name} · ${fmt(depth)} m`}</span></p></div>
       <RoundBtn icon="close" label="Keluar tur" onClick={()=>engine.setMode('jelajah')}/>
     </header>
     {s.set!=='kapal'&&<DepthMeter/>}
@@ -80,7 +80,7 @@ function TourOverlay({engine}:{engine:LautEngine}) {
     <div className="absolute bottom-0 inset-x-0 flex flex-col items-center gap-3 bg-gradient-to-t from-[#031627]/95 via-[#031627]/40 to-transparent px-3 pb-[max(12px,env(safe-area-inset-bottom))] pt-10 sm:gap-4">
       <div className="max-w-[760px] text-center">
         <p className="mb-2 text-xs font-bold text-[#ffe4a0] sm:text-sm"><Icon name="search" size={15} className="mr-1 inline"/>{s.prompt}</p>
-        {captions&&<div className="rounded-[20px] border border-white/15 bg-[#061d32]/95 px-4 py-3 shadow-lg sm:px-6"><p className="mb-1 text-[10px] font-extrabold uppercase tracking-[.18em] text-cyan-200">Agam · {source==='rekaman'?'Algenib':source==='perangkat'?'Suara perangkat':'Baca bersama'}</p><p className="text-[14px] font-bold leading-relaxed sm:text-[17px]">{s.lines[line]??s.lines[0]}</p></div>}
+        {captions&&<div className="rounded-[20px] border border-white/15 bg-[#061d32]/95 px-4 py-3 shadow-lg sm:px-6"><p className="mb-1 text-[11px] font-extrabold uppercase tracking-[.18em] text-cyan-200">Agam · {source==='rekaman'?'Algenib':source==='perangkat'?'Suara perangkat':'Baca bersama'}</p><p className="text-[14px] font-bold leading-relaxed sm:text-[17px]">{s.lines[line]??s.lines[0]}</p></div>}
       </div>
       {source==='rekaman'&&<div className="pointer-events-auto flex w-full max-w-[640px] items-center gap-3 px-2 text-[11px] font-bold tabular-nums text-cyan-50">
         <span className="w-9 shrink-0">{audioTimeLabel(audioTime)}</span>
@@ -132,7 +132,7 @@ export function LautSpace() {
     {!engine&&!error&&<div className="absolute inset-0 flex items-center justify-center text-white"><p className="animate-pulse text-lg font-bold">Menyiapkan dunia bawah laut…</p></div>}
     {error&&<div className="absolute inset-0 flex items-center justify-center p-6 text-center text-white"><div><h1 className="text-2xl font-bold">Tampilan 3D belum bisa dibuka</h1><p className="my-3">Coba muat ulang atau gunakan browser yang mendukung WebGL.</p><a href="/laut/narasi-v2.zip" download className="rounded-full bg-white px-5 py-3 font-bold text-[#0b2545]">Unduh cerita ekspedisi</a></div></div>}
     {engine&&(mode==='tur'?<TourOverlay engine={engine}/>:<div className="pointer-events-none absolute inset-0 flex flex-col justify-between bg-gradient-to-b from-[#03223d]/50 via-transparent to-[#031627]/50 p-3 sm:p-5">
-      <header className="flex items-start justify-between gap-4"><RoundBtn icon={focus?'arrow_back':'home'} label={focus?'Kembali':'Keluar'} onClick={()=>focus?engine.focus(null):router.push('/akademi/lab')}/><div className="text-center text-white"><p className="mt-2 text-[10px] font-extrabold uppercase tracking-[.22em] text-cyan-100">Rinoya · dunia pengetahuan</p><h1 className="mt-1 text-[28px] leading-tight sm:text-4xl" style={{fontFamily:BALOO,fontWeight:800}}>Jelajah Laut</h1><p className="mt-1 hidden text-sm font-bold text-cyan-100 sm:block">Dari taman karang hingga hampir 11 kilometer di bawah laut.</p></div><RoundBtn icon="scuba_diving" label="Mulai ekspedisi" tone="orange" onClick={()=>engine.setMode('tur')}/></header>
+      <header className="flex items-start justify-between gap-4"><RoundBtn icon={focus?'arrow_back':'home'} label={focus?'Kembali':'Keluar'} onClick={()=>focus?engine.focus(null):router.push('/akademi/lab')}/><div className="text-center text-white"><p className="mt-2 text-[11px] font-extrabold uppercase tracking-[.22em] text-cyan-100">Rinoya · dunia pengetahuan</p><h1 className="mt-1 text-[28px] leading-tight sm:text-4xl" style={{fontFamily:BALOO,fontWeight:800}}>Jelajah Laut</h1><p className="mt-1 hidden text-sm font-bold text-cyan-100 sm:block">Dari taman karang hingga hampir 11 kilometer di bawah laut.</p></div><RoundBtn icon="scuba_diving" label="Mulai ekspedisi" tone="orange" onClick={()=>engine.setMode('tur')}/></header>
       <DepthMeter/>
       <footer className="flex flex-col gap-3"><p className="text-center text-xs font-bold text-white/80">Geser untuk melihat sekitar · Pilih hewan untuk mengenal lebih dekat</p><Dock engine={engine}/></footer>
     </div>)}
