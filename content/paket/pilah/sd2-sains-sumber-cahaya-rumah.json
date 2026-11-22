@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-rumah",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -74,7 +74,11 @@
       "id": "lampu",
       "labelKey": "i-lampu",
       "bin": "sumber",
-      "emoji": "💡"
+      "emoji": "💡",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "✨"
+      }
     },
     {
       "id": "lilin",
@@ -105,7 +109,11 @@
       "labelKey": "i-lampumati",
       "bin": "bukan",
       "emoji": "💡",
-      "color": "#bdbdbd"
+      "color": "#bdbdbd",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "❌"
+      }
     },
     {
       "id": "cermin",

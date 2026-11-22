@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-pagi",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -322,12 +322,20 @@
         {
           "id": "ayam-1",
           "labelKey": "ayam-1",
-          "emoji": "🌽"
+          "emoji": "🌽",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "✋"
+          }
         },
         {
           "id": "ayam-2",
           "labelKey": "ayam-2",
-          "emoji": "🌽"
+          "emoji": "🌽",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "👇"
+          }
         },
         {
           "id": "ayam-3",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-bayangan-besar-kecil",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -139,22 +139,38 @@
         {
           "id": "p1",
           "labelKey": "boneka-p1",
-          "emoji": "🧸"
+          "emoji": "🧸",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "p2",
           "labelKey": "boneka-p2",
-          "emoji": "🧸"
+          "emoji": "🧸",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "p3",
           "labelKey": "boneka-p3",
-          "emoji": "🧸"
+          "emoji": "🧸",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "p4",
           "labelKey": "boneka-p4",
-          "emoji": "🧸"
+          "emoji": "🧸",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -165,22 +181,38 @@
         {
           "id": "p1",
           "labelKey": "tangan-p1",
-          "emoji": "🤘"
+          "emoji": "🤘",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "p2",
           "labelKey": "tangan-p2",
-          "emoji": "🤘"
+          "emoji": "🤘",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "p3",
           "labelKey": "tangan-p3",
-          "emoji": "🤘"
+          "emoji": "🤘",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "p4",
           "labelKey": "tangan-p4",
-          "emoji": "🤘"
+          "emoji": "🤘",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -191,22 +223,38 @@
         {
           "id": "p1",
           "labelKey": "dino-p1",
-          "emoji": "🦖"
+          "emoji": "🦖",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "p2",
           "labelKey": "dino-p2",
-          "emoji": "🦖"
+          "emoji": "🦖",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "p3",
           "labelKey": "dino-p3",
-          "emoji": "🦖"
+          "emoji": "🦖",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "p4",
           "labelKey": "dino-p4",
-          "emoji": "🦖"
+          "emoji": "🦖",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -217,22 +265,38 @@
         {
           "id": "p1",
           "labelKey": "kunci-p1",
-          "emoji": "🔑"
+          "emoji": "🔑",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "p2",
           "labelKey": "kunci-p2",
-          "emoji": "🔑"
+          "emoji": "🔑",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "p3",
           "labelKey": "kunci-p3",
-          "emoji": "🔑"
+          "emoji": "🔑",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "p4",
           "labelKey": "kunci-p4",
-          "emoji": "🔑"
+          "emoji": "🔑",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -243,22 +307,38 @@
         {
           "id": "bintang-1",
           "labelKey": "bintang-1",
-          "emoji": "⭐"
+          "emoji": "⭐",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "bintang-2",
           "labelKey": "bintang-2",
-          "emoji": "⭐"
+          "emoji": "⭐",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "bintang-3",
           "labelKey": "bintang-3",
-          "emoji": "⭐"
+          "emoji": "⭐",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "bintang-4",
           "labelKey": "bintang-4",
-          "emoji": "⭐"
+          "emoji": "⭐",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -269,22 +349,38 @@
         {
           "id": "kupu-1",
           "labelKey": "kupu-1",
-          "emoji": "🦋"
+          "emoji": "🦋",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "kupu-2",
           "labelKey": "kupu-2",
-          "emoji": "🦋"
+          "emoji": "🦋",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "kupu-3",
           "labelKey": "kupu-3",
-          "emoji": "🦋"
+          "emoji": "🦋",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "kupu-4",
           "labelKey": "kupu-4",
-          "emoji": "🦋"
+          "emoji": "🦋",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -295,22 +391,38 @@
         {
           "id": "mobil-1",
           "labelKey": "mobil-1",
-          "emoji": "🚗"
+          "emoji": "🚗",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "mobil-2",
           "labelKey": "mobil-2",
-          "emoji": "🚗"
+          "emoji": "🚗",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "mobil-3",
           "labelKey": "mobil-3",
-          "emoji": "🚗"
+          "emoji": "🚗",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "mobil-4",
           "labelKey": "mobil-4",
-          "emoji": "🚗"
+          "emoji": "🚗",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -321,22 +433,38 @@
         {
           "id": "gunting-1",
           "labelKey": "gunting-1",
-          "emoji": "✂️"
+          "emoji": "✂️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "gunting-2",
           "labelKey": "gunting-2",
-          "emoji": "✂️"
+          "emoji": "✂️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "gunting-3",
           "labelKey": "gunting-3",
-          "emoji": "✂️"
+          "emoji": "✂️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "gunting-4",
           "labelKey": "gunting-4",
-          "emoji": "✂️"
+          "emoji": "✂️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -347,22 +475,38 @@
         {
           "id": "apel-1",
           "labelKey": "apel-1",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "apel-2",
           "labelKey": "apel-2",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "apel-3",
           "labelKey": "apel-3",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "apel-4",
           "labelKey": "apel-4",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     },
@@ -373,22 +517,38 @@
         {
           "id": "pensil-1",
           "labelKey": "pensil-1",
-          "emoji": "✏️"
+          "emoji": "✏️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0
+          }
         },
         {
           "id": "pensil-2",
           "labelKey": "pensil-2",
-          "emoji": "✏️"
+          "emoji": "✏️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.3
+          }
         },
         {
           "id": "pensil-3",
           "labelKey": "pensil-3",
-          "emoji": "✏️"
+          "emoji": "✏️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 0.65
+          }
         },
         {
           "id": "pensil-4",
           "labelKey": "pensil-4",
-          "emoji": "✏️"
+          "emoji": "✏️",
+          "adegan": {
+            "jenis": "senter",
+            "t": 1
+          }
         }
       ]
     }

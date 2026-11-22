@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-data-janggal-kelas",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PENYELIDIKAN.01"
@@ -155,218 +155,182 @@
     {
       "id": "a1",
       "labelKey": "i-a1",
-      "bin": "pilihan",
-      "emoji": "⏱️"
+      "bin": "pilihan"
     },
     {
       "id": "a2",
       "labelKey": "i-a2",
-      "bin": "pilihan",
-      "emoji": "⏱️"
+      "bin": "pilihan"
     },
     {
       "id": "a3",
       "labelKey": "i-a3",
-      "bin": "pilihan",
-      "emoji": "⏱️"
+      "bin": "pilihan"
     },
     {
       "id": "a4",
       "labelKey": "i-a4",
-      "bin": "pilihan",
-      "emoji": "⏱️"
+      "bin": "pilihan"
     },
     {
       "id": "b1",
       "labelKey": "i-b1",
-      "bin": "pilihan",
-      "emoji": "📏"
+      "bin": "pilihan"
     },
     {
       "id": "b2",
       "labelKey": "i-b2",
-      "bin": "pilihan",
-      "emoji": "📏"
+      "bin": "pilihan"
     },
     {
       "id": "b3",
       "labelKey": "i-b3",
-      "bin": "pilihan",
-      "emoji": "📏"
+      "bin": "pilihan"
     },
     {
       "id": "b4",
       "labelKey": "i-b4",
-      "bin": "pilihan",
-      "emoji": "📏"
+      "bin": "pilihan"
     },
     {
       "id": "c1",
       "labelKey": "i-c1",
-      "bin": "pilihan",
-      "emoji": "🌡️"
+      "bin": "pilihan"
     },
     {
       "id": "c2",
       "labelKey": "i-c2",
-      "bin": "pilihan",
-      "emoji": "🌡️"
+      "bin": "pilihan"
     },
     {
       "id": "c3",
       "labelKey": "i-c3",
-      "bin": "pilihan",
-      "emoji": "🌡️"
+      "bin": "pilihan"
     },
     {
       "id": "c4",
       "labelKey": "i-c4",
-      "bin": "pilihan",
-      "emoji": "🌡️"
+      "bin": "pilihan"
     },
     {
       "id": "d1",
       "labelKey": "i-d1",
-      "bin": "pilihan",
-      "emoji": "💧"
+      "bin": "pilihan"
     },
     {
       "id": "d2",
       "labelKey": "i-d2",
-      "bin": "pilihan",
-      "emoji": "💧"
+      "bin": "pilihan"
     },
     {
       "id": "d3",
       "labelKey": "i-d3",
-      "bin": "pilihan",
-      "emoji": "💧"
+      "bin": "pilihan"
     },
     {
       "id": "d4",
       "labelKey": "i-d4",
-      "bin": "pilihan",
-      "emoji": "💧"
+      "bin": "pilihan"
     },
     {
       "id": "e1",
       "labelKey": "i-e1",
-      "bin": "pilihan",
-      "emoji": "⏲️"
+      "bin": "pilihan"
     },
     {
       "id": "e2",
       "labelKey": "i-e2",
-      "bin": "pilihan",
-      "emoji": "⏲️"
+      "bin": "pilihan"
     },
     {
       "id": "e3",
       "labelKey": "i-e3",
-      "bin": "pilihan",
-      "emoji": "⏲️"
+      "bin": "pilihan"
     },
     {
       "id": "e4",
       "labelKey": "i-e4",
-      "bin": "pilihan",
-      "emoji": "⏲️"
+      "bin": "pilihan"
     },
     {
       "id": "f1",
       "labelKey": "i-f1",
-      "bin": "pilihan",
-      "emoji": "⚖️"
+      "bin": "pilihan"
     },
     {
       "id": "f2",
       "labelKey": "i-f2",
-      "bin": "pilihan",
-      "emoji": "⚖️"
+      "bin": "pilihan"
     },
     {
       "id": "f3",
       "labelKey": "i-f3",
-      "bin": "pilihan",
-      "emoji": "⚖️"
+      "bin": "pilihan"
     },
     {
       "id": "f4",
       "labelKey": "i-f4",
-      "bin": "pilihan",
-      "emoji": "⚖️"
+      "bin": "pilihan"
     },
     {
       "id": "g1",
       "labelKey": "i-g1",
-      "bin": "pilihan",
-      "emoji": "✈️"
+      "bin": "pilihan"
     },
     {
       "id": "g2",
       "labelKey": "i-g2",
-      "bin": "pilihan",
-      "emoji": "✈️"
+      "bin": "pilihan"
     },
     {
       "id": "g3",
       "labelKey": "i-g3",
-      "bin": "pilihan",
-      "emoji": "✈️"
+      "bin": "pilihan"
     },
     {
       "id": "g4",
       "labelKey": "i-g4",
-      "bin": "pilihan",
-      "emoji": "✈️"
+      "bin": "pilihan"
     },
     {
       "id": "h1",
       "labelKey": "i-h1",
-      "bin": "pilihan",
-      "emoji": "💓"
+      "bin": "pilihan"
     },
     {
       "id": "h2",
       "labelKey": "i-h2",
-      "bin": "pilihan",
-      "emoji": "💓"
+      "bin": "pilihan"
     },
     {
       "id": "h3",
       "labelKey": "i-h3",
-      "bin": "pilihan",
-      "emoji": "💓"
+      "bin": "pilihan"
     },
     {
       "id": "h4",
       "labelKey": "i-h4",
-      "bin": "pilihan",
-      "emoji": "💓"
+      "bin": "pilihan"
     },
     {
       "id": "i1",
       "labelKey": "i-i1",
-      "bin": "pilihan",
-      "emoji": "⌛"
+      "bin": "pilihan"
     },
     {
       "id": "i2",
       "labelKey": "i-i2",
-      "bin": "pilihan",
-      "emoji": "⌛"
+      "bin": "pilihan"
     },
     {
       "id": "i3",
       "labelKey": "i-i3",
-      "bin": "pilihan",
-      "emoji": "⌛"
+      "bin": "pilihan"
     },
     {
       "id": "i4",
       "labelKey": "i-i4",
-      "bin": "pilihan",
-      "emoji": "⌛"
+      "bin": "pilihan"
     },
     {
       "id": "ulangicari",

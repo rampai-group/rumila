@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-sudut-potongan-pizza",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -95,61 +95,101 @@
       "id": "kecil-1",
       "labelKey": "i1",
       "bin": "kecil",
-      "emoji": "🍕"
+      "emoji": "🍕",
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.125
+      }
     },
     {
       "id": "kecil-2",
       "labelKey": "i2",
       "bin": "kecil",
-      "emoji": "🍕"
+      "emoji": "🍕",
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.1667
+      }
     },
     {
       "id": "kecil-3",
       "labelKey": "i3",
       "bin": "kecil",
-      "emoji": "🍕"
+      "emoji": "🍕",
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.2
+      }
     },
     {
       "id": "siku-4",
       "labelKey": "i4",
       "bin": "siku",
-      "emoji": "🍕"
+      "emoji": "🍕",
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.25
+      }
     },
     {
       "id": "besar-5",
       "labelKey": "i5",
       "bin": "besar",
-      "emoji": "🍕"
+      "emoji": "🍕",
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.3333
+      }
     },
     {
       "id": "lurus-6",
       "labelKey": "i6",
       "bin": "lurus",
-      "emoji": "🍕"
+      "emoji": "🍕",
+      "adegan": {
+        "jenis": "potong",
+        "t": 0.5
+      }
     },
     {
       "id": "kecil-7",
       "labelKey": "i7",
       "bin": "kecil",
-      "emoji": "🤖"
+      "emoji": "🤖",
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.125
+      }
     },
     {
       "id": "siku-8",
       "labelKey": "i8",
       "bin": "siku",
-      "emoji": "🤖"
+      "emoji": "🤖",
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.25
+      }
     },
     {
       "id": "besar-9",
       "labelKey": "i9",
       "bin": "besar",
-      "emoji": "🤖"
+      "emoji": "🤖",
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.3333
+      }
     },
     {
       "id": "lurus-10",
       "labelKey": "i10",
       "bin": "lurus",
-      "emoji": "🤖"
+      "emoji": "🤖",
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.5
+      }
     },
     {
       "id": "kecil-11",

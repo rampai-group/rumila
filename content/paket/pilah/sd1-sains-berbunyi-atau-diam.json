@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-berbunyi-atau-diam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,27 +78,43 @@
       "id": "radionyala",
       "labelKey": "i-radionyala",
       "bin": "bunyi",
-      "emoji": "📻"
+      "emoji": "📻",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🎵"
+      }
     },
     {
       "id": "radiomati",
       "labelKey": "i-radiomati",
       "bin": "diam",
       "emoji": "📻",
-      "color": "#bdbdbd"
+      "color": "#bdbdbd",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔇"
+      }
     },
     {
       "id": "anjinggonggong",
       "labelKey": "i-anjinggonggong",
       "bin": "bunyi",
-      "emoji": "🐕"
+      "emoji": "🐕",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "💬"
+      }
     },
     {
       "id": "anjingtidur",
       "labelKey": "i-anjingtidur",
       "bin": "diam",
       "emoji": "🐕",
-      "color": "#bdbdbd"
+      "color": "#bdbdbd",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "💤"
+      }
     },
     {
       "id": "bel",

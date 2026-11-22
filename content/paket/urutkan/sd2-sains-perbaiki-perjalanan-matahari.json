@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-perbaiki-perjalanan-matahari",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -163,19 +163,28 @@
           "id": "pagi",
           "labelKey": "bayangan-pagi",
           "emoji": "🚩",
-          "width": 3
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0
+          }
         },
         {
           "id": "siang",
           "labelKey": "bayangan-siang",
           "emoji": "🚩",
-          "width": 0.6
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0.5
+          }
         },
         {
           "id": "sore",
           "labelKey": "bayangan-sore",
           "emoji": "🚩",
-          "width": 3.2
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 1
+          }
         }
       ]
     },
@@ -212,17 +221,29 @@
         {
           "id": "timur",
           "labelKey": "bunga-timur",
-          "emoji": "🌻"
+          "emoji": "🌻",
+          "adegan": {
+            "jenis": "hadap",
+            "t": 0
+          }
         },
         {
           "id": "atas",
           "labelKey": "bunga-atas",
-          "emoji": "🌻"
+          "emoji": "🌻",
+          "adegan": {
+            "jenis": "hadap",
+            "t": 0.5
+          }
         },
         {
           "id": "barat",
           "labelKey": "bunga-barat",
-          "emoji": "🌻"
+          "emoji": "🌻",
+          "adegan": {
+            "jenis": "hadap",
+            "t": 1
+          }
         }
       ]
     },
@@ -260,25 +281,37 @@
           "id": "bayangan-pohon-1",
           "labelKey": "bayangan-pohon-1",
           "emoji": "🌳",
-          "width": 3
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0
+          }
         },
         {
           "id": "bayangan-pohon-2",
           "labelKey": "bayangan-pohon-2",
           "emoji": "🌳",
-          "width": 1.8
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0.25
+          }
         },
         {
           "id": "bayangan-pohon-3",
           "labelKey": "bayangan-pohon-3",
           "emoji": "🌳",
-          "width": 0.6
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0.5
+          }
         },
         {
           "id": "bayangan-pohon-4",
           "labelKey": "bayangan-pohon-4",
           "emoji": "🌳",
-          "width": 3.2
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 1
+          }
         }
       ]
     },
@@ -289,22 +322,42 @@
         {
           "id": "pasir-1",
           "labelKey": "pasir-1",
-          "emoji": "🏖️"
+          "emoji": "🏖️",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 0,
+            "tanda": "❄️"
+          }
         },
         {
           "id": "pasir-2",
           "labelKey": "pasir-2",
-          "emoji": "🏖️"
+          "emoji": "🏖️",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 0.25,
+            "tanda": "♨️"
+          }
         },
         {
           "id": "pasir-3",
           "labelKey": "pasir-3",
-          "emoji": "🏖️"
+          "emoji": "🏖️",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 0.5,
+            "tanda": "🔥"
+          }
         },
         {
           "id": "pasir-4",
           "labelKey": "pasir-4",
-          "emoji": "🏖️"
+          "emoji": "🏖️",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 1,
+            "tanda": "💨"
+          }
         }
       ]
     },
@@ -315,22 +368,42 @@
         {
           "id": "jemuran-1",
           "labelKey": "jemuran-1",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 0,
+            "tanda": "💧"
+          }
         },
         {
           "id": "jemuran-2",
           "labelKey": "jemuran-2",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 0.25,
+            "tanda": "💨"
+          }
         },
         {
           "id": "jemuran-3",
           "labelKey": "jemuran-3",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 0.5,
+            "tanda": "✨"
+          }
         },
         {
           "id": "jemuran-4",
           "labelKey": "jemuran-4",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "matahari",
+            "t": 1,
+            "tanda": "🧺"
+          }
         }
       ]
     },
@@ -368,25 +441,37 @@
           "id": "bayangan-diri-1",
           "labelKey": "bayangan-diri-1",
           "emoji": "🧍",
-          "width": 3
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0
+          }
         },
         {
           "id": "bayangan-diri-2",
           "labelKey": "bayangan-diri-2",
           "emoji": "🧍",
-          "width": 1.8
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0.25
+          }
         },
         {
           "id": "bayangan-diri-3",
           "labelKey": "bayangan-diri-3",
           "emoji": "🧍",
-          "width": 0.6
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 0.5
+          }
         },
         {
           "id": "bayangan-diri-4",
           "labelKey": "bayangan-diri-4",
           "emoji": "🧍",
-          "width": 3.2
+          "adegan": {
+            "jenis": "bayangan",
+            "t": 1
+          }
         }
       ]
     }

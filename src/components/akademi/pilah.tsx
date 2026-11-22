@@ -13,6 +13,7 @@ import { TombolBantu } from "./bantu";
 import { sfx } from "@/lib/sfx";
 import { sedangBicara, ucapkan } from "@/lib/akademi/suara";
 import { Benda, KartuBenda, skalaLebar, type VisualSpec } from "./benda";
+import { kolomTerbaik } from "./kisi";
 import { usePanggung } from "./dunia";
 import { LabelWadah, Wadah } from "./wadah";
 import { BALOO, BENAR, INK, type PresenterProps } from "./jenis";
@@ -28,8 +29,8 @@ const UNGU = "#0786eb";
 const WARNA_PILIHAN = ["#ffd23f", "#6fd0ff", "#ff9fcb", "#7fe0a7", "#ffb066", "#c4b0ff"];
 
 /** Visual dari field paket; label dipakai Benda hanya bila tidak ada emoji/bentuk (mis. kartu angka). */
-function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; kolom?: number; shape?: VisualSpec["shape"]; width?: number; angka?: string; latar?: boolean; labelKey: string }, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, label: t(x.labelKey) };
+function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; kolom?: number; shape?: VisualSpec["shape"]; width?: number; angka?: string; latar?: boolean; adegan?: VisualSpec["adegan"]; labelKey: string }, t: (k: string) => string): VisualSpec {
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, adegan: x.adegan, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px) di pojok kanan area permainan. */
@@ -346,11 +347,19 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
 
   const n = choices.length;
   const pilihanTulisan = choices.every((c) => !c.emoji && !c.shape && !c.color);
-  const kolom = n === 2 ? "grid-cols-2" : n === 3 ? "grid-cols-3" : n === 4 ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-3";
   // gambar pilihan ikut tinggi kartu: di tablet kartu tinggi, jadi emoji kecil di tengah kartu besar terasa kosong
   // …tapi tidak boleh lebih lebar dari kartunya: di HP tinggi (2 kolom sempit) bola berskala besar sempat terpotong
   const lebar = typeof window !== "undefined" && window.innerWidth >= 640;
-  const jmlKolom = n === 2 ? 2 : n === 3 ? 3 : n === 4 ? (lebar ? 4 : 2) : lebar ? 3 : 2;
+  const muat = n === 2 ? 2 : n === 3 ? 3 : n === 4 ? (lebar ? 4 : 2) : lebar ? 3 : 2;
+  // layar tegak: 4 pilihan jadi 2×2, 3 pilihan berkalimat ditumpuk — bukan kolom sempit dengan ruang kosong atas-bawah
+  const berkalimat = choices.some((c) => {
+    const p = t(c.labelKey).length;
+    return c.emoji || c.shape ? tulisLabel && p > 24 : p > 12;
+  });
+  const jmlKolom =
+    n === 3 && w > 0 && (h > w * 1.5 || ((berkalimat || pilihanTulisan) && h > w * 1.1)) ? 1
+      : n === 4 ? kolomTerbaik(w, h - 90 * sk, n, muat, 14 * sk)
+        : muat;
   // baris mengikuti kolom yang benar-benar tampil (di bawah 640 px kisinya 2 kolom), kalau tidak kartu jadi separuh tinggi
   const baris = Math.ceil(n / jmlKolom);
   const tinggiBaris = h > 0 ? (h - 90 * sk - 14 * sk * (baris - 1)) / baris : 0;
@@ -373,9 +382,9 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
       {/* pilihan mengisi sisa panggung: kartu besar di tablet, tetap rapat di HP. Pilihan tulisan diberi warna menurut posisi;
           pilihan bergambar/berwarna tetap putih supaya warna bendanya tidak tertukar dengan warna kartu */}
       <div
-        className={`my-auto grid w-full flex-1 ${kolom}`}
+        className="my-auto grid w-full flex-1"
         style={{
-          gap: 14 * sk, gridAutoRows: sk > 1 ? `minmax(${Math.round(120 * sk)}px, 1fr)` : undefined,
+          gap: 14 * sk, gridTemplateColumns: `repeat(${jmlKolom}, minmax(0, 1fr))`, gridAutoRows: sk > 1 ? `minmax(${Math.round(120 * sk)}px, 1fr)` : undefined,
           // layar tegak: kartu jangan jadi kolom tinggi kosong; maksimal ±1,5× lebarnya, kelompok di tengah panggung
           maxHeight: Number.isFinite(lebarKartu) ? baris * Math.max(170 * sk, lebarKartu * (labelPanjang ? 2.1 : 1.5)) + 14 * sk * (baris - 1) : undefined,
         }}
@@ -394,7 +403,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
               wrong={salah}
               dim={redup === c.id && !hasil}
               keterangan={tulisLabel}
-              labelSize={Math.round(Math.max(14 * sk, Math.min(22, ukuran * 0.15)))}
+              labelSize={Math.round(Math.max(14 * sk, Math.min(24, Math.max(ukuran * 0.15, Math.min(lebarKartu, 480) * 0.06))))}
               onClick={() => pilih(c.id)}
               className={`min-h-[120px] ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
               style={{ background: benar ? "#8fe6b6" : salah ? "#ffc08a" : pilihanTulisan ? WARNA_PILIHAN[i % WARNA_PILIHAN.length] : undefined, pointerEvents: kunci ? "none" : undefined }}

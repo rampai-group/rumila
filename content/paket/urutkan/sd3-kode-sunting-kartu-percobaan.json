@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-kartu-percobaan",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -426,7 +426,11 @@
         {
           "id": "bolu-2",
           "labelKey": "bolu-2",
-          "emoji": "🥣"
+          "emoji": "🥣",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🥚"
+          }
         },
         {
           "id": "bolu-3",
@@ -436,7 +440,11 @@
         {
           "id": "bolu-4",
           "labelKey": "bolu-4",
-          "emoji": "🥣"
+          "emoji": "🥣",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🍰"
+          }
         },
         {
           "id": "bolu-5",

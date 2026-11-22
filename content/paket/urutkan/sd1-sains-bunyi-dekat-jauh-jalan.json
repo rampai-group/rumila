@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-bunyi-dekat-jauh-jalan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -139,22 +139,42 @@
         {
           "id": "1",
           "labelKey": "sirene-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "🚑"
+          }
         },
         {
           "id": "2",
           "labelKey": "sirene-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "🚑"
+          }
         },
         {
           "id": "3",
           "labelKey": "sirene-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "🚑"
+          }
         },
         {
           "id": "4",
           "labelKey": "sirene-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "🚑"
+          }
         }
       ]
     },
@@ -165,22 +185,42 @@
         {
           "id": "1",
           "labelKey": "kereta-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "🚂"
+          }
         },
         {
           "id": "2",
           "labelKey": "kereta-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "🚂"
+          }
         },
         {
           "id": "3",
           "labelKey": "kereta-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "🚂"
+          }
         },
         {
           "id": "4",
           "labelKey": "kereta-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "🚂"
+          }
         }
       ]
     },
@@ -191,22 +231,42 @@
         {
           "id": "1",
           "labelKey": "terompet-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "🎺"
+          }
         },
         {
           "id": "2",
           "labelKey": "terompet-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "🎺"
+          }
         },
         {
           "id": "3",
           "labelKey": "terompet-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "🎺"
+          }
         },
         {
           "id": "4",
           "labelKey": "terompet-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "🎺"
+          }
         }
       ]
     },
@@ -217,22 +277,42 @@
         {
           "id": "1",
           "labelKey": "bakso-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "2",
           "labelKey": "bakso-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "3",
           "labelKey": "bakso-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "4",
           "labelKey": "bakso-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "🍲"
+          }
         }
       ]
     },
@@ -243,22 +323,42 @@
         {
           "id": "1",
           "labelKey": "kentongan-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "🪵"
+          }
         },
         {
           "id": "2",
           "labelKey": "kentongan-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "🪵"
+          }
         },
         {
           "id": "3",
           "labelKey": "kentongan-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "🪵"
+          }
         },
         {
           "id": "4",
           "labelKey": "kentongan-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "🪵"
+          }
         }
       ]
     },
@@ -269,22 +369,42 @@
         {
           "id": "1",
           "labelKey": "radio-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "📻"
+          }
         },
         {
           "id": "2",
           "labelKey": "radio-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "📻"
+          }
         },
         {
           "id": "3",
           "labelKey": "radio-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "📻"
+          }
         },
         {
           "id": "4",
           "labelKey": "radio-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "📻"
+          }
         }
       ]
     },
@@ -295,22 +415,42 @@
         {
           "id": "1",
           "labelKey": "pesawat-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "✈️"
+          }
         },
         {
           "id": "2",
           "labelKey": "pesawat-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "✈️"
+          }
         },
         {
           "id": "3",
           "labelKey": "pesawat-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "✈️"
+          }
         },
         {
           "id": "4",
           "labelKey": "pesawat-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "✈️"
+          }
         }
       ]
     },
@@ -321,22 +461,42 @@
         {
           "id": "1",
           "labelKey": "kambing-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "2",
           "labelKey": "kambing-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "3",
           "labelKey": "kambing-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "4",
           "labelKey": "kambing-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "🐐"
+          }
         }
       ]
     },
@@ -347,22 +507,42 @@
         {
           "id": "1",
           "labelKey": "alarm-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "⏰"
+          }
         },
         {
           "id": "2",
           "labelKey": "alarm-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "⏰"
+          }
         },
         {
           "id": "3",
           "labelKey": "alarm-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "⏰"
+          }
         },
         {
           "id": "4",
           "labelKey": "alarm-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "⏰"
+          }
         }
       ]
     },
@@ -373,22 +553,42 @@
         {
           "id": "1",
           "labelKey": "kucing-1",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0,
+            "tanda": "🐈"
+          }
         },
         {
           "id": "2",
           "labelKey": "kucing-2",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.3,
+            "tanda": "🐈"
+          }
         },
         {
           "id": "3",
           "labelKey": "kucing-3",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 0.65,
+            "tanda": "🐈"
+          }
         },
         {
           "id": "4",
           "labelKey": "kucing-4",
-          "emoji": "🧒"
+          "emoji": "🧒",
+          "adegan": {
+            "jenis": "jauh",
+            "t": 1,
+            "tanda": "🐈"
+          }
         }
       ]
     }

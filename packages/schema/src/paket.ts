@@ -27,6 +27,18 @@ export const KnobSchema = z.record(Key, z.object({
 }));
 export type KnobSchema = z.infer<typeof KnobSchema>;
 
+/**
+ * Keadaan benda yang digambar kode, untuk langkah/benda ber-emoji sama yang harus terlihat berbeda.
+ * t 0–1 = posisi dalam proses (matahari terbit→terbenam, dekat→jauh, penuh→kosong) atau bagian putaran (potong, sudut).
+ */
+export const Adegan = z.object({
+  jenis: z.enum(["tanda", "matahari", "bayangan", "hadap", "jauh", "senter", "kering", "jamur", "isi", "cokelat", "potong", "sudut"]),
+  t: z.number().min(0).max(1).optional(),
+  /** emoji pelengkap: lambang keadaan, atau sumber bunyi untuk "jauh" */
+  tanda: z.string().min(1).optional(),
+}).refine((a) => (a.jenis === "tanda" ? !!a.tanda : a.t !== undefined), { message: "adegan tanda butuh `tanda`; jenis lain butuh `t`" });
+export type Adegan = z.infer<typeof Adegan>;
+
 /** Tampilan benda tanpa aset: emoji + warna + skala. Presenter 2D menggambar dari sini. */
 const Visual = {
   /** satu emoji (boleh gabungan ZWJ) */
@@ -47,6 +59,8 @@ const Visual = {
   width: z.number().min(0.25).max(4).optional(),
   /** gambar `color` sebagai latar bulat di belakang emoji (warna pembeda, mis. rubah kutub putih); bawaan: hanya bila emoji itu muncul dengan ≥ 2 warna di paket */
   latar: z.boolean().optional(),
+  /** gambar adegan; menggantikan emoji polos di kartu */
+  adegan: Adegan.optional(),
 };
 
 const Base = {

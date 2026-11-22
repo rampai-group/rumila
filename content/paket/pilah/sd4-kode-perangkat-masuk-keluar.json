@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perangkat-masuk-keluar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -179,7 +179,11 @@
       "id": "i14",
       "labelKey": "i14",
       "bin": "keduanya",
-      "emoji": "🎧"
+      "emoji": "🎧",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🎤"
+      }
     },
     {
       "id": "i15",

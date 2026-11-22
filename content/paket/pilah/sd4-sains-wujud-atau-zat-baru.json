@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-wujud-atau-zat-baru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.WUJUD-ZAT.03"
@@ -102,7 +102,11 @@
       "id": "lilinleleh",
       "labelKey": "i-lilinleleh",
       "bin": "fisika",
-      "emoji": "🕯️"
+      "emoji": "🕯️",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "💧"
+      }
     },
     {
       "id": "embun",
@@ -120,7 +124,11 @@
       "id": "sumbubakar",
       "labelKey": "i-sumbubakar",
       "bin": "kimia",
-      "emoji": "🕯️"
+      "emoji": "🕯️",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🔥"
+      }
     },
     {
       "id": "pakukarat",

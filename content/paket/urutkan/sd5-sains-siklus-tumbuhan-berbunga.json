@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-berbunga",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -208,7 +208,11 @@
         {
           "id": "biji",
           "labelKey": "kacang-biji",
-          "emoji": "🥜"
+          "emoji": "🥜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⬇️"
+          }
         },
         {
           "id": "kecambah",
@@ -233,7 +237,11 @@
         {
           "id": "polong",
           "labelKey": "kacang-polong",
-          "emoji": "🥜"
+          "emoji": "🥜",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🫛"
+          }
         }
       ]
     },

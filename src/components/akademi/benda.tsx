@@ -5,6 +5,8 @@
 
 import { createContext, useContext, useMemo, type CSSProperties, type ReactNode } from "react";
 import { BALOO, INK, NUNITO, PILAR_CSS, bayangKartu } from "./jenis";
+import type { Adegan } from "@akademi/schema";
+import { GambarAdegan } from "./adegan-gambar";
 
 /** Huruf terpanjang satu kata (untuk ukuran huruf yang tidak memotong kata di tengah). */
 const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+|(?<=-)/).map((k) => k.length));
@@ -12,6 +14,8 @@ const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+|(?<=-)/)
 export const skalaLebar = (v: { scale?: number; emoji?: string; width?: number }) => (v.scale ?? 1) * Math.max(1, v.emoji ? v.width ?? 1 : 1);
 
 export interface VisualSpec {
+  /** keadaan benda digambar kode (lihat adegan-gambar.tsx) */
+  adegan?: Adegan;
   emoji?: string;
   color?: string;
   scale?: number;
@@ -228,6 +232,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
   const bedaWarna = useContext(LatarWarna);
   const berlatar = !!v.emoji && !!v.color && (v.latar ?? bedaWarna.has(v.emoji));
   const satu = (k: number): ReactNode => {
+    if (v.adegan) return <GambarAdegan key={k} adegan={v.adegan} emoji={v.emoji} s={s} />;
     if (v.emoji) {
       const font = n > 1 ? Math.max(n > 12 ? 11 : 18, s / Math.max(v.kolom ?? 0, Math.ceil(Math.sqrt(n))) * 0.9) : s * 0.86;
       const gambar = (

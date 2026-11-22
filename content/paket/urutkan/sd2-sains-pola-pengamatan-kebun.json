@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-pola-pengamatan-kebun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -170,7 +170,11 @@
         {
           "id": "b",
           "labelKey": "telur-b",
-          "emoji": "🥚"
+          "emoji": "🥚",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "⚡"
+          }
         },
         {
           "id": "c",
@@ -217,22 +221,38 @@
         {
           "id": "a",
           "labelKey": "jemuran-a",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "kering",
+            "t": 0
+          }
         },
         {
           "id": "b",
           "labelKey": "jemuran-b",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "kering",
+            "t": 0.4
+          }
         },
         {
           "id": "c",
           "labelKey": "jemuran-c",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "kering",
+            "t": 0.8
+          }
         },
         {
           "id": "d",
           "labelKey": "jemuran-d",
-          "emoji": "👕"
+          "emoji": "👕",
+          "adegan": {
+            "jenis": "kering",
+            "t": 1
+          }
         }
       ]
     },
@@ -243,22 +263,38 @@
         {
           "id": "a",
           "labelKey": "roti-a",
-          "emoji": "🍞"
+          "emoji": "🍞",
+          "adegan": {
+            "jenis": "jamur",
+            "t": 0
+          }
         },
         {
           "id": "b",
           "labelKey": "roti-b",
-          "emoji": "🍞"
+          "emoji": "🍞",
+          "adegan": {
+            "jenis": "jamur",
+            "t": 0.3
+          }
         },
         {
           "id": "c",
           "labelKey": "roti-c",
-          "emoji": "🍞"
+          "emoji": "🍞",
+          "adegan": {
+            "jenis": "jamur",
+            "t": 0.6
+          }
         },
         {
           "id": "d",
           "labelKey": "roti-d",
-          "emoji": "🍞"
+          "emoji": "🍞",
+          "adegan": {
+            "jenis": "jamur",
+            "t": 1
+          }
         }
       ]
     },
@@ -269,22 +305,38 @@
         {
           "id": "a",
           "labelKey": "gelas-a",
-          "emoji": "🥛"
+          "emoji": "🥛",
+          "adegan": {
+            "jenis": "isi",
+            "t": 0
+          }
         },
         {
           "id": "b",
           "labelKey": "gelas-b",
-          "emoji": "🥛"
+          "emoji": "🥛",
+          "adegan": {
+            "jenis": "isi",
+            "t": 0.35
+          }
         },
         {
           "id": "c",
           "labelKey": "gelas-c",
-          "emoji": "🥛"
+          "emoji": "🥛",
+          "adegan": {
+            "jenis": "isi",
+            "t": 0.75
+          }
         },
         {
           "id": "d",
           "labelKey": "gelas-d",
-          "emoji": "🥛"
+          "emoji": "🥛",
+          "adegan": {
+            "jenis": "isi",
+            "t": 1
+          }
         }
       ]
     },
@@ -333,7 +385,11 @@
         {
           "id": "c",
           "labelKey": "bungamatahari-c",
-          "emoji": "🌿"
+          "emoji": "🌿",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🟢"
+          }
         },
         {
           "id": "d",
@@ -349,22 +405,38 @@
         {
           "id": "a",
           "labelKey": "apel-a",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "cokelat",
+            "t": 0
+          }
         },
         {
           "id": "b",
           "labelKey": "apel-b",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "cokelat",
+            "t": 0.3
+          }
         },
         {
           "id": "c",
           "labelKey": "apel-c",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "cokelat",
+            "t": 0.7
+          }
         },
         {
           "id": "d",
           "labelKey": "apel-d",
-          "emoji": "🍎"
+          "emoji": "🍎",
+          "adegan": {
+            "jenis": "cokelat",
+            "t": 1
+          }
         }
       ]
     },
@@ -375,22 +447,38 @@
         {
           "id": "a",
           "labelKey": "panci-a",
-          "emoji": "🍲"
+          "emoji": "🍲",
+          "adegan": {
+            "jenis": "isi",
+            "t": 0
+          }
         },
         {
           "id": "b",
           "labelKey": "panci-b",
-          "emoji": "🍲"
+          "emoji": "🍲",
+          "adegan": {
+            "jenis": "isi",
+            "t": 0.25
+          }
         },
         {
           "id": "c",
           "labelKey": "panci-c",
-          "emoji": "🍲"
+          "emoji": "🍲",
+          "adegan": {
+            "jenis": "isi",
+            "t": 0.5
+          }
         },
         {
           "id": "d",
           "labelKey": "panci-d",
-          "emoji": "🍲"
+          "emoji": "🍲",
+          "adegan": {
+            "jenis": "isi",
+            "t": 0.88
+          }
         }
       ]
     }
