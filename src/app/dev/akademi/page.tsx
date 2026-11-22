@@ -8,7 +8,7 @@ import { notFound, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { ActivityRunner, judulPaket } from "@/components/akademi/runner";
 import { TrackView } from "@/components/akademi/portal/track";
-import { KidFrame } from "@/components/kid";
+import { KidFrame, KidHeader } from "@/components/kid";
 import AkademiPortal from "@/app/(app)/akademi/page";
 import { TelemetriView } from "@/components/akademi/portal/telemetri";
 import { SertifikatKartu } from "@/components/akademi/sertifikat";
@@ -23,6 +23,7 @@ import { RuangOrangTua } from "@/components/ortu/ruang";
 import { useMe, useRumila, type Member } from "@/lib/store";
 import { GedungView } from "@/components/kampus";
 import { KampusDunia } from "@/components/kampus-dunia";
+import { SheetHost } from "@/components/sheets";
 import { GEDUNG } from "@/lib/kampus";
 
 function KampusDev() {
@@ -33,10 +34,12 @@ function KampusDev() {
     const id = q.get("kampus");
     if (id && id !== "1") useRumila.getState().switchMember(id);
   }, [q]);
+  // ?kampus=1&gedung=lab → kepala halaman satu gedung
+  const gedung = GEDUNG.find((g) => g.id === q.get("gedung"));
   return (
     <>
-      <KampusDunia me={me} />
-      <GedungView g={GEDUNG[0]} />
+      <KidHeader kampus={!gedung} />
+      {gedung ? <GedungView g={gedung} /> : <KampusDunia me={me} />}
     </>
   );
 }
@@ -89,7 +92,7 @@ function Preview() {
   if (q.get("berpikir") === "tes") return <TesBerpikir anak={DEMO} kembaliKe="/dev/akademi?berpikir=hasil" />;
   if (q.get("berpikir")) return <div className="mx-auto max-w-[900px] bg-[#fff0da] p-4"><ProfilBerpikirOrtu anak={DEMO} /></div>;
   if (q.get("ortu")) return <RuangOrangTua />;
-  if (q.get("kampus")) return <KidFrame><KampusDev /></KidFrame>;
+  if (q.get("kampus")) return <KidFrame overlay={<SheetHost />}><KampusDev /></KidFrame>;
   const ujian = JENIS_UJIAN.find((j) => j === q.get("ujian"));
   if (ujian) {
     const lv = (q.get("level") ?? "PAUD") as LevelId;

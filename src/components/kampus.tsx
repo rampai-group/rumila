@@ -5,9 +5,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { levelMeta, type LevelId } from "@akademi/schema";
-import { IlustrasiGedung } from "@/components/kampus-gedung";
 import { useOpenTool } from "@/components/shell";
-import "./kampus.css";
 import { AppIcon, BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { TRACK_SLICE } from "@/components/akademi/portal/bersama";
@@ -45,15 +43,6 @@ export function useLab(me: Member): (toolId: string) => KeadaanLab {
 }
 
 const INK = "#0b2545";
-
-function Awan() {
-  return (
-    <>
-      <span aria-hidden className="kampus-awan" style={{ top: 18, left: "8%", width: 56 }} />
-      <span aria-hidden className="kampus-awan" style={{ top: 44, right: "12%", width: 44, animationDuration: "46s" }} />
-    </>
-  );
-}
 
 /** Ringkasan kelas anak: jenjang, semester aktif, persen semester, dan tugas berikutnya (dipakai peta kampus). */
 export function useKelasHariIni(me: Member) {
@@ -105,18 +94,17 @@ export function GedungView({ g }: { g: Gedung }) {
 
   return (
     <>
-      <div className="kampus-langit relative flex items-end overflow-hidden rounded-[28px] shadow-[0_5px_0_rgba(11,37,69,.08)]">
-        <Awan />
-        <div className="relative z-10 flex min-w-0 flex-1 flex-col gap-2 self-center p-4 sm:p-5">
+      <div className="relative flex flex-col-reverse overflow-hidden rounded-[28px] bg-white shadow-[0_5px_0_rgba(11,37,69,.08)] sm:min-h-[264px] sm:flex-row">
+        <div className="relative z-10 flex min-w-0 flex-col gap-2 p-4 sm:flex-1 sm:self-center sm:p-5">
           <span className="self-start rounded-full px-3 py-0.5 text-[11px] font-black tracking-[0.1em] text-white uppercase" style={{ background: `color-mix(in srgb, ${d} 72%, #000)`, boxShadow: `0 2px 0 ${m}` }}>
             {g.peran}
           </span>
           <h1 style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, lineHeight: 1.05, color: INK }}>{g.nama}</h1>
           <p className="text-[14px] font-bold text-ink-2">{g.desc}</p>
         </div>
-        <div className="relative w-[44%] max-w-[260px] shrink-0">
-          <IlustrasiGedung id={g.id} className="relative -mb-px block w-full" />
-          <div className="kampus-rumput h-9" />
+        <div className="relative h-[228px] w-full shrink-0 sm:h-auto sm:w-[52%] sm:max-w-[350px]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={`/kampus/gedung-${g.id}.webp`} alt="" draggable={false} className="absolute inset-0 h-full w-full object-cover object-[50%_55%]" />
         </div>
       </div>
 

@@ -53,14 +53,16 @@ export function KidFrame({ children, overlay }: { children: ReactNode; overlay?:
   );
 }
 
-export function KidHeader() {
+export function KidHeader({ kampus }: { kampus?: boolean }) {
   const me = useMe();
   const openSheet = useUI((s) => s.openSheet);
   const [hello, setHello] = useState("Halo");
   useEffect(() => setHello(greeting()), []);
-  const diBeranda = usePathname() === "/beranda";
+  const path = usePathname();
+  const diBeranda = kampus ?? path === "/beranda";
   return (
-    <header className="flex items-center gap-3">
+    // di beranda kepala mengambang di atas gambar kampus
+    <header className={`relative flex items-center gap-3 ${diBeranda ? "pointer-events-none z-10 h-[46px] justify-between" : ""}`}>
       {/* jalan pulang ke beranda dari halaman mana pun */}
       {!diBeranda && (
         <Link
@@ -74,14 +76,14 @@ export function KidHeader() {
         </Link>
       )}
       {/* salam (bukan tombol) */}
-      <div className="min-w-0 flex-1">
-        <span className="block text-[12px] font-extrabold text-ink-3">{hello},</span>
-        <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, color: INK, lineHeight: 1.2 }}>
+      <div className={diBeranda ? "flex h-[46px] min-w-0 max-w-[calc(100%-62px)] flex-col justify-center rounded-[16px] bg-white/95 px-3.5 shadow-[0_3px_10px_rgba(11,37,69,.18)] min-[700px]:max-w-[calc(50%-140px)]" : "min-w-0 flex-1"}>
+        <span className={`block font-extrabold ${diBeranda ? "truncate text-[11px] leading-tight text-ink-2" : "text-[12px] text-ink-3"}`}>{hello},</span>
+        <span className="block truncate" style={{ fontFamily: BALOO, fontSize: diBeranda ? 18 : 21, fontWeight: 800, color: INK, lineHeight: 1.2 }}>
           {me.name}
         </span>
       </div>
       {/* profil & pengaturan: kanan atas, terpisah dari konten */}
-      <button onClick={() => openSheet({ kind: "members" })} className="relative shrink-0 transition-transform active:scale-90" aria-label="Profil dan pengaturan">
+      <button onClick={() => openSheet({ kind: "members" })} className="pointer-events-auto relative shrink-0 transition-transform active:scale-90" aria-label="Profil dan pengaturan">
         <MemberAvatar m={me} size={46} theme="playful" />
         <span className="absolute -right-1 -bottom-1 flex size-[22px] items-center justify-center rounded-full bg-white text-[#0567c2] shadow-[0_2px_0_rgba(11,37,69,.15)]">
           <Icon name="settings" size={15} />
