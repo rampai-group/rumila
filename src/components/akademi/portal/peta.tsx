@@ -19,8 +19,7 @@ import { alasanKunci } from "@/lib/akademi/akses";
 import { KartuPraktikKampus } from "./praktik";
 import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
-import { proyeksi } from "@/lib/akademi/mastery";
-import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi, type MisiPeta, type PetaJenjang, type SemesterPeta, type UnitPeta } from "@/lib/akademi/peta";
+import { jenjangBerikut, paketMisi, petaDariBukti, type MisiPeta, type PetaJenjang, type SemesterPeta, type UnitPeta } from "@/lib/akademi/peta";
 import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, trackMeta } from "./bersama";
@@ -37,14 +36,11 @@ type Events = ReturnType<typeof useEvents>;
 export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: LevelId; onHadiah: () => void }) {
   const events = useEvents(me.id);
   const bahasa = useBahasaAnak(me.id);
-  const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
-  const selesaiSet = useMemo(() => kompetensiSelesai(events, PAKET), [events]);
-  const progres = useMemo(() => progresMisi(events, PAKET), [events]);
   const hasilUjian = useUjian(me.id);
   useEffect(() => {
     ambilUjian(me.id).catch((e) => console.error("[akademi] ambil ujian gagal", e));
   }, [me.id]);
-  const peta = useMemo(() => petaJenjang(peng, selesaiSet, KOMPETENSI, level, TRACK_SLICE, progres, hasilUjian), [peng, selesaiSet, level, progres, hasilUjian]);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian), [events, level, hasilUjian]);
   const streak = useMemo(() => hitungStreak(events), [events]);
   const berikut = jenjangBerikut(level, KOMPETENSI);
 

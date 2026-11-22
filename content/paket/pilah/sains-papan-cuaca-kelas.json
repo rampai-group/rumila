@@ -1,6 +1,6 @@
 {
   "id": "sains-papan-cuaca-kelas",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Papan Cuaca Kelas",
-      "instruksi": "Lihat ke luar jendela kelas, lalu pasang simbol cuaca yang cocok di papan cuaca.",
+      "instruksi": "Dengarkan cerita cuaca di sekolah, lalu sentuh simbol cuaca yang cocok.",
       "pilihan": "pilihan",
       "i-cerah": "cerah",
       "i-mendung": "mendung",
@@ -31,7 +31,7 @@
     },
     "en": {
       "judul": "Classroom Weather Board",
-      "instruksi": "Look out of the classroom window, then put the matching weather symbol on the weather board.",
+      "instruksi": "Listen to the weather story at school, then touch the matching weather symbol.",
       "pilihan": "choices",
       "i-cerah": "sunny",
       "i-mendung": "cloudy",

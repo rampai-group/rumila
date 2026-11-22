@@ -14,8 +14,7 @@ import { TRACK_SLICE } from "@/components/akademi/portal/bersama";
 import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { keadaanLab, type KeadaanLab } from "@/lib/akademi/lab";
-import { proyeksi } from "@/lib/akademi/mastery";
-import { kompetensiSelesai, petaJenjang, progresMisi } from "@/lib/akademi/peta";
+import { kompetensiSelesai, petaDariBukti } from "@/lib/akademi/peta";
 import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { PLAY, canonicalToolId } from "@/lib/catalog";
@@ -65,7 +64,7 @@ export function useKelasHariIni(me: Member) {
     ambilUjian(me.id).catch(() => {});
   }, [me.id]);
   const peta = useMemo(
-    () => petaJenjang(proyeksi(events, KOMPETENSI), kompetensiSelesai(events, PAKET), KOMPETENSI, level, TRACK_SLICE, progresMisi(events, PAKET), ujian),
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian),
     [events, level, ujian],
   );
   const lv = levelMeta(level);

@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-dapur",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -107,7 +107,11 @@
       "id": "talenan",
       "labelKey": "i-talenan",
       "bin": "kayu",
-      "emoji": "🪵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-talenan",
+        "t": 0
+      }
     },
     {
       "id": "kaleng",
@@ -137,7 +141,11 @@
       "id": "gelaskaca",
       "labelKey": "i-gelaskaca",
       "bin": "kaca",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gelas",
+        "t": 0
+      }
     },
     {
       "id": "toples",

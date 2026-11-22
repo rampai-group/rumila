@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-sudut-jarum-jam",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Sudut Jarum Jam",
-      "instruksi": "Lihat sudut di antara dua jarum jam. Bandingkan dengan sudut siku seperti pojok buku, lalu taruh tiap jam di raknya.",
-      "b-kurang-siku": "lebih kecil dari siku",
+      "instruksi": "Pilah jam berdasarkan sudut terkecil yang ditandai di antara kedua jarum. Lancip lebih kecil dari siku. Tumpul lebih besar dari siku, tapi lebih kecil dari lurus.",
+      "b-kurang-siku": "sudut lancip",
       "b-siku": "sudut siku",
-      "b-lebih-siku": "lebih besar dari siku",
-      "b-garis-lurus": "garis lurus",
+      "b-lebih-siku": "sudut tumpul",
+      "b-garis-lurus": "sudut lurus",
       "i-jam-pukul-1": "jam pukul 1",
       "i-jam-pukul-2": "jam pukul 2",
       "i-jam-pukul-3": "jam pukul 3",
@@ -29,11 +29,11 @@
     },
     "en": {
       "judul": "Clock-Hand Angles",
-      "instruksi": "Look at the angle between the two clock hands. Compare it with a right angle, like the corner of a book, then put each clock on its shelf.",
-      "b-kurang-siku": "smaller than a right angle",
+      "instruksi": "Sort the clocks by the smaller angle marked between their hands. Acute angles are smaller than a right angle. Obtuse angles are larger than a right angle and smaller than a straight angle.",
+      "b-kurang-siku": "acute angle",
       "b-siku": "right angle",
-      "b-lebih-siku": "bigger than a right angle",
-      "b-garis-lurus": "straight line",
+      "b-lebih-siku": "obtuse angle",
+      "b-garis-lurus": "straight angle",
       "i-jam-pukul-1": "clock at 1 o'clock",
       "i-jam-pukul-2": "clock at 2 o'clock",
       "i-jam-pukul-3": "clock at 3 o'clock",
@@ -65,20 +65,35 @@
   "bins": [
     {
       "id": "kecil",
-      "labelKey": "b-kurang-siku"
+      "labelKey": "b-kurang-siku",
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.125
+      }
     },
     {
       "id": "siku",
       "labelKey": "b-siku",
-      "emoji": "📐"
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.25
+      }
     },
     {
       "id": "besar",
-      "labelKey": "b-lebih-siku"
+      "labelKey": "b-lebih-siku",
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.375
+      }
     },
     {
       "id": "lurus",
-      "labelKey": "b-garis-lurus"
+      "labelKey": "b-garis-lurus",
+      "adegan": {
+        "jenis": "sudut",
+        "t": 0.5
+      }
     }
   ],
   "items": [
@@ -86,67 +101,100 @@
       "id": "pukul-1",
       "labelKey": "i-jam-pukul-1",
       "bin": "kecil",
-      "emoji": "🕐"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-1"
+      }
     },
     {
       "id": "pukul-2",
       "labelKey": "i-jam-pukul-2",
       "bin": "kecil",
-      "emoji": "🕑"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-2"
+      }
     },
     {
       "id": "pukul-3",
       "labelKey": "i-jam-pukul-3",
       "bin": "siku",
-      "emoji": "🕒"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-3"
+      }
     },
     {
       "id": "pukul-4",
       "labelKey": "i-jam-pukul-4",
       "bin": "besar",
-      "emoji": "🕓"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-4"
+      }
     },
     {
       "id": "pukul-5",
       "labelKey": "i-jam-pukul-5",
       "bin": "besar",
-      "emoji": "🕔"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-5"
+      }
     },
     {
       "id": "pukul-6",
       "labelKey": "i-jam-pukul-6",
       "bin": "lurus",
-      "emoji": "🕕"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-6"
+      }
     },
     {
       "id": "pukul-7",
       "labelKey": "i-jam-pukul-7",
       "bin": "besar",
-      "emoji": "🕖"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-7"
+      }
     },
     {
       "id": "pukul-8",
       "labelKey": "i-jam-pukul-8",
       "bin": "besar",
-      "emoji": "🕗"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-8"
+      }
     },
     {
       "id": "pukul-9",
       "labelKey": "i-jam-pukul-9",
       "bin": "siku",
-      "emoji": "🕘"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-9"
+      }
     },
     {
       "id": "pukul-10",
       "labelKey": "i-jam-pukul-10",
       "bin": "kecil",
-      "emoji": "🕙"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-10"
+      }
     },
     {
       "id": "pukul-11",
       "labelKey": "i-jam-pukul-11",
       "bin": "kecil",
-      "emoji": "🕚"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "pukul-11"
+      }
     }
   ]
 }

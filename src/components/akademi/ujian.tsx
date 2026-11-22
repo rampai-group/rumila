@@ -53,6 +53,7 @@ export function LayarUjian(p: UjianProps) {
   const [sessionId, setSessionId] = useState(() => uuid());
   const soal = useMemo(() => rencanaUjian(p.kompetensiIds, PAKET, JUMLAH_SOAL[p.jenis], sessionId, p.level), [p.kompetensiIds, p.jenis, p.level, sessionId]);
   const izin = bolehMengulang(riwayat, p.jenis, p.level, p.ruang);
+  const pending = riwayat.find((h) => h.pending && h.jenis === p.jenis && h.level === p.level && h.ruang === p.ruang);
   // Ujian Akhir yang sudah dimulai tapi belum diserahkan (anak keluar di tengah): tidak boleh mulai baru
   const tertunda = useMemo(() => (SEKALI.has(p.jenis) ? sesiTertunda(me.id, p.jenis, p.level, riwayat) : null), [me.id, p.jenis, p.level, riwayat]);
   if (!mulai)
@@ -61,6 +62,7 @@ export function LayarUjian(p: UjianProps) {
         {...p}
         jumlah={soal.length}
         izin={izin}
+        pending={pending}
         tertunda={tertunda}
         onMulai={() => setMulai("ujian")}
         onLatihan={() => {
@@ -96,23 +98,37 @@ function Bingkai({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, onLatihan, kembaliKe = "/akademi" }: UjianProps & { jumlah: number; izin: ReturnType<typeof bolehMengulang>; tertunda: ReturnType<typeof sesiTertunda>; onMulai: () => void; onLatihan: () => void }) {
+function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, pending, onMulai, onLatihan, kembaliKe = "/akademi", onSelesai }: UjianProps & { jumlah: number; izin: ReturnType<typeof bolehMengulang>; tertunda: ReturnType<typeof sesiTertunda>; pending?: HasilUjian; onMulai: () => void; onLatihan: () => void }) {
   const me = useMe();
   const lv = levelMeta(level);
   const sekali = SEKALI.has(jenis);
   const [siap, setSiap] = useState(false);
   const [menyerahkan, setMenyerahkan] = useState(false);
+  const [hasil, setHasil] = useState<HasilUjian | null>(null);
+  const [galat, setGalat] = useState<string | null>(null);
+  const [kirimUlang, setKirimUlang] = useState<HasilUjian | null>(null);
+  const riwayat = useUjian(me.id);
   const aturan = sekali
     ? [`${jumlah} soal dari seluruh materi ${lv.pangkat}`, "Tanpa tombol Bantu", "HANYA SEKALI — tidak bisa diulang", "Nilai apa adanya tertulis di sertifikat", "Keluar di tengah jalan = soal sisa dihitung salah"]
     : [jenis === "penempatan" ? `${jumlah} soal untuk menemukan titik mulaimu` : `${jumlah} soal dari permainan yang sudah kamu latih`, "Tanpa tombol Bantu", `Lulus bila nilai minimal ${AMBANG[jenis]}`, jenis === "penempatan" ? "Hasilnya menentukan jenjang awalmu" : "Belum lulus? Ulangi materinya, coba lagi besok"];
-  const serahkanTertunda = async () => {
-    if (!tertunda) return;
+  const serahkanTertunda = async (h: HasilUjian) => {
     setMenyerahkan(true);
-    const n = JUMLAH_SOAL[jenis];
-    const nilaiAkhir = nilaiDari(tertunda.benar, n);
-    await serahkanUjian(me.id, { jenis, level, ruang, sessionId: tertunda.sessionId, benar: tertunda.benar, total: n, nilai: nilaiAkhir, lulus: lulusDari(jenis, nilaiAkhir), at: new Date().toISOString() }, true);
+    setGalat(null);
+    setKirimUlang(h);
+    const r = await serahkanUjian(me.id, h, sekali);
+    if (r.ok) setHasil(r.hasil);
+    else setGalat(r.alasan);
     setMenyerahkan(false);
   };
+  const n = JUMLAH_SOAL[jenis];
+  const sebagian: HasilUjian | null = tertunda ? { jenis, level, ruang, sessionId: tertunda.sessionId, benar: tertunda.benar, total: n, nilai: nilaiDari(tertunda.benar, n), lulus: lulusDari(jenis, nilaiDari(tertunda.benar, n)), at: new Date().toISOString() } : null;
+  const aktif = kirimUlang ?? pending;
+  const hasilResmi = aktif ? riwayat.find((h) => h.sessionId === aktif.sessionId && !h.pending) : undefined;
+  const akhir = hasilResmi ?? hasil ?? pending;
+  useLaporHasil(akhir, onSelesai);
+  if (akhir || kirimUlang) {
+    return <LayarNilai h={akhir ?? null} judul={judul} kembaliKe={kembaliKe} mengirim={menyerahkan} galat={galat} onUlang={aktif ? () => void serahkanTertunda(aktif) : undefined} />;
+  }
   return (
     <Bingkai>
       <span className="mx-auto flex size-16 items-center justify-center rounded-[20px] bg-[#e4f1fd] text-[#0567c2]">
@@ -132,7 +148,7 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
       {sekali && tertunda && izin.boleh ? (
         <div className="mt-5 rounded-[14px] bg-[#fff4e5] px-3 py-3 text-[15px] font-bold text-[#a34a00]">
           Ujian Akhir sudah dimulai ({tertunda.dijawab} soal dijawab) dan tidak bisa diulang. Serahkan hasilnya sekarang.
-          <button onClick={serahkanTertunda} disabled={menyerahkan} className="mt-3 w-full rounded-[14px] bg-[#0b2545] py-3 text-[17px] font-extrabold text-white disabled:opacity-60">
+          <button onClick={() => { if (sebagian) void serahkanTertunda(sebagian); }} disabled={menyerahkan} className="mt-3 w-full rounded-[14px] bg-[#0b2545] py-3 text-[17px] font-extrabold text-white disabled:opacity-60">
             {menyerahkan ? "Menyerahkan…" : "Serahkan hasil"}
           </button>
         </div>
@@ -173,7 +189,15 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
   const [benar, setBenar] = useState(0);
   const [akhir, setAkhir] = useState<HasilUjian | null>(null);
   const [mengirim, setMengirim] = useState(false);
-  const [latihanSelesai, setLatihanSelesai] = useState(false);
+  const [baru, setBaru] = useState<HasilUjian | null>(null);
+  const [galat, setGalat] = useState<string | null>(null);
+  const terkirim = useRef(false);
+  const jeda = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const riwayat = useUjian(learnerId);
+  const resmi = riwayat.find((h) => h.sessionId === sessionId && !h.pending);
+  const h = resmi ?? akhir;
+  useLaporHasil(h, latihan ? undefined : onSelesai);
+  useEffect(() => () => clearTimeout(jeda.current), []);
   const mulaiRonde = useRef(Date.now());
   const s = soal[idx];
   const paket = useMemo(() => (s ? paketById(s.paketId) : undefined), [s]);
@@ -191,8 +215,20 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
     };
   }, [instruksi, ucap]);
 
+  const simpan = async (lokal: HasilUjian) => {
+    setMengirim(true);
+    setGalat(null);
+    const r = await serahkanUjian(learnerId, lokal);
+    if (r.ok) {
+      setAkhir(r.hasil);
+      if (!r.hasil.pending && r.hasil.lulus) sfx.celebrate();
+    } else setGalat(r.alasan);
+    setMengirim(false);
+  };
+
   const onJawab = (j: Jawaban) => {
-    if (hasil || !paket || !ronde || !s) return;
+    if (terkirim.current || !paket || !ronde || !s) return;
+    terkirim.current = true;
     const h = nilai(paket, ronde, j);
     setHasil(h);
     sfx.tap();
@@ -202,39 +238,33 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
     });
     const b = benar + (h.benar ? 1 : 0);
     setBenar(b);
-    setTimeout(async () => {
+    jeda.current = setTimeout(() => {
       if (idx + 1 < soal.length) {
         setIdx(idx + 1);
         setHasil(null);
+        terkirim.current = false;
         mulaiRonde.current = Date.now();
         return;
       }
-      setMengirim(true);
       const n = nilaiDari(b, soal.length);
       const lokal: HasilUjian = { jenis, level, ruang, sessionId, benar: b, total: soal.length, nilai: n, lulus: lulusDari(jenis, n), at: new Date().toISOString() };
       if (latihan) {
-        setAkhir({ ...lokal, pending: false });
-        setMengirim(false);
-        setLatihanSelesai(true);
+        setAkhir(lokal);
         return;
       }
-      const r = await serahkanUjian(learnerId, lokal);
-      const final = r.ok ? r.hasil : lokal;
-      setAkhir(final);
-      setMengirim(false);
-      if (final.lulus) sfx.celebrate();
-      onSelesai?.(final);
+      setBaru(lokal);
+      void simpan(lokal);
     }, JEDA);
   };
 
-  if (akhir || mengirim) return <LayarNilai h={akhir} judul={judul} kembaliKe={kembaliKe} latihan={latihanSelesai} />;
+  if (h || baru || mengirim) return <LayarNilai h={h} judul={judul} kembaliKe={kembaliKe} latihan={latihan} mengirim={mengirim} galat={galat} onUlang={baru ? () => void simpan(baru) : undefined} />;
   if (!paket || !ronde) return <Bingkai>Soal tidak ditemukan.</Bingkai>;
 
-  const props = { paket, ronde, t, onJawab, hasil } as const;
+  const props = { paket, ronde, t, onJawab, hasil: null } as const;
   return (
     <ModeUjianProvider value={true}>
       <LayarAktivitas judul={`${latihan ? "Latihan " : ""}${NAMA_UJIAN[jenis]} · ${judul}`} ronde={idx + 1} total={soal.length} instruksi={instruksi} onUcap={ucap} kembaliKe={kembaliKe} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)}>
-        <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center">
+        <div key={idx} inert={!!hasil} className="akademi-fade flex flex-1 flex-col justify-center">
           <LatarWarnaProvider paket={paket}>
           {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
           {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
@@ -246,8 +276,8 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
         </div>
         {hasil && (
           <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">
-            <div className="akademi-pop rounded-[24px] bg-[#0b2545] px-6 py-4 text-white" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>
-              Jawaban tersimpan
+            <div role="status" className="akademi-pop rounded-[24px] bg-[#0b2545] px-6 py-4 text-white" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>
+              Jawaban dicatat
             </div>
           </div>
         )}
@@ -265,17 +295,44 @@ function teksInstruksi(paket: ContentPack, ronde: Ronde, t: (k: string) => strin
   return isiBarang(teks, g ? t(g.labelKey) : "");
 }
 
-function LayarNilai({ h, judul, kembaliKe, latihan }: { h: HasilUjian | null; judul: string; kembaliKe: string; latihan?: boolean }) {
+function useLaporHasil(h: HasilUjian | null | undefined, onSelesai?: UjianProps["onSelesai"]) {
+  const dilaporkan = useRef<string | null>(null);
+  useEffect(() => {
+    if (!onSelesai || !h || h.pending || dilaporkan.current === h.sessionId) return;
+    dilaporkan.current = h.sessionId;
+    onSelesai(h);
+  }, [h, onSelesai]);
+}
+
+const alasanKirim: Record<string, string> = {
+  tanpa_sesi: "Masuk kembali ke akunmu sebelum mencoba mengirim lagi.",
+  sesi_tidak_sah: "Masuk kembali ke akunmu sebelum mencoba mengirim lagi.",
+  ujian_terkunci: "Tahap ujian ini belum terbuka di peta. Periksa tahap yang tersedia.",
+  jenjang_beda: "Jenjang aktifmu berubah. Kembali ke peta untuk melihat tahap yang tersedia.",
+  penempatan_ditutup: "Jenjang awalmu sudah ditetapkan. Kembali ke peta untuk melanjutkan.",
+  sudah_dikerjakan: "Ujian ini sudah dijawab di sesi lain. Periksa hasilnya di peta.",
+  sudah_lulus: "Ujian ini sudah lulus. Lihat tahap berikutnya di peta.",
+  tunggu_besok: "Kamu sudah mencoba hari ini. Coba lagi besok, ya.",
+};
+
+function LayarNilai({ h, judul, kembaliKe, latihan, mengirim, galat, onUlang }: { h: HasilUjian | null; judul: string; kembaliKe: string; latihan?: boolean; mengirim?: boolean; galat?: string | null; onUlang?: () => void }) {
   const router = useRouter();
   useEffect(() => {
-    if (!h) return;
+    if (!h || h.pending) return;
     const u = latihan ? kalimatUjian.latihan(h.nilai) : SEKALI.has(h.jenis) ? kalimatUjian.akhir(h.nilai) : h.lulus ? kalimatUjian.lulus(h.nilai) : kalimatUjian.belum(h.nilai);
     ucapkanBerurutan(u.potongan, "id-ID", u.teks);
   }, [h, latihan]);
-  if (!h)
+  if (mengirim || !h || h.pending || galat)
     return (
       <Bingkai>
-        <p className="text-[20px] font-extrabold">Menghitung nilai…</p>
+        <p role="status" className="text-[20px] font-extrabold">{mengirim ? "Mengirim hasil…" : "Hasil belum dikonfirmasi"}</p>
+        {!mengirim && (
+          <>
+            <p className="mt-2 text-[15px] font-bold text-[#4a5a75]">{galat ? (alasanKirim[galat] ?? "Hasil belum bisa disimpan. Coba kirim lagi.") : "Jawabanmu menunggu konfirmasi. Kamu bisa mengirimnya lagi saat internet tersambung."}</p>
+            {onUlang && <button type="button" onClick={onUlang} className="mt-4 w-full rounded-[18px] bg-[#12803f] py-3.5 text-[19px] font-extrabold text-white">Coba kirim lagi</button>}
+            <Link href={kembaliKe} className="mt-2 inline-flex min-h-11 items-center font-extrabold">Kembali ke peta</Link>
+          </>
+        )}
       </Bingkai>
     );
   const pred = predikat(h.nilai, h.jenis);
@@ -301,7 +358,6 @@ function LayarNilai({ h, judul, kembaliKe, latihan }: { h: HasilUjian | null; ju
             : h.lulus
               ? "Tahap berikutnya sudah terbuka."
               : `Butuh nilai ${AMBANG[h.jenis]}. Ulangi materinya, lalu coba besok.`}
-        {h.pending && " Nilai menunggu sinkron."}
       </p>
       <button onClick={() => router.push(kembaliKe)} className="mt-5 w-full rounded-[18px] bg-[#12803f] py-3.5 text-[19px] font-extrabold text-white shadow-[0_5px_0_#16804f] active:translate-y-0.5">
         Kembali ke peta

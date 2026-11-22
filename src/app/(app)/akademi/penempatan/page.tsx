@@ -42,10 +42,10 @@ export default function PenempatanPage() {
         <p className="mt-1 text-[15px] font-bold text-[#4a5a75]" style={{ fontFamily: "var(--ff-nunito), system-ui" }}>
           Pilih pangkat yang paling mendekati usia {me.name}. Tes 10 soal ini menentukan jenjang awal di RINOYA Academy.
         </p>
-        <div className="mt-4 grid grid-cols-3 gap-2">
+        <div className="mt-4 grid grid-cols-2 gap-2 min-[420px]:grid-cols-3">
           {LEVELS.filter((l) => ADA.includes(l.id)).map((l) => (
-            <button key={l.id} onClick={() => setLevel(l.id)} className="rounded-[16px] bg-[#cfe9ff] px-2 py-3 active:scale-95">
-              <span className="block text-[17px] font-extrabold">{l.pangkat}</span>
+            <button key={l.id} onClick={() => setLevel(l.id)} className="min-w-0 rounded-[16px] bg-[#cfe9ff] px-1.5 py-3 active:scale-95">
+              <span className="block text-[16px] font-extrabold [overflow-wrap:anywhere]">{l.pangkat}</span>
               <span className="block text-[11px] font-bold text-[#4a5a75]">{l.usia[0]}–{l.usia[1]} tahun</span>
             </button>
           ))}

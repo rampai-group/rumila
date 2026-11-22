@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-perbaiki",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -322,10 +322,9 @@
         {
           "id": "buah",
           "labelKey": "kacangpanjang-buah",
-          "emoji": "🥜",
           "adegan": {
-            "jenis": "tanda",
-            "tanda": "🫛"
+            "jenis": "ilustrasi-sd",
+            "varian": "polong-panjang"
           }
         }
       ]
@@ -589,10 +588,9 @@
         {
           "id": "buah",
           "labelKey": "buncis-buah",
-          "emoji": "🥜",
           "adegan": {
-            "jenis": "tanda",
-            "tanda": "🫛"
+            "jenis": "ilustrasi-sd",
+            "varian": "polong-buncis"
           }
         }
       ]

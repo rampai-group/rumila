@@ -1,6 +1,6 @@
 {
   "id": "sarang-telur-selisih-satu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,19 +10,19 @@
   "locale": {
     "id": {
       "judul": "Sarang Telur Ayam",
-      "instruksi": "Dua sarang ayam hampir sama: dengarkan pertanyaannya, lalu sentuh sarang yang telurnya lebih banyak atau lebih sedikit.",
+      "instruksi": "Lihat tiap kelompok telur. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
       "pilihan": "pilihan",
       "telur": "telur",
-      "tBanyak": "Sarang mana yang telurnya lebih banyak?",
-      "tSedikit": "Sarang mana yang telurnya lebih sedikit?"
+      "tBanyak": "Kelompok mana yang telurnya lebih banyak?",
+      "tSedikit": "Kelompok mana yang telurnya lebih sedikit?"
     },
     "en": {
       "judul": "Hen Nests",
-      "instruksi": "Two hen nests look alike: listen to the question, then touch the nest with more or fewer eggs.",
+      "instruksi": "Look at each group of eggs. Listen to the question, then touch the correct group.",
       "pilihan": "choices",
       "telur": "eggs",
-      "tBanyak": "Which nest has more eggs?",
-      "tSedikit": "Which nest has fewer eggs?"
+      "tBanyak": "Which group has more eggs?",
+      "tSedikit": "Which group has fewer eggs?"
     }
   },
   "knobs": {

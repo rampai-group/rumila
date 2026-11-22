@@ -49,6 +49,15 @@ export function buatRonde(p: ContentPack, knobs: Knobs, seed: number): Ronde {
  * sama dengan ronde terakhir — dengan meminjam knob tetangga, dan untuk navigasi saringan knob dilepas sebagai pilihan terakhir.
  */
 export function buatRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwayat: readonly string[], percobaan = 24): Ronde {
+  return cariRondeBaru(p, knobs, seed, riwayat, percobaan, true) ?? buatRonde(p, knobs, seed);
+}
+
+/** Untuk sesi latihan: berhenti ketika tidak ada varian unik yang ditemukan. */
+export function buatRondeUnik(p: ContentPack, knobs: Knobs, seed: number, riwayat: readonly string[], percobaan = 48): Ronde | null {
+  return cariRondeBaru(p, knobs, seed, riwayat, percobaan, false);
+}
+
+function cariRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwayat: readonly string[], percobaan: number, bolehUlang: boolean): Ronde | null {
   const pernah = new Set(riwayat);
   const terakhir = riwayat[riwayat.length - 1];
   const turunan = (i: number) => (seed + Math.imul(i, 0x9e3779b1)) >>> 0;
@@ -80,6 +89,16 @@ export function buatRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwaya
   for (let i = 0; i < percobaan; i++) {
     const r = buatRonde(p, tetangga[i % Math.max(1, tetangga.length)] ?? knobs, turunan(percobaan + i));
     if (!pernah.has(kunciRonde(r))) return r;
+  }
+  if (!bolehUlang) {
+    if (p.mechanic === "navigasi") {
+      // Peta lain tetap boleh dipakai setelah varian yang memenuhi knob habis.
+      for (let i = 0; i < percobaan; i++) {
+        const r = buatRonde(p, {}, turunan(2 * percobaan + i));
+        if (!pernah.has(kunciRonde(r))) return r;
+      }
+    }
+    return null;
   }
   if (bedaTerakhir) return bedaTerakhir;
   for (let i = 0; i < percobaan; i++) {

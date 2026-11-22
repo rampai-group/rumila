@@ -22,6 +22,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import { join, relative, resolve } from "node:path";
 import { ContentPack, isiBarang } from "@akademi/schema";
 import { kalimatPaket, kalimatUmum } from "../src/lib/akademi/kalimat-suara";
+import { SUARA as suaraTersimpan } from "../src/lib/akademi/suara-manifest.generated";
 
 const root = resolve(process.cwd());
 const OUT_DIR = resolve(root, "public/akademi/suara");
@@ -138,20 +139,26 @@ const totalKarakter = items.reduce((n, i) => n + i.teks.length, 0);
 
 function tulisManifest(semua: Item[]) {
   const sudahAda = semua.filter((i) => existsSync(join(OUT_DIR, i.file)));
-  const baris = sudahAda
-    .sort((a, b) => a.teks.localeCompare(b.teks, "id"))
-    .map((i) => `  ${JSON.stringify(i.teks)}: ${JSON.stringify(URL_PREFIX + i.file)},\n`)
+  // Pertahankan rekaman lokal yang masih valid saat teks paket berubah atau dipindah.
+  // Pengumpulan baru tidak boleh membuang entri lama yang masih dipakai oleh klien/cache sebelumnya.
+  const rekaman = new Map(Object.entries(suaraTersimpan).filter(([, url]) =>
+    url.startsWith(URL_PREFIX) && existsSync(join(OUT_DIR, url.slice(URL_PREFIX.length))),
+  ));
+  for (const i of sudahAda) rekaman.set(i.teks, URL_PREFIX + i.file);
+  const baris = [...rekaman]
+    .sort(([a], [b]) => a.localeCompare(b, "id"))
+    .map(([teks, url]) => `  ${JSON.stringify(teks)}: ${JSON.stringify(url)},\n`)
     .join("");
   const isi = `// DIBUAT OTOMATIS oleh scripts/akademi-suara.ts — jangan diedit.
-// Teks yang dibacakan → berkas MP3 di public/akademi/suara (rekaman narasi EduVoice yang dipotong per kalimat/kata, atau ElevenLabs bila dibuat lewat skrip ini).
+// Teks yang dibacakan → berkas MP3 di public/akademi/suara (rekaman narasi EduVoice, ElevenLabs, atau suara Indonesia lokal saat disiapkan secara offline).
 // Perbarui dengan: npm run -s akademi:suara
-// Hanya teks yang berkasnya sudah ada yang masuk; teks Indonesia lain tidak dibacakan (tidak ada suara robot).
+// Hanya teks yang berkasnya sudah ada yang masuk; teks Indonesia lain tetap diam (tanpa sintesis peramban).
 
 export const SUARA: Record<string, string> = {
 ${baris}};
 `;
   writeFileSync(OUT_MANIFEST, isi);
-  return sudahAda.length;
+  return rekaman.size;
 }
 
 /* ---------------- ElevenLabs ---------------- */

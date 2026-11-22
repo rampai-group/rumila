@@ -450,6 +450,10 @@ export function kalimatPaket(p: ContentPack): KalimatRekam[] {
   } else if (p.mechanic === "pilah" && p.mode !== "pilih" && levelIndex(p.level) < levelIndex("SD1")) {
     // PAUD–TK: nama kartu dibacakan saat disentuh (pilah.tsx bacaLabel)
     for (const i of p.items) tambah(nama(i.labelKey));
+  } else if (p.mechanic === "pilah" && p.mode === "pilih") {
+    // Hanya soal yang menyediakan tombol dengarkan pilihan; gunakan teks yang sama dengan presenter.
+    const dibaca = new Set(p.pilihan.filter((soal) => soal.bacaPilihan).flatMap((soal) => soal.choices));
+    for (const i of p.items) if (dibaca.has(i.id)) tambah(nama(i.altKey ?? i.labelKey));
   }
   return out;
 }

@@ -20,11 +20,11 @@ export function LabelWadah({ teks, gambar, rata = "tengah" }: { teks: string; ga
   const { nama, ciri } = pecahLabel(teks);
   const kiri = rata === "kiri";
   return (
-    <span className={`flex min-w-0 items-center gap-2 ${kiri ? "flex-row text-left" : "flex-col text-center"}`} style={{ gap: (kiri ? 8 : 2) * skala }}>
+    <span className={`flex w-full min-w-0 items-center gap-2 ${kiri ? "flex-row text-left" : "flex-col text-center"}`} style={{ gap: (kiri ? 8 : 2) * skala }}>
       {gambar && <span className="flex shrink-0 items-center justify-center">{gambar}</span>}
-      <span className="flex min-w-0 flex-col" style={{ alignItems: kiri ? "flex-start" : "center" }}>
-        <span style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16.5 * skala, lineHeight: 1.1, color: INK, textWrap: "balance", overflowWrap: "break-word" }}>{nama}</span>
-        {ciri && <span style={{ fontFamily: NUNITO, fontWeight: 700, fontSize: 12.5 * skala, lineHeight: 1.2, color: "#2f4260", marginTop: 2, textWrap: "balance" }}>{ciri}</span>}
+      <span className={`flex min-w-0 max-w-full flex-col ${kiri ? "flex-1 items-start" : "w-full items-center"}`}>
+        <span className="max-w-full [overflow-wrap:anywhere]" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16.5 * skala, lineHeight: 1.1, color: INK }}>{nama}</span>
+        {ciri && <span className="max-w-full [overflow-wrap:anywhere]" style={{ fontFamily: NUNITO, fontWeight: 700, fontSize: 12.5 * skala, lineHeight: 1.2, color: "#2f4260", marginTop: 2 }}>{ciri}</span>}
       </span>
     </span>
   );
@@ -126,6 +126,8 @@ export interface WadahProps extends Omit<HTMLAttributes<HTMLDivElement>, "childr
   ring?: string;
   /** latar isi hijau saat semua isinya benar */
   hijau?: boolean;
+  /** Warna kategori soal (merah, biru, dan seterusnya). */
+  warnaKategori?: string;
   /** tinggi minimum area isi (px, sebelum skala) */
   minIsi?: number;
   /** paksa bentuk wadah (mis. label menyebut "rak"); kosong = bentuk dari panggung */
@@ -135,7 +137,7 @@ export interface WadahProps extends Omit<HTMLAttributes<HTMLDivElement>, "childr
 }
 
 /** Wadah bertema dunia: label di atas, area isi terang di dalam badan wadah. */
-export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, minIsi = 56, bentuk: _bentuk, arah = "kolom", className = "", style, ...rest }, ref) {
+export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, warnaKategori, minIsi = 56, bentuk: _bentuk, arah = "kolom", className = "", style, ...rest }, ref) {
   // Gaya bersih (artifact "Gaya Soal RINOYA"): semua wadah = kartu putih bertepi abu + bayangan bawah; bentuk dunia
   // (keranjang/pot/peti) tidak lagi digambar di layar soal. `badan()` dipertahankan untuk layar dunia lain.
   void _bentuk;
@@ -148,7 +150,7 @@ export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ lab
       {...rest}
       className={`relative flex rounded-[18px] bg-white transition-transform ${baris ? "flex-row items-stretch" : "flex-col"} ${className}`}
       style={{
-        boxShadow: aktif ? `0 0 0 3px ${ring}, 0 4px 0 ${GARIS_BAWAH}` : `0 0 0 2px ${GARIS}, 0 4px 0 ${GARIS_BAWAH}`,
+        boxShadow: `${warnaKategori ? `inset 0 5px 0 ${warnaKategori}, ` : ""}0 0 0 ${aktif ? 3 : 2}px ${aktif ? ring : GARIS}, 0 4px 0 ${GARIS_BAWAH}`,
         padding: 8 * skala,
         gap: 8 * skala,
         ...style,
@@ -162,7 +164,7 @@ export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ lab
       </div>
       <div
         className="flex min-w-0 flex-1 flex-wrap content-center items-center justify-center gap-1.5 rounded-[12px] px-1.5 py-1"
-        style={{ minHeight: minIsi * skala, background: hijau ? "#e6f8ef" : aktif ? "color-mix(in srgb, var(--pilar, #0786eb) 7%, #fff)" : "color-mix(in srgb, var(--pilar, #0786eb) 13%, #fff)", border: `2px dashed ${hijau ? "#22b573" : aktif ? "var(--pilar, #0786eb)" : "#c9d2df"}` }}
+        style={{ minHeight: minIsi * skala, background: warnaKategori ? `${warnaKategori}30` : hijau ? "#e6f8ef" : aktif ? "color-mix(in srgb, var(--pilar, #0786eb) 7%, #fff)" : "color-mix(in srgb, var(--pilar, #0786eb) 13%, #fff)", border: `2px dashed ${warnaKategori ?? (hijau ? "#22b573" : aktif ? "var(--pilar, #0786eb)" : "#c9d2df")}` }}
       >
         {children}
       </div>

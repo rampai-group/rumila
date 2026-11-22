@@ -7,6 +7,8 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Adegan } from "@akademi/schema";
 import { BALOO } from "./jenis";
+import { GambarIlustrasiAwal } from "./ilustrasi-awal";
+import { GambarAdeganSd } from "./adegan-gambar-sd";
 
 /** Kanvas 130 × 100; `s` = tinggi px. */
 const W = 130;
@@ -27,6 +29,10 @@ function langit(t: number): [string, string] {
 
 export function GambarAdegan({ adegan, emoji = "", s, style, className = "" }: { adegan: Adegan; emoji?: string; s: number; style?: CSSProperties; className?: string }) {
   const { jenis, tanda } = adegan;
+  if (jenis === "ilustrasi" && adegan.varian) return <GambarIlustrasiAwal gambar={adegan.varian} s={s} style={style} className={className} />;
+  if (jenis === "kaus-kaki" || jenis === "geometri" || jenis === "rangkaian" || jenis === "ilustrasi-sd" || (jenis === "potong" && adegan.penyebut !== undefined)) {
+    return <GambarAdeganSd adegan={adegan} s={s} style={style} className={className} />;
+  }
   const t = adegan.t ?? 0;
   const k = s / H;
   /** emoji berpusat di (x, y) kanvas, tinggi `besar` */

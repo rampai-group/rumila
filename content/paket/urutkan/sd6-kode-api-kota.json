@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-api-kota",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Aplikasi Kota Bertanya ke Server",
-      "instruksi": "Aplikasi warga kota tidak menyimpan semua data sendiri; ia meminta ke server lewat API. Susun langkahnya dari permintaan, server memproses, jawaban, sampai hasil tampil.",
+      "instruksi": "Aplikasi warga kota meminta data ke server lewat API. Susun langkah dari awal permintaan sampai hasil tampil di layar.",
       "s1": "Kamus daring",
       "s1-1": "kamu mengetik kata 'gembira'",
       "s1-2": "aplikasi mengirim kata itu ke API kamus",
@@ -86,7 +86,7 @@
     },
     "en": {
       "judul": "City Apps Asking the Server",
-      "instruksi": "The city's apps don't keep all the data themselves; they ask a server through an API. Put the steps in order from request, server working, reply, to the result on screen.",
+      "instruksi": "The city app requests data from a server through an API. Put the steps in order from the start of the request to the result appearing on screen.",
       "s1": "Online dictionary",
       "s1-1": "you type the word 'cheerful'",
       "s1-2": "the app sends the word to the dictionary API",
@@ -167,7 +167,7 @@
       "max": 5,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah tahap; 4 = sampai server mengirim jawaban, 5 = sampai hasil tampil"
+      "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
     }
   },
   "assets": [],
@@ -548,5 +548,6 @@
         }
       ]
     }
-  ]
+  ],
+  "potong": "tengah"
 }

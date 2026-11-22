@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perjalanan-pesan",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -27,7 +27,7 @@
       "s3-1": "kamu menulis email lalu menekan kirim",
       "s3-2": "email dipecah jadi paket-paket",
       "s3-3": "paket lewat beberapa router",
-      "s3-4": "paket disusun lagi di server penerima",
+      "s3-4": "paket tiba lewat jaringan dan disusun di server penerima",
       "s3-5": "penerima membuka email",
       "s4": "Mencetak lewat Wi-Fi",
       "s4-1": "kamu menekan Cetak di laptop",
@@ -38,7 +38,7 @@
       "s5-1": "kamera merekam wajahmu",
       "s5-2": "gambar dipecah jadi paket",
       "s5-3": "paket dikirim lewat internet",
-      "s5-4": "HP temanmu menyusun paketnya",
+      "s5-4": "paket tiba lewat internet, lalu HP temanmu menyusunnya",
       "s5-5": "wajahmu muncul di layar temanmu",
       "s6": "Mencari di internet",
       "s6-1": "kamu mengetik kata kunci lalu menekan Cari",
@@ -90,7 +90,7 @@
       "s3-1": "you write an email and press send",
       "s3-2": "the email is split into packets",
       "s3-3": "the packets travel through several routers",
-      "s3-4": "the packets are put back together at the receiver's server",
+      "s3-4": "the packets arrive over the network and are reassembled at the receiver’s server",
       "s3-5": "the receiver opens the email",
       "s4": "Printing over Wi-Fi",
       "s4-1": "you press Print on the laptop",
@@ -101,7 +101,7 @@
       "s5-1": "the camera records your face",
       "s5-2": "the picture is split into packets",
       "s5-3": "the packets are sent across the internet",
-      "s5-4": "your friend's phone puts the packets together",
+      "s5-4": "the packets arrive over the internet and your friend’s phone puts them back together",
       "s5-5": "your face appears on your friend's screen",
       "s6": "Searching the internet",
       "s6-1": "you type a keyword and press Search",
@@ -141,7 +141,7 @@
       "max": 5,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah tahap yang disusun; 5 menambah tahap paket disusun lagi / penerima"
+      "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
     }
   },
   "assets": [],
@@ -455,5 +455,6 @@
         }
       ]
     }
-  ]
+  ],
+  "potong": "tengah"
 }

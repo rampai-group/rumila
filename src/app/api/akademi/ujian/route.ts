@@ -13,8 +13,10 @@
 
 import { JENIS_UJIAN, JUMLAH_SOAL, SEKALI, bolehMengulang, lulusDari, nilaiDari, type HasilUjian, type JenisUjian } from "@/lib/akademi/ujian";
 import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
-import { KOMPETENSI, PAKET } from "@/lib/akademi/katalog";
-import { UUID, anggotaMilik, jawab, klien, semuaEvent } from "@/lib/akademi/server";
+import { KOMPETENSI, PAKET, TRACK_AKTIF } from "@/lib/akademi/katalog";
+import { petaDariBukti, ujianTerbuka } from "@/lib/akademi/peta";
+import { eventDariBaris } from "@/lib/akademi/sertifikat-inti";
+import { UUID, anggotaMilik, jawab, klien, semuaEvent, type Admin } from "@/lib/akademi/server";
 import { LevelId } from "@akademi/schema";
 
 export const runtime = "nodejs";
@@ -23,6 +25,26 @@ export const dynamic = "force-dynamic";
 const KOLOM = "id, member_id, jenis, level, ruang, session_id, benar, total, nilai, lulus, created_at";
 type BarisUjian = { jenis: string; level: string; ruang: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at: string };
 const keHasil = (r: BarisUjian): HasilUjian => ({ jenis: r.jenis as JenisUjian, level: r.level as LevelId, ruang: r.ruang, sessionId: r.session_id, benar: r.benar, total: r.total, nilai: r.nilai, lulus: r.lulus, at: r.created_at });
+
+/** Jalankan lagi bila nilai tersimpan tetapi sinkron jenjang/semester gagal pada permintaan pertama. */
+async function tanggapanHasil(admin: Admin, member: { id: string; family_id: string }, h: HasilUjian) {
+  const sekarang = new Date().toISOString();
+  let levelBaru: LevelId | undefined;
+  if (h.lulus && h.jenis === "semester" && h.ruang === "S1") {
+    const { error } = await admin.from("akademi_siswa").update({ semester: 2, updated_at: sekarang }).eq("member_id", member.id).eq("level", h.level).eq("semester", 1);
+    if (error) return jawab(500, { error: "galat" });
+  }
+  if (h.jenis === "penempatan" && (h.lulus || h.level === "PAUD")) {
+    const { data: siswa, error } = await admin.from("akademi_siswa").select("level, sumber").eq("member_id", member.id).maybeSingle();
+    if (error) return jawab(500, { error: "galat" });
+    if (siswa?.sumber !== "naik" && siswa?.level !== h.level) {
+      const { error: gagal } = await admin.from("akademi_siswa").upsert({ member_id: member.id, family_id: member.family_id, level: h.level, semester: 1, sumber: "awal", level_sejak: sekarang, updated_at: sekarang }, { onConflict: "member_id" });
+      if (gagal) return jawab(500, { error: "galat" });
+    }
+    levelBaru = siswa?.sumber === "naik" ? siswa.level as LevelId : h.level;
+  }
+  return jawab(200, { ujian: h, levelBaru });
+}
 
 export async function POST(req: Request) {
   const k = klien(req);
@@ -43,31 +65,45 @@ export async function POST(req: Request) {
   if (typeof member === "number") return jawab(member, { error: member === 401 ? "sesi_tidak_sah" : "tidak_berhak" });
 
   // sesi yang sama sudah dinilai → kembalikan apa adanya
-  const { data: ada } = await admin.from("akademi_ujian").select(KOLOM).eq("session_id", sessionId).maybeSingle();
+  const { data: ada, error: gagalCekSesi } = await admin.from("akademi_ujian").select(KOLOM).eq("session_id", sessionId).maybeSingle();
+  if (gagalCekSesi) return jawab(500, { error: "galat" });
   if (ada) {
     if (ada.member_id !== memberId) return jawab(403, { error: "tidak_berhak" });
-    return jawab(200, { ujian: keHasil(ada) });
+    if (ada.jenis !== jenis || ada.level !== level || ada.ruang !== ruang) return jawab(409, { error: "sesi_berbeda" });
+    return tanggapanHasil(admin, member, keHasil(ada));
   }
 
   const cakupan = cakupanUjian(jenis, level, ruang, KOMPETENSI);
   if (!cakupan?.length) return jawab(422, { error: "ruang_tidak_dikenal" });
 
-  const { data: siswa } = await admin.from("akademi_siswa").select("level, sumber, semester").eq("member_id", memberId).maybeSingle();
+  const { data: siswa, error: gagalCekSiswa } = await admin.from("akademi_siswa").select("level, sumber, semester").eq("member_id", memberId).maybeSingle();
+  if (gagalCekSiswa) return jawab(500, { error: "galat" });
   if (jenis === "penempatan") {
-    const { count: sertifikat } = await admin.from("akademi_certificate").select("id", { count: "exact", head: true }).eq("member_id", memberId);
-    const { count: lulusTes } = await admin.from("akademi_ujian").select("id", { count: "exact", head: true }).eq("member_id", memberId).eq("jenis", "penempatan").eq("lulus", true);
+    const { count: sertifikat, error: gagalCekSertifikat } = await admin.from("akademi_certificate").select("id", { count: "exact", head: true }).eq("member_id", memberId);
+    const { count: lulusTes, error: gagalCekPenempatan } = await admin.from("akademi_ujian").select("id", { count: "exact", head: true }).eq("member_id", memberId).eq("jenis", "penempatan").eq("lulus", true);
+    if (gagalCekSertifikat || gagalCekPenempatan) return jawab(500, { error: "galat" });
     if (siswa?.sumber === "naik" || (sertifikat ?? 0) > 0 || (lulusTes ?? 0) > 0) return jawab(409, { error: "penempatan_ditutup" });
   } else if (!siswa || siswa.level !== level) {
     return jawab(409, { error: "jenjang_beda", levelAktif: siswa?.level });
   }
 
-  const { data: riwayat } = await admin.from("akademi_ujian").select(KOLOM).eq("member_id", memberId).eq("jenis", jenis).eq("level", level).eq("ruang", ruang);
-  const boleh = bolehMengulang((riwayat ?? []).map(keHasil), jenis, level, ruang);
+  const { data: riwayat, error: gagalCekRiwayat } = await admin.from("akademi_ujian").select(KOLOM).eq("member_id", memberId).eq("level", level);
+  if (gagalCekRiwayat) return jawab(500, { error: "galat" });
+  const hasilSebelumnya = (riwayat ?? []).map(keHasil);
+  const boleh = bolehMengulang(hasilSebelumnya, jenis, level, ruang);
   if (!boleh.boleh) return jawab(409, { error: boleh.sekali ? "sudah_dikerjakan" : boleh.besok ? "tunggu_besok" : "sudah_lulus" });
+
+  if (jenis !== "penempatan") {
+    const jejak = await semuaEvent(admin, memberId);
+    if (!jejak) return jawab(500, { error: "galat" });
+    const bukti = eventDariBaris(jejak.filter((e) => e.session_id !== sessionId));
+    const peta = petaDariBukti(bukti, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilSebelumnya);
+    if (!ujianTerbuka(peta, jenis, ruang)) return jawab(409, { error: "ujian_terkunci" });
+  }
 
   // Ujian Akhir sekali-jalan: sesi lain yang sudah mulai menjawab (walau belum diserahkan) mengunci sesi baru
   if (SEKALI.has(jenis)) {
-    const { data: lain } = await admin
+    const { data: lain, error: gagalCekLain } = await admin
       .from("learner_event")
       .select("session_id")
       .eq("member_id", memberId)
@@ -76,6 +112,7 @@ export async function POST(req: Request) {
       .eq("payload->detail->>level", level)
       .neq("session_id", sessionId)
       .limit(1);
+    if (gagalCekLain) return jawab(500, { error: "galat" });
     if (lain?.length) return jawab(409, { error: "sudah_dikerjakan", sessionLain: lain[0].session_id });
   }
 
@@ -106,13 +143,5 @@ export async function POST(req: Request) {
     return jawab(500, { error: "galat" });
   }
 
-  let levelBaru: string | undefined;
-  const sekarang = new Date().toISOString();
-  if (lulus && jenis === "semester" && ruang === "S1") await admin.from("akademi_siswa").update({ semester: 2, updated_at: sekarang }).eq("member_id", memberId);
-  // Penempatan: lulus → jenjang itu; belum lulus di jenjang terendah → tetap mulai dari jenjang itu
-  if (jenis === "penempatan" && (lulus || level === "PAUD")) {
-    const { error: e } = await admin.from("akademi_siswa").upsert({ member_id: memberId, family_id: member.family_id, level, semester: 1, sumber: "awal", level_sejak: sekarang, updated_at: sekarang }, { onConflict: "member_id" });
-    if (!e) levelBaru = level;
-  }
-  return jawab(200, { ujian: keHasil(baru), levelBaru });
+  return tanggapanHasil(admin, member, keHasil(baru));
 }

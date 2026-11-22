@@ -1,6 +1,6 @@
 {
   "id": "sains-senter-bola-dunia",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,15 +20,15 @@
       "i-lampu": "lampu jalan menyala",
       "i-hadap": "diputar menghadap senter",
       "i-jauh": "diputar ke sisi gelap",
-      "t-1": "Bola dunia diputar sampai Bali menghadap senter. Apa yang terjadi di Bali?",
+      "t-1": "Bola dunia diputar sampai Bali menghadap senter. Kegiatan mana yang cocok saat siang?",
       "t-2": "Aceh kini membelakangi senter. Apa yang terlihat di langit Aceh?",
-      "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Apa yang terjadi?",
-      "t-4": "London ada di sisi bola dunia yang gelap. Apa yang dilakukan anak di London?",
-      "t-5": "Sydney menghadap senter. Apa yang dilakukan anak di Sydney?",
+      "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Kegiatan mana yang cocok saat siang?",
+      "t-4": "London ada di sisi bola dunia yang gelap. Kegiatan mana yang cocok saat malam?",
+      "t-5": "Sydney menghadap senter. Kegiatan mana yang biasanya dilakukan pagi atau siang?",
       "t-6": "Riyadh membelakangi senter. Apa yang terlihat di jalan?",
-      "t-7": "Bola dunia berputar, Seoul pindah ke sisi yang kena cahaya. Apa yang terjadi?",
-      "t-8": "Manado ada di sisi gelap. Apa yang dilakukan anak di Manado?",
-      "t-9": "Palembang kena cahaya senter. Apa yang terjadi di Palembang?",
+      "t-7": "Bola dunia berputar, Seoul pindah ke sisi yang kena cahaya. Kegiatan mana yang cocok saat siang?",
+      "t-8": "Manado ada di sisi gelap. Kegiatan mana yang cocok saat malam?",
+      "t-9": "Palembang kena cahaya senter. Kegiatan mana yang cocok saat siang?",
       "t-10": "Lombok diputar menjauh dari senter. Apa yang terlihat di langit?",
       "t-11": "Robot ingin Kupang menjadi siang. Bola dunia diputar sampai Kupang…",
       "t-12": "Supaya anak di Dubai bisa bermain di bawah sinar matahari, Dubai diputar sampai…",
@@ -47,15 +47,15 @@
       "i-lampu": "street lights are on",
       "i-hadap": "turned to face the flashlight",
       "i-jauh": "turned to the dark side",
-      "t-1": "The globe turns until Bali faces the flashlight. What happens in Bali?",
+      "t-1": "The globe turns until Bali faces the flashlight. Which activity suits daytime?",
       "t-2": "Aceh now faces away from the flashlight. What is in the sky over Aceh?",
-      "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. What happens?",
-      "t-4": "London is on the dark side of the globe. What are the children in London doing?",
-      "t-5": "Sydney faces the flashlight. What are the children in Sydney doing?",
+      "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. Which activity suits daytime?",
+      "t-4": "London is on the dark side of the globe. Which activity suits nighttime?",
+      "t-5": "Sydney faces the flashlight. Which activity usually happens in the morning or daytime?",
       "t-6": "Riyadh faces away from the flashlight. What can be seen on the streets?",
-      "t-7": "The globe turns and Seoul moves to the lit side. What happens?",
-      "t-8": "Manado is on the dark side. What are the children in Manado doing?",
-      "t-9": "Palembang is in the flashlight's light. What happens in Palembang?",
+      "t-7": "The globe turns and Seoul moves to the lit side. Which activity suits daytime?",
+      "t-8": "Manado is on the dark side. Which activity suits nighttime?",
+      "t-9": "Palembang is in the flashlight's light. Which activity suits daytime?",
       "t-10": "Lombok is turned away from the flashlight. What is in the sky?",
       "t-11": "The robot wants daytime in Kupang. The globe is turned until Kupang is…",
       "t-12": "So the children in Dubai can play in the sunshine, Dubai is turned until it is…",
@@ -124,13 +124,21 @@
       "id": "hadap",
       "labelKey": "i-hadap",
       "bin": "pilihan",
-      "emoji": "🔦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-siang",
+        "t": 0
+      }
     },
     {
       "id": "jauh",
       "labelKey": "i-jauh",
       "bin": "pilihan",
-      "emoji": "🌚"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-malam",
+        "t": 0
+      }
     }
   ],
   "pilihan": [

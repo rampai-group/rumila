@@ -1,6 +1,6 @@
 {
   "id": "sains-cari-organ-di-tubuh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -102,8 +102,11 @@
       "id": "lambung",
       "labelKey": "i-lambung",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#ffab91"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-lambung",
+        "t": 0
+      }
     },
     {
       "id": "mata",

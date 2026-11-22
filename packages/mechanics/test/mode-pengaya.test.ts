@@ -54,6 +54,16 @@ describe("simulasi menara", () => {
     expect(buatRondeSimulasi(p, { tinggi: 3, benda: 6 }, 1)).toMatchObject({ target: 3 });
     expect(buatRondeSimulasi(p, { tinggi: 3, benda: 6 }, 1).items).toHaveLength(6);
   });
+  it("membatasi target adaptif pada stok benda yang bisa ditumpuk", () => {
+    for (let seed = 0; seed < 16; seed++) {
+      const ronde = buatRondeSimulasi(p, { tinggi: 8, benda: 5 }, seed);
+      const bisa = ronde.items.filter(i => i.value !== 0);
+      expect(ronde.items).toHaveLength(5);
+      expect(ronde.target).toBeLessThanOrEqual(bisa.length);
+      expect(ronde.items.some(i => i.value === 0)).toBe(true);
+      expect(nilaiSimulasi(ronde, { tumpukan: bisa.slice(0, ronde.target).map(i => i.id) }).benar).toBe(true);
+    }
+  });
   it("nilai: 4 benda rata berdiri = benar; tabung tegak dihitung bisa (penemuan) dengan detail.tabung", () => {
     const r = buatRondeSimulasi(p, {}, 2);
     const bisa = r.items.filter(i => i.value !== 0).map(i => i.id).slice(0, 4);

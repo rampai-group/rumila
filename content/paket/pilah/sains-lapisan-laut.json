@@ -1,6 +1,6 @@
 {
   "id": "sains-lapisan-laut",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -111,19 +111,31 @@
       "id": "paus",
       "labelKey": "i-paus",
       "bin": "dalam",
-      "emoji": "🐋"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-paus-sperma",
+        "t": 0
+      }
     },
     {
       "id": "cumi",
       "labelKey": "i-cumi",
       "bin": "dalam",
-      "emoji": "🦑"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-cumi-raksasa",
+        "t": 0
+      }
     },
     {
       "id": "hiu",
       "labelKey": "i-hiu",
       "bin": "dalam",
-      "emoji": "🦈"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-hiu-goblin",
+        "t": 0
+      }
     },
     {
       "id": "ubur",
@@ -135,28 +147,41 @@
       "id": "sungut",
       "labelKey": "i-sungut",
       "bin": "dalam",
-      "emoji": "🐟",
-      "color": "#37474f"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ikan-sungut",
+        "t": 0
+      }
     },
     {
       "id": "siputpalung",
       "labelKey": "i-siputpalung",
       "bin": "palung",
-      "emoji": "🐟",
-      "color": "#eceff1"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ikan-siput",
+        "t": 0
+      }
     },
     {
       "id": "dumbo",
       "labelKey": "i-dumbo",
       "bin": "palung",
-      "emoji": "🐙"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gurita-dumbo",
+        "t": 0
+      }
     },
     {
       "id": "udangpalung",
       "labelKey": "i-udangpalung",
       "bin": "palung",
-      "emoji": "🦐",
-      "color": "#263238"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-udang-palung",
+        "t": 0
+      }
     }
   ],
   "pilihan": []

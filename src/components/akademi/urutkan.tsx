@@ -13,7 +13,7 @@ import type { Tema } from "@/lib/akademi/tema-dunia";
 import { KALIMAT_URUTKAN, KATA_URUTAN, kalimatUrutkan } from "@/lib/akademi/kalimat-suara";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
-import { KartuBenda, skalaLebar, type VisualSpec } from "./benda";
+import { Benda, KartuBenda, skalaLebar, type VisualSpec } from "./benda";
 import { kolomTerbaik } from "./kisi";
 import { usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
@@ -213,7 +213,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
               type="button"
               onClick={() => ketukSlot(i)}
               disabled={kunci}
-              aria-label={`Slot ${i + 1}`}
+              aria-label={id ? `Slot ${i + 1}: ${t(langkah(id).labelKey)}` : `Slot ${i + 1}`}
               className={`relative flex flex-col items-center justify-center gap-1 p-1.5 transition-transform active:scale-95 ${salah ? "akademi-shake" : ""} ${disorot ? "akademi-bounce" : ""}`}
               style={{
                 width: sel.s,
@@ -227,7 +227,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
                 <Nomor n={i + 1} warna={benar ? BENAR : salah ? SALAH : undefined} />
               </span>
               {id ? (
-                <KartuBenda v={visual(langkah(id), t)} size={ukuran} keterangan={false} className="pointer-events-none !shadow-none" />
+                <Benda v={visual(langkah(id), t)} size={ukuran} className="pointer-events-none" />
               ) : (
                 <span style={{ fontFamily: BALOO, fontSize: Math.max(30 * sk, ukuran * skalaMaks * 0.55), fontWeight: 900, color: siap ? "#0786eb" : tema.wadahGelap, lineHeight: 1 }}>?</span>
               )}
@@ -254,7 +254,6 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
               style={{
                 width: kar.s,
                 minHeight: tinggiMinKartu,
-                transform: dipilih ? "scale(1.12)" : undefined,
                 boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
                 pointerEvents: kunci ? "none" : undefined,
               }}
@@ -624,7 +623,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
       </div>
 
       {/* palet label: ikon + suara */}
-      <div className="flex justify-center" style={{ ...gayaPanel(tema, sk), padding: 10 * sk, gap: 10 * sk }} role="group" aria-label="Keping label">
+      <div className="mx-auto grid w-full max-w-[460px] grid-cols-3" style={{ ...gayaPanel(tema, sk), padding: 8 * sk, gap: 8 * sk }} role="group" aria-label="Keping label">
         {URUTAN_LABEL.map((l) => {
           const tersisa = sisa(l);
           const dipilih = terpilih === l;
@@ -636,17 +635,15 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
               onClick={() => ketukLabel(l)}
               disabled={kunci || tersisa <= 0}
               aria-label={`Label ${LABEL[l].kata}, sisa ${tersisa}`}
-              className={`relative flex flex-col items-center justify-center gap-0.5 rounded-[18px] bg-white px-3 transition-transform active:scale-95 disabled:opacity-40 ${disorot ? "akademi-bounce" : ""}`}
+              className={`relative flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-[18px] bg-white px-1.5 transition-transform active:scale-95 disabled:opacity-40 ${disorot ? "akademi-bounce" : ""}`}
               style={{
                 minHeight: 80 * Math.min(sk, 1.3),
-                minWidth: 92 * Math.min(sk, 1.3),
                 boxShadow: `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${dipilih ? "#0786eb" : disorot ? SOROT : `${tema.aksen}55`}`,
-                transform: dipilih ? "scale(1.08)" : undefined,
               }}
             >
               <span style={{ fontSize: 34 * Math.min(sk, 1.3), lineHeight: 1 }} aria-hidden>{LABEL[l].ikon}</span>
               <span style={{ fontFamily: BALOO, fontSize: 14 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>{LABEL[l].kata}</span>
-              {jatah(l) > 1 && <span className="absolute -top-2 -right-2 flex size-7 items-center justify-center rounded-full text-white" style={{ background: "#0786eb", fontFamily: BALOO, fontSize: 14, fontWeight: 900, boxShadow: "0 0 0 2px #fff" }}>{tersisa}</span>}
+              {jatah(l) > 1 && <span className="absolute right-1 top-1 flex size-5 items-center justify-center rounded-full text-white" style={{ background: "#0786eb", fontFamily: BALOO, fontSize: 12, fontWeight: 900, boxShadow: "0 0 0 2px #fff" }}>{tersisa}</span>}
             </button>
           );
         })}

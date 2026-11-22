@@ -5,6 +5,7 @@
 
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { PILAR, TEMA, temaBersih, type BentukWadah, type DuniaId, type Pilar, type Tema } from "@/lib/akademi/tema-dunia";
 import { Icon } from "@/components/ui";
 import { diamkan } from "@/lib/akademi/suara";
@@ -75,14 +76,17 @@ function useSkalaTablet() {
  * isi di bawah, supaya tombol jawab di ujung bawah tetap ketemu. Hilang begitu sampai bawah.
  */
 function GulirLagi({ wadah }: { wadah: React.RefObject<HTMLDivElement | null> }) {
-  const [ada, setAda] = useState(false);
+  const [arah, setArah] = useState<"bawah" | "atas" | null>(null);
   useEffect(() => {
     const el = wadah.current;
     if (!el) return;
     let tunggu = 0;
     const cek = () => {
       cancelAnimationFrame(tunggu);
-      tunggu = requestAnimationFrame(() => setAda(el.scrollHeight - el.clientHeight - el.scrollTop > 12));
+      tunggu = requestAnimationFrame(() => {
+        const ruang = el.scrollHeight - el.clientHeight;
+        setArah(ruang <= 12 ? null : ruang - el.scrollTop > 12 ? "bawah" : "atas");
+      });
     };
     const ro = new ResizeObserver(cek);
     const amati = () => {
@@ -102,18 +106,30 @@ function GulirLagi({ wadah }: { wadah: React.RefObject<HTMLDivElement | null> })
       el.removeEventListener("scroll", cek);
     };
   }, [wadah]);
-  if (!ada) return null;
+  if (!arah) return null;
   return (
     <button
       type="button"
       data-gulir-lagi
-      aria-label="Lihat ke bawah"
-      onClick={() => wadah.current?.scrollTo({ top: wadah.current.scrollHeight, behavior: "smooth" })}
-      className="absolute bottom-1 left-1/2 z-10 flex size-11 -translate-x-1/2 items-center justify-center rounded-full border-[3px] border-white bg-[#fdb724] text-[#0b2545] shadow-[0_3px_0_#c98a00] active:scale-90"
+      aria-label={arah === "bawah" ? "Lihat ke bawah" : "Kembali ke atas soal"}
+      onClick={() => {
+        const el = wadah.current;
+        if (!el) return;
+        el.scrollTo({ top: arah === "bawah" ? el.scrollTop + el.clientHeight * 0.8 : 0, behavior: "smooth" });
+      }}
+      className="mx-auto mt-1 flex h-8 min-w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0b2545] shadow-[0_2px_0_rgba(11,37,69,.16)] active:scale-95"
     >
-      <Icon name="expand_more" size={28} />
+      <Icon name={arah === "bawah" ? "expand_more" : "expand_less"} size={23} />
     </button>
   );
+}
+
+const SlotAksi = createContext<HTMLElement | null>(null);
+
+/** Jaga aksi utama tetap terlihat ketika permainan harus digulir. */
+export function AksiBawah({ aktif = true, children }: { aktif?: boolean; children: ReactNode }) {
+  const slot = useContext(SlotAksi);
+  return aktif && slot ? createPortal(children, slot) : children;
 }
 
 /** Kerangka layar aktivitas: kembali · judul & progres · instruksi (bisa diputar ulang) · isi. */
@@ -164,6 +180,7 @@ export function LayarAktivitas({
   }, []);
   const panggung: Panggung = { tema, w: ukuran.w, h: ukuran.h, skala: skalaPanggung(ukuran.w, ukuran.h), rintangan };
   const [slotBantu, setSlotBantu] = useState<HTMLElement | null>(null);
+  const [slotAksi, setSlotAksi] = useState<HTMLElement | null>(null);
   // Tombol kembali: hentikan suara dulu (ketukan pertama di HP bisa membuka ucapan yang tertahan),
   // lalu kembali lewat riwayat bila datang dari aplikasi ini (instan dari cache), selain itu ke kembaliKe.
   const kembali = () => {
@@ -229,10 +246,13 @@ export function LayarAktivitas({
         <div className="relative flex min-h-0 flex-1 flex-col rounded-[26px] p-1.5" style={{ background: pilar.dasar }}>
         <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
           <PanggungCtx.Provider value={panggung}>
-            <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>
+            <SlotAksi.Provider value={slotAksi}>
+              <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>
+            </SlotAksi.Provider>
           </PanggungCtx.Provider>
         </div>
         <GulirLagi wadah={panggungRef} />
+        <div ref={setSlotAksi} className="mt-1.5 shrink-0 pb-1 empty:hidden" data-aksi-bawah />
         </div>
       </div>
     </div>

@@ -18,6 +18,9 @@ const terhubung = (memberId: string) => typeof window !== "undefined" && UUID.te
 /** Anak sudah punya catatan belajar (jawaban) → jenjang tidak boleh dipilih ulang. */
 export const sudahBelajar = (memberId: string) => eventsAnak(memberId).some((e) => e.type === "attempt");
 
+/** Jawaban tes penempatan yang belum selesai tidak menghilangkan pintu untuk memulai ulang tes. */
+export const sudahMulaiPelajaran = (memberId: string) => eventsAnak(memberId).some((e) => e.type === "attempt" && (e.payload.detail as { ujian?: string } | undefined)?.ujian !== "penempatan");
+
 const sedang = new Map<string, Promise<LevelId | null>>();
 
 /** Samakan jenjang lokal dengan server. Mengembalikan jenjang server, atau null bila offline / anggota demo. */

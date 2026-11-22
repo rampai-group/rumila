@@ -1,6 +1,6 @@
 {
   "id": "sains-rancang-ciri-hewan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,25 +16,25 @@
       "i-sayapsirip": "sayap pendek seperti sirip untuk berenang di air es",
       "i-putihsalju": "warna putih seperti salju",
       "i-ekorpipih": "ekor lebar dan pipih untuk mendayung",
-      "i-sisikikan": "sisik licin untuk meluncur di air",
+      "i-sisikikan": "sisik berlendir yang membantu ikan bergerak di air",
       "i-hidungtutup": "hidung bisa ditutup saat menyelam",
       "i-telingabesar": "telinga besar untuk membuang panas",
-      "i-kulitkering": "kulit bersisik yang tahan panas",
+      "i-kulitkering": "kulit bersisik yang mengurangi kehilangan air",
       "i-warnapasir": "warna cokelat muda seperti pasir",
       "i-jarilengket": "jari lengket untuk memanjat pohon",
       "i-paruhbesar": "paruh besar untuk memetik buah di pohon",
       "i-warnakayu": "warna cokelat seperti kulit kayu",
       "t-1": "Hewan ini akan tinggal di es yang licin. Ciri mana yang cocok?",
-      "t-2": "Hewan ini akan berenang di laut yang dingin di dekat es. Ciri mana yang cocok?",
+      "t-2": "Hewan ini berenang di laut dingin. Bentuk sayap mana yang berfungsi seperti sirip?",
       "t-3": "Hewan ini akan bersembunyi di padang salju. Ciri mana yang cocok?",
-      "t-4": "Hewan ini akan tinggal di sungai dan berenang. Ciri mana yang cocok?",
-      "t-5": "Hewan ini akan hidup di dalam air sepanjang hari. Ciri mana yang cocok?",
-      "t-6": "Hewan ini suka menyelam ke dasar danau. Ciri mana yang cocok?",
-      "t-7": "Hewan ini akan tinggal di gurun yang sangat panas. Ciri mana yang cocok?",
-      "t-8": "Hewan ini akan berjemur di batu gurun yang panas. Ciri mana yang cocok?",
+      "t-4": "Hewan ini berenang di sungai. Bentuk ekor mana yang bisa digunakan untuk mendayung?",
+      "t-5": "Hewan ini hidup di air. Penutup tubuh mana yang membantu ikan bergerak di air?",
+      "t-6": "Hewan ini menyelam di danau. Ciri hidung mana yang mencegah air masuk?",
+      "t-7": "Hewan ini tinggal di gurun panas. Bentuk telinga mana yang membantu melepaskan panas?",
+      "t-8": "Hewan ini tinggal di gurun yang kering. Ciri kulit mana yang membantu tubuhnya tidak cepat kehilangan air?",
       "t-9": "Hewan ini akan bersembunyi di gurun pasir. Ciri mana yang cocok?",
-      "t-10": "Hewan ini akan tinggal di pohon-pohon hutan. Ciri mana yang cocok?",
-      "t-11": "Hewan ini akan makan buah di atas pohon hutan. Ciri mana yang cocok?",
+      "t-10": "Hewan ini memanjat batang pohon. Ciri jari mana yang membantu menempel pada batang?",
+      "t-11": "Hewan ini memetik buah di pohon. Bentuk paruh mana yang bisa menjangkau dan memegang buah?",
       "t-12": "Hewan ini akan bersembunyi di batang pohon hutan. Ciri mana yang cocok?"
     },
     "en": {
@@ -45,25 +45,25 @@
       "i-sayapsirip": "short flipper wings for swimming in icy water",
       "i-putihsalju": "white colour like snow",
       "i-ekorpipih": "a wide flat tail for paddling",
-      "i-sisikikan": "slippery scales for gliding in water",
+      "i-sisikikan": "mucus-coated scales that help a fish move through water",
       "i-hidungtutup": "a nose that closes when diving",
       "i-telingabesar": "big ears to let out heat",
-      "i-kulitkering": "scaly skin that handles heat",
+      "i-kulitkering": "scaly skin that reduces water loss",
       "i-warnapasir": "light brown colour like sand",
       "i-jarilengket": "sticky toes for climbing trees",
       "i-paruhbesar": "a big beak for picking fruit in trees",
       "i-warnakayu": "brown colour like tree bark",
       "t-1": "This animal will live on slippery ice. Which feature fits?",
-      "t-2": "This animal will swim in the cold sea near the ice. Which feature fits?",
+      "t-2": "This animal swims in a cold sea. Which wing shape works like flippers?",
       "t-3": "This animal will hide in a snowy field. Which feature fits?",
-      "t-4": "This animal will live in a river and swim. Which feature fits?",
-      "t-5": "This animal will live in water all day. Which feature fits?",
-      "t-6": "This animal likes diving to the bottom of the lake. Which feature fits?",
-      "t-7": "This animal will live in a very hot desert. Which feature fits?",
-      "t-8": "This animal will sunbathe on hot desert rocks. Which feature fits?",
+      "t-4": "This animal swims in a river. Which tail shape can act as a paddle?",
+      "t-5": "This animal lives in water. Which body covering helps a fish move through water?",
+      "t-6": "This animal dives in a lake. Which nose feature keeps water out?",
+      "t-7": "This animal lives in a hot desert. Which ear shape helps release heat?",
+      "t-8": "This animal lives in a dry desert. Which skin feature helps its body lose less water?",
       "t-9": "This animal will hide in the sandy desert. Which feature fits?",
-      "t-10": "This animal will live in forest trees. Which feature fits?",
-      "t-11": "This animal will eat fruit high in the forest trees. Which feature fits?",
+      "t-10": "This animal climbs a tree trunk. Which toe feature helps it grip the trunk?",
+      "t-11": "This animal picks fruit in a tree. Which beak shape can reach and hold fruit?",
       "t-12": "This animal will hide on forest tree trunks. Which feature fits?"
     }
   },
@@ -92,75 +92,121 @@
       "id": "kakiberbulu",
       "labelKey": "i-kakiberbulu",
       "bin": "pilihan",
-      "emoji": "🐾",
-      "color": "#e3f2fd"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-kakiberbulu",
+        "t": 0
+      }
     },
     {
       "id": "sayapsirip",
       "labelKey": "i-sayapsirip",
       "bin": "pilihan",
-      "emoji": "🐧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-sayapsirip",
+        "t": 0
+      }
     },
     {
       "id": "putihsalju",
       "labelKey": "i-putihsalju",
       "bin": "pilihan",
-      "emoji": "❄️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-putihsalju",
+        "t": 0
+      }
     },
     {
       "id": "ekorpipih",
       "labelKey": "i-ekorpipih",
       "bin": "pilihan",
-      "emoji": "🦫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-ekorpipih",
+        "t": 0
+      }
     },
     {
       "id": "sisikikan",
       "labelKey": "i-sisikikan",
       "bin": "pilihan",
-      "emoji": "🐟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-sisikikan",
+        "t": 0
+      }
     },
     {
       "id": "hidungtutup",
       "labelKey": "i-hidungtutup",
       "bin": "pilihan",
-      "emoji": "🦛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-hidungtutup",
+        "t": 0
+      }
     },
     {
       "id": "telingabesar",
       "labelKey": "i-telingabesar",
       "bin": "pilihan",
-      "emoji": "🦊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-telingabesar",
+        "t": 0
+      }
     },
     {
       "id": "kulitkering",
       "labelKey": "i-kulitkering",
       "bin": "pilihan",
-      "emoji": "🦎"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-kulitkering",
+        "t": 0
+      }
     },
     {
       "id": "warnapasir",
       "labelKey": "i-warnapasir",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#e0c48a"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-warnapasir",
+        "t": 0
+      }
     },
     {
       "id": "jarilengket",
       "labelKey": "i-jarilengket",
       "bin": "pilihan",
-      "emoji": "🐸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-jarilengket",
+        "t": 0
+      }
     },
     {
       "id": "paruhbesar",
       "labelKey": "i-paruhbesar",
       "bin": "pilihan",
-      "emoji": "🦜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-paruhbesar",
+        "t": 0
+      }
     },
     {
       "id": "warnakayu",
       "labelKey": "i-warnakayu",
       "bin": "pilihan",
-      "emoji": "🪵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-ciri-warnakayu",
+        "t": 0
+      }
     }
   ],
   "pilihan": [

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-berbunga",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -237,10 +237,9 @@
         {
           "id": "polong",
           "labelKey": "kacang-polong",
-          "emoji": "🥜",
           "adegan": {
-            "jenis": "tanda",
-            "tanda": "🫛"
+            "jenis": "ilustrasi-sd",
+            "varian": "polong-kacang"
           }
         }
       ]

@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-genap-ganjil-20",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -233,22 +233,28 @@
       "id": "kaus-kaki-6",
       "labelKey": "i-6-kaus-kaki",
       "bin": "genap",
-      "emoji": "🧦",
-      "count": 6
+      "count": 6,
+      "adegan": {
+        "jenis": "kaus-kaki"
+      }
     },
     {
       "id": "kaus-kaki-7",
       "labelKey": "i-7-kaus-kaki",
       "bin": "ganjil",
-      "emoji": "🧦",
-      "count": 7
+      "count": 7,
+      "adegan": {
+        "jenis": "kaus-kaki"
+      }
     },
     {
       "id": "kaus-kaki-9",
       "labelKey": "i-9-kaus-kaki",
       "bin": "ganjil",
-      "emoji": "🧦",
-      "count": 9
+      "count": 9,
+      "adegan": {
+        "jenis": "kaus-kaki"
+      }
     },
     {
       "id": "kepik-5",

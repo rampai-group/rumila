@@ -1,6 +1,6 @@
 {
   "id": "sains-pilah-lapisan-tubuh-kelas",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -137,8 +137,11 @@
       "id": "lambung",
       "labelKey": "i-lambung",
       "bin": "organ",
-      "shape": "circle",
-      "color": "#ffab91"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-lambung",
+        "t": 0
+      }
     },
     {
       "id": "usus",

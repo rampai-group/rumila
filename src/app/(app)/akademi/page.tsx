@@ -11,7 +11,7 @@ import { Koleksi } from "@/components/akademi/portal/koleksi";
 import { PetaPetualangan } from "@/components/akademi/portal/peta";
 import { levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import Link from "next/link";
-import { sinkronSiswa, sudahBelajar } from "@/lib/akademi/siswa";
+import { sinkronSiswa, sudahMulaiPelajaran } from "@/lib/akademi/siswa";
 import { useUjian } from "@/lib/akademi/ujian-klien";
 import { useMe } from "@/lib/store";
 
@@ -20,10 +20,10 @@ export default function AkademiPage() {
   const versi = useProfilAkademiVersi();
   const [hadiah, setHadiah] = useState(false);
   const ujian = useUjian(me.id);
-  // Tes Penempatan ditawarkan selama anak belum pernah menjawab soal apa pun dan belum ikut tes.
+  // Tes yang belum selesai atau belum menetapkan jenjang masih bisa dibuka dari peta.
   const [baru, setBaru] = useState(false);
-  useEffect(() => setBaru(!sudahBelajar(me.id)), [me.id]);
-  const perluPenempatan = baru && !ujian.some((h) => h.jenis === "penempatan");
+  useEffect(() => setBaru(!sudahMulaiPelajaran(me.id)), [me.id]);
+  const perluPenempatan = baru && !ujian.some((h) => h.jenis === "penempatan" && !h.pending && (h.lulus || h.level === "PAUD"));
   const [level, setLevel] = useState<LevelId>("PAUD");
   useEffect(() => setLevel(levelAnak(me.id)), [me.id, versi]);
   // Jenjang aktif dipegang server (akademi_siswa); jenjang lokal disamakan setiap portal dibuka.

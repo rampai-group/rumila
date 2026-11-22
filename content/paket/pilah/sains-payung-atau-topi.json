@@ -1,6 +1,6 @@
 {
   "id": "sains-payung-atau-topi",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Payung atau Topi?",
-      "instruksi": "Lihat langitnya, lalu sentuh benda yang harus dibawa robot keluar rumah.",
+      "instruksi": "Dengarkan keadaan cuacanya, lalu sentuh benda yang cocok dipakai.",
       "pilihan": "pilihan",
       "i-payung": "payung",
       "i-topi": "topi",
@@ -29,7 +29,7 @@
     },
     "en": {
       "judul": "Umbrella or Hat?",
-      "instruksi": "Look at the sky, then touch what robot should take before going out.",
+      "instruksi": "Listen to the weather description, then touch the useful item.",
       "pilihan": "choices",
       "i-payung": "umbrella",
       "i-topi": "sun hat",

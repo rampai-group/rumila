@@ -1,6 +1,6 @@
 {
   "id": "sains-simbol-cuaca-jendela",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cuaca dari Jendela Rumah",
-      "instruksi": "Lihat langit dari jendela rumah, lalu pasang simbol cuaca yang cocok.",
+      "instruksi": "Dengarkan cerita cuaca dari jendela rumah, lalu sentuh simbol yang cocok.",
       "pilihan": "pilihan",
       "i-cerah": "cerah",
       "i-mendung": "mendung",
@@ -29,7 +29,7 @@
     },
     "en": {
       "judul": "Weather from the Home Window",
-      "instruksi": "Look at the sky from the home window, then put up the matching weather symbol.",
+      "instruksi": "Listen to the weather story from the home window, then touch the matching symbol.",
       "pilihan": "choices",
       "i-cerah": "sunny",
       "i-mendung": "cloudy",

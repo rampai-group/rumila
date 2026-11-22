@@ -1,6 +1,6 @@
 {
   "id": "sains-pasang-bagian-robot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Pasang Tubuh Robot",
-      "instruksi": "Robot belum lengkap. Dengarkan tempat yang kosong, lalu sentuh bagian tubuh yang harus dipasang.",
+      "instruksi": "Lihat robot yang belum lengkap. Sentuh bagian tubuh yang cocok untuk tempat bergaris putus-putus.",
       "pilihan": "pilihan",
       "i-kepala": "kepala robot",
       "i-badan": "badan robot",
@@ -34,7 +34,7 @@
     },
     "en": {
       "judul": "Build the Robot's Body",
-      "instruksi": "The robot is not finished. Listen to which place is empty, then touch the body part it needs.",
+      "instruksi": "Look at the incomplete robot. Touch the body part that fits the dashed space.",
       "pilihan": "choices",
       "i-kepala": "robot head",
       "i-badan": "robot body",
@@ -82,26 +82,41 @@
       "id": "kepala",
       "labelKey": "i-kepala",
       "bin": "pilihan",
-      "emoji": "🤖"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-kepala",
+        "t": 0
+      }
     },
     {
       "id": "badan",
       "labelKey": "i-badan",
       "bin": "pilihan",
-      "shape": "rect",
-      "color": "#90a4ae"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-badan",
+        "t": 0
+      }
     },
     {
       "id": "tangan",
       "labelKey": "i-tangan",
       "bin": "pilihan",
-      "emoji": "🦾"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tangan",
+        "t": 0
+      }
     },
     {
       "id": "kaki",
       "labelKey": "i-kaki",
       "bin": "pilihan",
-      "emoji": "🦿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-kaki",
+        "t": 0
+      }
     },
     {
       "id": "roda",
@@ -137,7 +152,12 @@
         "baterai",
         "kaki"
       ],
-      "correct": "kepala"
+      "correct": "kepala",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-kepala",
+        "t": 0
+      }
     },
     {
       "id": "kepala2",
@@ -147,7 +167,12 @@
         "tangan",
         "obeng"
       ],
-      "correct": "kepala"
+      "correct": "kepala",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-kepala",
+        "t": 0
+      }
     },
     {
       "id": "kepala3",
@@ -157,7 +182,12 @@
         "kaki",
         "roda"
       ],
-      "correct": "kepala"
+      "correct": "kepala",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-kepala",
+        "t": 0
+      }
     },
     {
       "id": "badan1",
@@ -167,7 +197,12 @@
         "roda",
         "kepala"
       ],
-      "correct": "badan"
+      "correct": "badan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-badan",
+        "t": 0
+      }
     },
     {
       "id": "badan2",
@@ -177,7 +212,12 @@
         "lampu",
         "tangan"
       ],
-      "correct": "badan"
+      "correct": "badan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-badan",
+        "t": 0
+      }
     },
     {
       "id": "tangan1",
@@ -187,7 +227,12 @@
         "baterai",
         "kepala"
       ],
-      "correct": "tangan"
+      "correct": "tangan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-tangan",
+        "t": 0
+      }
     },
     {
       "id": "tangan2",
@@ -197,7 +242,12 @@
         "kaki",
         "roda"
       ],
-      "correct": "tangan"
+      "correct": "tangan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-tangan",
+        "t": 0
+      }
     },
     {
       "id": "tangan3",
@@ -207,7 +257,12 @@
         "obeng",
         "badan"
       ],
-      "correct": "tangan"
+      "correct": "tangan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-tangan",
+        "t": 0
+      }
     },
     {
       "id": "kaki1",
@@ -217,7 +272,12 @@
         "lampu",
         "kepala"
       ],
-      "correct": "kaki"
+      "correct": "kaki",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-kaki",
+        "t": 0
+      }
     },
     {
       "id": "kaki2",
@@ -227,7 +287,12 @@
         "tangan",
         "baterai"
       ],
-      "correct": "kaki"
+      "correct": "kaki",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-kaki",
+        "t": 0
+      }
     },
     {
       "id": "kaki3",
@@ -237,7 +302,12 @@
         "lampu",
         "badan"
       ],
-      "correct": "kaki"
+      "correct": "kaki",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-robot-tanpa-kaki",
+        "t": 0
+      }
     }
   ]
 }

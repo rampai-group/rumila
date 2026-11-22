@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-yang-dari-kayu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -106,7 +106,11 @@
       "id": "gelas",
       "labelKey": "i-gelas",
       "bin": "pilihan",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gelas",
+        "t": 0
+      }
     },
     {
       "id": "paku",
@@ -118,7 +122,11 @@
       "id": "talenan",
       "labelKey": "i-talenan",
       "bin": "pilihan",
-      "emoji": "🪵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-talenan",
+        "t": 0
+      }
     },
     {
       "id": "pensil",

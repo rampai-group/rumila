@@ -1,6 +1,6 @@
 {
   "id": "sains-pilih-bahan-bangun-rumah",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,17 +16,17 @@
       "i-logam": "logam",
       "i-plastik": "plastik",
       "i-kaca": "kaca",
-      "t-jendela": "Jendela supaya cahaya masuk. Bahan apa?",
+      "t-jendela": "Jendela ini memakai lembar bening yang keras dan mudah pecah, seperti gelas. Bahannya apa?",
       "t-kursi": "Kursi dari batang pohon yang digergaji. Bahan apa?",
       "t-paku": "Paku supaya papan tidak lepas. Bahan apa?",
-      "t-botol": "Botol minum yang ringan dan tidak pecah. Bahan apa?",
-      "t-pintu": "Pintu rumah yang kokoh. Bahan apa?",
-      "t-cermin": "Cermin untuk bercermin. Bahan apa?",
-      "t-bohlam": "Bohlam lampu yang bening. Bahan apa?",
+      "t-botol": "Botol minum ini ringan, bisa diremas sedikit, dan tidak mudah pecah. Bahannya apa?",
+      "t-pintu": "Pintu ini dibuat dari papan hasil menggergaji batang pohon. Bahannya apa?",
+      "t-cermin": "Bagian depan cermin ini berupa lembar bening seperti gelas, dengan lapisan pemantul di belakangnya. Bahan lembar bening itu apa?",
+      "t-bohlam": "Bagian bening bohlam pijar ini keras dan mudah pecah seperti gelas. Bahannya apa?",
       "t-kunci": "Kunci pintu yang keras dan kuat. Bahan apa?",
       "t-panci": "Panci untuk memasak di atas kompor. Bahan apa?",
       "t-kresek": "Kantong kresek untuk belanja. Bahan apa?",
-      "t-lantai": "Lantai rumah panggung. Bahan apa?"
+      "t-lantai": "Lantai rumah ini dibuat dari papan hasil menggergaji batang pohon. Bahannya apa?"
     },
     "en": {
       "judul": "Pick Materials for the Little House",
@@ -36,17 +36,17 @@
       "i-logam": "metal",
       "i-plastik": "plastic",
       "i-kaca": "glass",
-      "t-jendela": "A window to let light in. Which material?",
+      "t-jendela": "This window uses a hard, clear sheet that can shatter, like a drinking glass. What material is it?",
       "t-kursi": "A chair made from a sawn tree trunk. Which material?",
       "t-paku": "A nail to hold the boards. Which material?",
-      "t-botol": "A light drinking bottle that won't break. Which material?",
-      "t-pintu": "A sturdy front door. Which material?",
-      "t-cermin": "A mirror to look at yourself. Which material?",
-      "t-bohlam": "A clear light bulb. Which material?",
+      "t-botol": "This drinking bottle is light, can be squeezed a little, and does not shatter easily. What material is it?",
+      "t-pintu": "This door is made from boards sawn from a tree trunk. What material is it?",
+      "t-cermin": "The front of this mirror is a clear sheet like a drinking glass, with a reflective coating behind it. What is the clear sheet made of?",
+      "t-bohlam": "The clear shell of this filament bulb is hard and can shatter like a drinking glass. What material is it?",
       "t-kunci": "A hard, strong door key. Which material?",
       "t-panci": "A pot for cooking on the stove. Which material?",
       "t-kresek": "A shopping bag. Which material?",
-      "t-lantai": "The floor of a house on stilts. Which material?"
+      "t-lantai": "This house has floorboards sawn from tree trunks. What material are they?"
     }
   },
   "knobs": {
@@ -74,29 +74,41 @@
       "id": "kayu",
       "labelKey": "i-kayu",
       "bin": "pilihan",
-      "emoji": "🪵",
-      "color": "#d7ccc8"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kayu",
+        "t": 0
+      }
     },
     {
       "id": "logam",
       "labelKey": "i-logam",
       "bin": "pilihan",
-      "emoji": "🔩",
-      "color": "#cfd8dc"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-logam",
+        "t": 0
+      }
     },
     {
       "id": "plastik",
       "labelKey": "i-plastik",
       "bin": "pilihan",
-      "emoji": "🧴",
-      "color": "#ffe0b2"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-plastik",
+        "t": 0
+      }
     },
     {
       "id": "kaca",
       "labelKey": "i-kaca",
       "bin": "pilihan",
-      "emoji": "🥛",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kaca",
+        "t": 0
+      }
     }
   ],
   "pilihan": [

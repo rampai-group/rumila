@@ -24,6 +24,8 @@ export interface RondePilahKelompok {
 export interface RondePilahPilih {
   mode: "pilih";
   promptKey: string;
+  adegan?: PaketPilah["pilihan"][number]["adegan"];
+  bacaPilihan?: boolean;
   choices: PaketPilah["items"];
   /** id item yang benar */
   correct: string;

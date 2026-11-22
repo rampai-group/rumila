@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { duniaPaket, pilarPaket, rintanganPaket, wadahPaket } from "@/lib/akademi/tema-dunia";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isiBarang, type ContentPack } from "@akademi/schema";
-import { buatRonde, buatRondeBaru, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
+import { buatRonde, buatRondeUnik, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
 import { kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
@@ -55,10 +55,11 @@ export function ActivityRunner({ paketId }: { paketId: string }) {
   const paket = useMemo(() => paketById(paketId), [paketId]);
   // Ronde bergantung seed sesi (acak di klien) → render hanya di klien agar tidak terjadi hydration mismatch.
   const [siap, setSiap] = useState(false);
+  const [ulangan, setUlangan] = useState(0);
   useEffect(() => setSiap(true), []);
   if (!siap) return null;
   if (!paket) return <TidakAda />;
-  return <Runner paket={paket} />;
+  return <Runner key={`${paket.id}|${ulangan}`} paket={paket} onLagi={() => setUlangan((u) => u + 1)} />;
 }
 
 function TidakAda() {
@@ -72,7 +73,7 @@ function TidakAda() {
   );
 }
 
-function Runner({ paket }: { paket: ContentPack }) {
+function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
   const me = useMe();
   const learnerId = me?.id ?? "dev";
   const router = useRouter();
@@ -104,6 +105,8 @@ function Runner({ paket }: { paket: ContentPack }) {
   const musik = useBacksound(learnerId, levelAnak(learnerId), !selesai);
   const mulai = useRef(Date.now());
   const mulaiRonde = useRef(Date.now());
+  const jeda = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const terkirim = useRef(false);
   const total = paket.rounds;
 
   // {barang} di instruksi = nama barang ronde ini (dagang yang barangnya diacak per ronde)
@@ -130,6 +133,7 @@ function Runner({ paket }: { paket: ContentPack }) {
     const timer = aktif ? setTimeout(ucap, 400) : undefined;
     return () => {
       clearTimeout(timer);
+      clearTimeout(jeda.current);
       diamkan();
     };
     // sekali per aktivitas
@@ -151,7 +155,8 @@ function Runner({ paket }: { paket: ContentPack }) {
   };
 
   const onJawab = (j: Jawaban) => {
-    if (hasil) return;
+    if (terkirim.current) return;
+    terkirim.current = true;
     const h = nilai(paket, ronde, j);
     const latencyMs = Date.now() - mulaiRonde.current;
     setHasil(h);
@@ -177,23 +182,26 @@ function Runner({ paket }: { paket: ContentPack }) {
     }
     // Latihan: salah = tetap di soal yang sama (presenter dipasang ulang) sampai benar. Ujian punya alur sendiri.
     if (!h.benar) {
-      setTimeout(() => {
+      jeda.current = setTimeout(() => {
         setHasil(null);
         setPercobaan((n) => n + 1);
         mulaiRonde.current = Date.now();
+        terkirim.current = false;
       }, JEDA_UMPAN_BALIK);
       return;
     }
-    setTimeout(() => {
+    jeda.current = setTimeout(() => {
       setPercobaan(0);
       setGratisTerpakai(false);
       const next = idx + 1;
-      if (next >= total) {
+      riwayat.current.push(kunciRonde(ronde));
+      const rondeBerikut = next < total ? buatRondeUnik(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`), riwayat.current) : null;
+      if (!rondeBerikut) {
         catatEvent({
           learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "activity_end",
           payload: { outcome: "selesai", successCount: skorBaru.benar, failCount: skorBaru.salah, hintCount: skorBaru.hint, durationMs: Date.now() - mulai.current },
         });
-        if (skorBaru.benar >= Math.ceil(total * 0.6)) completeTool(learnerId, `akademi-${paket.mechanic}`, "edukasi", paket.id);
+        if (skorBaru.benar >= Math.ceil(next * 0.6)) completeTool(learnerId, `akademi-${paket.mechanic}`, "edukasi", paket.id);
         setSelesai(true);
         return;
       }
@@ -201,12 +209,12 @@ function Runner({ paket }: { paket: ContentPack }) {
       setHasil(null);
       setHint(false);
       mulaiRonde.current = Date.now();
-      riwayat.current.push(kunciRonde(ronde));
-      setRonde(buatRondeBaru(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`), riwayat.current));
+      setRonde(rondeBerikut);
+      terkirim.current = false;
     }, JEDA_UMPAN_BALIK);
   };
 
-  if (selesai) return <LayarSelesai paket={paket} bahasa={bahasa} skor={skor} onLagi={() => router.replace(`/akademi/main/${paket.id}?u=${Date.now()}`)} onKembali={() => router.push("/akademi")} />;
+  if (selesai) return <LayarSelesai paket={paket} bahasa={bahasa} skor={skor} onLagi={onLagi} onKembali={() => router.push("/akademi")} />;
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (

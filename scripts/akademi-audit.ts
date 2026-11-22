@@ -8,10 +8,10 @@
 //   paket      : id ganda, judul kembar (id/en), kompetensi tak dikenal, item id ganda, label item kembar dalam satu
 //                paket, ronde gagal dibuat, soal yang tak bisa dijawab benar (jawaban kunci dinilai salah),
 //                pilihan kembar dalam satu soal, peta robot tak terpecahkan / melebihi slot,
-//                soal berulang dalam satu sesi (10 ronde)
+//                soal berulang dalam satu sesi latihan
 //   ujian      : modul/semester/jenjang yang soal ujiannya tidak bisa disusun
 //   teks       : kunci locale id/en tidak seimbang
-// WARNING     : instruksi tanpa kata kerja perintah, pilihan kembar makna, ejaan tidak baku, instruksi terlalu panjang untuk jenjang, mekanik kompetensi tak cocok dengan paket,
+// WARNING     : stok soal unik lebih pendek dari target ronde, instruksi tanpa kata kerja perintah, pilihan kembar makna, ejaan tidak baku, instruksi terlalu panjang untuk jenjang, mekanik kompetensi tak cocok dengan paket,
 //                paket hampir kembar (isi ≥ 80% sama untuk kompetensi sama), instruksi kembar, kompetensi dengan
 //                1 paket saja (Ulangan Modul jadi monoton), paket lintas jenjang,
 //                dagang bayar/kembalian dengan tingkat knob harga tanpa barang ber-price sama (harga-barang-tak-cocok).
@@ -19,7 +19,7 @@
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { ContentPack, KurikulumFile, LEVEL_IDS, levelIndex, type Competency } from "../packages/schema/src/index";
-import { buatRonde, buatRondeBaru, dariJson, jalankan, knobDefaults, kunciRonde, nilai, optimal, type Jawaban, type NavBlock, type NavGrid, type Ronde } from "../packages/mechanics/src/index";
+import { buatRonde, buatRondeUnik, dariJson, jalankan, knobDefaults, kunciRonde, nilai, optimal, type Jawaban, type NavBlock, type NavGrid, type Ronde } from "../packages/mechanics/src/index";
 import type { NavCommand } from "../packages/schema/src/index";
 
 /**
@@ -242,7 +242,7 @@ for (const { p } of paket) {
     if (Array.isArray(o)) return o.forEach(jelajah);
     if (!o || typeof o !== "object") return;
     for (const [k, v] of Object.entries(o)) {
-      if (k === "emoji" && typeof v === "string" && EMOJI_BARU.test(v)) temu.add(v);
+      if ((k === "emoji" || k === "tanda") && typeof v === "string" && EMOJI_BARU.test(v)) temu.add(v);
       else if (v && typeof v === "object") jelajah(v);
     }
   };
@@ -425,16 +425,22 @@ for (const { p } of paket) {
       } catch (e) { catat("nilai-error", `seed ${s}: ${(e as Error).message}`); }
     }
   }
-  // soal tidak berulang dalam satu sesi
+  // Latihan berhenti bila stok unik habis. Stok pendek adalah petunjuk bagi penyusun materi.
   let terburuk = 99;
   for (let s = 0; s < 6; s++) {
     const riw: string[] = [];
     try {
-      for (let i = 0; i < p.rounds; i++) riw.push(kunciRonde(buatRondeBaru(p, k, (s * 7919 + i * 104729) >>> 0, riw)));
+      for (let i = 0; i < p.rounds; i++) {
+        const seed = (s * 7919 + i * 104729) >>> 0;
+        const r = i === 0 ? buatRonde(p, k, seed) : buatRondeUnik(p, k, seed, riw);
+        if (!r) break;
+        riw.push(kunciRonde(r));
+      }
     } catch { break; }
-    terburuk = Math.min(terburuk, new Set(riw).size);
+    if (new Set(riw).size < riw.length) catat("soal-berulang-satu-sesi", `sesi seed ${s} mengulang soal sebelum selesai`);
+    terburuk = Math.min(terburuk, riw.length);
   }
-  if (terburuk < p.rounds) catat("soal-berulang-satu-sesi", `hanya ${terburuk} soal berbeda dari ${p.rounds} ronde`);
+  if (terburuk < p.rounds) lapor("WARNING", "stok-soal-unik-pendek", p.id, `latihan bisa selesai di ${terburuk} dari ${p.rounds} ronde karena stok soal unik habis`);
   for (const [jenis, pesan] of masalah) lapor("ERROR", jenis, p.id, pesan);
 }
 // dariJson dipakai agar impor tidak dihapus linter (program debug JSON → blok)

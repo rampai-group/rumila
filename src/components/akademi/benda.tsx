@@ -3,15 +3,24 @@
 // Gambar benda dari deskripsi Visual paket (emoji / bentuk / warna / skala / lebar / jumlah) — tanpa aset.
 // Dipakai semua presenter supaya item, bin, langkah, dan barang dagangan tampil seragam.
 
-import { createContext, useContext, useMemo, type CSSProperties, type ReactNode } from "react";
+import { createContext, useContext, useMemo, type CSSProperties, type MouseEventHandler, type ReactNode } from "react";
 import { BALOO, INK, NUNITO, PILAR_CSS, bayangKartu } from "./jenis";
 import type { Adegan } from "@akademi/schema";
 import { GambarAdegan } from "./adegan-gambar";
 
 /** Huruf terpanjang satu kata (untuk ukuran huruf yang tidak memotong kata di tengah). */
 const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+|(?<=-)/).map((k) => k.length));
-/** Lebar gambar terbesar relatif ukuran dasar: emoji memakai scaleX(width) yang tidak ikut dihitung tata letak. */
-export const skalaLebar = (v: { scale?: number; emoji?: string; width?: number }) => (v.scale ?? 1) * Math.max(1, v.emoji ? v.width ?? 1 : 1);
+export const visualBergambar = (v: Pick<VisualSpec, "adegan" | "emoji" | "shape">) => !!(v.adegan || v.emoji || v.shape);
+
+/** Lebar total sebelum digambar, termasuk bentuk lebar dan kisi beberapa benda. */
+export function skalaLebar(v: VisualSpec) {
+  const n = v.count ?? 1;
+  const akar = Math.ceil(Math.sqrt(n));
+  const kolom = Math.min(v.kolom ?? akar, n);
+  const bentuk = v.adegan ? 1.55 : (v.shape === "uang" ? 1.52 : 1) * (v.width ?? 1);
+  const kisi = n === 1 ? bentuk : (kolom / akar) * bentuk + (kolom - 1) * 0.06;
+  return (v.scale ?? 1) * Math.max(1, kisi);
+}
 
 export interface VisualSpec {
   /** keadaan benda digambar kode (lihat adegan-gambar.tsx) */
@@ -151,14 +160,16 @@ function Bentuk({ shape, color, size, width = 1, angka }: { shape: NonNullable<V
 function BentukDasar({ shape, color, size, width = 1 }: { shape: NonNullable<VisualSpec["shape"]>; color: string; size: number; width?: number }) {
   const w = size * width, h = size;
   if (shape === "circle") return <span style={{ width: w, height: h, borderRadius: 9999, background: color, display: "inline-block" }} />;
-  if (shape === "square") return <span style={{ width: w, height: h, borderRadius: size * 0.12, background: color, display: "inline-block" }} />;
-  if (shape === "rect") return <span style={{ width: w, height: h * 0.42, borderRadius: size * 0.16, background: color, display: "inline-block" }} />;
-  if (shape === "triangle")
+  if (shape === "square") return <span style={{ width: w, height: h, background: color, display: "inline-block" }} />;
+  if (shape === "rect") return <span style={{ width: w, height: h * 0.42, background: color, display: "inline-block" }} />;
+  if (shape === "triangle") {
+    const alas = 8 + 44 * Math.sqrt(3);
     return (
       <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden>
-        <polygon points="50,6 96,92 4,92" fill={color} />
+        <polygon points={`50,8 94,${alas} 6,${alas}`} fill={color} />
       </svg>
     );
+  }
   // belah ketupat tegak: lebih tinggi daripada lebar, sudut tajam di atas/bawah — jelas beda dari persegi
   if (shape === "belah-ketupat")
     return (
@@ -229,18 +240,26 @@ function BentukDasar({ shape, color, size, width = 1 }: { shape: NonNullable<Vis
 export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; size?: number; style?: CSSProperties; className?: string }) {
   const s = size * (v.scale ?? 1);
   const n = v.count ?? 1;
+  const kolom = Math.min(v.kolom ?? Math.ceil(Math.sqrt(n)), n);
+  const kisi = Math.max(kolom, Math.ceil(n / kolom));
   const bedaWarna = useContext(LatarWarna);
   const berlatar = !!v.emoji && !!v.color && (v.latar ?? bedaWarna.has(v.emoji));
   const satu = (k: number): ReactNode => {
-    if (v.adegan) return <GambarAdegan key={k} adegan={v.adegan} emoji={v.emoji} s={s} />;
+    if (v.adegan) {
+      const tinggi = n > 1 ? s / kisi : s;
+      return <GambarAdegan key={k} adegan={v.adegan} emoji={v.emoji} s={tinggi} />;
+    }
     if (v.emoji) {
-      const font = n > 1 ? Math.max(n > 12 ? 11 : 18, s / Math.max(v.kolom ?? 0, Math.ceil(Math.sqrt(n))) * 0.9) : s * 0.86;
+      const font = n > 1 ? s / kisi * 0.9 : s * 0.86;
       const gambar = (
         <span key={k} style={{ fontSize: berlatar ? font * 0.78 : font, lineHeight: 1, display: "inline-block", transform: v.width && v.width !== 1 ? `scaleX(${v.width})` : undefined, transformOrigin: "center" }}>
           {v.emoji}
         </span>
       );
-      if (!berlatar) return gambar;
+      if (!berlatar) {
+        if (!v.width || v.width === 1) return gambar;
+        return <span key={k} className="inline-flex shrink-0 items-center justify-center" style={{ width: font * v.width }}>{gambar}</span>;
+      }
       // latar berwarna (cincin putih tipis supaya warna gelap tetap terpisah dari kartu/latar)
       return (
         <span key={k} className="inline-flex items-center justify-center" style={{ width: font * 1.1 * (v.width ?? 1), height: font * 1.1, borderRadius: font * 0.32, background: v.color, boxShadow: "inset 0 0 0 2px rgba(255,255,255,.55), 0 2px 0 rgba(11,37,69,.18)" }}>
@@ -250,7 +269,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
     }
     if (v.shape) {
       // uang kertas ~1,9× lebar tingginya: kelompok uang disusun lebih sempit supaya kisi tetap muat
-      const per = n > 1 ? Math.max(14, s / Math.ceil(Math.sqrt(n)) / (v.shape === "uang" ? 1.4 : 1)) : v.shape === "uang" ? s * 0.8 : s;
+      const per = n > 1 ? s / kisi / (v.shape === "uang" ? 1.4 : 1) : v.shape === "uang" ? s * 0.8 : s;
       return <Bentuk key={k} shape={v.shape} color={v.color} size={per} width={v.width} angka={v.angka} />;
     }
     // kartu teks: teks panjang (mis. "1 puluhan 1 satuan") diperkecil dan boleh turun baris supaya tidak keluar kartu/wadah
@@ -288,13 +307,12 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
   };
   if (n === 1)
     return (
-      <span className={`inline-flex items-center justify-center ${className}`} style={{ minWidth: s, minHeight: s, ...(!v.emoji && !v.shape ? { maxWidth: "100%" } : {}), ...style }}>
+      <span className={`inline-flex items-center justify-center ${className}`} style={{ minWidth: visualBergambar(v) ? s : 0, minHeight: s, ...(!visualBergambar(v) ? { maxWidth: "100%" } : {}), ...style }}>
         {satu(0)}
       </span>
     );
-  const cols = v.kolom ?? Math.ceil(Math.sqrt(n));
   return (
-    <span className={`inline-grid place-items-center ${className}`} style={{ gridTemplateColumns: `repeat(${cols}, auto)`, gap: Math.max(2, s * 0.06), minWidth: s, minHeight: s, ...style }}>
+    <span className={`inline-grid place-items-center ${className}`} style={{ gridTemplateColumns: `repeat(${kolom}, auto)`, gap: s * 0.06, minWidth: s, minHeight: s, ...style }}>
       {Array.from({ length: n }, (_, k) => satu(k))}
     </span>
   );
@@ -302,13 +320,13 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
 
 /** Kartu benda yang bisa disentuh/diseret: latar putih, bayangan tebal gaya Rumila. */
 export function KartuBenda({
-  v, size = 56, label, labelSize = 13, keterangan = true, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "", penuh,
+  v, size = 56, label, ariaLabel, labelSize = 13, keterangan = true, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "", penuh, disabled,
 }: {
-  v: VisualSpec; size?: number; label?: string; labelSize?: number;
+  v: VisualSpec; size?: number; label?: string; ariaLabel?: string; labelSize?: number; disabled?: boolean;
   /** tampilkan teks label di bawah gambar bila kartu bergambar (emoji/bentuk); false untuk kartu kecil di dalam rak/slot */
   keterangan?: boolean;
   selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
-  onClick?: () => void; style?: CSSProperties; draggable?: boolean; onDragStart?: React.DragEventHandler; onPointerDown?: React.PointerEventHandler; className?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>; style?: CSSProperties; draggable?: boolean; onDragStart?: React.DragEventHandler; onPointerDown?: React.PointerEventHandler; className?: string;
   /**
    * Lebar kartu ditentukan wadahnya (kisi/`w-full`): kartu menjadi container query sehingga huruf menyesuaikan
    * lebar kartu. Jangan dipakai untuk kartu yang lebarnya mengikuti isi (mis. kartu kecil di dalam bin).
@@ -319,10 +337,13 @@ export function KartuBenda({
   const ring = right ? "#22b573" : wrong ? "#ff9a4d" : selected ? PILAR_CSS : "transparent";
   // Kartu bergambar: teks label tetap ditulis di bawahnya (tanpa ini kartu bernomor/berdeskripsi tampak kembar).
   // Kartu tanpa gambar sudah menampilkan labelnya sebagai teks besar di dalam Benda.
-  const teks = label ?? (keterangan && (v.emoji || v.shape) && v.label && v.label !== v.angka ? v.label : undefined);
+  const teks = label ?? (keterangan && visualBergambar(v) && v.label && v.label !== v.angka ? v.label : undefined);
   return (
     <button
       type="button"
+      aria-label={ariaLabel ?? (teks ?? v.label ?? v.angka)}
+      aria-pressed={selected}
+      disabled={disabled}
       onClick={onClick}
       draggable={draggable}
       onDragStart={onDragStart}
@@ -333,7 +354,7 @@ export function KartuBenda({
       <Benda v={v} size={size} />
       {teks && (
         <span
-          style={{ fontFamily: NUNITO, fontSize: `max(12px, min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi))`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: Math.max(96, size * 2.6), overflowWrap: "break-word" }}
+          style={{ fontFamily: NUNITO, fontSize: `max(12px, min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi))`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: `min(100%, ${Math.max(96, size * 2.6)}px)`, overflowWrap: "anywhere" }}
           className="text-center text-balance"
         >
           {teks}
