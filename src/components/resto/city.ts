@@ -1111,7 +1111,7 @@ export class City {
     this.row(19.8, 101, 3.2, 1, kantor ? 'mix' : 'ruko', kantor ? 5 : 4);
     // seberang jalan utama: bangunan umum, tidak terlalu tinggi, agar seimbang dengan resto
     if (loc === 'sekolah') {
-      this.building({ x: -6, z: E + 9.4, w: 26, d: 12, floors: 3, style: 'punched', wall: '#f0e8d8', glass: '#6a8aa0', ry: Math.PI, ground: 'lobby', name: 'SD RINOYA' });
+      this.building({ x: -6, z: E + 9.4, w: 26, d: 12, floors: 3, style: 'punched', wall: '#f0e8d8', glass: '#6a8aa0', ry: Math.PI, ground: 'lobby', name: 'RINOYA ACADEMY' });
       const postM = std('#3a5a8a', 0.6);
       for (let x = -19; x <= 7; x += 1) {
         const post = new T.Mesh(new T.BoxGeometry(0.08, 1.2, 0.08), postM);

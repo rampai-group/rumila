@@ -29,8 +29,7 @@ export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
         <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
           <h2 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>Pelajaranmu</h2>
           <span className="text-[13px] font-extrabold text-ink-3">
-            {lv.nama} · {lv.lokal}
-            {lv.pangkat ? ` · ${lv.pangkat}` : ""}
+            {lv.pangkat}
           </span>
         </div>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

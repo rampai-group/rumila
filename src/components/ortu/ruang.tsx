@@ -355,7 +355,7 @@ function KartuIdentitas({ anak }: { anak: Member }) {
             <div className="rounded-[14px] bg-[#fff8ec] p-2.5">
               <dt className="text-[11px] font-extrabold text-ink-3 uppercase">Jenjang</dt>
               <dd className="mt-0.5 text-[14px] font-extrabold">
-                {lv.lokal} · {lv.nama}
+                {lv.pangkat}
               </dd>
             </div>
             <div className="rounded-[14px] bg-[#fff8ec] p-2.5">
@@ -398,7 +398,7 @@ function ContohSertifikat({ anak, onLihat }: { anak: Member; onLihat: () => void
     <section className={`${KARTU} flex flex-col gap-3 p-4`}>
       <div className="flex flex-wrap items-center gap-2">
         <div className="min-w-0 flex-1">
-          <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>Contoh Sertifikat {lv.lokal}</h3>
+          <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>Contoh Sertifikat {lv.pangkat}</h3>
           <p className="text-[13px] font-bold text-ink-3">
             Begini sertifikat {anak.name} nanti. Isinya mengikuti kemajuan saat ini ({snapshot.dikuasai} dari {snapshot.total} kompetensi inti dikuasai); sertifikat asli terbit setelah lulus Ujian Akhir.
           </p>
@@ -447,7 +447,7 @@ function Ringkasan({ anak }: { anak: Member }) {
   const terakhir = [...hasil].sort((a, b) => (a.at < b.at ? 1 : -1))[0];
 
   const angka: [string, string][] = [
-    ["Jenjang", `${lv.lokal} · Semester ${peta.semesterAktif}`],
+    ["Jenjang", `${lv.pangkat} · Semester ${peta.semesterAktif}`],
     ["Misi selesai", `${peta.selesai} dari ${peta.total}`],
     ["Kompetensi inti dikuasai", `${peta.inti.dikuasai} dari ${peta.inti.total}`],
     ["Belajar 7 hari terakhir", `${menit} menit · ${hitungStreak(events)} hari aktif`],
@@ -492,7 +492,7 @@ function Ringkasan({ anak }: { anak: Member }) {
 function namaRuang(h: HasilUjian) {
   if (h.jenis === "kuis") return KOMPETENSI.find((c) => c.level === h.level && c.unit.id === h.ruang)?.unit.nama.id ?? h.ruang;
   if (h.jenis === "semester") return `Semester ${h.ruang.slice(1)}`;
-  return levelMeta(h.level).nama;
+  return levelMeta(h.level).pangkat;
 }
 
 function DaftarUjian({ anak }: { anak: Member }) {
@@ -530,7 +530,7 @@ function DaftarUjian({ anak }: { anak: Member }) {
                   <td className="py-2 pr-3">
                     <b>{NAMA_UJIAN[h.jenis]}</b> · {namaRuang(h)}
                   </td>
-                  <td className="py-2 pr-3">{levelMeta(h.level).lokal}</td>
+                  <td className="py-2 pr-3">{levelMeta(h.level).pangkat}</td>
                   <td className="py-2 pr-3 text-right tabular-nums">
                     {h.benar}/{h.total}
                   </td>

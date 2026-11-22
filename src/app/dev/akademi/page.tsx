@@ -16,7 +16,7 @@ import { PiagamModulKartu, SertifikatSemesterKartu, TranskripJenjang } from "@/c
 import { BUKU_PRINT_CSS, BukuSertifikat } from "@/components/akademi/buku-sertifikat";
 import { snapshotSertifikat } from "@/lib/akademi/sertifikat";
 import { KOMPETENSI } from "@/lib/akademi/konten";
-import type { LevelId } from "@akademi/schema";
+import { namaLevel, type LevelId } from "@akademi/schema";
 import { LayarUjian } from "@/components/akademi/ujian";
 import { ProfilBerpikirOrtu, TesBerpikir } from "@/components/ortu/profil-berpikir";
 import { RuangOrangTua } from "@/components/ortu/ruang";
@@ -95,7 +95,7 @@ function Preview() {
     const lv = (q.get("level") ?? "PAUD") as LevelId;
     const ruang = q.get("ruang") ?? "";
     const ids = cakupanUjian(ujian, lv, ruang, KOMPETENSI) ?? [];
-    return <LayarUjian jenis={ujian} level={lv} ruang={ruang} kompetensiIds={ids} judul={ruang || lv} kembaliKe="/dev/akademi?portal=1" />;
+    return <LayarUjian jenis={ujian} level={lv} ruang={ruang} kompetensiIds={ids} judul={ruang || namaLevel(lv)} kembaliKe="/dev/akademi?portal=1" />;
   }
   if (q.get("telemetri")) return <TelemetriView />;
   if (q.get("kartu")) {
@@ -108,15 +108,15 @@ function Preview() {
       return (
         <div className="sertifikat-root bg-[#fff0da] p-4">
           <style>{BUKU_PRINT_CSS}</style>
-          <BukuSertifikat nama="Dek Nara Salsabila" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/PAUD/000001" issuedAt={at} snapshot={{ ...snap, ujian: [...snap.ujian, { jenis: "semester", ruang: "S2", nilai: 84 }, ...KOMPETENSI.filter((c) => c.level === "PAUD").map((c) => c.unit.id).filter((u, i, xs) => xs.indexOf(u) === i).map((u, i) => ({ jenis: "kuis", ruang: u, nilai: 78 + ((i * 7) % 22) }))] }} foto={q.get("foto") ?? null} />
+          <BukuSertifikat nama="Dek Nara Salsabila" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/TUNAS/000001" issuedAt={at} snapshot={{ ...snap, ujian: [...snap.ujian, { jenis: "semester", ruang: "S2", nilai: 84 }, ...KOMPETENSI.filter((c) => c.level === "PAUD").map((c) => c.unit.id).filter((u, i, xs) => xs.indexOf(u) === i).map((u, i) => ({ jenis: "kuis", ruang: u, nilai: 78 + ((i * 7) % 22) }))] }} foto={q.get("foto") ?? null} />
         </div>
       );
     return (
       <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-6 bg-[#fff0da] p-4">
         <PiagamModulKartu nama="Dek Nara" p={{ level: "PAUD", unitId: "BILANGAN-1-5", track: "MAT", ke: 1, nama: { id: "Bilangan 1–5", en: "Numbers 1–5" }, nilai: 90, at, sessionId: "x" }} />
         <SertifikatSemesterKartu nama="Dek Nara" s={contohSemester} />
-        <SertifikatKartu nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/PAUD/000001" issuedAt={at} snapshot={snap} />
-        <TranskripJenjang nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/PAUD/000001" issuedAt={at} snapshot={snap} />
+        <SertifikatKartu nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/TUNAS/000001" issuedAt={at} snapshot={snap} />
+        <TranskripJenjang nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/TUNAS/000001" issuedAt={at} snapshot={snap} />
       </div>
     );
   }

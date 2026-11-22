@@ -271002,7 +271002,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Orkes Kelas Lima",
+        "judul": "Orkes di Kelas",
         "instruksi": "Alat musik di kelas diubah sedikit. Sentuh perkiraanmu: bunyinya jadi bagaimana?",
         "b-pilihan": "pilihan",
         "i-tinggi": "nada lebih tinggi",

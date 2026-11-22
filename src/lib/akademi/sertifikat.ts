@@ -36,7 +36,7 @@ export interface Sertifikat {
   issuedAt: string;
   /** Belum sampai ke server (offline / belum punya rumah). */
   pending?: boolean;
-  /** Nomor resmi dari server, mis. RA/2026/TKB/000128. */
+  /** Nomor resmi dari server, mis. RA/2026/NAVIGATOR/000128. */
   nomor?: string | null;
   status?: "sah" | "dicabut";
 }

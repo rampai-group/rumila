@@ -274,7 +274,7 @@ function AddSheet() {
   );
 }
 
-/** Pengaturan Academy per anggota: anak/dewasa, jenjang Cambridge, bahasa konten. Disimpan di kunci akademi yang disinkron antarperangkat. */
+/** Pengaturan Academy per anggota: anak/dewasa, jenjang (pangkat), bahasa konten. Disimpan di kunci akademi yang disinkron antarperangkat. */
 function ProfilAkademi({ memberId }: { memberId: string }) {
   const peran = usePeranAkademi(memberId);
   const versi = useProfilAkademiVersi();
@@ -310,7 +310,7 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
             <div className="flex items-center gap-2 rounded-[12px] bg-white px-3 py-2.5 text-[12px] font-bold text-ink">
               <Icon name="lock" size={16} />
               <span className="flex-1">
-                {LEVELS.find((l) => l.id === level)?.nama} · {LEVELS.find((l) => l.id === level)?.lokal}
+                {LEVELS.find((l) => l.id === level)?.pangkat}
                 <span className="block text-[10px] font-semibold text-ink-3">Terkunci. Naik jenjang lewat kelulusan di Academy.</span>
               </span>
             </div>
@@ -326,8 +326,8 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
                   }}
                   className={`rounded-[12px] px-2 py-2 text-[12px] font-bold ${level === l.id ? "bg-ink text-white" : "bg-white text-ink"}`}
                 >
-                  {l.nama}
-                  <span className="block text-[10px] font-semibold opacity-70">{l.lokal}</span>
+                  {l.pangkat}
+                  <span className="block text-[10px] font-semibold opacity-70">{l.usia[0]}–{l.usia[1]} tahun</span>
                 </button>
               ))}
             </div>

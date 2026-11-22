@@ -40,7 +40,7 @@ export function PiagamModulKartu({ nama, p, className = "" }: { nama: string; p:
           <p style={{ fontFamily: BALOO, fontWeight: 800, fontSize: "6cqw", lineHeight: 1.02, color: "#135385", marginTop: "0.8cqw" }}>{p.nama.id}</p>
           <p style={{ fontFamily: BALOO, fontWeight: 800, fontSize: "5cqw", lineHeight: 1.05, color: "#0786eb", marginTop: "1.4cqw" }}>{nama}</p>
           <p style={{ fontFamily: SANS, fontWeight: 600, fontSize: "2.2cqw", color: "#4b6178", marginTop: "1cqw", lineHeight: 1.35 }}>
-            berhasil menuntaskan Modul {p.ke} jenjang {lv.lokal} dengan nilai kuis <b style={{ color: "#10304f" }}>{p.nilai}</b>.
+            berhasil menuntaskan Modul {p.ke} jenjang {lv.pangkat} dengan nilai kuis <b style={{ color: "#10304f" }}>{p.nilai}</b>.
           </p>
           <div className="flex items-center" style={{ gap: "1.6cqw", marginTop: "2.4cqw", fontFamily: SANS, fontSize: "1.8cqw", fontWeight: 700, color: "#5b6f86" }}>
             <Image src="/brand/rinoya-mark-r.png" alt="" width={40} height={40} style={{ width: "4.4cqw", height: "auto" }} />
@@ -85,13 +85,13 @@ export function SertifikatSemesterKartu({ nama, s, terverifikasi, className = ""
         </div>
         <h1 style={{ fontWeight: 700, fontSize: "4.6cqw", lineHeight: 1, letterSpacing: "0.14em", color: NAVY, marginTop: "1.2cqw" }}>SERTIFIKAT SEMESTER</h1>
         <p style={{ fontFamily: SANS, fontWeight: 700, fontSize: "1.25cqw", letterSpacing: "0.34em", color: GOLD, marginTop: "0.6cqw" }}>
-          {lv.lokal.toUpperCase()} · SEMESTER {s.ke} · {tahunAjaran(s.at)}
+          {lv.pangkat.toUpperCase()} · SEMESTER {s.ke} · {tahunAjaran(s.at)}
         </p>
         <p style={{ fontStyle: "italic", fontSize: "1.7cqw", color: MUTED, marginTop: "1.6cqw" }}>Diberikan kepada</p>
         <p style={{ fontFamily: SCRIPT, fontSize: "5cqw", lineHeight: 1.05, color: NAVY }}>{nama}</p>
         <div style={{ width: "44%", height: 1, background: GOLD, marginTop: "0.4cqw" }} />
         <p style={{ fontSize: "1.6cqw", marginTop: "1cqw" }}>
-          atas kelulusan Ujian Semester {s.ke} {lv.nama} ({lv.lokal}) dengan rincian nilai berikut.
+          atas kelulusan Ujian Semester {s.ke} jenjang {lv.pangkat} dengan rincian nilai berikut.
         </p>
         <div className="grid w-[86%]" style={{ gridTemplateColumns: `repeat(${Math.max(1, s.perPelajaran.length + 1)}, 1fr)`, gap: "1.4cqw", marginTop: "1.4cqw", fontFamily: SANS }}>
           {s.perPelajaran.map((p) => (
@@ -166,10 +166,6 @@ export function TranskripJenjang({ nama, level, kode, nomor, issuedAt, snapshot 
       <section className="grid gap-x-6 gap-y-1" style={{ gridTemplateColumns: "auto 1fr auto 1fr", fontSize: 12.5, marginTop: 14 }}>
         <span style={{ color: MUTED }}>Nama</span>
         <b>{nama}</b>
-        <span style={{ color: MUTED }}>Jenjang</span>
-        <b>
-          {lv.nama} ({lv.lokal})
-        </b>
         <span style={{ color: MUTED }}>Pangkat</span>
         <b>{snapshot.pangkat || lv.pangkat}</b>
         <span style={{ color: MUTED }}>Nilai akhir</span>
@@ -232,7 +228,7 @@ export function TranskripJenjang({ nama, level, kode, nomor, issuedAt, snapshot 
         </div>
       ))}
       <p style={{ fontSize: 10.5, color: MUTED, marginTop: 18, lineHeight: 1.5 }}>
-        Kurikulum mengacu pada {lv.acuan}. RINOYA Academy adalah program belajar non-formal pendamping sekolah; dokumen ini bukan ijazah. Keaslian dapat diperiksa dengan kode {kode}.
+        RINOYA Academy adalah program belajar non-formal pendamping sekolah; dokumen ini bukan ijazah. Keaslian dapat diperiksa dengan kode {kode}.
       </p>
     </div>
   );

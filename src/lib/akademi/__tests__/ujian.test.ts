@@ -67,7 +67,7 @@ describe("piagam & sertifikat semester", async () => {
     expect(s[0].nilaiAkhir).toBe(Math.round(0.6 * 90 + 0.4 * ((s[0].perPelajaran.reduce((a, b) => a + b.nilai * b.modul, 0)) / s[0].perPelajaran.reduce((a, b) => a + b.modul, 0))));
     expect(tahunAjaran("2026-11-15T00:00:00Z")).toBe("2026/2027");
     expect(tahunAjaran("2027-03-01T00:00:00Z")).toBe("2026/2027");
-    expect(nomorSemester({ level: "PAUD", ke: 1, at: "2026-11-15T00:00:00Z", sessionId: "ab12cd34-0000-4000-8000-000000000000" })).toBe("RA/2026/PAUD-S1/AB12CD34");
+    expect(nomorSemester({ level: "PAUD", ke: 1, at: "2026-11-15T00:00:00Z", sessionId: "ab12cd34-0000-4000-8000-000000000000" })).toBe("RA/2026/TUNAS-S1/AB12CD34");
   });
 });
 

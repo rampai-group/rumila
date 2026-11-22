@@ -227,7 +227,7 @@ function LencanaTrack({ track, semua }: { track: TrackId; semua: Lencana[] }) {
         baris.map(({ lv, unit }) => (
           <div key={lv} className="flex flex-col gap-1.5">
             <span className="text-[12px] font-extrabold text-ink-3">
-              {levelMeta(lv).nama} · {levelMeta(lv).lokal}
+              {levelMeta(lv).pangkat}
             </span>
             <ul className="grid grid-cols-[repeat(auto-fill,minmax(96px,1fr))] gap-x-1 gap-y-2">
               {unit.map((u) => (
@@ -267,7 +267,6 @@ function KoinLencana({ track, nama, status }: { track: TrackId; nama: string; st
 }
 
 function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) {
-  const meta = levelMeta(p.level);
   const [l, m, d] = PLAY[p.tercapai ? "gold" : "blue"];
   return (
     <article
@@ -280,9 +279,6 @@ function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) 
         <p className="leading-none" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK }}>
           {p.nama} {p.tercapai && <span aria-label="Tercapai">🎖️</span>}
         </p>
-        <p className="mt-1 text-[13px] font-extrabold text-ink-3">
-          {meta.nama} · {meta.lokal}
-        </p>
         <div className="mt-1.5 flex flex-wrap gap-1">
           {jenjangAnak && <span className="rounded-full bg-[#e4f8ec] px-2.5 py-0.5 text-[11px] font-black text-[#12904a]">Jenjangmu</span>}
           {p.tercapai ? (
@@ -292,7 +288,7 @@ function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) 
           ) : null}
         </div>
         {p.tercapai && (
-          <Link href={`/akademi/sertifikat/${p.level}`} className="mt-2 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-[#0b2545] transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
+          <Link href={`/akademi/sertifikat/${levelMeta(p.level).slug}`} className="mt-2 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-[#0b2545] transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
             Lihat sertifikat 🎓
           </Link>
         )}

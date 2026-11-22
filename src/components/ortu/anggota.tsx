@@ -5,7 +5,7 @@
 
 import { muatUlang } from "@/lib/mode-app";
 import { useEffect, useState, type ReactNode } from "react";
-import { ACTIVE_LEVELS, levelMeta, type LevelId } from "@akademi/schema";
+import { ACTIVE_LEVELS, levelMeta, usiaLevel, type LevelId } from "@akademi/schema";
 import { PilihAvatar } from "@/components/avatar-karakter";
 import { BALOO, MemberAvatar } from "@/components/launcher";
 import { BuatPin } from "@/components/pin-pad";
@@ -51,8 +51,8 @@ function PilihJenisPin({ value, onChange }: { value: "angka" | "gambar"; onChang
     <div className="grid grid-cols-2 gap-2">
       {(
         [
-          ["angka", "PIN angka", "pin", "4 angka · SD"],
-          ["gambar", "PIN gambar", "pets", "4 gambar · PAUD–TK"],
+          ["angka", "PIN angka", "pin", "4 angka · usia 6+"],
+          ["gambar", "PIN gambar", "pets", "4 gambar · usia 3–5"],
         ] as const
       ).map(([id, label, ikon, sub]) => (
         <button
@@ -167,7 +167,8 @@ function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
               onClick={() => void buat(l)}
               className="rounded-[14px] bg-white px-2 py-2.5 text-[13px] font-extrabold shadow-[0_2px_0_rgba(11,37,69,.08)] disabled:opacity-50"
             >
-              {levelMeta(l).lokal}
+              {levelMeta(l).pangkat}
+              <span className="block text-[11px] font-bold text-ink-3">{usiaLevel(l)}</span>
             </button>
           ))}
         </div>
@@ -203,7 +204,7 @@ function BarisAnggota({ m, onAvatar, onPin }: { m: Member; onAvatar: () => void;
   useEffect(() => setLevel(levelAnak(m.id)), [m.id, versi]);
   useEffect(() => setTablet(perangkatAnak()), []);
   const ortu = isOrangTua(m);
-  const keterangan = [ortu ? (m.admin ? "Orang tua · admin" : "Orang tua") : `Anak · ${levelMeta(level).lokal}`, m.pin ? (m.jenisPin === "gambar" ? "PIN gambar" : "PIN angka") : "Belum ada PIN"].join(" · ");
+  const keterangan = [ortu ? (m.admin ? "Orang tua · admin" : "Orang tua") : `Anak · ${levelMeta(level).pangkat}`, m.pin ? (m.jenisPin === "gambar" ? "PIN gambar" : "PIN angka") : "Belum ada PIN"].join(" · ");
   return (
     <li className="flex flex-wrap items-center gap-3 rounded-[18px] bg-[#f4f7fb] p-3">
       <button onClick={onAvatar} aria-label={`Ganti avatar ${m.name}`} className="relative transition-transform active:scale-95">

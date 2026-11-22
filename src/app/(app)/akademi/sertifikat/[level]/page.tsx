@@ -7,7 +7,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { LEVELS, type LevelId } from "@akademi/schema";
+import { LEVELS, levelDariSlug, type LevelId } from "@akademi/schema";
 import { BALOO, NUNITO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { SERTIFIKAT_PRINT_CSS } from "@/components/akademi/sertifikat";
@@ -28,9 +28,10 @@ const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
 
 export default function SertifikatLevelPage() {
   const { level: raw } = useParams<{ level: string }>();
-  const level = (raw ?? "").toUpperCase() as LevelId;
-  const valid = (LEVEL_PANGKAT as readonly string[]).includes(level);
-  return <Kerangka>{valid ? <IsiSertifikat level={level} /> : <TidakAda />}</Kerangka>;
+  // alamat memakai pangkat (/akademi/sertifikat/komandan)
+  const level = levelDariSlug(raw ?? "");
+  const valid = !!level && (LEVEL_PANGKAT as readonly string[]).includes(level);
+  return <Kerangka>{valid ? <IsiSertifikat level={level as LevelId} /> : <TidakAda />}</Kerangka>;
 }
 
 function Kerangka({ children }: { children: React.ReactNode }) {
@@ -104,10 +105,10 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const bagikan = async () => {
     if (!sert) return;
     const url = URL_VERIFIKASI(sert.code);
-    const title = `Sertifikat ${meta.nama} — ${me.name}`;
+    const title = `Sertifikat ${meta.pangkat} — ${me.name}`;
     try {
       if (typeof navigator !== "undefined" && navigator.share) {
-        await navigator.share({ title, text: `${me.name} menuntaskan ${meta.nama} (${meta.lokal}) — pangkat ${meta.pangkat}. Cek keasliannya:`, url });
+        await navigator.share({ title, text: `${me.name} menuntaskan jenjang ${meta.pangkat}. Cek keasliannya:`, url });
         return;
       }
     } catch {
@@ -124,7 +125,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   if (sert) {
     return (
       <>
-        <Kepala judul={`Sertifikat ${meta.pangkat}`} sub={`${meta.nama} · ${meta.lokal} · ${me.name}`} />
+        <Kepala judul={`Sertifikat ${meta.pangkat}`} sub={me.name} />
         <style>{BUKU_PRINT_CSS}</style>
         <BukuSertifikat nama={me.name} level={level} kode={sert.code} nomor={sert.nomor} issuedAt={sert.issuedAt} snapshot={sert.snapshot} foto={foto} pending={sert.pending} />
         <div className="no-print flex flex-wrap justify-center gap-2">
@@ -149,11 +150,11 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   if (p?.tercapai && !akhirSelesai) {
     return (
       <>
-        <Kepala judul="Siap Ujian Akhir" sub={`${meta.nama} · ${meta.lokal} · ${me.name}`} />
+        <Kepala judul="Siap Ujian Akhir" sub={me.name} />
         <div className={`${KARTU} flex flex-col items-center gap-4 p-6 text-center`}>
           <Icon name="workspace_premium" size={56} style={{ color: "#e8590c" }} />
           <p className="max-w-[440px] leading-tight" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>
-            Semua kompetensi inti {meta.nama} sudah dikuasai
+            Semua kompetensi inti {meta.pangkat} sudah dikuasai
           </p>
           <p className="max-w-[460px] text-[14px] font-bold text-ink-3">Satu langkah lagi: Ujian Akhir jenjang. Ujian ini hanya sekali dan nilainya tertulis di sertifikat. Boleh latihan dulu sepuasnya.</p>
           <Link href="/akademi/ujian?jenis=kenaikan&ruang=" className="inline-flex h-14 items-center gap-2 rounded-[18px] px-8 text-white" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ff8a5c,#e8590c 65%)", boxShadow: "0 4px 0 #b8460a" }}>
@@ -167,13 +168,13 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   if (p?.tercapai) {
     return (
       <>
-        <Kepala judul={`Pangkat ${meta.pangkat} tercapai! 🎖️`} sub={`${meta.nama} · ${meta.lokal} · ${me.name}`} />
+        <Kepala judul={`Pangkat ${meta.pangkat} tercapai! 🎖️`} sub={me.name} />
         <div className={`${KARTU} flex flex-col items-center gap-4 p-6 text-center`}>
           <span className="flex size-24 items-center justify-center rounded-full" style={{ background: "linear-gradient(155deg,#ffe46b,#ffbe0b 65%)", boxShadow: "0 4px 0 #d99400", fontSize: 52 }}>
             🎓
           </span>
           <p className="max-w-[420px] leading-tight" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>
-            Semua kompetensi inti {meta.nama} sudah dikuasai
+            Semua kompetensi inti {meta.pangkat} sudah dikuasai
           </p>
           <p className="max-w-[460px] text-[14px] font-bold text-ink-3">
             Sertifikat Kenaikan Jenjang diterbitkan sekali setelah Ujian Akhir lulus, lengkap dengan nomor resmi, kode verifikasi, dan transkrip.
@@ -196,7 +197,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const persen = Math.round((p?.progres ?? 0) * 100);
   return (
     <>
-      <Kepala judul={`Menuju pangkat ${meta.pangkat}`} sub={`${meta.nama} · ${meta.lokal} · ${me.name}`} />
+      <Kepala judul={`Menuju pangkat ${meta.pangkat}`} sub={me.name} />
       <div className={`${KARTU} flex flex-col gap-3 p-5`}>
         <div className="flex items-center justify-between">
           <p style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>Progres pangkat</p>

@@ -86,12 +86,8 @@ function JudulJenjang({ lv, jenjangAnak }: { lv: LevelId; jenjangAnak: boolean }
   return (
     <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
       <h2 className="leading-none" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK }}>
-        {meta.nama}
+        {meta.pangkat}
       </h2>
-      <span className="text-[13px] font-extrabold text-ink-3">
-        {meta.lokal}
-        {meta.pangkat ? ` · ${meta.pangkat}` : ""}
-      </span>
       {jenjangAnak && <span className="rounded-full bg-[#e4f8ec] px-2.5 py-0.5 text-[11px] font-black text-[#12904a]">Jenjangmu</span>}
     </div>
   );

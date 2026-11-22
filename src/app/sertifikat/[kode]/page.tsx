@@ -80,7 +80,7 @@ export default function VerifikasiSertifikatPage() {
               ✓ Sertifikat sah
             </div>
             <p className="no-print text-center text-[14px] font-bold text-ink-3">
-              <b style={{ color: INK }}>{hasil.firstName}</b> {hasil.nomor ? <>· No. {hasil.nomor} · </> : null}menuntaskan {meta.nama} ({meta.lokal}) — pangkat {hasil.snapshot.pangkat || meta.pangkat} · diterbitkan {new Date(hasil.issuedAt).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}.
+              <b style={{ color: INK }}>{hasil.firstName}</b> {hasil.nomor ? <>· No. {hasil.nomor} · </> : null}menuntaskan jenjang {hasil.snapshot.pangkat || meta.pangkat} · diterbitkan {new Date(hasil.issuedAt).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}.
             </p>
             <div className="flex justify-center">
               <SertifikatKartu nama={hasil.firstName} level={hasil.level} kode={kode} issuedAt={hasil.issuedAt} snapshot={hasil.snapshot} nomor={hasil.nomor} terverifikasi />

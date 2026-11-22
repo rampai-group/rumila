@@ -57,9 +57,6 @@ export function KartuPelajar({ me, level }: { me: Member; level: LevelId }) {
             KARTU PELAJAR
           </span>
         </span>
-        <span className="rounded-full bg-[#fdb724] px-[2cqw] py-[.6cqw] font-black" style={{ fontSize: "2.4cqw", color: INK }}>
-          {lv.lokal}
-        </span>
       </div>
 
       {/* bintang hiasan */}
@@ -111,7 +108,7 @@ export function KartuPelajar({ me, level }: { me: Member; level: LevelId }) {
                 Jenjang
               </span>
               <span className="block truncate font-black" style={{ fontSize: "3.6cqw" }}>
-                {lv.nama}
+                {lv.pangkat}
               </span>
             </div>
           </div>

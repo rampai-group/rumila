@@ -4,7 +4,7 @@
 //   Tingkat 3 · Sertifikat Kenaikan : sertifikat jenjang (tabel akademi_certificate, terbit dari server)
 // Tingkat 1 & 2 diturunkan dari hasil ujian (akademi_ujian), jadi tidak perlu tabel sendiri.
 
-import { levelIndex, type Competency, type LevelId, type TrackId } from "@akademi/schema";
+import { levelIndex, levelMeta, type Competency, type LevelId, type TrackId } from "@akademi/schema";
 import { TRACK_AKTIF } from "./katalog";
 import { petaJenjang } from "./peta";
 import { terbaik, type HasilUjian } from "./ujian";
@@ -89,9 +89,9 @@ export function tahunAjaran(iso: string): string {
   return `${awal}/${awal + 1}`;
 }
 
-/** Nomor dokumen semester: RA/<tahun>/<jenjang>-S<ke>/<8 huruf sesi>. */
+/** Nomor dokumen semester: RA/<tahun>/<pangkat>-S<ke>/<8 huruf sesi>. */
 export const nomorSemester = (s: Pick<SertifikatSemester, "level" | "ke" | "at" | "sessionId">) =>
-  `RA/${new Date(s.at).getUTCFullYear()}/${s.level}-S${s.ke}/${s.sessionId.replace(/-/g, "").slice(0, 8).toUpperCase()}`;
+  `RA/${new Date(s.at).getUTCFullYear()}/${levelMeta(s.level).slug.toUpperCase()}-S${s.ke}/${s.sessionId.replace(/-/g, "").slice(0, 8).toUpperCase()}`;
 
 /** Urutan jenjang untuk lemari piagam (jenjang terbaru dulu). */
 export const urutJenjangTurun = (a: LevelId, b: LevelId) => levelIndex(b) - levelIndex(a);

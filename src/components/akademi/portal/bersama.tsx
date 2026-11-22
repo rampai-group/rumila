@@ -58,20 +58,6 @@ export const STATUS_WARNA: Record<Status, string> = { dikuasai: "#1fbf62", berke
 export const STATUS_LABEL: Record<Status, string> = { dikuasai: "Dikuasai", berkembang: "Berkembang", belum: "Belum" };
 export const STATUS_SIMBOL: Record<Status, string> = { dikuasai: "✓", berkembang: "●", belum: "○" };
 
-const FRAMEWORK_NAMA: Record<string, string> = {
-  CAMBRIDGE_EY: "Cambridge Early Years",
-  CAMBRIDGE_PRIMARY_MATHS: "Cambridge Primary Maths",
-  CAMBRIDGE_PRIMARY_COMPUTING: "Cambridge Primary Computing",
-  CAMBRIDGE_PRIMARY_SCIENCE: "Cambridge Primary Science",
-  CAMBRIDGE_PRIMARY_ENGLISH: "Cambridge Primary English",
-  CAMBRIDGE_GLOBAL_PERSPECTIVES: "Cambridge Global Perspectives",
-  EYFS: "EYFS",
-  COMMON_CORE: "Common Core",
-  CEFR: "CEFR",
-  KURMER: "Kurikulum Merdeka",
-};
-export const namaFramework = (f: string) => FRAMEWORK_NAMA[f] ?? f;
-
 /* ---------------- tanggal & event ---------------- */
 
 export function tanggalLokal(iso?: string) {

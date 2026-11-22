@@ -9,7 +9,7 @@ describe("keadaanLab", () => {
   it("terkunci sampai modul syarat tuntas, dengan teks syarat", () => {
     const k = keadaanLab("edukasi-buah", dasar);
     expect(k.terbuka).toBe(false);
-    expect(k.syarat).toBe("Sains · TK A · BAGIAN-TUMBUHAN");
+    expect(k.syarat).toBe("Sains · Kadet · BAGIAN-TUMBUHAN");
     expect(keadaanLab("edukasi-buah", { ...dasar, selesai: new Set(["SAINS.TKA.BAGIAN-TUMBUHAN.01"]) }).terbuka).toBe(false);
     expect(keadaanLab("edukasi-buah", { ...dasar, selesai: new Set(K.map((c) => c.id)) }).terbuka).toBe(true);
   });
