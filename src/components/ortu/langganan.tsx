@@ -157,7 +157,7 @@ export function LanggananKeluarga() {
             <p className="flex items-start gap-2 rounded-[14px] bg-[#e6f7f3] p-3 text-[13px] font-bold text-[#0b5e52]">
               <Icon name="school" size={20} />
               <span>
-                {alumni.map((m) => m.name).join(", ")} sudah lulus SD 6. Sebagai alumni, rapor dan sertifikatnya tetap terbuka gratis dan tidak perlu dihitung dalam jumlah anak.
+                {alumni.map((m) => m.name).join(", ")} sudah jadi Legenda. Sebagai alumni, rapor dan sertifikatnya tetap terbuka gratis dan tidak perlu dihitung dalam jumlah anak.
               </span>
             </p>
           )}

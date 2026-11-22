@@ -36,7 +36,7 @@ export default function KebijakanPrivasi() {
         </header>
 
         <p className="text-[15px] leading-relaxed text-[#33475f]">
-          RINOYA Academy (&quot;kami&quot;) adalah layanan belajar untuk anak usia PAUD sampai SD kelas 6, dikelola oleh Rampai Group. Layanan ini dipakai lewat
+          RINOYA Academy (&quot;kami&quot;) adalah layanan belajar untuk anak usia 3–12 tahun, dikelola oleh Rampai Group. Layanan ini dipakai lewat
           situs <b>kampus.pulaurinoya.com</b> dan aplikasi RINOYA di Android dan iOS. Kebijakan ini menjelaskan data apa yang kami kumpulkan, untuk apa,
           dan bagaimana orang tua atau wali mengelolanya. Kami menyusunnya dengan mengacu pada UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.
         </p>

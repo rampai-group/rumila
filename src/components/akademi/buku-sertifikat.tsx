@@ -179,7 +179,7 @@ function LembarSampul({ p, footer }: { p: BukuSertifikatProps; footer: ReactNode
         <div aria-hidden style={{ marginTop: "2cqw", width: "26cqw", height: 1.5, background: EMAS }} />
         <p style={{ marginTop: "2cqw", fontFamily: SKRIP, fontSize: "5.4cqw", lineHeight: 1.05, color: GOLD_TERANG }}>{p.nama}</p>
         <p style={{ marginTop: "1.4cqw", fontSize: "2cqw", color: "#f6ecd2" }}>
-          {lv.nama} ({lv.lokal}) · Pangkat {p.snapshot.pangkat || lv.pangkat}
+          Pangkat {p.snapshot.pangkat || lv.pangkat}
         </p>
         <p style={{ marginTop: "auto", fontFamily: SANS, fontWeight: 600, fontSize: "1.2cqw", letterSpacing: "0.3em", color: "rgba(246,236,210,.8)" }}>TAHUN AJARAN {tahunAjaran(p.issuedAt)}</p>
       </div>
@@ -299,7 +299,7 @@ function LembarSertifikat({ p, footer }: { p: BukuSertifikatProps; footer: React
             </p>
           )}
           <p style={{ marginTop: p.lahir ? "1.2cqw" : "2cqw", fontSize: "1.9cqw", lineHeight: 1.5, maxWidth: "94%" }}>
-            yang telah menyelesaikan seluruh materi dan Ujian Akhir <b style={{ color: NAVY }}>{lv.nama} ({lv.lokal})</b>, meraih pangkat <b style={{ color: NAVY }}>{p.snapshot.pangkat || lv.pangkat}</b>, dengan menguasai <b style={{ color: NAVY }}>{p.snapshot.dikuasai} dari {p.snapshot.total}</b> kompetensi inti pada pelajaran {daftar}.
+            yang telah menyelesaikan seluruh materi dan Ujian Akhir, meraih pangkat <b style={{ color: NAVY }}>{p.snapshot.pangkat || lv.pangkat}</b>, dengan menguasai <b style={{ color: NAVY }}>{p.snapshot.dikuasai} dari {p.snapshot.total}</b> kompetensi inti pada pelajaran {daftar}.
           </p>
           {typeof p.snapshot.nilai === "number" && (
             <p className="rounded-full text-white" style={{ marginTop: "2cqw", padding: "0.6cqw 2cqw", background: NAVY, fontFamily: SANS, fontWeight: 700, fontSize: "1.15cqw", letterSpacing: "0.22em" }}>
@@ -307,7 +307,7 @@ function LembarSertifikat({ p, footer }: { p: BukuSertifikatProps; footer: React
             </p>
           )}
           <p style={{ marginTop: "1.4cqw", fontFamily: SANS, fontSize: "1.05cqw", color: MUTED, letterSpacing: "0.08em" }}>
-            Kurikulum mengacu pada {lv.acuan} · Diterbitkan {tanggalPanjang(p.issuedAt)}
+            Program pendamping sekolah · Diterbitkan {tanggalPanjang(p.issuedAt)}
           </p>
           <div className="mt-auto grid w-full items-end" style={{ gridTemplateColumns: "1fr 1fr", gap: "4cqw" }}>
             <TandaTangan i={0} />
@@ -336,7 +336,7 @@ function LembarHasil({ p, footer }: { p: BukuSertifikatProps; footer: ReactNode 
   const rata = (xs: { nilai: number }[]) => Math.round(xs.reduce((n, x) => n + x.nilai, 0) / Math.max(1, xs.length));
   return (
     <Lembar label="Hasil belajar">
-      <BingkaiIsi judul="Hasil Belajar" sub={`${p.nama} · ${LEVELS.find((l) => l.id === p.level)!.nama}`} />
+      <BingkaiIsi judul="Hasil Belajar" sub={`${p.nama} · ${LEVELS.find((l) => l.id === p.level)!.pangkat}`} />
       <div className="absolute grid" style={{ left: "6%", right: "6%", top: "19%", bottom: "11%", gridTemplateColumns: "34% 1fr", gap: "3cqw", fontFamily: SANS }}>
         <div className="flex flex-col gap-[1.2cqw]">
           <div style={{ background: NAVY, color: "#f6ecd2", borderRadius: "0.8cqw", padding: "1.6cqw" }}>
@@ -472,7 +472,6 @@ function LembarPengesahan({ p, footer }: { p: BukuSertifikatProps; footer: React
   const url = URL_VERIFIKASI(p.kode);
   const data: [string, string][] = [
     ["Nama peserta", p.nama],
-    ["Jenjang", `${lv.nama} (${lv.lokal})`],
     ["Pangkat", p.snapshot.pangkat || lv.pangkat],
     ["Nilai Ujian Akhir", typeof p.snapshot.nilai === "number" ? `${p.snapshot.nilai} · ${p.snapshot.predikat ?? ""}` : "—"],
     ["Kompetensi inti", `${p.snapshot.dikuasai} dari ${p.snapshot.total} dikuasai`],
@@ -494,7 +493,7 @@ function LembarPengesahan({ p, footer }: { p: BukuSertifikatProps; footer: React
             ))}
           </dl>
           <p style={{ marginTop: "1.6cqw", fontSize: "1.02cqw", lineHeight: 1.6, color: TINTA, maxWidth: "95%" }}>
-            Sertifikat ini diterbitkan oleh sistem RINOYA Academy setelah peserta menuntaskan seluruh modul, Ujian Semester, dan Ujian Akhir jenjang. Kelulusan dihitung ulang oleh server dari catatan belajar peserta, sehingga isi dokumen tidak dapat diubah. RINOYA Academy adalah program belajar non-formal pendamping sekolah; dokumen ini bukan ijazah. Kurikulum mengacu pada {lv.acuan}.
+            Sertifikat ini diterbitkan oleh sistem RINOYA Academy setelah peserta menuntaskan seluruh modul, Ujian Semester, dan Ujian Akhir jenjang. Kelulusan dihitung ulang oleh server dari catatan belajar peserta, sehingga isi dokumen tidak dapat diubah. RINOYA Academy adalah program belajar non-formal pendamping sekolah; dokumen ini bukan ijazah.
           </p>
           <div className="mt-auto grid" style={{ gridTemplateColumns: "1fr 1fr", gap: "3cqw" }}>
             <TandaTangan i={0} />

@@ -13,24 +13,28 @@ export type LevelId = z.infer<typeof LevelId>;
 /** Jenjang yang masuk lingkup produk: PAUD sampai SD 6 (SMP–SMA dihapus, keputusan PO 25 Okt 2026). */
 export const ACTIVE_LEVELS: readonly LevelId[] = ["PAUD", "TKA", "TKB", "SD1", "SD2", "SD3", "SD4", "SD5", "SD6"];
 
-export interface LevelMeta { id: LevelId; /** nama Cambridge */ nama: string; /** padanan Indonesia */ lokal: string; usia: [number, number]; pangkat: string; acuan: string }
+export interface LevelMeta { id: LevelId; /** perkiraan usia, hanya untuk orang tua */ usia: [number, number]; /** satu-satunya nama jenjang yang boleh tampil */ pangkat: string; /** untuk alamat halaman dan nomor dokumen */ slug: string }
 export const LEVELS: readonly LevelMeta[] = [
-  // Nama jenjang mengikuti istilah resmi Cambridge Pathway: Early Years 1–3 dan Primary Stage 1–6 (keputusan PO 24 & 25 Okt 2026).
-  // Pemetaan opsi A: SD 1–6 = Stage 1–6 sehingga Checkpoint jatuh di akhir SD 6. Menurut Cambridge, EY3 dan Stage 1
-  // setara (keduanya jalan menuju Stage 2), jadi SD 1 diperlakukan sebagai pemantapan setelah TK B. Cambridge hanya "acuan".
-  { id: "PAUD", nama: "Early Years 1", lokal: "PAUD", usia: [3, 4], pangkat: "Tunas", acuan: "Cambridge Early Years 1, EYFS" },
-  { id: "TKA", nama: "Early Years 2", lokal: "TK A", usia: [4, 5], pangkat: "Kadet", acuan: "Cambridge Early Years 2" },
-  { id: "TKB", nama: "Early Years 3", lokal: "TK B", usia: [5, 6], pangkat: "Navigator", acuan: "Cambridge Early Years 3, Pre-A1 Starters" },
-  { id: "SD1", nama: "Primary Stage 1", lokal: "SD 1", usia: [6, 7], pangkat: "Pilot", acuan: "Cambridge Primary Stage 1 (setara EY3; jenjang pemantapan sebelum Stage 2)" },
-  { id: "SD2", nama: "Primary Stage 2", lokal: "SD 2", usia: [7, 8], pangkat: "Kapten", acuan: "Cambridge Primary Stage 2, A1 Movers" },
-  { id: "SD3", nama: "Primary Stage 3", lokal: "SD 3", usia: [8, 9], pangkat: "Komandan", acuan: "Cambridge Primary Stage 3" },
-  { id: "SD4", nama: "Primary Stage 4", lokal: "SD 4", usia: [9, 10], pangkat: "Laksamana", acuan: "Cambridge Primary Stage 4, A2 Flyers" },
-  { id: "SD5", nama: "Primary Stage 5", lokal: "SD 5", usia: [10, 11], pangkat: "Penjelajah", acuan: "Cambridge Primary Stage 5" },
-  { id: "SD6", nama: "Primary Stage 6", lokal: "SD 6", usia: [11, 12], pangkat: "Legenda", acuan: "Cambridge Primary Stage 6, Checkpoint" },
+  // Keputusan owner 22 Nov 2026: layar dan konten tidak menyebut jenjang sekolah formal (PAUD/TK/SD) maupun istilah
+  // Cambridge. Yang tampil = pangkat. Id di bawah hanya kode internal dan tidak pernah ditampilkan.
+  // Pemetaan acuan kurikulum ada di docs/akademi/kurikulum.md.
+  { id: "PAUD", usia: [3, 4], pangkat: "Tunas", slug: "tunas" },
+  { id: "TKA", usia: [4, 5], pangkat: "Kadet", slug: "kadet" },
+  { id: "TKB", usia: [5, 6], pangkat: "Navigator", slug: "navigator" },
+  { id: "SD1", usia: [6, 7], pangkat: "Pilot", slug: "pilot" },
+  { id: "SD2", usia: [7, 8], pangkat: "Kapten", slug: "kapten" },
+  { id: "SD3", usia: [8, 9], pangkat: "Komandan", slug: "komandan" },
+  { id: "SD4", usia: [9, 10], pangkat: "Laksamana", slug: "laksamana" },
+  { id: "SD5", usia: [10, 11], pangkat: "Penjelajah", slug: "penjelajah" },
+  { id: "SD6", usia: [11, 12], pangkat: "Legenda", slug: "legenda" },
 ];
 export const levelMeta = (id: LevelId) => LEVELS.find((l) => l.id === id)!;
-/** Nama tampilan: "Early Years 1 (PAUD)" */
-export const namaLevel = (id: LevelId) => { const l = levelMeta(id); return `${l.nama} (${l.lokal})`; };
+/** Nama tampilan jenjang: "Komandan". */
+export const namaLevel = (id: LevelId) => levelMeta(id).pangkat;
+/** Perkiraan usia: "8–9 tahun". Hanya untuk layar orang tua dan pilihan titik mulai. */
+export const usiaLevel = (id: LevelId) => { const [a, b] = levelMeta(id).usia; return `${a}–${b} tahun`; };
+/** Alamat halaman "komandan" → "SD3". */
+export const levelDariSlug = (slug: string) => LEVELS.find((l) => l.slug === slug.toLowerCase())?.id;
 export const levelIndex = (id: LevelId) => LEVEL_IDS.indexOf(id);
 
 export const TRACK_IDS = ["MAT", "KODE", "SAINS", "BIND", "BING", "DUNIA", "SENI", "KARAKTER"] as const;

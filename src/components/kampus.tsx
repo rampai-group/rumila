@@ -74,7 +74,7 @@ export function useKelasHariIni(me: Member) {
   const tugas = peta.sekarang
     ? { judul: `Misi ${peta.sekarang.nomor}`, sub: peta.sekarang.kompetensi.unit.nama.id, ikon: "play_arrow" }
     : peta.ujian
-      ? { judul: NAMA_UJIAN[peta.ujian.jenis], sub: peta.ujian.unit?.nama.id ?? (peta.ujian.semester ? `Semester ${peta.ujian.semester}` : lv.nama), ikon: "quiz" }
+      ? { judul: NAMA_UJIAN[peta.ujian.jenis], sub: peta.ujian.unit?.nama.id ?? (peta.ujian.semester ? `Semester ${peta.ujian.semester}` : lv.pangkat), ikon: "quiz" }
       : peta.lulusJenjang
         ? { judul: "Jenjang tuntas", sub: "Ambil sertifikatmu", ikon: "workspace_premium" }
         : { judul: "Pemantapan", sub: "Latihan kemampuan inti", ikon: "fitness_center" };

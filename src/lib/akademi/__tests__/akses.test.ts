@@ -32,7 +32,7 @@ describe("akses paket Academy", () => {
     const sd1 = PAKET.find((p) => INDEKS.get(p.competencyIds[0])?.level === "SD1")!;
     const a = aksesPaket(sd1, peta, INDEKS);
     expect(a.boleh).toBe(false);
-    if (!a.boleh) expect(a.alasan).toContain("SD 1");
+    if (!a.boleh) expect(a.alasan).toContain("Pilot");
     const petaSd1 = petaJenjang({}, new Set(), KOMPETENSI, "SD1", TRACK_AKTIF, new Map(), []);
     const paud = PAKET.find((p) => INDEKS.get(p.competencyIds[0])?.level === "PAUD")!;
     expect(aksesPaket(paud, petaSd1, INDEKS)).toEqual({ boleh: true });

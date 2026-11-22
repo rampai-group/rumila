@@ -1,6 +1,6 @@
 "use client";
 
-// Tangga jenjang mini di kartu jenjang Peta: deret 9 medali berlambang pangkat (PAUD → SD 6) dengan garis progres.
+// Tangga jenjang mini di kartu jenjang Peta: deret 9 medali berlambang pangkat (Tunas → Legenda) dengan garis progres.
 // Lambang juga dipakai medali besar di kartu jenjang.
 
 import { LEVELS, levelIndex, type LevelId } from "@akademi/schema";
@@ -35,8 +35,8 @@ export function TanggaMini({ level }: { level: LevelId }) {
           <li
             key={lv.id}
             className="relative flex items-center justify-center rounded-full border-2 border-white text-white"
-            aria-label={`${lv.nama} · ${lv.lokal} · Pangkat ${lv.pangkat}${kini ? " · kamu di sini" : lewat ? " · selesai" : " · terkunci"}`}
-            title={`${lv.lokal} · ${lv.pangkat}`}
+            aria-label={`Pangkat ${lv.pangkat}${kini ? " · kamu di sini" : lewat ? " · selesai" : " · terkunci"}`}
+            title={lv.pangkat}
             style={{
               width: ukuran,
               height: ukuran,

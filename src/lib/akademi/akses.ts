@@ -54,7 +54,7 @@ export function aksesPaket(p: ContentPack, peta: PetaJenjang, kompetensi: Readon
     if (m && !m.terkunci) return { boleh: true };
   }
   if (lebihTinggi && !p.competencyIds.some((id) => kompetensi.get(id)?.level === peta.level)) {
-    const nama = levelMeta(lebihTinggi).lokal;
+    const nama = levelMeta(lebihTinggi).pangkat;
     return { boleh: false, alasan: bahasa === "en" ? `Opens when you move up to ${nama}.` : `Terbuka setelah kamu naik ke ${nama}.` };
   }
   return { boleh: false, alasan: alasanKunci(peta, bahasa) };

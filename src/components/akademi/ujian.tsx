@@ -103,7 +103,7 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
   const [siap, setSiap] = useState(false);
   const [menyerahkan, setMenyerahkan] = useState(false);
   const aturan = sekali
-    ? [`${jumlah} soal dari seluruh materi ${lv.lokal}`, "Tanpa tombol Bantu", "HANYA SEKALI — tidak bisa diulang", "Nilai apa adanya tertulis di sertifikat", "Keluar di tengah jalan = soal sisa dihitung salah"]
+    ? [`${jumlah} soal dari seluruh materi ${lv.pangkat}`, "Tanpa tombol Bantu", "HANYA SEKALI — tidak bisa diulang", "Nilai apa adanya tertulis di sertifikat", "Keluar di tengah jalan = soal sisa dihitung salah"]
     : [`${jumlah} soal dari permainan yang sudah kamu latih`, "Tanpa tombol Bantu", `Lulus bila nilai minimal ${AMBANG[jenis]}`, jenis === "penempatan" ? "Hasilnya menentukan jenjang awalmu" : "Belum lulus? Ulangi materinya, coba lagi besok"];
   const serahkanTertunda = async () => {
     if (!tertunda) return;
@@ -119,7 +119,7 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
         <Icon name={jenis === "kuis" ? "quiz" : jenis === "penempatan" ? "explore" : "workspace_premium"} size={36} />
       </span>
       <p className="mt-3 text-[13px] font-black tracking-[0.12em] text-[#fd861d] uppercase">
-        {NAMA_UJIAN[jenis]} · {lv.lokal}
+        {NAMA_UJIAN[jenis]} · {lv.pangkat}
       </p>
       <h1 className="mt-1 text-[28px] leading-tight font-extrabold">{judul}</h1>
       <ul className="mt-4 flex flex-col gap-2 text-left text-[15px] font-bold" style={{ fontFamily: "var(--ff-nunito), system-ui, sans-serif" }}>

@@ -91,7 +91,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
               const lv = levelMeta(s.level);
               return (
                 <button key={s.code} onClick={() => onLihat(`jenjang:${s.code}`)} className="text-left">
-                  <Baris ikon="military_tech" warna="#fdb724" judul={`${lv.nama} (${lv.lokal}) · ${s.snapshot.pangkat || lv.pangkat}`} sub={`${s.nomor ?? s.code} · ${tanggalPanjang(s.issuedAt)}${typeof s.snapshot.nilai === "number" ? ` · nilai ${s.snapshot.nilai}` : ""}`} />
+                  <Baris ikon="military_tech" warna="#fdb724" judul={`Pangkat ${s.snapshot.pangkat || lv.pangkat}`} sub={`${s.nomor ?? s.code} · ${tanggalPanjang(s.issuedAt)}${typeof s.snapshot.nilai === "number" ? ` · nilai ${s.snapshot.nilai}` : ""}`} />
                 </button>
               );
             })}
@@ -101,7 +101,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
           <Rak judul="Sertifikat Semester" ikon="school">
             {semester.map((s) => (
               <button key={s.sessionId} onClick={() => onLihat(`semester:${s.sessionId}`)} className="text-left">
-                <Baris ikon="verified" warna="#0786eb" judul={`${levelMeta(s.level).lokal} · Semester ${s.ke} · ${tahunAjaran(s.at)}`} sub={`Nilai akhir ${s.nilaiAkhir} · ${tanggalPanjang(s.at)}`} />
+                <Baris ikon="verified" warna="#0786eb" judul={`${levelMeta(s.level).pangkat} · Semester ${s.ke} · ${tahunAjaran(s.at)}`} sub={`Nilai akhir ${s.nilaiAkhir} · ${tanggalPanjang(s.at)}`} />
               </button>
             ))}
           </Rak>
@@ -110,7 +110,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
           <Rak judul="Piagam Modul" ikon="emoji_events">
             {modul.map((m) => (
               <button key={m.sessionId} onClick={() => onLihat(`modul:${m.sessionId}`)} className="text-left">
-                <Baris ikon="star" warna="#fd861d" judul={m.nama.id} sub={`${levelMeta(m.level).lokal} · Modul ${m.ke} · nilai ${m.nilai}`} />
+                <Baris ikon="star" warna="#fd861d" judul={m.nama.id} sub={`${levelMeta(m.level).pangkat} · Modul ${m.ke} · nilai ${m.nilai}`} />
               </button>
             ))}
           </Rak>

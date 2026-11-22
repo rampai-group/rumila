@@ -36,3 +36,11 @@ nama tabel/migrasi Supabase, dan nama paket `rumila-app`.
 
 Konten kurikulum/paket tetap tanpa nama tokoh atau brand (validator menolak `Agam|Rinoya|Mecca`).
 Nama brand dipasang di kerangka aplikasi, bukan di isi paket.
+
+## Istilah jenjang (keputusan owner 22 Nov 2026)
+
+- Layar, suara, dan konten **tidak menyebut PAUD, TK, SD**, dan tidak menampilkan nama kerangka Cambridge sampai ada izin tertulis.
+- Nama jenjang = pangkat: Tunas, Kadet, Navigator, Pilot, Kapten, Komandan, Laksamana, Penjelajah, Legenda.
+- Promosi: "Dari Tunas sampai Legenda · usia 3–12 tahun".
+- Umur hanya untuk orang tua saat memilih titik mulai, tidak di kartu, peta, atau sertifikat anak.
+- Id internal (`PAUD`, `TKA`, `SD3`) tetap, tidak pernah ditampilkan. Dijaga `istilah-jenjang.test.ts`.

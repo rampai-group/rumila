@@ -167,7 +167,7 @@ function KartuJenjang({ peta, streak, onHadiah }: { peta: PetaJenjang; streak: n
   const R = 44;
   const kel = 2 * Math.PI * R;
   return (
-    <section className={`${KARTU} relative flex flex-col gap-3 overflow-hidden p-4`} aria-label={`Jenjang ${lv.nama}, misi ${peta.selesai} dari ${peta.total}, target pangkat ${lv.pangkat}`}>
+    <section className={`${KARTU} relative flex flex-col gap-3 overflow-hidden p-4`} aria-label={`Jenjang ${lv.pangkat}, misi ${peta.selesai} dari ${peta.total}, target pangkat ${lv.pangkat}`}>
       <div className="relative flex items-center gap-4">
         <span aria-hidden className="absolute -left-10 -top-12 size-40 rounded-full" style={{ background: `${warna[0]}33` }} />
         <span className="relative shrink-0" style={{ width: 104, height: 104 }}>
@@ -184,12 +184,11 @@ function KartuJenjang({ peta, streak, onHadiah }: { peta: PetaJenjang; streak: n
         </span>
         <div className="relative min-w-0 flex-1">
           <span className="inline-flex items-center gap-1 rounded-full bg-[#fff3d1] px-2.5 py-0.5 text-[12px] font-black text-[#7a5200]">
-            <Icon name="military_tech" size={16} /> {lv.pangkat}
+            <Icon name="military_tech" size={16} /> Pangkat
           </span>
           <h2 className="mt-1 leading-none" style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK }}>
-            {lv.lokal}
+            {lv.pangkat}
           </h2>
-          <p className="mt-1 text-[13px] font-extrabold text-ink-3">{lv.nama}</p>
           <p className="mt-1.5 leading-none" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: warna[1] }}>
             {peta.selesai}/{peta.total} <span className="text-[13px] text-ink-3">misi</span>
           </p>
@@ -493,7 +492,7 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
         {lv.pangkat}
         {berikut && (
           <>
-            <Icon name="arrow_forward" size={16} /> {levelMeta(berikut).lokal}
+            <Icon name="arrow_forward" size={16} /> {levelMeta(berikut).pangkat}
           </>
         )}
       </span>
@@ -503,7 +502,7 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
   );
   const label = peta.lulusJenjang ? "Gerbang naik pangkat: tercapai, lihat sertifikat" : terbuka ? `Gerbang naik pangkat: kuasai ${sisa} kemampuan inti lagi` : "Gerbang naik pangkat: terbuka setelah semua misi selesai";
   return peta.lulusJenjang ? (
-    <Link href={`/akademi/sertifikat/${peta.level}`} aria-label={label} className="flex flex-col items-center py-2 transition-transform active:scale-95">
+    <Link href={`/akademi/sertifikat/${levelMeta(peta.level).slug}`} aria-label={label} className="flex flex-col items-center py-2 transition-transform active:scale-95">
       {isi}
     </Link>
   ) : (
@@ -526,13 +525,13 @@ function Rayakan({ dari, ke, onTutup }: { dari: LevelId; ke: LevelId; onTutup: (
         </span>
         <h2 style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Naik pangkat!</h2>
         <p className="text-[15px] leading-snug font-bold text-ink-2">
-          Semua kemampuan inti {a.nama} sudah dikuasai. Pangkat <b style={{ color: INK }}>{a.pangkat}</b> tercapai, dan petualangan <b style={{ color: INK }}>{b.nama} · {b.lokal}</b> sekarang terbuka.
+          Semua kemampuan inti {a.pangkat} sudah dikuasai. Pangkat <b style={{ color: INK }}>{a.pangkat}</b> tercapai, dan petualangan <b style={{ color: INK }}>{b.pangkat}</b> sekarang terbuka.
         </p>
-        <Link href={`/akademi/sertifikat/${dari}`} className="flex h-12 w-full items-center justify-center gap-1.5 rounded-[16px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.12)]" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
+        <Link href={`/akademi/sertifikat/${levelMeta(dari).slug}`} className="flex h-12 w-full items-center justify-center gap-1.5 rounded-[16px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.12)]" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
           <Icon name="workspace_premium" size={24} /> Ambil sertifikat
         </Link>
         <button onClick={onTutup} className="flex h-12 w-full items-center justify-center gap-1.5 rounded-[16px] text-white" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 4px 0 #04509a" }}>
-          <Icon name="rocket_launch" size={24} /> Mulai {b.lokal}
+          <Icon name="rocket_launch" size={24} /> Mulai jadi {b.pangkat}
         </button>
       </div>
     </div>

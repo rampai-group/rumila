@@ -125,7 +125,7 @@ export interface SertifikatKartuProps {
   kode: string;
   issuedAt: string;
   snapshot: SnapshotSertifikat;
-  /** Nomor resmi dari server (RA/2026/TKB/000128); kosong = sertifikat lama/pending. */
+  /** Nomor resmi dari server (RA/2026/NAVIGATOR/000128); kosong = sertifikat lama/pending. */
   nomor?: string | null;
   /** Belum tersimpan di server (offline) → cap kecil "menunggu sinkron". */
   pending?: boolean;
@@ -150,9 +150,7 @@ export function unitDikuasai(snapshot: SnapshotSertifikat) {
 
 export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, pending, terverifikasi, className = "" }: SertifikatKartuProps) {
   const meta = LEVELS.find((l) => l.id === level);
-  const namaJenjang = meta ? `${meta.nama} (${meta.lokal})` : level;
   const pangkat = snapshot.pangkat || meta?.pangkat || "";
-  const acuan = meta?.acuan ?? "";
   const url = URL_VERIFIKASI(kode);
   const kelompok = unitDikuasai(snapshot);
   const pelajaran = TRACKS.filter((t) => snapshot.kompetensi.some((k) => k.track === t.id)).map((t) => t.nama.id);
@@ -211,14 +209,7 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
           <span className="absolute left-1/2 top-1/2 block size-[9px] -translate-x-1/2 -translate-y-1/2 rotate-45" style={{ background: GOLD_GRAD }} />
         </div>
         <p style={{ marginTop: "1.2cqw", fontSize: "clamp(11px, 1.7cqw, 21px)", color: INK, lineHeight: 1.35, maxWidth: "80%" }}>
-          yang telah lulus <b style={{ color: NAVY }}>{namaJenjang}</b>
-          {pangkat && (
-            <>
-              {" "}
-              dan meraih pangkat <b style={{ color: NAVY }}>{pangkat}</b>
-            </>
-          )}
-          , dengan menguasai <b style={{ color: NAVY }}>{snapshot.dikuasai} dari {snapshot.total}</b> kompetensi inti
+          yang telah lulus dan meraih pangkat <b style={{ color: NAVY }}>{pangkat}</b>, dengan menguasai <b style={{ color: NAVY }}>{snapshot.dikuasai} dari {snapshot.total}</b> kompetensi inti
           {pelajaran.length > 0 && <> pada pelajaran {gabung(pelajaran)}</>}.
         </p>
         {typeof snapshot.nilai === "number" && (
@@ -226,11 +217,9 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
             {(snapshot.predikat ?? "").toUpperCase()} · NILAI AKHIR {snapshot.nilai}
           </p>
         )}
-        {acuan && acuan !== "dicadangkan" && (
-          <p style={{ marginTop: "0.7cqw", fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", color: MUTED, letterSpacing: "0.1em" }}>
-            Kurikulum mengacu pada {acuan} · Program non-formal pendamping sekolah
-          </p>
-        )}
+        <p style={{ marginTop: "0.7cqw", fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", color: MUTED, letterSpacing: "0.1em" }}>
+          Program non-formal pendamping sekolah
+        </p>
         {kelompok.length > 0 && typeof snapshot.nilai !== "number" && (
           <div className="flex w-full flex-wrap justify-center" style={{ marginTop: "1cqw", gap: "0.5cqw 2.2cqw", fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", color: INK }}>
             {kelompok.map((g) => (
@@ -253,7 +242,7 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
       {/* baris dokumen: nomor & tanggal · kode & QR */}
       <div className="absolute flex items-center justify-between" style={{ left: "8.4%", right: "8.4%", bottom: "2.6%", fontFamily: SANS, fontSize: "clamp(6.5px, 0.95cqw, 11px)", fontWeight: 600, color: MUTED, letterSpacing: "0.06em" }}>
         <span>
-          {nomor ? `No. ${nomor}` : pending ? "Nomor terbit setelah sinkron" : `No. RA/SJ/${level}/${kode}`} · Terbit {tanggalPanjang(issuedAt)}
+          {nomor ? `No. ${nomor}` : pending ? "Nomor terbit setelah sinkron" : `No. RA/SJ/${pangkat.toUpperCase()}/${kode}`} · Terbit {tanggalPanjang(issuedAt)}
         </span>
         <span className="flex items-center gap-[0.8cqw]">
           <span className="text-right">

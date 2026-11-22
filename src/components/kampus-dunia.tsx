@@ -193,7 +193,7 @@ function Papan({ info }: { info: ReturnType<typeof useKelasHariIni> }) {
     <div className="absolute top-[max(10px,1.4%)] left-3 z-10 flex items-center gap-2 rounded-[16px] bg-white/90 py-1.5 pr-2 pl-3 shadow-[0_3px_0_rgba(11,37,69,.1)] backdrop-blur-sm md:top-4 md:left-4">
       <span className="flex flex-col">
         <span className="leading-tight" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, color: INK }}>
-          {info.lv.lokal} · Semester {info.semester}
+          Semester {info.semester}
         </span>
         <span className="mt-1 block h-1.5 w-[110px] overflow-hidden rounded-full bg-[#e8eef6]" aria-label={`Semester ${info.semester}: ${info.persen}%`}>
           <span className="block h-full rounded-full bg-[#0786eb]" style={{ width: `${Math.max(4, info.persen)}%` }} />

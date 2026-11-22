@@ -25,7 +25,7 @@ export const SYARAT_LAB: Record<string, SyaratLab> = {
 
 export interface KeadaanLab {
   terbuka: boolean;
-  /** teks syarat untuk dunia yang masih terkunci, mis. "Sains · TK A · Bagian tumbuhan" */
+  /** teks syarat untuk dunia yang masih terkunci, mis. "Sains · Kadet · Bagian tumbuhan" */
   syarat?: string;
 }
 
@@ -39,5 +39,5 @@ export function keadaanLab(
   const isi = o.kompetensi.filter((c) => c.track === "SAINS" && c.level === s.level && c.unit.id === s.unit);
   if (!isi.length) return { terbuka: true };
   const tuntas = isi.every((c) => o.selesai.has(c.id)) || sudahLulus(o.ujian, "kuis", s.level, s.unit);
-  return tuntas ? { terbuka: true } : { terbuka: false, syarat: `Sains · ${levelMeta(s.level).lokal} · ${isi[0].unit.nama.id}` };
+  return tuntas ? { terbuka: true } : { terbuka: false, syarat: `Sains · ${levelMeta(s.level).pangkat} · ${isi[0].unit.nama.id}` };
 }

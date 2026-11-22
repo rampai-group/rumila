@@ -17,7 +17,7 @@ import { KOMPETENSI, levelAnak, paketById, setBahasaAnak, useBahasaAnak, type Ba
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
 import { sinkronSiswa } from "@/lib/akademi/siswa";
 import { useMe, useRumila, type Member } from "@/lib/store";
-import { BadgeStatus, INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, namaFramework, tanggalJam, tanggalLokal, trackMeta } from "./bersama";
+import { BadgeStatus, INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, tanggalJam, tanggalLokal, trackMeta } from "./bersama";
 import { unitUntuk } from "./track";
 
 const PRINT_CSS = `
@@ -151,13 +151,13 @@ export function RaporAnak({ anak }: { anak: Member }) {
         <div className="min-w-0 flex-1">
           <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1.1 }}>{anak.name}</h2>
           <p className="text-[13px] font-bold text-ink-3">
-            Jenjang {lv.nama} ({lv.lokal}) · pangkat {lv.pangkat} · {lv.acuan}
+            Pangkat {lv.pangkat}
           </p>
         </div>
         <div className="no-print flex flex-col gap-1">
           <span className="text-[11px] font-extrabold text-ink-3 uppercase">Jenjang anak</span>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eef4fb] px-3 py-1.5 text-[13px] font-extrabold text-[#135385]">
-            <Icon name="lock" size={16} /> {lv.lokal} · naik lewat kelulusan
+            <Icon name="lock" size={16} /> {lv.pangkat} · naik lewat kelulusan
           </span>
         </div>
         <div className="no-print flex flex-col gap-1">
@@ -257,7 +257,7 @@ function DaftarTrack({ track, level, peng, bahasa }: { track: TrackId; level: Le
     <section className="flex flex-col gap-3">
       <h3 className="flex items-center gap-2" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>
         <span className="inline-block size-3 rounded-full" style={{ background: m }} />
-        {trackMeta(track).nama[bahasa]} · {levelMeta(level).nama} ({levelMeta(level).lokal})
+        {trackMeta(track).nama[bahasa]} · {levelMeta(level).pangkat}
       </h3>
       {unit.length === 0 ? (
         <p className="rapor-card rounded-[20px] bg-white p-4 text-[14px] font-bold text-ink-3">Kurikulum jenjang ini belum tersedia.</p>
@@ -281,7 +281,6 @@ function DaftarTrack({ track, level, peng, bahasa }: { track: TrackId; level: Le
 
 function BarisKompetensi({ c, p, bahasa }: { c: Competency; p?: Penguasaan; bahasa: BahasaAnak }) {
   const status = p?.status ?? "belum";
-  const refs = c.refs.map((r) => `${namaFramework(r.framework)} ${r.code}`).join(" · ");
   return (
     <li className="flex flex-col gap-1 py-2.5 sm:flex-row sm:items-start sm:gap-3">
       <div className="min-w-0 flex-1">
@@ -289,7 +288,6 @@ function BarisKompetensi({ c, p, bahasa }: { c: Competency; p?: Penguasaan; baha
           {c.statement[bahasa] ?? c.statement.id}
           {c.core && <span className="ml-1.5 rounded-full bg-[#fff0da] px-1.5 py-0.5 align-middle text-[10px] font-black text-ink-3">INTI</span>}
         </p>
-        {refs && <p className="mt-0.5 text-[12px] font-bold text-ink-3">{refs}</p>}
         <p className="mt-0.5 text-[12px] font-bold text-ink-3">
           {p && p.success > 0 ? `${p.success} bukti · terakhir ${tanggalLokal(p.lastAt)}` : "Belum ada bukti"}
         </p>
