@@ -26,7 +26,7 @@ function ucapPesanan(teks: string, bahasa: BahasaAnak = "id", potongan?: string[
 }
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
-import { usePanggung } from "./dunia";
+import { AksiBawah, usePanggung } from "./dunia";
 import { Wadah } from "./wadah";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 
@@ -523,7 +523,7 @@ function ModeAmbil(c: Ctx) {
             const sisa = (ronde.tersedia[id] ?? 0) - (keranjang[id] ?? 0);
             const sorot = hint && kurang(id) > 0;
             return (
-              <div key={id} className="flex items-center gap-2 overflow-x-auto rounded-[16px] px-2 py-1" style={{ background: sorot ? "rgba(255,210,63,.75)" : "rgba(255,255,255,.3)", gap: 8 * sk, padding: `${4 * sk}px ${8 * sk}px` }}>
+              <div key={id} className="flex flex-wrap items-center gap-2 rounded-[16px] px-2 py-1" style={{ background: sorot ? "rgba(255,210,63,.75)" : "rgba(255,255,255,.3)", gap: 8 * sk, padding: `${4 * sk}px ${8 * sk}px` }}>
                 <span className="shrink-0 rounded-full bg-white px-2 py-0.5 text-center" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 14 * sk, color: INK, minWidth: 64 * sk }}>{nama(id)}</span>
                 {Array.from({ length: sisa }, (_, k) => (
                   <KartuBenda key={k} v={visual(id)} size={Math.round(44 * sk)} keterangan={false} onClick={() => ambil(id)} className={`min-h-14 min-w-14 shrink-0 ${sorot && k < kurang(id) ? "akademi-bounce" : ""}`} style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
@@ -632,50 +632,38 @@ function ModeSubitasi(c: Ctx) {
 
 /* ---------------- hitung ---------------- */
 
-/** Posisi acak-stabil dari indeks: grid + jitter, tidak bertumpuk. */
-function posisiBenda(n: number): { left: string; top: string }[] {
-  const cols = Math.max(1, Math.ceil(Math.sqrt(n * 1.8)));
-  const rows = Math.max(1, Math.ceil(n / cols));
-  const noise = (i: number, s: number) => { const x = Math.sin(i * 12.9898 + s * 78.233) * 43758.5453; return x - Math.floor(x); };
-  return Array.from({ length: n }, (_, i) => {
-    const cx = (i % cols + 0.5) / cols, cy = (Math.floor(i / cols) + 0.5) / rows;
-    const jx = (noise(i, 1) - 0.5) * 0.5 / cols, jy = (noise(i, 2) - 0.5) * 0.5 / rows;
-    return { left: `${(cx + jx) * 100}%`, top: `${(cy + jy) * 100}%` };
-  });
-}
-
 function ModeHitung(c: Ctx) {
   const { ronde, onJawab, hasil, terkunci, nama, visual, wajah } = c;
   const [urutan, setUrutan] = useState<Record<number, number>>({});
   const sentuhan = useRef<string[]>([]);
   const [dipilih, setDipilih] = useState<number | null>(null);
   const { hint, bantu } = useBantu(c.onHint);
-  const pos = useMemo(() => posisiBenda(ronde.benda.length), [ronde.benda.length]);
+  const { w } = usePanggung();
   const n = ronde.benda.length;
   const terhitung = Object.keys(urutan).length;
   const id0 = ronde.benda[0] ?? "";
   const teks = kd.hitung(nama(id0));
 
   const sentuh = (i: number) => {
+    if (terkunci || sentuhan.current.includes(String(i))) return;
     sentuhan.current.push(String(i));
-    if (urutan[i] !== undefined) { sfxAkademi.tolak(); return; }
     sfxAkademi.koin();
     setUrutan((u) => ({ ...u, [i]: Object.keys(u).length + 1 }));
   };
   const lebar = useLebar();
-  const tinggi = n <= 5 ? 180 : n <= 10 ? 240 : lebar ? 300 : 230;
   const sk = useSk();
   const meja = useSkMeja();
   // benda hitung ikut meja; bila banyak, dibatasi supaya tidak saling menindih
   const skB = n > 10 ? (lebar ? sk : 0.8) : meja;
-  const bulat = Math.round(64 * skB);
+  const panel = lebar ? w * 0.52 : w;
+  const kolom = Math.max(1, Math.min(Math.ceil(Math.sqrt(n * 1.8)), Math.floor(((panel || 284) - 24 * meja) / 54)));
+  const bulat = Math.max(44, Math.min(Math.round(64 * skB), Math.floor(((panel || 284) - 24 * meja - 10 * (kolom - 1)) / kolom)));
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex items-center gap-2"><Benda v={visual(id0)} size={Math.round(34 * sk)} /><span style={{ ...Tebal, fontSize: 18 * sk }}>Ada berapa {nama(id0)}?</span></div>} jawabanBenar={`${ronde.target} ${nama(id0)}`} />
       <Lapak>
-        {/* meja hitung mengisi sisa tinggi; benda tersebar di seluruh meja */}
-        <div className="relative w-full flex-1" style={{ minHeight: tinggi * sk, margin: lebar ? `${bulat / 2}px 0` : undefined }} role="group" aria-label="Benda untuk dihitung">
+        <div className="grid w-full flex-1 content-center justify-items-center gap-2 py-2" style={{ gridTemplateColumns: `repeat(${kolom}, minmax(0, 1fr))` }} role="group" aria-label="Benda untuk dihitung">
           {ronde.benda.map((gid, i) => {
             const no = urutan[i];
             return (
@@ -684,11 +672,11 @@ function ModeHitung(c: Ctx) {
                 type="button"
                 onClick={() => sentuh(i)}
                 aria-label={no ? `${nama(gid)} ke-${no}` : nama(gid)}
-                className={`absolute flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all active:scale-90 ${hint && !no ? "akademi-bounce" : ""}`}
-                style={{ ...pos[i], width: bulat, height: bulat, background: no ? "rgba(214,236,255,.92)" : "#fff", boxShadow: no ? "inset 0 0 0 3px #0786eb" : "0 4px 0 rgba(11,37,69,.18)" }}
+                className={`relative flex items-center justify-center rounded-full transition-all active:scale-90 ${hint && !no ? "akademi-bounce" : ""}`}
+                style={{ width: bulat, height: bulat, background: no ? "rgba(214,236,255,.92)" : "#fff", boxShadow: no ? "inset 0 0 0 3px #0786eb" : "0 4px 0 rgba(11,37,69,.18)" }}
               >
-                <span style={{ opacity: no ? 0.6 : 1 }}><Benda v={visual(gid)} size={Math.round(44 * skB)} /></span>
-                {no && <span className="akademi-pop absolute -top-2 -right-1 flex items-center justify-center rounded-full bg-[#0786eb] text-white" style={{ width: 32 * sk, height: 32 * sk, fontFamily: BALOO, fontWeight: 900, fontSize: 18 * sk, boxShadow: "0 0 0 2px #fff" }}>{no}</span>}
+                <span style={{ opacity: no ? 0.6 : 1 }}><Benda v={visual(gid)} size={Math.min(bulat - 8, Math.round(44 * skB))} /></span>
+                {no && <span className="akademi-pop absolute right-0 top-0 flex size-6 items-center justify-center rounded-full bg-[#0786eb] text-sm text-white" style={{ fontFamily: BALOO, fontWeight: 900, boxShadow: "0 0 0 2px #fff" }}>{no}</span>}
               </button>
             );
           })}
@@ -757,6 +745,7 @@ function ModeBayar(c: Ctx) {
 }
 
 function ModeKembalian(c: Ctx) {
+  const lebar = useLebar();
   const { ronde, onJawab, hasil, terkunci, nama, visual, wajah } = c;
   const { uang, ambil, kembalikan, total } = useNampan();
   const { hint, bantu } = useBantu(c.onHint);
@@ -812,10 +801,12 @@ function ModeKembalian(c: Ctx) {
     </>} kanan={<>
       <Nampan uang={uang} onAmbil={kembalikan} judul="Kembalian" sorot={hint && total === kembalian} />
       <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} sorot={sorot} disabled={terkunci} />
+      <AksiBawah aktif={!lebar}>
       <div className="flex shrink-0 gap-2">
         <TombolBantu onClick={bantu} disabled={terkunci} />
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang }); }} disabled={terkunci || uang.length === 0}><Icon name="currency_exchange" size={26} /> Beri kembalian</TombolBesar>
       </div>
+      </AksiBawah>
     </>} />
   );
 }
@@ -897,7 +888,9 @@ function ModeLengkapi(c: Ctx) {
           <div className="flex flex-wrap items-center gap-2">
             <Tanya>Koinnya kurang berapa?</Tanya>
             {tampil ? (
-              <span className="akademi-pop flex flex-wrap gap-0.5" aria-label={`${ditunjukkan} koin`}>{Array.from({ length: ditunjukkan }, (_, k) => <span key={k} style={{ fontSize: 26 * sk, lineHeight: 1 }}>🪙</span>)}</span>
+              <span className="flex w-full min-w-0 flex-wrap gap-1" role="img" aria-label={`${ditunjukkan} koin`}>
+                {Array.from({ length: ditunjukkan }, (_, k) => <Benda key={k} v={{ shape: "koin", color: "#f2c230" }} size={Math.round(24 * sk)} />)}
+              </span>
             ) : (
               <span className="flex items-center gap-1"><span style={{ fontSize: 40 * sk, lineHeight: 1 }}>✊</span><span style={{ ...Tebal, fontSize: 24 * sk, color: "#2f4260" }}>…</span></span>
             )}
@@ -1007,6 +1000,21 @@ const TEMA_SISA: Record<string, TemaSisa> = {
   kebun: { latar: "radial-gradient(ellipse at 50% 40%,#d9f2c4,#9ccc65)", ditangkap: "🧺", tutupIkon: "🍃", tutup: "Bedeng ditutup daun", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: kerjaSisa("kebun") },
 };
 const TEMA_SISA_UMUM: TemaSisa = { latar: "radial-gradient(ellipse at 50% 40%,#fffaf0,#f1dcb4)", ditangkap: "✋", tutupIkon: "📦", tutup: "Kotak ditutup", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: kerjaSisa(undefined) };
+
+/** Posisi benda pada adegan pengurangan, sebelum sebagian diambil. */
+function posisiBenda(n: number): { left: string; top: string }[] {
+  const cols = Math.max(1, Math.ceil(Math.sqrt(n * 1.8)));
+  const rows = Math.max(1, Math.ceil(n / cols));
+  const noise = (i: number, s: number) => {
+    const x = Math.sin(i * 12.9898 + s * 78.233) * 43758.5453;
+    return x - Math.floor(x);
+  };
+  return Array.from({ length: n }, (_, i) => {
+    const cx = (i % cols + 0.5 + (noise(i, 1) - 0.5) * 0.5) / cols;
+    const cy = (Math.floor(i / cols) + 0.5 + (noise(i, 2) - 0.5) * 0.5) / rows;
+    return { left: `${cx * 100}%`, top: `${cy * 100}%` };
+  });
+}
 
 function ModeSisa(c: Ctx) {
   const { paket, ronde, onJawab, hasil, terkunci, wajah, nama, visual } = c;

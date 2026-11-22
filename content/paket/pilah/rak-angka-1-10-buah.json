@@ -1,6 +1,6 @@
 {
   "id": "rak-angka-1-10-buah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,7 @@
       "n9": "9",
       "n10": "10",
       "jeruk": "jeruk",
-      "anggur": "anggur"
+      "anggur": "buah anggur"
     },
     "en": {
       "judul": "Fruit Number Shelf",
@@ -38,7 +38,7 @@
       "n9": "9",
       "n10": "10",
       "jeruk": "oranges",
-      "anggur": "grapes"
+      "anggur": "grape"
     }
   },
   "knobs": {
@@ -117,8 +117,12 @@
       "id": "anggur-1",
       "labelKey": "anggur",
       "bin": "r1",
-      "emoji": "🍇",
-      "count": 1
+      "count": 1,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-2",
@@ -131,8 +135,12 @@
       "id": "anggur-2",
       "labelKey": "anggur",
       "bin": "r2",
-      "emoji": "🍇",
-      "count": 2
+      "count": 2,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-3",
@@ -145,8 +153,12 @@
       "id": "anggur-3",
       "labelKey": "anggur",
       "bin": "r3",
-      "emoji": "🍇",
-      "count": 3
+      "count": 3,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-4",
@@ -159,8 +171,12 @@
       "id": "anggur-4",
       "labelKey": "anggur",
       "bin": "r4",
-      "emoji": "🍇",
-      "count": 4
+      "count": 4,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-5",
@@ -173,8 +189,12 @@
       "id": "anggur-5",
       "labelKey": "anggur",
       "bin": "r5",
-      "emoji": "🍇",
-      "count": 5
+      "count": 5,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-6",
@@ -187,8 +207,12 @@
       "id": "anggur-6",
       "labelKey": "anggur",
       "bin": "r6",
-      "emoji": "🍇",
-      "count": 6
+      "count": 6,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-7",
@@ -201,8 +225,12 @@
       "id": "anggur-7",
       "labelKey": "anggur",
       "bin": "r7",
-      "emoji": "🍇",
-      "count": 7
+      "count": 7,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-8",
@@ -215,8 +243,12 @@
       "id": "anggur-8",
       "labelKey": "anggur",
       "bin": "r8",
-      "emoji": "🍇",
-      "count": 8
+      "count": 8,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-9",
@@ -229,8 +261,12 @@
       "id": "anggur-9",
       "labelKey": "anggur",
       "bin": "r9",
-      "emoji": "🍇",
-      "count": 9
+      "count": 9,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "jeruk-10",
@@ -243,8 +279,12 @@
       "id": "anggur-10",
       "labelKey": "anggur",
       "bin": "r10",
-      "emoji": "🍇",
-      "count": 10
+      "count": 10,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     }
   ]
 }

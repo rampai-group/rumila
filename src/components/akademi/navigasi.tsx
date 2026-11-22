@@ -13,12 +13,13 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import type { NavCommand, PaketNavigasi } from "@akademi/schema";
 import { hitungBlok, jalankan, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
 import { TombolBantu } from "./bantu";
+import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { COMMON_DEFS } from "@/components/koding/art";
 import { AgamTop } from "@/components/koding/stage";
 import { sfx } from "@/lib/sfx";
 import type { DuniaId } from "@/lib/akademi/tema-dunia";
-import { usePanggung } from "./dunia";
+import { AksiBawah, usePanggung } from "./dunia";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 import "@/components/koding/koding.css";
 
@@ -144,6 +145,7 @@ interface Agam extends NavState {
 }
 
 export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
+  const ujian = useModeUjian();
   const grids = ronde.grids;
   const slotMaks = ronde.rackSlots ?? SLOT_DEFAULT;
   const modeBendera = ronde.execMode === "program" && ronde.commands.includes("bendera");
@@ -164,6 +166,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   // mode langsung
   const [efektif, setEfektif] = useState<NavBlock[]>([]);
   const [gagal, setGagal] = useState(0);
+  const [langsungTuntas, setLangsungTuntas] = useState(false);
 
   // mode program
   const [rak, setRak] = useState<NavBlock[]>(() => ronde.program.map((b) => ({ ...b })));
@@ -233,7 +236,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   /* ---------- mode langsung ---------- */
 
   const tekanLangsung = async (cmd: NavCommand) => {
-    if (sibuk || terkunci || cmd === "ulangi" || cmd === "bendera") return;
+    if (sibuk || terkunci || langsungTuntas || cmd === "ulangi" || cmd === "bendera") return;
     const program: NavBlock[] = [...efektif, { cmd }];
     const lari = jalankan(grid, program);
     const idx = efektif.length;
@@ -247,15 +250,25 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     if (!ok) return;
     if (lari.outcome === "tersandung" || lari.outcome === "tabrak") {
       setGagal((g) => g + 1);
-      setPesan(pesanGagal(lari.outcome));
-      // posisi Agam dipulihkan ke sebelum blok gagal (mesin sudah mengembalikan after = sebelum)
-      setAgam((a) => ({ ...a, ...sebelum }));
+      if (ujian) {
+        setEfektif(program);
+        setLangsungTuntas(true);
+        setPesan("Kirim jalur yang sudah kamu pilih.");
+      } else {
+        setPesan(pesanGagal(lari.outcome));
+        setAgam((a) => ({ ...a, ...sebelum }));
+      }
     } else {
       setEfektif(program);
       if (lari.outcome === "bintang") {
-        sfx.arrive();
-        setAgam((a) => ({ ...a, senang: true, wajah: "🎉" }));
-        kirim({ program, langsung: program, runs: gagal });
+        if (ujian) {
+          setLangsungTuntas(true);
+          setPesan("Kirim jalur yang sudah kamu pilih.");
+        } else {
+          sfx.arrive();
+          setAgam((a) => ({ ...a, senang: true, wajah: "🎉" }));
+          kirim({ program, langsung: program, runs: gagal });
+        }
       }
     }
     setSibuk(false);
@@ -334,6 +347,16 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
 
   /* ---------- mode program: jalan ---------- */
 
+  const kirimProgramUjian = () => {
+    if (sibuk || terkunci) return;
+    if (modeBendera) {
+      if (!bendera || !rak.length || !rak2.length) return;
+      kirim({ program: [...rak, { cmd: "bendera" }, ...rak2], bendera: { ...bendera, bagian: [rak, rak2] }, runs: 1 });
+    } else if (rak.length) {
+      kirim({ program: rak, edits: ronde.debug ? hitungEdits(ronde.program, rak) : undefined, runs: 1 });
+    }
+  };
+
   const jalan = async () => {
     if (sibuk || terkunci) return;
     const program: NavBlock[] = modeBendera ? [...rak, { cmd: "bendera" }, ...rak2] : rak;
@@ -408,15 +431,20 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     setSorot([]);
     const benar = tebakan ? samaSel(tebakan, s.after) : true;
     const daftar = ronde.prediksi ? [...prediksi, benar] : prediksi;
-    if (ronde.prediksi) { setPrediksi(daftar); setPesan(benar ? "Tebakanmu benar! ⭐" : "Hmm, Agam ke sini ternyata"); }
+    if (ronde.prediksi) {
+      setPrediksi(daftar);
+      if (!ujian) setPesan(benar ? "Tebakanmu benar! ⭐" : "Hmm, Agam ke sini ternyata");
+    }
     if (!(await animasikan([s], id, { x: agam.x, y: agam.y, dir: agam.dir }))) return;
     setTebakan(null);
     setLangkahKe(langkahKe + 1);
     setSibuk(false);
     const habis = langkahKe + 1 >= lariLangkah.steps.length;
     if (habis) {
-      if (lariLangkah.outcome === "bintang") setAgam((a) => ({ ...a, senang: true, wajah: "🎉" }));
-      else setPesan(pesanGagal(lariLangkah.outcome));
+      if (!ujian) {
+        if (lariLangkah.outcome === "bintang") setAgam((a) => ({ ...a, senang: true, wajah: "🎉" }));
+        else setPesan(pesanGagal(lariLangkah.outcome));
+      }
       await tunggu(400);
       kirim({ program: ronde.program, prediksi: daftar, runs: 1 });
     }
@@ -578,11 +606,17 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
         <>
           <div className="flex items-center justify-center gap-2 font-bold" style={{ fontSize: 14 * skt }}>
             <span className="rounded-full bg-white px-3 py-1 shadow-[0_3px_0_rgba(11,37,69,.12)]">{efektif.length} langkah</span>
-            <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-60" style={{ minHeight: Math.max(44, 36 * skt) }}>
-              ↺ Ulang dari awal
-            </button>
+            {ujian ? (
+              <button type="button" onClick={() => kirim({ program: efektif, langsung: efektif, runs: 1 })} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-[#16804f] px-3 py-1.5 text-white shadow-[0_3px_0_#0e5a37] disabled:opacity-60" style={{ minHeight: Math.max(44, 36 * skt) }}>
+                Kirim jawaban
+              </button>
+            ) : (
+              <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-60" style={{ minHeight: Math.max(44, 36 * skt) }}>
+                ↺ Ulang dari awal
+              </button>
+            )}
           </div>
-          <Palet commands={palet} onTekan={tekanLangsung} nonaktif={sibuk || terkunci} besar penuh={mendatar} />
+          <Palet commands={palet} onTekan={tekanLangsung} nonaktif={sibuk || terkunci || langsungTuntas} besar penuh={mendatar} />
         </>
       )}
 
@@ -602,14 +636,15 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
             />
           )}
           <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} penuh={mendatar} rapat={rapat} />
+          <AksiBawah aktif={!mendatar}>
           <div className="flex gap-2">
             <button
-              onClick={jalan}
-              disabled={sibuk || terkunci}
+              onClick={ujian ? kirimProgramUjian : jalan}
+              disabled={sibuk || terkunci || (ujian && (!rak.length || (modeBendera && (!rak2.length || !bendera))))}
               className="flex-1 rounded-[20px] bg-[#16804f] py-2 text-white shadow-[0_6px_0_#0e5a37] active:translate-y-1 disabled:opacity-60"
               style={{ fontSize: 24 * skt, fontWeight: 900, minHeight: (rapat ? 52 : 64) * skt }}
             >
-              Jalan ▶
+              {ujian ? "Kirim program" : "Jalan ▶"}
             </button>
             <button
               onClick={() => { if (sibuk || terkunci) return; sfx.close(); setRak(ronde.program.map((b) => ({ ...b }))); setRak2([]); setSel(null); setBendera(null); setPesan(""); setAgam(awalAgam(grid)); setStatusGrid(grids.map(() => null)); }}
@@ -621,6 +656,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
               <Icon name="restart_alt" size={Math.round(28 * skt)} />
             </button>
           </div>
+          </AksiBawah>
         </>
       )}
 
@@ -635,7 +671,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
                   ? `Blok berikutnya: ${BLOK[blokLangkah.cmd === "bendera" ? "bendera" : blokLangkah.cmd].label}. Ketuk petak tujuannya, lalu tekan Langkah.`
                   : "Program habis."
                 : "Tekan Langkah untuk menjalankan satu blok."}
-              {ronde.prediksi && prediksi.length > 0 && <span className="ml-1">({prediksi.filter(Boolean).length}/{prediksi.length} tebakan benar)</span>}
+              {!ujian && ronde.prediksi && prediksi.length > 0 && <span className="ml-1">({prediksi.filter(Boolean).length}/{prediksi.length} tebakan benar)</span>}
             </div>
             <button
               onClick={langkah}

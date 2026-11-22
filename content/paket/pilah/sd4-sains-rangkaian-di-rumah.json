@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-rangkaian-di-rumah",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,100 +72,90 @@
       "id": "senteron",
       "labelKey": "i-senteron",
       "bin": "menyala",
-      "emoji": "🔦",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "👆"
+        "jenis": "rangkaian",
+        "varian": "senter-on"
       }
     },
     {
       "id": "mobilon",
       "labelKey": "i-mobilon",
       "bin": "menyala",
-      "emoji": "🚗",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🔋"
+        "jenis": "rangkaian",
+        "varian": "mobil-on"
       }
     },
     {
       "id": "lenteraon",
       "labelKey": "i-lenteraon",
       "bin": "menyala",
-      "emoji": "🏮",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🔋"
+        "jenis": "rangkaian",
+        "varian": "lentera-on"
       }
     },
     {
       "id": "mejaon",
       "labelKey": "i-mejaon",
       "bin": "menyala",
-      "emoji": "🔋",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🔧"
+        "jenis": "rangkaian",
+        "varian": "kabel-baru"
       }
     },
     {
       "id": "pisauon",
       "labelKey": "i-pisauon",
       "bin": "menyala",
-      "emoji": "🔘",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "⬇️"
+        "jenis": "rangkaian",
+        "varian": "sakelar-pisau-tutup"
       }
     },
     {
       "id": "senteroff",
       "labelKey": "i-senteroff",
       "bin": "padam",
-      "emoji": "🔦",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "👇"
+        "jenis": "rangkaian",
+        "varian": "senter-off"
       }
     },
     {
       "id": "mobilputus",
       "labelKey": "i-mobilputus",
       "bin": "padam",
-      "emoji": "🚗",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "✂️"
+        "jenis": "rangkaian",
+        "varian": "mobil-putus"
       }
     },
     {
       "id": "lenterakosong",
       "labelKey": "i-lenterakosong",
       "bin": "padam",
-      "emoji": "🏮",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🪫"
+        "jenis": "rangkaian",
+        "varian": "lentera-kosong"
       }
     },
     {
       "id": "mejalepas",
       "labelKey": "i-mejalepas",
       "bin": "padam",
-      "emoji": "🔋",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "✂️"
+        "jenis": "rangkaian",
+        "varian": "jepit-lampu-lepas"
       }
     },
     {
       "id": "pisauoff",
       "labelKey": "i-pisauoff",
       "bin": "padam",
-      "emoji": "🔘",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "⬆️"
+        "jenis": "rangkaian",
+        "varian": "sakelar-pisau-buka"
       }
     }
   ],

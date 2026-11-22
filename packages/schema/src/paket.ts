@@ -32,11 +32,27 @@ export type KnobSchema = z.infer<typeof KnobSchema>;
  * t 0–1 = posisi dalam proses (matahari terbit→terbenam, dekat→jauh, penuh→kosong) atau bagian putaran (potong, sudut).
  */
 export const Adegan = z.object({
-  jenis: z.enum(["tanda", "matahari", "bayangan", "hadap", "jauh", "senter", "kering", "jamur", "isi", "cokelat", "potong", "sudut"]),
+  jenis: z.enum(["tanda", "matahari", "bayangan", "hadap", "jauh", "senter", "kering", "jamur", "isi", "cokelat", "potong", "sudut", "ilustrasi", "ilustrasi-sd", "kaus-kaki", "geometri", "rangkaian"]),
   t: z.number().min(0).max(1).optional(),
   /** emoji pelengkap: lambang keadaan, atau sumber bunyi untuk "jauh" */
   tanda: z.string().min(1).optional(),
-}).refine((a) => (a.jenis === "tanda" ? !!a.tanda : a.t !== undefined), { message: "adegan tanda butuh `tanda`; jenis lain butuh `t`" });
+  varian: Slug.optional(),
+  pembilang: z.number().int().min(0).max(24).optional(),
+  penyebut: z.number().int().min(1).max(24).optional(),
+}).refine((a) => {
+  switch (a.jenis) {
+    case "tanda": return !!a.tanda;
+    case "ilustrasi":
+    case "ilustrasi-sd":
+    case "geometri":
+    case "rangkaian": return !!a.varian;
+    case "kaus-kaki": return true;
+    case "potong":
+      if (a.pembilang === undefined && a.penyebut === undefined) return a.t !== undefined;
+      return a.pembilang !== undefined && a.penyebut !== undefined && a.pembilang <= a.penyebut;
+    default: return a.t !== undefined;
+  }
+}, { message: "adegan perlu tanda, varian, pecahan, atau posisi sesuai jenisnya" });
 export type Adegan = z.infer<typeof Adegan>;
 
 /** Tampilan benda tanpa aset: emoji + warna + skala. Presenter 2D menggambar dari sini. */
@@ -84,9 +100,13 @@ const Base = {
 /* ---------------- pilah ---------------- */
 
 export const PilahBin = z.object({ id: Slug, labelKey: Key, assetId: Slug.optional(), ...Visual });
-export const PilahItem = z.object({ id: Slug, labelKey: Key, bin: Slug, assetId: Slug.optional(), ...Visual });
+export const PilahItem = z.object({ id: Slug, labelKey: Key, altKey: Key.optional(), bin: Slug, assetId: Slug.optional(), ...Visual });
 /** mode "pilih": satu ronde = satu pertanyaan dengan beberapa pilihan, tepat satu benar */
-export const PilahRonde = z.object({ id: Slug, promptKey: Key, choices: z.array(Slug).min(2).max(6), correct: Slug });
+export const PilahRonde = z.object({
+  id: Slug, promptKey: Key, choices: z.array(Slug).min(2).max(6), correct: Slug,
+  adegan: Adegan.optional(),
+  bacaPilihan: z.boolean().optional(),
+});
 
 export const PaketPilahObj = z.object({
   ...Base,
@@ -345,7 +365,11 @@ export const PACK_MECHANICS: readonly MechanicId[] = ["pilah", "urutkan", "dagan
 export function kunciLocale(d: ContentPack): Set<string> {
   // "judul" wajib: nama aktivitas ramah anak yang tampil di peta pelajaran dan misi
   const k = new Set<string>([d.instructionKey, "judul"]);
-  if (d.mechanic === "pilah") { d.bins.forEach(b => k.add(b.labelKey)); d.items.forEach(i => k.add(i.labelKey)); d.pilihan.forEach(r => k.add(r.promptKey)); }
+  if (d.mechanic === "pilah") {
+    d.bins.forEach(b => k.add(b.labelKey));
+    d.items.forEach(i => { k.add(i.labelKey); if (i.altKey) k.add(i.altKey); });
+    d.pilihan.forEach(r => k.add(r.promptKey));
+  }
   if (d.mechanic === "urutkan") d.sequences.forEach(s => { k.add(s.titleKey); s.steps.forEach(x => k.add(x.labelKey)); });
   if (d.mechanic === "dagang") d.goods.forEach(g => k.add(g.labelKey));
   if (d.mechanic === "pola" || d.mechanic === "simulasi") d.items.forEach(i => k.add(i.labelKey));

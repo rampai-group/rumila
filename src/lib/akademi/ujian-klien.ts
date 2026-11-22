@@ -3,7 +3,7 @@
 // Hasil ujian di aplikasi: salinan lokal localStorage["rumila-akademi-ujian-<memberId>"] + tarik dari tabel
 // akademi_ujian (server menang). Nilai resmi dihitung server (/api/akademi/ujian) dari jawaban yang tercatat.
 // Anggota demo (id bukan UUID) dan keadaan offline: hasil disimpan lokal sebagai pending; pending dikirim ulang
-// saat online. Server bisa menolak pending (mis. tunggu besok) → salinan pending dibuang.
+// saat online. Hasil pending tidak membuka jenjang atau ujian sampai disetujui server.
 
 import { useEffect, useState } from "react";
 import type { LevelId } from "@akademi/schema";
@@ -47,8 +47,13 @@ export function useUjian(memberId: string): HasilUjian[] {
     const segar = (e: Event) => {
       if ((e as CustomEvent).detail === memberId) setDaftar(ujianAnak(memberId));
     };
+    const daring = () => void kirimTertunda(memberId);
     window.addEventListener(EVENT, segar);
-    return () => window.removeEventListener(EVENT, segar);
+    window.addEventListener("online", daring);
+    return () => {
+      window.removeEventListener(EVENT, segar);
+      window.removeEventListener("online", daring);
+    };
   }, [memberId]);
   return daftar;
 }
@@ -65,10 +70,12 @@ export async function ambilUjian(memberId: string): Promise<HasilUjian[]> {
     .order("created_at", { ascending: true });
   if (error) throw error;
   const server: HasilUjian[] = (data ?? []).map((r) => ({ jenis: r.jenis as JenisUjian, level: r.level as LevelId, ruang: r.ruang, sessionId: r.session_id, benar: r.benar, total: r.total, nilai: r.nilai, lulus: r.lulus, at: r.created_at }));
-  const pending = ujianAnak(memberId).filter((h) => h.pending && !server.some((s) => s.sessionId === h.sessionId));
-  simpan(memberId, [...server, ...pending]);
+  const pending = ujianAnak(memberId).filter((h) => h.pending);
+  // Minta tanggapan API walau baris nilai sudah terlihat: efek jenjang/semester mungkin masih harus diselesaikan.
+  const terkonfirmasi = [...server.filter((s) => !pending.some((h) => h.sessionId === s.sessionId)), ...pending];
+  simpan(memberId, terkonfirmasi);
   if (pending.length) void kirimTertunda(memberId);
-  return [...server, ...pending];
+  return terkonfirmasi;
 }
 
 export type HasilKirim = { ok: true; hasil: HasilUjian; levelBaru?: LevelId } | { ok: false; alasan: string };
@@ -92,7 +99,7 @@ async function minta(memberId: string, h: Pick<HasilUjian, "jenis" | "level" | "
   }
 }
 
-const sementara = (a: string) => a === "jaringan" || a === "penerbit_belum_aktif" || a === "galat" || a.startsWith("http_5");
+const sementara = (a: string) => a === "jaringan" || a === "penerbit_belum_aktif" || a === "galat" || a === "belum_lengkap" || a.startsWith("http_5");
 
 /**
  * Serahkan hasil ujian. `lokal` = hitungan di perangkat (dipakai bila offline / anggota demo, ditandai pending).
@@ -102,7 +109,7 @@ export async function serahkanUjian(memberId: string, lokal: HasilUjian, sebagia
   if (!terhubung(memberId)) {
     const h = { ...lokal, pending: !UUID.test(memberId) ? false : true };
     taruh(memberId, h);
-    if (h.jenis === "penempatan" && (h.lulus || h.level === "PAUD")) setLevelAnak(memberId, h.level);
+    if (!h.pending && h.jenis === "penempatan" && (h.lulus || h.level === "PAUD")) setLevelAnak(memberId, h.level);
     return { ok: true, hasil: h };
   }
   // jawaban terakhir perlu sampai ke server dulu; beri jeda singkat bila antrean baru saja terkirim
@@ -121,22 +128,25 @@ export async function serahkanUjian(memberId: string, lokal: HasilUjian, sebagia
     taruh(memberId, h);
     return { ok: true, hasil: h };
   }
+  if (ujianAnak(memberId).some((h) => h.pending && h.sessionId === lokal.sessionId)) {
+    simpan(memberId, ujianAnak(memberId).filter((h) => h.sessionId !== lokal.sessionId));
+  }
   return r;
 }
 
-let sedang = false;
+const sedang = new Set<string>();
 async function kirimTertunda(memberId: string) {
-  if (sedang) return;
-  sedang = true;
+  if (!terhubung(memberId) || sedang.has(memberId)) return;
+  sedang.add(memberId);
   try {
     for (const h of ujianAnak(memberId).filter((x) => x.pending)) {
       const r = await minta(memberId, h, h.jenis === "kenaikan");
       if (r.ok) {
         taruh(memberId, { ...r.hasil, pending: false });
         if (r.levelBaru) setLevelAnak(memberId, r.levelBaru);
-      } else if (!sementara(r.alasan)) simpan(memberId, ujianAnak(memberId).filter((x) => x.sessionId !== h.sessionId));
+      }
     }
   } finally {
-    sedang = false;
+    sedang.delete(memberId);
   }
 }

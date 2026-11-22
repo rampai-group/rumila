@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-jalan-data-kota",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Data Berkeliling Kota",
-      "instruksi": "Data berjalan dari perangkat pengirim sampai ke penerima dan melewati router serta internet: susun langkah perjalanannya dari awal sampai akhir.",
+      "instruksi": "Susun perjalanan data lewat jaringan, dari perangkat pengirim sampai hasilnya muncul di perangkat penerima.",
       "s1": "Mengunggah tugas",
       "s1-1": "kamu menekan Unggah pada tugasmu",
       "s1-2": "laptop mengirim berkas lewat Wi-Fi ke router",
@@ -80,7 +80,7 @@
     },
     "en": {
       "judul": "Data Around Town",
-      "instruksi": "Data travels from the sending device to the receiver, passing a router and the internet: put the steps of its trip in order from start to finish.",
+      "instruksi": "Put the data’s journey through the network in order, from the sending device to the result on the receiving device.",
       "s1": "Uploading homework",
       "s1-1": "you press Upload on your homework",
       "s1-2": "the laptop sends the file over Wi-Fi to the router",
@@ -155,7 +155,7 @@
       "max": 5,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah tahap yang disusun; 4 berhenti sebelum penerima menampilkan hasil"
+      "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
     }
   },
   "assets": [],
@@ -505,5 +505,6 @@
         }
       ]
     }
-  ]
+  ],
+  "potong": "tengah"
 }

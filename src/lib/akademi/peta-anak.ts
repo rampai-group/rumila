@@ -8,8 +8,7 @@ import { TRACK_SLICE } from "@/components/akademi/portal/bersama";
 import { aksesPaket, type Akses } from "./akses";
 import { useEvents } from "./jejak";
 import { KOMPETENSI, PAKET, levelAnak, useBahasaAnak } from "./konten";
-import { proyeksi } from "./mastery";
-import { kompetensiSelesai, petaJenjang, progresMisi, type PetaJenjang } from "./peta";
+import { petaDariBukti, type PetaJenjang } from "./peta";
 import { ambilUjian, useUjian } from "./ujian-klien";
 
 const INDEKS = new Map(KOMPETENSI.map((c) => [c.id, c]));
@@ -29,7 +28,7 @@ export function useAksesAkademi(memberId: string): { peta: PetaJenjang; level: L
       .finally(() => setSiap(true));
   }, [memberId]);
   const peta = useMemo(
-    () => petaJenjang(proyeksi(events, KOMPETENSI), kompetensiSelesai(events, PAKET), KOMPETENSI, level, TRACK_SLICE, progresMisi(events, PAKET), ujian),
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian),
     [events, level, ujian],
   );
   const akses = useMemo(() => (p: ContentPack) => aksesPaket(p, peta, INDEKS, bahasa === "en" ? "en" : "id"), [peta, bahasa]);

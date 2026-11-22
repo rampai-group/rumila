@@ -7,12 +7,12 @@
 import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent, type ReactNode } from "react";
 import type { PaketSimulasi } from "@akademi/schema";
-import type { JawabanSimulasi, RondeSimulasi } from "@akademi/mechanics";
+import { TOLERANSI_JENGKAL, type JawabanSimulasi, type RondeSimulasi } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { KALIMAT_SIMULASI as KS, kalimatSimulasi as ks } from "@/lib/akademi/kalimat-suara";
 import { ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
-import { Benda, KartuBenda, type VisualSpec } from "./benda";
+import { Benda, KartuBenda, skalaLebar, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
 import { Wadah } from "./wadah";
@@ -342,7 +342,7 @@ function JamDinding({
             boxShadow: sorot ? `0 0 0 4px ${KUNING}` : undefined,
           };
           if (!onKetukAngka) return <span key={n} aria-hidden className={`absolute flex items-center justify-center rounded-full ${sorot ? "akademi-bounce" : ""}`} style={gaya}>{n}</span>;
-          const dt = 52 * k; // jarak antar-angka 52,8k: tombol tidak saling menindih
+          const dt = Math.min(52 * k, 2 * rAngka * Math.sin(Math.PI / 12) - 2);
           return (
             <button key={n} type="button" disabled={terkunci} onClick={() => onKetukAngka(n)} aria-label={`Angka ${n}`} className={`absolute flex items-center justify-center rounded-full active:scale-90 ${sorot ? "akademi-bounce" : ""}`} style={{ ...gaya, width: dt, height: dt, marginLeft: -dt / 2, marginTop: -dt / 2 }}>
               {n}
@@ -508,8 +508,8 @@ function ModeTimbangan(c: Ctx) {
             <Adegan min={200}>
               {({ w, h }) => {
                 // lebar timbangan: muat lebar & tinggi adegan (rasio 400:260); benda ikut membesar
-                const lebar = Math.max(260, Math.min(w - 8, ((h - 8) * 400) / 260, 1000));
-                const ub = Math.round(56 * Math.max(1, lebar / 440));
+                const lebar = Math.max(1, Math.min(w - 8, ((h - 8) * 400) / 260, 1000));
+                const ukuranBenda = (v: VisualSpec) => Math.min(Math.round(56 * Math.max(0.6, lebar / 440)), lebar * 0.21 / skalaLebar(v));
                 return (
                   <div className="relative" style={{ width: lebar, aspectRatio: "400 / 260" }} role="img" aria-label={fase === "miring" ? `Timbangan miring ke ${beratKiri ? "kiri" : "kanan"}` : "Benda diletakkan di timbangan"}>
                     <svg viewBox="0 0 400 260" className="absolute inset-0 h-full w-full" aria-hidden>
@@ -520,8 +520,8 @@ function ModeTimbangan(c: Ctx) {
                       <Pan x={uk.x} y={uk.y} />
                       <Pan x={uka.x} y={uka.y} />
                     </svg>
-                    {kiri && <div className={`absolute ${fase === "taruh" ? "akademi-pop" : ""}`} style={posBenda(uk)}><Benda v={visual(kiri.id)} size={ub} /></div>}
-                    {kanan && <div className={`absolute ${fase === "taruh" ? "akademi-pop" : ""}`} style={{ ...posBenda(uka), animationDelay: "200ms" }}><Benda v={visual(kanan.id)} size={ub} /></div>}
+                    {kiri && <div className={`absolute ${fase === "taruh" ? "akademi-pop" : ""}`} style={posBenda(uk)}><Benda v={visual(kiri.id)} size={ukuranBenda(visual(kiri.id))} /></div>}
+                    {kanan && <div className={`absolute ${fase === "taruh" ? "akademi-pop" : ""}`} style={{ ...posBenda(uka), animationDelay: "200ms" }}><Benda v={visual(kanan.id)} size={ukuranBenda(visual(kanan.id))} /></div>}
                   </div>
                 );
               }}
@@ -532,19 +532,20 @@ function ModeTimbangan(c: Ctx) {
         kendali={
           <div className={`flex gap-2 ${samping ? "flex-col" : ""}`} style={{ gap: 8 * skala }}>
             <TombolBantu onClick={() => { bantu(); ucapkan(KS.timbanganBantu); }} disabled={terkunci} />
-            <div className="grid flex-1 grid-cols-2 gap-2" style={{ gap: 8 * skala }}>
+            <div className="grid min-w-0 flex-1 grid-cols-2 gap-2" style={{ gap: 8 * skala }}>
               {benda.map((b) => (
                 <KartuBenda
+                  penuh
                   key={b.id}
                   v={visual(b.id)}
-                  size={Math.round(56 * skala * (samping ? 1.15 : 1))}
+                  size={Math.round(56 * skala * (samping ? 1.15 : 1)) / skalaLebar(visual(b.id))}
                   labelSize={Math.round(13 * st)}
                   label={nama(b.id)}
                   selected={dipilih === b.id}
                   right={!!hasil && b.id === berat}
                   wrong={!!hasil && b.id === dipilih && b.id !== berat}
                   onClick={() => { if (terkunci || fase !== "miring") return; setDipilih(b.id); sfx.tap(); onJawab({ pilih: b.id }); }}
-                  className={`min-h-24 ${hint && b.id === berat ? "akademi-bounce" : ""}`}
+                  className={`min-h-24 min-w-0 ${hint && b.id === berat ? "akademi-bounce" : ""}`}
                   style={{ minHeight: 96 * skala * (samping ? 1.4 : 1), ...(fase !== "miring" ? { opacity: 0.6 } : undefined) }}
                 />
               ))}
@@ -605,11 +606,12 @@ function ModeJengkal(c: Ctx) {
     const urut = [...telapak].sort((a, b) => a - b);
     for (let i = 0; i + 1 < urut.length; i++) {
       const selisih = urut[i + 1] - (urut[i] + 1);
-      if (selisih > 0.2) out.push({ x: urut[i] + 1, w: selisih, jenis: "celah" });
-      else if (selisih < -0.2) out.push({ x: urut[i + 1], w: -selisih, jenis: "tumpang" });
+      if (selisih > TOLERANSI_JENGKAL) out.push({ x: urut[i] + 1, w: selisih, jenis: "celah" });
+      else if (selisih < -TOLERANSI_JENGKAL) out.push({ x: urut[i + 1], w: -selisih, jenis: "tumpang" });
     }
     return out;
   }, [hasil, telapak]);
+  const perbaikiUjung = hasil && !hasil.benar && (hasil.detail.awalPas === false || hasil.detail.akhirPas === false);
 
   return (
     <Kunci terkunci={terkunci}>
@@ -672,7 +674,7 @@ function ModeJengkal(c: Ctx) {
             );
           }}
         </Adegan>
-        {hint && <Petunjuk className="mt-1">Taruh telapak rapat-rapat dari ujung kiri sampai ujung kanan, lalu hitung.</Petunjuk>}
+        {(hint || perbaikiUjung) && <Petunjuk className="mt-1">Taruh telapak rapat-rapat dari ujung kiri sampai ujung kanan, lalu hitung.</Petunjuk>}
       </Papan>
         }
         kendali={<>

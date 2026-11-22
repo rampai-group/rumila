@@ -1,6 +1,6 @@
 {
   "id": "keranjang-jeruk-selisih-satu",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,17 +10,17 @@
   "locale": {
     "id": {
       "judul": "Keranjang Jeruk: Mana Lebih Banyak?",
-      "instruksi": "Dua keranjang jeruk hampir sama: sentuh yang jeruknya lebih banyak.",
+      "instruksi": "Lihat tiap kelompok jeruk. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
       "pilihan": "pilihan",
       "jeruk": "jeruk",
-      "tBanyak": "Keranjang mana yang jeruknya lebih banyak?"
+      "tBanyak": "Kelompok mana yang jeruknya lebih banyak?"
     },
     "en": {
       "judul": "Orange Baskets: Which Has More?",
-      "instruksi": "Two baskets of oranges look alike: touch the one with more oranges.",
+      "instruksi": "Look at each group of oranges. Listen to the question, then touch the correct group.",
       "pilihan": "choices",
       "jeruk": "oranges",
-      "tBanyak": "Which basket has more oranges?"
+      "tBanyak": "Which group has more oranges?"
     }
   },
   "knobs": {

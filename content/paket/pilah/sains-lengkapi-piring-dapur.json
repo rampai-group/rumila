@@ -1,6 +1,6 @@
 {
   "id": "sains-lengkapi-piring-dapur",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,7 @@
       "i-daging": "daging",
       "i-udang": "udang",
       "i-terong": "terung",
-      "i-kacangpolong": "kacang polong",
+      "i-kacangpolong": "kacang polong hijau",
       "i-paprika": "paprika hijau",
       "i-mangga": "mangga",
       "i-semangka": "semangka",
@@ -134,7 +134,11 @@
       "id": "kacangpolong",
       "labelKey": "i-kacangpolong",
       "bin": "pilihan",
-      "emoji": "🥜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-polong",
+        "t": 0
+      }
     },
     {
       "id": "paprika",

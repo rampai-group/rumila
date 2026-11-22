@@ -8,6 +8,7 @@
 // Soal = satu ronde dari paket permainan yang sudah ada, tanpa tombol Bantu. Kompetensi diambil bergiliran
 // supaya semua kompetensi ruang ujian terwakili. Gagal → boleh mengulang besok (remedial dulu).
 
+import { buatRonde, knobDefaults, kunciRonde } from "@akademi/mechanics";
 import type { ContentPack, LevelId } from "@akademi/schema";
 
 export const JENIS_UJIAN = ["kuis", "semester", "kenaikan", "penempatan"] as const;
@@ -54,8 +55,8 @@ export function hashUjian(s: string): number {
 }
 
 /**
- * Susun soal ujian: kompetensi bergiliran (urutan diacak stabil per seed), tiap soal memakai paket yang memuat
- * kompetensi itu (paket berganti bila kompetensi muncul lagi). Kompetensi tanpa paket dilewati.
+ * Sebar ruang ujian lintas pelajaran secara bergiliran dan cari varian soal yang belum dipakai.
+ * Urutan mata pelajaran, kompetensi, dan varian tetap sama untuk seed sesi yang sama.
  */
 export function rencanaUjian(kompetensiIds: string[], paket: ContentPack[], n: number, seed: string, level?: LevelId): SoalUjian[] {
   const perKomp = new Map<string, ContentPack[]>();
@@ -65,16 +66,50 @@ export function rencanaUjian(kompetensiIds: string[], paket: ContentPack[], n: n
       .sort((a, b) => Number(level !== undefined && a.level !== level) - Number(level !== undefined && b.level !== level) || Number(a.competencyIds[0] !== cid) - Number(b.competencyIds[0] !== cid) || a.id.localeCompare(b.id));
     if (list.length) perKomp.set(cid, list);
   }
-  const urut = [...perKomp.keys()].sort((a, b) => hashUjian(`${seed}:${a}`) - hashUjian(`${seed}:${b}`) || a.localeCompare(b));
-  if (!urut.length) return [];
+  const urutAcak = (a: string, b: string) => hashUjian(`${seed}:${a}`) - hashUjian(`${seed}:${b}`) || a.localeCompare(b);
+  const perPelajaran = new Map<string, string[]>();
+  for (const cid of [...perKomp.keys()].sort(urutAcak)) {
+    const track = cid.includes(".") ? cid.split(".")[0] : "";
+    (perPelajaran.get(track) ?? perPelajaran.set(track, []).get(track)!).push(cid);
+  }
+  const pelajaran = [...perPelajaran.keys()].sort(urutAcak);
+  if (!pelajaran.length) return [];
+
+  const terpakai = new Set<string>();
   const pakai = new Map<string, number>();
   const out: SoalUjian[] = [];
   for (let i = 0; i < n; i++) {
-    const cid = urut[i % urut.length];
-    const list = perKomp.get(cid)!;
-    const k = pakai.get(cid) ?? 0;
-    pakai.set(cid, k + 1);
-    out.push({ paketId: list[k % list.length].id, competencyId: cid, seed: hashUjian(`${seed}:${i}`) });
+    const track = pelajaran[i % pelajaran.length];
+    const daftar = perPelajaran.get(track)!;
+    const mulai = Math.floor(i / pelajaran.length) % daftar.length;
+    let soal: SoalUjian | undefined;
+    for (let j = 0; j < daftar.length && !soal; j++) {
+      const cid = daftar[(mulai + j) % daftar.length];
+      const list = perKomp.get(cid)!;
+      const k = pakai.get(cid) ?? 0;
+      for (let l = 0; l < list.length && !soal; l++) {
+        const p = list[(k + l) % list.length];
+        const knobs = knobDefaults(p);
+        for (let s = 0; s < 32 && !soal; s++) {
+          const seedSoal = hashUjian(`${seed}:${i}:${cid}:${p.id}:${s}`);
+          const r = buatRonde(p, knobs, seedSoal);
+          const kunci = `${p.id}|${kunciRonde(r)}`;
+          if (terpakai.has(kunci)) continue;
+          terpakai.add(kunci);
+          pakai.set(cid, k + l + 1);
+          soal = { paketId: p.id, competencyId: cid, seed: seedSoal };
+        }
+      }
+    }
+    // Jaga jumlah soal resmi bila bank paket suatu pelajaran tidak punya cukup varian.
+    if (!soal) {
+      const cid = daftar[mulai];
+      const list = perKomp.get(cid)!;
+      const k = pakai.get(cid) ?? 0;
+      pakai.set(cid, k + 1);
+      soal = { paketId: list[k % list.length].id, competencyId: cid, seed: hashUjian(`${seed}:${i}:cadangan`) };
+    }
+    out.push(soal);
   }
   return out;
 }
@@ -96,6 +131,7 @@ const kunci = (h: Pick<HasilUjian, "jenis" | "level" | "ruang">) => `${h.jenis}|
 export function terbaik(hasil: HasilUjian[]): Map<string, HasilUjian> {
   const out = new Map<string, HasilUjian>();
   for (const h of hasil) {
+    if (h.pending) continue;
     const k = kunci(h);
     const ada = out.get(k);
     if (!ada || Number(h.lulus) - Number(ada.lulus) > 0 || (h.lulus === ada.lulus && h.nilai > ada.nilai)) out.set(k, h);
@@ -104,7 +140,7 @@ export function terbaik(hasil: HasilUjian[]): Map<string, HasilUjian> {
 }
 
 export function sudahLulus(hasil: HasilUjian[], jenis: JenisUjian, level: LevelId, ruang = ""): boolean {
-  return hasil.some((h) => h.jenis === jenis && h.level === level && h.ruang === ruang && h.lulus);
+  return hasil.some((h) => !h.pending && h.jenis === jenis && h.level === level && h.ruang === ruang && h.lulus);
 }
 
 /** Tanggal lokal Asia/Jakarta (YYYY-MM-DD). */
@@ -112,7 +148,7 @@ export const hariWIB = (iso: string | Date) => new Date(new Date(iso).getTime() 
 
 /** Ujian sekali-jalan sudah pernah dikerjakan (lulus atau tidak). */
 export function sudahDikerjakan(hasil: HasilUjian[], jenis: JenisUjian, level: LevelId, ruang = ""): boolean {
-  return hasil.some((h) => h.jenis === jenis && h.level === level && h.ruang === ruang);
+  return hasil.some((h) => !h.pending && h.jenis === jenis && h.level === level && h.ruang === ruang);
 }
 
 /** Gagal hari ini → mengulang besok. Lulus → tidak perlu mengulang. Ujian Akhir: sekali saja. */

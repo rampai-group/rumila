@@ -1,6 +1,6 @@
 {
   "id": "sains-lemari-cuaca",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,11 +17,11 @@
       "i-jaket": "jaket tebal",
       "i-syal": "syal",
       "i-sandal": "sandal jepit",
-      "t-hujan": "Di luar hujan deras. Pakai apa?",
+      "t-hujan": "Hujan turun. Pakai baju luar bertudung yang menahan air agar baju di dalam tetap kering. Yang mana?",
       "t-panas": "Matahari terik, hari panas. Pakai apa?",
-      "t-dingin": "Udara dingin sekali, menggigil. Pakai apa?",
-      "t-hujan2": "Awan gelap, hujan turun lagi. Pakai apa?",
-      "t-dingin2": "Angin dingin bertiup di pagi hari. Pakai apa?",
+      "t-dingin": "Udara dingin sekali. Pakai baju luar tebal apa agar badan hangat?",
+      "t-hujan2": "Hujan turun. Pakai baju luar bertudung yang menahan air agar baju di dalam tetap kering. Yang mana?",
+      "t-dingin2": "Angin dingin mengenai leher. Pakai apa untuk membungkus leher?",
       "i-sarungtangan": "sarung tangan",
       "i-kaus": "kaus tipis",
       "i-sepatubot": "sepatu bot",
@@ -41,11 +41,11 @@
       "i-jaket": "warm jacket",
       "i-syal": "scarf",
       "i-sandal": "flip-flops",
-      "t-hujan": "It's raining hard outside. What do we wear?",
+      "t-hujan": "It is raining. Which hooded outer garment keeps rain off the clothes underneath?",
       "t-panas": "The sun is strong, it's hot. What do we wear?",
-      "t-dingin": "It's very cold and chilly. What do we wear?",
-      "t-hujan2": "Dark clouds, it's raining again. What do we wear?",
-      "t-dingin2": "A cold wind blows this morning. What do we wear?",
+      "t-dingin": "It is very cold. Which thick outer garment keeps your body warm?",
+      "t-hujan2": "It is raining. Which hooded outer garment keeps rain off the clothes underneath?",
+      "t-dingin2": "Cold wind blows on your neck. What can you wrap around your neck?",
       "i-sarungtangan": "gloves",
       "i-kaus": "light T-shirt",
       "i-sepatubot": "boots",
@@ -82,8 +82,11 @@
       "id": "jashujan",
       "labelKey": "i-jashujan",
       "bin": "pilihan",
-      "emoji": "🧥",
-      "color": "#ffee58"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-jas-hujan",
+        "t": 0
+      }
     },
     {
       "id": "topi",
@@ -95,8 +98,11 @@
       "id": "jaket",
       "labelKey": "i-jaket",
       "bin": "pilihan",
-      "emoji": "🧥",
-      "color": "#5c6bc0"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-jaket",
+        "t": 0
+      }
     },
     {
       "id": "syal",

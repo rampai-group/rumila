@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lampu-menyala",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.LISTRIK.01"
@@ -74,92 +74,90 @@
       "id": "utuh",
       "labelKey": "i-utuh",
       "bin": "menyala",
-      "emoji": "🔋",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "⭕"
+        "jenis": "rangkaian",
+        "varian": "utuh"
       }
     },
     {
       "id": "sakelartutup",
       "labelKey": "i-sakelartutup",
       "bin": "menyala",
-      "emoji": "🔘",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🔒"
+        "jenis": "rangkaian",
+        "varian": "sakelar-tutup"
       }
     },
     {
       "id": "duabaterai",
       "labelKey": "i-duabaterai",
       "bin": "menyala",
-      "emoji": "🔋",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "2️⃣"
+        "jenis": "rangkaian",
+        "varian": "dua-baterai"
       }
     },
     {
       "id": "kabelbaru",
       "labelKey": "i-kabelbaru",
       "bin": "menyala",
-      "emoji": "🔌",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🔋"
+        "jenis": "rangkaian",
+        "varian": "kabel-baru"
       }
     },
     {
       "id": "lepas",
       "labelKey": "i-lepas",
       "bin": "padam",
-      "emoji": "🔋",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "✂️"
+        "jenis": "rangkaian",
+        "varian": "kabel-lepas"
       }
     },
     {
       "id": "sakelarbuka",
       "labelKey": "i-sakelarbuka",
       "bin": "padam",
-      "emoji": "🔘",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🔓"
+        "jenis": "rangkaian",
+        "varian": "sakelar-buka"
       }
     },
     {
       "id": "potong",
       "labelKey": "i-potong",
       "bin": "padam",
-      "emoji": "✂️"
+      "adegan": {
+        "jenis": "rangkaian",
+        "varian": "kabel-potong"
+      }
     },
     {
       "id": "putus",
       "labelKey": "i-putus",
       "bin": "padam",
-      "emoji": "💡"
+      "adegan": {
+        "jenis": "rangkaian",
+        "varian": "filamen-putus"
+      }
     },
     {
       "id": "kutubsama",
       "labelKey": "i-kutubsama",
       "bin": "padam",
-      "emoji": "🔋",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "↩️"
+        "jenis": "rangkaian",
+        "varian": "kutub-sama"
       }
     },
     {
       "id": "tanpabaterai",
       "labelKey": "i-tanpabaterai",
       "bin": "padam",
-      "emoji": "🔌",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🪫"
+        "jenis": "rangkaian",
+        "varian": "tanpa-baterai"
       }
     }
   ],

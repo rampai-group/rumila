@@ -1,6 +1,6 @@
 {
   "id": "bentuk-di-taman",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -74,7 +74,11 @@
       "id": "roda",
       "labelKey": "roda",
       "bin": "pilihan",
-      "emoji": "🚲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-roda",
+        "t": 0
+      }
     },
     {
       "id": "frisbee",
@@ -140,7 +144,11 @@
       "id": "keju",
       "labelKey": "keju",
       "bin": "pilihan",
-      "emoji": "🧀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-keju",
+        "t": 0
+      }
     }
   ],
   "pilihan": [

@@ -1,6 +1,6 @@
 {
   "id": "sains-putar-bumi-siang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -84,13 +84,21 @@
       "id": "hadap",
       "labelKey": "i-hadap",
       "bin": "pilihan",
-      "emoji": "🌞"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bumi-siang",
+        "t": 0
+      }
     },
     {
       "id": "belakang",
       "labelKey": "i-belakang",
       "bin": "pilihan",
-      "emoji": "🌑"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bumi-malam",
+        "t": 0
+      }
     }
   ],
   "pilihan": [

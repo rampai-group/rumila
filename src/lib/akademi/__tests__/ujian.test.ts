@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { bolehMengulang, hariWIB, lulusDari, nilaiDari, predikat, rencanaUjian, terbaik, type HasilUjian } from "../ujian";
+import { buatRonde, buatRondeUnik, knobDefaults, kunciRonde } from "@akademi/mechanics";
+import { KOMPETENSI, PAKET, paketById } from "../katalog";
+import { cakupanUjian } from "../ruang-ujian";
+import { bolehMengulang, hariWIB, lulusDari, nilaiDari, predikat, rencanaUjian, sudahDikerjakan, sudahLulus, terbaik, type HasilUjian } from "../ujian";
 import { paket } from "./helper";
 
 const P = [paket("a1", "PAUD", ["C1"]), paket("a2", "PAUD", ["C1"]), paket("b1", "PAUD", ["C2", "C1"]), paket("x", "TKA", ["C3"])];
@@ -17,6 +20,33 @@ describe("rencanaUjian", () => {
   it("kompetensi tanpa paket dilewati; tanpa paket sama sekali → kosong", () => {
     expect(rencanaUjian(["C9"], P, 5, "s")).toEqual([]);
     expect(rencanaUjian(["C9", "C3"], P, 3, "s").every((x) => x.paketId === "x")).toBe(true);
+  });
+
+  it("seed regresi penempatan TKB memberi ketiga pelajaran dengan kuota berimbang", () => {
+    const ids = cakupanUjian("penempatan", "TKB", "", KOMPETENSI)!;
+    const s = rencanaUjian(ids, PAKET, 10, "bdf6a401-3667-4c17-b0e9-d1a7731f9954", "TKB");
+    const jumlah = ["MAT", "KODE", "SAINS"].map((track) => s.filter((x) => x.competencyId.startsWith(track + ".")).length);
+    expect(jumlah.sort()).toEqual([3, 3, 4]);
+  });
+
+  it.each([["URUTAN", "rumila-qa-a1"], ["BANDING", "rumila-qa-a2"]])("Ulangan Modul PAUD %s tetap memberi delapan ronde berbeda", (ruang, seed) => {
+    const ids = cakupanUjian("kuis", "PAUD", ruang, KOMPETENSI)!;
+    const s = rencanaUjian(ids, PAKET, 8, seed, "PAUD");
+    const kunci = s.map((x) => {
+      const p = paketById(x.paketId)!;
+      return p.id + "|" + kunciRonde(buatRonde(p, knobDefaults(p), x.seed));
+    });
+    expect(new Set(kunci).size).toBe(8);
+  });
+});
+
+describe("latihan unik", () => {
+  it("selesai ketika satu-satunya ronde yang tersedia sudah dimainkan", () => {
+    const p = P[0];
+    const k = knobDefaults(p);
+    const r = buatRondeUnik(p, k, 1, []);
+    expect(r).not.toBeNull();
+    expect(buatRondeUnik(p, k, 2, [kunciRonde(r!)])).toBeNull();
   });
 });
 
@@ -45,6 +75,12 @@ describe("mengulang", () => {
   it("terbaik: lulus menang", () => {
     const m = terbaik([h(false, "a"), h(true, "b")]);
     expect([...m.values()][0].lulus).toBe(true);
+  });
+  it("hasil pending tidak memberi nilai resmi atau membuka tahap berikutnya", () => {
+    const lulus = { ...h(true, "2026-11-10T09:00:00+07:00"), pending: true };
+    expect(sudahLulus([lulus], "kuis", "PAUD", "U1")).toBe(false);
+    expect(sudahDikerjakan([lulus], "kuis", "PAUD", "U1")).toBe(false);
+    expect(terbaik([lulus]).size).toBe(0);
   });
 });
 

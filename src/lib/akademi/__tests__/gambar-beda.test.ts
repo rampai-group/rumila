@@ -12,9 +12,9 @@ const paket = semua(join(process.cwd(), "content/paket")).flatMap((f) => {
 });
 
 type Gambar = { emoji?: string; shape?: string; color?: string; scale?: number; count?: number; width?: number; angka?: string; adegan?: unknown };
-/** Yang terlihat mata; kartu tulisan saja (tanpa emoji/bentuk) memang dibedakan tulisannya. */
+/** Kartu tulisan dibedakan oleh teks. Adegan juga mencakup gambar tanpa emoji/bentuk dasar. */
 const rupa = (x: Gambar) =>
-  x.emoji || x.shape ? JSON.stringify([x.emoji, x.shape, x.color, x.scale ?? 1, x.count ?? 1, x.width ?? 1, x.angka, x.adegan]) : null;
+  x.emoji || x.shape || x.adegan ? JSON.stringify([x.emoji, x.shape, x.color, x.scale ?? 1, x.count ?? 1, x.width ?? 1, x.angka, x.adegan]) : null;
 
 describe("gambar dalam satu soal harus bisa dibedakan", () => {
   it("langkah urutan tidak bergambar sama", () => {

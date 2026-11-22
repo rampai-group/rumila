@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import type { GameEvent } from "@akademi/schema";
 import type { Penguasaan, Status } from "../mastery";
 import type { HasilUjian } from "../ujian";
-import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi, bagiSemester } from "../peta";
-import { LEARNER, SESSION, idBaru, kompetensi, paket, waktuHari } from "./helper";
+import { jenjangBerikut, kompetensiSelesai, paketMisi, petaDariBukti, petaJenjang, progresMisi, bagiSemester, ujianTerbuka } from "../peta";
+import { LEARNER, SESSION, attempt, idBaru, kompetensi, paket, waktuHari } from "./helper";
 
 const M1 = "MAT.PAUD.BILANGAN.01";
 const M2 = "MAT.PAUD.BILANGAN.02";
@@ -154,6 +154,28 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
     expect(pt.ujian).toMatchObject({ jenis: "kuis", ruang: "BILANGAN" });
     expect(pt.sekarang).toBeUndefined();
     expect(kode(pt)).toBe("SSKKK");
+  });
+
+  it("tautan ujian hanya membuka tahap berikutnya yang ada di peta", () => {
+    const selesai = new Set([M1, M2]);
+    const awal = petaJenjang({}, selesai, KOMP, "PAUD", TRACKS, new Map(), []);
+    expect(ujianTerbuka(awal, "kuis", "BILANGAN")).toBe(true);
+    expect(ujianTerbuka(awal, "kuis", "URUTAN")).toBe(false);
+    expect(ujianTerbuka(awal, "semester", "S1")).toBe(false);
+    expect(ujianTerbuka(awal, "kenaikan", "")).toBe(false);
+    const lanjut = petaJenjang({}, selesai, KOMP, "PAUD", TRACKS, new Map(), [h("kuis", "BILANGAN")]);
+    expect(ujianTerbuka(lanjut, "semester", "S1")).toBe(true);
+    expect(ujianTerbuka(lanjut, "semester", "S2")).toBe(false);
+  });
+
+  it("jawaban tes yang belum resmi tidak mengubah penguasaan peta saat dibuka ulang", () => {
+    const c = kompetensi(M1, { mastery: { minSuccess: 1, minContexts: 1, minDays: 1, minRatioLast10: 1, noHintLast: 0 } });
+    const soal = attempt([M1], { activityId: "a" });
+    const jejak = { ...soal, payload: { ...soal.payload, detail: { ujian: "penempatan" } } } as GameEvent;
+    const daftar = [paket("a", "PAUD", [M1])];
+    const resmi = { ...h("penempatan", ""), sessionId: SESSION };
+    expect(petaDariBukti([jejak], daftar, [c], "PAUD", TRACKS, [{ ...resmi, pending: true }]).unit[0].misi[0].dikuasai).toBe(false);
+    expect(petaDariBukti([jejak], daftar, [c], "PAUD", TRACKS, [resmi]).unit[0].misi[0].dikuasai).toBe(true);
   });
 
   it("kuis gagal tetap terkunci; kuis lulus → Ujian Semester 1 sebelum semester 2", () => {

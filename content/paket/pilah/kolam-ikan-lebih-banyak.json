@@ -1,6 +1,6 @@
 {
   "id": "kolam-ikan-lebih-banyak",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,17 +10,17 @@
   "locale": {
     "id": {
       "judul": "Kolam Ikan: Mana Lebih Banyak?",
-      "instruksi": "Kucing robot lapar: sentuh kolam yang ikannya lebih banyak.",
+      "instruksi": "Lihat tiap kelompok ikan. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
       "pilihan": "pilihan",
       "ikan": "ikan",
-      "tBanyak": "Mana kolam yang ikannya lebih banyak?"
+      "tBanyak": "Kelompok mana yang ikannya lebih banyak?"
     },
     "en": {
       "judul": "Fish Pond: Which Has More?",
-      "instruksi": "The robot's cat is hungry: touch the pond with more fish.",
+      "instruksi": "Look at each group of fish. Listen to the question, then touch the correct group.",
       "pilihan": "choices",
       "ikan": "fish",
-      "tBanyak": "Which pond has more fish?"
+      "tBanyak": "Which group has more fish?"
     }
   },
   "knobs": {

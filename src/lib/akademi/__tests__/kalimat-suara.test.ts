@@ -103,6 +103,23 @@ describe("pembangun kalimat stabil (teks sama dengan yang sudah tampil/terekam)"
 describe("semua kalimat ronde masuk daftar rekaman", () => {
   const SEED = 40;
 
+  it("merekam label pilihan yang dapat didengarkan, termasuk altKey", () => {
+    const p = structuredClone(paket.find((x) => x.id === "sains-pot-mana-yang-layu"));
+    if (!p || p.mechanic !== "pilah" || p.mode !== "pilih") throw new Error("paket pot tidak ditemukan");
+    const rekam = new Set(kalimatPaket(p).map((k) => k.teks));
+    for (const soal of p.pilihan) for (const id of soal.choices) {
+      const item = p.items.find((x) => x.id === id)!;
+      expect(rekam.has(p.locale.id[item.altKey ?? item.labelKey]), id).toBe(true);
+    }
+
+    const item = p.items.find((x) => x.id === p.pilihan[0].choices[0])!;
+    item.altKey = "alt-pilihan-untuk-suara";
+    p.locale.id[item.altKey] = "Pot di dekat jendela yang terang.";
+    expect(kalimatPaket(p).map((k) => k.teks)).toContain(p.locale.id[item.altKey]);
+    for (const soal of p.pilihan) soal.bacaPilihan = false;
+    expect(kalimatPaket(p)).toEqual([]);
+  });
+
   it("simulasi", () => {
     for (const p of paket) {
       if (p.mechanic !== "simulasi") continue;

@@ -257,7 +257,10 @@ describe("simulasi jengkal & kubus", () => {
     const n = r.target;
     const rapat = Array.from({ length: n }, (_, i) => i);
     expect(nilaiSimulasi(r, { posisi: rapat, angka: n }).benar).toBe(true);
-    expect(nilaiSimulasi(r, { posisi: rapat.map(x => x * 1.1), angka: n }).benar).toBe(true);
+    expect(nilaiSimulasi(r, { posisi: rapat.map(x => x + 0.1), angka: n }).benar).toBe(true);
+    expect(nilaiSimulasi(r, { posisi: rapat.map(x => x + 0.5), angka: n })).toMatchObject({
+      benar: false, detail: { celah: 0, tumpang: 0, awalPas: false, akhirPas: false },
+    });
     const celah = nilaiSimulasi(r, { posisi: rapat.map((x, i) => (i === n - 1 ? x + 0.5 : x)), angka: n });
     expect(celah.benar).toBe(false);
     expect(celah.detail.celah).toBe(1);

@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-potongan-pizza-senilai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -112,22 +112,24 @@
       "id": "setengah-3",
       "labelKey": "i3",
       "bin": "setengah",
-      "emoji": "🍕",
       "scale": 0.8,
       "adegan": {
         "jenis": "potong",
-        "t": 0.5
+        "t": 0.5,
+        "pembilang": 3,
+        "penyebut": 6
       }
     },
     {
       "id": "setengah-4",
       "labelKey": "i4",
       "bin": "setengah",
-      "emoji": "🍕",
       "scale": 0.8,
       "adegan": {
         "jenis": "potong",
-        "t": 0.5
+        "t": 0.5,
+        "pembilang": 4,
+        "penyebut": 8
       }
     },
     {
@@ -140,11 +142,12 @@
       "id": "seperempat-6",
       "labelKey": "i6",
       "bin": "seperempat",
-      "emoji": "🍕",
       "scale": 0.8,
       "adegan": {
         "jenis": "potong",
-        "t": 0.25
+        "t": 0.25,
+        "pembilang": 2,
+        "penyebut": 8
       }
     },
     {
@@ -157,11 +160,12 @@
       "id": "tigaperempat-8",
       "labelKey": "i8",
       "bin": "tigaperempat",
-      "emoji": "🍕",
       "scale": 0.8,
       "adegan": {
         "jenis": "potong",
-        "t": 0.75
+        "t": 0.75,
+        "pembilang": 6,
+        "penyebut": 8
       }
     },
     {
@@ -174,11 +178,12 @@
       "id": "sepertiga-10",
       "labelKey": "i10",
       "bin": "sepertiga",
-      "emoji": "🍕",
       "scale": 0.8,
       "adegan": {
         "jenis": "potong",
-        "t": 0.3333
+        "t": 0.3333,
+        "pembilang": 2,
+        "penyebut": 6
       }
     },
     {
@@ -191,11 +196,12 @@
       "id": "duapertiga-12",
       "labelKey": "i12",
       "bin": "duapertiga",
-      "emoji": "🍕",
       "scale": 0.8,
       "adegan": {
         "jenis": "potong",
-        "t": 0.6667
+        "t": 0.6667,
+        "pembilang": 4,
+        "penyebut": 6
       }
     }
   ]

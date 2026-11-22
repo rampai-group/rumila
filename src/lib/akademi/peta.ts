@@ -14,7 +14,7 @@
 import { percobaanUlang } from "./percobaan";
 import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import { AMBANG_STIKER, statusLencana, type StatusLencana } from "./koleksi";
-import type { Penguasaan } from "./mastery";
+import { proyeksi, type Penguasaan } from "./mastery";
 import { sudahDikerjakan, sudahLulus, ruangSemester, type HasilUjian, type JenisUjian } from "./ujian";
 
 export interface MisiPeta {
@@ -93,6 +93,21 @@ export interface PetaJenjang {
   kenaikanSelesai: boolean;
   /** jenjang tuntas: inti dikuasai dan Ujian Akhir sudah dikerjakan */
   lulusJenjang: boolean;
+}
+
+/** Peta menentukan ujian berikutnya; tautan langsung dan penyerahan memakai aturan yang sama. */
+export function ujianTerbuka(peta: PetaJenjang, jenis: JenisUjian, ruang: string): boolean {
+  return peta.ujian?.jenis === jenis && peta.ujian.ruang === ruang;
+}
+
+/** Nilai sementara tidak boleh membuat ujian yang sedang dikerjakan terkunci saat halaman dibuka ulang. */
+export function petaDariBukti(events: GameEvent[], paket: ContentPack[], kompetensi: Competency[], level: LevelId, tracks: readonly TrackId[], ujian: HasilUjian[]): PetaJenjang {
+  const resmi = new Set(ujian.filter((h) => !h.pending).map((h) => h.sessionId));
+  const bukti = events.filter((e) => {
+    const jenis = (e.payload as { detail?: { ujian?: string } }).detail?.ujian;
+    return e.type !== "attempt" || !jenis || resmi.has(e.sessionId);
+  });
+  return petaJenjang(proyeksi(bukti, kompetensi), kompetensiSelesai(bukti, paket), kompetensi, level, tracks, progresMisi(bukti, paket), ujian);
 }
 
 /** Kompetensi yang punya paket tamat dengan sukses ≥ AMBANG_STIKER. */

@@ -1,6 +1,6 @@
 {
   "id": "menara-balok-bola",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -15,6 +15,7 @@
       "kotak": "kotak",
       "buku": "buku",
       "kaleng": "kaleng",
+      "balok": "balok kayu",
       "bola-sepak": "bola sepak",
       "bola-basket": "bola basket",
       "bola-tenis": "bola tenis"
@@ -26,6 +27,7 @@
       "kotak": "box",
       "buku": "book",
       "kaleng": "can",
+      "balok": "wooden block",
       "bola-sepak": "soccer ball",
       "bola-basket": "basketball",
       "bola-tenis": "tennis ball"
@@ -80,6 +82,15 @@
       "role": "benda",
       "value": 2,
       "emoji": "🥫"
+    },
+    {
+      "id": "balok",
+      "labelKey": "balok",
+      "role": "benda",
+      "value": 1,
+      "shape": "rect",
+      "width": 1.1,
+      "color": "#9c5c30"
     },
     {
       "id": "bola-sepak",

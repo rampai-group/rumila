@@ -13,7 +13,7 @@ export const ALAT_PANJANG = "penggaris-kubus";
 export const ALAT_BERAT = "timbangan";
 /** toleransi taksir (selisih mutlak) dan jengkal (celah/tumpang tindih dalam satuan jengkal) */
 const TOLERANSI_TAKSIR = 3;
-const TOLERANSI_JENGKAL = 0.2;
+export const TOLERANSI_JENGKAL = 0.2;
 /** telusur: minimal rasio jalur angka yang disentuh, maksimal rasio sampel jari di luar toleransi */
 export const TELUSUR_CAKUPAN_MIN = 0.85;
 export const TELUSUR_KELUAR_MAX = 0.25;
@@ -139,10 +139,10 @@ export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number):
       // target = tinggi menara (knob tinggi, default 4); benda di lantai = knob benda (default 5–6 acak), dijamin ≥ target yang bisa
       // ditumpuk dan ≥ 1 yang menggelinding (bila paket punya keduanya) supaya penemuan "bola jatuh" selalu mungkin.
       const semua = bernilai(p, "benda");
-      const target = jepit(knobs.tinggi, 2, 8, 4);
       const jumlah = Math.min(semua.length, knobs.benda !== undefined ? jepit(knobs.benda, 2, 12, 5) : acakInt(r, 5, 6));
       const bisa = acak(semua.filter(i => (i.value ?? 0) !== MENARA_GELINDING), r);
       const gelinding = acak(semua.filter(i => (i.value ?? 0) === MENARA_GELINDING), r);
+      const target = Math.min(jepit(knobs.tinggi, 2, 8, 4), bisa.length, jumlah - (gelinding.length ? 1 : 0));
       const wajibBisa = Math.min(bisa.length, Math.max(target, jumlah - gelinding.length));
       const wajibGelinding = Math.min(gelinding.length, Math.max(gelinding.length ? 1 : 0, jumlah - wajibBisa));
       const dipilih = [...bisa.slice(0, wajibBisa), ...gelinding.slice(0, wajibGelinding)];
@@ -194,8 +194,10 @@ export function nilaiSimulasi(r: RondeSimulasi, j: JawabanSimulasi): Hasil {
         if (d - 1 > TOLERANSI_JENGKAL) celah++;
         if (d - 1 < -TOLERANSI_JENGKAL) tumpang++;
       }
-      const benar = angka === r.target && posisi.length === r.target && terurut && celah === 0 && tumpang === 0;
-      return { benar, detail: { angka, target: r.target, jumlahJengkal: posisi.length, celah, tumpang, terurut } };
+      const awalPas = posisi.length > 0 && Math.abs(posisi[0]) <= TOLERANSI_JENGKAL;
+      const akhirPas = posisi.length > 0 && Math.abs(posisi[posisi.length - 1] + 1 - r.target) <= TOLERANSI_JENGKAL;
+      const benar = angka === r.target && posisi.length === r.target && posisi.every(Number.isFinite) && terurut && celah === 0 && tumpang === 0 && awalPas && akhirPas;
+      return { benar, detail: { angka, target: r.target, jumlahJengkal: posisi.length, celah, tumpang, terurut, awalPas, akhirPas } };
     }
     case "turus": {
       const turus = "turus" in j && j.turus && typeof j.turus === "object" ? j.turus : {};

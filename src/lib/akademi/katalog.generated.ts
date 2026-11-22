@@ -175625,7 +175625,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "bentuk-di-taman",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -175699,7 +175699,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "roda",
         "labelKey": "roda",
         "bin": "pilihan",
-        "emoji": "🚲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-roda",
+          "t": 0
+        }
       },
       {
         "id": "frisbee",
@@ -175765,7 +175769,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "keju",
         "labelKey": "keju",
         "bin": "pilihan",
-        "emoji": "🧀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-keju",
+          "t": 0
+        }
       }
     ],
     "pilihan": [
@@ -177076,7 +177084,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "keranjang-jeruk-selisih-satu",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -177086,17 +177094,17 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Keranjang Jeruk: Mana Lebih Banyak?",
-        "instruksi": "Dua keranjang jeruk hampir sama: sentuh yang jeruknya lebih banyak.",
+        "instruksi": "Lihat tiap kelompok jeruk. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
         "pilihan": "pilihan",
         "jeruk": "jeruk",
-        "tBanyak": "Keranjang mana yang jeruknya lebih banyak?"
+        "tBanyak": "Kelompok mana yang jeruknya lebih banyak?"
       },
       "en": {
         "judul": "Orange Baskets: Which Has More?",
-        "instruksi": "Two baskets of oranges look alike: touch the one with more oranges.",
+        "instruksi": "Look at each group of oranges. Listen to the question, then touch the correct group.",
         "pilihan": "choices",
         "jeruk": "oranges",
-        "tBanyak": "Which basket has more oranges?"
+        "tBanyak": "Which group has more oranges?"
       }
     },
     "knobs": {
@@ -177339,7 +177347,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kolam-ikan-lebih-banyak",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -177349,17 +177357,17 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kolam Ikan: Mana Lebih Banyak?",
-        "instruksi": "Kucing robot lapar: sentuh kolam yang ikannya lebih banyak.",
+        "instruksi": "Lihat tiap kelompok ikan. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
         "pilihan": "pilihan",
         "ikan": "ikan",
-        "tBanyak": "Mana kolam yang ikannya lebih banyak?"
+        "tBanyak": "Kelompok mana yang ikannya lebih banyak?"
       },
       "en": {
         "judul": "Fish Pond: Which Has More?",
-        "instruksi": "The robot's cat is hungry: touch the pond with more fish.",
+        "instruksi": "Look at each group of fish. Listen to the question, then touch the correct group.",
         "pilihan": "choices",
         "ikan": "fish",
-        "tBanyak": "Which pond has more fish?"
+        "tBanyak": "Which group has more fish?"
       }
     },
     "knobs": {
@@ -179612,7 +179620,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "piring-kue-lebih-banyak",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -179622,19 +179630,19 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Piring Kue: Mana Lebih Banyak?",
-        "instruksi": "Robot lapar sekali: sentuh piring yang kuenya lebih banyak.",
+        "instruksi": "Lihat tiap kelompok kue. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
         "pilihan": "pilihan",
         "kue": "kue",
-        "tBanyak": "Mana piring yang kuenya lebih banyak?",
+        "tBanyak": "Kelompok mana yang kuenya lebih banyak?",
         "kuemangkuk": "kue mangkuk",
         "donat": "donat"
       },
       "en": {
         "judul": "Cake Plates: Which Has More?",
-        "instruksi": "Robot is very hungry: touch the plate with more treats.",
+        "instruksi": "Look at each group of cakes. Listen to the question, then touch the correct group.",
         "pilihan": "choices",
         "kue": "cookies",
-        "tBanyak": "Which plate has more treats?",
+        "tBanyak": "Which group has more cakes?",
         "kuemangkuk": "cupcake",
         "donat": "doughnut"
       }
@@ -179888,7 +179896,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "rak-angka-1-10-buah",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -179910,7 +179918,7 @@ export const PAKET_RAW: unknown[] = [
         "n9": "9",
         "n10": "10",
         "jeruk": "jeruk",
-        "anggur": "anggur"
+        "anggur": "buah anggur"
       },
       "en": {
         "judul": "Fruit Number Shelf",
@@ -179926,7 +179934,7 @@ export const PAKET_RAW: unknown[] = [
         "n9": "9",
         "n10": "10",
         "jeruk": "oranges",
-        "anggur": "grapes"
+        "anggur": "grape"
       }
     },
     "knobs": {
@@ -180005,8 +180013,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-1",
         "labelKey": "anggur",
         "bin": "r1",
-        "emoji": "🍇",
-        "count": 1
+        "count": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-2",
@@ -180019,8 +180031,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-2",
         "labelKey": "anggur",
         "bin": "r2",
-        "emoji": "🍇",
-        "count": 2
+        "count": 2,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-3",
@@ -180033,8 +180049,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-3",
         "labelKey": "anggur",
         "bin": "r3",
-        "emoji": "🍇",
-        "count": 3
+        "count": 3,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-4",
@@ -180047,8 +180067,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-4",
         "labelKey": "anggur",
         "bin": "r4",
-        "emoji": "🍇",
-        "count": 4
+        "count": 4,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-5",
@@ -180061,8 +180085,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-5",
         "labelKey": "anggur",
         "bin": "r5",
-        "emoji": "🍇",
-        "count": 5
+        "count": 5,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-6",
@@ -180075,8 +180103,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-6",
         "labelKey": "anggur",
         "bin": "r6",
-        "emoji": "🍇",
-        "count": 6
+        "count": 6,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-7",
@@ -180089,8 +180121,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-7",
         "labelKey": "anggur",
         "bin": "r7",
-        "emoji": "🍇",
-        "count": 7
+        "count": 7,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-8",
@@ -180103,8 +180139,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-8",
         "labelKey": "anggur",
         "bin": "r8",
-        "emoji": "🍇",
-        "count": 8
+        "count": 8,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-9",
@@ -180117,8 +180157,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-9",
         "labelKey": "anggur",
         "bin": "r9",
-        "emoji": "🍇",
-        "count": 9
+        "count": 9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "jeruk-10",
@@ -180131,8 +180175,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-10",
         "labelKey": "anggur",
         "bin": "r10",
-        "emoji": "🍇",
-        "count": 10
+        "count": 10,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       }
     ]
   },
@@ -183142,7 +183190,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-bekerja-dulu-di-taman",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -183151,44 +183199,44 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Bagian Mana yang Akan Bekerja?",
+        "judul": "Tubuh Bekerja di Taman",
         "instruksi": "Budi mau bermain di taman. Dengarkan apa yang akan ia lakukan, lalu sentuh bagian tubuh yang akan paling bekerja.",
         "pilihan": "pilihan",
         "i-kaki": "otot kaki",
         "i-lengan": "otot lengan",
         "i-paru": "paru-paru",
         "i-otak": "otak",
-        "t-1": "Budi mau lompat tali. Bagian mana yang bekerja?",
-        "t-2": "Budi mau berlari mengejar layang-layang. Bagian mana yang bekerja?",
-        "t-3": "Budi mau naik tangga perosotan satu per satu. Bagian mana yang bekerja?",
-        "t-4": "Budi mau menarik napas dalam sebelum bernyanyi. Bagian mana yang bekerja?",
-        "t-5": "Budi mau menghirup udara segar dalam-dalam. Bagian mana yang bekerja?",
-        "t-6": "Budi mau meniup kincir angin kertas. Bagian mana yang bekerja?",
-        "t-7": "Budi mau mendorong ayunan teman dengan tangan. Bagian mana yang bekerja?",
-        "t-8": "Budi mau bergelantungan di palang taman. Bagian mana yang bekerja?",
-        "t-9": "Budi mau mengangkat ember berisi pasir. Bagian mana yang bekerja?",
-        "t-10": "Budi mau menghitung bunga di taman. Bagian mana yang bekerja?",
-        "t-11": "Budi mau mengingat jalan pulang dari taman. Bagian mana yang bekerja?"
+        "t-1": "Budi melompat. Otot pada bagian mana yang mendorong tubuhnya ke atas?",
+        "t-2": "Budi berlari. Otot pada bagian mana yang menggerakkan langkah kakinya?",
+        "t-3": "Budi menaiki tangga. Otot pada bagian mana yang mengangkat tubuhnya ke anak tangga berikutnya?",
+        "t-4": "Budi menarik napas. Organ mana yang terisi udara di dalam dadanya?",
+        "t-5": "Budi menghirup udara segar. Organ mana yang mengambil oksigen dari udara itu?",
+        "t-6": "Budi meniup kincir. Udara dikeluarkan dari organ mana di dalam dadanya?",
+        "t-7": "Budi mendorong ayunan dengan tangan. Otot pada bagian mana yang meluruskan sikunya?",
+        "t-8": "Budi bergelantungan sambil menekuk siku. Otot pada bagian mana yang menekuk sikunya?",
+        "t-9": "Budi mengangkat ember dengan menekuk siku. Otot pada bagian mana yang menekuk sikunya?",
+        "t-10": "Budi menghitung bunga. Organ mana yang membantunya berpikir dan menghitung?",
+        "t-11": "Budi mengingat jalan pulang. Organ mana yang membantunya menyimpan dan mengingat informasi?"
       },
       "en": {
-        "judul": "Which Part Will Work?",
+        "judul": "How the Body Works at the Park",
         "instruksi": "Budi wants to play in the park. Listen to what he will do, then touch the body part that will work the most.",
         "pilihan": "choices",
         "i-kaki": "leg muscles",
         "i-lengan": "arm muscles",
         "i-paru": "lungs",
         "i-otak": "brain",
-        "t-1": "Budi wants to skip rope. Which part works?",
-        "t-2": "Budi wants to run after a kite. Which part works?",
-        "t-3": "Budi wants to climb the slide steps one by one. Which part works?",
-        "t-4": "Budi wants to take a deep breath before singing. Which part works?",
-        "t-5": "Budi wants to breathe in fresh air deeply. Which part works?",
-        "t-6": "Budi wants to blow a paper pinwheel. Which part works?",
-        "t-7": "Budi wants to push a friend's swing with his hands. Which part works?",
-        "t-8": "Budi wants to hang from the monkey bars. Which part works?",
-        "t-9": "Budi wants to lift a bucket of sand. Which part works?",
-        "t-10": "Budi wants to count the flowers in the park. Which part works?",
-        "t-11": "Budi wants to remember the way home from the park. Which part works?"
+        "t-1": "Budi jumps. Which body part has the muscles that push his body upward?",
+        "t-2": "Budi runs. Which body part has the muscles that move his legs?",
+        "t-3": "Budi climbs the steps. Which body part has the muscles that lift him to the next step?",
+        "t-4": "Budi breathes in. Which organs fill with air inside his chest?",
+        "t-5": "Budi breathes in fresh air. Which organs take oxygen from that air?",
+        "t-6": "Budi blows a pinwheel. Which organs inside his chest release the air?",
+        "t-7": "Budi pushes a swing with his hands. Which body part has the muscles that straighten his elbows?",
+        "t-8": "Budi hangs from a bar with bent elbows. Which body part has the muscles that bend his elbows?",
+        "t-9": "Budi lifts a bucket by bending his elbows. Which body part has the muscles that bend his elbows?",
+        "t-10": "Budi counts flowers. Which organ helps him think and count?",
+        "t-11": "Budi remembers the way home. Which organ helps him store and remember information?"
       }
     },
     "knobs": {
@@ -183679,7 +183727,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-bisa-dilihat-tembus",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -183761,7 +183809,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelas",
         "labelKey": "i-gelas",
         "bin": "tembus",
-        "emoji": "🥃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gelas",
+          "t": 0
+        }
       },
       {
         "id": "goggle",
@@ -184140,7 +184192,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-cari-organ-di-tubuh",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -184242,8 +184294,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "lambung",
         "labelKey": "i-lambung",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#ffab91"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-lambung",
+          "t": 0
+        }
       },
       {
         "id": "mata",
@@ -187717,7 +187772,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lapisan-laut",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -187828,19 +187883,31 @@ export const PAKET_RAW: unknown[] = [
         "id": "paus",
         "labelKey": "i-paus",
         "bin": "dalam",
-        "emoji": "🐋"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-paus-sperma",
+          "t": 0
+        }
       },
       {
         "id": "cumi",
         "labelKey": "i-cumi",
         "bin": "dalam",
-        "emoji": "🦑"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-cumi-raksasa",
+          "t": 0
+        }
       },
       {
         "id": "hiu",
         "labelKey": "i-hiu",
         "bin": "dalam",
-        "emoji": "🦈"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-hiu-goblin",
+          "t": 0
+        }
       },
       {
         "id": "ubur",
@@ -187852,28 +187919,41 @@ export const PAKET_RAW: unknown[] = [
         "id": "sungut",
         "labelKey": "i-sungut",
         "bin": "dalam",
-        "emoji": "🐟",
-        "color": "#37474f"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ikan-sungut",
+          "t": 0
+        }
       },
       {
         "id": "siputpalung",
         "labelKey": "i-siputpalung",
         "bin": "palung",
-        "emoji": "🐟",
-        "color": "#eceff1"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ikan-siput",
+          "t": 0
+        }
       },
       {
         "id": "dumbo",
         "labelKey": "i-dumbo",
         "bin": "palung",
-        "emoji": "🐙"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gurita-dumbo",
+          "t": 0
+        }
       },
       {
         "id": "udangpalung",
         "labelKey": "i-udangpalung",
         "bin": "palung",
-        "emoji": "🦐",
-        "color": "#263238"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-udang-palung",
+          "t": 0
+        }
       }
     ],
     "pilihan": []
@@ -188158,7 +188238,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lemari-cuaca",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -188175,11 +188255,11 @@ export const PAKET_RAW: unknown[] = [
         "i-jaket": "jaket tebal",
         "i-syal": "syal",
         "i-sandal": "sandal jepit",
-        "t-hujan": "Di luar hujan deras. Pakai apa?",
+        "t-hujan": "Hujan turun. Pakai baju luar bertudung yang menahan air agar baju di dalam tetap kering. Yang mana?",
         "t-panas": "Matahari terik, hari panas. Pakai apa?",
-        "t-dingin": "Udara dingin sekali, menggigil. Pakai apa?",
-        "t-hujan2": "Awan gelap, hujan turun lagi. Pakai apa?",
-        "t-dingin2": "Angin dingin bertiup di pagi hari. Pakai apa?",
+        "t-dingin": "Udara dingin sekali. Pakai baju luar tebal apa agar badan hangat?",
+        "t-hujan2": "Hujan turun. Pakai baju luar bertudung yang menahan air agar baju di dalam tetap kering. Yang mana?",
+        "t-dingin2": "Angin dingin mengenai leher. Pakai apa untuk membungkus leher?",
         "i-sarungtangan": "sarung tangan",
         "i-kaus": "kaus tipis",
         "i-sepatubot": "sepatu bot",
@@ -188199,11 +188279,11 @@ export const PAKET_RAW: unknown[] = [
         "i-jaket": "warm jacket",
         "i-syal": "scarf",
         "i-sandal": "flip-flops",
-        "t-hujan": "It's raining hard outside. What do we wear?",
+        "t-hujan": "It is raining. Which hooded outer garment keeps rain off the clothes underneath?",
         "t-panas": "The sun is strong, it's hot. What do we wear?",
-        "t-dingin": "It's very cold and chilly. What do we wear?",
-        "t-hujan2": "Dark clouds, it's raining again. What do we wear?",
-        "t-dingin2": "A cold wind blows this morning. What do we wear?",
+        "t-dingin": "It is very cold. Which thick outer garment keeps your body warm?",
+        "t-hujan2": "It is raining. Which hooded outer garment keeps rain off the clothes underneath?",
+        "t-dingin2": "Cold wind blows on your neck. What can you wrap around your neck?",
         "i-sarungtangan": "gloves",
         "i-kaus": "light T-shirt",
         "i-sepatubot": "boots",
@@ -188240,8 +188320,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jashujan",
         "labelKey": "i-jashujan",
         "bin": "pilihan",
-        "emoji": "🧥",
-        "color": "#ffee58"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-jas-hujan",
+          "t": 0
+        }
       },
       {
         "id": "topi",
@@ -188253,8 +188336,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jaket",
         "labelKey": "i-jaket",
         "bin": "pilihan",
-        "emoji": "🧥",
-        "color": "#5c6bc0"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-jaket",
+          "t": 0
+        }
       },
       {
         "id": "syal",
@@ -188400,7 +188486,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lengkapi-piring-dapur",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -188418,7 +188504,7 @@ export const PAKET_RAW: unknown[] = [
         "i-daging": "daging",
         "i-udang": "udang",
         "i-terong": "terung",
-        "i-kacangpolong": "kacang polong",
+        "i-kacangpolong": "kacang polong hijau",
         "i-paprika": "paprika hijau",
         "i-mangga": "mangga",
         "i-semangka": "semangka",
@@ -188534,7 +188620,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "kacangpolong",
         "labelKey": "i-kacangpolong",
         "bin": "pilihan",
-        "emoji": "🥜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-polong",
+          "t": 0
+        }
       },
       {
         "id": "paprika",
@@ -188710,7 +188800,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lengkapi-tubuh-boneka",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -188720,7 +188810,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Lengkapi Tubuh Boneka",
-        "instruksi": "Boneka belum lengkap. Dengarkan tempat yang kosong, lalu sentuh bagian tubuh yang harus dipasang.",
+        "instruksi": "Lihat boneka yang belum lengkap. Sentuh bagian tubuh yang cocok untuk tempat bergaris putus-putus.",
         "pilihan": "pilihan",
         "i-kepala": "kepala",
         "i-badan": "badan",
@@ -188742,7 +188832,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Finish the Doll's Body",
-        "instruksi": "The doll is not finished. Listen to which place is empty, then touch the body part to put on.",
+        "instruksi": "Look at the incomplete doll. Touch the body part that fits the dashed space.",
         "pilihan": "choices",
         "i-kepala": "head",
         "i-badan": "body",
@@ -188788,25 +188878,41 @@ export const PAKET_RAW: unknown[] = [
         "id": "kepala",
         "labelKey": "i-kepala",
         "bin": "pilihan",
-        "emoji": "🙂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-kepala",
+          "t": 0
+        }
       },
       {
         "id": "badan",
         "labelKey": "i-badan",
         "bin": "pilihan",
-        "shape": "badan"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-badan",
+          "t": 0
+        }
       },
       {
         "id": "tangan",
         "labelKey": "i-tangan",
         "bin": "pilihan",
-        "emoji": "✋"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tangan",
+          "t": 0
+        }
       },
       {
         "id": "kaki",
         "labelKey": "i-kaki",
         "bin": "pilihan",
-        "emoji": "🦶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-kaki",
+          "t": 0
+        }
       },
       {
         "id": "bola",
@@ -188836,7 +188942,12 @@ export const PAKET_RAW: unknown[] = [
           "tangan",
           "bola"
         ],
-        "correct": "kepala"
+        "correct": "kepala",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-kepala",
+          "t": 0
+        }
       },
       {
         "id": "r2",
@@ -188846,7 +188957,12 @@ export const PAKET_RAW: unknown[] = [
           "kepala",
           "sepatu"
         ],
-        "correct": "kaki"
+        "correct": "kaki",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-kaki",
+          "t": 0
+        }
       },
       {
         "id": "r3",
@@ -188856,7 +188972,12 @@ export const PAKET_RAW: unknown[] = [
           "kaki",
           "topi"
         ],
-        "correct": "tangan"
+        "correct": "tangan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-tangan",
+          "t": 0
+        }
       },
       {
         "id": "r4",
@@ -188866,7 +188987,12 @@ export const PAKET_RAW: unknown[] = [
           "kepala",
           "bola"
         ],
-        "correct": "badan"
+        "correct": "badan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-badan",
+          "t": 0
+        }
       },
       {
         "id": "r5",
@@ -188876,7 +189002,12 @@ export const PAKET_RAW: unknown[] = [
           "kaki",
           "badan"
         ],
-        "correct": "kepala"
+        "correct": "kepala",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-kepala",
+          "t": 0
+        }
       },
       {
         "id": "r6",
@@ -188886,7 +189017,12 @@ export const PAKET_RAW: unknown[] = [
           "tangan",
           "topi"
         ],
-        "correct": "kaki"
+        "correct": "kaki",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-kaki",
+          "t": 0
+        }
       },
       {
         "id": "r7",
@@ -188896,7 +189032,12 @@ export const PAKET_RAW: unknown[] = [
           "badan",
           "sepatu"
         ],
-        "correct": "tangan"
+        "correct": "tangan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-tangan",
+          "t": 0
+        }
       },
       {
         "id": "r8",
@@ -188906,7 +189047,12 @@ export const PAKET_RAW: unknown[] = [
           "tangan",
           "bola"
         ],
-        "correct": "badan"
+        "correct": "badan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-badan",
+          "t": 0
+        }
       },
       {
         "id": "r9",
@@ -188916,7 +189062,12 @@ export const PAKET_RAW: unknown[] = [
           "topi",
           "bola"
         ],
-        "correct": "badan"
+        "correct": "badan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-badan",
+          "t": 0
+        }
       },
       {
         "id": "r10",
@@ -188926,7 +189077,12 @@ export const PAKET_RAW: unknown[] = [
           "kepala",
           "sepatu"
         ],
-        "correct": "tangan"
+        "correct": "tangan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-boneka-tanpa-tangan",
+          "t": 0
+        }
       }
     ]
   },
@@ -190585,7 +190741,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-mana-yang-dari-kayu",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -190691,7 +190847,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelas",
         "labelKey": "i-gelas",
         "bin": "pilihan",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gelas",
+          "t": 0
+        }
       },
       {
         "id": "paku",
@@ -190703,7 +190863,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "talenan",
         "labelKey": "i-talenan",
         "bin": "pilihan",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-talenan",
+          "t": 0
+        }
       },
       {
         "id": "pensil",
@@ -191391,7 +191555,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-papan-cuaca-kelas",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -191401,7 +191565,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Papan Cuaca Kelas",
-        "instruksi": "Lihat ke luar jendela kelas, lalu pasang simbol cuaca yang cocok di papan cuaca.",
+        "instruksi": "Dengarkan cerita cuaca di sekolah, lalu sentuh simbol cuaca yang cocok.",
         "pilihan": "pilihan",
         "i-cerah": "cerah",
         "i-mendung": "mendung",
@@ -191422,7 +191586,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Classroom Weather Board",
-        "instruksi": "Look out of the classroom window, then put the matching weather symbol on the weather board.",
+        "instruksi": "Listen to the weather story at school, then touch the matching weather symbol.",
         "pilihan": "choices",
         "i-cerah": "sunny",
         "i-mendung": "cloudy",
@@ -191613,7 +191777,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-pasang-bagian-robot",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -191623,7 +191787,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Pasang Tubuh Robot",
-        "instruksi": "Robot belum lengkap. Dengarkan tempat yang kosong, lalu sentuh bagian tubuh yang harus dipasang.",
+        "instruksi": "Lihat robot yang belum lengkap. Sentuh bagian tubuh yang cocok untuk tempat bergaris putus-putus.",
         "pilihan": "pilihan",
         "i-kepala": "kepala robot",
         "i-badan": "badan robot",
@@ -191647,7 +191811,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Build the Robot's Body",
-        "instruksi": "The robot is not finished. Listen to which place is empty, then touch the body part it needs.",
+        "instruksi": "Look at the incomplete robot. Touch the body part that fits the dashed space.",
         "pilihan": "choices",
         "i-kepala": "robot head",
         "i-badan": "robot body",
@@ -191695,26 +191859,41 @@ export const PAKET_RAW: unknown[] = [
         "id": "kepala",
         "labelKey": "i-kepala",
         "bin": "pilihan",
-        "emoji": "🤖"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-kepala",
+          "t": 0
+        }
       },
       {
         "id": "badan",
         "labelKey": "i-badan",
         "bin": "pilihan",
-        "shape": "rect",
-        "color": "#90a4ae"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-badan",
+          "t": 0
+        }
       },
       {
         "id": "tangan",
         "labelKey": "i-tangan",
         "bin": "pilihan",
-        "emoji": "🦾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tangan",
+          "t": 0
+        }
       },
       {
         "id": "kaki",
         "labelKey": "i-kaki",
         "bin": "pilihan",
-        "emoji": "🦿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-kaki",
+          "t": 0
+        }
       },
       {
         "id": "roda",
@@ -191750,7 +191929,12 @@ export const PAKET_RAW: unknown[] = [
           "baterai",
           "kaki"
         ],
-        "correct": "kepala"
+        "correct": "kepala",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-kepala",
+          "t": 0
+        }
       },
       {
         "id": "kepala2",
@@ -191760,7 +191944,12 @@ export const PAKET_RAW: unknown[] = [
           "tangan",
           "obeng"
         ],
-        "correct": "kepala"
+        "correct": "kepala",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-kepala",
+          "t": 0
+        }
       },
       {
         "id": "kepala3",
@@ -191770,7 +191959,12 @@ export const PAKET_RAW: unknown[] = [
           "kaki",
           "roda"
         ],
-        "correct": "kepala"
+        "correct": "kepala",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-kepala",
+          "t": 0
+        }
       },
       {
         "id": "badan1",
@@ -191780,7 +191974,12 @@ export const PAKET_RAW: unknown[] = [
           "roda",
           "kepala"
         ],
-        "correct": "badan"
+        "correct": "badan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-badan",
+          "t": 0
+        }
       },
       {
         "id": "badan2",
@@ -191790,7 +191989,12 @@ export const PAKET_RAW: unknown[] = [
           "lampu",
           "tangan"
         ],
-        "correct": "badan"
+        "correct": "badan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-badan",
+          "t": 0
+        }
       },
       {
         "id": "tangan1",
@@ -191800,7 +192004,12 @@ export const PAKET_RAW: unknown[] = [
           "baterai",
           "kepala"
         ],
-        "correct": "tangan"
+        "correct": "tangan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-tangan",
+          "t": 0
+        }
       },
       {
         "id": "tangan2",
@@ -191810,7 +192019,12 @@ export const PAKET_RAW: unknown[] = [
           "kaki",
           "roda"
         ],
-        "correct": "tangan"
+        "correct": "tangan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-tangan",
+          "t": 0
+        }
       },
       {
         "id": "tangan3",
@@ -191820,7 +192034,12 @@ export const PAKET_RAW: unknown[] = [
           "obeng",
           "badan"
         ],
-        "correct": "tangan"
+        "correct": "tangan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-tangan",
+          "t": 0
+        }
       },
       {
         "id": "kaki1",
@@ -191830,7 +192049,12 @@ export const PAKET_RAW: unknown[] = [
           "lampu",
           "kepala"
         ],
-        "correct": "kaki"
+        "correct": "kaki",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-kaki",
+          "t": 0
+        }
       },
       {
         "id": "kaki2",
@@ -191840,7 +192064,12 @@ export const PAKET_RAW: unknown[] = [
           "tangan",
           "baterai"
         ],
-        "correct": "kaki"
+        "correct": "kaki",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-kaki",
+          "t": 0
+        }
       },
       {
         "id": "kaki3",
@@ -191850,13 +192079,18 @@ export const PAKET_RAW: unknown[] = [
           "lampu",
           "badan"
         ],
-        "correct": "kaki"
+        "correct": "kaki",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-robot-tanpa-kaki",
+          "t": 0
+        }
       }
     ]
   },
   {
     "id": "sains-payung-atau-topi",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -191866,7 +192100,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Payung atau Topi?",
-        "instruksi": "Lihat langitnya, lalu sentuh benda yang harus dibawa robot keluar rumah.",
+        "instruksi": "Dengarkan keadaan cuacanya, lalu sentuh benda yang cocok dipakai.",
         "pilihan": "pilihan",
         "i-payung": "payung",
         "i-topi": "topi",
@@ -191885,7 +192119,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Umbrella or Hat?",
-        "instruksi": "Look at the sky, then touch what robot should take before going out.",
+        "instruksi": "Listen to the weather description, then touch the useful item.",
         "pilihan": "choices",
         "i-payung": "umbrella",
         "i-topi": "sun hat",
@@ -192352,7 +192586,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-pilah-lapisan-tubuh-kelas",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -192489,8 +192723,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "lambung",
         "labelKey": "i-lambung",
         "bin": "organ",
-        "shape": "circle",
-        "color": "#ffab91"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-lambung",
+          "t": 0
+        }
       },
       {
         "id": "usus",
@@ -192517,7 +192754,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-pilih-bahan-bangun-rumah",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -192533,17 +192770,17 @@ export const PAKET_RAW: unknown[] = [
         "i-logam": "logam",
         "i-plastik": "plastik",
         "i-kaca": "kaca",
-        "t-jendela": "Jendela supaya cahaya masuk. Bahan apa?",
+        "t-jendela": "Jendela ini memakai lembar bening yang keras dan mudah pecah, seperti gelas. Bahannya apa?",
         "t-kursi": "Kursi dari batang pohon yang digergaji. Bahan apa?",
         "t-paku": "Paku supaya papan tidak lepas. Bahan apa?",
-        "t-botol": "Botol minum yang ringan dan tidak pecah. Bahan apa?",
-        "t-pintu": "Pintu rumah yang kokoh. Bahan apa?",
-        "t-cermin": "Cermin untuk bercermin. Bahan apa?",
-        "t-bohlam": "Bohlam lampu yang bening. Bahan apa?",
+        "t-botol": "Botol minum ini ringan, bisa diremas sedikit, dan tidak mudah pecah. Bahannya apa?",
+        "t-pintu": "Pintu ini dibuat dari papan hasil menggergaji batang pohon. Bahannya apa?",
+        "t-cermin": "Bagian depan cermin ini berupa lembar bening seperti gelas, dengan lapisan pemantul di belakangnya. Bahan lembar bening itu apa?",
+        "t-bohlam": "Bagian bening bohlam pijar ini keras dan mudah pecah seperti gelas. Bahannya apa?",
         "t-kunci": "Kunci pintu yang keras dan kuat. Bahan apa?",
         "t-panci": "Panci untuk memasak di atas kompor. Bahan apa?",
         "t-kresek": "Kantong kresek untuk belanja. Bahan apa?",
-        "t-lantai": "Lantai rumah panggung. Bahan apa?"
+        "t-lantai": "Lantai rumah ini dibuat dari papan hasil menggergaji batang pohon. Bahannya apa?"
       },
       "en": {
         "judul": "Pick Materials for the Little House",
@@ -192553,17 +192790,17 @@ export const PAKET_RAW: unknown[] = [
         "i-logam": "metal",
         "i-plastik": "plastic",
         "i-kaca": "glass",
-        "t-jendela": "A window to let light in. Which material?",
+        "t-jendela": "This window uses a hard, clear sheet that can shatter, like a drinking glass. What material is it?",
         "t-kursi": "A chair made from a sawn tree trunk. Which material?",
         "t-paku": "A nail to hold the boards. Which material?",
-        "t-botol": "A light drinking bottle that won't break. Which material?",
-        "t-pintu": "A sturdy front door. Which material?",
-        "t-cermin": "A mirror to look at yourself. Which material?",
-        "t-bohlam": "A clear light bulb. Which material?",
+        "t-botol": "This drinking bottle is light, can be squeezed a little, and does not shatter easily. What material is it?",
+        "t-pintu": "This door is made from boards sawn from a tree trunk. What material is it?",
+        "t-cermin": "The front of this mirror is a clear sheet like a drinking glass, with a reflective coating behind it. What is the clear sheet made of?",
+        "t-bohlam": "The clear shell of this filament bulb is hard and can shatter like a drinking glass. What material is it?",
         "t-kunci": "A hard, strong door key. Which material?",
         "t-panci": "A pot for cooking on the stove. Which material?",
         "t-kresek": "A shopping bag. Which material?",
-        "t-lantai": "The floor of a house on stilts. Which material?"
+        "t-lantai": "This house has floorboards sawn from tree trunks. What material are they?"
       }
     },
     "knobs": {
@@ -192591,29 +192828,41 @@ export const PAKET_RAW: unknown[] = [
         "id": "kayu",
         "labelKey": "i-kayu",
         "bin": "pilihan",
-        "emoji": "🪵",
-        "color": "#d7ccc8"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kayu",
+          "t": 0
+        }
       },
       {
         "id": "logam",
         "labelKey": "i-logam",
         "bin": "pilihan",
-        "emoji": "🔩",
-        "color": "#cfd8dc"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-logam",
+          "t": 0
+        }
       },
       {
         "id": "plastik",
         "labelKey": "i-plastik",
         "bin": "pilihan",
-        "emoji": "🧴",
-        "color": "#ffe0b2"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-plastik",
+          "t": 0
+        }
       },
       {
         "id": "kaca",
         "labelKey": "i-kaca",
         "bin": "pilihan",
-        "emoji": "🥛",
-        "color": "#e1f5fe"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca",
+          "t": 0
+        }
       }
     ],
     "pilihan": [
@@ -193031,7 +193280,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-pot-mana-yang-layu",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -193040,50 +193289,50 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Pot Mana yang Akan Layu?",
-        "instruksi": "Dengarkan di mana tiap pot disimpan, lalu tebak pot yang akan layu beberapa hari lagi.",
+        "judul": "Pot Mana Kekurangan Cahaya?",
+        "instruksi": "Semua pot disiram. Lihat tempat tiap pot dan dengarkan namanya. Pilih pot yang kekurangan cahaya sehingga tanamannya sulit tumbuh sehat.",
         "pilihan": "pilihan",
         "i-jendela": "pot di jendela terang",
         "i-teras": "pot di teras",
         "i-lemari": "pot di lemari gelap",
         "i-kotak": "pot di dalam kotak tertutup",
-        "t-r1": "Satu pot ditaruh di jendela, satu di lemari gelap. Pot mana yang akan layu?",
-        "t-r2": "Pot di jendela, pot di teras, dan pot di kotak tertutup. Mana yang akan layu?",
-        "t-r3": "Semua disiram, tapi satu tak kena cahaya. Mana yang akan layu?",
-        "t-r4": "Mana pot yang akan layu karena gelap?",
+        "t-r1": "Satu pot ditaruh di jendela, satu di lemari gelap. Pot mana yang akan sulit tumbuh sehat?",
+        "t-r2": "Pot di jendela, pot di teras, dan pot di kotak tertutup. Mana yang akan sulit tumbuh sehat?",
+        "t-r3": "Semua disiram, tapi satu tak kena cahaya. Mana yang akan sulit tumbuh sehat?",
+        "t-r4": "Mana pot yang akan sulit tumbuh sehat karena gelap?",
         "i-kebun": "pot di kebun",
         "i-gudang": "pot di gudang gelap",
         "i-kolong": "pot di kolong tempat tidur",
-        "t-r5": "Satu pot di kebun, satu di gudang gelap. Pot mana yang akan layu?",
-        "t-r6": "Pot di teras, pot di jendela, dan pot di kolong tempat tidur. Mana yang akan layu?",
-        "t-r7": "Mana pot yang tidak kena sinar matahari, sehingga akan layu?",
-        "t-r8": "Tiga pot disiram setiap hari. Mana yang akan layu?",
-        "t-r9": "Mana pot yang akan layu karena tidak mendapat cahaya?",
-        "t-r10": "Pot di kebun, pot di teras, dan pot di dalam kotak tertutup. Mana yang akan layu?",
-        "t-r11": "Satu pot di kebun, satu di kolong tempat tidur. Mana yang akan layu?"
+        "t-r5": "Satu pot di kebun, satu di gudang gelap. Pot mana yang akan sulit tumbuh sehat?",
+        "t-r6": "Pot di teras, pot di jendela, dan pot di kolong tempat tidur. Mana yang akan sulit tumbuh sehat?",
+        "t-r7": "Mana pot yang tidak kena sinar matahari, sehingga sulit tumbuh sehat?",
+        "t-r8": "Tiga pot disiram setiap hari. Mana yang akan sulit tumbuh sehat?",
+        "t-r9": "Mana pot yang akan sulit tumbuh sehat karena tidak mendapat cahaya?",
+        "t-r10": "Pot di kebun, pot di teras, dan pot di dalam kotak tertutup. Mana yang akan sulit tumbuh sehat?",
+        "t-r11": "Satu pot di kebun, satu di kolong tempat tidur. Mana yang akan sulit tumbuh sehat?"
       },
       "en": {
-        "judul": "Which Pot Will Wilt?",
-        "instruksi": "Listen to where each pot is kept, then guess which one will wilt in a few days.",
+        "judul": "Which Pot Needs More Light?",
+        "instruksi": "Every pot is watered. Look at each location and listen to its name. Choose the pot without enough light for healthy growth.",
         "pilihan": "choices",
         "i-jendela": "pot by the bright window",
         "i-teras": "pot on the porch",
         "i-lemari": "pot in the dark cupboard",
         "i-kotak": "pot inside a closed box",
-        "t-r1": "One pot is by the window, one in a dark cupboard. Which will wilt?",
-        "t-r2": "A pot by the window, one on the porch, one in a closed box. Which will wilt?",
-        "t-r3": "All were watered, but one gets no light. Which will wilt?",
-        "t-r4": "Which pot will wilt because it is dark?",
+        "t-r1": "One pot is by the window, one in a dark cupboard. Which will struggle to grow healthily?",
+        "t-r2": "A pot by the window, one on the porch, one in a closed box. Which will struggle to grow healthily?",
+        "t-r3": "All were watered, but one gets no light. Which will struggle to grow healthily?",
+        "t-r4": "Which pot will struggle to grow healthily because it is dark?",
         "i-kebun": "pot in the garden",
         "i-gudang": "pot in the dark shed",
         "i-kolong": "pot under the bed",
-        "t-r5": "One pot is in the garden, one in a dark shed. Which will wilt?",
-        "t-r6": "A pot on the porch, one by the window, one under the bed. Which will wilt?",
-        "t-r7": "Which pot gets no sunlight, so it will wilt?",
-        "t-r8": "Three pots are watered every day. Which will wilt?",
-        "t-r9": "Which pot will wilt because it gets no light?",
-        "t-r10": "A pot in the garden, one on the porch, one in a closed box. Which will wilt?",
-        "t-r11": "One pot is in the garden, one under the bed. Which will wilt?"
+        "t-r5": "One pot is in the garden, one in a dark shed. Which will struggle to grow healthily?",
+        "t-r6": "A pot on the porch, one by the window, one under the bed. Which will struggle to grow healthily?",
+        "t-r7": "Which pot gets no sunlight, so it will struggle to grow healthily?",
+        "t-r8": "Three pots are watered every day. Which will struggle to grow healthily?",
+        "t-r9": "Which pot will struggle to grow healthily because it gets no light?",
+        "t-r10": "A pot in the garden, one on the porch, one in a closed box. Which will struggle to grow healthily?",
+        "t-r11": "One pot is in the garden, one under the bed. Which will struggle to grow healthily?"
       }
     },
     "knobs": {
@@ -193111,50 +193360,71 @@ export const PAKET_RAW: unknown[] = [
         "id": "jendela",
         "labelKey": "i-jendela",
         "bin": "pilihan",
-        "emoji": "🪴",
-        "color": "#fff59d"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-pot-jendela",
+          "t": 0
+        }
       },
       {
         "id": "teras",
         "labelKey": "i-teras",
         "bin": "pilihan",
-        "emoji": "🪴",
-        "color": "#c8e6c9"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-pot-teras",
+          "t": 0
+        }
       },
       {
         "id": "lemari",
         "labelKey": "i-lemari",
         "bin": "pilihan",
-        "emoji": "🪴",
-        "color": "#263238"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-pot-lemari",
+          "t": 0
+        }
       },
       {
         "id": "kotak",
         "labelKey": "i-kotak",
         "bin": "pilihan",
-        "emoji": "📦",
-        "color": "#4e342e"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-pot-kotak",
+          "t": 0
+        }
       },
       {
         "id": "kebun",
         "labelKey": "i-kebun",
         "bin": "pilihan",
-        "emoji": "🪴",
-        "color": "#dcedc8"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-pot-kebun",
+          "t": 0
+        }
       },
       {
         "id": "gudang",
         "labelKey": "i-gudang",
         "bin": "pilihan",
-        "emoji": "🪴",
-        "color": "#212121"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-pot-gudang",
+          "t": 0
+        }
       },
       {
         "id": "kolong",
         "labelKey": "i-kolong",
         "bin": "pilihan",
-        "emoji": "🪴",
-        "color": "#37474f"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-pot-kolong",
+          "t": 0
+        }
       }
     ],
     "pilihan": [
@@ -193165,7 +193435,8 @@ export const PAKET_RAW: unknown[] = [
           "jendela",
           "lemari"
         ],
-        "correct": "lemari"
+        "correct": "lemari",
+        "bacaPilihan": true
       },
       {
         "id": "r2",
@@ -193175,7 +193446,8 @@ export const PAKET_RAW: unknown[] = [
           "kotak",
           "teras"
         ],
-        "correct": "kotak"
+        "correct": "kotak",
+        "bacaPilihan": true
       },
       {
         "id": "r3",
@@ -193185,7 +193457,8 @@ export const PAKET_RAW: unknown[] = [
           "lemari",
           "jendela"
         ],
-        "correct": "lemari"
+        "correct": "lemari",
+        "bacaPilihan": true
       },
       {
         "id": "r4",
@@ -193196,7 +193469,8 @@ export const PAKET_RAW: unknown[] = [
           "jendela",
           "kebun"
         ],
-        "correct": "kotak"
+        "correct": "kotak",
+        "bacaPilihan": true
       },
       {
         "id": "r5",
@@ -193205,7 +193479,8 @@ export const PAKET_RAW: unknown[] = [
           "kebun",
           "gudang"
         ],
-        "correct": "gudang"
+        "correct": "gudang",
+        "bacaPilihan": true
       },
       {
         "id": "r6",
@@ -193215,7 +193490,8 @@ export const PAKET_RAW: unknown[] = [
           "jendela",
           "kolong"
         ],
-        "correct": "kolong"
+        "correct": "kolong",
+        "bacaPilihan": true
       },
       {
         "id": "r7",
@@ -193225,7 +193501,8 @@ export const PAKET_RAW: unknown[] = [
           "lemari",
           "teras"
         ],
-        "correct": "lemari"
+        "correct": "lemari",
+        "bacaPilihan": true
       },
       {
         "id": "r8",
@@ -193235,7 +193512,8 @@ export const PAKET_RAW: unknown[] = [
           "jendela",
           "kebun"
         ],
-        "correct": "gudang"
+        "correct": "gudang",
+        "bacaPilihan": true
       },
       {
         "id": "r9",
@@ -193246,7 +193524,8 @@ export const PAKET_RAW: unknown[] = [
           "jendela",
           "teras"
         ],
-        "correct": "kolong"
+        "correct": "kolong",
+        "bacaPilihan": true
       },
       {
         "id": "r10",
@@ -193256,7 +193535,8 @@ export const PAKET_RAW: unknown[] = [
           "teras",
           "kotak"
         ],
-        "correct": "kotak"
+        "correct": "kotak",
+        "bacaPilihan": true
       },
       {
         "id": "r11",
@@ -193265,13 +193545,14 @@ export const PAKET_RAW: unknown[] = [
           "kolong",
           "kebun"
         ],
-        "correct": "kolong"
+        "correct": "kolong",
+        "bacaPilihan": true
       }
     ]
   },
   {
     "id": "sains-putar-bumi-siang",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -193355,13 +193636,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "hadap",
         "labelKey": "i-hadap",
         "bin": "pilihan",
-        "emoji": "🌞"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bumi-siang",
+          "t": 0
+        }
       },
       {
         "id": "belakang",
         "labelKey": "i-belakang",
         "bin": "pilihan",
-        "emoji": "🌑"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bumi-malam",
+          "t": 0
+        }
       }
     ],
     "pilihan": [
@@ -193459,7 +193748,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-rak-bahan-dapur",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -193566,7 +193855,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "talenan",
         "labelKey": "i-talenan",
         "bin": "kayu",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-talenan",
+          "t": 0
+        }
       },
       {
         "id": "kaleng",
@@ -193596,7 +193889,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelaskaca",
         "labelKey": "i-gelaskaca",
         "bin": "kaca",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gelas",
+          "t": 0
+        }
       },
       {
         "id": "toples",
@@ -193973,7 +194270,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-rancang-ciri-hewan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -193989,25 +194286,25 @@ export const PAKET_RAW: unknown[] = [
         "i-sayapsirip": "sayap pendek seperti sirip untuk berenang di air es",
         "i-putihsalju": "warna putih seperti salju",
         "i-ekorpipih": "ekor lebar dan pipih untuk mendayung",
-        "i-sisikikan": "sisik licin untuk meluncur di air",
+        "i-sisikikan": "sisik berlendir yang membantu ikan bergerak di air",
         "i-hidungtutup": "hidung bisa ditutup saat menyelam",
         "i-telingabesar": "telinga besar untuk membuang panas",
-        "i-kulitkering": "kulit bersisik yang tahan panas",
+        "i-kulitkering": "kulit bersisik yang mengurangi kehilangan air",
         "i-warnapasir": "warna cokelat muda seperti pasir",
         "i-jarilengket": "jari lengket untuk memanjat pohon",
         "i-paruhbesar": "paruh besar untuk memetik buah di pohon",
         "i-warnakayu": "warna cokelat seperti kulit kayu",
         "t-1": "Hewan ini akan tinggal di es yang licin. Ciri mana yang cocok?",
-        "t-2": "Hewan ini akan berenang di laut yang dingin di dekat es. Ciri mana yang cocok?",
+        "t-2": "Hewan ini berenang di laut dingin. Bentuk sayap mana yang berfungsi seperti sirip?",
         "t-3": "Hewan ini akan bersembunyi di padang salju. Ciri mana yang cocok?",
-        "t-4": "Hewan ini akan tinggal di sungai dan berenang. Ciri mana yang cocok?",
-        "t-5": "Hewan ini akan hidup di dalam air sepanjang hari. Ciri mana yang cocok?",
-        "t-6": "Hewan ini suka menyelam ke dasar danau. Ciri mana yang cocok?",
-        "t-7": "Hewan ini akan tinggal di gurun yang sangat panas. Ciri mana yang cocok?",
-        "t-8": "Hewan ini akan berjemur di batu gurun yang panas. Ciri mana yang cocok?",
+        "t-4": "Hewan ini berenang di sungai. Bentuk ekor mana yang bisa digunakan untuk mendayung?",
+        "t-5": "Hewan ini hidup di air. Penutup tubuh mana yang membantu ikan bergerak di air?",
+        "t-6": "Hewan ini menyelam di danau. Ciri hidung mana yang mencegah air masuk?",
+        "t-7": "Hewan ini tinggal di gurun panas. Bentuk telinga mana yang membantu melepaskan panas?",
+        "t-8": "Hewan ini tinggal di gurun yang kering. Ciri kulit mana yang membantu tubuhnya tidak cepat kehilangan air?",
         "t-9": "Hewan ini akan bersembunyi di gurun pasir. Ciri mana yang cocok?",
-        "t-10": "Hewan ini akan tinggal di pohon-pohon hutan. Ciri mana yang cocok?",
-        "t-11": "Hewan ini akan makan buah di atas pohon hutan. Ciri mana yang cocok?",
+        "t-10": "Hewan ini memanjat batang pohon. Ciri jari mana yang membantu menempel pada batang?",
+        "t-11": "Hewan ini memetik buah di pohon. Bentuk paruh mana yang bisa menjangkau dan memegang buah?",
         "t-12": "Hewan ini akan bersembunyi di batang pohon hutan. Ciri mana yang cocok?"
       },
       "en": {
@@ -194018,25 +194315,25 @@ export const PAKET_RAW: unknown[] = [
         "i-sayapsirip": "short flipper wings for swimming in icy water",
         "i-putihsalju": "white colour like snow",
         "i-ekorpipih": "a wide flat tail for paddling",
-        "i-sisikikan": "slippery scales for gliding in water",
+        "i-sisikikan": "mucus-coated scales that help a fish move through water",
         "i-hidungtutup": "a nose that closes when diving",
         "i-telingabesar": "big ears to let out heat",
-        "i-kulitkering": "scaly skin that handles heat",
+        "i-kulitkering": "scaly skin that reduces water loss",
         "i-warnapasir": "light brown colour like sand",
         "i-jarilengket": "sticky toes for climbing trees",
         "i-paruhbesar": "a big beak for picking fruit in trees",
         "i-warnakayu": "brown colour like tree bark",
         "t-1": "This animal will live on slippery ice. Which feature fits?",
-        "t-2": "This animal will swim in the cold sea near the ice. Which feature fits?",
+        "t-2": "This animal swims in a cold sea. Which wing shape works like flippers?",
         "t-3": "This animal will hide in a snowy field. Which feature fits?",
-        "t-4": "This animal will live in a river and swim. Which feature fits?",
-        "t-5": "This animal will live in water all day. Which feature fits?",
-        "t-6": "This animal likes diving to the bottom of the lake. Which feature fits?",
-        "t-7": "This animal will live in a very hot desert. Which feature fits?",
-        "t-8": "This animal will sunbathe on hot desert rocks. Which feature fits?",
+        "t-4": "This animal swims in a river. Which tail shape can act as a paddle?",
+        "t-5": "This animal lives in water. Which body covering helps a fish move through water?",
+        "t-6": "This animal dives in a lake. Which nose feature keeps water out?",
+        "t-7": "This animal lives in a hot desert. Which ear shape helps release heat?",
+        "t-8": "This animal lives in a dry desert. Which skin feature helps its body lose less water?",
         "t-9": "This animal will hide in the sandy desert. Which feature fits?",
-        "t-10": "This animal will live in forest trees. Which feature fits?",
-        "t-11": "This animal will eat fruit high in the forest trees. Which feature fits?",
+        "t-10": "This animal climbs a tree trunk. Which toe feature helps it grip the trunk?",
+        "t-11": "This animal picks fruit in a tree. Which beak shape can reach and hold fruit?",
         "t-12": "This animal will hide on forest tree trunks. Which feature fits?"
       }
     },
@@ -194065,75 +194362,121 @@ export const PAKET_RAW: unknown[] = [
         "id": "kakiberbulu",
         "labelKey": "i-kakiberbulu",
         "bin": "pilihan",
-        "emoji": "🐾",
-        "color": "#e3f2fd"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-kakiberbulu",
+          "t": 0
+        }
       },
       {
         "id": "sayapsirip",
         "labelKey": "i-sayapsirip",
         "bin": "pilihan",
-        "emoji": "🐧"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-sayapsirip",
+          "t": 0
+        }
       },
       {
         "id": "putihsalju",
         "labelKey": "i-putihsalju",
         "bin": "pilihan",
-        "emoji": "❄️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-putihsalju",
+          "t": 0
+        }
       },
       {
         "id": "ekorpipih",
         "labelKey": "i-ekorpipih",
         "bin": "pilihan",
-        "emoji": "🦫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-ekorpipih",
+          "t": 0
+        }
       },
       {
         "id": "sisikikan",
         "labelKey": "i-sisikikan",
         "bin": "pilihan",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-sisikikan",
+          "t": 0
+        }
       },
       {
         "id": "hidungtutup",
         "labelKey": "i-hidungtutup",
         "bin": "pilihan",
-        "emoji": "🦛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-hidungtutup",
+          "t": 0
+        }
       },
       {
         "id": "telingabesar",
         "labelKey": "i-telingabesar",
         "bin": "pilihan",
-        "emoji": "🦊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-telingabesar",
+          "t": 0
+        }
       },
       {
         "id": "kulitkering",
         "labelKey": "i-kulitkering",
         "bin": "pilihan",
-        "emoji": "🦎"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-kulitkering",
+          "t": 0
+        }
       },
       {
         "id": "warnapasir",
         "labelKey": "i-warnapasir",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#e0c48a"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-warnapasir",
+          "t": 0
+        }
       },
       {
         "id": "jarilengket",
         "labelKey": "i-jarilengket",
         "bin": "pilihan",
-        "emoji": "🐸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-jarilengket",
+          "t": 0
+        }
       },
       {
         "id": "paruhbesar",
         "labelKey": "i-paruhbesar",
         "bin": "pilihan",
-        "emoji": "🦜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-paruhbesar",
+          "t": 0
+        }
       },
       {
         "id": "warnakayu",
         "labelKey": "i-warnakayu",
         "bin": "pilihan",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-warnakayu",
+          "t": 0
+        }
       }
     ],
     "pilihan": [
@@ -194682,7 +195025,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-senter-bola-dunia",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -194702,15 +195045,15 @@ export const PAKET_RAW: unknown[] = [
         "i-lampu": "lampu jalan menyala",
         "i-hadap": "diputar menghadap senter",
         "i-jauh": "diputar ke sisi gelap",
-        "t-1": "Bola dunia diputar sampai Bali menghadap senter. Apa yang terjadi di Bali?",
+        "t-1": "Bola dunia diputar sampai Bali menghadap senter. Kegiatan mana yang cocok saat siang?",
         "t-2": "Aceh kini membelakangi senter. Apa yang terlihat di langit Aceh?",
-        "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Apa yang terjadi?",
-        "t-4": "London ada di sisi bola dunia yang gelap. Apa yang dilakukan anak di London?",
-        "t-5": "Sydney menghadap senter. Apa yang dilakukan anak di Sydney?",
+        "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Kegiatan mana yang cocok saat siang?",
+        "t-4": "London ada di sisi bola dunia yang gelap. Kegiatan mana yang cocok saat malam?",
+        "t-5": "Sydney menghadap senter. Kegiatan mana yang biasanya dilakukan pagi atau siang?",
         "t-6": "Riyadh membelakangi senter. Apa yang terlihat di jalan?",
-        "t-7": "Bola dunia berputar, Seoul pindah ke sisi yang kena cahaya. Apa yang terjadi?",
-        "t-8": "Manado ada di sisi gelap. Apa yang dilakukan anak di Manado?",
-        "t-9": "Palembang kena cahaya senter. Apa yang terjadi di Palembang?",
+        "t-7": "Bola dunia berputar, Seoul pindah ke sisi yang kena cahaya. Kegiatan mana yang cocok saat siang?",
+        "t-8": "Manado ada di sisi gelap. Kegiatan mana yang cocok saat malam?",
+        "t-9": "Palembang kena cahaya senter. Kegiatan mana yang cocok saat siang?",
         "t-10": "Lombok diputar menjauh dari senter. Apa yang terlihat di langit?",
         "t-11": "Robot ingin Kupang menjadi siang. Bola dunia diputar sampai Kupang…",
         "t-12": "Supaya anak di Dubai bisa bermain di bawah sinar matahari, Dubai diputar sampai…",
@@ -194729,15 +195072,15 @@ export const PAKET_RAW: unknown[] = [
         "i-lampu": "street lights are on",
         "i-hadap": "turned to face the flashlight",
         "i-jauh": "turned to the dark side",
-        "t-1": "The globe turns until Bali faces the flashlight. What happens in Bali?",
+        "t-1": "The globe turns until Bali faces the flashlight. Which activity suits daytime?",
         "t-2": "Aceh now faces away from the flashlight. What is in the sky over Aceh?",
-        "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. What happens?",
-        "t-4": "London is on the dark side of the globe. What are the children in London doing?",
-        "t-5": "Sydney faces the flashlight. What are the children in Sydney doing?",
+        "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. Which activity suits daytime?",
+        "t-4": "London is on the dark side of the globe. Which activity suits nighttime?",
+        "t-5": "Sydney faces the flashlight. Which activity usually happens in the morning or daytime?",
         "t-6": "Riyadh faces away from the flashlight. What can be seen on the streets?",
-        "t-7": "The globe turns and Seoul moves to the lit side. What happens?",
-        "t-8": "Manado is on the dark side. What are the children in Manado doing?",
-        "t-9": "Palembang is in the flashlight's light. What happens in Palembang?",
+        "t-7": "The globe turns and Seoul moves to the lit side. Which activity suits daytime?",
+        "t-8": "Manado is on the dark side. Which activity suits nighttime?",
+        "t-9": "Palembang is in the flashlight's light. Which activity suits daytime?",
         "t-10": "Lombok is turned away from the flashlight. What is in the sky?",
         "t-11": "The robot wants daytime in Kupang. The globe is turned until Kupang is…",
         "t-12": "So the children in Dubai can play in the sunshine, Dubai is turned until it is…",
@@ -194806,13 +195149,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "hadap",
         "labelKey": "i-hadap",
         "bin": "pilihan",
-        "emoji": "🔦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-siang",
+          "t": 0
+        }
       },
       {
         "id": "jauh",
         "labelKey": "i-jauh",
         "bin": "pilihan",
-        "emoji": "🌚"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-malam",
+          "t": 0
+        }
       }
     ],
     "pilihan": [
@@ -196221,7 +196572,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-simbol-cuaca-jendela",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -196231,7 +196582,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Cuaca dari Jendela Rumah",
-        "instruksi": "Lihat langit dari jendela rumah, lalu pasang simbol cuaca yang cocok.",
+        "instruksi": "Dengarkan cerita cuaca dari jendela rumah, lalu sentuh simbol yang cocok.",
         "pilihan": "pilihan",
         "i-cerah": "cerah",
         "i-mendung": "mendung",
@@ -196250,7 +196601,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Weather from the Home Window",
-        "instruksi": "Look at the sky from the home window, then put up the matching weather symbol.",
+        "instruksi": "Listen to the weather story from the home window, then touch the matching symbol.",
         "pilihan": "choices",
         "i-cerah": "sunny",
         "i-mendung": "cloudy",
@@ -197542,7 +197893,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sarang-telur-selisih-satu",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -197552,19 +197903,19 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Sarang Telur Ayam",
-        "instruksi": "Dua sarang ayam hampir sama: dengarkan pertanyaannya, lalu sentuh sarang yang telurnya lebih banyak atau lebih sedikit.",
+        "instruksi": "Lihat tiap kelompok telur. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
         "pilihan": "pilihan",
         "telur": "telur",
-        "tBanyak": "Sarang mana yang telurnya lebih banyak?",
-        "tSedikit": "Sarang mana yang telurnya lebih sedikit?"
+        "tBanyak": "Kelompok mana yang telurnya lebih banyak?",
+        "tSedikit": "Kelompok mana yang telurnya lebih sedikit?"
       },
       "en": {
         "judul": "Hen Nests",
-        "instruksi": "Two hen nests look alike: listen to the question, then touch the nest with more or fewer eggs.",
+        "instruksi": "Look at each group of eggs. Listen to the question, then touch the correct group.",
         "pilihan": "choices",
         "telur": "eggs",
-        "tBanyak": "Which nest has more eggs?",
-        "tSedikit": "Which nest has fewer eggs?"
+        "tBanyak": "Which group has more eggs?",
+        "tSedikit": "Which group has fewer eggs?"
       }
     },
     "knobs": {
@@ -199703,7 +200054,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-genap-ganjil-20",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -199936,22 +200287,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "kaus-kaki-6",
         "labelKey": "i-6-kaus-kaki",
         "bin": "genap",
-        "emoji": "🧦",
-        "count": 6
+        "count": 6,
+        "adegan": {
+          "jenis": "kaus-kaki"
+        }
       },
       {
         "id": "kaus-kaki-7",
         "labelKey": "i-7-kaus-kaki",
         "bin": "ganjil",
-        "emoji": "🧦",
-        "count": 7
+        "count": 7,
+        "adegan": {
+          "jenis": "kaus-kaki"
+        }
       },
       {
         "id": "kaus-kaki-9",
         "labelKey": "i-9-kaus-kaki",
         "bin": "ganjil",
-        "emoji": "🧦",
-        "count": 9
+        "count": 9,
+        "adegan": {
+          "jenis": "kaus-kaki"
+        }
       },
       {
         "id": "kepik-5",
@@ -226357,7 +226714,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-mat-potongan-pizza-senilai",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -226469,22 +226826,24 @@ export const PAKET_RAW: unknown[] = [
         "id": "setengah-3",
         "labelKey": "i3",
         "bin": "setengah",
-        "emoji": "🍕",
         "scale": 0.8,
         "adegan": {
           "jenis": "potong",
-          "t": 0.5
+          "t": 0.5,
+          "pembilang": 3,
+          "penyebut": 6
         }
       },
       {
         "id": "setengah-4",
         "labelKey": "i4",
         "bin": "setengah",
-        "emoji": "🍕",
         "scale": 0.8,
         "adegan": {
           "jenis": "potong",
-          "t": 0.5
+          "t": 0.5,
+          "pembilang": 4,
+          "penyebut": 8
         }
       },
       {
@@ -226497,11 +226856,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "seperempat-6",
         "labelKey": "i6",
         "bin": "seperempat",
-        "emoji": "🍕",
         "scale": 0.8,
         "adegan": {
           "jenis": "potong",
-          "t": 0.25
+          "t": 0.25,
+          "pembilang": 2,
+          "penyebut": 8
         }
       },
       {
@@ -226514,11 +226874,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "tigaperempat-8",
         "labelKey": "i8",
         "bin": "tigaperempat",
-        "emoji": "🍕",
         "scale": 0.8,
         "adegan": {
           "jenis": "potong",
-          "t": 0.75
+          "t": 0.75,
+          "pembilang": 6,
+          "penyebut": 8
         }
       },
       {
@@ -226531,11 +226892,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "sepertiga-10",
         "labelKey": "i10",
         "bin": "sepertiga",
-        "emoji": "🍕",
         "scale": 0.8,
         "adegan": {
           "jenis": "potong",
-          "t": 0.3333
+          "t": 0.3333,
+          "pembilang": 2,
+          "penyebut": 6
         }
       },
       {
@@ -226548,11 +226910,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "duapertiga-12",
         "labelKey": "i12",
         "bin": "duapertiga",
-        "emoji": "🍕",
         "scale": 0.8,
         "adegan": {
           "jenis": "potong",
-          "t": 0.6667
+          "t": 0.6667,
+          "pembilang": 4,
+          "penyebut": 6
         }
       }
     ]
@@ -228452,7 +228815,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-mat-segi-banyak-beraturan",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -228469,8 +228832,8 @@ export const PAKET_RAW: unknown[] = [
         "i-segitiga-sama-sisi": "segitiga sama sisi",
         "i-segi-lima-beraturan": "segi lima",
         "i-segi-enam-beraturan": "segi enam",
-        "i-segi-enam-mendatar": "segi enam mendatar",
-        "i-rambu-segi-delapan": "rambu segi delapan",
+        "i-segi-enam-mendatar": "segi enam diputar",
+        "i-rambu-segi-delapan": "segi delapan",
         "i-persegi-panjang": "persegi panjang",
         "i-belah-ketupat": "belah ketupat",
         "i-jajar-genjang": "jajar genjang",
@@ -228486,8 +228849,8 @@ export const PAKET_RAW: unknown[] = [
         "i-segitiga-sama-sisi": "equilateral triangle",
         "i-segi-lima-beraturan": "pentagon",
         "i-segi-enam-beraturan": "hexagon",
-        "i-segi-enam-mendatar": "flat hexagon",
-        "i-rambu-segi-delapan": "octagon sign",
+        "i-segi-enam-mendatar": "rotated hexagon",
+        "i-rambu-segi-delapan": "octagon",
         "i-persegi-panjang": "rectangle",
         "i-belah-ketupat": "rhombus",
         "i-jajar-genjang": "parallelogram",
@@ -228527,72 +228890,100 @@ export const PAKET_RAW: unknown[] = [
         "id": "persegi",
         "labelKey": "i-persegi",
         "bin": "beraturan",
-        "shape": "square",
-        "color": "#6ab0e8"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "persegi"
+        }
       },
       {
         "id": "segitiga-sama-sisi",
         "labelKey": "i-segitiga-sama-sisi",
         "bin": "beraturan",
-        "shape": "triangle",
-        "color": "#ff5a6e"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "segitiga-sama-sisi"
+        }
       },
       {
         "id": "segilima",
         "labelKey": "i-segi-lima-beraturan",
         "bin": "beraturan",
-        "emoji": "⬟"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "segilima"
+        }
       },
       {
         "id": "segienam",
         "labelKey": "i-segi-enam-beraturan",
         "bin": "beraturan",
-        "emoji": "⬡"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "segienam"
+        }
       },
       {
         "id": "segienam-datar",
         "labelKey": "i-segi-enam-mendatar",
         "bin": "beraturan",
-        "emoji": "⬣"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "segienam-datar"
+        }
       },
       {
         "id": "segidelapan",
         "labelKey": "i-rambu-segi-delapan",
         "bin": "beraturan",
-        "emoji": "🛑"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "segidelapan"
+        }
       },
       {
         "id": "persegi-panjang",
         "labelKey": "i-persegi-panjang",
         "bin": "tidak",
-        "shape": "rect",
-        "color": "#ffd23f",
-        "width": 2
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "persegi-panjang"
+        }
       },
       {
         "id": "ketupat",
         "labelKey": "i-belah-ketupat",
         "bin": "tidak",
-        "shape": "belah-ketupat",
-        "color": "#a78bfa"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "ketupat"
+        }
       },
       {
         "id": "jajar-genjang",
         "labelKey": "i-jajar-genjang",
         "bin": "tidak",
-        "emoji": "▱"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jajar-genjang"
+        }
       },
       {
         "id": "trapesium",
         "labelKey": "i-trapesium",
         "bin": "tidak",
-        "emoji": "⏢"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "trapesium"
+        }
       },
       {
         "id": "segitiga-siku",
         "labelKey": "i-segitiga-sikumsiku",
         "bin": "tidak",
-        "emoji": "📐"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "segitiga-siku"
+        }
       }
     ]
   },
@@ -228847,7 +229238,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-mat-sudut-jarum-jam",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -228857,11 +229248,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Sudut Jarum Jam",
-        "instruksi": "Lihat sudut di antara dua jarum jam. Bandingkan dengan sudut siku seperti pojok buku, lalu taruh tiap jam di raknya.",
-        "b-kurang-siku": "lebih kecil dari siku",
+        "instruksi": "Pilah jam berdasarkan sudut terkecil yang ditandai di antara kedua jarum. Lancip lebih kecil dari siku. Tumpul lebih besar dari siku, tapi lebih kecil dari lurus.",
+        "b-kurang-siku": "sudut lancip",
         "b-siku": "sudut siku",
-        "b-lebih-siku": "lebih besar dari siku",
-        "b-garis-lurus": "garis lurus",
+        "b-lebih-siku": "sudut tumpul",
+        "b-garis-lurus": "sudut lurus",
         "i-jam-pukul-1": "jam pukul 1",
         "i-jam-pukul-2": "jam pukul 2",
         "i-jam-pukul-3": "jam pukul 3",
@@ -228876,11 +229267,11 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Clock-Hand Angles",
-        "instruksi": "Look at the angle between the two clock hands. Compare it with a right angle, like the corner of a book, then put each clock on its shelf.",
-        "b-kurang-siku": "smaller than a right angle",
+        "instruksi": "Sort the clocks by the smaller angle marked between their hands. Acute angles are smaller than a right angle. Obtuse angles are larger than a right angle and smaller than a straight angle.",
+        "b-kurang-siku": "acute angle",
         "b-siku": "right angle",
-        "b-lebih-siku": "bigger than a right angle",
-        "b-garis-lurus": "straight line",
+        "b-lebih-siku": "obtuse angle",
+        "b-garis-lurus": "straight angle",
         "i-jam-pukul-1": "clock at 1 o'clock",
         "i-jam-pukul-2": "clock at 2 o'clock",
         "i-jam-pukul-3": "clock at 3 o'clock",
@@ -228912,20 +229303,35 @@ export const PAKET_RAW: unknown[] = [
     "bins": [
       {
         "id": "kecil",
-        "labelKey": "b-kurang-siku"
+        "labelKey": "b-kurang-siku",
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.125
+        }
       },
       {
         "id": "siku",
         "labelKey": "b-siku",
-        "emoji": "📐"
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.25
+        }
       },
       {
         "id": "besar",
-        "labelKey": "b-lebih-siku"
+        "labelKey": "b-lebih-siku",
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.375
+        }
       },
       {
         "id": "lurus",
-        "labelKey": "b-garis-lurus"
+        "labelKey": "b-garis-lurus",
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.5
+        }
       }
     ],
     "items": [
@@ -228933,73 +229339,106 @@ export const PAKET_RAW: unknown[] = [
         "id": "pukul-1",
         "labelKey": "i-jam-pukul-1",
         "bin": "kecil",
-        "emoji": "🕐"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-1"
+        }
       },
       {
         "id": "pukul-2",
         "labelKey": "i-jam-pukul-2",
         "bin": "kecil",
-        "emoji": "🕑"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-2"
+        }
       },
       {
         "id": "pukul-3",
         "labelKey": "i-jam-pukul-3",
         "bin": "siku",
-        "emoji": "🕒"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-3"
+        }
       },
       {
         "id": "pukul-4",
         "labelKey": "i-jam-pukul-4",
         "bin": "besar",
-        "emoji": "🕓"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-4"
+        }
       },
       {
         "id": "pukul-5",
         "labelKey": "i-jam-pukul-5",
         "bin": "besar",
-        "emoji": "🕔"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-5"
+        }
       },
       {
         "id": "pukul-6",
         "labelKey": "i-jam-pukul-6",
         "bin": "lurus",
-        "emoji": "🕕"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-6"
+        }
       },
       {
         "id": "pukul-7",
         "labelKey": "i-jam-pukul-7",
         "bin": "besar",
-        "emoji": "🕖"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-7"
+        }
       },
       {
         "id": "pukul-8",
         "labelKey": "i-jam-pukul-8",
         "bin": "besar",
-        "emoji": "🕗"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-8"
+        }
       },
       {
         "id": "pukul-9",
         "labelKey": "i-jam-pukul-9",
         "bin": "siku",
-        "emoji": "🕘"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-9"
+        }
       },
       {
         "id": "pukul-10",
         "labelKey": "i-jam-pukul-10",
         "bin": "kecil",
-        "emoji": "🕙"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-10"
+        }
       },
       {
         "id": "pukul-11",
         "labelKey": "i-jam-pukul-11",
         "bin": "kecil",
-        "emoji": "🕚"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "pukul-11"
+        }
       }
     ]
   },
   {
     "id": "sd3-mat-sudut-potongan-pizza",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -229009,11 +229448,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Sudut Potongan Pizza",
-        "instruksi": "Bandingkan tiap sudut dengan sudut siku, seperti seperempat putaran. Setengah putaran membentuk garis lurus. Taruh tiap kartu di raknya.",
-        "b-kecil": "lebih kecil dari siku",
+        "instruksi": "Pilah tiap sudut ke raknya. Lancip lebih kecil dari siku. Tumpul lebih besar dari siku, tapi lebih kecil dari lurus. Setengah putaran membentuk sudut lurus.",
+        "b-kecil": "sudut lancip",
         "b-siku": "sudut siku",
-        "b-besar": "lebih besar dari siku",
-        "b-lurus": "garis lurus",
+        "b-besar": "sudut tumpul",
+        "b-lurus": "sudut lurus",
         "i1": "ujung potongan pizza, dibagi 8 sama besar",
         "i2": "ujung potongan pizza, dibagi 6 sama besar",
         "i3": "ujung potongan pizza, dibagi 5 sama besar",
@@ -229033,11 +229472,11 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Pizza Slice Angles",
-        "instruksi": "Compare each angle with a right angle, like a quarter turn. A half turn makes a straight line. Put each card on its shelf.",
-        "b-kecil": "smaller than a right angle",
+        "instruksi": "Sort each angle onto its shelf. Acute angles are smaller than a right angle. Obtuse angles are larger than a right angle and smaller than a straight angle. A half turn is a straight angle.",
+        "b-kecil": "acute angle",
         "b-siku": "right angle",
-        "b-besar": "bigger than a right angle",
-        "b-lurus": "straight line",
+        "b-besar": "obtuse angle",
+        "b-lurus": "straight angle",
         "i1": "tip of a pizza slice cut into 8 equal parts",
         "i2": "tip of a pizza slice cut into 6 equal parts",
         "i3": "tip of a pizza slice cut into 5 equal parts",
@@ -229074,19 +229513,35 @@ export const PAKET_RAW: unknown[] = [
     "bins": [
       {
         "id": "kecil",
-        "labelKey": "b-kecil"
+        "labelKey": "b-kecil",
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.125
+        }
       },
       {
         "id": "siku",
-        "labelKey": "b-siku"
+        "labelKey": "b-siku",
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.25
+        }
       },
       {
         "id": "besar",
-        "labelKey": "b-besar"
+        "labelKey": "b-besar",
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.375
+        }
       },
       {
         "id": "lurus",
-        "labelKey": "b-lurus"
+        "labelKey": "b-lurus",
+        "adegan": {
+          "jenis": "sudut",
+          "t": 0.5
+        }
       }
     ],
     "items": [
@@ -229094,60 +229549,60 @@ export const PAKET_RAW: unknown[] = [
         "id": "kecil-1",
         "labelKey": "i1",
         "bin": "kecil",
-        "emoji": "🍕",
         "adegan": {
           "jenis": "potong",
-          "t": 0.125
+          "pembilang": 1,
+          "penyebut": 8
         }
       },
       {
         "id": "kecil-2",
         "labelKey": "i2",
         "bin": "kecil",
-        "emoji": "🍕",
         "adegan": {
           "jenis": "potong",
-          "t": 0.1667
+          "pembilang": 1,
+          "penyebut": 6
         }
       },
       {
         "id": "kecil-3",
         "labelKey": "i3",
         "bin": "kecil",
-        "emoji": "🍕",
         "adegan": {
           "jenis": "potong",
-          "t": 0.2
+          "pembilang": 1,
+          "penyebut": 5
         }
       },
       {
         "id": "siku-4",
         "labelKey": "i4",
         "bin": "siku",
-        "emoji": "🍕",
         "adegan": {
           "jenis": "potong",
-          "t": 0.25
+          "pembilang": 1,
+          "penyebut": 4
         }
       },
       {
         "id": "besar-5",
         "labelKey": "i5",
         "bin": "besar",
-        "emoji": "🍕",
         "adegan": {
           "jenis": "potong",
-          "t": 0.3333
+          "pembilang": 1,
+          "penyebut": 3
         }
       },
       {
         "id": "lurus-6",
         "labelKey": "i6",
         "bin": "lurus",
-        "emoji": "🍕",
         "adegan": {
           "jenis": "potong",
-          "t": 0.5
+          "pembilang": 1,
+          "penyebut": 2
         }
       },
       {
@@ -229177,7 +229632,7 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🤖",
         "adegan": {
           "jenis": "sudut",
-          "t": 0.3333
+          "t": 0.3333333333333333
         }
       },
       {
@@ -229194,35 +229649,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "kecil-11",
         "labelKey": "i11",
         "bin": "kecil",
-        "emoji": "🔺"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "sudut-segitiga"
+        }
       },
       {
         "id": "siku-12",
         "labelKey": "i12",
-        "bin": "siku"
+        "bin": "siku",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "sudut-ubin"
+        }
       },
       {
         "id": "besar-13",
         "labelKey": "i13",
         "bin": "besar",
-        "emoji": "🛑"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "sudut-rambu"
+        }
       },
       {
         "id": "besar-14",
         "labelKey": "i14",
-        "bin": "besar"
+        "bin": "besar",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "sudut-segienam"
+        }
       },
       {
         "id": "lurus-15",
         "labelKey": "i15",
         "bin": "lurus",
-        "emoji": "📖"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "sudut-buku"
+        }
       },
       {
         "id": "kecil-16",
         "labelKey": "i16",
         "bin": "kecil",
-        "emoji": "✂️"
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "sudut-gunting"
+        }
       }
     ]
   },
@@ -248049,7 +248524,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-lampu-menyala",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.LISTRIK.01"
@@ -248123,92 +248598,90 @@ export const PAKET_RAW: unknown[] = [
         "id": "utuh",
         "labelKey": "i-utuh",
         "bin": "menyala",
-        "emoji": "🔋",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "⭕"
+          "jenis": "rangkaian",
+          "varian": "utuh"
         }
       },
       {
         "id": "sakelartutup",
         "labelKey": "i-sakelartutup",
         "bin": "menyala",
-        "emoji": "🔘",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔒"
+          "jenis": "rangkaian",
+          "varian": "sakelar-tutup"
         }
       },
       {
         "id": "duabaterai",
         "labelKey": "i-duabaterai",
         "bin": "menyala",
-        "emoji": "🔋",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "2️⃣"
+          "jenis": "rangkaian",
+          "varian": "dua-baterai"
         }
       },
       {
         "id": "kabelbaru",
         "labelKey": "i-kabelbaru",
         "bin": "menyala",
-        "emoji": "🔌",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔋"
+          "jenis": "rangkaian",
+          "varian": "kabel-baru"
         }
       },
       {
         "id": "lepas",
         "labelKey": "i-lepas",
         "bin": "padam",
-        "emoji": "🔋",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "✂️"
+          "jenis": "rangkaian",
+          "varian": "kabel-lepas"
         }
       },
       {
         "id": "sakelarbuka",
         "labelKey": "i-sakelarbuka",
         "bin": "padam",
-        "emoji": "🔘",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔓"
+          "jenis": "rangkaian",
+          "varian": "sakelar-buka"
         }
       },
       {
         "id": "potong",
         "labelKey": "i-potong",
         "bin": "padam",
-        "emoji": "✂️"
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "kabel-potong"
+        }
       },
       {
         "id": "putus",
         "labelKey": "i-putus",
         "bin": "padam",
-        "emoji": "💡"
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "filamen-putus"
+        }
       },
       {
         "id": "kutubsama",
         "labelKey": "i-kutubsama",
         "bin": "padam",
-        "emoji": "🔋",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "↩️"
+          "jenis": "rangkaian",
+          "varian": "kutub-sama"
         }
       },
       {
         "id": "tanpabaterai",
         "labelKey": "i-tanpabaterai",
         "bin": "padam",
-        "emoji": "🔌",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🪫"
+          "jenis": "rangkaian",
+          "varian": "tanpa-baterai"
         }
       }
     ],
@@ -250092,7 +250565,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-rangkaian-di-rumah",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -250164,100 +250637,90 @@ export const PAKET_RAW: unknown[] = [
         "id": "senteron",
         "labelKey": "i-senteron",
         "bin": "menyala",
-        "emoji": "🔦",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "👆"
+          "jenis": "rangkaian",
+          "varian": "senter-on"
         }
       },
       {
         "id": "mobilon",
         "labelKey": "i-mobilon",
         "bin": "menyala",
-        "emoji": "🚗",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔋"
+          "jenis": "rangkaian",
+          "varian": "mobil-on"
         }
       },
       {
         "id": "lenteraon",
         "labelKey": "i-lenteraon",
         "bin": "menyala",
-        "emoji": "🏮",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔋"
+          "jenis": "rangkaian",
+          "varian": "lentera-on"
         }
       },
       {
         "id": "mejaon",
         "labelKey": "i-mejaon",
         "bin": "menyala",
-        "emoji": "🔋",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔧"
+          "jenis": "rangkaian",
+          "varian": "kabel-baru"
         }
       },
       {
         "id": "pisauon",
         "labelKey": "i-pisauon",
         "bin": "menyala",
-        "emoji": "🔘",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "⬇️"
+          "jenis": "rangkaian",
+          "varian": "sakelar-pisau-tutup"
         }
       },
       {
         "id": "senteroff",
         "labelKey": "i-senteroff",
         "bin": "padam",
-        "emoji": "🔦",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "👇"
+          "jenis": "rangkaian",
+          "varian": "senter-off"
         }
       },
       {
         "id": "mobilputus",
         "labelKey": "i-mobilputus",
         "bin": "padam",
-        "emoji": "🚗",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "✂️"
+          "jenis": "rangkaian",
+          "varian": "mobil-putus"
         }
       },
       {
         "id": "lenterakosong",
         "labelKey": "i-lenterakosong",
         "bin": "padam",
-        "emoji": "🏮",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🪫"
+          "jenis": "rangkaian",
+          "varian": "lentera-kosong"
         }
       },
       {
         "id": "mejalepas",
         "labelKey": "i-mejalepas",
         "bin": "padam",
-        "emoji": "🔋",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "✂️"
+          "jenis": "rangkaian",
+          "varian": "jepit-lampu-lepas"
         }
       },
       {
         "id": "pisauoff",
         "labelKey": "i-pisauoff",
         "bin": "padam",
-        "emoji": "🔘",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "⬆️"
+          "jenis": "rangkaian",
+          "varian": "sakelar-pisau-buka"
         }
       }
     ],
@@ -254906,7 +255369,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-kode-perangkat-terhubung",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD5",
     "mechanic": "pilah",
     "competencyIds": [
@@ -254920,12 +255383,12 @@ export const PAKET_RAW: unknown[] = [
         "bin-kirim": "terhubung ke internet",
         "bin-sendiri": "bekerja tanpa internet",
         "i1": "sensor cuaca yang mengirim suhu ke situs cuaca",
-        "i2": "kamera keamanan yang bisa dilihat dari HP",
-        "i3": "lampu pintar yang diatur lewat aplikasi",
-        "i4": "mesin parkir yang mengirim data ke aplikasi",
-        "i5": "speaker pintar yang menjawab pertanyaan",
-        "i6": "meteran listrik pintar yang mengirim catatan pemakaian ke kantor listrik",
-        "i7": "mobil yang mengirim lokasinya ke aplikasi",
+        "i2": "kamera rumah yang siarannya bisa dilihat dari kantor lewat internet",
+        "i3": "lampu rumah yang dimatikan dari luar rumah lewat aplikasi dan internet",
+        "i4": "mesin parkir yang memperbarui jumlah tempat kosong di situs kota",
+        "i5": "speaker yang mencari jawaban di internet",
+        "i6": "meteran listrik yang mengunggah angka pemakaian ke situs penyedia listrik",
+        "i7": "mobil yang mengirim lokasi lewat internet untuk dilihat di peta daring",
         "i8": "kalkulator saku",
         "i9": "senter",
         "i10": "jam weker biasa",
@@ -254940,12 +255403,12 @@ export const PAKET_RAW: unknown[] = [
         "bin-kirim": "connected to the internet",
         "bin-sendiri": "works offline",
         "i1": "weather sensor sending temperature to a weather website",
-        "i2": "security camera you can watch from a phone",
-        "i3": "smart lamp controlled by an app",
-        "i4": "parking machine that sends data to an app",
-        "i5": "smart speaker that answers questions",
-        "i6": "smart electricity meter that sends usage readings to the power company",
-        "i7": "car that sends its location to an app",
+        "i2": "a home camera you watch from work over the internet",
+        "i3": "a home lamp turned off from elsewhere using an app over the internet",
+        "i4": "a parking machine that updates free spaces on the town website",
+        "i5": "a speaker that looks up answers on the internet",
+        "i6": "an electricity meter that uploads readings to the power company’s website",
+        "i7": "a car that sends its location over the internet to an online map",
         "i8": "pocket calculator",
         "i9": "torch",
         "i10": "ordinary alarm clock",
@@ -255385,7 +255848,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-kode-terhubung-kota",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD5",
     "mechanic": "pilah",
     "competencyIds": [
@@ -255398,13 +255861,13 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Di kota ada banyak benda listrik: seret tiap benda, apakah ia terhubung ke internet untuk mengirim atau menerima data, atau bekerja sendiri tanpa internet? Ingat, memakai listrik belum tentu memakai internet.",
         "bin-kirim": "terhubung ke internet",
         "bin-sendiri": "bekerja tanpa internet",
-        "i1": "jam tangan pintar yang mengirim langkah ke aplikasi",
-        "i2": "bel pintu yang mengirim video ke HP",
-        "i3": "papan jadwal bus yang menampilkan bus terdekat",
-        "i4": "sensor banjir yang mengirim peringatan ke warga",
-        "i5": "kunci pintu yang dibuka lewat aplikasi",
+        "i1": "jam tangan yang mengunggah jumlah langkah ke catatan kebugaran daring",
+        "i2": "bel rumah yang mengirim video lewat internet ke HP saat kamu di sekolah",
+        "i3": "papan jadwal bus yang mengambil lokasi bus dari situs angkutan kota",
+        "i4": "sensor banjir yang mengunggah peringatan ke situs kota",
+        "i5": "kunci pintu yang dibuka lewat internet saat pemiliknya di luar rumah",
         "i6": "kamera lalu lintas yang siarannya bisa dilihat di internet",
-        "i7": "robot penyedot debu yang diatur dari aplikasi",
+        "i7": "robot penyedot debu yang dinyalakan lewat internet saat pemiliknya di luar rumah",
         "i8": "setrika listrik",
         "i9": "blender",
         "i10": "radio FM bertenaga baterai",
@@ -255418,13 +255881,13 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Town is full of electric things: drag each one, does it connect to the internet to send or receive data, or work on its own without internet? Remember, using electricity doesn't mean using the internet.",
         "bin-kirim": "connected to the internet",
         "bin-sendiri": "works without internet",
-        "i1": "a smartwatch that sends steps to an app",
-        "i2": "a doorbell that sends video to a phone",
-        "i3": "a bus board showing the nearest bus live",
-        "i4": "a flood sensor that sends warnings to residents",
-        "i5": "a door lock opened with an app",
+        "i1": "a watch that uploads your step count to an online fitness log",
+        "i2": "a doorbell that sends video over the internet to your phone at school",
+        "i3": "a bus board that gets live bus locations from the town transit website",
+        "i4": "a flood sensor that uploads warnings to the town website",
+        "i5": "a door lock opened over the internet while its owner is away from home",
         "i6": "a traffic camera you can watch live on the internet",
-        "i7": "a robot vacuum controlled from an app",
+        "i7": "a robot vacuum switched on over the internet while its owner is away from home",
         "i8": "an electric iron",
         "i9": "a blender",
         "i10": "a battery FM radio",
@@ -276164,7 +276627,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-ai-atau-aturan-lab",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -276174,15 +276637,15 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Mesin Belajar atau Mesin Aturan?",
-        "instruksi": "Di laboratorium ada banyak program: seret tiap tugas, dikerjakan program yang belajar dari banyak contoh, atau program yang mengikuti aturan tetap yang ditulis manusia?",
+        "instruksi": "Baca cara kerja program pada tiap kartu, lalu seret ke rak belajar dari contoh atau aturan tetap.",
         "bin-ai": "belajar dari contoh",
         "bin-aturan": "aturan tetap",
-        "i1": "menebak penyakit daun dari fotonya",
-        "i2": "mengenali suara burung dari rekaman",
-        "i3": "menebak gambar dari coretan tangan",
-        "i4": "mobil swakemudi mengenali pejalan kaki",
-        "i5": "membaca tulisan di foto papan jalan",
-        "i6": "menyarankan lagu yang mungkin kamu suka",
+        "i1": "mengenali kondisi daun setelah belajar dari foto daun dengan label kondisinya",
+        "i2": "mengenali suara burung setelah belajar dari rekaman berlabel nama burung",
+        "i3": "menebak gambar baru setelah belajar dari contoh coretan yang diberi nama",
+        "i4": "mengenali pejalan kaki setelah belajar dari foto dengan posisi pejalan kaki ditandai",
+        "i5": "membaca tulisan di foto setelah belajar dari foto dan pasangan teksnya",
+        "i6": "memprediksi lagu yang disukai setelah belajar dari penilaian pendengar",
         "i7": "menghitung rata-rata nilai kelas",
         "i8": "lampu taman menyala tepat jam 18.00",
         "i9": "AC menyala kalau suhu di atas 28°C",
@@ -276192,15 +276655,15 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Learning Machine or Rule Machine?",
-        "instruksi": "The lab has many programs: drag each task, is it done by a program that learns from many examples, or by a program following fixed rules written by people?",
+        "instruksi": "Read how the program works on each card, then drag it to the learns from examples shelf or the fixed rules shelf.",
         "bin-ai": "learns from examples",
         "bin-aturan": "fixed rules",
-        "i1": "guessing a leaf disease from its photo",
-        "i2": "recognising a bird from a recording of its song",
-        "i3": "guessing a picture from a hand sketch",
-        "i4": "a self-driving car recognising people walking",
-        "i5": "reading the words in a photo of a road sign",
-        "i6": "suggesting songs you might like",
+        "i1": "recognising leaf conditions after learning from photos labelled with their conditions",
+        "i2": "recognising birdsong after learning from recordings labelled with bird names",
+        "i3": "guessing a new drawing after learning from named examples of doodles",
+        "i4": "recognising pedestrians after learning from photos where the pedestrians are marked",
+        "i5": "reading text in a photo after learning from photos paired with their text",
+        "i6": "predicting songs you might like after learning from listener ratings",
         "i7": "working out the class average mark",
         "i8": "park lights turning on at exactly 18:00",
         "i9": "the air conditioner turning on above 28°C",
@@ -276313,7 +276776,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-alir-menara",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -276340,7 +276803,7 @@ export const PAKET_RAW: unknown[] = [
         "q4": "Mulai → air = 0 → ◇ air ≥ 25? ya: tampil 'tangki penuh' → Selesai. tidak: air = air + 5, kembali ke ◇. Berapa kali kotak 'air = air + 5' dijalankan?",
         "c10": "nyalakan pemanas",
         "c11": "matikan pemanas",
-        "q5": "Mulai → baca suhu (18) → ◇ suhu < 20? ya: tampil 'nyalakan pemanas'. tidak: tampil 'matikan pemanas' → Selesai. Apa yang tampil?",
+        "q5": "Mulai → baca suhu (18) → ◇ suhu < 20? Ya: tampil 'nyalakan pemanas'. Tidak: tampil 'matikan pemanas'. Kedua jalur berakhir di Selesai. Apa yang tampil?",
         "c12": "1",
         "c13": "3",
         "c14": "0",
@@ -276352,7 +276815,7 @@ export const PAKET_RAW: unknown[] = [
         "q8": "Mulai → lantai = 1 → ◇ lantai = 6? ya: tampil 'sampai' → Selesai. tidak: lantai = lantai + 1, kembali ke ◇. Berapa kali lift naik satu lantai?",
         "c18": "belum boleh",
         "c19": "boleh naik",
-        "q9": "Mulai → tinggi = 120, umur = 8 → ◇ tinggi ≥ 130? ya: 'boleh naik'. tidak: ◇ umur ≥ 10? ya: 'boleh naik', tidak: 'belum boleh' → Selesai. Apa yang tampil?",
+        "q9": "Mulai → tinggi = 120, umur = 8 → ◇ tinggi ≥ 130? Ya: tampil 'boleh naik'. Tidak: periksa ◇ umur ≥ 10? Ya: tampil 'boleh naik'. Tidak: tampil 'belum boleh'. Semua jalur berakhir di Selesai. Apa yang tampil?",
         "c20": "25",
         "c21": "50",
         "q10": "Mulai → x = 100 → ◇ x < 30? ya: tampil x → Selesai. tidak: x = x ÷ 2, kembali ke ◇. Apa yang tampil?",
@@ -276382,7 +276845,7 @@ export const PAKET_RAW: unknown[] = [
         "q4": "Start → water = 0 → ◇ water ≥ 25? yes: show 'tank full' → End. no: water = water + 5, back to ◇. How many times does the box 'water = water + 5' run?",
         "c10": "heater on",
         "c11": "heater off",
-        "q5": "Start → read temperature (18) → ◇ temperature < 20? yes: show 'heater on'. no: show 'heater off' → End. What is shown?",
+        "q5": "Start → read temperature (18) → ◇ temperature < 20? Yes: show 'heater on'. No: show 'heater off'. Both paths go to End. What is shown?",
         "c12": "1",
         "c13": "3",
         "c14": "0",
@@ -276394,7 +276857,7 @@ export const PAKET_RAW: unknown[] = [
         "q8": "Start → floor = 1 → ◇ floor = 6? yes: show 'arrived' → End. no: floor = floor + 1, back to ◇. How many times does the lift go up one floor?",
         "c18": "not yet",
         "c19": "may ride",
-        "q9": "Start → height = 120, age = 8 → ◇ height ≥ 130? yes: 'may ride'. no: ◇ age ≥ 10? yes: 'may ride', no: 'not yet' → End. What is shown?",
+        "q9": "Start → height = 120, age = 8 → ◇ height ≥ 130? Yes: show 'may ride'. No: check ◇ age ≥ 10? Yes: show 'may ride'. No: show 'not yet'. All paths go to End. What is shown?",
         "c20": "25",
         "c21": "50",
         "q10": "Start → x = 100 → ◇ x < 30? yes: show x → End. no: x = x ÷ 2, back to ◇. What is shown?",
@@ -276693,7 +277156,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-bagi-dua-toko-buku",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -276738,10 +277201,10 @@ export const PAKET_RAW: unknown[] = [
         "c21": "bisa, asal mulai dari tengah",
         "c22": "bisa, malah lebih cepat",
         "q11": "Buku di rak disusun acak, tidak urut abjad. Bisakah cari bagi dua dipakai?",
-        "c23": "bagi dua paling banyak 9 kali cek",
-        "c24": "satu per satu paling banyak 9 kali cek",
-        "c25": "bagi dua paling banyak 250 kali cek",
-        "q12": "Daftar urut berisi 500 judul buku. Pernyataan mana yang benar?",
+        "c23": "9",
+        "c24": "10",
+        "c25": "250",
+        "q12": "Cari buku dengan cara bagi dua dalam daftar 500 judul yang sudah urut. Pada kasus terburuk, berapa kali tepatnya judul diperiksa?",
         "c26": "Dewi",
         "c27": "Fajar",
         "c28": "Ani",
@@ -276784,10 +277247,10 @@ export const PAKET_RAW: unknown[] = [
         "c21": "yes, as long as you start in the middle",
         "c22": "yes, and it is even faster",
         "q11": "The books on the shelf are in random order, not alphabetical. Can halving search be used?",
-        "c23": "halving needs at most 9 checks",
-        "c24": "one by one needs at most 9 checks",
-        "c25": "halving needs at most 250 checks",
-        "q12": "A sorted list holds 500 book titles. Which statement is true?",
+        "c23": "9",
+        "c24": "10",
+        "c25": "250",
+        "q12": "Use binary search to find a book in a sorted list of 500 titles. Exactly how many titles are checked in the worst case?",
         "c26": "Dewi",
         "c27": "Fajar",
         "c28": "Ani",
@@ -277111,7 +277574,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-belajar-dari-contoh",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -277121,36 +277584,36 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Belajar dari Contoh atau Aturan Tetap?",
-        "instruksi": "Seret tiap tugas: dikerjakan program yang belajar dari banyak contoh (AI), atau program yang mengikuti aturan tetap?",
+        "instruksi": "Baca cara kerja program pada setiap kartu. Seret ke rak belajar dari contoh atau rak aturan tetap.",
         "bin-ai": "belajar dari contoh",
         "bin-aturan": "aturan tetap",
-        "i1": "mengenali wajah di foto",
-        "i2": "menyarankan video yang mungkin kamu suka",
-        "i3": "mengubah ucapan menjadi tulisan",
-        "i4": "menerjemahkan kalimat",
-        "i5": "membaca tulisan tangan",
-        "i6": "menebak jenis bunga dari fotonya",
-        "i7": "mengenali lagu dari potongan suaranya",
+        "i1": "mengenali wajah baru setelah berlatih dengan foto wajah berlabel",
+        "i2": "memprediksi video yang disukai dengan belajar dari penilaian penonton",
+        "i3": "menulis ucapan baru setelah belajar dari rekaman dan teks ucapannya",
+        "i4": "menerjemahkan kalimat baru setelah belajar dari contoh dua bahasa",
+        "i5": "membaca tulisan tangan setelah belajar dari huruf tulisan tangan berlabel",
+        "i6": "mengenali bunga baru setelah belajar dari foto dengan nama jenis bunganya",
+        "i7": "menebak jenis musik setelah belajar dari lagu yang sudah diberi jenisnya",
         "i8": "kalkulator menghitung 2 + 3",
         "i9": "lampu lalu lintas berganti tiap 60 detik",
         "i10": "alarm berbunyi jam 6 pagi",
         "i11": "menjumlah total belanja",
         "i12": "mengurutkan nama dari A sampai Z",
         "i13": "mesin cuci berhenti setelah 30 menit",
-        "i14": "menolak kata sandi kurang dari 8 huruf"
+        "i14": "menolak kata sandi kurang dari 8 karakter"
       },
       "en": {
         "judul": "Learns From Examples or Fixed Rules?",
-        "instruksi": "Drag each task: done by a program that learns from many examples (AI), or by a program that follows fixed rules?",
+        "instruksi": "Read how the program works on each card. Drag it to the learns from examples shelf or the fixed rules shelf.",
         "bin-ai": "learns from examples",
         "bin-aturan": "fixed rules",
-        "i1": "recognising faces in photos",
-        "i2": "suggesting videos you might like",
-        "i3": "turning speech into text",
-        "i4": "translating sentences",
-        "i5": "reading handwriting",
-        "i6": "guessing a flower's type from its photo",
-        "i7": "recognising a song from a short clip",
+        "i1": "recognising a new face after practising with labelled photos of faces",
+        "i2": "predicting favourite videos by learning from viewer ratings",
+        "i3": "writing out new speech after learning from recordings and their transcripts",
+        "i4": "translating a new sentence after learning from examples in two languages",
+        "i5": "reading handwriting after learning from labelled handwritten letters",
+        "i6": "recognising a new flower after learning from photos labelled with flower names",
+        "i7": "predicting a kind of music after learning from songs labelled with their kind",
         "i8": "a calculator working out 2 + 3",
         "i9": "traffic lights changing every 60 seconds",
         "i10": "an alarm ringing at 6 am",
@@ -282807,7 +283270,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-telusur-diagram-alir",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -282834,7 +283297,7 @@ export const PAKET_RAW: unknown[] = [
         "q4": "Mulai → x = 1, hitung = 0 → ◇ x > 4? ya: tampil hitung → Selesai. tidak: x = x + 1, hitung = hitung + 1, kembali ke ◇. Apa yang tampil?",
         "c10": "kipas nyala",
         "c11": "kipas mati",
-        "q5": "Mulai → baca suhu (34) → ◇ suhu > 30? ya: tampil 'kipas nyala'. tidak: tampil 'kipas mati' → Selesai. Apa yang tampil?",
+        "q5": "Mulai → baca suhu (34) → ◇ suhu > 30? Ya: tampil 'kipas nyala'. Tidak: tampil 'kipas mati'. Kedua jalur berakhir di Selesai. Apa yang tampil?",
         "c12": "80",
         "c13": "75",
         "c14": "70",
@@ -282846,10 +283309,10 @@ export const PAKET_RAW: unknown[] = [
         "q8": "Mulai → koin = 0 → ◇ koin = 15? ya: tampil 'penuh' → Selesai. tidak: koin = koin + 5, kembali ke ◇. Berapa kali kotak 'koin = koin + 5' dijalankan?",
         "c18": "ganjil",
         "c19": "genap",
-        "q9": "Mulai → x = 7 → ◇ x genap? ya: tampil 'genap'. tidak: tampil 'ganjil' → Selesai. Apa yang tampil?",
+        "q9": "Mulai → x = 7 → ◇ x genap? Ya: tampil 'genap'. Tidak: tampil 'ganjil'. Kedua jalur berakhir di Selesai. Apa yang tampil?",
         "c20": "boleh naik",
         "c21": "belum boleh",
-        "q10": "Mulai → umur = 11, tinggi = 145 → ◇ umur ≥ 12? ya: 'boleh naik'. tidak: ◇ tinggi ≥ 140? ya: 'boleh naik', tidak: 'belum boleh' → Selesai. Apa yang tampil?",
+        "q10": "Mulai → umur = 11, tinggi = 145 → ◇ umur ≥ 12? Ya: tampil 'boleh naik'. Tidak: periksa ◇ tinggi ≥ 140? Ya: tampil 'boleh naik'. Tidak: tampil 'belum boleh'. Semua jalur berakhir di Selesai. Apa yang tampil?",
         "c22": "20",
         "q11": "Mulai → x = 50 → ◇ x < 10? ya: tampil x → Selesai. tidak: x = x − 15, kembali ke ◇. Apa yang tampil?",
         "q12": "Mulai → jumlah = 0, i = 1 → ◇ i > 3? ya: tampil jumlah → Selesai. tidak: jumlah = jumlah + i, i = i + 1, kembali ke ◇. Apa yang tampil?"
@@ -282873,7 +283336,7 @@ export const PAKET_RAW: unknown[] = [
         "q4": "Start → x = 1, count = 0 → ◇ x > 4? yes: show count → End. no: x = x + 1, count = count + 1, back to ◇. What is shown?",
         "c10": "fan on",
         "c11": "fan off",
-        "q5": "Start → read temp (34) → ◇ temp > 30? yes: show 'fan on'. no: show 'fan off' → End. What is shown?",
+        "q5": "Start → read temperature (34) → ◇ temperature > 30? Yes: show 'fan on'. No: show 'fan off'. Both paths go to End. What is shown?",
         "c12": "80",
         "c13": "75",
         "c14": "70",
@@ -282885,10 +283348,10 @@ export const PAKET_RAW: unknown[] = [
         "q8": "Start → coins = 0 → ◇ coins = 15? yes: show 'full' → End. no: coins = coins + 5, back to ◇. How many times does the box 'coins = coins + 5' run?",
         "c18": "odd",
         "c19": "even",
-        "q9": "Start → x = 7 → ◇ x even? yes: show 'even'. no: show 'odd' → End. What is shown?",
+        "q9": "Start → x = 7 → ◇ x even? Yes: show 'even'. No: show 'odd'. Both paths go to End. What is shown?",
         "c20": "may ride",
         "c21": "not yet",
-        "q10": "Start → age = 11, height = 145 → ◇ age ≥ 12? yes: 'may ride'. no: ◇ height ≥ 140? yes: 'may ride', no: 'not yet' → End. What is shown?",
+        "q10": "Start → age = 11, height = 145 → ◇ age ≥ 12? Yes: show 'may ride'. No: check ◇ height ≥ 140? Yes: show 'may ride'. No: show 'not yet'. All paths go to End. What is shown?",
         "c22": "20",
         "q11": "Start → x = 50 → ◇ x < 10? yes: show x → End. no: x = x − 15, back to ◇. What is shown?",
         "q12": "Start → sum = 0, i = 1 → ◇ i > 3? yes: show sum → End. no: sum = sum + i, i = i + 1, back to ◇. What is shown?"
@@ -303399,7 +303862,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "stok-buah-piktogram",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -303414,7 +303877,7 @@ export const PAKET_RAW: unknown[] = [
         "apel": "apel",
         "pisang": "pisang",
         "jeruk": "jeruk",
-        "anggur": "anggur",
+        "anggur": "buah anggur",
         "tSedikit": "Tukang antar datang. Rak mana yang isinya paling sedikit, supaya diisi?",
         "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?"
       },
@@ -303425,7 +303888,7 @@ export const PAKET_RAW: unknown[] = [
         "apel": "apples",
         "pisang": "bananas",
         "jeruk": "oranges",
-        "anggur": "grapes",
+        "anggur": "grape",
         "tSedikit": "The delivery is here. Which shelf has the fewest, so we can refill it?",
         "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?"
       }
@@ -303497,15 +303960,23 @@ export const PAKET_RAW: unknown[] = [
         "id": "anggur-a",
         "labelKey": "anggur",
         "bin": "pilihan",
-        "emoji": "🍇",
-        "count": 8
+        "count": 8,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       },
       {
         "id": "anggur-b",
         "labelKey": "anggur",
         "bin": "pilihan",
-        "emoji": "🍇",
-        "count": 4
+        "count": 4,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       }
     ],
     "pilihan": [
@@ -308304,7 +308775,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "menara-balok-bola",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -308319,6 +308790,7 @@ export const PAKET_RAW: unknown[] = [
         "kotak": "kotak",
         "buku": "buku",
         "kaleng": "kaleng",
+        "balok": "balok kayu",
         "bola-sepak": "bola sepak",
         "bola-basket": "bola basket",
         "bola-tenis": "bola tenis"
@@ -308330,6 +308802,7 @@ export const PAKET_RAW: unknown[] = [
         "kotak": "box",
         "buku": "book",
         "kaleng": "can",
+        "balok": "wooden block",
         "bola-sepak": "soccer ball",
         "bola-basket": "basketball",
         "bola-tenis": "tennis ball"
@@ -308384,6 +308857,15 @@ export const PAKET_RAW: unknown[] = [
         "role": "benda",
         "value": 2,
         "emoji": "🥫"
+      },
+      {
+        "id": "balok",
+        "labelKey": "balok",
+        "role": "benda",
+        "value": 1,
+        "shape": "rect",
+        "width": 1.1,
+        "color": "#9c5c30"
       },
       {
         "id": "bola-sepak",
@@ -320297,7 +320779,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-perbaiki-algoritma",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -320496,10 +320978,9 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "jus-5",
             "labelKey": "jus-5",
-            "emoji": "🥤",
             "adegan": {
-              "jenis": "tanda",
-              "tanda": "🫗"
+              "jenis": "ilustrasi-sd",
+              "varian": "tuang"
             }
           },
           {
@@ -327046,7 +327527,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-kartu-tugas-kelas",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -327343,7 +327824,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "baterai-1",
             "labelKey": "baterai-1",
-            "emoji": "🪫"
+            "adegan": {
+              "jenis": "rangkaian",
+              "varian": "baterai-lemah"
+            }
           },
           {
             "id": "baterai-2",
@@ -334114,7 +334598,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-kode-perjalanan-pesan",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -334143,14 +334627,14 @@ export const PAKET_RAW: unknown[] = [
         "video-1": "ketik judul video",
         "video-2": "tekan cari",
         "video-3": "permintaan lewat internet ke server",
-        "video-4": "server mengirim video",
+        "video-4": "server mengirim video lewat internet",
         "video-5": "video sampai di tablet",
         "video-6": "video diputar",
         "t-panggilan": "Panggilan video",
         "panggilan-1": "pilih nama teman",
         "panggilan-2": "tekan tombol video",
         "panggilan-3": "panggilan lewat internet",
-        "panggilan-4": "ponsel teman berdering",
+        "panggilan-4": "panggilan tiba lewat internet dan ponsel teman berdering",
         "panggilan-5": "teman mengangkat",
         "panggilan-6": "kalian saling melihat",
         "t-surel": "Mengirim email ke guru",
@@ -334164,7 +334648,7 @@ export const PAKET_RAW: unknown[] = [
         "lagu-1": "cari judul lagu",
         "lagu-2": "tekan putar",
         "lagu-3": "permintaan lewat internet ke server",
-        "lagu-4": "server mengirim lagu",
+        "lagu-4": "server mengirim lagu lewat internet",
         "lagu-5": "lagu sampai di ponsel",
         "lagu-6": "lagu terdengar di headset",
         "t-pesan-suara": "Mengirim pesan suara",
@@ -334187,7 +334671,7 @@ export const PAKET_RAW: unknown[] = [
         "stiker-3": "stiker lewat internet ke server",
         "stiker-4": "server meneruskan ke semua anggota grup",
         "stiker-5": "ponsel teman-teman bergetar",
-        "stiker-6": "teman-teman tertawa"
+        "stiker-6": "teman-teman melihat stiker"
       },
       "en": {
         "judul": "A Message's Journey",
@@ -334210,14 +334694,14 @@ export const PAKET_RAW: unknown[] = [
         "video-1": "type the video name",
         "video-2": "press search",
         "video-3": "the request travels to the server",
-        "video-4": "the server sends the video",
+        "video-4": "the server sends the video over the internet",
         "video-5": "the video reaches the tablet",
         "video-6": "the video plays",
         "t-panggilan": "A video call",
         "panggilan-1": "pick your friend's name",
         "panggilan-2": "press the video button",
         "panggilan-3": "the call travels over the internet",
-        "panggilan-4": "your friend's phone rings",
+        "panggilan-4": "the call reaches your friend over the internet and their phone rings",
         "panggilan-5": "your friend answers",
         "panggilan-6": "you see each other",
         "t-surel": "Emailing your teacher",
@@ -334231,7 +334715,7 @@ export const PAKET_RAW: unknown[] = [
         "lagu-1": "search for the song title",
         "lagu-2": "press play",
         "lagu-3": "the request travels over the internet to the server",
-        "lagu-4": "the server sends the song",
+        "lagu-4": "the server sends the song over the internet",
         "lagu-5": "the song reaches the phone",
         "lagu-6": "you hear the song in your headphones",
         "t-pesan-suara": "Sending a voice message",
@@ -334254,7 +334738,7 @@ export const PAKET_RAW: unknown[] = [
         "stiker-3": "the sticker travels over the internet to the server",
         "stiker-4": "the server passes it to everyone in the group",
         "stiker-5": "your friends' phones buzz",
-        "stiker-6": "your friends laugh"
+        "stiker-6": "your friends see the sticker"
       }
     },
     "knobs": {
@@ -334263,7 +334747,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 6,
         "default": 5,
         "step": 1,
-        "keterangan": "jumlah langkah: 5 → 6 (urutan dipotong dari depan)"
+        "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
       }
     },
     "assets": [],
@@ -334592,11 +335076,12 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "stiker-6",
             "labelKey": "stiker-6",
-            "emoji": "😄"
+            "emoji": "👀"
           }
         ]
       }
-    ]
+    ],
+    "potong": "tengah"
   },
   {
     "id": "sd3-kode-rute-data-internet",
@@ -344964,7 +345449,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-kode-jalan-data-kota",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD4",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -344974,7 +345459,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Data Berkeliling Kota",
-        "instruksi": "Data berjalan dari perangkat pengirim sampai ke penerima dan melewati router serta internet: susun langkah perjalanannya dari awal sampai akhir.",
+        "instruksi": "Susun perjalanan data lewat jaringan, dari perangkat pengirim sampai hasilnya muncul di perangkat penerima.",
         "s1": "Mengunggah tugas",
         "s1-1": "kamu menekan Unggah pada tugasmu",
         "s1-2": "laptop mengirim berkas lewat Wi-Fi ke router",
@@ -345044,7 +345529,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Data Around Town",
-        "instruksi": "Data travels from the sending device to the receiver, passing a router and the internet: put the steps of its trip in order from start to finish.",
+        "instruksi": "Put the data’s journey through the network in order, from the sending device to the result on the receiving device.",
         "s1": "Uploading homework",
         "s1-1": "you press Upload on your homework",
         "s1-2": "the laptop sends the file over Wi-Fi to the router",
@@ -345119,7 +345604,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 5,
         "default": 5,
         "step": 1,
-        "keterangan": "jumlah tahap yang disusun; 4 berhenti sebelum penerima menampilkan hasil"
+        "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
       }
     },
     "assets": [],
@@ -345469,7 +345954,8 @@ export const PAKET_RAW: unknown[] = [
           }
         ]
       }
-    ]
+    ],
+    "potong": "tengah"
   },
   {
     "id": "sd4-kode-masukan-proses-keluaran",
@@ -345869,7 +346355,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-kode-perjalanan-pesan",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "level": "SD4",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -345896,7 +346382,7 @@ export const PAKET_RAW: unknown[] = [
         "s3-1": "kamu menulis email lalu menekan kirim",
         "s3-2": "email dipecah jadi paket-paket",
         "s3-3": "paket lewat beberapa router",
-        "s3-4": "paket disusun lagi di server penerima",
+        "s3-4": "paket tiba lewat jaringan dan disusun di server penerima",
         "s3-5": "penerima membuka email",
         "s4": "Mencetak lewat Wi-Fi",
         "s4-1": "kamu menekan Cetak di laptop",
@@ -345907,7 +346393,7 @@ export const PAKET_RAW: unknown[] = [
         "s5-1": "kamera merekam wajahmu",
         "s5-2": "gambar dipecah jadi paket",
         "s5-3": "paket dikirim lewat internet",
-        "s5-4": "HP temanmu menyusun paketnya",
+        "s5-4": "paket tiba lewat internet, lalu HP temanmu menyusunnya",
         "s5-5": "wajahmu muncul di layar temanmu",
         "s6": "Mencari di internet",
         "s6-1": "kamu mengetik kata kunci lalu menekan Cari",
@@ -345959,7 +346445,7 @@ export const PAKET_RAW: unknown[] = [
         "s3-1": "you write an email and press send",
         "s3-2": "the email is split into packets",
         "s3-3": "the packets travel through several routers",
-        "s3-4": "the packets are put back together at the receiver's server",
+        "s3-4": "the packets arrive over the network and are reassembled at the receiver’s server",
         "s3-5": "the receiver opens the email",
         "s4": "Printing over Wi-Fi",
         "s4-1": "you press Print on the laptop",
@@ -345970,7 +346456,7 @@ export const PAKET_RAW: unknown[] = [
         "s5-1": "the camera records your face",
         "s5-2": "the picture is split into packets",
         "s5-3": "the packets are sent across the internet",
-        "s5-4": "your friend's phone puts the packets together",
+        "s5-4": "the packets arrive over the internet and your friend’s phone puts them back together",
         "s5-5": "your face appears on your friend's screen",
         "s6": "Searching the internet",
         "s6-1": "you type a keyword and press Search",
@@ -346010,7 +346496,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 5,
         "default": 4,
         "step": 1,
-        "keterangan": "jumlah tahap yang disusun; 5 menambah tahap paket disusun lagi / penerima"
+        "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
       }
     },
     "assets": [],
@@ -346324,7 +346810,8 @@ export const PAKET_RAW: unknown[] = [
           }
         ]
       }
-    ]
+    ],
+    "potong": "tengah"
   },
   {
     "id": "sd4-mat-urut-bilangan-besar",
@@ -355227,7 +355714,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-siklus-tumbuhan-berbunga",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -355464,10 +355951,9 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "polong",
             "labelKey": "kacang-polong",
-            "emoji": "🥜",
             "adegan": {
-              "jenis": "tanda",
-              "tanda": "🫛"
+              "jenis": "ilustrasi-sd",
+              "varian": "polong-kacang"
             }
           }
         ]
@@ -355902,7 +356388,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-siklus-tumbuhan-perbaiki",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -356224,10 +356710,9 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "buah",
             "labelKey": "kacangpanjang-buah",
-            "emoji": "🥜",
             "adegan": {
-              "jenis": "tanda",
-              "tanda": "🫛"
+              "jenis": "ilustrasi-sd",
+              "varian": "polong-panjang"
             }
           }
         ]
@@ -356491,10 +356976,9 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "buah",
             "labelKey": "buncis-buah",
-            "emoji": "🥜",
             "adegan": {
-              "jenis": "tanda",
-              "tanda": "🫛"
+              "jenis": "ilustrasi-sd",
+              "varian": "polong-buncis"
             }
           }
         ]
@@ -356588,7 +357072,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-api-kota",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -356598,7 +357082,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Aplikasi Kota Bertanya ke Server",
-        "instruksi": "Aplikasi warga kota tidak menyimpan semua data sendiri; ia meminta ke server lewat API. Susun langkahnya dari permintaan, server memproses, jawaban, sampai hasil tampil.",
+        "instruksi": "Aplikasi warga kota meminta data ke server lewat API. Susun langkah dari awal permintaan sampai hasil tampil di layar.",
         "s1": "Kamus daring",
         "s1-1": "kamu mengetik kata 'gembira'",
         "s1-2": "aplikasi mengirim kata itu ke API kamus",
@@ -356674,7 +357158,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "City Apps Asking the Server",
-        "instruksi": "The city's apps don't keep all the data themselves; they ask a server through an API. Put the steps in order from request, server working, reply, to the result on screen.",
+        "instruksi": "The city app requests data from a server through an API. Put the steps in order from the start of the request to the result appearing on screen.",
         "s1": "Online dictionary",
         "s1-1": "you type the word 'cheerful'",
         "s1-2": "the app sends the word to the dictionary API",
@@ -356755,7 +357239,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 5,
         "default": 5,
         "step": 1,
-        "keterangan": "jumlah tahap; 4 = sampai server mengirim jawaban, 5 = sampai hasil tampil"
+        "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
       }
     },
     "assets": [],
@@ -357136,7 +357620,8 @@ export const PAKET_RAW: unknown[] = [
           }
         ]
       }
-    ]
+    ],
+    "potong": "tengah"
   },
   {
     "id": "sd6-kode-git-kelas",
@@ -358270,7 +358755,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-minta-jawab-api",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD6",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -358425,7 +358910,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 5,
         "default": 5,
         "step": 1,
-        "keterangan": "jumlah tahap; 4 = sampai server mengirim jawaban, 5 = sampai hasil tampil"
+        "keterangan": "jumlah tahap yang disusun, dengan langkah awal dan akhir selalu tampil"
       }
     },
     "assets": [],
@@ -358775,7 +359260,8 @@ export const PAKET_RAW: unknown[] = [
           }
         ]
       }
-    ]
+    ],
+    "potong": "tengah"
   },
   {
     "id": "sd6-mat-urut-desimal-pecahan-persen",

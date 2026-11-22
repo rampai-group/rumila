@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-segi-banyak-beraturan",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,8 +17,8 @@
       "i-segitiga-sama-sisi": "segitiga sama sisi",
       "i-segi-lima-beraturan": "segi lima",
       "i-segi-enam-beraturan": "segi enam",
-      "i-segi-enam-mendatar": "segi enam mendatar",
-      "i-rambu-segi-delapan": "rambu segi delapan",
+      "i-segi-enam-mendatar": "segi enam diputar",
+      "i-rambu-segi-delapan": "segi delapan",
       "i-persegi-panjang": "persegi panjang",
       "i-belah-ketupat": "belah ketupat",
       "i-jajar-genjang": "jajar genjang",
@@ -34,8 +34,8 @@
       "i-segitiga-sama-sisi": "equilateral triangle",
       "i-segi-lima-beraturan": "pentagon",
       "i-segi-enam-beraturan": "hexagon",
-      "i-segi-enam-mendatar": "flat hexagon",
-      "i-rambu-segi-delapan": "octagon sign",
+      "i-segi-enam-mendatar": "rotated hexagon",
+      "i-rambu-segi-delapan": "octagon",
       "i-persegi-panjang": "rectangle",
       "i-belah-ketupat": "rhombus",
       "i-jajar-genjang": "parallelogram",
@@ -75,72 +75,100 @@
       "id": "persegi",
       "labelKey": "i-persegi",
       "bin": "beraturan",
-      "shape": "square",
-      "color": "#6ab0e8"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "persegi"
+      }
     },
     {
       "id": "segitiga-sama-sisi",
       "labelKey": "i-segitiga-sama-sisi",
       "bin": "beraturan",
-      "shape": "triangle",
-      "color": "#ff5a6e"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "segitiga-sama-sisi"
+      }
     },
     {
       "id": "segilima",
       "labelKey": "i-segi-lima-beraturan",
       "bin": "beraturan",
-      "emoji": "⬟"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "segilima"
+      }
     },
     {
       "id": "segienam",
       "labelKey": "i-segi-enam-beraturan",
       "bin": "beraturan",
-      "emoji": "⬡"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "segienam"
+      }
     },
     {
       "id": "segienam-datar",
       "labelKey": "i-segi-enam-mendatar",
       "bin": "beraturan",
-      "emoji": "⬣"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "segienam-datar"
+      }
     },
     {
       "id": "segidelapan",
       "labelKey": "i-rambu-segi-delapan",
       "bin": "beraturan",
-      "emoji": "🛑"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "segidelapan"
+      }
     },
     {
       "id": "persegi-panjang",
       "labelKey": "i-persegi-panjang",
       "bin": "tidak",
-      "shape": "rect",
-      "color": "#ffd23f",
-      "width": 2
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "persegi-panjang"
+      }
     },
     {
       "id": "ketupat",
       "labelKey": "i-belah-ketupat",
       "bin": "tidak",
-      "shape": "belah-ketupat",
-      "color": "#a78bfa"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "ketupat"
+      }
     },
     {
       "id": "jajar-genjang",
       "labelKey": "i-jajar-genjang",
       "bin": "tidak",
-      "emoji": "▱"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jajar-genjang"
+      }
     },
     {
       "id": "trapesium",
       "labelKey": "i-trapesium",
       "bin": "tidak",
-      "emoji": "⏢"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "trapesium"
+      }
     },
     {
       "id": "segitiga-siku",
       "labelKey": "i-segitiga-sikumsiku",
       "bin": "tidak",
-      "emoji": "📐"
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "segitiga-siku"
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "sains-lengkapi-tubuh-boneka",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Lengkapi Tubuh Boneka",
-      "instruksi": "Boneka belum lengkap. Dengarkan tempat yang kosong, lalu sentuh bagian tubuh yang harus dipasang.",
+      "instruksi": "Lihat boneka yang belum lengkap. Sentuh bagian tubuh yang cocok untuk tempat bergaris putus-putus.",
       "pilihan": "pilihan",
       "i-kepala": "kepala",
       "i-badan": "badan",
@@ -32,7 +32,7 @@
     },
     "en": {
       "judul": "Finish the Doll's Body",
-      "instruksi": "The doll is not finished. Listen to which place is empty, then touch the body part to put on.",
+      "instruksi": "Look at the incomplete doll. Touch the body part that fits the dashed space.",
       "pilihan": "choices",
       "i-kepala": "head",
       "i-badan": "body",
@@ -78,25 +78,41 @@
       "id": "kepala",
       "labelKey": "i-kepala",
       "bin": "pilihan",
-      "emoji": "🙂"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-kepala",
+        "t": 0
+      }
     },
     {
       "id": "badan",
       "labelKey": "i-badan",
       "bin": "pilihan",
-      "shape": "badan"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-badan",
+        "t": 0
+      }
     },
     {
       "id": "tangan",
       "labelKey": "i-tangan",
       "bin": "pilihan",
-      "emoji": "✋"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tangan",
+        "t": 0
+      }
     },
     {
       "id": "kaki",
       "labelKey": "i-kaki",
       "bin": "pilihan",
-      "emoji": "🦶"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-kaki",
+        "t": 0
+      }
     },
     {
       "id": "bola",
@@ -126,7 +142,12 @@
         "tangan",
         "bola"
       ],
-      "correct": "kepala"
+      "correct": "kepala",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-kepala",
+        "t": 0
+      }
     },
     {
       "id": "r2",
@@ -136,7 +157,12 @@
         "kepala",
         "sepatu"
       ],
-      "correct": "kaki"
+      "correct": "kaki",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-kaki",
+        "t": 0
+      }
     },
     {
       "id": "r3",
@@ -146,7 +172,12 @@
         "kaki",
         "topi"
       ],
-      "correct": "tangan"
+      "correct": "tangan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-tangan",
+        "t": 0
+      }
     },
     {
       "id": "r4",
@@ -156,7 +187,12 @@
         "kepala",
         "bola"
       ],
-      "correct": "badan"
+      "correct": "badan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-badan",
+        "t": 0
+      }
     },
     {
       "id": "r5",
@@ -166,7 +202,12 @@
         "kaki",
         "badan"
       ],
-      "correct": "kepala"
+      "correct": "kepala",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-kepala",
+        "t": 0
+      }
     },
     {
       "id": "r6",
@@ -176,7 +217,12 @@
         "tangan",
         "topi"
       ],
-      "correct": "kaki"
+      "correct": "kaki",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-kaki",
+        "t": 0
+      }
     },
     {
       "id": "r7",
@@ -186,7 +232,12 @@
         "badan",
         "sepatu"
       ],
-      "correct": "tangan"
+      "correct": "tangan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-tangan",
+        "t": 0
+      }
     },
     {
       "id": "r8",
@@ -196,7 +247,12 @@
         "tangan",
         "bola"
       ],
-      "correct": "badan"
+      "correct": "badan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-badan",
+        "t": 0
+      }
     },
     {
       "id": "r9",
@@ -206,7 +262,12 @@
         "topi",
         "bola"
       ],
-      "correct": "badan"
+      "correct": "badan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-badan",
+        "t": 0
+      }
     },
     {
       "id": "r10",
@@ -216,7 +277,12 @@
         "kepala",
         "sepatu"
       ],
-      "correct": "tangan"
+      "correct": "tangan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-boneka-tanpa-tangan",
+        "t": 0
+      }
     }
   ]
 }

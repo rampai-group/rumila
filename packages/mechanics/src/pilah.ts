@@ -65,7 +65,10 @@ export function buatRondePilah(p: PaketPilah, knobs: Knobs, seed: number): Ronde
       const benar = choices.filter(c => c.id === ronde.correct);
       choices = [...benar, ...acak(choices.filter(c => c.id !== ronde.correct), r).slice(0, n - benar.length)];
     }
-    return { mode: "pilih", promptKey: ronde.promptKey, choices: acak(choices, r), correct: ronde.correct };
+    return {
+      mode: "pilih", promptKey: ronde.promptKey, choices: acak(choices, r), correct: ronde.correct,
+      adegan: ronde.adegan, bacaPilihan: ronde.bacaPilihan,
+    };
   }
   const bins = binAktif(p, knobs);
   return { mode: "kelompok", bins, items: itemAktif(p, bins, knobs, r) };

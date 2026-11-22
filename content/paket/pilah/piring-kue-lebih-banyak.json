@@ -1,6 +1,6 @@
 {
   "id": "piring-kue-lebih-banyak",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,19 +10,19 @@
   "locale": {
     "id": {
       "judul": "Piring Kue: Mana Lebih Banyak?",
-      "instruksi": "Robot lapar sekali: sentuh piring yang kuenya lebih banyak.",
+      "instruksi": "Lihat tiap kelompok kue. Dengarkan pertanyaannya, lalu sentuh kelompok yang benar.",
       "pilihan": "pilihan",
       "kue": "kue",
-      "tBanyak": "Mana piring yang kuenya lebih banyak?",
+      "tBanyak": "Kelompok mana yang kuenya lebih banyak?",
       "kuemangkuk": "kue mangkuk",
       "donat": "donat"
     },
     "en": {
       "judul": "Cake Plates: Which Has More?",
-      "instruksi": "Robot is very hungry: touch the plate with more treats.",
+      "instruksi": "Look at each group of cakes. Listen to the question, then touch the correct group.",
       "pilihan": "choices",
       "kue": "cookies",
-      "tBanyak": "Which plate has more treats?",
+      "tBanyak": "Which group has more cakes?",
       "kuemangkuk": "cupcake",
       "donat": "doughnut"
     }
