@@ -35,8 +35,7 @@ export function diver() {
   const suit = std('#1d1f26', 0.55),
     orange = std('#ff8a1f', 0.5),
     teal = std('#18b6b0', 0.45),
-    skin = std('#e9b98a', 0.6),
-    hair = std('#4a2c18', 0.7),
+    hood = std('#16407e', 0.45),
     metal = std('#c9cfd6', 0.25, { metalness: 0.8 }),
     black = std('#101114', 0.5);
 
@@ -59,41 +58,27 @@ export function diver() {
   vest.position.set(0.05, 0.12, 0);
   g.add(tank, valve, vest);
 
-  // kepala, masker, rambut ikal — dalam satu grup berporos di leher (bisa menoleh saat berdiri)
+  // kepala bertudung + masker emas tertutup (tanpa wajah) — dalam satu grup berporos di leher (bisa menoleh saat berdiri)
   const headG = new T.Group();
   headG.position.set(0.36, 0, 0);
   g.add(headG);
   const addH = (...o: T.Object3D[]) => o.forEach((x) => (x.position.x -= 0.36, headG.add(x)));
-  const head = new T.Mesh(new T.SphereGeometry(0.17, 22, 16), skin);
+  const head = new T.Mesh(new T.SphereGeometry(0.17, 22, 16), hood);
   head.position.set(0.5, 0.06, 0);
   addH(head);
-  const hairG = new T.Group();
-  for (let i = 0; i < 14; i++) {
-    const c = new T.Mesh(new T.SphereGeometry(0.075, 10, 8), hair);
-    const a = (i / 14) * 6.28;
-    c.position.set(0.45 + Math.cos(a) * 0.05, 0.16 + Math.abs(Math.sin(a * 2)) * 0.03, Math.sin(a) * 0.12);
-    hairG.add(c);
-  }
-  addH(hairG);
   const mask = new T.Mesh(new T.TorusGeometry(0.1, 0.028, 8, 20), teal);
   mask.position.set(0.64, 0.08, 0);
   mask.rotation.y = Math.PI / 2;
   mask.scale.set(1, 0.75, 1.5);
-  const glass = new T.Mesh(new T.CircleGeometry(0.1, 20), new T.MeshPhysicalMaterial({ color: '#bfefff', roughness: 0.05, transparent: true, opacity: 0.35 }));
-  glass.position.set(0.655, 0.08, 0);
+  const glass = new T.Mesh(new T.CircleGeometry(0.1, 20), new T.MeshPhysicalMaterial({ color: '#d9a441', roughness: 0.1, metalness: 0.6, emissive: '#3a2405' }));
+  glass.position.set(0.672, 0.08, 0);
   glass.rotation.y = Math.PI / 2;
   glass.scale.set(1.45, 0.72, 1);
-  const eyesG = new T.Group();
-  for (const s of [-1, 1]) {
-    const e = new T.Mesh(new T.SphereGeometry(0.03, 10, 8), std('#1a1a1a', 0.2));
-    e.position.set(0.635, 0.09, s * 0.05);
-    eyesG.add(e);
-  }
   const reg = new T.Mesh(new T.CylinderGeometry(0.035, 0.035, 0.06, 10), black);
   reg.rotation.z = Math.PI / 2;
   reg.position.set(0.66, -0.05, 0);
 
-  addH(mask, glass, eyesG, reg);
+  addH(mask, glass, reg);
 
   // lengan & kaki (bersendi di bahu/pinggul)
   const limb = (x: number, z: number, len: number, rad: number, m: T.Material, hand: boolean) => {
@@ -146,8 +131,8 @@ export function diver() {
     armL.rotation.z = armR.rotation.z = on ? Math.PI * 0.95 : 0;
   };
 
-  // Model 3D Agam penyelam (Higgsfield: baju selam, BCD, tabung, masker, fin; 24 tulang). GLB tegak (kepala +y,
-  // wajah +z) diputar ke rangka penyelam ini: kepala ke +x, punggung/tabung ke +y, perut ke −y; panjang ±2 unit.
+  // Model 3D penyelam tanpa wajah (turunan Higgsfield: baju selam, BCD, tabung, masker, fin; 24 tulang). GLB tegak (kepala +y,
+  // visor +z) diputar ke rangka penyelam ini: kepala ke +x, punggung/tabung ke +y, perut ke −y; panjang ±2 unit.
   const rig = new AgamModel(
     g,
     () => {
@@ -157,7 +142,7 @@ export function diver() {
       beam.visible = true;
     },
     {
-      url: '/laut/agam-penyelam-v2.glb',
+      url: '/laut/penyelam-r.glb',
       fit: (root) => {
         const k = 2.0 / 1.2;
         root.scale.setScalar(k);
@@ -243,24 +228,18 @@ export function submersible() {
   bowRing.position.x = L / 2;
   g.add(bowRing);
 
-  // pilot cilik di balik kaca haluan
+  // pilot cilik di balik kaca haluan: helm + visor emas, tanpa wajah
   const pilot = new T.Group();
-  const head = new T.Mesh(new T.SphereGeometry(0.17, 20, 14), std('#e9b98a', 0.6));
-  const hair = new T.Mesh(new T.SphereGeometry(0.182, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.5), std('#4a2c18', 0.7));
-  hair.rotation.z = -0.4;
+  const head = new T.Mesh(new T.SphereGeometry(0.17, 20, 14), std('#16407e', 0.4));
+  const visor = new T.Mesh(new T.SphereGeometry(0.14, 24, 16), std('#d9a441', 0.12, { metalness: 0.6, emissive: '#3a2405' }));
+  visor.position.set(0.07, 0.02, 0);
+  visor.scale.set(0.9, 0.8, 1);
   const body = new T.Mesh(new T.CapsuleGeometry(0.15, 0.16, 6, 12), std('#1d1f26', 0.5));
   body.position.y = -0.3;
   const stripe = new T.Mesh(new T.TorusGeometry(0.15, 0.022, 6, 20), std('#ff8a1f'));
   stripe.rotation.x = Math.PI / 2;
   stripe.position.y = -0.26;
-  pilot.add(head, hair, body, stripe);
-  for (const s of [-1, 1]) {
-    const w = new T.Mesh(new T.SphereGeometry(0.043, 10, 8), std('#fff', 0.2));
-    w.position.set(0.13, 0.03, s * 0.06);
-    const e = new T.Mesh(new T.SphereGeometry(0.03, 10, 8), std('#111', 0.2));
-    e.position.set(0.15, 0.03, s * 0.06);
-    pilot.add(w, e);
-  }
+  pilot.add(head, visor, body, stripe);
   pilot.position.set(L / 2 + 0.05, 0.02, 0);
   g.add(pilot);
 
