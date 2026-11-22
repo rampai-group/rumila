@@ -78,8 +78,6 @@ export interface Explorer {
 
 export function explorer(withLamp = true): Explorer {
   const a = new T.Group();
-  const skin = std(0xe8b48a, { roughness: 0.55 });
-  const hair = std(0x3b2414, { roughness: 0.6 });
   const shirt = std(0x1f2f7a, { roughness: 0.8 });
   const vest = std(0xf07a1f, { roughness: 0.6 });
   const refl = std(0xf2f2e8, { roughness: 0.3, metalness: 0.4, emissive: 0x333322 });
@@ -104,58 +102,15 @@ export function explorer(withLamp = true): Explorer {
   belt.position.y = 0.31;
   a.add(belt);
 
-  // kepala
+  // kepala: balaklava + kacamata pelindung emas menutup penuh, sengaja tanpa wajah (privasi anak)
   const headY = 0.69;
-  const head = new T.Mesh(new T.SphereGeometry(0.1, 28, 20), skin);
+  const head = new T.Mesh(new T.SphereGeometry(0.1, 28, 20), std(0x1b2b4a, { roughness: 0.7 }));
   head.position.y = headY;
   head.scale.set(1, 1.02, 0.95);
-  a.add(head);
-  for (let i = 0; i < 6; i++) {
-    const tuft = new T.Mesh(new T.SphereGeometry(0.03, 10, 8), hair);
-    tuft.position.set(-0.06 + i * 0.024, headY + 0.055 - Math.abs(i - 2.5) * 0.006, 0.072 - Math.abs(i - 2.5) * 0.008);
-    tuft.scale.set(1, 0.6, 0.8);
-    a.add(tuft);
-  }
-  const back = new T.Mesh(new T.SphereGeometry(0.103, 24, 14, 0, TAU, 0, Math.PI * 0.6), hair);
-  back.position.set(0, headY, -0.012);
-  back.rotation.x = -0.9;
-  a.add(back);
-  const white = std(0xffffff, { roughness: 0.2 });
-  const iris = std(0x6b3a1a, { roughness: 0.25 });
-  const pupil = std(0x120a06, { roughness: 0.2 });
-  const shine = new T.MeshBasicMaterial({ color: 0xffffff });
-  for (const sx of [-1, 1]) {
-    const eye = new T.Group();
-    const w = new T.Mesh(new T.SphereGeometry(0.026, 16, 12), white);
-    w.scale.set(1, 1.15, 0.55);
-    const ir = new T.Mesh(new T.SphereGeometry(0.019, 16, 12), iris);
-    ir.position.z = 0.009;
-    ir.scale.set(1, 1.1, 0.5);
-    const pu = new T.Mesh(new T.SphereGeometry(0.01, 12, 8), pupil);
-    pu.position.z = 0.016;
-    pu.scale.set(1, 1.1, 0.5);
-    const hl = new T.Mesh(new T.SphereGeometry(0.005, 8, 6), shine);
-    hl.position.set(0.006, 0.009, 0.02);
-    eye.add(w, ir, pu, hl);
-    eye.position.set(sx * 0.037, headY + 0.0, 0.083);
-    a.add(eye);
-    const brow = new T.Mesh(new T.CapsuleGeometry(0.005, 0.026, 3, 6), hair);
-    brow.rotation.z = Math.PI / 2 + sx * 0.18;
-    brow.position.set(sx * 0.037, headY + 0.036, 0.09);
-    const cheek = new T.Mesh(new T.CircleGeometry(0.014, 12), new T.MeshBasicMaterial({ color: 0xf0907a, transparent: true, opacity: 0.55 }));
-    cheek.position.set(sx * 0.058, headY - 0.034, 0.083);
-    cheek.rotation.y = sx * 0.5;
-    const ear = new T.Mesh(new T.SphereGeometry(0.02, 10, 8), skin);
-    ear.position.set(sx * 0.098, headY - 0.01, 0);
-    ear.scale.set(0.6, 1, 0.8);
-    a.add(brow, cheek, ear);
-  }
-  const nose = new T.Mesh(new T.SphereGeometry(0.011, 10, 8), skin);
-  nose.position.set(0, headY - 0.018, 0.096);
-  const smile = new T.Mesh(new T.TorusGeometry(0.022, 0.004, 6, 16, Math.PI), std(0x8a3a2a));
-  smile.rotation.z = Math.PI;
-  smile.position.set(0, headY - 0.042, 0.088);
-  a.add(nose, smile);
+  const visor = new T.Mesh(new T.SphereGeometry(0.094, 32, 20), std(0xd9a441, { roughness: 0.12, metalness: 0.6, emissive: 0x3a2405 }));
+  visor.position.set(0, headY - 0.004, 0.034);
+  visor.scale.set(1, 0.72, 0.85);
+  a.add(head, visor);
 
   // helm proyek kuning dengan lampu kepala
   const dome = new T.Mesh(new T.SphereGeometry(0.118, 32, 16, 0, TAU, 0, Math.PI / 2), helm);
@@ -195,7 +150,7 @@ export function explorer(withLamp = true): Explorer {
   beam.position.copy(lens.position);
   a.add(beam);
 
-  // papan nama AGAM di rompi + bendera Merah Putih di lengan
+  // badge R di rompi + bendera Merah Putih di lengan
   const tag = new T.Mesh(
     new T.PlaneGeometry(0.09, 0.032),
     new T.MeshStandardMaterial({
@@ -206,7 +161,7 @@ export function explorer(withLamp = true): Explorer {
         g.font = '900 58px system-ui, sans-serif';
         g.textAlign = 'center';
         g.textBaseline = 'middle';
-        g.fillText('AGAM', w / 2, h / 2 + 3);
+        g.fillText('R', w / 2, h / 2 + 3);
       }),
     }),
   );

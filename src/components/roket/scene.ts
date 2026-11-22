@@ -390,10 +390,9 @@ function nameTex(name: string) {
 }
 
 /**
- * Agam, astronaut cilik Rumila (mengikuti gambar karakter): helm gelembung kaca bening memperlihatkan
- * wajah anak (mata cokelat besar, rambut cokelat), baju putih beraksen oranye & biru dongker, papan nama
- * "AGAM", kotak kendali dada berlampu biru, sabuk & pelindung lutut dongker, sepatu bot putih-oranye,
- * ransel penunjang hidup, bendera Merah Putih di bahu kiri dan logo misi RINOYA di bahu kanan.
+ * Astronaut cilik RINOYA (cadangan sebelum/ bila GLB gagal dimuat): TANPA WAJAH. Visor emas tertutup,
+ * baju putih beraksen oranye & biru dongker, badge "R", kotak kendali dada berlampu biru, sabuk & pelindung
+ * lutut dongker, sepatu bot putih-oranye, ransel penunjang hidup, bendera Merah Putih di bahu kiri.
  */
 export function buildAstronaut() {
   const a = new THREE.Group();
@@ -402,8 +401,6 @@ export function buildAstronaut() {
   const navy = new THREE.MeshStandardMaterial({ color: 0x1f2f7a, roughness: 0.55 });
   const grey = new THREE.MeshStandardMaterial({ color: 0xb8bec8, roughness: 0.5, metalness: 0.3 });
   const dark = new THREE.MeshStandardMaterial({ color: 0x2c2f38, roughness: 0.6 });
-  const skin = new THREE.MeshStandardMaterial({ color: 0xe8b48a, roughness: 0.55 });
-  const hair = new THREE.MeshStandardMaterial({ color: 0x3b2414, roughness: 0.6 });
 
   // badan (sedikit gemuk seperti anak) + sabuk dongker
   const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.14, 0.17, 8, 24), suit);
@@ -414,66 +411,13 @@ export function buildAstronaut() {
   buckle.position.set(0, 0.34, 0.146);
   a.add(torso, belt, buckle);
 
-  // kepala anak di dalam helm: wajah, rambut, mata besar, alis, senyum, pipi, telinga
+  // helm bervisor emas tertutup: sengaja tanpa wajah (privasi anak)
   const headY = 0.71;
-  const head = new THREE.Mesh(new THREE.SphereGeometry(0.1, 28, 20), skin);
-  head.position.y = headY;
-  head.scale.set(1, 1.02, 0.95);
-  const hairCap = new THREE.Mesh(new THREE.SphereGeometry(0.104, 28, 16, 0, TAU, 0, Math.PI * 0.52), hair);
-  hairCap.position.set(0, headY + 0.008, -0.006);
-  hairCap.rotation.x = -0.35;
-  a.add(head, hairCap);
-  // poni bergelombang
-  for (let i = 0; i < 6; i++) {
-    const tuft = new THREE.Mesh(new THREE.SphereGeometry(0.032, 10, 8), hair);
-    tuft.position.set(-0.06 + i * 0.024, headY + 0.07 - Math.abs(i - 2.5) * 0.006, 0.065 - Math.abs(i - 2.5) * 0.008);
-    tuft.scale.set(1, 0.7, 0.8);
-    a.add(tuft);
-  }
-  const white = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2 });
-  const iris = new THREE.MeshStandardMaterial({ color: 0x6b3a1a, roughness: 0.25 });
-  const pupil = new THREE.MeshStandardMaterial({ color: 0x120a06, roughness: 0.2 });
-  const shine = new THREE.MeshBasicMaterial({ color: 0xffffff });
-  for (const sx of [-1, 1]) {
-    const eye = new THREE.Group();
-    const w = new THREE.Mesh(new THREE.SphereGeometry(0.026, 16, 12), white);
-    w.scale.set(1, 1.15, 0.55);
-    const ir = new THREE.Mesh(new THREE.SphereGeometry(0.019, 16, 12), iris);
-    ir.position.z = 0.009;
-    ir.scale.set(1, 1.1, 0.5);
-    const pu = new THREE.Mesh(new THREE.SphereGeometry(0.01, 12, 8), pupil);
-    pu.position.z = 0.016;
-    pu.scale.set(1, 1.1, 0.5);
-    const hl = new THREE.Mesh(new THREE.SphereGeometry(0.005, 8, 6), shine);
-    hl.position.set(0.006, 0.009, 0.02);
-    eye.add(w, ir, pu, hl);
-    eye.position.set(sx * 0.037, headY + 0.008, 0.083);
-    a.add(eye);
-    const brow = new THREE.Mesh(new THREE.CapsuleGeometry(0.005, 0.026, 3, 6), hair);
-    brow.rotation.z = Math.PI / 2 + sx * 0.18;
-    brow.position.set(sx * 0.037, headY + 0.045, 0.088);
-    const cheek = new THREE.Mesh(new THREE.CircleGeometry(0.014, 12), new THREE.MeshBasicMaterial({ color: 0xf0907a, transparent: true, opacity: 0.55 }));
-    cheek.position.set(sx * 0.058, headY - 0.028, 0.083);
-    cheek.rotation.y = sx * 0.5;
-    const ear = new THREE.Mesh(new THREE.SphereGeometry(0.02, 10, 8), skin);
-    ear.position.set(sx * 0.098, headY, 0);
-    ear.scale.set(0.6, 1, 0.8);
-    a.add(brow, cheek, ear);
-  }
-  const nose = new THREE.Mesh(new THREE.SphereGeometry(0.011, 10, 8), skin);
-  nose.position.set(0, headY - 0.012, 0.096);
-  const smile = new THREE.Mesh(new THREE.TorusGeometry(0.022, 0.004, 6, 16, Math.PI), new THREE.MeshStandardMaterial({ color: 0x8a3a2a }));
-  smile.rotation.z = Math.PI;
-  smile.position.set(0, headY - 0.036, 0.088);
-  a.add(nose, smile);
-
-  // helm: gelembung kaca bening + bingkai putih di belakang + cincin leher & tepi oranye + "telinga" helm
-  const helmet = new THREE.Mesh(
-    new THREE.SphereGeometry(0.155, 36, 24),
-    new THREE.MeshPhysicalMaterial({ color: 0xdff4ff, roughness: 0.03, metalness: 0, transparent: true, opacity: 0.16, clearcoat: 1, clearcoatRoughness: 0.03, depthWrite: false }),
+  const visor = new THREE.Mesh(
+    new THREE.SphereGeometry(0.15, 36, 24),
+    new THREE.MeshPhysicalMaterial({ color: 0xd9a441, roughness: 0.08, metalness: 0.8, clearcoat: 1, clearcoatRoughness: 0.05, emissive: 0x3a2405 }),
   );
-  helmet.position.y = headY + 0.01;
-  helmet.renderOrder = 3;
+  visor.position.y = headY + 0.01;
   // bingkai putih mengelilingi gelembung (terlihat dari depan) + tudung putih di belakang kepala
   const rim = new THREE.Mesh(new THREE.TorusGeometry(0.156, 0.013, 8, 48), suit);
   rim.position.set(0, headY + 0.01, -0.02);
@@ -487,7 +431,7 @@ export function buildAstronaut() {
   const neckTrim = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.008, 6, 32), orange);
   neckTrim.rotation.x = Math.PI / 2;
   neckTrim.position.y = 0.595;
-  a.add(helmet, shell, rim, neck, neckTrim);
+  a.add(visor, shell, rim, neck, neckTrim);
   for (const sx of [-1, 1]) {
     const pod = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.03, 18), suit);
     pod.rotation.z = Math.PI / 2;
@@ -533,8 +477,8 @@ export function buildAstronaut() {
   const blue = new THREE.PointLight(0x4a7bff, 0.25, 0.4);
   blue.position.set(0.028, 0.43, 0.2);
   a.add(blue);
-  // papan nama AGAM & tali pengikat dongker
-  const tag2 = new THREE.Mesh(new THREE.PlaneGeometry(0.1, 0.036), new THREE.MeshStandardMaterial({ map: nameTex("AGAM"), roughness: 0.6 }));
+  // badge R & tali pengikat dongker
+  const tag2 = new THREE.Mesh(new THREE.PlaneGeometry(0.1, 0.036), new THREE.MeshStandardMaterial({ map: nameTex("R"), roughness: 0.6 }));
   tag2.position.set(0, 0.505, 0.153);
   tag2.rotation.x = -0.25;
   a.add(tag2);
@@ -639,7 +583,7 @@ export function buildAstronaut() {
   a.add(armL, armR, legL, legR);
   a.scale.setScalar(0.85);
   tag(a, "astronot");
-  return { astro: a, armL, armR, legL, legR, helmet, visor: helmet };
+  return { astro: a, armL, armR, legL, legR, helmet: visor, visor };
 }
 
 /* ---------------- scene utama ---------------- */

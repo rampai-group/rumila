@@ -69,7 +69,7 @@ export class ShipOverlay {
             for (const mt of mats) this.agamMats.push(mt);
           });
         },
-        { url: "/roket/agam-astronot.glb", fit: (r) => r.scale.setScalar(0.8 / 1.2) },
+        { url: "/roket/astronot-r.glb", fit: (r) => r.scale.setScalar(0.8 / 1.2) },
       );
     }
     if (u === null) {

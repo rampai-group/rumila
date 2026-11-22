@@ -344,7 +344,7 @@ function KidTour() {
   );
 }
 
-const AGAM = "/angkasa/agam-astronot.png";
+const AGAM = "/angkasa/astronot-r.png";
 
 /** Sapaan Agam selama kamera mundur dari Bumi ke tata surya. */
 const INTRO_LINES = [

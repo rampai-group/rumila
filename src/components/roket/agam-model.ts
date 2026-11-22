@@ -1,4 +1,4 @@
-// Model 3D astronaut Agam (GLB dari Higgsfield/Meshy: bertekstur, bertulang 24 sendi, pose A, tinggi 1,2 m).
+// Model 3D astronaut tanpa wajah: visor emas + badge R (turunan GLB dari Higgsfield/Meshy: bertekstur, bertulang 24 sendi, pose A, tinggi 1,2 m).
 // Dimuat ke dalam grup astronaut yang sudah ada: tinggi disamakan dengan astronaut prosedural lama (yang lalu
 // disembunyikan), jadi semua posisi adegan tetap berlaku. Gerak (jalan, melayang) memutar tulang di sekitar
 // sumbu ruang model (x = samping, z = depan), dihitung dari pose istirahat tiap tulang.
@@ -6,10 +6,10 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
-const URL = "/roket/agam-astronot.glb";
+const URL = "/roket/astronot-r.glb";
 
 export interface AgamModelOpts {
-  /** berkas GLB bertulang (bawaan: astronaut Agam) */
+  /** berkas GLB bertulang (bawaan: astronaut badge R) */
   url?: string;
   /** atur skala/posisi/orientasi akar model sendiri; bila tidak ada, tinggi disamakan dengan isi `host` */
   fit?: (root: THREE.Object3D) => void;
