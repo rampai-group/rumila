@@ -227,7 +227,7 @@ export function TranskripJenjang({ nama, level, kode, nomor, issuedAt, snapshot 
           </ul>
         </div>
       ))}
-      <p style={{ fontSize: 10.5, color: MUTED, marginTop: 18, lineHeight: 1.5 }}>
+      <p style={{ fontSize: 11, color: MUTED, marginTop: 18, lineHeight: 1.5 }}>
         RINOYA Academy adalah program belajar non-formal pendamping sekolah; dokumen ini bukan ijazah. Keaslian dapat diperiksa dengan kode {kode}.
       </p>
     </div>

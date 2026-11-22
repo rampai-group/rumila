@@ -417,7 +417,7 @@ function KartuIdentitas({ anak }: { anak: Member }) {
             </div>
             <span title={`Lencana pangkat ${lv.pangkat}`} className="flex size-[90px] shrink-0 flex-col items-center justify-center rounded-full text-white" style={{ background: `radial-gradient(circle at 35% 30%, ${warna[0]}, ${warna[1]})`, boxShadow: `0 4px 0 ${warna[1]}55, inset 0 0 0 3px #ffffff66` }}>
               <Icon name={ikon} size={28} />
-              <span className="font-black uppercase" style={{ fontSize: 11 }}>{lv.pangkat}</span>
+              <span className="rounded-full bg-[#0b2545] px-1.5 font-black uppercase" style={{ fontSize: 11 }}>{lv.pangkat}</span>
             </span>
           </div>
           <dl className="grid grid-cols-2 gap-2 text-[13px]">

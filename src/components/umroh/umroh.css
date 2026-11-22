@@ -222,7 +222,7 @@
   .umroh-loc { height:44px; font-size:12.5px; padding:0 12px; }
   .umroh-glass-btn { width:44px; height:44px; }
   .umroh-babak { top:calc(env(safe-area-inset-top, 0px) + 62px); padding:8px 12px 6px; gap:8px; }
-  .umroh-babak span { font-size:9.5px; letter-spacing:.06em; }
+  .umroh-babak span { font-size:11px; letter-spacing:.02em; }
   .umroh-hud { top:calc(env(safe-area-inset-top, 0px) + 112px); }
   .umroh-caption { flex-wrap:wrap; gap:10px; padding:12px 12px 12px 16px; border-radius:22px; }
   .umroh-cap-text { flex-basis:100%; }

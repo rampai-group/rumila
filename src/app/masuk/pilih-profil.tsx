@@ -117,7 +117,7 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
   const [, mm, d] = PLAY[m.c];
   // Nama panjang diperkecil supaya tetap terbaca utuh, tidak terpotong "…".
   const panjang = m.name.length;
-  const ukuranNama = panjang > 12 ? "text-[17px] sm:text-[22px]" : panjang > 8 ? "text-[20px] sm:text-[24px]" : "text-[24px] sm:text-[28px]";
+  const ukuranNama = panjang > 12 ? "text-[15px] sm:text-[21px]" : panjang > 8 ? "text-[17px] sm:text-[23px]" : "text-[24px] sm:text-[28px]";
   return (
     <button
       type="button"
@@ -138,7 +138,7 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
         ) : null}
       </span>
       <span
-        className={`relative flex h-[30px] max-w-full items-center rounded-full px-3 text-white sm:h-[38px] ${ukuranNama}`}
+        className={`relative flex h-[34px] max-w-full items-center rounded-full px-2 sm:px-3 text-white sm:h-[38px] ${ukuranNama}`}
         style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1.1, background: `color-mix(in srgb, ${d} 62%, #000)` }}
       >
         <span className="truncate">{m.name}</span>
