@@ -360,7 +360,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
                   right={benar}
                   wrong={salah}
                   onClick={() => ketuk(id)}
-                  className={`w-full ${salah ? "akademi-shake" : ""} ${disorot ? "akademi-bounce" : ""}`}
+                  className={`w-full pt-6! ${salah ? "akademi-shake" : ""} ${disorot ? "akademi-bounce" : ""}`}
                   style={{
                     minHeight: tinggiKartu,
                     transform: dipilih ? "scale(1.1)" : undefined,
