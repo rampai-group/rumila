@@ -36,6 +36,12 @@
   border-radius: 50%;
   background: #8b45f5;
 }
+/* area sentuh 44 px untuk jari anak; pilnya tetap kecil supaya tidak menutup planet */
+.ak-label:not([data-kind="note"])::after {
+  content: "";
+  position: absolute;
+  inset: -12px -4px;
+}
 .ak-label[data-kind="part"]::before {
   background: #fd861d;
 }

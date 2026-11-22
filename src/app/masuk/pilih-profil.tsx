@@ -138,8 +138,8 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
         ) : null}
       </span>
       <span
-        className={`relative flex h-[28px] max-w-full items-center px-1 text-white sm:h-[34px] ${ukuranNama}`}
-        style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1.1, textShadow: `0 2px 0 ${d}, 0 0 3px ${d}` }}
+        className={`relative flex h-[30px] max-w-full items-center rounded-full px-3 text-white sm:h-[38px] ${ukuranNama}`}
+        style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1.1, background: `color-mix(in srgb, ${d} 62%, #000)` }}
       >
         <span className="truncate">{m.name}</span>
       </span>

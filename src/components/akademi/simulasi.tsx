@@ -429,7 +429,7 @@ function ModeJamPutar(c: Ctx) {
   return (
     <Kunci terkunci={terkunci}>
       <Tata
-        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span>Robot <span style={{ color: BIRU_TUA }}>{kegiatan}</span> pukul <span className="rounded-full px-2" style={{ background: "#fff1c2" }}>{ronde.target}</span></span>} /><Umpan hasil={hasil} benar={`Pukul ${ronde.target}`} /></>}
+        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span>Robot <span style={{ color: BIRU_TUA }}>{kegiatan}</span> pukul <span className="inline-block rounded-full px-2" style={{ background: "#fff1c2" }}>{ronde.target}</span></span>} /><Umpan hasil={hasil} benar={`Pukul ${ronde.target}`} /></>}
         adegan={
           <Papan>
             <Adegan min={240 + 72}>

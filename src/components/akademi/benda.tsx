@@ -259,7 +259,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
       const besar = s * 0.5;
       return (
         <span key={k} className="flex flex-col items-center text-center" style={{ gap: 2, maxWidth: Math.max(s * 2.4, 120) }}>
-          <span style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1, color: v.color ?? PILAR_CSS, fontSize: `min(${besar}px, 30cqi)` }}>{jam[1]}</span>
+          <span style={{ fontFamily: BALOO, fontWeight: 800, lineHeight: 1, color: v.color ?? "var(--pilar-tua, #083e73)", fontSize: `min(${besar}px, 30cqi)` }}>{jam[1]}</span>
           <span className="text-balance" style={{ fontFamily: NUNITO, fontWeight: 800, lineHeight: 1.2, color: INK, fontSize: `min(${Math.max(15, besar * 0.55)}px, ${(158 / kataTerpanjang(jam[2])).toFixed(1)}cqi)`, overflowWrap: "break-word" }}>{jam[2]}</span>
         </span>
       );
