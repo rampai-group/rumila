@@ -32,7 +32,7 @@ export default function KebijakanPrivasi() {
           <h1 className="text-[30px] leading-tight font-extrabold" style={{ fontFamily: "var(--ff-baloo), system-ui, sans-serif" }}>
             Kebijakan Privasi
           </h1>
-          <p className="text-[13px] font-bold text-[#6b7c93]">Berlaku sejak {TANGGAL}</p>
+          <p className="text-[13px] font-bold text-[#56657a]">Berlaku sejak {TANGGAL}</p>
         </header>
 
         <p className="text-[15px] leading-relaxed text-[#33475f]">
@@ -135,7 +135,7 @@ export default function KebijakanPrivasi() {
           </p>
         </Bagian>
 
-        <footer className="border-t border-[#f0e4d2] pt-4 text-[13px] font-bold text-[#6b7c93]">
+        <footer className="border-t border-[#f0e4d2] pt-4 text-[13px] font-bold text-[#56657a]">
           <Link href="/masuk" className="text-[#0567c2] underline">
             Kembali ke RINOYA Academy
           </Link>

@@ -23,7 +23,7 @@ const KUNCI_KOLEKSI = (memberId: string) => `rumila-akademi-koleksi-${memberId}`
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
 
 const LENCANA_WARNA: Record<StatusLencana, { bg: string; tepi: string; fg: string; label: string }> = {
-  terkunci: { bg: "#fff0da", tepi: "#f0e4d2", fg: "#b3a6c4", label: "Terkunci" },
+  terkunci: { bg: "#dbeafb", tepi: "#a9c0dc", fg: "#3d4f66", label: "Terkunci" },
   perunggu: { bg: "#cd7f32", tepi: "#a9652a", fg: "#fff", label: "Perunggu" },
   perak: { bg: "#b8c0cc", tepi: "#8f99a8", fg: "#fff", label: "Perak" },
   emas: { bg: "#f2b705", tepi: "#c99200", fg: "#fff", label: "Emas" },
@@ -307,7 +307,7 @@ function CincinPangkat({ progres, tercapai, warna, size = 64 }: { progres: numbe
   const isi = Math.max(0, Math.min(1, progres)) * keliling;
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden className="relative shrink-0">
-      <circle cx={c} cy={c} r={r} fill="none" stroke="#fff0da" strokeWidth={tebal} />
+      <circle cx={c} cy={c} r={r} fill="none" stroke="#dbeafb" strokeWidth={tebal} />
       {isi > 0 && <circle cx={c} cy={c} r={r} fill="none" stroke={tercapai ? "#f2b705" : m} strokeWidth={tebal} strokeDasharray={`${isi} ${keliling}`} transform={`rotate(-90 ${c} ${c})`} strokeLinecap="round" />}
       <text x={c} y={c + 1} textAnchor="middle" dominantBaseline="central" fontSize={size * 0.42} fill={tercapai ? d : "#c9bfd8"} fontFamily="Material Symbols Rounded">
         {tercapai ? "star" : "military_tech"}

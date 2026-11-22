@@ -25,7 +25,7 @@ const PRINT_CSS = `
 @media print {
   .no-print { display: none !important; }
   .rapor-root { background: #fff !important; padding: 0 !important; }
-  .rapor-card { box-shadow: none !important; border: 1px solid #f0e4d2; break-inside: avoid; }
+  .rapor-card { box-shadow: none !important; border: 1px solid #bcd4ee; break-inside: avoid; }
   a { text-decoration: none; color: inherit; }
 }`;
 
@@ -61,10 +61,10 @@ export function RaporView() {
           <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Rapor</h1>
           <p className="text-[13px] font-bold text-ink-3">Portal wali · RINOYA Academy</p>
         </div>
-        <Link href="/akademi/telemetri" className="inline-flex h-11 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+        <Link href="/akademi/telemetri" className="inline-flex h-11 items-center gap-1.5 rounded-full border border-[#bcd4ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
           <Icon name="monitoring" size={18} /> Telemetri
         </Link>
-        <button onClick={() => window.print()} className="inline-flex h-11 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+        <button onClick={() => window.print()} className="inline-flex h-11 items-center gap-1.5 rounded-full border border-[#bcd4ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
           <Icon name="print" size={18} /> Cetak
         </button>
       </header>
@@ -83,7 +83,7 @@ export function RaporView() {
                   aria-selected={on}
                   onClick={() => router.replace(`/akademi/rapor?anak=${m.id}`)}
                   className="flex items-center gap-2 rounded-full border py-1.5 pr-4 pl-1.5 text-[14px] font-extrabold transition-transform active:scale-95"
-                  style={{ borderColor: on ? INK : "#f0e4d2", background: on ? INK : "#fff", color: on ? "#fff" : INK }}
+                  style={{ borderColor: on ? INK : "#bcd4ee", background: on ? INK : "#fff", color: on ? "#fff" : INK }}
                 >
                   <MemberAvatar m={m} size={30} theme="playful" />
                   {m.name}
@@ -111,7 +111,7 @@ function Kerangka({ children }: { children: React.ReactNode }) {
 
 function TombolKembali({ ikon }: { ikon?: boolean }) {
   return ikon ? (
-    <Link href="/akademi" aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
+    <Link href="/akademi" aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-full border border-[#bcd4ee] bg-white transition-transform active:scale-95" style={{ color: INK }}>
       <Icon name="arrow_back" size={22} />
     </Link>
   ) : (
@@ -215,7 +215,7 @@ export function RaporAnak({ anak }: { anak: Member }) {
         {buktiTerakhir.length === 0 ? (
           <p className="mt-2 text-[14px] font-bold text-ink-3">Belum ada percobaan tercatat.</p>
         ) : (
-          <ul className="mt-2 divide-y divide-[#fff0da]">
+          <ul className="mt-2 divide-y divide-[#dbeafb]">
             {buktiTerakhir.map((e) => {
               const p = paketById(e.activityId);
               const benar = (e.payload as { correct?: unknown }).correct === true;
@@ -289,7 +289,7 @@ function DaftarTrack({ track, level, peng, bahasa }: { track: TrackId; level: Le
             <h4 className="text-[15px] font-black" style={{ color: INK }}>
               {u.nama}
             </h4>
-            <ul className="mt-2 divide-y divide-[#fff0da]">
+            <ul className="mt-2 divide-y divide-[#dbeafb]">
               {u.kompetensi.map((c) => (
                 <BarisKompetensi key={c.id} c={c} p={peng[c.id]} bahasa={bahasa} />
               ))}
@@ -309,7 +309,7 @@ function BarisKompetensi({ c, p, bahasa }: { c: Competency; p?: Penguasaan; baha
       <div className="min-w-0 flex-1">
         <p className="text-[14px] leading-snug font-extrabold" style={{ color: INK }}>
           {c.statement[bahasa] ?? c.statement.id}
-          {c.core && <span className="ml-1.5 rounded-full bg-[#fff0da] px-1.5 py-0.5 align-middle text-[11px] font-black text-ink-3">INTI</span>}
+          {c.core && <span className="ml-1.5 rounded-full bg-[#dbeafb] px-1.5 py-0.5 align-middle text-[11px] font-black text-ink-3">INTI</span>}
         </p>
         <p className="mt-0.5 text-[12px] font-bold text-ink-3">
           {p && p.success > 0 ? `${p.success} bukti · terakhir ${tanggalLokal(p.lastAt)}` : "Belum ada bukti"}

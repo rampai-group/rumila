@@ -45,7 +45,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
 
   if (satuModul || satuSemester || satuJenjang)
     return (
-      <div className={`sertifikat-root ${akar}`} style={{ background: tertanam ? undefined : "#fff0da", fontFamily: NUNITO, color: INK }}>
+      <div className={`sertifikat-root ${akar}`} style={{ background: tertanam ? undefined : "#dbeafb", fontFamily: NUNITO, color: INK }}>
         <style>{satuJenjang ? BUKU_PRINT_CSS : SERTIFIKAT_PRINT_CSS}</style>
         <div className="mx-auto flex max-w-[1040px] flex-col gap-4 px-4 py-5">
           <div className="no-print flex items-center gap-2">
@@ -72,7 +72,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
 
   const kosong = !jenjang.length && !semester.length && !modul.length;
   return (
-    <div className={akar} style={{ background: tertanam ? undefined : "#fff0da", fontFamily: NUNITO, color: INK }}>
+    <div className={akar} style={{ background: tertanam ? undefined : "#dbeafb", fontFamily: NUNITO, color: INK }}>
       <div className={`mx-auto flex max-w-[860px] flex-col gap-5 ${tertanam ? "" : "px-4 py-5"}`}>
         <header className="flex items-center gap-3">
           {kembali && <span className="text-[14px] font-extrabold text-ink-3">{kembali}</span>}

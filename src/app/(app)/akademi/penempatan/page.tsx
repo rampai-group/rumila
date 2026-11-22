@@ -80,7 +80,7 @@ export default function PenempatanPage() {
               setLevel(bawah);
             }}
             className="mt-5 w-full rounded-[18px] py-3.5 text-[19px] font-extrabold text-white"
-            style={{ background: "linear-gradient(155deg,#5fb8ff,#0786eb 65%)", boxShadow: "0 5px 0 #0567c2" }}
+            style={{ background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 5px 0 #044a8f" }}
           >
             Coba tes {namaLevel(bawah)}
           </button>

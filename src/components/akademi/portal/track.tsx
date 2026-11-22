@@ -162,7 +162,7 @@ function BarisKompetensi({ c, peng, selesai, terakhir, bahasa, akses }: { c: Com
   const paket = paketKompetensi(c, bahasa);
   const prasyaratBelum = c.prereq.some((id) => (peng[id]?.status ?? "belum") === "belum");
   return (
-    <li className={`flex flex-col gap-2 ${terakhir ? "" : "border-b border-[#fff0da] pb-3"}`}>
+    <li className={`flex flex-col gap-2 ${terakhir ? "" : "border-b border-[#dbeafb] pb-3"}`}>
       <div className="flex items-start gap-2.5">
         <IkonStatus status={status} />
         <p className="min-w-0 flex-1 pt-[3px] text-[15px] leading-snug font-bold" style={{ color: INK }}>
@@ -198,7 +198,7 @@ export function CincinProgres({ u, peng, warna, size = 52 }: { u: UnitGrup; peng
   const putar = (jumlah: number) => `rotate(${-90 + (jumlah / n) * 360} ${c} ${c})`;
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden className="shrink-0">
-      <circle cx={c} cy={c} r={r} fill="none" stroke="#fff0da" strokeWidth={tebal} />
+      <circle cx={c} cy={c} r={r} fill="none" stroke="#dbeafb" strokeWidth={tebal} />
       {ber > 0 && <circle cx={c} cy={c} r={r} fill="none" stroke="#ffbe0b" strokeWidth={tebal} strokeDasharray={segmen(ber)} transform={putar(dik)} strokeLinecap="round" />}
       {dik > 0 && <circle cx={c} cy={c} r={r} fill="none" stroke="#1fbf62" strokeWidth={tebal} strokeDasharray={segmen(dik)} transform={putar(0)} strokeLinecap="round" />}
       <text x={c} y={c} textAnchor="middle" dominantBaseline="central" fontSize={size * 0.32} fill={warna} fontFamily="Material Symbols Rounded">

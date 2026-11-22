@@ -53,7 +53,7 @@ export function KartuPelajar({ me, level }: { me: Member; level: LevelId }) {
           <span className="block" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: "4.4cqw", letterSpacing: ".06em" }}>
             RINOYA ACADEMY
           </span>
-          <span className="block font-extrabold opacity-85" style={{ fontSize: "2.4cqw", letterSpacing: ".18em" }}>
+          <span className="block font-extrabold" style={{ fontSize: "2.4cqw", letterSpacing: ".18em" }}>
             KARTU PELAJAR
           </span>
         </span>

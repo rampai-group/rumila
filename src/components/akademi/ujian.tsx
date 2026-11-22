@@ -152,7 +152,7 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, onMulai, 
           </button>
         </>
       ) : izin.boleh ? (
-        <button onClick={onMulai} className="mt-5 w-full rounded-[18px] py-3.5 text-[20px] font-extrabold text-white active:translate-y-0.5" style={{ background: "linear-gradient(155deg,#5fb8ff,#0786eb 65%)", boxShadow: "0 5px 0 #0567c2" }}>
+        <button onClick={onMulai} className="mt-5 w-full rounded-[18px] py-3.5 text-[20px] font-extrabold text-white active:translate-y-0.5" style={{ background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 5px 0 #044a8f" }}>
           Mulai {NAMA_UJIAN[jenis].toLowerCase()}
         </button>
       ) : (

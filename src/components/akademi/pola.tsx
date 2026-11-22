@@ -452,7 +452,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
             <span className="flex items-center rounded-full bg-white px-3 shadow-[0_3px_0_rgba(11,37,69,.1)]" style={{ height: 40 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 14 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>
               Diubah: {ubah}
             </span>
-            <TombolBesar onClick={() => kirim(urutan)} disabled={kunci} warna={BENAR}>
+            <TombolBesar onClick={() => kirim(urutan)} disabled={kunci} warna="#15803d">
               Sudah benar ✓
             </TombolBesar>
           </>

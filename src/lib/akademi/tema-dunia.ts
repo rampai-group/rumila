@@ -219,7 +219,7 @@ export interface Pilar { id: "MAT" | "SAINS" | "KODE"; warna: string; tua: strin
 
 export const PILAR: Record<Pilar["id"], Pilar> = {
   MAT: { id: "MAT", warna: "#5b4bff", tua: "#3223b8", dasar: "#c9c3ff", tengah: "#968bff" },
-  SAINS: { id: "SAINS", warna: "#0a8a7c", tua: "#04584f", dasar: "#9fe3d7", tengah: "#48bcae" },
+  SAINS: { id: "SAINS", warna: "#087b6f", tua: "#04584f", dasar: "#9fe3d7", tengah: "#48bcae" },
   KODE: { id: "KODE", warna: "#8b45f5", tua: "#551bb0", dasar: "#dcc2ff", tengah: "#b07cf8" },
 };
 

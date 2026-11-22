@@ -54,7 +54,7 @@ export const trackMeta = (id: TrackId) => TRACKS.find((t) => t.id === id)!;
 export const levelMeta = (id: LevelId) => LEVELS.find((l) => l.id === id)!;
 export const isTrackId = (s: string): s is TrackId => TRACKS.some((t) => t.id === s);
 
-export const STATUS_WARNA: Record<Status, string> = { dikuasai: "#1fbf62", berkembang: "#ffbe0b", belum: "#f0e4d2" };
+export const STATUS_WARNA: Record<Status, string> = { dikuasai: "#1fbf62", berkembang: "#ffbe0b", belum: "#bcd4ee" };
 export const STATUS_LABEL: Record<Status, string> = { dikuasai: "Dikuasai", berkembang: "Berkembang", belum: "Belum" };
 export const STATUS_SIMBOL: Record<Status, string> = { dikuasai: "✓", berkembang: "●", belum: "○" };
 
@@ -170,7 +170,7 @@ export function TitikStatus({ status, size = 12 }: { status: Status; size?: numb
 }
 
 export function BadgeStatus({ status }: { status: Status }) {
-  const bg = status === "dikuasai" ? "#e4f8ec" : status === "berkembang" ? "#fff4d1" : "#fff0da";
+  const bg = status === "dikuasai" ? "#e4f8ec" : status === "berkembang" ? "#fff4d1" : "#dbeafb";
   const fg = status === "dikuasai" ? "#12904a" : status === "berkembang" ? "#b07a00" : "#5b6b85";
   return (
     <span className="inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-extrabold" style={{ background: bg, color: fg }}>
@@ -213,7 +213,7 @@ export function TombolAktivitas({ p, selesai = false, kunci }: { p: ContentPack;
       <div
         aria-label={`${judulPaket(p, bahasa)}: terkunci. ${kunci}`}
         className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-[#e2e7ee] py-2 pr-2.5 pl-2.5"
-        style={{ boxShadow: "inset 0 0 0 1.5px #ece4d8" }}
+        style={{ boxShadow: "inset 0 0 0 1.5px #a9c0dc" }}
       >
         <span className="opacity-50"><IkonMekanik mekanik={p.mechanic} /></span>
         <span className="min-w-0 flex-1">
@@ -222,7 +222,7 @@ export function TombolAktivitas({ p, selesai = false, kunci }: { p: ContentPack;
           </span>
           <span className="mt-0.5 block text-[12px] font-extrabold text-[#3d4f66]">{kunci}</span>
         </span>
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#ece4d8] text-[#a99c8a]">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#dbe7f5] text-[#3d4f66]">
           <Icon name="lock" size={20} />
         </span>
       </div>

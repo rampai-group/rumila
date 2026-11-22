@@ -131,7 +131,7 @@ export function LayarAktivitas({
             <Icon name="arrow_back" size={24} />
           </button>
           <h1
-            className="m-0 hidden min-w-0 max-w-[48%] shrink-0 truncate px-1 [@media(min-width:760px)_and_(max-height:820px)]:block"
+            className="m-0 hidden min-w-0 max-w-[48%] shrink-0 overflow-hidden leading-[1.05] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] px-1 [@media(min-width:760px)_and_(max-height:820px)]:[display:-webkit-box]"
             style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, lineHeight: 1.4, color: "#fff" }}
           >
             {judul}

@@ -44,7 +44,7 @@ import './resto.css';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 const INK = '#3a2416';
-const WOOD = 'linear-gradient(180deg,#b9824a,#8a5a2e)';
+const WOOD = 'linear-gradient(180deg,#9a6434,#7a4a22)';
 const CREAM = '#fff6e4';
 const n = (x: number) => Math.round(x).toLocaleString('id-ID');
 
@@ -54,10 +54,10 @@ type Panel = null | 'lokasi' | 'kontraktor' | 'bangun' | 'bahan' | 'menu' | 'tim
 
 function Btn({ children, onClick, tone = 'green', disabled, big }: { children: React.ReactNode; onClick: () => void; tone?: 'green' | 'orange' | 'red' | 'blue' | 'cream'; disabled?: boolean; big?: boolean }) {
   const bg = {
-    green: ['linear-gradient(180deg,#8fe05a,#4caf2a)', '#2e7d1a', '#fff'],
-    orange: ['linear-gradient(180deg,#ffc050,#ff8a1a)', '#c85a00', '#fff'],
-    red: ['linear-gradient(180deg,#ff7a6a,#e0402a)', '#a02a1a', '#fff'],
-    blue: ['linear-gradient(180deg,#7cc8ff,#2f86ff)', '#1a5fd1', '#fff'],
+    green: ['linear-gradient(180deg,#3f9a22,#2e7d1a)', '#1f5a10', '#fff'],
+    orange: ['linear-gradient(180deg,#e56a00,#bd4e00)', '#8a3600', '#fff'],
+    red: ['linear-gradient(180deg,#e0402a,#b82e1c)', '#80200f', '#fff'],
+    blue: ['linear-gradient(180deg,#2f80f0,#1a5fd1)', '#10408f', '#fff'],
     cream: [CREAM, '#c9a27a', INK],
   }[tone];
   return (

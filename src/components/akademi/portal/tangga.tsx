@@ -24,7 +24,7 @@ export function TanggaMini({ level }: { level: LevelId }) {
   const n = LEVELS.length;
   return (
     <ol className="relative flex items-center justify-between" aria-label="Tangga jenjang">
-      <span aria-hidden className="absolute inset-x-3 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-[#fff0da]" />
+      <span aria-hidden className="absolute inset-x-3 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-[#dbeafb]" />
       <span aria-hidden className="absolute left-3 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-[#fdb724]" style={{ width: `calc((100% - 24px) * ${idx / (n - 1)})` }} />
       {LEVELS.map((lv, i) => {
         const lewat = i < idx;

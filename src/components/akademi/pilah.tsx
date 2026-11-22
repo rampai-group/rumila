@@ -347,12 +347,13 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const n = choices.length;
   const pilihanTulisan = choices.every((c) => !c.emoji && !c.shape && !c.color);
   const kolom = n === 2 ? "grid-cols-2" : n === 3 ? "grid-cols-3" : n === 4 ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-3";
-  const baris = Math.ceil(n / (n === 2 ? 2 : n === 3 ? 3 : n === 4 ? 4 : 3));
   // gambar pilihan ikut tinggi kartu: di tablet kartu tinggi, jadi emoji kecil di tengah kartu besar terasa kosong
-  const tinggiBaris = h > 0 ? (h - 90 * sk - 14 * sk * (baris - 1)) / baris : 0;
   // …tapi tidak boleh lebih lebar dari kartunya: di HP tinggi (2 kolom sempit) bola berskala besar sempat terpotong
   const lebar = typeof window !== "undefined" && window.innerWidth >= 640;
   const jmlKolom = n === 2 ? 2 : n === 3 ? 3 : n === 4 ? (lebar ? 4 : 2) : lebar ? 3 : 2;
+  // baris mengikuti kolom yang benar-benar tampil (di bawah 640 px kisinya 2 kolom), kalau tidak kartu jadi separuh tinggi
+  const baris = Math.ceil(n / jmlKolom);
+  const tinggiBaris = h > 0 ? (h - 90 * sk - 14 * sk * (baris - 1)) / baris : 0;
   const lebarKartu = w > 0 ? (w - 14 * sk * (jmlKolom - 1)) / jmlKolom : Infinity;
   const skalaMaks = Math.max(1, ...choices.map(skalaLebar));
   const ukuran = Math.round(Math.min(200, Math.max((n <= 2 ? 110 : n <= 4 ? 92 : 76) * sk, tinggiBaris * (tulisLabel ? 0.4 : 0.5)), (lebarKartu * 0.8) / skalaMaks));

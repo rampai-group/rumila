@@ -420,7 +420,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
           </span>
           <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1 }}>
             {found.size}
-            <span className="text-[16px] text-[#5b6b85]">/{FRUITS.length}</span>
+            <span className="text-[16px] text-[#3d4f66]">/{FRUITS.length}</span>
           </span>
         </div>
         <div className="flex gap-2 sm:gap-3">

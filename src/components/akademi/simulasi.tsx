@@ -22,6 +22,8 @@ type Props = PresenterProps<RondeSimulasi, JawabanSimulasi, PaketSimulasi>;
 type Item = PaketSimulasi["items"][number];
 
 const UNGU = "#0786eb";
+/** biru tua: tulisan di atas putih dan latar di bawah tulisan putih kecil */
+const BIRU_TUA = "#0567c2";
 const KUNING = "#ffd23f";
 const MERAH_JARUM = "#ff5a6e";
 const BIRU_JARUM = "#3b82f6";
@@ -427,7 +429,7 @@ function ModeJamPutar(c: Ctx) {
   return (
     <Kunci terkunci={terkunci}>
       <Tata
-        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span>Robot <span style={{ color: UNGU }}>{kegiatan}</span> pukul <span className="rounded-full px-2" style={{ background: "#fff1c2" }}>{ronde.target}</span></span>} /><Umpan hasil={hasil} benar={`Pukul ${ronde.target}`} /></>}
+        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span>Robot <span style={{ color: BIRU_TUA }}>{kegiatan}</span> pukul <span className="rounded-full px-2" style={{ background: "#fff1c2" }}>{ronde.target}</span></span>} /><Umpan hasil={hasil} benar={`Pukul ${ronde.target}`} /></>}
         adegan={
           <Papan>
             <Adegan min={240 + 72}>
@@ -959,7 +961,7 @@ function ModeTaksir(c: Ctx) {
 
   const lihatLagi = () => { c.onHint?.(); flash(); };
   const teks = KS.taksir;
-  const tinggi = ronde.target <= 8 ? 140 : ronde.target <= 14 ? 170 : 205;
+  const tinggi = ronde.target <= 8 ? 130 : ronde.target <= 14 ? 145 : 165;
   const { cols, rows } = kisiBenda(ronde.target);
 
   return (
@@ -1075,9 +1077,9 @@ function ModeTombol(c: Ctx) {
     <Kunci terkunci={terkunci}>
       <Instruksi teks={teks} hasil={hasil} />
       <Umpan hasil={hasil} benar={ronde.urutan.map((tb) => `${nama(tb)} → ${nama(ronde.peta[tb] ?? "")}`).join(", ")} />
-      <div className="flex items-center justify-center gap-2" role="tablist" aria-label="Putaran">
+      <div className="flex items-center justify-center gap-2" aria-label="Putaran">
         {(["coba", "tebak"] as const).map((f, i) => (
-          <span key={f} className="rounded-full px-3 py-1" style={{ ...Tebal, fontSize: 14 * st, background: fase === f ? UNGU : "#fff", color: fase === f ? "#fff" : INK, boxShadow: BAYANG }} role="tab" aria-selected={fase === f}>{i + 1}. {f === "coba" ? "Coba dulu" : "Tebak dulu"}</span>
+          <span key={f} className="rounded-full px-3 py-1" style={{ ...Tebal, fontSize: 14 * st, background: fase === f ? BIRU_TUA : "#fff", color: fase === f ? "#fff" : INK, boxShadow: BAYANG }} aria-current={fase === f ? "step" : undefined}>{i + 1}. {f === "coba" ? "Coba dulu" : "Tebak dulu"}</span>
         ))}
         {fase === "tebak" && <span className="rounded-full bg-white px-3 py-1" style={{ ...Tebal, fontSize: 14 * st, boxShadow: BAYANG }}>{Math.min(giliran + 1, ronde.urutan.length)}/{ronde.urutan.length}</span>}
       </div>
@@ -1188,7 +1190,7 @@ function ModeAlat(c: Ctx) {
   return (
     <Kunci terkunci={terkunci}>
       <Tata
-        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span><span style={{ color: UNGU }}>{hewan ? nama(hewan.id) : "Hewan"}</span>: {tanya}</span>} /><Umpan hasil={hasil} benar={ronde.correctId ? `${nama(ronde.correctId)} untuk ${tanyaBerat ? "berat" : "panjang"}` : "-"} /></>}
+        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span><span style={{ color: BIRU_TUA }}>{hewan ? nama(hewan.id) : "Hewan"}</span>: {tanya}</span>} /><Umpan hasil={hasil} benar={ronde.correctId ? `${nama(ronde.correctId)} untuk ${tanyaBerat ? "berat" : "panjang"}` : "-"} /></>}
         adegan={
           <Papan>
             <Adegan min={208}>

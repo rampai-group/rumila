@@ -114,7 +114,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
 
 /** Kartu anak: kartu tegak berwarna profil, avatar di lingkaran putih (gembok kecil bila ber-PIN), nama, tombol "Ayo belajar". */
 function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
-  const [l, mm, d] = PLAY[m.c];
+  const [, mm, d] = PLAY[m.c];
   // Nama panjang diperkecil supaya tetap terbaca utuh, tidak terpotong "…".
   const panjang = m.name.length;
   const ukuranNama = panjang > 12 ? "text-[17px] sm:text-[22px]" : panjang > 8 ? "text-[20px] sm:text-[24px]" : "text-[24px] sm:text-[28px]";
@@ -124,7 +124,7 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
       onClick={onPilih}
       aria-label={`${m.name}${m.pin ? ", pakai PIN" : ""}`}
       className="group relative flex w-[156px] flex-col items-center gap-2.5 overflow-hidden rounded-[28px] px-3 pt-5 pb-4 transition-transform hover:-translate-y-1 active:translate-y-1 sm:w-[230px] sm:gap-3 sm:rounded-[32px] sm:pt-8 sm:pb-5 sm:[@media(max-height:820px)]:pt-5"
-      style={{ background: `linear-gradient(165deg, ${l} 0%, ${mm} 70%)`, boxShadow: `0 6px 0 ${d}, 0 14px 26px rgba(11,37,69,.16)` }}
+      style={{ background: `linear-gradient(165deg, ${mm} 0%, ${d} 100%)`, boxShadow: `0 6px 0 ${d}, 0 14px 26px rgba(11,37,69,.16)` }}
     >
       <span aria-hidden className="absolute -top-8 -right-8 size-24 rounded-full bg-white/20" />
       <span className="relative rounded-full bg-white p-1.5 shadow-[0_4px_0_rgba(0,0,0,.12)]">
@@ -143,7 +143,7 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
       >
         <span className="truncate">{m.name}</span>
       </span>
-      <span className="relative flex items-center gap-0.5 rounded-full bg-white py-1.5 pr-3 pl-4 text-[14px] font-black whitespace-nowrap sm:text-[15px]" style={{ color: d }}>
+      <span className="relative flex items-center gap-0.5 rounded-full bg-white py-1.5 pr-3 pl-4 text-[14px] font-black whitespace-nowrap sm:text-[15px]" style={{ color: `color-mix(in srgb, ${d} 72%, #000)` }}>
         Ayo belajar <Icon name="play_arrow" size={18} />
       </span>
     </button>

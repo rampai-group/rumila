@@ -19,8 +19,8 @@ const SANS = '"Avenir Next", Avenir, "Helvetica Neue", "Segoe UI", Arial, sans-s
 
 const NAVY = "#14233f";
 const INK = "#3a4356";
-const MUTED = "#7a7466";
-const GOLD = "#b8892b";
+const MUTED = "#5f5a4f";
+const GOLD = "#946b1a";
 const GOLD_GRAD = "linear-gradient(135deg,#a8761d 0%,#e9c46a 35%,#f7e3a1 55%,#c9962f 75%,#9a6a17 100%)";
 
 /** CSS cetak: A4 landscape tanpa margin, sembunyikan elemen .no-print, kartu mengisi satu halaman. */

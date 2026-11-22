@@ -266,13 +266,15 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
     }
     const kalimat = tulisan.length > 6 && /\s/.test(tulisan);
     const px = s * 0.6 * kecil * (kalimat ? 0.82 : 1);
+    // angka + satuan pendek ("45 m²", "8 cm") selalu satu baris: diukur dari seluruh tulisannya
+    const sebaris = tulisan.length <= 6;
     return (
       <span
         key={k}
         className="text-center text-balance"
         style={{
           fontFamily: kalimat ? NUNITO : BALOO, fontWeight: kalimat ? 800 : 900, color: v.color ?? INK, lineHeight: kalimat ? 1.2 : 1.1,
-          fontSize: `max(12px, min(${kalimat ? Math.max(15, px) : px}px, ${(158 / kataTerpanjang(tulisan)).toFixed(1)}cqi))`, overflowWrap: "break-word", hyphens: "manual", maxWidth: `min(100%, ${Math.max(s * 2.4, kalimat ? 170 : 120)}px)`,
+          whiteSpace: sebaris ? "nowrap" : undefined, fontSize: `max(12px, min(${kalimat ? Math.max(15, px) : px}px, ${(158 / (sebaris ? Math.max(1, tulisan.length) : kataTerpanjang(tulisan))).toFixed(1)}cqi))`, overflowWrap: "break-word", hyphens: "manual", maxWidth: `min(100%, ${Math.max(s * 2.4, kalimat ? 170 : 120)}px)`,
         }}
       >
         {tulisan}

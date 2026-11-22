@@ -172,7 +172,7 @@ function KartuJenjang({ peta, streak, onHadiah }: { peta: PetaJenjang; streak: n
         <span aria-hidden className="absolute -left-10 -top-12 size-40 rounded-full" style={{ background: `${warna[0]}33` }} />
         <span className="relative shrink-0" style={{ width: 104, height: 104 }}>
           <svg width={104} height={104} viewBox="0 0 104 104" aria-hidden className="absolute inset-0 -rotate-90">
-            <circle cx={52} cy={52} r={R} fill="none" stroke="#fff0da" strokeWidth={9} />
+            <circle cx={52} cy={52} r={R} fill="none" stroke="#dbeafb" strokeWidth={9} />
             {progres > 0 && <circle cx={52} cy={52} r={R} fill="none" stroke={warna[1]} strokeWidth={9} strokeLinecap="round" strokeDasharray={`${Math.max(progres * kel, 6)} ${kel}`} />}
           </svg>
           <span
@@ -335,7 +335,7 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
     : m.sekarang
       ? { background: `linear-gradient(155deg, ${l}, ${mm} 65%)`, boxShadow: `0 7px 0 ${d}`, color: "#fff" }
       : m.terkunci
-        ? { background: "#ece4d8", boxShadow: "0 5px 0 #d6cbbb", color: "#a99c8a" }
+        ? { background: "#dbe7f5", boxShadow: "0 5px 0 #a9c0dc", color: "#3d4f66" }
         : { background: "#fff", boxShadow: `0 5px 0 ${l}`, border: `3px solid ${l}`, color: mm };
   const label = `Misi ${m.nomor}, ${judul}: ${pernyataan(m, bahasa)}. ${m.selesai ? "Selesai, main lagi" : m.terkunci ? "Terkunci" : persen ? `Sudah ${persen}%` : "Belum dimainkan"}`;
   const kelas = "relative flex items-center justify-center rounded-full transition-transform active:translate-y-1 active:scale-95 group-active:translate-y-1 group-active:scale-95";
@@ -424,7 +424,7 @@ function KartuUjian({ u, bahasa }: { u: NonNullable<PetaJenjang["ujian"]>; bahas
       href={`/akademi/ujian?jenis=${u.jenis}&ruang=${encodeURIComponent(u.ruang)}`}
       aria-label={`${NAMA_UJIAN[u.jenis]}: ${judul}`}
       className="flex items-center gap-3 rounded-[28px] p-3 pr-5 text-white transition-transform active:scale-[.98]"
-      style={{ background: "linear-gradient(155deg,#5fb8ff,#0786eb 60%)", boxShadow: "0 6px 0 #0567c2" }}
+      style={{ background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 6px 0 #044a8f" }}
     >
       <span className="relative flex size-16 shrink-0 items-center justify-center rounded-full bg-white text-[#0567c2]">
         <span aria-hidden className="akademi-denyut absolute inset-0 rounded-full" />
@@ -480,8 +480,8 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
   const gaya: React.CSSProperties = peta.lulusJenjang
     ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 7px 0 #c88a00", color: INK }
     : terbuka
-      ? { background: "linear-gradient(155deg,#5fb8ff,#0786eb 65%)", boxShadow: "0 7px 0 #0567c2", color: "#fff" }
-      : { background: "#ece4d8", boxShadow: "0 6px 0 #d6cbbb", color: "#a99c8a" };
+      ? { background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 7px 0 #044a8f", color: "#fff" }
+      : { background: "#dbe7f5", boxShadow: "0 6px 0 #a9c0dc", color: "#3d4f66" };
   const isi = (
     <>
       <span className="flex size-24 items-center justify-center rounded-[30px]" style={gaya}>
