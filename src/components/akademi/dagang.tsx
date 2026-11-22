@@ -208,9 +208,9 @@ function Pembeli({
 }
 
 /** Kalimat tanya di balon: gambar & angka saja tidak memberi tahu anak apa yang diminta. */
-function Tanya({ children }: { children: ReactNode }) {
+function Tanya({ children, sebaris }: { children: ReactNode; sebaris?: boolean }) {
   const sk = useSk();
-  return <div className="w-full text-balance" style={{ ...Tebal, fontSize: 18 * sk, lineHeight: 1.2 }}>{children}</div>;
+  return <div className={sebaris ? "shrink-0" : "w-full text-balance"} style={{ ...Tebal, fontSize: 18 * sk, lineHeight: 1.2 }}>{children}</div>;
 }
 
 /** Baris pesanan di balon: emoji diulang qty kali + angka kecil. */
@@ -514,7 +514,7 @@ function ModeAmbil(c: Ctx) {
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli
         wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} bahasa={bahasa}
-        balon={<div className="flex flex-col gap-1"><Tanya>{bahasa === "en" ? "I want:" : "Aku mau:"}</Tanya>{ronde.pesanan.map((p) => <BarisPesanan key={p.goodId} tampilLabel v={visual(p.goodId)} qty={p.qty} label={nama(p.goodId)} />)}</div>}
+        balon={<div className="flex flex-wrap items-center gap-x-3 gap-y-1"><Tanya sebaris>{bahasa === "en" ? "I want:" : "Aku mau:"}</Tanya>{ronde.pesanan.map((p) => <BarisPesanan key={p.goodId} tampilLabel v={visual(p.goodId)} qty={p.qty} label={nama(p.goodId)} />)}</div>}
         jawabanBenar={ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(" + ")}
       />
       <Lapak>
