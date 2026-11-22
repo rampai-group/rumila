@@ -1116,8 +1116,7 @@ function ModeTombol(c: Ctx) {
             );
           }}
         </Adegan>
-        {/* kabel tersembunyi */}
-        <div className="my-2 flex justify-center gap-6" aria-hidden>{alat.map((a) => <span key={a.id} style={{ ...Tebal, fontSize: 18 * st, opacity: 0.55 }}>?</span>)}</div>
+        <div className="my-2" aria-hidden />
         {/* tombol */}
         <div className="grid gap-2" style={{ gap: 10 * skala, gridTemplateColumns: `repeat(${Math.max(1, tombol.length)}, minmax(0,1fr))` }} role="group" aria-label="Tombol">
           {tombol.map((b) => {
@@ -1174,7 +1173,7 @@ function ModeAlat(c: Ctx) {
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
   const tanyaBerat = hewan?.value === 2;
-  const tanya = ks.alatTanya(tanyaBerat);
+  // yang dijawab ALAT-nya, bukan angkanya: tulisan menanyakan alat; suara tetap rekaman "… Pilih alat yang tepat."
   const teks = ks.alat(hewan ? nama(hewan.id) : "Hewan", tanyaBerat);
   const jenisAlat = (a: Item) => (emojiAlat(a, a.id) === "⚖️" || a.id.includes("timbang") ? "timbangan" : "penggaris");
   const dipakai = dipilih ? itemById(dipilih) : undefined;
@@ -1190,7 +1189,7 @@ function ModeAlat(c: Ctx) {
   return (
     <Kunci terkunci={terkunci}>
       <Tata
-        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span><span style={{ color: BIRU_TUA }}>{hewan ? nama(hewan.id) : "Hewan"}</span>: {tanya}</span>} /><Umpan hasil={hasil} benar={ronde.correctId ? `${nama(ronde.correctId)} untuk ${tanyaBerat ? "berat" : "panjang"}` : "-"} /></>}
+        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span>Pakai alat apa untuk mengukur <span style={{ color: BIRU_TUA }}>{tanyaBerat ? "berat" : "panjang"} {hewan ? nama(hewan.id) : "hewan"}</span>?</span>} /><Umpan hasil={hasil} benar={ronde.correctId ? `${nama(ronde.correctId)} untuk ${tanyaBerat ? "berat" : "panjang"}` : "-"} /></>}
         adegan={
           <Papan>
             <Adegan min={208}>
@@ -1199,12 +1198,21 @@ function ModeAlat(c: Ctx) {
                 const f = Math.max(1, Math.min((h - 8) / 208, (w - 8) / 420, 2.4));
                 return (
                   <div className="relative flex w-full flex-col items-center justify-end" style={{ height: 208 * f, maxWidth: 420 * f }}>
-                    {/* balon pertanyaan */}
-                    <div className="absolute top-0 right-2 rounded-[14px] bg-white px-3 py-1 akademi-pop" style={{ ...Tebal, fontSize: 15 * Math.min(f, 1.6), boxShadow: `${BAYANG}, inset 0 0 0 2px rgba(11,37,69,.16)` }}>{tanyaBerat ? "⚖️ berat?" : "📏 panjang?"}</div>
                     {/* hewan */}
                     <div className="relative z-10 transition-transform duration-700 ease-in-out" style={{ transform: jenisDipakai === "timbangan" ? "translateY(-6px)" : "none" }}>
-                      <Benda v={visual(hewan?.id ?? "")} size={Math.round(96 * f)} />
+                      <Benda v={visual(hewan?.id ?? "")} size={Math.round(128 * f)} />
                     </div>
+                    {/* yang mau diukur, digambar di bendanya (tanpa gambar alat supaya jawabannya tidak bocor) */}
+                    {!jenisDipakai && (
+                      <div className={`flex items-center justify-center ${tanyaBerat ? "" : "flex-col"}`} style={{ height: 40 * f, width: 128 * f, color: BIRU_TUA }} aria-hidden>
+                        {tanyaBerat ? (
+                          <svg width={30 * f} height={34 * f} viewBox="0 0 30 34"><path d="M15 3v25M4 18l11 12 11-12" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                        ) : (
+                          <svg width="100%" height={18 * f} viewBox="0 0 150 28" preserveAspectRatio="none"><path d="M4 2v24M146 2v24M10 14h130M22 5 10 14l12 9M128 5l12 9-12 9" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                        )}
+                        <span className="ml-1 shrink-0" style={{ ...Tebal, color: BIRU_TUA, lineHeight: 1.2, fontSize: 17 * Math.min(f, 1.6) }}>{tanyaBerat ? "berat" : "panjang"}</span>
+                      </div>
+                    )}
                     {/* penggaris kubus masuk di bawah hewan */}
                     <div className="flex overflow-hidden transition-all duration-700 ease-out" style={{ height: 36 * f, width: jenisDipakai === "penggaris" ? 240 * f : 0, opacity: jenisDipakai === "penggaris" ? 1 : 0 }} aria-hidden>
                       {Array.from({ length: 6 }, (_, k) => <div key={k} className="flex shrink-0 items-center justify-center" style={{ width: 36 * f, height: 36 * f, background: ["#ff8fa3", "#ffd23f", "#7ec8a0", "#6ab0e8", "#c59be8", "#ffb86b"][k], ...Tebal, fontSize: 14 * f, borderRight: "2px solid rgba(11,37,69,.35)" }}>{k + 1}</div>)}
@@ -1233,10 +1241,10 @@ function ModeAlat(c: Ctx) {
                   onClick={() => pilih(a.id)}
                   aria-label={nama(a.id)}
                   className={`flex min-h-24 flex-col items-center justify-center gap-1 overflow-hidden rounded-[20px] bg-white active:scale-95 ${hint && a.id === ronde.correctId ? "akademi-bounce" : ""}`}
-                  style={{ minHeight: 96 * skala * (samping ? 1.35 : 1), boxShadow: `${BAYANG}, 0 0 0 3px ${hasil && a.id === ronde.correctId ? BENAR : hasil && a.id === dipilih ? SALAH : dipilih === a.id ? UNGU : "rgba(11,37,69,.16)"}`, opacity: dipilih && dipilih !== a.id ? 0.55 : 1 }}
+                  style={{ minHeight: 96 * skala * (samping ? 1.35 : 1.75), boxShadow: `${BAYANG}, 0 0 0 3px ${hasil && a.id === ronde.correctId ? BENAR : hasil && a.id === dipilih ? SALAH : dipilih === a.id ? UNGU : "rgba(11,37,69,.16)"}`, opacity: dipilih && dipilih !== a.id ? 0.55 : 1 }}
                 >
-                  <span style={{ fontSize: 52 * skala * (samping ? 1.2 : 1), lineHeight: 1 }} aria-hidden>{emojiAlat(a, a.id)}</span>
-                  <span style={{ ...Tebal, fontSize: 14 * st }}>{nama(a.id)}</span>
+                  <span style={{ fontSize: 52 * skala * (samping ? 1.2 : 1.5), lineHeight: 1 }} aria-hidden>{emojiAlat(a, a.id)}</span>
+                  <span style={{ ...Tebal, fontSize: 19 * st }}>{nama(a.id)}</span>
                 </button>
               ))}
             </div>
@@ -1498,7 +1506,7 @@ function ModeBantuan(c: Ctx) {
     <Kunci terkunci={terkunci}>
       <Tata
         lebar={0.32}
-        atas={<><Instruksi teks={teks} hasil={hasil} /><Umpan hasil={hasil} benar={hasil?.benar ? "minta tolong itu pintar!" : `kamu mengetuk ${ketukan} kali; kalau macet, langsung minta tolong ya`} /></>}
+        atas={<><Instruksi teks={teks} hasil={hasil} anak={<span>{macet ? `Ini ${nama(macet.id)}. ` : ""}Ketuk untuk mencoba. Kalau tetap mati, tekan <span style={{ color: BIRU_TUA }}>Tolong</span>.</span>} /><Umpan hasil={hasil} benar={hasil?.benar ? "minta tolong itu pintar!" : `kamu mengetuk ${ketukan} kali; kalau macet, langsung minta tolong ya`} /></>}
         adegan={
           <Papan>
             <Adegan min={240}>
@@ -1533,12 +1541,9 @@ function ModeBantuan(c: Ctx) {
         kendali={
           <div className={`flex gap-2 ${samping ? "flex-col" : ""}`} style={{ gap: 8 * skala }}>
             {/* tombol tolong: selalu tampil, tidak berkedip, tidak dipandu */}
-            <TombolBesar onClick={tolong} disabled={terkunci || fase !== "macet"} warna={UNGU} bayang="#0567c2" className={samping ? "" : "max-w-[220px]"}>
+            <TombolBesar onClick={tolong} disabled={terkunci || fase !== "macet"} warna={UNGU} bayang="#0567c2" className="flex-1">
               Tolong 🙋
             </TombolBesar>
-            <div className="flex min-h-16 flex-1 items-center justify-center rounded-[20px] bg-white px-3 text-center" style={{ ...Tebal, minHeight: 64 * skala, fontSize: 15 * st, boxShadow: BAYANG }}>
-              {macet ? nama(macet.id) : "Alat"}
-            </div>
           </div>
         }
       />

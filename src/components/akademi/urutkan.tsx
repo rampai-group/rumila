@@ -425,7 +425,7 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
       {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
       {adaJudul && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
-        Mana yang lebih dulu? <span style={{ color: "#0567c2" }}>?</span>
+        Mana yang lebih dulu?
       </div>
       <div className="grid flex-1 grid-cols-2 content-center" style={{ gap, gridAutoRows: tinggiKartu }}>
         {shown.map((s) => {
