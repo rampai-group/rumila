@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Tiga Kesalahan Tersembunyi",
-      "instruksi": "Ada tiga bagian yang salah di program empat ruas ini: jalankan, amati di mana robot menyimpang, perbaiki, lalu ulangi sampai tepat tiga bagian diperbaiki."
+      "instruksi": "Jalankan program awal dan amati tempat robot menyimpang. Ubah paling banyak tiga blok agar robot sampai ke bintang."
     },
     "en": {
       "judul": "Three Hidden Bugs",
-      "instruksi": "Three parts of this four-part program are wrong: run it, watch where the robot goes off course, fix it, and repeat until exactly three parts are fixed."
+      "instruksi": "Run the starting program and see where the robot goes off course. Change up to three blocks so it reaches the star."
     }
   },
   "knobs": {

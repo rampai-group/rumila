@@ -1,6 +1,6 @@
 {
   "id": "sains-intip-tembus-pandang",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Intip: Tembus Pandang?",
-      "instruksi": "Coba melihat lewat tiap benda. Taruh ke rak tembus pandang atau tidak tembus pandang.",
+      "instruksi": "Intip titik di balik benda. Bisa terlihat jelas? Pilih tembus pandang. Jika tidak, pilih rak satunya.",
       "tembus": "tembus pandang",
       "tidak": "tidak tembus pandang",
       "i-jendela": "kaca jendela",
@@ -24,11 +24,11 @@
       "i-papan": "papan kayu",
       "i-buku": "buku tebal",
       "i-piring": "piring keramik",
-      "i-selimut": "kasur tebal"
+      "i-selimut": "selimut tebal"
     },
     "en": {
       "judul": "Peek: Can You See Through?",
-      "instruksi": "Try looking through each thing. Put it on the see-through shelf or the not see-through shelf.",
+      "instruksi": "Look for the dots behind the object. Can you see them clearly? Choose see-through. If you cannot, choose the other bin.",
       "tembus": "see-through",
       "tidak": "not see-through",
       "i-jendela": "window glass",
@@ -42,7 +42,7 @@
       "i-papan": "wooden board",
       "i-buku": "thick book",
       "i-piring": "ceramic plate",
-      "i-selimut": "thick mattress"
+      "i-selimut": "thick blanket"
     }
   },
   "knobs": {
@@ -51,7 +51,7 @@
       "max": 6,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah benda per putaran; dicoba langsung, bukan ditebak"
+      "keterangan": "jumlah gambar percobaan per putaran: 3 sampai 6"
     }
   },
   "assets": [],
@@ -78,74 +78,121 @@
       "id": "jendela",
       "labelKey": "i-jendela",
       "bin": "tembus",
-      "emoji": "🪟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-jendela",
+        "t": 0
+      }
     },
     {
       "id": "toples",
       "labelKey": "i-toples",
       "bin": "tembus",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-toples",
+        "t": 0
+      }
     },
     {
       "id": "kacamata",
       "labelKey": "i-kacamata",
       "bin": "tembus",
-      "emoji": "👓"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-kacamata",
+        "t": 0
+      }
     },
     {
       "id": "air",
       "labelKey": "i-air",
       "bin": "tembus",
-      "emoji": "💧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-air",
+        "t": 0
+      }
     },
     {
       "id": "plastik",
       "labelKey": "i-plastik",
       "bin": "tembus",
-      "shape": "rect",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-plastik",
+        "t": 0
+      }
     },
     {
       "id": "gelembung",
       "labelKey": "i-gelembung",
       "bin": "tembus",
-      "emoji": "🧼"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-gelembung",
+        "t": 0
+      }
     },
     {
       "id": "kardus",
       "labelKey": "i-kardus",
       "bin": "tidak",
-      "emoji": "📦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-kardus",
+        "t": 0
+      }
     },
     {
       "id": "tembok",
       "labelKey": "i-tembok",
       "bin": "tidak",
-      "emoji": "🧱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-tembok",
+        "t": 0
+      }
     },
     {
       "id": "papan",
       "labelKey": "i-papan",
       "bin": "tidak",
-      "emoji": "🪵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-papan",
+        "t": 0
+      }
     },
     {
       "id": "buku",
       "labelKey": "i-buku",
       "bin": "tidak",
-      "emoji": "📕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-buku",
+        "t": 0
+      }
     },
     {
       "id": "piring",
       "labelKey": "i-piring",
       "bin": "tidak",
-      "emoji": "🍽️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-piring",
+        "t": 0
+      }
     },
     {
       "id": "selimut",
       "labelKey": "i-selimut",
       "bin": "tidak",
-      "emoji": "🛏️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-selimut",
+        "t": 0
+      }
     }
   ],
   "pilihan": []

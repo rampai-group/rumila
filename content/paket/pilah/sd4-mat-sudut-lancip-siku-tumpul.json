@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rak Tiga Sudut",
-      "instruksi": "Pilah tiap sudut: lancip kurang dari 90°, siku-siku tepat 90°, tumpul lebih dari 90°. Pada jam, lihat sudut kecil antara dua jarum.",
+      "instruksi": "Pilah tiap sudut: lancip di bawah 90°, siku-siku tepat 90°, tumpul di atas 90° dan di bawah 180°. Pilih sudut kecil di antara jarum jam.",
       "b-lancip": "lancip",
       "b-siku": "siku-siku",
       "b-tumpul": "tumpul",
@@ -37,7 +37,7 @@
     },
     "en": {
       "judul": "Three Angle Shelves",
-      "instruksi": "Sort each angle: acute is less than 90°, right is exactly 90°, obtuse is more than 90°. On a clock, look at the small angle between the hands.",
+      "instruksi": "Sort each angle: acute is below 90°, right is exactly 90°, and obtuse is above 90° and below 180°. Use the smaller angle between the clock hands.",
       "b-lancip": "acute",
       "b-siku": "right angle",
       "b-tumpul": "obtuse",

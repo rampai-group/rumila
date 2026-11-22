@@ -1,6 +1,6 @@
 {
   "id": "sains-cuaca-begini-main-apa",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,15 +23,15 @@
       "t-cerah3": "Pantai cerah dan hangat, tidak hujan. Main apa?",
       "t-cerah4": "Matahari terik dan halaman kering. Apa yang cocok dikerjakan?",
       "t-hujan1": "Hujan deras turun. Apa yang sebaiknya dilakukan?",
-      "t-hujan2": "Hujan dan petir di luar. Apa yang sebaiknya dilakukan?",
+      "t-hujan2": "Terdengar guntur dan terlihat kilat. Di mana kita bisa berlindung dengan aman?",
       "t-hujan3": "Hujan turun saat kita harus berjalan ke masjid. Apa yang dilakukan?",
       "t-hujan4": "Tiba-tiba hujan saat pulang sekolah. Apa yang dilakukan?",
       "t-angin1": "Angin bertiup kencang dan tidak hujan. Main apa?",
       "t-angin2": "Angin kencang bertiup di kolam taman. Main apa yang cocok?",
       "t-angin3": "Daun-daun beterbangan tertiup angin di lapangan. Main apa?",
-      "i-teras": "berteduh di teras rumah",
       "i-payung": "berjalan memakai payung",
-      "i-jemur": "menjemur baju"
+      "i-jemur": "menjemur baju",
+      "i-rumah": "masuk ke dalam rumah"
     },
     "en": {
       "judul": "This Weather, What Shall We Do?",
@@ -48,15 +48,15 @@
       "t-cerah3": "The beach is sunny and warm, no rain. What shall we play?",
       "t-cerah4": "The sun is hot and the yard is dry. What is good to do?",
       "t-hujan1": "Heavy rain is falling. What should we do?",
-      "t-hujan2": "Rain and lightning outside. What should we do?",
+      "t-hujan2": "You hear thunder and see lightning. Where can you take shelter safely?",
       "t-hujan3": "It rains while we must walk to the mosque. What do we do?",
       "t-hujan4": "Suddenly it rains on the way home from school. What do we do?",
       "t-angin1": "The wind is strong and it isn't raining. What shall we play?",
       "t-angin2": "A strong wind blows over the park pond. What fits?",
       "t-angin3": "Leaves fly in the wind over the field. What shall we play?",
-      "i-teras": "shelter on the porch",
       "i-payung": "walk with an umbrella",
-      "i-jemur": "hang clothes out to dry"
+      "i-jemur": "hang clothes out to dry",
+      "i-rumah": "go inside the house"
     }
   },
   "knobs": {
@@ -117,10 +117,14 @@
       "emoji": "🏖️"
     },
     {
-      "id": "teras",
-      "labelKey": "i-teras",
+      "id": "rumah",
+      "labelKey": "i-rumah",
       "bin": "pilihan",
-      "emoji": "🏠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-dalam-rumah",
+        "t": 0
+      }
     },
     {
       "id": "payung",
@@ -132,7 +136,11 @@
       "id": "jemur",
       "labelKey": "i-jemur",
       "bin": "pilihan",
-      "emoji": "👕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-jemuran",
+        "t": 0
+      }
     }
   ],
   "pilihan": [
@@ -151,7 +159,7 @@
       "promptKey": "t-cerah2",
       "choices": [
         "bola",
-        "teras",
+        "rumah",
         "halte"
       ],
       "correct": "bola"
@@ -161,7 +169,7 @@
       "promptKey": "t-cerah3",
       "choices": [
         "pasir",
-        "teras",
+        "rumah",
         "halte"
       ],
       "correct": "pasir"
@@ -172,7 +180,7 @@
       "choices": [
         "jemur",
         "halte",
-        "teras"
+        "rumah"
       ],
       "correct": "jemur"
     },
@@ -190,11 +198,11 @@
       "id": "hujan2",
       "promptKey": "t-hujan2",
       "choices": [
-        "teras",
+        "rumah",
         "bola",
         "layang"
       ],
-      "correct": "teras"
+      "correct": "rumah"
     },
     {
       "id": "hujan3",
@@ -231,7 +239,7 @@
       "promptKey": "t-angin2",
       "choices": [
         "perahu",
-        "teras",
+        "rumah",
         "halte"
       ],
       "correct": "perahu"
@@ -241,7 +249,7 @@
       "promptKey": "t-angin3",
       "choices": [
         "layang",
-        "teras",
+        "rumah",
         "payung"
       ],
       "correct": "layang"

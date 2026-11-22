@@ -12,7 +12,8 @@ import { penilaianKampus, snapshotPraktik } from "@/lib/akademi/praktik-kampus";
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { LevelId } from "@akademi/schema";
-import { KOMPETENSI } from "@/lib/akademi/katalog";
+import { KOMPETENSI, TRACK_AKTIF } from "@/lib/akademi/katalog";
+import { ruangKuisKanonik } from "@/lib/akademi/modul";
 import { buatKode, eventDariBaris, nilaiKelulusan, type BarisEvent } from "@/lib/akademi/sertifikat-inti";
 import { predikat } from "@/lib/akademi/ujian";
 import type { Database, Json } from "@/lib/supabase/types";
@@ -88,8 +89,9 @@ export async function POST(req: Request) {
   const { data: semuaUjian } = await admin.from("akademi_ujian").select("jenis, ruang, nilai, lulus").eq("member_id", memberId).eq("level", level).or("lulus.eq.true,jenis.eq.kenaikan");
   const terbaikUjian = new Map<string, { jenis: string; ruang: string; nilai: number }>();
   for (const u of semuaUjian ?? []) {
-    const k = `${u.jenis}|${u.ruang}`;
-    if ((terbaikUjian.get(k)?.nilai ?? -1) < u.nilai) terbaikUjian.set(k, { jenis: u.jenis, ruang: u.ruang, nilai: u.nilai });
+    const ruang = u.jenis === "kuis" ? ruangKuisKanonik(level, u.ruang, KOMPETENSI, TRACK_AKTIF) : u.ruang;
+    const k = `${u.jenis}|${ruang}`;
+    if ((terbaikUjian.get(k)?.nilai ?? -1) < u.nilai) terbaikUjian.set(k, { jenis: u.jenis, ruang, nilai: u.nilai });
   }
   hasil.snapshot.ujian = [...terbaikUjian.values()];
   // Penilaian Praktik Kampus (pelengkap, bukan syarat): dihitung dari jejak gedung kampus di server

@@ -1,6 +1,6 @@
 {
   "id": "cerita-urut-peternakan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -22,7 +22,6 @@
       "t-susu": "Memerah susu sapi",
       "susu-ember": "bawa ember",
       "susu-perah": "perah susu sapi",
-      "susu-minum": "minum susu",
       "t-domba": "Mencukur domba",
       "domba-tangkap": "panggil domba",
       "domba-cukur": "cukur bulunya",
@@ -58,7 +57,8 @@
       "t-panen": "Panen apel",
       "panen-tangga": "pasang tangga",
       "panen-petik": "petik apel",
-      "panen-peti": "taruh di peti"
+      "panen-peti": "taruh di peti",
+      "susu-kirim": "kirim susu untuk diolah"
     },
     "en": {
       "judul": "Farm Stories in Order",
@@ -74,7 +74,6 @@
       "t-susu": "Milking the cow",
       "susu-ember": "bring a bucket",
       "susu-perah": "milk the cow",
-      "susu-minum": "drink the milk",
       "t-domba": "Shearing the sheep",
       "domba-tangkap": "call the sheep",
       "domba-cukur": "shear its wool",
@@ -110,7 +109,8 @@
       "t-panen": "Picking apples",
       "panen-tangga": "set up the ladder",
       "panen-petik": "pick the apples",
-      "panen-peti": "put them in the crate"
+      "panen-peti": "put them in the crate",
+      "susu-kirim": "send the milk for processing"
     }
   },
   "knobs": {
@@ -185,9 +185,9 @@
           "emoji": "🐄"
         },
         {
-          "id": "susu-minum",
-          "labelKey": "susu-minum",
-          "emoji": "🥛"
+          "id": "susu-kirim",
+          "labelKey": "susu-kirim",
+          "emoji": "🚚"
         }
       ]
     },

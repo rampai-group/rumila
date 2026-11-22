@@ -1,6 +1,6 @@
 {
   "id": "sains-senter-bola-dunia",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -100,7 +100,11 @@
       "id": "jemur",
       "labelKey": "i-jemur",
       "bin": "pilihan",
-      "emoji": "👕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-jemuran",
+        "t": 0
+      }
     },
     {
       "id": "tidur",

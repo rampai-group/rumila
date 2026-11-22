@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Sudut di Sekitar Kita",
-      "instruksi": "Pilah tiap sudut: lancip (< 90°), siku-siku (= 90°), atau tumpul (> 90°). Seperempat putaran = 90°.",
+      "instruksi": "Pilah tiap sudut: lancip (< 90°), siku-siku (= 90°), atau tumpul (90° < sudut < 180°). Seperempat putaran = 90°.",
       "b-lancip": "lancip",
       "b-siku": "siku-siku",
       "b-tumpul": "tumpul",
@@ -34,7 +34,7 @@
     },
     "en": {
       "judul": "Angles Around Us",
-      "instruksi": "Sort each angle: acute (< 90°), right (= 90°) or obtuse (> 90°). A quarter turn = 90°.",
+      "instruksi": "Sort each angle: acute (< 90°), right (= 90°), or obtuse (between 90° and 180°, excluding both). A quarter turn = 90°.",
       "b-lancip": "acute",
       "b-siku": "right angle",
       "b-tumpul": "obtuse",

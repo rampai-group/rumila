@@ -1,6 +1,6 @@
 {
   "id": "sains-layu-atau-segar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,40 +9,40 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Layu atau Tetap Segar?",
-      "instruksi": "Lihat tempat dan keadaan tiap tanaman. Taruh ke rak akan layu beberapa hari lagi, atau tetap segar.",
-      "b-layu": "akan layu",
-      "b-segar": "tetap segar",
-      "i-ember": "bunga ditutup ember terbalik",
-      "i-kardus": "tanaman di bawah tumpukan kardus",
-      "i-terpal": "tanaman ditutup terpal hitam",
-      "i-garasi": "pot di garasi yang gelap",
-      "i-kering": "tanaman tidak disiram berhari-hari",
-      "i-laci": "bibit disimpan di dalam laci",
+      "judul": "Tanaman Butuh Cahaya dan Air",
+      "instruksi": "Lihat cahaya dan air di tiap gambar. Pilih keadaan yang membantu tanaman tumbuh sehat atau yang membuatnya sulit tumbuh.",
+      "b-layu": "sulit tumbuh sehat",
+      "b-segar": "membantu tumbuh sehat",
+      "i-ember": "tanaman tertutup ember, tanpa cahaya",
+      "i-kardus": "tanaman di kotak tertutup, tanpa cahaya",
+      "i-terpal": "tanaman tertutup terpal gelap, tanpa cahaya",
+      "i-garasi": "tanaman di garasi gelap, tanpa cahaya",
+      "i-kering": "tanaman di tanah kering yang tidak disiram",
+      "i-laci": "bibit di laci tertutup, tanpa cahaya",
       "i-halaman": "tanaman di halaman terang dan disiram",
-      "i-sayur": "sayur di kebun yang kena matahari",
-      "i-balkon": "pot bunga di balkon yang terang",
-      "i-padi": "padi di sawah yang terang",
-      "i-tulip": "bunga di taman yang disiram tiap pagi",
-      "i-kaca": "tanaman di rumah kaca yang terang"
+      "i-sayur": "sayur di kebun yang terang dan disiram",
+      "i-balkon": "bunga di balkon terang dan disiram",
+      "i-padi": "padi mendapat cahaya dan air di sawah",
+      "i-tulip": "tulip di taman mendapat cahaya dan air",
+      "i-kaca": "tanaman di rumah kaca terang dan disiram"
     },
     "en": {
-      "judul": "Wilt or Stay Fresh?",
-      "instruksi": "Look at where each plant is and how it is cared for. Put it on the will-wilt-in-a-few-days shelf or the stays-fresh shelf.",
-      "b-layu": "will wilt",
-      "b-segar": "stays fresh",
-      "i-ember": "flower covered by an upside-down bucket",
-      "i-kardus": "plant under a pile of boxes",
-      "i-terpal": "plant covered with a black tarp",
-      "i-garasi": "pot in a dark garage",
-      "i-kering": "plant not watered for many days",
-      "i-laci": "seedling kept inside a drawer",
-      "i-halaman": "plant in a bright yard and watered",
-      "i-sayur": "vegetables in a sunny garden",
-      "i-balkon": "flower pot on a bright balcony",
-      "i-padi": "rice plants in a bright field",
-      "i-tulip": "flowers in a park watered every morning",
-      "i-kaca": "plant in a bright greenhouse"
+      "judul": "Plants Need Light and Water",
+      "instruksi": "Look at the light and water in each picture. Sort the conditions into helps the plant grow well or makes it hard to grow.",
+      "b-layu": "hard to grow well",
+      "b-segar": "helps the plant grow well",
+      "i-ember": "a plant covered by a bucket, with no light",
+      "i-kardus": "a plant inside a closed box, with no light",
+      "i-terpal": "a plant under an opaque tarp, with no light",
+      "i-garasi": "a plant in a dark garage, with no light",
+      "i-kering": "a plant in dry soil that receives no water",
+      "i-laci": "a seedling in a closed drawer, with no light",
+      "i-halaman": "a plant in a bright yard that is watered",
+      "i-sayur": "vegetables in a sunny garden that are watered",
+      "i-balkon": "a flower on a bright balcony that is watered",
+      "i-padi": "rice with light and water in a paddy",
+      "i-tulip": "a tulip with light and water in a garden",
+      "i-kaca": "a plant in a bright greenhouse that is watered"
     }
   },
   "knobs": {
@@ -51,7 +51,7 @@
       "max": 6,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah tanaman per putaran: 3 → 6; tempat & keadaan berbeda dari paket Pot Mana yang Akan Layu"
+      "keterangan": "jumlah kondisi cahaya dan air per putaran: 3 sampai 6"
     }
   },
   "assets": [],
@@ -76,83 +76,121 @@
       "id": "ember",
       "labelKey": "i-ember",
       "bin": "layu",
-      "emoji": "🪣"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-ember",
+        "t": 0
+      }
     },
     {
       "id": "kardus",
       "labelKey": "i-kardus",
       "bin": "layu",
-      "emoji": "📦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-kardus",
+        "t": 0
+      }
     },
     {
       "id": "terpal",
       "labelKey": "i-terpal",
       "bin": "layu",
-      "emoji": "🌿",
-      "color": "#212121"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-terpal",
+        "t": 0
+      }
     },
     {
       "id": "garasi",
       "labelKey": "i-garasi",
       "bin": "layu",
-      "emoji": "🌿",
-      "color": "#263238"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-garasi",
+        "t": 0
+      }
     },
     {
       "id": "kering",
       "labelKey": "i-kering",
       "bin": "layu",
-      "emoji": "🌿",
-      "color": "#a1887f"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-kering",
+        "t": 0
+      }
     },
     {
       "id": "laci",
       "labelKey": "i-laci",
       "bin": "layu",
-      "emoji": "🌱",
-      "color": "#37474f"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-laci",
+        "t": 0
+      }
     },
     {
       "id": "halaman",
       "labelKey": "i-halaman",
       "bin": "segar",
-      "emoji": "🌿",
-      "color": "#fff59d"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-halaman",
+        "t": 0
+      }
     },
     {
       "id": "sayur",
       "labelKey": "i-sayur",
       "bin": "segar",
-      "emoji": "🥬",
-      "color": "#dcedc8"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-sayur",
+        "t": 0
+      }
     },
     {
       "id": "balkon",
       "labelKey": "i-balkon",
       "bin": "segar",
-      "emoji": "🌼",
-      "color": "#fff9c4"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-balkon",
+        "t": 0
+      }
     },
     {
       "id": "padi",
       "labelKey": "i-padi",
       "bin": "segar",
-      "emoji": "🌾",
-      "color": "#c5e1a5"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-padi",
+        "t": 0
+      }
     },
     {
       "id": "tulip",
       "labelKey": "i-tulip",
       "bin": "segar",
-      "emoji": "🌷",
-      "color": "#c8e6c9"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-tulip",
+        "t": 0
+      }
     },
     {
       "id": "kaca",
       "labelKey": "i-kaca",
       "bin": "segar",
-      "emoji": "🌱",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-pot-kaca",
+        "t": 0
+      }
     }
   ],
   "pilihan": []

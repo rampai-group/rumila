@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kubik di Antara Bintang",
-      "instruksi": "Bilangan kubik = bilangan dikali dirinya tiga kali (3 × 3 × 3 = 27). Bilangan kuadrat = dikali dirinya dua kali (3 × 3 = 9). Sentuh jawaban yang benar.",
+      "instruksi": "Bilangan kubik adalah hasil kali tiga faktor yang sama (3 × 3 × 3 = 27), kuadrat dua faktor yang sama (3 × 3 = 9). Sentuh jawabannya.",
       "pilihan": "pilihan",
       "q1": "Bintang bernomor 64 termasuk bilangan …",
       "c1": "kuadrat dan kubik",
@@ -51,7 +51,7 @@
     },
     "en": {
       "judul": "Cubes Among the Stars",
-      "instruksi": "A cube number is a number multiplied by itself three times (3 × 3 × 3 = 27). A square number is multiplied by itself twice (3 × 3 = 9). Touch the right answer.",
+      "instruksi": "A cube number is the product of three equal factors (3 × 3 × 3 = 27). A square number uses two equal factors (3 × 3 = 9). Touch the correct answer.",
       "pilihan": "choices",
       "q1": "The star numbered 64 is a …",
       "c1": "square and cube",

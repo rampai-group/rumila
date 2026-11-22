@@ -231,7 +231,8 @@
       },
       "walls": [],
       "rocks": [],
-      "optimal": 9
+      "optimal": 9,
+      "rackSlots": 9
     },
     {
       "id": "kiri-kiri",

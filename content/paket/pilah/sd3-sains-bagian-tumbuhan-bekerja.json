@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-bagian-tumbuhan-bekerja",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "t-seledri": "Bunga krisan putih ditaruh di air berwarna merah. Besoknya kelopaknya kemerahan. Warnanya naik lewat bagian mana?",
       "t-gelap": "Tanaman disimpan di lemari gelap seminggu. Bagian mana yang menguning karena tidak bisa membuat makanan?",
       "t-biji": "Bagian mana yang nanti berubah menjadi buah dan biji?",
-      "t-siramdaun": "Tanaman layu hanya disemprot daunnya, tanahnya tetap kering. Bagian mana yang sebenarnya butuh air?",
+      "t-siramdaun": "Tanaman layu hanya disemprot daunnya, tanahnya tetap kering. Bagian mana yang perlu menyerap air dari tanah?",
       "t-tegak": "Bunga matahari tetap berdiri tegak menghadap cahaya. Bagian mana yang menopangnya?"
     },
     "en": {
@@ -43,7 +43,7 @@
       "t-seledri": "A white chrysanthemum stands in red water. Next day its petals are reddish. Which part did the colour travel up?",
       "t-gelap": "A plant is kept in a dark cupboard for a week. Which part turns yellow because it can't make food?",
       "t-biji": "Which part later turns into fruit and seeds?",
-      "t-siramdaun": "A wilting plant only gets its leaves sprayed and the soil stays dry. Which part really needs the water?",
+      "t-siramdaun": "A wilting plant only gets its leaves sprayed and the soil stays dry. Which part needs to absorb water from the soil?",
       "t-tegak": "A sunflower stands tall facing the light. Which part holds it up?"
     }
   },

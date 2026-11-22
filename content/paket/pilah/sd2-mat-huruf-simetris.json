@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-huruf-simetris",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -102,127 +102,227 @@
     {
       "id": "huruf-a",
       "labelKey": "i-a",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-a"
+      }
     },
     {
       "id": "huruf-h",
       "labelKey": "i-h",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-h"
+      }
     },
     {
       "id": "huruf-m",
       "labelKey": "i-m",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-m"
+      }
     },
     {
       "id": "huruf-t",
       "labelKey": "i-t",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-t"
+      }
     },
     {
       "id": "huruf-u",
       "labelKey": "i-u",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-u"
+      }
     },
     {
       "id": "huruf-v",
       "labelKey": "i-v",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-v"
+      }
     },
     {
       "id": "huruf-w",
       "labelKey": "i-w",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-w"
+      }
     },
     {
       "id": "huruf-x",
       "labelKey": "i-x",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-x"
+      }
     },
     {
       "id": "huruf-y",
       "labelKey": "i-y",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-y"
+      }
     },
     {
       "id": "huruf-o",
       "labelKey": "i-o",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-o"
+      }
     },
     {
       "id": "huruf-b",
       "labelKey": "i-b",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-b"
+      }
     },
     {
       "id": "huruf-c",
       "labelKey": "i-c",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-c"
+      }
     },
     {
       "id": "huruf-d",
       "labelKey": "i-d",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-d"
+      }
     },
     {
       "id": "huruf-e",
       "labelKey": "i-e",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-e"
+      }
     },
     {
       "id": "huruf-i",
       "labelKey": "i-i",
-      "bin": "simetris"
+      "bin": "simetris",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-i"
+      }
     },
     {
       "id": "huruf-f",
       "labelKey": "i-f",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-f"
+      }
     },
     {
       "id": "huruf-g",
       "labelKey": "i-g",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-g"
+      }
     },
     {
       "id": "huruf-j",
       "labelKey": "i-j",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-j"
+      }
     },
     {
       "id": "huruf-l",
       "labelKey": "i-l",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-l"
+      }
     },
     {
       "id": "huruf-n",
       "labelKey": "i-n",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-n"
+      }
     },
     {
       "id": "huruf-p",
       "labelKey": "i-p",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-p"
+      }
     },
     {
       "id": "huruf-r",
       "labelKey": "i-r",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-r"
+      }
     },
     {
       "id": "huruf-s",
       "labelKey": "i-s",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-s"
+      }
     },
     {
       "id": "huruf-z",
       "labelKey": "i-z",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-z"
+      }
     },
     {
       "id": "huruf-q",
       "labelKey": "i-q",
-      "bin": "tidak"
+      "bin": "tidak",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-huruf-q"
+      }
     }
   ]
 }

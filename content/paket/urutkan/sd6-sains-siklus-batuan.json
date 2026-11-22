@@ -144,15 +144,7 @@
       "gurun-bukit": "the sand piles up into dunes"
     }
   },
-  "knobs": {
-    "steps": {
-      "min": 4,
-      "max": 7,
-      "default": 4,
-      "step": 1,
-      "keterangan": "jumlah langkah: 4 → 7 (beberapa jalur hanya 4–5 langkah)"
-    }
-  },
+  "knobs": {},
   "assets": [],
   "generatif": true,
   "rounds": 10,

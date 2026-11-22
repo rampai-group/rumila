@@ -35,15 +35,7 @@
       "t-semua": "Solar system model: from closest to the Sun"
     }
   },
-  "knobs": {
-    "steps": {
-      "min": 4,
-      "max": 8,
-      "default": 5,
-      "step": 1,
-      "keterangan": "jumlah planet yang tampil: 4 → 8; sequence dipotong dari depan, tetap urut dari Matahari"
-    }
-  },
+  "knobs": {},
   "assets": [],
   "generatif": true,
   "rounds": 10,

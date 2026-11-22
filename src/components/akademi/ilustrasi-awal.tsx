@@ -1,6 +1,8 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
+import { ILUSTRASI_AWAL_SD_IDS, IlustrasiAwalSD } from "./ilustrasi-awal-sd";
+import { GambarIlustrasiTk } from "./ilustrasi-tk";
 
 /** Concrete early-years objects. Each identifier names a visible feature, never an answer state. */
 export const ILUSTRASI_AWAL_IDS = [
@@ -15,7 +17,7 @@ export const ILUSTRASI_AWAL_IDS = [
   "boneka-tanpa-kepala", "boneka-tanpa-badan", "boneka-tanpa-tangan", "boneka-tanpa-kaki",
   "ciri-kakiberbulu", "ciri-sayapsirip", "ciri-putihsalju", "ciri-ekorpipih", "ciri-sisikikan", "ciri-hidungtutup",
   "ciri-telingabesar", "ciri-kulitkering", "ciri-warnapasir", "ciri-jarilengket", "ciri-paruhbesar", "ciri-warnakayu",
-].map((id) => `awal-${id}`);
+].map((id) => `awal-${id}`).concat(ILUSTRASI_AWAL_SD_IDS);
 const dikenal = new Set(ILUSTRASI_AWAL_IDS);
 export const isIlustrasiAwal = (gambar: string) => dikenal.has(gambar);
 const INK = "#16364b";
@@ -63,9 +65,11 @@ function Body({ kind, part, missing }: { kind: string; part: string; missing: bo
 
 /** One scalable SVG; parent cards provide the localized accessible name and optional listen button. */
 export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: string; s: number; style?: CSSProperties; className?: string }) {
+  if (gambar.startsWith("tk-")) return <GambarIlustrasiTk gambar={gambar} s={s} style={style} className={className} />;
   const id = gambar.replace(/^awal-/, "");
   let art: ReactNode = null;
-  if (id === "polong") art = <g stroke="#267343" strokeWidth="2.5"><path d="M14 71Q29 18 112 25Q100 78 22 81Z" fill="#43a94c" /><path d="M21 72Q45 38 105 31Q81 78 21 72Z" fill="#c7e880" />{[35,56,77,96].map((x,i) => <circle key={x} cx={x} cy={63-i*8} r="9" fill="#73bf45" />)}<path d="M110 26Q117 12 108 13" fill="none" /></g>;
+  if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
+  else if (id === "polong") art = <g stroke="#267343" strokeWidth="2.5"><path d="M14 71Q29 18 112 25Q100 78 22 81Z" fill="#43a94c" /><path d="M21 72Q45 38 105 31Q81 78 21 72Z" fill="#c7e880" />{[35,56,77,96].map((x,i) => <circle key={x} cx={x} cy={63-i*8} r="9" fill="#73bf45" />)}<path d="M110 26Q117 12 108 13" fill="none" /></g>;
   else if (id === "anggur") art = <g><path d="M64 22Q62 9 71 6" fill="none" stroke="#5e8048" strokeWidth="5" /><path d="M68 16Q92 0 96 18Q81 28 68 16" fill="#68a54f" /><ellipse cx="65" cy="57" rx="31" ry="34" fill="#9463bd" stroke="#62428f" strokeWidth="3" /><ellipse cx="52" cy="41" rx="8" ry="11" fill="#c6a1e0" /></g>;
   else if (id === "roda") art = <g><circle cx="65" cy="50" r="39" fill="#fff" stroke="#384d59" strokeWidth="8" /><circle cx="65" cy="50" r="31" fill="none" stroke="#a6bac7" strokeWidth="3" />{Array.from({length:8},(_,i) => <path key={i} d="M65 20V80" stroke="#698692" strokeWidth="2" transform={`rotate(${i*22.5} 65 50)`} />)}<circle cx="65" cy="50" r="6" fill="#fcba3c" stroke={INK} strokeWidth="2" /></g>;
   else if (id === "keju") art = <g><path d="M17 85L65 12 114 85Z" fill="#ffda59" stroke="#b77e16" strokeWidth="4" strokeLinejoin="round" /><circle cx="60" cy="44" r="6" fill="#eaa72b" /><circle cx="43" cy="71" r="7" fill="#eaa72b" /><circle cx="83" cy="72" r="6" fill="#eaa72b" /></g>;

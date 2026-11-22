@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-larut-mengendap-lab",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -112,7 +112,10 @@
       "id": "kacangmerah",
       "labelKey": "i-kacangmerah",
       "bin": "tidak",
-      "emoji": "🥜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kacang-merah"
+      }
     },
     {
       "id": "koin",

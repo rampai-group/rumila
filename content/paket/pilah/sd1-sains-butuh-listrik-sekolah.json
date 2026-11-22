@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-butuh-listrik-sekolah",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -138,7 +138,10 @@
       "id": "peluit",
       "labelKey": "i-peluit",
       "bin": "tanpa",
-      "emoji": "😗"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-peluit"
+      }
     },
     {
       "id": "bola",

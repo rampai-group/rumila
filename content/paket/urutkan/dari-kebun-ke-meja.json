@@ -1,6 +1,6 @@
 {
   "id": "dari-kebun-ke-meja",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Dari Kebun ke Meja",
-      "instruksi": "Susun gambar supaya ceritanya urut dari kebun sampai ke meja makan.",
+      "instruksi": "Susun gambar dari awal sampai makanan siap di meja.",
       "tanam": "Menanam apel",
       "sayur": "Memasak sayur",
       "biji": "tanam biji",
       "siram": "siram air",
       "bunga": "bunga mekar",
       "buah": "buah matang",
-      "panen": "panen ke keranjang",
+      "panen": "petik apel dan sajikan di meja",
       "potong": "potong sayur",
       "masak": "masak di panci",
       "sajikan": "sajikan di piring",
@@ -29,13 +29,13 @@
       "t-padi": "Cerita padi",
       "padi-tanam": "tanam bibit padi",
       "padi-kuning": "padi menguning",
-      "padi-masak": "masak nasi",
+      "padi-masak": "masak beras menjadi nasi",
       "padi-makan": "makan nasi",
       "t-tomat": "Cerita tomat",
       "tomat-tanam": "tanam bibit tomat",
       "tomat-buah": "tomat merah",
       "tomat-petik": "petik ke keranjang",
-      "tomat-sup": "masak sup",
+      "tomat-sup": "sajikan sup tomat di meja",
       "t-telur": "Cerita telur",
       "telur-ayam": "ayam bertelur",
       "telur-ambil": "ambil telur",
@@ -44,14 +44,12 @@
       "t-susu": "Cerita susu",
       "susu-sapi": "sapi di kandang",
       "susu-perah": "perah susu ke ember",
-      "susu-tuang": "tuang ke gelas",
-      "susu-minum": "minum susu",
+      "susu-minum": "minum susu yang sudah diolah",
       "t-wortel": "Cerita wortel",
       "wortel-tanam": "tanam biji wortel",
       "wortel-cabut": "cabut wortel",
       "wortel-siram": "siram setiap hari",
-      "wortel-potong": "potong wortel",
-      "wortel-sup": "masak sup",
+      "wortel-sup": "sajikan sup wortel di meja",
       "t-kentang": "Cerita kentang",
       "kentang-tanam": "tanam bibit kentang",
       "kentang-gali": "gali kentang",
@@ -67,18 +65,19 @@
       "jeruk-bunga": "bunga mekar",
       "jeruk-buah": "jeruk matang",
       "jeruk-jus": "minum jus jeruk",
-      "petik": "petik sayur di kebun"
+      "petik": "petik sayur di kebun",
+      "susu-olah": "susu diolah di pabrik supaya aman diminum"
     },
     "en": {
       "judul": "From Garden to Table",
-      "instruksi": "Put the pictures in order so the story goes from the garden to the dinner table.",
+      "instruksi": "Put the pictures in order, from the start until the food is ready to serve.",
       "tanam": "Growing an apple",
       "sayur": "Cooking vegetables",
       "biji": "plant the seed",
       "siram": "water it",
       "bunga": "blossom",
       "buah": "ripe fruit",
-      "panen": "harvest into the basket",
+      "panen": "pick the apple and serve it at the table",
       "potong": "chop them",
       "masak": "cook in the pot",
       "sajikan": "serve on a plate",
@@ -96,7 +95,7 @@
       "tomat-tanam": "plant a tomato seedling",
       "tomat-buah": "red tomatoes",
       "tomat-petik": "pick into the basket",
-      "tomat-sup": "cook soup",
+      "tomat-sup": "serve tomato soup at the table",
       "t-telur": "The egg story",
       "telur-ayam": "the hen lays an egg",
       "telur-ambil": "take the egg",
@@ -105,14 +104,12 @@
       "t-susu": "The milk story",
       "susu-sapi": "the cow in the barn",
       "susu-perah": "milk into the pail",
-      "susu-tuang": "pour into a glass",
-      "susu-minum": "drink the milk",
+      "susu-minum": "drink the pasteurized milk",
       "t-wortel": "The carrot story",
       "wortel-tanam": "plant carrot seeds",
       "wortel-cabut": "pull up the carrot",
       "wortel-siram": "water it every day",
-      "wortel-potong": "cut the carrot",
-      "wortel-sup": "cook soup",
+      "wortel-sup": "serve carrot soup at the table",
       "t-kentang": "The potato story",
       "kentang-tanam": "plant a potato",
       "kentang-gali": "dig up the potatoes",
@@ -128,7 +125,8 @@
       "jeruk-bunga": "flowers bloom",
       "jeruk-buah": "the oranges are ripe",
       "jeruk-jus": "drink orange juice",
-      "petik": "pick vegetables in the garden"
+      "petik": "pick vegetables in the garden",
+      "susu-olah": "the milk is pasteurized at the dairy so it is safe to drink"
     }
   },
   "knobs": {
@@ -173,7 +171,7 @@
         {
           "id": "panen",
           "labelKey": "panen",
-          "emoji": "🧺"
+          "emoji": "🍽️"
         }
       ]
     },
@@ -322,9 +320,9 @@
           "emoji": "🪣"
         },
         {
-          "id": "tuang",
-          "labelKey": "susu-tuang",
-          "emoji": "🥛"
+          "id": "olah",
+          "labelKey": "susu-olah",
+          "emoji": "🏭"
         },
         {
           "id": "minum",
@@ -351,11 +349,6 @@
           "id": "cabut",
           "labelKey": "wortel-cabut",
           "emoji": "🥕"
-        },
-        {
-          "id": "potong",
-          "labelKey": "wortel-potong",
-          "emoji": "🔪"
         },
         {
           "id": "sup",
@@ -442,5 +435,6 @@
         }
       ]
     }
-  ]
+  ],
+  "potong": "tengah"
 }

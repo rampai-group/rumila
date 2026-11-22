@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-penggaris-geser",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD2",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -19,7 +19,7 @@
       "i-wortel": "wortel",
       "i-sumpit": "sumpit",
       "i-pisang": "pisang",
-      "i-seruling": "seruling",
+      "i-seruling": "saksofon",
       "i-tongkat": "tongkat kayu"
     },
     "en": {
@@ -33,7 +33,7 @@
       "i-wortel": "carrot",
       "i-sumpit": "chopsticks",
       "i-pisang": "banana",
-      "i-seruling": "flute",
+      "i-seruling": "saxophone",
       "i-tongkat": "wooden stick"
     }
   },

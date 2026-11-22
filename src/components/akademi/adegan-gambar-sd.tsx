@@ -154,6 +154,25 @@ function PizzaPotong({ pembilang, penyebut }: { pembilang: number; penyebut: num
 }
 
 function PenandaSd({ varian }: { varian: string }) {
+  if (varian === "gelas-air") {
+    return (
+      <g stroke="#243b62" strokeWidth="3" strokeLinejoin="round">
+        <path d="M32 17h66L90 89H40Z" fill="#f1fbff" />
+        <path d="M37 46q14-7 28 0t28 0l-4 40H41Z" fill="#86d4f4" stroke="none" />
+        <path d="M45 26l2 12" stroke="#fff" strokeLinecap="round" />
+      </g>
+    );
+  }
+  if (varian === "botol-air") {
+    return (
+      <g stroke="#243b62" strokeWidth="3" strokeLinejoin="round">
+        <path d="M52 20h26v10l8 11q3 4 3 10v31q0 9-7 9H48q-7 0-7-9V51q0-6 3-10l8-11Z" fill="#f1fbff" />
+        <path d="M43 53q11-6 22 0t22 0v29q0 7-5 7H48q-5 0-5-7Z" fill="#86d4f4" stroke="none" />
+        <rect x="50" y="10" width="30" height="11" rx="3" fill="#3d9dc9" />
+        <path d="M49 44l4-6" stroke="#fff" strokeLinecap="round" />
+      </g>
+    );
+  }
   if (varian === "tuang") {
     return (
       <g stroke="#243b62" strokeWidth="3" strokeLinejoin="round">

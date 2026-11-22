@@ -1,6 +1,6 @@
 {
   "id": "piktogram-buah-keranjang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -146,25 +146,42 @@
       "id": "anggur-a",
       "labelKey": "anggur",
       "bin": "anggur",
-      "emoji": "🍇"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "anggur-b",
       "labelKey": "anggur",
       "bin": "anggur",
-      "emoji": "🍇"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "anggur-c",
       "labelKey": "anggur",
       "bin": "anggur",
-      "emoji": "🍇"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     },
     {
       "id": "anggur-d",
       "labelKey": "anggur",
       "bin": "anggur",
-      "emoji": "🍇"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-anggur",
+        "t": 0
+      }
     }
-  ]
+  ],
+  "layoutBin": "piktogram"
 }

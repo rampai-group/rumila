@@ -323,7 +323,7 @@ function Penanda() {
 }
 
 /** Keranjang 🧺: isi bisa diketuk untuk dikembalikan. */
-function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, className = "" }: { isi: { key: string; v: VisualSpec; label?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; className?: string }) {
+function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, disabled, className = "" }: { isi: { key: string; v: VisualSpec; label?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; disabled?: boolean; className?: string }) {
   const sk = useSk();
   return (
     <Wadah
@@ -340,7 +340,7 @@ function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang
     >
       {isi.length === 0 && <span className="w-full rounded-full bg-white/80 px-3 py-1 text-center font-bold" style={{ fontSize: 14 * sk, color: INK }}>{kosong}</span>}
       {isi.map((b) => (
-        <KartuBenda key={b.key} v={b.v} size={Math.round(44 * sk)} label={b.label} labelSize={Math.round(13 * sk)} onClick={onKembali ? () => onKembali(b.key) : undefined} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
+        <KartuBenda key={b.key} v={b.v} size={Math.round(44 * sk)} label={b.label} labelSize={Math.round(13 * sk)} disabled={disabled} onClick={onKembali ? () => onKembali(b.key) : undefined} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
       ))}
     </Wadah>
   );
@@ -604,12 +604,17 @@ function ModeSubitasi(c: Ctx) {
       <Lapak>
         <div className="flex flex-wrap content-center justify-center" style={{ gap: 8 * sk }}>
           {Array.from({ length: tersedia - jumlah }, (_, k) => (
-            <KartuBenda key={k} v={visual(id)} size={Math.round(48 * meja)} keterangan={false} onClick={() => { if (sudahLihat && !tampil) { sfxAkademi.ambil(); setJumlah((n) => n + 1); } }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
+            <KartuBenda key={k} v={visual(id)} size={Math.round(48 * meja)} keterangan={false} disabled={terkunci || !sudahLihat || tampil} onClick={() => { sfxAkademi.ambil(); setJumlah((n) => n + 1); }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
           ))}
         </div>
       </Lapak>
     </>} kanan={<>
-      <Keranjang isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))} onKembali={() => { sfxAkademi.taruh(); setJumlah((n) => Math.max(0, n - 1)); }} />
+      <Keranjang
+        isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))}
+        onKembali={() => { sfxAkademi.taruh(); setJumlah((n) => Math.max(0, n - 1)); }}
+        disabled={terkunci || tampil}
+        kosong={!sudahLihat ? "Ketuk Lihat jari dulu" : tampil ? "Tunggu tangannya turun" : "Ketuk buah di lapak"}
+      />
       {!sudahLihat ? (
         <div className="flex shrink-0">
           <TombolBesar onClick={lihatPertama} warna="#0786eb" bayang="#0567c2">

@@ -155,7 +155,10 @@
         {
           "id": "air",
           "labelKey": "mencair-air",
-          "emoji": "🥛"
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "gelas-air"
+          }
         }
       ]
     },

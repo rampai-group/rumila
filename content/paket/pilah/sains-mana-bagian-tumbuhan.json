@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-bagian-tumbuhan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -81,7 +81,11 @@
       "id": "batang",
       "labelKey": "i-batang",
       "bin": "pilihan",
-      "emoji": "🎋"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-batang",
+        "t": 0
+      }
     },
     {
       "id": "daun",

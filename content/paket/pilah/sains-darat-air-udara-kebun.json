@@ -1,6 +1,6 @@
 {
   "id": "sains-darat-air-udara-kebun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,36 +9,36 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Darat, Air, atau Udara?",
-      "instruksi": "Antar tiap hewan ke tempat hidupnya.",
-      "darat": "darat",
-      "air": "air",
-      "udara": "udara",
-      "i-sapi": "sapi",
-      "i-kambing": "kambing",
-      "i-kucing": "kucing",
-      "i-ikan": "ikan",
-      "i-gurita": "gurita",
-      "i-penyu": "penyu",
-      "i-burung": "burung",
-      "i-kupu": "kupu-kupu",
-      "i-lebah": "lebah"
+      "judul": "Berjalan, Berenang, atau Terbang?",
+      "instruksi": "Dengarkan apa yang dilakukan tiap hewan. Taruh kartunya di rak berjalan, berenang, atau terbang.",
+      "darat": "berjalan",
+      "air": "berenang",
+      "udara": "terbang",
+      "i-sapi": "sapi sedang berjalan",
+      "i-kambing": "kambing sedang berjalan",
+      "i-kucing": "kucing sedang berjalan",
+      "i-ikan": "ikan sedang berenang",
+      "i-gurita": "gurita sedang berenang",
+      "i-penyu": "penyu sedang berenang",
+      "i-burung": "burung sedang terbang",
+      "i-kupu": "kupu-kupu sedang terbang",
+      "i-lebah": "lebah sedang terbang"
     },
     "en": {
-      "judul": "Land, Water, or Sky?",
-      "instruksi": "Take each animal to where it lives.",
-      "darat": "land",
-      "air": "water",
-      "udara": "sky",
-      "i-sapi": "cow",
-      "i-kambing": "goat",
-      "i-kucing": "cat",
-      "i-ikan": "fish",
-      "i-gurita": "octopus",
-      "i-penyu": "sea turtle",
-      "i-burung": "bird",
-      "i-kupu": "butterfly",
-      "i-lebah": "bee"
+      "judul": "Walk, Swim, or Fly?",
+      "instruksi": "Listen to what each animal is doing. Sort its card into walking, swimming, or flying.",
+      "darat": "walking",
+      "air": "swimming",
+      "udara": "flying",
+      "i-sapi": "A cow is walking",
+      "i-kambing": "A goat is walking",
+      "i-kucing": "A cat is walking",
+      "i-ikan": "A fish is swimming",
+      "i-gurita": "An octopus is swimming",
+      "i-penyu": "A sea turtle is swimming",
+      "i-burung": "A bird is flying",
+      "i-kupu": "A butterfly is flying",
+      "i-lebah": "A bee is flying"
     }
   },
   "knobs": {
@@ -47,7 +47,7 @@
       "max": 3,
       "default": 2,
       "step": 1,
-      "keterangan": "jumlah tempat: 2 (darat, air) → 3 (tambah udara)"
+      "keterangan": "jumlah cara: 2 (berjalan, berenang) sampai 3 (tambah terbang)"
     },
     "itemCount": {
       "min": 4,
@@ -66,7 +66,7 @@
     {
       "id": "darat",
       "labelKey": "darat",
-      "emoji": "🌾",
+      "emoji": "🐾",
       "color": "#c5e1a5"
     },
     {
@@ -78,7 +78,7 @@
     {
       "id": "udara",
       "labelKey": "udara",
-      "emoji": "☁️",
+      "emoji": "🐦",
       "color": "#e3f2fd"
     }
   ],

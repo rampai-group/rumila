@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tembus-cahaya-di-sekolah",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -106,8 +106,10 @@
       "id": "kotakpensil",
       "labelKey": "i-kotakpensil",
       "bin": "pandang",
-      "emoji": "🧴",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kotak-pensil-bening"
+      }
     },
     {
       "id": "airbotol",
@@ -137,7 +139,10 @@
       "id": "kotaklogam",
       "labelKey": "i-kotaklogam",
       "bin": "tidak",
-      "emoji": "🥫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kotak-pensil-logam"
+      }
     },
     {
       "id": "kalkir",
@@ -161,8 +166,10 @@
       "id": "tirai",
       "labelKey": "i-tirai",
       "bin": "cahaya",
-      "color": "#f8bbd0",
-      "shape": "rect"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-tirai-tipis"
+      }
     }
   ],
   "pilihan": []

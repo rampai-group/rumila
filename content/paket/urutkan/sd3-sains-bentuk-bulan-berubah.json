@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-bentuk-bulan-berubah",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -126,7 +126,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 8,
   "world": "angkasa",
   "mode": "susun",
   "sequences": [

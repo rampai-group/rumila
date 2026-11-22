@@ -94,6 +94,11 @@ export function hitungBlok(program: NavBlock[]): number {
   return program.reduce((n, b) => n + (b.cmd === "ulangi" ? 1 + hitungBlok(b.body) : 1), 0);
 }
 
+/** Jika batas rak debug tidak ditulis, rak harus muat program yang disediakan. */
+export function kapasitasRakNavigasi(r: Pick<RondeNavigasi, "rackSlots" | "debug" | "program">): number {
+  return r.rackSlots ?? Math.max(8, r.debug ? hitungBlok(r.program) : 0);
+}
+
 /** Konversi program JSON paket → NavBlock (bentuknya sama; disalin supaya aman diubah presenter). */
 export function dariJson(blok: NavBlockJson[]): NavBlock[] {
   return blok.map(b => (b.cmd === "ulangi" ? { cmd: "ulangi", n: b.n, body: dariJson(b.body) } : { cmd: b.cmd }));
@@ -154,8 +159,9 @@ export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
   const semuaBintang = outcomes.length > 0 && outcomes.every(o => o === "bintang");
   // debug: anak boleh menemukan perbaikan yang lebih hemat dari target (dulu wajib tepat sama → salah dinilai)
   const debugBeres = !r.debug || r.fixes === undefined || (typeof j.edits === "number" && j.edits <= r.fixes);
-  // mode bendera: layar membatasi tiap rak sendiri-sendiri, jadi batas berlaku per bagian (bukan total program)
-  const rakBeres = r.rackSlots === undefined || (j.bendera ? j.bendera.bagian.every(b => hitungBlok(b) <= r.rackSlots!) : blocks <= r.rackSlots);
+  // mode bendera: batas berlaku per bagian. Debug memakai kapasitas yang sama dengan editor.
+  const batasRak = r.rackSlots ?? (r.debug && r.execMode === "program" ? kapasitasRakNavigasi(r) : undefined);
+  const rakBeres = batasRak === undefined || (j.bendera ? j.bendera.bagian.every(b => hitungBlok(b) <= batasRak) : blocks <= batasRak);
   // mode prediksi: program sudah disediakan, jadi buktinya tebakan anak (minimal 60% benar, sama dengan ambang misi)
   const prediksiBeres = !r.prediksi || prediksiTotal === 0 || prediksiBenar / prediksiTotal >= 0.6;
   // mode langkah + prediksi: program disediakan mesin (boleh sengaja berakhir menabrak, mis. "berhenti sebelum

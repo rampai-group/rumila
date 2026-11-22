@@ -136,15 +136,7 @@
       "lipatan-erosi": "the marble weathers and wears away"
     }
   },
-  "knobs": {
-    "steps": {
-      "min": 4,
-      "max": 7,
-      "default": 4,
-      "step": 1,
-      "keterangan": "jumlah tahap: 4 → 7 (beberapa jalur hanya 4–6 tahap)"
-    }
-  },
+  "knobs": {},
   "assets": [],
   "generatif": true,
   "rounds": 10,

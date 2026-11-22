@@ -1,6 +1,6 @@
 {
   "id": "sains-perbaiki-siklus-kupu-kupu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -140,7 +140,11 @@
           "id": "telur",
           "labelKey": "jeruk-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -150,10 +154,12 @@
         {
           "id": "kepompong",
           "labelKey": "jeruk-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -170,7 +176,11 @@
           "id": "telur",
           "labelKey": "kubis-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -180,10 +190,12 @@
         {
           "id": "kepompong",
           "labelKey": "kubis-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -200,7 +212,11 @@
           "id": "telur",
           "labelKey": "sirih-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -210,10 +226,12 @@
         {
           "id": "kepompong",
           "labelKey": "sirih-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -230,7 +248,11 @@
           "id": "telur",
           "labelKey": "pepaya-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -240,10 +262,12 @@
         {
           "id": "kepompong",
           "labelKey": "pepaya-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -260,7 +284,11 @@
           "id": "telur",
           "labelKey": "sepatu-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -270,10 +298,12 @@
         {
           "id": "kepompong",
           "labelKey": "sepatu-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -290,7 +320,11 @@
           "id": "telur",
           "labelKey": "mangga-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -300,10 +334,12 @@
         {
           "id": "kepompong",
           "labelKey": "mangga-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -320,7 +356,11 @@
           "id": "telur",
           "labelKey": "jambu-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -330,10 +370,12 @@
         {
           "id": "kepompong",
           "labelKey": "jambu-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -350,7 +392,11 @@
           "id": "telur",
           "labelKey": "kenikir-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -360,10 +406,12 @@
         {
           "id": "kepompong",
           "labelKey": "kenikir-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -380,7 +428,11 @@
           "id": "telur",
           "labelKey": "mawar-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -390,10 +442,12 @@
         {
           "id": "kepompong",
           "labelKey": "mawar-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",
@@ -410,7 +464,11 @@
           "id": "telur",
           "labelKey": "sirsak-telur",
           "scale": 0.6,
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-telur-di-daun",
+            "t": 0
+          }
         },
         {
           "id": "ulat",
@@ -420,10 +478,12 @@
         {
           "id": "kepompong",
           "labelKey": "sirsak-kepompong",
-          "shape": "rect",
-          "color": "#8d6e63",
           "scale": 1.1,
-          "width": 0.55
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kepompong",
+            "t": 0
+          }
         },
         {
           "id": "kupu",

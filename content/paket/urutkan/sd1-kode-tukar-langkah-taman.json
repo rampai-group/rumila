@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tukar-langkah-taman",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Satu Tukar Beres",
-      "instruksi": "Satu langkah salah tempat. Cari langkah itu, lalu tukar sekali saja supaya urutannya benar.",
+      "instruksi": "Dua langkah tertukar tempat. Cari kedua kartu itu, lalu tukar sekali supaya urutannya benar.",
       "t-telur": "Menggoreng telur",
       "telur-1": "tuang minyak ke wajan",
       "telur-2": "panaskan minyaknya",
@@ -91,7 +91,7 @@
     },
     "en": {
       "judul": "One Swap Fixes It",
-      "instruksi": "One step is in the wrong place. Find it and swap just once so the order is right.",
+      "instruksi": "Two steps have swapped places. Find both cards and swap them once to put the steps in order.",
       "t-telur": "Frying an egg",
       "telur-1": "pour oil into the pan",
       "telur-2": "heat the oil",

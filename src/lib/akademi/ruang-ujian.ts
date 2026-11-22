@@ -5,13 +5,15 @@ import type { Competency, LevelId } from "@akademi/schema";
 import { TRACK_AKTIF } from "./katalog";
 import { petaJenjang } from "./peta";
 import type { JenisUjian } from "./ujian";
+import { ruangKuis, ruangKuisKanonik } from "./modul";
 
 /** null = ruang tidak dikenal untuk jenjang itu. */
 export function cakupanUjian(jenis: JenisUjian, level: LevelId, ruang: string, kompetensi: Competency[]): string[] | null {
   const peta = petaJenjang({}, new Set(), kompetensi, level, TRACK_AKTIF);
   const ids = (us: typeof peta.unit) => us.flatMap((u) => u.misi.map((m) => m.kompetensi.id));
   if (jenis === "kuis") {
-    const u = peta.unit.find((x) => x.id === ruang);
+    const kanonik = ruangKuisKanonik(level, ruang, kompetensi, TRACK_AKTIF);
+    const u = peta.unit.find((x) => ruangKuis(x.track, x.id) === kanonik);
     return u ? ids([u]) : null;
   }
   if (jenis === "semester") {

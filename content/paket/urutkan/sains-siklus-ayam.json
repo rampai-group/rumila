@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-ayam",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -136,8 +136,12 @@
         {
           "id": "anak",
           "labelKey": "bebek-anak",
-          "emoji": "🦆",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-anak-bebek",
+            "t": 0
+          }
         },
         {
           "id": "dewasa",
@@ -186,8 +190,12 @@
         {
           "id": "retak",
           "labelKey": "bebek-menetas-retak",
-          "emoji": "🐣",
-          "scale": 0.9
+          "scale": 0.9,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-bebek-menetas",
+            "t": 0
+          }
         },
         {
           "id": "dewasa",
@@ -277,14 +285,22 @@
         {
           "id": "retak",
           "labelKey": "bebek-besar-retak",
-          "emoji": "🐣",
-          "scale": 0.9
+          "scale": 0.9,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-bebek-menetas",
+            "t": 0
+          }
         },
         {
           "id": "anak",
           "labelKey": "bebek-besar-anak",
-          "emoji": "🦆",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-anak-bebek",
+            "t": 0
+          }
         },
         {
           "id": "dewasa",

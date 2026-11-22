@@ -1,6 +1,6 @@
 {
   "id": "sains-antar-ke-lapisan-laut",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,38 +10,38 @@
   "locale": {
     "id": {
       "judul": "Antar Hewan ke Lapisannya",
-      "instruksi": "Kapal selam berangkat dari pantai. Dengarkan hewan yang ikut, lalu sentuh lapisan rumahnya: terumbu, laut dalam, atau palung.",
+      "instruksi": "Dengarkan di mana hewannya ditemukan. Pilih terumbu dangkal, laut dalam di luar palung, atau dasar palung.",
       "pilihan": "pilihan",
-      "i-terumbu": "terumbu karang (dangkal dan terang)",
-      "i-dalam": "laut dalam (gelap dan dingin)",
-      "i-palung": "palung (paling dalam)",
+      "i-terumbu": "terumbu dangkal",
+      "i-dalam": "laut dalam di luar palung",
+      "i-palung": "dasar palung",
       "t-1": "Ikan kakatua menggigit karang untuk makan. Antar ke mana?",
       "t-2": "Kuda laut berpegangan pada karang dengan ekornya. Antar ke mana?",
       "t-3": "Belut laut bersembunyi di lubang karang yang terang. Antar ke mana?",
       "t-4": "Siput laut berwarna cerah merayap di antara karang. Antar ke mana?",
-      "t-5": "Cumi vampir suka tempat gelap dan dingin, jauh di bawah terumbu. Antar ke mana?",
-      "t-6": "Ikan kapak punya perut bercahaya di laut yang gelap. Antar ke mana?",
-      "t-7": "Hiu goblin berenang pelan di laut yang gelap dan dalam. Antar ke mana?",
-      "t-8": "Kutu laut raksasa merayap di dasar laut dalam yang gelap. Antar ke mana?",
+      "t-5": "Cumi vampir ditemukan jauh di bawah terumbu, di air gelap di luar palung. Antar ke mana?",
+      "t-6": "Ikan kapak berperut bercahaya ditemukan di air gelap di luar palung. Antar ke mana?",
+      "t-7": "Hiu goblin ditemukan berenang di lereng laut dalam, sebelum sampai ke palung. Antar ke mana?",
+      "t-8": "Kutu laut raksasa ditemukan di dasar laut yang gelap, di luar palung. Antar ke mana?",
       "t-9": "Ikan siput palung hidup di tempat paling dalam di seluruh laut. Antar ke mana?",
       "t-10": "Hewan mirip udang berwarna pucat hidup di dasar palung. Antar ke mana?",
       "t-11": "Teripang bening hidup di lubang laut yang paling dalam. Antar ke mana?"
     },
     "en": {
       "judul": "Take the Animal to Its Layer",
-      "instruksi": "The submarine leaves the beach. Listen to the animal on board, then touch its home layer: reef, deep sea, or trench.",
+      "instruksi": "Listen to where the animal was found. Choose the shallow reef, the deep sea outside the trench, or the trench floor.",
       "pilihan": "choices",
-      "i-terumbu": "coral reef (shallow and bright)",
-      "i-dalam": "deep sea (dark and cold)",
-      "i-palung": "trench (the deepest)",
+      "i-terumbu": "shallow reef",
+      "i-dalam": "deep sea outside the trench",
+      "i-palung": "trench floor",
       "t-1": "The parrotfish bites coral to eat. Where does it go?",
       "t-2": "The seahorse holds onto coral with its tail. Where does it go?",
       "t-3": "The moray eel hides in a hole in the bright coral. Where does it go?",
       "t-4": "A brightly coloured sea slug crawls among the coral. Where does it go?",
-      "t-5": "The vampire squid likes dark, cold water far below the reef. Where does it go?",
-      "t-6": "The hatchetfish has a glowing belly in the dark sea. Where does it go?",
-      "t-7": "The goblin shark swims slowly in the dark, deep sea. Where does it go?",
-      "t-8": "The giant isopod crawls on the dark deep-sea floor. Where does it go?",
+      "t-5": "The vampire squid was found far below the reef, in dark water outside the trench. Where does it go?",
+      "t-6": "The hatchetfish with a glowing belly was found in dark water outside the trench. Where does it go?",
+      "t-7": "A goblin shark was found swimming along a deep-sea slope before the trench. Where does it go?",
+      "t-8": "A giant isopod was found on the dark seafloor outside the trench. Where does it go?",
       "t-9": "The trench snailfish lives in the deepest place in the whole ocean. Where does it go?",
       "t-10": "A pale shrimp-like animal lives on the trench floor. Where does it go?",
       "t-11": "A see-through sea cucumber lives in the deepest hole in the sea. Where does it go?"
@@ -72,21 +72,31 @@
       "id": "terumbu",
       "labelKey": "i-terumbu",
       "bin": "pilihan",
-      "emoji": "🐠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-laut-terumbu",
+        "t": 0
+      }
     },
     {
       "id": "dalam",
       "labelKey": "i-dalam",
       "bin": "pilihan",
-      "emoji": "🌊",
-      "color": "#1a237e"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-laut-dalam",
+        "t": 0
+      }
     },
     {
       "id": "palung",
       "labelKey": "i-palung",
       "bin": "pilihan",
-      "emoji": "🕳️",
-      "color": "#0d1b2a"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-laut-palung",
+        "t": 0
+      }
     }
   ],
   "pilihan": [

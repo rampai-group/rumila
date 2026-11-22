@@ -440,7 +440,13 @@ function KartuUjian({ u, bahasa }: { u: NonNullable<PetaJenjang["ujian"]>; bahas
 /* ---------------- kepala semester ---------------- */
 
 function KepalaSemester({ sm, aktif, ujianLulus }: { sm: SemesterPeta; aktif: boolean; ujianLulus: boolean }) {
-  const status = sm.tuntas && ujianLulus ? { teks: "Lulus", bg: "#e3f6ec", fg: "#13794a", ikon: "verified" } : sm.tuntas ? { teks: "Ujian", bg: "#fff1e0", fg: "#c2410c", ikon: "workspace_premium" } : sm.terkunci ? { teks: "Tuntas", bg: "#e3f6ec", fg: "#13794a", ikon: "verified" } : sm.terkunci ? { teks: "Terkunci", bg: "#efe8de", fg: "#8a7d6b", ikon: "lock" } : { teks: "Berjalan", bg: "#e4f1fd", fg: "#0567c2", ikon: "school" };
+  const status = sm.terkunci
+    ? { teks: "Terkunci", bg: "#efe8de", fg: "#8a7d6b", ikon: "lock" }
+    : !sm.tuntas
+      ? { teks: "Berjalan", bg: "#e4f1fd", fg: "#0567c2", ikon: "school" }
+      : ujianLulus
+        ? { teks: "Lulus", bg: "#e3f6ec", fg: "#13794a", ikon: "verified" }
+        : { teks: "Ujian", bg: "#fff1e0", fg: "#c2410c", ikon: "workspace_premium" };
   const persen = sm.total ? Math.round((sm.selesai / sm.total) * 100) : 0;
   return (
     <div className={`${KARTU} flex items-center gap-3 px-4 py-3 ${aktif ? "ring-4 ring-[#0567c2]" : ""}`} style={aktif ? { backgroundColor: "#d3ebff" } : undefined} aria-label={`Semester ${sm.ke}: ${status.teks}, ${sm.selesai} dari ${sm.total} misi`}>

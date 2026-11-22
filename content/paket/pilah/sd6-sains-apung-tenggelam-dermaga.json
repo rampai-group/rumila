@@ -35,10 +35,10 @@
       "p-r6": "Ukurannya sama. Mana yang tenggelam?",
       "p-r7": "Ukurannya sama. Mana yang mengapung?",
       "p-r8": "Dua plastisin sama massanya. Mana yang mengapung?",
-      "p-r9": "Kapal selam memasukkan air laut ke tangkinya sehingga massanya bertambah, tetapi bentuknya tetap. Kapal selam itu…",
-      "p-r10": "Kapal selam memompa air keluar dari tangkinya sehingga massanya berkurang. Kapal selam itu…",
+      "p-r9": "Kapal selam melayang diam di dalam air laut. Tangki diisi lagi sehingga massa bertambah, tetapi volume kapal tetap. Kapal itu…",
+      "p-r10": "Kapal selam melayang diam di dalam air laut. Air dipompa keluar dari tangki sehingga massa berkurang, tetapi volume kapal tetap. Kapal itu…",
       "p-r11": "Perahu seng yang mengapung dilubangi bagian bawahnya, lalu air masuk ke dalamnya. Perahu itu…",
-      "p-r12": "Kotak bekal berisi batu tenggelam. Batunya dikeluarkan, lalu kotak ditutup rapat lagi. Kotak itu…"
+      "p-r12": "Kotak bekal kosong yang tertutup mengapung. Kotak diisi batu dan tenggelam. Batu dikeluarkan, lalu kotak ditutup rapat lagi. Kotak itu…"
     },
     "en": {
       "judul": "Float Test at the Pier",
@@ -68,10 +68,10 @@
       "p-r6": "They are the same size. Which one sinks?",
       "p-r7": "They are the same size. Which one floats?",
       "p-r8": "Two pieces of playdough have the same mass. Which one floats?",
-      "p-r9": "A submarine lets seawater into its tanks so its mass goes up, but its shape stays the same. The submarine…",
-      "p-r10": "A submarine pumps water out of its tanks so its mass goes down. The submarine…",
+      "p-r9": "A submarine hovers in seawater. It takes on more ballast water, so its mass increases while its volume stays the same. It…",
+      "p-r10": "A submarine hovers in seawater. It pumps ballast water out, so its mass decreases while its volume stays the same. It…",
       "p-r11": "A floating metal boat gets a hole in the bottom and water comes in. The boat…",
-      "p-r12": "A lunch box full of stones sinks. The stones are taken out and the box is closed tight again. The box…"
+      "p-r12": "An empty closed lunch box floats. It sinks when filled with stones. The stones are taken out and the box is sealed again. It…"
     }
   },
   "knobs": {},

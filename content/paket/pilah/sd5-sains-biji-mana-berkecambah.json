@@ -38,7 +38,7 @@
       "p-r9": "Tiga cawan biji kacang hijau. Mana yang tidak berkecambah?",
       "p-r10": "Biji ditaruh di kapas kering di kelas yang hangat. Apa yang terjadi?",
       "p-r11": "Biji kacang hijau di kapas kering tidak berkecambah. Apa yang kurang?",
-      "p-r12": "Biji yang terendam air dingin di kulkas lambat berkecambah. Apa yang perlu diubah?"
+      "p-r12": "Biji di kapas lembap dalam kulkas lambat berkecambah. Biji masih mendapat cukup udara. Apa yang perlu diubah?"
     },
     "en": {
       "judul": "Sprout Prediction",
@@ -71,7 +71,7 @@
       "p-r9": "Three dishes of mung bean seeds. Which one does not germinate?",
       "p-r10": "Seeds are put on dry cotton wool in a warm classroom. What happens?",
       "p-r11": "Mung bean seeds on dry cotton wool do not germinate. What is missing?",
-      "p-r12": "Seeds soaking in cold water in the fridge are slow to germinate. What needs to change?"
+      "p-r12": "Seeds on damp cotton wool in the fridge germinate slowly. They get enough air. What needs to change?"
     }
   },
   "knobs": {},

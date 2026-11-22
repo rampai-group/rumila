@@ -1,6 +1,6 @@
 {
   "id": "sains-susun-tumbuhan-utuh",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -151,7 +151,11 @@
         {
           "id": "batang",
           "labelKey": "bungamatahari-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -178,7 +182,11 @@
         {
           "id": "batang",
           "labelKey": "pohon-batang",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang-pohon",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -200,7 +208,11 @@
         {
           "id": "batang",
           "labelKey": "tulip-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -227,7 +239,11 @@
         {
           "id": "batang",
           "labelKey": "mawar-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -254,7 +270,11 @@
         {
           "id": "batang",
           "labelKey": "sepatu-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -281,7 +301,11 @@
         {
           "id": "batang",
           "labelKey": "kuning-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -308,7 +332,11 @@
         {
           "id": "batang",
           "labelKey": "merahmuda-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -335,7 +363,11 @@
         {
           "id": "batang",
           "labelKey": "teratai-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -362,7 +394,11 @@
         {
           "id": "batang",
           "labelKey": "padi-batang",
-          "emoji": "🎋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -389,7 +425,11 @@
         {
           "id": "batang",
           "labelKey": "mangga-batang",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang-pohon",
+            "t": 0
+          }
         },
         {
           "id": "daun",
@@ -416,7 +456,11 @@
         {
           "id": "batang",
           "labelKey": "cemara-batang",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-batang-pohon",
+            "t": 0
+          }
         },
         {
           "id": "daun",

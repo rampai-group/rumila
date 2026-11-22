@@ -1,6 +1,6 @@
 {
   "id": "hujan-dan-pesta-ulang-tahun",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -17,10 +17,8 @@
       "turun": "hujan turun",
       "reda": "hujan reda",
       "pelangi": "pelangi muncul",
-      "lilin": "pasang lilin",
       "kue": "kue datang",
       "tiup": "tiup lilin",
-      "potong": "potong kue",
       "makan": "makan kue",
       "t-kado": "Kado untuk teman",
       "kado-beli": "beli boneka",
@@ -72,10 +70,8 @@
       "turun": "rain falls",
       "reda": "rain stops",
       "pelangi": "a rainbow appears",
-      "lilin": "put on the candles",
       "kue": "the cake arrives",
       "tiup": "blow out the candle",
-      "potong": "cut the cake",
       "makan": "eat the cake",
       "t-kado": "A present for a friend",
       "kado-beli": "buy a teddy bear",
@@ -167,27 +163,43 @@
         {
           "id": "kue",
           "labelKey": "kue",
-          "emoji": "🎂"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kue-datang",
+            "t": 0
+          }
         },
         {
-          "id": "lilin",
-          "labelKey": "lilin",
-          "emoji": "🕯️"
+          "id": "nyala",
+          "labelKey": "lilin-nyala",
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kue-nyala",
+            "t": 0
+          }
+        },
+        {
+          "id": "nyanyi",
+          "labelKey": "lilin-nyanyi",
+          "emoji": "🎶"
         },
         {
           "id": "tiup",
           "labelKey": "tiup",
-          "emoji": "💨"
-        },
-        {
-          "id": "potong",
-          "labelKey": "potong",
-          "emoji": "🍰"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kue-tiup",
+            "t": 0
+          }
         },
         {
           "id": "makan",
           "labelKey": "makan",
-          "emoji": "😋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kue-makan",
+            "t": 0
+          }
         }
       ]
     },
@@ -399,5 +411,6 @@
         }
       ]
     }
-  ]
+  ],
+  "potong": "tengah"
 }

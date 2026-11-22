@@ -150,7 +150,7 @@ export function skalaPanggung(w: number, h: number): number {
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function LayarAktivitas({
-  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", wadah, rintangan = "🌳", musik, pilar = PILAR.MAT,
+  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", wadah, rintangan = "🌳", musik, pilar = PILAR.MAT, padat = false,
 }: {
   /** warna pilar pelajaran: latar layar lembut + aksen aktif (progres, kartu terpilih, wadah tujuan) */
   pilar?: Pilar;
@@ -161,23 +161,33 @@ export function LayarAktivitas({
   rintangan?: string;
   /** backsound: tombol musik nyala/mati di kepala layar (kosong = tanpa tombol, mis. ujian) */
   musik?: { nyala: boolean; alih: () => void };
+  /** Ukuran panel mengikuti isi, tetap dapat digulir jika lebih tinggi dari ruang layar. */
+  padat?: boolean;
 }) {
   const router = useRouter();
   useSkalaTablet();
   // Layar soal bergaya bersih: dunia tidak lagi digambar di belakang soal (cukup di pembuka & layar selesai);
   // panel & wadah putih, aksen = warna pilar.
   const tema = temaBersih(wadah ? { ...TEMA[dunia], wadah } : TEMA[dunia], pilar);
+  const ruangPanggungRef = useRef<HTMLDivElement>(null);
   const panggungRef = useRef<HTMLDivElement>(null);
   const [ukuran, setUkuran] = useState({ w: 0, h: 0 });
   useIsoLayout(() => {
     const el = panggungRef.current;
-    if (!el) return;
-    const ukur = () => setUkuran((u) => (u.w === el.clientWidth && u.h === el.clientHeight ? u : { w: el.clientWidth, h: el.clientHeight }));
+    const ruang = ruangPanggungRef.current;
+    if (!el || !ruang) return;
+    const ukur = () => {
+      const w = el.clientWidth;
+      // Untuk panel padat, ukur ruang yang tersedia agar tinggi kartu tidak berubah mengikuti panel itu sendiri.
+      const h = padat ? Math.max(0, ruang.clientHeight - 12) : el.clientHeight;
+      setUkuran((u) => (u.w === w && u.h === h ? u : { w, h }));
+    };
     ukur();
     const ro = new ResizeObserver(ukur);
     ro.observe(el);
+    if (padat) ro.observe(ruang);
     return () => ro.disconnect();
-  }, []);
+  }, [padat]);
   const panggung: Panggung = { tema, w: ukuran.w, h: ukuran.h, skala: skalaPanggung(ukuran.w, ukuran.h), rintangan };
   const [slotBantu, setSlotBantu] = useState<HTMLElement | null>(null);
   const [slotAksi, setSlotAksi] = useState<HTMLElement | null>(null);
@@ -242,17 +252,18 @@ export function LayarAktivitas({
           </h1>
         </div>
         <Instruksi teks={instruksi} onUcap={onUcap} />
-        {/* panggung: mengisi sisa tinggi layar; presenter yang sudah "penuh layar" memakai flex-1, sisanya ditengahkan */}
-        <div className="relative flex min-h-0 flex-1 flex-col rounded-[26px] p-1.5" style={{ background: pilar.dasar }}>
-        <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
-          <PanggungCtx.Provider value={panggung}>
-            <SlotAksi.Provider value={slotAksi}>
-              <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>
-            </SlotAksi.Provider>
-          </PanggungCtx.Provider>
-        </div>
-        <GulirLagi wadah={panggungRef} />
-        <div ref={setSlotAksi} className="mt-1.5 shrink-0 pb-1 empty:hidden" data-aksi-bawah />
+        <div ref={ruangPanggungRef} className="flex min-h-0 flex-1 flex-col">
+          <div className={`relative flex min-h-0 flex-col rounded-[26px] p-1.5 ${padat ? "" : "flex-1"}`} style={{ background: pilar.dasar }}>
+            <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
+              <PanggungCtx.Provider value={panggung}>
+                <SlotAksi.Provider value={slotAksi}>
+                  <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>
+                </SlotAksi.Provider>
+              </PanggungCtx.Provider>
+            </div>
+            <GulirLagi wadah={panggungRef} />
+            <div ref={setSlotAksi} className="mt-1.5 shrink-0 pb-1 empty:hidden" data-aksi-bawah />
+          </div>
         </div>
       </div>
     </div>

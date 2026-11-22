@@ -8,7 +8,8 @@
 import { NAMA_GEDUNG_PRAKTIK } from "@/lib/akademi/praktik-kampus";
 import Image from "next/image";
 import { LEVELS, TRACKS, levelMeta, type LevelId } from "@akademi/schema";
-import { KOMPETENSI } from "@/lib/akademi/katalog";
+import { KOMPETENSI, TRACK_AKTIF } from "@/lib/akademi/katalog";
+import { modulDariRuang } from "@/lib/akademi/modul";
 import { nomorSemester, tahunAjaran, type PiagamModul, type SertifikatSemester } from "@/lib/akademi/piagam";
 import { URL_VERIFIKASI_SEMESTER, type SnapshotSertifikat } from "@/lib/akademi/sertifikat-inti";
 import { predikat } from "@/lib/akademi/ujian";
@@ -143,7 +144,7 @@ const LABEL_STATUS: Record<string, string> = { dikuasai: "Dikuasai", berkembang:
 
 export function TranskripJenjang({ nama, level, kode, nomor, issuedAt, snapshot }: { nama: string; level: LevelId; kode: string; nomor?: string | null; issuedAt: string; snapshot: SnapshotSertifikat }) {
   const lv = LEVELS.find((l) => l.id === level)!;
-  const namaUnit = (id: string) => KOMPETENSI.find((c) => c.level === level && c.unit.id === id)?.unit.nama.id ?? id;
+  const namaUnit = (id: string) => modulDariRuang(level, id, KOMPETENSI, TRACK_AKTIF)?.isi[0].unit.nama.id ?? id;
   const ujian = snapshot.ujian ?? [];
   const kuis = ujian.filter((u) => u.jenis === "kuis");
   const lain = ujian.filter((u) => u.jenis !== "kuis").sort((a, b) => (a.jenis + a.ruang).localeCompare(b.jenis + b.ruang));

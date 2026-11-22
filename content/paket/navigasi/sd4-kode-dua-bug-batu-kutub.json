@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Tiga Keping Salah di Es",
-      "instruksi": "Robot tersesat di padang es: jalankan programnya, lihat di mana ia menyimpang, perbaiki, jalankan lagi, lalu cari kesalahan berikutnya. Ubah tepat tiga keping."
+      "instruksi": "Jalankan program awal di padang es. Amati tempat robot menyimpang, lalu ubah paling banyak tiga keping agar robot sampai."
     },
     "en": {
       "judul": "Three Wrong Pieces on the Ice",
-      "instruksi": "The robot is lost on the ice field: run the program, see where it goes wrong, fix it, run again, then find the next mistake. Change exactly three pieces."
+      "instruksi": "Run the starting program on the ice field. See where the robot goes off course, then change up to three blocks so it reaches the star."
     }
   },
   "knobs": {

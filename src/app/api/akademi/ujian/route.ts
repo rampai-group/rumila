@@ -18,13 +18,14 @@ import { petaDariBukti, ujianTerbuka } from "@/lib/akademi/peta";
 import { eventDariBaris } from "@/lib/akademi/sertifikat-inti";
 import { UUID, anggotaMilik, jawab, klien, semuaEvent, type Admin } from "@/lib/akademi/server";
 import { LevelId } from "@akademi/schema";
+import { normalisasiHasilUjian, ruangKuisKanonik } from "@/lib/akademi/modul";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const KOLOM = "id, member_id, jenis, level, ruang, session_id, benar, total, nilai, lulus, created_at";
 type BarisUjian = { jenis: string; level: string; ruang: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at: string };
-const keHasil = (r: BarisUjian): HasilUjian => ({ jenis: r.jenis as JenisUjian, level: r.level as LevelId, ruang: r.ruang, sessionId: r.session_id, benar: r.benar, total: r.total, nilai: r.nilai, lulus: r.lulus, at: r.created_at });
+const keHasil = (r: BarisUjian): HasilUjian => normalisasiHasilUjian([{ jenis: r.jenis as JenisUjian, level: r.level as LevelId, ruang: r.ruang, sessionId: r.session_id, benar: r.benar, total: r.total, nilai: r.nilai, lulus: r.lulus, at: r.created_at }], KOMPETENSI, TRACK_AKTIF)[0];
 
 /** Jalankan lagi bila nilai tersimpan tetapi sinkron jenjang/semester gagal pada permintaan pertama. */
 async function tanggapanHasil(admin: Admin, member: { id: string; family_id: string }, h: HasilUjian) {
@@ -57,9 +58,10 @@ export async function POST(req: Request) {
   const sessionId = typeof body?.sessionId === "string" ? body.sessionId : "";
   const jenis = JENIS_UJIAN.find((j) => j === body?.jenis);
   const lv = LevelId.safeParse(body?.level);
-  const ruang = typeof body?.ruang === "string" ? body.ruang : "";
+  const diminta = typeof body?.ruang === "string" ? body.ruang : "";
   if (!UUID.test(memberId) || !UUID.test(sessionId) || !jenis || !lv.success) return jawab(400, { error: "permintaan_tidak_valid" });
   const level = lv.data;
+  const ruang = jenis === "kuis" ? ruangKuisKanonik(level, diminta, KOMPETENSI, TRACK_AKTIF) : diminta;
 
   const member = await anggotaMilik(pemanggil, memberId);
   if (typeof member === "number") return jawab(member, { error: member === 401 ? "sesi_tidak_sah" : "tidak_berhak" });
@@ -69,7 +71,7 @@ export async function POST(req: Request) {
   if (gagalCekSesi) return jawab(500, { error: "galat" });
   if (ada) {
     if (ada.member_id !== memberId) return jawab(403, { error: "tidak_berhak" });
-    if (ada.jenis !== jenis || ada.level !== level || ada.ruang !== ruang) return jawab(409, { error: "sesi_berbeda" });
+    if (ada.jenis !== jenis || ada.level !== level || keHasil(ada).ruang !== ruang) return jawab(409, { error: "sesi_berbeda" });
     return tanggapanHasil(admin, member, keHasil(ada));
   }
 
