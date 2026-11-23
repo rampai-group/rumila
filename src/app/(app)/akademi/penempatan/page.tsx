@@ -1,30 +1,35 @@
 "use client";
 
-// Tes Penempatan (Sekolah Tahap 3): sekali saat anak mulai Academy. Pilih jenjang perkiraan → 10 soal kompetensi
-// inti jenjang itu. Lulus (≥70) → jenjang awal anak (dicatat server). Belum lulus → tawarkan jenjang di bawahnya;
-// sampai PAUD tetap belum lulus → mulai dari PAUD.
+// Tes Penempatan (Sekolah Tahap 3): sekali saat anak mulai Academy. Jenjang tes pertama dari usia yang diisi wali saat
+// mendaftar (belum ada → tanya usia dulu) → 10 soal kompetensi inti jenjang itu. Lulus (≥70) → jenjang awal anak
+// (dicatat server). Belum lulus → tes jenjang di bawahnya; sampai PAUD tetap belum lulus → mulai dari PAUD.
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
-import { ACTIVE_LEVELS, LEVELS, levelIndex, namaLevel, type LevelId } from "@akademi/schema";
+import { useEffect, useMemo, useState } from "react";
+import { ACTIVE_LEVELS, namaLevel, type LevelId } from "@akademi/schema";
 import { LayarUjian } from "@/components/akademi/ujian";
 import { BALOO, INK } from "@/components/akademi/jenis";
 import { Icon } from "@/components/ui";
-import { KOMPETENSI } from "@/lib/akademi/konten";
+import { KOMPETENSI, setUsiaAnak, usiaAnak } from "@/lib/akademi/konten";
+import { levelDariUsia, levelDiBawah } from "@/lib/akademi/penempatan";
 import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
 import type { HasilUjian } from "@/lib/akademi/ujian";
 import { useMe } from "@/lib/store";
 
 const ADA = ACTIVE_LEVELS.filter((l) => KOMPETENSI.some((c) => c.level === l));
+const USIA = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 export default function PenempatanPage() {
   const me = useMe();
   const router = useRouter();
   const [level, setLevel] = useState<LevelId | null>(null);
   const [hasil, setHasil] = useState<HasilUjian | null>(null);
+  const [usia, setUsia] = useState<number | null>(null);
+  useEffect(() => setUsia(usiaAnak(me.id)), [me.id]);
+  const saran = usia !== null ? levelDariUsia(usia, ADA) : undefined;
   const ids = useMemo(() => (level ? (cakupanUjian("penempatan", level, "", KOMPETENSI) ?? []) : []), [level]);
-  const bawah = level ? ADA.filter((l) => levelIndex(l) < levelIndex(level)).at(-1) : undefined;
+  const bawah = level ? levelDiBawah(level, ADA) : undefined;
 
   const Kotak = ({ children }: { children: React.ReactNode }) => (
     <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#0786eb,#135385)", fontFamily: BALOO, color: INK }}>
@@ -39,17 +44,30 @@ export default function PenempatanPage() {
           <Icon name="explore" size={36} />
         </span>
         <h1 className="mt-3 text-[28px] font-extrabold">Tes Penempatan</h1>
-        <p className="mt-1 text-[15px] font-bold text-[#4a5a75]" style={{ fontFamily: "var(--ff-nunito), system-ui" }}>
-          Pilih pangkat yang paling mendekati usia {me.name}. Tes 10 soal ini menentukan jenjang awal di RINOYA Academy.
-        </p>
-        <div className="mt-4 grid grid-cols-2 gap-2 min-[420px]:grid-cols-3">
-          {LEVELS.filter((l) => ADA.includes(l.id)).map((l) => (
-            <button key={l.id} onClick={() => setLevel(l.id)} className="min-w-0 rounded-[16px] bg-[#cfe9ff] px-1.5 py-3 active:scale-95">
-              <span className="block text-[16px] font-extrabold [overflow-wrap:anywhere]">{l.pangkat}</span>
-              <span className="block text-[11px] font-bold text-[#4a5a75]">{l.usia[0]}–{l.usia[1]} tahun</span>
+        {saran ? (
+          <>
+            <p className="mt-1 text-[15px] font-bold text-[#4a5a75]" style={{ fontFamily: "var(--ff-nunito), system-ui" }}>
+              10 soal untuk menentukan pangkat awal {me.name}. Kita mulai dari tes {namaLevel(saran)}, sesuai usia {usia} tahun.
+            </p>
+            <button onClick={() => setLevel(saran)} className="mt-4 w-full rounded-[18px] py-3.5 text-[19px] font-extrabold text-white active:scale-[.98]" style={{ background: "linear-gradient(155deg,#0786eb,#0567c2 85%)", boxShadow: "0 5px 0 #044a8f" }}>
+              Mulai tes {namaLevel(saran)}
             </button>
-          ))}
-        </div>
+          </>
+        ) : (
+          <>
+            <p className="mt-1 text-[15px] font-bold text-[#4a5a75]" style={{ fontFamily: "var(--ff-nunito), system-ui" }}>
+              Berapa usia {me.name}? Tes dimulai dari pangkat yang sesuai usia.
+            </p>
+            <div className="mt-4 grid grid-cols-5 gap-2">
+              {USIA.map((u) => (
+                <button key={u} onClick={() => { setUsiaAnak(me.id, u); setUsia(u); }} className="rounded-[14px] bg-[#cfe9ff] py-2.5 text-[18px] font-extrabold active:scale-95">
+                  {u}
+                </button>
+              ))}
+            </div>
+            <p className="mt-1 text-[12px] font-bold text-[#4a5a75]">tahun</p>
+          </>
+        )}
         <Link href="/akademi" className="mt-3 inline-flex min-h-11 min-w-24 items-center justify-center text-[15px] font-extrabold text-[#4a5a75]">
           Nanti saja
         </Link>

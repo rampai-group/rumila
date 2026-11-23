@@ -10,7 +10,7 @@ import { PilihAvatar } from "@/components/avatar-karakter";
 import { BALOO, MemberAvatar } from "@/components/launcher";
 import { BuatPin } from "@/components/pin-pad";
 import { Icon } from "@/components/ui";
-import { levelAnak, setPeranAkademi, useProfilAkademiVersi } from "@/lib/akademi/konten";
+import { levelAnak, setPeranAkademi, setUsiaAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { PLAY, MEMBER_COLORS, type ColorKey } from "@/lib/catalog";
 import { isOrangTua, perangkatAnak, setPerangkatAnak } from "@/lib/profil";
 import { signOutAccount, tungguSinkron } from "@/lib/supabase/family";
@@ -110,6 +110,7 @@ function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
   const [nama, setNama] = useState("");
   const [c, setC] = useState<ColorKey>(MEMBER_COLORS.find((x) => !members.some((m) => m.c === x)) ?? "orange");
   const [jenis, setJenis] = useState<"angka" | "gambar">("angka");
+  const [usia, setUsia] = useState<number | null>(null);
   const [avatar, setAvatar] = useState<string | undefined>();
   const [id, setId] = useState<string | null>(null);
   const [sibuk, setSibuk] = useState(false);
@@ -121,13 +122,22 @@ function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
         className="flex flex-col gap-3"
         onSubmit={(e) => {
           e.preventDefault();
-          if (nama.trim()) setLangkah("avatar");
+          if (nama.trim() && usia) setLangkah("avatar");
         }}
       >
         <label htmlFor="anak-nama" className="text-[12px] font-black text-ink-2">
           Nama panggilan
         </label>
         <input id="anak-nama" autoFocus value={nama} maxLength={24} onChange={(e) => setNama(e.target.value)} placeholder="mis. Raka" className="h-12 rounded-[14px] border-[1.5px] border-[#7d8da6] bg-white px-3 text-[16px] font-bold" />
+        <span className="text-[12px] font-black text-ink-2">Usia</span>
+        <div className="grid grid-cols-5 gap-2" role="radiogroup" aria-label="Usia anak">
+          {[3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((u) => (
+            <button key={u} type="button" role="radio" aria-checked={usia === u} onClick={() => setUsia(u)} className={`h-11 rounded-[12px] text-[15px] font-extrabold ${usia === u ? "bg-[#0567c2] text-white" : "bg-white text-ink shadow-[0_2px_0_rgba(11,37,69,.08)]"}`}>
+              {u}
+            </button>
+          ))}
+        </div>
+        <span className="-mt-1 text-[12px] font-bold text-ink-3">tahun · menentukan Tes Penempatan pertama</span>
         <span className="text-[12px] font-black text-ink-2">Warna profil</span>
         <div className="flex flex-wrap gap-2">
           {MEMBER_COLORS.map((x) => (
@@ -136,7 +146,7 @@ function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
         </div>
         <span className="text-[12px] font-black text-ink-2">Jenis PIN</span>
         <PilihJenisPin value={jenis} onChange={setJenis} />
-        <button disabled={!nama.trim()} className="h-12 rounded-[16px] bg-[#0567c2] text-[16px] font-extrabold text-white disabled:opacity-50">
+        <button disabled={!nama.trim() || !usia} className="h-12 rounded-[16px] bg-[#0567c2] text-[16px] font-extrabold text-white disabled:opacity-50">
           Lanjut pilih avatar
         </button>
       </form>
@@ -163,6 +173,7 @@ function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
     setSibuk(true);
     const idBaru = addMember(nama.trim(), c, { avatar: a, peran: "anak", jenisPin: jenis });
     setPeranAkademi(idBaru, "anak");
+    if (usia) setUsiaAnak(idBaru, usia);
     await tungguSinkron();
     setSibuk(false);
     setId(idBaru);

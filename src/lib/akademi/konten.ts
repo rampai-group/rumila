@@ -139,6 +139,40 @@ export function setPeranAkademi(memberId: string, peran: PeranAkademi) {
   }
 }
 
+/* ---------------- usia anak: diisi wali saat mendaftar, menentukan tes penempatan pertama ---------------- */
+
+/** Usia anak sekarang (tahun), dihitung dari usia saat diisi + waktu yang lewat. null = belum diisi. */
+export function usiaAnak(memberId: string, sekarang = Date.now()): number | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const v = JSON.parse(localStorage.getItem(LEVEL_ANAK_KEY(memberId)) ?? "{}") as { usia?: unknown; usiaDiisi?: unknown };
+    if (typeof v?.usia !== "number") return null;
+    const diisi = typeof v.usiaDiisi === "string" ? Date.parse(v.usiaDiisi) : NaN;
+    const lewat = Number.isFinite(diisi) ? Math.max(0, Math.floor((sekarang - diisi) / (365.25 * 864e5))) : 0;
+    return v.usia + lewat;
+  } catch {
+    return null;
+  }
+}
+
+export function setUsiaAnak(memberId: string, usia: number) {
+  if (typeof window === "undefined") return;
+  try {
+    let prev: Record<string, unknown> = {};
+    try {
+      prev = JSON.parse(localStorage.getItem(LEVEL_ANAK_KEY(memberId)) ?? "{}") ?? {};
+    } catch {}
+    localStorage.setItem(LEVEL_ANAK_KEY(memberId), JSON.stringify({ ...prev, usia, usiaDiisi: new Date().toISOString() }));
+  } catch {}
+  for (const fn of pendengarBahasa) {
+    try {
+      fn(memberId);
+    } catch (e) {
+      console.error("[akademi] pendengar usia gagal", e);
+    }
+  }
+}
+
 /** Anak di rumah: non-admin yang tidak ditandai dewasa. */
 export function anakRumah<T extends { id: string; admin: boolean; peran?: "anak" | "dewasa" }>(members: T[]): T[] {
   // peran di server menang; tanpa itu, non-admin dianggap anak kecuali ditandai dewasa di perangkat
