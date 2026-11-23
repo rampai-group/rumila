@@ -12,8 +12,8 @@ import { signOutAccount, useCloud } from "@/lib/supabase/family";
 import { displayLogin } from "@/app/masuk/account";
 import { installApp, useCanInstall } from "./pwa";
 import { setSfxEnabled, sfx, sfxEnabled } from "@/lib/sfx";
-import { ACTIVE_LEVELS, LEVELS, type LevelId } from "@akademi/schema";
-import { sudahBelajar, aturJenjangAwal } from "@/lib/akademi/siswa";
+import { LEVELS, type LevelId } from "@akademi/schema";
+import { sudahBelajar } from "@/lib/akademi/siswa";
 import { PilihAvatar } from "@/components/avatar-karakter";
 import { tutupProfil } from "@/lib/profil";
 import { bahasaAnak, levelAnak, setBahasaAnak, setPeranAkademi, usePeranAkademi, useProfilAkademiVersi, type BahasaAnak } from "@/lib/akademi/konten";
@@ -295,9 +295,7 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
     setBahasa(bahasaAnak(memberId));
   }, [memberId, versi]);
   const anak = peran === "anak";
-  const jenjang = LEVELS.filter((l) => ACTIVE_LEVELS.includes(l.id));
-  const showToast = useUI((s) => s.showToast);
-  // Jenjang hanya bisa dipilih sebelum anak mulai belajar; sesudahnya naik lewat kelulusan (dicek ulang server).
+  // Jenjang tidak dipilih wali: ditentukan Tes Penempatan, lalu naik lewat kelulusan (dicek ulang server).
   const terkunci = useMemo(() => sudahBelajar(memberId), [memberId, versi]);
   return (
     <div className="rounded-[18px] bg-page px-3.5 py-3">
@@ -315,7 +313,7 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
       </button>
       {anak && (
         <div className="mt-2 flex flex-col gap-2">
-          <div className="text-xs font-bold text-ink-3">{terkunci ? "Jenjang" : "Jenjang awal"}</div>
+          <div className="text-xs font-bold text-ink-3">Jenjang</div>
           {terkunci ? (
             <div className="flex items-center gap-2 rounded-[12px] bg-white px-3 py-2.5 text-[12px] font-bold text-ink">
               <Icon name="lock" size={16} />
@@ -325,21 +323,12 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
               </span>
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-1.5">
-              {jenjang.map((l) => (
-                <button
-                  key={l.id}
-                  onClick={async () => {
-                    const r = await aturJenjangAwal(memberId, l.id);
-                    if (r.ok) setLevel(l.id);
-                    else showToast(r.alasan === "terkunci" ? "Jenjang terkunci karena anak sudah mulai belajar." : "Jenjang belum tersimpan. Coba lagi.");
-                  }}
-                  className={`rounded-[12px] px-2 py-2 text-[12px] font-bold ${level === l.id ? "bg-ink text-white" : "bg-white text-ink"}`}
-                >
-                  {l.pangkat}
-                  <span className="block text-[11px] font-semibold opacity-70">{l.usia[0]}–{l.usia[1]} tahun</span>
-                </button>
-              ))}
+            <div className="flex items-center gap-2 rounded-[12px] bg-white px-3 py-2.5 text-[12px] font-bold text-ink">
+              <Icon name="explore" size={16} />
+              <span className="flex-1">
+                Ditentukan Tes Penempatan
+                <span className="block text-[11px] font-semibold text-ink-3">Tes muncul otomatis saat anak pertama masuk Academy.</span>
+              </span>
             </div>
           )}
           <div className="text-xs font-bold text-ink-3">Bahasa konten</div>
