@@ -1,11 +1,14 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.pulaurinoya.academy",
       "sha256_cert_fingerprints": [
-        "A7:25:0E:46:20:43:83:3F:0E:C1:2E:03:C4:4B:00:A0:CC:77:44:D1:18:D0:B6:A5:25:76:4E:10:DA:20:7C:BD"
+        "A7:25:0E:46:20:43:83:3F:0E:C1:2E:03:C4:4B:00:A0:CC:77:44:D1:18:D0:B6:A5:25:76:4E:10:DA:20:7C:BD",
+        "FC:C9:DF:1B:A3:A6:B6:D4:BD:53:AF:61:E3:74:41:3D:78:5D:32:20:A5:BB:F1:09:56:42:8F:86:30:37:D5:B7"
       ]
     }
   }
