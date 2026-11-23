@@ -109,10 +109,6 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
           <Icon name="arrow_forward" size={30} />
         </Link>
       )}
-
-      <div className="hidden flex-col gap-2 md:flex">
-        <TautanBawah />
-      </div>
       </div>
     </div>
 
@@ -131,25 +127,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
         <KartuPraktikKampus events={events} level={level} kunci={{ selesai: peta.selesai, total: peta.total }} />
       </div>
 
-      <div className="flex flex-col gap-2 md:hidden">
-        <TautanBawah />
-      </div>
-
       {rayakan && <Rayakan dari={rayakan.dari} ke={rayakan.ke} onTutup={() => setRayakan(null)} />}
-    </div>
-  );
-}
-
-function TautanBawah() {
-  const kelas = "inline-flex min-h-11 items-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[14px] font-extrabold text-[#3d4b63] shadow-[0_3px_0_rgba(11,37,69,.1)] transition-transform active:scale-95";
-  return (
-    <div className="flex flex-wrap justify-center gap-2">
-      <Link href="/akademi/piagam" className={kelas}>
-        <Icon name="emoji_events" size={18} /> Lemari Piagam
-      </Link>
-      <Link href="/orang-tua" className={kelas}>
-        <Icon name="lock" size={18} /> Ruang Orang Tua
-      </Link>
     </div>
   );
 }
