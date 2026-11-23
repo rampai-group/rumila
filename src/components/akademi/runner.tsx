@@ -11,7 +11,7 @@ import { isiBarang, type ContentPack } from "@akademi/schema";
 import { buatRonde, buatRondeUnik, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
-import { kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { judulPaket, kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { useBacksound } from "@/lib/akademi/backsound";
 import { KALIMAT_RUNNER } from "@/lib/akademi/kalimat-suara";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
@@ -20,7 +20,7 @@ import { completeTool, useToolSession } from "@/lib/tool-session";
 import { uuid } from "@/lib/uuid";
 import { LatarWarnaProvider } from "./benda";
 import { PresenterDagang } from "./dagang";
-import { HujanKonfeti, LayarAktivitas, UmpanBalik } from "./dunia";
+import { HujanKonfeti, LayarAktivitas, panggungPadat, UmpanBalik } from "./dunia";
 import { sfxAkademi } from "@/lib/sfx-akademi";
 import { BALOO, INK } from "./jenis";
 import { PresenterNavigasi } from "./navigasi";
@@ -29,6 +29,8 @@ import { PresenterPola } from "./pola";
 import { PresenterSimulasi } from "./simulasi";
 import { PresenterUrutkan } from "./urutkan";
 import "./akademi.css";
+
+export { judulPaket } from "@/lib/akademi/konten";
 
 const JEDA_UMPAN_BALIK = 1400;
 
@@ -218,7 +220,7 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
-    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)} musik={musik} padat={paket.mechanic === "pilah"}>
+    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} percobaan={percobaan} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)} musik={musik} padat={panggungPadat(paket)}>
       <div key={`${idx}-${percobaan}`} className="akademi-fade flex flex-1 flex-col justify-center">
         <SisaBantuProvider value={sisaBantu}>
         <LatarWarnaProvider paket={paket}>
@@ -234,13 +236,6 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
       {hasil && <UmpanBalik key={`umpan-${idx}-${percobaan}`} benar={hasil.benar} beruntun={streak} pakaiBantu={!hasil.benar && percobaan >= 1 && (!gratisTerpakai || bantuTerpakai < BATAS_BANTU)} />}
     </LayarAktivitas>
   );
-}
-
-/** Judul aktivitas: locale[bahasa].judul (default id, cadangan id); cadangan terakhir dari id paket (slug → Kata Kapital) */
-export function judulPaket(p: ContentPack, bahasa: BahasaAnak = "id") {
-  const judul = p.locale[bahasa]?.judul ?? p.locale.id.judul;
-  if (judul) return judul;
-  return p.id.split("-").map((s) => (/^\d/.test(s) ? s : s.charAt(0).toUpperCase() + s.slice(1))).join(" ");
 }
 
 function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: ContentPack; bahasa: BahasaAnak; skor: { benar: number; salah: number; hint: number }; onLagi: () => void; onKembali: () => void }) {

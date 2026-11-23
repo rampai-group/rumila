@@ -1069,6 +1069,14 @@ function ModeTombol(c: Ctx) {
     setLangkah("tekan");
   };
 
+  const mulaiTebak = () => {
+    timers.current.forEach(clearTimeout);
+    timers.current = [];
+    setNyala({});
+    sfx.open();
+    setFase("tebak");
+  };
+
   const semuaDicoba = tombol.every((b) => dicoba.has(b.id));
   const sedang = fase === "tebak" ? ronde.urutan[giliran] : null;
   const teks = fase === "coba" ? KS.tombolCoba : langkah === "tunjuk" ? ks.tombolTebak(nama(sedang ?? "")) : langkah === "tekan" ? ks.tombolTekan(nama(sedang ?? "")) : KS.tombolLihat;
@@ -1085,11 +1093,10 @@ function ModeTombol(c: Ctx) {
         ))}
         {fase === "tebak" && <span className="rounded-full bg-white px-3 py-1" style={{ ...Tebal, fontSize: 14 * st, boxShadow: BAYANG }}>{Math.min(giliran + 1, ronde.urutan.length)}/{ronde.urutan.length}</span>}
       </div>
-      <Papan>
-        {/* alat: mengisi sisa tinggi; emoji ikut tinggi kartu */}
-        <Adegan min={112}>
+      <Papan style={{ flex: "none" }}>
+        <Adegan min={150} style={{ minHeight: "clamp(150px, min(44dvh, 68vw), 440px)" }}>
           {({ w, h }) => {
-            const ue = Math.round(Math.max(56, Math.min(h * 0.5, (w / Math.max(1, alat.length)) * 0.45, 150)));
+            const ue = Math.round(Math.max(56, Math.min(h * 0.5, (w / Math.max(1, alat.length)) * 0.53, 192)));
             return (
               <div className="grid h-full w-full gap-2" style={{ gap: 10 * skala, gridTemplateColumns: `repeat(${Math.max(1, alat.length)}, minmax(0,1fr))` }} role="group" aria-label="Alat">
                 {alat.map((a) => {
@@ -1126,17 +1133,18 @@ function ModeTombol(c: Ctx) {
             const sudah = dicoba.has(b.id);
             const aktifTebak = sedang === b.id;
             const bisa = !terkunci && (fase === "coba" || (aktifTebak && langkah === "tekan"));
+            const sorot = (aktifTebak && langkah === "tekan") || (fase === "coba" && hint && !sudah);
             return (
               <button
                 key={b.id}
                 type="button"
                 disabled={!bisa && fase === "tebak"}
                 onClick={() => tekan(b.id)}
-                aria-label={`Tombol ${nama(b.id)}${sudah && fase === "coba" ? ", sudah dicoba" : ""}`}
-                className={`flex min-h-20 flex-col items-center justify-center gap-1 rounded-[20px] transition-transform active:translate-y-1 ${aktifTebak && langkah !== "nyala" ? "akademi-bounce" : ""} ${fase === "coba" && hint && !sudah ? "akademi-bounce" : ""}`}
+                aria-label={`${nama(b.id)}${sudah && fase === "coba" ? ", sudah dicoba" : ""}`}
+                className="flex min-h-20 flex-col items-center justify-center gap-1 rounded-[20px]"
                 style={{ minHeight: 80 * skala, background: "#fff", boxShadow: `${BAYANG}${aktifTebak ? `, 0 0 0 4px ${KUNING}` : ", inset 0 0 0 2px rgba(11,37,69,.16)"}`, opacity: fase === "tebak" && !aktifTebak ? 0.55 : 1 }}
               >
-                <span className="flex items-center justify-center rounded-full" style={{ width: bulat, height: bulat, background: warna, boxShadow: `0 5px 0 rgba(0,0,0,.25), inset 0 -4px 0 rgba(0,0,0,.15)`, border: "4px solid #fff", outline: `3px solid ${warna}` }} aria-hidden>
+                <span className={`pointer-events-none flex items-center justify-center rounded-full ${sorot ? "akademi-bounce motion-reduce:animate-none!" : ""}`} style={{ width: bulat, height: bulat, background: warna, boxShadow: `0 5px 0 rgba(0,0,0,.25), inset 0 -4px 0 rgba(0,0,0,.15)`, border: "4px solid #fff", outline: `3px solid ${warna}` }} aria-hidden>
                   {sudah && fase === "coba" && <Icon name="check" size={Math.round(24 * skala)} style={{ color: "#fff" }} />}
                 </span>
                 <span style={{ ...Tebal, fontSize: 13 * st }}>{nama(b.id)}</span>
@@ -1148,7 +1156,7 @@ function ModeTombol(c: Ctx) {
       <div className="flex gap-2" style={{ gap: 8 * skala }}>
         <TombolBantu onClick={() => { bantu(); ucapkan(fase === "coba" ? KS.tombolBantuCoba : KS.tombolBantuTebak); }} disabled={terkunci} />
         {fase === "coba" ? (
-          <TombolBesar onClick={() => { sfx.open(); setFase("tebak"); }} disabled={terkunci || !semuaDicoba} warna={UNGU} bayang="#0567c2">
+          <TombolBesar onClick={mulaiTebak} disabled={terkunci || !semuaDicoba} warna={UNGU} bayang="#0567c2">
             <Icon name="arrow_forward" size={26} /> {semuaDicoba ? "Lanjut: Tebak dulu" : `Coba semua tombol (${dicoba.size}/${tombol.length})`}
           </TombolBesar>
         ) : (

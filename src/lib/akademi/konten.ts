@@ -2,7 +2,7 @@
 // berkas ini menambah profil anak (level, bahasa, peran) di localStorage dan hook React-nya.
 
 import { useEffect, useState } from "react";
-import { LevelId } from "@akademi/schema";
+import { LevelId, type ContentPack } from "@akademi/schema";
 
 export * from "./katalog";
 
@@ -50,6 +50,12 @@ export function setLevelAnak(memberId: string, level: LevelId) {
 /** Bahasa konten Academy per anak: instruksi paket, pernyataan kompetensi, nama unit/track. UI kerangka tetap Indonesia. */
 export type BahasaAnak = "id" | "en";
 const BAHASA_DEFAULT: BahasaAnak = "id";
+
+export function judulPaket(paket: ContentPack, bahasa: BahasaAnak = BAHASA_DEFAULT): string {
+  const judul = paket.locale[bahasa]?.judul ?? paket.locale.id.judul;
+  if (judul) return judul;
+  return paket.id.split("-").map((kata) => kata.charAt(0).toUpperCase() + kata.slice(1)).join(" ");
+}
 
 export function bahasaAnak(memberId: string): BahasaAnak {
   if (typeof window === "undefined") return BAHASA_DEFAULT;

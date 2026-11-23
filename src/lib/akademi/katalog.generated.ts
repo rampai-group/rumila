@@ -8725,8 +8725,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memilah benda ke indra yang memakainya: pelangi ke mata, lonceng ke telinga, bunga ke hidung",
-          "en": "I can sort things to the sense that uses them: a rainbow to the eyes, a bell to the ears, a flower to the nose"
+          "id": "Aku bisa memilih indra yang cocok untuk petunjuk pada kartu, seperti warna pelangi, bunyi lonceng, dan aroma mawar",
+          "en": "I can choose the right sense for a clue on a card, such as rainbow colors, the sound of a bell, or the scent of a rose"
         },
         "depth": [
           "pakai"
@@ -8740,7 +8740,7 @@ export const KURIKULUM_RAW = [
           "pilah",
           "cari"
         ],
-        "catatan": "Pilah dengan 3 keranjang berlabel gambar indra (mata, telinga, hidung). Tiga indra ini yang bisa dialami langsung di game: benda bersinar/berwarna, benda berbunyi (diputar suaranya saat disentuh), benda berbau (tokoh mengendus). Item harus jelas satu indra dominan: pelangi, lampu kelap-kelip, kunang-kunang → mata; lonceng, genderang, bel sepeda → telinga; bunga, sabun, parfum → hidung. Umpan balik: keranjang yang benar 'memakai' bendanya (mata membesar melihat pelangi, telinga bergetar mendengar lonceng). Jebakan: benda yang bisa dilihat dan didengar sekaligus (burung) — hindari di ronde awal. Beda dengan .01: di sini anak menghubungkan indra dengan fungsinya, bukan sekadar menunjuk. Knob: 3 indra → 4 (tambah mulut/lidah: kue, permen) → 5 (kulit/tangan: es batu, bulu halus) hanya di ronde lanjut; 'lidah' dan 'kulit' sebagai nama indra ditegaskan di TK A. Tanpa kode kerangka yang cocok di kamus. [Tinjauan 24 Okt 2026: dipersempit dari 4 indra ke 3; 'kue ke lidah' dipindah ke knob.]"
+        "catatan": "Awalnya ada tiga keranjang berlabel mata, telinga, dan hidung. Anak mengetuk kartu untuk mendengar petunjuk yang spesifik, misalnya warna pelangi, bunyi lonceng, atau aroma mawar, lalu memilih indra yang sesuai. Saat jumlah keranjang naik menjadi empat, tambah lidah untuk petunjuk rasa seperti rasa manis kue. Setiap kartu menyebut satu petunjuk agar benda yang sama dapat dibedakan menurut hal yang diamati."
       },
       {
         "id": "SAINS.PAUD.HEWAN-SUARA.01",
@@ -8754,8 +8754,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menunjuk kucing, ayam, sapi, kambing, bebek, atau burung saat namanya disebut",
-          "en": "I can point to the cat, chicken, cow, goat, duck, or bird when its name is said"
+          "id": "Aku bisa menunjuk gambar hewan di halaman atau di laut, seperti kucing atau hiu, saat namanya disebut",
+          "en": "I can point to pictures of yard or sea animals, such as cats or sharks, when their names are said"
         },
         "depth": [
           "kenal"
@@ -8773,7 +8773,7 @@ export const KURIKULUM_RAW = [
           "pilah",
           "ucap"
         ],
-        "catatan": "Pengenalan nama hewan halaman (reseptif). Mekanik pilah mode pilih: enam hewan di satu adegan kebun/halaman 2D, instruksi audio 'Mana sapinya?', anak menyentuh satu hewan. Variasi ucap: tokoh menyorot hewan, anak menyebut namanya. Jebakan: bebek vs ayam, kambing vs sapi kecil — beda ukuran dan warna harus jelas. Knob: jumlah hewan di adegan 3 → 6. Catatan aset: belum ada dunia 3D hewan halaman, jadi mekanik `cari` tidak dipakai di sini; bila dunia itu dibuat, tambahkan `cari` (hewan laut dari Bawah Laut bisa jadi varian). [Tinjauan 24 Okt 2026: `cari` diganti `pilah` karena tidak ada dunia 3D yang memuat hewan ini.]"
+        "catatan": "Pengenalan nama hewan secara reseptif. Anak mendengar nama hewan lalu menyentuh gambarnya. Varian halaman mencakup kucing, ayam, sapi, kambing, bebek, dan burung. Varian laut mencakup ikan, penyu, hiu, dan hewan laut lain. Pilihan untuk nama umum seperti burung memakai pengecoh dari kelompok hewan lain agar hanya satu gambar sesuai. Knob: 3–6 pilihan."
       },
       {
         "id": "SAINS.PAUD.HEWAN-SUARA.02",
@@ -8787,8 +8787,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menemukan hewan yang bersuara dengan mendengar suaranya saja, misalnya meong untuk kucing",
-          "en": "I can find the animal that is making a sound just by listening to it, for example meow for the cat"
+          "id": "Aku bisa mencocokkan tiruan bunyi yang dibacakan, seperti meong, dengan gambar hewan yang sesuai",
+          "en": "I can match a spoken imitation, such as meow, to a picture of the right animal"
         },
         "depth": [
           "pakai"
@@ -8800,14 +8800,14 @@ export const KURIKULUM_RAW = [
           {
             "framework": "EYFS",
             "code": "ELG-UW-NATURAL-WORLD-01",
-            "note": "mengamati hewan lewat indra pendengaran"
+            "note": "mengenal hewan lewat tiruan bunyi yang diucapkan"
           }
         ],
         "core": true,
         "mechanics": [
           "pilah"
         ],
-        "catatan": "Aksi teramati: suara hewan diputar tanpa petunjuk visual (semua hewan diam), anak menyentuh hewan yang bersuara. Bukti sah hanya bila hewan tidak beranimasi saat suaranya diputar. Jebakan: anak menyentuh hewan favorit, bukan yang bersuara — acak urutan. Varian pilah: kartu suara (ikon pengeras) diseret ke hewannya. Knob: 3 → 6 hewan, suara mirip (kambing vs sapi) di ronde lanjut. Mekanik pilah mode pilih pada adegan 2D; `cari` baru relevan bila dunia 3D hewan halaman ada. [Tinjauan 24 Okt 2026: `cari` dilepas.]"
+        "catatan": "Kartu soal menampilkan dan membacakan tiruan bunyi, misalnya meong untuk kucing atau kukuruyuk untuk ayam jago. Anak mencocokkannya dengan gambar hewan. Varian halaman dan kebun melatih hubungan antara tiruan bunyi yang diucapkan dan nama hewan. Knob: 3–6 pilihan."
       },
       {
         "id": "SAINS.PAUD.HEWAN-SUARA.03",
@@ -8856,8 +8856,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memilah gambar kegiatan ke siang atau malam: bermain di luar ke siang, tidur ke malam",
-          "en": "I can sort pictures of activities into day or night: playing outside to day, sleeping to night"
+          "id": "Aku bisa memilah gambar kegiatan ke siang atau malam dari petunjuk langitnya",
+          "en": "I can sort pictures of activities into day or night using clues from the sky"
         },
         "depth": [
           "pakai"
@@ -8875,7 +8875,7 @@ export const KURIKULUM_RAW = [
           "pilah",
           "simulasi"
         ],
-        "catatan": "Dua keranjang: langit siang (matahari) dan langit malam (bulan, bintang). Item harus punya petunjuk visual kuat: lampu menyala, piyama, matahari di jendela. Jebakan: makan bisa siang atau malam — hindari item ambigu. Varian simulasi: anak memasang matahari atau bulan di langit sesuai kegiatan yang sedang terjadi. Knob: 4 → 8 gambar."
+        "catatan": "Anak memilah berdasarkan petunjuk langit: cahaya matahari dan awan terang untuk siang, langit gelap berbintang untuk malam. Kartu tetap memberi petunjuk waktu ketika aktivitasnya biasa dilakukan pada siang maupun malam, seperti bersepeda atau memakai senter. Knob: 4–8 kartu."
       },
       {
         "id": "SAINS.PAUD.SIANG-MALAM-CUACA.02",
@@ -14528,7 +14528,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "hitung-anak-ayam-kandang",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "PAUD",
     "mechanic": "dagang",
     "competencyIds": [
@@ -14539,6 +14539,7 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Berhitung di Kandang",
         "instruksi": "Sentuh {barang} di kandang satu per satu sambil berhitung, lalu geser penanda ke jumlahnya.",
+        "tempat-hitung": "di kandang",
         "anakayam": "anak ayam",
         "bebek": "bebek",
         "kelinci": "kelinci"
@@ -14546,6 +14547,7 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Counting in the Coop",
         "instruksi": "Touch the {barang} in the coop one at a time as you count, then slide the marker to the number.",
+        "tempat-hitung": "in the coop",
         "anakayam": "chicks",
         "bebek": "ducks",
         "kelinci": "rabbits"
@@ -176057,7 +176059,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kartu Titik",
-        "instruksi": "Hitung bendanya, lalu taruh di kartu yang titiknya sama banyak.",
+        "instruksi": "Ketuk satu kartu, lalu ketuk kotak dengan jumlah titik yang sama.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -176071,7 +176073,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Dot Cards",
-        "instruksi": "Count the things, then put them on the card with the same number of dots.",
+        "instruksi": "Tap one card, then tap the box with an equal number of dots.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -176323,7 +176325,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kartu Titik Kebun",
-        "instruksi": "Hitung yang ada di kebun, lalu seret ke kartu yang titiknya sama banyak.",
+        "instruksi": "Ketuk kartu, lalu ketuk kotak yang titiknya sama banyak.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -176337,7 +176339,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Garden Dot Cards",
-        "instruksi": "Count the things in the garden, then drag them to the card with the same number of dots.",
+        "instruksi": "Tap a card, then tap the box with the same number of dots.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -186177,7 +186179,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Hidup di Bawah Laut",
-        "instruksi": "Robot menyelam: taruh makhluk hidup ke keranjang daun, benda tak hidup ke keranjang batu.",
+        "instruksi": "Robot menyelam. Ketuk satu kartu, lalu ketuk kotak hidup atau tak hidup.",
         "hidup": "hidup",
         "takhidup": "tak hidup",
         "i-ikan": "ikan",
@@ -186193,7 +186195,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Living Things Under the Sea",
-        "instruksi": "Robot dives: put living things in the leaf basket and non-living things in the stone basket.",
+        "instruksi": "Robot dives. Tap a card, then tap the living or not living box.",
         "hidup": "living",
         "takhidup": "not living",
         "i-ikan": "fish",
@@ -187112,7 +187114,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-keranjang-indra-pasar",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -187122,61 +187124,61 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Indra di Pasar",
-        "instruksi": "Robot jalan-jalan di pasar: taruh tiap benda ke indra yang memakainya.",
+        "instruksi": "Di pasar, ketuk kartu untuk dengar petunjuknya, lalu ketuk indra yang tepat.",
         "mata": "mata",
         "telinga": "telinga",
         "hidung": "hidung",
         "lidah": "lidah",
-        "i-lukisan": "lukisan",
-        "i-terompet": "terompet",
-        "i-gitar": "gitar",
-        "i-mawar": "bunga mawar",
-        "i-parfum": "minyak wangi",
-        "i-eskrim": "es krim manis",
-        "i-madu": "madu manis",
-        "lampion": "lampion menyala",
-        "papanharga": "papan harga",
-        "lonceng": "lonceng toko",
-        "pengeras": "penjual berteriak",
+        "i-lukisan": "warna lukisan",
+        "i-terompet": "suara terompet",
+        "i-gitar": "suara gitar",
+        "i-mawar": "aroma mawar",
+        "i-parfum": "aroma parfum",
+        "i-eskrim": "rasa manis es krim",
+        "i-madu": "rasa manis madu",
+        "lampion": "cahaya lampion",
+        "papanharga": "tulisan harga",
+        "lonceng": "bunyi lonceng toko",
+        "pengeras": "suara megafon",
         "bawang": "bau bawang putih",
-        "permen": "permen manis",
-        "cermin": "cermin",
-        "lampu": "lampu terang",
-        "radio": "radio",
-        "gendang": "gendang",
-        "melati": "bunga melati",
-        "pandan": "daun pandan wangi",
-        "cokelat": "cokelat manis",
-        "garam": "garam asin"
+        "permen": "rasa manis permen",
+        "cermin": "bayangan di cermin",
+        "lampu": "cahaya lampu",
+        "radio": "suara radio",
+        "gendang": "bunyi gendang",
+        "melati": "aroma melati",
+        "pandan": "aroma daun pandan",
+        "cokelat": "rasa manis cokelat",
+        "garam": "rasa asin garam"
       },
       "en": {
         "judul": "Senses at the Market",
-        "instruksi": "Robot strolls the market: put each thing with the sense that uses it.",
+        "instruksi": "At the market, tap a card to hear its clue, then tap the matching sense.",
         "mata": "eye",
         "telinga": "ear",
         "hidung": "nose",
         "lidah": "tongue",
-        "i-lukisan": "painting",
-        "i-terompet": "trumpet",
-        "i-gitar": "guitar",
-        "i-mawar": "rose",
-        "i-parfum": "perfume",
-        "i-eskrim": "sweet ice cream",
-        "i-madu": "sweet honey",
-        "lampion": "glowing lantern",
-        "papanharga": "price sign",
-        "lonceng": "shop bell",
-        "pengeras": "seller shouting",
+        "i-lukisan": "the colors of a painting",
+        "i-terompet": "the sound of a trumpet",
+        "i-gitar": "the sound of a guitar",
+        "i-mawar": "the scent of a rose",
+        "i-parfum": "the scent of perfume",
+        "i-eskrim": "the sweet taste of ice cream",
+        "i-madu": "the sweet taste of honey",
+        "lampion": "the light from a lantern",
+        "papanharga": "the writing on a price sign",
+        "lonceng": "the sound of a shop bell",
+        "pengeras": "the sound of a megaphone",
         "bawang": "garlic smell",
-        "permen": "sweet lollipop",
-        "cermin": "mirror",
-        "lampu": "bright lamp",
-        "radio": "radio",
-        "gendang": "drum",
-        "melati": "jasmine",
-        "pandan": "fragrant pandan leaf",
-        "cokelat": "sweet chocolate",
-        "garam": "salt"
+        "permen": "the sweet taste of candy",
+        "cermin": "a reflection in a mirror",
+        "lampu": "the light from a lamp",
+        "radio": "the sound of a radio",
+        "gendang": "the sound of a drum",
+        "melati": "the scent of jasmine",
+        "pandan": "the scent of pandan leaves",
+        "cokelat": "the sweet taste of chocolate",
+        "garam": "the salty taste of salt"
       }
     },
     "knobs": {
@@ -187192,7 +187194,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 8,
         "default": 4,
         "step": 2,
-        "keterangan": "jumlah benda per putaran; tiap benda hanya satu indra dominan"
+        "keterangan": "jumlah petunjuk indra per putaran"
       }
     },
     "assets": [],
@@ -187275,7 +187277,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "parfum",
         "labelKey": "i-parfum",
         "bin": "hidung",
-        "emoji": "🧴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tunas-parfum",
+          "t": 0
+        }
       },
       {
         "id": "bawang",
@@ -187354,7 +187360,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-keranjang-indra-rumah",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -187364,69 +187370,69 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Keranjang Indra",
-        "instruksi": "Taruh tiap benda ke indra yang memakainya: lampu ke mata, lonceng ke telinga.",
+        "instruksi": "Ketuk kartu di rumah untuk dengar petunjuknya, lalu pilih indra yang cocok.",
         "mata": "mata",
         "telinga": "telinga",
         "hidung": "hidung",
         "lidah": "lidah",
-        "i-lampu": "lampu menyala",
-        "i-pelangi": "pelangi",
-        "i-lonceng": "lonceng",
-        "i-genderang": "genderang",
-        "i-bunga": "bunga harum",
-        "i-sabun": "sabun wangi",
-        "i-kue": "kue manis",
-        "i-permen": "permen",
-        "i-lukisan": "lukisan",
-        "i-cermin": "cermin",
-        "i-senter": "senter menyala",
-        "i-bukugambar": "buku bergambar",
-        "i-bintang": "bintang di langit",
-        "i-terompet": "terompet",
-        "i-gitar": "petikan gitar",
-        "i-radio": "radio",
-        "i-biola": "biola",
-        "i-piano": "piano",
-        "i-mawar": "mawar harum",
-        "i-melati": "bunga melati harum",
-        "i-kauskaki": "kaus kaki bau",
-        "i-sampah": "tempat sampah bau",
-        "i-eskrim": "es krim manis",
-        "i-lemon": "lemon asam",
-        "i-madu": "madu manis"
+        "i-lampu": "cahaya lampu",
+        "i-pelangi": "warna pelangi",
+        "i-lonceng": "bunyi lonceng",
+        "i-genderang": "bunyi genderang",
+        "i-bunga": "aroma bunga",
+        "i-sabun": "aroma sabun",
+        "i-kue": "rasa manis kue",
+        "i-permen": "rasa manis permen",
+        "i-lukisan": "warna lukisan",
+        "i-cermin": "bayangan di cermin",
+        "i-senter": "cahaya senter",
+        "i-bukugambar": "gambar di buku",
+        "i-bintang": "cahaya bintang",
+        "i-terompet": "suara terompet",
+        "i-gitar": "suara petikan gitar",
+        "i-radio": "suara radio",
+        "i-biola": "suara biola",
+        "i-piano": "suara piano",
+        "i-mawar": "aroma mawar",
+        "i-melati": "aroma melati",
+        "i-kauskaki": "bau kaus kaki",
+        "i-sampah": "bau tempat sampah",
+        "i-eskrim": "rasa manis es krim",
+        "i-lemon": "rasa asam lemon",
+        "i-madu": "rasa manis madu"
       },
       "en": {
         "judul": "Sense Baskets",
-        "instruksi": "Put each thing with the sense that uses it: the lamp with the eye, the bell with the ear.",
+        "instruksi": "At home, tap each card to hear its clue, then choose the matching sense.",
         "mata": "eye",
         "telinga": "ear",
         "hidung": "nose",
         "lidah": "tongue",
-        "i-lampu": "glowing lamp",
-        "i-pelangi": "rainbow",
-        "i-lonceng": "bell",
-        "i-genderang": "drum",
-        "i-bunga": "sweet-smelling flower",
-        "i-sabun": "scented soap",
-        "i-kue": "sweet cake",
-        "i-permen": "candy",
-        "i-lukisan": "painting",
-        "i-cermin": "mirror",
-        "i-senter": "glowing flashlight",
-        "i-bukugambar": "picture book",
-        "i-bintang": "star in the sky",
-        "i-terompet": "trumpet",
-        "i-gitar": "guitar strumming",
-        "i-radio": "radio",
-        "i-biola": "violin",
-        "i-piano": "piano",
-        "i-mawar": "sweet-smelling rose",
-        "i-melati": "fragrant jasmine",
-        "i-kauskaki": "smelly socks",
-        "i-sampah": "smelly trash can",
-        "i-eskrim": "sweet ice cream",
-        "i-lemon": "sour lemon",
-        "i-madu": "sweet honey"
+        "i-lampu": "the light from a lamp",
+        "i-pelangi": "the colors of a rainbow",
+        "i-lonceng": "the sound of a bell",
+        "i-genderang": "the sound of a drum",
+        "i-bunga": "the scent of a flower",
+        "i-sabun": "the scent of soap",
+        "i-kue": "the sweet taste of cake",
+        "i-permen": "the sweet taste of candy",
+        "i-lukisan": "the colors of a painting",
+        "i-cermin": "a reflection in a mirror",
+        "i-senter": "the light from a torch",
+        "i-bukugambar": "pictures in a book",
+        "i-bintang": "starlight",
+        "i-terompet": "the sound of a trumpet",
+        "i-gitar": "the sound of a plucked guitar",
+        "i-radio": "the sound of a radio",
+        "i-biola": "the sound of a violin",
+        "i-piano": "the sound of a piano",
+        "i-mawar": "the scent of a rose",
+        "i-melati": "the scent of jasmine",
+        "i-kauskaki": "the smell of socks",
+        "i-sampah": "the smell of a rubbish bin",
+        "i-eskrim": "the sweet taste of ice cream",
+        "i-lemon": "the sour taste of a lemon",
+        "i-madu": "the sweet taste of honey"
       }
     },
     "knobs": {
@@ -187442,7 +187448,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 8,
         "default": 6,
         "step": 2,
-        "keterangan": "jumlah benda per putaran; tiap benda hanya satu indra dominan"
+        "keterangan": "jumlah petunjuk indra per putaran"
       }
     },
     "assets": [],
@@ -187628,7 +187634,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-langit-siang-malam",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -187638,31 +187644,31 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Siang atau Malam?",
-        "instruksi": "Taruh tiap gambar kegiatan ke langit siang atau langit malam.",
+        "instruksi": "Lihat langit di tiap kartu, lalu taruh kegiatannya di kelompok siang atau malam.",
         "siang": "siang",
         "malam": "malam",
-        "i-bola": "main bola di lapangan",
-        "i-sepeda": "naik sepeda",
-        "i-sekolah": "berangkat sekolah",
-        "i-layang": "main layang-layang",
-        "i-tidur": "tidur di kasur",
-        "i-bintang": "melihat bintang",
-        "i-senter": "menyalakan senter",
-        "i-burunghantu": "burung hantu terbang"
+        "i-bola": "main bola saat cerah",
+        "i-sepeda": "bersepeda di bawah matahari",
+        "i-sekolah": "ke sekolah saat pagi cerah",
+        "i-layang": "main layang-layang saat cerah",
+        "i-tidur": "tidur di malam hari",
+        "i-bintang": "bintang di langit malam",
+        "i-senter": "senter di malam hari",
+        "i-burunghantu": "burung hantu di malam hari"
       },
       "en": {
         "judul": "Day or Night?",
-        "instruksi": "Put each activity picture under the day sky or the night sky.",
+        "instruksi": "Look at the sky on each card, then sort the activities into day or night.",
         "siang": "day",
         "malam": "night",
-        "i-bola": "playing ball outside",
-        "i-sepeda": "riding a bike",
-        "i-sekolah": "going to school",
-        "i-layang": "flying a kite",
-        "i-tidur": "sleeping in bed",
-        "i-bintang": "watching the stars",
-        "i-senter": "turning on a torch",
-        "i-burunghantu": "an owl flying"
+        "i-bola": "playing ball under a sunny sky",
+        "i-sepeda": "cycling in the sunshine",
+        "i-sekolah": "going to school on a sunny morning",
+        "i-layang": "flying a kite under a sunny sky",
+        "i-tidur": "sleeping at night",
+        "i-bintang": "stars in the night sky",
+        "i-senter": "a torch at night",
+        "i-burunghantu": "an owl at night"
       }
     },
     "knobs": {
@@ -187671,7 +187677,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 8,
         "default": 6,
         "step": 2,
-        "keterangan": "jumlah gambar per putaran; semua gambar punya petunjuk kuat (matahari, lampu, piyama)"
+        "keterangan": "jumlah gambar kegiatan dengan tanda langit siang atau malam"
       }
     },
     "assets": [],
@@ -187698,49 +187704,81 @@ export const PAKET_RAW: unknown[] = [
         "id": "bola",
         "labelKey": "i-bola",
         "bin": "siang",
-        "emoji": "⚽"
+        "emoji": "⚽",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "sepeda",
         "labelKey": "i-sepeda",
         "bin": "siang",
-        "emoji": "🚲"
+        "emoji": "🚲",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "sekolah",
         "labelKey": "i-sekolah",
         "bin": "siang",
-        "emoji": "🏫"
+        "emoji": "🏫",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "layang",
         "labelKey": "i-layang",
         "bin": "siang",
-        "emoji": "🪁"
+        "emoji": "🪁",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "tidur",
         "labelKey": "i-tidur",
         "bin": "malam",
-        "emoji": "🛌"
+        "emoji": "🛌",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       },
       {
         "id": "bintang",
         "labelKey": "i-bintang",
         "bin": "malam",
-        "emoji": "🌟"
+        "emoji": "🌟",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       },
       {
         "id": "senter",
         "labelKey": "i-senter",
         "bin": "malam",
-        "emoji": "🔦"
+        "emoji": "🔦",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       },
       {
         "id": "burunghantu",
         "labelKey": "i-burunghantu",
         "bin": "malam",
-        "emoji": "🦉"
+        "emoji": "🦉",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       }
     ],
     "pilihan": []
@@ -189016,21 +189054,21 @@ export const PAKET_RAW: unknown[] = [
         "pilihan": "choices",
         "i-kepala": "head",
         "i-badan": "body",
-        "i-tangan": "hand",
-        "i-kaki": "foot",
+        "i-tangan": "arms",
+        "i-kaki": "legs",
         "i-bola": "ball",
         "i-topi": "hat",
         "i-sepatu": "shoe",
         "t1": "The doll has no head. Which part goes in the empty place?",
-        "t2": "The doll has no feet. Which part goes in the empty place?",
-        "t3": "The doll has no hands. Which part goes in the empty place?",
+        "t2": "The doll has no legs. Which part goes in the empty place?",
+        "t3": "The doll has no arms. Which part goes in the empty place?",
         "t4": "The doll has no body. Which part goes in the empty place?",
         "t5": "The very top of the doll is empty, where the eyes and mouth go. Which part goes on?",
         "t6": "The very bottom of the doll is empty, for standing and walking. Which part goes on?",
         "t7": "The doll can't hold or wave yet. Which part goes in the empty place?",
         "t8": "The middle of the doll is empty, where a shirt goes. Which part goes on?",
         "t9": "The head is on. Which part goes in the empty place right under the head?",
-        "t10": "The body and feet are on. Which part goes on the left and right of the body?"
+        "t10": "The body and legs are on. Which part goes on the left and right of the body?"
       }
     },
     "knobs": {
@@ -189417,7 +189455,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-mana-bagian-tubuh",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -189443,10 +189481,10 @@ export const PAKET_RAW: unknown[] = [
         "t-kaki": "Mana kakinya?",
         "i-gigi": "gigi",
         "i-lidah": "lidah",
-        "i-jempol": "jempol",
+        "i-jempol": "ibu jari tangan",
         "t-gigi": "Mana giginya?",
         "t-lidah": "Mana lidahnya?",
-        "t-jempol": "Mana jempolnya?",
+        "t-jempol": "Mana ibu jari tangan?",
         "t-mata2": "Mana matanya? Mata untuk melihat.",
         "t-telinga2": "Mana telinganya? Telinga untuk mendengar.",
         "t-hidung2": "Mana hidungnya? Hidung untuk mencium bau."
@@ -189472,7 +189510,7 @@ export const PAKET_RAW: unknown[] = [
         "i-jempol": "thumb",
         "t-gigi": "Where is the tooth?",
         "t-lidah": "Where is the tongue?",
-        "t-jempol": "Where is the thumb?",
+        "t-jempol": "Which picture shows a thumb?",
         "t-mata2": "Where is the eye? Eyes are for seeing.",
         "t-telinga2": "Where is the ear? Ears are for hearing.",
         "t-hidung2": "Where is the nose? Noses are for smelling."
@@ -190164,7 +190202,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-mana-hewan-halaman",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -190379,8 +190417,8 @@ export const PAKET_RAW: unknown[] = [
         "promptKey": "t-burung",
         "choices": [
           "burung",
-          "ayam",
-          "bebek",
+          "kelinci",
+          "kucing",
           "kambing"
         ],
         "correct": "burung"
@@ -195538,7 +195576,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-siang-malam-di-kebun",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -195548,31 +195586,31 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kebun Siang dan Malam",
-        "instruksi": "Robot menata foto kebun: taruh yang terjadi siang ke matahari, yang malam ke bulan.",
+        "instruksi": "Lihat langit pada foto kebun. Taruh kegiatan siang ke matahari dan kegiatan malam ke bulan.",
         "siang": "siang",
         "malam": "malam",
-        "i-jemur": "menjemur baju",
-        "i-kupu": "kupu-kupu di bunga",
-        "i-kacamata": "pakai kacamata hitam",
-        "i-kunang": "kunang-kunang menyala",
-        "i-lampu": "lampion menyala",
-        "i-piyama": "tidur di kasur",
-        "i-kelelawar": "kelelawar terbang",
-        "i-pelangi": "pelangi di langit"
+        "i-jemur": "jemur baju saat cerah",
+        "i-kupu": "kupu-kupu saat cerah",
+        "i-kacamata": "kacamata saat terik",
+        "i-kunang": "kunang-kunang saat gelap",
+        "i-lampu": "lampion di malam hari",
+        "i-piyama": "tidur saat malam tiba",
+        "i-kelelawar": "kelelawar di langit malam",
+        "i-pelangi": "pelangi di siang hari"
       },
       "en": {
         "judul": "The Garden by Day and Night",
-        "instruksi": "Robot sorts garden photos: day things go to the sun, night things to the moon.",
+        "instruksi": "Look at the sky in each garden picture. Put daytime activities by the sun and nighttime activities by the moon.",
         "siang": "day",
         "malam": "night",
-        "i-jemur": "hanging laundry in the sun",
-        "i-kupu": "butterfly on a flower",
-        "i-kacamata": "wearing sunglasses",
-        "i-kunang": "glowing fireflies",
-        "i-lampu": "glowing lantern",
-        "i-piyama": "sleeping in bed",
-        "i-kelelawar": "bats flying",
-        "i-pelangi": "a rainbow in the sky"
+        "i-jemur": "drying clothes in the sunshine",
+        "i-kupu": "a butterfly under a sunny sky",
+        "i-kacamata": "sunglasses in bright sunshine",
+        "i-kunang": "fireflies glowing in the dark",
+        "i-lampu": "a lantern at night",
+        "i-piyama": "going to bed at night",
+        "i-kelelawar": "a bat in the night sky",
+        "i-pelangi": "a rainbow in the daytime"
       }
     },
     "knobs": {
@@ -195581,7 +195619,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 8,
         "default": 6,
         "step": 2,
-        "keterangan": "jumlah gambar per putaran; hindari kegiatan yang bisa siang atau malam"
+        "keterangan": "jumlah gambar kegiatan dengan tanda langit siang atau malam"
       }
     },
     "assets": [],
@@ -195608,49 +195646,81 @@ export const PAKET_RAW: unknown[] = [
         "id": "jemur",
         "labelKey": "i-jemur",
         "bin": "siang",
-        "emoji": "🧺"
+        "emoji": "🧺",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "kupu",
         "labelKey": "i-kupu",
         "bin": "siang",
-        "emoji": "🦋"
+        "emoji": "🦋",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "pelangi",
         "labelKey": "i-pelangi",
         "bin": "siang",
-        "emoji": "🌈"
+        "emoji": "🌈",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "kacamata",
         "labelKey": "i-kacamata",
         "bin": "siang",
-        "emoji": "🕶️"
+        "emoji": "🕶️",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌤️"
+        }
       },
       {
         "id": "kunang",
         "labelKey": "i-kunang",
         "bin": "malam",
-        "emoji": "✨"
+        "emoji": "✨",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       },
       {
         "id": "lampu",
         "labelKey": "i-lampu",
         "bin": "malam",
-        "emoji": "🏮"
+        "emoji": "🏮",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       },
       {
         "id": "piyama",
         "labelKey": "i-piyama",
         "bin": "malam",
-        "emoji": "🛌"
+        "emoji": "🛌",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       },
       {
         "id": "kelelawar",
         "labelKey": "i-kelelawar",
         "bin": "malam",
-        "emoji": "🦇"
+        "emoji": "🦇",
+        "adegan": {
+          "jenis": "tanda",
+          "tanda": "🌌"
+        }
       }
     ],
     "pilihan": []
@@ -196556,7 +196626,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-siapa-yang-bersuara",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -196566,7 +196636,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Siapa yang Bersuara?",
-        "instruksi": "Dengarkan suaranya, lalu sentuh hewan yang bersuara begitu.",
+        "instruksi": "Dengarkan tiruan bunyi hewan, misalnya meong. Lalu sentuh gambar hewan yang cocok.",
         "pilihan": "pilihan",
         "i-kucing": "kucing",
         "i-ayam": "ayam jago",
@@ -196591,7 +196661,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Who Made That Sound?",
-        "instruksi": "Listen to the sound, then touch the animal that makes it.",
+        "instruksi": "Listen to someone imitate an animal sound, like meow. Then tap the matching animal.",
         "pilihan": "choices",
         "i-kucing": "cat",
         "i-ayam": "rooster",
@@ -197151,7 +197221,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-suara-siapa-di-kebun",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -197161,7 +197231,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Suara Siapa di Kebun?",
-        "instruksi": "Ssst, ada suara di kebun! Dengarkan, lalu sentuh hewan yang bersuara begitu.",
+        "instruksi": "Dengarkan tiruan bunyi di kebun, lalu sentuh gambar hewan yang cocok.",
         "pilihan": "pilihan",
         "i-lebah": "lebah",
         "i-jangkrik": "jangkrik",
@@ -197187,7 +197257,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Whose Sound in the Garden?",
-        "instruksi": "Shh, there's a sound in the garden! Listen, then touch the animal that makes it.",
+        "instruksi": "Listen to someone imitate a garden animal sound. Then tap the matching animal.",
         "pilihan": "choices",
         "i-lebah": "bee",
         "i-jangkrik": "cricket",
@@ -312148,7 +312218,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Berangkat Sekolah",
-        "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
+        "instruksi": "Susun gambar dari kejadian pertama sampai terakhir.",
         "sekolah": "Robot ke sekolah",
         "seragam": "pakai seragam",
         "sepeda": "naik sepeda",
@@ -312195,7 +312265,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Off to School",
-        "instruksi": "Put the pictures in order to get to school the right way.",
+        "instruksi": "Put the pictures in order from the first event to the last.",
         "sekolah": "The robot goes to school",
         "seragam": "put on uniform",
         "sepeda": "ride the bike",
@@ -312235,7 +312305,7 @@ export const PAKET_RAW: unknown[] = [
         "seberang-3": "cross the road",
         "seberang-4": "arrive at school",
         "t-salim": "Arriving at school",
-        "salim-1": "shake hands with the teacher at the gate",
+        "salim-1": "bow and greet the teacher at the gate",
         "salim-2": "walk to the classroom",
         "salim-3": "put your bag in the classroom",
         "sekolah-bangun": "wake up"
@@ -312467,7 +312537,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "salim-1",
             "labelKey": "salim-1",
-            "emoji": "🤝"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-salim-di-gerbang",
+              "t": 0
+            }
           },
           {
             "id": "salim-2",
@@ -315118,7 +315192,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "mana-dulu-alam",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "level": "PAUD",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -315142,8 +315216,8 @@ export const PAKET_RAW: unknown[] = [
         "s_hujan_hujan": "hujan",
         "s_hujan_pelangi": "pelangi",
         "t_buah": "Cerita apel",
-        "s_buah_bunga": "bunga mekar",
-        "s_buah_apel": "apel matang",
+        "s_buah_bunga": "bunga pohon apel",
+        "s_buah_apel": "apel matang di pohon",
         "t_katak": "Cerita katak",
         "s_katak_berudu": "berudu",
         "s_katak_katak": "katak",
@@ -315176,8 +315250,8 @@ export const PAKET_RAW: unknown[] = [
         "s_hujan_hujan": "rain",
         "s_hujan_pelangi": "rainbow",
         "t_buah": "The apple",
-        "s_buah_bunga": "flower",
-        "s_buah_apel": "ripe apple",
+        "s_buah_bunga": "apple blossoms",
+        "s_buah_apel": "ripe apples on the tree",
         "t_katak": "The frog",
         "s_katak_berudu": "tadpole",
         "s_katak_katak": "frog",
@@ -315281,12 +315355,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bunga",
             "labelKey": "s_buah_bunga",
-            "emoji": "🌸"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-apel-berbunga",
+              "t": 0
+            }
           },
           {
             "id": "apel",
             "labelKey": "s_buah_apel",
-            "emoji": "🍎"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-apel-berbuah",
+              "t": 0
+            }
           }
         ]
       },
@@ -315346,12 +315428,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "pohon",
             "labelKey": "s_kelapa_pohon",
-            "emoji": "🌴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-kelapa-di-pohon"
+            }
           },
           {
             "id": "jatuh",
             "labelKey": "s_kelapa_jatuh",
-            "emoji": "🥥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-kelapa-di-tanah"
+            }
           }
         ]
       },
@@ -315362,12 +315450,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "hijau",
             "labelKey": "s_daun_hijau",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-daun-di-pohon"
+            }
           },
           {
             "id": "gugur",
             "labelKey": "s_daun_gugur",
-            "emoji": "🍂"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-daun-di-tanah"
+            }
           }
         ]
       }
@@ -368460,7 +368554,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "hitung-ambil",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -368470,7 +368564,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kotak Kelereng",
-        "instruksi": "Sentuh setiap kelereng satu per satu, lalu masukkan ke kotak yang angkanya pas.",
+        "instruksi": "Ketuk kartu, lalu ketuk kotak sesuai jumlah kelereng.",
         "k1": "1",
         "k2": "2",
         "k3": "3",
@@ -368480,7 +368574,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Marble Boxes",
-        "instruksi": "Touch each marble one by one, then put the group in the box with the right number.",
+        "instruksi": "Tap the card, then tap the box matching the number of marbles.",
         "k1": "1",
         "k2": "2",
         "k3": "3",

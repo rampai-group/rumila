@@ -1,6 +1,6 @@
 {
   "id": "sains-siang-malam-di-kebun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,31 +10,31 @@
   "locale": {
     "id": {
       "judul": "Kebun Siang dan Malam",
-      "instruksi": "Robot menata foto kebun: taruh yang terjadi siang ke matahari, yang malam ke bulan.",
+      "instruksi": "Lihat langit pada foto kebun. Taruh kegiatan siang ke matahari dan kegiatan malam ke bulan.",
       "siang": "siang",
       "malam": "malam",
-      "i-jemur": "menjemur baju",
-      "i-kupu": "kupu-kupu di bunga",
-      "i-kacamata": "pakai kacamata hitam",
-      "i-kunang": "kunang-kunang menyala",
-      "i-lampu": "lampion menyala",
-      "i-piyama": "tidur di kasur",
-      "i-kelelawar": "kelelawar terbang",
-      "i-pelangi": "pelangi di langit"
+      "i-jemur": "jemur baju saat cerah",
+      "i-kupu": "kupu-kupu saat cerah",
+      "i-kacamata": "kacamata saat terik",
+      "i-kunang": "kunang-kunang saat gelap",
+      "i-lampu": "lampion di malam hari",
+      "i-piyama": "tidur saat malam tiba",
+      "i-kelelawar": "kelelawar di langit malam",
+      "i-pelangi": "pelangi di siang hari"
     },
     "en": {
       "judul": "The Garden by Day and Night",
-      "instruksi": "Robot sorts garden photos: day things go to the sun, night things to the moon.",
+      "instruksi": "Look at the sky in each garden picture. Put daytime activities by the sun and nighttime activities by the moon.",
       "siang": "day",
       "malam": "night",
-      "i-jemur": "hanging laundry in the sun",
-      "i-kupu": "butterfly on a flower",
-      "i-kacamata": "wearing sunglasses",
-      "i-kunang": "glowing fireflies",
-      "i-lampu": "glowing lantern",
-      "i-piyama": "sleeping in bed",
-      "i-kelelawar": "bats flying",
-      "i-pelangi": "a rainbow in the sky"
+      "i-jemur": "drying clothes in the sunshine",
+      "i-kupu": "a butterfly under a sunny sky",
+      "i-kacamata": "sunglasses in bright sunshine",
+      "i-kunang": "fireflies glowing in the dark",
+      "i-lampu": "a lantern at night",
+      "i-piyama": "going to bed at night",
+      "i-kelelawar": "a bat in the night sky",
+      "i-pelangi": "a rainbow in the daytime"
     }
   },
   "knobs": {
@@ -43,7 +43,7 @@
       "max": 8,
       "default": 6,
       "step": 2,
-      "keterangan": "jumlah gambar per putaran; hindari kegiatan yang bisa siang atau malam"
+      "keterangan": "jumlah gambar kegiatan dengan tanda langit siang atau malam"
     }
   },
   "assets": [],
@@ -70,49 +70,81 @@
       "id": "jemur",
       "labelKey": "i-jemur",
       "bin": "siang",
-      "emoji": "🧺"
+      "emoji": "🧺",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "kupu",
       "labelKey": "i-kupu",
       "bin": "siang",
-      "emoji": "🦋"
+      "emoji": "🦋",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "pelangi",
       "labelKey": "i-pelangi",
       "bin": "siang",
-      "emoji": "🌈"
+      "emoji": "🌈",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "kacamata",
       "labelKey": "i-kacamata",
       "bin": "siang",
-      "emoji": "🕶️"
+      "emoji": "🕶️",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "kunang",
       "labelKey": "i-kunang",
       "bin": "malam",
-      "emoji": "✨"
+      "emoji": "✨",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     },
     {
       "id": "lampu",
       "labelKey": "i-lampu",
       "bin": "malam",
-      "emoji": "🏮"
+      "emoji": "🏮",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     },
     {
       "id": "piyama",
       "labelKey": "i-piyama",
       "bin": "malam",
-      "emoji": "🛌"
+      "emoji": "🛌",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     },
     {
       "id": "kelelawar",
       "labelKey": "i-kelelawar",
       "bin": "malam",
-      "emoji": "🦇"
+      "emoji": "🦇",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     }
   ],
   "pilihan": []

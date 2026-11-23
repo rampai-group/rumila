@@ -45,22 +45,50 @@ function World({ night, torch }: { night: boolean; torch: boolean }) {
     </g>
   </>;
 }
+const LENGAN_BONEKA = "M48 47Q42 43 36 48L28 56L24 54Q21 53 19 56Q18 59 22 61L16 64Q13 66 15 69L18 70L14 73Q13 76 16 77L20 76Q19 80 23 81Q25 82 28 77Q29 80 32 78L38 67L49 55Z";
+const TUNGKAI_BONEKA = "M48 66H62L61 76Q57 83 59 89L60 96H39V92L46 87L48 77Z";
+
+function AnggotaBoneka({ part, kosong = false }: { part: "tangan" | "kaki"; kosong?: boolean }) {
+  const tangan = part === "tangan";
+  return <g fill={kosong ? "#fff6d9" : "#f1bc91"} stroke={kosong ? "#c98b24" : INK} strokeWidth={kosong ? 2 : 2.2} strokeLinejoin="round" strokeLinecap="round">
+    {["", "translate(130 0) scale(-1 1)"].map((transform) => <g key={transform} transform={transform}>
+      <path d={tangan ? LENGAN_BONEKA : TUNGKAI_BONEKA} strokeDasharray={kosong ? "4 3" : undefined} />
+      {!kosong && (tangan ? <>
+        <path d="M48 47Q42 43 36 48L32 52L42 61L49 55Z" fill="#f08a9b" />
+        <path d="M18 70L24 66M20 76L26 71" fill="none" stroke="#a86450" strokeWidth="1.3" />
+      </> : <>
+        <path d="M48 66H62L61.5 72H48Z" fill="#4d77a0" />
+        <path d="M49 79Q53 77 57 79" fill="none" stroke="#a86450" strokeWidth="1.3" />
+        <path d="M46 88Q53 92 59 89L60 96H39V92Z" fill="#8ab5df" />
+        <path d="M41 94H58" fill="none" stroke="#eff6fc" strokeWidth="1.5" />
+      </>)}
+    </g>)}
+  </g>;
+}
+
 function BodyPart({ part, robot }: { part: string; robot: boolean }) {
   const fill = robot ? "#a7d0dc" : "#f1bc91";
   if (part === "kepala") return robot ? <g><rect x="40" y="10" width="50" height="30" rx="8" fill={fill} stroke={INK} strokeWidth="2.5" /><path d="M65 10V3" stroke={INK} strokeWidth="2" /><circle cx="65" cy="3" r="3" fill="#fdc94a" /><circle cx="53" cy="23" r="4" fill={INK} /><circle cx="77" cy="23" r="4" fill={INK} /><path d="M56 33H74" stroke={INK} strokeWidth="3" /></g> : <g><circle cx="65" cy="24" r="17" fill={fill} stroke={INK} strokeWidth="2" /><path d="M49 20Q49 1 65 7Q84 4 81 22L74 15 68 18 59 13Z" fill="#725142" /><circle cx="59" cy="24" r="2" fill={INK} /><circle cx="72" cy="24" r="2" fill={INK} /><path d="M59 31Q65 36 72 31" fill="none" stroke={INK} strokeWidth="2" /></g>;
   if (part === "badan") return <g><path d={robot ? "M43 44H87V74H43Z" : "M49 43Q65 38 81 43L86 73H44Z"} fill={robot ? fill : "#f08a9b"} stroke={INK} strokeWidth="2.5" />{robot ? <><rect x="52" y="51" width="25" height="13" rx="3" fill="#f9ce52" /><circle cx="54" cy="69" r="2" fill="#ee7667" /><circle cx="63" cy="69" r="2" fill="#4b8cbd" /></> : <path d="M56 47L65 53 74 47" fill="none" stroke="#fff" strokeWidth="3" />}</g>;
-  if (part === "tangan") return <g stroke={INK} strokeWidth="2.5" fill={fill}><path d="M40 47Q31 43 27 52L19 66Q17 73 24 76Q30 77 34 69L43 55Z" /><path d="M90 47Q99 43 103 52L111 66Q113 73 106 76Q100 77 96 69L87 55Z" />{robot && <><circle cx="31" cy="60" r="4" fill="#698d9d" /><circle cx="99" cy="60" r="4" fill="#698d9d" /></>}</g>;
-  return <g fill={robot ? fill : "#8ab5df"} stroke={INK} strokeWidth="2.5"><path d="M48 76H60V91H42V86H48Z" /><path d="M70 76H82V86H88V91H70Z" /></g>;
+  if (!robot) return <AnggotaBoneka part={part === "tangan" ? "tangan" : "kaki"} />;
+  if (part === "tangan") return <g stroke={INK} strokeWidth="2.5" fill={fill}><path d="M40 47Q31 43 27 52L19 66Q17 73 24 76Q30 77 34 69L43 55Z" /><path d="M90 47Q99 43 103 52L111 66Q113 73 106 76Q100 77 96 69L87 55Z" /><circle cx="31" cy="60" r="4" fill="#698d9d" /><circle cx="99" cy="60" r="4" fill="#698d9d" /></g>;
+  return <g fill={fill} stroke={INK} strokeWidth="2.5"><path d="M48 76H60V91H42V86H48Z" /><path d="M70 76H82V86H88V91H70Z" /></g>;
 }
 function Body({ kind, part, missing }: { kind: string; part: string; missing: boolean }) {
   const robot = kind === "robot";
-  const parts = ["kepala", "badan", "tangan", "kaki"];
+  const parts = robot ? ["kepala", "badan", "tangan", "kaki"] : ["kaki", "tangan", "badan", "kepala"];
+  const lubangAnggota = !robot && (part === "tangan" || part === "kaki");
   if (!missing) {
-    const translate: Record<string, string> = { kepala: "translate(-22 18) scale(1.35)", badan: "translate(-22 -29) scale(1.35)", tangan: "translate(-7 -18) scale(1.1)", kaki: "translate(-78 -138) scale(2.2)" };
+    const translate: Record<string, string> = { kepala: "translate(-22 18) scale(1.35)", badan: "translate(-22 -29) scale(1.35)", tangan: robot ? "translate(-7 -18) scale(1.1)" : "translate(-5 -18) scale(1.08)", kaki: robot ? "translate(-78 -138) scale(2.2)" : "translate(-59 -107) scale(1.9)" };
     return <g transform={translate[part]}><BodyPart part={part} robot={robot} /></g>;
   }
   const slots: Record<string, [number, number, number, number][]> = { kepala: [[39, 8, 52, 33]], badan: [[42, 43, 46, 32]], tangan: [[17, 44, 27, 34], [86, 44, 27, 34]], kaki: [[40, 76, 22, 18], [68, 76, 22, 18]] };
-  return <><rect x="5" y="1" width="120" height="98" rx="12" fill="#f0f7fc" />{parts.filter((p) => p !== part).map((p) => <BodyPart key={p} part={p} robot={robot} />)}{slots[part].map(([x,y,w,h], i) => <rect key={i} x={x} y={y} width={w} height={h} rx="5" fill="#fff6d9" stroke="#c98b24" strokeWidth="2" strokeDasharray="4 3" />)}</>;
+  return <>
+    <rect x="5" y="1" width="120" height="98" rx="12" fill="#f0f7fc" />
+    {lubangAnggota && <AnggotaBoneka part={part} kosong />}
+    {parts.filter((p) => p !== part).map((p) => <BodyPart key={p} part={p} robot={robot} />)}
+    {!lubangAnggota && slots[part].map(([x,y,w,h], i) => <rect key={i} x={x} y={y} width={w} height={h} rx="5" fill="#fff6d9" stroke="#c98b24" strokeWidth="2" strokeDasharray="4 3" />)}
+  </>;
 }
 
 /** One scalable SVG; parent cards provide the localized accessible name and optional listen button. */

@@ -297,6 +297,8 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const semuaTerisi = urutan.length > 0 && urutan.every((x) => x !== null);
   const hiasan = mode === "cipta" && !!hasil?.benar;
   const { tema, skala: sk, w, h } = usePanggung();
+  const padat = paket.level === "PAUD";
+  const tablet = padat && w >= 620 && h >= 680;
   const gap = Math.round(8 * sk);
   const lebarDalam = w > 0 ? w - 24 * sk - 6 : 0;
   // palet: benda membesar mengikuti lebar & tinggi panggung (±16% tinggi), tanpa pindah baris
@@ -315,7 +317,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
     mode === "lanjut" ? "Lanjutkan polanya!" : mode === "perbaiki" ? "Ada yang tertukar. Betulkan satu!" : fasePilih ? `Pilih ${butuhPilih} benda untuk polamu` : "Susun polamu berulang-ulang";
 
   return (
-    <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
+    <div className={`flex flex-1 flex-col gap-3 ${tablet ? "justify-center" : ""}`} style={{ color: INK, minHeight: tablet ? Math.min(620, Math.round(h * 0.64)) : undefined }}>
       {/* judul + bantu */}
       <div className="flex items-start gap-2">
         <div className="flex-1 px-1 text-center" style={{ fontFamily: BALOO, fontSize: 21 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar-tua)" }}>
@@ -324,9 +326,9 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
         <TombolBantu onClick={bantu} disabled={kunci} />
       </div>
 
-      {/* kalung / pagar: rak bertema dunia, mengisi sisa tinggi panggung */}
+      {/* Rak pola Tunas mengikuti tinggi slot supaya palet tetap dekat. */}
       <div
-        className={`relative flex flex-1 flex-col justify-center ${hiasan ? "akademi-pop" : ""}`}
+        className={`relative flex ${padat ? "shrink-0" : "flex-1"} flex-col justify-center ${hiasan ? "akademi-pop" : ""}`}
         style={{
           borderRadius: 26 * sk,
           padding: `${16 * sk}px ${12 * sk}px`,
@@ -352,7 +354,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 key={i}
                 type="button"
                 onClick={() => ketukSlot(i)}
-                aria-label={kosong ? `Slot kosong ${i + 1}` : `Slot ${i + 1}`}
+                aria-label={item ? `Slot ${i + 1}: ${t(item.labelKey)}` : `Slot kosong ${i + 1}`}
                 className={`flex items-center justify-center transition-transform ${bisaKetuk ? "active:scale-95" : ""} ${benar === false ? "akademi-shake" : ""} ${disorot ? "akademi-bounce" : ""} ${hiasan ? "akademi-pop" : ""}`}
                 style={{
                   width: slotPx,

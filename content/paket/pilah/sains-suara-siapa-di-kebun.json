@@ -1,6 +1,6 @@
 {
   "id": "sains-suara-siapa-di-kebun",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Suara Siapa di Kebun?",
-      "instruksi": "Ssst, ada suara di kebun! Dengarkan, lalu sentuh hewan yang bersuara begitu.",
+      "instruksi": "Dengarkan tiruan bunyi di kebun, lalu sentuh gambar hewan yang cocok.",
       "pilihan": "pilihan",
       "i-lebah": "lebah",
       "i-jangkrik": "jangkrik",
@@ -36,7 +36,7 @@
     },
     "en": {
       "judul": "Whose Sound in the Garden?",
-      "instruksi": "Shh, there's a sound in the garden! Listen, then touch the animal that makes it.",
+      "instruksi": "Listen to someone imitate a garden animal sound. Then tap the matching animal.",
       "pilihan": "choices",
       "i-lebah": "bee",
       "i-jangkrik": "cricket",

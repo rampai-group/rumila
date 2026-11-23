@@ -102,10 +102,14 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const binRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const terkirim = useRef(false);
   const kunci = !!hasil;
-  const { tema, skala: sk, w } = usePanggung();
+  const { tema, skala: sk, w, h } = usePanggung();
   const lebarArea = Math.min(w || 390, 920) - 4;
   const hp = lebarArea < 600;
   const piktogram = paket.layoutBin === "piktogram";
+  const kartuTitik = bins.length > 0 && bins.every((b) => b.emoji && MUKA_DADU.includes(b.emoji));
+  const titikLega = kartuTitik && lebarArea >= 620 && h >= 680;
+  const wadahLega = paket.level === "PAUD" && !kartuTitik && !piktogram &&
+    bins.length >= 2 && bins.length <= 3 && lebarArea >= 620 && h >= 680;
 
   // reset saat ronde berganti
   useEffect(() => {
@@ -211,43 +215,59 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const n = bins.length;
   // HP dengan ≥ 4 wadah, atau 3 wadah bernama panjang ("mamalia (berambut, menyusui)"): wadah disusun per baris
   // (label kiri, isi kanan) — kolom selebar ±100 px membuat nama & ciri terlipat per kata.
-  const baris = !piktogram && hp && (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
-  const jarakBin = (piktogram ? 8 : baris ? 10 : 12) * sk;
-  const kapasitasKolom = Math.max(1, Math.floor((lebarArea + jarakBin) / Math.min(148, 114 * sk + jarakBin)));
+  const baris = !piktogram && !kartuTitik && hp && (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
+  const titikRapat = kartuTitik && hp;
+  const jarakBin = (piktogram || titikRapat ? 8 : baris ? 10 : 12) * sk;
+  const lebarMinBin = titikRapat ? 84 + jarakBin : Math.min(148, 114 * sk + jarakBin);
+  const kapasitasKolom = Math.max(1, Math.floor((lebarArea + jarakBin) / lebarMinBin));
   const kolomBin = piktogram ? n : baris ? 1 : Math.ceil(n / Math.ceil(n / kapasitasKolom));
   const lebarBin = (lebarArea - jarakBin * (kolomBin - 1)) / kolomBin;
   const lebarIsi = Math.max(28, (baris ? lebarBin * 0.56 : lebarBin) - (piktogram ? 20 : 36) * sk);
-  const ukuranIkonBin = Math.min((hp ? 42 : 52) * sk, lebarBin - (piktogram ? 16 : 24) * sk);
+  const ukuranIkonBin = Math.min((wadahLega ? 86 : titikLega ? 64 : hp ? 42 : 52) * sk, lebarBin - (piktogram ? 16 : 24) * sk);
   const itemSeret = seret?.aktif ? items.find((i) => i.id === seret.id) : undefined;
   // kartu bergambar berlabel panjang (deskripsi) dibuat lebih lebar supaya teksnya tidak terlipat terlalu banyak
-  const lebarMinKartu = Math.round((items.some((i) => visualBergambar(i) && t(i.labelKey).length > 18) ? 132 : hp ? 92 : 112) * sk);
-  const maksKolomKartu = Math.min(items.length, Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8))));
-  const kolomKartu = items.length === 4 && maksKolomKartu === 3 ? 2 : maksKolomKartu;
-  const lebarKartu = (lebarArea - 8 * (kolomKartu - 1)) / kolomKartu;
-  const gambarKartu = Math.round((hp ? 56 : 80) * Math.min(sk, 1.2));
+  const labelPanjang = items.some((i) => visualBergambar(i) && t(i.labelKey).length > 18);
+  const lebarMinKartu = Math.round((labelPanjang ? 132 : titikRapat ? 78 : hp ? 92 : 112) * sk);
+  const kolomMuat = Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8)));
+  const maksKolomKartu = Math.min(items.length, titikLega ? Math.min(4, kolomMuat) : kolomMuat);
+  const kolomKartu = kartuTitik
+    ? Math.ceil(items.length / Math.ceil(items.length / maksKolomKartu))
+    : items.length === 4 && maksKolomKartu === 3 ? 2 : maksKolomKartu;
+  const lebarKolomKartu = (lebarArea - 8 * (kolomKartu - 1)) / kolomKartu;
+  const lebarKartu = wadahLega ? Math.min(180, lebarKolomKartu) : lebarKolomKartu;
+  const tinggiBaki = wadahLega ? Math.min(224, Math.round(h * 0.23)) : 84 * sk;
+  const tinggiIsi = wadahLega ? Math.min(220, Math.round(h * 0.22 / sk)) : piktogram || titikLega ? 112 : titikRapat ? 58 : baris ? 52 : 84;
+  const gambarKartu = Math.round((wadahLega ? 132 : titikLega ? 112 : hp ? 56 : 80) * Math.min(sk, 1.2));
+  const gambarTerpasang = (piktogram ? 46 : wadahLega ? 96 : titikLega ? 80 : hp ? 52 : 64) * sk;
   const urutanIsi = Object.keys(peta);
 
   return (
-    <div className="mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5" style={{ color: INK }}>
+    <div
+      className={`mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${wadahLega ? "justify-center" : ""}`}
+      style={{ color: INK, minHeight: wadahLega ? Math.min(680, Math.round(h * 0.72)) : undefined }}
+    >
       {/* tombol Bantu dipasang ke kepala layar (portal), tidak memakan baris */}
       <TombolBantu onClick={bantu} disabled={kunci} />
       {/* item yang belum dipilah */}
       {/* kartu langsung di atas latar layar (tanpa panel pembungkus: satu lapis kartu) */}
-      <div className="relative" style={{ minHeight: 84 * sk }}>
-        <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${kolomKartu}, minmax(0, 1fr))`, gridAutoRows: "1fr" }}>
+      <div className="relative shrink-0" style={{ minHeight: tinggiBaki }}>
+        <div
+          className={wadahLega ? "flex flex-wrap justify-center gap-2" : "grid gap-2"}
+          style={wadahLega ? undefined : { gridTemplateColumns: `repeat(${kolomKartu}, minmax(0, 1fr))`, gridAutoRows: "1fr" }}
+        >
           {lepasDiAtas.map((i) => {
             const dipilih = terpilih === i.id;
             const disorot = hint?.item === i.id;
             const sedangDiseret = seret?.aktif && seret.id === i.id;
             return (
               // pointer capture di tombol; move/up menggelembung ke pembungkus ini
-              <div key={i.id} className="flex min-w-0" onPointerMove={(e) => gerak(e, i.id)} onPointerUp={(e) => lepas(e, i.id)} onPointerCancel={batal}>
+              <div key={i.id} className="flex min-w-0" style={wadahLega ? { width: lebarKartu } : undefined} onPointerMove={(e) => gerak(e, i.id)} onPointerUp={(e) => lepas(e, i.id)} onPointerCancel={batal}>
                 <KartuBenda
                   penuh
                   v={visual(i, t)}
                   ariaLabel={namaPilihan(i, items, t, lang === "en-US")}
                   size={Math.min(gambarKartu, (lebarKartu - 16) / skalaLebar(i))}
-                  labelSize={Math.round(14 * Math.min(sk, 1.3))}
+                  labelSize={Math.round((wadahLega ? 17 : 14) * Math.min(sk, 1.3))}
                   selected={dipilih}
                   disabled={kunci}
                   onClick={(e) => {
@@ -258,7 +278,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                   onPointerDown={(e) => turun(e, i.id)}
                   className={`w-full touch-none select-none ${disorot ? "akademi-bounce" : ""}`}
                   style={{
-                    minHeight: 76 * sk,
+                    minHeight: wadahLega ? tinggiBaki : 76 * sk,
                     opacity: sedangDiseret ? 0.25 : 1,
                     boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
                     zIndex: dipilih ? 2 : undefined,
@@ -268,7 +288,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             );
           })}
           {lepasDiAtas.length === 0 && (
-            <div className="col-span-full flex h-[76px] items-center justify-center" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, opacity: 0.6 }}>
+            <div className="col-span-full flex w-full items-center justify-center" style={{ height: wadahLega ? tinggiBaki : 76, fontFamily: BALOO, fontSize: 20, fontWeight: 800, opacity: 0.6 }}>
               Semua sudah dipilah
             </div>
           )}
@@ -296,8 +316,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               }}
               onClick={() => ketukBin(b.id)}
               arah={piktogram ? "piktogram" : baris ? "baris" : "kolom"}
-              isiDariAtas={!baris}
-              minIsi={piktogram ? 112 : baris ? 52 : 84}
+              isiDariAtas={!baris && !wadahLega}
+              minIsi={tinggiIsi}
               ring={ring}
               hijau={hijau}
               warnaKategori={b.color}
@@ -305,7 +325,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               label={
                 // gambar hanya bila wadah bergambar; wadah teks/angka cukup labelnya (dulu tertulis dua kali: "11 11")
                 <button type="button" disabled={kunci} onClick={(e) => { e.stopPropagation(); ketukBin(b.id); }} className="min-h-11 w-full min-w-0 rounded-md py-1 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0786eb]">
-                  <LabelWadah teks={t(b.labelKey)} rata={baris && lebarArea >= 360 && t(b.labelKey).length <= 18 ? "kiri" : "tengah"} gambar={ikonBin} />
+                  <LabelWadah teks={t(b.labelKey)} rata={(titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={ikonBin} />
                 </button>
               }
             >
@@ -313,7 +333,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                 <KartuBenda
                   key={i.id}
                   v={visual(i, t)}
-                  size={Math.min((piktogram ? 46 : hp ? 52 : 64) * sk, lebarIsi - (piktogram ? 8 : 16)) / skalaLebar(i)}
+                  size={Math.min(gambarTerpasang, lebarIsi - (piktogram ? 8 : 16)) / skalaLebar(i)}
                   keterangan={false}
                   ariaLabel={lang === "en-US" ? `Remove ${t(i.labelKey)} from ${t(b.labelKey)}` : `Ambil ${t(i.labelKey)} dari ${t(b.labelKey)}`}
                   disabled={kunci}
@@ -406,6 +426,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const pilihanTulisan = choices.every((c) => !visualBergambar(c) && !c.color);
   const lebarArea = Math.min(w || 390, 920) - 4;
   const lebar = lebarArea >= 600;
+  const adeganLega = paket.level === "PAUD" && !!ronde.adegan && lebarArea >= 620 && h >= 680;
   const muat = n === 2 ? 2 : n === 3 ? 3 : n === 4 ? (lebar ? 4 : 2) : lebar ? 3 : 2;
   // Tumpuk pilihan berkalimat atau berkontrol audio di HP. Pilihan gambar singkat muat dalam satu baris.
   const berkalimat = choices.some((c) => {
@@ -421,7 +442,8 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const lebarKartu = (lebarArea - jarak * (jmlKolom - 1)) / jmlKolom;
   const skalaMaks = Math.max(1, ...choices.map(skalaLebar));
   const labelPanjang = tulisLabel && choices.some((c) => visualBergambar(c) && t(c.labelKey).length > 34);
-  const tinggiSoal = (ronde.adegan ? 176 : 68) * sk;
+  const ukuranAdegan = adeganLega ? Math.min(190, Math.round(h * 0.21)) : Math.max(60, Math.min(100, h * 0.18));
+  const tinggiSoal = ronde.adegan ? Math.max(176 * sk, ukuranAdegan + 70 * sk) : 68 * sk;
   const tinggiAudio = ronde.bacaPilihan ? 48 : 0;
   const tinggiBaris = h > 0 ? (h - tinggiSoal - jarak * (baris - 1)) / baris - tinggiAudio : 160;
   const tinggiMaks = jmlKolom === 1 ? (pilihanTulisan ? 126 : 148) : 240;
@@ -430,7 +452,10 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const ukuran = Math.round(Math.min(200, tinggiKartu * (tulisLabel ? 0.6 : 0.77), lebarKartu * (labelPanjang ? 0.55 : 0.78) / skalaMaks));
 
   return (
-    <div className="mx-auto flex w-full min-w-0 max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5" style={{ color: INK }}>
+    <div
+      className={`mx-auto flex w-full min-w-0 max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${adeganLega ? "justify-center" : ""}`}
+      style={{ color: INK, minHeight: adeganLega ? Math.min(620, Math.round(h * 0.66)) : undefined }}
+    >
       <div className="flex items-start gap-2">
         <div className="min-w-0 flex-1 px-1 py-1 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar-tua)" }}>
           <button type="button" onClick={() => ucapkan(soal, lang)} className="min-h-11 w-full whitespace-pre-line [overflow-wrap:anywhere]" aria-label="Dengarkan soal">
@@ -442,7 +467,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
               </span>
             ) : soal}
           </button>
-          {ronde.adegan && <div className="mt-1 flex justify-center"><GambarAdegan adegan={ronde.adegan} s={Math.max(60, Math.min(100, h * 0.18))} /></div>}
+          {ronde.adegan && <div className="mt-1 flex justify-center"><GambarAdegan adegan={ronde.adegan} s={ukuranAdegan} /></div>}
         </div>
         <TombolBantu onClick={bantu} disabled={kunci} />
       </div>

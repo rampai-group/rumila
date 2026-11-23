@@ -94,7 +94,10 @@ export const KALIMAT_SIMULASI = {
 export const KATA_URUTAN = { pertama: "pertama", lalu: "lalu", terakhir: "terakhir" } as const;
 export type KataUrutan = keyof typeof KATA_URUTAN;
 
-export const KALIMAT_URUTKAN = { berhenti: "Lho, ceritanya berhenti di sini." } as const;
+export const KALIMAT_URUTKAN = {
+  caraSusun: "Ketuk kartu, lalu ketuk kotak bernomor.",
+  berhenti: "Lho, ceritanya berhenti di sini.",
+} as const;
 
 /** Frasa sambung (b) yang direkam sebagai potongan. */
 export const FRASA = {
@@ -125,8 +128,8 @@ export const kalimatSimulasi = {
   jamPutarBantu: (jam: number) => `Cari angka ${jam} di jam, lalu ketuk.`,
   jengkal: (benda: string) => `Ukur ${benda} dengan jengkal. Berapa jengkal panjangnya?`,
   kubus: (benda: string) => `Berapa kubus panjang ${benda}?`,
-  tombolTebak: (tombol: string) => `Tebak dulu: tombol ${tombol} menyalakan alat mana? Ketuk alatnya.`,
-  tombolTekan: (tombol: string) => `Sekarang tekan tombol ${tombol}.`,
+  tombolTebak: (namaTombol: string) => `Tebak dulu: ${namaTombol} menyalakan alat mana? Ketuk alatnya.`,
+  tombolTekan: (namaTombol: string) => `Sekarang tekan ${namaTombol}.`,
   alatTanya: (berat: boolean) => (berat ? "Seberapa berat?" : "Seberapa panjang?"),
   alat: (hewan: string, berat: boolean) => `${hewan} bertanya: ${kalimatSimulasi.alatTanya(berat)} Pilih alat yang tepat.`,
   menara: (tingkat: number) => `Bangun menara ${tingkat} tingkat. Ketuk benda untuk menaruhnya di atas.`,
@@ -176,6 +179,12 @@ export type TemaSisaKata = "ditangkap" | "dibeli" | "dipetik" | "diambil";
 export const KERJA_SISA: Record<string, TemaSisaKata> = { kolam: "ditangkap", "toko-kue": "dibeli", kebun: "dipetik" };
 export const kerjaSisa = (world: string | undefined): TemaSisaKata => KERJA_SISA[world ?? ""] ?? "diambil";
 
+/** Tempat dari locale paket menjaga pertanyaan terlihat dan ucapan tetap dalam adegan yang sama. */
+export function tanyaHitung(nama: string, tempat = "", bahasa: "id" | "en" = "id"): string {
+  const benda = `${nama}${tempat ? ` ${tempat}` : ""}`;
+  return bahasa === "en" ? `How many ${benda} are there?` : `Ada berapa ${benda}?`;
+}
+
 export const kalimatDagang = {
   /** ambil: "Aku mau 3 jeruk dan 2 apel." (b) */
   pesanan: (pesanan: { qty: number; nama: string }[]): Ucapan => {
@@ -187,7 +196,8 @@ export const kalimatDagang = {
     return { teks: `Aku mau ${pesanan.map((p) => `${p.qty} ${p.nama}`).join(" dan ")}.`, potongan };
   },
   subitasi: (nama: string) => `Aku mau ${nama} sebanyak jariku.`,
-  hitung: (nama: string) => `Ada berapa ${nama} di meja? Sentuh satu-satu, lalu pilih angkanya.`,
+  hitung: (nama: string, tempat?: string, bahasa: "id" | "en" = "id") =>
+    `${tanyaHitung(nama, tempat ?? (bahasa === "en" ? "on the table" : "di meja"), bahasa)} ${bahasa === "en" ? "Touch them one at a time, then choose the number." : "Sentuh satu-satu, lalu pilih angkanya."}`,
   /** bayar tanpa rincian (a) */
   hargaKoin: (koin: number) => `Harganya ${koin} koin.`,
   hargaRupiah: (harga: number) => `Harganya ${formatRibuan(harga)} rupiah.`,
@@ -361,7 +371,7 @@ function kalimatPaketDagang(p: PaketDagang, nama: (key: string) => string, tamba
       for (const g of p.goods) tambah(kalimatDagang.subitasi(nama(g.labelKey)));
       return;
     case "hitung":
-      for (const g of p.goods) tambah(kalimatDagang.hitung(nama(g.labelKey)));
+      for (const g of p.goods) tambah(kalimatDagang.hitung(nama(g.labelKey), p.locale.id["tempat-hitung"]));
       return;
     case "bayar":
     case "kembalian": {
