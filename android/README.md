@@ -6,7 +6,7 @@ Isi app ikut web, jadi update konten/fitur cukup deploy web. Build ulang hanya u
 - Package: `com.pulaurinoya.academy`
 - Konfigurasi: `twa-manifest.json` (dibuat dengan @bubblewrap/core)
 - Upload key: `~/.rinoya-android/upload.keystore` (alias `upload`, sandi di `~/.rinoya-android/kunci.txt`) — TIDAK di repo, backup aman!
-- Verifikasi domain: `public/.well-known/assetlinks.json` (SHA-256 upload key; tambahkan SHA-256 "App signing key" dari Play Console setelah upload pertama)
+- Verifikasi domain: `public/.well-known/assetlinks.json` berisi SHA-256 upload key dan "App signing key" Play Console (ditambah 23 Nov 2026)
 
 ## Build
 
