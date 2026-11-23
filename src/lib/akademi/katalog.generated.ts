@@ -186247,7 +186247,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "penyu",
         "labelKey": "i-penyu",
         "bin": "hidup",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-penyu-laut"
+        }
       },
       {
         "id": "gurita",
@@ -187241,7 +187244,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "papanharga",
         "labelKey": "papanharga",
         "bin": "mata",
-        "emoji": "🪧"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tunas-papan-harga",
+          "t": 0
+        }
       },
       {
         "id": "terompet",
@@ -187311,7 +187318,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "cermin",
         "labelKey": "cermin",
         "bin": "mata",
-        "emoji": "🪞"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tunas-pantulan-cermin",
+          "t": 0
+        }
       },
       {
         "id": "lampu",
@@ -187537,7 +187548,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "cermin",
         "labelKey": "i-cermin",
         "bin": "mata",
-        "emoji": "🪞"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tunas-pantulan-cermin",
+          "t": 0
+        }
       },
       {
         "id": "senter",
@@ -190572,7 +190587,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "penyu",
         "labelKey": "i-penyu",
         "bin": "pilihan",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-penyu-laut"
+        }
       },
       {
         "id": "gurita",

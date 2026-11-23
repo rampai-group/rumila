@@ -78,7 +78,10 @@
       "id": "penyu",
       "labelKey": "i-penyu",
       "bin": "hidup",
-      "emoji": "🐢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-penyu-laut"
+      }
     },
     {
       "id": "gurita",

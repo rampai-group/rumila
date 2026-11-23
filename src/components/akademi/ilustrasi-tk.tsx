@@ -444,6 +444,34 @@ function ParfumSemprot() {
   </>;
 }
 
+function PapanHarga() {
+  return <>
+    <path d="M59 57H71V94H59Z" fill="#c7935e" stroke="#704529" strokeWidth="3" />
+    <rect x="5" y="16" width="120" height="56" rx="9" fill="#d39555" stroke="#704529" strokeWidth="3" />
+    <rect x="12" y="23" width="106" height="42" rx="4" fill="#fff3d4" />
+    <text x="65" y="54" textAnchor="middle" fill={INK} fontFamily="system-ui, sans-serif" fontWeight="900" fontSize="30" textLength="92" lengthAdjust="spacingAndGlyphs">Rp 500</text>
+  </>;
+}
+
+function PantulanCermin() {
+  return <>
+    <path d="M85 77V91M66 93H104" fill="none" stroke="#80552f" strokeWidth="6" />
+    <rect x="46" y="4" width="78" height="79" rx="36" fill="#f2b665" stroke="#80552f" strokeWidth="3" />
+    <rect x="53" y="11" width="64" height="65" rx="29" fill="#d6f1f8" stroke="#377588" strokeWidth="2" />
+    <path d="M66 66Q71 58 85 58Q97 58 104 66Q94 73 85 73Q75 73 66 66Z" fill="#996fcb" stroke={INK} strokeWidth="2" />
+    <circle cx="85" cy="43" r="16" fill="#ecbb8b" stroke={INK} strokeWidth="2" />
+    <path d="M69 41Q67 25 81 24Q96 22 101 37Q91 37 85 32Q78 40 69 41Z" fill="#634638" stroke={INK} strokeWidth="2" />
+    <circle cx="79" cy="44" r="2" fill={INK} /><circle cx="91" cy="44" r="2" fill={INK} />
+    <path d="M81 51Q85 55 89 51" fill="none" stroke="#9a5449" strokeWidth="2" />
+    <path d="M106 24L110 19M109 33L113 28" fill="none" stroke="#fff" strokeWidth="3" />
+    <path d="M7 91Q8 75 23 72H35Q47 77 49 91Z" fill="#996fcb" stroke={INK} strokeWidth="2.5" />
+    <path d="M19 63H36V75Q28 80 19 75Z" fill="#ecbb8b" stroke={INK} strokeWidth="2" />
+    <path d="M10 55Q10 37 27 37Q44 37 44 53Q44 69 28 70Q11 69 10 55Z" fill="#634638" stroke={INK} strokeWidth="2.5" />
+    <path d="M37 55Q44 51 45 57Q45 63 39 63" fill="#ecbb8b" stroke={INK} strokeWidth="2" />
+    <path d="M15 53Q16 43 27 42" fill="none" stroke="#976a53" strokeWidth="2.5" />
+  </>;
+}
+
 export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: string; s: number; style?: CSSProperties; className?: string }) {
   const id = gambar.slice(3);
   let art: ReactNode;
@@ -465,6 +493,8 @@ export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: str
   else if (id === "apel-berbunga" || id === "apel-berbuah") art = <PohonApel berbuah={id === "apel-berbuah"} />;
   else if (id === "salim-di-gerbang") art = <SalimDiGerbang />;
   else if (id === "tunas-parfum") art = <ParfumSemprot />;
+  else if (id === "tunas-papan-harga") art = <PapanHarga />;
+  else if (id === "tunas-pantulan-cermin") art = <PantulanCermin />;
   else return null;
   return <svg aria-hidden data-ilustrasi={gambar} width={s * 1.3} height={s} viewBox="0 0 130 100" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>{art}</svg>;
 }

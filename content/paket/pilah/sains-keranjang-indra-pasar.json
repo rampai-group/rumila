@@ -127,7 +127,11 @@
       "id": "papanharga",
       "labelKey": "papanharga",
       "bin": "mata",
-      "emoji": "🪧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-tunas-papan-harga",
+        "t": 0
+      }
     },
     {
       "id": "terompet",
@@ -197,7 +201,11 @@
       "id": "cermin",
       "labelKey": "cermin",
       "bin": "mata",
-      "emoji": "🪞"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-tunas-pantulan-cermin",
+        "t": 0
+      }
     },
     {
       "id": "lampu",

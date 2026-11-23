@@ -10,6 +10,7 @@ export const ILUSTRASI_AWAL_IDS = [
   "bahan-kayu", "bahan-logam", "bahan-plastik", "bahan-kaca", "jas-hujan", "jaket",
   "pot-jendela", "pot-teras", "pot-lemari", "pot-kotak", "pot-kebun", "pot-gudang", "pot-kolong",
   "bumi-siang", "bumi-malam", "bola-siang", "bola-malam",
+  "penyu-laut",
   "ikan-sungut", "ikan-siput", "hiu-goblin", "paus-sperma", "gurita-dumbo", "udang-palung", "cumi-raksasa",
   "robot-kepala", "robot-badan", "robot-tangan", "robot-kaki",
   "boneka-kepala", "boneka-badan", "boneka-tangan", "boneka-kaki",
@@ -45,6 +46,27 @@ function World({ night, torch }: { night: boolean; torch: boolean }) {
     </g>
   </>;
 }
+
+function PenyuLaut() {
+  return <g stroke="#22574f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <g fill="#4f9980">
+      <path d="M41 42Q30 26 16 25Q15 36 29 49Z" />
+      <path d="M38 58Q23 62 14 74Q25 80 43 68Z" />
+      <path d="M76 36Q84 17 106 10Q112 15 103 25L87 46Z" />
+      <path d="M38 50Q28 54 16 53Q24 61 38 61Z" />
+    </g>
+    <path d="M86 45Q97 29 111 33Q123 35 123 44Q121 50 110 51L98 56L85 53Z" fill="#7bb99b" />
+    <path d="M29 54Q39 29 66 28Q96 25 100 47Q103 64 78 73Q51 81 29 54Z" fill="#507c5a" />
+    <path d="M37 54Q49 36 69 36Q89 33 91 49Q93 61 74 67Q53 74 37 54Z" fill="#a5a765" stroke="#d9ce96" />
+    <path d="M49 43L57 51L51 64M57 51L73 47L80 35M73 47L84 58M73 67L69 56L57 51M69 56L84 58L91 49" fill="none" stroke="#5e774f" strokeWidth="2" />
+    <path d="M81 57Q91 56 96 66Q109 83 113 91Q106 96 89 84Q76 75 74 68Q73 61 81 57Z" fill="#7bb99b" />
+    <path d="M81 65Q84 76 103 86" fill="none" stroke="#4f9980" strokeWidth="2" />
+    <path d="M111 46Q116 47 120 44" fill="none" strokeWidth="1.4" />
+    <circle cx="112" cy="39" r="2.8" fill="#173a3b" stroke="none" />
+    <circle cx="112.8" cy="38.2" r=".9" fill="#fff" stroke="none" />
+  </g>;
+}
+
 const LENGAN_BONEKA = "M48 47Q42 43 36 48L28 56L24 54Q21 53 19 56Q18 59 22 61L16 64Q13 66 15 69L18 70L14 73Q13 76 16 77L20 76Q19 80 23 81Q25 82 28 77Q29 80 32 78L38 67L49 55Z";
 const TUNGKAI_BONEKA = "M48 66H62L61 76Q57 83 59 89L60 96H39V92L46 87L48 77Z";
 
@@ -97,6 +119,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   const id = gambar.replace(/^awal-/, "");
   let art: ReactNode = null;
   if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
+  else if (id === "penyu-laut") art = <PenyuLaut />;
   else if (id === "polong") art = <g stroke="#267343" strokeWidth="2.5"><path d="M14 71Q29 18 112 25Q100 78 22 81Z" fill="#43a94c" /><path d="M21 72Q45 38 105 31Q81 78 21 72Z" fill="#c7e880" />{[35,56,77,96].map((x,i) => <circle key={x} cx={x} cy={63-i*8} r="9" fill="#73bf45" />)}<path d="M110 26Q117 12 108 13" fill="none" /></g>;
   else if (id === "anggur") art = <g><path d="M64 22Q62 9 71 6" fill="none" stroke="#5e8048" strokeWidth="5" /><path d="M68 16Q92 0 96 18Q81 28 68 16" fill="#68a54f" /><ellipse cx="65" cy="57" rx="31" ry="34" fill="#9463bd" stroke="#62428f" strokeWidth="3" /><ellipse cx="52" cy="41" rx="8" ry="11" fill="#c6a1e0" /></g>;
   else if (id === "roda") art = <g><circle cx="65" cy="50" r="39" fill="#fff" stroke="#384d59" strokeWidth="8" /><circle cx="65" cy="50" r="31" fill="none" stroke="#a6bac7" strokeWidth="3" />{Array.from({length:8},(_,i) => <path key={i} d="M65 20V80" stroke="#698692" strokeWidth="2" transform={`rotate(${i*22.5} 65 50)`} />)}<circle cx="65" cy="50" r="6" fill="#fcba3c" stroke={INK} strokeWidth="2" /></g>;

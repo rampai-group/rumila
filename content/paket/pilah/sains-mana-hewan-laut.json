@@ -90,7 +90,10 @@
       "id": "penyu",
       "labelKey": "i-penyu",
       "bin": "pilihan",
-      "emoji": "🐢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-penyu-laut"
+      }
     },
     {
       "id": "gurita",

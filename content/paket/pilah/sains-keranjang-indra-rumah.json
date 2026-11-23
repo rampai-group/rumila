@@ -177,7 +177,11 @@
       "id": "cermin",
       "labelKey": "i-cermin",
       "bin": "mata",
-      "emoji": "🪞"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-tunas-pantulan-cermin",
+        "t": 0
+      }
     },
     {
       "id": "senter",
