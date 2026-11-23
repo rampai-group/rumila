@@ -1,5 +1,5 @@
 import * as T from 'three';
-import { addGarudaAircraft, beam, bench, color, kit, luggage, palm, textPlate, type Kit } from './itinerary';
+import { addGarudaAircraft, addTaxiVehicle, beam, bench, color, kit, luggage, palm, textPlate, type Kit } from './itinerary';
 import { createSeatedPassengers, StandingPeople } from './pilgrims';
 import { createCabinWorld, CABIN_SEAT } from './travel';
 import type { CameraPose, Position, Rect, UmrohWorld, WorldFrame, WorldResources } from './types';
@@ -101,9 +101,12 @@ function stanchions(k: Kit, parent: T.Object3D, x0: number, x1: number, z0: numb
 }
 
 /** Shell: polished floor, tall slatted ceiling with skylights, tree columns and glass facades. */
-function hall(k: Kit, group: T.Group, blockers: Rect[], names: Names): void {
+/** `pintu` = [x kiri, x kanan] bukaan pintu masuk di fasad depan (z = 64), untuk berjalan dari pelataran. */
+function hall(k: Kit, group: T.Group, blockers: Rect[], names: Names, pintu?: [number, number]): void {
   const { r } = k;
-  const floor = r.floor(group, 92, 190, r.mat.marble); floor.position.z = -30;
+  // Marmer sedikit lebih hangat dan gelap dari putih murni, supaya aula tidak pucat dan pantulan terbaca.
+  const lantai = k.r.keep(r.mat.marble.clone()); lantai.color.set(names.desert ? '#ece4d4' : '#d9d6cf'); lantai.roughness = .26;
+  const floor = r.floor(group, 92, 190, lantai); floor.position.z = -30;
   // Inlaid floor bands guide the eye along the passenger flow.
   for (const x of [-12, 12]) r.box(group, [.35, .01, 186], [x, .006, -30], color(k, 'floor-inlay', names.desert ? '#b79d74' : '#8d98a0', { roughness: .4 }));
   const ceiling = color(k, 'ceiling-slat', names.desert ? '#efe7da' : '#f3f1ea', { roughness: .8 });
@@ -124,10 +127,26 @@ function hall(k: Kit, group: T.Group, blockers: Rect[], names: Names): void {
     for (let z = 55; z >= -115; z -= 10) r.box(group, [.32, 3, 8], [side * 45.9, 13, z], r.mat.glass);
   }
   for (const z of [64, -124]) {
-    for (let x = -45; x <= 45; x += 3) { r.box(group, [.1, 16, .14], [x, 8, z], r.mat.metal); if (x < 45) r.box(group, [2.9, 15.8, .05], [x + 1.5, 8, z], r.mat.glass); }
+    for (let x = -45; x <= 45; x += 3) {
+      const buka = z === 64 && pintu && x + 1.5 > pintu[0] && x + 1.5 < pintu[1];
+      r.box(group, [.1, 16, .14], [x, 8, z], r.mat.metal);
+      // Bukaan pintu: kaca hanya di atas ambang pintu.
+      if (x < 45) { if (buka) r.box(group, [2.9, 12.6, .05], [x + 1.5, 9.6, z], r.mat.glass); else r.box(group, [2.9, 15.8, .05], [x + 1.5, 8, z], r.mat.glass); }
+    }
     for (const y of [3.2, 8, 12.4]) r.box(group, [92, .1, .16], [0, y, z], r.mat.metal);
   }
-  blockers.push({ minX: -46, maxX: 46, minZ: 63, maxZ: 66 }, { minX: -46, maxX: 46, minZ: -126, maxZ: -122 });
+  if (pintu) blockers.push({ minX: -46, maxX: pintu[0], minZ: 63, maxZ: 66 }, { minX: pintu[1], maxX: 46, minZ: 63, maxZ: 66 });
+  else blockers.push({ minX: -46, maxX: 46, minZ: 63, maxZ: 66 });
+  blockers.push({ minX: -46, maxX: 46, minZ: -126, maxZ: -122 });
+  // Panel batik kawung (sogan) di dinding samping aula Soekarno–Hatta: ciri Indonesia sejak pintu masuk.
+  if (!names.desert) {
+    const batik = batikPanel(k, 'batik-sogan', '#eadfca', '#7a4a2a', '#c49a3c');
+    const lis = color(k, 'batik-frame', '#5a3a22', { roughness: .6 });
+    for (const side of [-1, 1]) for (const z of [44, 12, -20, -52]) {
+      r.box(group, [.08, 6.4, 24], [side * 45.75, 4.6, z], batik);
+      for (const y of [1.36, 7.84]) r.box(group, [.12, .16, 24.2], [side * 45.7, y, z], lis);
+    }
+  }
   // Indoor gardens, a hallmark of Indonesian terminals; palms in Jeddah.
   for (const [x, z] of [[-38, 52], [38, 52], [-38, -60], [38, -60]]) {
     r.box(group, [6, .6, 6], [x, .3, z], r.mat.limestone);
@@ -135,6 +154,148 @@ function hall(k: Kit, group: T.Group, blockers: Rect[], names: Names): void {
     palm(k, group, x, z, names.desert ? 7 : 5.5);
     blockers.push({ minX: x - 3.2, maxX: x + 3.2, minZ: z - 3.2, maxZ: z + 3.2 });
   }
+}
+
+/** Motif kawung orisinal untuk panel dinding aula Soekarno–Hatta. */
+function batikPanel(k: Kit, name: string, base: string, ink: string, accent: string): T.MeshStandardMaterial {
+  const cached = k.materials.get(name); if (cached) return cached as T.MeshStandardMaterial;
+  const canvas = document.createElement('canvas'); canvas.width = canvas.height = 256;
+  const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Motif batik tidak tersedia.');
+  ctx.fillStyle = base; ctx.fillRect(0, 0, 256, 256);
+  for (let y = 0; y < 256; y += 64) for (let x = 0; x < 256; x += 64) {
+    for (let i = 0; i < 4; i++) {
+      const a = i * Math.PI / 2 + Math.PI / 4;
+      ctx.fillStyle = ink; ctx.beginPath(); ctx.ellipse(x + 32 + Math.cos(a) * 15, y + 32 + Math.sin(a) * 15, 14, 7.5, a, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = accent; ctx.beginPath(); ctx.ellipse(x + 32 + Math.cos(a) * 15, y + 32 + Math.sin(a) * 15, 6, 2.6, a, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.fillStyle = accent; ctx.beginPath(); ctx.arc(x + 32, y + 32, 3.4, 0, Math.PI * 2); ctx.fill();
+  }
+  const map = k.r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; map.wrapS = map.wrapT = T.RepeatWrapping; map.anisotropy = 4;
+  // Tanpa keepUV: batching memberi UV dari koordinat dunia, jadi motif berulang tiap 3 m di bidang mana pun.
+  const material = k.r.keep(new T.MeshStandardMaterial({ map, roughness: .8 }));
+  k.materials.set(name, material); return material;
+}
+
+/**
+ * Pelataran keberangkatan Terminal 3: trotoar, kanopi besar bertiang pohon, jalur drop-off dengan taksi,
+ * penumpang dengan troli, taman tengah, dan papan nama bandara. Titik awal perjalanan umroh.
+ * Tata letak ilustratif, bukan survei bandara sebenarnya.
+ */
+function forecourt(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[], pintu: [number, number]): void {
+  const { r } = k;
+  const paving = color(k, 'kerb-paving', '#aaa496', { roughness: .85 });
+  const nat = color(k, 'kerb-joint', '#8c877b', { roughness: .9 });
+  const kerb = color(k, 'kerb-stone', '#eeebe4', { roughness: .7 });
+  const marka = color(k, 'road-marking', '#f3f1ea', { roughness: .6 });
+  const kuning = color(k, 'road-yellow', '#e5b52c', { roughness: .6 });
+  // Trotoar keberangkatan (z 64–74), jalan drop-off dua lajur, pulau taman, jalan luar, lalu rumput.
+  r.box(group, [140, .14, 10], [0, .07, 69], paving);
+  // Nat ubin trotoar tiap 1,5 m.
+  for (let x = -69; x <= 69; x += 1.5) r.box(group, [.05, .012, 10], [x, .145, 69], nat);
+  for (let z = 64.75; z <= 73.5; z += 1.5) r.box(group, [140, .012, .05], [0, .145, z], nat);
+  r.box(group, [140, .22, .4], [0, .11, 74.2], kerb);
+  r.box(group, [260, .04, 14], [0, .02, 81.4], r.mat.asphalt);
+  for (let x = -126; x <= 126; x += 7) r.box(group, [3.2, .012, .16], [x, .045, 81.4], marka);
+  r.box(group, [260, .012, .14], [0, .045, 75], kuning);
+  // Zebra cross dari pintu ke pulau taman.
+  for (let x = pintu[0] + .4; x < pintu[1]; x += 1.2) r.box(group, [.6, .014, 13.4], [x, .046, 81.4], marka);
+  r.box(group, [260, .3, 4.4], [0, .15, 90.6], paving);
+  r.box(group, [260, .04, 13], [0, .02, 99.3], r.mat.asphalt);
+  for (let x = -126; x <= 126; x += 7) r.box(group, [3.2, .012, .16], [x, .045, 99.3], marka);
+  const rumput = color(k, 'airport-grass', '#6f9a4a', { roughness: 1 });
+  r.box(group, [700, .02, 320], [0, .005, 266], rumput);
+  r.box(group, [260, .02, 140], [-200, .004, 10], rumput); r.box(group, [260, .02, 140], [200, .004, 10], rumput);
+
+  // Kanopi putih besar di atas trotoar dan lajur drop-off, ditopang tiang bercabang seperti di dalam aula.
+  const atap = color(k, 'canopy-white', '#f6f5f1', { roughness: .55 });
+  const kisi = color(k, 'canopy-slat', '#e4e1d8', { roughness: .7 });
+  const tepi = color(k, 'canopy-edge', '#0d5f7e', { roughness: .45, metalness: .2 });
+  r.box(group, [104, .5, 23], [0, 11, 75.5], atap);
+  for (let x = -51; x <= 51; x += 1.5) r.box(group, [.14, .3, 23], [x, 10.6, 75.5], kisi);
+  r.box(group, [104, 1.1, .3], [0, 11, 87.1], tepi);
+  const tiang = color(k, 'canopy-column', '#e9ebec', { roughness: .45, metalness: .15 });
+  for (const x of [-42, -26, -10, 14, 30, 46]) {
+    r.cylinder(group, .32, .42, 8.6, [x, 4.3, 86], tiang, 18);
+    for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2 + Math.PI / 4; beam(k, group, [x, 8.4, 86], [x + Math.cos(a) * 4, 10.75, 86 + Math.sin(a) * 4], .12, tiang); }
+    blockers.push({ minX: x - .6, maxX: x + .6, minZ: 85.4, maxZ: 86.6 });
+  }
+  // Lampu bawah kanopi.
+  const lampu = color(k, 'canopy-light', '#fff8e8', { emissive: '#fff3d6', emissiveIntensity: 1.2 });
+  for (let x = -48; x <= 48; x += 8) for (const z of [68, 78]) r.box(group, [1.4, .05, .4], [x, 10.42, z], lampu);
+
+  // Papan nama: tepi kanopi, atas fasad, dan di atas pintu.
+  const nama = textPlate(k, group, 'TERMINAL 3  ·  KEBERANGKATAN', [0, 11, 87.3], 20, '#ffffff'); nama.position.y = 11.02;
+  const fasad = textPlate(k, group, 'BANDARA INTERNASIONAL SOEKARNO–HATTA', [0, 14.2, 64.4], 40, '#ffffff', '#0d5f7e'); fasad.castShadow = false;
+  wayfinding(k, group, 'PINTU 3  ·  KEBERANGKATAN', 'International departure · Garuda Indonesia', [(pintu[0] + pintu[1]) / 2, 4.6, 64.35], 7);
+  // Bingkai pintu geser kaca.
+  const bingkai = color(k, 'door-frame', '#3b4248', { metalness: .6, roughness: .35 });
+  r.box(group, [pintu[1] - pintu[0], .3, .3], [(pintu[0] + pintu[1]) / 2, 3.35, 64], bingkai);
+  for (const x of pintu) r.box(group, [.3, 3.4, .3], [x, 1.7, 64], bingkai);
+  for (const [x, w] of [[pintu[0] + .9, 1.6], [pintu[1] - .9, 1.6]] as const) r.box(group, [w, 3.1, .05], [x, 1.6, 64.2], r.mat.glass);
+
+  // Pulau taman: kamboja dan palem, lampu jalan.
+  for (let x = -60; x <= 60; x += 12) {
+    r.box(group, [3.2, .55, 2.6], [x, .4, 90.6], r.mat.limestone);
+    r.box(group, [2.9, .57, 2.3], [x, .41, 90.6], color(k, 'island-soil', '#3b4a2c'));
+    if (Math.abs(x) % 24 === 0) palm(k, group, x, 90.6, 6.5);
+    else {
+      r.cylinder(group, .12, .18, 2.2, [x, 1.5, 90.6], r.mat.wood, 8);
+      for (const [dx, dz, s] of [[0, 0, 1.4], [.7, .3, 1], [-.6, -.4, 1.1], [.2, -.7, .9]] as const)
+        r.sphere(group, [s, s * .65, s], [x + dx, 2.9 + s * .2, 90.6 + dz], color(k, 'frangipani', '#4f7a3a', { roughness: .95 }));
+      for (const [dx, dz] of [[.5, .5], [-.7, .2], [.1, -.8], [.9, -.3]] as const) r.sphere(group, [.18, .12, .18], [x + dx, 3.5, 90.6 + dz], color(k, 'frangipani-flower', '#fff4e0', { roughness: .7 }));
+    }
+  }
+  const tiangLampu = color(k, 'street-pole', '#5a6166', { metalness: .5, roughness: .4 });
+  for (let x = -54; x <= 54; x += 18) { r.cylinder(group, .08, .12, 7, [x + 6, 3.5, 90.6], tiangLampu, 10); r.box(group, [1.6, .14, .4], [x + 6.6, 7, 90.6], tiangLampu); }
+  // Barisan pohon di kejauhan, di seberang jalan luar.
+  for (let x = -120; x <= 120; x += 9) palm(k, group, x + (x % 2 ? 2 : -1), 112 + (x % 3) * 2, 6 + (x % 4));
+
+  // Kejauhan: menara pengawas (ATC) dan deretan gedung bandara, supaya ujung pandangan tidak kosong.
+  const menara = color(k, 'atc-tower', '#e4e2dc', { roughness: .6 });
+  const kabin = color(k, 'atc-cab', '#3d5866', { roughness: .15, metalness: .5 });
+  r.cylinder(group, 3.2, 5, 56, [-170, 28, 150], menara, 20);
+  r.cylinder(group, 9, 6.5, 7, [-170, 59, 150], kabin, 20);
+  r.cylinder(group, 9.6, 9.6, 1, [-170, 63, 150], menara, 20);
+  r.cylinder(group, .2, .2, 8, [-170, 67, 150], r.mat.metal, 8);
+  const gedung = color(k, 'far-building', '#cfd6d9', { roughness: .8 });
+  const gedungAtap = color(k, 'far-roof', '#9aa6ab', { roughness: .7 });
+  for (const [x, z, w, h, d] of [[-120, 170, 60, 14, 30], [-210, 120, 50, 18, 40], [-60, 200, 70, 10, 26], [130, 180, 80, 12, 30], [220, 140, 60, 16, 40]] as const) {
+    r.box(group, [w, h, d], [x, h / 2, z], gedung); r.box(group, [w + 1, .8, d + 1], [x, h + .4, z], gedungAtap);
+  }
+  // Taksi menurunkan penumpang di tepi trotoar (moncong ke -X), satu mobil hitam, dan taksi yang melaju.
+  const parkir = new T.Group(); group.add(parkir);
+  addTaxiVehicle(k.r, parkir, 'taxi', [-14, 0, 77], Math.PI / 2);
+  addTaxiVehicle(k.r, parkir, 'uber', [-26, 0, 77], Math.PI / 2);
+  addTaxiVehicle(k.r, parkir, 'taxi', [22, 0, 77], Math.PI / 2);
+  const lewat = dynamicGroup(group);
+  const melaju = addTaxiVehicle(k.r, lewat, 'taxi', [0, 0, 84.6], Math.PI / 2);
+  const melaju2 = addTaxiVehicle(k.r, lewat, 'uber', [0, 0, 98], -Math.PI / 2);
+  animators.push((frame) => {
+    if (frame.reducedMotion) return;
+    melaju.position.x = 120 - ((frame.time * 7) % 240);
+    melaju2.position.x = -120 + ((frame.time * 9 + 70) % 240);
+  });
+
+  // Penumpang di trotoar: menurunkan koper, mendorong troli, dan menuju pintu.
+  const orang: { position: Position; angle: number; female?: boolean }[] = [
+    { position: [-13.6, 0, 74.9], angle: Math.PI, female: true }, { position: [-15, 0, 74.6], angle: Math.PI },
+    { position: [-24.8, 0, 74.8], angle: 0 }, { position: [21.4, 0, 74.7], angle: Math.PI, female: true },
+    { position: [-6, 0, 70], angle: Math.PI }, { position: [9.5, 0, 69], angle: Math.PI, female: true },
+    { position: [12, 0, 71.5], angle: -Math.PI / 2 }, { position: [-9, 0, 66.5], angle: Math.PI },
+    { position: [16, 0, 66.8], angle: Math.PI / 2, female: true }, { position: [-18, 0, 69.5], angle: Math.PI / 2 },
+  ];
+  const ramai = new StandingPeople(k.r, orang); group.add(ramai.group);
+  const warnaKoper = ['#1d6a52', '#7a2f3a', '#2c4a7a', '#c9a227', '#4a4f55'];
+  orang.forEach((o, i) => { if (i % 3 !== 2) luggage(k, group, [o.position[0] + .5, 0, o.position[2] - .2], .95, color(k, 'kerb-bag-' + (i % 5), warnaKoper[i % 5], { roughness: .45 })); });
+  for (const [x, z, a] of [[-6.6, 70.9, Math.PI], [9, 70, Math.PI], [-9.6, 67.4, Math.PI], [4.5, 66.2, 0]] as const) {
+    const t = trolley(k, group, [x, 0, z], a);
+    if (x < 0) luggage(k, t, [0, .34, .05], .85, color(k, 'trolley-bag', '#2c4a7a', { roughness: .45 }));
+  }
+  // Deretan troli siap pakai di dekat pintu.
+  for (let i = 0; i < 6; i++) trolley(k, group, [pintu[1] + 2.2 + i * .45, 0, 66.2], 0);
+  blockers.push({ minX: pintu[1] + 1.8, maxX: pintu[1] + 5, minZ: 65.5, maxZ: 67 });
+  // Kendaraan parkir jadi penghalang; jalan raya di luar batas berjalan.
+  for (const x of [-14, -26, 22]) blockers.push({ minX: x - 2.4, maxX: x + 2.4, minZ: 75.9, maxZ: 78.1 });
 }
 
 function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[], names: Names, chapter: string): void {
@@ -145,6 +306,12 @@ function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[]
   // Backlit airline fascia high above the counter screens, so neither covers the other.
   const fascia = airlineFascia(k, group, [-13.05, 4.55, COUNTER_Z - 1], 26); fascia.rotation.y = Math.PI / 2;
   r.box(group, [.4, 3.4, 30], [-17.3, 1.7, 28], garuda);
+  // Dinding konter: panel kayu di bawah, garis lampu tegak di tiap konter, lis atas terang.
+  const kayu = color(k, 'counter-wood', '#9a6a3f', { roughness: .55 });
+  const garisLampu = color(k, 'counter-light-strip', '#e8f6ff', { emissive: '#cfeeff', emissiveIntensity: 1.1 });
+  r.box(group, [.06, 1.3, 30], [-17.07, .65, 28], kayu);
+  r.box(group, [.06, .08, 30], [-17.07, 3.36, 28], garisLampu);
+  for (let i = 0; i <= 6; i++) r.box(group, [.06, 2.0, .08], [-17.07, 2.3, 13.8 + i * 4.4], garisLampu);
   r.box(group, [1, .55, 29], [-15.6, .45, 28], belt);
   for (let z = 14; z <= 42; z += .9) { const roller = r.cylinder(group, .05, .05, .9, [-15.6, .74, z], r.mat.metal, 8); roller.rotation.z = Math.PI / 2; }
   blockers.push({ minX: -17.6, maxX: -12.8, minZ: 13, maxZ: 43 });
@@ -153,6 +320,10 @@ function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[]
     const z = 16 + i * 4.4;
     r.box(group, [1.1, 1.05, 2], [-13.4, .53, z], desk);
     r.box(group, [1.2, .05, 2.1], [-13.4, 1.08, z], top);
+    // Muka meja menghadap penumpang: lapis kayu dan pita biru Garuda.
+    r.box(group, [.04, .78, 1.9], [-12.83, .5, z], kayu);
+    r.box(group, [.05, .12, 1.92], [-12.82, .98, z], garuda);
+    r.box(group, [.05, .06, 1.92], [-12.82, .08, z], color(k, 'counter-plinth', '#2b2f33', { roughness: .6 }));
     r.box(group, [.05, .32, .5], [-13.9, 1.3, z - .3], r.mat.black);
     // Counter screen: flight, destination and counter number.
     const plate = counterScreen(k, group, i + 3, [-13.1, 2.7, z], names.rute); plate.rotation.y = Math.PI / 2;
@@ -180,11 +351,18 @@ function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[]
   for (const t of travellers.slice(0, 7)) luggage(k, group, [t.position[0] + .35, 0, t.position[2] + .3], .9, i2c(k, t.position[2]));
   const people = new StandingPeople(r, [...agents, ...travellers]); group.add(people.group);
   // Self check-in kiosks near the entrance.
+  const kioskBody = color(k, 'kiosk-body', '#2f3a44', { roughness: .4, metalness: .3 });
+  const kioskBand = color(k, 'kiosk-band', '#0d5f7e', { roughness: .45 });
   for (let x = -6; x <= 6; x += 2.4) {
-    r.box(group, [.7, 1.5, .5], [x, .75, 48], desk);
-    r.box(group, [.55, .4, .03], [x, 1.32, 47.73], color(k, 'kiosk-screen', '#1a3a52', { emissive: '#2a6d94', emissiveIntensity: .7 }));
+    r.box(group, [.62, .08, .5], [x, .04, 48], kioskBody);
+    r.box(group, [.5, 1.1, .36], [x, .62, 48], kioskBody);
+    r.box(group, [.52, .12, .38], [x, 1.06, 48], kioskBand);
+    const layar = r.box(group, [.6, .44, .08], [x, 1.42, 47.96], kioskBody); layar.rotation.x = -.35;
+    const kaca = r.box(group, [.5, .34, .01], [x, 1.43, 47.9], color(k, 'kiosk-screen', '#1a3a52', { emissive: '#3a8fc4', emissiveIntensity: .9 })); kaca.rotation.x = -.35;
+    r.box(group, [.6, .44, .02], [x, 1.98, 48.12], kioskBand);
     blockers.push({ minX: x - .45, maxX: x + .45, minZ: 47.6, maxZ: 48.4 });
   }
+  textPlate(k, group, 'CHECK-IN MANDIRI', [0, 2.45, 48.2], 4.2, '#ffffff', '#0d5f7e');
   wayfinding(k, group, 'KEBERANGKATAN INTERNASIONAL', 'International departure · Check-in', [0, 6.2, 44], 12);
   wayfinding(k, group, 'Pemeriksaan awal  ·  Pintu masuk', 'Semua tas melewati mesin X-ray', [24, 3.4, 58], 6);
   // Entrance screening lane just inside the doors.
@@ -581,8 +759,11 @@ export function createTerminalWorld(r: WorldResources, airport: 'cgk' | 'jed', m
   const k = kit(r), group = new T.Group(), blockers: Rect[] = [], animators: Animator[] = [];
   const names = NAMES[airport], departure = mode === 'departure';
   group.name = `Bandara ${names.title} — ${departure ? 'keberangkatan' : 'kedatangan'}`;
-  hall(k, group, blockers, names);
-  r.sign(group, `${names.title} · ${names.code}`, departure ? `${names.subtitle} · Keberangkatan internasional` : `${names.subtitle} · Kedatangan internasional`, [0, 9.5, 62], 22);
+  const pintu: [number, number] | undefined = departure && airport === 'cgk' ? [-3, 7] : undefined;
+  hall(k, group, blockers, names, pintu);
+  if (pintu) forecourt(k, group, blockers, animators, pintu);
+  // Soekarno–Hatta sudah punya papan nama di fasad luar; papan dalam hanya untuk bandara lain.
+  if (!pintu) r.sign(group, `${names.title} · ${names.code}`, departure ? `${names.subtitle} · Keberangkatan internasional` : `${names.subtitle} · Kedatangan internasional`, [0, 9.5, 62], 22);
   const lobbyChapter = airport === 'cgk' ? 'cgk' : 'jeddah_pulang';
   if (departure) {
     checkIn(k, group, blockers, animators, names, lobbyChapter);
@@ -599,7 +780,10 @@ export function createTerminalWorld(r: WorldResources, airport: 'cgk' | 'jed', m
     } else wayfinding(k, group, 'PENJEMPUTAN · TAKSI  →', 'Lanjutkan perjalanan pulang', [30, 4.2, 56], 9, Math.PI);
   }
   const counter: CameraPose = { position: [-8.6, 1.68, COUNTER_Z - 1.2], lookAt: [-13.3, 1.0, COUNTER_Z + .3] };
+  // Berdiri di trotoar, memandang sepanjang kanopi: fasad kaca di kanan, taksi di kiri, langit di ujung.
+  const kerb: CameraPose = { position: [11, 1.68, 72.8], lookAt: [-20, 3.4, 70.2] };
   const stations: Partial<Record<string, CameraPose>> = departure ? {
+    ...(pintu ? { cgk_tiba: kerb } : {}),
     cgk: counter, jeddah_pulang: counter,
     cgk_imigrasi: { position: [3.15, 1.68, -2.6], lookAt: [3.25, 1.25, -7] },
     cgk_keamanan: { position: [-6.4, 1.68, -22.4], lookAt: [-8.2, 1.0, -29] },
@@ -609,9 +793,13 @@ export function createTerminalWorld(r: WorldResources, airport: 'cgk' | 'jed', m
     cgk_pulang: { position: [6.5, 1.68, 19], lookAt: [12, .8, 28] },
   };
   return {
-    group, stations, spawn: departure ? [2, 1.68, 56] : [2, 1.68, 40], lookAt: departure ? [-6, 2.4, 30] : [0, 2.4, 20], overview: [36, 14, 60], indoor: true,
-    bounds: { minX: -44.5, maxX: 44.5, minZ: departure ? -110 : -110, maxZ: 61 }, blockers,
+    group, stations, spawn: departure ? [2, 1.68, 56] : [2, 1.68, 40], lookAt: departure ? [-6, 2.4, 30] : [0, 2.4, 20], overview: [36, 14, 60], indoor: true, ambient: pintu ? 1.12 : undefined,
+    bounds: { minX: -44.5, maxX: 44.5, minZ: departure ? -110 : -110, maxZ: pintu ? 73.6 : 61 }, blockers,
     landmarks: departure ? [
+      ...(pintu ? [
+        { id: 'airport-kerb', label: 'Depan Terminal 3', position: kerb.position, lookAt: kerb.lookAt },
+        { id: 'airport-doors', label: 'Pintu keberangkatan', position: [2, 1.68, 67.5] as Position, lookAt: [-2, 2.2, 40] as Position },
+      ] : []),
       { id: 'airport-hall', label: 'Pintu masuk terminal', position: [2, 1.68, 56], lookAt: [-6, 2.4, 30] },
       { id: 'airport-checkin', label: 'Konter check-in Garuda', position: counter.position, lookAt: counter.lookAt },
       { id: 'airport-immigration', label: 'Imigrasi dan autogate', position: [3.15, 1.68, -1.2], lookAt: [3.25, 1.25, -7] },

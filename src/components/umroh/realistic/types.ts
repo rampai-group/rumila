@@ -39,6 +39,8 @@ export interface UmrohWorld {
   /** Posisi & arah hadap jamaah utama (mis. di teras rumah menghadap kamera), bila dunia menentukannya. */
   guide?: { position: Position; heading: number };
   indoor?: boolean;
+  /** Kekuatan cahaya langit (hemisphere) khusus dunia ini; kosong = bawaan indoor/outdoor. */
+  ambient?: number;
   /** Static vehicle interior with scenery translated by journey progress. */
   motion?: { group: T.Group; axis: 'x' | 'z'; distance: number; loop?: boolean };
   /** Complete aircraft used only by exterior flight cameras. */

@@ -14,11 +14,6 @@ export interface AksiLangkah {
 }
 
 export const AKSI_LANGKAH: Partial<Record<JourneyChapterId, readonly AksiLangkah[]>> = {
-  rumah: [
-    { aksi: "Cek paspor", ikon: "badge", suara: "pick" },
-    { aksi: "Periksa koper", ikon: "luggage", suara: "clunk" },
-    { aksi: "Pamit & berdoa", ikon: "volunteer_activism", suara: "sparkle" },
-  ],
   cgk: [
     { aksi: "Antre ke konter", ikon: "groups", suara: "pick" },
     { aksi: "Serahkan paspor", ikon: "badge", suara: "pick" },

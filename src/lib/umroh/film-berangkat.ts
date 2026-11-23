@@ -23,14 +23,8 @@ export interface AdeganFilm {
 const satu = (isi: string) => [{ pada: 0, isi }];
 
 export const FILM_BERANGKAT: readonly AdeganFilm[] = [
-  { bab: "rumah", detik: 6, langkah: 0, landmark: "home-porch", gerak: "maju", teks: satu("Perjalanan umroh kita dimulai dari rumah, di Indonesia.") },
-  { bab: "rumah", detik: 6, langkah: 1, landmark: "home-luggage", gerak: "geser", teks: satu("Paspor dan dokumen perjalanan diperiksa bersama keluarga.") },
-  { bab: "rumah", detik: 5, langkah: 2, landmark: "home-luggage", gerak: "maju", teks: satu("Koper sudah siap. Pamit dan berdoa sebelum berangkat.") },
-  { bab: "rumah", detik: 5, langkah: 3, landmark: "home-taxi", gerak: "naik", teks: satu("Taksi sudah datang. Saatnya berangkat ke bandara!") },
-  { bab: "taxi_cgk", detik: 14, perjalanan: true, teks: [
-    { pada: 0, isi: "Taksi melaju menuju Bandara Soekarno–Hatta." },
-    { pada: 0.5, isi: "Dokumen disimpan di tas kecil supaya mudah diambil." },
-  ] },
+  { bab: "cgk_tiba", detik: 8, landmark: "airport-kerb", gerak: "naik", teks: satu("Perjalanan umroh kita dimulai di Bandara Soekarno–Hatta, Terminal 3.") },
+  { bab: "cgk_tiba", detik: 8, landmark: "airport-doors", gerak: "maju", teks: satu("Ambil troli, lalu masuk lewat pintu keberangkatan internasional.") },
   { bab: "cgk", detik: 6, langkah: 1, gerak: "maju", teks: satu("Di terminal keberangkatan, kita antre di konter check-in.") },
   { bab: "cgk", detik: 6, langkah: 2, gerak: "geser", teks: satu("Paspor diserahkan kepada petugas maskapai.") },
   { bab: "cgk", detik: 6, langkah: 3, gerak: "maju", teks: satu("Koper ditimbang, diberi label JED, lalu masuk sabuk bagasi.") },
@@ -134,7 +128,7 @@ export function teksAdegan(a: AdeganFilm, dalam: number): string {
 
 /** Penanda tahap di garis waktu: awal tiap bab, dengan nama singkat. */
 export const PENANDA_FILM: Partial<Record<JourneyChapterId, string>> = {
-  rumah: "Rumah", taxi_cgk: "Taksi", cgk: "Check-in", cgk_imigrasi: "Imigrasi", cgk_keamanan: "Keamanan",
+  cgk_tiba: "Terminal 3", cgk: "Check-in", cgk_imigrasi: "Imigrasi", cgk_keamanan: "Keamanan",
   cgk_gate: "Gerbang", cgk_boarding: "Boarding", garuda_jed: "Terbang", jeddah: "Jeddah",
   makkah_jed: "Bus", jeddah_pulang: "Bandara JED", garuda_cgk: "Terbang", cgk_pulang: "Tiba CGK", taxi_rumah: "Taksi", rumah_selesai: "Rumah",
 };

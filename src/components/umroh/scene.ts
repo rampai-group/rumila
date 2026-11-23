@@ -104,7 +104,7 @@ export class UmrohScene {
   private guide: Pilgrims;
   private avatar = new T.Vector3();
   private heading = Math.PI;
-  private state: UmrohSceneState = { chapter: 'rumah', stage: 'persiapan', route: 'madinah', pilgrim: 'putra', progress: 0, running: false, view: 'walk', timeOfDay: 'day', visit: null };
+  private state: UmrohSceneState = { chapter: 'cgk', stage: 'persiapan', route: 'madinah', pilgrim: 'putra', progress: 0, running: false, view: 'walk', timeOfDay: 'day', visit: null };
   private frame = 0;
   private lastTime = 0;
   private crowdTime = 0;
@@ -245,7 +245,7 @@ export class UmrohScene {
     this.sky.material.uniforms.turbidity.value = sunset ? 5 : 1.5;
     this.sun.color.set(sunset ? '#ffd2a2' : '#fff2dc'); this.sun.intensity = sunset ? 1.8 : 2.8;
     this.sun.position.copy(direction).multiplyScalar(170);
-    this.hemisphere.intensity = this.world?.indoor ? (aloft ? 1.05 : 1.45) : flying ? 1.2 : sunset ? .55 : .7;
+    this.hemisphere.intensity = this.world?.ambient ?? (this.world?.indoor ? (aloft ? 1.05 : 1.45) : flying ? 1.2 : sunset ? .55 : .7);
     this.hemisphere.color.set(sunset ? '#d7c8c1' : '#dbe7ef');
     this.renderer.toneMappingExposure = aloft ? (sunset ? .62 : .68) : flying ? .95 : sunset ? .66 : .7;
     this.scene.fog = new T.Fog(sunset ? '#d6bba0' : aloft ? '#d4e1e8' : '#c6d2d4', aloft ? 1500 : 170, aloft ? 45000 : 1100);
@@ -267,7 +267,7 @@ export class UmrohScene {
     if (state.visit === 'nabawi') return 'nabawi';
     if (isFlightChapter(state.chapter) && getFlightPov(state.travelProgress ?? 0, state.flightCamera, this.reducedMotion) === 'exterior') return state.chapter === 'garuda_jed' ? 'flight-jed' : 'flight-cgk';
     const chapters: Partial<Record<JourneyChapterId, WorldKey>> = {
-      rumah: 'home', taxi_cgk: 'taxi-cgk', cgk: 'cgk', cgk_imigrasi: 'cgk', cgk_keamanan: 'cgk', cgk_gate: 'cgk', cgk_boarding: 'boarding', garuda_jed: 'garuda-jed', jeddah: 'jed', haramain: 'haramain',
+      cgk_tiba: 'cgk', cgk: 'cgk', cgk_imigrasi: 'cgk', cgk_keamanan: 'cgk', cgk_gate: 'cgk', cgk_boarding: 'boarding', garuda_jed: 'garuda-jed', jeddah: 'jed', haramain: 'haramain',
       madinah_station: 'madinah-station', uber_nabawi: 'uber', nabawi: 'nabawi', rawdah: 'rawdah', salam: 'salam',
       makkah_jed: 'jeddah-bus', jeddah_pulang: 'jed-return', garuda_cgk: 'garuda-cgk', cgk_pulang: 'cgk-return', taxi_rumah: 'taxi-home', rumah_selesai: 'home',
     };
