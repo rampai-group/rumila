@@ -78,10 +78,11 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level) : undefined;
 
   return (
-    // HP: satu kolom. Tablet mendatar/desktop (lg): kiri = jenjang, tombol misi, tautan (menempel saat gulir); kanan = peta.
-    <div className="grid gap-4 lg:grid-cols-[minmax(340px,420px)_minmax(0,1fr)] lg:items-start lg:gap-6">
-    <div className="flex flex-col gap-4 lg:sticky lg:top-4">
+    // Satu kolom penuh di semua layar: kartu pangkat dan semester sejajar satu garis. Layar lebar (md): pangkat | misi berdampingan.
+    <div className="flex flex-col gap-4">
+    <div className="grid gap-4 md:grid-cols-2 md:items-stretch">
       <KartuJenjang peta={peta} streak={streak} onHadiah={onHadiah} />
+      <div className="flex flex-col justify-center gap-4">
 
       {peta.ujian && !peta.sekarang && <KartuUjian u={peta.ujian} bahasa={bahasa} />}
 
@@ -102,15 +103,16 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
             </span>
             <span className="mt-1 flex items-center gap-1.5 text-[15px] font-extrabold opacity-90">
               <Icon name={TRACK_IKON[target.kompetensi.track]} size={18} />
-              <span className="truncate">{target.kompetensi.unit.nama[bahasa] ?? target.kompetensi.unit.nama.id}</span>
+              <span className="line-clamp-2">{target.kompetensi.unit.nama[bahasa] ?? target.kompetensi.unit.nama.id}</span>
             </span>
           </span>
           <Icon name="arrow_forward" size={30} />
         </Link>
       )}
 
-      <div className="hidden flex-col gap-2 lg:flex">
+      <div className="hidden flex-col gap-2 md:flex">
         <TautanBawah />
+      </div>
       </div>
     </div>
 
@@ -129,7 +131,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
         <KartuPraktikKampus events={events} level={level} kunci={{ selesai: peta.selesai, total: peta.total }} />
       </div>
 
-      <div className="flex flex-col gap-2 lg:hidden">
+      <div className="flex flex-col gap-2 md:hidden">
         <TautanBawah />
       </div>
 
