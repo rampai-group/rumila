@@ -23,6 +23,10 @@ export const sudahMulaiPelajaran = (memberId: string) => eventsAnak(memberId).so
 
 const sedang = new Map<string, Promise<LevelId | null>>();
 
+/** "sudah" = anak punya jenjang di server (dipilih wali, hasil tes, atau sudah belajar); "perlu" = belum ditempatkan. */
+export type StatusPenempatan = "sudah" | "perlu";
+const statusPenempatan = new Map<string, StatusPenempatan>();
+
 /** Samakan jenjang lokal dengan server. Mengembalikan jenjang server, atau null bila offline / anggota demo. */
 export function sinkronSiswa(memberId: string): Promise<LevelId | null> {
   if (!terhubung(memberId)) return Promise.resolve(null);
@@ -33,12 +37,19 @@ export function sinkronSiswa(memberId: string): Promise<LevelId | null> {
       const { data, error } = await supabase().from("akademi_siswa").select("level").eq("member_id", memberId).maybeSingle();
       if (error) throw error;
       if (data) {
+        statusPenempatan.set(memberId, "sudah");
         const lv = data.level as LevelId;
         if (levelAnak(memberId) !== lv) setLevelAnak(memberId, lv);
         return lv;
       }
+      // Belum punya jenjang dan belum pernah belajar: tunggu Tes Penempatan, jangan didaftarkan otomatis di jenjang terendah.
+      if (!sudahMulaiPelajaran(memberId)) {
+        statusPenempatan.set(memberId, "perlu");
+        return null;
+      }
       const r = await supabase().rpc("akademi_atur_jenjang_awal", { p_member: memberId, p_level: levelAnak(memberId) });
       if (r.error) throw r.error;
+      statusPenempatan.set(memberId, "sudah");
       return (r.data?.level as LevelId) ?? null;
     } catch (e) {
       console.error("[akademi] sinkron status siswa gagal", e);
@@ -49,6 +60,13 @@ export function sinkronSiswa(memberId: string): Promise<LevelId | null> {
   })();
   sedang.set(memberId, p);
   return p;
+}
+
+/** Status penempatan dari server; null = belum bisa dipastikan (offline / anggota demo). */
+export async function cekPenempatan(memberId: string): Promise<StatusPenempatan | null> {
+  if (!terhubung(memberId)) return null;
+  await sinkronSiswa(memberId);
+  return statusPenempatan.get(memberId) ?? null;
 }
 
 export type HasilAturJenjang = { ok: true } | { ok: false; alasan: "terkunci" | "galat" };
@@ -63,5 +81,6 @@ export async function aturJenjangAwal(memberId: string, level: LevelId): Promise
   const { data, error } = await supabase().rpc("akademi_atur_jenjang_awal", { p_member: memberId, p_level: level });
   if (error) return { ok: false, alasan: /jenjang_terkunci/.test(error.message) ? "terkunci" : "galat" };
   setLevelAnak(memberId, (data?.level as LevelId) ?? level);
+  statusPenempatan.set(memberId, "sudah");
   return { ok: true };
 }

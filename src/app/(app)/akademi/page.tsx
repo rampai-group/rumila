@@ -11,19 +11,16 @@ import { Koleksi } from "@/components/akademi/portal/koleksi";
 import { PetaPetualangan } from "@/components/akademi/portal/peta";
 import { levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import Link from "next/link";
-import { sinkronSiswa, sudahMulaiPelajaran } from "@/lib/akademi/siswa";
-import { useUjian } from "@/lib/akademi/ujian-klien";
+import { usePerluPenempatan } from "@/lib/akademi/penempatan-klien";
+import { sinkronSiswa } from "@/lib/akademi/siswa";
 import { useMe } from "@/lib/store";
 
 export default function AkademiPage() {
   const me = useMe();
   const versi = useProfilAkademiVersi();
   const [hadiah, setHadiah] = useState(false);
-  const ujian = useUjian(me.id);
-  // Tes yang belum selesai atau belum menetapkan jenjang masih bisa dibuka dari peta.
-  const [baru, setBaru] = useState(false);
-  useEffect(() => setBaru(!sudahMulaiPelajaran(me.id)), [me.id]);
-  const perluPenempatan = baru && !ujian.some((h) => h.jenis === "penempatan" && !h.pending && (h.lulus || h.level === "PAUD"));
+  // Anak yang belum ditempatkan: tes dibuka otomatis sekali; kartunya tetap ada sampai jenjang tercatat.
+  const perluPenempatan = usePerluPenempatan(me, { buka: true });
   const [level, setLevel] = useState<LevelId>("PAUD");
   useEffect(() => setLevel(levelAnak(me.id)), [me.id, versi]);
   // Jenjang aktif dipegang server (akademi_siswa); jenjang lokal disamakan setiap portal dibuka.
