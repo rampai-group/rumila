@@ -340,6 +340,41 @@ function DalamRumah() {
   </>;
 }
 
+const JATUH_DI_ALAM: Record<string, { jenis: "kelapa" | "daun"; jatuh: boolean }> = {
+  "kelapa-di-pohon": { jenis: "kelapa", jatuh: false },
+  "kelapa-di-tanah": { jenis: "kelapa", jatuh: true },
+  "daun-di-pohon": { jenis: "daun", jatuh: false },
+  "daun-di-tanah": { jenis: "daun", jatuh: true },
+};
+
+function JatuhDiAlam({ jenis, jatuh }: (typeof JATUH_DI_ALAM)[string]) {
+  const kelapa = jenis === "kelapa";
+  const posisi = kelapa ? (jatuh ? "88 76" : "80 46") : (jatuh ? "83 82" : "83 33");
+  return <>
+    <rect x="3" y="3" width="124" height="94" rx="11" fill="#e9f6fa" />
+    <path d="M4 89H126V92Q126 97 121 97H9Q4 97 4 92Z" fill="#a3c97a" />
+    {kelapa ? <>
+      <path d="M38 89C48 69 52 48 55 27L66 28C63 51 59 73 52 89Z" fill="#c89561" stroke="#8c613f" strokeWidth="2.4" />
+      <path d="M46 70L57 73M50 57L61 60M53 45L64 48" fill="none" stroke="#9c6c4a" strokeWidth="2.2" />
+      <path d="M60 29Q37 9 15 29Q39 23 57 35Q34 31 23 48Q43 39 63 35Q84 34 111 47Q95 29 69 30Q91 20 112 25Q89 10 65 26Q67 15 80 8Q64 6 59 25Q48 11 36 9Q47 24 60 29Z" fill="#65964d" stroke="#48713d" strokeWidth="2.4" />
+      {!jatuh && <path d="M64 31Q75 27 80 33" fill="none" stroke="#82713d" strokeWidth="3.2" />}
+    </> : <>
+      <path d="M10 40Q6 29 18 23Q18 12 31 13Q40 6 51 19Q66 18 68 31Q74 40 64 49Q58 58 47 52Q39 60 30 53Q15 55 10 40Z" fill="#acd296" stroke="#80ab6e" strokeWidth="2" />
+      <path d="M27 89Q32 72 30 53L22 37L28 34L38 50Q42 46 48 43L63 37L65 41Q50 50 41 63L42 89Z" fill="#ba8e66" stroke="#88684f" strokeWidth="2.4" />
+    </>}
+    {jatuh && <ellipse cx={kelapa ? 88 : 83} cy="91" rx={kelapa ? 15 : 20} ry="2.6" fill="#779b5f" />}
+    <g transform={`translate(${posisi})`}>
+      {kelapa ? <>
+        <path d="M-12-2C-12-10-5-13 0-13C7-14 13-8 14 0C15 8 8 14 0 14C-8 14-14 8-12-2Z" fill="#d7a453" stroke="#805530" strokeWidth="2.6" />
+        <path d="M-3-10C-10-4-9 4-5 10M4-8C9-3 10 4 6 9" fill="none" stroke="#ae7841" strokeWidth="1.8" />
+      </> : <>
+        <path d="M-11 3Q-10-12 17-8Q11 11-3 8Q-8 7-11 3Z" fill="#53a552" stroke="#326b43" strokeWidth="2.6" />
+        <path d="M-19 7Q-5 1 10-5M-6 2L-4-3M1 0L5 3" fill="none" stroke="#326b43" strokeWidth="2" />
+      </>}
+    </g>
+  </>;
+}
+
 export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: string; s: number; style?: CSSProperties; className?: string }) {
   const id = gambar.slice(3);
   let art: ReactNode;
@@ -357,6 +392,7 @@ export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: str
   else if (id === "mars") art = <Mars />;
   else if (id.startsWith("kue-")) art = <KuePesta id={id.slice(4)} />;
   else if (id === "dalam-rumah") art = <DalamRumah />;
+  else if (JATUH_DI_ALAM[id]) art = <JatuhDiAlam {...JATUH_DI_ALAM[id]} />;
   else return null;
   return <svg aria-hidden data-ilustrasi={gambar} width={s * 1.3} height={s} viewBox="0 0 130 100" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>{art}</svg>;
 }

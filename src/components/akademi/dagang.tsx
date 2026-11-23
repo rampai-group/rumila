@@ -11,7 +11,7 @@ import { TombolBantu } from "./bantu";
 import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
-import { formatRibuan, kalimatDagang as kd, kerjaSisa, type Ucapan } from "@/lib/akademi/kalimat-suara";
+import { formatRibuan, kalimatDagang as kd, kerjaSisa, tanyaHitung, type Ucapan } from "@/lib/akademi/kalimat-suara";
 import { ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
 import { useMe } from "@/lib/store";
 
@@ -638,7 +638,7 @@ function ModeSubitasi(c: Ctx) {
 /* ---------------- hitung ---------------- */
 
 function ModeHitung(c: Ctx) {
-  const { ronde, onJawab, hasil, terkunci, nama, visual, wajah } = c;
+  const { ronde, onJawab, hasil, terkunci, nama, visual, wajah, bahasa } = c;
   const [urutan, setUrutan] = useState<Record<number, number>>({});
   const sentuhan = useRef<string[]>([]);
   const [dipilih, setDipilih] = useState<number | null>(null);
@@ -647,7 +647,8 @@ function ModeHitung(c: Ctx) {
   const n = ronde.benda.length;
   const terhitung = Object.keys(urutan).length;
   const id0 = ronde.benda[0] ?? "";
-  const teks = kd.hitung(nama(id0));
+  const tempat = c.paket.locale[bahasa]?.["tempat-hitung"];
+  const teks = kd.hitung(nama(id0), tempat, bahasa);
 
   const sentuh = (i: number) => {
     if (terkunci || sentuhan.current.includes(String(i))) return;
@@ -666,7 +667,7 @@ function ModeHitung(c: Ctx) {
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
-      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex items-center gap-2"><Benda v={visual(id0)} size={Math.round(34 * sk)} /><span style={{ ...Tebal, fontSize: 18 * sk }}>Ada berapa {nama(id0)}?</span></div>} jawabanBenar={`${ronde.target} ${nama(id0)}`} />
+      <Pembeli wajah={wajah} teksUcap={teks} bahasa={bahasa} hasil={hasil} balon={<div className="flex items-center gap-2"><Benda v={visual(id0)} size={Math.round(34 * sk)} /><span style={{ ...Tebal, fontSize: 18 * sk }}>{tanyaHitung(nama(id0), tempat, bahasa)}</span></div>} jawabanBenar={`${ronde.target} ${nama(id0)}`} />
       <Lapak>
         <div className="grid w-full flex-1 content-center justify-items-center gap-2 py-2" style={{ gridTemplateColumns: `repeat(${kolom}, minmax(0, 1fr))` }} role="group" aria-label="Benda untuk dihitung">
           {ronde.benda.map((gid, i) => {

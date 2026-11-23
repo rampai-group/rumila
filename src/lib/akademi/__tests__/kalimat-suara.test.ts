@@ -9,7 +9,7 @@ import { buatRonde, type Knobs } from "@akademi/mechanics";
 import { rincianHarga } from "@/components/akademi/dagang";
 import {
   ANGKA_KATA, KATA_URUTAN, RATUSAN_KATA, angkaKata, bilanganPotongan, kalimatDagang, kalimatPaket, kalimatSimulasi, kalimatUjian,
-  kalimatUmum, kalimatUrutkan, kerjaSisa, type Ucapan,
+  kalimatUmum, kalimatUrutkan, kerjaSisa, tanyaHitung, type Ucapan,
 } from "@/lib/akademi/kalimat-suara";
 
 const KOIN = 1000;
@@ -103,6 +103,28 @@ describe("pembangun kalimat stabil (teks sama dengan yang sudah tampil/terekam)"
 describe("semua kalimat ronde masuk daftar rekaman", () => {
   const SEED = 40;
 
+  it.each(["anakayam", "bebek", "kelinci"])("pertanyaan dan ucapan %s tetap di kandang untuk kedua bahasa", (id) => {
+    const p = paket.find((x) => x.id === "hitung-anak-ayam-kandang");
+    if (!p || p.mechanic !== "dagang") throw new Error("paket kandang tidak ditemukan");
+    const g = p.goods.find((x) => x.id === id)!;
+    for (const bahasa of ["id", "en"] as const) {
+      const nama = p.locale[bahasa][g.labelKey];
+      const tempat = p.locale[bahasa]["tempat-hitung"];
+      expect(tempat).toBe(bahasa === "id" ? "di kandang" : "in the coop");
+      const tanya = tanyaHitung(nama, tempat, bahasa);
+      const ucapan = kalimatDagang.hitung(nama, tempat, bahasa);
+      expect(tanya).toContain(`${nama} ${tempat}`);
+      expect(ucapan).toContain(tanya);
+      expect(ucapan).not.toMatch(/meja|table/);
+      expect(ucapan).toContain(bahasa === "id" ? "pilih angkanya" : "choose the number");
+      if (bahasa === "id") expect(kalimatPaket(p).map((k) => k.teks)).toContain(ucapan);
+    }
+  });
+
+  it("paket hitung tanpa tempat khusus mempertahankan rekaman lama", () => {
+    expect(kalimatDagang.hitung("apel")).toBe("Ada berapa apel di meja? Sentuh satu-satu, lalu pilih angkanya.");
+  });
+
   it("merekam label pilihan yang dapat didengarkan, termasuk altKey", () => {
     const p = structuredClone(paket.find((x) => x.id === "sains-pot-mana-yang-layu"));
     if (!p || p.mechanic !== "pilah" || p.mode !== "pilih") throw new Error("paket pot tidak ditemukan");
@@ -165,7 +187,7 @@ describe("semua kalimat ronde masuk daftar rekaman", () => {
         switch (o.mode) {
           case "ambil": harusTerekam(rekam, kalimatDagang.pesanan(o.pesanan.map((x) => ({ qty: x.qty, nama: nama(x.goodId) }))), ctx); break;
           case "subitasi": harusTerekam(rekam, kalimatDagang.subitasi(nama(o.pesanan[0]?.goodId ?? id0)), ctx); break;
-          case "hitung": harusTerekam(rekam, kalimatDagang.hitung(nama(o.benda[0] ?? "")), ctx); break;
+          case "hitung": harusTerekam(rekam, kalimatDagang.hitung(nama(o.benda[0] ?? ""), pd.locale.id["tempat-hitung"]), ctx); break;
           case "bayar": {
             const rin = rincianHarga(pd, o);
             harusTerekam(rekam, rin ? kalimatDagang.bayarRincian(rin, nama) : o.priceLabel === "koin" ? kalimatDagang.hargaKoin(Math.round(o.harga / KOIN)) : kalimatDagang.hargaRupiah(o.harga), ctx);

@@ -102,10 +102,12 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const binRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const terkirim = useRef(false);
   const kunci = !!hasil;
-  const { tema, skala: sk, w } = usePanggung();
+  const { tema, skala: sk, w, h } = usePanggung();
   const lebarArea = Math.min(w || 390, 920) - 4;
   const hp = lebarArea < 600;
   const piktogram = paket.layoutBin === "piktogram";
+  const kartuTitik = bins.length > 0 && bins.every((b) => b.emoji && MUKA_DADU.includes(b.emoji));
+  const titikLega = kartuTitik && lebarArea >= 620 && h >= 680;
 
   // reset saat ronde berganti
   useEffect(() => {
@@ -211,20 +213,26 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const n = bins.length;
   // HP dengan ≥ 4 wadah, atau 3 wadah bernama panjang ("mamalia (berambut, menyusui)"): wadah disusun per baris
   // (label kiri, isi kanan) — kolom selebar ±100 px membuat nama & ciri terlipat per kata.
-  const baris = !piktogram && hp && (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
-  const jarakBin = (piktogram ? 8 : baris ? 10 : 12) * sk;
-  const kapasitasKolom = Math.max(1, Math.floor((lebarArea + jarakBin) / Math.min(148, 114 * sk + jarakBin)));
+  const baris = !piktogram && !kartuTitik && hp && (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
+  const titikRapat = kartuTitik && hp;
+  const jarakBin = (piktogram || titikRapat ? 8 : baris ? 10 : 12) * sk;
+  const lebarMinBin = titikRapat ? 84 + jarakBin : Math.min(148, 114 * sk + jarakBin);
+  const kapasitasKolom = Math.max(1, Math.floor((lebarArea + jarakBin) / lebarMinBin));
   const kolomBin = piktogram ? n : baris ? 1 : Math.ceil(n / Math.ceil(n / kapasitasKolom));
   const lebarBin = (lebarArea - jarakBin * (kolomBin - 1)) / kolomBin;
   const lebarIsi = Math.max(28, (baris ? lebarBin * 0.56 : lebarBin) - (piktogram ? 20 : 36) * sk);
-  const ukuranIkonBin = Math.min((hp ? 42 : 52) * sk, lebarBin - (piktogram ? 16 : 24) * sk);
+  const ukuranIkonBin = Math.min((titikLega ? 64 : hp ? 42 : 52) * sk, lebarBin - (piktogram ? 16 : 24) * sk);
   const itemSeret = seret?.aktif ? items.find((i) => i.id === seret.id) : undefined;
   // kartu bergambar berlabel panjang (deskripsi) dibuat lebih lebar supaya teksnya tidak terlipat terlalu banyak
-  const lebarMinKartu = Math.round((items.some((i) => visualBergambar(i) && t(i.labelKey).length > 18) ? 132 : hp ? 92 : 112) * sk);
-  const maksKolomKartu = Math.min(items.length, Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8))));
-  const kolomKartu = items.length === 4 && maksKolomKartu === 3 ? 2 : maksKolomKartu;
+  const labelPanjang = items.some((i) => visualBergambar(i) && t(i.labelKey).length > 18);
+  const lebarMinKartu = Math.round((labelPanjang ? 132 : titikRapat ? 78 : hp ? 92 : 112) * sk);
+  const kolomMuat = Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8)));
+  const maksKolomKartu = Math.min(items.length, titikLega ? Math.min(4, kolomMuat) : kolomMuat);
+  const kolomKartu = kartuTitik
+    ? Math.ceil(items.length / Math.ceil(items.length / maksKolomKartu))
+    : items.length === 4 && maksKolomKartu === 3 ? 2 : maksKolomKartu;
   const lebarKartu = (lebarArea - 8 * (kolomKartu - 1)) / kolomKartu;
-  const gambarKartu = Math.round((hp ? 56 : 80) * Math.min(sk, 1.2));
+  const gambarKartu = Math.round((titikLega ? 112 : hp ? 56 : 80) * Math.min(sk, 1.2));
   const urutanIsi = Object.keys(peta);
 
   return (
@@ -297,7 +305,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               onClick={() => ketukBin(b.id)}
               arah={piktogram ? "piktogram" : baris ? "baris" : "kolom"}
               isiDariAtas={!baris}
-              minIsi={piktogram ? 112 : baris ? 52 : 84}
+              minIsi={piktogram || titikLega ? 112 : titikRapat ? 58 : baris ? 52 : 84}
               ring={ring}
               hijau={hijau}
               warnaKategori={b.color}
@@ -305,7 +313,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               label={
                 // gambar hanya bila wadah bergambar; wadah teks/angka cukup labelnya (dulu tertulis dua kali: "11 11")
                 <button type="button" disabled={kunci} onClick={(e) => { e.stopPropagation(); ketukBin(b.id); }} className="min-h-11 w-full min-w-0 rounded-md py-1 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0786eb]">
-                  <LabelWadah teks={t(b.labelKey)} rata={baris && lebarArea >= 360 && t(b.labelKey).length <= 18 ? "kiri" : "tengah"} gambar={ikonBin} />
+                  <LabelWadah teks={t(b.labelKey)} rata={(titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={ikonBin} />
                 </button>
               }
             >
@@ -313,7 +321,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                 <KartuBenda
                   key={i.id}
                   v={visual(i, t)}
-                  size={Math.min((piktogram ? 46 : hp ? 52 : 64) * sk, lebarIsi - (piktogram ? 8 : 16)) / skalaLebar(i)}
+                  size={Math.min((piktogram ? 46 : titikLega ? 80 : hp ? 52 : 64) * sk, lebarIsi - (piktogram ? 8 : 16)) / skalaLebar(i)}
                   keterangan={false}
                   ariaLabel={lang === "en-US" ? `Remove ${t(i.labelKey)} from ${t(b.labelKey)}` : `Ambil ${t(i.labelKey)} dari ${t(b.labelKey)}`}
                   disabled={kunci}

@@ -421,28 +421,30 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
 
   const { tema, skala: sk, w, h } = usePanggung();
   const adaJudul = !/^mana yang lebih dulu/i.test(t(ronde.titleKey));
-  // dua kartu besar mengisi panggung; tinggi dibatasi agar tidak terlalu jangkung di HP
+  // Kartu berdekatan dengan pertanyaan dan tetap memberi ruang bagi label yang membungkus.
+  const lebar = Math.min(w || 390, 800) - 8;
   const gap = Math.round(12 * sk);
-  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT : 0;
-  // layar tegak: dua pilihan ditumpuk penuh, bukan dua kotak kecil di tengah layar kosong
-  const tumpuk = w > 0 && tinggiSisa > w * 1.2;
-  const lebarKartu = w > 0 ? (tumpuk ? w : (w - gap) / 2) : 0;
-  const tinggiKartu = batas(150 * sk, tumpuk ? (tinggiSisa - gap) / 2 : Math.min(tinggiSisa, lebarKartu * 1.15), 560);
-  const ukuran = batas(96 * sk, Math.min(tinggiKartu * 0.5, lebarKartu * 0.5), 210);
+  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT : 160;
+  const tumpuk = lebar < 540 && tinggiSisa > lebar * 1.2;
+  const lebarKartu = tumpuk ? lebar : (lebar - gap) / 2;
+  const tinggiKartu = batas(118 * sk, tumpuk ? (tinggiSisa - gap) / 2 : Math.min(tinggiSisa, lebarKartu), tumpuk ? 210 : 310);
+  const skalaTerlebar = Math.max(1, ...shown.map(skalaLebar));
+  const ukuran = Math.round(Math.min(196, tinggiKartu - 52, (lebarKartu - 24) / skalaTerlebar));
 
   return (
-    <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
+    <div className="mx-auto flex w-full max-w-[800px] flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK }}>
       {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
       {adaJudul && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
         Mana yang lebih dulu?
       </div>
-      <div className={`grid flex-1 content-center ${tumpuk ? "grid-cols-1" : "grid-cols-2"}`} style={{ gap, gridAutoRows: tinggiKartu }}>
+      <div className={`grid ${tumpuk ? "grid-cols-1" : "grid-cols-2"}`} style={{ gap, gridAutoRows: "1fr" }}>
         {shown.map((s) => {
           const benar = !!hasil && s.id === benarId;
           const salah = !!hasil && dipilih === s.id && s.id !== benarId;
           return (
             <KartuBenda
+              penuh
               key={s.id}
               v={visual(s, t)}
               size={ukuran}
@@ -452,8 +454,8 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
               right={benar}
               wrong={salah}
               onClick={() => pilih(s.id)}
-              className={`${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
-              style={{ minHeight: 150 * sk, background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined, pointerEvents: kunci ? "none" : undefined, boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 3px ${benar ? BENAR : salah ? SALAH : !hasil && dipilih === s.id ? "#0786eb" : `${tema.aksen}55`}` }}
+              className={`min-w-0 ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
+              style={{ minHeight: tinggiKartu, background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined, pointerEvents: kunci ? "none" : undefined, boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 3px ${benar ? BENAR : salah ? SALAH : !hasil && dipilih === s.id ? "#0786eb" : `${tema.aksen}55`}` }}
             />
           );
         })}
