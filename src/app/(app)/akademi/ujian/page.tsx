@@ -8,8 +8,9 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useState } from "react";
 import type { LevelId } from "@akademi/schema";
 import { LayarUjian } from "@/components/akademi/ujian";
-import { KOMPETENSI } from "@/lib/akademi/konten";
-import { ujianTerbuka } from "@/lib/akademi/peta";
+import { UjianAkhirTerkunci } from "@/components/akademi/ujian-terkunci";
+import { KOMPETENSI, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { ujianTerbuka, type PetaJenjang } from "@/lib/akademi/peta";
 import { useAksesAkademi } from "@/lib/akademi/peta-anak";
 import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
 import { JENIS_UJIAN, SEKALI, type JenisUjian } from "@/lib/akademi/ujian";
@@ -22,6 +23,7 @@ function Isi() {
   const q = useSearchParams();
   const me = useMe();
   const { peta, siap, level } = useAksesAkademi(me.id);
+  const bahasa = useBahasaAnak(me.id);
   const riwayat = useUjian(me.id);
   const jenis = JENIS_UJIAN.find((j) => j === q.get("jenis") && j !== "penempatan");
   const diminta = q.get("ruang") ?? "";
@@ -33,14 +35,15 @@ function Isi() {
   const judul = jenis === "kuis" ? (unit ?? "Modul") : jenis === "semester" ? `Semester ${ruang.slice(1)}` : "Seluruh jenjang";
   const riwayatRuang = riwayat.filter((h) => h.jenis === jenis && h.ruang === ruang && h.level === level);
   const boleh = ujianTerbuka(peta, jenis, ruang) || riwayatRuang.some((h) => h.pending || h.lulus || SEKALI.has(jenis));
-  return <Pintu key={`${me.id}|${jenis}|${ruang}|${level}`} boleh={boleh} jenis={jenis} level={level} ruang={ruang} kompetensiIds={ids} judul={judul} />;
+  return <Pintu key={`${me.id}|${jenis}|${ruang}|${level}`} boleh={boleh} peta={peta} bahasa={bahasa} jenis={jenis} level={level} ruang={ruang} kompetensiIds={ids} judul={judul} />;
 }
 
-function Pintu({ boleh, ...ujian }: { boleh: boolean; jenis: JenisUjian; level: LevelId; ruang: string; kompetensiIds: string[]; judul: string }) {
+function Pintu({ boleh, peta, bahasa, ...ujian }: { boleh: boolean; peta: PetaJenjang; bahasa: BahasaAnak; jenis: JenisUjian; level: LevelId; ruang: string; kompetensiIds: string[]; judul: string }) {
   // Simpan izin saat masuk supaya event jawaban selama tes tidak menutup layar yang sedang dimainkan.
   const [terbuka, setTerbuka] = useState(boleh);
   useEffect(() => { if (boleh) setTerbuka(true); }, [boleh]);
   if (terbuka || boleh) return <LayarUjian {...ujian} />;
+  if (ujian.jenis === "kenaikan") return <UjianAkhirTerkunci peta={peta} bahasa={bahasa} />;
   return (
     <div className="mx-auto max-w-md p-6 text-center font-bold">
       <p>Ujian ini masih terkunci. Selesaikan tahap yang tersedia di peta lebih dulu.</p>

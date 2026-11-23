@@ -24,8 +24,9 @@ import { nomorInduk, tahunMasuk } from "@/lib/akademi/kartu-pelajar";
 import { snapshotSertifikat } from "@/lib/akademi/sertifikat-inti";
 import { penilaianKampus, snapshotPraktik } from "@/lib/akademi/praktik-kampus";
 import { proyeksi } from "@/lib/akademi/mastery";
-import { kompetensiSelesai, petaJenjang, progresMisi } from "@/lib/akademi/peta";
+import { petaDariBukti } from "@/lib/akademi/peta";
 import { sinkronSiswa } from "@/lib/akademi/siswa";
+import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
 import { NAMA_UJIAN, predikat, type HasilUjian } from "@/lib/akademi/ujian";
 import { adminBerPin, bukaDenganPin, bukaRuang, ruangTerbuka, sisaKunci, tutupRuang } from "@/lib/ortu";
 import { isOrangTua, profilTerbuka } from "@/lib/profil";
@@ -523,8 +524,8 @@ function Ringkasan({ anak }: { anak: Member }) {
   const { hasil, jenjang, modul, semester } = usePenghargaan(anak.id);
   const level = levelAnak(anak.id);
   const lv = levelMeta(level);
-  const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
-  const peta = useMemo(() => petaJenjang(peng, kompetensiSelesai(events, PAKET), KOMPETENSI, level, TRACK_SLICE, progresMisi(events, PAKET), hasil), [peng, events, level, hasil]);
+  const tanggal = useTanggalAkademi();
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasil, tanggal), [events, level, hasil, tanggal]);
   const seminggu = Date.now() - 7 * 86400_000;
   const pekan = events.filter((e) => Date.parse(e.clientAt) >= seminggu);
   const menit = Math.round(pekan.filter((e) => e.type === "activity_end").reduce((n, e) => n + (Number((e.payload as { durationMs?: number }).durationMs) || 0), 0) / 60000);
@@ -558,7 +559,9 @@ function Ringkasan({ anak }: { anak: Member }) {
                 ? "Jenjang ini tuntas. Sertifikat Kenaikan Jenjang siap."
                 : peta.pemantapan
                   ? `Latihan pemantapan: ${peta.pemantapan.kompetensi.statement.id}`
-                  : "Belum ada misi berikutnya."}
+                  : peta.pemantapanMenungguHari
+                    ? "Bukti latihan hari ini sudah cukup. Lanjutkan Pemantapan pada hari berbeda."
+                    : "Belum ada misi berikutnya."}
         </p>
       </section>
 

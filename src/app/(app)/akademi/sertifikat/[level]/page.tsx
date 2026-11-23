@@ -7,21 +7,23 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { LEVELS, levelDariSlug, type LevelId } from "@akademi/schema";
+import { levelDariSlug, levelIndex, levelMeta, type LevelId } from "@akademi/schema";
 import { BALOO, NUNITO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { SERTIFIKAT_PRINT_CSS } from "@/components/akademi/sertifikat";
 import { BUKU_PRINT_CSS, BukuSertifikat } from "@/components/akademi/buku-sertifikat";
 import { useFotoAnak } from "@/lib/akademi/foto";
-import { sudahDikerjakan } from "@/lib/akademi/ujian";
-import { useUjian } from "@/lib/akademi/ujian-klien";
+import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { useEvents } from "@/lib/akademi/jejak";
-import { LEVEL_PANGKAT, pangkat } from "@/lib/akademi/koleksi";
-import { KOMPETENSI } from "@/lib/akademi/konten";
-import { proyeksi } from "@/lib/akademi/mastery";
+import { LEVEL_PANGKAT } from "@/lib/akademi/koleksi";
+import { KOMPETENSI, PAKET, levelAnak, useBahasaAnak } from "@/lib/akademi/konten";
+import { paketMisi, petaDariBukti, ujianTerbuka } from "@/lib/akademi/peta";
+import { TRACK_AKTIF } from "@/lib/akademi/katalog";
+import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
 import { ambilSertifikat, PangkatBelumTercapai, terbitkan, URL_VERIFIKASI, useSertifikat } from "@/lib/akademi/sertifikat";
 import { useCloud } from "@/lib/supabase/family";
 import { useMe, useUI } from "@/lib/store";
+import { labelSisaPenguasaan, RincianPenguasaan } from "@/components/akademi/portal/penguasaan";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
@@ -73,20 +75,33 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const showToast = useUI((s) => s.showToast);
   const familyId = useCloud((s) => s.familyId);
   const events = useEvents(me.id);
-  const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
-  const p = useMemo(() => pangkat(peng, KOMPETENSI, [level])[0], [peng, level]);
-  const meta = LEVELS.find((l) => l.id === level)!;
+  const bahasa = useBahasaAnak(me.id);
+  const inggris = bahasa === "en";
+  const tanggal = useTanggalAkademi();
+  const hasilUjian = useUjian(me.id);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilUjian, tanggal), [events, level, hasilUjian, tanggal]);
+  const meta = levelMeta(level);
+  const jenjangAktif = levelAnak(me.id);
+  const tautanLatih = useMemo(() => {
+    const tautan = new Map<string, string>();
+    if (levelIndex(level) > levelIndex(jenjangAktif)) return tautan;
+    const misiTerbuka = new Set(peta.unit.flatMap((u) => u.misi).filter((m) => !m.terkunci).map((m) => m.kompetensi.id));
+    for (const r of peta.rincianPemantapan) {
+      if (!r.bisaDilatihHariIni || (level === jenjangAktif && !misiTerbuka.has(r.kompetensi.id))) continue;
+      const paket = paketMisi(r.kompetensi.id, PAKET, events, level, r.paketBenar);
+      if (paket) tautan.set(r.kompetensi.id, `/akademi/main/${paket.id}`);
+    }
+    return tautan;
+  }, [events, jenjangAktif, level, peta]);
   const daftar = useSertifikat(me.id);
   const sert = daftar.find((s) => s.level === level && !s.track);
   const [sibuk, setSibuk] = useState(false);
   const foto = useFotoAnak(me.id);
-  const hasilUjian = useUjian(me.id);
-  const akhirSelesai = sudahDikerjakan(hasilUjian, "kenaikan", level, "");
-
   // Sertifikat yang terbit di perangkat lain: tarik dari server sekali saat halaman dibuka.
   useEffect(() => {
     if (!familyId) return;
     ambilSertifikat(me.id).catch((e) => console.error("[akademi] ambil sertifikat gagal", e));
+    ambilUjian(me.id).catch((e) => console.error("[akademi] ambil ujian gagal", e));
   }, [familyId, me.id]);
 
   const terbit = async () => {
@@ -147,25 +162,32 @@ function IsiSertifikat({ level }: { level: LevelId }) {
     );
   }
 
-  if (p?.tercapai && !akhirSelesai) {
+  if (peta.tercapai && !peta.kenaikanSelesai) {
+    const siap = level === jenjangAktif && ujianTerbuka(peta, "kenaikan", "");
+    const judulProgres = inggris ? `Working toward ${meta.pangkat}` : `Menuju pangkat ${meta.pangkat}`;
+    const judulSiap = inggris ? "Final Exam ready" : "Siap Ujian Akhir";
+    const petunjuk = siap
+      ? inggris ? "You can practice before taking the Final Exam. You have one attempt, and your score appears on the certificate." : "Ujian Akhir hanya sekali dan nilainya tertulis di sertifikat. Kamu bisa mencoba latihan dulu."
+      : inggris ? "Follow the next step on your map to unlock the Final Exam." : "Ikuti tahap yang tersedia di peta untuk membuka Ujian Akhir.";
+    const label = siap ? inggris ? "Go to Final Exam" : "Ke Ujian Akhir" : inggris ? "Back to map" : "Kembali ke peta";
     return (
       <>
-        <Kepala judul="Siap Ujian Akhir" sub={me.name} />
+        <Kepala judul={siap ? judulSiap : judulProgres} sub={me.name} />
         <div className={`${KARTU} flex flex-col items-center gap-4 p-6 text-center`}>
           <Icon name="workspace_premium" size={56} style={{ color: "#e8590c" }} />
           <p className="max-w-[440px] leading-tight" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>
-            Semua kompetensi inti {meta.pangkat} sudah dikuasai
+            {inggris ? `All ${meta.pangkat} core skills mastered` : `Semua kompetensi inti ${meta.pangkat} sudah dikuasai`}
           </p>
-          <p className="max-w-[460px] text-[14px] font-bold text-ink-3">Satu langkah lagi: Ujian Akhir jenjang. Ujian ini hanya sekali dan nilainya tertulis di sertifikat. Boleh latihan dulu sepuasnya.</p>
-          <Link href="/akademi/ujian?jenis=kenaikan&ruang=" className="inline-flex h-14 items-center gap-2 rounded-[18px] px-8 text-white" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ff8a5c,#e8590c 65%)", boxShadow: "0 4px 0 #b8460a" }}>
-            <Icon name="arrow_forward" size={24} /> Ke Ujian Akhir
+          <p className="max-w-[460px] text-[14px] font-bold text-ink-3">{petunjuk}</p>
+          <Link href={siap ? "/akademi/ujian?jenis=kenaikan&ruang=" : "/akademi"} className="inline-flex min-h-14 items-center gap-2 rounded-[18px] px-6 py-2 text-white" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ff8a5c,#e8590c 65%)", boxShadow: "0 4px 0 #b8460a" }}>
+            <Icon name="arrow_forward" size={24} /> {label}
           </Link>
         </div>
       </>
     );
   }
 
-  if (p?.tercapai) {
+  if (peta.lulusJenjang) {
     return (
       <>
         <Kepala judul={`Pangkat ${meta.pangkat} tercapai! 🎖️`} sub={me.name} />
@@ -193,51 +215,21 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   }
 
   // Belum tercapai: progres + daftar kompetensi inti yang belum dikuasai.
-  const belum = KOMPETENSI.filter((c) => c.level === level && c.core && peng[c.id]?.status !== "dikuasai");
-  const persen = Math.round((p?.progres ?? 0) * 100);
+  const persen = peta.inti.total ? Math.round(peta.inti.dikuasai / peta.inti.total * 100) : 0;
   return (
     <>
-      <Kepala judul={`Menuju pangkat ${meta.pangkat}`} sub={me.name} />
+      <Kepala judul={inggris ? `Working toward ${meta.pangkat}` : `Menuju pangkat ${meta.pangkat}`} sub={me.name} />
       <div className={`${KARTU} flex flex-col gap-3 p-5`}>
         <div className="flex items-center justify-between">
-          <p style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>Progres pangkat</p>
+          <p style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>{inggris ? "Rank progress" : "Progres pangkat"}</p>
           <span className="rounded-full bg-[#e3f1fd] px-3 py-1 text-[13px] font-black text-[#0567c2]">{persen}%</span>
         </div>
         <div className="h-3 w-full overflow-hidden rounded-full bg-[#fff0da]">
           <div className="h-full rounded-full" style={{ width: `${persen}%`, background: "linear-gradient(90deg,#4fb3ff,#0786eb)" }} />
         </div>
-        <p className="text-[13px] font-bold text-ink-3">
-          Sertifikat terbit otomatis bisa diminta setelah semua kompetensi inti jenjang ini dikuasai. Tinggal {belum.length} lagi.
-        </p>
+        <p className="text-[13px] font-bold text-ink-3">{labelSisaPenguasaan(peta.rincianPemantapan.length, bahasa)}</p>
       </div>
-      <section className={`${KARTU} flex flex-col gap-2 p-5`}>
-        <p style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}>Yang masih harus dikuasai</p>
-        {belum.length === 0 ? (
-          <p className="text-[13px] font-bold text-ink-3">Jenjang ini belum punya kompetensi inti.</p>
-        ) : (
-          <ul className="flex flex-col divide-y divide-[#fff0da]">
-            {belum.map((c) => {
-              const st = peng[c.id]?.status ?? "belum";
-              return (
-                <li key={c.id} className="flex items-center gap-3 py-2.5">
-                  <span className="size-3 shrink-0 rounded-full" style={{ background: st === "berkembang" ? "#ffbe0b" : "#f0e4d2" }} aria-label={st} />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[14px] font-extrabold" style={{ color: INK }}>
-                      {c.statement.id}
-                    </p>
-                    <p className="text-[12px] font-bold text-ink-3">
-                      {c.unit.nama.id} · {st === "berkembang" ? "Berkembang" : "Belum"}
-                    </p>
-                  </div>
-                  <Link href={`/akademi/pelajaran/${c.track}`} className="rounded-full border border-[#f0e4d2] bg-white px-3 py-1 text-[12px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
-                    Latih
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </section>
+      <RincianPenguasaan rincian={peta.rincianPemantapan} bahasa={bahasa} tautanLatih={tautanLatih} />
     </>
   );
 }

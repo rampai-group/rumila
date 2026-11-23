@@ -9,6 +9,7 @@ import { aksesPaket, type Akses } from "./akses";
 import { useEvents } from "./jejak";
 import { KOMPETENSI, PAKET, levelAnak, useBahasaAnak } from "./konten";
 import { petaDariBukti, type PetaJenjang } from "./peta";
+import { useTanggalAkademi } from "./tanggal-akademi";
 import { ambilUjian, useUjian } from "./ujian-klien";
 
 const INDEKS = new Map(KOMPETENSI.map((c) => [c.id, c]));
@@ -18,6 +19,7 @@ export function useAksesAkademi(memberId: string): { peta: PetaJenjang; level: L
   const events = useEvents(memberId);
   const bahasa = useBahasaAnak(memberId);
   const ujian = useUjian(memberId);
+  const tanggal = useTanggalAkademi();
   const [siap, setSiap] = useState(false);
   const [level, setLevel] = useState<LevelId>(() => levelAnak(memberId));
   useEffect(() => {
@@ -28,8 +30,8 @@ export function useAksesAkademi(memberId: string): { peta: PetaJenjang; level: L
       .finally(() => setSiap(true));
   }, [memberId]);
   const peta = useMemo(
-    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian),
-    [events, level, ujian],
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, tanggal),
+    [events, level, ujian, tanggal],
   );
   const akses = useMemo(() => (p: ContentPack) => aksesPaket(p, peta, INDEKS, bahasa === "en" ? "en" : "id"), [peta, bahasa]);
   return { peta, level, siap, akses };

@@ -102,6 +102,14 @@ describe("paketMisi", () => {
     expect(paketMisi(M1, PAKET, [ev("activity_start", "b")], "PAUD")?.id).toBe("d");
     expect(paketMisi("TIDAK.ADA", PAKET, [], "PAUD")).toBeUndefined();
   });
+
+  it("mendahulukan konteks baru jika syarat paket masih kurang", () => {
+    const riwayat = [ev("activity_start", "d"), ev("activity_start", "d")];
+    expect(paketMisi(M1, PAKET, riwayat, "PAUD")?.id).toBe("b");
+    expect(paketMisi(M1, PAKET, riwayat, "PAUD", ["b"])?.id).toBe("d");
+    expect(paketMisi(M1, PAKET, riwayat, "PAUD", ["b", "d"])?.id).toBe("a");
+    expect(paketMisi(M1, PAKET, riwayat, "PAUD", ["a", "b", "d"])?.id).toBe("c");
+  });
 });
 
 describe("progresMisi", () => {
@@ -200,6 +208,42 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
     const pt = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), kuis);
     expect(pt.ujian).toMatchObject({ jenis: "semester", ruang: "S1" });
     expect(pt.semester[1].terkunci).toBe(true);
+  });
+
+  it("meneruskan ke latihan yang bisa membantu hari ini dan membuka Ujian Akhir setelah bukti tanggal kedua", () => {
+    const daftar = [paket("a1", "PAUD", [M1]), paket("a2", "PAUD", [M1]), paket("b1", "PAUD", [M2]), paket("b2", "PAUD", [M2])];
+    const kurikulum = KOMP.slice(0, 2);
+    const ujian = [h("kuis", "BILANGAN"), h("semester", "S1")];
+    const bukti = [
+      tamat("a1", 5, 0), tamat("b1", 5, 0),
+      ...["a1", "a2", "a1"].map((activityId) => attempt([M1], { activityId })),
+      ...Array.from({ length: 3 }, () => attempt([M2], { activityId: "b1" })),
+    ];
+    const peta = (hari: number, hasilUjian: HasilUjian[] = ujian) =>
+      petaDariBukti(bukti, daftar, kurikulum, "PAUD", TRACKS, hasilUjian, new Date(waktuHari(hari)));
+
+    const hariIni = peta(0);
+    expect(hariIni.pemantapan?.kompetensi.id).toBe(M2);
+    expect(hariIni.pemantapanMenungguHari).toBe(false);
+    expect(hariIni.rincianPemantapan).toMatchObject([
+      { kompetensi: { id: M1 }, tungguHariBerbeda: true, bisaDilatihHariIni: false, syarat: [{ jenis: "hari", jumlah: 1, target: 2 }] },
+      { kompetensi: { id: M2 }, tungguHariBerbeda: true, bisaDilatihHariIni: true, paketBenar: ["b1"], syarat: [{ jenis: "paket", jumlah: 1, target: 2 }, { jenis: "hari", jumlah: 1, target: 2 }] },
+    ]);
+
+    bukti.push(attempt([M2], { activityId: "b2", hari: 0.01 }));
+    expect(peta(0)).toMatchObject({ pemantapanMenungguHari: true, tercapai: false });
+    expect(peta(0).pemantapan).toBeUndefined();
+    expect(peta(0, [h("kuis", "BILANGAN")]).pemantapanMenungguHari).toBe(false);
+    expect(ujianTerbuka(peta(0), "kenaikan", "")).toBe(false);
+
+    bukti.push(attempt([M1], { hari: 1, activityId: "a1", correct: false }));
+    expect(peta(1)).toMatchObject({ pemantapanMenungguHari: false, tercapai: false });
+    expect(peta(1).pemantapan?.kompetensi.id).toBe(M1);
+    expect(peta(1).rincianPemantapan[0].tungguHariBerbeda).toBe(false);
+
+    bukti.push(attempt([M1], { hari: 1, activityId: "a1" }), attempt([M2], { hari: 1, activityId: "b2" }));
+    expect(ujianTerbuka(peta(1), "kenaikan", "")).toBe(true);
+    expect(peta(1).rincianPemantapan).toEqual([]);
   });
 
   it("semua tuntas + inti dikuasai → Ujian Akhir; sudah dikerjakan (nilai berapa pun) → jenjang tuntas", () => {
