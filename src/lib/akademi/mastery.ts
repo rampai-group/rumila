@@ -21,6 +21,15 @@ export interface Penguasaan {
   ratioLast10: number;
   lastAt?: string;
   hintTail: number;
+  hariBenar?: readonly string[];
+  paketBenar?: readonly string[];
+  tanpaBantuTerakhir?: number;
+}
+
+export interface SyaratPenguasaan {
+  jenis: "benar" | "paket" | "hari" | "akurasi" | "tanpaBantu";
+  jumlah: number;
+  target: number;
 }
 
 interface Bukti {
@@ -36,6 +45,20 @@ const KOSONG: Penguasaan = { status: "belum", success: 0, fail: 0, contexts: 0, 
 export function hariLokal(iso: string): string {
   const d = new Date(iso);
   return Number.isNaN(d.getTime()) ? iso.slice(0, 10) : d.toLocaleDateString("id-ID");
+}
+
+export function syaratPenguasaan(peng: Penguasaan | undefined, aturan: MasteryRule): SyaratPenguasaan[] {
+  const p = peng ?? KOSONG;
+  const syarat: SyaratPenguasaan[] = [
+    { jenis: "benar", jumlah: p.success, target: aturan.minSuccess },
+    { jenis: "paket", jumlah: p.contexts, target: aturan.minContexts },
+    { jenis: "hari", jumlah: p.days, target: aturan.minDays },
+    { jenis: "akurasi", jumlah: p.ratioLast10, target: aturan.minRatioLast10 },
+    { jenis: "tanpaBantu", jumlah: p.tanpaBantuTerakhir ?? 0, target: aturan.noHintLast },
+  ];
+  return syarat.filter(({ jumlah, target }) => jumlah < target).map((s) =>
+    s.jenis === "akurasi" ? { ...s, jumlah: s.jumlah * 100, target: s.target * 100 } : s,
+  );
 }
 
 function kumpulkanBukti(events: GameEvent[], saring: (e: GameEvent) => boolean = (e) => !dariKampus(e)): Map<string, Bukti[]> {
@@ -69,20 +92,22 @@ export function nilaiPenguasaan(bukti: Bukti[], aturan: MasteryRule): Penguasaan
   const benar = bukti.filter((b) => b.correct);
   const success = benar.length;
   const fail = bukti.length - success;
-  const contexts = new Set(benar.map((b) => b.konteks)).size;
-  const days = new Set(benar.map((b) => hariLokal(b.at))).size;
+  const paketBenar = [...new Set(benar.map((b) => b.konteks))];
+  const hariBenar = [...new Set(benar.map((b) => hariLokal(b.at)))];
   const last10 = bukti.slice(-10);
   const ratioLast10 = last10.filter((b) => b.correct).length / last10.length;
-  let hintTail = 0;
-  for (let i = bukti.length - 1; i >= 0 && bukti[i].hintUsed; i--) hintTail++;
-  const lastAt = bukti[bukti.length - 1].at;
-
-  const ekor = bukti.slice(-aturan.noHintLast);
-  const tanpaHint = aturan.noHintLast === 0 || (hintTail === 0 && ekor.length >= aturan.noHintLast && ekor.every((b) => !b.hintUsed));
-  const dikuasai =
-    success >= aturan.minSuccess && contexts >= aturan.minContexts && days >= aturan.minDays && ratioLast10 >= aturan.minRatioLast10 && tanpaHint;
-  const status: Status = dikuasai ? "dikuasai" : success >= 1 ? "berkembang" : "belum";
-  return { status, success, fail, contexts, days, ratioLast10, lastAt, hintTail };
+  const terakhir = bukti[bukti.length - 1];
+  let berturut = 0;
+  for (let i = bukti.length - 1; i >= 0 && bukti[i].hintUsed === terakhir.hintUsed; i--) berturut++;
+  const peng: Penguasaan = {
+    status: success >= 1 ? "berkembang" : "belum",
+    success, fail, contexts: paketBenar.length, days: hariBenar.length, ratioLast10, lastAt: terakhir.at,
+    hintTail: terakhir.hintUsed ? berturut : 0,
+    tanpaBantuTerakhir: terakhir.hintUsed ? 0 : berturut,
+    hariBenar, paketBenar,
+  };
+  if (!syaratPenguasaan(peng, aturan).length) peng.status = "dikuasai";
+  return peng;
 }
 
 export function aturanUntuk(c: Competency): MasteryRule {

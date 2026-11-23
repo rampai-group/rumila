@@ -13,6 +13,7 @@ import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { keadaanLab, type KeadaanLab } from "@/lib/akademi/lab";
 import { kompetensiSelesai, petaDariBukti } from "@/lib/akademi/peta";
+import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
 import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { PLAY, canonicalToolId } from "@/lib/catalog";
@@ -49,12 +50,13 @@ export function useKelasHariIni(me: Member) {
   const events = useEvents(me.id);
   const ujian = useUjian(me.id);
   const level = useLevel(me.id);
+  const tanggal = useTanggalAkademi();
   useEffect(() => {
     ambilUjian(me.id).catch(() => {});
   }, [me.id]);
   const peta = useMemo(
-    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian),
-    [events, level, ujian],
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, tanggal),
+    [events, level, ujian, tanggal],
   );
   const lv = levelMeta(level);
   const sm = peta.semester[peta.semesterAktif - 1];
@@ -65,7 +67,7 @@ export function useKelasHariIni(me: Member) {
       ? { judul: NAMA_UJIAN[peta.ujian.jenis], sub: peta.ujian.unit?.nama.id ?? (peta.ujian.semester ? `Semester ${peta.ujian.semester}` : lv.pangkat), ikon: "quiz" }
       : peta.lulusJenjang
         ? { judul: "Jenjang tuntas", sub: "Ambil sertifikatmu", ikon: "workspace_premium" }
-        : { judul: "Pemantapan", sub: "Latihan kemampuan inti", ikon: "fitness_center" };
+        : { judul: "Pemantapan", sub: peta.pemantapanMenungguHari ? "Lanjut di hari berbeda" : "Latihan kemampuan inti", ikon: "fitness_center" };
   return { level, lv, semester: peta.semesterAktif, persen, tugas };
 }
 

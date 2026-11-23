@@ -14,7 +14,7 @@
 import { percobaanUlang } from "./percobaan";
 import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import { AMBANG_STIKER, statusLencana, type StatusLencana } from "./koleksi";
-import { proyeksi, type Penguasaan } from "./mastery";
+import { aturanUntuk, hariLokal, proyeksi, syaratPenguasaan, type Penguasaan, type SyaratPenguasaan } from "./mastery";
 import { sudahDikerjakan, sudahLulus, ruangSemester, type HasilUjian, type JenisUjian } from "./ujian";
 import { normalisasiHasilUjian, ruangKuis, urutModul } from "./modul";
 
@@ -59,6 +59,15 @@ export interface Hitungan {
   total: number;
 }
 
+export interface RincianPemantapan {
+  kompetensi: Competency;
+  syarat: SyaratPenguasaan[];
+  tungguHariBerbeda: boolean;
+  bisaDilatihHariIni: boolean;
+  /** Paket yang sudah memberi jawaban benar saat syarat paket berbeda masih kurang. */
+  paketBenar?: readonly string[];
+}
+
 export interface SemesterPeta {
   ke: 1 | 2;
   unit: UnitPeta[];
@@ -84,8 +93,12 @@ export interface PetaJenjang {
   /** semua kompetensi inti jenjang dikuasai */
   tercapai: boolean;
   sekarang?: MisiPeta;
-  /** semua misi selesai tapi pangkat belum: kompetensi inti pertama (urut jalur) yang belum dikuasai */
+  /** semua misi selesai tapi pangkat belum: kompetensi inti pertama yang bisa dilatih hari ini */
   pemantapan?: MisiPeta;
+  /** Tahap Pemantapan sudah terbuka, tetapi semua kemampuan tersisa menunggu tanggal lain. */
+  pemantapanMenungguHari: boolean;
+  /** Syarat yang belum terpenuhi untuk setiap kompetensi inti. */
+  rincianPemantapan: RincianPemantapan[];
   /** ujian yang menunggu dikerjakan (hanya bila peta dibuat dengan data ujian) */
   ujian?: UjianPeta;
   /** status ujian semester per semester (true bila tanpa data ujian) */
@@ -102,13 +115,13 @@ export function ujianTerbuka(peta: PetaJenjang, jenis: JenisUjian, ruang: string
 }
 
 /** Nilai sementara tidak boleh membuat ujian yang sedang dikerjakan terkunci saat halaman dibuka ulang. */
-export function petaDariBukti(events: GameEvent[], paket: ContentPack[], kompetensi: Competency[], level: LevelId, tracks: readonly TrackId[], ujian: HasilUjian[]): PetaJenjang {
+export function petaDariBukti(events: GameEvent[], paket: ContentPack[], kompetensi: Competency[], level: LevelId, tracks: readonly TrackId[], ujian: HasilUjian[], waktu = new Date()): PetaJenjang {
   const resmi = new Set(ujian.filter((h) => !h.pending).map((h) => h.sessionId));
   const bukti = events.filter((e) => {
     const jenis = (e.payload as { detail?: { ujian?: string } }).detail?.ujian;
     return e.type !== "attempt" || !jenis || resmi.has(e.sessionId);
   });
-  return petaJenjang(proyeksi(bukti, kompetensi), kompetensiSelesai(bukti, paket), kompetensi, level, tracks, progresMisi(bukti, paket), ujian);
+  return petaJenjang(proyeksi(bukti, kompetensi), kompetensiSelesai(bukti, paket), kompetensi, level, tracks, progresMisi(bukti, paket), ujian, waktu);
 }
 
 /** Kompetensi yang punya paket tamat dengan sukses ≥ AMBANG_STIKER. */
@@ -153,6 +166,7 @@ export function petaJenjang(
   progres: ReadonlyMap<string, number> = new Map(),
   /** hasil ujian anak; tanpa ini peta berjalan seperti sebelum Tahap 3 (tanpa kuis/ujian) */
   ujian?: HasilUjian[],
+  waktu = new Date(),
 ): PetaJenjang {
   const urutUnit = urutModul(kompetensi, level, tracks);
   const hasilUjian = ujian ? normalisasiHasilUjian(ujian, kompetensi, tracks) : [];
@@ -212,8 +226,25 @@ export function petaJenjang(
   if (sekarang) sekarang.sekarang = true;
   const semesterAktif: 1 | 2 = terbukaS2 ? 2 : 1;
 
-  const pemantapan = !sekarang && !tercapai && (!ujianBerikut || ujianBerikut.jenis === "kenaikan") && (aktif < 0 || !pakaiUjian) ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
-  return { level, unit, semester, semesterAktif, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan, ujian: ujianBerikut, semesterLulus, kenaikanSelesai, lulusJenjang: tercapai && kenaikanSelesai };
+  const hariIni = hariLokal(waktu.toISOString());
+  const misiIntiBelum = unit.flatMap((u) => u.misi).filter((m) => m.kompetensi.core && !m.dikuasai);
+  const rincianPemantapan: RincianPemantapan[] = misiIntiBelum.map(({ kompetensi: c }) => {
+    const hasil = peng[c.id];
+    const syarat = syaratPenguasaan(hasil, aturanUntuk(c));
+    const tungguHariBerbeda = syarat.some((s) => s.jenis === "hari") && (hasil?.hariBenar?.includes(hariIni) ?? false);
+    return {
+      kompetensi: c,
+      syarat,
+      tungguHariBerbeda,
+      bisaDilatihHariIni: syarat.some((s) => s.jenis !== "hari" || !tungguHariBerbeda),
+      paketBenar: syarat.some((s) => s.jenis === "paket") ? hasil?.paketBenar : undefined,
+    };
+  });
+  const bolehPemantapan = !sekarang && !tercapai && (!ujianBerikut || ujianBerikut.jenis === "kenaikan") && (aktif < 0 || !pakaiUjian);
+  const berikutPemantapan = rincianPemantapan.findIndex((r) => r.bisaDilatihHariIni);
+  const pemantapan = bolehPemantapan ? misiIntiBelum[berikutPemantapan] : undefined;
+  const pemantapanMenungguHari = bolehPemantapan && !pemantapan && rincianPemantapan.length > 0 && rincianPemantapan.every((r) => r.tungguHariBerbeda);
+  return { level, unit, semester, semesterAktif, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan, pemantapanMenungguHari, rincianPemantapan, ujian: ujianBerikut, semesterLulus, kenaikanSelesai, lulusJenjang: tercapai && kenaikanSelesai };
 }
 
 /**
@@ -252,16 +283,17 @@ export function jenjangBerikut(level: LevelId, kompetensi: Competency[]): LevelI
 }
 
 /**
- * Paket untuk memainkan satu misi: jenjang sama dulu, lalu paket yang kompetensi pertamanya misi ini,
- * lalu yang paling jarang dimulai (agar pemantapan berganti permainan), lalu id.
+ * Paket untuk memainkan satu misi: konteks baru bila syarat paket berbeda masih kurang,
+ * lalu jenjang sama, kompetensi utama, yang paling jarang dimulai, dan id.
  */
-export function paketMisi(competencyId: string, paket: ContentPack[], events: GameEvent[], level?: LevelId): ContentPack | undefined {
+export function paketMisi(competencyId: string, paket: ContentPack[], events: GameEvent[], level?: LevelId, paketBenar: readonly string[] = []): ContentPack | undefined {
   const dimulai = new Map<string, number>();
   for (const e of events) if (e.type === "activity_start") dimulai.set(e.activityId, (dimulai.get(e.activityId) ?? 0) + 1);
   return paket
     .filter((p) => p.competencyIds.includes(competencyId))
     .sort(
       (a, b) =>
+        Number(paketBenar.includes(a.id)) - Number(paketBenar.includes(b.id)) ||
         Number(a.level !== level) - Number(b.level !== level) ||
         Number(a.competencyIds[0] !== competencyId) - Number(b.competencyIds[0] !== competencyId) ||
         (dimulai.get(a.id) ?? 0) - (dimulai.get(b.id) ?? 0) ||

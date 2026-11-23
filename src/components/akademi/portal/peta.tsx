@@ -20,9 +20,11 @@ import { KartuPraktikKampus } from "./praktik";
 import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { jenjangBerikut, paketMisi, petaDariBukti, type MisiPeta, type PetaJenjang, type SemesterPeta, type UnitPeta } from "@/lib/akademi/peta";
+import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
 import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, trackMeta } from "./bersama";
+import { labelSisaPenguasaan, tautanRincianPenguasaan } from "./penguasaan";
 import { LatarDunia } from "../latar-dunia";
 import { duniaPaket, type DuniaId } from "@/lib/akademi/tema-dunia";
 import "../akademi.css";
@@ -37,10 +39,11 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   const events = useEvents(me.id);
   const bahasa = useBahasaAnak(me.id);
   const hasilUjian = useUjian(me.id);
+  const tanggal = useTanggalAkademi();
   useEffect(() => {
     ambilUjian(me.id).catch((e) => console.error("[akademi] ambil ujian gagal", e));
   }, [me.id]);
-  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian), [events, level, hasilUjian]);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian, tanggal), [events, level, hasilUjian, tanggal]);
   const streak = useMemo(() => hitungStreak(events), [events]);
   const berikut = jenjangBerikut(level, KOMPETENSI);
 
@@ -75,8 +78,11 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   const target = peta.sekarang ?? peta.pemantapan;
   const unitAktif = peta.sekarang ? (peta.sekarang.kompetensi.unit.nama[bahasa] ?? peta.sekarang.kompetensi.unit.nama.id) : undefined;
   const alasan = alasanKunci(peta, bahasa === "en" ? "en" : "id");
-  const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level) : undefined;
+  const rincianTarget = peta.rincianPemantapan.find((r) => r.kompetensi.id === peta.pemantapan?.kompetensi.id);
+  const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level, rincianTarget?.paketBenar) : undefined;
   const judulTarget = targetPaket ? judulPaket(targetPaket, bahasa) : undefined;
+  const tampilPemantapan = !!peta.pemantapan || peta.pemantapanMenungguHari;
+  const inggris = bahasa === "en";
 
   return (
     // Satu kolom penuh di semua layar: kartu pangkat dan semester sejajar satu garis. Layar lebar (md): pangkat | misi berdampingan.
@@ -90,7 +96,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
       {target && targetPaket && !(peta.ujian && !peta.sekarang && peta.ujian.jenis !== "kenaikan") && (
         <Link
           href={`/akademi/main/${targetPaket.id}`}
-          aria-label={`${peta.sekarang ? `Lanjut Misi ${target.nomor}` : "Latihan pemantapan"}: ${judulTarget}. ${pernyataan(target, bahasa)}`}
+          aria-label={`${peta.sekarang ? `${inggris ? "Continue Mission" : "Lanjut Misi"} ${target.nomor}` : inggris ? "Mastery practice" : "Latihan pemantapan"}. ${judulTarget}. ${pernyataan(target, bahasa)}`}
           title={judulTarget}
           className="flex items-center gap-3 rounded-[28px] p-3 pr-5 text-[#0b2545] transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.98]"
           style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 6px 0 #c85400" }}
@@ -101,7 +107,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
           </span>
           <span className="min-w-0 flex-1">
             <span className="block leading-none" style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800 }}>
-              {peta.sekarang ? `Misi ${target.nomor}` : "Pemantapan"}
+              {peta.sekarang ? `${inggris ? "Mission" : "Misi"} ${target.nomor}` : inggris ? "Mastery practice" : "Pemantapan"}
             </span>
             <span className="mt-1 flex items-center gap-1.5 text-[15px] font-extrabold opacity-90">
               <Icon name={TRACK_IKON[target.kompetensi.track]} size={18} />
@@ -110,6 +116,19 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
           </span>
           <Icon name="arrow_forward" size={30} />
         </Link>
+      )}
+      {tampilPemantapan && (
+        <div className={peta.pemantapanMenungguHari ? `${KARTU} px-4 py-3` : "px-1"}>
+          {peta.pemantapanMenungguHari && (
+            <>
+              <h2 className="text-lg font-black" style={{ color: INK }}>{inggris ? "Continue on a different day" : "Lanjutkan pada hari berbeda"}</h2>
+              <p className="text-sm font-bold text-ink-3">{labelSisaPenguasaan(peta.rincianPemantapan.length, bahasa)}.</p>
+            </>
+          )}
+          <Link href={tautanRincianPenguasaan(level)} className="inline-flex min-h-11 items-center gap-2 rounded-lg px-2 text-sm font-extrabold text-[#0567c2] underline underline-offset-2">
+            {inggris ? "View core skill progress" : "Lihat rincian penguasaan"}
+          </Link>
+        </div>
       )}
       </div>
     </div>
@@ -125,7 +144,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
             </div>
           ),
         )}
-        <Gerbang peta={peta} berikut={berikut} />
+        <Gerbang peta={peta} berikut={berikut} bahasa={bahasa} />
         <KartuPraktikKampus events={events} level={level} kunci={{ selesai: peta.selesai, total: peta.total }} />
       </div>
 
@@ -455,10 +474,13 @@ function KepalaSemester({ sm, aktif, ujianLulus }: { sm: SemesterPeta; aktif: bo
 
 /* ---------------- gerbang naik pangkat: benteng di ujung jalur ---------------- */
 
-function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
+function Gerbang({ peta, berikut, bahasa }: { peta: PetaJenjang; berikut?: LevelId; bahasa: BahasaAnak }) {
   const lv = levelMeta(peta.level);
   const terbuka = !peta.sekarang && (!peta.ujian || peta.ujian.jenis === "kenaikan");
   const sisa = peta.inti.total - peta.inti.dikuasai;
+  const tersedia = peta.rincianPemantapan.filter((r) => r.bisaDilatihHariIni).length;
+  const hariBerbeda = peta.rincianPemantapan.filter((r) => r.tungguHariBerbeda && !r.bisaDilatihHariIni).length;
+  const inggris = bahasa === "en";
   const gaya: React.CSSProperties = peta.lulusJenjang
     ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 7px 0 #c88a00", color: INK }
     : terbuka
@@ -478,11 +500,22 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
           </>
         )}
       </span>
-      {terbuka && !peta.lulusJenjang && sisa > 0 && <span className="mt-1 text-[12px] font-extrabold text-ink-3">{sisa} latihan lagi</span>}
-      {terbuka && peta.tercapai && !peta.kenaikanSelesai && <span className="mt-1 text-[12px] font-extrabold text-ink-3">Ujian Akhir menunggu</span>}
+      {terbuka && !peta.lulusJenjang && sisa > 0 && (
+        <div className="mt-2 max-w-full rounded-2xl bg-white px-4 py-2.5 text-center shadow-sm">
+          <p className="text-sm font-black" style={{ color: INK }}>{labelSisaPenguasaan(sisa, bahasa)}</p>
+          {tersedia > 0 && <p className="mt-1 text-[13px] font-bold text-ink-3">{inggris ? `${tersedia} ready to practice today` : `${tersedia} bisa dilatih hari ini`}</p>}
+          {hariBerbeda > 0 && <p className="mt-1 text-[13px] font-bold text-ink-3">{inggris ? `${hariBerbeda} to practice on a different day` : `${hariBerbeda} perlu dilatih pada hari berbeda`}</p>}
+        </div>
+      )}
+      {terbuka && peta.tercapai && !peta.kenaikanSelesai && <span className="mt-1 text-[12px] font-extrabold text-ink-3">{inggris ? "Final Exam ready" : "Ujian Akhir menunggu"}</span>}
     </>
   );
-  const label = peta.lulusJenjang ? "Gerbang naik pangkat: tercapai, lihat sertifikat" : terbuka ? `Gerbang naik pangkat: kuasai ${sisa} kemampuan inti lagi` : "Gerbang naik pangkat: terbuka setelah semua misi selesai";
+  const namaGerbang = inggris ? "Rank-up gate" : "Gerbang naik pangkat";
+  let status = inggris ? "Opens after the required missions and exams" : "Terbuka setelah misi dan ujian prasyarat selesai";
+  if (peta.lulusJenjang) status = inggris ? "Complete. View certificate" : "Tercapai. Lihat sertifikat";
+  else if (terbuka && sisa > 0) status = labelSisaPenguasaan(sisa, bahasa);
+  else if (terbuka && peta.tercapai) status = inggris ? "Final Exam ready" : "Ujian Akhir menunggu";
+  const label = `${namaGerbang}. ${status}`;
   return peta.lulusJenjang ? (
     <Link href={`/akademi/sertifikat/${levelMeta(peta.level).slug}`} aria-label={label} className="flex flex-col items-center py-2 transition-transform active:scale-95">
       {isi}
@@ -490,6 +523,11 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
   ) : (
     <section aria-label={label} className="flex flex-col items-center py-2">
       {isi}
+      {terbuka && sisa > 0 && (
+        <Link href={tautanRincianPenguasaan(peta.level)} className="mt-1 inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-extrabold text-[#0567c2] underline underline-offset-2">
+          {inggris ? "View core skill progress" : "Lihat rincian penguasaan"}
+        </Link>
+      )}
     </section>
   );
 }
