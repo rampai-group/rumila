@@ -5,13 +5,12 @@
 
 import { muatUlang } from "@/lib/mode-app";
 import { useEffect, useState, type ReactNode } from "react";
-import { ACTIVE_LEVELS, levelMeta, usiaLevel, type LevelId } from "@akademi/schema";
+import { levelMeta, type LevelId } from "@akademi/schema";
 import { PilihAvatar } from "@/components/avatar-karakter";
 import { BALOO, MemberAvatar } from "@/components/launcher";
 import { BuatPin } from "@/components/pin-pad";
 import { Icon } from "@/components/ui";
 import { levelAnak, setPeranAkademi, useProfilAkademiVersi } from "@/lib/akademi/konten";
-import { aturJenjangAwal } from "@/lib/akademi/siswa";
 import { PLAY, MEMBER_COLORS, type ColorKey } from "@/lib/catalog";
 import { isOrangTua, perangkatAnak, setPerangkatAnak } from "@/lib/profil";
 import { signOutAccount, tungguSinkron } from "@/lib/supabase/family";
@@ -103,12 +102,11 @@ function UbahPin({ m, onSelesai }: { m: Member; onSelesai: () => void }) {
   );
 }
 
-/** Daftarkan anak: nama & warna → avatar → jenjang → PIN. */
+/** Daftarkan anak: nama & warna → avatar → PIN. Jenjang ditentukan Tes Penempatan saat anak pertama masuk. */
 function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
   const addMember = useRumila((s) => s.addMember);
   const members = useRumila((s) => s.members);
-  const showToast = useUI((s) => s.showToast);
-  const [langkah, setLangkah] = useState<"data" | "avatar" | "jenjang" | "pin">("data");
+  const [langkah, setLangkah] = useState<"data" | "avatar" | "pin">("data");
   const [nama, setNama] = useState("");
   const [c, setC] = useState<ColorKey>(MEMBER_COLORS.find((x) => !members.some((m) => m.c === x)) ?? "orange");
   const [jenis, setJenis] = useState<"angka" | "gambar">("angka");
@@ -152,46 +150,20 @@ function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
         onBatal={() => setLangkah("data")}
         onSimpan={(a) => {
           setAvatar(a);
-          setLangkah("jenjang");
+          void buat(a);
         }}
       />
     );
 
-  if (langkah === "jenjang")
-    return (
-      <div className="flex flex-col gap-3">
-        <p className="text-[14px] font-bold text-ink-2">Jenjang awal {nama.trim()}. Belum yakin? Pilih Tes Penempatan, nanti jenjangnya ditentukan dari hasil tes.</p>
-        <div className="grid grid-cols-3 gap-2">
-          {ACTIVE_LEVELS.map((l) => (
-            <button
-              key={l}
-              disabled={sibuk}
-              onClick={() => void buat(l)}
-              className="rounded-[14px] bg-white px-2 py-2.5 text-[13px] font-extrabold shadow-[0_2px_0_rgba(11,37,69,.08)] disabled:opacity-50"
-            >
-              {levelMeta(l).pangkat}
-              <span className="block text-[11px] font-bold text-ink-3">{usiaLevel(l)}</span>
-            </button>
-          ))}
-        </div>
-        <button disabled={sibuk} onClick={() => void buat(null)} className="h-12 rounded-[16px] bg-[#fd861d] text-[16px] font-extrabold text-[#0b2545] disabled:opacity-50">
-          Tes Penempatan
-        </button>
-        {sibuk && <p className="text-center text-[13px] font-bold text-ink-3">Menyimpan profil…</p>}
-      </div>
-    );
+  if (sibuk) return <p className="text-[14px] font-bold text-ink-3">Menyimpan profil…</p>;
 
   return baru ? <BuatPin m={baru} jenis={jenis} judul={`Buat PIN ${baru.name}`} onSelesai={onSelesai} /> : <p className="text-[14px] font-bold text-ink-3">Menyiapkan profil…</p>;
 
-  async function buat(level: LevelId | null) {
+  async function buat(a: string | undefined) {
     setSibuk(true);
-    const idBaru = addMember(nama.trim(), c, { avatar, peran: "anak", jenisPin: jenis });
+    const idBaru = addMember(nama.trim(), c, { avatar: a, peran: "anak", jenisPin: jenis });
     setPeranAkademi(idBaru, "anak");
     await tungguSinkron();
-    if (level) {
-      const r = await aturJenjangAwal(idBaru, level);
-      if (!r.ok) showToast("Jenjang belum tersimpan. Atur lagi lewat tombol Atur.");
-    }
     setSibuk(false);
     setId(idBaru);
     setLangkah("pin");
