@@ -15,6 +15,7 @@ import { useLastTool } from "@/components/kid";
 import { AppIcon, BALOO } from "@/components/launcher";
 import { useOpenTool } from "@/components/shell";
 import { Icon } from "@/components/ui";
+import { usePerluPenempatan } from "@/lib/akademi/penempatan-klien";
 import { letakkanKampus, type LetakKampus } from "@/lib/kampus-letak";
 import { GEDUNG, type GedungId } from "@/lib/kampus";
 import { can, useUI, type Member } from "@/lib/store";
@@ -49,6 +50,8 @@ export function KampusDunia({ me }: { me: Member }) {
   const [kartu, setKartu] = useState(false);
   const [zoom, setZoom] = useState<{ x: number; y: number } | null>(null);
   const dok = kelas || !!terakhir;
+  // anak baru tanpa jenjang: Tes Penempatan langsung dibuka saat pertama masuk kampus
+  usePerluPenempatan(me, { buka: kelas });
 
   useEffect(() => {
     const el = ruang.current;
