@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kartu Titik Kebun",
-      "instruksi": "Hitung yang ada di kebun, lalu seret ke kartu yang titiknya sama banyak.",
+      "instruksi": "Ketuk kartu, lalu ketuk kotak yang titiknya sama banyak.",
       "n1": "1",
       "n2": "2",
       "n3": "3",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Garden Dot Cards",
-      "instruksi": "Count the things in the garden, then drag them to the card with the same number of dots.",
+      "instruksi": "Tap a card, then tap the box with the same number of dots.",
       "n1": "1",
       "n2": "2",
       "n3": "3",

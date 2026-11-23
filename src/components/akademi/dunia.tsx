@@ -85,7 +85,10 @@ function GulirLagi({ wadah }: { wadah: React.RefObject<HTMLDivElement | null> })
       cancelAnimationFrame(tunggu);
       tunggu = requestAnimationFrame(() => {
         const ruang = el.scrollHeight - el.clientHeight;
-        setArah(ruang <= 12 ? null : ruang - el.scrollTop > 12 ? "bawah" : "atas");
+        const tombol = el.parentElement?.querySelector<HTMLElement>("[data-gulir-lagi]");
+        // Jangan pertahankan panah kalau isi akan muat setelah ruang tombolnya dikembalikan.
+        const tinggiTombol = tombol ? tombol.offsetHeight + (parseFloat(getComputedStyle(tombol).marginTop) || 0) : 0;
+        setArah(ruang <= tinggiTombol + 12 ? null : ruang - el.scrollTop > 12 ? "bawah" : "atas");
       });
     };
     const ro = new ResizeObserver(cek);
@@ -173,6 +176,10 @@ export function LayarAktivitas({
   const panggungRef = useRef<HTMLDivElement>(null);
   const [ukuran, setUkuran] = useState({ w: 0, h: 0 });
   useIsoLayout(() => {
+    const panggung = panggungRef.current;
+    if (panggung) panggung.scrollTop = 0;
+  }, [ronde]);
+  useIsoLayout(() => {
     const el = panggungRef.current;
     const ruang = ruangPanggungRef.current;
     if (!el || !ruang) return;
@@ -254,7 +261,7 @@ export function LayarAktivitas({
         <Instruksi teks={instruksi} onUcap={onUcap} />
         <div ref={ruangPanggungRef} className="flex min-h-0 flex-1 flex-col">
           <div className={`relative flex min-h-0 flex-col rounded-[26px] p-1.5 ${padat ? "" : "flex-1"}`} style={{ background: pilar.dasar }}>
-            <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
+            <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden scroll-auto [overflow-anchor:none]" data-panggung>
               <PanggungCtx.Provider value={panggung}>
                 <SlotAksi.Provider value={slotAksi}>
                   <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>

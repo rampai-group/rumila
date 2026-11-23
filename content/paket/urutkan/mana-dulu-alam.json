@@ -1,6 +1,6 @@
 {
   "id": "mana-dulu-alam",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -228,12 +228,18 @@
         {
           "id": "pohon",
           "labelKey": "s_kelapa_pohon",
-          "emoji": "🌴"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kelapa-di-pohon"
+          }
         },
         {
           "id": "jatuh",
           "labelKey": "s_kelapa_jatuh",
-          "emoji": "🥥"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-kelapa-di-tanah"
+          }
         }
       ]
     },
@@ -244,12 +250,18 @@
         {
           "id": "hijau",
           "labelKey": "s_daun_hijau",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-daun-di-pohon"
+          }
         },
         {
           "id": "gugur",
           "labelKey": "s_daun_gugur",
-          "emoji": "🍂"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-daun-di-tanah"
+          }
         }
       ]
     }

@@ -14528,7 +14528,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "hitung-anak-ayam-kandang",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "PAUD",
     "mechanic": "dagang",
     "competencyIds": [
@@ -14539,6 +14539,7 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Berhitung di Kandang",
         "instruksi": "Sentuh {barang} di kandang satu per satu sambil berhitung, lalu geser penanda ke jumlahnya.",
+        "tempat-hitung": "di kandang",
         "anakayam": "anak ayam",
         "bebek": "bebek",
         "kelinci": "kelinci"
@@ -14546,6 +14547,7 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Counting in the Coop",
         "instruksi": "Touch the {barang} in the coop one at a time as you count, then slide the marker to the number.",
+        "tempat-hitung": "in the coop",
         "anakayam": "chicks",
         "bebek": "ducks",
         "kelinci": "rabbits"
@@ -176057,7 +176059,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kartu Titik",
-        "instruksi": "Hitung bendanya, lalu taruh di kartu yang titiknya sama banyak.",
+        "instruksi": "Ketuk satu kartu, lalu ketuk kotak dengan jumlah titik yang sama.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -176071,7 +176073,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Dot Cards",
-        "instruksi": "Count the things, then put them on the card with the same number of dots.",
+        "instruksi": "Tap one card, then tap the box with an equal number of dots.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -176323,7 +176325,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kartu Titik Kebun",
-        "instruksi": "Hitung yang ada di kebun, lalu seret ke kartu yang titiknya sama banyak.",
+        "instruksi": "Ketuk kartu, lalu ketuk kotak yang titiknya sama banyak.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -176337,7 +176339,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Garden Dot Cards",
-        "instruksi": "Count the things in the garden, then drag them to the card with the same number of dots.",
+        "instruksi": "Tap a card, then tap the box with the same number of dots.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -315118,7 +315120,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "mana-dulu-alam",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "level": "PAUD",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -315346,12 +315348,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "pohon",
             "labelKey": "s_kelapa_pohon",
-            "emoji": "🌴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-kelapa-di-pohon"
+            }
           },
           {
             "id": "jatuh",
             "labelKey": "s_kelapa_jatuh",
-            "emoji": "🥥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-kelapa-di-tanah"
+            }
           }
         ]
       },
@@ -315362,12 +315370,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "hijau",
             "labelKey": "s_daun_hijau",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-daun-di-pohon"
+            }
           },
           {
             "id": "gugur",
             "labelKey": "s_daun_gugur",
-            "emoji": "🍂"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-daun-di-tanah"
+            }
           }
         ]
       }
@@ -368460,7 +368474,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "hitung-ambil",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -368470,7 +368484,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kotak Kelereng",
-        "instruksi": "Sentuh setiap kelereng satu per satu, lalu masukkan ke kotak yang angkanya pas.",
+        "instruksi": "Ketuk kartu, lalu ketuk kotak sesuai jumlah kelereng.",
         "k1": "1",
         "k2": "2",
         "k3": "3",
@@ -368480,7 +368494,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Marble Boxes",
-        "instruksi": "Touch each marble one by one, then put the group in the box with the right number.",
+        "instruksi": "Tap the card, then tap the box matching the number of marbles.",
         "k1": "1",
         "k2": "2",
         "k3": "3",

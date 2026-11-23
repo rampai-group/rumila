@@ -1,6 +1,6 @@
 {
   "id": "hitung-ambil",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kotak Kelereng",
-      "instruksi": "Sentuh setiap kelereng satu per satu, lalu masukkan ke kotak yang angkanya pas.",
+      "instruksi": "Ketuk kartu, lalu ketuk kotak sesuai jumlah kelereng.",
       "k1": "1",
       "k2": "2",
       "k3": "3",
@@ -20,7 +20,7 @@
     },
     "en": {
       "judul": "Marble Boxes",
-      "instruksi": "Touch each marble one by one, then put the group in the box with the right number.",
+      "instruksi": "Tap the card, then tap the box matching the number of marbles.",
       "k1": "1",
       "k2": "2",
       "k3": "3",
