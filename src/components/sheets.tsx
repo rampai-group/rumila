@@ -103,6 +103,16 @@ function MembersSheet() {
         </div>
       )}
 
+      <button
+        onClick={() => {
+          close();
+          router.push("/akademi/piagam");
+        }}
+        className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-[#fdb724] text-[15px] font-bold text-[#0b2545]"
+      >
+        <Icon name="emoji_events" /> Lemari Piagam
+      </button>
+
       <div className="grid grid-cols-2 gap-2">
         <button
           onClick={() => {

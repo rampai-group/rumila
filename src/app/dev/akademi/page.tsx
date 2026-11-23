@@ -87,7 +87,7 @@ function Preview() {
   const paket = q.get("paket"), track = q.get("track");
   if (paket) return <ActivityRunner paketId={paket} />;
   if (track) return <KidFrame><TrackView track={track} /></KidFrame>;
-  if (q.get("portal")) return <KidFrame><AkademiPortal /></KidFrame>;
+  if (q.get("portal")) return <KidFrame overlay={<SheetHost />}><KidHeader /><AkademiPortal /></KidFrame>;
   if (q.get("penempatan")) return <PenempatanPage />;
   if (q.get("berpikir") === "tes") return <TesBerpikir anak={DEMO} kembaliKe="/dev/akademi?berpikir=hasil" />;
   if (q.get("berpikir")) return <div className="mx-auto max-w-[900px] bg-[#fff0da] p-4"><ProfilBerpikirOrtu anak={DEMO} /></div>;
