@@ -19,7 +19,7 @@ const opsi = (n) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.l
 const draf = opsi("draf");
 const hanya = opsi("hanya")?.split(",");
 const keluar = draf ?? path.join(akar, "public/kampus");
-const [sampel, skala] = draf ? [10, 0.8] : [56, 1];
+const [sampel, skala] = [Number(opsi("sampel") ?? (draf ? 10 : 56)), draf ? 0.8 : 1];
 fs.mkdirSync(keluar, { recursive: true });
 
 const paket = await esbuild.build({ entryPoints: [path.join(di, "adegan.js")], bundle: true, write: false, format: "iife", logLevel: "error" });
@@ -54,14 +54,51 @@ try {
     const i = await sharp(Buffer.from(url.split(",")[1], "base64")).removeAlpha().webp({ quality: mutu, effort: 6, smartSubsample: true }).toFile(f);
     console.log(nama, `${i.width}x${i.height}`, `${Math.round(i.size / 1024)} KB`);
   };
+  /** Semua sprite satu denah dalam satu lembar WebP transparan. */
+  const lembar = async (n, latar, gambar) => {
+    const bg = sharp(Buffer.from(latar.split(",")[1], "base64")).removeAlpha();
+    const isi = [];
+    for (const g of gambar) {
+      const kecil = await sharp(Buffer.from(g.url.split(",")[1], "base64")).resize(g.w, g.h, { kernel: "lanczos3" }).ensureAlpha();
+      if (g.potong) {
+        // topeng: alfa dari siluet, warna dari latar sendiri
+        const alfa = await kecil.clone().extractChannel(3).raw().toBuffer();
+        const p = g.potong;
+        // sharp menjalankan joinChannel sebelum extract dalam satu pipa, jadi dipotong dulu
+        const potongan = await bg.clone().extract({ left: p.x, top: p.y, width: p.w, height: p.h }).raw().toBuffer();
+        isi.push({ ...g, buf: await sharp(potongan, { raw: { width: p.w, height: p.h, channels: 3 } }).joinChannel(alfa, { raw: { width: p.w, height: p.h, channels: 1 } }).png().toBuffer() });
+      } else isi.push({ ...g, buf: await kecil.png().toBuffer() });
+    }
+    const LEBAR = Math.max(1024, ...isi.map((g) => g.w));
+    const bingkai = {};
+    let [x, y, baris] = [0, 0, 0];
+    for (const g of [...isi].sort((a, b) => b.h - a.h)) {
+      if (x + g.w > LEBAR) [x, y, baris] = [0, y + baris + 1, 0];
+      bingkai[g.nama] = [x, y, g.w, g.h];
+      g.left = x;
+      g.top = y;
+      x += g.w + 1;
+      baris = Math.max(baris, g.h);
+    }
+    const tinggi = y + baris;
+    const f = path.join(keluar, `hidup-${n}.webp`);
+    const i = await sharp({ create: { width: LEBAR, height: tinggi, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+      .composite(isi.map((g) => ({ input: g.buf, left: g.left, top: g.top })))
+      .webp({ quality: 92, alphaQuality: 100, effort: 6 })
+      .toFile(f);
+    console.log(`hidup-${n}`, `${i.width}x${i.height}`, `${Math.round(i.size / 1024)} KB`, Object.keys(bingkai).length, "bingkai");
+    return { lembar: [LEBAR, tinggi], bingkai };
+  };
   for (const n of DENAH.filter((x) => !hanya || hanya.includes(x))) {
     const t = Date.now();
-    const { url, ...info } = await hal.evaluate(([a, b, c]) => window.denah(a, b, c), [n, sampel, skala]);
+    const { url, gambar, halangan, hidup, ...info } = await hal.evaluate(([a, b, c]) => window.denah(a, b, c), [n, sampel, skala]);
     await tulis(n, url, 70);
-    peta[n] = info;
+    peta[n] = { ...info, hidup: { ...hidup, ...(await lembar(n, url, gambar)) } };
+    if (halangan.length) console.log(`  ${halangan.length} titik jalur tertutup benda:\n   ` + halangan.slice(0, 40).join("\n   "));
     console.log("  detik", (Date.now() - t) / 1000, "rasio aman", ((info.aman[2] * info.w) / (info.aman[3] * info.h)).toFixed(3));
   }
   for (const id of GEDUNG.filter((x) => !hanya || hanya.includes(x))) await tulis(`gedung-${id}`, await hal.evaluate(([a, b, c]) => window.satuGedung(a, b, c), [id, sampel, skala]), 78);
+  if (draf) fs.writeFileSync(path.join(keluar, "peta.json"), JSON.stringify(peta));
   if (!draf && !hanya)
     fs.writeFileSync(
       path.join(akar, "src/components/kampus-peta.generated.ts"),

@@ -127,7 +127,10 @@ export function lingkungan(S, D, kotak) {
   const lp = lantai.attributes.position;
   for (let i = 0; i < lp.count; i++) lantai.attributes.uv.setXY(i, lp.getX(i), lp.getZ(i));
   taruh(S, lantai, B.mPaving, 0, 0.215, fz);
-  airMancur(S, fz, fr);
+  const mancur = new T.Group();
+  mancur.userData.penutup = "mancur";
+  S.add(mancur);
+  airMancur(mancur, fz, fr);
 
   // jalan raya + trotoar
   balok(S, new T.MeshStandardMaterial({ map: B.aspal, roughness: 0.94 }), 700, 0.1, 9, 0, 0, raya);
@@ -138,8 +141,9 @@ export function lingkungan(S, D, kotak) {
   const marka = M("#f1f1ec", 0.6);
   for (let x = -198; x < 200; x += 5) if (Math.abs(x) > 5) balok(S, marka, 2.6, 0.02, 0.22, x, 0.1, raya);
   for (let i = -3; i <= 3; i++) balok(S, marka, 0.6, 0.025, 8, i * 1.15, 0.1, raya);
-  mobil(S, -L * 0.62, raya + 2.2, "#d8dde1");
-  mobil(S, L * 0.45, raya - 2.2, "#b8323a", true);
+  // lalu lintas kiri: menuju kanan (+x) di lajur jauh, menuju kiri di lajur dekat
+  const WARNA_MOBIL = ["#b8323a", "#d8dde1", "#2c5d9e", "#f2b632", "#2f3a44"];
+  WARNA_MOBIL.forEach((w, i) => (mobil(S, (i - 2) * 9, raya + (i % 2 ? 2.2 : -2.2), w, i % 2 === 1).userData.hidup = { jenis: "mobil", arah: i % 2 ? -1 : 1 }));
 
   pagar(S, L, belakang, gz, 8 * gs);
 
@@ -198,6 +202,7 @@ export function lingkungan(S, D, kotak) {
     petak(s * (L - 5), gz - 1.5, 3.4, 0.8);
   }
   sebar(S, new T.DodecahedronGeometry(1, 0), M("#fff", 0.8), bunga);
+  S.userData.raya = raya;
 
   // lampu taman + bangku
   for (const s of [-1, 1]) {
@@ -252,9 +257,10 @@ function laut(S, pesisir) {
   lapis(75, 600, ["#12719f", "#0f5f8c"], 0.09);
   // perahu layar dan jejak airnya
   const layar = M("#fffaf0", 0.7, { side: T.DoubleSide });
-  for (const [x, jarak, k] of [[-25, 40, 1.5], [21, 62, 1.2], [58, 34, 1.3], [-76, 70, 1.2]]) {
+  for (const [x, jarak, k] of [[-25, 44, 1.5], [21, 64, 1.2], [58, 40, 1.3], [-76, 72, 1.2]]) {
     const g = new T.Group();
-    g.position.set(x, 0.15, pesisir(x) - jarak);
+    g.position.set(x, 0.15, pesisir(0) - 4 - jarak);
+    g.userData.hidup = { jenis: "perahu" };
     g.scale.setScalar(k);
     S.add(g);
     taruh(g, new T.SphereGeometry(1, 20, 10, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), cet("#fd861d"), 0, 0.75, 0).scale.set(2.4, 0.8, 0.8);
@@ -284,16 +290,22 @@ function airMancur(S, z, r) {
 function pagar(S, L, belakang, depan, celah) {
   const g = mergeGeometries([new T.BoxGeometry(0.16, 1.5, 0.16).translate(0, 0.75, 0), new T.ConeGeometry(0.14, 0.26, 4).translate(0, 1.63, 0)]);
   const m = M("#fbfaf5", 0.45);
-  const tiang = [];
-  for (let x = celah; x <= L; x += 0.85) tiang.push({ x, z: depan }, { x: -x, z: depan });
-  for (let z = belakang; z < depan; z += 0.85) tiang.push({ x: L + 0.7, z }, { x: -L - 0.7, z });
-  sebar(S, g, m, tiang);
+  // pagar depan satu kelompok: jadi penutup bagi orang yang berjalan di belakangnya
+  const muka = new T.Group();
+  muka.userData.penutup = "pagar";
+  S.add(muka);
+  const tiangDepan = [];
+  const tiangSisi = [];
+  for (let x = celah; x <= L; x += 0.85) tiangDepan.push({ x, z: depan }, { x: -x, z: depan });
+  for (let z = belakang; z < depan; z += 0.85) tiangSisi.push({ x: L + 0.7, z }, { x: -L - 0.7, z });
+  sebar(muka, g, m, tiangDepan);
+  sebar(S, g, m, tiangSisi);
   for (const y of [0.4, 1.15])
     for (const s of [-1, 1]) {
-      balok(S, m, L - celah, 0.11, 0.08, (s * (L + celah)) / 2, y, depan);
+      balok(muka, m, L - celah, 0.11, 0.08, (s * (L + celah)) / 2, y, depan);
       balok(S, m, 0.08, 0.11, depan - belakang, s * (L + 0.7), y, (belakang + depan) / 2);
     }
-  for (const s of [-1, 1]) for (let i = 0; i <= 4; i++) balok(S, B.mBata, 0.55, 1.95, 0.55, s * (celah + ((L - celah) * i) / 4), 0, depan);
+  for (const s of [-1, 1]) for (let i = 0; i <= 4; i++) balok(muka, B.mBata, 0.55, 1.95, 0.55, s * (celah + ((L - celah) * i) / 4), 0, depan);
 }
 
 function lampu(S, x, z) {
@@ -313,7 +325,7 @@ function bangku(S, x, z, r) {
   for (const s of [-1.2, 1.2]) balok(g, cet("#26343f"), 0.12, 1.35, 0.16, s, 0, -0.35);
 }
 
-function mobil(S, x, z, warna, balik = false) {
+export function mobil(S, x, z, warna, balik = false) {
   const g = new T.Group();
   g.position.set(x, 0.1, z);
   g.rotation.y = balik ? Math.PI : 0;
@@ -325,4 +337,46 @@ function mobil(S, x, z, warna, balik = false) {
   taruh(g, bentuk([[-2.2, 0.35], [2.2, 0.35], [2.3, 0.85], [1.4, 1.1], [-2.1, 1.1]], 1.8), new T.MeshPhysicalMaterial({ color: warna, metalness: 0.5, roughness: 0.25, clearcoat: 1 }));
   taruh(g, bentuk([[-1.7, 1.15], [1.2, 1.15], [0.6, 1.8], [-1.4, 1.8]], 1.55), B.kacaGelap);
   for (const a of [-1.4, 1.4]) for (const b of [-0.95, 0.95]) taruh(g, new T.CylinderGeometry(0.43, 0.43, 0.25, 20), B.hitam, a, 0.43, b).rotation.x = Math.PI / 2;
+  return g;
+}
+
+/** Orang berjalan. Pakaian dari daftar warna; langkah 0–1 = satu siklus dua langkah. Asal = di antara kaki, menghadap +x. */
+export function orang({ baju, celana, kulit, rambut, tinggi = 1.35, tas }) {
+  const g = new T.Group();
+  const k = tinggi / 1.75;
+  const isi = new T.Group();
+  isi.scale.setScalar(k);
+  g.add(isi);
+  const m = (c, r = 0.8) => M(c, r);
+  const sendi = (x, y, z) => {
+    const s = new T.Group();
+    s.position.set(x, y, z);
+    isi.add(s);
+    return s;
+  };
+  const kapsul = (p, r, h, warna, y) => taruh(p, new T.CapsuleGeometry(r, h, 4, 12), m(warna), 0, y, 0);
+  const kaki = [-0.13, 0.13].map((z) => sendi(0, 0.86, z));
+  for (const s of kaki) {
+    kapsul(s, 0.095, 0.62, celana, -0.38);
+    taruh(s, new T.BoxGeometry(0.26, 0.1, 0.13), m("#2a2f38", 0.5), 0.05, -0.8, 0);
+  }
+  kapsul(isi, 0.2, 0.42, baju, 1.13);
+  const lengan = [-0.27, 0.27].map((z) => sendi(0, 1.42, z));
+  for (const s of lengan) {
+    kapsul(s, 0.065, 0.46, baju, -0.26);
+    taruh(s, new T.SphereGeometry(0.075, 10, 8), m(kulit), 0, -0.55, 0);
+  }
+  taruh(isi, new T.SphereGeometry(0.17, 18, 14), m(kulit, 0.6), 0, 1.66, 0);
+  taruh(isi, new T.SphereGeometry(0.18, 18, 14, 0, Math.PI * 2, 0, Math.PI * 0.55), m(rambut, 0.5), -0.015, 1.68, 0);
+  if (tas) taruh(isi, new T.BoxGeometry(0.2, 0.36, 0.3), m(tas, 0.6), -0.26, 1.12, 0);
+  g.userData.langkah = (t) => {
+    const a = Math.sin(t * Math.PI * 2);
+    kaki[0].rotation.z = a * 0.5;
+    kaki[1].rotation.z = -a * 0.5;
+    lengan[0].rotation.z = -a * 0.45;
+    lengan[1].rotation.z = a * 0.45;
+    isi.position.y = Math.abs(Math.cos(t * Math.PI * 2)) * 0.03 * k;
+  };
+  g.userData.langkah(0);
+  return g;
 }
