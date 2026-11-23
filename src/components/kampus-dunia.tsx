@@ -8,6 +8,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { JendelaKartuPelajar } from "@/components/akademi/kartu-pelajar";
+import { KampusHidup } from "@/components/kampus-hidup";
 import { keteranganGedung, useGedungKampus, useKelasHariIni, useLab } from "@/components/kampus";
 import { PETA_KAMPUS } from "@/components/kampus-peta.generated";
 import { useLastTool } from "@/components/kid";
@@ -108,6 +109,7 @@ export function KampusDunia({ me }: { me: Member }) {
               {/* render statis sudah dikompres; next/image tidak menambah apa-apa */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img key={letak.denah} src={`/kampus/${letak.denah}.webp`} alt="" draggable={false} className="kd-foto block h-full w-full max-w-none select-none" />
+              <KampusHidup denah={letak.denah} k={letak.w / peta.w} />
               {tempat.map((t) => {
                 const { kotak, bentuk } = peta.tempat[t.id];
                 const [x, y, w, h] = kotak;

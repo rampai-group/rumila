@@ -122,17 +122,18 @@ export function gedungUtama() {
     taruh(q, new T.CircleGeometry(1.85, 48), M("#fff", 0.3, { map: jam }), 0, 0, 2.8);
   }
   tabung(g, B.logam, 0.08, 0.12, 5, 0, 22.7, z, 10).userData.tanpaSiluet = true;
-  const kain = new T.PlaneGeometry(3.6, 2.4, 24, 4).translate(1.8, 0, 0);
-  const pos = kain.attributes.position;
-  for (let i = 0; i < pos.count; i++) pos.setZ(i, Math.sin(pos.getX(i) * 2.2) * 0.22);
-  kain.computeVertexNormals();
+  const kain = new T.PlaneGeometry(3.6, 2.4, 24, 6).translate(1.8, 0, 0);
+  kain.userData.asal = kain.attributes.position.array.slice();
+  kibar(kain, 0);
   const bendera = kanvas(64, 64, (c) => {
     c.fillStyle = "#e8232f";
     c.fillRect(0, 0, 64, 32);
     c.fillStyle = "#fff";
     c.fillRect(0, 32, 64, 32);
   });
-  taruh(g, kain, M("#fff", 0.85, { map: bendera, side: T.DoubleSide }), 0.1, 26.4, z).userData.tanpaSiluet = true;
+  const k = taruh(g, kain, M("#fff", 0.85, { map: bendera, side: T.DoubleSide }), 0.1, 26.4, z);
+  k.userData.tanpaSiluet = true;
+  k.userData.hidup = "bendera";
 
   perdu(g, deret(8, 1.35, -13), 1, 0.8);
   perdu(g, deret(8, 1.35, 13), 1, 0.8);
@@ -407,4 +408,18 @@ export function gerbang() {
   taruh(g, new T.TubeGeometry(lengkung, 40, 0.28, 12), cet("#0b5fb5"));
   papan(g, "KAMPUS RINOYA", { w: 14.4, h: 2.2, y: 7.9, z: 0.5, latar: "#0b5fb5", jarak: 10 });
   return g;
+}
+
+/** Kain bendera berkibar; fase 0–1 = satu kibasan. Ujung bebas bergelombang lebih besar dan sedikit melorot. */
+export function kibar(kain, fase) {
+  const a = kain.userData.asal;
+  const p = kain.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const [x, y] = [a[i * 3], a[i * 3 + 1]];
+    const u = x / 3.6;
+    const w = x * 2.1 - fase * Math.PI * 2;
+    p.setXYZ(i, x - u * u * 0.18, y - u * u * 0.25 + Math.sin(w * 0.7 + y * 0.6) * 0.06 * u, (Math.sin(w) * 0.42 + Math.sin(w * 1.9 + y * 0.9) * 0.08) * u);
+  }
+  p.needsUpdate = true;
+  kain.computeVertexNormals();
 }

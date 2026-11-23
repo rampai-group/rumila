@@ -13,6 +13,6 @@ export const DENAH = {
   lebar: {
     tempat: { utama: [0, -22, 1.2], lab: [-39, -19.5, 1.2], komputer: [39, -19.5, 1.2], taman: [-40.5, 26, 1.12], musala: [41, 26, 1.14], kantor: [-18.5, 26.5, 1], pos: [18, 27, 1.1] },
     mancur: [0, 1, 6], gerbang: [0, 34, 1], lebarKampus: 58,
-    kamera: { sudut: 31, jarak: 300 }, lebih: { kiri: 0.51, kanan: 0.51, atas: 0.58, bawah: 0.46 }, lebarPx: 1800,
+    kamera: { sudut: 31, jarak: 300 }, lebih: { kiri: 0.68, kanan: 0.68, atas: 0.58, bawah: 0.46 }, lebarPx: 1800,
   },
 };
