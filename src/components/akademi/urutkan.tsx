@@ -414,7 +414,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
 
 /* ---------------- mode dulu ---------------- */
 
-function Dulu({ ronde, t, onJawab, hasil }: Props) {
+function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
   const { shown, correct } = ronde;
   const [dipilih, setDipilih] = useState<string | null>(null);
   const kunci = !!hasil || dipilih !== null;
@@ -433,18 +433,24 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
 
   const { tema, skala: sk, w, h } = usePanggung();
   const adaJudul = !/^mana yang lebih dulu/i.test(t(ronde.titleKey));
-  // Kartu berdekatan dengan pertanyaan dan tetap memberi ruang bagi label yang membungkus.
-  const lebar = Math.min(w || 390, 800) - 8;
+  const panggungLuas = paket.level === "PAUD" && w >= 600 && h >= 460;
+  const potretLuas = panggungLuas && h >= w * 1.15;
+  const lebarMaks = potretLuas ? 680 : panggungLuas ? 920 : 800;
+  const lebar = Math.min(w || 390, lebarMaks) - 8;
   const gap = Math.round(12 * sk);
   const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT : 160;
-  const tumpuk = lebar < 540 && tinggiSisa > lebar * 1.2;
+  // Di potret tablet, dua kartu memanfaatkan tinggi layar dan tetap dekat dengan pertanyaan.
+  const tumpuk = potretLuas || (lebar < 540 && tinggiSisa > lebar * 1.2);
   const lebarKartu = tumpuk ? lebar : (lebar - gap) / 2;
-  const tinggiKartu = batas(118 * sk, tumpuk ? (tinggiSisa - gap) / 2 : Math.min(tinggiSisa, lebarKartu), tumpuk ? 210 : 310);
+  const ruangKartu = tumpuk ? (tinggiSisa - gap) / 2 : Math.min(tinggiSisa, lebarKartu * (panggungLuas ? 1.2 : 1));
+  const batasTinggi = panggungLuas ? (tumpuk ? 445 : 490) : (tumpuk ? 210 : 310);
+  const tinggiKartu = batas(118 * sk, ruangKartu, batasTinggi);
   const skalaTerlebar = Math.max(1, ...shown.map(skalaLebar));
-  const ukuran = Math.round(Math.min(196, tinggiKartu - 52, (lebarKartu - 24) / skalaTerlebar));
+  const ruangLabel = panggungLuas ? 86 : 52;
+  const ukuran = Math.round(Math.min(panggungLuas ? 340 : 196, tinggiKartu - ruangLabel, (lebarKartu - 24) / skalaTerlebar));
 
   return (
-    <div className="mx-auto flex w-full max-w-[800px] flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK }}>
+    <div className="mx-auto flex w-full flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK, maxWidth: lebarMaks }}>
       {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
       {adaJudul && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
