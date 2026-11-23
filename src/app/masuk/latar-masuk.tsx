@@ -1,15 +1,16 @@
 "use client";
 
-// Latar layar masuk: bersih dan lembut. Gradasi langit pucat, tiga bulatan warna brand yang diburamkan,
-// pola titik tipis, dan beberapa kilau kecil. Tidak ada objek di area isi, jadi tidak ada yang tertimpa.
+// Satu latar bergradasi menghindari sambungan warna dari komposit lapisan blur di WebKit iPad.
+const GRADASI = [
+  "radial-gradient(ellipse 52% 56% at 3% 72%, #ffb3d14d 0%, #ffb3d13b 32%, #ffb3d116 68%, #ffb3d105 90%, #ffb3d100 100%)",
+  "radial-gradient(ellipse 66% 76% at 94% 82%, #ffc27a6b 0%, #ffc27a57 32%, #ffc27a21 68%, #ffc27a08 90%, #ffc27a00 100%)",
+  "radial-gradient(ellipse 67% 71% at 10% 24%, #8fcbff77 0%, #8fcbff60 32%, #8fcbff27 68%, #8fcbff09 90%, #8fcbff00 100%)",
+  "linear-gradient(180deg, #e3f2ff, #f2f8ff 48%, #fff7ec)",
+].join(", ");
 
 export function LatarMasuk() {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
-      <div className="absolute inset-0" style={{ background: "linear-gradient(180deg,#e3f2ff 0%,#f2f8ff 48%,#fff7ec 100%)" }} />
-      <div className="absolute -top-[18%] -left-[22%] size-[70vmax] max-h-[720px] max-w-[720px] rounded-full bg-[#8fcbff] opacity-40 blur-[90px]" />
-      <div className="absolute -right-[20%] -bottom-[16%] size-[64vmax] max-h-[680px] max-w-[680px] rounded-full bg-[#ffc27a] opacity-40 blur-[90px]" />
-      <div className="absolute top-[42%] -left-[18%] size-[40vmax] max-h-[440px] max-w-[440px] rounded-full bg-[#ffb3d1] opacity-25 blur-[90px]" />
+    <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden" style={{ background: GRADASI }}>
       <div
         className="absolute inset-0 opacity-60"
         style={{
