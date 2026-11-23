@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Hidup di Bawah Laut",
-      "instruksi": "Robot menyelam: taruh makhluk hidup ke keranjang daun, benda tak hidup ke keranjang batu.",
+      "instruksi": "Robot menyelam. Ketuk satu kartu, lalu ketuk kotak hidup atau tak hidup.",
       "hidup": "hidup",
       "takhidup": "tak hidup",
       "i-ikan": "ikan",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Living Things Under the Sea",
-      "instruksi": "Robot dives: put living things in the leaf basket and non-living things in the stone basket.",
+      "instruksi": "Robot dives. Tap a card, then tap the living or not living box.",
       "hidup": "living",
       "takhidup": "not living",
       "i-ikan": "fish",

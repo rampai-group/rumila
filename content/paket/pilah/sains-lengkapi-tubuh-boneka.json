@@ -36,21 +36,21 @@
       "pilihan": "choices",
       "i-kepala": "head",
       "i-badan": "body",
-      "i-tangan": "hand",
-      "i-kaki": "foot",
+      "i-tangan": "arms",
+      "i-kaki": "legs",
       "i-bola": "ball",
       "i-topi": "hat",
       "i-sepatu": "shoe",
       "t1": "The doll has no head. Which part goes in the empty place?",
-      "t2": "The doll has no feet. Which part goes in the empty place?",
-      "t3": "The doll has no hands. Which part goes in the empty place?",
+      "t2": "The doll has no legs. Which part goes in the empty place?",
+      "t3": "The doll has no arms. Which part goes in the empty place?",
       "t4": "The doll has no body. Which part goes in the empty place?",
       "t5": "The very top of the doll is empty, where the eyes and mouth go. Which part goes on?",
       "t6": "The very bottom of the doll is empty, for standing and walking. Which part goes on?",
       "t7": "The doll can't hold or wave yet. Which part goes in the empty place?",
       "t8": "The middle of the doll is empty, where a shirt goes. Which part goes on?",
       "t9": "The head is on. Which part goes in the empty place right under the head?",
-      "t10": "The body and feet are on. Which part goes on the left and right of the body?"
+      "t10": "The body and legs are on. Which part goes on the left and right of the body?"
     }
   },
   "knobs": {

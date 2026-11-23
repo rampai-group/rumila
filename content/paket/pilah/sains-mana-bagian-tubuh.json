@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-bagian-tubuh",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -26,10 +26,10 @@
       "t-kaki": "Mana kakinya?",
       "i-gigi": "gigi",
       "i-lidah": "lidah",
-      "i-jempol": "jempol",
+      "i-jempol": "ibu jari tangan",
       "t-gigi": "Mana giginya?",
       "t-lidah": "Mana lidahnya?",
-      "t-jempol": "Mana jempolnya?",
+      "t-jempol": "Mana ibu jari tangan?",
       "t-mata2": "Mana matanya? Mata untuk melihat.",
       "t-telinga2": "Mana telinganya? Telinga untuk mendengar.",
       "t-hidung2": "Mana hidungnya? Hidung untuk mencium bau."
@@ -55,7 +55,7 @@
       "i-jempol": "thumb",
       "t-gigi": "Where is the tooth?",
       "t-lidah": "Where is the tongue?",
-      "t-jempol": "Where is the thumb?",
+      "t-jempol": "Which picture shows a thumb?",
       "t-mata2": "Where is the eye? Eyes are for seeing.",
       "t-telinga2": "Where is the ear? Ears are for hearing.",
       "t-hidung2": "Where is the nose? Noses are for smelling."

@@ -70,8 +70,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah benda ke indra yang memakainya: pelangi ke mata, lonceng ke telinga, bunga ke hidung",
-        "en": "I can sort things to the sense that uses them: a rainbow to the eyes, a bell to the ears, a flower to the nose"
+        "id": "Aku bisa memilih indra yang cocok untuk petunjuk pada kartu, seperti warna pelangi, bunyi lonceng, dan aroma mawar",
+        "en": "I can choose the right sense for a clue on a card, such as rainbow colors, the sound of a bell, or the scent of a rose"
       },
       "depth": [
         "pakai"
@@ -85,7 +85,7 @@
         "pilah",
         "cari"
       ],
-      "catatan": "Pilah dengan 3 keranjang berlabel gambar indra (mata, telinga, hidung). Tiga indra ini yang bisa dialami langsung di game: benda bersinar/berwarna, benda berbunyi (diputar suaranya saat disentuh), benda berbau (tokoh mengendus). Item harus jelas satu indra dominan: pelangi, lampu kelap-kelip, kunang-kunang → mata; lonceng, genderang, bel sepeda → telinga; bunga, sabun, parfum → hidung. Umpan balik: keranjang yang benar 'memakai' bendanya (mata membesar melihat pelangi, telinga bergetar mendengar lonceng). Jebakan: benda yang bisa dilihat dan didengar sekaligus (burung) — hindari di ronde awal. Beda dengan .01: di sini anak menghubungkan indra dengan fungsinya, bukan sekadar menunjuk. Knob: 3 indra → 4 (tambah mulut/lidah: kue, permen) → 5 (kulit/tangan: es batu, bulu halus) hanya di ronde lanjut; 'lidah' dan 'kulit' sebagai nama indra ditegaskan di TK A. Tanpa kode kerangka yang cocok di kamus. [Tinjauan 24 Okt 2026: dipersempit dari 4 indra ke 3; 'kue ke lidah' dipindah ke knob.]"
+      "catatan": "Awalnya ada tiga keranjang berlabel mata, telinga, dan hidung. Anak mengetuk kartu untuk mendengar petunjuk yang spesifik, misalnya warna pelangi, bunyi lonceng, atau aroma mawar, lalu memilih indra yang sesuai. Saat jumlah keranjang naik menjadi empat, tambah lidah untuk petunjuk rasa seperti rasa manis kue. Setiap kartu menyebut satu petunjuk agar benda yang sama dapat dibedakan menurut hal yang diamati."
     },
     {
       "id": "SAINS.PAUD.HEWAN-SUARA.01",
@@ -99,8 +99,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menunjuk kucing, ayam, sapi, kambing, bebek, atau burung saat namanya disebut",
-        "en": "I can point to the cat, chicken, cow, goat, duck, or bird when its name is said"
+        "id": "Aku bisa menunjuk gambar hewan di halaman atau di laut, seperti kucing atau hiu, saat namanya disebut",
+        "en": "I can point to pictures of yard or sea animals, such as cats or sharks, when their names are said"
       },
       "depth": [
         "kenal"
@@ -118,7 +118,7 @@
         "pilah",
         "ucap"
       ],
-      "catatan": "Pengenalan nama hewan halaman (reseptif). Mekanik pilah mode pilih: enam hewan di satu adegan kebun/halaman 2D, instruksi audio 'Mana sapinya?', anak menyentuh satu hewan. Variasi ucap: tokoh menyorot hewan, anak menyebut namanya. Jebakan: bebek vs ayam, kambing vs sapi kecil — beda ukuran dan warna harus jelas. Knob: jumlah hewan di adegan 3 → 6. Catatan aset: belum ada dunia 3D hewan halaman, jadi mekanik `cari` tidak dipakai di sini; bila dunia itu dibuat, tambahkan `cari` (hewan laut dari Bawah Laut bisa jadi varian). [Tinjauan 24 Okt 2026: `cari` diganti `pilah` karena tidak ada dunia 3D yang memuat hewan ini.]"
+      "catatan": "Pengenalan nama hewan secara reseptif. Anak mendengar nama hewan lalu menyentuh gambarnya. Varian halaman mencakup kucing, ayam, sapi, kambing, bebek, dan burung. Varian laut mencakup ikan, penyu, hiu, dan hewan laut lain. Pilihan untuk nama umum seperti burung memakai pengecoh dari kelompok hewan lain agar hanya satu gambar sesuai. Knob: 3–6 pilihan."
     },
     {
       "id": "SAINS.PAUD.HEWAN-SUARA.02",
@@ -132,8 +132,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menemukan hewan yang bersuara dengan mendengar suaranya saja, misalnya meong untuk kucing",
-        "en": "I can find the animal that is making a sound just by listening to it, for example meow for the cat"
+        "id": "Aku bisa mencocokkan tiruan bunyi yang dibacakan, seperti meong, dengan gambar hewan yang sesuai",
+        "en": "I can match a spoken imitation, such as meow, to a picture of the right animal"
       },
       "depth": [
         "pakai"
@@ -145,14 +145,14 @@
         {
           "framework": "EYFS",
           "code": "ELG-UW-NATURAL-WORLD-01",
-          "note": "mengamati hewan lewat indra pendengaran"
+          "note": "mengenal hewan lewat tiruan bunyi yang diucapkan"
         }
       ],
       "core": true,
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Aksi teramati: suara hewan diputar tanpa petunjuk visual (semua hewan diam), anak menyentuh hewan yang bersuara. Bukti sah hanya bila hewan tidak beranimasi saat suaranya diputar. Jebakan: anak menyentuh hewan favorit, bukan yang bersuara — acak urutan. Varian pilah: kartu suara (ikon pengeras) diseret ke hewannya. Knob: 3 → 6 hewan, suara mirip (kambing vs sapi) di ronde lanjut. Mekanik pilah mode pilih pada adegan 2D; `cari` baru relevan bila dunia 3D hewan halaman ada. [Tinjauan 24 Okt 2026: `cari` dilepas.]"
+      "catatan": "Kartu soal menampilkan dan membacakan tiruan bunyi, misalnya meong untuk kucing atau kukuruyuk untuk ayam jago. Anak mencocokkannya dengan gambar hewan. Varian halaman dan kebun melatih hubungan antara tiruan bunyi yang diucapkan dan nama hewan. Knob: 3–6 pilihan."
     },
     {
       "id": "SAINS.PAUD.HEWAN-SUARA.03",
@@ -201,8 +201,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah gambar kegiatan ke siang atau malam: bermain di luar ke siang, tidur ke malam",
-        "en": "I can sort pictures of activities into day or night: playing outside to day, sleeping to night"
+        "id": "Aku bisa memilah gambar kegiatan ke siang atau malam dari petunjuk langitnya",
+        "en": "I can sort pictures of activities into day or night using clues from the sky"
       },
       "depth": [
         "pakai"
@@ -220,7 +220,7 @@
         "pilah",
         "simulasi"
       ],
-      "catatan": "Dua keranjang: langit siang (matahari) dan langit malam (bulan, bintang). Item harus punya petunjuk visual kuat: lampu menyala, piyama, matahari di jendela. Jebakan: makan bisa siang atau malam — hindari item ambigu. Varian simulasi: anak memasang matahari atau bulan di langit sesuai kegiatan yang sedang terjadi. Knob: 4 → 8 gambar."
+      "catatan": "Anak memilah berdasarkan petunjuk langit: cahaya matahari dan awan terang untuk siang, langit gelap berbintang untuk malam. Kartu tetap memberi petunjuk waktu ketika aktivitasnya biasa dilakukan pada siang maupun malam, seperti bersepeda atau memakai senter. Knob: 4–8 kartu."
     },
     {
       "id": "SAINS.PAUD.SIANG-MALAM-CUACA.02",

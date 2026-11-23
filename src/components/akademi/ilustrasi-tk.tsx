@@ -340,6 +340,110 @@ function DalamRumah() {
   </>;
 }
 
+const JATUH_DI_ALAM: Record<string, { jenis: "kelapa" | "daun"; jatuh: boolean }> = {
+  "kelapa-di-pohon": { jenis: "kelapa", jatuh: false },
+  "kelapa-di-tanah": { jenis: "kelapa", jatuh: true },
+  "daun-di-pohon": { jenis: "daun", jatuh: false },
+  "daun-di-tanah": { jenis: "daun", jatuh: true },
+};
+
+function JatuhDiAlam({ jenis, jatuh }: (typeof JATUH_DI_ALAM)[string]) {
+  const kelapa = jenis === "kelapa";
+  const posisi = kelapa ? (jatuh ? "88 76" : "80 46") : (jatuh ? "83 82" : "83 33");
+  return <>
+    <rect x="3" y="3" width="124" height="94" rx="11" fill="#e9f6fa" />
+    <path d="M4 89H126V92Q126 97 121 97H9Q4 97 4 92Z" fill="#a3c97a" />
+    {kelapa ? <>
+      <path d="M38 89C48 69 52 48 55 27L66 28C63 51 59 73 52 89Z" fill="#c89561" stroke="#8c613f" strokeWidth="2.4" />
+      <path d="M46 70L57 73M50 57L61 60M53 45L64 48" fill="none" stroke="#9c6c4a" strokeWidth="2.2" />
+      <path d="M60 29Q37 9 15 29Q39 23 57 35Q34 31 23 48Q43 39 63 35Q84 34 111 47Q95 29 69 30Q91 20 112 25Q89 10 65 26Q67 15 80 8Q64 6 59 25Q48 11 36 9Q47 24 60 29Z" fill="#65964d" stroke="#48713d" strokeWidth="2.4" />
+      {!jatuh && <path d="M64 31Q75 27 80 33" fill="none" stroke="#82713d" strokeWidth="3.2" />}
+    </> : <>
+      <path d="M10 40Q6 29 18 23Q18 12 31 13Q40 6 51 19Q66 18 68 31Q74 40 64 49Q58 58 47 52Q39 60 30 53Q15 55 10 40Z" fill="#acd296" stroke="#80ab6e" strokeWidth="2" />
+      <path d="M27 89Q32 72 30 53L22 37L28 34L38 50Q42 46 48 43L63 37L65 41Q50 50 41 63L42 89Z" fill="#ba8e66" stroke="#88684f" strokeWidth="2.4" />
+    </>}
+    {jatuh && <ellipse cx={kelapa ? 88 : 83} cy="91" rx={kelapa ? 15 : 20} ry="2.6" fill="#779b5f" />}
+    <g transform={`translate(${posisi})`}>
+      {kelapa ? <>
+        <path d="M-12-2C-12-10-5-13 0-13C7-14 13-8 14 0C15 8 8 14 0 14C-8 14-14 8-12-2Z" fill="#d7a453" stroke="#805530" strokeWidth="2.6" />
+        <path d="M-3-10C-10-4-9 4-5 10M4-8C9-3 10 4 6 9" fill="none" stroke="#ae7841" strokeWidth="1.8" />
+      </> : <>
+        <path d="M-11 3Q-10-12 17-8Q11 11-3 8Q-8 7-11 3Z" fill="#53a552" stroke="#326b43" strokeWidth="2.6" />
+        <path d="M-19 7Q-5 1 10-5M-6 2L-4-3M1 0L5 3" fill="none" stroke="#326b43" strokeWidth="2" />
+      </>}
+    </g>
+  </>;
+}
+
+function PohonApel({ berbuah }: { berbuah: boolean }) {
+  const ranting = [[36, 40], [57, 27], [83, 36], [70, 54], [99, 53]];
+  return <>
+    <rect x="3" y="3" width="124" height="94" rx="11" fill="#e9f6fa" />
+    <path d="M4 87Q40 82 65 87T126 87V92Q126 97 121 97H9Q4 97 4 92Z" fill="#a3c97a" />
+    <path d="M53 88Q61 76 60 53H70Q68 74 76 88Z" fill="#ad7951" stroke="#784f34" strokeWidth="2.6" />
+    <path d="M17 55Q12 41 24 34Q22 20 38 18Q45 7 61 15Q76 6 88 17Q105 15 111 32Q125 41 114 55Q116 68 100 70Q84 82 68 72Q51 80 40 71Q20 70 17 55Z" fill="#7fbd6e" stroke="#437948" strokeWidth="2.6" />
+    <path d="M64 71V47M64 59L51 47M64 58L79 43M40 53L33 45M95 60L99 53" fill="none" stroke="#5b8e51" strokeWidth="3" />
+    {ranting.map(([x, y]) => <g key={x} transform={`translate(${x} ${y})`}>
+      {berbuah ? <>
+        <path d="M0-4Q0-8 3-10" fill="none" stroke="#664838" strokeWidth="2" />
+        <path d="M1-7Q4-13 10-11Q8-6 1-7Z" fill="#3e7e4b" />
+        <path d="M0-4C-11-10-13 3-7 9Q-3 13 0 10Q5 13 9 6C13-1 8-9 0-4Z" fill="#de5a55" stroke="#9d3d36" strokeWidth="1.7" />
+        <path d="M-7-1Q-8 0-8 3" fill="none" stroke="#ffb5ac" strokeWidth="1.7" />
+      </> : <>
+        <path d="M0-4V-10" stroke="#437948" strokeWidth="2" />
+        <path d="M0-4Q5-11 9-5Q12-1 6 2Q9 8 3 10Q0 11-2 6Q-8 10-10 4Q-12 0-6-2Q-9-8-4-8Q-1-8 0-4Z" fill="#fff1f6" stroke="#c8688f" strokeWidth="1.5" />
+        <circle cy="1" r="2.6" fill="#e69b49" />
+      </>}
+    </g>)}
+  </>;
+}
+
+function SalimDiGerbang() {
+  return <>
+    <rect x="3" y="3" width="124" height="94" rx="11" fill="#e9f6fa" />
+    <path d="M4 79H126V92Q126 97 121 97H9Q4 97 4 92Z" fill="#adc983" />
+    <path d="M39 72H94L115 97H18Z" fill="#d6c8aa" />
+    <path d="M16 79V27H26V79M104 79V27H114V79M18 27V20H112V27Z" fill="#d6936d" stroke="#915947" strokeWidth="2" />
+    <path d="M27 60H38M91 60H103M31 47V76M98 47V76" fill="none" stroke="#91aeb0" strokeWidth="3" />
+    {/* Guru berdiri, anak menunduk membawa punggung tangan guru ke dahinya. */}
+    <path d="M81 68H96L98 87H86L83 78L78 87H71Z" fill="#3e6282" stroke={INK} strokeWidth="2" />
+    <path d="M78 86V91H69M97 87V91H103" fill="none" stroke={INK} strokeWidth="3.5" />
+    <path d="M79 41Q88 38 95 43L98 69H77Z" fill="#637caa" stroke={INK} strokeWidth="2.2" />
+    <path d="M86 44L90 50L94 43M94 50L98 61L95 68" fill="none" stroke="#c8dbf0" strokeWidth="2" />
+    <path d="M86 20Q99 18 100 31Q100 43 88 44Q81 41 81 35L78 33L82 29Z" fill="#daa378" stroke={INK} strokeWidth="2" />
+    <path d="M81 28Q81 16 94 19Q104 22 101 37L97 35L95 27Q89 29 81 28Z" fill="#384056" />
+    <circle cx="86" cy="32" r="1.25" fill={INK} />
+    <path d="M34 73L47 72L49 84L45 89H38L30 84Z" fill="#b7454b" stroke={INK} strokeWidth="2" />
+    <path d="M35 85L32 90H27M44 87V91H49" fill="none" stroke={INK} strokeWidth="3.2" />
+    <path d="M34 69Q27 66 31 57L40 52L44 66Z" fill="#c45e4f" stroke={INK} strokeWidth="1.7" />
+    <path d="M35 74L37 61L45 55L54 61L48 74Z" fill="#fff" stroke={INK} strokeWidth="2" />
+    <path d="M48 54Q41 48 48 40Q57 34 64 40Q70 45 67 52L70 55L65 56Q61 62 55 58Z" fill="#f0bc8b" stroke={INK} strokeWidth="2" />
+    <path d="M45 46Q46 35 57 35Q64 35 67 42L63 45Q57 41 53 49L48 51Z" fill="#554033" />
+    <path d="M60 52L62 53" stroke={INK} strokeWidth="1.6" />
+    <path d="M80 50L75 52L68 46" fill="none" stroke={INK} strokeWidth="8" />
+    <path d="M80 50L75 52L67 45" fill="none" stroke="#daa378" strokeWidth="5.5" />
+    <path d="M48 64L58 64L67 50M53 62L61 57L66 47" fill="none" stroke={INK} strokeWidth="5.5" />
+    <path d="M48 64L58 64L67 50M53 62L61 57L66 47" fill="none" stroke="#f0bc8b" strokeWidth="3.2" />
+  </>;
+}
+
+function ParfumSemprot() {
+  return <>
+    <path d="M37 37H61L68 46Q80 50 80 64V85Q80 92 72 92H25Q17 92 17 85V64Q17 50 30 46Z" fill="#dcc9f4" stroke="#66458b" strokeWidth="3" />
+    <path d="M19 67Q48 60 78 67V85Q78 90 72 90H25Q19 90 19 85Z" fill="#bc8de2" />
+    <path d="M37 27H61V41H37Z" fill="#b5a0cf" stroke="#66458b" strokeWidth="2.6" />
+    <path d="M39 26V17Q39 12 44 12H61Q65 12 65 17V26Z" fill="#d8c9ed" stroke="#66458b" strokeWidth="2.6" />
+    <circle cx="64" cy="19" r="2.8" fill="#66458b" />
+    <path d="M29 61Q28 55 34 53M26 69V80" fill="none" stroke="#fff3ff" strokeWidth="3.5" />
+    <path d="M49 62Q51 72 60 74Q51 77 49 86Q46 77 37 74Q46 71 49 62Z" fill="#fff0ff" />
+    <g fill="#8759ba">
+      <circle cx="77" cy="19" r="2" /><circle cx="90" cy="15" r="2.4" /><circle cx="91" cy="24" r="2.4" />
+      <circle cx="103" cy="9" r="2.9" /><circle cx="105" cy="20" r="2.9" /><circle cx="105" cy="32" r="2.9" />
+      <circle cx="117" cy="14" r="3.1" /><circle cx="119" cy="26" r="3.1" /><circle cx="117" cy="39" r="3.1" />
+    </g>
+  </>;
+}
+
 export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: string; s: number; style?: CSSProperties; className?: string }) {
   const id = gambar.slice(3);
   let art: ReactNode;
@@ -357,6 +461,10 @@ export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: str
   else if (id === "mars") art = <Mars />;
   else if (id.startsWith("kue-")) art = <KuePesta id={id.slice(4)} />;
   else if (id === "dalam-rumah") art = <DalamRumah />;
+  else if (JATUH_DI_ALAM[id]) art = <JatuhDiAlam {...JATUH_DI_ALAM[id]} />;
+  else if (id === "apel-berbunga" || id === "apel-berbuah") art = <PohonApel berbuah={id === "apel-berbuah"} />;
+  else if (id === "salim-di-gerbang") art = <SalimDiGerbang />;
+  else if (id === "tunas-parfum") art = <ParfumSemprot />;
   else return null;
   return <svg aria-hidden data-ilustrasi={gambar} width={s * 1.3} height={s} viewBox="0 0 130 100" strokeLinecap="round" strokeLinejoin="round" className={className} style={style}>{art}</svg>;
 }

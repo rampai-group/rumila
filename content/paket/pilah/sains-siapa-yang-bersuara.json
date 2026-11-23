@@ -1,6 +1,6 @@
 {
   "id": "sains-siapa-yang-bersuara",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Siapa yang Bersuara?",
-      "instruksi": "Dengarkan suaranya, lalu sentuh hewan yang bersuara begitu.",
+      "instruksi": "Dengarkan tiruan bunyi hewan, misalnya meong. Lalu sentuh gambar hewan yang cocok.",
       "pilihan": "pilihan",
       "i-kucing": "kucing",
       "i-ayam": "ayam jago",
@@ -35,7 +35,7 @@
     },
     "en": {
       "judul": "Who Made That Sound?",
-      "instruksi": "Listen to the sound, then touch the animal that makes it.",
+      "instruksi": "Listen to someone imitate an animal sound, like meow. Then tap the matching animal.",
       "pilihan": "choices",
       "i-kucing": "cat",
       "i-ayam": "rooster",

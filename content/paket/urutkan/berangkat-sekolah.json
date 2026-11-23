@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Berangkat Sekolah",
-      "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
+      "instruksi": "Susun gambar dari kejadian pertama sampai terakhir.",
       "sekolah": "Robot ke sekolah",
       "seragam": "pakai seragam",
       "sepeda": "naik sepeda",
@@ -57,7 +57,7 @@
     },
     "en": {
       "judul": "Off to School",
-      "instruksi": "Put the pictures in order to get to school the right way.",
+      "instruksi": "Put the pictures in order from the first event to the last.",
       "sekolah": "The robot goes to school",
       "seragam": "put on uniform",
       "sepeda": "ride the bike",
@@ -97,7 +97,7 @@
       "seberang-3": "cross the road",
       "seberang-4": "arrive at school",
       "t-salim": "Arriving at school",
-      "salim-1": "shake hands with the teacher at the gate",
+      "salim-1": "bow and greet the teacher at the gate",
       "salim-2": "walk to the classroom",
       "salim-3": "put your bag in the classroom",
       "sekolah-bangun": "wake up"
@@ -329,7 +329,11 @@
         {
           "id": "salim-1",
           "labelKey": "salim-1",
-          "emoji": "🤝"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tk-salim-di-gerbang",
+            "t": 0
+          }
         },
         {
           "id": "salim-2",

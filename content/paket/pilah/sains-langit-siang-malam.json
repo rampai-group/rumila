@@ -1,6 +1,6 @@
 {
   "id": "sains-langit-siang-malam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,31 +10,31 @@
   "locale": {
     "id": {
       "judul": "Siang atau Malam?",
-      "instruksi": "Taruh tiap gambar kegiatan ke langit siang atau langit malam.",
+      "instruksi": "Lihat langit di tiap kartu, lalu taruh kegiatannya di kelompok siang atau malam.",
       "siang": "siang",
       "malam": "malam",
-      "i-bola": "main bola di lapangan",
-      "i-sepeda": "naik sepeda",
-      "i-sekolah": "berangkat sekolah",
-      "i-layang": "main layang-layang",
-      "i-tidur": "tidur di kasur",
-      "i-bintang": "melihat bintang",
-      "i-senter": "menyalakan senter",
-      "i-burunghantu": "burung hantu terbang"
+      "i-bola": "main bola saat cerah",
+      "i-sepeda": "bersepeda di bawah matahari",
+      "i-sekolah": "ke sekolah saat pagi cerah",
+      "i-layang": "main layang-layang saat cerah",
+      "i-tidur": "tidur di malam hari",
+      "i-bintang": "bintang di langit malam",
+      "i-senter": "senter di malam hari",
+      "i-burunghantu": "burung hantu di malam hari"
     },
     "en": {
       "judul": "Day or Night?",
-      "instruksi": "Put each activity picture under the day sky or the night sky.",
+      "instruksi": "Look at the sky on each card, then sort the activities into day or night.",
       "siang": "day",
       "malam": "night",
-      "i-bola": "playing ball outside",
-      "i-sepeda": "riding a bike",
-      "i-sekolah": "going to school",
-      "i-layang": "flying a kite",
-      "i-tidur": "sleeping in bed",
-      "i-bintang": "watching the stars",
-      "i-senter": "turning on a torch",
-      "i-burunghantu": "an owl flying"
+      "i-bola": "playing ball under a sunny sky",
+      "i-sepeda": "cycling in the sunshine",
+      "i-sekolah": "going to school on a sunny morning",
+      "i-layang": "flying a kite under a sunny sky",
+      "i-tidur": "sleeping at night",
+      "i-bintang": "stars in the night sky",
+      "i-senter": "a torch at night",
+      "i-burunghantu": "an owl at night"
     }
   },
   "knobs": {
@@ -43,7 +43,7 @@
       "max": 8,
       "default": 6,
       "step": 2,
-      "keterangan": "jumlah gambar per putaran; semua gambar punya petunjuk kuat (matahari, lampu, piyama)"
+      "keterangan": "jumlah gambar kegiatan dengan tanda langit siang atau malam"
     }
   },
   "assets": [],
@@ -70,49 +70,81 @@
       "id": "bola",
       "labelKey": "i-bola",
       "bin": "siang",
-      "emoji": "⚽"
+      "emoji": "⚽",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "sepeda",
       "labelKey": "i-sepeda",
       "bin": "siang",
-      "emoji": "🚲"
+      "emoji": "🚲",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "sekolah",
       "labelKey": "i-sekolah",
       "bin": "siang",
-      "emoji": "🏫"
+      "emoji": "🏫",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "layang",
       "labelKey": "i-layang",
       "bin": "siang",
-      "emoji": "🪁"
+      "emoji": "🪁",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌤️"
+      }
     },
     {
       "id": "tidur",
       "labelKey": "i-tidur",
       "bin": "malam",
-      "emoji": "🛌"
+      "emoji": "🛌",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     },
     {
       "id": "bintang",
       "labelKey": "i-bintang",
       "bin": "malam",
-      "emoji": "🌟"
+      "emoji": "🌟",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     },
     {
       "id": "senter",
       "labelKey": "i-senter",
       "bin": "malam",
-      "emoji": "🔦"
+      "emoji": "🔦",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     },
     {
       "id": "burunghantu",
       "labelKey": "i-burunghantu",
       "bin": "malam",
-      "emoji": "🦉"
+      "emoji": "🦉",
+      "adegan": {
+        "jenis": "tanda",
+        "tanda": "🌌"
+      }
     }
   ],
   "pilihan": []

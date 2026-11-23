@@ -4,6 +4,7 @@
 // Satu komponen latar + kerangka layar aktivitas (header kembali, progres ronde, tombol dengar instruksi).
 
 import { useRouter } from "next/navigation";
+import type { ContentPack } from "@akademi/schema";
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { PILAR, TEMA, temaBersih, type BentukWadah, type DuniaId, type Pilar, type Tema } from "@/lib/akademi/tema-dunia";
@@ -85,7 +86,10 @@ function GulirLagi({ wadah }: { wadah: React.RefObject<HTMLDivElement | null> })
       cancelAnimationFrame(tunggu);
       tunggu = requestAnimationFrame(() => {
         const ruang = el.scrollHeight - el.clientHeight;
-        setArah(ruang <= 12 ? null : ruang - el.scrollTop > 12 ? "bawah" : "atas");
+        const tombol = el.parentElement?.querySelector<HTMLElement>("[data-gulir-lagi]");
+        // Jangan pertahankan panah kalau isi akan muat setelah ruang tombolnya dikembalikan.
+        const tinggiTombol = tombol ? tombol.offsetHeight + (parseFloat(getComputedStyle(tombol).marginTop) || 0) : 0;
+        setArah(ruang <= tinggiTombol + 12 ? null : ruang - el.scrollTop > 12 ? "bawah" : "atas");
       });
     };
     const ro = new ResizeObserver(cek);
@@ -147,14 +151,21 @@ export function skalaPanggung(w: number, h: number): number {
   return Math.round(Math.max(1, Math.min(1.6, w / 880, h / 500)) * 100) / 100;
 }
 
+export function panggungPadat(paket: ContentPack): boolean {
+  return paket.mechanic === "pilah" ||
+    (paket.mechanic === "urutkan" && (paket.mode === "dulu" || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
+    (paket.mechanic === "pola" && paket.level === "PAUD") ||
+    (paket.mechanic === "simulasi" && paket.mode === "tombol" && paket.level === "PAUD");
+}
+
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function LayarAktivitas({
-  judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", wadah, rintangan = "🌳", musik, pilar = PILAR.MAT, padat = false,
+  judul, ronde, percobaan = 0, total, instruksi, onUcap, children, kembaliKe = "/akademi", dunia = "kebun", wadah, rintangan = "🌳", musik, pilar = PILAR.MAT, padat = false,
 }: {
   /** warna pilar pelajaran: latar layar lembut + aksen aktif (progres, kartu terpilih, wadah tujuan) */
   pilar?: Pilar;
-  judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string; dunia?: DuniaId;
+  judul: string; ronde: number; percobaan?: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string; dunia?: DuniaId;
   /** bentuk wadah yang disebut paket (mis. "rak"); kosong = bawaan dunia */
   wadah?: BentukWadah;
   /** emoji rintangan soal robot (mis. 🗄️ bila soal menyebut rak) */
@@ -172,6 +183,10 @@ export function LayarAktivitas({
   const ruangPanggungRef = useRef<HTMLDivElement>(null);
   const panggungRef = useRef<HTMLDivElement>(null);
   const [ukuran, setUkuran] = useState({ w: 0, h: 0 });
+  useIsoLayout(() => {
+    const panggung = panggungRef.current;
+    if (panggung) panggung.scrollTop = 0;
+  }, [ronde, percobaan]);
   useIsoLayout(() => {
     const el = panggungRef.current;
     const ruang = ruangPanggungRef.current;
@@ -254,7 +269,7 @@ export function LayarAktivitas({
         <Instruksi teks={instruksi} onUcap={onUcap} />
         <div ref={ruangPanggungRef} className="flex min-h-0 flex-1 flex-col">
           <div className={`relative flex min-h-0 flex-col rounded-[26px] p-1.5 ${padat ? "" : "flex-1"}`} style={{ background: pilar.dasar }}>
-            <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden" data-panggung>
+            <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden scroll-auto [overflow-anchor:none]" data-panggung>
               <PanggungCtx.Provider value={panggung}>
                 <SlotAksi.Provider value={slotAksi}>
                   <SlotBantuProvider value={slotBantu}>{children}</SlotBantuProvider>

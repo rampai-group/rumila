@@ -13,7 +13,7 @@ import { Icon } from "@/components/ui";
 import { tintaPada } from "@/lib/brand";
 import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, PAKET, levelAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { KOMPETENSI, PAKET, judulPaket, levelAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { terbitkan } from "@/lib/akademi/sertifikat";
 import { alasanKunci } from "@/lib/akademi/akses";
 import { KartuPraktikKampus } from "./praktik";
@@ -76,6 +76,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   const unitAktif = peta.sekarang ? (peta.sekarang.kompetensi.unit.nama[bahasa] ?? peta.sekarang.kompetensi.unit.nama.id) : undefined;
   const alasan = alasanKunci(peta, bahasa === "en" ? "en" : "id");
   const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level) : undefined;
+  const judulTarget = targetPaket ? judulPaket(targetPaket, bahasa) : undefined;
 
   return (
     // Satu kolom penuh di semua layar: kartu pangkat dan semester sejajar satu garis. Layar lebar (md): pangkat | misi berdampingan.
@@ -89,7 +90,8 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
       {target && targetPaket && !(peta.ujian && !peta.sekarang && peta.ujian.jenis !== "kenaikan") && (
         <Link
           href={`/akademi/main/${targetPaket.id}`}
-          aria-label={`${peta.sekarang ? `Lanjut Misi ${target.nomor}` : "Latihan pemantapan"}: ${pernyataan(target, bahasa)}`}
+          aria-label={`${peta.sekarang ? `Lanjut Misi ${target.nomor}` : "Latihan pemantapan"}: ${judulTarget}. ${pernyataan(target, bahasa)}`}
+          title={judulTarget}
           className="flex items-center gap-3 rounded-[28px] p-3 pr-5 text-[#0b2545] transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.98]"
           style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 6px 0 #c85400" }}
         >
@@ -103,7 +105,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
             </span>
             <span className="mt-1 flex items-center gap-1.5 text-[15px] font-extrabold opacity-90">
               <Icon name={TRACK_IKON[target.kompetensi.track]} size={18} />
-              <span className="line-clamp-2">{target.kompetensi.unit.nama[bahasa] ?? target.kompetensi.unit.nama.id}</span>
+              <span className="line-clamp-2">{judulTarget}</span>
             </span>
           </span>
           <Icon name="arrow_forward" size={30} />
@@ -273,12 +275,10 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level, alasan }: { u: Unit
         </span>
         {u.misi.map((x, i) => {
           const pk = paketMisi(x.kompetensi.id, PAKET, events, level);
-          // judul tetap (paket utama kompetensi ini), bukan paket yang sedang dirotasi, supaya nama misi tidak berganti-ganti
-          const utama = PAKET.filter((p) => p.competencyIds[0] === x.kompetensi.id).sort((p, q) => Number(p.level !== level) - Number(q.level !== level) || p.id.localeCompare(q.id))[0] ?? pk;
-          const judul = utama ? (utama.locale[bahasa]?.judul ?? utama.locale.id?.judul) : undefined;
+          const judul = pk ? judulPaket(pk, bahasa) : (u.nama[bahasa] ?? u.nama.id);
           return (
             <li key={x.kompetensi.id} className="relative flex items-center justify-center focus-within:z-10 hover:z-10" style={{ height: SLOT, transform: `translateX(${geser[i]}px)` }}>
-              <TitikMisi m={x} warna={[l, m, d]} unitAktif={unitAktif} href={pk && !x.terkunci ? `/akademi/main/${pk.id}` : undefined} judul={judul ?? (u.nama[bahasa] ?? u.nama.id)} sisiLabel={arah > 0 ? "kiri" : "kanan"} bahasa={bahasa} />
+              <TitikMisi m={x} warna={[l, m, d]} unitAktif={unitAktif} href={pk && !x.terkunci ? `/akademi/main/${pk.id}` : undefined} judul={judul} sisiLabel={arah > 0 ? "kiri" : "kanan"} bahasa={bahasa} />
             </li>
           );
         })}
@@ -383,7 +383,7 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
     </>
   );
   return href ? (
-    <Link href={href} onClick={() => setMembuka(true)} aria-label={label} title={pernyataan(m, bahasa)} className="group relative flex flex-col items-center [-webkit-tap-highlight-color:transparent]">
+    <Link href={href} onClick={() => setMembuka(true)} aria-label={label} title={judul} className="group relative flex flex-col items-center [-webkit-tap-highlight-color:transparent]">
       {dalam}
     </Link>
   ) : (

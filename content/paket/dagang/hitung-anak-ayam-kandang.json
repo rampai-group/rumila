@@ -1,6 +1,6 @@
 {
   "id": "hitung-anak-ayam-kandang",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "PAUD",
   "mechanic": "dagang",
   "competencyIds": [
@@ -11,6 +11,7 @@
     "id": {
       "judul": "Berhitung di Kandang",
       "instruksi": "Sentuh {barang} di kandang satu per satu sambil berhitung, lalu geser penanda ke jumlahnya.",
+      "tempat-hitung": "di kandang",
       "anakayam": "anak ayam",
       "bebek": "bebek",
       "kelinci": "kelinci"
@@ -18,6 +19,7 @@
     "en": {
       "judul": "Counting in the Coop",
       "instruksi": "Touch the {barang} in the coop one at a time as you count, then slide the marker to the number.",
+      "tempat-hitung": "in the coop",
       "anakayam": "chicks",
       "bebek": "ducks",
       "kelinci": "rabbits"

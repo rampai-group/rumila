@@ -107,7 +107,7 @@ export function PresenterUrutkan(props: Props) {
 
 /* ---------------- mode susun ---------------- */
 
-function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
+function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const { shown, correct } = ronde;
   const n = shown.length;
   const [slot, setSlot] = useState<(string | null)[]>(() => Array(n).fill(null));
@@ -172,35 +172,47 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
 
   const sisa = shown.filter((s) => !slot.includes(s.id));
   const { tema, skala: sk, w, h } = usePanggung();
-  // ukuran mengikuti panggung: rak ±55% dan baki kartu ±45% dari sisa tinggi; lebar sel tanpa menambah baris
+  const tataTunas = paket.level === "PAUD";
+  const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
+  const caraSusun = inggris ? "Tap a card, then tap a numbered box." : KALIMAT_URUTKAN.caraSusun;
   const base = n <= 4 ? 64 : 52;
   const gap = Math.round(10 * sk);
   const pad = 12 * sk;
-  const lebarDalam = w > 0 ? w - 2 * pad - 6 : 0;
-  const tinggi = h > 0 ? h - tinggiKepala(sk) - 2 * GAP_ROOT : 0;
-  // rak & baki masing-masing separuh panggung: kartu melebar (0,75) lebih terbaca daripada kolom sempit
+  const lebarDalam = w > 0 ? (tataTunas ? Math.min(w, 920) : w) - 2 * pad - 6 : 0;
+  const tinggi = tataTunas ? Math.max(0, h - tinggiKepala(sk) - 44 - 3 * GAP_ROOT) : h > 0 ? h - tinggiKepala(sk) - 2 * GAP_ROOT : 0;
+  // Rak dan kartu memakai lebar yang sama agar posisi mudah diikuti saat kartu dipindah.
   const sel = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 300 : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75, 2);
-  // layar tegak (HP): sel sempit tapi tinggi longgar → slot/kartu boleh lebih jangkung dan bendanya lebih besar
   const tegak = w > 0 && h > w;
   const rasio = tegak ? 1.6 : 1.15;
   const isiLebar = tegak ? 0.68 : 0.6;
-  const tinggiSlot = batas(96 * sk, Math.min(sel.s * rasio, (tinggi * 0.55 - 2 * pad - gap * (sel.baris - 1)) / sel.baris), 400);
+  const tinggiSlot = batas(96 * sk, Math.min(sel.s * rasio, (tinggi * 0.55 - 2 * pad - gap * (sel.baris - 1)) / sel.baris), tataTunas ? 240 : 400);
   // benda berskala (mis. planet besar) dibagi skala terbesarnya supaya tidak meluap dari kartu/slot
   const skalaMaks = Math.max(1, ...shown.map((x) => skalaLebar(visual(x, t))));
   const ukuran = batas(base * sk, Math.min(tinggiSlot * 0.6, sel.s * isiLebar), 170) / skalaMaks;
-  const kar = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 300 : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75, 2);
-  const tinggiKartu = (tinggi * 0.45 - 2 * pad - gap * (kar.baris - 1)) / kar.baris;
-  const padat = kar.baris >= 2 && shown.some((x) => t(x.labelKey).length > 50);
-  const ukuranKartu = batas((padat || kar.baris >= 3 ? 36 : base + 8) * sk, Math.min(tinggiKartu * (padat ? 0.24 : 0.5), kar.s * (tegak ? 0.68 : 0.58)), 160) / skalaMaks;
-  // di layar tegak kartu ikut meninggi mengisi baki (mendatar tetap setinggi isinya)
-  const tinggiMinKartu = tegak ? batas(84 * sk, Math.min(tinggiKartu, kar.s * 1.6), 400) : 84 * sk;
+  const tinggiKartu = (tinggi * 0.45 - 2 * pad - gap * (sel.baris - 1)) / sel.baris;
+  const padat = sel.baris >= 2 && shown.some((x) => t(x.labelKey).length > 50);
+  const ukuranKartu = batas((padat || sel.baris >= 3 ? 36 : base + 8) * sk, Math.min(tinggiKartu * (padat ? 0.24 : 0.5), sel.s * (tegak ? 0.68 : 0.58)), 160) / skalaMaks;
+  const tinggiMinKartu = tataTunas
+    ? batas(84 * sk, Math.min(tinggiKartu, sel.s * (tegak ? 1.12 : 0.9)), 220)
+    : tegak ? batas(84 * sk, Math.min(tinggiKartu, sel.s * 1.6), 400) : 84 * sk;
+  const lebarRak = sel.blok ? sel.blok + 8 * sk : undefined;
 
   return (
-    <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
+    <div className={`flex flex-col gap-3 ${tataTunas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : "flex-1"}`} style={{ color: INK }}>
       <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
+      {tataTunas && (
+        <button
+          type="button"
+          onClick={() => ucapkan(caraSusun, inggris ? "en-US" : "id-ID")}
+          className="mx-auto -mt-2 flex min-h-11 max-w-full shrink-0 items-center gap-2 rounded-xl bg-white px-3 py-1.5 text-left text-sm font-extrabold active:scale-95"
+        >
+          <span aria-hidden className="flex shrink-0" style={{ color: tema.aksen }}><Icon name="volume_up" size={20} /></span>
+          <span>{caraSusun}</span>
+        </button>
+      )}
 
       {/* slot bernomor di rak bertema dunia */}
-      <div className="flex flex-wrap content-center items-center justify-center" style={{ ...gayaRak(tema, sk), gap, flex: "11 1 0%", paddingTop: 18 * sk, width: "100%", maxWidth: sel.blok ? sel.blok + 8 * sk : undefined, marginInline: "auto" }}>
+      <div className={`mx-auto flex w-full flex-wrap justify-center ${tataTunas ? "shrink-0 items-stretch" : "content-center items-center"}`} style={{ ...gayaRak(tema, sk), gap, rowGap: tataTunas ? Math.max(gap, 16 * sk) : gap, paddingTop: (tataTunas ? 14 : 18) * sk, maxWidth: lebarRak, flex: tataTunas ? undefined : "11 1 0%" }}>
         {slot.map((id, i) => {
           const benar = kunci && id === correct[i];
           const salah = kunci && id !== correct[i];
@@ -237,7 +249,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
       </div>
 
       {/* kartu langkah yang belum dipakai */}
-      <div className="flex flex-wrap content-center items-center justify-center" style={{ ...gayaPanel(tema, sk), gap, flex: "9 1 0%", minHeight: 100 * sk, width: "100%", maxWidth: kar.blok ? kar.blok + 8 * sk : undefined, marginInline: "auto" }}>
+      <div className={`mx-auto flex w-full flex-wrap justify-center ${tataTunas ? "shrink-0 items-stretch" : "content-center items-center"}`} style={{ ...gayaPanel(tema, sk), gap, minHeight: tataTunas ? tinggiMinKartu : 100 * sk, maxWidth: lebarRak, flex: tataTunas ? undefined : "9 1 0%" }}>
         {sisa.map((s) => {
           const dipilih = terpilih === s.id;
           const disorot = hint?.kartu === s.id;
@@ -247,12 +259,12 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
               key={s.id}
               v={visual(s, t)}
               size={ukuranKartu}
-              labelSize={batas(14 * sk, kar.s * 0.07, 22)}
+              labelSize={batas(14 * sk, sel.s * 0.07, 22)}
               selected={dipilih}
               onClick={() => ketukKartu(s.id)}
               className={disorot ? "akademi-bounce" : ""}
               style={{
-                width: kar.s,
+                width: sel.s,
                 minHeight: tinggiMinKartu,
                 boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
                 pointerEvents: kunci ? "none" : undefined,
@@ -421,28 +433,30 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
 
   const { tema, skala: sk, w, h } = usePanggung();
   const adaJudul = !/^mana yang lebih dulu/i.test(t(ronde.titleKey));
-  // dua kartu besar mengisi panggung; tinggi dibatasi agar tidak terlalu jangkung di HP
+  // Kartu berdekatan dengan pertanyaan dan tetap memberi ruang bagi label yang membungkus.
+  const lebar = Math.min(w || 390, 800) - 8;
   const gap = Math.round(12 * sk);
-  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT : 0;
-  // layar tegak: dua pilihan ditumpuk penuh, bukan dua kotak kecil di tengah layar kosong
-  const tumpuk = w > 0 && tinggiSisa > w * 1.2;
-  const lebarKartu = w > 0 ? (tumpuk ? w : (w - gap) / 2) : 0;
-  const tinggiKartu = batas(150 * sk, tumpuk ? (tinggiSisa - gap) / 2 : Math.min(tinggiSisa, lebarKartu * 1.15), 560);
-  const ukuran = batas(96 * sk, Math.min(tinggiKartu * 0.5, lebarKartu * 0.5), 210);
+  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT : 160;
+  const tumpuk = lebar < 540 && tinggiSisa > lebar * 1.2;
+  const lebarKartu = tumpuk ? lebar : (lebar - gap) / 2;
+  const tinggiKartu = batas(118 * sk, tumpuk ? (tinggiSisa - gap) / 2 : Math.min(tinggiSisa, lebarKartu), tumpuk ? 210 : 310);
+  const skalaTerlebar = Math.max(1, ...shown.map(skalaLebar));
+  const ukuran = Math.round(Math.min(196, tinggiKartu - 52, (lebarKartu - 24) / skalaTerlebar));
 
   return (
-    <div className="flex flex-1 flex-col gap-3" style={{ color: INK }}>
+    <div className="mx-auto flex w-full max-w-[800px] flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK }}>
       {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
       {adaJudul && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
         Mana yang lebih dulu?
       </div>
-      <div className={`grid flex-1 content-center ${tumpuk ? "grid-cols-1" : "grid-cols-2"}`} style={{ gap, gridAutoRows: tinggiKartu }}>
+      <div className={`grid ${tumpuk ? "grid-cols-1" : "grid-cols-2"}`} style={{ gap, gridAutoRows: "1fr" }}>
         {shown.map((s) => {
           const benar = !!hasil && s.id === benarId;
           const salah = !!hasil && dipilih === s.id && s.id !== benarId;
           return (
             <KartuBenda
+              penuh
               key={s.id}
               v={visual(s, t)}
               size={ukuran}
@@ -452,8 +466,8 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
               right={benar}
               wrong={salah}
               onClick={() => pilih(s.id)}
-              className={`${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
-              style={{ minHeight: 150 * sk, background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined, pointerEvents: kunci ? "none" : undefined, boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 3px ${benar ? BENAR : salah ? SALAH : !hasil && dipilih === s.id ? "#0786eb" : `${tema.aksen}55`}` }}
+              className={`min-w-0 ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
+              style={{ minHeight: tinggiKartu, background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined, pointerEvents: kunci ? "none" : undefined, boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 3px ${benar ? BENAR : salah ? SALAH : !hasil && dipilih === s.id ? "#0786eb" : `${tema.aksen}55`}` }}
             />
           );
         })}
