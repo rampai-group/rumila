@@ -440,7 +440,8 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const baris = Math.ceil(n / jmlKolom);
   const jarak = 12 * sk;
   const lebarKartu = (lebarArea - jarak * (jmlKolom - 1)) / jmlKolom;
-  const skalaMaks = Math.max(1, ...choices.map(skalaLebar));
+  const skalaLebarMaks = Math.max(1, ...choices.map(skalaLebar));
+  const skalaTinggiMaks = Math.max(1, ...choices.map((c) => c.scale ?? 1));
   const labelPanjang = tulisLabel && choices.some((c) => visualBergambar(c) && t(c.labelKey).length > 34);
   const ukuranAdegan = adeganLega ? Math.min(190, Math.round(h * 0.21)) : Math.max(60, Math.min(100, h * 0.18));
   const tinggiSoal = ronde.adegan ? Math.max(176 * sk, ukuranAdegan + 70 * sk) : 68 * sk;
@@ -449,7 +450,9 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const tinggiMaks = jmlKolom === 1 ? (pilihanTulisan ? 126 : 148) : 240;
   const tinggiBatas = Math.min(tinggiMaks * Math.min(sk, 1.2), lebarKartu * (labelPanjang ? 1.42 : 1.03));
   const tinggiKartu = Math.round(Math.max(pilihanTulisan ? 88 : 112, Math.min(tinggiBaris, tinggiBatas)));
-  const ukuran = Math.round(Math.min(200, tinggiKartu * (tulisLabel ? 0.6 : 0.77), lebarKartu * (labelPanjang ? 0.55 : 0.78) / skalaMaks));
+  // Benda mengalikan ukuran dasar dengan scale. Sisakan ruang di kartu untuk gambar yang diperbesar.
+  const batasTinggiGambar = Math.min(200, tinggiKartu * (tulisLabel ? 0.6 : 0.77));
+  const ukuran = Math.round(Math.min(batasTinggiGambar / skalaTinggiMaks, lebarKartu * (labelPanjang ? 0.55 : 0.78) / skalaLebarMaks));
 
   return (
     <div
