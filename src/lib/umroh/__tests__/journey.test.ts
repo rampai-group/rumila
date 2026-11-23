@@ -38,10 +38,10 @@ function reachUmrohStage(stage: UmrohStage): UmrohProgress {
 }
 
 describe("Indonesia round-trip journey", () => {
-  it("starts at home and visits the complete outbound and return itinerary in order", () => {
+  it("starts at Soekarno–Hatta and visits the complete outbound and return itinerary in order", () => {
     let progress = createJourneyProgress("putri");
     const seen: JourneyChapterId[] = [progress.chapter];
-    expect(progress).toMatchObject({ version: 2, chapter: "rumah", travelSeconds: 0, umroh: { route: "madinah", pilgrim: "putri", stage: "persiapan" } });
+    expect(progress).toMatchObject({ version: 2, chapter: "cgk_tiba", travelSeconds: 0, umroh: { route: "madinah", pilgrim: "putri", stage: "persiapan" } });
     while (progress.chapter !== "rumah_selesai") {
       const chapter = getJourneyChapter(progress.chapter);
       if (chapter.kind === "travel") progress = advanceJourneyTravel(progress, chapter.durationSeconds!);
@@ -55,7 +55,7 @@ describe("Indonesia round-trip journey", () => {
       expect(parseJourneyProgress(serializeJourneyProgress(progress))).toEqual(progress);
     }
     expect(seen).toEqual([
-      "rumah", "taxi_cgk", "cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate", "cgk_boarding", "garuda_jed", "jeddah", "haramain", "madinah_station",
+      "cgk_tiba", "cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate", "cgk_boarding", "garuda_jed", "jeddah", "haramain", "madinah_station",
       "uber_nabawi", "nabawi", "rawdah", "salam", "umroh", "makkah_jed", "jeddah_pulang",
       "garuda_cgk", "cgk_pulang", "taxi_rumah", "rumah_selesai",
     ]);
@@ -97,17 +97,17 @@ describe("Indonesia round-trip journey", () => {
   );
 
   it("bounds travel time, ignores invalid deltas, and never accumulates time in a lesson", () => {
-    const initial = reachChapter("taxi_cgk");
+    const initial = reachChapter("taxi_rumah");
     for (const delta of [0, -1, NaN, Infinity, -Infinity]) expect(advanceJourneyTravel(initial, delta)).toBe(initial);
     const maximum = advanceJourneyTravel(initial, Number.MAX_VALUE);
-    expect(maximum.travelSeconds).toBe(getJourneyChapter("taxi_cgk").durationSeconds);
+    expect(maximum.travelSeconds).toBe(getJourneyChapter("taxi_rumah").durationSeconds);
     expect(advanceJourneyTravel(maximum, 1)).toBe(maximum);
     const lesson = createJourneyProgress();
     expect(advanceJourneyTravel(lesson, 10)).toBe(lesson);
     let fractional = initial;
     for (let i = 0; i < 140; i++) fractional = advanceJourneyTravel(fractional, 0.1);
     expect(fractional.travelSeconds).toBe(14);
-    expect(nextJourneyChapter(fractional).chapter).toBe("cgk");
+    expect(nextJourneyChapter(fractional).chapter).toBe("rumah_selesai");
   });
 
   it("cannot start the return before both seven-part practices and tahallul are complete", () => {
@@ -196,7 +196,7 @@ describe("journey persistence and migration", () => {
     const returnTrip = reachChapter("makkah_jed");
     const invalid = [
       { ...initial, travelSeconds: 0.1 },
-      { ...initial, chapter: "taxi_cgk", travelSeconds: 14.001 },
+      { ...initial, chapter: "cgk_boarding", travelSeconds: 20.001 },
       { ...initial, umroh: { ...initial.umroh, route: "pesawat" } },
       { ...initial, chapter: "nabawi", umroh: completeLesson(initial.umroh) },
       { ...initial, chapter: "salam", umroh: completeUmroh(initial.umroh) },

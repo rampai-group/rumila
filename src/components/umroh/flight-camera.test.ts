@@ -23,6 +23,6 @@ describe('flight camera', () => {
     expect(getFlightPov(10)).toBe('exterior');
     expect(isFlightChapter('garuda_jed')).toBe(true);
     expect(isFlightChapter('garuda_cgk')).toBe(true);
-    for (const chapter of ['haramain', 'taxi_cgk', 'umroh', undefined]) expect(isFlightChapter(chapter)).toBe(false);
+    for (const chapter of ['haramain', 'taxi_rumah', 'umroh', undefined]) expect(isFlightChapter(chapter)).toBe(false);
   });
 });

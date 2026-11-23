@@ -7,7 +7,7 @@ import { useMe, useRumila } from '@/lib/store';
 import {
   STAGES, UMROH_SOURCES, TAWAF_LAP_SECONDS, SAI_LEG_SECONDS, completeLesson,
   advancePractice, finishPractice, getStageContent,
-  JOURNEY_CHAPTERS, createJourneyProgress, advanceJourneyTravel, nextJourneyChapter,
+  JOURNEY_CHAPTERS, JOURNEY_START, createJourneyProgress, advanceJourneyTravel, nextJourneyChapter,
   updateJourneyUmroh, parseJourneyProgress, serializeJourneyProgress, getJourneyChapter,
   type JourneyProgress, type UmrohPilgrim,
   aksiLangkah, FILM, filmUntukBab, durasiFilm, posisiFilm, teksAdegan, penandaFilm, formatWaktuFilm, type FilmId,
@@ -48,7 +48,7 @@ const NABAWI_VISIT = {
 
 /** Empat babak perjalanan; progres tampil sebagai empat garis, bukan angka 1/22. */
 const BABAK: readonly { id: string; nama: string; bab: readonly string[] }[] = [
-  { id: 'berangkat', nama: 'Berangkat', bab: ['rumah', 'taxi_cgk', 'cgk', 'cgk_imigrasi', 'cgk_keamanan', 'cgk_gate', 'cgk_boarding', 'garuda_jed', 'jeddah'] },
+  { id: 'berangkat', nama: 'Berangkat', bab: ['cgk_tiba', 'cgk', 'cgk_imigrasi', 'cgk_keamanan', 'cgk_gate', 'cgk_boarding', 'garuda_jed', 'jeddah'] },
   { id: 'madinah', nama: 'Madinah', bab: ['haramain', 'madinah_station', 'uber_nabawi', 'nabawi', 'rawdah', 'salam'] },
   { id: 'umroh', nama: 'Umroh', bab: ['umroh'] },
   { id: 'pulang', nama: 'Pulang', bab: ['makkah_jed', 'jeddah_pulang', 'garuda_cgk', 'cgk_pulang', 'taxi_rumah', 'rumah_selesai'] },
@@ -148,7 +148,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   const practiceRate = progress.stage === 'tawaf' ? (practiceSpeed === 'normal' ? 0.12 : 0.6) : (practiceSpeed === 'normal' ? 0.075 : 0.3);
   const stepLabels = visit ? [] : inUmroh ? (progress.stage === 'persiapan' ? PREPARATION_STEPS : []) : chapter.steps ?? [];
   const needsChecklist = stepLabels.length > 0;
-  const choosePilgrim = !visit && (journey.chapter === 'rumah' || (inUmroh && progress.stage === 'persiapan'));
+  const choosePilgrim = !visit && (journey.chapter === JOURNEY_START || (inUmroh && progress.stage === 'persiapan'));
   // Steps are ticked in order; the 3D scene acts out each one as it is reached.
   const doneSteps = stepLabels.findIndex((_, i) => !checks[i]) === -1 ? stepLabels.length : stepLabels.findIndex((_, i) => !checks[i]);
   const showBoardingPass = !visit && (BOARDING_PASS_CHAPTERS.includes(journey.chapter) || (journey.chapter === 'cgk' && doneSteps >= 4));
@@ -175,7 +175,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   useEffect(() => {
     try {
       const restored = parseJourneyProgress(localStorage.getItem(saveKey));
-      if (restored && restored.chapter !== 'rumah') setSaved(restored);
+      if (restored && restored.chapter !== JOURNEY_START) setSaved(restored);
       else if (restored) setJourney(restored);
     } catch { setStorageWarning(true); }
     setReady(true);
@@ -262,7 +262,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
     setJourney((j) => (j.chapter === adegan.bab ? j : { ...j, chapter: adegan.bab, travelSeconds: 0 }));
     setChecks(Array.from({ length: adegan.langkah ?? 0 }, () => true));
     // Taksi & bus: duduk di dalam kendaraan; garbarata & pesawat memakai kamera otomatisnya sendiri.
-    setView(adegan.perjalanan && ['taxi_cgk', 'taxi_rumah', 'makkah_jed'].includes(adegan.bab) ? 'follow' : 'walk');
+    setView(adegan.perjalanan && ['taxi_rumah', 'makkah_jed'].includes(adegan.bab) ? 'follow' : 'walk');
     setFlightCamera('auto');
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filmPos?.i]);
@@ -297,13 +297,13 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
     }
   }, [film, filmTotal, memberId]);
 
-  // Tawarkan film saat perjalanan baru dimulai dari rumah.
+  // Tawarkan film saat perjalanan baru dimulai di Bandara Soekarno–Hatta.
   const filmBab = visit ? null : filmUntukBab(journey.chapter);
   const bolehFilm = filmBab !== null;
   const putarFilm = (id: FilmId) => { scene.current?.unlockAudio(); setMenuOpen(false); setGuideOpen(false); setFilmDitawarkan((d) => ({ ...d, [id]: true })); setFilm({ id, t: 0, main: true }); };
   const keluarFilm = () => { scene.current?.stopFilmShot(); setFilm(null); setRunning(false); stopMovement(); };
   // Ditawarkan di awal tiap film: rumah (Berangkat) dan bus dari Makkah sebelum berangkat (Pulang).
-  const tawaranFilm: FilmId | null = journey.chapter === 'rumah' ? 'berangkat' : journey.chapter === 'makkah_jed' && journey.travelSeconds === 0 ? 'pulang' : null;
+  const tawaranFilm: FilmId | null = journey.chapter === JOURNEY_START ? 'berangkat' : journey.chapter === 'makkah_jed' && journey.travelSeconds === 0 ? 'pulang' : null;
   const tawarkanFilm = ready && sceneReady && !saved && !film && !visit && tawaranFilm !== null && !filmDitawarkan[tawaranFilm];
 
   useEffect(() => {
@@ -481,7 +481,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
             <button onClick={() => { setHudHidden(true); setMenuOpen(false); setGuideOpen(false); }}><Icon name="visibility_off" size={20} />Sembunyikan tombol & teks</button>
             {travelling && !travelDone && !visit && <button onClick={() => { finishTravel(); setMenuOpen(false); }}><Icon name="fast_forward" size={20} />Singkatkan perjalanan</button>}
             <button onClick={() => { setMenuOpen(false); setRunning(false); setShowInfo(true); }}><Icon name="info" size={20} />Tentang modul & sumber</button>
-            <button onClick={() => { setMenuOpen(false); setRunning(false); setShowRestart(true); }}><Icon name="restart_alt" size={20} />Ulangi dari rumah</button>
+            <button onClick={() => { setMenuOpen(false); setRunning(false); setShowRestart(true); }}><Icon name="restart_alt" size={20} />Ulangi dari bandara</button>
           </div>
         </div>}
 
@@ -527,7 +527,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
 
         {tawarkanFilm && tawaranFilm && <div className="umroh-film-offer" role="dialog" aria-label="Tonton film perjalanan">
           <span className="umroh-cap-eyebrow">{tawaranFilm === 'berangkat' ? 'Babak 1 · Berangkat' : 'Babak 4 · Pulang'}</span>
-          <h2>{tawaranFilm === 'berangkat' ? 'Dari rumah sampai Jeddah' : 'Dari Makkah kembali ke rumah'}</h2>
+          <h2>{tawaranFilm === 'berangkat' ? 'Dari Soekarno–Hatta sampai Jeddah' : 'Dari Makkah kembali ke rumah'}</h2>
           <p>Film 3D sekitar {Math.round(durasiFilm(FILM[tawaranFilm].adegan) / 60)} menit: {tawaranFilm === 'berangkat' ? 'check-in, imigrasi, naik pesawat, sampai mendarat.' : 'bandara Jeddah, terbang pulang, tiba di Soekarno–Hatta, sampai rumah.'} Bisa dijeda kapan saja untuk menjelajah.</p>
           <div className="umroh-film-offer-actions">
             <button className="umroh-go" onClick={() => putarFilm(tawaranFilm)}><Icon name="play_arrow" size={22} />Putar film</button>
@@ -571,12 +571,12 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
         </div>
       </aside>
 
-      {saved && <Modal title="Lanjutkan perjalananmu?" onClose={() => { setJourney(saved); setSaved(null); }}><p>Terakhir kamu sampai di <strong>{saved.chapter === 'umroh' ? getStageContent(saved.umroh.stage, saved.umroh.route, saved.umroh.pilgrim).title : getJourneyChapter(saved.chapter).title}</strong>. Perjalanan dilanjutkan dalam keadaan jeda.</p><button className="umroh-primary" onClick={() => { setJourney(saved); setSaved(null); }}>Lanjutkan perjalanan<Icon name="arrow_forward" /></button><button className="umroh-outline-btn umroh-full" onClick={reset}>Mulai dari rumah</button></Modal>}
+      {saved && <Modal title="Lanjutkan perjalananmu?" onClose={() => { setJourney(saved); setSaved(null); }}><p>Terakhir kamu sampai di <strong>{saved.chapter === 'umroh' ? getStageContent(saved.umroh.stage, saved.umroh.route, saved.umroh.pilgrim).title : getJourneyChapter(saved.chapter).title}</strong>. Perjalanan dilanjutkan dalam keadaan jeda.</p><button className="umroh-primary" onClick={() => { setJourney(saved); setSaved(null); }}>Lanjutkan perjalanan<Icon name="arrow_forward" /></button><button className="umroh-outline-btn umroh-full" onClick={reset}>Mulai dari bandara</button></Modal>}
       {showRestart && <Modal title="Mulai dari awal?" onClose={() => setShowRestart(false)}><p>Posisi perjalanan ini akan kembali ke rumah di Indonesia. Catatan materi yang sudah dipelajari tetap ada.</p><button className="umroh-primary" onClick={reset}>Ya, ulangi rangkaian</button><button className="umroh-outline-btn umroh-full" onClick={() => setShowRestart(false)}>Kembali ke latihan</button></Modal>}
       {showMap && <Modal title="Peta & rangkaian" onClose={() => setShowMap(false)}>
         {landmarks.length > 0 && <><h3 className="umroh-dialog-label">Jelajahi lokasi ini</h3><div className="umroh-landmark-list">{landmarks.map((landmark) => <button key={landmark.id} onClick={() => jumpTo(landmark.id)}><Icon name="location_on" size={18} /><span>{landmark.label}</span><Icon name="arrow_forward" size={17} /></button>)}</div></>}
         {(inUmroh || visit) && <div className="umroh-map-visit">{visit ? <button className="umroh-outline-btn umroh-full" onClick={() => { returnToLesson(); setShowMap(false); }}><Icon name="arrow_back" size={18} />Kembali ke perjalanan</button> : <button className="umroh-visit-button" onClick={openNabawi}><Icon name="mosque" /><span><strong>Kunjungi kembali Masjid Nabawi</strong><small>Tur tambahan tanpa mengubah progres</small></span><Icon name="arrow_outward" size={18} /></button>}</div>}
-        <h3 className="umroh-dialog-label">Dari rumah sampai kembali ke rumah</h3>
+        <h3 className="umroh-dialog-label">Dari Soekarno–Hatta sampai kembali ke rumah</h3>
         <ol className="umroh-map-list">{JOURNEY_CHAPTERS.map((item, i) => <li key={item.id} className={i === chapterIndex ? 'active' : ''} aria-current={i === chapterIndex ? 'step' : undefined}><span>{i < chapterIndex ? <Icon name="check" size={17} /> : i + 1}</span><div><strong>{item.title}</strong><small>{i < chapterIndex ? 'Sudah dilalui' : i === chapterIndex ? 'Lokasimu saat ini' : 'Perjalanan berikutnya'}</small></div></li>)}</ol>
         {inUmroh && <><h3 className="umroh-dialog-label">Rangkaian manasik</h3><ol className="umroh-map-list">{STAGES.map((s, i) => <li key={s.id} className={i === stageIndex ? 'active' : ''} aria-current={i === stageIndex ? 'step' : undefined}><span>{i < stageIndex ? <Icon name="check" size={17} /> : i + 1}</span><div><strong>{s.title}</strong><small>{i < stageIndex ? 'Sudah dipelajari' : i === stageIndex ? 'Pelajaranmu saat ini' : 'Langkah berikutnya'}</small></div></li>)}</ol></>}
       </Modal>}

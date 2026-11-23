@@ -2,7 +2,7 @@ import { createProgress, parseSavedProgress } from "./state";
 import type { UmrohPilgrim, UmrohProgress } from "./types";
 
 export const JOURNEY_CHAPTER_IDS = [
-  "rumah", "taxi_cgk", "cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate", "cgk_boarding", "garuda_jed", "jeddah", "haramain",
+  "cgk_tiba", "cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate", "cgk_boarding", "garuda_jed", "jeddah", "haramain",
   "madinah_station", "uber_nabawi", "nabawi", "rawdah", "salam", "umroh",
   "makkah_jed", "jeddah_pulang", "garuda_cgk", "cgk_pulang", "taxi_rumah", "rumah_selesai",
 ] as const;
@@ -30,17 +30,10 @@ export interface JourneyChapter {
 
 export const JOURNEY_CHAPTERS: readonly JourneyChapter[] = [
   {
-    id: "rumah", title: "Bersiap dari rumah", subtitle: "Perjalanan umroh dimulai di Indonesia",
-    instruction: "Siapkan koper, dokumen perjalanan, dan kebutuhan pribadi bersama keluarga.",
-    detail: "Kita berangkat melalui Jeddah, berkunjung ke Madinah, lalu umroh di Makkah. Periksa dokumen dan koper bersama keluarga sebelum kendaraan datang.",
-    action: "Naik taksi", icon: "home", location: "Rumah · Indonesia", kind: "lesson",
-    steps: ["Paspor dan dokumen perjalanan siap", "Koper dan perlengkapan sudah diperiksa", "Siap berangkat bersama pendamping"],
-  },
-  {
-    id: "taxi_cgk", title: "Taksi menuju bandara", subtitle: "Dari rumah ke Soekarno–Hatta",
-    instruction: "Duduk dengan tertib, gunakan sabuk pengaman, dan ikuti perjalanan menuju bandara.",
-    detail: "Pastikan koper ikut terbawa dan simpan dokumen di tempat yang mudah dijangkau. Perhatikan petunjuk menuju terminal keberangkatan.",
-    action: "Masuk terminal CGK", icon: "local_taxi", location: "Jalan menuju CGK", kind: "travel", durationSeconds: 14,
+    id: "cgk_tiba", title: "Tiba di Bandara Soekarno–Hatta", subtitle: "Perjalanan umroh dimulai di Terminal 3",
+    instruction: "Turun di area keberangkatan, ambil troli untuk koper, lalu masuk lewat pintu keberangkatan internasional.",
+    detail: "Kita berangkat melalui Jeddah, berkunjung ke Madinah, lalu umroh di Makkah. Penerbangan internasional Garuda berangkat dari Terminal 3. Pastikan paspor dan dokumen perjalanan ada di tas kecil sebelum masuk terminal.",
+    action: "Masuk terminal", icon: "flight_takeoff", location: "Bandara Soekarno–Hatta · Terminal 3", kind: "lesson",
   },
   {
     id: "cgk", title: "Check-in di Soekarno–Hatta", subtitle: "Terminal keberangkatan internasional",
@@ -184,8 +177,11 @@ export function getJourneyChapter(id: JourneyChapterId): JourneyChapter {
   return chapter;
 }
 
+/** Perjalanan dimulai di Bandara Soekarno–Hatta (keputusan owner 23 Nov 2026), bukan dari rumah. */
+export const JOURNEY_START: JourneyChapterId = JOURNEY_CHAPTER_IDS[0];
+
 export function createJourneyProgress(pilgrim: UmrohPilgrim = "putra"): JourneyProgress {
-  return { version: 2, chapter: "rumah", travelSeconds: 0, umroh: createProgress("madinah", pilgrim) };
+  return { version: 2, chapter: JOURNEY_START, travelSeconds: 0, umroh: createProgress("madinah", pilgrim) };
 }
 
 /** The caller supplies active, unpaused seconds. Time while away is never replayed. */

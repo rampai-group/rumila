@@ -3,9 +3,10 @@ import { BAB_FILM, FILM_BERANGKAT, durasiFilm, mulaiAdegan, penandaFilm, posisiF
 import { JOURNEY_CHAPTERS, getJourneyChapter } from "../journey";
 
 describe("film Berangkat", () => {
-  it("mengikuti urutan bab perjalanan dari rumah sampai Jeddah tanpa melompat", () => {
+  it("mengikuti urutan bab perjalanan dari Soekarno–Hatta sampai Jeddah tanpa melompat", () => {
     const ids = JOURNEY_CHAPTERS.map((c) => c.id);
-    const awal = ids.indexOf("rumah");
+    const awal = ids.indexOf("cgk_tiba");
+    expect(awal).toBe(0);
     expect(BAB_FILM).toEqual(ids.slice(awal, awal + BAB_FILM.length));
     expect(BAB_FILM.at(-1)).toBe("jeddah");
   });
@@ -49,7 +50,7 @@ describe("aksi langkah interaktif", () => {
   it("setiap bab berlangkah punya satu aksi per langkah", () => {
     for (const bab of JOURNEY_CHAPTERS) {
       const aksi = AKSI_LANGKAH[bab.id];
-      if (bab.steps && ["rumah", "cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate"].includes(bab.id)) expect(aksi?.length, bab.id).toBe(bab.steps.length);
+      if (bab.steps && ["cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate"].includes(bab.id)) expect(aksi?.length, bab.id).toBe(bab.steps.length);
       if (aksi) for (const a of aksi) expect(a.aksi.length).toBeLessThanOrEqual(26);
     }
   });
