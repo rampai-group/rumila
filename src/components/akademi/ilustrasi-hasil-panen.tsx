@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 function Sawi() {
   return <g stroke="#386646" strokeWidth="2.6">
-    {[[-24, "#538f55"], [22, "#68a860"], [0, "#78b66d"]].map(([sudut, warna]) => <g key={sudut} transform={`rotate(${sudut} 64 89)`}>
+    {([[-24, "#538f55"], [22, "#68a860"], [0, "#78b66d"]] as const).map(([sudut, warna]) => <g key={sudut} transform={`rotate(${sudut} 64 89)`}>
       <path d="M58 86C55 65 40 49 41 30C41 13 50 7 64 7C78 7 87 17 86 34C84 54 70 70 69 86Z" fill={warna} />
       <path d="M57 84Q59 73 62 60L64 33L67 60Q69 75 71 84Q67 92 57 90Z" fill="#d8e4bd" stroke="#789765" strokeWidth="1.8" />
       <path d="M64 46L53 31M65 50L76 34" stroke="#90bf80" fill="none" strokeWidth="2" />
