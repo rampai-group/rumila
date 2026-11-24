@@ -1,6 +1,6 @@
 {
   "id": "sains-susun-tumbuhan-utuh",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -47,9 +47,9 @@
       "merahmuda-bunga": "bunga di pucuk",
       "t-teratai": "Teratai dari bawah ke atas",
       "teratai-akar": "akar di dalam lumpur",
-      "teratai-batang": "batang di dalam air",
-      "teratai-daun": "daun di atas air",
-      "teratai-bunga": "bunga di pucuk",
+      "teratai-batang": "batang di dasar kolam",
+      "teratai-daun": "daun mengapung di air",
+      "teratai-bunga": "bunga di atas permukaan air",
       "t-padi": "Padi dari bawah ke atas",
       "padi-akar": "akar di dalam tanah",
       "padi-batang": "batang padi",
@@ -102,11 +102,11 @@
       "merahmuda-batang": "stem above the soil",
       "merahmuda-daun": "leaf on the stem",
       "merahmuda-bunga": "flower at the top",
-      "t-teratai": "Lotus from bottom to top",
+      "t-teratai": "Water lily from bottom to top",
       "teratai-akar": "root in the mud",
-      "teratai-batang": "stem in the water",
-      "teratai-daun": "leaf on the water",
-      "teratai-bunga": "flower at the top",
+      "teratai-batang": "stem at the bottom of the pond",
+      "teratai-daun": "leaf floating on the water",
+      "teratai-bunga": "flower above the water",
       "t-padi": "Rice plant from bottom to top",
       "padi-akar": "root under the soil",
       "padi-batang": "rice stalk",
@@ -191,7 +191,10 @@
         {
           "id": "daun",
           "labelKey": "pohon-daun",
-          "emoji": "🌳"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-susun-daun-pohon"
+          }
         }
       ]
     },
@@ -357,27 +360,34 @@
         {
           "id": "akar",
           "labelKey": "teratai-akar",
-          "color": "#8d6e63",
-          "shape": "akar"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-susun-akar-teratai"
+          }
         },
         {
           "id": "batang",
           "labelKey": "teratai-batang",
           "adegan": {
             "jenis": "ilustrasi",
-            "varian": "tk-batang",
-            "t": 0
+            "varian": "tumbuhan-susun-batang-teratai"
           }
         },
         {
           "id": "daun",
           "labelKey": "teratai-daun",
-          "emoji": "🍃"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-susun-daun-teratai"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "teratai-bunga",
-          "emoji": "🌸"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-susun-bunga-teratai"
+          }
         }
       ]
     },
@@ -403,12 +413,18 @@
         {
           "id": "daun",
           "labelKey": "padi-daun",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-susun-daun-padi"
+          }
         },
         {
           "id": "bulir",
           "labelKey": "padi-bulir",
-          "emoji": "🌾"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-susun-bunga-padi"
+          }
         }
       ]
     },
@@ -465,7 +481,10 @@
         {
           "id": "daun",
           "labelKey": "cemara-daun",
-          "emoji": "🌲"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-susun-daun-cemara"
+          }
         }
       ]
     }
