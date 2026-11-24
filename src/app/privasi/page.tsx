@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Data apa yang dikumpulkan RINOYA Academy, untuk apa, dan bagaimana orang tua mengelola atau menghapusnya.",
 };
 
-const TANGGAL = "21 November 2026";
+const TANGGAL = "25 November 2026";
 const KONTAK = "kampus@pulaurinoya.com";
 
 function Bagian({ judul, children }: { judul: string; children: React.ReactNode }) {
@@ -41,17 +41,22 @@ export default function KebijakanPrivasi() {
           dan bagaimana orang tua atau wali mengelolanya. Kami menyusunnya dengan mengacu pada UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.
         </p>
 
-        <Bagian judul="1. Akun dibuat oleh orang tua">
+        <Bagian judul="1. Siapa yang membuat akun">
           <p>
-            Akun RINOYA dibuat dan dikelola oleh orang tua atau wali (akun rumah). Anak tidak membuat akun sendiri; orang tua menambahkan profil anak
-            dari Ruang Orang Tua. Dengan membuat profil anak, orang tua menyatakan setuju data anak diproses sesuai kebijakan ini.
+            Akun RINOYA dibuat dan dikelola oleh orang tua atau wali (akun rumah). Anak di bawah 13 tahun tidak membuat akun sendiri; orang tua
+            menambahkan profil anak di akun rumah. Dengan membuat profil anak, orang tua menyatakan setuju data anak diproses sesuai kebijakan ini.
+          </p>
+          <p className="mt-2">
+            Siswa berusia 13 tahun ke atas boleh membuat akun sendiri dengan email dan tanggal lahir. Saat mendaftar, sistem memeriksa tanggal lahir;
+            pendaftar di bawah 13 tahun diarahkan untuk didaftarkan orang tua.
           </p>
         </Bagian>
 
         <Bagian judul="2. Data yang kami kumpulkan">
           <ul className="list-disc space-y-1.5 pl-5">
             <li>
-              <b>Akun orang tua:</b> email atau nama pengguna dan kata sandi. Kata sandi disimpan dalam bentuk tersandi (hash), bukan teks asli.
+              <b>Akun:</b> email (akun lama: nama pengguna), kata sandi, peran pendaftar (orang tua atau siswa), dan tanggal lahir bila
+              pendaftarnya siswa. Kata sandi disimpan dalam bentuk tersandi (hash), bukan teks asli.
             </li>
             <li>
               <b>Profil keluarga dan anak:</b> nama panggilan, gambar avatar, jenjang belajar, PIN profil, dan tanggal lahir anak bila diisi orang tua

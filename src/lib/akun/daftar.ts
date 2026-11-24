@@ -3,7 +3,8 @@
 
 export type PeranDaftar = "orang_tua" | "siswa";
 
-export const USIA_SISWA_MIN = 3;
+/** Di bawah umur ini, anak didaftarkan orang tua (COPPA / UU PDP: data anak perlu persetujuan orang tua). */
+export const USIA_SISWA_MIN = 13;
 export const USIA_SISWA_MAX = 25;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -36,8 +37,9 @@ export function cekDaftar(
     if (!isian.lahir) return "Siswa wajib mengisi tanggal lahir.";
     const umur = umurDari(isian.lahir, sekarang);
     if (umur === null) return "Tanggal lahir belum benar.";
-    if (umur < USIA_SISWA_MIN || umur > USIA_SISWA_MAX)
-      return `Umur siswa ${USIA_SISWA_MIN}–${USIA_SISWA_MAX} tahun. Periksa lagi tanggal lahirnya.`;
+    if (umur < USIA_SISWA_MIN)
+      return `Siswa di bawah ${USIA_SISWA_MIN} tahun didaftarkan orang tua. Minta orang tua daftar sebagai "Orang tua", lalu tambahkan profilmu.`;
+    if (umur > USIA_SISWA_MAX) return `Umur siswa ${USIA_SISWA_MIN}–${USIA_SISWA_MAX} tahun. Periksa lagi tanggal lahirnya.`;
   }
   return "";
 }
