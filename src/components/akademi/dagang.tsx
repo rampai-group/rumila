@@ -190,7 +190,7 @@ function Pembeli({
         type="button"
         onClick={() => { sfx.tap(); ucapPesanan(teksUcap, bahasa, potongan); }}
         aria-label={`Dengar pesanan: ${teksUcap}`}
-        className="relative min-h-14 flex-1 rounded-[20px] bg-white px-3 py-2 text-left active:scale-[.98]"
+        className="relative min-h-14 min-w-0 flex-1 rounded-[20px] bg-white px-3 py-2 text-left active:scale-[.98]"
         style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", color: INK, minHeight: 56 * sk, padding: `${8 * sk}px ${12 * sk}px` }}
       >
         <span aria-hidden className="absolute bottom-4" style={kanan ? { right: -9, borderTop: "9px solid transparent", borderBottom: "9px solid transparent", borderLeft: "9px solid #fff" } : { left: -9, borderTop: "9px solid transparent", borderBottom: "9px solid transparent", borderRight: "9px solid #fff" }} />
@@ -751,10 +751,12 @@ function ModeBayar(c: Ctx) {
     </>} kanan={<>
       <Nampan uang={uang} onAmbil={kembalikan} judul="Nampan bayar" sorot={hint && total === ronde.harga} />
       <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} sorot={sorot} disabled={terkunci} />
-      <div className="flex shrink-0 gap-2">
-        <TombolBantu onClick={bantu} disabled={terkunci} />
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang }); }} disabled={terkunci || uang.length === 0}><Icon name="payments" size={26} /> Bayar</TombolBesar>
-      </div>
+      <AksiBawah>
+        <div className="flex shrink-0 gap-2">
+          <TombolBantu onClick={bantu} disabled={terkunci} />
+          <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang }); }} disabled={terkunci || uang.length === 0}>{c.bahasa === "en" ? "Pay" : "Bayar"}</TombolBesar>
+        </div>
+      </AksiBawah>
     </>} />
   );
 }
@@ -863,10 +865,12 @@ function ModeTukar(c: Ctx) {
         <div className="self-center rounded-full bg-white px-3 py-0.5 text-center" style={{ ...Tebal, fontSize: 15 * sk }}>{uang.length} koin = {rupiah(total)}</div>
       </div>
       <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} sorot={hint && total < ronde.dibayar ? KOIN : null} disabled={terkunci} />
-      <div className="flex shrink-0 gap-2">
-        <TombolBantu onClick={bantu} disabled={terkunci} />
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang }); }} disabled={terkunci || uang.length === 0}><Icon name="swap_horiz" size={26} /> Tukar</TombolBesar>
-      </div>
+      <AksiBawah>
+        <div className="flex shrink-0 gap-2">
+          <TombolBantu onClick={bantu} disabled={terkunci} />
+          <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang }); }} disabled={terkunci || uang.length === 0}>{c.bahasa === "en" ? "Exchange" : "Tukar"}</TombolBesar>
+        </div>
+      </AksiBawah>
     </>} />
   );
 }
@@ -936,10 +940,12 @@ function ModeLengkapi(c: Ctx) {
       </Lapak>
     </>} kanan={<>
       <Laci laci={ronde.laci} dipakai={uang} onAmbil={(n) => { if (!tampil) ambil(n); }} sorot={hint && uang.length < kurang ? KOIN : null} disabled={terkunci || tampil} penuh />
-      <div className="flex shrink-0 gap-2">
-        <TombolBantu onClick={bantu} disabled={terkunci || tampil} label="Lihat lagi" />
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang, latencyMs: jam.latency() }); }} disabled={terkunci || tampil || uang.length === 0}><Icon name="check" size={26} /> Cukup!</TombolBesar>
-      </div>
+      <AksiBawah>
+        <div className="flex shrink-0 gap-2">
+          <TombolBantu onClick={bantu} disabled={terkunci || tampil} label="Lihat lagi" />
+          <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang, latencyMs: jam.latency() }); }} disabled={terkunci || tampil || uang.length === 0}>{c.bahasa === "en" ? "Enough!" : "Cukup!"}</TombolBesar>
+        </div>
+      </AksiBawah>
     </>} />
   );
 }
