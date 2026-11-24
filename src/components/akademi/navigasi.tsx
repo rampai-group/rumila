@@ -687,24 +687,26 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
       {ronde.execMode === "langkah" && lariLangkah && (
         <>
           <Rak judul={`Program Agam · blok ${Math.min(langkahKe + 1, Math.max(1, hitungBlok(ronde.program)))} dari ${hitungBlok(ronde.program)}`} blok={ronde.program} slot={Math.max(hitungBlok(ronde.program), 1)} aktif sel={null} bacaSaja />
-          <div className={`flex gap-2 ${mendatar ? "flex-col items-stretch" : "items-center"}`}>
-            <div className="flex-1 rounded-[16px] bg-white px-3 py-2 font-bold" style={{ fontSize: 15 * skt }}>
-              {ronde.prediksi
-                ? blokLangkah
-                  ? `Blok berikutnya: ${BLOK[blokLangkah.cmd === "bendera" ? "bendera" : blokLangkah.cmd].label}. Ketuk petak tujuannya, lalu tekan Langkah.`
-                  : "Program habis."
-                : "Tekan Langkah untuk menjalankan satu blok."}
-              {!ujian && ronde.prediksi && prediksi.length > 0 && <span className="ml-1">({prediksi.filter(Boolean).length}/{prediksi.length} tebakan benar)</span>}
+          <AksiBawah aktif={!mendatar}>
+            <div className={`flex gap-2 ${mendatar ? "flex-col items-stretch" : "items-center"}`}>
+              <div className="min-w-0 flex-1 rounded-[16px] bg-white px-3 py-2 font-bold" style={{ fontSize: 15 * skt }}>
+                {ronde.prediksi
+                  ? blokLangkah
+                    ? `Blok berikutnya: ${BLOK[blokLangkah.cmd === "bendera" ? "bendera" : blokLangkah.cmd].label}. Ketuk petak tujuannya, lalu tekan Langkah.`
+                    : "Program habis."
+                  : "Tekan Langkah untuk menjalankan satu blok."}
+                {!ujian && ronde.prediksi && prediksi.length > 0 && <span className="ml-1">({prediksi.filter(Boolean).length}/{prediksi.length} tebakan benar)</span>}
+              </div>
+              <button
+                onClick={langkah}
+                disabled={sibuk || terkunci || (ronde.prediksi && !tebakan && !!blokLangkah)}
+                className={`shrink-0 rounded-[20px] bg-[#2463c9] text-white shadow-[0_6px_0_#1a4a99] active:translate-y-1 disabled:opacity-60 ${mendatar ? "px-6 py-4" : "px-3 py-2"}`}
+                style={{ fontSize: (mendatar ? 22 : 18) * skt, fontWeight: 900, minHeight: (mendatar ? 64 : 48) * skt, minWidth: (mendatar ? 140 : 104) * skt }}
+              >
+                Langkah ▶
+              </button>
             </div>
-            <button
-              onClick={langkah}
-              disabled={sibuk || terkunci || (ronde.prediksi && !tebakan && !!blokLangkah)}
-              className="rounded-[20px] bg-[#2463c9] px-6 py-4 text-white shadow-[0_6px_0_#1a4a99] active:translate-y-1 disabled:opacity-60"
-              style={{ fontSize: 22 * skt, fontWeight: 900, minHeight: 64 * skt, minWidth: 140 * skt }}
-            >
-              Langkah ▶
-            </button>
-          </div>
+          </AksiBawah>
         </>
       )}
     </>
