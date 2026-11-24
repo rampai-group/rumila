@@ -17,8 +17,9 @@ import { supabase } from "@/lib/supabase/client";
 import { useCloud } from "@/lib/supabase/family";
 import { eventsAnak } from "./jejak";
 import { pangkat } from "./koleksi";
-import { KOMPETENSI, setLevelAnak } from "./konten";
+import { KOMPETENSI, levelAnak, setLevelAnak } from "./konten";
 import { proyeksi } from "./mastery";
+import { jenjangBerikut } from "./peta";
 import { bacaSnapshot, buatKode, snapshotSertifikat, type SnapshotSertifikat } from "./sertifikat-inti";
 
 export * from "./sertifikat-inti";
@@ -178,8 +179,12 @@ export async function mintaTerbit(memberId: string, level: LevelId): Promise<Has
 function terapkan(h: Extract<HasilTerbit, { ok: true }>) {
   const bersih = { ...h.sertifikat, pending: false };
   taruhLokal(bersih);
-  if (h.levelBaru) setLevelAnak(bersih.memberId, h.levelBaru);
+  if (h.levelBaru && levelAnak(bersih.memberId) === bersih.level) setLevelAnak(bersih.memberId, h.levelBaru);
   return bersih;
+}
+
+function perluPulihkanKenaikan(s: Sertifikat): boolean {
+  return s.status === "sah" && levelAnak(s.memberId) === s.level && !!jenjangBerikut(s.level, KOMPETENSI);
 }
 
 /** Tarik semua sertifikat anak dari server, gabung ke lokal (server menang), lalu kirim yang masih pending. */
@@ -196,7 +201,7 @@ export async function ambilSertifikat(memberId: string): Promise<Sertifikat[]> {
 }
 
 let sedangKirim = false;
-/** Minta ulang penerbitan untuk sertifikat pending di perangkat ini (saat `online` dan setelah ambilSertifikat). */
+/** Minta ulang penerbitan atau kenaikan yang belum selesai (saat `online` dan setelah ambilSertifikat). */
 export async function kirimTertunda(): Promise<void> {
   if (!adaWindow() || sedangKirim) return;
   if (!useCloud.getState().familyId) return;
@@ -205,11 +210,12 @@ export async function kirimTertunda(): Promise<void> {
     for (const m of semuaMemberLokal()) {
       if (!UUID.test(m)) continue;
       for (const s of sertifikatAnak(m)) {
-        if (!s.pending) continue;
+        const pemulihan = s.snapshot.nilai !== undefined && perluPulihkanKenaikan(s);
+        if (!s.pending && !pemulihan) continue;
         const h = await mintaTerbit(m, s.level);
         if (h.ok) terapkan(h);
         // Server menolak (belum lulus menurut catatan server / jenjang beda): buang salinan pending yang tidak sah.
-        else if (h.alasan === "belum_lulus" || h.alasan === "belum_ujian" || h.alasan === "jenjang_beda") simpanLokal(m, sertifikatAnak(m).filter((x) => !kunciSama(x, s)));
+        else if (s.pending && (h.alasan === "belum_lulus" || h.alasan === "belum_ujian" || h.alasan === "jenjang_beda")) simpanLokal(m, sertifikatAnak(m).filter((x) => !kunciSama(x, s)));
       }
     }
   } finally {
@@ -234,8 +240,15 @@ export class PangkatBelumTercapai extends Error {
  * mengembalikan yang ada. Lulus = jenjang anak dinaikkan server dan salinan lokal ikut diperbarui.
  */
 export async function terbitkan(memberId: string, level: LevelId): Promise<Sertifikat> {
+  const bisaKeServer = useCloud.getState().familyId && UUID.test(memberId);
   const sudah = sertifikatAnak(memberId).find((s) => s.level === level && !s.track && !s.pending);
-  if (sudah) return sudah;
+  if (sudah) {
+    if (bisaKeServer && perluPulihkanKenaikan(sudah)) {
+      const h = await mintaTerbit(memberId, level);
+      if (h.ok) return terapkan(h);
+    }
+    return sudah;
+  }
 
   const peng = proyeksi(eventsAnak(memberId), KOMPETENSI);
   const p = pangkat(peng, KOMPETENSI, [level])[0];
@@ -251,7 +264,7 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
     pending: true,
   };
 
-  if (useCloud.getState().familyId && UUID.test(memberId)) {
+  if (bisaKeServer) {
     const h = await mintaTerbit(memberId, level);
     if (h.ok) return terapkan(h);
     if (h.alasan === "belum_lulus")

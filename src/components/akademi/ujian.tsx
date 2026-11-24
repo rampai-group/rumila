@@ -12,8 +12,9 @@ import { isiBarang, levelMeta, type ContentPack, type LevelId } from "@akademi/s
 import { buatRonde, knobDefaults, nilai, type Hasil, type Jawaban, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent, eventsAnak } from "@/lib/akademi/jejak";
-import { PAKET, kompetensiUntuk, paketById, useBahasaAnak } from "@/lib/akademi/konten";
+import { KOMPETENSI, PAKET, kompetensiUntuk, paketById, useBahasaAnak } from "@/lib/akademi/konten";
 import { kalimatUjian } from "@/lib/akademi/kalimat-suara";
+import { jenjangBerikut } from "@/lib/akademi/peta";
 import { diamkan, ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
 import { AMBANG, JUMLAH_SOAL, NAMA_UJIAN, SEKALI, bolehMengulang, lulusDari, nilaiDari, predikat, rencanaUjian, type HasilUjian, type JenisUjian } from "@/lib/akademi/ujian";
 import { serahkanUjian, useUjian } from "@/lib/akademi/ujian-klien";
@@ -124,10 +125,11 @@ function Pembuka({ jenis, level, ruang, judul, jumlah, izin, tertunda, pending, 
   const sebagian: HasilUjian | null = tertunda ? { jenis, level, ruang, sessionId: tertunda.sessionId, benar: tertunda.benar, total: n, nilai: nilaiDari(tertunda.benar, n), lulus: lulusDari(jenis, nilaiDari(tertunda.benar, n)), at: new Date().toISOString() } : null;
   const aktif = kirimUlang ?? pending;
   const hasilResmi = aktif ? riwayat.find((h) => h.sessionId === aktif.sessionId && !h.pending) : undefined;
-  const akhir = hasilResmi ?? hasil ?? pending;
+  const ujianAkhirSelesai = sekali ? riwayat.find((h) => h.jenis === jenis && h.level === level && h.ruang === ruang && !h.pending) : undefined;
+  const akhir = hasilResmi ?? ujianAkhirSelesai ?? hasil ?? pending;
   useLaporHasil(akhir, onSelesai);
   if (akhir || kirimUlang) {
-    return <LayarNilai h={akhir ?? null} judul={judul} kembaliKe={kembaliKe} mengirim={menyerahkan} galat={galat} onUlang={aktif ? () => void serahkanTertunda(aktif) : undefined} />;
+    return <LayarNilai h={akhir ?? null} judul={judul} kembaliKe={kembaliKe} mengirim={menyerahkan} galat={hasilResmi || ujianAkhirSelesai ? null : galat} onUlang={aktif ? () => void serahkanTertunda(aktif) : undefined} />;
   }
   return (
     <Bingkai>
@@ -336,6 +338,8 @@ function LayarNilai({ h, judul, kembaliKe, latihan, mengirim, galat, onUlang }: 
       </Bingkai>
     );
   const pred = predikat(h.nilai, h.jenis);
+  const ujianAkhir = !latihan && SEKALI.has(h.jenis);
+  const tamatAkademi = ujianAkhir && !jenjangBerikut(h.level, KOMPETENSI);
   return (
     <Bingkai>
       <p className="text-[13px] font-black tracking-[0.12em] text-[#a34a00] uppercase">
@@ -353,8 +357,8 @@ function LayarNilai({ h, judul, kembaliKe, latihan, mengirim, galat, onUlang }: 
       <p className="mt-1 text-[15px] font-bold text-[#4a5a75]">
         {latihan
           ? "Nilai latihan tidak disimpan. Ulangi materi yang masih salah, lalu ikuti Ujian Akhir."
-          : SEKALI.has(h.jenis)
-            ? "Nilai ini tertulis di Sertifikat Kenaikan Jenjang."
+          : ujianAkhir
+            ? tamatAkademi ? "Kamu sudah menuntaskan Akademi Rinoya. Nilai ini dicantumkan di sertifikat." : "Ujian Akhir selesai. Nilai ini dicantumkan di sertifikat."
             : h.lulus
               ? "Tahap berikutnya sudah terbuka."
               : `Butuh nilai ${AMBANG[h.jenis]}. Ulangi materinya, lalu coba besok.`}
@@ -362,6 +366,11 @@ function LayarNilai({ h, judul, kembaliKe, latihan, mengirim, galat, onUlang }: 
       <button onClick={() => router.push(kembaliKe)} className="mt-5 w-full rounded-[18px] bg-[#12803f] py-3.5 text-[19px] font-extrabold text-white shadow-[0_5px_0_#16804f] active:translate-y-0.5">
         Kembali ke peta
       </button>
+      {ujianAkhir && (
+        <Link href={`/akademi/sertifikat/${levelMeta(h.level).slug}`} className="mt-3 inline-flex min-h-11 items-center px-3 font-extrabold text-[#0567c2] underline">
+          Lihat sertifikat
+        </Link>
+      )}
     </Bingkai>
   );
 }

@@ -14,7 +14,9 @@ import { createClient } from "@supabase/supabase-js";
 import { LevelId } from "@akademi/schema";
 import { KOMPETENSI, TRACK_AKTIF } from "@/lib/akademi/katalog";
 import { ruangKuisKanonik } from "@/lib/akademi/modul";
+import { jenjangBerikut } from "@/lib/akademi/peta";
 import { buatKode, eventDariBaris, nilaiKelulusan, type BarisEvent } from "@/lib/akademi/sertifikat-inti";
+import type { Admin } from "@/lib/akademi/server";
 import { predikat } from "@/lib/akademi/ujian";
 import type { Database, Json } from "@/lib/supabase/types";
 
@@ -27,6 +29,32 @@ const HALAMAN = 1000;
 const MAKS_EVENT = 60_000;
 
 const json = (status: number, body: Record<string, unknown>) => NextResponse.json(body, { status, headers: { "cache-control": "no-store" } });
+
+function ujianAkhir(admin: Admin, memberId: string, level: LevelId) {
+  return admin.from("akademi_ujian").select("nilai").eq("member_id", memberId).eq("jenis", "kenaikan").eq("level", level).order("created_at", { ascending: true }).limit(1);
+}
+
+async function tanggapanTerbit(admin: Admin, member: { id: string; family_id: string }, level: LevelId, berikut: LevelId | undefined, sertifikat: unknown) {
+  if (!berikut) return json(200, { sertifikat });
+
+  const sekarang = new Date().toISOString();
+  const perubahan = { level: berikut, semester: 1, sumber: "naik" as const, level_sejak: sekarang, updated_at: sekarang };
+  // Permintaan yang terlambat hanya boleh mengubah jenjang asal yang masih aktif.
+  const berubah = await admin.from("akademi_siswa").update(perubahan).eq("member_id", member.id).eq("level", level).select("level").maybeSingle();
+  if (berubah.error) return json(500, { error: "galat" });
+  if (berubah.data) return json(200, { sertifikat, levelBaru: berubah.data.level });
+
+  // Profil lama bisa belum punya baris siswa. Bila sudah ada, upsert ini membiarkan pangkatnya utuh.
+  const ditambah = await admin.from("akademi_siswa")
+    .upsert({ ...perubahan, member_id: member.id, family_id: member.family_id }, { onConflict: "member_id", ignoreDuplicates: true })
+    .select("level").maybeSingle();
+  if (ditambah.error) return json(500, { error: "galat" });
+  if (ditambah.data) return json(200, { sertifikat, levelBaru: ditambah.data.level });
+
+  const aktif = await admin.from("akademi_siswa").select("level").eq("member_id", member.id).maybeSingle();
+  if (aktif.error || !aktif.data || aktif.data.level === level) return json(500, { error: "galat" });
+  return json(200, { sertifikat, levelBaru: aktif.data.level });
+}
 
 export async function POST(req: Request) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -53,11 +81,22 @@ export async function POST(req: Request) {
   if (!member) return json(403, { error: "tidak_berhak" });
 
   // 2. jenjang aktif siswa
-  const { data: siswa } = await admin.from("akademi_siswa").select("level").eq("member_id", memberId).maybeSingle();
+  const { data: siswa, error: eSiswa } = await admin.from("akademi_siswa").select("level").eq("member_id", memberId).maybeSingle();
+  if (eSiswa) return json(500, { error: "galat" });
 
-  // sudah pernah terbit → kembalikan apa adanya (idempoten), jenjang tidak diubah lagi
-  const { data: ada } = await admin.from("akademi_certificate").select(KOLOM).eq("member_id", memberId).eq("level", level).is("track", null).maybeSingle();
-  if (ada) return json(200, { sertifikat: ada, levelBaru: siswa?.level && siswa.level !== level ? siswa.level : undefined });
+  // Gunakan kembali sertifikat yang sudah terbit, termasuk saat kenaikan belum sempat tersimpan.
+  const { data: ada, error: eSertifikat } = await admin.from("akademi_certificate").select(KOLOM).eq("member_id", memberId).eq("level", level).is("track", null).maybeSingle();
+  if (eSertifikat) return json(500, { error: "galat" });
+  if (ada) {
+    if (siswa && siswa.level !== level) return json(200, { sertifikat: ada, levelBaru: siswa.level });
+    const berikut = jenjangBerikut(level, KOMPETENSI);
+    if (!berikut || ada.status !== "sah") return json(200, { sertifikat: ada });
+    const { data: kenaikan, error } = await ujianAkhir(admin, memberId, level);
+    if (error) return json(500, { error: "galat" });
+    // Sertifikat lama bisa berasal dari sebelum Ujian Akhir menjadi syarat.
+    if (!kenaikan?.length) return json(200, { sertifikat: ada });
+    return tanggapanTerbit(admin, member, level, berikut, ada);
+  }
 
   if (siswa && siswa.level !== level) return json(409, { error: "jenjang_beda", levelAktif: siswa.level });
 
@@ -81,7 +120,8 @@ export async function POST(req: Request) {
   if (!hasil.lulus) return json(422, { error: "belum_lulus", dikuasai: hasil.dikuasai, total: hasil.total });
 
   // Ujian Akhir (sekali-jalan) wajib sudah dikerjakan; nilainya dibekukan apa adanya (<75 = predikat "Cukup")
-  const { data: kenaikan } = await admin.from("akademi_ujian").select("nilai").eq("member_id", memberId).eq("jenis", "kenaikan").eq("level", level).order("created_at", { ascending: true }).limit(1);
+  const { data: kenaikan, error: eUjian } = await ujianAkhir(admin, memberId, level);
+  if (eUjian) return json(500, { error: "galat" });
   const nilaiAkhir = kenaikan?.[0]?.nilai;
   if (nilaiAkhir === undefined) return json(422, { error: "belum_ujian_kenaikan", dikuasai: hasil.dikuasai, total: hasil.total });
   hasil.snapshot.nilai = nilaiAkhir;
@@ -118,16 +158,5 @@ export async function POST(req: Request) {
   }
   if (!terbit) return json(500, { error: "galat" });
 
-  // naik jenjang
-  let levelBaru: string | undefined;
-  if (hasil.berikut) {
-    const sekarang = new Date().toISOString();
-    const { error } = await admin
-      .from("akademi_siswa")
-      .upsert({ member_id: memberId, family_id: member.family_id, level: hasil.berikut, semester: 1, sumber: "naik", level_sejak: sekarang, updated_at: sekarang }, { onConflict: "member_id" });
-    if (error) console.error("[sertifikat] naik jenjang gagal", error);
-    else levelBaru = hasil.berikut;
-  }
-
-  return json(200, { sertifikat: terbit, levelBaru });
+  return tanggapanTerbit(admin, member, level, hasil.berikut, terbit);
 }
