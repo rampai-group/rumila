@@ -217610,7 +217610,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -217714,7 +217714,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "yoghurt",
         "labelKey": "i-yoghurt",
         "bin": "baru",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-yoghurt"
+        }
       },
       {
         "id": "tempe",
@@ -218286,7 +218289,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218296,7 +218299,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Siapa Tinggal di Mana?",
-        "instruksi": "Antar tiap hewan dan tumbuhan ke habitatnya.",
+        "instruksi": "Antar tiap makhluk hidup ke habitat yang cocok.",
         "b-gurun": "gurun",
         "b-kolam": "kolam",
         "b-hutan": "hutan hujan",
@@ -218321,7 +218324,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Who Lives Where?",
-        "instruksi": "Take each animal and plant to its habitat.",
+        "instruksi": "Take each living thing to a matching habitat.",
         "b-gurun": "desert",
         "b-kolam": "pond",
         "b-hutan": "rainforest",
@@ -218490,9 +218493,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "penguin",
         "labelKey": "i-penguin",
         "bin": "kutub",
-        "emoji": "🐺",
-        "color": "#fafafa",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-serigala-kutub"
+        }
       },
       {
         "id": "anjinglaut",
@@ -219918,7 +219922,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-sifat-yang-dibutuhkan",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -220081,7 +220085,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kainpel",
         "labelKey": "i-kainpel",
         "bin": "serap",
-        "emoji": "🧹"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-kain-pel"
+        }
       },
       {
         "id": "popokkain",
@@ -332633,7 +332640,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-hewan-tumbuh-besar",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -332862,8 +332869,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bayi",
             "labelKey": "bebek-bayi",
-            "emoji": "🦆",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-anak-bebek"
+            }
           },
           {
             "id": "kecil",
@@ -333069,7 +333078,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-mana-dulu-bahan-baru",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -333291,7 +333300,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akhir",
             "labelKey": "susu-akhir",
-            "emoji": "🥣"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-yoghurt"
+            }
           }
         ]
       },
@@ -333860,7 +333872,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -334089,8 +334101,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bayi",
             "labelKey": "bebek-bayi",
-            "emoji": "🦆",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-anak-bebek"
+            }
           },
           {
             "id": "kecil",
@@ -345112,7 +345126,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -345264,9 +345278,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kepompong",
             "labelKey": "kupu-kepompong",
-            "shape": "rect",
-            "color": "#a1887f",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-kepompong"
+            }
           },
           {
             "id": "kupu",

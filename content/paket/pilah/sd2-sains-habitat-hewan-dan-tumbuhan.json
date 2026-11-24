@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Siapa Tinggal di Mana?",
-      "instruksi": "Antar tiap hewan dan tumbuhan ke habitatnya.",
+      "instruksi": "Antar tiap makhluk hidup ke habitat yang cocok.",
       "b-gurun": "gurun",
       "b-kolam": "kolam",
       "b-hutan": "hutan hujan",
@@ -35,7 +35,7 @@
     },
     "en": {
       "judul": "Who Lives Where?",
-      "instruksi": "Take each animal and plant to its habitat.",
+      "instruksi": "Take each living thing to a matching habitat.",
       "b-gurun": "desert",
       "b-kolam": "pond",
       "b-hutan": "rainforest",
@@ -204,9 +204,10 @@
       "id": "penguin",
       "labelKey": "i-penguin",
       "bin": "kutub",
-      "emoji": "🐺",
-      "color": "#fafafa",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-serigala-kutub"
+      }
     },
     {
       "id": "anjinglaut",
