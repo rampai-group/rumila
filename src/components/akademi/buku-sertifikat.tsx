@@ -2,13 +2,13 @@
 
 // Buku Sertifikat Kenaikan Jenjang RINOYA Academy — beberapa lembar A4 mendatar, siap cetak/PDF:
 //   1. Sampul            2. Sertifikat (dengan foto anak)   3. Hasil Belajar (nilai ujian & ulangan)
-//   4+. Transkrip Kompetensi (dipecah per lembar)            terakhir. Lembar Pengesahan (QR, tanda tangan)
+//   Berikutnya: lanjutan nilai modul bila diperlukan, transkrip per lembar, dan pengesahan (QR, tanda tangan).
 // Setiap lembar ber-footer: identitas dokumen, nomor, dan "Lembar x dari y".
 // Foto hanya untuk dokumen milik keluarga (halaman murid & Ruang Orang Tua), tidak untuk verifikasi publik.
 
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { LEVELS, TRACKS, type LevelId } from "@akademi/schema";
+import { LEVELS, TRACKS, type LevelId, type TrackId } from "@akademi/schema";
 import { KOMPETENSI, TRACK_AKTIF } from "@/lib/akademi/katalog";
 import { modulDariRuang } from "@/lib/akademi/modul";
 import { tahunAjaran } from "@/lib/akademi/piagam";
@@ -37,7 +37,8 @@ export const BUKU_PRINT_CSS = `
   html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
   .no-print { display: none !important; }
   .sertifikat-root { background: #fff !important; padding: 0 !important; margin: 0 !important; min-height: 0 !important; }
-  .buku-sertifikat { gap: 0 !important; }
+  .sertifikat-root > div { display: block !important; max-width: none !important; padding: 0 !important; margin: 0 !important; }
+  .buku-sertifikat { display: block !important; gap: 0 !important; }
   .lembar { width: 297mm !important; height: 210mm !important; max-width: none !important; box-shadow: none !important; border-radius: 0 !important; break-after: page; break-inside: avoid; }
   .lembar:last-child { break-after: auto; }
 }`;
@@ -75,8 +76,13 @@ const DRAFT_CSS = `
 }`;
 
 export function BukuSertifikat(p: BukuSertifikatProps) {
+  const barisKuis = barisNilaiKuis(p.snapshot, p.level);
+  const kuisLanjutan = barisKuis.slice(KUIS_LEMBAR_AWAL);
+  const kuisPerLembar = KUIS_PER_KOLOM * 2;
+  const hasilLanjutan = Array.from({ length: Math.ceil(kuisLanjutan.length / kuisPerLembar) }, (_, i) => kuisLanjutan.slice(i * kuisPerLembar, (i + 1) * kuisPerLembar));
   const halTranskrip = pecahTranskrip(p.snapshot.kompetensi);
-  const total = 3 + halTranskrip.length + 1;
+  const awalTranskrip = 4 + hasilLanjutan.length;
+  const total = awalTranskrip + halTranskrip.length;
   const foot = (ke: number) => <Footer p={p} ke={ke} total={total} />;
   if (p.hanya === "sertifikat")
     return (
@@ -90,9 +96,12 @@ export function BukuSertifikat(p: BukuSertifikatProps) {
       {p.draft && <style>{DRAFT_CSS}</style>}
       <LembarSampul p={p} footer={foot(1)} />
       <LembarSertifikat p={p} footer={foot(2)} />
-      <LembarHasil p={p} footer={foot(3)} />
+      <LembarHasil p={p} barisKuis={barisKuis} footer={foot(3)} />
+      {hasilLanjutan.map((baris, i) => (
+        <LembarKuisLanjutan key={i} baris={baris} footer={foot(4 + i)} />
+      ))}
       {halTranskrip.map((isi, i) => (
-        <LembarTranskrip key={i} p={p} isi={isi} ke={i + 1} dari={halTranskrip.length} footer={foot(4 + i)} />
+        <LembarTranskrip key={i} p={p} isi={isi} ke={i + 1} dari={halTranskrip.length} footer={foot(awalTranskrip + i)} />
       ))}
       <LembarPengesahan p={p} footer={foot(total)} />
     </div>
@@ -323,17 +332,68 @@ function LembarSertifikat({ p, footer }: { p: BukuSertifikatProps; footer: React
 
 /* ---------------- 3. hasil belajar ---------------- */
 
-const LABEL_UJIAN = (jenis: string, ruang: string, level: LevelId) => {
-  if (jenis === "kuis") return modulDariRuang(level, ruang, KOMPETENSI, TRACK_AKTIF)?.isi[0].unit.nama.id ?? ruang;
-  if (jenis === "semester") return `Semester ${ruang.slice(1)}`;
-  return "Seluruh jenjang";
-};
+// Memberi ruang untuk judul, baris yang membungkus, dan catatan sebelum footer A4.
+const KUIS_PER_KOLOM = 14;
+const KUIS_LEMBAR_AWAL = 18;
+type BarisNilaiKuis = { ruang: string; track: TrackId; pelajaran: string; modul: string; nilai: number };
 
-function LembarHasil({ p, footer }: { p: BukuSertifikatProps; footer: ReactNode }) {
-  const ujian = p.snapshot.ujian ?? [];
-  const besar = ujian.filter((u) => u.jenis !== "kuis").sort((a, b) => (a.jenis === "kenaikan" ? 1 : 0) - (b.jenis === "kenaikan" ? 1 : 0) || a.ruang.localeCompare(b.ruang));
-  const trackDari = (ruang: string) => modulDariRuang(p.level, ruang, KOMPETENSI, TRACK_AKTIF)?.track;
-  const perPelajaran = TRACKS.map((t) => ({ t, rows: ujian.filter((u) => u.jenis === "kuis" && trackDari(u.ruang) === t.id) })).filter((g) => g.rows.length);
+function barisNilaiKuis(snapshot: SnapshotSertifikat, level: LevelId): BarisNilaiKuis[] {
+  const kuis = (snapshot.ujian ?? []).flatMap((u) => {
+    if (u.jenis !== "kuis") return [];
+    const modul = modulDariRuang(level, u.ruang, KOMPETENSI, TRACK_AKTIF);
+    return modul ? [{ ruang: u.ruang, nilai: u.nilai, track: modul.track, modul: modul.isi[0].unit.nama.id }] : [];
+  });
+  return TRACKS.flatMap((t) => kuis.filter((u) => u.track === t.id).map((u) => ({ ...u, pelajaran: t.nama.id })));
+}
+
+function TabelNilaiKuis({ baris }: { baris: BarisNilaiKuis[] }) {
+  return (
+    <table aria-label="Daftar nilai ulangan modul" className="w-full" style={{ marginTop: "0.6cqw", borderCollapse: "collapse", fontSize: "1.25cqw", lineHeight: 1.3 }}>
+      <thead>
+        <tr style={{ color: MUTED, fontSize: "0.9cqw", letterSpacing: "0.12em" }}>
+          <th className="text-left" style={{ padding: "0.4cqw 0" }}>PELAJARAN</th>
+          <th className="text-left">MODUL</th>
+          <th className="text-right">NILAI</th>
+        </tr>
+      </thead>
+      <tbody>
+        {baris.map((u, i) => (
+          <tr key={`${u.ruang}-${i}`} style={{ borderTop: `0.12cqw solid ${GOLD}55` }}>
+            <td style={{ padding: "0.45cqw 0.6cqw 0.45cqw 0", fontWeight: 700, color: NAVY }}>{baris[i - 1]?.track !== u.track ? u.pelajaran : ""}</td>
+            <td>{u.modul}</td>
+            <td className="text-right" style={{ fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{u.nilai}</td>
+          </tr>
+        ))}
+        {!baris.length && (
+          <tr>
+            <td colSpan={3} style={{ padding: "0.6cqw 0", color: MUTED }}>
+              Sertifikat ini terbit sebelum sistem ulangan berlaku.
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  );
+}
+
+function LembarKuisLanjutan({ baris, footer }: { baris: BarisNilaiKuis[]; footer: ReactNode }) {
+  const duaKolom = baris.length > KUIS_LEMBAR_AWAL;
+  const batas = Math.ceil(baris.length / 2);
+  const kolom = duaKolom ? [baris.slice(0, batas), baris.slice(batas)] : [baris];
+  return (
+    <Lembar label="Nilai ulangan modul lanjutan">
+      <BingkaiIsi judul="Nilai Ulangan Modul" sub="Lanjutan" />
+      <div className="absolute grid items-start" style={{ inset: "19% 6% 11%", gridTemplateColumns: duaKolom ? "repeat(2, minmax(0, 1fr))" : "minmax(0, 1fr)", gap: "3cqw", fontFamily: SANS }}>
+        {kolom.map((isi, i) => <TabelNilaiKuis key={i} baris={isi} />)}
+      </div>
+      {footer}
+    </Lembar>
+  );
+}
+
+function LembarHasil({ p, barisKuis, footer }: { p: BukuSertifikatProps; barisKuis: BarisNilaiKuis[]; footer: ReactNode }) {
+  const semester = (p.snapshot.ujian ?? []).filter((u) => u.jenis !== "kuis" && u.jenis !== "kenaikan").sort((a, b) => a.ruang.localeCompare(b.ruang));
+  const perPelajaran = TRACKS.map((t) => ({ t, rows: barisKuis.filter((u) => u.track === t.id) })).filter((g) => g.rows.length);
   const rata = (xs: { nilai: number }[]) => Math.round(xs.reduce((n, x) => n + x.nilai, 0) / Math.max(1, xs.length));
   return (
     <Lembar label="Hasil belajar">
@@ -345,14 +405,12 @@ function LembarHasil({ p, footer }: { p: BukuSertifikatProps; footer: ReactNode 
             <p style={{ fontFamily: SERIF, fontWeight: 700, fontSize: "6.4cqw", lineHeight: 1, fontVariantNumeric: "lining-nums" }}>{p.snapshot.nilai ?? "—"}</p>
             <p style={{ fontSize: "1.4cqw", fontWeight: 700 }}>{p.snapshot.predikat ?? ""}</p>
           </div>
-          {besar
-            .filter((u) => u.jenis !== "kenaikan")
-            .map((u) => (
-              <div key={`${u.jenis}-${u.ruang}`} className="flex items-baseline justify-between" style={{ borderBottom: `1px solid ${GOLD}55`, paddingBottom: "0.6cqw" }}>
-                <span style={{ fontSize: "1.25cqw", fontWeight: 600 }}>{NAMA_UJIAN[u.jenis as JenisUjian] ?? u.jenis} · {LABEL_UJIAN(u.jenis, u.ruang, p.level)}</span>
-                <b style={{ fontFamily: SERIF, fontSize: "2.2cqw", color: NAVY, fontVariantNumeric: "lining-nums" }}>{u.nilai}</b>
-              </div>
-            ))}
+          {semester.map((u) => (
+            <div key={`${u.jenis}-${u.ruang}`} className="flex items-baseline justify-between" style={{ borderBottom: `1px solid ${GOLD}55`, paddingBottom: "0.6cqw" }}>
+              <span style={{ fontSize: "1.25cqw", fontWeight: 600 }}>{NAMA_UJIAN[u.jenis as JenisUjian] ?? u.jenis} · {u.jenis === "semester" ? `Semester ${u.ruang.slice(1)}` : "Seluruh jenjang"}</span>
+              <b style={{ fontFamily: SERIF, fontSize: "2.2cqw", color: NAVY, fontVariantNumeric: "lining-nums" }}>{u.nilai}</b>
+            </div>
+          ))}
           <div className="grid" style={{ gridTemplateColumns: `repeat(${Math.max(1, perPelajaran.length)}, 1fr)`, gap: "0.8cqw" }}>
             {perPelajaran.map(({ t, rows }) => (
               <div key={t.id} style={{ border: `1px solid ${GOLD}66`, borderRadius: "0.6cqw", padding: "0.9cqw", background: "rgba(255,255,255,.5)" }}>
@@ -365,33 +423,8 @@ function LembarHasil({ p, footer }: { p: BukuSertifikatProps; footer: ReactNode 
         </div>
         <div className="min-w-0">
           <p style={{ fontSize: "1.05cqw", fontWeight: 700, letterSpacing: "0.18em", color: GOLD }}>NILAI ULANGAN MODUL</p>
-          <table className="w-full" style={{ marginTop: "0.6cqw", borderCollapse: "collapse", fontSize: "1.15cqw" }}>
-            <thead>
-              <tr style={{ color: MUTED, fontSize: "0.9cqw", letterSpacing: "0.12em" }}>
-                <th className="text-left" style={{ padding: "0.4cqw 0" }}>PELAJARAN</th>
-                <th className="text-left">MODUL</th>
-                <th className="text-right">NILAI</th>
-              </tr>
-            </thead>
-            <tbody>
-              {perPelajaran.flatMap(({ t, rows }) =>
-                rows.map((u, i) => (
-                  <tr key={`${u.ruang}-${i}`} style={{ borderTop: `1px solid ${GOLD}33` }}>
-                    <td style={{ padding: "0.45cqw 0", fontWeight: 700, color: NAVY }}>{i === 0 ? t.nama.id : ""}</td>
-                    <td>{LABEL_UJIAN(u.jenis, u.ruang, p.level)}</td>
-                    <td className="text-right" style={{ fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{u.nilai}</td>
-                  </tr>
-                )),
-              )}
-              {!perPelajaran.length && (
-                <tr>
-                  <td colSpan={3} style={{ padding: "0.6cqw 0", color: MUTED }}>
-                    Sertifikat ini terbit sebelum sistem ulangan berlaku.
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+          <TabelNilaiKuis baris={barisKuis.slice(0, KUIS_LEMBAR_AWAL)} />
+          {barisKuis.length > KUIS_LEMBAR_AWAL && <p style={{ marginTop: "0.6cqw", fontSize: "1cqw", fontWeight: 700, color: NAVY }}>Nilai modul berikutnya ada di lembar lanjutan.</p>}
           <p style={{ marginTop: "1.2cqw", fontSize: "0.95cqw", color: MUTED, lineHeight: 1.5 }}>
             Ulangan Modul dan Ujian Semester boleh diulang setelah materi diulang (nilai terbaik dicatat). Ujian Akhir hanya dikerjakan sekali; nilainya dicatat apa adanya. Predikat: 90–100 Dengan Pujian · 80–89 Sangat Baik · 75–79 Baik · di bawah 75 Cukup.
           </p>
@@ -402,7 +435,7 @@ function LembarHasil({ p, footer }: { p: BukuSertifikatProps; footer: ReactNode 
   );
 }
 
-/* ---------------- 4+. transkrip kompetensi ---------------- */
+/* ---------------- transkrip kompetensi ---------------- */
 
 type BarisTranskrip = { judul?: string; k?: SnapshotKompetensi };
 
