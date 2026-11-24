@@ -7,9 +7,9 @@
 import { useEffect, useRef, useState } from "react";
 import { create } from "zustand";
 import { Icon } from "@/components/ui";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ambilKe, appIos, modeApp } from "@/lib/mode-app";
-import { cekPembaruan, rapikanAlamat, segarkan } from "@/lib/pembaruan";
+import { cekPembaruan, rapikanAlamat, segarkan, tundaPembaruanAkademi } from "@/lib/pembaruan";
 
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 const INK = "#0b2545";
@@ -53,14 +53,16 @@ export async function installApp() {
 export function PwaSetup() {
   const iosHelp = usePwa((s) => s.iosHelp);
   const router = useRouter();
+  const tunda = tundaPembaruanAkademi(usePathname());
   useEffect(() => {
     // kembali ke halaman semula setelah muat ulang lewat alamat awal app iOS (lihat muatUlang)
     const ke = ambilKe();
     if (ke) router.replace(ke);
     else rapikanAlamat();
   }, [router]);
-  // pembaruan otomatis: saat dibuka, saat kembali ke depan, dan tiap 10 menit
+  // Cek lagi setelah kembali dari misi atau ujian, selain saat aplikasi tampil dan tiap 10 menit.
   useEffect(() => {
+    if (tunda) return;
     void cekPembaruan();
     const saatTampil = () => document.visibilityState === "visible" && void cekPembaruan();
     document.addEventListener("visibilitychange", saatTampil);
@@ -69,7 +71,7 @@ export function PwaSetup() {
       document.removeEventListener("visibilitychange", saatTampil);
       window.clearInterval(t);
     };
-  }, []);
+  }, [tunda]);
   useEffect(() => {
     // iOS (Safari 17+/app): Web Audio (backsound, efek suara) ikut bisu saat tombol senyap aktif.
     // Sesi "playback" membuat suara tetap terdengar seperti video, mengikuti tombol volume.
