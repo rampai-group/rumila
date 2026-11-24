@@ -29,6 +29,22 @@ describe("rencanaUjian", () => {
     expect(jumlah.sort()).toEqual([3, 3, 4]);
   });
 
+  it("Ulangan warna PAUD tidak mengulang warna yang sama dengan variasi ukuran kartu", () => {
+    const ids = cakupanUjian("kuis", "PAUD", "WARNA", KOMPETENSI)!;
+    const soal = rencanaUjian(ids, PAKET, 8, "rumila-qa-a1", "PAUD");
+    const tampilan = soal.flatMap((s) => {
+      const paket = paketById(s.paketId)!;
+      const r = buatRonde(paket, knobDefaults(paket), s.seed);
+      if (r.mechanic !== "pilah" || r.ronde.mode !== "pilih") return [];
+      const teks = paket.locale.id;
+      const pilihan = r.ronde.choices.map((c) => JSON.stringify([teks[c.labelKey], c.emoji, c.shape, c.color])).sort();
+      return [JSON.stringify([teks[r.ronde.promptKey], pilihan])];
+    });
+    expect(soal).toHaveLength(8);
+    expect(tampilan.length).toBeGreaterThan(1);
+    expect(new Set(tampilan).size).toBe(tampilan.length);
+  });
+
   it.each([["URUTAN", "rumila-qa-a1"], ["BANDING", "rumila-qa-a2"]])("Ulangan Modul PAUD %s tetap memberi delapan ronde berbeda", (ruang, seed) => {
     const ids = cakupanUjian("kuis", "PAUD", ruang, KOMPETENSI)!;
     const s = rencanaUjian(ids, PAKET, 8, seed, "PAUD");

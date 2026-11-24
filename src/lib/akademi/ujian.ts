@@ -8,7 +8,7 @@
 // Soal = satu ronde dari paket permainan yang sudah ada, tanpa tombol Bantu. Kompetensi diambil bergiliran
 // supaya semua kompetensi ruang ujian terwakili. Gagal → boleh mengulang besok (remedial dulu).
 
-import { buatRonde, knobDefaults, kunciRonde } from "@akademi/mechanics";
+import { buatRonde, knobDefaults, kunciRonde, type Ronde } from "@akademi/mechanics";
 import { hariWIB } from "./kalender";
 
 export { hariWIB } from "./kalender";
@@ -57,6 +57,22 @@ export function hashUjian(s: string): number {
   return h >>> 0;
 }
 
+/** Dua paket bisa menampilkan pertanyaan dan pilihan yang sama dengan id kartu berbeda. */
+function kunciTampilanPilihan(paket: ContentPack, ronde: Ronde): string | undefined {
+  if (ronde.mechanic !== "pilah" || ronde.ronde.mode !== "pilih") return undefined;
+  const { promptKey, choices, adegan, bacaPilihan } = ronde.ronde;
+  const { id, en } = paket.locale;
+  // Perbedaan ukuran kartu tidak menambah soal baru ketika tugasnya mengenali warna.
+  const ujiWarna = paket.competencyIds.includes("MAT.PAUD.WARNA.01");
+  const tampilan = choices.map(({ id: _id, bin: _bin, labelKey, altKey, assetId, scale, ...visual }) => {
+    void _id;
+    void _bin;
+    const aset = paket.assets.find((a) => a.id === assetId)?.path;
+    return JSON.stringify([id[labelKey], en[labelKey], altKey && [id[altKey], en[altKey]], aset, visual, ujiWarna ? undefined : scale]);
+  }).sort();
+  return JSON.stringify([id[promptKey], en[promptKey], adegan, bacaPilihan ?? false, tampilan]);
+}
+
 /**
  * Sebar ruang ujian lintas pelajaran secara bergiliran dan cari varian soal yang belum dipakai.
  * Urutan mata pelajaran, kompetensi, dan varian tetap sama untuk seed sesi yang sama.
@@ -79,6 +95,7 @@ export function rencanaUjian(kompetensiIds: string[], paket: ContentPack[], n: n
   if (!pelajaran.length) return [];
 
   const terpakai = new Set<string>();
+  const tampilanTerpakai = new Set<string>();
   const pakai = new Map<string, number>();
   const out: SoalUjian[] = [];
   for (let i = 0; i < n; i++) {
@@ -97,8 +114,10 @@ export function rencanaUjian(kompetensiIds: string[], paket: ContentPack[], n: n
           const seedSoal = hashUjian(`${seed}:${i}:${cid}:${p.id}:${s}`);
           const r = buatRonde(p, knobs, seedSoal);
           const kunci = `${p.id}|${kunciRonde(r)}`;
-          if (terpakai.has(kunci)) continue;
+          const tampilan = kunciTampilanPilihan(p, r);
+          if (terpakai.has(kunci) || (tampilan !== undefined && tampilanTerpakai.has(tampilan))) continue;
           terpakai.add(kunci);
+          if (tampilan !== undefined) tampilanTerpakai.add(tampilan);
           pakai.set(cid, k + l + 1);
           soal = { paketId: p.id, competencyId: cid, seed: seedSoal };
         }
