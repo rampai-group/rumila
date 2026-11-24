@@ -764,6 +764,7 @@ export const SUARA: Record<string, string> = {
   "Antar tiap hewan ke rumahnya: terumbu yang dangkal, laut dalam yang gelap, atau palung yang paling dalam.": "/akademi/suara/7fb193ffb37d.mp3",
   "Antar tiap hewan ke tempat hewan itu ditemukan: terumbu dangkal, laut dalam di luar palung, atau dasar palung.": "/akademi/suara/7a8a5de5b7fe.mp3",
   "Antar tiap hewan ke tempat hidupnya.": "/akademi/suara/310c346a7e74.mp3",
+  "Antar tiap makhluk hidup ke habitat yang cocok.": "/akademi/suara/707d2fcc7a23.mp3",
   "Antena dan mata dipasang bersama. Bagian mana yang cocok dengan garis putus-putus?": "/akademi/suara/5576d6360382.mp3",
   "antre = 10. kalau antre > 10: tampil 'cari wahana lain', kalau tidak: tampil 'ikut antre'. Apa yang tampil?": "/akademi/suara/a49980771940.mp3",
   "Apa yang membuat tulang bergerak?": "/akademi/suara/af20790ef3f3.mp3",

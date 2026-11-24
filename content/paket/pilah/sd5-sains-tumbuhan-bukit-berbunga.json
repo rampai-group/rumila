@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tumbuhan-bukit-berbunga",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNGA.02"
@@ -38,7 +38,7 @@
       "i-cabai": "chilli plant",
       "i-terong": "aubergine plant",
       "i-sepatu": "hibiscus",
-      "i-teratai": "lotus",
+      "i-teratai": "water lily",
       "i-anggrek": "moth orchid",
       "i-kopi": "coffee plant",
       "i-anggur": "grapevine",
@@ -114,7 +114,10 @@
       "id": "teratai",
       "labelKey": "i-teratai",
       "bin": "bunga",
-      "emoji": "🌸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tumbuhan-susun-bunga-teratai"
+      }
     },
     {
       "id": "anggrek",
@@ -126,7 +129,10 @@
       "id": "kopi",
       "labelKey": "i-kopi",
       "bin": "bunga",
-      "emoji": "☕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd5-tanaman-kopi"
+      }
     },
     {
       "id": "anggur",

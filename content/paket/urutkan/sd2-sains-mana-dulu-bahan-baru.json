@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-mana-dulu-bahan-baru",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -222,7 +222,10 @@
         {
           "id": "akhir",
           "labelKey": "susu-akhir",
-          "emoji": "🥣"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-yoghurt"
+          }
         }
       ]
     },
