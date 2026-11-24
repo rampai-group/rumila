@@ -199,7 +199,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
             Semua kompetensi inti {meta.pangkat} sudah dikuasai
           </p>
           <p className="max-w-[460px] text-[14px] font-bold text-ink-3">
-            Sertifikat Kenaikan Jenjang diterbitkan sekali setelah Ujian Akhir lulus, lengkap dengan nomor resmi, kode verifikasi, dan transkrip.
+            Sertifikat diterbitkan sekali setelah Ujian Akhir selesai. Sertifikat memuat nilai ujian, nomor resmi, kode verifikasi, dan transkrip.
           </p>
           <button
             onClick={terbit}
