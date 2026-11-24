@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-bagian-tumbuhan-bekerja",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,12 +18,12 @@
       "i-bunga": "bunga",
       "t-serap": "Tanah di pot disiram. Bagian mana yang menyerap airnya?",
       "t-angkut": "Air dari akar dibawa naik sampai ke daun. Lewat bagian mana?",
-      "t-makanan": "Tumbuhan membuat makanannya sendiri dengan cahaya Matahari. Di bagian mana?",
-      "t-lebah": "Lebah datang, lalu tumbuh buah dan biji. Bagian mana yang didatangi lebah?",
+      "t-makanan": "Pada kebanyakan tanaman berbunga, bagian mana yang paling banyak membuat makanan dengan cahaya Matahari?",
+      "t-lebah": "Lebah memindahkan serbuk sari saat mengunjungi bagian tumbuhan mana?",
       "t-angin": "Angin kencang bertiup, tetapi pohon tidak roboh. Bagian mana yang mencengkeram tanah?",
       "t-seledri": "Bunga krisan putih ditaruh di air berwarna merah. Besoknya kelopaknya kemerahan. Warnanya naik lewat bagian mana?",
-      "t-gelap": "Tanaman disimpan di lemari gelap seminggu. Bagian mana yang menguning karena tidak bisa membuat makanan?",
-      "t-biji": "Bagian mana yang nanti berubah menjadi buah dan biji?",
+      "t-gelap": "Tanaman di lemari gelap tampak pucat. Bagian lebar mana yang biasanya menangkap cahaya untuk membuat makanan?",
+      "t-biji": "Buah dan biji tomat mulai terbentuk dari bagian tanaman mana?",
       "t-siramdaun": "Tanaman layu hanya disemprot daunnya, tanahnya tetap kering. Bagian mana yang perlu menyerap air dari tanah?",
       "t-tegak": "Bunga matahari tetap berdiri tegak menghadap cahaya. Bagian mana yang menopangnya?"
     },
@@ -37,12 +37,12 @@
       "i-bunga": "flower",
       "t-serap": "The soil in the pot is watered. Which part takes in the water?",
       "t-angkut": "Water from the roots travels up to the leaves. Through which part?",
-      "t-makanan": "A plant makes its own food using sunlight. In which part?",
-      "t-lebah": "Bees visit, then fruit and seeds grow. Which part do the bees visit?",
+      "t-makanan": "In most flowering plants, which part makes the most food using sunlight?",
+      "t-lebah": "Which plant part does a bee visit when it transfers pollen?",
       "t-angin": "A strong wind blows, but the tree doesn't fall. Which part grips the soil?",
       "t-seledri": "A white chrysanthemum stands in red water. Next day its petals are reddish. Which part did the colour travel up?",
-      "t-gelap": "A plant is kept in a dark cupboard for a week. Which part turns yellow because it can't make food?",
-      "t-biji": "Which part later turns into fruit and seeds?",
+      "t-gelap": "A plant looks pale in a dark cupboard. Which broad part usually captures light to make food?",
+      "t-biji": "Which part of the tomato plant do the fruit and seeds start forming from?",
       "t-siramdaun": "A wilting plant only gets its leaves sprayed and the soil stays dry. Which part needs to absorb water from the soil?",
       "t-tegak": "A sunflower stands tall facing the light. Which part holds it up?"
     }

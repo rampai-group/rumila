@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-pisahkan-campuran",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "t-teh": "Ampas daun teh di dalam air teh.",
       "t-serbuk": "Serbuk besi bercampur pasir.",
       "t-kelereng": "Kelereng bercampur tepung.",
-      "t-lumpur": "Air keruh berisi tanah.",
+      "t-lumpur": "Santan bercampur ampas kelapa. Pisahkan ampasnya dari santan.",
       "t-jepit": "Jepit rambut besi jatuh ke kotak pasir.",
       "t-batu": "Batu kecil bercampur pasir halus di kebun."
     },
@@ -42,7 +42,7 @@
       "t-teh": "Tea leaves floating in tea.",
       "t-serbuk": "Iron filings mixed with sand.",
       "t-kelereng": "Marbles mixed with flour.",
-      "t-lumpur": "Muddy water full of soil.",
+      "t-lumpur": "Coconut milk is mixed with pieces of coconut pulp. Separate the pulp from the liquid.",
       "t-jepit": "Steel hair grips dropped in a sandpit.",
       "t-batu": "Small stones mixed with fine garden sand."
     }

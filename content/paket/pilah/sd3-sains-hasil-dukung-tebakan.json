@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-hasil-dukung-tebakan",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,13 +17,13 @@
       "t-es": "Tebakan: es di bawah Matahari mencair lebih dulu. Hasil: es di bawah Matahari habis lebih dulu.",
       "t-tanaman": "Tebakan: tanaman di jendela tumbuh paling tinggi. Hasil: tanaman di lemari tumbuh paling tinggi.",
       "t-mobil": "Tebakan: mobil meluncur paling jauh di lantai licin. Hasil: mobil meluncur paling jauh di lantai keramik yang paling licin.",
-      "t-gula": "Tebakan: gula larut dalam air. Hasil: gula tetap terlihat di dasar gelas setelah diaduk lama.",
-      "t-bayangan": "Tebakan: bayangan membesar saat boneka didekatkan ke senter. Hasil: bayangan jadi besar.",
+      "t-gula": "Tebakan: semua gula di gelas air larut setelah diaduk. Hasil: masih ada butiran gula di dasar gelas.",
+      "t-bayangan": "Tebakan: bayangan membesar saat boneka didekatkan ke senter. Hasil: saat boneka digeser mendekat, bayangannya di dinding membesar.",
       "t-magnet": "Tebakan: magnet menarik kaleng minuman. Hasil: kaleng minuman tidak bergerak.",
       "t-jemuran": "Tebakan: baju di bawah Matahari kering lebih dulu. Hasil: baju di dalam rumah kering lebih dulu.",
       "t-bola": "Tebakan: bola karet memantul lebih tinggi dari bola kain. Hasil: bola karet memantul lebih tinggi.",
       "t-serap": "Tebakan: spons menyerap air paling banyak. Hasil: kain menyerap paling banyak, spons kedua.",
-      "t-kecambah": "Tebakan: biji yang disiram tumbuh lebih cepat. Hasil: biji yang disiram tumbuh duluan."
+      "t-kecambah": "Tebakan: dari dua biji sejenis, yang diberi air berkecambah lebih dulu. Hasil: biji yang diberi air memang berkecambah lebih dulu."
     },
     "en": {
       "judul": "Do the Results Support the Prediction?",
@@ -34,13 +34,13 @@
       "t-es": "Prediction: the ice in the sun melts first. Result: the ice in the sun was gone first.",
       "t-tanaman": "Prediction: the plant by the window grows tallest. Result: the plant in the cupboard grew tallest.",
       "t-mobil": "Prediction: the car rolls furthest on the slippery floor. Result: the car rolls furthest on the tiled floor, the most slippery one.",
-      "t-gula": "Prediction: sugar dissolves in water. Result: the sugar stayed at the bottom after lots of stirring.",
-      "t-bayangan": "Prediction: the shadow grows when the teddy moves closer to the torch. Result: the shadow got bigger.",
+      "t-gula": "Prediction: all the sugar in the glass of water dissolves after stirring. Result: some grains of sugar remain on the bottom.",
+      "t-bayangan": "Prediction: the shadow grows when the toy moves closer to the torch. Result: as the toy moved closer, its shadow on the wall grew.",
       "t-magnet": "Prediction: the magnet pulls the drink can. Result: the can didn't move.",
       "t-jemuran": "Prediction: the shirt in the sun dries first. Result: the shirt indoors dried first.",
       "t-bola": "Prediction: the rubber ball bounces higher than the cloth ball. Result: the rubber ball bounced higher.",
       "t-serap": "Prediction: the sponge soaks up the most water. Result: the cloth soaked up the most, the sponge came second.",
-      "t-kecambah": "Prediction: watered seeds sprout faster. Result: the watered seeds sprouted first."
+      "t-kecambah": "Prediction: of two seeds of the same kind, the watered one sprouts first. Result: the watered seed did sprout first."
     }
   },
   "knobs": {},

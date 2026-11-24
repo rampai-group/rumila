@@ -207347,7 +207347,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-tebak-panas-matahari",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -207366,14 +207366,15 @@ export const PAKET_RAW: unknown[] = [
         "i-kotak": "di dalam kotak tertutup",
         "t-es": "Di mana es batu paling cepat mencair?",
         "t-jemuran": "Di mana baju basah paling cepat kering?",
-        "t-eskrim": "Supaya es krim tidak cepat meleleh, simpan di mana?",
+        "t-eskrim": "Supaya es krim tetap beku, simpan di mana?",
         "t-kucing": "Kucing mencari tempat paling hangat untuk tidur. Ke mana dia pergi?",
         "t-cokelat": "Di mana cokelat paling cepat lembek?",
         "t-teduh": "Siang hari panas. Di mana tempat paling sejuk untuk bermain di luar?",
         "t-genangan": "Di mana genangan air hujan paling cepat hilang?",
         "t-batu": "Siang hari, batu di mana yang paling hangat saat dipegang?",
         "t-susu": "Supaya susu tetap dingin, simpan di mana?",
-        "t-kerupuk": "Kerupuk dijemur supaya kering. Taruh di mana?"
+        "t-kerupuk": "Kerupuk dijemur supaya kering. Taruh di mana?",
+        "i-freezer": "di bagian pembeku kulkas"
       },
       "en": {
         "judul": "Guess: Where Is Fastest?",
@@ -207386,14 +207387,15 @@ export const PAKET_RAW: unknown[] = [
         "i-kotak": "inside a closed box",
         "t-es": "Where does ice melt fastest?",
         "t-jemuran": "Where do wet clothes dry fastest?",
-        "t-eskrim": "Where should you keep ice cream so it doesn't melt quickly?",
+        "t-eskrim": "Where should you keep ice cream so it stays frozen?",
         "t-kucing": "A cat looks for the warmest place to nap. Where does it go?",
         "t-cokelat": "Where does chocolate go soft fastest?",
         "t-teduh": "It's a hot afternoon. Where is the coolest place to play outside?",
         "t-genangan": "Where does a rain puddle dry up fastest?",
         "t-batu": "At midday, where is the rock that feels warmest to touch?",
         "t-susu": "Where should you keep milk to stay cold?",
-        "t-kerupuk": "Crackers are put out to dry. Where should they go?"
+        "t-kerupuk": "Crackers are put out to dry. Where should they go?",
+        "i-freezer": "in the freezer compartment"
       }
     },
     "knobs": {
@@ -207439,13 +207441,25 @@ export const PAKET_RAW: unknown[] = [
         "id": "kulkas",
         "labelKey": "i-kulkas",
         "bin": "pilihan",
-        "emoji": "🧊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-kulkas"
+        }
       },
       {
         "id": "kotak",
         "labelKey": "i-kotak",
         "bin": "pilihan",
         "emoji": "📦"
+      },
+      {
+        "id": "freezer",
+        "labelKey": "i-freezer",
+        "bin": "pilihan",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-freezer"
+        }
       }
     ],
     "pilihan": [
@@ -207473,11 +207487,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "eskrim",
         "promptKey": "t-eskrim",
         "choices": [
-          "kulkas",
+          "freezer",
           "matahari",
           "rumah"
         ],
-        "correct": "kulkas"
+        "correct": "freezer"
       },
       {
         "id": "kucing",
@@ -217843,7 +217857,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-bahan-untuk-tugasnya",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -217859,7 +217873,7 @@ export const PAKET_RAW: unknown[] = [
         "i-kaca": "kaca",
         "i-kayu": "kayu",
         "i-logam": "logam",
-        "i-kain": "kain",
+        "i-kain": "kain katun",
         "i-kertas": "kertas",
         "i-karet": "karet",
         "t-jashujan": "Jas hujan harus kedap air. Bahan apa?",
@@ -217867,7 +217881,7 @@ export const PAKET_RAW: unknown[] = [
         "t-panci": "Panci harus tahan dipanaskan di kompor. Bahan apa?",
         "t-handuk": "Handuk harus menyerap air. Bahan apa?",
         "t-ban": "Ban sepeda harus lentur dan memantul. Bahan apa?",
-        "t-gagang": "Gagang panci tidak boleh ikut panas. Bahan apa?",
+        "t-gagang": "Gagang panci perlu memperlambat panas sampai ke tangan. Bahan apa yang cocok?",
         "t-tas": "Tas belanja harus ringan dan bisa dilipat. Bahan apa?",
         "t-amplop": "Amplop harus ringan dan bisa ditulisi. Bahan apa?",
         "t-sepatubot": "Sepatu bot harus kedap air dan lentur. Bahan apa?",
@@ -217882,7 +217896,7 @@ export const PAKET_RAW: unknown[] = [
         "i-kaca": "glass",
         "i-kayu": "wood",
         "i-logam": "metal",
-        "i-kain": "fabric",
+        "i-kain": "cotton cloth",
         "i-kertas": "paper",
         "i-karet": "rubber",
         "t-jashujan": "A raincoat must be waterproof. Which material?",
@@ -217890,7 +217904,7 @@ export const PAKET_RAW: unknown[] = [
         "t-panci": "A pan must be safe to heat on the stove. Which material?",
         "t-handuk": "A towel must soak up water. Which material?",
         "t-ban": "A bike tyre must be bendy and bouncy. Which material?",
-        "t-gagang": "A pan handle must not get hot. Which material?",
+        "t-gagang": "A pan handle needs to slow heat from reaching your hand. Which material is suitable?",
         "t-tas": "A shopping bag must be light and foldable. Which material?",
         "t-amplop": "An envelope must be light and easy to write on. Which material?",
         "t-sepatubot": "Rain boots must be waterproof and bendy. Which material?",
@@ -232149,7 +232163,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-bagian-tumbuhan-bekerja",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -232167,12 +232181,12 @@ export const PAKET_RAW: unknown[] = [
         "i-bunga": "bunga",
         "t-serap": "Tanah di pot disiram. Bagian mana yang menyerap airnya?",
         "t-angkut": "Air dari akar dibawa naik sampai ke daun. Lewat bagian mana?",
-        "t-makanan": "Tumbuhan membuat makanannya sendiri dengan cahaya Matahari. Di bagian mana?",
-        "t-lebah": "Lebah datang, lalu tumbuh buah dan biji. Bagian mana yang didatangi lebah?",
+        "t-makanan": "Pada kebanyakan tanaman berbunga, bagian mana yang paling banyak membuat makanan dengan cahaya Matahari?",
+        "t-lebah": "Lebah memindahkan serbuk sari saat mengunjungi bagian tumbuhan mana?",
         "t-angin": "Angin kencang bertiup, tetapi pohon tidak roboh. Bagian mana yang mencengkeram tanah?",
         "t-seledri": "Bunga krisan putih ditaruh di air berwarna merah. Besoknya kelopaknya kemerahan. Warnanya naik lewat bagian mana?",
-        "t-gelap": "Tanaman disimpan di lemari gelap seminggu. Bagian mana yang menguning karena tidak bisa membuat makanan?",
-        "t-biji": "Bagian mana yang nanti berubah menjadi buah dan biji?",
+        "t-gelap": "Tanaman di lemari gelap tampak pucat. Bagian lebar mana yang biasanya menangkap cahaya untuk membuat makanan?",
+        "t-biji": "Buah dan biji tomat mulai terbentuk dari bagian tanaman mana?",
         "t-siramdaun": "Tanaman layu hanya disemprot daunnya, tanahnya tetap kering. Bagian mana yang perlu menyerap air dari tanah?",
         "t-tegak": "Bunga matahari tetap berdiri tegak menghadap cahaya. Bagian mana yang menopangnya?"
       },
@@ -232186,12 +232200,12 @@ export const PAKET_RAW: unknown[] = [
         "i-bunga": "flower",
         "t-serap": "The soil in the pot is watered. Which part takes in the water?",
         "t-angkut": "Water from the roots travels up to the leaves. Through which part?",
-        "t-makanan": "A plant makes its own food using sunlight. In which part?",
-        "t-lebah": "Bees visit, then fruit and seeds grow. Which part do the bees visit?",
+        "t-makanan": "In most flowering plants, which part makes the most food using sunlight?",
+        "t-lebah": "Which plant part does a bee visit when it transfers pollen?",
         "t-angin": "A strong wind blows, but the tree doesn't fall. Which part grips the soil?",
         "t-seledri": "A white chrysanthemum stands in red water. Next day its petals are reddish. Which part did the colour travel up?",
-        "t-gelap": "A plant is kept in a dark cupboard for a week. Which part turns yellow because it can't make food?",
-        "t-biji": "Which part later turns into fruit and seeds?",
+        "t-gelap": "A plant looks pale in a dark cupboard. Which broad part usually captures light to make food?",
+        "t-biji": "Which part of the tomato plant do the fruit and seeds start forming from?",
         "t-siramdaun": "A wilting plant only gets its leaves sprayed and the soil stays dry. Which part needs to absorb water from the soil?",
         "t-tegak": "A sunflower stands tall facing the light. Which part holds it up?"
       }
@@ -232706,7 +232720,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-hasil-dukung-tebakan",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -232723,13 +232737,13 @@ export const PAKET_RAW: unknown[] = [
         "t-es": "Tebakan: es di bawah Matahari mencair lebih dulu. Hasil: es di bawah Matahari habis lebih dulu.",
         "t-tanaman": "Tebakan: tanaman di jendela tumbuh paling tinggi. Hasil: tanaman di lemari tumbuh paling tinggi.",
         "t-mobil": "Tebakan: mobil meluncur paling jauh di lantai licin. Hasil: mobil meluncur paling jauh di lantai keramik yang paling licin.",
-        "t-gula": "Tebakan: gula larut dalam air. Hasil: gula tetap terlihat di dasar gelas setelah diaduk lama.",
-        "t-bayangan": "Tebakan: bayangan membesar saat boneka didekatkan ke senter. Hasil: bayangan jadi besar.",
+        "t-gula": "Tebakan: semua gula di gelas air larut setelah diaduk. Hasil: masih ada butiran gula di dasar gelas.",
+        "t-bayangan": "Tebakan: bayangan membesar saat boneka didekatkan ke senter. Hasil: saat boneka digeser mendekat, bayangannya di dinding membesar.",
         "t-magnet": "Tebakan: magnet menarik kaleng minuman. Hasil: kaleng minuman tidak bergerak.",
         "t-jemuran": "Tebakan: baju di bawah Matahari kering lebih dulu. Hasil: baju di dalam rumah kering lebih dulu.",
         "t-bola": "Tebakan: bola karet memantul lebih tinggi dari bola kain. Hasil: bola karet memantul lebih tinggi.",
         "t-serap": "Tebakan: spons menyerap air paling banyak. Hasil: kain menyerap paling banyak, spons kedua.",
-        "t-kecambah": "Tebakan: biji yang disiram tumbuh lebih cepat. Hasil: biji yang disiram tumbuh duluan."
+        "t-kecambah": "Tebakan: dari dua biji sejenis, yang diberi air berkecambah lebih dulu. Hasil: biji yang diberi air memang berkecambah lebih dulu."
       },
       "en": {
         "judul": "Do the Results Support the Prediction?",
@@ -232740,13 +232754,13 @@ export const PAKET_RAW: unknown[] = [
         "t-es": "Prediction: the ice in the sun melts first. Result: the ice in the sun was gone first.",
         "t-tanaman": "Prediction: the plant by the window grows tallest. Result: the plant in the cupboard grew tallest.",
         "t-mobil": "Prediction: the car rolls furthest on the slippery floor. Result: the car rolls furthest on the tiled floor, the most slippery one.",
-        "t-gula": "Prediction: sugar dissolves in water. Result: the sugar stayed at the bottom after lots of stirring.",
-        "t-bayangan": "Prediction: the shadow grows when the teddy moves closer to the torch. Result: the shadow got bigger.",
+        "t-gula": "Prediction: all the sugar in the glass of water dissolves after stirring. Result: some grains of sugar remain on the bottom.",
+        "t-bayangan": "Prediction: the shadow grows when the toy moves closer to the torch. Result: as the toy moved closer, its shadow on the wall grew.",
         "t-magnet": "Prediction: the magnet pulls the drink can. Result: the can didn't move.",
         "t-jemuran": "Prediction: the shirt in the sun dries first. Result: the shirt indoors dried first.",
         "t-bola": "Prediction: the rubber ball bounces higher than the cloth ball. Result: the rubber ball bounced higher.",
         "t-serap": "Prediction: the sponge soaks up the most water. Result: the cloth soaked up the most, the sponge came second.",
-        "t-kecambah": "Prediction: watered seeds sprout faster. Result: the watered seeds sprouted first."
+        "t-kecambah": "Prediction: of two seeds of the same kind, the watered one sprouts first. Result: the watered seed did sprout first."
       }
     },
     "knobs": {},
@@ -234819,7 +234833,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-pisahkan-campuran",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -234842,7 +234856,7 @@ export const PAKET_RAW: unknown[] = [
         "t-teh": "Ampas daun teh di dalam air teh.",
         "t-serbuk": "Serbuk besi bercampur pasir.",
         "t-kelereng": "Kelereng bercampur tepung.",
-        "t-lumpur": "Air keruh berisi tanah.",
+        "t-lumpur": "Santan bercampur ampas kelapa. Pisahkan ampasnya dari santan.",
         "t-jepit": "Jepit rambut besi jatuh ke kotak pasir.",
         "t-batu": "Batu kecil bercampur pasir halus di kebun."
       },
@@ -234861,7 +234875,7 @@ export const PAKET_RAW: unknown[] = [
         "t-teh": "Tea leaves floating in tea.",
         "t-serbuk": "Iron filings mixed with sand.",
         "t-kelereng": "Marbles mixed with flour.",
-        "t-lumpur": "Muddy water full of soil.",
+        "t-lumpur": "Coconut milk is mixed with pieces of coconut pulp. Separate the pulp from the liquid.",
         "t-jepit": "Steel hair grips dropped in a sandpit.",
         "t-batu": "Small stones mixed with fine garden sand."
       }

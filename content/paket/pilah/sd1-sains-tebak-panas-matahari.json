@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-tebak-panas-matahari",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,14 +19,15 @@
       "i-kotak": "di dalam kotak tertutup",
       "t-es": "Di mana es batu paling cepat mencair?",
       "t-jemuran": "Di mana baju basah paling cepat kering?",
-      "t-eskrim": "Supaya es krim tidak cepat meleleh, simpan di mana?",
+      "t-eskrim": "Supaya es krim tetap beku, simpan di mana?",
       "t-kucing": "Kucing mencari tempat paling hangat untuk tidur. Ke mana dia pergi?",
       "t-cokelat": "Di mana cokelat paling cepat lembek?",
       "t-teduh": "Siang hari panas. Di mana tempat paling sejuk untuk bermain di luar?",
       "t-genangan": "Di mana genangan air hujan paling cepat hilang?",
       "t-batu": "Siang hari, batu di mana yang paling hangat saat dipegang?",
       "t-susu": "Supaya susu tetap dingin, simpan di mana?",
-      "t-kerupuk": "Kerupuk dijemur supaya kering. Taruh di mana?"
+      "t-kerupuk": "Kerupuk dijemur supaya kering. Taruh di mana?",
+      "i-freezer": "di bagian pembeku kulkas"
     },
     "en": {
       "judul": "Guess: Where Is Fastest?",
@@ -39,14 +40,15 @@
       "i-kotak": "inside a closed box",
       "t-es": "Where does ice melt fastest?",
       "t-jemuran": "Where do wet clothes dry fastest?",
-      "t-eskrim": "Where should you keep ice cream so it doesn't melt quickly?",
+      "t-eskrim": "Where should you keep ice cream so it stays frozen?",
       "t-kucing": "A cat looks for the warmest place to nap. Where does it go?",
       "t-cokelat": "Where does chocolate go soft fastest?",
       "t-teduh": "It's a hot afternoon. Where is the coolest place to play outside?",
       "t-genangan": "Where does a rain puddle dry up fastest?",
       "t-batu": "At midday, where is the rock that feels warmest to touch?",
       "t-susu": "Where should you keep milk to stay cold?",
-      "t-kerupuk": "Crackers are put out to dry. Where should they go?"
+      "t-kerupuk": "Crackers are put out to dry. Where should they go?",
+      "i-freezer": "in the freezer compartment"
     }
   },
   "knobs": {
@@ -92,13 +94,25 @@
       "id": "kulkas",
       "labelKey": "i-kulkas",
       "bin": "pilihan",
-      "emoji": "🧊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kulkas"
+      }
     },
     {
       "id": "kotak",
       "labelKey": "i-kotak",
       "bin": "pilihan",
       "emoji": "📦"
+    },
+    {
+      "id": "freezer",
+      "labelKey": "i-freezer",
+      "bin": "pilihan",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-freezer"
+      }
     }
   ],
   "pilihan": [
@@ -126,11 +140,11 @@
       "id": "eskrim",
       "promptKey": "t-eskrim",
       "choices": [
-        "kulkas",
+        "freezer",
         "matahari",
         "rumah"
       ],
-      "correct": "kulkas"
+      "correct": "freezer"
     },
     {
       "id": "kucing",
