@@ -64,6 +64,7 @@ export function formatRibuan(n: number) {
 
 export const KALIMAT_RUNNER = {
   stiker: "Hebat! Kamu dapat stiker baru.",
+  ulang: "Hebat!",
   coba: "Bagus, kamu sudah mencoba. Ayo main lagi.",
 } as const;
 

@@ -6,6 +6,8 @@ import type { Penguasaan, Status } from "./mastery";
 /** Ambang "selesai dengan baik" untuk stiker. */
 export const AMBANG_STIKER = 0.6;
 
+export type StatusStikerMisi = "baru" | "sudah-ada" | "belum";
+
 export interface Stiker {
   paketId: string;
   /** Waktu penyelesaian pertama (clientAt). */
@@ -32,12 +34,23 @@ export interface Pangkat {
   tercapai: boolean;
 }
 
-/** Rasio sukses satu event activity_end; null bila tidak ada hitungan. */
-function rasioSukses(e: GameEvent): number | null {
+function memenuhiAmbangStiker(benar: number, salah: number): boolean {
+  const total = benar + salah;
+  return total !== 0 && benar / total >= AMBANG_STIKER;
+}
+
+function penyelesaianStiker(e: GameEvent): boolean {
+  if (e.type !== "activity_end") return false;
   const p = e.payload as { successCount?: unknown; failCount?: unknown };
   const s = typeof p.successCount === "number" ? p.successCount : 0;
   const f = typeof p.failCount === "number" ? p.failCount : 0;
-  return s + f === 0 ? null : s / (s + f);
+  return memenuhiAmbangStiker(s, f);
+}
+
+/** Status hadiah dari skor saat ini dan riwayat sebelum penyelesaian ini dicatat. */
+export function statusStikerMisi(events: GameEvent[], paketId: string, benar: number, salah: number): StatusStikerMisi {
+  if (!memenuhiAmbangStiker(benar, salah)) return "belum";
+  return events.some((e) => e.activityId === paketId && penyelesaianStiker(e)) ? "sudah-ada" : "baru";
 }
 
 /**
@@ -48,9 +61,7 @@ export function stiker(events: GameEvent[], paket: ContentPack[]): Stiker[] {
   const ada = new Set(paket.map((p) => p.id));
   const map = new Map<string, Stiker & { terakhirAt: string }>();
   for (const e of events) {
-    if (e.type !== "activity_end" || !ada.has(e.activityId)) continue;
-    const r = rasioSukses(e);
-    if (r === null || r < AMBANG_STIKER) continue;
+    if (!ada.has(e.activityId) || !penyelesaianStiker(e)) continue;
     const s = map.get(e.activityId);
     if (!s) map.set(e.activityId, { paketId: e.activityId, pertamaAt: e.clientAt, terakhirAt: e.clientAt, kali: 1 });
     else {

@@ -5,7 +5,7 @@
 
 import { bentukDariTeks } from "@/lib/akademi/tema-dunia";
 import { sfxAkademi } from "@/lib/sfx-akademi";
-import { useEffect, useRef, useState, type PointerEvent as RPointerEvent } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent as RPointerEvent } from "react";
 import { createPortal } from "react-dom";
 import { levelIndex, type PaketPilah } from "@akademi/schema";
 import type { JawabanPilah, RondePilah, RondePilahKelompok, RondePilahPilih } from "@akademi/mechanics";
@@ -410,6 +410,8 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const tulisLabel = levelIndex(paket.level) >= levelIndex("SD1");
   const [dipilih, setDipilih] = useState<string | null>(null);
   const [redup, setRedup] = useState<string | null>(null);
+  const kepalaSoal = useRef<HTMLDivElement>(null);
+  const [tinggiKepala, setTinggiKepala] = useState(0);
   const kunci = !!hasil || dipilih !== null;
   const { skala: sk, h, w } = usePanggung();
 
@@ -462,6 +464,21 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const lebar = lebarArea >= 600;
   const adeganLega = paket.level === "PAUD" && !!ronde.adegan && lebarArea >= 620 && h >= 680;
   const gambarLega = !pilihanTulisan && !ronde.bacaPilihan && h >= 560;
+  const gridGambar = !tulisLabel && !ronde.adegan && !ronde.bacaPilihan &&
+    (n === 3 || n === 4) && choices.every(visualBergambar);
+  // Dua kolom menjaga lebar gambar tetap sama ketika satu pilihan hilang di layar potret.
+  const gridPotret = gridGambar && h >= lebarArea;
+  const tigaLanskap = gridGambar && !gridPotret && n === 3 && lebar && gambarLega;
+  useLayoutEffect(() => {
+    const kepala = kepalaSoal.current;
+    if (!gridGambar || !kepala) return;
+    const ukur = () => setTinggiKepala(kepala.offsetHeight);
+    ukur();
+    const pengamat = new ResizeObserver(ukur);
+    pengamat.observe(kepala);
+    return () => pengamat.disconnect();
+  }, [gridGambar]);
+  const gridSempit = gridPotret && lebarArea < 320;
   const pilihanRingkas = gambarLega && !ronde.adegan && n <= 3;
   const muat = n === 2 ? 2 : n === 3 ? 3 : n === 4 ? (lebar ? 4 : 2) : lebar ? 3 : 2;
   // Tumpuk pilihan berkalimat atau berkontrol audio di HP. Pilihan gambar singkat muat dalam satu baris.
@@ -470,7 +487,8 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
     return visualBergambar(c) ? tulisLabel && p > 24 : p > 12;
   });
   const jmlKolom =
-    n === 3 && !lebar && (berkalimat || ronde.bacaPilihan) && h > lebarArea * 1.1 ? 1
+    gridPotret ? 2
+      : n === 3 && !lebar && (berkalimat || ronde.bacaPilihan) && h > lebarArea * 1.1 ? 1
       : n === 4 ? kolomTerbaik(lebarArea, h - 90 * sk, n, muat, 12 * sk)
         : muat;
   const baris = Math.ceil(n / jmlKolom);
@@ -480,26 +498,31 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const skalaTinggiMaks = Math.max(1, ...choices.map((c) => c.scale ?? 1));
   const labelPanjang = tulisLabel && choices.some((c) => visualBergambar(c) && t(c.labelKey).length > 34);
   const ukuranAdegan = adeganLega ? Math.min(190, Math.round(h * 0.21)) : Math.max(60, Math.min(100, h * 0.18));
-  const tinggiSoal = ronde.adegan ? Math.max(176 * sk, ukuranAdegan + 70 * sk) : 68 * sk;
+  const tinggiSoal = gridGambar && tinggiKepala ? tinggiKepala + 26
+    : ronde.adegan ? Math.max(176 * sk, ukuranAdegan + 70 * sk) : 68 * sk;
   const tinggiAudio = ronde.bacaPilihan ? 48 : 0;
   const tinggiBaris = h > 0 ? (h - tinggiSoal - jarak * (baris - 1)) / baris - tinggiAudio : 160;
-  const tinggiMaks = jmlKolom === 1 ? (pilihanTulisan ? 126 : 148) : pilihanRingkas && lebar ? 390 : gambarLega ? 322 : 240;
-  const rasioKartu = labelPanjang || gambarLega ? 1.42 : 1.03;
+  const tinggiMaks = jmlKolom === 1 ? (pilihanTulisan ? 126 : 148)
+    : tigaLanskap ? 500
+      : gridPotret && lebar ? 432
+        : pilihanRingkas && lebar ? 390
+          : gambarLega ? 322 : 240;
+  const rasioKartu = tigaLanskap ? 1.8 : labelPanjang || gambarLega ? 1.42 : 1.03;
   const tinggiBatas = Math.min(tinggiMaks * Math.min(sk, 1.2), lebarKartu * rasioKartu);
-  const tinggiKartu = Math.round(Math.max(pilihanTulisan ? 88 : 112, Math.min(tinggiBaris, tinggiBatas)));
+  const tinggiKartu = Math.round(Math.max(pilihanTulisan ? 88 : gridSempit ? 96 : 112, Math.min(tinggiBaris, tinggiBatas)));
   // Benda mengalikan ukuran dasar dengan scale. Sisakan ruang di kartu untuk gambar yang diperbesar.
-  const batasTinggiGambar = Math.min(pilihanRingkas && lebar ? 296 : gambarLega ? 252 : 200, tinggiKartu * (tulisLabel ? 0.6 : 0.77));
-  const lebarGambar = Math.min(lebarKartu - 24, lebarKartu * (labelPanjang ? 0.55 : gambarLega ? 0.84 : 0.78));
+  const batasTinggiGambar = Math.min((pilihanRingkas || gridPotret) && lebar ? 296 : gambarLega ? 252 : 200, tinggiKartu * (tulisLabel ? 0.6 : 0.77));
+  const lebarGambar = Math.min(lebarKartu - 24, lebarKartu * (labelPanjang ? 0.55 : tigaLanskap ? 0.92 : gambarLega ? 0.84 : 0.78));
   const ukuran = Math.round(Math.min(batasTinggiGambar / skalaTinggiMaks, lebarGambar / skalaLebarMaks));
 
   return (
     <div
-      data-pilih-tengah={gambarLega && n <= 3 && !adeganLega ? "" : undefined}
+      data-pilih-tengah={gambarLega && n <= 3 && !adeganLega && !gridGambar ? "" : undefined}
       className={`mx-auto flex w-full min-w-0 max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${adeganLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: adeganLega ? Math.min(620, Math.round(h * 0.66)) : undefined }}
     >
-      <div className="flex items-start gap-2">
-        <div className="min-w-0 flex-1 px-1 py-1 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar-tua)" }}>
+      <div ref={kepalaSoal} className="flex items-start gap-2">
+        <div className="min-w-0 flex-1 px-1 py-1 text-center" style={{ fontFamily: BALOO, fontSize: gridSempit ? 20 : 24 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar-tua)" }}>
           <button type="button" onClick={() => ucapkan(soal, lang)} className="min-h-11 w-full whitespace-pre-line [overflow-wrap:anywhere]" aria-label="Dengarkan soal">
             {fungsi ? (
               <span className="flex min-w-0 flex-col gap-1">
@@ -523,6 +546,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
         {choices.map((c, i) => {
           const benar = !!hasil && c.id === correct;
           const salah = !!hasil && dipilih === c.id && c.id !== correct;
+          const sendiri = gridPotret && n === 3 && i === n - 1;
           const nama = namaPilihan(c, choices, t, lang === "en-US");
           const kartu = (
             <KartuBenda
@@ -540,7 +564,12 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
               onClick={() => pilih(c.id)}
               disabled={kunci}
               className={`min-w-0 ${ronde.bacaPilihan ? "w-full flex-1" : ""} ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
-              style={{ minHeight: tinggiKartu, background: benar ? "#8fe6b6" : salah ? "#ffc08a" : pilihanTulisan ? WARNA_PILIHAN[i % WARNA_PILIHAN.length] : undefined, pointerEvents: kunci ? "none" : undefined }}
+              style={{
+                minHeight: tinggiKartu,
+                background: benar ? "#8fe6b6" : salah ? "#ffc08a" : pilihanTulisan ? WARNA_PILIHAN[i % WARNA_PILIHAN.length] : undefined,
+                pointerEvents: kunci ? "none" : undefined,
+                ...(sendiri ? { gridColumn: "1 / -1", justifySelf: "center", width: `calc((100% - ${jarak}px) / 2)` } : {}),
+              }}
             />
           );
           if (!ronde.bacaPilihan) return kartu;
