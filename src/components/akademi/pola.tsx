@@ -11,7 +11,7 @@ import type { PaketPola } from "@akademi/schema";
 import type { JawabanPola, RondePola } from "@akademi/mechanics";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
-import { usePanggung } from "./dunia";
+import { AksiBawah, usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 
@@ -298,6 +298,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const hiasan = mode === "cipta" && !!hasil?.benar;
   const { tema, skala: sk, w, h } = usePanggung();
   const padat = paket.level === "PAUD";
+  const aksiMenetap = !padat && w > 0 && w < 600 && mode !== "perbaiki";
   const tablet = padat && w >= 620 && h >= 680;
   const gap = Math.round(8 * sk);
   const lebarDalam = w > 0 ? w - 24 * sk - 6 : 0;
@@ -308,7 +309,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const barisPalet = Math.ceil(palette.length / Math.max(1, Math.floor((lebarDalam + gap) / (lebarKartu + gap)) || 1));
   const tinggiPalet = barisPalet * (kartuPx + 16 + 20 * sk) + 24 * sk + (mode === "cipta" ? 60 * sk : 0);
   // kalung mengisi sisa tinggi: panggung − judul − palet − baris aksi − jarak − padding kalung
-  const tinggiKalung = h > 0 ? h - 58 * Math.min(sk, 1.3) - tinggiPalet - 56 * Math.min(sk, 1.3) - 3 * 12 - 32 * sk - (hiasan ? 36 * sk : 0) : 0;
+  const tinggiKalung = h > 0 ? h - 58 * Math.min(sk, 1.3) - tinggiPalet - (aksiMenetap ? 0 : 56 * Math.min(sk, 1.3)) - 3 * 12 - 32 * sk - (hiasan ? 36 * sk : 0) : 0;
   const baseSlot = urutan.length > 9 ? 56 : urutan.length > 6 ? 64 : 72;
   const tegak = w > 0 && h > w;
   const slotPx = sisiMuat(lebarDalam, tegak ? tinggiKalung - 16 : tinggiKalung, urutan.length, baseSlot * sk, 150, gap, tegak);
@@ -448,42 +449,44 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
       </div>
 
       {/* baris aksi */}
-      <div className="flex flex-wrap items-center justify-center gap-3">
-        {mode === "perbaiki" && (
-          <>
-            <span className="flex items-center rounded-full bg-white px-3 shadow-[0_3px_0_rgba(11,37,69,.1)]" style={{ height: 40 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 14 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>
-              Diubah: {ubah}
-            </span>
-            <TombolBesar onClick={() => kirim(urutan)} disabled={kunci} warna="#15803d">
-              Sudah benar ✓
-            </TombolBesar>
-          </>
-        )}
-        {mode === "cipta" && (
-          <>
-            <TombolBesar onClick={() => putar(urutan)} disabled={sedangMain || urutan.every((x) => x === null)} warna={UNGU}>
-              Mainkan ♪
-            </TombolBesar>
-            {semuaTerisi && !kunci && (
-              <TombolBesar onClick={() => kirim(urutan)} warna={BENAR} className="akademi-pop">
-                Selesai
+      <AksiBawah aktif={aksiMenetap}>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          {mode === "perbaiki" && (
+            <>
+              <span className="flex items-center rounded-full bg-white px-3 shadow-[0_3px_0_rgba(11,37,69,.1)]" style={{ height: 40 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 14 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}>
+                Diubah: {ubah}
+              </span>
+              <TombolBesar onClick={() => kirim(urutan)} disabled={kunci} warna="#15803d">
+                Sudah benar ✓
               </TombolBesar>
-            )}
-          </>
-        )}
-        {mode === "lanjut" && (
-          <button
-            type="button"
-            onClick={() => putar(urutan)}
-            disabled={sedangMain}
-            aria-label="Dengar pola"
-            className="flex items-center gap-2 rounded-full bg-white px-5 shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
-            style={{ height: 56 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 18 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}
-          >
-            Dengar ♪
-          </button>
-        )}
-      </div>
+            </>
+          )}
+          {mode === "cipta" && (
+            <>
+              <TombolBesar onClick={() => putar(urutan)} disabled={sedangMain || urutan.every((x) => x === null)} warna={UNGU}>
+                Mainkan ♪
+              </TombolBesar>
+              {semuaTerisi && !kunci && (
+                <TombolBesar onClick={() => kirim(urutan)} warna={BENAR} className="akademi-pop">
+                  Selesai
+                </TombolBesar>
+              )}
+            </>
+          )}
+          {mode === "lanjut" && (
+            <button
+              type="button"
+              onClick={() => putar(urutan)}
+              disabled={sedangMain}
+              aria-label="Dengar pola"
+              className="flex items-center gap-2 rounded-full bg-white px-5 shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
+              style={{ height: 56 * Math.min(sk, 1.3), fontFamily: BALOO, fontSize: 18 * Math.min(sk, 1.3), fontWeight: 800, color: INK }}
+            >
+              Dengar ♪
+            </button>
+          )}
+        </div>
+      </AksiBawah>
     </div>
   );
 }
