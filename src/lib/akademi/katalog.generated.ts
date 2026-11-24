@@ -187860,7 +187860,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lapak-panen-bagian-tumbuhan",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -187870,7 +187870,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Lapak Panen di Pasar",
-        "instruksi": "Taruh hasil panen ke rak bagian tumbuhan yang diambil: mangga ke buah, sawi ke daun, wortel ke akar.",
+        "instruksi": "Ketuk hasil panen, lalu ketuk rak yang cocok. Mangga masuk rak buah, sawi masuk rak daun.",
         "b-buah": "buah",
         "b-daun": "daun",
         "b-akar": "akar",
@@ -187884,11 +187884,11 @@ export const PAKET_RAW: unknown[] = [
         "i-daunsingkong": "daun singkong",
         "i-kemangi": "kemangi",
         "i-wortel": "wortel",
-        "i-ubiungu": "ubi ungu"
+        "i-ubiungu": "ubi jalar ungu"
       },
       "en": {
         "judul": "Harvest Stall at the Market",
-        "instruksi": "Put each crop on the shelf for the plant part we pick: mango to fruit, mustard greens to leaf, carrot to root.",
+        "instruksi": "Tap a crop, then tap its shelf. Mango goes on the fruit shelf, mustard greens on the leaf shelf.",
         "b-buah": "fruit",
         "b-daun": "leaf",
         "b-akar": "root",
@@ -187978,26 +187978,37 @@ export const PAKET_RAW: unknown[] = [
         "id": "sawi",
         "labelKey": "i-sawi",
         "bin": "daun",
-        "emoji": "🥬"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-sawi"
+        }
       },
       {
         "id": "kol",
         "labelKey": "i-kol",
         "bin": "daun",
-        "emoji": "🥬",
-        "color": "#c5e1a5"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-kol"
+        }
       },
       {
         "id": "daunsingkong",
         "labelKey": "i-daunsingkong",
         "bin": "daun",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-daun-singkong"
+        }
       },
       {
         "id": "kemangi",
         "labelKey": "i-kemangi",
         "bin": "daun",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-perbaiki-daun-kemangi"
+        }
       },
       {
         "id": "wortel",
@@ -188009,9 +188020,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ubiungu",
         "labelKey": "i-ubiungu",
         "bin": "akar",
-        "emoji": "🍠",
-        "color": "#7b1fa2",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-ubi-jalar-ungu"
+        }
       }
     ],
     "pilihan": []
@@ -194477,7 +194489,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-rak-sayur-bagian-tumbuhan",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -194487,7 +194499,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Sayur dari Bagian Mana?",
-        "instruksi": "Taruh tiap sayur ke rak bagian tumbuhan asalnya: wortel ke akar, bayam ke daun.",
+        "instruksi": "Ketuk sayurnya, lalu ketuk rak yang cocok. Wortel masuk rak akar, bayam masuk rak daun.",
         "akar": "akar",
         "daun": "daun",
         "i-wortel": "wortel",
@@ -194504,7 +194516,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Which Part Is the Veggie?",
-        "instruksi": "Put each vegetable on the shelf of the plant part it comes from: carrot to root, spinach to leaf.",
+        "instruksi": "Tap a vegetable, then tap its shelf. Carrot goes on the root shelf, spinach on the leaf shelf.",
         "akar": "root",
         "daun": "leaf",
         "i-wortel": "carrot",
@@ -194570,32 +194582,46 @@ export const PAKET_RAW: unknown[] = [
         "id": "ubi",
         "labelKey": "i-ubi",
         "bin": "akar",
-        "emoji": "🍠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-ubi-jalar"
+        }
       },
       {
         "id": "lobak",
         "labelKey": "i-lobak",
         "bin": "akar",
-        "color": "#e9e2d0",
-        "shape": "akar"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-lobak-putih"
+        }
       },
       {
         "id": "bayam",
         "labelKey": "i-bayam",
         "bin": "daun",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-bayam"
+        }
       },
       {
         "id": "selada",
         "labelKey": "i-selada",
         "bin": "daun",
-        "emoji": "🥬"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-selada"
+        }
       },
       {
         "id": "kangkung",
         "labelKey": "i-kangkung",
         "bin": "daun",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-kangkung"
+        }
       },
       {
         "id": "tomat",

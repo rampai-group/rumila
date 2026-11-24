@@ -2,6 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import { ILUSTRASI_AWAL_SD_IDS, IlustrasiAwalSD } from "./ilustrasi-awal-sd";
+import { ILUSTRASI_HASIL_PANEN_IDS, IlustrasiHasilPanen } from "./ilustrasi-hasil-panen";
 import { ILUSTRASI_QC_SD_AWAL_IDS, IlustrasiQcSdAwal } from "./ilustrasi-qc-sd-awal";
 import { ILUSTRASI_QC_SD4_SD6_IDS, IlustrasiQcSd4Sd6 } from "./ilustrasi-qc-sd4-sd6";
 import { ILUSTRASI_QC_TUNAS_IDS, IlustrasiQcTunas } from "./ilustrasi-qc-tunas";
@@ -23,7 +24,15 @@ export const ILUSTRASI_AWAL_IDS = [
   "boneka-tanpa-kepala", "boneka-tanpa-badan", "boneka-tanpa-tangan", "boneka-tanpa-kaki",
   "ciri-kakiberbulu", "ciri-sayapsirip", "ciri-putihsalju", "ciri-ekorpipih", "ciri-sisikikan", "ciri-hidungtutup",
   "ciri-telingabesar", "ciri-kulitkering", "ciri-warnapasir", "ciri-jarilengket", "ciri-paruhbesar", "ciri-warnakayu",
-].map((id) => `awal-${id}`).concat(ILUSTRASI_AWAL_SD_IDS, ILUSTRASI_QC_TUNAS_IDS, ILUSTRASI_TUMBUHAN_PERBAIKI_IDS, ILUSTRASI_TUMBUHAN_SUSUN_IDS, ILUSTRASI_QC_SD_AWAL_IDS, ILUSTRASI_QC_SD4_SD6_IDS);
+].map((id) => `awal-${id}`).concat(
+  ILUSTRASI_AWAL_SD_IDS,
+  ILUSTRASI_QC_TUNAS_IDS,
+  ILUSTRASI_TUMBUHAN_PERBAIKI_IDS,
+  ILUSTRASI_TUMBUHAN_SUSUN_IDS,
+  ILUSTRASI_HASIL_PANEN_IDS,
+  ILUSTRASI_QC_SD_AWAL_IDS,
+  ILUSTRASI_QC_SD4_SD6_IDS,
+);
 const dikenal = new Set(ILUSTRASI_AWAL_IDS);
 export const isIlustrasiAwal = (gambar: string) => dikenal.has(gambar);
 const INK = "#16364b";
@@ -126,6 +135,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   if (ILUSTRASI_QC_TUNAS_IDS.includes(gambar)) art = <IlustrasiQcTunas id={gambar} />;
   else if (ILUSTRASI_TUMBUHAN_PERBAIKI_IDS.includes(gambar)) art = <IlustrasiTumbuhanPerbaiki id={gambar} />;
   else if (ILUSTRASI_TUMBUHAN_SUSUN_IDS.includes(gambar)) art = <IlustrasiTumbuhanSusun id={gambar} />;
+  else if (ILUSTRASI_HASIL_PANEN_IDS.includes(gambar)) art = <IlustrasiHasilPanen id={gambar} />;
   else if (ILUSTRASI_QC_SD_AWAL_IDS.includes(gambar)) art = <IlustrasiQcSdAwal id={gambar} />;
   else if (ILUSTRASI_QC_SD4_SD6_IDS.includes(gambar)) art = <IlustrasiQcSd4Sd6 id={gambar} />;
   else if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
