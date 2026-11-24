@@ -3,6 +3,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { ILUSTRASI_AWAL_SD_IDS, IlustrasiAwalSD } from "./ilustrasi-awal-sd";
 import { ILUSTRASI_HASIL_PANEN_IDS, IlustrasiHasilPanen } from "./ilustrasi-hasil-panen";
+import { ILUSTRASI_HEWAN_PILAH_IDS, IlustrasiHewanPilah } from "./ilustrasi-hewan-pilah";
 import { ILUSTRASI_QC_SD_AWAL_IDS, IlustrasiQcSdAwal } from "./ilustrasi-qc-sd-awal";
 import { ILUSTRASI_QC_SD4_SD6_IDS, IlustrasiQcSd4Sd6 } from "./ilustrasi-qc-sd4-sd6";
 import { ILUSTRASI_QC_TUNAS_IDS, IlustrasiQcTunas } from "./ilustrasi-qc-tunas";
@@ -30,6 +31,7 @@ export const ILUSTRASI_AWAL_IDS = [
   ILUSTRASI_TUMBUHAN_PERBAIKI_IDS,
   ILUSTRASI_TUMBUHAN_SUSUN_IDS,
   ILUSTRASI_HASIL_PANEN_IDS,
+  ILUSTRASI_HEWAN_PILAH_IDS,
   ILUSTRASI_QC_SD_AWAL_IDS,
   ILUSTRASI_QC_SD4_SD6_IDS,
 );
@@ -136,6 +138,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   else if (ILUSTRASI_TUMBUHAN_PERBAIKI_IDS.includes(gambar)) art = <IlustrasiTumbuhanPerbaiki id={gambar} />;
   else if (ILUSTRASI_TUMBUHAN_SUSUN_IDS.includes(gambar)) art = <IlustrasiTumbuhanSusun id={gambar} />;
   else if (ILUSTRASI_HASIL_PANEN_IDS.includes(gambar)) art = <IlustrasiHasilPanen id={gambar} />;
+  else if (ILUSTRASI_HEWAN_PILAH_IDS.includes(gambar)) art = <IlustrasiHewanPilah id={gambar} />;
   else if (ILUSTRASI_QC_SD_AWAL_IDS.includes(gambar)) art = <IlustrasiQcSdAwal id={gambar} />;
   else if (ILUSTRASI_QC_SD4_SD6_IDS.includes(gambar)) art = <IlustrasiQcSd4Sd6 id={gambar} />;
   else if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
