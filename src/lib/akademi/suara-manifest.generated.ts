@@ -5404,6 +5404,7 @@ export const SUARA: Record<string, string> = {
   "Susun gambar tanaman dari biji, tunas, berdaun, sampai berbunga.": "/akademi/suara/f3941e6b1e07.mp3",
   "Susun hewan dari yang paling muda sampai dewasa.": "/akademi/suara/6e15a29bf526.mp3",
   "Susun jalur energi: mulai dari Matahari, lalu produsen, lalu siapa memakan siapa.": "/akademi/suara/5b23952131fd.mp3",
+  "Susun jengkal dari ujung ke ujung. Ketuk jumlahnya.": "/akademi/suara/11ff22428e06.mp3",
   "Susun kartu angka dari yang terkecil ke yang terbesar.": "/akademi/suara/4a68f3a58916.mp3",
   "Susun kartu bilangan dari yang terkecil sampai yang terbesar.": "/akademi/suara/ec8a843a3df4.mp3",
   "Susun kartu dari nilai terkecil sampai terbesar.": "/akademi/suara/d83be6394e6b.mp3",

@@ -309276,7 +309276,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Ukur dengan Jengkal",
-        "instruksi": "Tempelkan jengkal tanganmu dari ujung ke ujung, lalu sentuh angka jumlah jengkalnya.",
+        "instruksi": "Susun jengkal dari ujung ke ujung. Ketuk jumlahnya.",
         "wortel": "wortel",
         "timun": "timun",
         "jagung": "jagung",
@@ -309291,7 +309291,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Measure in Hand Spans",
-        "instruksi": "Lay your hand spans from one end to the other, then touch the number of spans.",
+        "instruksi": "Lay hand spans end to end. Tap the total.",
         "wortel": "carrot",
         "timun": "cucumber",
         "jagung": "corn",
