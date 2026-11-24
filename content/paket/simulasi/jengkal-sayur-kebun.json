@@ -1,6 +1,6 @@
 {
   "id": "jengkal-sayur-kebun",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -65,7 +65,7 @@
       "labelKey": "wortel",
       "id": "wortel",
       "role": "benda",
-      "emoji": "🥕",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-wortel", "t": 0 },
       "value": 1,
       "width": 0.5
     },
@@ -73,7 +73,7 @@
       "labelKey": "pisang",
       "id": "pisang",
       "role": "benda",
-      "emoji": "🍌",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-pisang", "t": 0 },
       "value": 1,
       "width": 0.5
     },
@@ -81,7 +81,7 @@
       "labelKey": "ubi",
       "id": "ubi",
       "role": "benda",
-      "emoji": "🍠",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-ubi", "t": 0 },
       "value": 1,
       "width": 0.5
     },
@@ -89,7 +89,7 @@
       "labelKey": "brokoli",
       "id": "brokoli",
       "role": "benda",
-      "emoji": "🥦",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-brokoli", "t": 0 },
       "value": 1,
       "width": 0.5
     },
@@ -97,7 +97,7 @@
       "labelKey": "timun",
       "id": "timun",
       "role": "benda",
-      "emoji": "🥒",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-timun", "t": 0 },
       "value": 2,
       "width": 1.0
     },
@@ -105,7 +105,7 @@
       "labelKey": "jagung",
       "id": "jagung",
       "role": "benda",
-      "emoji": "🌽",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-jagung", "t": 0 },
       "value": 2,
       "width": 1.0
     },
@@ -113,7 +113,7 @@
       "labelKey": "terong",
       "id": "terong",
       "role": "benda",
-      "emoji": "🍆",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-terong", "t": 0 },
       "value": 2,
       "width": 1.0
     },
@@ -121,7 +121,7 @@
       "labelKey": "nanas",
       "id": "nanas",
       "role": "benda",
-      "emoji": "🍍",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-nanas", "t": 0 },
       "value": 2,
       "width": 1.0
     },
@@ -129,7 +129,7 @@
       "labelKey": "sawi",
       "id": "sawi",
       "role": "benda",
-      "emoji": "🥬",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-sawi", "t": 0 },
       "value": 2,
       "width": 1.0
     },
@@ -139,13 +139,13 @@
       "role": "benda",
       "value": 3,
       "width": 1.5,
-      "emoji": "🥒"
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-kacang-panjang", "t": 0 }
     },
     {
       "labelKey": "roti",
       "id": "roti",
       "role": "benda",
-      "emoji": "🥖",
+      "adegan": { "jenis": "ilustrasi", "varian": "jengkal-kebun-roti", "t": 0 },
       "value": 4,
       "width": 2.0
     }

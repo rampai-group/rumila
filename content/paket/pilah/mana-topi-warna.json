@@ -1,6 +1,6 @@
 {
   "id": "mana-topi-warna",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -54,92 +54,92 @@
       "id": "topi-merah",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
-      "color": "#e53935"
+      "color": "#e53935",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-merah", "t": 0 }
     },
     {
       "id": "topi-merah-kecil",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#e53935",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-merah", "t": 0 },
       "scale": 0.7
     },
     {
       "id": "topi-merah-besar",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#e53935",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-merah", "t": 0 },
       "scale": 1.3
     },
     {
       "id": "topi-biru",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
-      "color": "#1e88e5"
+      "color": "#1e88e5",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-biru", "t": 0 }
     },
     {
       "id": "topi-biru-kecil",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#1e88e5",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-biru", "t": 0 },
       "scale": 0.7
     },
     {
       "id": "topi-biru-besar",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#1e88e5",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-biru", "t": 0 },
       "scale": 1.3
     },
     {
       "id": "topi-kuning",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
-      "color": "#fdd835"
+      "color": "#fdd835",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-kuning", "t": 0 }
     },
     {
       "id": "topi-kuning-kecil",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#fdd835",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-kuning", "t": 0 },
       "scale": 0.7
     },
     {
       "id": "topi-kuning-besar",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#fdd835",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-kuning", "t": 0 },
       "scale": 1.3
     },
     {
       "id": "topi-hijau",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
-      "color": "#43a047"
+      "color": "#43a047",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-hijau", "t": 0 }
     },
     {
       "id": "topi-hijau-kecil",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#43a047",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-hijau", "t": 0 },
       "scale": 0.7
     },
     {
       "id": "topi-hijau-besar",
       "labelKey": "topi",
       "bin": "pilihan",
-      "shape": "triangle",
       "color": "#43a047",
+      "adegan": { "jenis": "ilustrasi", "varian": "topi-pesta-hijau", "t": 0 },
       "scale": 1.3
     }
   ],

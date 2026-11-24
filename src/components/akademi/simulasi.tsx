@@ -12,6 +12,7 @@ import { Icon } from "@/components/ui";
 import { KALIMAT_SIMULASI as KS, kalimatSimulasi as ks } from "@/lib/akademi/kalimat-suara";
 import { ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
+import { GambarAdegan } from "./adegan-gambar";
 import { Benda, KartuBenda, skalaLebar, type VisualSpec } from "./benda";
 import { AksiBawah, usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
@@ -624,7 +625,8 @@ function ModeJengkal(c: Ctx) {
         <Adegan min={150}>
           {({ w, h }) => {
             // lebar jengkal: muat lebar (di HP boleh 64 px dengan gulir mendatar), tetapi selalu muat tinggi adegan supaya panggung tidak meluap
-            const jp = Math.max(44, Math.min(Math.max(J, Math.floor((w - 36) / maxSpans)), Math.floor(((h - 12) * J) / 200), 130));
+            const batasJengkal = benda?.adegan ? 168 : 130;
+            const jp = Math.max(44, Math.min(Math.max(J, Math.floor((w - 36) / maxSpans)), Math.floor(((h - 12) * J) / 200), batasJengkal));
             jPx.current = jp;
             const f = jp / J;
             const lebarJalur = maxSpans * jp;
@@ -634,7 +636,15 @@ function ModeJengkal(c: Ctx) {
                 <div className="relative mx-auto" style={{ width: lebarJalur + 24, height: 200 * f, paddingLeft: 12 }}>
                   {/* benda memanjang */}
                   <div className="absolute flex items-center" style={{ left: kiri, top: 8 * f, width: ronde.target * jp, height: 72 * f, overflow: "visible" }} aria-label={`${benda ? nama(benda.id) : "benda"} sepanjang ${ronde.target} jengkal`}>
-                    <span style={{ fontSize: 60 * f, lineHeight: 1, display: "inline-block", transform: `scaleX(${(ronde.target * jp) / (60 * f)})`, transformOrigin: "left center" }} aria-hidden>{benda?.emoji ?? "🥖"}</span>
+                    {benda?.adegan ? (
+                      <GambarAdegan
+                        adegan={benda.adegan}
+                        s={72 * f}
+                        style={{ transform: `scaleX(${(ronde.target * jp) / (72 * f * 1.3)})`, transformOrigin: "left center" }}
+                      />
+                    ) : (
+                      <span style={{ fontSize: 60 * f, lineHeight: 1, display: "inline-block", transform: `scaleX(${(ronde.target * jp) / (60 * f)})`, transformOrigin: "left center" }} aria-hidden>{benda?.emoji ?? "🥖"}</span>
+                    )}
                   </div>
                   {/* garis dasar */}
                   <div className="absolute" style={{ left: kiri, top: 88 * f, width: lebarJalur, height: 4 * f, background: INK, borderRadius: 2 }} />

@@ -4,6 +4,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { ILUSTRASI_AWAL_SD_IDS, IlustrasiAwalSD } from "./ilustrasi-awal-sd";
 import { ILUSTRASI_HASIL_PANEN_IDS, IlustrasiHasilPanen } from "./ilustrasi-hasil-panen";
 import { ILUSTRASI_HEWAN_PILAH_IDS, IlustrasiHewanPilah } from "./ilustrasi-hewan-pilah";
+import { ILUSTRASI_JENGKAL_SAYUR_IDS, IlustrasiJengkalSayur } from "./ilustrasi-jengkal-sayur";
 import { ILUSTRASI_PERTUMBUHAN_TANAMAN_IDS, IlustrasiPertumbuhanTanaman } from "./ilustrasi-pertumbuhan-tanaman";
 import { ILUSTRASI_KEADAAN_BENDA_IDS, IlustrasiKeadaanBenda } from "./ilustrasi-keadaan-benda";
 import { ILUSTRASI_QC_SD_AWAL_IDS, IlustrasiQcSdAwal } from "./ilustrasi-qc-sd-awal";
@@ -12,6 +13,7 @@ import { ILUSTRASI_QC_TUNAS_IDS, IlustrasiQcTunas } from "./ilustrasi-qc-tunas";
 import { GambarIlustrasiTk } from "./ilustrasi-tk";
 import { ILUSTRASI_TUMBUHAN_PERBAIKI_IDS, IlustrasiTumbuhanPerbaiki } from "./ilustrasi-tumbuhan-perbaiki";
 import { ILUSTRASI_TUMBUHAN_SUSUN_IDS, IlustrasiTumbuhanSusun } from "./ilustrasi-tumbuhan-susun";
+import { ILUSTRASI_WARNA_PAUD_IDS, IlustrasiWarnaPaud } from "./ilustrasi-warna-paud";
 
 /** Concrete early-years objects. Each identifier names a visible feature, never an answer state. */
 export const ILUSTRASI_AWAL_IDS = [
@@ -38,6 +40,8 @@ export const ILUSTRASI_AWAL_IDS = [
   ILUSTRASI_KEADAAN_BENDA_IDS,
   ILUSTRASI_QC_SD_AWAL_IDS,
   ILUSTRASI_QC_SD4_SD6_IDS,
+  ILUSTRASI_WARNA_PAUD_IDS,
+  ILUSTRASI_JENGKAL_SAYUR_IDS,
 );
 const dikenal = new Set(ILUSTRASI_AWAL_IDS);
 export const isIlustrasiAwal = (gambar: string) => dikenal.has(gambar);
@@ -147,6 +151,8 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   else if (ILUSTRASI_KEADAAN_BENDA_IDS.includes(gambar)) art = <IlustrasiKeadaanBenda id={gambar} />;
   else if (ILUSTRASI_QC_SD_AWAL_IDS.includes(gambar)) art = <IlustrasiQcSdAwal id={gambar} />;
   else if (ILUSTRASI_QC_SD4_SD6_IDS.includes(gambar)) art = <IlustrasiQcSd4Sd6 id={gambar} />;
+  else if (ILUSTRASI_WARNA_PAUD_IDS.includes(gambar)) art = <IlustrasiWarnaPaud id={gambar} />;
+  else if (ILUSTRASI_JENGKAL_SAYUR_IDS.includes(gambar)) art = <IlustrasiJengkalSayur id={gambar} />;
   else if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
   else if (id === "penyu-laut") art = <PenyuLaut />;
   else if (id === "polong") art = <g stroke="#267343" strokeWidth="2.5"><path d="M14 71Q29 18 112 25Q100 78 22 81Z" fill="#43a94c" /><path d="M21 72Q45 38 105 31Q81 78 21 72Z" fill="#c7e880" />{[35,56,77,96].map((x,i) => <circle key={x} cx={x} cy={63-i*8} r="9" fill="#73bf45" />)}<path d="M110 26Q117 12 108 13" fill="none" /></g>;

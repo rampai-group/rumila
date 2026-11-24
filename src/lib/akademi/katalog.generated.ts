@@ -176872,7 +176872,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kebun-bunga-warna",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -177055,8 +177055,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "ikan",
         "labelKey": "ikan",
         "bin": "biru",
-        "emoji": "🐟",
-        "color": "#1e88e5"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "ikan-kolam-biru",
+          "t": 0
+        }
       },
       {
         "id": "pisang",
@@ -178752,7 +178755,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "mana-topi-warna",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -178806,92 +178809,140 @@ export const PAKET_RAW: unknown[] = [
         "id": "topi-merah",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
-        "color": "#e53935"
+        "color": "#e53935",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-merah",
+          "t": 0
+        }
       },
       {
         "id": "topi-merah-kecil",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#e53935",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-merah",
+          "t": 0
+        },
         "scale": 0.7
       },
       {
         "id": "topi-merah-besar",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#e53935",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-merah",
+          "t": 0
+        },
         "scale": 1.3
       },
       {
         "id": "topi-biru",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
-        "color": "#1e88e5"
+        "color": "#1e88e5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-biru",
+          "t": 0
+        }
       },
       {
         "id": "topi-biru-kecil",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#1e88e5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-biru",
+          "t": 0
+        },
         "scale": 0.7
       },
       {
         "id": "topi-biru-besar",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#1e88e5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-biru",
+          "t": 0
+        },
         "scale": 1.3
       },
       {
         "id": "topi-kuning",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
-        "color": "#fdd835"
+        "color": "#fdd835",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-kuning",
+          "t": 0
+        }
       },
       {
         "id": "topi-kuning-kecil",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#fdd835",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-kuning",
+          "t": 0
+        },
         "scale": 0.7
       },
       {
         "id": "topi-kuning-besar",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#fdd835",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-kuning",
+          "t": 0
+        },
         "scale": 1.3
       },
       {
         "id": "topi-hijau",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
-        "color": "#43a047"
+        "color": "#43a047",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-hijau",
+          "t": 0
+        }
       },
       {
         "id": "topi-hijau-kecil",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#43a047",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-hijau",
+          "t": 0
+        },
         "scale": 0.7
       },
       {
         "id": "topi-hijau-besar",
         "labelKey": "topi",
         "bin": "pilihan",
-        "shape": "triangle",
         "color": "#43a047",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "topi-pesta-hijau",
+          "t": 0
+        },
         "scale": 1.3
       }
     ],
@@ -309215,7 +309266,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "jengkal-sayur-kebun",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "TKA",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -309280,7 +309331,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "wortel",
         "id": "wortel",
         "role": "benda",
-        "emoji": "🥕",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-wortel",
+          "t": 0
+        },
         "value": 1,
         "width": 0.5
       },
@@ -309288,7 +309343,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "pisang",
         "id": "pisang",
         "role": "benda",
-        "emoji": "🍌",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-pisang",
+          "t": 0
+        },
         "value": 1,
         "width": 0.5
       },
@@ -309296,7 +309355,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "ubi",
         "id": "ubi",
         "role": "benda",
-        "emoji": "🍠",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-ubi",
+          "t": 0
+        },
         "value": 1,
         "width": 0.5
       },
@@ -309304,7 +309367,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "brokoli",
         "id": "brokoli",
         "role": "benda",
-        "emoji": "🥦",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-brokoli",
+          "t": 0
+        },
         "value": 1,
         "width": 0.5
       },
@@ -309312,7 +309379,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "timun",
         "id": "timun",
         "role": "benda",
-        "emoji": "🥒",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-timun",
+          "t": 0
+        },
         "value": 2,
         "width": 1
       },
@@ -309320,7 +309391,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "jagung",
         "id": "jagung",
         "role": "benda",
-        "emoji": "🌽",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-jagung",
+          "t": 0
+        },
         "value": 2,
         "width": 1
       },
@@ -309328,7 +309403,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "terong",
         "id": "terong",
         "role": "benda",
-        "emoji": "🍆",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-terong",
+          "t": 0
+        },
         "value": 2,
         "width": 1
       },
@@ -309336,7 +309415,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "nanas",
         "id": "nanas",
         "role": "benda",
-        "emoji": "🍍",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-nanas",
+          "t": 0
+        },
         "value": 2,
         "width": 1
       },
@@ -309344,7 +309427,11 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "sawi",
         "id": "sawi",
         "role": "benda",
-        "emoji": "🥬",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-sawi",
+          "t": 0
+        },
         "value": 2,
         "width": 1
       },
@@ -309354,13 +309441,21 @@ export const PAKET_RAW: unknown[] = [
         "role": "benda",
         "value": 3,
         "width": 1.5,
-        "emoji": "🥒"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-kacang-panjang",
+          "t": 0
+        }
       },
       {
         "labelKey": "roti",
         "id": "roti",
         "role": "benda",
-        "emoji": "🥖",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "jengkal-kebun-roti",
+          "t": 0
+        },
         "value": 4,
         "width": 2
       }
