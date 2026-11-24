@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-otot-tarik-ulur",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,27 +78,37 @@
       "id": "biseps",
       "labelKey": "i-biseps",
       "bin": "pilihan",
-      "emoji": "💪"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd4-otot-biseps"
+      }
     },
     {
       "id": "trisep",
       "labelKey": "i-trisep",
       "bin": "pilihan",
-      "emoji": "💪",
-      "color": "#ffe0b2"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd4-otot-triseps"
+      }
     },
     {
       "id": "depanpaha",
       "labelKey": "i-depanpaha",
       "bin": "pilihan",
-      "emoji": "🦵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd4-otot-paha-depan"
+      }
     },
     {
       "id": "belakangpaha",
       "labelKey": "i-belakangpaha",
       "bin": "pilihan",
-      "emoji": "🦵",
-      "color": "#ffe0b2"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd4-otot-paha-belakang"
+      }
     },
     {
       "id": "mengerut",
