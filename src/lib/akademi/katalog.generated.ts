@@ -184553,7 +184553,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-ciri-tubuh-dan-habitat",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -184571,7 +184571,7 @@ export const PAKET_RAW: unknown[] = [
         "i-bulutebal": "bulu tebal hangat",
         "i-sirip": "sirip untuk berenang",
         "i-insang": "insang untuk bernapas di air",
-        "i-punuk": "punuk penyimpan cadangan",
+        "i-punuk": "punuk untuk menyimpan lemak",
         "i-kakilebar": "kaki lebar untuk pasir",
         "i-warnahijau": "warna hijau daun untuk bersembunyi",
         "i-ekorpanjang": "ekor panjang untuk bergelantung",
@@ -184590,7 +184590,7 @@ export const PAKET_RAW: unknown[] = [
         "i-bulutebal": "thick warm fur",
         "i-sirip": "fins for swimming",
         "i-insang": "gills to breathe in water",
-        "i-punuk": "hump that stores reserves",
+        "i-punuk": "hump that stores fat",
         "i-kakilebar": "wide feet for sand",
         "i-warnahijau": "leaf-green colour to hide",
         "i-ekorpanjang": "long tail for hanging",
@@ -184652,62 +184652,83 @@ export const PAKET_RAW: unknown[] = [
         "id": "bulutebal",
         "labelKey": "i-bulutebal",
         "bin": "es",
-        "emoji": "🧥",
-        "color": "#ffffff"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-bulu-tebal"
+        }
       },
       {
         "id": "sirip",
         "labelKey": "i-sirip",
         "bin": "air",
-        "shape": "triangle",
-        "color": "#0288d1"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-sirip"
+        }
       },
       {
         "id": "insang",
         "labelKey": "i-insang",
         "bin": "air",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-insang"
+        }
       },
       {
         "id": "punuk",
         "labelKey": "i-punuk",
         "bin": "gurun",
-        "emoji": "🐪",
-        "color": "#ffe0b2"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-punuk"
+        }
       },
       {
         "id": "kakilebar",
         "labelKey": "i-kakilebar",
         "bin": "gurun",
-        "shape": "rect",
-        "color": "#d7ccc8",
-        "width": 1.8
+        "width": 1.8,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-kaki-unta"
+        }
       },
       {
         "id": "warnahijau",
         "labelKey": "i-warnahijau",
         "bin": "hutan",
-        "shape": "circle",
-        "color": "#43a047"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-warna-hijau"
+        }
       },
       {
         "id": "ekorpanjang",
         "labelKey": "i-ekorpanjang",
         "bin": "hutan",
-        "emoji": "🐒",
-        "color": "#c8e6c9"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-ekor-panjang"
+        }
       },
       {
         "id": "bulupolar",
         "labelKey": "i-bulupolar",
         "bin": "es",
-        "emoji": "🐻‍❄️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-putihsalju"
+        }
       },
       {
         "id": "selaput",
         "labelKey": "i-selaput",
         "bin": "air",
-        "emoji": "🦆"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-selaput"
+        }
       },
       {
         "id": "ramping",
@@ -184719,7 +184740,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bulumata",
         "labelKey": "i-bulumata",
         "bin": "gurun",
-        "emoji": "🐫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-bulu-mata"
+        }
       }
     ],
     "pilihan": []
@@ -186712,7 +186736,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-isi-piringku",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -186722,8 +186746,8 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Isi Piringku",
-        "instruksi": "Isi tiap bagian piring: nasi, lauk, sayur, dan buah. Jajanan tidak masuk piring.",
-        "nasi": "nasi dan makanan pokok",
+        "instruksi": "Isi tiap bagian piring: makanan pokok, lauk, sayur, dan buah. Taruh permen dan soda di luar piring.",
+        "nasi": "makanan pokok",
         "lauk": "lauk",
         "sayur": "sayur",
         "buah": "buah",
@@ -186744,8 +186768,8 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Fill My Plate",
-        "instruksi": "Fill each part of the plate: rice, protein, veggies, and fruit. Treats stay off the plate.",
-        "nasi": "rice and staple foods",
+        "instruksi": "Fill each section with a staple food, a protein dish, vegetables, or fruit. Put candy and soda outside the plate.",
+        "nasi": "staple food",
         "lauk": "protein",
         "sayur": "vegetables",
         "buah": "fruit",
@@ -186853,7 +186877,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bayam",
         "labelKey": "i-bayam",
         "bin": "sayur",
-        "emoji": "🥬"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-bayam"
+        }
       },
       {
         "id": "wortel",
@@ -186902,7 +186929,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-kandang-dua-empat-kaki",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -186912,7 +186939,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kandang Dua Kaki, Empat Kaki",
-        "instruksi": "Hitung kakinya, lalu taruh hewan ke kandang dua kaki atau empat kaki.",
+        "instruksi": "Hitung kaki hewan. Ketuk kartunya, lalu pilih kandang yang cocok. Kalau tidak ada kaki, pilih kandang tanpa kaki.",
         "dua": "dua kaki",
         "empat": "empat kaki",
         "nol": "tanpa kaki",
@@ -186927,7 +186954,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Two-Leg, Four-Leg Pens",
-        "instruksi": "Count the legs, then put each animal in the two-leg or four-leg pen.",
+        "instruksi": "Count the animal’s legs. Tap its card, then choose the matching pen. If it has no legs, choose the no-leg pen.",
         "dua": "two legs",
         "empat": "four legs",
         "nol": "no legs",
@@ -186947,7 +186974,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 3,
         "default": 2,
         "step": 1,
-        "keterangan": "2 kandang (dua kaki, empat kaki); 3 menambah kandang tanpa kaki untuk ikan sebagai pengecoh"
+        "keterangan": "dua kandang untuk 2 dan 4 kaki; tambah kandang tanpa kaki untuk ikan pada tingkat berikutnya"
       },
       "itemCount": {
         "min": 4,
@@ -186978,7 +187005,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "nol",
         "labelKey": "nol",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-nol-kaki"
+        }
       }
     ],
     "items": [
@@ -186986,43 +187016,64 @@ export const PAKET_RAW: unknown[] = [
         "id": "ayam",
         "labelKey": "i-ayam",
         "bin": "dua",
-        "emoji": "🐓"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-jago"
+        }
       },
       {
         "id": "bebek",
         "labelKey": "i-bebek",
         "bin": "dua",
-        "emoji": "🦆"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-bebek"
+        }
       },
       {
         "id": "burung",
         "labelKey": "i-burung",
         "bin": "dua",
-        "emoji": "🦜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-beo"
+        }
       },
       {
         "id": "kucing",
         "labelKey": "i-kucing",
         "bin": "empat",
-        "emoji": "🐈"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-kucing-empat-kaki"
+        }
       },
       {
         "id": "sapi",
         "labelKey": "i-sapi",
         "bin": "empat",
-        "emoji": "🐄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-sapi"
+        }
       },
       {
         "id": "kambing",
         "labelKey": "i-kambing",
         "bin": "empat",
-        "emoji": "🐐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-kambing-empat-kaki"
+        }
       },
       {
         "id": "anjing",
         "labelKey": "i-anjing",
         "bin": "empat",
-        "emoji": "🐕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-anjing"
+        }
       },
       {
         "id": "ikan",
@@ -188791,7 +188842,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lengkapi-piring-dapur",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -188819,14 +188870,14 @@ export const PAKET_RAW: unknown[] = [
         "i-lolipop": "lolipop",
         "i-cokelat": "cokelat batang",
         "t-1": "Piring sudah ada lauk, sayur, dan buah. Masih kurang makanan pokok seperti nasi. Pilih yang mana?",
-        "t-2": "Piring sudah ada nasi, lauk, dan buah. Masih kurang sayur. Pilih yang mana?",
+        "t-2": "Piring sudah ada nasi, lauk, dan buah. Pilih bahan yang biasa dimasak jadi sayur.",
         "t-3": "Piring sudah ada nasi, lauk, dan sayur. Masih kurang buah. Pilih yang mana?",
         "t-4": "Piring sudah ada nasi, sayur, dan buah. Masih kurang lauk. Pilih yang mana?",
         "t-5": "Robot mau menambah sayur hijau ke piring. Pilih yang mana?",
         "t-6": "Piring masih kosong di bagian makanan pokok. Pilih yang mana?",
-        "t-7": "Bagian buah di piring masih kosong. Pilih yang mana?",
+        "t-7": "Bagian buah di piring masih kosong. Pilih buah yang biasa dimakan segar.",
         "t-8": "Bagian lauk masih kosong. Robot ingin lauk dari laut. Pilih yang mana?",
-        "t-9": "Bagian sayur masih kosong. Pilih yang mana?",
+        "t-9": "Pilih bahan hijau yang biasa dimasak jadi sayur.",
         "t-10": "Piring hampir lengkap, tinggal buah. Pilih yang mana?",
         "t-11": "Makanan pokok belum ada. Pilih yang mana?",
         "t-12": "Satu bagian lagi: buah segar. Pilih yang mana?"
@@ -188851,14 +188902,14 @@ export const PAKET_RAW: unknown[] = [
         "i-lolipop": "lollipop",
         "i-cokelat": "chocolate bar",
         "t-1": "The plate has protein, vegetables, and fruit. It still needs a staple like rice. Which one?",
-        "t-2": "The plate has rice, protein, and fruit. It still needs a vegetable. Which one?",
+        "t-2": "The plate has rice, a protein dish, and fruit. Choose something people cook as a vegetable.",
         "t-3": "The plate has rice, protein, and vegetables. It still needs fruit. Which one?",
         "t-4": "The plate has rice, vegetables, and fruit. It still needs protein. Which one?",
         "t-5": "The robot wants to add a green vegetable to the plate. Which one?",
         "t-6": "The staple part of the plate is still empty. Which one?",
-        "t-7": "The fruit part of the plate is still empty. Which one?",
+        "t-7": "The fruit section is still empty. Choose a fruit people usually eat fresh.",
         "t-8": "The protein part is still empty. The robot wants protein from the sea. Which one?",
-        "t-9": "The vegetable part is still empty. Which one?",
+        "t-9": "Choose something green that people cook as a vegetable.",
         "t-10": "The plate is almost full; only fruit is missing. Which one?",
         "t-11": "There is no staple food yet. Which one?",
         "t-12": "One more part: fresh fruit. Which one?"
