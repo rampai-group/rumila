@@ -3,14 +3,15 @@
 // Tahap sebelum pilih profil: masuk/daftar akun rumah (Supabase Auth) dan buat rumah baru.
 
 import Image from "next/image";
-import { useState, type CSSProperties, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type FormEvent, type ReactNode } from "react";
 import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { CAT, MEMBER_COLORS, PLAY, type ColorKey } from "@/lib/catalog";
 import { friendlyError, supabase } from "@/lib/supabase/client";
 import { createFamily, signOutAccount } from "@/lib/supabase/family";
 import { useRumila, type Theme } from "@/lib/store";
-import { setPeranAkademi } from "@/lib/akademi/konten";
+import { setPeranAkademi, setUsiaAnak } from "@/lib/akademi/konten";
+import { cekDaftar, dataDaftar, umurDari, type PeranDaftar } from "@/lib/akun/daftar";
 
 const PI = "#0b2545";
 const NV = "#1F3044";
@@ -79,6 +80,8 @@ export function AccountStage({ theme }: { theme: Theme }) {
   const [mode, setMode] = useState<"masuk" | "daftar" | "lupa">("masuk");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [peran, setPeran] = useState<PeranDaftar | "">("");
+  const [lahir, setLahir] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [sent, setSent] = useState<"" | "email" | "username" | "reset">("");
@@ -87,6 +90,13 @@ export function AccountStage({ theme }: { theme: Theme }) {
     e.preventDefault();
     setErr("");
     const login = email.trim();
+    if (mode === "daftar") {
+      const salah = cekDaftar({ email: login, peran, lahir });
+      if (salah) {
+        setErr(salah);
+        return;
+      }
+    }
     if (isUsername(login) && !/^[a-z0-9._-]{3,30}$/i.test(login)) {
       setErr("Nama pengguna 3–30 karakter: huruf, angka, titik, strip, atau garis bawah.");
       return;
@@ -109,7 +119,10 @@ export function AccountStage({ theme }: { theme: Theme }) {
         const { data, error } = await sb.auth.signUp({
           email: toLoginEmail(login),
           password,
-          options: { emailRedirectTo: `${window.location.origin}/masuk` },
+          options: {
+            emailRedirectTo: `${window.location.origin}/masuk`,
+            data: { peran, ...(peran === "siswa" ? { tanggal_lahir: lahir } : {}) },
+          },
         });
         if (error) throw error;
         // Tanpa sesi = Supabase masih mewajibkan konfirmasi email.
@@ -164,30 +177,67 @@ export function AccountStage({ theme }: { theme: Theme }) {
       ) : (
         <>
           <div>
-            <h1 style={L.title}>{mode === "masuk" ? "Masuk ke rumahmu" : mode === "lupa" ? "Lupa kata sandi" : "Bikin akun rumah"}</h1>
+            <h1 style={L.title}>{mode === "masuk" ? "Masuk ke rumahmu" : mode === "lupa" ? "Lupa kata sandi" : "Daftar akun"}</h1>
             <p className="mt-1.5" style={{ color: L.muted, fontWeight: 600, fontSize: 14 }}>
               {mode === "masuk"
                 ? "Satu akun untuk seluruh keluarga."
                 : mode === "lupa"
                   ? "Tulis email akun rumahmu. Kami kirim tautan untuk membuat kata sandi baru."
-                  : "Nanti tiap anggota punya profil sendiri."}
+                  : "Pakai email aktif. Kami kirim tautan konfirmasi ke sana."}
             </p>
           </div>
           <form onSubmit={submit} className="flex w-full flex-col gap-3.5">
-            <Field label={mode === "lupa" ? "Email akun" : "Nama pengguna atau email"} muted={L.muted}>
+            {mode === "daftar" && (
+              <div className="flex flex-col gap-1.5 text-left">
+                <span style={{ fontSize: 13, fontWeight: 700, color: L.muted }}>Saya mendaftar sebagai</span>
+                <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Saya mendaftar sebagai">
+                  {([
+                    ["orang_tua", "Orang tua", "family_restroom"],
+                    ["siswa", "Siswa", "school"],
+                  ] as const).map(([v, label, ikon]) => (
+                    <button
+                      key={v}
+                      type="button"
+                      role="radio"
+                      aria-checked={peran === v}
+                      onClick={() => setPeran(v)}
+                      className="flex items-center justify-center gap-1.5 rounded-[16px] border-2 py-2.5 text-[14px] font-extrabold"
+                      style={{ borderColor: peran === v ? "#0567c2" : "#f0e4d2", background: peran === v ? "#e3f1fd" : "#fff", color: L.ink }}
+                    >
+                      <Icon name={ikon} size={20} /> {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            <Field label={mode === "masuk" ? "Email atau nama pengguna" : "Email"} muted={L.muted}>
               <input
-                type="text"
+                type={mode === "masuk" ? "text" : "email"}
                 required
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
-                autoComplete={mode === "lupa" ? "email" : "username"}
+                autoComplete={mode === "masuk" ? "username" : "email"}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 style={L.input}
-                placeholder={mode === "lupa" ? "nama@email.com" : "Nama pengguna atau email"}
+                placeholder={mode === "masuk" ? "Email atau nama pengguna" : "nama@email.com"}
               />
             </Field>
+            {mode === "daftar" && peran === "siswa" && (
+              <Field label="Tanggal lahir siswa" muted={L.muted}>
+                <input
+                  type="date"
+                  required
+                  min="2000-01-01"
+                  max={new Date().toISOString().slice(0, 10)}
+                  value={lahir}
+                  onChange={(e) => setLahir(e.target.value)}
+                  style={L.input}
+                  aria-label="Tanggal lahir siswa"
+                />
+              </Field>
+            )}
             {mode !== "lupa" && (
             <Field label="Kata sandi" muted={L.muted}>
               <input
@@ -253,6 +303,18 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
   const L = useLook(theme);
   // Orang tua membuat rumah keluarga; siswa (mis. 12 tahun) boleh mendaftar sendiri dan langsung belajar.
   const [siswa, setSiswa] = useState(false);
+  // Peran & tanggal lahir yang dipilih saat daftar (akun lama: kosong, pilihan tetap muncul di sini).
+  const [daftar, setDaftar] = useState<ReturnType<typeof dataDaftar>>({ peran: null, lahir: null });
+  useEffect(() => {
+    supabase()
+      .auth.getUser()
+      .then(({ data }) => {
+        const d = dataDaftar(data.user?.user_metadata);
+        setDaftar(d);
+        if (d.peran) setSiswa(d.peran === "siswa");
+      })
+      .catch(() => {});
+  }, []);
   const [family, setFamily] = useState("");
   const [name, setName] = useState("");
   const [c, setC] = useState<ColorKey>("indigo");
@@ -273,6 +335,8 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
         if (saya) {
           setPeranAkademi(saya.id, "anak");
           useRumila.getState().updateMember(saya.id, { peran: "anak" });
+          const umur = daftar.lahir ? umurDari(daftar.lahir) : null;
+          if (umur !== null) setUsiaAnak(saya.id, umur);
         }
       }
     } catch (e) {
@@ -289,6 +353,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
           {siswa ? "Langsung belajar. Orang tua bisa ikut bergabung kapan saja lewat Ruang Orang Tua." : "Setelah ini, daftarkan anak di Ruang Orang Tua. Anak masuk cukup dengan PIN."}
         </p>
       </div>
+      {!daftar.peran && (
       <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Saya mendaftar sebagai">
         {([
           [false, "Saya orang tua", "family_restroom"],
@@ -307,6 +372,7 @@ export function SetupStage({ theme, email }: { theme: Theme; email: string | nul
           </button>
         ))}
       </div>
+      )}
       <form onSubmit={submit} className="flex flex-col gap-3.5">
         {!siswa && (
         <Field label="Nama rumah" muted={L.muted}>
