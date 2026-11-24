@@ -182503,7 +182503,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-bagian-tumbuhan-di-taman",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -182531,13 +182531,13 @@ export const PAKET_RAW: unknown[] = [
         "t-akar3": "Bagian tumbuhan ini paling bawah, tersembunyi di dalam tanah. Mana itu?",
         "t-batang1": "Batang pohon tumbuh tegak dari tanah. Mana batang pohonnya?",
         "t-batang2": "Bambu di taman tinggi dan beruas-ruas. Mana batangnya?",
-        "t-batang3": "Bagian ini menyangga daun dan bunga supaya tegak. Mana batangnya?",
+        "t-batang3": "Bagian pohon ini menyangga cabang dan daun. Mana batang pohonnya?",
         "t-daun1": "Angin meniup daun sampai jatuh ke tanah. Mana daunnya?",
         "t-daun2": "Ulat suka makan bagian tumbuhan yang hijau dan lebar. Mana daunnya?",
         "t-daun3": "Cari daun dengan tiga helai kecil di ujung satu tangkai.",
         "t-bunga1": "Lebah mengisap sari bunga di bagian yang berwarna-warni. Mana bunganya?",
-        "t-bunga2": "Bunga ini punya kelopak kuning dan bagian tengah berwarna cokelat. Mana bunganya?",
-        "t-bunga3": "Bunga ini merah dengan kelopak berlapis. Mana bunganya?",
+        "t-bunga2": "Bunga ini punya bagian tengah cokelat yang dikelilingi warna kuning. Mana bunganya?",
+        "t-bunga3": "Bagian merah bunga ini tersusun berlapis. Mana bunganya?",
         "t-bunga4": "Taman penuh warna karena tulip mekar. Mana bunganya?"
       },
       "en": {
@@ -182560,13 +182560,13 @@ export const PAKET_RAW: unknown[] = [
         "t-akar3": "This plant part is at the very bottom, hidden in the soil. Which one?",
         "t-batang1": "A tree trunk grows upright from the ground. Where is the tree trunk?",
         "t-batang2": "The bamboo in the park is tall with joints. Where is the stem?",
-        "t-batang3": "This part holds up the leaves and flowers. Where is the stem?",
+        "t-batang3": "This part of a tree supports its branches and leaves. Where is the tree trunk?",
         "t-daun1": "The wind blows a leaf to the ground. Where is the leaf?",
         "t-daun2": "Caterpillars like to eat the green, flat part of a plant. Where is the leaf?",
         "t-daun3": "Find the leaf with three little leaflets at the end of one stalk.",
         "t-bunga1": "A bee looks for nectar in the colourful part. Where is the flower?",
-        "t-bunga2": "This flower has yellow petals and a brown center. Where is the flower?",
-        "t-bunga3": "This flower is red with layers of petals. Where is the flower?",
+        "t-bunga2": "Yellow surrounds the brown center of this flower. Which flower is it?",
+        "t-bunga3": "The red parts of this flower are arranged in layers. Which flower is it?",
         "t-bunga4": "The park is colourful because the tulips are blooming. Where is the flower?"
       }
     },
