@@ -1,6 +1,6 @@
 {
   "id": "sains-pilah-lapisan-tubuh-kelas",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,11 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Tulang, Otot, atau Organ?",
-      "instruksi": "Lihat gambar bagian tubuh dan dengarkan namanya. Masukkan ke rak tulang, otot, atau organ.",
-      "b-tulang": "lapisan tulang",
-      "b-otot": "lapisan otot",
-      "b-organ": "lapisan organ",
+      "judul": "Tulang, Otot, dan Organ Lain",
+      "instruksi": "Ketuk kartu bagian tubuh, lalu ketuk raknya. Jantung dan paru-paru masuk rak organ lain.",
+      "b-tulang": "tulang",
+      "b-otot": "otot",
+      "b-organ": "organ lain",
       "i-rusuk": "tulang rusuk",
       "i-belakang": "tulang belakang",
       "i-tangan": "tulang jari tangan",
@@ -28,11 +28,11 @@
       "i-paru": "paru-paru"
     },
     "en": {
-      "judul": "Bone, Muscle, or Organ?",
-      "instruksi": "Look at each body part and listen to its name. Sort it into bones, muscles, or organs.",
-      "b-tulang": "bone layer",
-      "b-otot": "muscle layer",
-      "b-organ": "organ layer",
+      "judul": "Bones, Muscles, and Other Organs",
+      "instruksi": "Tap a body-part card, then tap its shelf. The heart and lungs go with the other organs.",
+      "b-tulang": "bones",
+      "b-otot": "muscles",
+      "b-organ": "other organs",
       "i-rusuk": "rib bones",
       "i-belakang": "backbone",
       "i-tangan": "finger bones",
@@ -53,7 +53,7 @@
       "max": 6,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah potongan per putaran: 3 → 6; sebagian potongan berbeda dari paket Lapisan Tubuh (rusuk, tulang belakang, otot pipi, lambung, usus)"
+      "keterangan": "jumlah potongan per putaran: 3 → 6; sebagian potongan berbeda dari paket Rak Bagian Tubuh (rusuk, tulang belakang, otot pipi, lambung, usus)"
     }
   },
   "assets": [],

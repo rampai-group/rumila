@@ -188278,7 +188278,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lapisan-tulang-otot-organ",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -188287,11 +188287,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Lapisan Tubuh",
-        "instruksi": "Taruh tiap potongan ke lapisannya: tulang, otot, atau organ. Jantung masuk organ.",
-        "tulang": "lapisan tulang",
-        "otot": "lapisan otot",
-        "organ": "lapisan organ (jantung di sini)",
+        "judul": "Rak Bagian Tubuh",
+        "instruksi": "Pilah bagian tubuh ke rak tulang, otot, atau organ lain. Jantung masuk rak organ lain.",
+        "tulang": "tulang",
+        "otot": "otot",
+        "organ": "organ lain",
         "i-tengkorak": "tengkorak",
         "i-tulangpaha": "tulang paha",
         "i-ototlengan": "otot lengan",
@@ -188301,11 +188301,11 @@ export const PAKET_RAW: unknown[] = [
         "i-otak": "otak"
       },
       "en": {
-        "judul": "Layers of the Body",
-        "instruksi": "Put each piece in its layer: bones, muscles, or organs. The heart goes with organs.",
-        "tulang": "bone layer",
-        "otot": "muscle layer",
-        "organ": "organ layer (heart goes here)",
+        "judul": "Sort the Body Parts",
+        "instruksi": "Sort each body part onto the bone, muscle, or other organs shelf. The heart goes with the other organs.",
+        "tulang": "bones",
+        "otot": "muscles",
+        "organ": "other organs",
         "i-tengkorak": "skull",
         "i-tulangpaha": "thigh bone",
         "i-ototlengan": "arm muscle",
@@ -192459,7 +192459,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-payung-atau-topi",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -192474,16 +192474,16 @@ export const PAKET_RAW: unknown[] = [
         "i-payung": "payung",
         "i-topi": "topi",
         "i-layang": "layang-layang",
-        "t-cerah1": "Langit cerah, matahari terik. Robot mau lari-larian. Mana yang dipakai?",
-        "t-hujan1": "Langit gelap, hujan turun. Mana yang dipakai?",
-        "t-cerah2": "Matahari bersinar terang. Robot mau main bola. Mana yang dipakai?",
-        "t-hujan2": "Tetes hujan jatuh dari langit. Mana yang dipakai?",
+        "t-cerah1": "Matahari terik. Robot mau berlari. Apa yang dipakai di kepala?",
+        "t-hujan1": "Langit gelap dan hujan turun. Apa yang dibuka di atas kepala supaya badan tetap kering?",
+        "t-cerah2": "Matahari bersinar terang. Robot mau main bola. Apa yang dipakai di kepala?",
+        "t-hujan2": "Tetes hujan jatuh dari langit. Apa yang bisa dibuka untuk menahan air hujan?",
         "t-angin": "Angin bertiup pelan dan stabil di lapangan. Mana yang bisa dimainkan?",
-        "t-cerah3": "Siang hari panas sekali. Robot mau main kejar-kejaran. Mana yang dipakai?",
+        "t-cerah3": "Siang panas. Robot mau main kejar-kejaran. Apa yang dipakai di kepala?",
         "t-cerah4": "Tidak ada awan, matahari di atas kepala. Robot mau main di lapangan. Mana yang dipakai di kepala?",
-        "t-hujan3": "Hujan deras, jalanan jadi basah. Mana yang dipakai?",
-        "t-hujan4": "Gerimis turun rintik-rintik. Mana yang dipakai?",
-        "t-hujan5": "Tik-tik-tik, bunyi hujan di atap. Mana yang dipakai?",
+        "t-hujan3": "Hujan deras dan jalanan basah. Apa yang dibuka agar kepala dan bahu terlindung?",
+        "t-hujan4": "Gerimis turun rintik-rintik. Apa yang dibuka di atas kepala supaya tidak basah?",
+        "t-hujan5": "Tik-tik-tik, hujan berbunyi di atap. Apa yang bisa dibuka untuk berlindung dari hujan?",
         "t-angin2": "Ada angin sepoi-sepoi di lapangan yang luas. Mana yang bisa dimainkan?"
       },
       "en": {
@@ -192493,16 +192493,16 @@ export const PAKET_RAW: unknown[] = [
         "i-payung": "umbrella",
         "i-topi": "sun hat",
         "i-layang": "kite",
-        "t-cerah1": "Sunny sky, the sun is hot. Robot wants to run around. Which one do we use?",
-        "t-hujan1": "Dark sky, the rain is falling. Which one do we use?",
-        "t-cerah2": "The sun is shining bright. Robot wants to play ball. Which one do we use?",
-        "t-hujan2": "Raindrops are falling from the sky. Which one do we use?",
+        "t-cerah1": "The sun is hot. Robot wants to run. What do we wear on our head?",
+        "t-hujan1": "The sky is dark and it is raining. What do we open over our head to stay dry?",
+        "t-cerah2": "The sun is shining. Robot wants to play ball. What do we wear on our head?",
+        "t-hujan2": "Raindrops are falling. What can we open to keep the rain off?",
         "t-angin": "A steady breeze blows across the field. Which item can you play with?",
-        "t-cerah3": "It is very hot at noon. Robot wants to play tag. Which one do we use?",
+        "t-cerah3": "It is hot at noon. Robot wants to play tag. What do we wear on our head?",
         "t-cerah4": "No clouds, the sun is overhead. Robot wants to play in the field. Which one goes on the head?",
-        "t-hujan3": "Heavy rain, the road is wet. Which one do we use?",
-        "t-hujan4": "A light drizzle is falling. Which one do we use?",
-        "t-hujan5": "Pitter-patter, rain on the roof. Which one do we use?",
+        "t-hujan3": "It is raining hard and the road is wet. What do we open to shield our head and shoulders?",
+        "t-hujan4": "It is drizzling. What do we open over our head to stay dry?",
+        "t-hujan5": "Pitter-patter, rain on the roof. What can we open to shelter from the rain?",
         "t-angin2": "There is a gentle breeze in the open field. Which item can you play with?"
       }
     },
@@ -192955,7 +192955,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-pilah-lapisan-tubuh-kelas",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -192964,11 +192964,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Tulang, Otot, atau Organ?",
-        "instruksi": "Lihat gambar bagian tubuh dan dengarkan namanya. Masukkan ke rak tulang, otot, atau organ.",
-        "b-tulang": "lapisan tulang",
-        "b-otot": "lapisan otot",
-        "b-organ": "lapisan organ",
+        "judul": "Tulang, Otot, dan Organ Lain",
+        "instruksi": "Ketuk kartu bagian tubuh, lalu ketuk raknya. Jantung dan paru-paru masuk rak organ lain.",
+        "b-tulang": "tulang",
+        "b-otot": "otot",
+        "b-organ": "organ lain",
         "i-rusuk": "tulang rusuk",
         "i-belakang": "tulang belakang",
         "i-tangan": "tulang jari tangan",
@@ -192983,11 +192983,11 @@ export const PAKET_RAW: unknown[] = [
         "i-paru": "paru-paru"
       },
       "en": {
-        "judul": "Bone, Muscle, or Organ?",
-        "instruksi": "Look at each body part and listen to its name. Sort it into bones, muscles, or organs.",
-        "b-tulang": "bone layer",
-        "b-otot": "muscle layer",
-        "b-organ": "organ layer",
+        "judul": "Bones, Muscles, and Other Organs",
+        "instruksi": "Tap a body-part card, then tap its shelf. The heart and lungs go with the other organs.",
+        "b-tulang": "bones",
+        "b-otot": "muscles",
+        "b-organ": "other organs",
         "i-rusuk": "rib bones",
         "i-belakang": "backbone",
         "i-tangan": "finger bones",
@@ -193008,7 +193008,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 6,
         "default": 4,
         "step": 1,
-        "keterangan": "jumlah potongan per putaran: 3 → 6; sebagian potongan berbeda dari paket Lapisan Tubuh (rusuk, tulang belakang, otot pipi, lambung, usus)"
+        "keterangan": "jumlah potongan per putaran: 3 → 6; sebagian potongan berbeda dari paket Rak Bagian Tubuh (rusuk, tulang belakang, otot pipi, lambung, usus)"
       }
     },
     "assets": [],
