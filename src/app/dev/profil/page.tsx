@@ -2,7 +2,7 @@
 
 // Pratinjau KHUSUS DEVELOPMENT: layar pilih profil, PIN pad, tab Anggota, dan pemilih avatar dengan data demo.
 // Halaman ini dipakai untuk screenshot toko: JANGAN isi nama, foto, atau data orang sungguhan.
-// ?p=pilih | kampus | pin | gambar | anggota | avatar. (kampus = persis layar /masuk dengan latarnya) Di produksi halaman ini 404.
+// ?p=pilih | kosong | kampus | pin | gambar | anggota | avatar. (kampus = persis layar /masuk dengan latarnya) Di produksi halaman ini 404.
 
 import { notFound, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -46,6 +46,7 @@ function Preview() {
   return (
     <div className="bg-dots flex min-h-dvh items-center justify-center p-6" style={{ fontFamily: "var(--ff-nunito)" }}>
       {p === "pilih" && <PilihProfil members={DEMO} onMasuk={() => {}} />}
+      {p === "kosong" && <PilihProfil members={[DEMO[3]]} onMasuk={() => {}} />}
       {p === "pin" && <MasukPin m={DEMO[0]} judul="Halo Anak Contoh 2, ketik PIN-mu" onBenar={() => {}} />}
       {p === "gambar" && <MasukPin m={DEMO[1]} judul="Halo Anak Contoh 1, ketuk gambar rahasiamu" onBenar={() => {}} />}
       {p === "avatar" && (

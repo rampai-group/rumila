@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MemberAvatar } from "@/components/launcher";
 import { BuatPin, LupaPin, MasukPin } from "@/components/pin-pad";
+import { DaftarAnak, Jendela } from "@/components/ortu/anggota";
 import { Icon } from "@/components/ui";
 import { PLAY } from "@/lib/catalog";
 import { isOrangTua, perangkatAnak } from "@/lib/profil";
@@ -17,7 +18,14 @@ import type { Member } from "@/lib/store";
 const INK = "#0b2545";
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 
-type Langkah = { kind: "daftar" } | { kind: "pin"; m: Member } | { kind: "buat"; m: Member } | { kind: "lupa"; m: Member };
+type Langkah =
+  | { kind: "daftar" }
+  | { kind: "pin"; m: Member }
+  | { kind: "buat"; m: Member; lalu?: "tambah" }
+  | { kind: "lupa"; m: Member }
+  // Tambah anak: orang tua membuka dulu dengan PIN-nya (anak tidak bisa menambah profil sendiri).
+  | { kind: "gerbang"; m: Member }
+  | { kind: "tambah" };
 
 export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: (m: Member) => void }) {
   const router = useRouter();
@@ -31,6 +39,11 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
     // Orang tua wajib punya PIN supaya anak tidak bisa masuk ke profilnya.
     if (isOrangTua(m)) return setLangkah({ kind: "buat", m });
     onMasuk(m);
+  };
+  const ortuUtama = ortu.find((m) => m.admin) ?? ortu[0];
+  const mulaiTambah = () => {
+    if (!ortuUtama) return;
+    setLangkah(ortuUtama.pin ? { kind: "gerbang", m: ortuUtama } : { kind: "buat", m: ortuUtama, lalu: "tambah" } as Langkah);
   };
   const kembali = (
     <button type="button" onClick={() => setLangkah({ kind: "daftar" })} className="text-[14px] font-extrabold text-[#0567c2]">
@@ -54,8 +67,33 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
   if (langkah.kind === "buat")
     return (
       <div className="anim-fade relative flex w-full max-w-[420px] flex-col items-center rounded-[32px] bg-[#eef5fc] px-5 py-6 shadow-[0_0_0_4px_#fff,0_8px_0_4px_rgba(11,37,69,.12),0_24px_48px_rgba(11,37,69,.18)] sm:px-7">
-        <BuatPin m={langkah.m} jenis="angka" judul={`Buat PIN orang tua untuk ${langkah.m.name}`} onSelesai={() => onMasuk(langkah.m)} kiri={kembali} />
+        <BuatPin
+          m={langkah.m}
+          jenis="angka"
+          judul={`Buat PIN orang tua untuk ${langkah.m.name}`}
+          onSelesai={() => (langkah.lalu === "tambah" ? setLangkah({ kind: "tambah" }) : onMasuk(langkah.m))}
+          kiri={kembali}
+        />
       </div>
+    );
+  if (langkah.kind === "gerbang")
+    return (
+      <div className="anim-fade relative flex w-full max-w-[420px] flex-col items-center rounded-[32px] bg-[#eef5fc] px-5 py-6 shadow-[0_0_0_4px_#fff,0_8px_0_4px_rgba(11,37,69,.12),0_24px_48px_rgba(11,37,69,.18)] sm:px-7">
+        <MasukPin
+          key={`gerbang-${langkah.m.id}`}
+          m={langkah.m}
+          judul={`PIN ${langkah.m.name} untuk menambah anak`}
+          onBenar={() => setLangkah({ kind: "tambah" })}
+          kiri={kembali}
+          onLupa={() => setLangkah({ kind: "lupa", m: langkah.m })}
+        />
+      </div>
+    );
+  if (langkah.kind === "tambah")
+    return (
+      <Jendela judul="Tambah anak" onTutup={() => setLangkah({ kind: "daftar" })}>
+        <DaftarAnak onSelesai={() => setLangkah({ kind: "daftar" })} />
+      </Jendela>
     );
   if (langkah.kind === "lupa")
     return (
@@ -71,11 +109,12 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
         <h1 className="text-balance" style={{ fontFamily: BALOO, fontSize: "clamp(26px, 5vw, 44px)", fontWeight: 800, color: INK, lineHeight: 1.05 }}>Siapa yang belajar hari ini?</h1>
         <p className="text-[14px] font-extrabold text-[#0b2545] sm:text-[17px]">Ketuk kartumu untuk mulai</p>
       </div>
-      {anak.length > 0 && (
+      {(anak.length > 0 || ortuUtama) && (
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
           {anak.map((m) => (
             <KartuAnak key={m.id} m={m} onPilih={() => pilih(m)} />
           ))}
+          {ortuUtama && <KartuTambah kosong={anak.length === 0} onTambah={mulaiTambah} />}
         </div>
       )}
       {ortu.length > 0 && (
@@ -146,6 +185,24 @@ function KartuAnak({ m, onPilih }: { m: Member; onPilih: () => void }) {
       <span className="relative flex items-center gap-0.5 rounded-full bg-white py-1.5 pr-3 pl-4 text-[14px] font-black whitespace-nowrap sm:text-[15px]" style={{ color: `color-mix(in srgb, ${d} 72%, #000)` }}>
         Ayo belajar <Icon name="play_arrow" size={18} />
       </span>
+    </button>
+  );
+}
+
+/** Kartu "Tambah anak": sejajar kartu anak, bergaris putus-putus. Dibuka dengan PIN orang tua. */
+function KartuTambah({ kosong, onTambah }: { kosong: boolean; onTambah: () => void }) {
+  return (
+    <button
+      type="button"
+      onClick={onTambah}
+      aria-label="Tambah anak, pakai PIN orang tua"
+      className="flex w-[156px] flex-col items-center justify-center gap-2.5 rounded-[28px] border-[3px] border-dashed border-[#0567c2]/45 bg-white/70 px-3 py-5 text-[#0567c2] transition-transform hover:-translate-y-1 active:translate-y-1 sm:w-[230px] sm:rounded-[32px] sm:py-8"
+    >
+      <span className="grid size-[92px] place-items-center rounded-full bg-[#e3f1fd] sm:size-[108px]">
+        <Icon name="person_add" size={44} />
+      </span>
+      <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.1 }}>Tambah anak</span>
+      <span className="text-[12.5px] font-bold text-[#3d4f66]">{kosong ? "Belum ada profil anak" : "Pakai PIN orang tua"}</span>
     </button>
   );
 }
