@@ -10,10 +10,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isiBarang, type ContentPack } from "@akademi/schema";
 import { buatRonde, buatRondeUnik, geserKnob, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
-import { catatEvent } from "@/lib/akademi/jejak";
+import { catatEvent, eventsAnak } from "@/lib/akademi/jejak";
 import { judulPaket, kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { useBacksound } from "@/lib/akademi/backsound";
 import { KALIMAT_RUNNER } from "@/lib/akademi/kalimat-suara";
+import { AMBANG_STIKER, statusStikerMisi, type StatusStikerMisi } from "@/lib/akademi/koleksi";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { useMe } from "@/lib/store";
 import { completeTool, useToolSession } from "@/lib/tool-session";
@@ -33,6 +34,12 @@ import "./akademi.css";
 export { judulPaket } from "@/lib/akademi/konten";
 
 const JEDA_UMPAN_BALIK = 1400;
+
+const PESAN_SELESAI = {
+  baru: { judul: "Stiker baru!", suara: KALIMAT_RUNNER.stiker },
+  "sudah-ada": { judul: KALIMAT_RUNNER.ulang, suara: KALIMAT_RUNNER.ulang },
+  belum: { judul: "Bagus, sudah mencoba", suara: KALIMAT_RUNNER.coba },
+} satisfies Record<StatusStikerMisi, { judul: string; suara: string }>;
 
 function hash(s: string): number {
   let h = 2166136261;
@@ -90,11 +97,11 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
   const [gratisTerpakai, setGratisTerpakai] = useState(false);
   const [skor, setSkor] = useState({ benar: 0, salah: 0, hint: 0 });
   const [beruntun, setBeruntun] = useState({ benar: 0, salah: 0 });
-  const [selesai, setSelesai] = useState(false);
+  const [statusStiker, setStatusStiker] = useState<StatusStikerMisi | null>(null);
   /** jumlah jawaban benar berturut-turut (untuk umpan balik yang makin meriah) */
   const [streak, setStreak] = useState(0);
   // backsound sesuai jenjang anak; diam di layar selesai (dan tidak ada di Ruang Ujian)
-  const musik = useBacksound(learnerId, levelAnak(learnerId), !selesai);
+  const musik = useBacksound(learnerId, levelAnak(learnerId), statusStiker === null);
   const mulai = useRef(Date.now());
   const mulaiRonde = useRef(Date.now());
   const jeda = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -191,12 +198,26 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
       setPercobaan(0);
       setGratisTerpakai(false);
       if (!rondeBerikut) {
-        catatEvent({
-          learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "activity_end",
-          payload: { outcome: "selesai", successCount: skorBaru.benar, failCount: skorBaru.salah, hintCount: skorBaru.hint, durationMs: Date.now() - mulai.current },
-        });
-        if (skorBaru.benar >= Math.ceil(next * 0.6)) completeTool(learnerId, `akademi-${paket.mechanic}`, "edukasi", paket.id);
-        setSelesai(true);
+        const durationMs = Date.now() - mulai.current;
+        let mulaiMencatat = false;
+        const catatSelesai = () => {
+          if (mulaiMencatat) return;
+          mulaiMencatat = true;
+          const status = statusStikerMisi(eventsAnak(learnerId), paket.id, skorBaru.benar, skorBaru.salah);
+          catatEvent({
+            learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "activity_end",
+            payload: { outcome: "selesai", successCount: skorBaru.benar, failCount: skorBaru.salah, hintCount: skorBaru.hint, durationMs },
+          });
+          if (skorBaru.benar >= Math.ceil(next * AMBANG_STIKER)) completeTool(learnerId, `akademi-${paket.mechanic}`, "edukasi", paket.id);
+          setStatusStiker(status);
+        };
+        // Tab dengan murid yang sama harus membaca riwayat setelah tab lain selesai mencatat.
+        if (navigator.locks) {
+          void navigator.locks.request(`rumila-akademi-selesai-${learnerId}`, catatSelesai).catch((error: unknown) => {
+            if (mulaiMencatat) console.error("[akademi] tidak bisa mencatat penyelesaian misi", error);
+            else catatSelesai();
+          });
+        } else catatSelesai();
         return;
       }
       setIdx(next);
@@ -208,7 +229,7 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
     }, JEDA_UMPAN_BALIK);
   };
 
-  if (selesai) return <LayarSelesai paket={paket} bahasa={bahasa} skor={skor} onLagi={onLagi} onKembali={() => router.push("/akademi")} />;
+  if (statusStiker !== null) return <LayarSelesai paket={paket} bahasa={bahasa} skor={skor} statusStiker={statusStiker} onLagi={onLagi} onKembali={() => router.push("/akademi")} />;
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
@@ -230,18 +251,19 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
   );
 }
 
-function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: ContentPack; bahasa: BahasaAnak; skor: { benar: number; salah: number; hint: number }; onLagi: () => void; onKembali: () => void }) {
+function LayarSelesai({ paket, bahasa, skor, statusStiker, onLagi, onKembali }: { paket: ContentPack; bahasa: BahasaAnak; skor: { benar: number; salah: number; hint: number }; statusStiker: StatusStikerMisi; onLagi: () => void; onKembali: () => void }) {
   const total = skor.benar + skor.salah;
-  const bintang = skor.benar >= total ? 3 : skor.benar >= Math.ceil(total * 0.6) ? 2 : skor.benar > 0 ? 1 : 0;
+  const bintang = skor.benar >= total ? 3 : statusStiker !== "belum" ? 2 : skor.benar > 0 ? 1 : 0;
+  const pesan = PESAN_SELESAI[statusStiker];
   // bintang muncul satu per satu (dengan bunyi), lalu fanfare
   const [tampil, setTampil] = useState(0);
   useEffect(() => {
     const t: ReturnType<typeof setTimeout>[] = [];
     for (let k = 0; k < bintang; k++) t.push(setTimeout(() => { setTampil(k + 1); sfxAkademi.bintang(k); }, 350 + k * 330));
     t.push(setTimeout(() => sfxAkademi.selesai(bintang), 350 + bintang * 330 + 120));
-    ucapkan(bintang >= 2 ? KALIMAT_RUNNER.stiker : KALIMAT_RUNNER.coba);
+    ucapkan(pesan.suara);
     return () => t.forEach(clearTimeout);
-  }, [bintang]);
+  }, [bintang, pesan.suara]);
   return (
     <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#0786eb,#22b573)", fontFamily: BALOO, color: INK }}>
       {bintang >= 2 && <HujanKonfeti jumlah={bintang >= 3 ? 60 : 36} />}
@@ -254,7 +276,7 @@ function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: Conte
           ))}
         </div>
         <div style={{ fontSize: 72, lineHeight: 1 }} className="my-2">{bintang >= 2 ? "🏅" : "🌱"}</div>
-        <div style={{ fontSize: 26, fontWeight: 900 }}>{bintang >= 2 ? "Stiker baru!" : "Bagus, sudah mencoba"}</div>
+        <div style={{ fontSize: 26, fontWeight: 900 }}>{pesan.judul}</div>
         <p className="mt-1 text-[15px] font-bold opacity-75">
           {skor.benar} dari {total} benar · {judulPaket(paket, bahasa)}
         </p>

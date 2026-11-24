@@ -13,6 +13,15 @@ function AkarSerabut() {
   </>;
 }
 
+function BatangPohonDiTaman() {
+  return <>
+    <ellipse cx="65" cy="91" rx="45" ry="5" fill="#e8edd6" />
+    <path d="M24 42Q19 28 33 24Q33 13 47 14Q56 5 69 12Q85 5 95 18Q110 18 112 30Q121 43 108 50Q106 60 91 58Q80 65 67 60Q54 66 44 58Q27 61 24 42Z" fill="#b4d49d" stroke="#779963" strokeWidth="2.4" />
+    <path d="M45 90Q54 81 55 66L55 57Q45 49 37 42L42 38Q50 43 58 47L61 31H68L70 48Q83 44 94 34L99 39Q87 54 74 61Q74 81 85 90Z" fill="#b47b4c" stroke="#754d32" strokeWidth="3" />
+    <path d="M63 46Q62 57 63 66Q64 77 57 86M68 64Q67 76 72 85M77 55L92 43" fill="none" stroke="#dfad79" strokeWidth="2.5" />
+  </>;
+}
+
 function Batang({ bambu, pohon }: { bambu: boolean; pohon: boolean }) {
   if (pohon) return <>
     <path d="M41 91Q54 72 52 50L52 12H77L76 36 99 18 106 27 77 52 79 68 94 91Z" fill="#b68053" stroke="#754d32" strokeWidth="3" />
@@ -29,6 +38,44 @@ function Batang({ bambu, pohon }: { bambu: boolean; pohon: boolean }) {
     <path d="M60 89Q63 75 63 57L61 13H70Q72 49 74 68L72 89Z" fill="#79b876" stroke="#2b7151" strokeWidth="3" />
     <path d="M64 48L42 31 46 25 65 38M72 65L91 46 96 51 74 75" fill="#79b876" stroke="#2b7151" strokeWidth="3" />
     <ellipse cx="65.5" cy="13" rx="4.5" ry="2.6" fill="#ceeab7" stroke="#2b7151" strokeWidth="1.8" />
+  </>;
+}
+
+function DaunTunggal({ kering }: { kering: boolean }) {
+  if (kering) return <>
+    <path d="M28 79Q18 67 24 52L20 46L30 39L28 31L42 29L46 22L59 25L67 18L77 23L88 18L99 20Q111 17 117 10Q117 24 107 32L108 43L98 49L97 59L84 65L78 75L64 76L54 83Q41 87 28 79Z" fill="#bd783f" stroke="#804b2b" strokeWidth="3" />
+    <path d="M14 91Q47 64 102 27M40 70L37 51M53 61L52 36M66 51L66 31M78 43L83 27M47 65L67 67M62 54L83 57M78 43L97 41" fill="none" stroke="#804b2b" strokeWidth="2.5" />
+    <path d="M30 58Q33 47 42 43M58 72Q70 68 76 65M80 35L94 28" fill="none" stroke="#e0a567" strokeWidth="3" />
+  </>;
+  return <>
+    <path d="M26 74C11 35 56 15 118 13C115 60 75 98 33 82Z" fill="#69b957" stroke="#2d743d" strokeWidth="3" />
+    <path d="M13 91Q44 64 103 28M41 69Q38 56 43 43M57 58Q55 45 62 32M72 47L79 30M48 64Q60 69 73 68M63 54Q74 57 88 54M80 42Q88 44 98 40" fill="none" stroke="#2d743d" strokeWidth="2.5" />
+    <path d="M35 45Q53 29 77 25" fill="none" stroke="#a8d883" strokeWidth="4" />
+  </>;
+}
+
+function DaunSemanggiPutih() {
+  return <>
+    <path d="M56 94Q67 76 65 57M65 57V46M65 57L50 57M65 57L80 57" fill="none" stroke="#287647" strokeWidth="4" />
+    {[0, -111, 111].map((sudut) => <g key={sudut} transform={`rotate(${sudut} 65 54)`}>
+      <path d="M65 48C52 42 46 30 49 18C52 3 78 3 81 18C84 30 78 42 65 48Z" fill="#56a858" stroke="#2d713d" strokeWidth="2.5" />
+      <path d="M53 24L65 33L77 24" fill="none" stroke="#c9e4a1" strokeWidth="4" />
+    </g>)}
+  </>;
+}
+
+function BungaSepatu() {
+  return <>
+    <g transform="translate(63 51)" fill="#ed7797" stroke="#a5325a" strokeWidth="2.5">
+      {[0, 72, 144, 216, 288].map((sudut) => <path key={sudut} transform={`rotate(${sudut})`} d="M0 5C-18 4-31-12-22-25C-26-39-10-46 0-41C11-46 26-39 22-25C31-12 18 4 0 5Z" />)}
+    </g>
+    <circle cx="63" cy="51" r="10" fill="#a32f57" />
+    <path d="M63 51Q76 38 94 31" fill="none" stroke="#a32f57" strokeWidth="8" />
+    <path d="M63 51Q76 38 94 31" fill="none" stroke="#ffd0af" strokeWidth="4" />
+    <path d="M95 30L96 24M95 30L101 28M95 30L98 35" fill="none" stroke="#a32f57" strokeWidth="2.3" />
+    <g fill="#ffd45e" stroke="#a32f57" strokeWidth="1.4">
+      <circle cx="96" cy="23" r="3.5" /><circle cx="102" cy="28" r="3.5" /><circle cx="98" cy="35" r="3.5" />
+    </g>
   </>;
 }
 
@@ -480,8 +527,12 @@ export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: str
   else if (id.startsWith("tubuh-")) art = <BagianTubuh id={id.slice(6)} />;
   else if (id.startsWith("laut-")) art = <Laut id={id.slice(5)} />;
   else if (id.startsWith("orbit-")) art = <Orbit id={id.slice(6)} />;
+  else if (id === "batang-pohon-di-taman") art = <BatangPohonDiTaman />;
   else if (id.startsWith("batang")) art = <Batang bambu={id === "batang-bambu"} pohon={id === "batang-pohon"} />;
   else if (id === "akar-serabut") art = <AkarSerabut />;
+  else if (id === "daun-lebar" || id === "daun-kering") art = <DaunTunggal kering={id === "daun-kering"} />;
+  else if (id === "daun-semanggi-putih") art = <DaunSemanggiPutih />;
+  else if (id === "bunga-sepatu") art = <BungaSepatu />;
   else if (id === "kepompong" || id === "telur-di-daun") art = <Metamorfosis telur={id === "telur-di-daun"} />;
   else if (id === "anak-bebek" || id === "bebek-menetas") art = <Bebek menetas={id === "bebek-menetas"} />;
   else if (id === "toples") art = <Toples />;

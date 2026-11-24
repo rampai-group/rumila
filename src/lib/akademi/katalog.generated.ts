@@ -182503,7 +182503,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-bagian-tumbuhan-di-taman",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -182521,7 +182521,7 @@ export const PAKET_RAW: unknown[] = [
         "i-batangbambu": "batang bambu",
         "i-daunhijau": "daun hijau",
         "i-daunkering": "daun kering",
-        "i-daunsemanggi": "daun semanggi",
+        "i-daunsemanggi": "daun semanggi putih",
         "i-bungamatahari": "bunga matahari",
         "i-bungamawar": "bunga mawar",
         "i-bungasepatu": "kembang sepatu",
@@ -182529,15 +182529,15 @@ export const PAKET_RAW: unknown[] = [
         "t-akar1": "Pohon besar di taman berdiri kuat karena akarnya. Mana akarnya?",
         "t-akar2": "Tukang kebun menggali tanah dan menemukan akar. Mana akarnya?",
         "t-akar3": "Bagian tumbuhan ini paling bawah, tersembunyi di dalam tanah. Mana itu?",
-        "t-batang1": "Burung bertengger di batang pohon. Mana batangnya?",
+        "t-batang1": "Batang pohon tumbuh tegak dari tanah. Mana batang pohonnya?",
         "t-batang2": "Bambu di taman tinggi dan beruas-ruas. Mana batangnya?",
         "t-batang3": "Bagian ini menyangga daun dan bunga supaya tegak. Mana batangnya?",
         "t-daun1": "Angin meniup daun sampai jatuh ke tanah. Mana daunnya?",
         "t-daun2": "Ulat suka makan bagian tumbuhan yang hijau dan lebar. Mana daunnya?",
-        "t-daun3": "Di rumput ada daun kecil bertiga. Sentuh daunnya!",
+        "t-daun3": "Cari daun dengan tiga helai kecil di ujung satu tangkai.",
         "t-bunga1": "Lebah mengisap sari bunga di bagian yang berwarna-warni. Mana bunganya?",
-        "t-bunga2": "Bunga besar berwarna kuning ini menghadap ke matahari. Sentuh bunganya!",
-        "t-bunga3": "Bunga ini harum dan batangnya berduri. Mana bunganya?",
+        "t-bunga2": "Bunga ini punya kelopak kuning dan bagian tengah berwarna cokelat. Mana bunganya?",
+        "t-bunga3": "Bunga ini merah dengan kelopak berlapis. Mana bunganya?",
         "t-bunga4": "Taman penuh warna karena tulip mekar. Mana bunganya?"
       },
       "en": {
@@ -182550,7 +182550,7 @@ export const PAKET_RAW: unknown[] = [
         "i-batangbambu": "bamboo stem",
         "i-daunhijau": "green leaf",
         "i-daunkering": "dry leaf",
-        "i-daunsemanggi": "clover leaf",
+        "i-daunsemanggi": "white clover leaf",
         "i-bungamatahari": "sunflower",
         "i-bungamawar": "rose",
         "i-bungasepatu": "hibiscus",
@@ -182558,15 +182558,15 @@ export const PAKET_RAW: unknown[] = [
         "t-akar1": "The big tree in the park stands strong because of its roots. Where are the roots?",
         "t-akar2": "The gardener digs the soil and finds roots. Where are the roots?",
         "t-akar3": "This plant part is at the very bottom, hidden in the soil. Which one?",
-        "t-batang1": "A bird perches on the tree trunk. Where is the trunk?",
+        "t-batang1": "A tree trunk grows upright from the ground. Where is the tree trunk?",
         "t-batang2": "The bamboo in the park is tall with joints. Where is the stem?",
         "t-batang3": "This part holds up the leaves and flowers. Where is the stem?",
         "t-daun1": "The wind blows a leaf to the ground. Where is the leaf?",
         "t-daun2": "Caterpillars like to eat the green, flat part of a plant. Where is the leaf?",
-        "t-daun3": "In the grass there are little leaves in threes. Touch the leaf!",
+        "t-daun3": "Find the leaf with three little leaflets at the end of one stalk.",
         "t-bunga1": "A bee looks for nectar in the colourful part. Where is the flower?",
-        "t-bunga2": "This big yellow flower faces the sun. Touch the flower!",
-        "t-bunga3": "This flower smells sweet and has a thorny stem. Where is the flower?",
+        "t-bunga2": "This flower has yellow petals and a brown center. Where is the flower?",
+        "t-bunga3": "This flower is red with layers of petals. Where is the flower?",
         "t-bunga4": "The park is colourful because the tulips are blooming. Where is the flower?"
       }
     },
@@ -182612,7 +182612,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "batangpohon",
         "labelKey": "i-batangpohon",
         "bin": "pilihan",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-batang-pohon-di-taman"
+        }
       },
       {
         "id": "batangbambu",
@@ -182628,19 +182631,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "daunhijau",
         "labelKey": "i-daunhijau",
         "bin": "pilihan",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-daun-lebar"
+        }
       },
       {
         "id": "daunkering",
         "labelKey": "i-daunkering",
         "bin": "pilihan",
-        "emoji": "🍂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-daun-kering"
+        }
       },
       {
         "id": "daunsemanggi",
         "labelKey": "i-daunsemanggi",
         "bin": "pilihan",
-        "emoji": "☘️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-daun-semanggi-putih"
+        }
       },
       {
         "id": "bungamatahari",
@@ -182658,7 +182670,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bungasepatu",
         "labelKey": "i-bungasepatu",
         "bin": "pilihan",
-        "emoji": "🌺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-bunga-sepatu"
+        }
       },
       {
         "id": "bungatulip",

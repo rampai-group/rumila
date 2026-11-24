@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { GameEvent } from "@akademi/schema";
-import { lencana, pangkat, statusLencana, stiker } from "../koleksi";
+import { lencana, pangkat, statusLencana, statusStikerMisi, stiker } from "../koleksi";
 import { proyeksi } from "../mastery";
 import { LEARNER, SESSION, attempt, buktiKuat, idBaru, kompetensi, paket, waktuHari } from "./helper";
 
@@ -26,6 +26,19 @@ function selesai(activityId: string, successCount: number, failCount: number, ha
 const PAKET = [paket("paket-a", "PAUD", [C1]), paket("paket-b", "PAUD", [C2])];
 
 describe("stiker", () => {
+  it("mengumumkan stiker baru sekali per paket, setelah skor pertama yang mencapai ambang", () => {
+    const riwayat = [selesai("paket-a", 2, 3), selesai("paket-b", 5, 0)];
+    expect(statusStikerMisi(riwayat, "paket-a", 3, 2)).toBe("baru");
+
+    const penyelesaianPertama = selesai("paket-a", 3, 2, 1);
+    const riwayatBaru = [...riwayat, penyelesaianPertama];
+    expect(statusStikerMisi(riwayatBaru, "paket-a", 5, 0)).toBe("sudah-ada");
+    expect(statusStikerMisi(riwayatBaru, "paket-a", 2, 3)).toBe("belum");
+
+    const ulang = selesai("paket-a", 5, 0, 2);
+    expect(stiker([...riwayatBaru, ulang], PAKET)).toContainEqual({ paketId: "paket-a", pertamaAt: waktuHari(1), kali: 2 });
+  });
+
   it("hanya activity_end dengan sukses ≥ 60%; attempt & paket asing diabaikan", () => {
     const ev = [selesai("paket-a", 3, 2), selesai("paket-b", 2, 3), selesai("tak-ada", 5, 0), attempt([C1])];
     const s = stiker(ev, PAKET);
