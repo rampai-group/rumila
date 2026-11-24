@@ -26,17 +26,24 @@ export async function segarkan() {
   muatUlang(undefined, true);
 }
 
+/** Misi dan ujian menyimpan ronde yang sedang berjalan di memori. */
+export function tundaPembaruanAkademi(pathname: string): boolean {
+  return /^\/akademi\/(main|ujian|penempatan)(\/|$)/.test(pathname);
+}
+
 /** Cek versi server; muat ulang bila ada versi baru. Satu percobaan per versi per sesi (cegah putaran). */
 export async function cekPembaruan() {
-  if (VERSI === "dev") return;
+  if (VERSI === "dev" || tundaPembaruanAkademi(window.location.pathname)) return;
   try {
     const r = await fetch(`/api/versi?t=${Date.now()}`, { cache: "no-store" });
     if (!r.ok) return;
     const { versi } = (await r.json()) as { versi?: string };
     if (!versi || versi === "dev" || versi === VERSI) return;
-    if (sessionStorage.getItem(KUNCI_COBA) === versi) return;
-    sessionStorage.setItem(KUNCI_COBA, versi);
+    if (sessionStorage.getItem(KUNCI_COBA) === versi || tundaPembaruanAkademi(window.location.pathname)) return;
     await bersihkanCache();
+    // Pemain bisa masuk misi saat permintaan versi atau pembersihan cache masih berlangsung.
+    if (sessionStorage.getItem(KUNCI_COBA) === versi || tundaPembaruanAkademi(window.location.pathname)) return;
+    sessionStorage.setItem(KUNCI_COBA, versi);
     muatUlang(undefined, true);
   } catch {}
 }
