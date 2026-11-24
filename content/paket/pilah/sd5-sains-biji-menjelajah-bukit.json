@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-biji-menjelajah-bukit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -130,7 +130,10 @@
       "id": "kopi",
       "labelKey": "i-kopi",
       "bin": "hewan",
-      "emoji": "☕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd5-buah-kopi"
+      }
     },
     {
       "id": "jarum",

@@ -536,12 +536,14 @@ function ModeAmbil(c: Ctx) {
       </Lapak>
     </>} kanan={<>
       <Keranjang isi={isi} onKembali={(key) => kembali(key.replace(/-\d+$/, ""))} />
-      <div className="flex shrink-0 gap-2">
-        <TombolBantu onClick={bantu} disabled={terkunci} />
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang }); }} disabled={terkunci || isi.length === 0}>
-          <Icon name="volunteer_activism" size={26} /> Beri ke pembeli
-        </TombolBesar>
-      </div>
+      <AksiBawah>
+        <div className="flex shrink-0 gap-2">
+          <TombolBantu onClick={bantu} disabled={terkunci} />
+          <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang }); }} disabled={terkunci || isi.length === 0}>
+            {bahasa === "en" ? "Give to the customer" : "Beri ke pembeli"}
+          </TombolBesar>
+        </div>
+      </AksiBawah>
     </>} />
   );
 }

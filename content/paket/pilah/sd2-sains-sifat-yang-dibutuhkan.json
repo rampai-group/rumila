@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sifat-yang-dibutuhkan",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -163,7 +163,10 @@
       "id": "kainpel",
       "labelKey": "i-kainpel",
       "bin": "serap",
-      "emoji": "🧹"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-kain-pel"
+      }
     },
     {
       "id": "popokkain",

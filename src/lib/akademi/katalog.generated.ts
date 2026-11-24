@@ -217687,7 +217687,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -217791,7 +217791,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "yoghurt",
         "labelKey": "i-yoghurt",
         "bin": "baru",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-yoghurt"
+        }
       },
       {
         "id": "tempe",
@@ -218363,7 +218366,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218373,7 +218376,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Siapa Tinggal di Mana?",
-        "instruksi": "Antar tiap hewan dan tumbuhan ke habitatnya.",
+        "instruksi": "Antar tiap makhluk hidup ke habitat yang cocok.",
         "b-gurun": "gurun",
         "b-kolam": "kolam",
         "b-hutan": "hutan hujan",
@@ -218398,7 +218401,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Who Lives Where?",
-        "instruksi": "Take each animal and plant to its habitat.",
+        "instruksi": "Take each living thing to a matching habitat.",
         "b-gurun": "desert",
         "b-kolam": "pond",
         "b-hutan": "rainforest",
@@ -218567,17 +218570,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "penguin",
         "labelKey": "i-penguin",
         "bin": "kutub",
-        "emoji": "🐺",
-        "color": "#fafafa",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-serigala-kutub"
+        }
       },
       {
         "id": "anjinglaut",
         "labelKey": "i-anjinglaut",
         "bin": "kutub",
-        "emoji": "🦊",
-        "color": "#fafafa",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-hewan-rubah-kutub"
+        }
       }
     ],
     "pilihan": []
@@ -219995,7 +220000,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-sifat-yang-dibutuhkan",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -220158,7 +220163,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kainpel",
         "labelKey": "i-kainpel",
         "bin": "serap",
-        "emoji": "🧹"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-kain-pel"
+        }
       },
       {
         "id": "popokkain",
@@ -250077,7 +250085,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-otot-berpasangan",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.RANGKA-OTOT.03"
@@ -250161,16 +250169,18 @@ export const PAKET_RAW: unknown[] = [
         "id": "biseps",
         "labelKey": "i-biseps",
         "bin": "pilihan",
-        "emoji": "💪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-biseps"
+        }
       },
       {
         "id": "trisep",
         "labelKey": "i-trisep",
         "bin": "pilihan",
-        "emoji": "💪",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔙"
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-triseps"
         }
       },
       {
@@ -250195,16 +250205,18 @@ export const PAKET_RAW: unknown[] = [
         "id": "depanpaha",
         "labelKey": "i-depanpaha",
         "bin": "pilihan",
-        "emoji": "🦵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-paha-depan"
+        }
       },
       {
         "id": "belakangpaha",
         "labelKey": "i-belakangpaha",
         "bin": "pilihan",
-        "emoji": "🦵",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔙"
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-paha-belakang"
         }
       },
       {
@@ -250358,7 +250370,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-otot-tarik-ulur",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -250436,27 +250448,37 @@ export const PAKET_RAW: unknown[] = [
         "id": "biseps",
         "labelKey": "i-biseps",
         "bin": "pilihan",
-        "emoji": "💪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-biseps"
+        }
       },
       {
         "id": "trisep",
         "labelKey": "i-trisep",
         "bin": "pilihan",
-        "emoji": "💪",
-        "color": "#ffe0b2"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-triseps"
+        }
       },
       {
         "id": "depanpaha",
         "labelKey": "i-depanpaha",
         "bin": "pilihan",
-        "emoji": "🦵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-paha-depan"
+        }
       },
       {
         "id": "belakangpaha",
         "labelKey": "i-belakangpaha",
         "bin": "pilihan",
-        "emoji": "🦵",
-        "color": "#ffe0b2"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-otot-paha-belakang"
+        }
       },
       {
         "id": "mengerut",
@@ -271765,7 +271787,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-adaptasi-tiga-wilayah",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.ADAPTASI.01"
@@ -271783,7 +271805,7 @@ export const PAKET_RAW: unknown[] = [
         "i-lidahbuaya": "lidah buaya: daun tebal berlendir menyimpan air",
         "i-ular": "ular gurun: bergerak menyamping agar sedikit menyentuh pasir panas",
         "i-akar": "tumbuhan gurun: akar menyebar luas tepat di bawah permukaan untuk menangkap hujan",
-        "i-rubah": "rubah kutub: bulu putih tebal dan telinga kecil",
+        "i-rubah": "rubah kutub: bulu tebal yang putih saat musim dingin, telinga kecil",
         "i-walrus": "anjing laut: lapisan lemak sangat tebal di bawah kulit",
         "i-penguin": "penguin kaisar: mengerami telur di atas kaki agar tak menyentuh es",
         "i-beruang": "beruang kutub: telapak kaki berbulu agar hangat dan tidak tergelincir",
@@ -271804,7 +271826,7 @@ export const PAKET_RAW: unknown[] = [
         "i-lidahbuaya": "aloe: thick, gooey leaves that store water",
         "i-ular": "desert snake: moves sideways so less of it touches the hot sand",
         "i-akar": "desert plant: roots spread wide just under the surface to catch rain",
-        "i-rubah": "Arctic fox: thick white fur and small ears",
+        "i-rubah": "Arctic fox: thick white winter fur and small ears",
         "i-walrus": "seal: a very thick layer of fat under the skin",
         "i-penguin": "emperor penguin: keeps its egg on its feet, off the ice",
         "i-beruang": "polar bear: furry paws to stay warm and not slip",
@@ -271885,7 +271907,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rubah",
         "labelKey": "i-rubah",
         "bin": "dingin",
-        "emoji": "🦊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-hewan-rubah-kutub"
+        }
       },
       {
         "id": "walrus",
@@ -272398,7 +272423,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-biji-menjelajah-bukit",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -272528,7 +272553,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kopi",
         "labelKey": "i-kopi",
         "bin": "hewan",
-        "emoji": "☕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-buah-kopi"
+        }
       },
       {
         "id": "jarum",
@@ -276633,7 +276661,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-tumbuhan-bukit-berbunga",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.BUNGA.02"
@@ -276671,7 +276699,7 @@ export const PAKET_RAW: unknown[] = [
         "i-cabai": "chilli plant",
         "i-terong": "aubergine plant",
         "i-sepatu": "hibiscus",
-        "i-teratai": "lotus",
+        "i-teratai": "water lily",
         "i-anggrek": "moth orchid",
         "i-kopi": "coffee plant",
         "i-anggur": "grapevine",
@@ -276747,7 +276775,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "teratai",
         "labelKey": "i-teratai",
         "bin": "bunga",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-susun-bunga-teratai"
+        }
       },
       {
         "id": "anggrek",
@@ -276759,7 +276790,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kopi",
         "labelKey": "i-kopi",
         "bin": "bunga",
-        "emoji": "☕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-tanaman-kopi"
+        }
       },
       {
         "id": "anggur",
@@ -299889,7 +299923,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-bentuk-dan-apung",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.APUNG-TENGGELAM.01"
@@ -300093,7 +300127,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "mangkuk",
         "labelKey": "i-mangkuk",
         "bin": "pilihan",
-        "emoji": "🥣"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd6-mangkuk-baja-kosong"
+        }
       },
       {
         "id": "sendok",
@@ -332710,7 +332747,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-hewan-tumbuh-besar",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -332939,8 +332976,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bayi",
             "labelKey": "bebek-bayi",
-            "emoji": "🦆",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-anak-bebek"
+            }
           },
           {
             "id": "kecil",
@@ -333146,7 +333185,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-mana-dulu-bahan-baru",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -333368,7 +333407,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akhir",
             "labelKey": "susu-akhir",
-            "emoji": "🥣"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-yoghurt"
+            }
           }
         ]
       },
@@ -333937,7 +333979,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -334166,8 +334208,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bayi",
             "labelKey": "bebek-bayi",
-            "emoji": "🦆",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-anak-bebek"
+            }
           },
           {
             "id": "kecil",
@@ -345189,7 +345233,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -345341,9 +345385,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kepompong",
             "labelKey": "kupu-kepompong",
-            "shape": "rect",
-            "color": "#a1887f",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-kepompong"
+            }
           },
           {
             "id": "kupu",

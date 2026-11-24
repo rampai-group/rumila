@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -104,7 +104,10 @@
       "id": "yoghurt",
       "labelKey": "i-yoghurt",
       "bin": "baru",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-yoghurt"
+      }
     },
     {
       "id": "tempe",
