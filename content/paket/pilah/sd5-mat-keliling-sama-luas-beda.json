@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-keliling-sama-luas-beda",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -11,7 +11,7 @@
     "id": {
       "judul": "Keliling Sama, Luas Beda?",
       "instruksi": "Bandingkan keliling dan luas beberapa persegi panjang, lalu sentuh jawaban yang benar.",
-      "q1": "Keliling 20 cm. Persegi panjang mana yang luasnya terbesar?",
+      "q1": "Semua bangun punya keliling 20 cm. Persegi atau persegi panjang mana yang luasnya terbesar?",
       "c1": "5 × 5",
       "c2": "6 × 4",
       "c3": "8 × 2",
@@ -38,7 +38,7 @@
       "q6": "Mana yang luasnya sama dengan persegi panjang 8 × 3?",
       "c20": "9 × 2",
       "c21": "7 × 4",
-      "q7": "Bangun L terdiri dari persegi panjang 6 × 2 dan 2 × 3 (cm). Luasnya …",
+      "q7": "Bangun L dibuat dengan menyambung dua persegi panjang tanpa tumpang tindih. Ukurannya 6 × 2 cm dan 2 × 3 cm. Berapa luasnya?",
       "c22": "18 cm²",
       "c23": "13 cm²",
       "c24": "17 cm²",
@@ -57,7 +57,7 @@
     "en": {
       "judul": "Same Perimeter, Different Area?",
       "instruksi": "Compare the perimeters and areas of the rectangles, then touch the right answer.",
-      "q1": "Perimeter 20 cm. Which rectangle has the largest area?",
+      "q1": "All shapes have a perimeter of 20 cm. Which square or rectangle has the largest area?",
       "c1": "5 × 5",
       "c2": "6 × 4",
       "c3": "8 × 2",
@@ -84,7 +84,7 @@
       "q6": "Which has the same area as an 8 × 3 rectangle?",
       "c20": "9 × 2",
       "c21": "7 × 4",
-      "q7": "An L-shape is made of a 6 × 2 and a 2 × 3 rectangle (cm). Its area is …",
+      "q7": "An L-shape joins two rectangles without overlap. They measure 6 × 2 cm and 2 × 3 cm. What is its area?",
       "c22": "18 cm²",
       "c23": "13 cm²",
       "c24": "17 cm²",

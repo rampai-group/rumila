@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-peluang-kartu-kantong",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Peluang Kartu dan Kantong",
-      "instruksi": "Peluang = banyak hasil yang diinginkan / banyak semua hasil. Sentuh jawabannya.",
+      "instruksi": "Satu kartu atau bola diambil secara acak. Peluangnya adalah jumlah benda yang memenuhi syarat dibagi jumlah semua benda. Sentuh jawabannya.",
       "q1": "Kartu bernomor 1 sampai 30. Peluang terambil kelipatan 5 …",
       "c1": "6/30",
       "c2": "5/30",
@@ -68,7 +68,7 @@
     },
     "en": {
       "judul": "Cards and Bags Probability",
-      "instruksi": "Probability = wanted outcomes / all outcomes. Touch the answer.",
+      "instruksi": "One card or ball is drawn at random. Every object is equally likely to be drawn, so divide the number of matching objects by the total. Touch the answer.",
       "q1": "Cards numbered 1 to 30. The probability of a multiple of 5 is …",
       "c1": "6/30",
       "c2": "5/30",

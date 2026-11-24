@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-kpk-dan-fpb",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "c5": "6",
       "c6": "3",
       "c7": "36",
-      "q3": "Lampu A berkedip tiap 6 detik, lampu B tiap 8 detik. Keduanya berkedip bersama lagi setelah … detik",
+      "q3": "Dua lampu berkedip bersamaan sekarang. Lampu A berkedip tiap 6 detik, lampu B tiap 8 detik. Berapa detik lagi keduanya berkedip bersamaan?",
       "c8": "48",
       "c9": "14",
       "q4": "24 apel dan 36 jeruk dibagi ke keranjang yang isinya sama, sebanyak mungkin keranjang. Berapa keranjang?",
@@ -69,7 +69,7 @@
       "c5": "6",
       "c6": "3",
       "c7": "36",
-      "q3": "Light A flashes every 6 seconds, light B every 8 seconds. They flash together again after … seconds",
+      "q3": "Two lights flash together now. Light A flashes every 6 seconds and light B every 8 seconds. How many seconds until they flash together again?",
       "c8": "48",
       "c9": "14",
       "q4": "24 apples and 36 oranges are shared into identical baskets, as many baskets as possible. How many baskets?",

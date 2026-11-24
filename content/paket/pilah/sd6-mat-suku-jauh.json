@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-suku-jauh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -72,7 +72,7 @@
     "en": {
       "judul": "Far-Away Terms",
       "instruksi": "Find the position-to-term rule (for example 3 × position + 2), then work out the term asked for. Touch the answer.",
-      "q1": "1, 6, 11, 16, … The 42th term is …",
+      "q1": "1, 6, 11, 16, … The 42nd term is …",
       "c1": "206",
       "c2": "210",
       "c3": "21",
@@ -82,7 +82,7 @@
       "c6": "270",
       "c7": "54",
       "c8": "284",
-      "q3": "18, 29, 40, 51, … The 43th term is …",
+      "q3": "18, 29, 40, 51, … The 43rd term is …",
       "c9": "480",
       "c10": "473",
       "c11": "62",
@@ -106,7 +106,7 @@
       "c25": "24",
       "c26": "146",
       "c27": "242",
-      "q8": "6, 10, 14, 18, … The 43th term is …",
+      "q8": "6, 10, 14, 18, … The 43rd term is …",
       "c28": "174",
       "c29": "172",
       "c30": "22",
@@ -124,7 +124,7 @@
       "c39": "162",
       "c40": "53",
       "c41": "179",
-      "q12": "6, 8, 10, 12, … The 23th term is …",
+      "q12": "6, 8, 10, 12, … The 23rd term is …",
       "c42": "50",
       "c43": "46",
       "c44": "52",
