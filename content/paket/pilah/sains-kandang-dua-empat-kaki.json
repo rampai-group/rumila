@@ -1,6 +1,6 @@
 {
   "id": "sains-kandang-dua-empat-kaki",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kandang Dua Kaki, Empat Kaki",
-      "instruksi": "Hitung kakinya, lalu taruh hewan ke kandang dua kaki atau empat kaki.",
+      "instruksi": "Hitung kaki hewan. Ketuk kartunya, lalu pilih kandang yang cocok. Kalau tidak ada kaki, pilih kandang tanpa kaki.",
       "dua": "dua kaki",
       "empat": "empat kaki",
       "nol": "tanpa kaki",
@@ -25,7 +25,7 @@
     },
     "en": {
       "judul": "Two-Leg, Four-Leg Pens",
-      "instruksi": "Count the legs, then put each animal in the two-leg or four-leg pen.",
+      "instruksi": "Count the animal’s legs. Tap its card, then choose the matching pen. If it has no legs, choose the no-leg pen.",
       "dua": "two legs",
       "empat": "four legs",
       "nol": "no legs",
@@ -45,7 +45,7 @@
       "max": 3,
       "default": 2,
       "step": 1,
-      "keterangan": "2 kandang (dua kaki, empat kaki); 3 menambah kandang tanpa kaki untuk ikan sebagai pengecoh"
+      "keterangan": "dua kandang untuk 2 dan 4 kaki; tambah kandang tanpa kaki untuk ikan pada tingkat berikutnya"
     },
     "itemCount": {
       "min": 4,
@@ -76,7 +76,10 @@
     {
       "id": "nol",
       "labelKey": "nol",
-      "emoji": "🌊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "hewan-pilah-nol-kaki"
+      }
     }
   ],
   "items": [
@@ -84,43 +87,64 @@
       "id": "ayam",
       "labelKey": "i-ayam",
       "bin": "dua",
-      "emoji": "🐓"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-jago"
+      }
     },
     {
       "id": "bebek",
       "labelKey": "i-bebek",
       "bin": "dua",
-      "emoji": "🦆"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-bebek"
+      }
     },
     {
       "id": "burung",
       "labelKey": "i-burung",
       "bin": "dua",
-      "emoji": "🦜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-beo"
+      }
     },
     {
       "id": "kucing",
       "labelKey": "i-kucing",
       "bin": "empat",
-      "emoji": "🐈"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "hewan-pilah-kucing-empat-kaki"
+      }
     },
     {
       "id": "sapi",
       "labelKey": "i-sapi",
       "bin": "empat",
-      "emoji": "🐄"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-sapi"
+      }
     },
     {
       "id": "kambing",
       "labelKey": "i-kambing",
       "bin": "empat",
-      "emoji": "🐐"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "hewan-pilah-kambing-empat-kaki"
+      }
     },
     {
       "id": "anjing",
       "labelKey": "i-anjing",
       "bin": "empat",
-      "emoji": "🐕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-anjing"
+      }
     },
     {
       "id": "ikan",

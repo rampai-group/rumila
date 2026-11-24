@@ -1,6 +1,6 @@
 {
   "id": "sains-isi-piringku",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,8 +10,8 @@
   "locale": {
     "id": {
       "judul": "Isi Piringku",
-      "instruksi": "Isi tiap bagian piring: nasi, lauk, sayur, dan buah. Jajanan tidak masuk piring.",
-      "nasi": "nasi dan makanan pokok",
+      "instruksi": "Isi tiap bagian piring: makanan pokok, lauk, sayur, dan buah. Taruh permen dan soda di luar piring.",
+      "nasi": "makanan pokok",
       "lauk": "lauk",
       "sayur": "sayur",
       "buah": "buah",
@@ -32,8 +32,8 @@
     },
     "en": {
       "judul": "Fill My Plate",
-      "instruksi": "Fill each part of the plate: rice, protein, veggies, and fruit. Treats stay off the plate.",
-      "nasi": "rice and staple foods",
+      "instruksi": "Fill each section with a staple food, a protein dish, vegetables, or fruit. Put candy and soda outside the plate.",
+      "nasi": "staple food",
       "lauk": "protein",
       "sayur": "vegetables",
       "buah": "fruit",
@@ -141,7 +141,10 @@
       "id": "bayam",
       "labelKey": "i-bayam",
       "bin": "sayur",
-      "emoji": "🥬"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-bayam"
+      }
     },
     {
       "id": "wortel",
