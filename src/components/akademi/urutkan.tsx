@@ -30,7 +30,7 @@ const BAGIAN_TUMBUHAN: Record<"id" | "en", Readonly<Record<string, string>>> = {
   en: { akar: "Roots", batang: "Stem", daun: "Leaves", bunga: "Flower", bulir: "Flower" },
 };
 
-function sorotKartuTumbuhan(dipilih: boolean, disorot: boolean): CSSProperties {
+function sorotKartuUrutan(dipilih: boolean, disorot: boolean): CSSProperties {
   if (!dipilih && !disorot) return {};
   return { boxShadow: `inset 0 0 0 4px ${dipilih ? WARNA_PILIH : SOROT}`, background: dipilih ? "#edf7ff" : "#fff9df" };
 }
@@ -325,7 +325,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               style={{
                 width: lebarKartu,
                 minHeight: tinggiMinKartu,
-                ...(tataTumbuhan ? sorotKartuTumbuhan(dipilih, disorot) : { boxShadow: disorot ? BAYANG_SOROT : undefined }),
+                ...(tataTumbuhan ? sorotKartuUrutan(dipilih, disorot) : { boxShadow: disorot ? BAYANG_SOROT : undefined }),
                 pointerEvents: kunci ? "none" : undefined,
               }}
             />
@@ -438,8 +438,8 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
             const disorot = hint === id;
             return (
               <div key={id} className="relative flex justify-center" style={{ width: sel.s }}>
-                <span className={`absolute z-10 ${tataTumbuhan ? "pointer-events-none top-1.5 left-1.5" : "-top-3 left-1"}`}>
-                  <Nomor n={i + 1} ringkas={tataTumbuhan} padat={layarPendek} warna={benar ? BENAR : salah ? SALAH : undefined} />
+                <span className={`pointer-events-none absolute z-10 ${tataTumbuhan ? "top-1.5 left-1.5" : "top-1 left-1"}`}>
+                  <Nomor n={i + 1} ringkas padat={layarPendek || !tataTumbuhan} warna={benar ? BENAR : salah ? SALAH : undefined} />
                 </span>
                 <KartuBenda
                   penuh
@@ -450,15 +450,12 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
                   right={benar}
                   wrong={salah}
                   onClick={() => ketuk(id)}
-                  className={`w-full ${tataTumbuhan ? "active:translate-y-0" : "pt-6!"} ${layarPendek ? "px-1.5! pb-1.5!" : ""} ${salah ? "akademi-shake" : ""} ${disorot && !tataTumbuhan ? "akademi-bounce" : ""}`}
+                  className={`w-full active:translate-y-0 ${layarPendek ? "px-1.5! pb-1.5!" : ""} ${salah ? "akademi-shake" : ""}`}
                   style={{
                     minHeight: tinggiKartu,
-                    paddingTop: tataTumbuhan ? (layarPendek ? 26 : 38) * sk : undefined,
+                    paddingTop: tataTumbuhan ? (layarPendek ? 26 : 38) * sk : 24,
                     background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined,
-                    ...(tataTumbuhan ? sorotKartuTumbuhan(!hasil && dipilih, !hasil && disorot) : {
-                      transform: dipilih ? "scale(1.1)" : undefined,
-                      boxShadow: disorot ? BAYANG_SOROT : undefined,
-                    }),
+                    ...sorotKartuUrutan(!hasil && dipilih, !hasil && disorot),
                     pointerEvents: kunci ? "none" : undefined,
                   }}
                 />
