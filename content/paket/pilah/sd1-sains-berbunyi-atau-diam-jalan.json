@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-berbunyi-atau-diam-jalan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -91,13 +91,19 @@
       "id": "peluit",
       "labelKey": "i-peluit",
       "bin": "bunyi",
-      "emoji": "😗"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-peluit-ditiup"
+      }
     },
     {
       "id": "peluitsaku",
       "labelKey": "i-peluitsaku",
       "bin": "diam",
-      "emoji": "👖"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-peluit-di-saku"
+      }
     },
     {
       "id": "sirene",
@@ -115,8 +121,10 @@
       "id": "kentongan",
       "labelKey": "i-kentongan",
       "bin": "bunyi",
-      "shape": "rect",
-      "color": "#a1887f"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-kentongan-dipukul"
+      }
     },
     {
       "id": "burungkicau",
@@ -143,8 +151,10 @@
       "id": "tiang",
       "labelKey": "i-tiang",
       "bin": "diam",
-      "color": "#bdbdbd",
-      "shape": "rect"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tiang-lampu"
+      }
     },
     {
       "id": "pohon",

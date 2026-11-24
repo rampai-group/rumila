@@ -3634,6 +3634,7 @@ export const SUARA: Record<string, string> = {
   "Mana yang punya 8 sisi?": "/akademi/suara/00efe872c3dc.mp3",
   "Mana yang sama dengan 0,5?": "/akademi/suara/cee8617ab429.mp3",
   "Mana yang sama dengan tujuh perseratus?": "/akademi/suara/c00bd1787fa9.mp3",
+  "Mana yang sedang menghasilkan cahaya sendiri? Taruh tiap benda di rak yang cocok.": "/akademi/suara/e2d172377642.mp3",
   "Mana yang segitiga?": "/akademi/suara/c3347dda4222.mp3",
   "Mana yang setara dengan 15 : 20?": "/akademi/suara/f89e6b47c55b.mp3",
   "Mana yang setara dengan 24 : 32?": "/akademi/suara/01b08968a6b0.mp3",
