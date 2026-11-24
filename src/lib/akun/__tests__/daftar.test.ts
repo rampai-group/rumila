@@ -21,8 +21,10 @@ describe("daftar akun", () => {
     expect(cekDaftar({ email: "ayah@gmail.com", peran: "orang_tua", lahir: "" }, HARI_INI)).toBe("");
     expect(cekDaftar({ email: "ayah@gmail.com", peran: "", lahir: "" }, HARI_INI)).toMatch(/orang tua atau siswa/);
     expect(cekDaftar({ email: "raka@gmail.com", peran: "siswa", lahir: "" }, HARI_INI)).toMatch(/tanggal lahir/);
-    expect(cekDaftar({ email: "raka@gmail.com", peran: "siswa", lahir: "2025-01-01" }, HARI_INI)).toMatch(/Umur siswa/);
-    expect(cekDaftar({ email: "raka@gmail.com", peran: "siswa", lahir: "2016-05-10" }, HARI_INI)).toBe("");
+    expect(cekDaftar({ email: "raka@gmail.com", peran: "siswa", lahir: "2016-05-10" }, HARI_INI)).toMatch(/didaftarkan orang tua/);
+    expect(cekDaftar({ email: "raka@gmail.com", peran: "siswa", lahir: "2013-11-26" }, HARI_INI)).toMatch(/didaftarkan orang tua/);
+    expect(cekDaftar({ email: "raka@gmail.com", peran: "siswa", lahir: "2013-11-25" }, HARI_INI)).toBe("");
+    expect(cekDaftar({ email: "raka@gmail.com", peran: "siswa", lahir: "1990-01-01" }, HARI_INI)).toMatch(/Umur siswa/);
   });
 
   it("metadata akun lama tidak punya peran", () => {
