@@ -10,35 +10,35 @@
   "locale": {
     "id": {
       "judul": "Panas-Kering atau Sejuk-Lembap?",
-      "instruksi": "Bayangkan berada di tiap tempat, lalu taruh ke rak panas-kering atau sejuk-lembap.",
+      "instruksi": "Bandingkan suhu dan kelembapan tiap tempat. Baca petunjuk pada kartu, lalu taruh di rak yang sesuai.",
       "b-panas": "panas dan kering",
       "b-lembap": "sejuk dan lembap",
-      "i-aspal": "jalan aspal siang hari",
-      "i-pasir": "pasir terkena Matahari",
-      "i-atap": "atap seng siang hari",
-      "i-lapangan": "lapangan tanpa pohon",
-      "i-batuterjemur": "batu besar di bawah terik",
-      "i-bawahbatu": "tanah di bawah batu",
-      "i-bawahpohon": "tanah di bawah pohon rindang",
-      "i-tepikolam": "tepi kolam",
-      "i-daun": "tumpukan daun basah",
-      "i-pot": "pot yang baru disiram"
+      "i-aspal": "aspal panas dan kering di bawah Matahari siang",
+      "i-pasir": "pasir panas dan kering di bawah terik Matahari",
+      "i-atap": "atap seng panas dan kering di siang terik",
+      "i-lapangan": "lapangan panas dan berdebu tanpa pohon",
+      "i-batuterjemur": "batu besar panas dan kering di bawah terik",
+      "i-bawahbatu": "tanah sejuk dan lembap di bawah batu",
+      "i-bawahpohon": "tanah sejuk dan lembap di bawah pohon rindang",
+      "i-tepikolam": "tepi kolam yang sejuk, teduh, dan basah",
+      "i-daun": "tumpukan daun basah di tempat sejuk dan teduh",
+      "i-pot": "pot sejuk di tempat teduh dengan tanah lembap"
     },
     "en": {
       "judul": "Hot and Dry or Cool and Damp?",
-      "instruksi": "Imagine being in each place, then put it on the hot-and-dry or cool-and-damp shelf.",
+      "instruksi": "Compare how warm and damp each place is. Read the clue on each card, then put it on the matching shelf.",
       "b-panas": "hot and dry",
       "b-lembap": "cool and damp",
-      "i-aspal": "road at midday",
-      "i-pasir": "sand in the sunshine",
-      "i-atap": "tin roof at midday",
-      "i-lapangan": "field with no trees",
-      "i-batuterjemur": "big rock in strong sun",
-      "i-bawahbatu": "soil under a stone",
-      "i-bawahpohon": "soil under a shady tree",
-      "i-tepikolam": "edge of the pond",
-      "i-daun": "pile of wet leaves",
-      "i-pot": "freshly watered pot"
+      "i-aspal": "hot, dry tarmac in the midday sun",
+      "i-pasir": "hot, dry sand in direct sunshine",
+      "i-atap": "a hot, dry metal roof in the midday sun",
+      "i-lapangan": "a hot, dusty field with no trees",
+      "i-batuterjemur": "a large, hot, dry rock in direct sunshine",
+      "i-bawahbatu": "cool, damp soil under a rock",
+      "i-bawahpohon": "cool, damp soil in the shade of a leafy tree",
+      "i-tepikolam": "a cool, wet pond edge in the shade",
+      "i-daun": "a pile of wet leaves in a cool, shady spot",
+      "i-pot": "a cool pot in the shade with damp soil"
     }
   },
   "knobs": {
@@ -80,7 +80,10 @@
       "id": "pasir",
       "labelKey": "i-pasir",
       "bin": "panas",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pasir-panas-kering"
+      }
     },
     {
       "id": "atap",

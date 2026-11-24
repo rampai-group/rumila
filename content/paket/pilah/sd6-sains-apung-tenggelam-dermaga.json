@@ -18,10 +18,10 @@
       "i-sengperahu": "lembar seng dibentuk perahu bertepi tinggi",
       "i-senggumpal": "lembar seng yang sama dilipat jadi gumpalan padat",
       "i-perahusedikit": "perahu tanah liat berisi sedikit kelereng",
-      "i-perahubanyak": "perahu tanah liat yang sama berisi kelereng sangat banyak sampai air masuk",
+      "i-perahubanyak": "perahu sama, penuh kelereng hingga air masuk",
       "i-busa": "balok busa pelampung",
       "i-bata": "batu bata seukuran balok busa",
-      "i-bambu": "batang bambu berongga",
+      "i-bambu": "batang bambu berongga dengan kedua ujung tertutup",
       "i-besi": "batang besi seukuran bambu",
       "i-plastisinpiring": "plastisin 100 g dipipihkan jadi piring bertepi",
       "i-plastisintongkat": "plastisin 100 g yang sama digulung jadi tongkat padat",
@@ -37,7 +37,7 @@
       "p-r8": "Dua plastisin sama massanya. Mana yang mengapung?",
       "p-r9": "Kapal selam melayang diam di dalam air laut. Tangki diisi lagi sehingga massa bertambah, tetapi volume kapal tetap. Kapal itu…",
       "p-r10": "Kapal selam melayang diam di dalam air laut. Air dipompa keluar dari tangki sehingga massa berkurang, tetapi volume kapal tetap. Kapal itu…",
-      "p-r11": "Perahu seng yang mengapung dilubangi bagian bawahnya, lalu air masuk ke dalamnya. Perahu itu…",
+      "p-r11": "Perahu seng yang mengapung dilubangi. Air mengisi seluruh bagian dalamnya dan menggantikan udara. Perahu itu…",
       "p-r12": "Kotak bekal kosong yang tertutup mengapung. Kotak diisi batu dan tenggelam. Batu dikeluarkan, lalu kotak ditutup rapat lagi. Kotak itu…"
     },
     "en": {
@@ -51,10 +51,10 @@
       "i-sengperahu": "a metal sheet shaped into a high-sided boat",
       "i-senggumpal": "the same metal sheet folded into a solid lump",
       "i-perahusedikit": "a clay boat holding a few marbles",
-      "i-perahubanyak": "the same clay boat holding so many marbles that water pours in",
+      "i-perahubanyak": "the same boat, full of marbles until water comes in",
       "i-busa": "a foam float block",
       "i-bata": "a brick the same size as the foam block",
-      "i-bambu": "a hollow bamboo pole",
+      "i-bambu": "hollow bamboo with both ends sealed",
       "i-besi": "an iron bar the same size as the bamboo",
       "i-plastisinpiring": "100 g of playdough flattened into a plate with a rim",
       "i-plastisintongkat": "the same 100 g of playdough rolled into a solid stick",
@@ -70,7 +70,7 @@
       "p-r8": "Two pieces of playdough have the same mass. Which one floats?",
       "p-r9": "A submarine hovers in seawater. It takes on more ballast water, so its mass increases while its volume stays the same. It…",
       "p-r10": "A submarine hovers in seawater. It pumps ballast water out, so its mass decreases while its volume stays the same. It…",
-      "p-r11": "A floating metal boat gets a hole in the bottom and water comes in. The boat…",
+      "p-r11": "A hole is made in a floating metal boat. Water fills the whole inside and replaces the air. The boat will…",
       "p-r12": "An empty closed lunch box floats. It sinks when filled with stones. The stones are taken out and the box is sealed again. It…"
     }
   },
@@ -92,55 +92,76 @@
       "id": "liatmangkuk",
       "labelKey": "i-liatmangkuk",
       "bin": "pilihan",
-      "shape": "rect",
-      "color": "#a1887f",
-      "scale": 0.9
+      "scale": 0.9,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-mangkuk-tanah-liat"
+      }
     },
     {
       "id": "liatbola",
       "labelKey": "i-liatbola",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#a1887f",
-      "scale": 0.7
+      "scale": 0.7,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-tanah-liat"
+      }
     },
     {
       "id": "kotakkosong",
       "labelKey": "i-kotakkosong",
       "bin": "pilihan",
-      "emoji": "🍱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kotak-kosong"
+      }
     },
     {
       "id": "kotakbatu",
       "labelKey": "i-kotakbatu",
       "bin": "pilihan",
-      "emoji": "🪨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kotak-berisi-batu"
+      }
     },
     {
       "id": "sengperahu",
       "labelKey": "i-sengperahu",
       "bin": "pilihan",
-      "emoji": "🛶"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perahu-seng"
+      }
     },
     {
       "id": "senggumpal",
       "labelKey": "i-senggumpal",
       "bin": "pilihan",
-      "shape": "square",
-      "color": "#90a4ae",
-      "scale": 0.6
+      "scale": 0.6,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-seng-padat"
+      }
     },
     {
       "id": "perahusedikit",
       "labelKey": "i-perahusedikit",
       "bin": "pilihan",
-      "emoji": "⛵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perahu-muatan-ringan"
+      }
     },
     {
       "id": "perahubanyak",
       "labelKey": "i-perahubanyak",
       "bin": "pilihan",
-      "emoji": "🌊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perahu-muatan-berat"
+      }
     },
     {
       "id": "busa",
@@ -160,7 +181,10 @@
       "id": "bambu",
       "labelKey": "i-bambu",
       "bin": "pilihan",
-      "emoji": "🎋"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bambu-tertutup"
+      }
     },
     {
       "id": "besi",
@@ -174,17 +198,21 @@
       "id": "plastisinpiring",
       "labelKey": "i-plastisinpiring",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#ab47bc",
-      "scale": 1
+      "scale": 1,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-piring-plastisin"
+      }
     },
     {
       "id": "plastisintongkat",
       "labelKey": "i-plastisintongkat",
       "bin": "pilihan",
-      "shape": "rect",
-      "color": "#ab47bc",
-      "scale": 0.6
+      "scale": 0.6,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tongkat-plastisin"
+      }
     },
     {
       "id": "tenggelam",

@@ -80,8 +80,10 @@
       "id": "ayunan",
       "labelKey": "i-ayunan",
       "bin": "dorong",
-      "shape": "rect",
-      "color": "#ffb74d"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-dorong-ayunan"
+      }
     },
     {
       "id": "gerobak",

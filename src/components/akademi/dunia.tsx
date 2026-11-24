@@ -153,9 +153,11 @@ export function skalaPanggung(w: number, h: number): number {
 
 export function panggungPadat(paket: ContentPack): boolean {
   return paket.mechanic === "pilah" ||
+    (paket.mechanic === "navigasi" && paket.execMode === "langsung") ||
+    (paket.mechanic === "dagang" && paket.mode === "subitasi") ||
     (paket.mechanic === "urutkan" && (paket.mode === "dulu" || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
-    (paket.mechanic === "simulasi" && paket.mode === "tombol" && paket.level === "PAUD");
+    (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || (paket.mode === "tombol" && paket.level === "PAUD")));
 }
 
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
@@ -267,7 +269,7 @@ export function LayarAktivitas({
           </h1>
         </div>
         <Instruksi teks={instruksi} onUcap={onUcap} />
-        <div ref={ruangPanggungRef} className="flex min-h-0 flex-1 flex-col">
+        <div ref={ruangPanggungRef} className="akademi-ruang-panggung flex min-h-0 flex-1 flex-col">
           <div className={`relative flex min-h-0 flex-col rounded-[26px] p-1.5 ${padat ? "" : "flex-1"}`} style={{ background: pilar.dasar }}>
             <div ref={panggungRef} className="flex min-h-0 flex-1 flex-col overflow-y-auto overflow-x-hidden scroll-auto [overflow-anchor:none]" data-panggung>
               <PanggungCtx.Provider value={panggung}>

@@ -10,8 +10,8 @@
   "locale": {
     "id": {
       "judul": "Kebun Siang dan Malam",
-      "instruksi": "Lihat langit pada foto kebun. Taruh kegiatan siang ke matahari dan kegiatan malam ke bulan.",
-      "siang": "siang",
+      "instruksi": "Lihat petunjuk langit. Taruh kartu pagi dan siang di kotak matahari. Taruh kartu malam di kotak bulan.",
+      "siang": "pagi atau siang",
       "malam": "malam",
       "i-jemur": "jemur baju saat cerah",
       "i-kupu": "kupu-kupu saat cerah",
@@ -24,8 +24,8 @@
     },
     "en": {
       "judul": "The Garden by Day and Night",
-      "instruksi": "Look at the sky in each garden picture. Put daytime activities by the sun and nighttime activities by the moon.",
-      "siang": "day",
+      "instruksi": "Look at each sky clue. Put morning and daytime cards by the sun. Put nighttime cards by the moon.",
+      "siang": "morning or daytime",
       "malam": "night",
       "i-jemur": "drying clothes in the sunshine",
       "i-kupu": "a butterfly under a sunny sky",

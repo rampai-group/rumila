@@ -11,6 +11,10 @@
     "id": {
       "judul": "Carroll Nomor Peti",
       "instruksi": "Kelipatan 5 bersatuan 0 atau 5. Genap bersatuan 0, 2, 4, 6, atau 8. Lihat angka satuannya, lalu taruh tiap nomor peti di kotak yang cocok untuk keduanya.",
+      "carroll-baris-1": "Genap",
+      "carroll-baris-2": "Ganjil",
+      "carroll-kolom-1": "Kelipatan 5",
+      "carroll-kolom-2": "Bukan kelipatan 5",
       "b-lima-genap": "kelipatan 5, genap",
       "b-bukan-genap": "bukan kelipatan 5, genap",
       "b-lima-ganjil": "kelipatan 5, ganjil",
@@ -43,6 +47,10 @@
     "en": {
       "judul": "Carroll Crate Numbers",
       "instruksi": "Multiples of 5 end in 0 or 5. Even numbers end in 0, 2, 4, 6 or 8. Look at the ones digit, then put each crate number in the box that fits both.",
+      "carroll-baris-1": "Even",
+      "carroll-baris-2": "Odd",
+      "carroll-kolom-1": "Multiple of 5",
+      "carroll-kolom-2": "Not a multiple of 5",
       "b-lima-genap": "multiple of 5, even",
       "b-bukan-genap": "not a multiple of 5, even",
       "b-lima-ganjil": "multiple of 5, odd",
@@ -95,6 +103,10 @@
   "world": "gudang",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "lima-genap",

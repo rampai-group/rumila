@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Payung atau Topi?",
-      "instruksi": "Dengarkan keadaan cuacanya, lalu sentuh benda yang cocok dipakai.",
+      "instruksi": "Dengarkan keadaan cuacanya, lalu sentuh benda yang cocok.",
       "pilihan": "pilihan",
       "i-payung": "payung",
       "i-topi": "topi",
@@ -19,17 +19,17 @@
       "t-hujan1": "Langit gelap, hujan turun. Mana yang dipakai?",
       "t-cerah2": "Matahari bersinar terang. Robot mau main bola. Mana yang dipakai?",
       "t-hujan2": "Tetes hujan jatuh dari langit. Mana yang dipakai?",
-      "t-angin": "Angin bertiup kencang, daun beterbangan. Mana yang dimainkan?",
+      "t-angin": "Angin bertiup pelan dan stabil di lapangan. Mana yang bisa dimainkan?",
       "t-cerah3": "Siang hari panas sekali. Robot mau main kejar-kejaran. Mana yang dipakai?",
       "t-cerah4": "Tidak ada awan, matahari di atas kepala. Robot mau main di lapangan. Mana yang dipakai di kepala?",
       "t-hujan3": "Hujan deras, jalanan jadi basah. Mana yang dipakai?",
       "t-hujan4": "Gerimis turun rintik-rintik. Mana yang dipakai?",
       "t-hujan5": "Tik-tik-tik, bunyi hujan di atap. Mana yang dipakai?",
-      "t-angin2": "Angin bertiup kencang di lapangan luas. Mana yang dimainkan?"
+      "t-angin2": "Ada angin sepoi-sepoi di lapangan yang luas. Mana yang bisa dimainkan?"
     },
     "en": {
       "judul": "Umbrella or Hat?",
-      "instruksi": "Listen to the weather description, then touch the useful item.",
+      "instruksi": "Listen to the weather description, then tap the item that fits.",
       "pilihan": "choices",
       "i-payung": "umbrella",
       "i-topi": "sun hat",
@@ -38,13 +38,13 @@
       "t-hujan1": "Dark sky, the rain is falling. Which one do we use?",
       "t-cerah2": "The sun is shining bright. Robot wants to play ball. Which one do we use?",
       "t-hujan2": "Raindrops are falling from the sky. Which one do we use?",
-      "t-angin": "The wind is blowing hard, leaves are flying. Which one do we play with?",
+      "t-angin": "A steady breeze blows across the field. Which item can you play with?",
       "t-cerah3": "It is very hot at noon. Robot wants to play tag. Which one do we use?",
       "t-cerah4": "No clouds, the sun is overhead. Robot wants to play in the field. Which one goes on the head?",
       "t-hujan3": "Heavy rain, the road is wet. Which one do we use?",
       "t-hujan4": "A light drizzle is falling. Which one do we use?",
       "t-hujan5": "Pitter-patter, rain on the roof. Which one do we use?",
-      "t-angin2": "A strong wind blows across the wide field. Which one do we play with?"
+      "t-angin2": "There is a gentle breeze in the open field. Which item can you play with?"
     }
   },
   "knobs": {

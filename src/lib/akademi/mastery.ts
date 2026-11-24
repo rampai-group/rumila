@@ -1,13 +1,14 @@
 // Proyeksi penguasaan kompetensi dari event belajar — fungsi murni, tanpa DOM / React.
 // Bukti = event "attempt" yang payload-nya menyebut competencyIds.
 //   konteks  = activityId berbeda di antara percobaan benar (event imported → satu konteks "import")
-//   hari     = tanggal lokal (id-ID) berbeda di antara percobaan benar
+//   hari     = tanggal WIB berbeda di antara percobaan benar
 //   ratio    = benar / semua pada 10 percobaan terakhir
 //   hintTail = percobaan berturut-turut dari akhir yang memakai bantuan
 // Aturan = DEFAULT_MASTERY ditimpa c.mastery.
 
 import { percobaanUlang } from "./percobaan";
 import { dariKampus } from "./akses";
+import { hariWIB } from "./kalender";
 import { DEFAULT_MASTERY, type Competency, type GameEvent, type LevelId, type MasteryRule, type TrackId } from "@akademi/schema";
 
 export type Status = "belum" | "berkembang" | "dikuasai";
@@ -40,12 +41,6 @@ interface Bukti {
 }
 
 const KOSONG: Penguasaan = { status: "belum", success: 0, fail: 0, contexts: 0, days: 0, ratioLast10: 0, hintTail: 0 };
-
-/** Tanggal lokal yang konsisten untuk hitungan "hari berbeda". */
-export function hariLokal(iso: string): string {
-  const d = new Date(iso);
-  return Number.isNaN(d.getTime()) ? iso.slice(0, 10) : d.toLocaleDateString("id-ID");
-}
 
 export function syaratPenguasaan(peng: Penguasaan | undefined, aturan: MasteryRule): SyaratPenguasaan[] {
   const p = peng ?? KOSONG;
@@ -93,7 +88,7 @@ export function nilaiPenguasaan(bukti: Bukti[], aturan: MasteryRule): Penguasaan
   const success = benar.length;
   const fail = bukti.length - success;
   const paketBenar = [...new Set(benar.map((b) => b.konteks))];
-  const hariBenar = [...new Set(benar.map((b) => hariLokal(b.at)))];
+  const hariBenar = [...new Set(benar.map((b) => hariWIB(b.at)))];
   const last10 = bukti.slice(-10);
   const ratioLast10 = last10.filter((b) => b.correct).length / last10.length;
   const terakhir = bukti[bukti.length - 1];

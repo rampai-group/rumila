@@ -175394,11 +175394,11 @@ export const PAKET_RAW: unknown[] = [
         "piring": "piring",
         "jendela": "jendela",
         "bingkai": "bingkai foto",
-        "tenda": "tenda",
+        "tenda": "tenda mainan dari depan",
         "pizza": "potongan pizza",
         "tBulat": "Mana yang bulat?",
         "tKotak": "Mana yang kotak?",
-        "tSegitiga": "Mana yang segitiga?",
+        "tSegitiga": "Mana yang berbentuk segitiga dari depan?",
         "koin": "uang koin",
         "penggaris": "penggaris segitiga",
         "kue": "kue kering",
@@ -175413,11 +175413,11 @@ export const PAKET_RAW: unknown[] = [
         "piring": "plate",
         "jendela": "window",
         "bingkai": "picture frame",
-        "tenda": "tent",
+        "tenda": "front of a play tent",
         "pizza": "pizza slice",
         "tBulat": "Which one is round?",
         "tKotak": "Which one is square?",
-        "tSegitiga": "Which one is a triangle?",
+        "tSegitiga": "Which object looks triangular from the front?",
         "koin": "coin",
         "penggaris": "triangle ruler",
         "kue": "cookie",
@@ -175486,7 +175486,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tenda",
         "labelKey": "tenda",
         "bin": "pilihan",
-        "emoji": "⛺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-tenda-depan"
+        }
       },
       {
         "id": "pizza",
@@ -176059,7 +176062,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kartu Titik",
-        "instruksi": "Ketuk satu kartu, lalu ketuk kotak dengan jumlah titik yang sama.",
+        "instruksi": "Hitung gambar di kartu. Ketuk kartu itu, lalu ketuk kotak yang jumlah titiknya sama.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -176073,7 +176076,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Dot Cards",
-        "instruksi": "Tap one card, then tap the box with an equal number of dots.",
+        "instruksi": "Count the pictures on a card. Tap the card, then tap the box with that many dots.",
         "n1": "1",
         "n2": "2",
         "n3": "3",
@@ -186046,13 +186049,13 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Hidup atau Tak Hidup?",
-        "instruksi": "Taruh yang hidup ke keranjang daun, yang tak hidup ke keranjang batu.",
+        "instruksi": "Ketuk satu kartu, lalu ketuk kotak hidup atau tak hidup.",
         "hidup": "hidup",
         "takhidup": "tak hidup",
         "i-kucing": "kucing",
         "i-ayam": "ayam",
         "i-pohon": "pohon",
-        "i-bunga": "bunga",
+        "i-bunga": "bunga dalam pot",
         "i-ikan": "ikan",
         "i-batu": "batu",
         "i-bola": "bola",
@@ -186062,13 +186065,13 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Living or Not Living?",
-        "instruksi": "Put living things in the leaf basket and non-living things in the stone basket.",
+        "instruksi": "Tap a card, then tap the living or non-living box.",
         "hidup": "living",
         "takhidup": "not living",
         "i-kucing": "cat",
         "i-ayam": "chicken",
         "i-pohon": "tree",
-        "i-bunga": "flower",
+        "i-bunga": "potted flower",
         "i-ikan": "fish",
         "i-batu": "stone",
         "i-bola": "ball",
@@ -186100,7 +186103,7 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "takhidup",
         "labelKey": "takhidup",
-        "emoji": "🧱"
+        "emoji": "🪨"
       }
     ],
     "items": [
@@ -186126,7 +186129,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bunga",
         "labelKey": "i-bunga",
         "bin": "hidup",
-        "emoji": "🌼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-bunga-dalam-pot"
+        }
       },
       {
         "id": "ikan",
@@ -186233,7 +186239,7 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "takhidup",
         "labelKey": "takhidup",
-        "emoji": "🧱"
+        "emoji": "🪨"
       }
     ],
     "items": [
@@ -186315,7 +186321,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Hitung Kaki Hewan",
-        "instruksi": "Lihat kaki hewannya. Taruh ke papan dua kaki atau empat kaki.",
+        "instruksi": "Hitung semua kaki yang terlihat, lalu pilih kotak dua kaki atau empat kaki.",
         "b-dua": "dua kaki",
         "b-empat": "empat kaki",
         "i-kalkun": "kalkun",
@@ -186333,7 +186339,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Count the Animal Legs",
-        "instruksi": "Look at each animal's legs. Put it on the two-leg or four-leg board.",
+        "instruksi": "Count all the legs you can see, then choose the two-leg or four-leg box.",
         "b-dua": "two legs",
         "b-empat": "four legs",
         "i-kalkun": "turkey",
@@ -186383,73 +186389,109 @@ export const PAKET_RAW: unknown[] = [
         "id": "kalkun",
         "labelKey": "i-kalkun",
         "bin": "dua",
-        "emoji": "🦃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-kalkun"
+        }
       },
       {
         "id": "beo",
         "labelKey": "i-beo",
         "bin": "dua",
-        "emoji": "🦜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-beo"
+        }
       },
       {
         "id": "jago",
         "labelKey": "i-jago",
         "bin": "dua",
-        "emoji": "🐓"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-jago"
+        }
       },
       {
         "id": "bebek",
         "labelKey": "i-bebek",
         "bin": "dua",
-        "emoji": "🦆"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-bebek"
+        }
       },
       {
         "id": "merak",
         "labelKey": "i-merak",
         "bin": "dua",
-        "emoji": "🦚"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-merak"
+        }
       },
       {
         "id": "burunghantu",
         "labelKey": "i-burunghantu",
         "bin": "dua",
-        "emoji": "🦉"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-burunghantu"
+        }
       },
       {
         "id": "kuda",
         "labelKey": "i-kuda",
         "bin": "empat",
-        "emoji": "🐎"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-kuda"
+        }
       },
       {
         "id": "kerbau",
         "labelKey": "i-kerbau",
         "bin": "empat",
-        "emoji": "🐃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-kerbau"
+        }
       },
       {
         "id": "domba",
         "labelKey": "i-domba",
         "bin": "empat",
-        "emoji": "🐑"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-domba"
+        }
       },
       {
         "id": "sapi",
         "labelKey": "i-sapi",
         "bin": "empat",
-        "emoji": "🐂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-sapi"
+        }
       },
       {
         "id": "rusa",
         "labelKey": "i-rusa",
         "bin": "empat",
-        "emoji": "🦌"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-rusa"
+        }
       },
       {
         "id": "anjing",
         "labelKey": "i-anjing",
         "bin": "empat",
-        "emoji": "🐕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-anjing"
+        }
       }
     ],
     "pilihan": []
@@ -187352,7 +187394,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pandan",
         "labelKey": "pandan",
         "bin": "hidung",
-        "emoji": "🍃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-daun-pandan"
+        }
       },
       {
         "id": "cokelat",
@@ -187659,8 +187704,8 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Siang atau Malam?",
-        "instruksi": "Lihat langit di tiap kartu, lalu taruh kegiatannya di kelompok siang atau malam.",
-        "siang": "siang",
+        "instruksi": "Lihat langit di setiap kartu. Ketuk kotak matahari untuk pagi atau siang, dan kotak bulan untuk malam.",
+        "siang": "pagi atau siang",
         "malam": "malam",
         "i-bola": "main bola saat cerah",
         "i-sepeda": "bersepeda di bawah matahari",
@@ -187673,8 +187718,8 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Day or Night?",
-        "instruksi": "Look at the sky on each card, then sort the activities into day or night.",
-        "siang": "day",
+        "instruksi": "Look at the sky on each card. Tap the sun box for morning or daytime, and the moon box for night.",
+        "siang": "morning or daytime",
         "malam": "night",
         "i-bola": "playing ball under a sunny sky",
         "i-sepeda": "cycling in the sunshine",
@@ -189052,10 +189097,10 @@ export const PAKET_RAW: unknown[] = [
         "i-bola": "bola",
         "i-topi": "topi",
         "i-sepatu": "sepatu",
-        "t1": "Boneka belum punya kepala. Bagian mana yang dipasang di tempat yang kosong?",
-        "t2": "Boneka belum punya kaki. Bagian mana yang dipasang di tempat yang kosong?",
-        "t3": "Boneka belum punya tangan. Bagian mana yang dipasang di tempat yang kosong?",
-        "t4": "Boneka belum punya badan. Bagian mana yang dipasang di tempat yang kosong?",
+        "t1": "Boneka ingin tersenyum. Bagian mana yang cocok dengan garis putus-putus?",
+        "t2": "Boneka ingin berdiri tegak. Apa yang dipasang di tempat kosong?",
+        "t3": "Boneka ingin memeluk temannya. Apa yang dipasang di kedua tempat kosong?",
+        "t4": "Boneka ingin mengenakan baju. Apa yang mengisi tempat kosong di tengah?",
         "t5": "Bagian paling atas boneka masih kosong, tempat mata dan mulut. Bagian mana yang dipasang?",
         "t6": "Bagian paling bawah boneka masih kosong, untuk berdiri dan berjalan. Bagian mana yang dipasang?",
         "t7": "Boneka belum bisa memegang dan melambai. Bagian mana yang dipasang di tempat yang kosong?",
@@ -189074,10 +189119,10 @@ export const PAKET_RAW: unknown[] = [
         "i-bola": "ball",
         "i-topi": "hat",
         "i-sepatu": "shoe",
-        "t1": "The doll has no head. Which part goes in the empty place?",
-        "t2": "The doll has no legs. Which part goes in the empty place?",
-        "t3": "The doll has no arms. Which part goes in the empty place?",
-        "t4": "The doll has no body. Which part goes in the empty place?",
+        "t1": "The doll wants to smile. Which part fits inside the dashed outline?",
+        "t2": "The doll wants to stand upright. What goes in the empty space?",
+        "t3": "The doll wants to hug a friend. What fits in both empty spaces?",
+        "t4": "The doll wants to wear a shirt. What fills the empty space in the middle?",
         "t5": "The very top of the doll is empty, where the eyes and mouth go. Which part goes on?",
         "t6": "The very bottom of the doll is empty, for standing and walking. Which part goes on?",
         "t7": "The doll can't hold or wave yet. Which part goes in the empty place?",
@@ -191278,7 +191323,7 @@ export const PAKET_RAW: unknown[] = [
         "i-batu": "batu",
         "i-daun": "daun",
         "i-paku": "baut logam",
-        "i-bola": "bola plastik",
+        "i-bola": "bola plastik berongga yang tertutup rapat",
         "i-kunci": "kunci logam",
         "t-t1": "Mana yang akan tenggelam?",
         "t-a1": "Mana yang akan terapung?",
@@ -191304,7 +191349,7 @@ export const PAKET_RAW: unknown[] = [
         "i-batu": "stone",
         "i-daun": "leaf",
         "i-paku": "metal bolt",
-        "i-bola": "plastic ball",
+        "i-bola": "sealed, hollow plastic ball",
         "i-kunci": "metal key",
         "t-t1": "Which one will sink?",
         "t-a1": "Which one will float?",
@@ -191373,7 +191418,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bola",
         "labelKey": "i-bola",
         "bin": "pilihan",
-        "emoji": "🏐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-plastik-berongga"
+        }
       },
       {
         "id": "kunci",
@@ -192040,15 +192088,15 @@ export const PAKET_RAW: unknown[] = [
         "i-baterai": "baterai",
         "i-obeng": "obeng",
         "i-lampu": "lampu",
-        "t-kepala1": "Robot belum punya kepala. Bagian mana yang dipasang di tempat yang kosong?",
+        "t-kepala1": "Antena dan mata dipasang bersama. Bagian mana yang cocok dengan garis putus-putus?",
         "t-kepala2": "Di atas badan robot masih kosong, tempat mata dan mulut. Bagian mana yang dipasang?",
         "t-kepala3": "Robot mau melihat dan berbicara, tapi bagian paling atasnya kosong. Bagian mana yang dipasang?",
-        "t-badan1": "Robot belum punya badan. Bagian mana yang dipasang di tempat yang kosong?",
+        "t-badan1": "Robot perlu tempat untuk panel dan baterai. Bagian mana yang dipasang di tengah?",
         "t-badan2": "Bagian tengah robot masih kosong, di antara kepala dan kaki. Bagian mana yang dipasang?",
-        "t-tangan1": "Robot belum punya tangan. Bagian mana yang dipasang di tempat yang kosong?",
+        "t-tangan1": "Robot ingin memeluk temannya. Bagian mana yang dipasang di kedua sisi?",
         "t-tangan2": "Robot mau memegang bola, tapi sisi badannya masih kosong. Bagian mana yang dipasang?",
         "t-tangan3": "Robot mau melambai, tapi kiri dan kanan badannya kosong. Bagian mana yang dipasang?",
-        "t-kaki1": "Robot belum punya kaki. Bagian mana yang dipasang di tempat yang kosong?",
+        "t-kaki1": "Robot ingin berdiri tegak. Bagian mana yang dipasang di bawah badan?",
         "t-kaki2": "Robot mau berjalan, tapi bagian paling bawahnya kosong. Bagian mana yang dipasang?",
         "t-kaki3": "Robot mau melompat, tapi di bawah badannya masih kosong. Bagian mana yang dipasang?"
       },
@@ -192064,15 +192112,15 @@ export const PAKET_RAW: unknown[] = [
         "i-baterai": "battery",
         "i-obeng": "screwdriver",
         "i-lampu": "light bulb",
-        "t-kepala1": "The robot has no head yet. Which part goes in the empty place?",
+        "t-kepala1": "The antenna and eyes go together. Which piece fits inside the dashed outline?",
         "t-kepala2": "The top of the robot's body is empty, where the eyes and mouth go. Which part goes on?",
         "t-kepala3": "The robot wants to see and talk, but its very top is empty. Which part goes on?",
-        "t-badan1": "The robot has no body yet. Which part goes in the empty place?",
+        "t-badan1": "The robot needs a place for its panel and battery. Which part goes in the middle?",
         "t-badan2": "The middle of the robot is empty, between the head and the legs. Which part goes on?",
-        "t-tangan1": "The robot has no arms yet. Which part goes in the empty place?",
+        "t-tangan1": "The robot wants to hug a friend. Which part goes on both sides?",
         "t-tangan2": "The robot wants to hold a ball, but the sides of its body are empty. Which part goes on?",
         "t-tangan3": "The robot wants to wave, but the left and right of its body are empty. Which part goes on?",
-        "t-kaki1": "The robot has no legs yet. Which part goes in the empty place?",
+        "t-kaki1": "The robot wants to stand upright. Which part goes below its body?",
         "t-kaki2": "The robot wants to walk, but its very bottom is empty. Which part goes on?",
         "t-kaki3": "The robot wants to jump, but below its body is empty. Which part goes on?"
       }
@@ -192343,7 +192391,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Payung atau Topi?",
-        "instruksi": "Dengarkan keadaan cuacanya, lalu sentuh benda yang cocok dipakai.",
+        "instruksi": "Dengarkan keadaan cuacanya, lalu sentuh benda yang cocok.",
         "pilihan": "pilihan",
         "i-payung": "payung",
         "i-topi": "topi",
@@ -192352,17 +192400,17 @@ export const PAKET_RAW: unknown[] = [
         "t-hujan1": "Langit gelap, hujan turun. Mana yang dipakai?",
         "t-cerah2": "Matahari bersinar terang. Robot mau main bola. Mana yang dipakai?",
         "t-hujan2": "Tetes hujan jatuh dari langit. Mana yang dipakai?",
-        "t-angin": "Angin bertiup kencang, daun beterbangan. Mana yang dimainkan?",
+        "t-angin": "Angin bertiup pelan dan stabil di lapangan. Mana yang bisa dimainkan?",
         "t-cerah3": "Siang hari panas sekali. Robot mau main kejar-kejaran. Mana yang dipakai?",
         "t-cerah4": "Tidak ada awan, matahari di atas kepala. Robot mau main di lapangan. Mana yang dipakai di kepala?",
         "t-hujan3": "Hujan deras, jalanan jadi basah. Mana yang dipakai?",
         "t-hujan4": "Gerimis turun rintik-rintik. Mana yang dipakai?",
         "t-hujan5": "Tik-tik-tik, bunyi hujan di atap. Mana yang dipakai?",
-        "t-angin2": "Angin bertiup kencang di lapangan luas. Mana yang dimainkan?"
+        "t-angin2": "Ada angin sepoi-sepoi di lapangan yang luas. Mana yang bisa dimainkan?"
       },
       "en": {
         "judul": "Umbrella or Hat?",
-        "instruksi": "Listen to the weather description, then touch the useful item.",
+        "instruksi": "Listen to the weather description, then tap the item that fits.",
         "pilihan": "choices",
         "i-payung": "umbrella",
         "i-topi": "sun hat",
@@ -192371,13 +192419,13 @@ export const PAKET_RAW: unknown[] = [
         "t-hujan1": "Dark sky, the rain is falling. Which one do we use?",
         "t-cerah2": "The sun is shining bright. Robot wants to play ball. Which one do we use?",
         "t-hujan2": "Raindrops are falling from the sky. Which one do we use?",
-        "t-angin": "The wind is blowing hard, leaves are flying. Which one do we play with?",
+        "t-angin": "A steady breeze blows across the field. Which item can you play with?",
         "t-cerah3": "It is very hot at noon. Robot wants to play tag. Which one do we use?",
         "t-cerah4": "No clouds, the sun is overhead. Robot wants to play in the field. Which one goes on the head?",
         "t-hujan3": "Heavy rain, the road is wet. Which one do we use?",
         "t-hujan4": "A light drizzle is falling. Which one do we use?",
         "t-hujan5": "Pitter-patter, rain on the roof. Which one do we use?",
-        "t-angin2": "A strong wind blows across the wide field. Which one do we play with?"
+        "t-angin2": "There is a gentle breeze in the open field. Which item can you play with?"
       }
     },
     "knobs": {
@@ -194913,14 +194961,14 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Mana yang membantu tanaman tumbuh berbunga? Taruh ke rak membantu atau tidak membantu.",
         "bantu": "membantu berbunga",
         "tidak": "tidak membantu",
-        "i-siram": "disiram air setiap hari",
+        "i-siram": "disiram secukupnya saat tanah mulai kering",
         "i-jendela": "ditaruh dekat jendela terang",
         "i-pagi": "dijemur sinar matahari pagi",
         "i-tanah": "ditanam di tanah gembur",
         "i-gulma": "rumput liar di sekitarnya dicabut",
         "i-pupuk": "diberi pupuk kompos",
         "i-lemari": "disimpan di lemari gelap",
-        "i-kering": "tidak disiram seminggu",
+        "i-kering": "tanahnya dibiarkan kering sampai retak",
         "i-kardus": "ditutup kardus terus",
         "i-minyak": "disiram minyak goreng",
         "i-injak": "diinjak-injak",
@@ -194931,14 +194979,14 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Which of these help a plant grow and bloom? Put each on the helps shelf or the does-not-help shelf.",
         "bantu": "helps it bloom",
         "tidak": "does not help",
-        "i-siram": "watered every day",
+        "i-siram": "watered lightly when the soil starts to dry",
         "i-jendela": "placed by a bright window",
         "i-pagi": "given morning sunshine",
         "i-tanah": "planted in loose soil",
         "i-gulma": "weeds around it pulled out",
         "i-pupuk": "given compost",
         "i-lemari": "kept in a dark cupboard",
-        "i-kering": "not watered for a week",
+        "i-kering": "its soil is left so dry it cracks",
         "i-kardus": "covered with a box all the time",
         "i-minyak": "watered with cooking oil",
         "i-injak": "stepped on",
@@ -194978,7 +195026,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "siram",
         "labelKey": "i-siram",
         "bin": "bantu",
-        "emoji": "🚿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-siram-tanaman"
+        }
       },
       {
         "id": "jendela",
@@ -195336,8 +195387,8 @@ export const PAKET_RAW: unknown[] = [
         "i-tidur": "anak tidur lelap",
         "i-bintang": "langit penuh bintang",
         "i-lampu": "lampu jalan menyala",
-        "i-hadap": "diputar menghadap senter",
-        "i-jauh": "diputar ke sisi gelap",
+        "i-hadap": "menghadap senter",
+        "i-jauh": "berada di sisi gelap",
         "t-1": "Bola dunia diputar sampai Bali menghadap senter. Kegiatan mana yang cocok saat siang?",
         "t-2": "Aceh kini membelakangi senter. Apa yang terlihat di langit Aceh?",
         "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Kegiatan mana yang cocok saat siang?",
@@ -195348,10 +195399,10 @@ export const PAKET_RAW: unknown[] = [
         "t-8": "Manado ada di sisi gelap. Kegiatan mana yang cocok saat malam?",
         "t-9": "Palembang kena cahaya senter. Kegiatan mana yang cocok saat siang?",
         "t-10": "Lombok diputar menjauh dari senter. Apa yang terlihat di langit?",
-        "t-11": "Robot ingin Kupang menjadi siang. Bola dunia diputar sampai Kupang…",
-        "t-12": "Supaya anak di Dubai bisa bermain di bawah sinar matahari, Dubai diputar sampai…",
-        "t-13": "Anak di Ambon ingin melihat bintang. Ambon diputar sampai…",
-        "t-14": "Supaya Paris menjadi siang, Paris diputar sampai…"
+        "t-11": "Agar siang di Kupang, robot memutar bola dunia sampai Kupang…",
+        "t-12": "Agar siang di Dubai, robot memutar bola dunia sampai Dubai…",
+        "t-13": "Anak di Ambon ingin melihat bintang. Robot memutar bola dunia sampai Ambon…",
+        "t-14": "Agar siang di Paris, robot memutar bola dunia sampai Paris…"
       },
       "en": {
         "judul": "Flashlight and Globe",
@@ -195363,8 +195414,8 @@ export const PAKET_RAW: unknown[] = [
         "i-tidur": "children fast asleep",
         "i-bintang": "a sky full of stars",
         "i-lampu": "street lights are on",
-        "i-hadap": "turned to face the flashlight",
-        "i-jauh": "turned to the dark side",
+        "i-hadap": "facing the flashlight",
+        "i-jauh": "on the dark side",
         "t-1": "The globe turns until Bali faces the flashlight. Which activity suits daytime?",
         "t-2": "Aceh now faces away from the flashlight. What is in the sky over Aceh?",
         "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. Which activity suits daytime?",
@@ -195375,10 +195426,10 @@ export const PAKET_RAW: unknown[] = [
         "t-8": "Manado is on the dark side. Which activity suits nighttime?",
         "t-9": "Palembang is in the flashlight's light. Which activity suits daytime?",
         "t-10": "Lombok is turned away from the flashlight. What is in the sky?",
-        "t-11": "The robot wants daytime in Kupang. The globe is turned until Kupang is…",
-        "t-12": "So the children in Dubai can play in the sunshine, Dubai is turned until it is…",
-        "t-13": "The children in Ambon want to see the stars. Ambon is turned until it is…",
-        "t-14": "To make it daytime in Paris, Paris is turned until it is…"
+        "t-11": "For daytime in Kupang, the robot turns the globe until Kupang is…",
+        "t-12": "For daytime in Dubai, the robot turns the globe until Dubai is…",
+        "t-13": "The children in Ambon want to see the stars. The robot turns the globe until Ambon is…",
+        "t-14": "For daytime in Paris, the robot turns the globe until Paris is…"
       }
     },
     "knobs": {
@@ -195604,8 +195655,8 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kebun Siang dan Malam",
-        "instruksi": "Lihat langit pada foto kebun. Taruh kegiatan siang ke matahari dan kegiatan malam ke bulan.",
-        "siang": "siang",
+        "instruksi": "Lihat petunjuk langit. Taruh kartu pagi dan siang di kotak matahari. Taruh kartu malam di kotak bulan.",
+        "siang": "pagi atau siang",
         "malam": "malam",
         "i-jemur": "jemur baju saat cerah",
         "i-kupu": "kupu-kupu saat cerah",
@@ -195618,8 +195669,8 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "The Garden by Day and Night",
-        "instruksi": "Look at the sky in each garden picture. Put daytime activities by the sun and nighttime activities by the moon.",
-        "siang": "day",
+        "instruksi": "Look at each sky clue. Put morning and daytime cards by the sun. Put nighttime cards by the moon.",
+        "siang": "morning or daytime",
         "malam": "night",
         "i-jemur": "drying clothes in the sunshine",
         "i-kupu": "a butterfly under a sunny sky",
@@ -197523,7 +197574,7 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Sebelum dicoba di air, tebak dulu: taruh benda ke kolom apung atau tenggelam.",
         "apung": "terapung",
         "tenggelam": "tenggelam",
-        "i-bola": "bola plastik",
+        "i-bola": "bola plastik berongga yang tertutup rapat",
         "i-daun": "daun",
         "i-kayu": "balok kayu besar",
         "i-bebekkaret": "bebek karet",
@@ -197539,7 +197590,7 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Before we try it in water, guess first: put each thing in the float or sink column.",
         "apung": "floats",
         "tenggelam": "sinks",
-        "i-bola": "plastic ball",
+        "i-bola": "sealed, hollow plastic ball",
         "i-daun": "leaf",
         "i-kayu": "big wooden block",
         "i-bebekkaret": "rubber duck",
@@ -197584,7 +197635,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bola",
         "labelKey": "i-bola",
         "bin": "apung",
-        "emoji": "🏐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-plastik-berongga"
+        }
       },
       {
         "id": "daun",
@@ -199441,6 +199495,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Kotak Kuning dan Bulat",
         "instruksi": "Tiap benda: kuning atau bukan? Bulat atau bersudut? Taruh di kotak yang cocok untuk dua-duanya.",
+        "carroll-baris-1": "Kuning",
+        "carroll-baris-2": "Bukan kuning",
+        "carroll-kolom-1": "Bulat",
+        "carroll-kolom-2": "Bersudut",
         "b-kuning-bulat": "kuning · bulat",
         "b-kuning-sudut": "kuning · bersudut",
         "b-lain-bulat": "bukan kuning · bulat",
@@ -199465,6 +199523,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Yellow and Round Boxes",
         "instruksi": "For each object: yellow or not? Round or with corners? Put it in the box that matches both.",
+        "carroll-baris-1": "Yellow",
+        "carroll-baris-2": "Not yellow",
+        "carroll-kolom-1": "Round",
+        "carroll-kolom-2": "Has corners",
         "b-kuning-bulat": "yellow · round",
         "b-kuning-sudut": "yellow · corners",
         "b-lain-bulat": "not yellow · round",
@@ -199509,6 +199571,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "kelas",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "kuning-bulat",
@@ -199650,6 +199722,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Diagram Empat Kotak",
         "instruksi": "Lihat dua hal: merah atau bukan, bulat atau bersudut. Taruh tiap benda di kotak yang cocok dua-duanya.",
+        "carroll-baris-1": "Merah",
+        "carroll-baris-2": "Bukan merah",
+        "carroll-kolom-1": "Bulat",
+        "carroll-kolom-2": "Bersudut",
         "b-merah-bulat": "merah · bulat",
         "b-merah-bersudut": "merah · bersudut",
         "b-lain-bulat": "bukan merah · bulat",
@@ -199670,6 +199746,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Four-Box Diagram",
         "instruksi": "Check two things: red or not, round or with corners. Put each object in the box that fits both.",
+        "carroll-baris-1": "Red",
+        "carroll-baris-2": "Not red",
+        "carroll-kolom-1": "Round",
+        "carroll-kolom-2": "Has corners",
         "b-merah-bulat": "red · round",
         "b-merah-bersudut": "red · corners",
         "b-lain-bulat": "not red · round",
@@ -199710,6 +199790,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "ruang-main",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "merah-bulat",
@@ -205109,8 +205199,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ayunan",
         "labelKey": "i-ayunan",
         "bin": "dorong",
-        "shape": "rect",
-        "color": "#ffb74d"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-dorong-ayunan"
+        }
       },
       {
         "id": "gerobak",
@@ -205966,14 +206058,14 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Makan Siang Hewan Peliharaan",
-        "instruksi": "Seret tiap makanan ke hewan yang suka memakannya.",
+        "instruksi": "Taruh sayur dan rumput untuk kelinci, daging dan ikan untuk kucing, biji untuk burung pemakan biji, serta pelet dan kutu air untuk ikan hias.",
         "b-kelinci": "kelinci",
         "b-kucing": "kucing",
         "b-burung": "burung",
         "b-ikanhias": "ikan hias",
         "i-wortel": "wortel",
         "i-sawi": "daun sawi",
-        "i-ikan": "ikan goreng",
+        "i-ikan": "ikan matang tanpa bumbu",
         "i-daging": "daging",
         "i-biji": "biji-bijian",
         "i-pepaya": "gabah",
@@ -205988,14 +206080,14 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Pet Lunchtime",
-        "instruksi": "Drag each food to the animal that likes to eat it.",
+        "instruksi": "Sort greens for rabbits, meat and fish for cats, seeds for seed-eating birds, and pellets and water fleas for aquarium fish.",
         "b-kelinci": "rabbit",
         "b-kucing": "cat",
         "b-burung": "bird",
         "b-ikanhias": "pet fish",
         "i-wortel": "carrot",
         "i-sawi": "mustard greens",
-        "i-ikan": "fried fish",
+        "i-ikan": "plain cooked fish",
         "i-daging": "meat",
         "i-biji": "birdseed",
         "i-pepaya": "unhusked rice grains",
@@ -206073,7 +206165,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ikan",
         "labelKey": "i-ikan",
         "bin": "kucing",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-ikan-matang"
+        }
       },
       {
         "id": "daging",
@@ -206103,9 +206198,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jentik",
         "labelKey": "i-jentik",
         "bin": "ikanhias",
-        "shape": "circle",
-        "color": "#e57373",
-        "scale": 0.5
+        "scale": 0.5,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kutu-air"
+        }
       },
       {
         "id": "rumput",
@@ -206141,7 +206238,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bijimatahari",
         "labelKey": "i-bijimatahari",
         "bin": "burung",
-        "emoji": "🌻"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-biji-bunga-matahari"
+        }
       }
     ],
     "pilihan": []
@@ -207546,6 +207646,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Kotak Laut dan Kaki",
         "instruksi": "Jawab dua pertanyaan untuk tiap hewan: hidup di laut? punya kaki? Lalu taruh di kotak yang cocok.",
+        "carroll-baris-1": "Laut",
+        "carroll-baris-2": "Darat",
+        "carroll-kolom-1": "Berkaki",
+        "carroll-kolom-2": "Tanpa kaki",
         "bin-laut-kaki": "laut · berkaki",
         "bin-laut-tanpa": "laut · tanpa kaki",
         "bin-darat-kaki": "darat · berkaki",
@@ -207567,6 +207671,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Sea and Legs Boxes",
         "instruksi": "Answer two questions for each animal: does it live in the sea? does it have legs? Then put it in the right box.",
+        "carroll-baris-1": "Sea",
+        "carroll-baris-2": "Land",
+        "carroll-kolom-1": "Has legs",
+        "carroll-kolom-2": "No legs",
         "bin-laut-kaki": "sea · has legs",
         "bin-laut-tanpa": "sea · no legs",
         "bin-darat-kaki": "land · has legs",
@@ -207608,6 +207716,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "pantai",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "laut-kaki",
@@ -207720,6 +207838,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Kotak Roda dan Mesin",
         "instruksi": "Jawab dua pertanyaan untuk tiap benda: punya roda? pakai mesin? Lalu taruh di kotak yang cocok.",
+        "carroll-baris-1": "Beroda",
+        "carroll-baris-2": "Tanpa roda",
+        "carroll-kolom-1": "Bermesin",
+        "carroll-kolom-2": "Tanpa mesin",
         "bin-roda-mesin": "roda · mesin",
         "bin-roda-tanpa": "roda · tanpa mesin",
         "bin-tanpa-mesin": "tanpa roda · mesin",
@@ -207742,6 +207864,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Wheels and Engine Boxes",
         "instruksi": "Answer two questions for each thing: wheels? engine? Then put it in the matching box.",
+        "carroll-baris-1": "Has wheels",
+        "carroll-baris-2": "No wheels",
+        "carroll-kolom-1": "Has an engine",
+        "carroll-kolom-2": "No engine",
         "bin-roda-mesin": "wheels · engine",
         "bin-roda-tanpa": "wheels · no engine",
         "bin-tanpa-mesin": "no wheels · engine",
@@ -207784,6 +207910,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "jalan-ke-sekolah",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "roda-mesin",
@@ -210014,6 +210150,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Diagram Carroll Bilangan",
         "instruksi": "Cek dua hal: genap atau ganjil, dan kurang dari 50 atau tidak. Taruh di kotak yang cocok dua-duanya.",
+        "carroll-baris-1": "Kurang dari 50",
+        "carroll-baris-2": "50 atau lebih",
+        "carroll-kolom-1": "Genap",
+        "carroll-kolom-2": "Ganjil",
         "b-genap-kurang-50": "genap, kurang dari 50",
         "b-ganjil-kurang-50": "ganjil, kurang dari 50",
         "b-genap-50": "genap, 50 atau lebih",
@@ -210042,6 +210182,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Number Carroll Diagram",
         "instruksi": "Check two things: even or odd, and less than 50 or not. Put each number in the box that fits both.",
+        "carroll-baris-1": "Less than 50",
+        "carroll-baris-2": "50 or more",
+        "carroll-kolom-1": "Even",
+        "carroll-kolom-2": "Odd",
         "b-genap-kurang-50": "even, less than 50",
         "b-ganjil-kurang-50": "odd, less than 50",
         "b-genap-50": "even, 50 or more",
@@ -210090,6 +210234,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "ruang-main",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "genap-kecil",
@@ -210248,6 +210402,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Lantai Menara Carroll",
         "instruksi": "Tiap nomor lantai: genap atau ganjil? Kurang dari 50 atau tidak? Taruh di kotak yang cocok untuk dua-duanya.",
+        "carroll-baris-1": "Genap",
+        "carroll-baris-2": "Ganjil",
+        "carroll-kolom-1": "Kurang dari 50",
+        "carroll-kolom-2": "50 atau lebih",
         "b-genap-kecil": "genap, kurang dari 50",
         "b-genap-besar": "genap, 50 atau lebih",
         "b-ganjil-kecil": "ganjil, kurang dari 50",
@@ -210280,6 +210438,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Tower Floors Carroll Diagram",
         "instruksi": "For each floor number: even or odd? Less than 50 or not? Put it in the box that matches both.",
+        "carroll-baris-1": "Even",
+        "carroll-baris-2": "Odd",
+        "carroll-kolom-1": "Less than 50",
+        "carroll-kolom-2": "50 or more",
         "b-genap-kecil": "even, less than 50",
         "b-genap-besar": "even, 50 or more",
         "b-ganjil-kecil": "odd, less than 50",
@@ -210332,6 +210494,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "menara",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "genap-kecil",
@@ -218656,7 +218828,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "lalat",
         "labelKey": "i-lalat",
         "bin": "k6",
-        "emoji": "🪰"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lalat-enam-kaki"
+        }
       },
       {
         "id": "kepikmerah",
@@ -218884,7 +219059,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kupu",
         "labelKey": "i-kupu",
         "bin": "k6",
-        "emoji": "🦋"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kupu-enam-kaki"
+        }
       },
       {
         "id": "belalang",
@@ -218937,35 +219115,35 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Panas-Kering atau Sejuk-Lembap?",
-        "instruksi": "Bayangkan berada di tiap tempat, lalu taruh ke rak panas-kering atau sejuk-lembap.",
+        "instruksi": "Bandingkan suhu dan kelembapan tiap tempat. Baca petunjuk pada kartu, lalu taruh di rak yang sesuai.",
         "b-panas": "panas dan kering",
         "b-lembap": "sejuk dan lembap",
-        "i-aspal": "jalan aspal siang hari",
-        "i-pasir": "pasir terkena Matahari",
-        "i-atap": "atap seng siang hari",
-        "i-lapangan": "lapangan tanpa pohon",
-        "i-batuterjemur": "batu besar di bawah terik",
-        "i-bawahbatu": "tanah di bawah batu",
-        "i-bawahpohon": "tanah di bawah pohon rindang",
-        "i-tepikolam": "tepi kolam",
-        "i-daun": "tumpukan daun basah",
-        "i-pot": "pot yang baru disiram"
+        "i-aspal": "aspal panas dan kering di bawah Matahari siang",
+        "i-pasir": "pasir panas dan kering di bawah terik Matahari",
+        "i-atap": "atap seng panas dan kering di siang terik",
+        "i-lapangan": "lapangan panas dan berdebu tanpa pohon",
+        "i-batuterjemur": "batu besar panas dan kering di bawah terik",
+        "i-bawahbatu": "tanah sejuk dan lembap di bawah batu",
+        "i-bawahpohon": "tanah sejuk dan lembap di bawah pohon rindang",
+        "i-tepikolam": "tepi kolam yang sejuk, teduh, dan basah",
+        "i-daun": "tumpukan daun basah di tempat sejuk dan teduh",
+        "i-pot": "pot sejuk di tempat teduh dengan tanah lembap"
       },
       "en": {
         "judul": "Hot and Dry or Cool and Damp?",
-        "instruksi": "Imagine being in each place, then put it on the hot-and-dry or cool-and-damp shelf.",
+        "instruksi": "Compare how warm and damp each place is. Read the clue on each card, then put it on the matching shelf.",
         "b-panas": "hot and dry",
         "b-lembap": "cool and damp",
-        "i-aspal": "road at midday",
-        "i-pasir": "sand in the sunshine",
-        "i-atap": "tin roof at midday",
-        "i-lapangan": "field with no trees",
-        "i-batuterjemur": "big rock in strong sun",
-        "i-bawahbatu": "soil under a stone",
-        "i-bawahpohon": "soil under a shady tree",
-        "i-tepikolam": "edge of the pond",
-        "i-daun": "pile of wet leaves",
-        "i-pot": "freshly watered pot"
+        "i-aspal": "hot, dry tarmac in the midday sun",
+        "i-pasir": "hot, dry sand in direct sunshine",
+        "i-atap": "a hot, dry metal roof in the midday sun",
+        "i-lapangan": "a hot, dusty field with no trees",
+        "i-batuterjemur": "a large, hot, dry rock in direct sunshine",
+        "i-bawahbatu": "cool, damp soil under a rock",
+        "i-bawahpohon": "cool, damp soil in the shade of a leafy tree",
+        "i-tepikolam": "a cool, wet pond edge in the shade",
+        "i-daun": "a pile of wet leaves in a cool, shady spot",
+        "i-pot": "a cool pot in the shade with damp soil"
       }
     },
     "knobs": {
@@ -219007,7 +219185,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "panas",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pasir-panas-kering"
+        }
       },
       {
         "id": "atap",
@@ -220188,39 +220369,39 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Panas atau Sejuk di Sekitarku?",
-        "instruksi": "Lihat gambar tiap tempat. Taruh ke rak panas dan kering, atau sejuk dan lembap.",
+        "instruksi": "Perhatikan gambar dan baca keadaan tiap tempat. Taruh ke rak panas dan kering, atau sejuk dan lembap.",
         "b-panas": "panas dan kering",
         "b-lembap": "sejuk dan lembap",
-        "i-gurun": "pasir pantai siang hari",
-        "i-kapmobil": "kap mobil di parkiran terbuka siang hari",
-        "i-tembok": "tembok bata disinari Matahari siang",
-        "i-ladang": "padang rumput kering di musim kemarau",
-        "i-lapbasket": "lapangan basket semen siang hari",
-        "i-gundul": "puncak bukit gundul di siang terik",
-        "i-hutan": "hutan lebat yang rindang",
-        "i-kamarmandi": "kamar mandi setelah dipakai mandi",
-        "i-kayulapuk": "di bawah batang kayu lapuk",
-        "i-tepisungai": "tepi sungai yang teduh",
-        "i-lumut": "tembok teduh yang berlumut",
-        "i-jamur": "tanah tempat jamur tumbuh"
+        "i-gurun": "pasir kering dan panas jauh dari ombak",
+        "i-kapmobil": "kap mobil panas dan kering di parkiran",
+        "i-tembok": "tembok bata kering yang panas kena terik siang",
+        "i-ladang": "padang rumput panas dan kering di musim kemarau",
+        "i-lapbasket": "lapangan basket semen yang panas dan kering",
+        "i-gundul": "puncak bukit gundul yang panas dan berdebu",
+        "i-hutan": "lantai hutan yang sejuk dan lembap di bawah pohon",
+        "i-kamarmandi": "kamar mandi sejuk dengan lantai basah",
+        "i-kayulapuk": "tanah sejuk dan lembap di bawah kayu lapuk",
+        "i-tepisungai": "tanah sejuk dan lembap di tepi sungai yang teduh",
+        "i-lumut": "tembok sejuk, teduh, dan lembap yang ditumbuhi lumut",
+        "i-jamur": "tanah sejuk dan lembap tempat jamur tumbuh"
       },
       "en": {
         "judul": "Hot or Cool Around Me?",
-        "instruksi": "Look at each place. Put it on the hot-and-dry shelf or the cool-and-damp shelf.",
+        "instruksi": "Look at the picture and read the conditions at each spot. Sort it as hot and dry or cool and damp.",
         "b-panas": "hot and dry",
         "b-lembap": "cool and damp",
-        "i-gurun": "beach sand at midday",
-        "i-kapmobil": "a car bonnet in an open car park at midday",
-        "i-tembok": "a brick wall in the midday sun",
-        "i-ladang": "a dry grass field in the dry season",
-        "i-lapbasket": "a concrete basketball court at midday",
-        "i-gundul": "a bare hilltop in the blazing sun",
-        "i-hutan": "a thick, shady forest",
-        "i-kamarmandi": "a bathroom just after a shower",
-        "i-kayulapuk": "under a rotting log",
-        "i-tepisungai": "a shady riverbank",
-        "i-lumut": "a shady wall covered in moss",
-        "i-jamur": "ground where mushrooms grow"
+        "i-gurun": "hot, dry sand well away from the waves",
+        "i-kapmobil": "the hot, dry hood of a parked car",
+        "i-tembok": "a dry brick wall hot from the midday sun",
+        "i-ladang": "a hot, dry field in the dry season",
+        "i-lapbasket": "a hot, dry concrete basketball court",
+        "i-gundul": "a hot, dusty hilltop without trees",
+        "i-hutan": "a cool, damp forest floor under the trees",
+        "i-kamarmandi": "a cool bathroom with a wet floor",
+        "i-kayulapuk": "cool, damp soil under a rotting log",
+        "i-tepisungai": "cool, damp soil on a shaded riverbank",
+        "i-lumut": "a cool, damp wall covered in moss in the shade",
+        "i-jamur": "cool, damp soil where mushrooms grow"
       }
     },
     "knobs": {
@@ -220254,7 +220435,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "gurun",
         "labelKey": "i-gurun",
         "bin": "panas",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pasir-panas-kering"
+        }
       },
       {
         "id": "kapmobil",
@@ -220296,7 +220480,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kamarmandi",
         "labelKey": "i-kamarmandi",
         "bin": "lembap",
-        "emoji": "🚿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lantai-sejuk-basah"
+        }
       },
       {
         "id": "kayulapuk",
@@ -221916,6 +222103,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Diagram Carroll Kelipatan 5",
         "instruksi": "Kelipatan 5 bersatuan 0 atau 5. Genap bersatuan 0, 2, 4, 6, 8. Taruh di kotak yang cocok untuk keduanya.",
+        "carroll-baris-1": "Kelipatan 5",
+        "carroll-baris-2": "Bukan kelipatan 5",
+        "carroll-kolom-1": "Genap",
+        "carroll-kolom-2": "Ganjil",
         "b-kelt-5-genap": "kelipatan 5, genap",
         "b-kelt-5-ganjil": "kelipatan 5, ganjil",
         "b-bukan-genap": "bukan kelipatan 5, genap",
@@ -221944,6 +222135,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Multiples of 5 Carroll Diagram",
         "instruksi": "Multiples of 5 end in 0 or 5. Even numbers end in 0, 2, 4, 6 or 8. Put each number in the box that fits both.",
+        "carroll-baris-1": "Multiple of 5",
+        "carroll-baris-2": "Not a multiple of 5",
+        "carroll-kolom-1": "Even",
+        "carroll-kolom-2": "Odd",
         "b-kelt-5-genap": "multiple of 5, even",
         "b-kelt-5-ganjil": "multiple of 5, odd",
         "b-bukan-genap": "not a multiple of 5, even",
@@ -221992,6 +222187,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "ruang-main",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "lima-genap",
@@ -222146,6 +222351,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Carroll Nomor Peti",
         "instruksi": "Kelipatan 5 bersatuan 0 atau 5. Genap bersatuan 0, 2, 4, 6, atau 8. Lihat angka satuannya, lalu taruh tiap nomor peti di kotak yang cocok untuk keduanya.",
+        "carroll-baris-1": "Genap",
+        "carroll-baris-2": "Ganjil",
+        "carroll-kolom-1": "Kelipatan 5",
+        "carroll-kolom-2": "Bukan kelipatan 5",
         "b-lima-genap": "kelipatan 5, genap",
         "b-bukan-genap": "bukan kelipatan 5, genap",
         "b-lima-ganjil": "kelipatan 5, ganjil",
@@ -222178,6 +222387,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Carroll Crate Numbers",
         "instruksi": "Multiples of 5 end in 0 or 5. Even numbers end in 0, 2, 4, 6 or 8. Look at the ones digit, then put each crate number in the box that fits both.",
+        "carroll-baris-1": "Even",
+        "carroll-baris-2": "Odd",
+        "carroll-kolom-1": "Multiple of 5",
+        "carroll-kolom-2": "Not a multiple of 5",
         "b-lima-genap": "multiple of 5, even",
         "b-bukan-genap": "not a multiple of 5, even",
         "b-lima-ganjil": "multiple of 5, odd",
@@ -222230,6 +222443,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "gudang",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "lima-genap",
@@ -232220,7 +232443,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Fosil atau Bukan?",
-        "instruksi": "Fosil adalah jejak atau sisa makhluk zaman dulu yang membatu. Taruh tiap temuan ke rak fosil atau bukan fosil.",
+        "instruksi": "Fosil adalah jejak atau sisa makhluk hidup purba yang terawetkan. Taruh tiap temuan ke rak fosil atau bukan fosil.",
         "b-fosil": "fosil",
         "b-bukan": "bukan fosil",
         "i-cetakandaun": "cetakan daun di batu",
@@ -232228,7 +232451,7 @@ export const PAKET_RAW: unknown[] = [
         "i-amonit": "cangkang laut kuno yang membatu",
         "i-tulangdino": "tulang dinosaurus di tebing",
         "i-ikanbatu": "cetakan ikan di batu",
-        "i-damar": "serangga di dalam damar membatu",
+        "i-damar": "serangga purba terawetkan dalam ambar",
         "i-mainan": "mainan dinosaurus plastik",
         "i-tulangayam": "tulang ayam sisa makan",
         "i-kerangsegar": "kerang segar di pantai",
@@ -232238,7 +232461,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Fossil or Not?",
-        "instruksi": "A fossil is a trace or remains of an ancient living thing turned to stone. Put each find on the fossil shelf or the not-a-fossil shelf.",
+        "instruksi": "Fossils are preserved remains or traces of ancient living things. Sort each find as a fossil or not a fossil.",
         "b-fosil": "fossil",
         "b-bukan": "not a fossil",
         "i-cetakandaun": "leaf print in rock",
@@ -232246,7 +232469,7 @@ export const PAKET_RAW: unknown[] = [
         "i-amonit": "ancient shell turned to stone",
         "i-tulangdino": "dinosaur bone in a cliff",
         "i-ikanbatu": "fish print in rock",
-        "i-damar": "insect trapped in ancient amber",
+        "i-damar": "an ancient insect preserved in amber",
         "i-mainan": "plastic toy dinosaur",
         "i-tulangayam": "leftover chicken bone",
         "i-kerangsegar": "fresh shell on the beach",
@@ -232288,45 +232511,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "cetakandaun",
         "labelKey": "i-cetakandaun",
         "bin": "fosil",
-        "emoji": "🍃",
-        "color": "#8d6e63",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-daun"
+        }
       },
       {
         "id": "jejakdino",
         "labelKey": "i-jejakdino",
         "bin": "fosil",
-        "emoji": "🦶",
-        "color": "#8d6e63",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-jejak"
+        }
       },
       {
         "id": "amonit",
         "labelKey": "i-amonit",
         "bin": "fosil",
-        "emoji": "🐚",
-        "color": "#8d6e63",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-amonit"
+        }
       },
       {
         "id": "tulangdino",
         "labelKey": "i-tulangdino",
         "bin": "fosil",
-        "emoji": "🦴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-tulang"
+        }
       },
       {
         "id": "ikanbatu",
         "labelKey": "i-ikanbatu",
         "bin": "fosil",
-        "emoji": "🐟",
-        "color": "#8d6e63",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-ikan"
+        }
       },
       {
         "id": "damar",
         "labelKey": "i-damar",
         "bin": "fosil",
-        "emoji": "🟠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-ambar"
+        }
       },
       {
         "id": "mainan",
@@ -236182,7 +236415,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Temuan di Tepi Sungai",
-        "instruksi": "Tim peneliti menemukan banyak benda di tepi sungai. Taruh ke rak fosil (sisa makhluk purba yang membatu) atau bukan fosil.",
+        "instruksi": "Periksa temuan di tepi sungai. Taruh jejak atau sisa makhluk hidup purba yang terawetkan ke rak fosil. Taruh temuan lain ke rak bukan fosil.",
         "b-fosil": "fosil",
         "b-bukan": "bukan fosil",
         "i-gigihiu": "gigi hiu purba yang membatu",
@@ -236195,12 +236428,12 @@ export const PAKET_RAW: unknown[] = [
         "i-ranting": "ranting kayu kering",
         "i-pakissegar": "daun pakis segar di kebun",
         "i-jejakkucing": "jejak kaki kucing di lumpur kemarin",
-        "i-tulangikan": "tulang ikan sisa makan siang",
+        "i-tulangikan": "ikan sisa makan siang",
         "i-siput": "siput kebun yang masih hidup"
       },
       "en": {
         "judul": "Finds by the River",
-        "instruksi": "The research team found many things by the river. Put each on the fossil shelf (remains of ancient life turned to stone) or the not-a-fossil shelf.",
+        "instruksi": "Look at the finds from the riverbank. Put preserved remains or traces of ancient living things on the fossil shelf. Put other finds on the not-a-fossil shelf.",
         "b-fosil": "fossil",
         "b-bukan": "not a fossil",
         "i-gigihiu": "a stone tooth of an ancient shark",
@@ -236213,7 +236446,7 @@ export const PAKET_RAW: unknown[] = [
         "i-ranting": "a dry twig",
         "i-pakissegar": "a fresh fern leaf in the garden",
         "i-jejakkucing": "cat footprints left in the mud yesterday",
-        "i-tulangikan": "fish bones left from lunch",
+        "i-tulangikan": "leftover fish from lunch",
         "i-siput": "a living garden snail"
       }
     },
@@ -236248,52 +236481,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "gigihiu",
         "labelKey": "i-gigihiu",
         "bin": "fosil",
-        "emoji": "🦷",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🦈"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-gigi-hiu"
         }
       },
       {
         "id": "kayubatu",
         "labelKey": "i-kayubatu",
         "bin": "fosil",
-        "emoji": "🪵",
-        "color": "#8d6e63",
-        "latar": true,
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🪨"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-kayu"
         }
       },
       {
         "id": "pakis",
         "labelKey": "i-pakis",
         "bin": "fosil",
-        "emoji": "🌿",
-        "color": "#8d6e63",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-daun"
+        }
       },
       {
         "id": "jejakburung",
         "labelKey": "i-jejakburung",
         "bin": "fosil",
-        "emoji": "🐾",
-        "color": "#8d6e63"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-jejak"
+        }
       },
       {
         "id": "amonit",
         "labelKey": "i-amonit",
         "bin": "fosil",
-        "emoji": "🐚"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-amonit"
+        }
       },
       {
         "id": "tengkorak",
         "labelKey": "i-tengkorak",
         "bin": "fosil",
-        "emoji": "💀",
-        "color": "#8d6e63",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-fosil-tengkorak"
+        }
       },
       {
         "id": "gigisusu",
@@ -240669,6 +240905,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Carroll Kelipatan",
         "instruksi": "Dua sifat: kelipatan 5 atau bukan, dan kelipatan 3 atau bukan. Taruh tiap bilangan di kotak yang cocok untuk keduanya.",
+        "carroll-baris-1": "Kelipatan 5",
+        "carroll-baris-2": "Bukan kelipatan 5",
+        "carroll-kolom-1": "Kelipatan 3",
+        "carroll-kolom-2": "Bukan kelipatan 3",
         "b-k5-k3": "kelipatan 5 dan 3",
         "b-k5-b3": "kelipatan 5, bukan 3",
         "b-b5-k3": "kelipatan 3, bukan 5",
@@ -240706,6 +240946,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Multiples Carroll Diagram",
         "instruksi": "Two properties: a multiple of 5 or not, and a multiple of 3 or not. Put each number in the box that fits both.",
+        "carroll-baris-1": "Multiple of 5",
+        "carroll-baris-2": "Not a multiple of 5",
+        "carroll-kolom-1": "Multiple of 3",
+        "carroll-kolom-2": "Not a multiple of 3",
         "b-k5-k3": "multiple of 5 and 3",
         "b-k5-b3": "of 5, not 3",
         "b-b5-k3": "of 3, not 5",
@@ -240756,6 +241000,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "kelas",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "k5-k3",
@@ -240935,6 +241189,10 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Diagram Carroll",
         "instruksi": "Setiap bilangan punya dua sifat: genap atau ganjil, dan lebih dari 50 atau tidak. Taruh di kotak yang cocok untuk keduanya.",
+        "carroll-baris-1": "Genap",
+        "carroll-baris-2": "Ganjil",
+        "carroll-kolom-1": "Lebih dari 50",
+        "carroll-kolom-2": "50 atau kurang",
         "b-genap-besar": "genap, lebih dari 50",
         "b-genap-kecil": "genap, 50 atau kurang",
         "b-ganjil-besar": "ganjil, lebih dari 50",
@@ -240961,6 +241219,10 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Carroll Diagram",
         "instruksi": "Each number has two properties: even or odd, and more than 50 or not. Put it in the box that fits both.",
+        "carroll-baris-1": "Even",
+        "carroll-baris-2": "Odd",
+        "carroll-kolom-1": "More than 50",
+        "carroll-kolom-2": "50 or less",
         "b-genap-besar": "even, more than 50",
         "b-genap-kecil": "even, 50 or less",
         "b-ganjil-besar": "odd, more than 50",
@@ -241000,6 +241262,16 @@ export const PAKET_RAW: unknown[] = [
     "world": "kelas",
     "mode": "kelompok",
     "pilihan": [],
+    "carroll": {
+      "baris": [
+        "carroll-baris-1",
+        "carroll-baris-2"
+      ],
+      "kolom": [
+        "carroll-kolom-1",
+        "carroll-kolom-2"
+      ]
+    },
     "bins": [
       {
         "id": "genap-besar",
@@ -248934,7 +249206,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tvnyala",
         "labelKey": "i-tvnyala",
         "bin": "sumber",
-        "emoji": "📺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-televisi-menyala"
+        }
       },
       {
         "id": "lentera",
@@ -248976,9 +249251,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tvmati",
         "labelKey": "i-tvmati",
         "bin": "pantul",
-        "emoji": "📺",
-        "color": "#424242",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-televisi-mati"
+        }
       }
     ],
     "pilihan": []
@@ -250416,7 +250692,7 @@ export const PAKET_RAW: unknown[] = [
         "i-labalaba": "laba-laba",
         "i-ayam": "ayam",
         "i-tikus": "tikus",
-        "i-beruang": "beruang",
+        "i-beruang": "beruang cokelat pemakan buah dan ikan",
         "i-monyet": "monyet"
       },
       "en": {
@@ -250437,7 +250713,7 @@ export const PAKET_RAW: unknown[] = [
         "i-labalaba": "spider",
         "i-ayam": "chicken",
         "i-tikus": "rat",
-        "i-beruang": "bear",
+        "i-beruang": "brown bear that eats fruit and fish",
         "i-monyet": "monkey"
       }
     },
@@ -250553,7 +250829,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "beruang",
         "labelKey": "i-beruang",
         "bin": "omnivora",
-        "emoji": "🐻"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-beruang-cokelat"
+        }
       },
       {
         "id": "monyet",
@@ -299001,10 +299280,10 @@ export const PAKET_RAW: unknown[] = [
         "i-sengperahu": "lembar seng dibentuk perahu bertepi tinggi",
         "i-senggumpal": "lembar seng yang sama dilipat jadi gumpalan padat",
         "i-perahusedikit": "perahu tanah liat berisi sedikit kelereng",
-        "i-perahubanyak": "perahu tanah liat yang sama berisi kelereng sangat banyak sampai air masuk",
+        "i-perahubanyak": "perahu sama, penuh kelereng hingga air masuk",
         "i-busa": "balok busa pelampung",
         "i-bata": "batu bata seukuran balok busa",
-        "i-bambu": "batang bambu berongga",
+        "i-bambu": "batang bambu berongga dengan kedua ujung tertutup",
         "i-besi": "batang besi seukuran bambu",
         "i-plastisinpiring": "plastisin 100 g dipipihkan jadi piring bertepi",
         "i-plastisintongkat": "plastisin 100 g yang sama digulung jadi tongkat padat",
@@ -299020,7 +299299,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r8": "Dua plastisin sama massanya. Mana yang mengapung?",
         "p-r9": "Kapal selam melayang diam di dalam air laut. Tangki diisi lagi sehingga massa bertambah, tetapi volume kapal tetap. Kapal itu…",
         "p-r10": "Kapal selam melayang diam di dalam air laut. Air dipompa keluar dari tangki sehingga massa berkurang, tetapi volume kapal tetap. Kapal itu…",
-        "p-r11": "Perahu seng yang mengapung dilubangi bagian bawahnya, lalu air masuk ke dalamnya. Perahu itu…",
+        "p-r11": "Perahu seng yang mengapung dilubangi. Air mengisi seluruh bagian dalamnya dan menggantikan udara. Perahu itu…",
         "p-r12": "Kotak bekal kosong yang tertutup mengapung. Kotak diisi batu dan tenggelam. Batu dikeluarkan, lalu kotak ditutup rapat lagi. Kotak itu…"
       },
       "en": {
@@ -299034,10 +299313,10 @@ export const PAKET_RAW: unknown[] = [
         "i-sengperahu": "a metal sheet shaped into a high-sided boat",
         "i-senggumpal": "the same metal sheet folded into a solid lump",
         "i-perahusedikit": "a clay boat holding a few marbles",
-        "i-perahubanyak": "the same clay boat holding so many marbles that water pours in",
+        "i-perahubanyak": "the same boat, full of marbles until water comes in",
         "i-busa": "a foam float block",
         "i-bata": "a brick the same size as the foam block",
-        "i-bambu": "a hollow bamboo pole",
+        "i-bambu": "hollow bamboo with both ends sealed",
         "i-besi": "an iron bar the same size as the bamboo",
         "i-plastisinpiring": "100 g of playdough flattened into a plate with a rim",
         "i-plastisintongkat": "the same 100 g of playdough rolled into a solid stick",
@@ -299053,7 +299332,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r8": "Two pieces of playdough have the same mass. Which one floats?",
         "p-r9": "A submarine hovers in seawater. It takes on more ballast water, so its mass increases while its volume stays the same. It…",
         "p-r10": "A submarine hovers in seawater. It pumps ballast water out, so its mass decreases while its volume stays the same. It…",
-        "p-r11": "A floating metal boat gets a hole in the bottom and water comes in. The boat…",
+        "p-r11": "A hole is made in a floating metal boat. Water fills the whole inside and replaces the air. The boat will…",
         "p-r12": "An empty closed lunch box floats. It sinks when filled with stones. The stones are taken out and the box is sealed again. It…"
       }
     },
@@ -299075,55 +299354,76 @@ export const PAKET_RAW: unknown[] = [
         "id": "liatmangkuk",
         "labelKey": "i-liatmangkuk",
         "bin": "pilihan",
-        "shape": "rect",
-        "color": "#a1887f",
-        "scale": 0.9
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-mangkuk-tanah-liat"
+        }
       },
       {
         "id": "liatbola",
         "labelKey": "i-liatbola",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#a1887f",
-        "scale": 0.7
+        "scale": 0.7,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-tanah-liat"
+        }
       },
       {
         "id": "kotakkosong",
         "labelKey": "i-kotakkosong",
         "bin": "pilihan",
-        "emoji": "🍱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kotak-kosong"
+        }
       },
       {
         "id": "kotakbatu",
         "labelKey": "i-kotakbatu",
         "bin": "pilihan",
-        "emoji": "🪨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kotak-berisi-batu"
+        }
       },
       {
         "id": "sengperahu",
         "labelKey": "i-sengperahu",
         "bin": "pilihan",
-        "emoji": "🛶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perahu-seng"
+        }
       },
       {
         "id": "senggumpal",
         "labelKey": "i-senggumpal",
         "bin": "pilihan",
-        "shape": "square",
-        "color": "#90a4ae",
-        "scale": 0.6
+        "scale": 0.6,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-seng-padat"
+        }
       },
       {
         "id": "perahusedikit",
         "labelKey": "i-perahusedikit",
         "bin": "pilihan",
-        "emoji": "⛵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perahu-muatan-ringan"
+        }
       },
       {
         "id": "perahubanyak",
         "labelKey": "i-perahubanyak",
         "bin": "pilihan",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perahu-muatan-berat"
+        }
       },
       {
         "id": "busa",
@@ -299143,7 +299443,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bambu",
         "labelKey": "i-bambu",
         "bin": "pilihan",
-        "emoji": "🎋"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bambu-tertutup"
+        }
       },
       {
         "id": "besi",
@@ -299157,17 +299460,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "plastisinpiring",
         "labelKey": "i-plastisinpiring",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#ab47bc",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-piring-plastisin"
+        }
       },
       {
         "id": "plastisintongkat",
         "labelKey": "i-plastisintongkat",
         "bin": "pilihan",
-        "shape": "rect",
-        "color": "#ab47bc",
-        "scale": 0.6
+        "scale": 0.6,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tongkat-plastisin"
+        }
       },
       {
         "id": "tenggelam",
@@ -299381,73 +299688,109 @@ export const PAKET_RAW: unknown[] = [
         "id": "andesit",
         "labelKey": "i-andesit",
         "bin": "beku",
-        "emoji": "🛕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-andesit"
+        }
       },
       {
         "id": "gabro",
         "labelKey": "i-gabro",
         "bin": "beku",
-        "emoji": "⬛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-gabro"
+        }
       },
       {
         "id": "diorit",
         "labelKey": "i-diorit",
         "bin": "beku",
-        "emoji": "🧂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-diorit"
+        }
       },
       {
         "id": "skoria",
         "labelKey": "i-skoria",
         "bin": "beku",
-        "emoji": "🔴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-skoria"
+        }
       },
       {
         "id": "tebing",
         "labelKey": "i-tebing",
         "bin": "sedimen",
-        "emoji": "🏞️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lanau"
+        }
       },
       {
         "id": "batubara",
         "labelKey": "i-batubara",
         "bin": "sedimen",
-        "emoji": "🪨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-bara"
+        }
       },
       {
         "id": "breksi",
         "labelKey": "i-breksi",
         "bin": "sedimen",
-        "emoji": "🧩"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-breksi"
+        }
       },
       {
         "id": "lempung",
         "labelKey": "i-lempung",
         "bin": "sedimen",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lempung"
+        }
       },
       {
         "id": "sekis",
         "labelKey": "i-sekis",
         "bin": "metamorf",
-        "emoji": "✨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sekis"
+        }
       },
       {
         "id": "filit",
         "labelKey": "i-filit",
         "bin": "metamorf",
-        "emoji": "🎀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-filit"
+        }
       },
       {
         "id": "pita",
         "labelKey": "i-pita",
         "bin": "metamorf",
-        "emoji": "🌀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-gneis"
+        }
       },
       {
         "id": "marmerputih",
         "labelKey": "i-marmerputih",
         "bin": "metamorf",
-        "emoji": "🏛️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-marmer"
+        }
       }
     ],
     "pilihan": []
@@ -299471,7 +299814,7 @@ export const PAKET_RAW: unknown[] = [
         "i-foilpadat": "aluminium foil dipukul jadi gumpalan padat",
         "i-botolkosong": "botol plastik kosong bertutup",
         "i-botolpasir": "botol yang sama diisi penuh pasir",
-        "i-perahukelereng": "perahu foil diisi sangat banyak kelereng",
+        "i-perahukelereng": "perahu foil penuh kelereng hingga air masuk",
         "i-kapal": "kapal baja besar berongga",
         "i-baut": "baut baja kecil",
         "i-pingpong": "bola pingpong",
@@ -299492,7 +299835,7 @@ export const PAKET_RAW: unknown[] = [
         "i-jerukkupas": "jeruk yang sama setelah dikupas",
         "i-kalengkosong": "kaleng aluminium kosong yang tertutup rapat",
         "i-kalengair": "kaleng yang sama diisi penuh air",
-        "p-r9": "Jeruknya sama. Mana yang tenggelam?",
+        "p-r9": "Dalam percobaan ini, lapisan kulit membantu jeruk mengapung karena berisi kantong udara. Mana yang cenderung tenggelam?",
         "p-r10": "Kalengnya sama. Mana yang terapung?",
         "p-r11": "Dua gumpal plastisin sama massanya. Mana yang tenggelam?",
         "p-r12": "Sama-sama dari baja. Mana yang tenggelam?"
@@ -299507,7 +299850,7 @@ export const PAKET_RAW: unknown[] = [
         "i-foilpadat": "foil hammered into a tight lump",
         "i-botolkosong": "an empty, capped plastic bottle",
         "i-botolpasir": "the same bottle filled with sand",
-        "i-perahukelereng": "a foil boat loaded with lots of marbles",
+        "i-perahukelereng": "a foil boat full of marbles until water comes in",
         "i-kapal": "a big hollow steel ship",
         "i-baut": "a small steel bolt",
         "i-pingpong": "a ping-pong ball",
@@ -299528,7 +299871,7 @@ export const PAKET_RAW: unknown[] = [
         "i-jerukkupas": "the same orange after peeling",
         "i-kalengkosong": "an empty, tightly sealed aluminium can",
         "i-kalengair": "the same can filled with water",
-        "p-r9": "It is the same orange. Which one sinks?",
+        "p-r9": "In this test, air pockets in the peel help the orange float. Which is more likely to sink?",
         "p-r10": "It is the same can. Which one floats?",
         "p-r11": "Two lumps of modelling clay have the same mass. Which one sinks?",
         "p-r12": "Both are made of steel. Which one sinks?"
@@ -299552,50 +299895,66 @@ export const PAKET_RAW: unknown[] = [
         "id": "bolaplastisin",
         "labelKey": "i-bolaplastisin",
         "bin": "pilihan",
-        "emoji": "🟤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-plastisin"
+        }
       },
       {
         "id": "perahuplastisin",
         "labelKey": "i-perahuplastisin",
         "bin": "pilihan",
-        "emoji": "🛶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perahu-plastisin"
+        }
       },
       {
         "id": "foilperahu",
         "labelKey": "i-foilperahu",
         "bin": "pilihan",
-        "emoji": "🛶",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "✨"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perahu-seng"
         }
       },
       {
         "id": "foilpadat",
         "labelKey": "i-foilpadat",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#b0bec5",
-        "scale": 0.6
+        "scale": 0.6,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-seng-padat"
+        }
       },
       {
         "id": "botolkosong",
         "labelKey": "i-botolkosong",
         "bin": "pilihan",
-        "emoji": "🍶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-botol-kosong"
+        }
       },
       {
         "id": "botolpasir",
         "labelKey": "i-botolpasir",
         "bin": "pilihan",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-botol-berisi-pasir"
+        }
       },
       {
         "id": "perahukelereng",
         "labelKey": "i-perahukelereng",
         "bin": "pilihan",
-        "emoji": "🔵",
-        "count": 6
+        "count": 6,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perahu-foil-berat"
+        }
       },
       {
         "id": "kapal",
@@ -299613,13 +299972,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "pingpong",
         "labelKey": "i-pingpong",
         "bin": "pilihan",
-        "emoji": "🏓"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-plastik-berongga"
+        }
       },
       {
         "id": "kelereng",
         "labelKey": "i-kelereng",
         "bin": "pilihan",
-        "emoji": "🔵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kayu",
@@ -299649,32 +300014,36 @@ export const PAKET_RAW: unknown[] = [
         "id": "jerukutuh",
         "labelKey": "i-jerukutuh",
         "bin": "pilihan",
-        "emoji": "🍊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jeruk-utuh"
+        }
       },
       {
         "id": "jerukkupas",
         "labelKey": "i-jerukkupas",
         "bin": "pilihan",
-        "emoji": "🍊",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🔪"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jeruk-kupas"
         }
       },
       {
         "id": "kalengkosong",
         "labelKey": "i-kalengkosong",
         "bin": "pilihan",
-        "emoji": "🥫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kaleng-kosong"
+        }
       },
       {
         "id": "kalengair",
         "labelKey": "i-kalengair",
         "bin": "pilihan",
-        "emoji": "🥫",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "💧"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kaleng-berisi-air"
         }
       }
     ],
@@ -301583,73 +301952,109 @@ export const PAKET_RAW: unknown[] = [
         "id": "granit",
         "labelKey": "i-granit",
         "bin": "beku",
-        "emoji": "⚪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-granit"
+        }
       },
       {
         "id": "basalt",
         "labelKey": "i-basalt",
         "bin": "beku",
-        "emoji": "⚫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-basalt"
+        }
       },
       {
         "id": "apung",
         "labelKey": "i-apung",
         "bin": "beku",
-        "emoji": "🧽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-apung"
+        }
       },
       {
         "id": "obsidian",
         "labelKey": "i-obsidian",
         "bin": "beku",
-        "emoji": "🖤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-obsidian"
+        }
       },
       {
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "sedimen",
-        "emoji": "🟫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-pasir"
+        }
       },
       {
         "id": "kapur",
         "labelKey": "i-kapur",
         "bin": "sedimen",
-        "emoji": "🐚"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-kapur"
+        }
       },
       {
         "id": "serpih",
         "labelKey": "i-serpih",
         "bin": "sedimen",
-        "emoji": "📚"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-serpih"
+        }
       },
       {
         "id": "konglomerat",
         "labelKey": "i-konglomerat",
         "bin": "sedimen",
-        "emoji": "🪨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-konglomerat"
+        }
       },
       {
         "id": "marmer",
         "labelKey": "i-marmer",
         "bin": "metamorf",
-        "emoji": "🏛️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-marmer"
+        }
       },
       {
         "id": "sabak",
         "labelKey": "i-sabak",
         "bin": "metamorf",
-        "emoji": "🔲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sabak"
+        }
       },
       {
         "id": "kuarsit",
         "labelKey": "i-kuarsit",
         "bin": "metamorf",
-        "emoji": "💠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kuarsit"
+        }
       },
       {
         "id": "gneis",
         "labelKey": "i-gneis",
         "bin": "metamorf",
-        "emoji": "🦓"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-gneis"
+        }
       }
     ],
     "pilihan": []
@@ -302709,7 +303114,7 @@ export const PAKET_RAW: unknown[] = [
         "i-lumut": "lumut air",
         "i-ikan": "ikan",
         "i-berang": "berang-berang",
-        "i-makanbanyak": "ia memakan banyak mangsa yang masing-masing membawa racun",
+        "i-makanbanyak": "zat bertahan di tubuh pemangsa setelah ia makan mangsa yang sudah tercemar",
         "i-palingbesar": "tubuhnya paling besar",
         "i-airsaja": "racun hanya ada di air minumnya",
         "i-bertambah": "bertambah banyak",
@@ -302718,17 +303123,17 @@ export const PAKET_RAW: unknown[] = [
         "i-tanparacun": "risiko elang memakan tikus yang keracunan berkurang",
         "i-tikushilang": "semua tikus hilang selamanya",
         "i-elangkenyang": "elang tidak perlu makan lagi",
-        "p-r1": "Pestisida yang sulit terurai masuk rantai sawah: padi → belalang → katak → elang. Siapa yang menumpuk racun paling banyak?",
-        "p-r2": "Pestisida yang sulit terurai masuk rantai sawah: padi → belalang → katak → elang. Siapa yang pertama menyerap racun?",
-        "p-r3": "Limbah merkuri di danau: ganggang → ikan kecil → bangau. Siapa yang menumpuk merkuri paling banyak?",
-        "p-r4": "Jika racun sulit terurai dan tersimpan di tubuh, mengapa pemakan puncak biasanya menumpuk racun paling banyak?",
+        "p-r1": "DDT sulit terurai dan tersimpan dalam tubuh. Di rantai padi → belalang → katak → elang, mana yang cenderung memiliki kadar DDT tertinggi?",
+        "p-r2": "DDT menempel di padi lalu pindah melalui rantai padi → belalang → katak → elang. Makhluk hidup mana yang terkena DDT langsung sebelum yang lain memakannya?",
+        "p-r3": "Di danau, metilmerkuri berpindah melalui ganggang → ikan kecil → bangau. Mana yang cenderung memiliki kadar metilmerkuri tertinggi?",
+        "p-r4": "Zat pencemar tertentu bertahan lama di tubuh mangsa. Mengapa kadar zat ini cenderung meningkat pada pemangsa puncak?",
         "p-r5": "Di jaring sawah, katak memakan belalang. Bila katak mati karena racun, belalang kemungkinan…",
         "p-r6": "Di kolam ini ular hanya memakan katak. Bila katak mati karena racun, ular kemungkinan…",
         "p-r7": "Elang memakan tikus di sawah. Petani mengganti racun tikus dengan burung hantu pemangsa tikus. Mengapa elang lebih aman?",
-        "p-r8": "Pestisida yang sulit terurai masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling sedikit?",
-        "p-r9": "Limbah merkuri di danau: ganggang → ikan kecil → bangau. Siapa yang pertama menyerap merkuri?",
-        "p-r10": "Pestisida yang sulit terurai masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling banyak?",
-        "p-r11": "Pestisida yang sulit terurai masuk rantai sawah: padi → belalang → katak → elang. Siapa yang menumpuk racun paling sedikit?",
+        "p-r8": "Metilmerkuri berpindah melalui lumut air → ikan → berang-berang. Mana yang cenderung memiliki kadar metilmerkuri terendah?",
+        "p-r9": "Di rantai ganggang → ikan kecil → bangau, metilmerkuri berpindah dari air ke kelompok pertama. Kelompok apa itu?",
+        "p-r10": "Metilmerkuri berpindah melalui lumut air → ikan → berang-berang. Mana yang cenderung memiliki kadar metilmerkuri tertinggi?",
+        "p-r11": "DDT sulit terurai dan tersimpan dalam tubuh. Di rantai padi → belalang → katak → elang, mana yang cenderung memiliki kadar DDT terendah?",
         "p-r12": "Di sungai ini berang-berang hanya memakan ikan. Bila ikan mati karena racun, berang-berang kemungkinan…",
         "p-r13": "Di danau ini hanya ikan kecil yang memakan ganggang. Bila ikan kecil mati karena racun, ganggang kemungkinan…"
       },
@@ -302745,7 +303150,7 @@ export const PAKET_RAW: unknown[] = [
         "i-lumut": "water weed",
         "i-ikan": "fish",
         "i-berang": "otter",
-        "i-makanbanyak": "it eats many prey that each carry some poison",
+        "i-makanbanyak": "the pollutant stays in the predator after it eats contaminated prey",
         "i-palingbesar": "it has the biggest body",
         "i-airsaja": "the poison is only in its drinking water",
         "i-bertambah": "increases",
@@ -302754,17 +303159,17 @@ export const PAKET_RAW: unknown[] = [
         "i-tanparacun": "eagles are less likely to eat poisoned rats",
         "i-tikushilang": "all the rats disappear forever",
         "i-elangkenyang": "eagles no longer need to eat",
-        "p-r1": "A persistent pesticide enters the rice-field food chain: rice → grasshopper → frog → eagle. Who builds up the most poison?",
-        "p-r2": "A persistent pesticide enters the rice-field food chain: rice → grasshopper → frog → eagle. Who takes in the poison first?",
-        "p-r3": "Mercury waste in a lake: algae → small fish → heron. Who builds up the most mercury?",
-        "p-r4": "If a poison persists and builds up in the body, why does the top consumer usually have the most?",
+        "p-r1": "DDT breaks down slowly and builds up in living things. In rice → grasshopper → frog → eagle, which tends to have the highest DDT concentration?",
+        "p-r2": "DDT lands on rice and moves through rice → grasshopper → frog → eagle. Which organism is exposed directly before it is eaten?",
+        "p-r3": "In a lake, methylmercury moves through algae → small fish → heron. Which tends to have the highest methylmercury concentration?",
+        "p-r4": "Some pollutants stay in prey for a long time. Why does their concentration tend to rise in top predators?",
         "p-r5": "In the rice-field web, frogs eat grasshoppers. If the frogs die from poison, the grasshoppers will probably…",
         "p-r6": "In this pond the snakes eat only frogs. If the frogs die from poison, the snakes will probably…",
         "p-r7": "Eagles hunt rats in the rice fields. Farmers use barn owls to hunt rats instead of rat poison. Why is this safer for eagles?",
-        "p-r8": "A persistent pesticide enters a river: water moss → fish → otter. Who builds up the least poison?",
-        "p-r9": "Mercury waste in a lake: algae → small fish → heron. Who takes in the mercury first?",
-        "p-r10": "A persistent pesticide enters a river: water moss → fish → otter. Who builds up the most poison?",
-        "p-r11": "A persistent pesticide enters the rice-field food chain: rice → grasshopper → frog → eagle. Who builds up the least poison?",
+        "p-r8": "Methylmercury moves through water moss → fish → otter. Which tends to have the lowest methylmercury concentration?",
+        "p-r9": "In algae → small fish → heron, methylmercury moves from the water to the first group. Which group is it?",
+        "p-r10": "Methylmercury moves through water moss → fish → otter. Which tends to have the highest methylmercury concentration?",
+        "p-r11": "DDT breaks down slowly and builds up in living things. In rice → grasshopper → frog → eagle, which tends to have the lowest DDT concentration?",
         "p-r12": "In this river otters eat only fish. If the fish die from poison, the otters will probably…",
         "p-r13": "In this lake only small fish eat the algae. If the small fish die from poison, the algae will probably…"
       }
@@ -303036,7 +303441,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Racun di Rantai Laut dan Sungai",
-        "instruksi": "Baca rantai makanannya, lalu sentuh jawaban yang paling masuk akal tentang penumpukan racun atau akibat bila satu makhluk hilang.",
+        "instruksi": "Ikuti rantai makanan. Bandingkan kadar pencemar yang bertahan di tubuh, atau perkirakan akibat bila satu makhluk hilang.",
         "b-pilihan": "pilihan",
         "i-fito": "fitoplankton",
         "i-udang": "udang kecil",
@@ -303054,16 +303459,16 @@ export const PAKET_RAW: unknown[] = [
         "i-bertambah": "bertambah banyak",
         "i-berkurang": "berkurang",
         "i-tetap": "tetap sama",
-        "i-banyakmangsa": "ia memakan sangat banyak mangsa yang tubuhnya sudah beracun",
+        "i-banyakmangsa": "metilmerkuri dari ikan teri bertahan di tubuh ikan tongkol",
         "i-sekali": "ia hanya makan satu kali seumur hidup",
         "i-berenang": "ia berenang paling cepat",
-        "p-r1": "Limbah merkuri masuk laut: fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Siapa yang paling banyak menumpuk merkuri?",
-        "p-r2": "Limbah merkuri masuk laut: fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Siapa yang paling sedikit menumpuk merkuri?",
-        "p-r3": "Mengapa ikan tongkol menumpuk racun lebih banyak daripada ikan teri?",
-        "p-r4": "Pestisida masuk danau: kutu air → ikan mas → burung pecuk. Siapa yang paling banyak menumpuk pestisida?",
-        "p-r5": "Merkuri dari tambang emas liar masuk sungai: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang paling banyak menumpuk merkuri?",
-        "p-r6": "Merkuri dari tambang emas liar masuk sungai: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang pertama menyerap merkuri?",
-        "p-r7": "Tikus sawah memakan umpan racun, lalu seekor burung hantu memakan banyak tikus itu. Siapa yang paling banyak menumpuk racun?",
+        "p-r1": "Metilmerkuri berpindah melalui fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Mana yang cenderung memiliki kadar metilmerkuri tertinggi?",
+        "p-r2": "Metilmerkuri berpindah melalui fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Mana yang cenderung memiliki kadar metilmerkuri terendah?",
+        "p-r3": "Ikan tongkol memangsa ikan teri yang mengandung metilmerkuri. Mengapa kadar metilmerkuri pada tongkol cenderung lebih tinggi?",
+        "p-r4": "DDT yang sulit terurai berpindah melalui kutu air → ikan mas → burung pecuk. Mana yang cenderung memiliki kadar DDT tertinggi?",
+        "p-r5": "Di sungai, metilmerkuri berpindah melalui lumut → ikan kecil → ikan besar → manusia. Dalam contoh ini, siapa yang sering memakan ikan besar dan dapat terpapar metilmerkuri lewat makanannya?",
+        "p-r6": "Di rantai lumut sungai → ikan kecil → ikan besar → manusia, metilmerkuri berpindah dari air ke kelompok pertama. Kelompok apa itu?",
+        "p-r7": "Tikus memakan umpan beracun. Racun itu bertahan lama di tubuh tikus. Siapa yang berisiko terkena racun dengan memakan tikus-tikus itu?",
         "p-r8": "Di laut ini, ikan teri dimakan ikan tongkol. Bila nelayan menangkap hampir semua ikan tongkol, ikan teri kemungkinan…",
         "p-r9": "Bila fitoplankton banyak yang mati karena limbah, udang kecil yang memakannya kemungkinan…",
         "p-r10": "Di danau ini hanya ikan mas yang memakan kutu air. Bila ikan mas habis karena racun, kutu air kemungkinan…",
@@ -303072,7 +303477,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Poison in Sea and River Chains",
-        "instruksi": "Read the food chain, then touch the most sensible answer about poison building up or what happens when one living thing disappears.",
+        "instruksi": "Follow the food chain. Compare concentrations of pollutants that stay in the body, or predict what happens when one living thing disappears.",
         "b-pilihan": "choices",
         "i-fito": "phytoplankton",
         "i-udang": "small shrimp",
@@ -303090,16 +303495,16 @@ export const PAKET_RAW: unknown[] = [
         "i-bertambah": "increases",
         "i-berkurang": "decreases",
         "i-tetap": "stays the same",
-        "i-banyakmangsa": "it eats a great many prey whose bodies already hold poison",
+        "i-banyakmangsa": "methylmercury from the anchovies stays in the tuna's body",
         "i-sekali": "it eats only once in its life",
         "i-berenang": "it swims the fastest",
-        "p-r1": "Mercury waste enters the sea: phytoplankton → small shrimp → anchovy → tuna → shark. Who builds up the most mercury?",
-        "p-r2": "Mercury waste enters the sea: phytoplankton → small shrimp → anchovy → tuna → shark. Who builds up the least mercury?",
-        "p-r3": "Why does tuna build up more poison than anchovy?",
-        "p-r4": "Pesticide gets into a lake: water flea → carp → cormorant. Who builds up the most pesticide?",
-        "p-r5": "Mercury from illegal gold mining gets into a river: river algae → small fish → big predatory fish → people. Who builds up the most mercury?",
-        "p-r6": "Mercury from illegal gold mining gets into a river: river algae → small fish → big predatory fish → people. Who takes in the mercury first?",
-        "p-r7": "Field rats eat poison bait, then an owl eats many of those rats. Who builds up the most poison?",
+        "p-r1": "Methylmercury moves through phytoplankton → small shrimp → anchovy → tuna → shark. Which tends to have the highest methylmercury concentration?",
+        "p-r2": "Methylmercury moves through phytoplankton → small shrimp → anchovy → tuna → shark. Which tends to have the lowest methylmercury concentration?",
+        "p-r3": "Tuna eat anchovies containing methylmercury. Why does tuna tend to have a higher methylmercury concentration?",
+        "p-r4": "DDT breaks down slowly and moves through water flea → carp → cormorant. Which tends to have the highest DDT concentration?",
+        "p-r5": "In a river, methylmercury moves through algae → small fish → large fish → people. In this example, who often eats large fish and can be exposed to methylmercury through its food?",
+        "p-r6": "In river algae → small fish → large fish → people, methylmercury moves from the water to the first group. Which group is it?",
+        "p-r7": "Field rats eat poisoned bait. The poison stays in their bodies for a long time. Who is at risk from eating those rats?",
         "p-r8": "In this sea, anchovies are eaten by tuna. If fishers catch almost all the tuna, the anchovies will probably…",
         "p-r9": "If much of the phytoplankton dies from waste, the small shrimp that eat it will probably…",
         "p-r10": "In this lake only carp eat water fleas. If the carp die out from poison, the water fleas will probably…",
@@ -303155,7 +303560,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kutuair",
         "labelKey": "i-kutuair",
         "bin": "pilihan",
-        "emoji": "🔬"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kutu-air"
+        }
       },
       {
         "id": "ikanmas",
@@ -305376,14 +305784,14 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Barisan Buah",
-        "instruksi": "Lihat barisan buah di piring, lalu taruh buah yang tepat di tempat kosong.",
+        "instruksi": "Lihat pola buah, lalu ketuk buah yang tepat untuk mengisi kotak kosong.",
         "apel": "apel",
         "pisang": "pisang",
         "anggur": "anggur"
       },
       "en": {
         "judul": "Fruit Parade",
-        "instruksi": "Look at the row of fruit on the plate, then put the right fruit in the empty spot.",
+        "instruksi": "Look at the fruit pattern, then tap the fruit that fits in the empty box.",
         "apel": "apple",
         "pisang": "banana",
         "anggur": "grapes"
@@ -313340,7 +313748,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Dari Kebun ke Meja",
-        "instruksi": "Susun gambar dari awal sampai makanan siap di meja.",
+        "instruksi": "Susun gambar dari langkah pertama sampai makanan disajikan atau dimakan.",
         "tanam": "Menanam apel",
         "sayur": "Memasak sayur",
         "biji": "tanam biji",
@@ -313378,7 +313786,7 @@ export const PAKET_RAW: unknown[] = [
         "t-wortel": "Cerita wortel",
         "wortel-tanam": "tanam biji wortel",
         "wortel-cabut": "cabut wortel",
-        "wortel-siram": "siram setiap hari",
+        "wortel-siram": "siram saat tanah mulai kering",
         "wortel-sup": "sajikan sup wortel di meja",
         "t-kentang": "Cerita kentang",
         "kentang-tanam": "tanam bibit kentang",
@@ -313400,7 +313808,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "From Garden to Table",
-        "instruksi": "Put the pictures in order, from the start until the food is ready to serve.",
+        "instruksi": "Put the pictures in order, from the first step until the food is served or eaten.",
         "tanam": "Growing an apple",
         "sayur": "Cooking vegetables",
         "biji": "plant the seed",
@@ -313438,7 +313846,7 @@ export const PAKET_RAW: unknown[] = [
         "t-wortel": "The carrot story",
         "wortel-tanam": "plant carrot seeds",
         "wortel-cabut": "pull up the carrot",
-        "wortel-siram": "water it every day",
+        "wortel-siram": "water when the soil starts to dry",
         "wortel-sup": "serve carrot soup at the table",
         "t-kentang": "The potato story",
         "kentang-tanam": "plant a potato",
@@ -313730,12 +314138,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "potong",
             "labelKey": "semangka-potong",
-            "emoji": "🔪"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-potong-semangka"
+            }
           },
           {
             "id": "makan",
             "labelKey": "semangka-makan",
-            "emoji": "😋"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-makan-semangka"
+            }
           }
         ]
       },
@@ -317325,8 +317739,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "hujan-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317353,8 +317769,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "pelangi-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317381,8 +317799,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "tebal",
             "labelKey": "awan-tebal",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317404,8 +317824,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "petir-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317427,8 +317849,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "malam-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung-malam"
+            }
           },
           {
             "id": "hujan",
@@ -317450,8 +317874,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "bintang-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung-malam"
+            }
           },
           {
             "id": "hujan",
@@ -317473,8 +317899,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "gerimis-mendung",
-            "emoji": "🌥️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317496,8 +317924,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "tertutup-mendung",
-            "emoji": "🌥️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317519,8 +317949,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "payung-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317542,8 +317974,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "berawan-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -317565,8 +317999,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mendung",
             "labelKey": "pagi-mendung",
-            "emoji": "☁️",
-            "color": "#90a4ae"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-tunas-awan-mendung"
+            }
           },
           {
             "id": "hujan",
@@ -342617,111 +343053,111 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Paling Jauh Meluncur",
-        "instruksi": "Susun dari permukaan yang membuat benda meluncur paling jauh sampai paling dekat.",
-        "s-mobil": "Kotak bekal didorong sama kuat",
-        "mobil-es": "lantai es",
-        "mobil-keramik": "lantai keramik mengilap",
-        "mobil-karpet": "karpet berbulu",
-        "mobil-pasir": "jalan berpasir",
-        "s-kotak": "Kotak didorong sama kuat",
-        "kotak-kaca": "meja kaca",
-        "kotak-kayu": "papan kayu halus",
-        "kotak-handuk": "handuk",
-        "kotak-amplas": "kertas amplas",
-        "s-kelereng": "Sandal didorong sama kuat",
-        "kelereng-ubin": "ubin licin",
-        "kelereng-kayu": "papan kayu",
-        "kelereng-handuk": "handuk tebal",
-        "kelereng-pasir": "pasir",
-        "t-buku": "Buku didorong sama kuat",
-        "buku-1": "lantai es",
-        "buku-2": "papan kayu",
-        "buku-3": "handuk tebal",
-        "buku-4": "pasir",
-        "t-kaleng": "Kaleng didorong sama kuat",
-        "kaleng-1": "lantai es",
-        "kaleng-2": "meja kaca",
-        "kaleng-3": "karpet berbulu",
-        "kaleng-4": "kertas amplas",
-        "t-balok": "Balok kayu didorong sama kuat",
-        "balok-1": "cermin yang diletakkan datar",
-        "balok-2": "papan kayu",
-        "balok-3": "karpet berbulu",
-        "balok-4": "kertas amplas",
-        "t-mangkuk": "Mangkuk plastik didorong sama kuat",
-        "mangkuk-1": "lantai keramik mengilap",
-        "mangkuk-2": "papan kayu",
-        "mangkuk-3": "karpet berbulu",
-        "mangkuk-4": "pasir",
-        "t-kotak-sepatu": "Kotak sepatu didorong sama kuat",
-        "kotak-sepatu-1": "lantai es",
-        "kotak-sepatu-2": "ubin licin",
-        "kotak-sepatu-3": "handuk tebal",
-        "kotak-sepatu-4": "kertas amplas",
-        "t-kardus": "Kardus didorong sama kuat",
-        "kardus-1": "lantai es",
-        "kardus-2": "cermin yang diletakkan datar",
-        "kardus-3": "papan kayu",
-        "kardus-4": "pasir",
-        "t-botol": "Botol plastik didorong sama kuat",
-        "botol-1": "lantai es",
-        "botol-2": "meja kaca",
-        "botol-3": "papan kayu",
-        "botol-4": "handuk tebal"
+        "instruksi": "Baca jarak luncur pada hasil simulasi. Susun dari jarak terjauh ke terdekat.",
+        "s-mobil": "Kotak bekal dilepas dari lintasan awal yang sama",
+        "mobil-es": "lantai es (90 cm)",
+        "mobil-keramik": "lantai keramik mengilap (64 cm)",
+        "mobil-karpet": "karpet berbulu (41 cm)",
+        "mobil-pasir": "jalan berpasir (22 cm)",
+        "s-kotak": "Kotak dilepas dari lintasan awal yang sama",
+        "kotak-kaca": "meja kaca (93 cm)",
+        "kotak-kayu": "papan kayu halus (66 cm)",
+        "kotak-handuk": "handuk (42 cm)",
+        "kotak-amplas": "kertas amplas (23 cm)",
+        "s-kelereng": "Sandal dilepas dari lintasan awal yang sama",
+        "kelereng-ubin": "ubin licin (96 cm)",
+        "kelereng-kayu": "papan kayu (68 cm)",
+        "kelereng-handuk": "handuk tebal (43 cm)",
+        "kelereng-pasir": "pasir (24 cm)",
+        "t-buku": "Buku dilepas dari lintasan awal yang sama",
+        "buku-1": "lantai es (99 cm)",
+        "buku-2": "papan kayu (70 cm)",
+        "buku-3": "handuk tebal (44 cm)",
+        "buku-4": "pasir (25 cm)",
+        "t-kaleng": "Kaleng dilepas dari lintasan awal yang sama",
+        "kaleng-1": "lantai es (102 cm)",
+        "kaleng-2": "meja kaca (72 cm)",
+        "kaleng-3": "karpet berbulu (45 cm)",
+        "kaleng-4": "kertas amplas (26 cm)",
+        "t-balok": "Balok kayu dilepas dari lintasan awal yang sama",
+        "balok-1": "cermin yang diletakkan datar (105 cm)",
+        "balok-2": "papan kayu (74 cm)",
+        "balok-3": "karpet berbulu (46 cm)",
+        "balok-4": "kertas amplas (27 cm)",
+        "t-mangkuk": "Mangkuk plastik dilepas dari lintasan awal yang sama",
+        "mangkuk-1": "lantai keramik mengilap (108 cm)",
+        "mangkuk-2": "papan kayu (76 cm)",
+        "mangkuk-3": "karpet berbulu (47 cm)",
+        "mangkuk-4": "pasir (28 cm)",
+        "t-kotak-sepatu": "Kotak sepatu dilepas dari lintasan awal yang sama",
+        "kotak-sepatu-1": "lantai es (111 cm)",
+        "kotak-sepatu-2": "ubin licin (78 cm)",
+        "kotak-sepatu-3": "handuk tebal (48 cm)",
+        "kotak-sepatu-4": "kertas amplas (29 cm)",
+        "t-kardus": "Kardus dilepas dari lintasan awal yang sama",
+        "kardus-1": "lantai es (114 cm)",
+        "kardus-2": "cermin yang diletakkan datar (80 cm)",
+        "kardus-3": "papan kayu (49 cm)",
+        "kardus-4": "pasir (30 cm)",
+        "t-botol": "Botol plastik dilepas dari lintasan awal yang sama",
+        "botol-1": "lantai es (117 cm)",
+        "botol-2": "meja kaca (82 cm)",
+        "botol-3": "papan kayu (50 cm)",
+        "botol-4": "handuk tebal (31 cm)"
       },
       "en": {
         "judul": "Slides the Farthest",
-        "instruksi": "Order the surfaces from where things slide farthest to where they stop soonest.",
-        "s-mobil": "A lunch box pushed just as hard each time",
-        "mobil-es": "ice rink",
-        "mobil-keramik": "shiny tiled floor",
-        "mobil-karpet": "shaggy carpet",
-        "mobil-pasir": "sandy path",
-        "s-kotak": "A box pushed just as hard each time",
-        "kotak-kaca": "glass table",
-        "kotak-kayu": "smooth wooden board",
-        "kotak-handuk": "towel",
-        "kotak-amplas": "sandpaper",
-        "s-kelereng": "A sandal pushed just as hard each time",
-        "kelereng-ubin": "smooth tiles",
-        "kelereng-kayu": "wooden board",
-        "kelereng-handuk": "thick towel",
-        "kelereng-pasir": "sand",
-        "t-buku": "A book pushed equally hard",
-        "buku-1": "ice floor",
-        "buku-2": "wooden board",
-        "buku-3": "thick towel",
-        "buku-4": "sand",
-        "t-kaleng": "A tin pushed equally hard",
-        "kaleng-1": "ice floor",
-        "kaleng-2": "glass table",
-        "kaleng-3": "fluffy carpet",
-        "kaleng-4": "sandpaper",
-        "t-balok": "A wooden block pushed equally hard",
-        "balok-1": "a mirror laid flat",
-        "balok-2": "wooden board",
-        "balok-3": "fluffy carpet",
-        "balok-4": "sandpaper",
-        "t-mangkuk": "A plastic bowl pushed equally hard",
-        "mangkuk-1": "shiny tiled floor",
-        "mangkuk-2": "wooden board",
-        "mangkuk-3": "fluffy carpet",
-        "mangkuk-4": "sand",
-        "t-kotak-sepatu": "A shoebox pushed equally hard",
-        "kotak-sepatu-1": "ice floor",
-        "kotak-sepatu-2": "smooth tiles",
-        "kotak-sepatu-3": "thick towel",
-        "kotak-sepatu-4": "sandpaper",
-        "t-kardus": "A cardboard box pushed equally hard",
-        "kardus-1": "ice floor",
-        "kardus-2": "a mirror laid flat",
-        "kardus-3": "wooden board",
-        "kardus-4": "sand",
-        "t-botol": "A plastic bottle pushed equally hard",
-        "botol-1": "ice floor",
-        "botol-2": "glass table",
-        "botol-3": "wooden board",
-        "botol-4": "thick towel"
+        "instruksi": "Read the sliding distances in the simulation results. Order them from greatest to least.",
+        "s-mobil": "A lunch box released from the same starting ramp",
+        "mobil-es": "ice rink (90 cm)",
+        "mobil-keramik": "shiny tiled floor (64 cm)",
+        "mobil-karpet": "shaggy carpet (41 cm)",
+        "mobil-pasir": "sandy path (22 cm)",
+        "s-kotak": "A box released from the same starting ramp",
+        "kotak-kaca": "glass table (93 cm)",
+        "kotak-kayu": "smooth wooden board (66 cm)",
+        "kotak-handuk": "towel (42 cm)",
+        "kotak-amplas": "sandpaper (23 cm)",
+        "s-kelereng": "A sandal released from the same starting ramp",
+        "kelereng-ubin": "smooth tiles (96 cm)",
+        "kelereng-kayu": "wooden board (68 cm)",
+        "kelereng-handuk": "thick towel (43 cm)",
+        "kelereng-pasir": "sand (24 cm)",
+        "t-buku": "A book released from the same starting ramp",
+        "buku-1": "ice floor (99 cm)",
+        "buku-2": "wooden board (70 cm)",
+        "buku-3": "thick towel (44 cm)",
+        "buku-4": "sand (25 cm)",
+        "t-kaleng": "A tin released from the same starting ramp",
+        "kaleng-1": "ice floor (102 cm)",
+        "kaleng-2": "glass table (72 cm)",
+        "kaleng-3": "fluffy carpet (45 cm)",
+        "kaleng-4": "sandpaper (26 cm)",
+        "t-balok": "A wooden block released from the same starting ramp",
+        "balok-1": "a mirror laid flat (105 cm)",
+        "balok-2": "wooden board (74 cm)",
+        "balok-3": "fluffy carpet (46 cm)",
+        "balok-4": "sandpaper (27 cm)",
+        "t-mangkuk": "A plastic bowl released from the same starting ramp",
+        "mangkuk-1": "shiny tiled floor (108 cm)",
+        "mangkuk-2": "wooden board (76 cm)",
+        "mangkuk-3": "fluffy carpet (47 cm)",
+        "mangkuk-4": "sand (28 cm)",
+        "t-kotak-sepatu": "A shoebox released from the same starting ramp",
+        "kotak-sepatu-1": "ice floor (111 cm)",
+        "kotak-sepatu-2": "smooth tiles (78 cm)",
+        "kotak-sepatu-3": "thick towel (48 cm)",
+        "kotak-sepatu-4": "sandpaper (29 cm)",
+        "t-kardus": "A cardboard box released from the same starting ramp",
+        "kardus-1": "ice floor (114 cm)",
+        "kardus-2": "a mirror laid flat (80 cm)",
+        "kardus-3": "wooden board (49 cm)",
+        "kardus-4": "sand (30 cm)",
+        "t-botol": "A plastic bottle released from the same starting ramp",
+        "botol-1": "ice floor (117 cm)",
+        "botol-2": "glass table (82 cm)",
+        "botol-3": "wooden board (50 cm)",
+        "botol-4": "thick towel (31 cm)"
       }
     },
     "knobs": {
@@ -343355,111 +343791,111 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Urutan Gesekan Tertukar",
-        "instruksi": "Dua permukaan tertukar. Tukar sekali supaya urut dari paling licin ke paling kasar.",
-        "s-mobil": "Kotak bekal didorong sama kuat",
-        "mobil-es": "lantai es",
-        "mobil-keramik": "lantai keramik mengilap",
-        "mobil-karpet": "karpet berbulu",
-        "mobil-pasir": "jalan berpasir",
-        "s-kotak": "Kotak didorong sama kuat",
-        "kotak-kaca": "meja kaca",
-        "kotak-kayu": "papan kayu halus",
-        "kotak-handuk": "handuk",
-        "kotak-amplas": "kertas amplas",
-        "s-kelereng": "Sandal didorong sama kuat",
-        "kelereng-ubin": "ubin licin",
-        "kelereng-kayu": "papan kayu",
-        "kelereng-handuk": "handuk tebal",
-        "kelereng-pasir": "pasir",
-        "s-sepatu": "Sepatu didorong sama kuat",
-        "sepatu-es": "lantai es",
-        "sepatu-keramik": "lantai keramik mengilap",
-        "sepatu-kayu": "papan kayu",
-        "sepatu-amplas": "kertas amplas",
-        "s-buku": "Buku didorong sama kuat",
-        "buku-es": "lantai es",
-        "buku-keramik": "lantai keramik mengilap",
-        "buku-handuk": "handuk tebal",
-        "buku-pasir": "pasir",
-        "s-truk": "Penghapus papan tulis didorong sama kuat",
-        "truk-es": "lantai es",
-        "truk-keramik": "lantai keramik mengilap",
-        "truk-handuk": "handuk tebal",
-        "truk-kerikil": "kertas amplas",
-        "s-balok": "Balok kayu ditarik sama kuat",
-        "balok-es": "lantai es",
-        "balok-kaca": "meja kaca",
-        "balok-kayu": "papan kayu",
-        "balok-pasir": "pasir",
-        "s-kardus": "Kardus didorong sama kuat",
-        "kardus-es": "lantai es",
-        "kardus-keramik": "lantai keramik mengilap",
-        "kardus-kayu": "papan kayu",
-        "kardus-kerikil": "kertas amplas",
-        "s-piring": "Piring plastik didorong sama kuat",
-        "piring-es": "lantai es",
-        "piring-kaca": "meja kaca",
-        "piring-handuk": "handuk tebal",
-        "piring-amplas": "kertas amplas",
-        "s-pensil": "Kotak pensil didorong sama kuat",
-        "pensil-es": "lantai es",
-        "pensil-kaca": "meja kaca",
-        "pensil-karpet": "karpet berbulu",
-        "pensil-kerikil": "kertas amplas"
+        "instruksi": "Hasil simulasi teracak. Tukar sekali untuk mengurutkan jarak luncur dari terjauh ke terdekat.",
+        "s-mobil": "Kotak bekal dilepas dari lintasan awal yang sama",
+        "mobil-es": "lantai es (90 cm)",
+        "mobil-keramik": "lantai keramik mengilap (64 cm)",
+        "mobil-karpet": "karpet berbulu (41 cm)",
+        "mobil-pasir": "jalan berpasir (22 cm)",
+        "s-kotak": "Kotak dilepas dari lintasan awal yang sama",
+        "kotak-kaca": "meja kaca (93 cm)",
+        "kotak-kayu": "papan kayu halus (66 cm)",
+        "kotak-handuk": "handuk (42 cm)",
+        "kotak-amplas": "kertas amplas (23 cm)",
+        "s-kelereng": "Sandal dilepas dari lintasan awal yang sama",
+        "kelereng-ubin": "ubin licin (96 cm)",
+        "kelereng-kayu": "papan kayu (68 cm)",
+        "kelereng-handuk": "handuk tebal (43 cm)",
+        "kelereng-pasir": "pasir (24 cm)",
+        "s-sepatu": "Sepatu dilepas dari lintasan awal yang sama",
+        "sepatu-es": "lantai es (99 cm)",
+        "sepatu-keramik": "lantai keramik mengilap (70 cm)",
+        "sepatu-kayu": "papan kayu (44 cm)",
+        "sepatu-amplas": "kertas amplas (25 cm)",
+        "s-buku": "Buku dilepas dari lintasan awal yang sama",
+        "buku-es": "lantai es (102 cm)",
+        "buku-keramik": "lantai keramik mengilap (72 cm)",
+        "buku-handuk": "handuk tebal (45 cm)",
+        "buku-pasir": "pasir (26 cm)",
+        "s-truk": "Penghapus papan tulis dilepas dari lintasan awal yang sama",
+        "truk-es": "lantai es (105 cm)",
+        "truk-keramik": "lantai keramik mengilap (74 cm)",
+        "truk-handuk": "handuk tebal (46 cm)",
+        "truk-kerikil": "kertas amplas (27 cm)",
+        "s-balok": "Balok kayu dilepas dari lintasan awal yang sama",
+        "balok-es": "lantai es (108 cm)",
+        "balok-kaca": "meja kaca (76 cm)",
+        "balok-kayu": "papan kayu (47 cm)",
+        "balok-pasir": "pasir (28 cm)",
+        "s-kardus": "Kardus dilepas dari lintasan awal yang sama",
+        "kardus-es": "lantai es (111 cm)",
+        "kardus-keramik": "lantai keramik mengilap (78 cm)",
+        "kardus-kayu": "papan kayu (48 cm)",
+        "kardus-kerikil": "kertas amplas (29 cm)",
+        "s-piring": "Piring plastik dilepas dari lintasan awal yang sama",
+        "piring-es": "lantai es (114 cm)",
+        "piring-kaca": "meja kaca (80 cm)",
+        "piring-handuk": "handuk tebal (49 cm)",
+        "piring-amplas": "kertas amplas (30 cm)",
+        "s-pensil": "Kotak pensil dilepas dari lintasan awal yang sama",
+        "pensil-es": "lantai es (117 cm)",
+        "pensil-kaca": "meja kaca (82 cm)",
+        "pensil-karpet": "karpet berbulu (50 cm)",
+        "pensil-kerikil": "kertas amplas (31 cm)"
       },
       "en": {
         "judul": "Friction Order Mixed Up",
-        "instruksi": "Two surfaces are swapped. Swap them once so they go from smoothest to roughest.",
-        "s-mobil": "A lunch box pushed just as hard each time",
-        "mobil-es": "ice rink",
-        "mobil-keramik": "shiny tiled floor",
-        "mobil-karpet": "shaggy carpet",
-        "mobil-pasir": "sandy path",
-        "s-kotak": "A box pushed just as hard each time",
-        "kotak-kaca": "glass table",
-        "kotak-kayu": "smooth wooden board",
-        "kotak-handuk": "towel",
-        "kotak-amplas": "sandpaper",
-        "s-kelereng": "A sandal pushed just as hard each time",
-        "kelereng-ubin": "smooth tiles",
-        "kelereng-kayu": "wooden board",
-        "kelereng-handuk": "thick towel",
-        "kelereng-pasir": "sand",
-        "s-sepatu": "A shoe pushed with the same push",
-        "sepatu-es": "ice floor",
-        "sepatu-keramik": "shiny tiled floor",
-        "sepatu-kayu": "wooden board",
-        "sepatu-amplas": "sandpaper",
-        "s-buku": "A book pushed with the same push",
-        "buku-es": "ice floor",
-        "buku-keramik": "shiny tiled floor",
-        "buku-handuk": "thick towel",
-        "buku-pasir": "sand",
-        "s-truk": "A board eraser pushed with the same push",
-        "truk-es": "ice floor",
-        "truk-keramik": "shiny tiled floor",
-        "truk-handuk": "thick towel",
-        "truk-kerikil": "sandpaper",
-        "s-balok": "A wooden block pulled with the same pull",
-        "balok-es": "ice floor",
-        "balok-kaca": "glass table",
-        "balok-kayu": "wooden board",
-        "balok-pasir": "sand",
-        "s-kardus": "A cardboard box pushed with the same push",
-        "kardus-es": "ice floor",
-        "kardus-keramik": "shiny tiled floor",
-        "kardus-kayu": "wooden board",
-        "kardus-kerikil": "sandpaper",
-        "s-piring": "A plastic plate pushed with the same push",
-        "piring-es": "ice floor",
-        "piring-kaca": "glass table",
-        "piring-handuk": "thick towel",
-        "piring-amplas": "sandpaper",
-        "s-pensil": "A pencil case pushed with the same push",
-        "pensil-es": "ice floor",
-        "pensil-kaca": "glass table",
-        "pensil-karpet": "fluffy carpet",
-        "pensil-kerikil": "sandpaper"
+        "instruksi": "The simulation results are mixed up. Swap once to order sliding distances from greatest to least.",
+        "s-mobil": "A lunch box released from the same starting ramp",
+        "mobil-es": "ice rink (90 cm)",
+        "mobil-keramik": "shiny tiled floor (64 cm)",
+        "mobil-karpet": "shaggy carpet (41 cm)",
+        "mobil-pasir": "sandy path (22 cm)",
+        "s-kotak": "A box released from the same starting ramp",
+        "kotak-kaca": "glass table (93 cm)",
+        "kotak-kayu": "smooth wooden board (66 cm)",
+        "kotak-handuk": "towel (42 cm)",
+        "kotak-amplas": "sandpaper (23 cm)",
+        "s-kelereng": "A sandal released from the same starting ramp",
+        "kelereng-ubin": "smooth tiles (96 cm)",
+        "kelereng-kayu": "wooden board (68 cm)",
+        "kelereng-handuk": "thick towel (43 cm)",
+        "kelereng-pasir": "sand (24 cm)",
+        "s-sepatu": "A shoe released from the same starting ramp",
+        "sepatu-es": "ice floor (99 cm)",
+        "sepatu-keramik": "shiny tiled floor (70 cm)",
+        "sepatu-kayu": "wooden board (44 cm)",
+        "sepatu-amplas": "sandpaper (25 cm)",
+        "s-buku": "A book released from the same starting ramp",
+        "buku-es": "ice floor (102 cm)",
+        "buku-keramik": "shiny tiled floor (72 cm)",
+        "buku-handuk": "thick towel (45 cm)",
+        "buku-pasir": "sand (26 cm)",
+        "s-truk": "A board eraser released from the same starting ramp",
+        "truk-es": "ice floor (105 cm)",
+        "truk-keramik": "shiny tiled floor (74 cm)",
+        "truk-handuk": "thick towel (46 cm)",
+        "truk-kerikil": "sandpaper (27 cm)",
+        "s-balok": "A wooden block released from the same starting ramp",
+        "balok-es": "ice floor (108 cm)",
+        "balok-kaca": "glass table (76 cm)",
+        "balok-kayu": "wooden board (47 cm)",
+        "balok-pasir": "sand (28 cm)",
+        "s-kardus": "A cardboard box released from the same starting ramp",
+        "kardus-es": "ice floor (111 cm)",
+        "kardus-keramik": "shiny tiled floor (78 cm)",
+        "kardus-kayu": "wooden board (48 cm)",
+        "kardus-kerikil": "sandpaper (29 cm)",
+        "s-piring": "A plastic plate released from the same starting ramp",
+        "piring-es": "ice floor (114 cm)",
+        "piring-kaca": "glass table (80 cm)",
+        "piring-handuk": "thick towel (49 cm)",
+        "piring-amplas": "sandpaper (30 cm)",
+        "s-pensil": "A pencil case released from the same starting ramp",
+        "pensil-es": "ice floor (117 cm)",
+        "pensil-kaca": "glass table (82 cm)",
+        "pensil-karpet": "fluffy carpet (50 cm)",
+        "pensil-kerikil": "sandpaper (31 cm)"
       }
     },
     "knobs": {
@@ -368825,7 +369261,27 @@ export const PAKET_RAW: unknown[] = [
         "lemon": "lemon",
         "brokoli": "brokoli",
         "timun": "timun",
-        "kura": "kura-kura"
+        "kura": "kura-kura",
+        "warna-apel": "apel berwarna merah",
+        "warna-stroberi": "stroberi berwarna merah",
+        "warna-bola": "bola berwarna biru",
+        "warna-ikan": "ikan berwarna biru",
+        "warna-pisang": "pisang berwarna kuning",
+        "warna-bebek": "bebek berwarna kuning",
+        "warna-daun": "daun berwarna hijau",
+        "warna-katak": "katak berwarna hijau",
+        "warna-tomat": "tomat berwarna merah",
+        "warna-cabai": "cabai berwarna merah",
+        "warna-ceri": "ceri berwarna merah",
+        "warna-blueberry": "buah bluberi berwarna biru",
+        "warna-paus": "paus berwarna biru",
+        "warna-topi": "topi berwarna biru",
+        "warna-bunga-matahari": "bunga matahari berwarna kuning",
+        "warna-keju": "keju berwarna kuning",
+        "warna-lemon": "lemon berwarna kuning",
+        "warna-brokoli": "brokoli berwarna hijau",
+        "warna-timun": "timun berwarna hijau",
+        "warna-kura": "kura-kura berwarna hijau"
       },
       "en": {
         "judul": "Color Baskets",
@@ -368853,7 +369309,27 @@ export const PAKET_RAW: unknown[] = [
         "lemon": "lemon",
         "brokoli": "broccoli",
         "timun": "cucumber",
-        "kura": "turtle"
+        "kura": "turtle",
+        "warna-apel": "red apple",
+        "warna-stroberi": "red strawberry",
+        "warna-bola": "blue ball",
+        "warna-ikan": "blue fish",
+        "warna-pisang": "yellow banana",
+        "warna-bebek": "yellow duck",
+        "warna-daun": "green leaf",
+        "warna-katak": "green frog",
+        "warna-tomat": "red tomato",
+        "warna-cabai": "red chili",
+        "warna-ceri": "red cherry",
+        "warna-blueberry": "blue blueberries",
+        "warna-paus": "blue whale",
+        "warna-topi": "blue cap",
+        "warna-bunga-matahari": "yellow sunflower",
+        "warna-keju": "yellow cheese",
+        "warna-lemon": "yellow lemon",
+        "warna-brokoli": "green broccoli",
+        "warna-timun": "green cucumber",
+        "warna-kura": "green turtle"
       }
     },
     "knobs": {
@@ -368904,121 +369380,144 @@ export const PAKET_RAW: unknown[] = [
         "id": "apel",
         "labelKey": "apel",
         "bin": "merah",
-        "emoji": "🍎"
+        "emoji": "🍎",
+        "altKey": "warna-apel"
       },
       {
         "id": "stroberi",
         "labelKey": "stroberi",
         "bin": "merah",
-        "emoji": "🍓"
+        "emoji": "🍓",
+        "altKey": "warna-stroberi"
       },
       {
         "id": "bola",
         "labelKey": "bola",
         "bin": "biru",
-        "emoji": "🔵"
+        "emoji": "🔵",
+        "altKey": "warna-bola"
       },
       {
         "id": "ikan",
         "labelKey": "ikan",
         "bin": "biru",
-        "emoji": "🐟"
+        "emoji": "🐟",
+        "altKey": "warna-ikan"
       },
       {
         "id": "pisang",
         "labelKey": "pisang",
         "bin": "kuning",
-        "emoji": "🍌"
+        "emoji": "🍌",
+        "altKey": "warna-pisang"
       },
       {
         "id": "bebek",
         "labelKey": "bebek",
         "bin": "kuning",
-        "emoji": "🐤"
+        "altKey": "warna-bebek",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-bebek"
+        }
       },
       {
         "id": "daun",
         "labelKey": "daun",
         "bin": "hijau",
-        "emoji": "🍃"
+        "emoji": "🍃",
+        "altKey": "warna-daun"
       },
       {
         "id": "katak",
         "labelKey": "katak",
         "bin": "hijau",
-        "emoji": "🐸"
+        "emoji": "🐸",
+        "altKey": "warna-katak"
       },
       {
         "id": "tomat",
         "labelKey": "tomat",
         "bin": "merah",
-        "emoji": "🍅"
+        "emoji": "🍅",
+        "altKey": "warna-tomat"
       },
       {
         "id": "cabai",
         "labelKey": "cabai",
         "bin": "merah",
-        "emoji": "🌶️"
+        "emoji": "🌶️",
+        "altKey": "warna-cabai"
       },
       {
         "id": "ceri",
         "labelKey": "ceri",
         "bin": "merah",
-        "emoji": "🍒"
+        "emoji": "🍒",
+        "altKey": "warna-ceri"
       },
       {
         "id": "blueberry",
         "labelKey": "blueberry",
         "bin": "biru",
-        "emoji": "🫐"
+        "emoji": "🫐",
+        "altKey": "warna-blueberry"
       },
       {
         "id": "paus",
         "labelKey": "paus",
         "bin": "biru",
-        "emoji": "🐳"
+        "emoji": "🐳",
+        "altKey": "warna-paus"
       },
       {
         "id": "topi",
         "labelKey": "topi",
         "bin": "biru",
-        "emoji": "🧢"
+        "emoji": "🧢",
+        "altKey": "warna-topi"
       },
       {
         "id": "bunga-matahari",
         "labelKey": "bunga-matahari",
         "bin": "kuning",
-        "emoji": "🌻"
+        "emoji": "🌻",
+        "altKey": "warna-bunga-matahari"
       },
       {
         "id": "keju",
         "labelKey": "keju",
         "bin": "kuning",
-        "emoji": "🧀"
+        "emoji": "🧀",
+        "altKey": "warna-keju"
       },
       {
         "id": "lemon",
         "labelKey": "lemon",
         "bin": "kuning",
-        "emoji": "🍋"
+        "emoji": "🍋",
+        "altKey": "warna-lemon"
       },
       {
         "id": "brokoli",
         "labelKey": "brokoli",
         "bin": "hijau",
-        "emoji": "🥦"
+        "emoji": "🥦",
+        "altKey": "warna-brokoli"
       },
       {
         "id": "timun",
         "labelKey": "timun",
         "bin": "hijau",
-        "emoji": "🥒"
+        "emoji": "🥒",
+        "altKey": "warna-timun"
       },
       {
         "id": "kura",
         "labelKey": "kura",
         "bin": "hijau",
-        "emoji": "🐢"
+        "emoji": "🐢",
+        "altKey": "warna-kura"
       }
     ]
   },

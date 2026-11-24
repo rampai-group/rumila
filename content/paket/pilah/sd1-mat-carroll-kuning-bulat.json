@@ -11,6 +11,10 @@
     "id": {
       "judul": "Kotak Kuning dan Bulat",
       "instruksi": "Tiap benda: kuning atau bukan? Bulat atau bersudut? Taruh di kotak yang cocok untuk dua-duanya.",
+      "carroll-baris-1": "Kuning",
+      "carroll-baris-2": "Bukan kuning",
+      "carroll-kolom-1": "Bulat",
+      "carroll-kolom-2": "Bersudut",
       "b-kuning-bulat": "kuning · bulat",
       "b-kuning-sudut": "kuning · bersudut",
       "b-lain-bulat": "bukan kuning · bulat",
@@ -35,6 +39,10 @@
     "en": {
       "judul": "Yellow and Round Boxes",
       "instruksi": "For each object: yellow or not? Round or with corners? Put it in the box that matches both.",
+      "carroll-baris-1": "Yellow",
+      "carroll-baris-2": "Not yellow",
+      "carroll-kolom-1": "Round",
+      "carroll-kolom-2": "Has corners",
       "b-kuning-bulat": "yellow · round",
       "b-kuning-sudut": "yellow · corners",
       "b-lain-bulat": "not yellow · round",
@@ -79,6 +87,10 @@
   "world": "kelas",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "kuning-bulat",

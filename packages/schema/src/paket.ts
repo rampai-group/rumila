@@ -115,6 +115,11 @@ export const PaketPilahObj = z.object({
   mode: z.enum(["kelompok", "pilih"]).default("kelompok"),
   /** Susun isi setiap wadah dari bawah untuk soal piktogram. */
   layoutBin: z.literal("piktogram").optional(),
+  /** Empat wadah Carroll disimpan dalam urutan kiri ke kanan, baris atas lalu baris bawah. */
+  carroll: z.object({
+    baris: z.tuple([Key, Key]),
+    kolom: z.tuple([Key, Key]),
+  }).optional(),
   bins: z.array(PilahBin).min(1).max(10),
   items: z.array(PilahItem).min(2),
   pilihan: z.array(PilahRonde).default([]),
@@ -123,6 +128,14 @@ export const PaketPilah = PaketPilahObj.superRefine(refinePilah);
 function refinePilah(p: z.infer<typeof PaketPilahObj>, ctx: z.RefinementCtx) {
   const bins = new Set(p.bins.map(b => b.id));
   const items = new Set(p.items.map(i => i.id));
+  if (p.carroll) {
+    if (p.mode !== "kelompok" || p.layoutBin || bins.size !== 4 || p.bins.length !== 4) {
+      ctx.addIssue({ code: "custom", path: ["carroll"], message: "diagram Carroll butuh empat wadah kelompok" });
+    }
+    for (const key of [...p.carroll.baris, ...p.carroll.kolom]) {
+      if (!p.locale.id[key] || !p.locale.en[key]) ctx.addIssue({ code: "custom", path: ["carroll"], message: `judul sumbu ${key} belum diterjemahkan` });
+    }
+  }
   if (p.mode === "kelompok") {
     if (p.bins.length < 2) ctx.addIssue({ code: "custom", path: ["bins"], message: "mode kelompok butuh minimal 2 bin" });
     if (p.items.length < 4) ctx.addIssue({ code: "custom", path: ["items"], message: "mode kelompok butuh minimal 4 item" });

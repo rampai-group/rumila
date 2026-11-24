@@ -45,8 +45,7 @@ export function buatRonde(p: ContentPack, knobs: Knobs, seed: number): Ronde {
 
 /**
  * Ronde berikutnya tanpa mengulang soal: coba beberapa seed turunan dan ambil yang belum pernah keluar di sesi ini
- * (`riwayat` = kunci ronde sebelumnya, lihat `kunciRonde`). Bila kumpulan soal untuk knob ini habis, minimal jangan
- * sama dengan ronde terakhir — dengan meminjam knob tetangga, dan untuk navigasi saringan knob dilepas sebagai pilihan terakhir.
+ * (`riwayat` = kunci ronde sebelumnya, lihat `kunciRonde`). Coba tingkat kesulitan lain sebelum memakai ulang soal.
  */
 export function buatRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwayat: readonly string[], percobaan = 24): Ronde {
   return cariRondeBaru(p, knobs, seed, riwayat, percobaan, true) ?? buatRonde(p, knobs, seed);
@@ -84,22 +83,23 @@ function cariRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwayat: read
     if (!bedaTerakhir && k !== terakhir) bedaTerakhir = r;
   }
   if (terbaik) return terbaik.r;
-  // Kumpulan soal di tingkat ini habis → pinjam dari tingkat kesulitan tetangga (satu langkah knob naik/turun).
+  // Utamakan tingkat kesulitan satu langkah dari knob adaptif.
   const tetangga = knobTetangga(p, knobs);
   for (let i = 0; i < percobaan; i++) {
     const r = buatRonde(p, tetangga[i % Math.max(1, tetangga.length)] ?? knobs, turunan(percobaan + i));
     if (!pernah.has(kunciRonde(r))) return r;
   }
-  if (!bolehUlang) {
-    if (p.mechanic === "navigasi") {
-      // Peta lain tetap boleh dipakai setelah varian yang memenuhi knob habis.
-      for (let i = 0; i < percobaan; i++) {
-        const r = buatRonde(p, {}, turunan(2 * percobaan + i));
-        if (!pernah.has(kunciRonde(r))) return r;
-      }
+  // Tingkat terdekat bisa habis sementara paket masih punya soal pada tingkat lain.
+  const cadangan = p.mechanic === "navigasi" ? [{}] : knobCadangan(p, knobs, tetangga);
+  for (const k of cadangan) {
+    for (let i = 0; i < percobaan; i++) {
+      const r = buatRonde(p, k, turunan(2 * percobaan + i));
+      const key = kunciRonde(r);
+      if (!pernah.has(key)) return r;
+      if (!bedaTerakhir && key !== terakhir) bedaTerakhir = r;
     }
-    return null;
   }
+  if (!bolehUlang) return null;
   if (bedaTerakhir) return bedaTerakhir;
   for (let i = 0; i < percobaan; i++) {
     const r = buatRonde(p, p.mechanic === "navigasi" ? {} : (tetangga[i % Math.max(1, tetangga.length)] ?? knobs), turunan(2 * percobaan + i));
@@ -108,18 +108,35 @@ function cariRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwayat: read
   return buatRonde(p, knobs, seed);
 }
 
-/** Knob yang bergeser satu langkah (naik dulu, lalu turun) dari `knobs`, tetap dalam rentang paket. */
+/** Knob yang bergeser satu langkah (naik dulu, lalu turun), dengan batas yang sama seperti runner. */
 function knobTetangga(p: ContentPack, knobs: Knobs): Knobs[] {
-  const spek = (p as { knobs?: Record<string, { min: number; max: number; step?: number }> }).knobs ?? {};
   const out: Knobs[] = [];
   for (const arah of [1, -1])
-    for (const [kunci, k] of Object.entries(spek)) {
-      const kini = (knobs as Record<string, number>)[kunci];
+    for (const [kunci, k] of Object.entries(p.knobs)) {
+      const kini = knobs[kunci];
       if (typeof kini !== "number") continue;
-      const baru = kini + arah * (k.step ?? 1);
-      if (baru >= k.min && baru <= k.max) out.push({ ...knobs, [kunci]: baru });
+      const baru = Math.min(k.max, Math.max(k.min, kini + arah * (k.step ?? 1)));
+      if (baru !== kini) out.push({ ...knobs, [kunci]: baru });
     }
   return out;
+}
+
+/** Telusuri kombinasi knob lain menurut jarak, mulai dari tetangga yang sudah dicoba. */
+function* knobCadangan(p: ContentPack, knobs: Knobs, tetangga: Knobs[]): Iterable<Knobs> {
+  const nama = Object.keys(p.knobs);
+  // Abaikan selisih pembulatan langkah pecahan saat mengunjungi ulang kombinasi yang sama.
+  const kunci = (k: Knobs) => nama.map((n) => k[n]?.toPrecision(14)).join("|");
+  const antre = [...tetangga];
+  const dilihat = new Set([knobs, ...tetangga].map(kunci));
+  for (let i = 0; i < antre.length; i++) {
+    for (const baru of knobTetangga(p, antre[i])) {
+      const id = kunci(baru);
+      if (dilihat.has(id)) continue;
+      dilihat.add(id);
+      antre.push(baru);
+      yield baru;
+    }
+  }
 }
 
 /** Kunci pembanding dua ronde menurut mata anak: soal yang sama dengan susunan acak lain (pilihan diacak, gambar cerita

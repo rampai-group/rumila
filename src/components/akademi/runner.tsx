@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { duniaPaket, pilarPaket, rintanganPaket, wadahPaket } from "@/lib/akademi/tema-dunia";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { isiBarang, type ContentPack } from "@akademi/schema";
-import { buatRonde, buatRondeUnik, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
+import { buatRonde, buatRondeUnik, geserKnob, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
 import { judulPaket, kompetensiUntuk, levelAnak, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
@@ -39,16 +39,6 @@ function hash(s: string): number {
   for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619);
   return h >>> 0;
 }
-
-function geserKnob(p: ContentPack, k: Knobs, arah: 1 | -1): Knobs {
-  const out: Knobs = { ...k };
-  for (const [nama, def] of Object.entries(p.knobs)) {
-    const v = (k[nama] ?? def.default) + arah * (def.step ?? 1);
-    out[nama] = Math.min(def.max, Math.max(def.min, v));
-  }
-  return out;
-}
-
 
 /** Jatah tombol Bantu per satu permainan (permintaan owner: anak tidak bergantung pada bantuan). */
 const BATAS_BANTU = 3;
@@ -109,7 +99,7 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
   const mulaiRonde = useRef(Date.now());
   const jeda = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const terkirim = useRef(false);
-  const total = paket.rounds;
+  const [total, setTotal] = useState(paket.rounds);
 
   // {barang} di instruksi = nama barang ronde ini (dagang yang barangnya diacak per ronde)
   const instruksi = useMemo(() => {
@@ -192,12 +182,14 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
       }, JEDA_UMPAN_BALIK);
       return;
     }
+    const next = idx + 1;
+    riwayat.current.push(kunciRonde(ronde));
+    const rondeBerikut = next < total ? buatRondeUnik(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`), riwayat.current) : null;
+    // Jika bank habis, progres pada umpan balik terakhir memakai jumlah ronde aktual.
+    if (!rondeBerikut) setTotal(next);
     jeda.current = setTimeout(() => {
       setPercobaan(0);
       setGratisTerpakai(false);
-      const next = idx + 1;
-      riwayat.current.push(kunciRonde(ronde));
-      const rondeBerikut = next < total ? buatRondeUnik(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`), riwayat.current) : null;
       if (!rondeBerikut) {
         catatEvent({
           learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "activity_end",

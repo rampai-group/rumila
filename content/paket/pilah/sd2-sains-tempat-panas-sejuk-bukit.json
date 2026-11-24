@@ -10,39 +10,39 @@
   "locale": {
     "id": {
       "judul": "Panas atau Sejuk di Sekitarku?",
-      "instruksi": "Lihat gambar tiap tempat. Taruh ke rak panas dan kering, atau sejuk dan lembap.",
+      "instruksi": "Perhatikan gambar dan baca keadaan tiap tempat. Taruh ke rak panas dan kering, atau sejuk dan lembap.",
       "b-panas": "panas dan kering",
       "b-lembap": "sejuk dan lembap",
-      "i-gurun": "pasir pantai siang hari",
-      "i-kapmobil": "kap mobil di parkiran terbuka siang hari",
-      "i-tembok": "tembok bata disinari Matahari siang",
-      "i-ladang": "padang rumput kering di musim kemarau",
-      "i-lapbasket": "lapangan basket semen siang hari",
-      "i-gundul": "puncak bukit gundul di siang terik",
-      "i-hutan": "hutan lebat yang rindang",
-      "i-kamarmandi": "kamar mandi setelah dipakai mandi",
-      "i-kayulapuk": "di bawah batang kayu lapuk",
-      "i-tepisungai": "tepi sungai yang teduh",
-      "i-lumut": "tembok teduh yang berlumut",
-      "i-jamur": "tanah tempat jamur tumbuh"
+      "i-gurun": "pasir kering dan panas jauh dari ombak",
+      "i-kapmobil": "kap mobil panas dan kering di parkiran",
+      "i-tembok": "tembok bata kering yang panas kena terik siang",
+      "i-ladang": "padang rumput panas dan kering di musim kemarau",
+      "i-lapbasket": "lapangan basket semen yang panas dan kering",
+      "i-gundul": "puncak bukit gundul yang panas dan berdebu",
+      "i-hutan": "lantai hutan yang sejuk dan lembap di bawah pohon",
+      "i-kamarmandi": "kamar mandi sejuk dengan lantai basah",
+      "i-kayulapuk": "tanah sejuk dan lembap di bawah kayu lapuk",
+      "i-tepisungai": "tanah sejuk dan lembap di tepi sungai yang teduh",
+      "i-lumut": "tembok sejuk, teduh, dan lembap yang ditumbuhi lumut",
+      "i-jamur": "tanah sejuk dan lembap tempat jamur tumbuh"
     },
     "en": {
       "judul": "Hot or Cool Around Me?",
-      "instruksi": "Look at each place. Put it on the hot-and-dry shelf or the cool-and-damp shelf.",
+      "instruksi": "Look at the picture and read the conditions at each spot. Sort it as hot and dry or cool and damp.",
       "b-panas": "hot and dry",
       "b-lembap": "cool and damp",
-      "i-gurun": "beach sand at midday",
-      "i-kapmobil": "a car bonnet in an open car park at midday",
-      "i-tembok": "a brick wall in the midday sun",
-      "i-ladang": "a dry grass field in the dry season",
-      "i-lapbasket": "a concrete basketball court at midday",
-      "i-gundul": "a bare hilltop in the blazing sun",
-      "i-hutan": "a thick, shady forest",
-      "i-kamarmandi": "a bathroom just after a shower",
-      "i-kayulapuk": "under a rotting log",
-      "i-tepisungai": "a shady riverbank",
-      "i-lumut": "a shady wall covered in moss",
-      "i-jamur": "ground where mushrooms grow"
+      "i-gurun": "hot, dry sand well away from the waves",
+      "i-kapmobil": "the hot, dry hood of a parked car",
+      "i-tembok": "a dry brick wall hot from the midday sun",
+      "i-ladang": "a hot, dry field in the dry season",
+      "i-lapbasket": "a hot, dry concrete basketball court",
+      "i-gundul": "a hot, dusty hilltop without trees",
+      "i-hutan": "a cool, damp forest floor under the trees",
+      "i-kamarmandi": "a cool bathroom with a wet floor",
+      "i-kayulapuk": "cool, damp soil under a rotting log",
+      "i-tepisungai": "cool, damp soil on a shaded riverbank",
+      "i-lumut": "a cool, damp wall covered in moss in the shade",
+      "i-jamur": "cool, damp soil where mushrooms grow"
     }
   },
   "knobs": {
@@ -76,7 +76,10 @@
       "id": "gurun",
       "labelKey": "i-gurun",
       "bin": "panas",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pasir-panas-kering"
+      }
     },
     {
       "id": "kapmobil",
@@ -118,7 +121,10 @@
       "id": "kamarmandi",
       "labelKey": "i-kamarmandi",
       "bin": "lembap",
-      "emoji": "🚿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lantai-sejuk-basah"
+      }
     },
     {
       "id": "kayulapuk",

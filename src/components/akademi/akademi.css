@@ -28,6 +28,9 @@
 /* Agam menghadap arah: dipakai presenter navigasi */
 .akademi-agam { transition: transform 280ms cubic-bezier(0.3, 1.2, 0.5, 1), left 280ms ease, top 280ms ease; }
 
+/* Pertanyaan dan pilihan gambar tetap rapat dalam panel yang ditengahkan. */
+.akademi-ruang-panggung:has([data-pilih-tengah]) { justify-content: safe center; }
+
 /* Peta Petualangan: denyut di titik "kamu di sini" */
 @keyframes akademi-denyut {
   0% { box-shadow: 0 0 0 0 rgba(7, 134, 235, 0.45); }

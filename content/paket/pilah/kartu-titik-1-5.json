@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kartu Titik",
-      "instruksi": "Ketuk satu kartu, lalu ketuk kotak dengan jumlah titik yang sama.",
+      "instruksi": "Hitung gambar di kartu. Ketuk kartu itu, lalu ketuk kotak yang jumlah titiknya sama.",
       "n1": "1",
       "n2": "2",
       "n3": "3",
@@ -24,7 +24,7 @@
     },
     "en": {
       "judul": "Dot Cards",
-      "instruksi": "Tap one card, then tap the box with an equal number of dots.",
+      "instruksi": "Count the pictures on a card. Tap the card, then tap the box with that many dots.",
       "n1": "1",
       "n2": "2",
       "n3": "3",

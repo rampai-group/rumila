@@ -11,6 +11,10 @@
     "id": {
       "judul": "Diagram Carroll",
       "instruksi": "Setiap bilangan punya dua sifat: genap atau ganjil, dan lebih dari 50 atau tidak. Taruh di kotak yang cocok untuk keduanya.",
+      "carroll-baris-1": "Genap",
+      "carroll-baris-2": "Ganjil",
+      "carroll-kolom-1": "Lebih dari 50",
+      "carroll-kolom-2": "50 atau kurang",
       "b-genap-besar": "genap, lebih dari 50",
       "b-genap-kecil": "genap, 50 atau kurang",
       "b-ganjil-besar": "ganjil, lebih dari 50",
@@ -37,6 +41,10 @@
     "en": {
       "judul": "Carroll Diagram",
       "instruksi": "Each number has two properties: even or odd, and more than 50 or not. Put it in the box that fits both.",
+      "carroll-baris-1": "Even",
+      "carroll-baris-2": "Odd",
+      "carroll-kolom-1": "More than 50",
+      "carroll-kolom-2": "50 or less",
       "b-genap-besar": "even, more than 50",
       "b-genap-kecil": "even, 50 or less",
       "b-ganjil-besar": "odd, more than 50",
@@ -76,6 +84,10 @@
   "world": "kelas",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "genap-besar",

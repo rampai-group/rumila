@@ -235,7 +235,10 @@
       "id": "pandan",
       "labelKey": "pandan",
       "bin": "hidung",
-      "emoji": "🍃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-daun-pandan"
+      }
     },
     {
       "id": "cokelat",

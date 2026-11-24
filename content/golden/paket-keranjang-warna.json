@@ -34,7 +34,27 @@
       "lemon": "lemon",
       "brokoli": "brokoli",
       "timun": "timun",
-      "kura": "kura-kura"
+      "kura": "kura-kura",
+      "warna-apel": "apel berwarna merah",
+      "warna-stroberi": "stroberi berwarna merah",
+      "warna-bola": "bola berwarna biru",
+      "warna-ikan": "ikan berwarna biru",
+      "warna-pisang": "pisang berwarna kuning",
+      "warna-bebek": "bebek berwarna kuning",
+      "warna-daun": "daun berwarna hijau",
+      "warna-katak": "katak berwarna hijau",
+      "warna-tomat": "tomat berwarna merah",
+      "warna-cabai": "cabai berwarna merah",
+      "warna-ceri": "ceri berwarna merah",
+      "warna-blueberry": "buah bluberi berwarna biru",
+      "warna-paus": "paus berwarna biru",
+      "warna-topi": "topi berwarna biru",
+      "warna-bunga-matahari": "bunga matahari berwarna kuning",
+      "warna-keju": "keju berwarna kuning",
+      "warna-lemon": "lemon berwarna kuning",
+      "warna-brokoli": "brokoli berwarna hijau",
+      "warna-timun": "timun berwarna hijau",
+      "warna-kura": "kura-kura berwarna hijau"
     },
     "en": {
       "judul": "Color Baskets",
@@ -62,7 +82,27 @@
       "lemon": "lemon",
       "brokoli": "broccoli",
       "timun": "cucumber",
-      "kura": "turtle"
+      "kura": "turtle",
+      "warna-apel": "red apple",
+      "warna-stroberi": "red strawberry",
+      "warna-bola": "blue ball",
+      "warna-ikan": "blue fish",
+      "warna-pisang": "yellow banana",
+      "warna-bebek": "yellow duck",
+      "warna-daun": "green leaf",
+      "warna-katak": "green frog",
+      "warna-tomat": "red tomato",
+      "warna-cabai": "red chili",
+      "warna-ceri": "red cherry",
+      "warna-blueberry": "blue blueberries",
+      "warna-paus": "blue whale",
+      "warna-topi": "blue cap",
+      "warna-bunga-matahari": "yellow sunflower",
+      "warna-keju": "yellow cheese",
+      "warna-lemon": "yellow lemon",
+      "warna-brokoli": "green broccoli",
+      "warna-timun": "green cucumber",
+      "warna-kura": "green turtle"
     }
   },
   "knobs": {
@@ -113,121 +153,144 @@
       "id": "apel",
       "labelKey": "apel",
       "bin": "merah",
-      "emoji": "🍎"
+      "emoji": "🍎",
+      "altKey": "warna-apel"
     },
     {
       "id": "stroberi",
       "labelKey": "stroberi",
       "bin": "merah",
-      "emoji": "🍓"
+      "emoji": "🍓",
+      "altKey": "warna-stroberi"
     },
     {
       "id": "bola",
       "labelKey": "bola",
       "bin": "biru",
-      "emoji": "🔵"
+      "emoji": "🔵",
+      "altKey": "warna-bola"
     },
     {
       "id": "ikan",
       "labelKey": "ikan",
       "bin": "biru",
-      "emoji": "🐟"
+      "emoji": "🐟",
+      "altKey": "warna-ikan"
     },
     {
       "id": "pisang",
       "labelKey": "pisang",
       "bin": "kuning",
-      "emoji": "🍌"
+      "emoji": "🍌",
+      "altKey": "warna-pisang"
     },
     {
       "id": "bebek",
       "labelKey": "bebek",
       "bin": "kuning",
-      "emoji": "🐤"
+      "altKey": "warna-bebek",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-bebek"
+      }
     },
     {
       "id": "daun",
       "labelKey": "daun",
       "bin": "hijau",
-      "emoji": "🍃"
+      "emoji": "🍃",
+      "altKey": "warna-daun"
     },
     {
       "id": "katak",
       "labelKey": "katak",
       "bin": "hijau",
-      "emoji": "🐸"
+      "emoji": "🐸",
+      "altKey": "warna-katak"
     },
     {
       "id": "tomat",
       "labelKey": "tomat",
       "bin": "merah",
-      "emoji": "🍅"
+      "emoji": "🍅",
+      "altKey": "warna-tomat"
     },
     {
       "id": "cabai",
       "labelKey": "cabai",
       "bin": "merah",
-      "emoji": "🌶️"
+      "emoji": "🌶️",
+      "altKey": "warna-cabai"
     },
     {
       "id": "ceri",
       "labelKey": "ceri",
       "bin": "merah",
-      "emoji": "🍒"
+      "emoji": "🍒",
+      "altKey": "warna-ceri"
     },
     {
       "id": "blueberry",
       "labelKey": "blueberry",
       "bin": "biru",
-      "emoji": "🫐"
+      "emoji": "🫐",
+      "altKey": "warna-blueberry"
     },
     {
       "id": "paus",
       "labelKey": "paus",
       "bin": "biru",
-      "emoji": "🐳"
+      "emoji": "🐳",
+      "altKey": "warna-paus"
     },
     {
       "id": "topi",
       "labelKey": "topi",
       "bin": "biru",
-      "emoji": "🧢"
+      "emoji": "🧢",
+      "altKey": "warna-topi"
     },
     {
       "id": "bunga-matahari",
       "labelKey": "bunga-matahari",
       "bin": "kuning",
-      "emoji": "🌻"
+      "emoji": "🌻",
+      "altKey": "warna-bunga-matahari"
     },
     {
       "id": "keju",
       "labelKey": "keju",
       "bin": "kuning",
-      "emoji": "🧀"
+      "emoji": "🧀",
+      "altKey": "warna-keju"
     },
     {
       "id": "lemon",
       "labelKey": "lemon",
       "bin": "kuning",
-      "emoji": "🍋"
+      "emoji": "🍋",
+      "altKey": "warna-lemon"
     },
     {
       "id": "brokoli",
       "labelKey": "brokoli",
       "bin": "hijau",
-      "emoji": "🥦"
+      "emoji": "🥦",
+      "altKey": "warna-brokoli"
     },
     {
       "id": "timun",
       "labelKey": "timun",
       "bin": "hijau",
-      "emoji": "🥒"
+      "emoji": "🥒",
+      "altKey": "warna-timun"
     },
     {
       "id": "kura",
       "labelKey": "kura",
       "bin": "hijau",
-      "emoji": "🐢"
+      "emoji": "🐢",
+      "altKey": "warna-kura"
     }
   ]
 }

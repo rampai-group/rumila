@@ -163,11 +163,11 @@ function Kunci({ terkunci, kiri, kanan }: { terkunci: boolean; kiri: ReactNode; 
 }
 
 /** Lapak pasar: tenda bergaris warna dunia + meja kayu (papan CSS). Mengisi sisa tinggi kolom; isi ditengahkan di atas meja. */
-function Lapak({ children, style, className = "" }: { children: ReactNode; style?: CSSProperties; className?: string }) {
+function Lapak({ children, style, className = "", padat = false }: { children: ReactNode; style?: CSSProperties; className?: string; padat?: boolean }) {
   const { skala: sk } = usePanggung();
   // gaya bersih: meja = kartu putih bertepi abu (tanpa tenda & papan kayu)
   return (
-    <div className={`relative flex flex-1 flex-col rounded-[20px] bg-white ${className}`} style={{ boxShadow: bayangKartu(), padding: 12 * sk, ...style }}>
+    <div className={`relative flex ${padat ? "shrink-0" : "flex-1"} flex-col rounded-[20px] bg-white ${className}`} style={{ boxShadow: bayangKartu(), padding: 12 * sk, ...style }}>
       <div className="flex flex-1 flex-col justify-center">{children}</div>
     </div>
   );
@@ -323,11 +323,11 @@ function Penanda() {
 }
 
 /** Keranjang 🧺: isi bisa diketuk untuk dikembalikan. */
-function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, disabled, className = "" }: { isi: { key: string; v: VisualSpec; label?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; disabled?: boolean; className?: string }) {
+function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, disabled, className = "", padat = false }: { isi: { key: string; v: VisualSpec; label?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; disabled?: boolean; className?: string; padat?: boolean }) {
   const sk = useSk();
   return (
     <Wadah
-      className={`flex-1 ${className}`}
+      className={`${padat ? "shrink-0" : "flex-1"} ${className}`}
       ring={sorot ? "#ffd23f" : undefined}
       minIsi={72}
       label={
@@ -573,8 +573,10 @@ function ModeSubitasi(c: Ctx) {
 
   const lihatLagi = () => { c.onHint?.(); flash(); };
   const teks = kd.subitasi(nama(id));
-  const sk = useSk();
-  const meja = useSkMeja();
+  const { skala: sk, w } = usePanggung();
+  const lebar = useLebar();
+  const sempit = w > 0 && w < 320;
+  const ukuranBuah = sempit ? 44 : Math.round(54 * Math.min(1.4, Math.max(1, w / 620)));
 
   return (
     <Kunci terkunci={terkunci} kiri={<>
@@ -601,36 +603,41 @@ function ModeSubitasi(c: Ctx) {
         }
         jawabanBenar={`${target} ${nama(id)}`}
       />
-      <Lapak>
-        <div className="flex flex-wrap content-center justify-center" style={{ gap: 8 * sk }}>
+      <Lapak padat>
+        <div className="flex flex-wrap content-center justify-center" style={{ gap: (sempit ? 6 : 8) * sk }}>
           {Array.from({ length: tersedia - jumlah }, (_, k) => (
-            <KartuBenda key={k} v={visual(id)} size={Math.round(48 * meja)} keterangan={false} disabled={terkunci || !sudahLihat || tampil} onClick={() => { sfxAkademi.ambil(); setJumlah((n) => n + 1); }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
+            <KartuBenda key={k} v={visual(id)} size={ukuranBuah} keterangan={false} disabled={terkunci || !sudahLihat || tampil} onClick={() => { sfxAkademi.ambil(); setJumlah((n) => n + 1); }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
           ))}
         </div>
       </Lapak>
     </>} kanan={<>
-      <Keranjang
-        isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))}
-        onKembali={() => { sfxAkademi.taruh(); setJumlah((n) => Math.max(0, n - 1)); }}
-        disabled={terkunci || tampil}
-        kosong={!sudahLihat ? "Ketuk Lihat jari dulu" : tampil ? "Tunggu tangannya turun" : "Ketuk buah di lapak"}
-      />
-      {!sudahLihat ? (
-        <div className="flex shrink-0">
-          <TombolBesar onClick={lihatPertama} warna="#0786eb" bayang="#0567c2">
-            <Icon name="visibility" size={26} /> Lihat jari
-          </TombolBesar>
-        </div>
-      ) : (
-      <div className="flex shrink-0 gap-2">
-        {!ujian && <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#0567c2] active:scale-95 disabled:bg-[#eef1f0] disabled:text-[#6b7a8a]" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 * Math.min(sk, 1.4), minHeight: 56 * sk }}>
-          <Icon name="visibility" size={Math.round(24 * sk)} /> Lihat lagi
-        </button>}
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [id]: jumlah }, latencyMs: jam.latency() }); }} disabled={terkunci || tampil || jumlah === 0}>
-          <Icon name="volunteer_activism" size={26} /> Beri
-        </TombolBesar>
-      </div>
+      {sudahLihat && (
+        <Keranjang
+          padat
+          isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))}
+          onKembali={() => { sfxAkademi.taruh(); setJumlah((n) => Math.max(0, n - 1)); }}
+          disabled={terkunci || tampil}
+          kosong={tampil ? "Tunggu tangannya turun" : "Ketuk buah di lapak"}
+        />
       )}
+      <AksiBawah aktif={!lebar}>
+        {!sudahLihat ? (
+          <div className="flex shrink-0">
+            <TombolBesar onClick={lihatPertama} warna="#0786eb" bayang="#0567c2">
+              <Icon name="visibility" size={26} /> Lihat jari
+            </TombolBesar>
+          </div>
+        ) : (
+          <div className="flex shrink-0 gap-2">
+            {!ujian && <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#0567c2] active:scale-95 disabled:bg-[#eef1f0] disabled:text-[#6b7a8a]" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 * Math.min(sk, 1.4), minHeight: 56 * sk }}>
+              <Icon name="visibility" size={Math.round(24 * sk)} /> Lihat lagi
+            </button>}
+            <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [id]: jumlah }, latencyMs: jam.latency() }); }} disabled={terkunci || tampil || jumlah === 0}>
+              <Icon name="volunteer_activism" size={26} /> Beri
+            </TombolBesar>
+          </div>
+        )}
+      </AksiBawah>
     </>} />
   );
 }

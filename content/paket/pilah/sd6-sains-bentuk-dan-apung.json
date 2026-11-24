@@ -17,7 +17,7 @@
       "i-foilpadat": "aluminium foil dipukul jadi gumpalan padat",
       "i-botolkosong": "botol plastik kosong bertutup",
       "i-botolpasir": "botol yang sama diisi penuh pasir",
-      "i-perahukelereng": "perahu foil diisi sangat banyak kelereng",
+      "i-perahukelereng": "perahu foil penuh kelereng hingga air masuk",
       "i-kapal": "kapal baja besar berongga",
       "i-baut": "baut baja kecil",
       "i-pingpong": "bola pingpong",
@@ -38,7 +38,7 @@
       "i-jerukkupas": "jeruk yang sama setelah dikupas",
       "i-kalengkosong": "kaleng aluminium kosong yang tertutup rapat",
       "i-kalengair": "kaleng yang sama diisi penuh air",
-      "p-r9": "Jeruknya sama. Mana yang tenggelam?",
+      "p-r9": "Dalam percobaan ini, lapisan kulit membantu jeruk mengapung karena berisi kantong udara. Mana yang cenderung tenggelam?",
       "p-r10": "Kalengnya sama. Mana yang terapung?",
       "p-r11": "Dua gumpal plastisin sama massanya. Mana yang tenggelam?",
       "p-r12": "Sama-sama dari baja. Mana yang tenggelam?"
@@ -53,7 +53,7 @@
       "i-foilpadat": "foil hammered into a tight lump",
       "i-botolkosong": "an empty, capped plastic bottle",
       "i-botolpasir": "the same bottle filled with sand",
-      "i-perahukelereng": "a foil boat loaded with lots of marbles",
+      "i-perahukelereng": "a foil boat full of marbles until water comes in",
       "i-kapal": "a big hollow steel ship",
       "i-baut": "a small steel bolt",
       "i-pingpong": "a ping-pong ball",
@@ -74,7 +74,7 @@
       "i-jerukkupas": "the same orange after peeling",
       "i-kalengkosong": "an empty, tightly sealed aluminium can",
       "i-kalengair": "the same can filled with water",
-      "p-r9": "It is the same orange. Which one sinks?",
+      "p-r9": "In this test, air pockets in the peel help the orange float. Which is more likely to sink?",
       "p-r10": "It is the same can. Which one floats?",
       "p-r11": "Two lumps of modelling clay have the same mass. Which one sinks?",
       "p-r12": "Both are made of steel. Which one sinks?"
@@ -98,50 +98,66 @@
       "id": "bolaplastisin",
       "labelKey": "i-bolaplastisin",
       "bin": "pilihan",
-      "emoji": "🟤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-plastisin"
+      }
     },
     {
       "id": "perahuplastisin",
       "labelKey": "i-perahuplastisin",
       "bin": "pilihan",
-      "emoji": "🛶"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perahu-plastisin"
+      }
     },
     {
       "id": "foilperahu",
       "labelKey": "i-foilperahu",
       "bin": "pilihan",
-      "emoji": "🛶",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "✨"
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perahu-seng"
       }
     },
     {
       "id": "foilpadat",
       "labelKey": "i-foilpadat",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#b0bec5",
-      "scale": 0.6
+      "scale": 0.6,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-seng-padat"
+      }
     },
     {
       "id": "botolkosong",
       "labelKey": "i-botolkosong",
       "bin": "pilihan",
-      "emoji": "🍶"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-botol-kosong"
+      }
     },
     {
       "id": "botolpasir",
       "labelKey": "i-botolpasir",
       "bin": "pilihan",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-botol-berisi-pasir"
+      }
     },
     {
       "id": "perahukelereng",
       "labelKey": "i-perahukelereng",
       "bin": "pilihan",
-      "emoji": "🔵",
-      "count": 6
+      "count": 6,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perahu-foil-berat"
+      }
     },
     {
       "id": "kapal",
@@ -159,13 +175,19 @@
       "id": "pingpong",
       "labelKey": "i-pingpong",
       "bin": "pilihan",
-      "emoji": "🏓"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-plastik-berongga"
+      }
     },
     {
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "pilihan",
-      "emoji": "🔵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-kaca-padat"
+      }
     },
     {
       "id": "kayu",
@@ -195,32 +217,36 @@
       "id": "jerukutuh",
       "labelKey": "i-jerukutuh",
       "bin": "pilihan",
-      "emoji": "🍊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jeruk-utuh"
+      }
     },
     {
       "id": "jerukkupas",
       "labelKey": "i-jerukkupas",
       "bin": "pilihan",
-      "emoji": "🍊",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🔪"
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jeruk-kupas"
       }
     },
     {
       "id": "kalengkosong",
       "labelKey": "i-kalengkosong",
       "bin": "pilihan",
-      "emoji": "🥫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kaleng-kosong"
+      }
     },
     {
       "id": "kalengair",
       "labelKey": "i-kalengair",
       "bin": "pilihan",
-      "emoji": "🥫",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "💧"
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kaleng-berisi-air"
       }
     }
   ],

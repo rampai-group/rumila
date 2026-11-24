@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Hidup atau Tak Hidup?",
-      "instruksi": "Taruh yang hidup ke keranjang daun, yang tak hidup ke keranjang batu.",
+      "instruksi": "Ketuk satu kartu, lalu ketuk kotak hidup atau tak hidup.",
       "hidup": "hidup",
       "takhidup": "tak hidup",
       "i-kucing": "kucing",
       "i-ayam": "ayam",
       "i-pohon": "pohon",
-      "i-bunga": "bunga",
+      "i-bunga": "bunga dalam pot",
       "i-ikan": "ikan",
       "i-batu": "batu",
       "i-bola": "bola",
@@ -26,13 +26,13 @@
     },
     "en": {
       "judul": "Living or Not Living?",
-      "instruksi": "Put living things in the leaf basket and non-living things in the stone basket.",
+      "instruksi": "Tap a card, then tap the living or non-living box.",
       "hidup": "living",
       "takhidup": "not living",
       "i-kucing": "cat",
       "i-ayam": "chicken",
       "i-pohon": "tree",
-      "i-bunga": "flower",
+      "i-bunga": "potted flower",
       "i-ikan": "fish",
       "i-batu": "stone",
       "i-bola": "ball",
@@ -64,7 +64,7 @@
     {
       "id": "takhidup",
       "labelKey": "takhidup",
-      "emoji": "🧱"
+      "emoji": "🪨"
     }
   ],
   "items": [
@@ -90,7 +90,10 @@
       "id": "bunga",
       "labelKey": "i-bunga",
       "bin": "hidup",
-      "emoji": "🌼"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-bunga-dalam-pot"
+      }
     },
     {
       "id": "ikan",

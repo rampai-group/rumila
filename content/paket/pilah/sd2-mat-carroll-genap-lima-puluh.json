@@ -11,6 +11,10 @@
     "id": {
       "judul": "Diagram Carroll Bilangan",
       "instruksi": "Cek dua hal: genap atau ganjil, dan kurang dari 50 atau tidak. Taruh di kotak yang cocok dua-duanya.",
+      "carroll-baris-1": "Kurang dari 50",
+      "carroll-baris-2": "50 atau lebih",
+      "carroll-kolom-1": "Genap",
+      "carroll-kolom-2": "Ganjil",
       "b-genap-kurang-50": "genap, kurang dari 50",
       "b-ganjil-kurang-50": "ganjil, kurang dari 50",
       "b-genap-50": "genap, 50 atau lebih",
@@ -39,6 +43,10 @@
     "en": {
       "judul": "Number Carroll Diagram",
       "instruksi": "Check two things: even or odd, and less than 50 or not. Put each number in the box that fits both.",
+      "carroll-baris-1": "Less than 50",
+      "carroll-baris-2": "50 or more",
+      "carroll-kolom-1": "Even",
+      "carroll-kolom-2": "Odd",
       "b-genap-kurang-50": "even, less than 50",
       "b-ganjil-kurang-50": "odd, less than 50",
       "b-genap-50": "even, 50 or more",
@@ -87,6 +95,10 @@
   "world": "ruang-main",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "genap-kecil",

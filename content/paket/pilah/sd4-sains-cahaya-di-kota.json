@@ -102,7 +102,10 @@
       "id": "tvnyala",
       "labelKey": "i-tvnyala",
       "bin": "sumber",
-      "emoji": "📺"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-televisi-menyala"
+      }
     },
     {
       "id": "lentera",
@@ -144,9 +147,10 @@
       "id": "tvmati",
       "labelKey": "i-tvmati",
       "bin": "pantul",
-      "emoji": "📺",
-      "color": "#424242",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-televisi-mati"
+      }
     }
   ],
   "pilihan": []

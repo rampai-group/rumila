@@ -11,6 +11,10 @@
     "id": {
       "judul": "Diagram Carroll Kelipatan 5",
       "instruksi": "Kelipatan 5 bersatuan 0 atau 5. Genap bersatuan 0, 2, 4, 6, 8. Taruh di kotak yang cocok untuk keduanya.",
+      "carroll-baris-1": "Kelipatan 5",
+      "carroll-baris-2": "Bukan kelipatan 5",
+      "carroll-kolom-1": "Genap",
+      "carroll-kolom-2": "Ganjil",
       "b-kelt-5-genap": "kelipatan 5, genap",
       "b-kelt-5-ganjil": "kelipatan 5, ganjil",
       "b-bukan-genap": "bukan kelipatan 5, genap",
@@ -39,6 +43,10 @@
     "en": {
       "judul": "Multiples of 5 Carroll Diagram",
       "instruksi": "Multiples of 5 end in 0 or 5. Even numbers end in 0, 2, 4, 6 or 8. Put each number in the box that fits both.",
+      "carroll-baris-1": "Multiple of 5",
+      "carroll-baris-2": "Not a multiple of 5",
+      "carroll-kolom-1": "Even",
+      "carroll-kolom-2": "Odd",
       "b-kelt-5-genap": "multiple of 5, even",
       "b-kelt-5-ganjil": "multiple of 5, odd",
       "b-bukan-genap": "not a multiple of 5, even",
@@ -87,6 +95,10 @@
   "world": "ruang-main",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "lima-genap",

@@ -25,7 +25,7 @@
       "i-labalaba": "laba-laba",
       "i-ayam": "ayam",
       "i-tikus": "tikus",
-      "i-beruang": "beruang",
+      "i-beruang": "beruang cokelat pemakan buah dan ikan",
       "i-monyet": "monyet"
     },
     "en": {
@@ -46,7 +46,7 @@
       "i-labalaba": "spider",
       "i-ayam": "chicken",
       "i-tikus": "rat",
-      "i-beruang": "bear",
+      "i-beruang": "brown bear that eats fruit and fish",
       "i-monyet": "monkey"
     }
   },
@@ -162,7 +162,10 @@
       "id": "beruang",
       "labelKey": "i-beruang",
       "bin": "omnivora",
-      "emoji": "🐻"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-beruang-cokelat"
+      }
     },
     {
       "id": "monyet",
