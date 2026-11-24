@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Makan Siang Hewan Peliharaan",
-      "instruksi": "Seret tiap makanan ke hewan yang suka memakannya.",
+      "instruksi": "Taruh sayur dan rumput untuk kelinci, daging dan ikan untuk kucing, biji untuk burung pemakan biji, serta pelet dan kutu air untuk ikan hias.",
       "b-kelinci": "kelinci",
       "b-kucing": "kucing",
       "b-burung": "burung",
       "b-ikanhias": "ikan hias",
       "i-wortel": "wortel",
       "i-sawi": "daun sawi",
-      "i-ikan": "ikan goreng",
+      "i-ikan": "ikan matang tanpa bumbu",
       "i-daging": "daging",
       "i-biji": "biji-bijian",
       "i-pepaya": "gabah",
@@ -32,14 +32,14 @@
     },
     "en": {
       "judul": "Pet Lunchtime",
-      "instruksi": "Drag each food to the animal that likes to eat it.",
+      "instruksi": "Sort greens for rabbits, meat and fish for cats, seeds for seed-eating birds, and pellets and water fleas for aquarium fish.",
       "b-kelinci": "rabbit",
       "b-kucing": "cat",
       "b-burung": "bird",
       "b-ikanhias": "pet fish",
       "i-wortel": "carrot",
       "i-sawi": "mustard greens",
-      "i-ikan": "fried fish",
+      "i-ikan": "plain cooked fish",
       "i-daging": "meat",
       "i-biji": "birdseed",
       "i-pepaya": "unhusked rice grains",
@@ -117,7 +117,10 @@
       "id": "ikan",
       "labelKey": "i-ikan",
       "bin": "kucing",
-      "emoji": "🐟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-ikan-matang"
+      }
     },
     {
       "id": "daging",
@@ -147,9 +150,11 @@
       "id": "jentik",
       "labelKey": "i-jentik",
       "bin": "ikanhias",
-      "shape": "circle",
-      "color": "#e57373",
-      "scale": 0.5
+      "scale": 0.5,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kutu-air"
+      }
     },
     {
       "id": "rumput",
@@ -185,7 +190,10 @@
       "id": "bijimatahari",
       "labelKey": "i-bijimatahari",
       "bin": "burung",
-      "emoji": "🌻"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-biji-bunga-matahari"
+      }
     }
   ],
   "pilihan": []

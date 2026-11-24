@@ -16,7 +16,7 @@
       "i-batu": "batu",
       "i-daun": "daun",
       "i-paku": "baut logam",
-      "i-bola": "bola plastik",
+      "i-bola": "bola plastik berongga yang tertutup rapat",
       "i-kunci": "kunci logam",
       "t-t1": "Mana yang akan tenggelam?",
       "t-a1": "Mana yang akan terapung?",
@@ -42,7 +42,7 @@
       "i-batu": "stone",
       "i-daun": "leaf",
       "i-paku": "metal bolt",
-      "i-bola": "plastic ball",
+      "i-bola": "sealed, hollow plastic ball",
       "i-kunci": "metal key",
       "t-t1": "Which one will sink?",
       "t-a1": "Which one will float?",
@@ -111,7 +111,10 @@
       "id": "bola",
       "labelKey": "i-bola",
       "bin": "pilihan",
-      "emoji": "🏐"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-plastik-berongga"
+      }
     },
     {
       "id": "kunci",

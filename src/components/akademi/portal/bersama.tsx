@@ -10,6 +10,7 @@ import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { PLAY, type ColorKey } from "@/lib/catalog";
+import { hariWIB } from "@/lib/akademi/kalender";
 import { TRACK_AKTIF } from "@/lib/akademi/katalog";
 import { kompetensiUntuk, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import type { Status } from "@/lib/akademi/mastery";
@@ -71,11 +72,6 @@ export function tanggalJam(iso: string) {
   if (Number.isNaN(d.getTime())) return iso;
   return d.toLocaleString("id-ID", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 }
-const hariLokal = (iso: string) => {
-  const d = new Date(iso);
-  return Number.isNaN(d.getTime()) ? iso.slice(0, 10) : d.toLocaleDateString("id-ID");
-};
-
 /** Jumlah hari berbeda dengan event attempt dalam `hari` hari terakhir. */
 export function hitungStreak(events: GameEvent[], hari = 7): number {
   const batas = Date.now() - hari * 86400000;
@@ -84,7 +80,7 @@ export function hitungStreak(events: GameEvent[], hari = 7): number {
     if (e.type !== "attempt") continue;
     const t = new Date(e.clientAt).getTime();
     if (Number.isNaN(t) || t < batas) continue;
-    set.add(hariLokal(e.clientAt));
+    set.add(hariWIB(e.clientAt));
   }
   return set.size;
 }

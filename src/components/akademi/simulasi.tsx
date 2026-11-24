@@ -13,7 +13,7 @@ import { KALIMAT_SIMULASI as KS, kalimatSimulasi as ks } from "@/lib/akademi/kal
 import { ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, skalaLebar, type VisualSpec } from "./benda";
-import { usePanggung } from "./dunia";
+import { AksiBawah, usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
 import { Wadah } from "./wadah";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
@@ -812,6 +812,7 @@ function ModeTurus(c: Ctx) {
   // Instruksi milik paket (tema bisa hewan, serangga, pengunjung, kendaraan…); cadangan netral.
   const instruksi = paket.instructionKey ? t(paket.instructionKey) : "";
   const teks = instruksi && instruksi !== paket.instructionKey ? instruksi : KS.turusCadangan;
+  const inggris = teks === paket.locale.en[paket.instructionKey] && teks !== paket.locale.id[paket.instructionKey];
   // di tablet baris tabel lebih tinggi; bila baris banyak & bertumpuk, jangan sampai mendesak jalur
   const sb = samping ? Math.min(skala * 1.1, 1.6) : skala;
 
@@ -834,25 +835,38 @@ function ModeTurus(c: Ctx) {
     <div className="flex flex-col gap-2 rounded-[20px] p-2" style={{ gap: 8 * skala, background: tema.panel, boxShadow: bayangKartu() }} role="group" aria-label="Tabel turus">
       {hewan.map((h) => {
         const n = turus[h.id] ?? 0;
+        const label = nama(h.id);
         const sorot = hint && sedang === h.id;
         return (
-          <button
-            key={h.id}
-            type="button"
-            disabled={terkunci}
-            onClick={() => { sfx.tap(); setTurus((tr) => ({ ...tr, [h.id]: (tr[h.id] ?? 0) + 1 })); }}
-            className={`flex min-h-16 items-center gap-3 rounded-[16px] bg-white px-3 py-1 text-left active:scale-[.98] ${sorot ? "akademi-bounce" : ""}`}
-            style={{ minHeight: 64 * sb, boxShadow: `${BAYANG}, inset 0 0 0 2px rgba(11,37,69,.16)${sorot ? `, 0 0 0 4px ${KUNING}` : ""}` }}
-            aria-label={`${nama(h.id)}: ${n} turus, ketuk untuk menambah`}
-          >
-            <Benda v={visual(h.id)} size={Math.round(44 * sb)} />
-            <span className="shrink-0" style={{ ...Tebal, fontSize: 15 * st, width: 64 * st }}>{nama(h.id)}</span>
-            <span className="flex-1 overflow-x-auto"><Turus n={n} s={Math.min(sb, 1.4)} /></span>
-            <span className="rounded-full px-2" style={{ ...Tebal, fontSize: 18 * st, background: "#fff1c2", boxShadow: "inset 0 0 0 2px #e0b400" }}>{n}</span>
-            {hasil && (
-              <span className="rounded-full px-2 text-white" style={{ ...Tebal, fontSize: 15 * st, color: "#fff", background: n === (benar[h.id] ?? 0) ? BENAR : SALAH }}>{benar[h.id] ?? 0}</span>
-            )}
-          </button>
+          <div key={h.id} className="flex min-w-0 items-center gap-2">
+            <button
+              type="button"
+              disabled={terkunci}
+              onClick={() => { sfx.tap(); setTurus((tr) => ({ ...tr, [h.id]: (tr[h.id] ?? 0) + 1 })); }}
+              className={`flex min-w-0 flex-1 items-center gap-2 rounded-[16px] bg-white px-2 py-1 text-left active:scale-[.98] ${sorot ? "akademi-bounce" : ""}`}
+              style={{ minHeight: 64 * sb, boxShadow: `${BAYANG}, inset 0 0 0 2px rgba(11,37,69,.16)${sorot ? `, 0 0 0 4px ${KUNING}` : ""}` }}
+              aria-label={inggris ? `${label}: ${n} tallies, tap to add` : `${label}: ${n} turus, ketuk untuk menambah`}
+            >
+              <Benda v={visual(h.id)} size={Math.round(39 * sb)} />
+              <span className="flex min-w-0 flex-1 flex-col">
+                <span className="[overflow-wrap:anywhere]" style={{ ...Tebal, fontSize: 15 * st }}>{label}</span>
+                <span aria-hidden className="overflow-x-auto"><Turus n={n} s={Math.min(sb, 1.4)} /></span>
+              </span>
+              <span className="rounded-full px-2" style={{ ...Tebal, fontSize: 18 * st, background: "#fff1c2", boxShadow: "inset 0 0 0 2px #e0b400" }}>{n}</span>
+              {hasil && (
+                <span className="rounded-full px-2 text-white" style={{ ...Tebal, fontSize: 15 * st, color: "#fff", background: n === (benar[h.id] ?? 0) ? BENAR : SALAH }}>{benar[h.id] ?? 0}</span>
+              )}
+            </button>
+            <button
+              type="button"
+              disabled={terkunci || n === 0}
+              onClick={() => { sfx.close(); setTurus((tr) => ({ ...tr, [h.id]: Math.max(0, (tr[h.id] ?? 0) - 1) })); }}
+              className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#0567c2] shadow-[0_3px_0_rgba(11,37,69,.16)] active:scale-95 disabled:text-slate-400 disabled:shadow-none"
+              aria-label={inggris ? `Remove one tally from ${label}` : `Kurangi satu turus untuk ${label}`}
+            >
+              <Icon name="remove" size={24} />
+            </button>
+          </div>
         );
       })}
     </div>
@@ -1488,13 +1502,15 @@ function ModeBantuan(c: Ctx) {
   const ketukanRef = useRef(0);
   const [goyang, setGoyang] = useState(0);
   const [fase, setFase] = useState<"macet" | "datang" | "beres">("macet");
-  const { skala } = usePanggung();
+  const { w, h } = usePanggung();
   const st = useSkalaTeks();
   const samping = useSamping();
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   useEffect(() => () => { timers.current.forEach(clearTimeout); }, []);
   const emoji = macet?.emoji ?? "🔌";
   const teks = t(paket.instructionKey);
+  const rapat = h > 0 && h < 460;
+  const tinggiAdegan = rapat ? Math.max(148, Math.round(h * 0.4)) : Math.min(w >= 620 ? 360 : 260, Math.max(220, Math.round(h * 0.46)));
 
   const ketuk = () => {
     if (terkunci || fase !== "macet") return;
@@ -1519,9 +1535,9 @@ function ModeBantuan(c: Ctx) {
         atas={<><Instruksi teks={teks} hasil={hasil} anak={<span>{macet ? `Ini ${nama(macet.id)}. ` : ""}Ketuk untuk mencoba. Kalau tetap mati, tekan <span style={{ color: BIRU_TUA }}>Tolong</span>.</span>} /><Umpan hasil={hasil} benar={hasil?.benar ? "minta tolong itu pintar!" : `kamu mengetuk ${ketukan} kali; kalau macet, langsung minta tolong ya`} /></>}
         adegan={
           <Papan>
-            <Adegan min={240}>
+            <Adegan min={tinggiAdegan}>
               {({ w, h }) => {
-                const f = Math.max(1, Math.min((h - 8) / 240, (w - 8) / 420, 2.2));
+                const f = Math.max(rapat ? 0.6 : 1, Math.min((h - 8) / 240, (w - 8) / 420, 2.2));
                 return (
                   <div className="relative w-full overflow-hidden" style={{ height: 240 * f, maxWidth: 420 * f }}>
                     {/* alat besar: tidak bereaksi, hanya bergoyang kecil */}
@@ -1549,12 +1565,12 @@ function ModeBantuan(c: Ctx) {
           </Papan>
         }
         kendali={
-          <div className={`flex gap-2 ${samping ? "flex-col" : ""}`} style={{ gap: 8 * skala }}>
+          <AksiBawah aktif={!samping}>
             {/* tombol tolong: selalu tampil, tidak berkedip, tidak dipandu */}
-            <TombolBesar onClick={tolong} disabled={terkunci || fase !== "macet"} warna={UNGU} bayang="#0567c2" className="flex-1">
+            <TombolBesar onClick={tolong} disabled={terkunci || fase !== "macet"} warna={UNGU} bayang="#0567c2" className="w-full">
               Tolong 🙋
             </TombolBesar>
-          </div>
+          </AksiBawah>
         }
       />
     </Kunci>

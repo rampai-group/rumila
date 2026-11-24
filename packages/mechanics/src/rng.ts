@@ -43,3 +43,13 @@ export function knobDefaults(paket: ContentPack): Knobs {
   for (const [k, v] of Object.entries(paket.knobs)) out[k] = v.default;
   return out;
 }
+
+/** Ubah tingkat kesulitan latihan satu langkah dan batasi nilainya ke rentang paket. */
+export function geserKnob(paket: ContentPack, knobs: Knobs, arah: 1 | -1): Knobs {
+  const hasil = { ...knobs };
+  for (const [nama, def] of Object.entries(paket.knobs)) {
+    const nilai = (knobs[nama] ?? def.default) + arah * (def.step ?? 1);
+    hasil[nama] = Math.min(def.max, Math.max(def.min, nilai));
+  }
+  return hasil;
+}

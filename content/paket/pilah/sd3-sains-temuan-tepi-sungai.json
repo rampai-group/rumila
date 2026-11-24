@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Temuan di Tepi Sungai",
-      "instruksi": "Tim peneliti menemukan banyak benda di tepi sungai. Taruh ke rak fosil (sisa makhluk purba yang membatu) atau bukan fosil.",
+      "instruksi": "Periksa temuan di tepi sungai. Taruh jejak atau sisa makhluk hidup purba yang terawetkan ke rak fosil. Taruh temuan lain ke rak bukan fosil.",
       "b-fosil": "fosil",
       "b-bukan": "bukan fosil",
       "i-gigihiu": "gigi hiu purba yang membatu",
@@ -23,12 +23,12 @@
       "i-ranting": "ranting kayu kering",
       "i-pakissegar": "daun pakis segar di kebun",
       "i-jejakkucing": "jejak kaki kucing di lumpur kemarin",
-      "i-tulangikan": "tulang ikan sisa makan siang",
+      "i-tulangikan": "ikan sisa makan siang",
       "i-siput": "siput kebun yang masih hidup"
     },
     "en": {
       "judul": "Finds by the River",
-      "instruksi": "The research team found many things by the river. Put each on the fossil shelf (remains of ancient life turned to stone) or the not-a-fossil shelf.",
+      "instruksi": "Look at the finds from the riverbank. Put preserved remains or traces of ancient living things on the fossil shelf. Put other finds on the not-a-fossil shelf.",
       "b-fosil": "fossil",
       "b-bukan": "not a fossil",
       "i-gigihiu": "a stone tooth of an ancient shark",
@@ -41,7 +41,7 @@
       "i-ranting": "a dry twig",
       "i-pakissegar": "a fresh fern leaf in the garden",
       "i-jejakkucing": "cat footprints left in the mud yesterday",
-      "i-tulangikan": "fish bones left from lunch",
+      "i-tulangikan": "leftover fish from lunch",
       "i-siput": "a living garden snail"
     }
   },
@@ -76,52 +76,55 @@
       "id": "gigihiu",
       "labelKey": "i-gigihiu",
       "bin": "fosil",
-      "emoji": "🦷",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🦈"
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-gigi-hiu"
       }
     },
     {
       "id": "kayubatu",
       "labelKey": "i-kayubatu",
       "bin": "fosil",
-      "emoji": "🪵",
-      "color": "#8d6e63",
-      "latar": true,
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🪨"
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-kayu"
       }
     },
     {
       "id": "pakis",
       "labelKey": "i-pakis",
       "bin": "fosil",
-      "emoji": "🌿",
-      "color": "#8d6e63",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-daun"
+      }
     },
     {
       "id": "jejakburung",
       "labelKey": "i-jejakburung",
       "bin": "fosil",
-      "emoji": "🐾",
-      "color": "#8d6e63"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-jejak"
+      }
     },
     {
       "id": "amonit",
       "labelKey": "i-amonit",
       "bin": "fosil",
-      "emoji": "🐚"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-amonit"
+      }
     },
     {
       "id": "tengkorak",
       "labelKey": "i-tengkorak",
       "bin": "fosil",
-      "emoji": "💀",
-      "color": "#8d6e63",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-tengkorak"
+      }
     },
     {
       "id": "gigisusu",

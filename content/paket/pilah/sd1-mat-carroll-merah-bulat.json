@@ -11,6 +11,10 @@
     "id": {
       "judul": "Diagram Empat Kotak",
       "instruksi": "Lihat dua hal: merah atau bukan, bulat atau bersudut. Taruh tiap benda di kotak yang cocok dua-duanya.",
+      "carroll-baris-1": "Merah",
+      "carroll-baris-2": "Bukan merah",
+      "carroll-kolom-1": "Bulat",
+      "carroll-kolom-2": "Bersudut",
       "b-merah-bulat": "merah · bulat",
       "b-merah-bersudut": "merah · bersudut",
       "b-lain-bulat": "bukan merah · bulat",
@@ -31,6 +35,10 @@
     "en": {
       "judul": "Four-Box Diagram",
       "instruksi": "Check two things: red or not, round or with corners. Put each object in the box that fits both.",
+      "carroll-baris-1": "Red",
+      "carroll-baris-2": "Not red",
+      "carroll-kolom-1": "Round",
+      "carroll-kolom-2": "Has corners",
       "b-merah-bulat": "red · round",
       "b-merah-bersudut": "red · corners",
       "b-lain-bulat": "not red · round",
@@ -71,6 +79,10 @@
   "world": "ruang-main",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "merah-bulat",

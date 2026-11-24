@@ -53,13 +53,13 @@ export interface OpsiAttempt {
   correct?: boolean;
   hintUsed?: boolean;
   activityId?: string;
-  /** hari ke-n (0 = 1 Jan 2026 pukul 10:00 lokal), bisa pecahan untuk jam berbeda */
+  /** hari ke-n (0 = 1 Jan 2026 pukul 10:00 WIB), bisa pecahan untuk jam berbeda */
   hari?: number;
   imported?: boolean;
   learnerId?: string;
 }
 
-const dasar = new Date(2026, 0, 1, 10, 0, 0).getTime();
+const dasar = Date.parse("2026-01-01T10:00:00+07:00");
 export const waktuHari = (hari: number) => new Date(dasar + hari * 86400000).toISOString();
 
 export function attempt(competencyIds: string[], o: OpsiAttempt = {}): GameEvent {

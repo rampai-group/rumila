@@ -185,7 +185,10 @@
       "id": "kupu",
       "labelKey": "i-kupu",
       "bin": "k6",
-      "emoji": "🦋"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kupu-enam-kaki"
+      }
     },
     {
       "id": "belalang",

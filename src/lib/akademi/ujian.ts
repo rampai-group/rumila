@@ -9,6 +9,9 @@
 // supaya semua kompetensi ruang ujian terwakili. Gagal → boleh mengulang besok (remedial dulu).
 
 import { buatRonde, knobDefaults, kunciRonde } from "@akademi/mechanics";
+import { hariWIB } from "./kalender";
+
+export { hariWIB } from "./kalender";
 import type { ContentPack, LevelId } from "@akademi/schema";
 
 export const JENIS_UJIAN = ["kuis", "semester", "kenaikan", "penempatan"] as const;
@@ -142,9 +145,6 @@ export function terbaik(hasil: HasilUjian[]): Map<string, HasilUjian> {
 export function sudahLulus(hasil: HasilUjian[], jenis: JenisUjian, level: LevelId, ruang = ""): boolean {
   return hasil.some((h) => !h.pending && h.jenis === jenis && h.level === level && h.ruang === ruang && h.lulus);
 }
-
-/** Tanggal lokal Asia/Jakarta (YYYY-MM-DD). */
-export const hariWIB = (iso: string | Date) => new Date(new Date(iso).getTime() + 7 * 3600_000).toISOString().slice(0, 10);
 
 /** Ujian sekali-jalan sudah pernah dikerjakan (lulus atau tidak). */
 export function sudahDikerjakan(hasil: HasilUjian[], jenis: JenisUjian, level: LevelId, ruang = ""): boolean {

@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { buatRonde, buatRondeUnik, knobDefaults, kunciRonde } from "@akademi/mechanics";
+import { buatRonde, buatRondeUnik, geserKnob, knobDefaults, kunciRonde } from "@akademi/mechanics";
 import { KOMPETENSI, PAKET, paketById } from "../katalog";
 import { cakupanUjian } from "../ruang-ujian";
-import { bolehMengulang, hariWIB, lulusDari, nilaiDari, predikat, rencanaUjian, sudahDikerjakan, sudahLulus, terbaik, type HasilUjian } from "../ujian";
+import { bolehMengulang, hariWIB, hashUjian, lulusDari, nilaiDari, predikat, rencanaUjian, sudahDikerjakan, sudahLulus, terbaik, type HasilUjian } from "../ujian";
 import { paket } from "./helper";
 
 const P = [paket("a1", "PAUD", ["C1"]), paket("a2", "PAUD", ["C1"]), paket("b1", "PAUD", ["C2", "C1"]), paket("x", "TKA", ["C3"])];
@@ -47,6 +47,33 @@ describe("latihan unik", () => {
     const r = buatRondeUnik(p, k, 1, []);
     expect(r).not.toBeNull();
     expect(buatRondeUnik(p, k, 2, [kunciRonde(r!)])).toBeNull();
+  });
+
+  it.each([
+    { id: "urutan-pagi-hari", trial: 0, arah: 1 },
+    { id: "ikan-kolam-sisa", trial: 0, arah: -1 },
+    { id: "kue-piring-sisa", trial: 1, arah: -1 },
+    { id: "mesin-tukar-koin", trial: 1, arah: -1 },
+    { id: "tukar-uang-bank-mini", trial: 0, arah: -1 },
+    { id: "bagi-ikan-dua-kucing", trial: 0, arah: -1 },
+    { id: "bagi-ikan-laut-adil", trial: 1, arah: -1 },
+    { id: "jengkal-benda-kelas", trial: 0, arah: -1 },
+    { id: "jengkal-tali-halaman", trial: 0, arah: -1 },
+  ] as const)("$id tetap menuntaskan ronde unik ketika tingkat berubah setiap dua soal", ({ id, trial, arah }) => {
+    const p = paketById(id)!;
+    const sessionId = `00000000-0000-4000-8000-${String(trial + 1).padStart(12, "0")}`;
+    const learnerId = "qa-rinoya-deterministic";
+    const history: string[] = [];
+    let knobs = knobDefaults(p);
+    for (let i = 0; i < p.rounds; i++) {
+      const seed = hashUjian(`${learnerId}|${id}|${i}|${sessionId}`);
+      const ronde = i === 0 ? buatRonde(p, knobs, seed) : buatRondeUnik(p, knobs, seed, history);
+      expect(ronde, `ronde ${i + 1}`).not.toBeNull();
+      const key = kunciRonde(ronde!);
+      expect(history).not.toContain(key);
+      history.push(key);
+      if (i % 2 === 1) knobs = geserKnob(p, knobs, arah);
+    }
   });
 });
 

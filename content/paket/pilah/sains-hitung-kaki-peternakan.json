@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Hitung Kaki Hewan",
-      "instruksi": "Lihat kaki hewannya. Taruh ke papan dua kaki atau empat kaki.",
+      "instruksi": "Hitung semua kaki yang terlihat, lalu pilih kotak dua kaki atau empat kaki.",
       "b-dua": "dua kaki",
       "b-empat": "empat kaki",
       "i-kalkun": "kalkun",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Count the Animal Legs",
-      "instruksi": "Look at each animal's legs. Put it on the two-leg or four-leg board.",
+      "instruksi": "Count all the legs you can see, then choose the two-leg or four-leg box.",
       "b-dua": "two legs",
       "b-empat": "four legs",
       "i-kalkun": "turkey",
@@ -78,73 +78,109 @@
       "id": "kalkun",
       "labelKey": "i-kalkun",
       "bin": "dua",
-      "emoji": "🦃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-kalkun"
+      }
     },
     {
       "id": "beo",
       "labelKey": "i-beo",
       "bin": "dua",
-      "emoji": "🦜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-beo"
+      }
     },
     {
       "id": "jago",
       "labelKey": "i-jago",
       "bin": "dua",
-      "emoji": "🐓"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-jago"
+      }
     },
     {
       "id": "bebek",
       "labelKey": "i-bebek",
       "bin": "dua",
-      "emoji": "🦆"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-bebek"
+      }
     },
     {
       "id": "merak",
       "labelKey": "i-merak",
       "bin": "dua",
-      "emoji": "🦚"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-merak"
+      }
     },
     {
       "id": "burunghantu",
       "labelKey": "i-burunghantu",
       "bin": "dua",
-      "emoji": "🦉"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-burunghantu"
+      }
     },
     {
       "id": "kuda",
       "labelKey": "i-kuda",
       "bin": "empat",
-      "emoji": "🐎"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-kuda"
+      }
     },
     {
       "id": "kerbau",
       "labelKey": "i-kerbau",
       "bin": "empat",
-      "emoji": "🐃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-kerbau"
+      }
     },
     {
       "id": "domba",
       "labelKey": "i-domba",
       "bin": "empat",
-      "emoji": "🐑"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-domba"
+      }
     },
     {
       "id": "sapi",
       "labelKey": "i-sapi",
       "bin": "empat",
-      "emoji": "🐂"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-sapi"
+      }
     },
     {
       "id": "rusa",
       "labelKey": "i-rusa",
       "bin": "empat",
-      "emoji": "🦌"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-rusa"
+      }
     },
     {
       "id": "anjing",
       "labelKey": "i-anjing",
       "bin": "empat",
-      "emoji": "🐕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-tunas-anjing"
+      }
     }
   ],
   "pilihan": []

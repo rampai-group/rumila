@@ -246,6 +246,24 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
     expect(peta(1).rincianPemantapan).toEqual([]);
   });
 
+  it("Pemantapan terbuka kembali tepat pada tengah malam WIB, sebelum pergantian UTC", () => {
+    const daftar = [paket("a", "PAUD", [M1]), paket("b", "PAUD", [M1])];
+    const kurikulum = [KOMP[0]];
+    const ujian = [h("kuis", "BILANGAN"), h("semester", "S1")];
+    const sebelum = "2026-11-23T16:59:59.999Z";
+    const sesudah = "2026-11-23T17:00:00.000Z";
+    const bukti = [tamat("a", 5, 0), ...["a", "b", "a"].map((activityId) => ({
+      ...attempt([M1], { activityId }),
+      clientAt: sebelum,
+    }))];
+    const peta = (waktu: string) => petaDariBukti(bukti, daftar, kurikulum, "PAUD", TRACKS, ujian, new Date(waktu));
+
+    expect(peta(sebelum).pemantapanMenungguHari).toBe(true);
+    expect(peta(sesudah).pemantapan?.kompetensi.id).toBe(M1);
+    bukti.push({ ...attempt([M1], { activityId: "a" }), clientAt: sesudah });
+    expect(ujianTerbuka(peta(sesudah), "kenaikan", "")).toBe(true);
+  });
+
   it("semua tuntas + inti dikuasai → Ujian Akhir; sudah dikerjakan (nilai berapa pun) → jenjang tuntas", () => {
     const dasar = [h("kuis", "BILANGAN"), h("kuis", "URUTAN"), h("kuis", "BENTUK"), h("semester", "S1"), h("semester", "S2")];
     const pt = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), dasar);

@@ -11,6 +11,10 @@
     "id": {
       "judul": "Kotak Roda dan Mesin",
       "instruksi": "Jawab dua pertanyaan untuk tiap benda: punya roda? pakai mesin? Lalu taruh di kotak yang cocok.",
+      "carroll-baris-1": "Beroda",
+      "carroll-baris-2": "Tanpa roda",
+      "carroll-kolom-1": "Bermesin",
+      "carroll-kolom-2": "Tanpa mesin",
       "bin-roda-mesin": "roda · mesin",
       "bin-roda-tanpa": "roda · tanpa mesin",
       "bin-tanpa-mesin": "tanpa roda · mesin",
@@ -33,6 +37,10 @@
     "en": {
       "judul": "Wheels and Engine Boxes",
       "instruksi": "Answer two questions for each thing: wheels? engine? Then put it in the matching box.",
+      "carroll-baris-1": "Has wheels",
+      "carroll-baris-2": "No wheels",
+      "carroll-kolom-1": "Has an engine",
+      "carroll-kolom-2": "No engine",
       "bin-roda-mesin": "wheels · engine",
       "bin-roda-tanpa": "wheels · no engine",
       "bin-tanpa-mesin": "no wheels · engine",
@@ -75,6 +83,10 @@
   "world": "jalan-ke-sekolah",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "roda-mesin",

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { hariWIB, jedaKeHariWIBBerikut } from "../kalender";
 import { proyeksi, ringkasTrack } from "../mastery";
 import { attempt, buktiKuat, kompetensi } from "./helper";
 
@@ -31,6 +32,23 @@ describe("proyeksi", () => {
     expect(proyeksi(satuKonteks, k)[C1]).toMatchObject({ status: "berkembang", contexts: 1, days: 5 });
     const satuHari = Array.from({ length: 5 }, (_, i) => attempt([C1], { hari: i * 0.01, activityId: i % 2 ? "b" : "a" }));
     expect(proyeksi(satuHari, k)[C1]).toMatchObject({ status: "berkembang", contexts: 2, days: 1 });
+  });
+
+  it("menghitung bukti sebelum dan setelah tengah malam WIB dalam dua hari meski UTC masih sama", () => {
+    const sebelum = "2026-11-23T16:59:59.999Z";
+    const sesudah = "2026-11-23T17:00:00.000Z";
+    const k = [kompetensi(C1)];
+    const bukti = [
+      { ...attempt([C1], { activityId: "paket-a" }), clientAt: "2026-11-23T13:00:00.000Z" },
+      { ...attempt([C1], { activityId: "paket-b" }), clientAt: "2026-11-23T16:00:00.000Z" },
+    ];
+    const satuHari = proyeksi([...bukti, { ...attempt([C1]), clientAt: sebelum }], k)[C1];
+    const duaHari = proyeksi([...bukti, { ...attempt([C1]), clientAt: sesudah }], k)[C1];
+    expect(satuHari).toMatchObject({ status: "berkembang", days: 1, hariBenar: ["2026-11-23"] });
+    expect(duaHari).toMatchObject({ status: "dikuasai", days: 2, hariBenar: ["2026-11-23", "2026-11-24"] });
+    expect(jedaKeHariWIBBerikut(new Date(sebelum))).toBe(1);
+    expect(jedaKeHariWIBBerikut(new Date(sesudah))).toBe(24 * 60 * 60 * 1000);
+    expect(hariWIB("2026-11-24T00:00:00.000Z")).toBe("2026-11-24");
   });
 
   it("hint di akhir menahan, hint di tengah tidak", () => {

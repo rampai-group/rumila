@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Barisan Buah",
-      "instruksi": "Lihat barisan buah di piring, lalu taruh buah yang tepat di tempat kosong.",
+      "instruksi": "Lihat pola buah, lalu ketuk buah yang tepat untuk mengisi kotak kosong.",
       "apel": "apel",
       "pisang": "pisang",
       "anggur": "anggur"
     },
     "en": {
       "judul": "Fruit Parade",
-      "instruksi": "Look at the row of fruit on the plate, then put the right fruit in the empty spot.",
+      "instruksi": "Look at the fruit pattern, then tap the fruit that fits in the empty box.",
       "apel": "apple",
       "pisang": "banana",
       "anggur": "grapes"

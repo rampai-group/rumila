@@ -1,0 +1,335 @@
+import type { ReactNode } from "react";
+
+const INK = "#203649";
+const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
+
+function KutuAir() {
+  return <g {...RINGKAS}>
+    <path d="M41 41Q20 16 9 16M37 33L16 30M30 39L10 47M54 35Q42 12 45 8M53 21L61 10" fill="none" stroke="#537983" />
+    <path d="M47 25Q32 22 27 42Q26 50 39 53Q39 82 70 87Q102 88 112 64L124 77L112 56Q108 19 79 19Q64 18 53 28Z" fill="#a9dbdb" fillOpacity=".76" stroke="#487987" />
+    <path d="M47 49Q68 48 74 61Q82 75 103 67M58 45L62 35M66 50L72 38M76 55L84 44M91 56L101 49" fill="none" stroke="#679ca2" />
+    <path d="M47 28Q58 25 61 36L57 45 46 42Z" fill="#c5876d" fillOpacity=".68" stroke="none" />
+    <circle cx="40" cy="38" r="6" fill="#263e4c" stroke="none" />
+    <circle cx="38" cy="36" r="2" fill="#f1fbfa" stroke="none" />
+  </g>;
+}
+
+/** Profile drawings separate each counted leg from wings and antennae. */
+function Serangga({ kupu }: { kupu: boolean }) {
+  const legs = kupu
+    ? ["M56 43L42 52 16 54", "M74 43L88 52 114 54", "M57 49L39 67 16 71", "M73 49L91 67 114 71", "M58 55L45 83 24 90", "M72 55L85 83 106 90"]
+    : ["M53 42L35 43 18 48", "M77 42L95 43 112 48", "M53 49L36 58 11 62", "M77 49L94 58 119 62", "M56 55L43 78 16 89", "M74 55L87 78 114 89"];
+  return <g {...RINGKAS}>
+    {["", "translate(130 0) scale(-1 1)"].map(flip => <g key={flip} transform={flip}>
+      {kupu ? <>
+        <path d="M62 47C39 16 10 7 10 25Q8 39 32 43L57 59Z" fill="#ffad63" />
+        <path d="M60 46Q38 32 18 39Q18 52 53 57Z" fill="#ffc969" stroke="none" />
+        <path d="M56 42L31 23M50 45L23 33" stroke="#bf602e" fill="none" />
+        <circle cx="22" cy="26" r="3.5" fill="#754163" stroke="none" />
+      </> : <path d="M52 41Q28 14 12 23Q1 36 35 42Z" fill="#d1edf2" stroke="#6f9ead" />}
+    </g>)}
+    <ellipse cx="65" cy={kupu ? 52 : 57} rx={kupu ? 8 : 14} ry={kupu ? 17 : 20} fill={kupu ? "#79506b" : "#487876"} />
+    {!kupu && <path d="M53 60Q65 66 77 60M56 68Q65 72 74 68" fill="none" stroke="#315e60" />}
+    <g fill="none" stroke={INK} strokeWidth="3.4">
+      {legs.map(d => <path key={d} d={d} />)}
+    </g>
+    <circle cx="65" cy="30" r={kupu ? 8 : 11} fill={kupu ? "#79506b" : "#537977"} />
+    <circle cx="59" cy="29" r={kupu ? 2 : 4} fill={kupu ? "#fceac4" : "#c36a59"} stroke="none" />
+    <circle cx="71" cy="29" r={kupu ? 2 : 4} fill={kupu ? "#fceac4" : "#c36a59"} stroke="none" />
+    <path d={kupu ? "M61 23Q54 10 47 12M69 23Q76 10 83 12" : "M60 22L57 17M70 22L73 17"} fill="none" strokeWidth={kupu ? 2 : 1.7} />
+  </g>;
+}
+
+function Televisi({ nyala }: { nyala: boolean }) {
+  return <g {...RINGKAS}>
+    {nyala && <path d="M7 24L14 29M6 48H15M8 72L15 66M123 24L115 30M125 48H116M123 71L115 66M49 15L45 8M81 15L85 8" fill="none" stroke="#eca526" strokeWidth="3" />}
+    <rect x="19" y="22" width="92" height="56" rx="7" fill="#46576c" />
+    <rect x="26" y="29" width="78" height="42" rx="3" fill={nyala ? "#b3edff" : "#16232e"} stroke="none" />
+    {nyala
+      ? <><path d="M27 60L43 45 55 56 72 40 89 56 104 51V71H27Z" fill="#6bbced" /><circle cx="81" cy="40" r="6" fill="#fff0a3" /></>
+      : <path d="M38 43L54 34M37 49L63 34" fill="none" stroke="#496070" strokeWidth="2" />}
+    <path d="M65 78V90M48 91H82" fill="none" strokeWidth="4" />
+  </g>;
+}
+
+const PAKAN: Record<string, ReactNode> = {
+  "ikan-matang": <g {...RINGKAS}>
+    <ellipse cx="65" cy="60" rx="55" ry="29" fill="#f6f8ea" stroke="#799fa6" />
+    <ellipse cx="65" cy="60" rx="43" ry="19" fill="#fffdf1" stroke="#c5d7cd" strokeWidth="1.5" />
+    <path d="M23 59L105 48 93 68 65 77 33 71ZM27 53Q47 33 67 41L105 47Q94 62 68 67L35 64Z" fill="#d49457" stroke="#825e42" />
+    <path d="M31 54Q48 40 66 46L95 49 69 61 48 58 41 62Z" fill="#fff0c8" stroke="#c8a567" />
+    <path d="M47 47L43 55M63 48L58 57M78 50L70 60" fill="none" stroke="#c89966" strokeWidth="1.5" />
+  </g>,
+  "biji-bunga-matahari": <g {...RINGKAS}>
+    {[[31,59,-53],[49,31,-28],[83,32,24],[92,64,43],[61,71,-11]].map(([x,y,a]) => <g key={x} transform={`translate(${x} ${y}) rotate(${a})`}>
+      <path d="M0-16C-14-2-13 15 0 17C13 15 14-2 0-16Z" fill="#526376" />
+      <path d="M0-12Q-4 5 0 14M4-10Q8 5 4 12" fill="none" stroke="#e7e4d4" strokeWidth="1.5" />
+    </g>)}
+  </g>,
+  "kutu-air": <KutuAir />,
+  "beruang-cokelat": <g {...RINGKAS}>
+    <path d="M10 60Q5 55 8 51Q16 50 21 53Q32 29 54 38Q63 27 83 32L101 40 121 57 118 69 101 72 90 65 85 89H70L72 67H46L40 90H24L27 64Z" fill="#936443" stroke="#593f33" />
+    <circle cx="97" cy="39" r="8" fill="#bd8962" stroke="#593f33" />
+    <path d="M106 50L122 57 118 66 105 65" fill="#cb9f75" stroke="#593f33" />
+    <circle cx="106" cy="54" r="2" fill={INK} stroke="none" />
+    <path d="M112 56L123 57 121 62" fill={INK} stroke="none" />
+    <path d="M26 79H40M72 80H85" stroke="#785239" />
+  </g>,
+};
+
+const KEGIATAN: Record<string, ReactNode> = {
+  "pasir-panas-kering": <g {...RINGKAS}>
+    <rect x="4" y="5" width="122" height="89" rx="11" fill="#c6ebfa" stroke="none" />
+    <circle cx="97" cy="31" r="14" fill="#ffcf59" stroke="#d69228" />
+    <path d="M97 10V12M97 50V53M71 31H77M118 31H123M79 13L83 17M111 45L115 49M112 16L116 12" fill="none" stroke="#e5a437" strokeWidth="2.2" />
+    <path d="M4 58Q40 51 72 65Q94 56 126 62V87Q126 94 118 94H12Q4 94 4 87Z" fill="#edc16c" stroke="none" />
+    <path d="M23 73L35 67 47 73 55 71M57 86L70 78 81 83 97 77M36 87L35 80 43 77" fill="none" stroke="#b28658" strokeWidth="2" />
+  </g>,
+  "lantai-sejuk-basah": <g {...RINGKAS}>
+    <path d="M13 18H117V63L103 89H25L13 63Z" fill="#d2ebf0" stroke="#7babb5" />
+    <path d="M13 45H117M39 18V63M65 18V63M91 18V63M16 64H114M26 64L36 88M100 64L92 88" stroke="#96bec7" strokeWidth="2" fill="none" />
+    <path d="M42 76Q61 65 91 75Q100 82 80 84Q57 87 40 82Q35 79 42 76Z" fill="#78c9e8" stroke="#5daace" />
+    <path d="M57 79Q70 75 87 78M53 28V37M68 28V44M83 28V37" fill="none" stroke="#54aed3" />
+    <path d="M47 26L54 20H82L89 26Z" fill="#6b8d9b" stroke="#5a7a8a" />
+  </g>,
+  "siram-tanaman": <g {...RINGKAS}>
+    <path d="M34 74H75L70 93H40Z" fill="#d1895c" stroke="#925a44" />
+    <path d="M32 72Q52 64 77 72L73 78H35Z" fill="#98634b" stroke="#7c5140" />
+    <path d="M54 71V34M53 54Q28 53 33 38Q48 35 54 47M55 44Q60 24 79 28Q77 45 55 49" fill="#79b86b" stroke="#438451" />
+    <path d="M83 43Q80 25 101 30Q115 31 113 45" fill="none" stroke="#2b7594" strokeWidth="5" />
+    <path d="M86 41L121 47 114 69 79 63ZM85 46L68 46 65 54 82 55" fill="#78bee4" stroke="#397999" />
+    <path d="M66 60L63 63M64 66L61 69M72 60L71 65" stroke="#4fb2d6" strokeWidth="2.2" />
+  </g>,
+  "dorong-ayunan": <g {...RINGKAS}>
+    <path d="M10 89H121" stroke="#a5bd85" strokeWidth="4" />
+    <path d="M79 18L68 87M107 18L121 87M71 18H114" fill="none" stroke="#688f9e" strokeWidth="5" />
+    <path d="M84 20L91 64M98 20L105 64M87 64L109 67" fill="none" stroke="#3d5e6d" strokeWidth="3" />
+    <circle cx="92" cy="44" r="8" fill="#eab28e" />
+    <path d="M89 38Q90 30 100 38L101 44" fill="#573d35" />
+    <path d="M92 52L93 63 103 63 109 72" fill="none" stroke="#cd6749" strokeWidth="7" />
+    <path d="M98 56L99 46" fill="none" stroke="#eab28e" strokeWidth="4" />
+    <circle cx="36" cy="38" r="10" fill="#d69a74" />
+    <path d="M25 38Q22 26 35 26Q43 26 44 33L35 31Z" fill="#44352f" />
+    <path d="M35 51L43 66 34 81M43 66L52 81" fill="none" stroke="#266e8c" strokeWidth="8" />
+    <path d="M38 52L69 54 82 51" fill="none" stroke="#d69a74" strokeWidth="6" />
+    <path d="M56 36H69L64 32M69 36L64 40" fill="none" stroke="#cf563c" strokeWidth="3" />
+  </g>,
+};
+
+const LAMBUNG = "M20 41H111L104 65Q97 75 84 76H46Q32 75 25 64Z";
+
+function Wadah({ id }: { id: string }) {
+  if (id === "bola-plastik-berongga") return <g {...RINGKAS}>
+    <circle cx="65" cy="50" r="35" fill="#f19151" stroke="#a95f39" />
+    <path d="M43 22Q37 38 44 61M38 26Q26 37 31 57M41 75Q49 82 60 83" fill="none" stroke="#ffdcb8" strokeWidth="4" />
+    <path d="M65 17Q96 21 99 49Q99 78 65 84Z" fill="#f9e5c9" opacity=".85" stroke="#b16a3b" />
+    <path d="M66 26Q92 28 92 50Q92 71 66 75Z" fill="#eef8fc" stroke="#b26f52" strokeDasharray="4 3" />
+  </g>;
+  if (id === "bola-kaca-padat") return <g {...RINGKAS}>
+    <circle cx="65" cy="50" r="35" fill="#78adbd" stroke="#477986" />
+    <path d="M38 51Q72 28 89 60M40 64Q67 41 91 61" fill="none" stroke="#80d9c6" strokeWidth="5" />
+    <path d="M42 34Q49 25 59 24" fill="none" stroke="#eafaff" strokeWidth="5" />
+  </g>;
+  if (id === "bola-tanah-liat" || id === "bola-plastisin") {
+    const liat = id === "bola-tanah-liat";
+    return <g {...RINGKAS}><circle cx="65" cy="50" r="35" fill={liat ? "#b97d63" : "#b36a8c"} /><path d="M39 43Q43 25 62 24M34 57Q42 69 56 72" fill="none" stroke={liat ? "#dcad85" : "#e9a2b7"} strokeWidth="4" /></g>;
+  }
+  if (id === "mangkuk-tanah-liat" || id === "piring-plastisin" || id === "perahu-plastisin") {
+    const liat = id === "mangkuk-tanah-liat";
+    const dangkal = id === "piring-plastisin";
+    return <g {...RINGKAS}>
+      <path d={dangkal ? "M11 51H119Q112 74 66 76Q23 75 11 51Z" : LAMBUNG} fill={liat ? "#b57f66" : "#b36a8c"} />
+      <ellipse cx="65" cy={dangkal ? 49 : 40} rx={dangkal ? 53 : 45} ry={dangkal ? 12 : 17} fill={liat ? "#f1bb92" : "#e7a0b7"} />
+      <path d={dangkal ? "M20 48Q63 29 111 48Q72 61 20 48Z" : "M26 39Q65 12 104 39Q66 57 26 39Z"} fill={liat ? "#a96b53" : "#aa6186"} stroke="none" />
+      <path d={dangkal ? "M24 53Q57 64 106 54" : "M29 45Q62 63 102 45"} fill="none" stroke={liat ? "#926553" : "#934b72"} strokeWidth="3" />
+    </g>;
+  }
+  if (id === "kotak-kosong" || id === "kotak-berisi-batu") return <g {...RINGKAS}>
+    <path d="M17 37L31 23H112L114 65 101 81H17Z" fill="#c2e6ec" stroke="#548e97" />
+    <path d="M17 37H101L112 23M101 37V81" fill="none" stroke="#548e97" />
+    <path d="M22 44H95V75H22Z" fill="#ebfaff" stroke="none" />
+    {id.endsWith("berisi-batu") && <g fill="#72808d" stroke="#515f6d" strokeWidth="1.5"><path d="M22 73L29 59 41 56 52 64 53 75ZM52 75L51 60 64 53 73 55 79 72 76 76ZM76 75L78 64 87 54 95 61V75Z" /><path d="M34 57L39 44 49 46 54 53 48 61ZM62 57L64 46 76 45 86 54 79 63Z" /></g>}
+    <path d="M14 34Q14 29 22 27L109 22Q118 21 117 27L114 40H15Z" fill="#74afb6" stroke="#548e97" />
+    <path d="M20 31H111" fill="none" stroke="#c7e8e9" strokeWidth="2" />
+  </g>;
+  if (id === "perahu-seng" || id.startsWith("perahu-muatan-") || id === "perahu-foil-berat") {
+    const berat = id.endsWith("-berat");
+    const ringan = id.endsWith("-ringan");
+    const liat = id.startsWith("perahu-muatan-");
+    const lambung = liat ? "#c28768" : "#b6c1cc";
+    const tepi = liat ? "#825640" : "#607480";
+    return <g {...RINGKAS}>
+      <path d="M14 49L38 34H99L116 49 101 74H32Z" fill={lambung} stroke={tepi} />
+      <path d="M22 49L41 39H96L106 50 96 58H38Z" fill={liat ? "#965f48" : "#738893"} stroke={liat ? "#f3c8aa" : "#e5edf3"} />
+      {(ringan || berat) && <g fill="#58afd5" stroke="#225f84" strokeWidth="1.5">{(berat ? [[37,48],[50,50],[63,47],[77,48],[91,48],[45,40],[59,38],[71,40],[85,39],[54,31],[70,30],[62,24]] : [[50,48],[66,48],[82,48]]).map(([x,y]) => <circle key={`${x},${y}`} cx={x} cy={y} r="6" />)}</g>}
+      <path d="M15 50L37 61H95L115 50 101 74H32Z" fill={lambung} stroke={tepi} />
+      {berat && <path d="M3 65Q12 59 21 65M108 64Q118 56 127 62" fill="none" stroke="#55b0d7" strokeWidth="4" />}
+    </g>;
+  }
+  if (id === "seng-padat") return <g {...RINGKAS}>
+    <path d="M25 41L43 19 72 15 100 28 110 51 92 76 62 87 38 79 20 62Z" fill="#a8b8c6" />
+    <path d="M43 19L52 43 72 15M52 43L81 40 100 28M52 43L49 60 25 41M49 60L62 87M81 40L92 76M81 40L68 65 49 60M68 65L110 51" fill="none" stroke="#627887" strokeWidth="2" />
+  </g>;
+  if (id === "bambu-tertutup") return <g {...RINGKAS}>
+    <path d="M14 45L42 23 113 40 100 70 26 77Z" fill="#91a850" stroke="#657e3f" />
+    <path d="M28 50L100 47M30 62L102 54M56 41L55 68M76 38L75 61" fill="none" stroke="#c6cb78" strokeWidth="4" />
+    <ellipse cx="22" cy="60" rx="10" ry="17" fill="#e3cb8a" stroke="#718046" />
+    <ellipse cx="110" cy="54" rx="10" ry="16" transform="rotate(18 110 54)" fill="#d7bd7c" stroke="#718046" />
+    <path d="M36 45H95L92 55H39Z" fill="#e9f1cd" stroke="#718046" strokeDasharray="4 3" />
+  </g>;
+  if (id === "tongkat-plastisin") return <g {...RINGKAS}>
+    <path d="M18 65Q10 58 19 49L100 29Q117 26 121 41Q121 52 111 56L28 76Z" fill="#b36a8c" />
+    <path d="M24 51L104 34" fill="none" stroke="#efd1d8" strokeWidth="4" />
+    <ellipse cx="23" cy="63" rx="9" ry="12" transform="rotate(-17 23 63)" fill="#d88ca8" />
+  </g>;
+  if (id === "botol-kosong" || id === "botol-berisi-pasir") return <g {...RINGKAS}>
+    <path d="M53 17H77V28Q93 34 94 49V90Q65 98 36 90V49Q37 34 53 28Z" fill="#e5f8fc" stroke="#5c9bab" />
+    {id.endsWith("pasir") && <path d="M50 34Q65 38 80 33Q90 41 90 51V87Q66 94 40 87V51Q40 41 50 34Z" fill="#e3bd76" stroke="#be9857" />}
+    <path d="M43 45V77M85 53V77" fill="none" stroke="#fff" strokeWidth="3" />
+    <rect x="49" y="10" width="32" height="13" rx="3" fill="#64a6ab" stroke="#597e92" />
+    <path d="M38 90H92" fill="none" stroke="#7bb2ba" />
+  </g>;
+  if (id === "kaleng-kosong" || id === "kaleng-berisi-air") return <g {...RINGKAS}>
+    <path d="M38 28H92V78Q90 86 65 86Q39 86 38 78Z" fill="#c2d8de" stroke="#5f8290" />
+    <path d="M46 39H84V78Q65 84 46 78Z" fill={id.endsWith("air") ? "#5dbee8" : "#fafdff"} stroke="#6c9eb2" strokeWidth="1.5" />
+    <path d="M52 43V73" stroke="#e4f5fe" strokeWidth="3" />
+    <ellipse cx="65" cy="29" rx="26" ry="8" fill="#b3c8ce" stroke="#577b87" />
+    <ellipse cx="67" cy="28" rx="7" ry="3" fill="#6f8e9a" stroke="#dce9ed" strokeWidth="1.2" />
+  </g>;
+  if (id === "jeruk-utuh" || id === "jeruk-kupas") {
+    const utuh = id.endsWith("utuh");
+    return <g {...RINGKAS}>
+      <ellipse cx="65" cy="53" rx="38" ry="34" fill={utuh ? "#f49139" : "#ffc366"} stroke="#b46b35" />
+      {utuh
+        ? <><path d="M42 37Q54 23 69 29" fill="none" stroke="#ffcf76" strokeWidth="5" /><path d="M65 23Q76 7 87 18Q81 28 65 23Z" fill="#6ca365" stroke="#537b42" />{[[49,64],[78,45],[87,65],[42,49],[66,72]].map(([x,y]) => <circle key={x} cx={x} cy={y} r="1.8" fill="#c87330" stroke="none" />)}</>
+        : <path d="M64 23Q42 53 61 87M69 22Q89 49 69 86M34 42Q60 30 97 44M32 61Q62 75 99 58" fill="none" stroke="#fff0b7" strokeWidth="4" />}
+    </g>;
+  }
+  return null;
+}
+
+const DATA_WADAH = [
+  "bola-plastik-berongga", "bola-kaca-padat", "bola-tanah-liat", "bola-plastisin",
+  "mangkuk-tanah-liat", "piring-plastisin", "perahu-plastisin", "kotak-kosong", "kotak-berisi-batu",
+  "perahu-seng", "perahu-muatan-ringan", "perahu-muatan-berat", "perahu-foil-berat", "seng-padat", "bambu-tertutup",
+  "tongkat-plastisin", "botol-kosong", "botol-berisi-pasir", "kaleng-kosong", "kaleng-berisi-air", "jeruk-utuh", "jeruk-kupas",
+];
+
+const JEJAK_FOSIL: Record<string, ReactNode> = {
+  "fosil-daun": <><path d="M35 66Q32 38 83 27Q84 56 51 66Z" fill="#9b826a" /><path d="M33 73L76 33M48 60L48 47M57 52L67 54M63 46L63 37M68 40L78 43" fill="none" /></>,
+  "fosil-jejak": <path d="M56 74Q54 61 46 60L36 46Q32 40 36 36Q40 36 47 43L57 51 56 31Q56 25 61 25Q65 30 67 50L79 42Q86 37 90 40Q88 46 81 51L70 61 71 74Q64 79 56 74Z" fill="#89735f" />,
+  "fosil-amonit": <><path d="M65 26C43 26 35 41 37 56C39 72 57 82 73 74C88 66 89 46 75 41C62 36 52 46 55 55C59 66 74 59 70 51" fill="none" stroke="#524437" strokeWidth="7"/><path d="M65 25L65 33M84 31L79 40M90 48L83 49M89 64L83 60M76 75L74 69M59 78L58 71M43 70L48 66M36 54L43 53M40 39L46 44" fill="none" stroke="#665446" strokeWidth="2"/></>,
+  "fosil-tulang": <path d="M34 41Q26 38 28 33Q31 26 39 31Q43 20 50 27Q54 32 52 37L82 59Q89 53 93 58Q98 62 92 68Q97 72 93 78Q84 85 79 78Q71 81 69 74L71 67 44 47Q38 55 31 49Q29 45 34 41Z" fill="#edd7a8" />,
+  "fosil-ikan": <><path d="M39 53Q51 41 60 46L88 53 101 45V62L88 55 55 60Z" fill="#aa9479"/><path d="M48 55H88M54 51L60 44 68 50 74 44 82 52M55 56L60 64 67 58 73 64 82 56" fill="none" /><circle cx="48" cy="52" r="2.6" /></>,
+  "fosil-gigi-hiu": <><path d="M44 38Q50 32 63 36Q70 33 82 33L90 41Q87 46 80 47L69 75 59 48Q50 49 44 44Z" fill="#e9d5ad"/><path d="M58 48L69 69 79 47M61 48L56 51M75 56L79 56" fill="none" /></>,
+  "fosil-kayu": <><path d="M27 55L50 34 95 42 108 61 81 76 41 73Z" fill="#a9825c" /><path d="M50 34L65 53 103 60M65 53L41 73M70 64L86 69M38 57L49 62M51 49L58 54M79 44L88 49" fill="none" stroke="#e4be93" /><path d="M40 50L56 67M46 44L67 64M54 40L75 60" fill="none" stroke="#754d3b" /></>,
+  "fosil-tengkorak": <><path d="M39 48Q47 33 67 31Q88 33 91 50L83 63 69 66 64 74H49L49 64 39 62Z" fill="#ded0a8" /><path d="M47 61H69L64 72 48 70M53 64V69M59 63V68" fill="none" /><circle cx="65" cy="46" r="7" fill="#7c624d" /><path d="M48 49L51 54 46 56" fill="none" /></>,
+};
+
+function Fosil({ id }: { id: string }) {
+  if (id === "fosil-ambar") return <g {...RINGKAS}>
+    <path d="M22 54Q21 28 52 15Q78 5 104 30Q118 50 106 72Q83 95 49 86Q29 82 22 54Z" fill="#efb14b" stroke="#a86a34" />
+    <path d="M36 39Q48 17 74 22M90 66L101 57" fill="none" stroke="#ffe89e" strokeWidth="5" opacity=".8" />
+    <path d="M55 53L45 45M75 53L85 45M55 57L43 60M75 57L87 60M58 61L50 70M72 61L81 70" stroke="#78503a" strokeWidth="2" />
+    <ellipse cx="65" cy="57" rx="10" ry="12" fill="#a66d40" stroke="#754a36" />
+    <path d="M58 55Q48 31 61 38L65 53Q74 34 80 38Q79 52 71 55Z" fill="#f1d399" stroke="#9f7141" />
+    <circle cx="65" cy="44" r="4" fill="#754a36" stroke="none" />
+  </g>;
+  return <g {...RINGKAS}>
+    <path d="M16 29L42 13 88 16 108 22 121 54 103 81 73 90 24 82 10 57Z" fill="#bc9f80" stroke="#806b59" />
+    <path d="M20 32L38 21 90 23 104 32 110 53 91 77 69 83 28 74 19 54Z" fill="#d9bd9a" stroke="#9a8069" />
+    <path d="M18 57L28 61M94 74L107 68M102 28L114 37M26 71L41 78" fill="none" stroke="#a0866b" strokeWidth="2" />
+    <g stroke="#725f4b" strokeWidth="2">{JEJAK_FOSIL[id]}</g>
+  </g>;
+}
+
+type CiriBatu = "bintik" | "kristal" | "kristal-halus" | "lubang" | "lamina" | "foliasi" | "butir" | "kerikil" | "bersudut" | "kaca" | "fosil" | "urat" | "pita" | "batu-bara";
+const JENIS_BATU: Record<string, { warna: string; aksen: string; gelap: string; ciri: CiriBatu }> = {
+  andesit: { warna: "#888a84", aksen: "#b9bcb0", gelap: "#696b65", ciri: "kristal-halus" },
+  gabro: { warna: "#42484b", aksen: "#a1a598", gelap: "#222a31", ciri: "kristal" },
+  diorit: { warna: "#d4d7d4", aksen: "#757c79", gelap: "#383f44", ciri: "bintik" },
+  skoria: { warna: "#b46857", aksen: "#d58d76", gelap: "#7d433c", ciri: "lubang" },
+  lanau: { warna: "#c0a183", aksen: "#ead4af", gelap: "#80604d", ciri: "lamina" },
+  "batu-bara": { warna: "#3d4247", aksen: "#928a77", gelap: "#262b32", ciri: "batu-bara" },
+  breksi: { warna: "#a78169", aksen: "#dbc5a9", gelap: "#795d58", ciri: "bersudut" },
+  lempung: { warna: "#a88468", aksen: "#d9b395", gelap: "#745949", ciri: "fosil" },
+  sekis: { warna: "#7b7675", aksen: "#d9d1c2", gelap: "#514c51", ciri: "foliasi" },
+  filit: { warna: "#685e71", aksen: "#b7aaba", gelap: "#514657", ciri: "foliasi" },
+  gneis: { warna: "#d6b9ac", aksen: "#efe2cb", gelap: "#574e58", ciri: "pita" },
+  marmer: { warna: "#f7f3e9", aksen: "#cbcad4", gelap: "#96939f", ciri: "urat" },
+  granit: { warna: "#d5ada5", aksen: "#f3d2bd", gelap: "#756562", ciri: "kristal" },
+  basalt: { warna: "#575958", aksen: "#788181", gelap: "#333b3f", ciri: "kristal-halus" },
+  "batu-apung": { warna: "#c2b9aa", aksen: "#e1d4c2", gelap: "#847769", ciri: "lubang" },
+  obsidian: { warna: "#302e39", aksen: "#b1b9ca", gelap: "#22232e", ciri: "kaca" },
+  "batu-pasir": { warna: "#bf8c57", aksen: "#efc376", gelap: "#8c5d40", ciri: "butir" },
+  "batu-kapur": { warna: "#dbcaac", aksen: "#f4e6cc", gelap: "#a19379", ciri: "fosil" },
+  "batu-serpih": { warna: "#807585", aksen: "#b0a8ab", gelap: "#5a5261", ciri: "lamina" },
+  konglomerat: { warna: "#aa8c71", aksen: "#e5c8aa", gelap: "#655e60", ciri: "kerikil" },
+  sabak: { warna: "#61747f", aksen: "#a8bbc5", gelap: "#425661", ciri: "lamina" },
+  kuarsit: { warna: "#d2adab", aksen: "#f5dcd2", gelap: "#9e7479", ciri: "butir" },
+};
+
+const TITIK_BATU = [[29,39],[44,31],[62,36],[77,33],[92,43],[104,41],[30,55],[51,54],[67,49],[83,57],[97,59],[38,68],[55,69],[75,67],[91,70]];
+
+function Batuan({ id }: { id: string }) {
+  const data = JENIS_BATU[id];
+  const { warna, aksen, gelap, ciri } = data;
+  const bintik = ciri === "bintik" || ciri === "kristal" || ciri === "kristal-halus" || ciri === "butir";
+  return <g {...RINGKAS}>
+    {ciri === "lamina"
+      ? <><path d="M15 32L37 21 96 22 117 40 110 73 88 81 27 75 12 60Z" fill={warna} stroke={gelap} /><path d="M17 43L39 41 58 48 84 42 114 45M16 55L43 51 69 57 91 52 112 55M20 65L44 62 70 67 91 62 111 66M38 72L87 74 102 69" fill="none" stroke={aksen} strokeWidth="3" /></>
+      : <path d="M16 53L30 31 50 22 81 24 107 32 118 52 112 67 93 80 54 83 27 74Z" fill={warna} stroke={gelap} />}
+    {bintik && TITIK_BATU.map(([x,y],i) => {
+      const fill = i % 3 === 1 ? aksen : gelap;
+      const large = ciri === "kristal" || ciri === "bintik";
+      return large
+        ? <path key={x + "," + y} d={`M${x-4} ${y-2}l5-3 5 2-1 6-6 1Z`} fill={fill} stroke="none" />
+        : <circle key={x + "," + y} cx={x} cy={y} r={i % 3 === 1 ? 2.3 : 1.5} fill={fill} stroke="none" />;
+    })}
+    {ciri === "lubang" && TITIK_BATU.map(([x,y],i) => <ellipse key={x + "," + y} cx={x} cy={y} rx={i%3===1?5:3.5} ry={i%3===1?4:2.8} fill={gelap} stroke={aksen} strokeWidth="1.5" />)}
+    {(ciri === "kerikil" || ciri === "bersudut") && TITIK_BATU.filter((_, i) => i%2 === 0 || i === 5).map(([x,y],i) => {
+      const fill = i%3===1 ? aksen : gelap;
+      return ciri === "kerikil"
+        ? <ellipse key={x + "," + y} cx={x} cy={y} rx={i%2===1?8:6} ry={i%2===1?5:6} fill={fill} strokeWidth="1" stroke={warna} />
+        : <path key={x + "," + y} d={`M${x-6} ${y+4}l3-10 9 2 1 8Z`} fill={fill} strokeWidth="1" stroke={warna} />;
+    })}
+    {ciri === "kaca" && <path d="M37 39L55 29 79 30M49 62Q75 66 97 52M68 48L91 44" fill="none" stroke={aksen} strokeWidth="3" />}
+    {ciri === "pita" && <>
+      <path d="M27 42Q38 34 54 44T82 46Q91 39 105 42M20 55Q43 46 58 57T84 56Q95 51 112 53M26 65Q43 61 58 68T86 68L105 62" fill="none" stroke={gelap} strokeWidth="5" />
+      <path d="M30 49Q43 42 59 50T84 52Q94 45 108 48M32 73Q49 70 64 76T91 73" fill="none" stroke={aksen} strokeWidth="3.3" />
+    </>}
+    {ciri === "urat" && <path d="M33 32Q44 43 55 41L69 55 67 65 85 76M58 27L68 36 79 37 90 51 104 54M45 46L35 56 39 69M64 64L54 75" fill="none" stroke={gelap} strokeWidth="1.7" />}
+    {ciri === "foliasi" && <path d="M29 46L42 38 52 39M41 54L57 46 70 46M67 54L80 45 91 45M37 67L55 59 68 59M70 69L83 61 102 60" fill="none" stroke={aksen} strokeWidth="3" />}
+    {ciri === "batu-bara" && <>
+      <path d="M24 56L40 50 64 57 87 49 108 53M28 67L48 62 68 68 94 62 110 60" fill="none" stroke="#2c3037" strokeWidth="3" />
+      <path d="M45 57Q46 40 82 32Q81 52 55 61ZM43 65L78 35" fill="none" stroke={aksen} strokeWidth="2" />
+    </>}
+    {ciri === "fosil" && (id === "lempung"
+      ? <><path d="M23 50L48 43 70 47 105 43M26 62L46 57 76 61 105 55M38 72L80 73 100 69" fill="none" stroke={aksen} strokeWidth="2" /><g transform="translate(23 19) scale(.64)" stroke={gelap}>{JEJAK_FOSIL["fosil-ikan"]}</g></>
+      : <g transform="translate(17 15) scale(.72)" stroke={gelap} fill="none"><path d="M41 58Q34 44 48 39Q54 32 62 38Q70 30 77 38Q88 41 88 53L79 64H48ZM50 46L57 61M63 42V61M76 44L70 62" /></g>)}
+  </g>;
+}
+
+const objectArt: Record<string, ReactNode> = {
+  ...PAKAN,
+  ...KEGIATAN,
+  "kupu-enam-kaki": <Serangga kupu />,
+  "lalat-enam-kaki": <Serangga kupu={false} />,
+  "televisi-menyala": <Televisi nyala />,
+  "televisi-mati": <Televisi nyala={false} />,
+};
+
+const PREFIX = "qc-jenjang-";
+export const ILUSTRASI_QC_JENJANG_IDS = [
+  ...Object.keys(objectArt), ...DATA_WADAH, ...Object.keys(JEJAK_FOSIL), "fosil-ambar", ...Object.keys(JENIS_BATU),
+].map(id => PREFIX + id);
+
+/** Artwork for curriculum cards. The parent supplies the view box and localized accessible label. */
+export function IlustrasiQcJenjang({ id }: { id: string }) {
+  const scene = id.slice(PREFIX.length);
+  if (Object.prototype.hasOwnProperty.call(objectArt, scene)) return objectArt[scene];
+  if (DATA_WADAH.includes(scene)) return <Wadah id={scene} />;
+  if (scene.startsWith("fosil-")) return <Fosil id={scene} />;
+  if (Object.prototype.hasOwnProperty.call(JENIS_BATU, scene)) return <Batuan id={scene} />;
+  return null;
+}

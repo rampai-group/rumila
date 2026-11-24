@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { ALFABET_KODE, POLA_KODE, bacaSnapshot, buatKode, rapikanKode, snapshotSertifikat } from "../sertifikat";
+import { eventDariBaris, nilaiKelulusan } from "../sertifikat-inti";
 import { proyeksi } from "../mastery";
 import { attempt, buktiKuat, kompetensi } from "./helper";
 
@@ -80,4 +81,28 @@ describe("snapshotSertifikat", () => {
     expect(bacaSnapshot({ level: "PAUD" })).toBeNull();
     expect(bacaSnapshot({ level: "PAUD", kompetensi: [null, { id: "X" }] })?.kompetensi).toHaveLength(1);
   });
+});
+
+it("kelulusan server memakai tanggal WIB dari waktu penerimaan, meski jam perangkat berbeda", () => {
+  const bukti = (akhir: string) => eventDariBaris([
+    "2026-11-23T13:00:00.000Z",
+    "2026-11-23T16:00:00.000Z",
+    akhir,
+  ].map((created_at, i) => {
+    const e = attempt([C1], { activityId: i === 1 ? "paket-b" : "paket-a" });
+    return {
+      id: e.id,
+      member_id: e.learnerId,
+      session_id: e.sessionId,
+      activity_id: e.activityId,
+      mechanic: e.mechanic,
+      type: e.type,
+      payload: e.payload,
+      client_at: "2026-11-24T01:00:00.000Z",
+      created_at,
+    };
+  }));
+  const k = [kompetensi(C1, { core: true })];
+  expect(nilaiKelulusan(bukti("2026-11-23T16:59:59.999Z"), k, "PAUD")).toMatchObject({ lulus: false, dikuasai: 0 });
+  expect(nilaiKelulusan(bukti("2026-11-23T17:00:00.000Z"), k, "PAUD")).toMatchObject({ lulus: true, dikuasai: 1 });
 });

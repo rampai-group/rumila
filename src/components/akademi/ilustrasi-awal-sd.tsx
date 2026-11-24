@@ -1,8 +1,9 @@
+import { ILUSTRASI_QC_JENJANG_IDS, IlustrasiQcJenjang } from "./ilustrasi-qc-jenjang";
 import { HurufSimetri } from "./huruf-simetri";
 
 const OBJEK = ["ayam-utuh", "katak-utuh", "tikus-utuh", "belut", "burung-unta", "air-gelas", "plastik-bening", "kotak-pensil-bening", "kotak-pensil-logam", "tirai-tipis", "kacang-hijau", "kacang-merah", "meja", "bot-karet", "semangka-utuh", "karang", "injak-karang", "peluit", "tunas-timur", "tunas-atas", "tunas-barat", "gula-halus"];
 const KATA = ["KODE", "KATA", "BOLA", "SAPI", "HOBI", "HUJAN", "BATU", "MEJA", "TAAT", "TAPI", "TOKO", "MATA", "AHA", "ADA", "API", "AKU"];
-export const ILUSTRASI_AWAL_SD_IDS = [...OBJEK.map((x) => `awal-${x}`), ...[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ", ...KATA].map((x) => `awal-huruf-${x.toLowerCase()}`)];
+export const ILUSTRASI_AWAL_SD_IDS = [...ILUSTRASI_QC_JENJANG_IDS, ...OBJEK.map((x) => `awal-${x}`), ...[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ", ...KATA].map((x) => `awal-huruf-${x.toLowerCase()}`)];
 const INK = "#16364b";
 
 function LatarCahaya() {
@@ -14,6 +15,7 @@ function Karang() {
 
 /** Source-native objects that expose the feature actually being assessed. */
 export function IlustrasiAwalSD({ id }: { id: string }) {
+  if (ILUSTRASI_QC_JENJANG_IDS.includes(id)) return <IlustrasiQcJenjang id={id} />;
   if (id.startsWith("huruf-")) return <HurufSimetri kata={id.slice(6).toUpperCase()} />;
   if (id === "ayam-utuh") return <g stroke={INK} strokeWidth="2.5" strokeLinejoin="round">
     <path d="M48 67V88M79 67V88M48 88L37 94M48 88V96M48 88L57 94M79 88L69 94M79 88V96M79 88L90 94" fill="none" stroke="#c6892e" strokeWidth="4" />

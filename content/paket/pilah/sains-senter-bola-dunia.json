@@ -18,8 +18,8 @@
       "i-tidur": "anak tidur lelap",
       "i-bintang": "langit penuh bintang",
       "i-lampu": "lampu jalan menyala",
-      "i-hadap": "diputar menghadap senter",
-      "i-jauh": "diputar ke sisi gelap",
+      "i-hadap": "menghadap senter",
+      "i-jauh": "berada di sisi gelap",
       "t-1": "Bola dunia diputar sampai Bali menghadap senter. Kegiatan mana yang cocok saat siang?",
       "t-2": "Aceh kini membelakangi senter. Apa yang terlihat di langit Aceh?",
       "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Kegiatan mana yang cocok saat siang?",
@@ -30,10 +30,10 @@
       "t-8": "Manado ada di sisi gelap. Kegiatan mana yang cocok saat malam?",
       "t-9": "Palembang kena cahaya senter. Kegiatan mana yang cocok saat siang?",
       "t-10": "Lombok diputar menjauh dari senter. Apa yang terlihat di langit?",
-      "t-11": "Robot ingin Kupang menjadi siang. Bola dunia diputar sampai Kupang…",
-      "t-12": "Supaya anak di Dubai bisa bermain di bawah sinar matahari, Dubai diputar sampai…",
-      "t-13": "Anak di Ambon ingin melihat bintang. Ambon diputar sampai…",
-      "t-14": "Supaya Paris menjadi siang, Paris diputar sampai…"
+      "t-11": "Agar siang di Kupang, robot memutar bola dunia sampai Kupang…",
+      "t-12": "Agar siang di Dubai, robot memutar bola dunia sampai Dubai…",
+      "t-13": "Anak di Ambon ingin melihat bintang. Robot memutar bola dunia sampai Ambon…",
+      "t-14": "Agar siang di Paris, robot memutar bola dunia sampai Paris…"
     },
     "en": {
       "judul": "Flashlight and Globe",
@@ -45,8 +45,8 @@
       "i-tidur": "children fast asleep",
       "i-bintang": "a sky full of stars",
       "i-lampu": "street lights are on",
-      "i-hadap": "turned to face the flashlight",
-      "i-jauh": "turned to the dark side",
+      "i-hadap": "facing the flashlight",
+      "i-jauh": "on the dark side",
       "t-1": "The globe turns until Bali faces the flashlight. Which activity suits daytime?",
       "t-2": "Aceh now faces away from the flashlight. What is in the sky over Aceh?",
       "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. Which activity suits daytime?",
@@ -57,10 +57,10 @@
       "t-8": "Manado is on the dark side. Which activity suits nighttime?",
       "t-9": "Palembang is in the flashlight's light. Which activity suits daytime?",
       "t-10": "Lombok is turned away from the flashlight. What is in the sky?",
-      "t-11": "The robot wants daytime in Kupang. The globe is turned until Kupang is…",
-      "t-12": "So the children in Dubai can play in the sunshine, Dubai is turned until it is…",
-      "t-13": "The children in Ambon want to see the stars. Ambon is turned until it is…",
-      "t-14": "To make it daytime in Paris, Paris is turned until it is…"
+      "t-11": "For daytime in Kupang, the robot turns the globe until Kupang is…",
+      "t-12": "For daytime in Dubai, the robot turns the globe until Dubai is…",
+      "t-13": "The children in Ambon want to see the stars. The robot turns the globe until Ambon is…",
+      "t-14": "For daytime in Paris, the robot turns the globe until Paris is…"
     }
   },
   "knobs": {

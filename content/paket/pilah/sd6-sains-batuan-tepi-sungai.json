@@ -86,73 +86,109 @@
       "id": "andesit",
       "labelKey": "i-andesit",
       "bin": "beku",
-      "emoji": "🛕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-andesit"
+      }
     },
     {
       "id": "gabro",
       "labelKey": "i-gabro",
       "bin": "beku",
-      "emoji": "⬛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-gabro"
+      }
     },
     {
       "id": "diorit",
       "labelKey": "i-diorit",
       "bin": "beku",
-      "emoji": "🧂"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-diorit"
+      }
     },
     {
       "id": "skoria",
       "labelKey": "i-skoria",
       "bin": "beku",
-      "emoji": "🔴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-skoria"
+      }
     },
     {
       "id": "tebing",
       "labelKey": "i-tebing",
       "bin": "sedimen",
-      "emoji": "🏞️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lanau"
+      }
     },
     {
       "id": "batubara",
       "labelKey": "i-batubara",
       "bin": "sedimen",
-      "emoji": "🪨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-batu-bara"
+      }
     },
     {
       "id": "breksi",
       "labelKey": "i-breksi",
       "bin": "sedimen",
-      "emoji": "🧩"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-breksi"
+      }
     },
     {
       "id": "lempung",
       "labelKey": "i-lempung",
       "bin": "sedimen",
-      "emoji": "🐟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lempung"
+      }
     },
     {
       "id": "sekis",
       "labelKey": "i-sekis",
       "bin": "metamorf",
-      "emoji": "✨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sekis"
+      }
     },
     {
       "id": "filit",
       "labelKey": "i-filit",
       "bin": "metamorf",
-      "emoji": "🎀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-filit"
+      }
     },
     {
       "id": "pita",
       "labelKey": "i-pita",
       "bin": "metamorf",
-      "emoji": "🌀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-gneis"
+      }
     },
     {
       "id": "marmerputih",
       "labelKey": "i-marmerputih",
       "bin": "metamorf",
-      "emoji": "🏛️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-marmer"
+      }
     }
   ],
   "pilihan": []

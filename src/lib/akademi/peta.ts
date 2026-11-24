@@ -14,7 +14,8 @@
 import { percobaanUlang } from "./percobaan";
 import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import { AMBANG_STIKER, statusLencana, type StatusLencana } from "./koleksi";
-import { aturanUntuk, hariLokal, proyeksi, syaratPenguasaan, type Penguasaan, type SyaratPenguasaan } from "./mastery";
+import { aturanUntuk, proyeksi, syaratPenguasaan, type Penguasaan, type SyaratPenguasaan } from "./mastery";
+import { hariWIB } from "./kalender";
 import { sudahDikerjakan, sudahLulus, ruangSemester, type HasilUjian, type JenisUjian } from "./ujian";
 import { normalisasiHasilUjian, ruangKuis, urutModul } from "./modul";
 
@@ -226,7 +227,7 @@ export function petaJenjang(
   if (sekarang) sekarang.sekarang = true;
   const semesterAktif: 1 | 2 = terbukaS2 ? 2 : 1;
 
-  const hariIni = hariLokal(waktu.toISOString());
+  const hariIni = hariWIB(waktu);
   const misiIntiBelum = unit.flatMap((u) => u.misi).filter((m) => m.kompetensi.core && !m.dikuasai);
   const rincianPemantapan: RincianPemantapan[] = misiIntiBelum.map(({ kompetensi: c }) => {
     const hasil = peng[c.id];

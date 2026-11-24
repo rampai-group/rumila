@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { hariWIB, jedaKeHariWIBBerikut } from "./kalender";
 
-/** Segarkan saran Pemantapan ketika tanggal lokal berganti, juga saat tab dibuka kembali. */
+/** Segarkan saran Pemantapan ketika tanggal WIB berganti, juga saat tab dibuka kembali. */
 export function useTanggalAkademi(): Date {
   const [tanggal, setTanggal] = useState(() => new Date());
 
@@ -10,12 +11,9 @@ export function useTanggalAkademi(): Date {
     let timer: number | undefined;
     const segarkan = () => {
       const sekarang = new Date();
-      setTanggal((sebelum) => sebelum.toDateString() === sekarang.toDateString() ? sebelum : sekarang);
-
-      const besok = new Date(sekarang);
-      besok.setHours(24, 0, 0, 0);
+      setTanggal((sebelum) => hariWIB(sebelum) === hariWIB(sekarang) ? sebelum : sekarang);
       window.clearTimeout(timer);
-      timer = window.setTimeout(segarkan, besok.getTime() - sekarang.getTime());
+      timer = window.setTimeout(segarkan, jedaKeHariWIBBerikut(sekarang));
     };
     const saatTerlihat = () => {
       if (document.visibilityState === "visible") segarkan();

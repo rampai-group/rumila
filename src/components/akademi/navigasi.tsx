@@ -37,7 +37,7 @@ const DELTA: Record<Arah, { dx: number; dy: number }> = { N: { dx: 0, dy: -1 }, 
 const PUTAR: Record<Arah, { kiri: Arah; kanan: Arah }> = { N: { kiri: "W", kanan: "E" }, E: { kiri: "N", kanan: "S" }, S: { kiri: "E", kanan: "W" }, W: { kiri: "S", kanan: "N" } };
 
 const BLOK: Record<NavCommand, { label: string; ikon: (px: number) => ReactNode; c: string; d: string }> = {
-  maju: { label: "maju", ikon: (px) => <Icon name="arrow_upward" size={px} />, c: "#3a86ff", d: "#2463c9" },
+  maju: { label: "maju", ikon: (px) => <Icon name="steps" size={px} />, c: "#3a86ff", d: "#2463c9" },
   lompat: { label: "lompat", ikon: (px) => <span style={{ fontSize: px * 0.93, lineHeight: 1 }}>🦘</span>, c: "#22b573", d: "#16804f" },
   kiri: { label: "kiri", ikon: (px) => <Icon name="turn_left" size={px} />, c: "#8b5cf6", d: "#6a3fd1" },
   kanan: { label: "kanan", ikon: (px) => <Icon name="turn_right" size={px} />, c: "#8b5cf6", d: "#6a3fd1" },
@@ -143,9 +143,11 @@ interface Agam extends NavState {
   senang: boolean;
 }
 
-export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
+export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Props) {
   const ujian = useModeUjian();
   const grids = ronde.grids;
+  const perahu = paket.id === "perahu-robot-maju";
+  const langsung = ronde.execMode === "langsung";
   const slotMaks = kapasitasRakNavigasi(ronde);
   const modeBendera = ronde.execMode === "program" && ronde.commands.includes("bendera");
   const palet = useMemo(() => ronde.commands.filter((c) => c !== "bendera"), [ronde.commands]);
@@ -552,9 +554,10 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     return () => ro.disconnect();
   }, [mendatar]);
   const sisaPeta = ph - tinggiKendali - 12 - 16 * sk - 16 - tinggiMini - (adaMini ? 24 : 0);
+  const batasPetakTegak = (langsung && pw >= 620 ? 156 : PETAK_MAKS) * sk;
   const petakTegak = Math.round(
-    ph > 0 && tinggiKendali > 0 ? Math.min(PETAK_MAKS * sk, Math.max(petakMin, sisaPeta / grid.h))
-      : ph > 0 ? Math.min(PETAK_MAKS * sk, Math.max(64, (ph * 0.55 - tinggiMini) / grid.h)) : PETAK_MAKS,
+    ph > 0 && tinggiKendali > 0 ? Math.min(batasPetakTegak, Math.max(petakMin, sisaPeta / grid.h))
+      : ph > 0 ? Math.min(batasPetakTegak, Math.max(64, (ph * 0.55 - tinggiMini) / grid.h)) : PETAK_MAKS,
   );
 
   const kartuPeta = {
@@ -575,6 +578,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
         onKetuk={ketukPetak}
         menang={!!hasil?.benar}
         tanah={tanah}
+        perahu={perahu}
         petak={mendatar ? petakDatar : undefined}
         petakMaks={petakTegak}
         petakMin={petakMin}
@@ -606,12 +610,12 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   const kendali = (
     <>
       {/* pesan */}
-      <div className={`rounded-full text-center font-extrabold ${!pesan && rapat ? "sr-only" : ""}`} style={{ minHeight: 28 * skt, fontSize: 17 * skt, color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0, background: "#ffffff", padding: "4px 12px" }} aria-live="polite">
+      <div className={`rounded-full text-center font-extrabold ${!pesan && (rapat || langsung) ? "sr-only" : ""}`} style={{ minHeight: 28 * skt, fontSize: 17 * skt, color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0, background: "#ffffff", padding: "4px 12px" }} aria-live="polite">
         {pesan || "·"}
       </div>
 
       {/* ---------- mode langsung ---------- */}
-      {ronde.execMode === "langsung" && (
+      {langsung && (
         <>
           <div className="flex items-center justify-center gap-2 font-bold" style={{ fontSize: 14 * skt }}>
             <span className="rounded-full bg-white px-3 py-1 shadow-[0_3px_0_rgba(11,37,69,.12)]">{efektif.length} langkah</span>
@@ -625,7 +629,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
               </button>
             )}
           </div>
-          <Palet commands={palet} onTekan={tekanLangsung} nonaktif={sibuk || terkunci || langsungTuntas} besar penuh={mendatar} />
+          <Palet commands={palet} onTekan={tekanLangsung} nonaktif={sibuk || terkunci || langsungTuntas} besar penuh={mendatar} arahMaju={agam.dir} />
         </>
       )}
 
@@ -708,7 +712,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
 
   if (mendatar) {
     return (
-      <div className="flex min-h-0 flex-1 flex-row items-stretch gap-4" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
+      <div className={`flex min-h-0 flex-1 flex-row items-stretch gap-4 ${langsung ? "pb-2" : ""}`} style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
         {peta}
         <div className={`flex min-h-0 shrink-0 flex-col overflow-y-auto rounded-[24px] [justify-content:safe_center] ${rapat ? "gap-2 p-2" : "gap-3 p-3"}`} style={{ width: lebarKanan, background: tema.panel, boxShadow: bayangKartu() }}>
           {kendali}
@@ -718,7 +722,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-3" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
+    <div className={`flex flex-col gap-3 ${langsung ? "pb-2" : ""}`} style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
       {peta}
       <div ref={kendaliRef} className={`flex flex-col ${rapat ? "gap-2" : "gap-3"}`}>
         {kendali}
@@ -729,10 +733,11 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
 
 /* ---------------- panggung ---------------- */
 
-function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tanah, petak, petakMaks, petakMin }: {
+function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tanah, perahu, petak, petakMaks, petakMin }: {
   grid: NavGrid; agam: Agam; bendera: { x: number; y: number } | null; sorot: Set<string>; tebakan: { x: number; y: number } | null;
   bisaKetuk: boolean; onKetuk: (x: number, y: number) => void; menang: boolean;
   tanah: [string, string];
+  perahu: boolean;
   /** ukuran petak tetap (px) di tata letak mendatar; kosong = lebar penuh dengan batas `petakMaks` */
   petak?: number;
   petakMaks: number;
@@ -782,7 +787,7 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
         className="mx-auto block"
         style={{ ...ukuranSvg, touchAction: "manipulation" }}
         role="img"
-        aria-label={`Kebun ${grid.w} kali ${grid.h} petak`}
+        aria-label={`${perahu ? "Laut" : "Kebun"} ${grid.w} kali ${grid.h} petak`}
       >
         <defs>{COMMON_DEFS}</defs>
         {sel}
@@ -792,7 +797,7 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
             <g className={agam.senang ? "akademi-bounce" : undefined}>
               <g style={{ transform: `scale(${agam.lompat ? 1.3 : 0.82})`, transition: "transform 220ms cubic-bezier(0.3, 1.4, 0.5, 1)" }}>
                 <g style={{ transform: `rotate(${agam.rot}deg)`, transition: "transform 300ms ease-in-out" }}>
-                  <AgamTop bump={false} />
+                  {perahu ? <AgamPerahu /> : <AgamTop bump={false} />}
                 </g>
               </g>
               {agam.wajah && (
@@ -803,6 +808,25 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
         </g>
       </svg>
     </div>
+  );
+}
+
+/** Tampak atas, satu arah dengan panah di depan haluan. */
+function AgamPerahu() {
+  return (
+    <g data-kendaraan="perahu">
+      <path d="M-24 44 Q0 54 24 44 M-19 53 Q0 62 19 53" fill="none" stroke="#f0faff" strokeWidth={5} strokeLinecap="round" />
+      <path d="M-15 -60 L0 -77 L15 -60" fill="none" stroke="#123c61" strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M-15 -60 L0 -77 L15 -60" fill="none" stroke="#fff" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M0 -50 Q-30 -25 -38 -2 L-36 29 Q0 49 36 29 L38 -2 Q30 -25 0 -50Z" fill="#f19d57" stroke="#8c471e" strokeWidth={5} />
+      <path d="M0 -35 Q-19 -19 -25 0 L-23 18 Q0 30 23 18 L25 0 Q19 -19 0 -35Z" fill="#ffeabb" stroke="#bf742f" strokeWidth={3} />
+      <path d="M-27 22 H27" fill="none" stroke="#bf742f" strokeWidth={5} strokeLinecap="round" />
+      <circle cy={-1} r={18} fill="#d9fff3" stroke="#0f7a66" strokeWidth={4} />
+      <rect x={-13} y={-12} width={26} height={12} rx={6} fill="#1b2a4e" />
+      <circle cx={-5} cy={-6} r={3} fill="#7df9ff" />
+      <circle cx={5} cy={-6} r={3} fill="#7df9ff" />
+      <path d="M-5 6 Q0 10 5 6" fill="none" stroke="#0f7a66" strokeWidth={2.5} strokeLinecap="round" />
+    </g>
   );
 }
 
@@ -823,7 +847,7 @@ function Mini({ grid, tanah, ukuran = 72 }: { grid: NavGrid; tanah: [string, str
 
 /* ---------------- palet & rak ---------------- */
 
-function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean; penuh?: boolean; rapat?: boolean }) {
+function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat, arahMaju }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean; penuh?: boolean; rapat?: boolean; arahMaju?: Arah }) {
   const { skala: sk, w } = usePanggung();
   const skt = Math.min(sk, 1.35);
   // tablet: semua blok sebaris; HP: paling banyak 4 sebaris
@@ -831,6 +855,7 @@ function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat }: { commands:
   const sesak = kolom > 4;
   // di kolom kanan (mendatar) tombol mengisi lebar kolom; di HP/tegak lebar tombol ikut skala
   const lebar = penuh ? "1fr" : `${Math.round((besar ? 160 : 140) * sk)}px`;
+  const ukuranIkon = Math.round((rapat ? 24 : 30) * sk);
   return (
     <div className="grid justify-center" style={{ gap: 8 * sk, gridTemplateColumns: `repeat(${kolom}, minmax(0, ${lebar}))` }}>
       {commands.map((c) => (
@@ -841,8 +866,11 @@ function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat }: { commands:
           className={`koding-block flex flex-col items-center justify-center gap-0.5 disabled:opacity-70 ${sesak ? "px-0.5 py-1" : "px-2 py-2"}`}
           style={{ background: muka(BLOK[c].c), border: `3px solid ${BLOK[c].c}`, boxShadow: `0 5px 0 ${BLOK[c].d}`, color: BLOK[c].d, minHeight: (besar ? 76 : rapat ? 56 : 64) * sk }}
           aria-label={BLOK[c].label}
+          aria-description={c === "maju" ? "Satu petak searah hadap robot" : undefined}
         >
-          {BLOK[c].ikon(Math.round((rapat ? 24 : 30) * sk))}
+          {c === "maju" && arahMaju ? (
+            <span className="inline-flex" aria-hidden style={{ transform: `rotate(${DEG[arahMaju]}deg)` }}><Icon name="arrow_upward" size={ukuranIkon} /></span>
+          ) : BLOK[c].ikon(ukuranIkon)}
           <span style={{ fontFamily: BALOO, fontSize: (c === "kalau" ? (sesak ? 11.5 : 13) : sesak ? 13 : 15) * skt, fontWeight: 800, lineHeight: 1.1, textAlign: "center", color: INK }}>{BLOK[c].label}</span>
         </button>
       ))}

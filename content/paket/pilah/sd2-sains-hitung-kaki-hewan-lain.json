@@ -166,7 +166,10 @@
       "id": "lalat",
       "labelKey": "i-lalat",
       "bin": "k6",
-      "emoji": "🪰"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lalat-enam-kaki"
+      }
     },
     {
       "id": "kepikmerah",

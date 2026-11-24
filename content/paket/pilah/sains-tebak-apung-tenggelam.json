@@ -13,7 +13,7 @@
       "instruksi": "Sebelum dicoba di air, tebak dulu: taruh benda ke kolom apung atau tenggelam.",
       "apung": "terapung",
       "tenggelam": "tenggelam",
-      "i-bola": "bola plastik",
+      "i-bola": "bola plastik berongga yang tertutup rapat",
       "i-daun": "daun",
       "i-kayu": "balok kayu besar",
       "i-bebekkaret": "bebek karet",
@@ -29,7 +29,7 @@
       "instruksi": "Before we try it in water, guess first: put each thing in the float or sink column.",
       "apung": "floats",
       "tenggelam": "sinks",
-      "i-bola": "plastic ball",
+      "i-bola": "sealed, hollow plastic ball",
       "i-daun": "leaf",
       "i-kayu": "big wooden block",
       "i-bebekkaret": "rubber duck",
@@ -74,7 +74,10 @@
       "id": "bola",
       "labelKey": "i-bola",
       "bin": "apung",
-      "emoji": "🏐"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-plastik-berongga"
+      }
     },
     {
       "id": "daun",

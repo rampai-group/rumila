@@ -11,6 +11,10 @@
     "id": {
       "judul": "Lantai Menara Carroll",
       "instruksi": "Tiap nomor lantai: genap atau ganjil? Kurang dari 50 atau tidak? Taruh di kotak yang cocok untuk dua-duanya.",
+      "carroll-baris-1": "Genap",
+      "carroll-baris-2": "Ganjil",
+      "carroll-kolom-1": "Kurang dari 50",
+      "carroll-kolom-2": "50 atau lebih",
       "b-genap-kecil": "genap, kurang dari 50",
       "b-genap-besar": "genap, 50 atau lebih",
       "b-ganjil-kecil": "ganjil, kurang dari 50",
@@ -43,6 +47,10 @@
     "en": {
       "judul": "Tower Floors Carroll Diagram",
       "instruksi": "For each floor number: even or odd? Less than 50 or not? Put it in the box that matches both.",
+      "carroll-baris-1": "Even",
+      "carroll-baris-2": "Odd",
+      "carroll-kolom-1": "Less than 50",
+      "carroll-kolom-2": "50 or more",
       "b-genap-kecil": "even, less than 50",
       "b-genap-besar": "even, 50 or more",
       "b-ganjil-kecil": "odd, less than 50",
@@ -95,6 +103,10 @@
   "world": "menara",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "genap-kecil",

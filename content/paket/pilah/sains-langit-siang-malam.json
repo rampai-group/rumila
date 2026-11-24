@@ -10,8 +10,8 @@
   "locale": {
     "id": {
       "judul": "Siang atau Malam?",
-      "instruksi": "Lihat langit di tiap kartu, lalu taruh kegiatannya di kelompok siang atau malam.",
-      "siang": "siang",
+      "instruksi": "Lihat langit di setiap kartu. Ketuk kotak matahari untuk pagi atau siang, dan kotak bulan untuk malam.",
+      "siang": "pagi atau siang",
       "malam": "malam",
       "i-bola": "main bola saat cerah",
       "i-sepeda": "bersepeda di bawah matahari",
@@ -24,8 +24,8 @@
     },
     "en": {
       "judul": "Day or Night?",
-      "instruksi": "Look at the sky on each card, then sort the activities into day or night.",
-      "siang": "day",
+      "instruksi": "Look at the sky on each card. Tap the sun box for morning or daytime, and the moon box for night.",
+      "siang": "morning or daytime",
       "malam": "night",
       "i-bola": "playing ball under a sunny sky",
       "i-sepeda": "cycling in the sunshine",

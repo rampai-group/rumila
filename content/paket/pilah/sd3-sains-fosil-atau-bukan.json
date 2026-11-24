@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Fosil atau Bukan?",
-      "instruksi": "Fosil adalah jejak atau sisa makhluk zaman dulu yang membatu. Taruh tiap temuan ke rak fosil atau bukan fosil.",
+      "instruksi": "Fosil adalah jejak atau sisa makhluk hidup purba yang terawetkan. Taruh tiap temuan ke rak fosil atau bukan fosil.",
       "b-fosil": "fosil",
       "b-bukan": "bukan fosil",
       "i-cetakandaun": "cetakan daun di batu",
@@ -18,7 +18,7 @@
       "i-amonit": "cangkang laut kuno yang membatu",
       "i-tulangdino": "tulang dinosaurus di tebing",
       "i-ikanbatu": "cetakan ikan di batu",
-      "i-damar": "serangga di dalam damar membatu",
+      "i-damar": "serangga purba terawetkan dalam ambar",
       "i-mainan": "mainan dinosaurus plastik",
       "i-tulangayam": "tulang ayam sisa makan",
       "i-kerangsegar": "kerang segar di pantai",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Fossil or Not?",
-      "instruksi": "A fossil is a trace or remains of an ancient living thing turned to stone. Put each find on the fossil shelf or the not-a-fossil shelf.",
+      "instruksi": "Fossils are preserved remains or traces of ancient living things. Sort each find as a fossil or not a fossil.",
       "b-fosil": "fossil",
       "b-bukan": "not a fossil",
       "i-cetakandaun": "leaf print in rock",
@@ -36,7 +36,7 @@
       "i-amonit": "ancient shell turned to stone",
       "i-tulangdino": "dinosaur bone in a cliff",
       "i-ikanbatu": "fish print in rock",
-      "i-damar": "insect trapped in ancient amber",
+      "i-damar": "an ancient insect preserved in amber",
       "i-mainan": "plastic toy dinosaur",
       "i-tulangayam": "leftover chicken bone",
       "i-kerangsegar": "fresh shell on the beach",
@@ -78,45 +78,55 @@
       "id": "cetakandaun",
       "labelKey": "i-cetakandaun",
       "bin": "fosil",
-      "emoji": "🍃",
-      "color": "#8d6e63",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-daun"
+      }
     },
     {
       "id": "jejakdino",
       "labelKey": "i-jejakdino",
       "bin": "fosil",
-      "emoji": "🦶",
-      "color": "#8d6e63",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-jejak"
+      }
     },
     {
       "id": "amonit",
       "labelKey": "i-amonit",
       "bin": "fosil",
-      "emoji": "🐚",
-      "color": "#8d6e63",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-amonit"
+      }
     },
     {
       "id": "tulangdino",
       "labelKey": "i-tulangdino",
       "bin": "fosil",
-      "emoji": "🦴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-tulang"
+      }
     },
     {
       "id": "ikanbatu",
       "labelKey": "i-ikanbatu",
       "bin": "fosil",
-      "emoji": "🐟",
-      "color": "#8d6e63",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-ikan"
+      }
     },
     {
       "id": "damar",
       "labelKey": "i-damar",
       "bin": "fosil",
-      "emoji": "🟠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-fosil-ambar"
+      }
     },
     {
       "id": "mainan",

@@ -11,6 +11,10 @@
     "id": {
       "judul": "Kotak Laut dan Kaki",
       "instruksi": "Jawab dua pertanyaan untuk tiap hewan: hidup di laut? punya kaki? Lalu taruh di kotak yang cocok.",
+      "carroll-baris-1": "Laut",
+      "carroll-baris-2": "Darat",
+      "carroll-kolom-1": "Berkaki",
+      "carroll-kolom-2": "Tanpa kaki",
       "bin-laut-kaki": "laut · berkaki",
       "bin-laut-tanpa": "laut · tanpa kaki",
       "bin-darat-kaki": "darat · berkaki",
@@ -32,6 +36,10 @@
     "en": {
       "judul": "Sea and Legs Boxes",
       "instruksi": "Answer two questions for each animal: does it live in the sea? does it have legs? Then put it in the right box.",
+      "carroll-baris-1": "Sea",
+      "carroll-baris-2": "Land",
+      "carroll-kolom-1": "Has legs",
+      "carroll-kolom-2": "No legs",
       "bin-laut-kaki": "sea · has legs",
       "bin-laut-tanpa": "sea · no legs",
       "bin-darat-kaki": "land · has legs",
@@ -73,6 +81,10 @@
   "world": "pantai",
   "mode": "kelompok",
   "pilihan": [],
+  "carroll": {
+    "baris": ["carroll-baris-1", "carroll-baris-2"],
+    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+  },
   "bins": [
     {
       "id": "laut-kaki",

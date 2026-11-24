@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Dari Kebun ke Meja",
-      "instruksi": "Susun gambar dari awal sampai makanan siap di meja.",
+      "instruksi": "Susun gambar dari langkah pertama sampai makanan disajikan atau dimakan.",
       "tanam": "Menanam apel",
       "sayur": "Memasak sayur",
       "biji": "tanam biji",
@@ -48,7 +48,7 @@
       "t-wortel": "Cerita wortel",
       "wortel-tanam": "tanam biji wortel",
       "wortel-cabut": "cabut wortel",
-      "wortel-siram": "siram setiap hari",
+      "wortel-siram": "siram saat tanah mulai kering",
       "wortel-sup": "sajikan sup wortel di meja",
       "t-kentang": "Cerita kentang",
       "kentang-tanam": "tanam bibit kentang",
@@ -70,7 +70,7 @@
     },
     "en": {
       "judul": "From Garden to Table",
-      "instruksi": "Put the pictures in order, from the start until the food is ready to serve.",
+      "instruksi": "Put the pictures in order, from the first step until the food is served or eaten.",
       "tanam": "Growing an apple",
       "sayur": "Cooking vegetables",
       "biji": "plant the seed",
@@ -108,7 +108,7 @@
       "t-wortel": "The carrot story",
       "wortel-tanam": "plant carrot seeds",
       "wortel-cabut": "pull up the carrot",
-      "wortel-siram": "water it every day",
+      "wortel-siram": "water when the soil starts to dry",
       "wortel-sup": "serve carrot soup at the table",
       "t-kentang": "The potato story",
       "kentang-tanam": "plant a potato",
@@ -400,12 +400,18 @@
         {
           "id": "potong",
           "labelKey": "semangka-potong",
-          "emoji": "🔪"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-potong-semangka"
+          }
         },
         {
           "id": "makan",
           "labelKey": "semangka-makan",
-          "emoji": "😋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-makan-semangka"
+          }
         }
       ]
     },

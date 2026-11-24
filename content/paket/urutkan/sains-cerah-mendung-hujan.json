@@ -137,8 +137,10 @@
         {
           "id": "mendung",
           "labelKey": "hujan-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -165,8 +167,10 @@
         {
           "id": "mendung",
           "labelKey": "pelangi-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -193,8 +197,10 @@
         {
           "id": "tebal",
           "labelKey": "awan-tebal",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -216,8 +222,10 @@
         {
           "id": "mendung",
           "labelKey": "petir-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -239,8 +247,10 @@
         {
           "id": "mendung",
           "labelKey": "malam-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung-malam"
+          }
         },
         {
           "id": "hujan",
@@ -262,8 +272,10 @@
         {
           "id": "mendung",
           "labelKey": "bintang-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung-malam"
+          }
         },
         {
           "id": "hujan",
@@ -285,8 +297,10 @@
         {
           "id": "mendung",
           "labelKey": "gerimis-mendung",
-          "emoji": "🌥️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -308,8 +322,10 @@
         {
           "id": "mendung",
           "labelKey": "tertutup-mendung",
-          "emoji": "🌥️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -331,8 +347,10 @@
         {
           "id": "mendung",
           "labelKey": "payung-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -354,8 +372,10 @@
         {
           "id": "mendung",
           "labelKey": "berawan-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
@@ -377,8 +397,10 @@
         {
           "id": "mendung",
           "labelKey": "pagi-mendung",
-          "emoji": "☁️",
-          "color": "#90a4ae"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-tunas-awan-mendung"
+          }
         },
         {
           "id": "hujan",
