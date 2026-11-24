@@ -346,7 +346,9 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const [hint, setHint] = useState<string | null>(null);
   const [terkirim, setTerkirim] = useState(false);
   const tataTumbuhan = paket.id === "sains-perbaiki-tumbuhan-utuh";
-  const inggris = tataTumbuhan && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
+  const tanamanTumbuh = paket.id === "sains-perbaiki-tanaman-tumbuh";
+  const kartuTumbuhan = tataTumbuhan || tanamanTumbuh;
+  const inggris = kartuTumbuhan && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
   const kunci = !!hasil || terkirim;
   const langkah = (id: string) => shown.find((s) => s.id === id)!;
 
@@ -397,40 +399,49 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
 
   const n = urutan.length;
   const { tema, skala: sk, w, h } = usePanggung();
-  const layarPendek = tataTumbuhan && layarPendekUrutan(w, h);
+  const layarPendek = kartuTumbuhan && layarPendekUrutan(w, h);
+  const tumbuhTablet = tanamanTumbuh && n === 4 && w >= 600 && h > w * 0.9;
   const aksiMenetap = !tataTumbuhan;
   const base = n <= 4 ? 64 : 52;
   const gap = Math.round((layarPendek ? 8 : 10) * sk);
   const pad = 12 * sk;
   const lebarDalam = w > 0 ? w - 2 * pad - 6 : 0;
   // Cadangkan ruang untuk judul dan petunjuk yang masing-masing bisa menjadi dua baris di HP pendek.
-  const tinggi = layarPendek ? h - 174
+  const tinggi = layarPendek ? h - (aksiMenetap ? 92 : 174)
     : h > 0 ? h - tinggiKepala(sk) - (aksiMenetap ? 0 : 64 * Math.min(sk, 1.3)) - 2 * GAP_ROOT - 2 * pad - 44 * sk : 0;
   // kartu bertulisan kalimat ("15.15 mengerjakan PR"): sel minimal lebih lebar (2 kolom di HP) supaya hurufnya
   // tetap besar dan kata tidak perlu diperkecil/terpotong
   const teksSaja = urutan.every((id) => {
     const l = langkah(id);
-    return !l.emoji && !l.shape && !(tataTumbuhan && l.adegan);
+    return !l.emoji && !l.shape && !(kartuTumbuhan && l.adegan);
   });
   const kataPanjang = Math.max(0, ...urutan.flatMap((id) => t(langkah(id).labelKey).split(/\s+/).map((k) => k.length)));
-  const sel = selMuat(lebarDalam, n, (teksSaja && kataPanjang > 6 ? 132 : 84) * sk, (w >= 600 ? 300 : 240) * sk, gap, tinggi, undefined, n, layarPendek ? 2 : n);
+  const duaKolom = layarPendek || tumbuhTablet;
+  const sel = selMuat(
+    lebarDalam, n, (teksSaja && kataPanjang > 6 ? 132 : 84) * sk, (w >= 600 ? 300 : 240) * sk,
+    gap, tinggi, undefined, tumbuhTablet ? 2 : n, duaKolom ? 2 : n,
+  );
   const tegak = w > 0 && h > w;
-  const tinggiKartu = batas((layarPendek ? 82 : 96) * sk, Math.min(sel.s * (tegak ? 1.9 : 1.2), (tinggi - gap * (sel.baris - 1)) / sel.baris), 420);
+  const rasioKartu = tumbuhTablet ? 1.05 : tegak ? 1.9 : 1.2;
+  const tinggiKartu = batas((layarPendek ? 82 : 96) * sk, Math.min(sel.s * rasioKartu, (tinggi - gap * (sel.baris - 1)) / sel.baris), 420);
   const skalaMaks = Math.max(1, ...urutan.map((id) => skalaLebar(visual(langkah(id), t))));
-  // kalimat panjang: gambar mengalah supaya semua kartu + tombol tetap satu layar
-  // berlaku juga untuk ≥ 3 baris (6–8 kartu di jendela sempit): tiap baris cuma kebagian sedikit tinggi
+  // Batas gambar mengikuti tinggi dan lebar kartu, dengan ruang untuk label yang panjang.
   const kalimatPanjang = sel.baris >= 3 || urutan.some((id) => t(langkah(id).labelKey).length > 50);
-  const ukuran = (tataTumbuhan
+  const ukuran = (tumbuhTablet ? Math.min(tinggiKartu * 0.83, sel.s * 0.88)
+    : tanamanTumbuh && layarPendek ? Math.min(tinggiKartu * 0.67, sel.s * 0.8)
+    : tataTumbuhan
     ? Math.min(tinggiKartu * 0.52, sel.s * 0.74, 186)
     : batas((kalimatPanjang ? 44 : base) * sk, Math.min(tinggiKartu * (kalimatPanjang ? 0.3 : 0.55), sel.s * (tegak ? 0.72 : 0.6)), 170)) / skalaMaks;
 
   return (
-    <div className={`flex flex-1 flex-col ${layarPendek ? "gap-2" : "gap-3"}`} style={{ color: INK }}>
+    <div className={`flex flex-1 flex-col ${layarPendek ? "gap-2" : "gap-3"} ${tumbuhTablet ? "justify-center" : ""}`} style={{ color: INK }}>
       <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
-      <div className="flex flex-1 flex-col items-center justify-center text-center" style={{ ...gayaRak(tema, sk), gap: (layarPendek ? 8 : 14) * sk }}>
-        <div style={{ fontFamily: NUNITO, fontSize: (layarPendek ? 14 : 17) * Math.min(sk, 1.3), fontWeight: 800, color: "#14223a" }}>
-          {inggris ? "Tap two cards to swap their places." : "Ketuk dua kartu untuk menukar tempatnya"}
-        </div>
+      <div className={`flex flex-col items-center justify-center text-center ${tumbuhTablet ? "" : "flex-1"}`} style={{ ...gayaRak(tema, sk), gap: (layarPendek ? 8 : 14) * sk }}>
+        {!(tanamanTumbuh && layarPendek) && (
+          <div style={{ fontFamily: NUNITO, fontSize: (layarPendek ? 14 : 17) * Math.min(sk, 1.3), fontWeight: 800, color: "#14223a" }}>
+            {inggris ? "Tap two cards to swap their places." : "Ketuk dua kartu untuk menukar tempatnya"}
+          </div>
+        )}
         <div className="mx-auto flex w-full flex-wrap justify-center" style={{ gap, maxWidth: sel.blok }}>
           {urutan.map((id, i) => {
             const benar = !!hasil && id === correct[i];
