@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Tanaman Pot yang Tertukar",
+      "judul": "Perbaiki Urutan Tumbuh Tanaman",
       "instruksi": "Ketuk dua kartu yang tertukar. Susun tahapnya dari biji, lalu tunas, tanaman berdaun, sampai berbunga.",
       "s-cabai": "Cabai tumbuh",
       "cabai-biji": "biji cabai",
@@ -63,7 +63,7 @@
       "pepaya-bunga": "pepaya berbunga putih"
     },
     "en": {
-      "judul": "Mixed-Up Pot Plants",
+      "judul": "Fix the Plant Growth Order",
       "instruksi": "Tap the two cards that were swapped. Put the stages in order: seed, sprout, leafy plant, then flowering plant.",
       "s-cabai": "Chilli grows",
       "cabai-biji": "chilli seed",
