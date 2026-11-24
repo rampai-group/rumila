@@ -252,8 +252,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah kata sandi kuat dan lemah berdasarkan panjang, kemudahan ditebak, dan campuran karakternya",
-        "en": "I can sort strong and weak passwords by length, how easy they are to guess and their mix of characters"
+        "id": "Aku bisa memilah kata sandi kuat dan lemah berdasarkan panjangnya dan seberapa sulit kata sandi itu ditebak",
+        "en": "I can sort strong and weak passwords by length and how hard they are to guess"
       },
       "depth": [
         "pakai"
@@ -266,7 +266,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Lemah: 123456, password, nama + tahun, qwerty, huruf berulang, tanggal lahir, satu kata. Kuat: frasa panjang empat kata atau campuran huruf besar-kecil, angka, simbol. Contoh kuat dikarang, bukan untuk dipakai. Jebakan: 'budi2014' terlihat campur, tetapi nama + tahun mudah ditebak. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-kata-sandi."
+      "catatan": "Lemah: 123456, password, nama + tahun, qwerty, huruf berulang, tanggal lahir, satu kata umum. Kuat: frasa panjang dari beberapa kata yang dipilih secara acak atau string panjang yang dibuat secara acak. Campuran jenis karakter saja kurang bila polanya mudah ditebak. Contoh kuat dikarang untuk latihan. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini. Paket: sd6-kode-kata-sandi dan sd6-kode-sandi-rumah."
     },
     {
       "id": "KODE.SD6.ROBOT.01",
