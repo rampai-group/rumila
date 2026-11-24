@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-kpk-fpb-alarm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -11,7 +11,7 @@
     "id": {
       "judul": "Alarm dan Paket",
       "instruksi": "KPK untuk \"bersama lagi\", FPB untuk \"dibagi sama rata sebanyak mungkin\". Sentuh jawabannya.",
-      "q1": "Alarm A berbunyi tiap 6 menit, alarm B tiap 16 menit. Keduanya berbunyi bersama lagi setelah … menit",
+      "q1": "Dua alarm berbunyi bersamaan sekarang. Alarm A berbunyi tiap 6 menit, alarm B tiap 16 menit. Berapa menit lagi keduanya berbunyi bersamaan?",
       "c1": "48",
       "c2": "96",
       "c3": "22",
@@ -24,7 +24,7 @@
       "q3": "KPK dari 15 dan 6 adalah …",
       "c9": "30",
       "c10": "90",
-      "q4": "Alarm A berbunyi tiap 8 menit, alarm B tiap 12 menit. Keduanya berbunyi bersama lagi setelah … menit",
+      "q4": "Dua alarm berbunyi bersamaan sekarang. Alarm A berbunyi tiap 8 menit, alarm B tiap 12 menit. Berapa menit lagi keduanya berbunyi bersamaan?",
       "c11": "24",
       "c12": "20",
       "c13": "4",
@@ -50,14 +50,14 @@
       "c26": "120",
       "c27": "240",
       "c28": "34",
-      "q12": "Alarm A berbunyi tiap 8 menit, alarm B tiap 14 menit. Keduanya berbunyi bersama lagi setelah … menit",
+      "q12": "Dua alarm berbunyi bersamaan sekarang. Alarm A berbunyi tiap 8 menit, alarm B tiap 14 menit. Berapa menit lagi keduanya berbunyi bersamaan?",
       "c29": "112",
       "pilihan": "pilihan"
     },
     "en": {
       "judul": "Alarms and Packs",
       "instruksi": "LCM for \"together again\", HCF for \"shared equally into as many as possible\". Touch the answer.",
-      "q1": "Alarm A rings every 6 minutes, alarm B every 16 minutes. They ring together again after … minutes",
+      "q1": "Two alarms ring together now. Alarm A rings every 6 minutes and alarm B every 16 minutes. How many minutes until they ring together again?",
       "c1": "48",
       "c2": "96",
       "c3": "22",
@@ -70,7 +70,7 @@
       "q3": "The LCM of 15 and 6 is …",
       "c9": "30",
       "c10": "90",
-      "q4": "Alarm A rings every 8 minutes, alarm B every 12 minutes. They ring together again after … minutes",
+      "q4": "Two alarms ring together now. Alarm A rings every 8 minutes and alarm B every 12 minutes. How many minutes until they ring together again?",
       "c11": "24",
       "c12": "20",
       "c13": "4",
@@ -96,7 +96,7 @@
       "c26": "120",
       "c27": "240",
       "c28": "34",
-      "q12": "Alarm A rings every 8 minutes, alarm B every 14 minutes. They ring together again after … minutes",
+      "q12": "Two alarms ring together now. Alarm A rings every 8 minutes and alarm B every 14 minutes. How many minutes until they ring together again?",
       "c29": "112",
       "pilihan": "choices"
     }

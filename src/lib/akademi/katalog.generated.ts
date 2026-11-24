@@ -262721,7 +262721,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-mat-keliling-sama-luas-beda",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD5",
     "mechanic": "pilah",
     "competencyIds": [
@@ -262732,7 +262732,7 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Keliling Sama, Luas Beda?",
         "instruksi": "Bandingkan keliling dan luas beberapa persegi panjang, lalu sentuh jawaban yang benar.",
-        "q1": "Keliling 20 cm. Persegi panjang mana yang luasnya terbesar?",
+        "q1": "Semua bangun punya keliling 20 cm. Persegi atau persegi panjang mana yang luasnya terbesar?",
         "c1": "5 × 5",
         "c2": "6 × 4",
         "c3": "8 × 2",
@@ -262759,7 +262759,7 @@ export const PAKET_RAW: unknown[] = [
         "q6": "Mana yang luasnya sama dengan persegi panjang 8 × 3?",
         "c20": "9 × 2",
         "c21": "7 × 4",
-        "q7": "Bangun L terdiri dari persegi panjang 6 × 2 dan 2 × 3 (cm). Luasnya …",
+        "q7": "Bangun L dibuat dengan menyambung dua persegi panjang tanpa tumpang tindih. Ukurannya 6 × 2 cm dan 2 × 3 cm. Berapa luasnya?",
         "c22": "18 cm²",
         "c23": "13 cm²",
         "c24": "17 cm²",
@@ -262778,7 +262778,7 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Same Perimeter, Different Area?",
         "instruksi": "Compare the perimeters and areas of the rectangles, then touch the right answer.",
-        "q1": "Perimeter 20 cm. Which rectangle has the largest area?",
+        "q1": "All shapes have a perimeter of 20 cm. Which square or rectangle has the largest area?",
         "c1": "5 × 5",
         "c2": "6 × 4",
         "c3": "8 × 2",
@@ -262805,7 +262805,7 @@ export const PAKET_RAW: unknown[] = [
         "q6": "Which has the same area as an 8 × 3 rectangle?",
         "c20": "9 × 2",
         "c21": "7 × 4",
-        "q7": "An L-shape is made of a 6 × 2 and a 2 × 3 rectangle (cm). Its area is …",
+        "q7": "An L-shape joins two rectangles without overlap. They measure 6 × 2 cm and 2 × 3 cm. What is its area?",
         "c22": "18 cm²",
         "c23": "13 cm²",
         "c24": "17 cm²",
@@ -287399,7 +287399,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-mat-kpk-dan-fpb",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -287419,7 +287419,7 @@ export const PAKET_RAW: unknown[] = [
         "c5": "6",
         "c6": "3",
         "c7": "36",
-        "q3": "Lampu A berkedip tiap 6 detik, lampu B tiap 8 detik. Keduanya berkedip bersama lagi setelah … detik",
+        "q3": "Dua lampu berkedip bersamaan sekarang. Lampu A berkedip tiap 6 detik, lampu B tiap 8 detik. Berapa detik lagi keduanya berkedip bersamaan?",
         "c8": "48",
         "c9": "14",
         "q4": "24 apel dan 36 jeruk dibagi ke keranjang yang isinya sama, sebanyak mungkin keranjang. Berapa keranjang?",
@@ -287468,7 +287468,7 @@ export const PAKET_RAW: unknown[] = [
         "c5": "6",
         "c6": "3",
         "c7": "36",
-        "q3": "Light A flashes every 6 seconds, light B every 8 seconds. They flash together again after … seconds",
+        "q3": "Two lights flash together now. Light A flashes every 6 seconds and light B every 8 seconds. How many seconds until they flash together again?",
         "c8": "48",
         "c9": "14",
         "q4": "24 apples and 36 oranges are shared into identical baskets, as many baskets as possible. How many baskets?",
@@ -287833,7 +287833,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-mat-kpk-fpb-alarm",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -287844,7 +287844,7 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Alarm dan Paket",
         "instruksi": "KPK untuk \"bersama lagi\", FPB untuk \"dibagi sama rata sebanyak mungkin\". Sentuh jawabannya.",
-        "q1": "Alarm A berbunyi tiap 6 menit, alarm B tiap 16 menit. Keduanya berbunyi bersama lagi setelah … menit",
+        "q1": "Dua alarm berbunyi bersamaan sekarang. Alarm A berbunyi tiap 6 menit, alarm B tiap 16 menit. Berapa menit lagi keduanya berbunyi bersamaan?",
         "c1": "48",
         "c2": "96",
         "c3": "22",
@@ -287857,7 +287857,7 @@ export const PAKET_RAW: unknown[] = [
         "q3": "KPK dari 15 dan 6 adalah …",
         "c9": "30",
         "c10": "90",
-        "q4": "Alarm A berbunyi tiap 8 menit, alarm B tiap 12 menit. Keduanya berbunyi bersama lagi setelah … menit",
+        "q4": "Dua alarm berbunyi bersamaan sekarang. Alarm A berbunyi tiap 8 menit, alarm B tiap 12 menit. Berapa menit lagi keduanya berbunyi bersamaan?",
         "c11": "24",
         "c12": "20",
         "c13": "4",
@@ -287883,14 +287883,14 @@ export const PAKET_RAW: unknown[] = [
         "c26": "120",
         "c27": "240",
         "c28": "34",
-        "q12": "Alarm A berbunyi tiap 8 menit, alarm B tiap 14 menit. Keduanya berbunyi bersama lagi setelah … menit",
+        "q12": "Dua alarm berbunyi bersamaan sekarang. Alarm A berbunyi tiap 8 menit, alarm B tiap 14 menit. Berapa menit lagi keduanya berbunyi bersamaan?",
         "c29": "112",
         "pilihan": "pilihan"
       },
       "en": {
         "judul": "Alarms and Packs",
         "instruksi": "LCM for \"together again\", HCF for \"shared equally into as many as possible\". Touch the answer.",
-        "q1": "Alarm A rings every 6 minutes, alarm B every 16 minutes. They ring together again after … minutes",
+        "q1": "Two alarms ring together now. Alarm A rings every 6 minutes and alarm B every 16 minutes. How many minutes until they ring together again?",
         "c1": "48",
         "c2": "96",
         "c3": "22",
@@ -287903,7 +287903,7 @@ export const PAKET_RAW: unknown[] = [
         "q3": "The LCM of 15 and 6 is …",
         "c9": "30",
         "c10": "90",
-        "q4": "Alarm A rings every 8 minutes, alarm B every 12 minutes. They ring together again after … minutes",
+        "q4": "Two alarms ring together now. Alarm A rings every 8 minutes and alarm B every 12 minutes. How many minutes until they ring together again?",
         "c11": "24",
         "c12": "20",
         "c13": "4",
@@ -287929,7 +287929,7 @@ export const PAKET_RAW: unknown[] = [
         "c26": "120",
         "c27": "240",
         "c28": "34",
-        "q12": "Alarm A rings every 8 minutes, alarm B every 14 minutes. They ring together again after … minutes",
+        "q12": "Two alarms ring together now. Alarm A rings every 8 minutes and alarm B every 14 minutes. How many minutes until they ring together again?",
         "c29": "112",
         "pilihan": "choices"
       }
@@ -290956,7 +290956,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-mat-peluang-kartu-kantong",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -290966,7 +290966,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Peluang Kartu dan Kantong",
-        "instruksi": "Peluang = banyak hasil yang diinginkan / banyak semua hasil. Sentuh jawabannya.",
+        "instruksi": "Satu kartu atau bola diambil secara acak. Peluangnya adalah jumlah benda yang memenuhi syarat dibagi jumlah semua benda. Sentuh jawabannya.",
         "q1": "Kartu bernomor 1 sampai 30. Peluang terambil kelipatan 5 …",
         "c1": "6/30",
         "c2": "5/30",
@@ -291024,7 +291024,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Cards and Bags Probability",
-        "instruksi": "Probability = wanted outcomes / all outcomes. Touch the answer.",
+        "instruksi": "One card or ball is drawn at random. Every object is equally likely to be drawn, so divide the number of matching objects by the total. Touch the answer.",
         "q1": "Cards numbered 1 to 30. The probability of a multiple of 5 is …",
         "c1": "6/30",
         "c2": "5/30",
@@ -291445,7 +291445,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-mat-peluang-pecahan",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -291455,7 +291455,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Peluang dalam Pecahan",
-        "instruksi": "Peluang = banyak hasil yang diinginkan dibagi banyak semua hasil. Sentuh jawabannya.",
+        "instruksi": "Anggap pengambilan dilakukan secara acak serta dadu dan roda putar adil. Jika semua hasil sama mungkin, peluangnya adalah jumlah hasil yang diinginkan dibagi jumlah semua hasil. Sentuh jawabannya.",
         "q1": "Kantong: 3 biru dan 7 merah. Peluang terambil biru …",
         "c1": "3/10",
         "c2": "3/7",
@@ -291486,7 +291486,7 @@ export const PAKET_RAW: unknown[] = [
         "c21": "5/8",
         "c22": "3/5",
         "c23": "1/8",
-        "q8": "Satu huruf diambil dari kata MATEMATIKA. Peluang terambil huruf A …",
+        "q8": "Setiap huruf pada kata MATEMATIKA ditulis pada satu kartu. Satu dari 10 kartu diambil secara acak. Berapa peluang mendapat huruf A?",
         "c24": "1/10",
         "q9": "Dadu biasa dilempar. Peluang muncul angka 7 …",
         "c25": "0",
@@ -291509,7 +291509,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Probability as a Fraction",
-        "instruksi": "Probability = number of wanted outcomes divided by all possible outcomes. Touch the answer.",
+        "instruksi": "When all outcomes are equally likely, divide the number of matching outcomes by the total. Assume random draws, a fair die, and a fair spinner. Touch the answer.",
         "q1": "Bag: 3 blue and 7 red. The probability of blue is …",
         "c1": "3/10",
         "c2": "3/7",
@@ -291540,7 +291540,7 @@ export const PAKET_RAW: unknown[] = [
         "c21": "5/8",
         "c22": "3/5",
         "c23": "1/8",
-        "q8": "One letter is picked from the word MATEMATIKA. The probability of A is …",
+        "q8": "Each letter in MATEMATIKA is written on its own card. One of the 10 cards is drawn at random. What is the probability of drawing A?",
         "c24": "1/10",
         "q9": "A normal dice is rolled. The probability of a 7 is …",
         "c25": "0",
@@ -297939,7 +297939,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-mat-suku-jauh",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -298011,7 +298011,7 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Far-Away Terms",
         "instruksi": "Find the position-to-term rule (for example 3 × position + 2), then work out the term asked for. Touch the answer.",
-        "q1": "1, 6, 11, 16, … The 42th term is …",
+        "q1": "1, 6, 11, 16, … The 42nd term is …",
         "c1": "206",
         "c2": "210",
         "c3": "21",
@@ -298021,7 +298021,7 @@ export const PAKET_RAW: unknown[] = [
         "c6": "270",
         "c7": "54",
         "c8": "284",
-        "q3": "18, 29, 40, 51, … The 43th term is …",
+        "q3": "18, 29, 40, 51, … The 43rd term is …",
         "c9": "480",
         "c10": "473",
         "c11": "62",
@@ -298045,7 +298045,7 @@ export const PAKET_RAW: unknown[] = [
         "c25": "24",
         "c26": "146",
         "c27": "242",
-        "q8": "6, 10, 14, 18, … The 43th term is …",
+        "q8": "6, 10, 14, 18, … The 43rd term is …",
         "c28": "174",
         "c29": "172",
         "c30": "22",
@@ -298063,7 +298063,7 @@ export const PAKET_RAW: unknown[] = [
         "c39": "162",
         "c40": "53",
         "c41": "179",
-        "q12": "6, 8, 10, 12, … The 23th term is …",
+        "q12": "6, 8, 10, 12, … The 23rd term is …",
         "c42": "50",
         "c43": "46",
         "c44": "52",
@@ -299812,7 +299812,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-bentuk-dan-apung",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.APUNG-TENGGELAM.01"
@@ -299834,9 +299834,9 @@ export const PAKET_RAW: unknown[] = [
         "i-baut": "baut baja kecil",
         "i-pingpong": "bola pingpong",
         "i-kelereng": "kelereng kaca seukuran pingpong",
-        "i-kayu": "batang kayu besar",
-        "i-paku": "paku payung",
-        "i-mangkuk": "mangkuk baja kosong",
+        "i-kayu": "batang kayu pinus kering",
+        "i-paku": "paku payung logam",
+        "i-mangkuk": "mangkuk baja kosong bertepi tinggi",
         "i-sendok": "sendok baja",
         "p-r1": "Dua gumpal plastisin sama massanya. Mana yang terapung?",
         "p-r2": "Dua lembar foil sama besar. Mana yang tenggelam?",
@@ -299844,8 +299844,8 @@ export const PAKET_RAW: unknown[] = [
         "p-r4": "Mana yang tenggelam?",
         "p-r5": "Sama-sama dari baja. Mana yang terapung?",
         "p-r6": "Ukurannya sama. Mana yang terapung?",
-        "p-r7": "Mana yang tenggelam walau jauh lebih kecil?",
-        "p-r8": "Sama-sama dari baja. Mana yang terapung?",
+        "p-r7": "Kedua benda dicelupkan ke air lalu dilepas. Mana yang tenggelam walau jauh lebih kecil?",
+        "p-r8": "Dua benda baja diletakkan di air tenang. Mangkuk tetap tegak dan air tidak masuk. Mana yang terapung?",
         "i-jerukutuh": "jeruk utuh dengan kulitnya",
         "i-jerukkupas": "jeruk yang sama setelah dikupas",
         "i-kalengkosong": "kaleng aluminium kosong yang tertutup rapat",
@@ -299870,9 +299870,9 @@ export const PAKET_RAW: unknown[] = [
         "i-baut": "a small steel bolt",
         "i-pingpong": "a ping-pong ball",
         "i-kelereng": "a glass marble the size of a ping-pong ball",
-        "i-kayu": "a large log",
-        "i-paku": "drawing pin",
-        "i-mangkuk": "an empty steel bowl",
+        "i-kayu": "a dry pine log",
+        "i-paku": "a metal drawing pin",
+        "i-mangkuk": "an empty steel bowl with high sides",
         "i-sendok": "a steel spoon",
         "p-r1": "Two lumps of clay have the same mass. Which one floats?",
         "p-r2": "Two sheets of foil are the same size. Which one sinks?",
@@ -299880,8 +299880,8 @@ export const PAKET_RAW: unknown[] = [
         "p-r4": "Which one sinks?",
         "p-r5": "Both are made of steel. Which one floats?",
         "p-r6": "They are the same size. Which one floats?",
-        "p-r7": "Which one sinks even though it is much smaller?",
-        "p-r8": "Both are made of steel. Which one floats?",
+        "p-r7": "Both objects are submerged, then released. Which one sinks even though it is much smaller?",
+        "p-r8": "Two steel objects are placed in calm water. The bowl stays upright and no water enters. Which one floats?",
         "i-jerukutuh": "a whole orange with its peel",
         "i-jerukkupas": "the same orange after peeling",
         "i-kalengkosong": "an empty, tightly sealed aluminium can",
@@ -299965,7 +299965,6 @@ export const PAKET_RAW: unknown[] = [
         "id": "perahukelereng",
         "labelKey": "i-perahukelereng",
         "bin": "pilihan",
-        "count": 6,
         "adegan": {
           "jenis": "ilustrasi",
           "varian": "qc-jenjang-perahu-foil-berat"

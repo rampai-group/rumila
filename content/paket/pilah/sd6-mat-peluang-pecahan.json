@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-peluang-pecahan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Peluang dalam Pecahan",
-      "instruksi": "Peluang = banyak hasil yang diinginkan dibagi banyak semua hasil. Sentuh jawabannya.",
+      "instruksi": "Anggap pengambilan dilakukan secara acak serta dadu dan roda putar adil. Jika semua hasil sama mungkin, peluangnya adalah jumlah hasil yang diinginkan dibagi jumlah semua hasil. Sentuh jawabannya.",
       "q1": "Kantong: 3 biru dan 7 merah. Peluang terambil biru …",
       "c1": "3/10",
       "c2": "3/7",
@@ -41,7 +41,7 @@
       "c21": "5/8",
       "c22": "3/5",
       "c23": "1/8",
-      "q8": "Satu huruf diambil dari kata MATEMATIKA. Peluang terambil huruf A …",
+      "q8": "Setiap huruf pada kata MATEMATIKA ditulis pada satu kartu. Satu dari 10 kartu diambil secara acak. Berapa peluang mendapat huruf A?",
       "c24": "1/10",
       "q9": "Dadu biasa dilempar. Peluang muncul angka 7 …",
       "c25": "0",
@@ -64,7 +64,7 @@
     },
     "en": {
       "judul": "Probability as a Fraction",
-      "instruksi": "Probability = number of wanted outcomes divided by all possible outcomes. Touch the answer.",
+      "instruksi": "When all outcomes are equally likely, divide the number of matching outcomes by the total. Assume random draws, a fair die, and a fair spinner. Touch the answer.",
       "q1": "Bag: 3 blue and 7 red. The probability of blue is …",
       "c1": "3/10",
       "c2": "3/7",
@@ -95,7 +95,7 @@
       "c21": "5/8",
       "c22": "3/5",
       "c23": "1/8",
-      "q8": "One letter is picked from the word MATEMATIKA. The probability of A is …",
+      "q8": "Each letter in MATEMATIKA is written on its own card. One of the 10 cards is drawn at random. What is the probability of drawing A?",
       "c24": "1/10",
       "q9": "A normal dice is rolled. The probability of a 7 is …",
       "c25": "0",
