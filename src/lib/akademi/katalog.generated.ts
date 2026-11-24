@@ -319645,7 +319645,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-perbaiki-tumbuhan-utuh",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKA",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -319700,7 +319700,7 @@ export const PAKET_RAW: unknown[] = [
         "bugenvil-akar": "akar bugenvil",
         "bugenvil-batang": "batang bugenvil",
         "bugenvil-daun": "daun bugenvil",
-        "bugenvil-bunga": "bunga bugenvil ungu",
+        "bugenvil-bunga": "bunga bugenvil di sela daun ungu",
         "s-asoka": "Asoka dari akar ke bunga",
         "asoka-akar": "akar asoka",
         "asoka-batang": "batang asoka",
@@ -319754,7 +319754,7 @@ export const PAKET_RAW: unknown[] = [
         "bugenvil-akar": "bougainvillea roots",
         "bugenvil-batang": "bougainvillea stem",
         "bugenvil-daun": "bougainvillea leaves",
-        "bugenvil-bunga": "purple bougainvillea flower",
+        "bugenvil-bunga": "bougainvillea flowers among purple bracts",
         "s-asoka": "Ixora from root to flower",
         "asoka-akar": "ixora roots",
         "asoka-batang": "ixora stem",
@@ -319798,13 +319798,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "melati-daun",
-            "emoji": "🍃"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-melati"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "melati-bunga",
-            "emoji": "🌼",
-            "color": "#ffffff"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-melati"
+            }
           }
         ]
       },
@@ -319815,7 +319820,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akar",
             "labelKey": "anggrek-akar",
-            "shape": "akar"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-akar-anggrek"
+            }
           },
           {
             "id": "batang",
@@ -319829,13 +319837,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "anggrek-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-anggrek"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "anggrek-bunga",
-            "emoji": "🌸",
-            "color": "#ab47bc"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-anggrek"
+            }
           }
         ]
       },
@@ -319860,13 +319873,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "jeruk-daun",
-            "emoji": "🍃"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-jeruk"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "jeruk-bunga",
-            "emoji": "🌼",
-            "color": "#fffde7"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-jeruk"
+            }
           }
         ]
       },
@@ -319891,13 +319909,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "kopi-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-kopi"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kopi-bunga",
-            "emoji": "🌼",
-            "color": "#fafafa"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-kopi"
+            }
           }
         ]
       },
@@ -319922,13 +319945,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "telang-daun",
-            "emoji": "☘️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-telang"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "telang-bunga",
-            "emoji": "🌸",
-            "color": "#1e88e5"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-telang"
+            }
           }
         ]
       },
@@ -319953,13 +319981,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "kemangi-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-kemangi"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kemangi-bunga",
-            "emoji": "🌸",
-            "color": "#e1bee7"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-kemangi"
+            }
           }
         ]
       },
@@ -319984,13 +320017,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "kenanga-daun",
-            "emoji": "🍃"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-kenanga"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kenanga-bunga",
-            "emoji": "🌼",
-            "color": "#fdd835"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-kenanga"
+            }
           }
         ]
       },
@@ -320015,13 +320053,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "alamanda-daun",
-            "emoji": "🍃"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-alamanda"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "alamanda-bunga",
-            "emoji": "🌼",
-            "color": "#ffeb3b"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-alamanda"
+            }
           }
         ]
       },
@@ -320046,13 +320089,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "bugenvil-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-bugenvil"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "bugenvil-bunga",
-            "emoji": "🌺",
-            "color": "#8e24aa"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-bugenvil"
+            }
           }
         ]
       },
@@ -320077,13 +320125,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "asoka-daun",
-            "emoji": "☘️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-daun-asoka"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "asoka-bunga",
-            "emoji": "🌺",
-            "color": "#e53935"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-perbaiki-bunga-asoka"
+            }
           }
         ]
       }
@@ -320583,7 +320636,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-susun-tumbuhan-utuh",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "level": "TKA",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -320630,9 +320683,9 @@ export const PAKET_RAW: unknown[] = [
         "merahmuda-bunga": "bunga di pucuk",
         "t-teratai": "Teratai dari bawah ke atas",
         "teratai-akar": "akar di dalam lumpur",
-        "teratai-batang": "batang di dalam air",
-        "teratai-daun": "daun di atas air",
-        "teratai-bunga": "bunga di pucuk",
+        "teratai-batang": "batang di dasar kolam",
+        "teratai-daun": "daun mengapung di air",
+        "teratai-bunga": "bunga di atas permukaan air",
         "t-padi": "Padi dari bawah ke atas",
         "padi-akar": "akar di dalam tanah",
         "padi-batang": "batang padi",
@@ -320685,11 +320738,11 @@ export const PAKET_RAW: unknown[] = [
         "merahmuda-batang": "stem above the soil",
         "merahmuda-daun": "leaf on the stem",
         "merahmuda-bunga": "flower at the top",
-        "t-teratai": "Lotus from bottom to top",
+        "t-teratai": "Water lily from bottom to top",
         "teratai-akar": "root in the mud",
-        "teratai-batang": "stem in the water",
-        "teratai-daun": "leaf on the water",
-        "teratai-bunga": "flower at the top",
+        "teratai-batang": "stem at the bottom of the pond",
+        "teratai-daun": "leaf floating on the water",
+        "teratai-bunga": "flower above the water",
         "t-padi": "Rice plant from bottom to top",
         "padi-akar": "root under the soil",
         "padi-batang": "rice stalk",
@@ -320774,7 +320827,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "pohon-daun",
-            "emoji": "🌳"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-susun-daun-pohon"
+            }
           }
         ]
       },
@@ -320940,27 +320996,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akar",
             "labelKey": "teratai-akar",
-            "color": "#8d6e63",
-            "shape": "akar"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-susun-akar-teratai"
+            }
           },
           {
             "id": "batang",
             "labelKey": "teratai-batang",
             "adegan": {
               "jenis": "ilustrasi",
-              "varian": "tk-batang",
-              "t": 0
+              "varian": "tumbuhan-susun-batang-teratai"
             }
           },
           {
             "id": "daun",
             "labelKey": "teratai-daun",
-            "emoji": "🍃"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-susun-daun-teratai"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "teratai-bunga",
-            "emoji": "🌸"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-susun-bunga-teratai"
+            }
           }
         ]
       },
@@ -320986,12 +321049,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "padi-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-susun-daun-padi"
+            }
           },
           {
             "id": "bulir",
             "labelKey": "padi-bulir",
-            "emoji": "🌾"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-susun-bunga-padi"
+            }
           }
         ]
       },
@@ -321048,7 +321117,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "daun",
             "labelKey": "cemara-daun",
-            "emoji": "🌲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-susun-daun-cemara"
+            }
           }
         ]
       }

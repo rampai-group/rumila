@@ -4,6 +4,8 @@ import type { CSSProperties, ReactNode } from "react";
 import { ILUSTRASI_AWAL_SD_IDS, IlustrasiAwalSD } from "./ilustrasi-awal-sd";
 import { ILUSTRASI_QC_TUNAS_IDS, IlustrasiQcTunas } from "./ilustrasi-qc-tunas";
 import { GambarIlustrasiTk } from "./ilustrasi-tk";
+import { ILUSTRASI_TUMBUHAN_PERBAIKI_IDS, IlustrasiTumbuhanPerbaiki } from "./ilustrasi-tumbuhan-perbaiki";
+import { ILUSTRASI_TUMBUHAN_SUSUN_IDS, IlustrasiTumbuhanSusun } from "./ilustrasi-tumbuhan-susun";
 
 /** Concrete early-years objects. Each identifier names a visible feature, never an answer state. */
 export const ILUSTRASI_AWAL_IDS = [
@@ -19,7 +21,7 @@ export const ILUSTRASI_AWAL_IDS = [
   "boneka-tanpa-kepala", "boneka-tanpa-badan", "boneka-tanpa-tangan", "boneka-tanpa-kaki",
   "ciri-kakiberbulu", "ciri-sayapsirip", "ciri-putihsalju", "ciri-ekorpipih", "ciri-sisikikan", "ciri-hidungtutup",
   "ciri-telingabesar", "ciri-kulitkering", "ciri-warnapasir", "ciri-jarilengket", "ciri-paruhbesar", "ciri-warnakayu",
-].map((id) => `awal-${id}`).concat(ILUSTRASI_AWAL_SD_IDS, ILUSTRASI_QC_TUNAS_IDS);
+].map((id) => `awal-${id}`).concat(ILUSTRASI_AWAL_SD_IDS, ILUSTRASI_QC_TUNAS_IDS, ILUSTRASI_TUMBUHAN_PERBAIKI_IDS, ILUSTRASI_TUMBUHAN_SUSUN_IDS);
 const dikenal = new Set(ILUSTRASI_AWAL_IDS);
 export const isIlustrasiAwal = (gambar: string) => dikenal.has(gambar);
 const INK = "#16364b";
@@ -120,6 +122,8 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   const id = gambar.replace(/^awal-/, "");
   let art: ReactNode = null;
   if (ILUSTRASI_QC_TUNAS_IDS.includes(gambar)) art = <IlustrasiQcTunas id={gambar} />;
+  else if (ILUSTRASI_TUMBUHAN_PERBAIKI_IDS.includes(gambar)) art = <IlustrasiTumbuhanPerbaiki id={gambar} />;
+  else if (ILUSTRASI_TUMBUHAN_SUSUN_IDS.includes(gambar)) art = <IlustrasiTumbuhanSusun id={gambar} />;
   else if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
   else if (id === "penyu-laut") art = <PenyuLaut />;
   else if (id === "polong") art = <g stroke="#267343" strokeWidth="2.5"><path d="M14 71Q29 18 112 25Q100 78 22 81Z" fill="#43a94c" /><path d="M21 72Q45 38 105 31Q81 78 21 72Z" fill="#c7e880" />{[35,56,77,96].map((x,i) => <circle key={x} cx={x} cy={63-i*8} r="9" fill="#73bf45" />)}<path d="M110 26Q117 12 108 13" fill="none" /></g>;

@@ -1,6 +1,6 @@
 {
   "id": "sains-perbaiki-tumbuhan-utuh",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -55,7 +55,7 @@
       "bugenvil-akar": "akar bugenvil",
       "bugenvil-batang": "batang bugenvil",
       "bugenvil-daun": "daun bugenvil",
-      "bugenvil-bunga": "bunga bugenvil ungu",
+      "bugenvil-bunga": "bunga bugenvil di sela daun ungu",
       "s-asoka": "Asoka dari akar ke bunga",
       "asoka-akar": "akar asoka",
       "asoka-batang": "batang asoka",
@@ -109,7 +109,7 @@
       "bugenvil-akar": "bougainvillea roots",
       "bugenvil-batang": "bougainvillea stem",
       "bugenvil-daun": "bougainvillea leaves",
-      "bugenvil-bunga": "purple bougainvillea flower",
+      "bugenvil-bunga": "bougainvillea flowers among purple bracts",
       "s-asoka": "Ixora from root to flower",
       "asoka-akar": "ixora roots",
       "asoka-batang": "ixora stem",
@@ -153,13 +153,18 @@
         {
           "id": "daun",
           "labelKey": "melati-daun",
-          "emoji": "🍃"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-melati"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "melati-bunga",
-          "emoji": "🌼",
-          "color": "#ffffff"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-melati"
+          }
         }
       ]
     },
@@ -170,7 +175,10 @@
         {
           "id": "akar",
           "labelKey": "anggrek-akar",
-          "shape": "akar"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-akar-anggrek"
+          }
         },
         {
           "id": "batang",
@@ -184,13 +192,18 @@
         {
           "id": "daun",
           "labelKey": "anggrek-daun",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-anggrek"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "anggrek-bunga",
-          "emoji": "🌸",
-          "color": "#ab47bc"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-anggrek"
+          }
         }
       ]
     },
@@ -215,13 +228,18 @@
         {
           "id": "daun",
           "labelKey": "jeruk-daun",
-          "emoji": "🍃"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-jeruk"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "jeruk-bunga",
-          "emoji": "🌼",
-          "color": "#fffde7"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-jeruk"
+          }
         }
       ]
     },
@@ -246,13 +264,18 @@
         {
           "id": "daun",
           "labelKey": "kopi-daun",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-kopi"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "kopi-bunga",
-          "emoji": "🌼",
-          "color": "#fafafa"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-kopi"
+          }
         }
       ]
     },
@@ -277,13 +300,18 @@
         {
           "id": "daun",
           "labelKey": "telang-daun",
-          "emoji": "☘️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-telang"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "telang-bunga",
-          "emoji": "🌸",
-          "color": "#1e88e5"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-telang"
+          }
         }
       ]
     },
@@ -308,13 +336,18 @@
         {
           "id": "daun",
           "labelKey": "kemangi-daun",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-kemangi"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "kemangi-bunga",
-          "emoji": "🌸",
-          "color": "#e1bee7"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-kemangi"
+          }
         }
       ]
     },
@@ -339,13 +372,18 @@
         {
           "id": "daun",
           "labelKey": "kenanga-daun",
-          "emoji": "🍃"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-kenanga"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "kenanga-bunga",
-          "emoji": "🌼",
-          "color": "#fdd835"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-kenanga"
+          }
         }
       ]
     },
@@ -370,13 +408,18 @@
         {
           "id": "daun",
           "labelKey": "alamanda-daun",
-          "emoji": "🍃"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-alamanda"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "alamanda-bunga",
-          "emoji": "🌼",
-          "color": "#ffeb3b"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-alamanda"
+          }
         }
       ]
     },
@@ -401,13 +444,18 @@
         {
           "id": "daun",
           "labelKey": "bugenvil-daun",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-bugenvil"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "bugenvil-bunga",
-          "emoji": "🌺",
-          "color": "#8e24aa"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-bugenvil"
+          }
         }
       ]
     },
@@ -432,13 +480,18 @@
         {
           "id": "daun",
           "labelKey": "asoka-daun",
-          "emoji": "☘️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-daun-asoka"
+          }
         },
         {
           "id": "bunga",
           "labelKey": "asoka-bunga",
-          "emoji": "🌺",
-          "color": "#e53935"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "tumbuhan-perbaiki-bunga-asoka"
+          }
         }
       ]
     }
