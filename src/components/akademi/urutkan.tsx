@@ -15,7 +15,7 @@ import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, skalaLebar, type VisualSpec } from "./benda";
 import { kolomTerbaik } from "./kisi";
-import { usePanggung } from "./dunia";
+import { AksiBawah, usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
 import { BALOO, BENAR, INK, NUNITO, SALAH, type PresenterProps } from "./jenis";
 
@@ -398,13 +398,14 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const n = urutan.length;
   const { tema, skala: sk, w, h } = usePanggung();
   const layarPendek = tataTumbuhan && layarPendekUrutan(w, h);
+  const aksiMenetap = !tataTumbuhan;
   const base = n <= 4 ? 64 : 52;
   const gap = Math.round((layarPendek ? 8 : 10) * sk);
   const pad = 12 * sk;
   const lebarDalam = w > 0 ? w - 2 * pad - 6 : 0;
   // Cadangkan ruang untuk judul dan petunjuk yang masing-masing bisa menjadi dua baris di HP pendek.
   const tinggi = layarPendek ? h - 174
-    : h > 0 ? h - tinggiKepala(sk) - 64 * Math.min(sk, 1.3) - 2 * GAP_ROOT - 2 * pad - 44 * sk : 0;
+    : h > 0 ? h - tinggiKepala(sk) - (aksiMenetap ? 0 : 64 * Math.min(sk, 1.3)) - 2 * GAP_ROOT - 2 * pad - 44 * sk : 0;
   // kartu bertulisan kalimat ("15.15 mengerjakan PR"): sel minimal lebih lebar (2 kolom di HP) supaya hurufnya
   // tetap besar dan kata tidak perlu diperkecil/terpotong
   const teksSaja = urutan.every((id) => {
@@ -464,20 +465,22 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
           })}
         </div>
       </div>
-      <div className="flex items-center gap-3">
-        <span className="rounded-full bg-white px-3 py-1 shadow-[0_3px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 15 * Math.min(sk, 1.3), fontWeight: 800, color: INK }} aria-label={inggris ? (tukar === 1 ? "Swapped once" : `Swapped ${tukar} times`) : `Ditukar ${tukar} kali`}>
-          🔁 {tukar}
-        </span>
-        <button
-          type="button"
-          onClick={selesai}
-          disabled={kunci}
-          className={`flex-1 rounded-[20px] bg-[#12803f] text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60 ${layarPendek ? "py-2" : "py-4"}`}
-          style={{ fontFamily: BALOO, fontSize: (layarPendek ? 18 : 22) * Math.min(sk, 1.3), fontWeight: 900, minHeight: (layarPendek ? 44 : 60) * Math.min(sk, 1.3) }}
-        >
-          {inggris ? "Done ✓" : "Sudah benar ✓"}
-        </button>
-      </div>
+      <AksiBawah aktif={aksiMenetap}>
+        <div className="flex items-center gap-3">
+          <span className="rounded-full bg-white px-3 py-1 shadow-[0_3px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 15 * Math.min(sk, 1.3), fontWeight: 800, color: INK }} aria-label={inggris ? (tukar === 1 ? "Swapped once" : `Swapped ${tukar} times`) : `Ditukar ${tukar} kali`}>
+            🔁 {tukar}
+          </span>
+          <button
+            type="button"
+            onClick={selesai}
+            disabled={kunci}
+            className={`flex-1 rounded-[20px] bg-[#12803f] text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60 ${layarPendek ? "py-2" : "py-4"}`}
+            style={{ fontFamily: BALOO, fontSize: (layarPendek ? 18 : 22) * Math.min(sk, 1.3), fontWeight: 900, minHeight: (layarPendek ? 44 : 60) * Math.min(sk, 1.3) }}
+          >
+            {inggris ? "Done ✓" : "Sudah benar ✓"}
+          </button>
+        </div>
+      </AksiBawah>
     </div>
   );
 }

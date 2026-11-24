@@ -72,6 +72,11 @@ function useSkalaTablet() {
   }, []);
 }
 
+function ruangPanahGulir(panggung: HTMLElement): number {
+  const panah = panggung.parentElement?.querySelector<HTMLElement>("[data-gulir-lagi]");
+  return panah ? panah.offsetHeight + (parseFloat(getComputedStyle(panah).marginTop) || 0) : 0;
+}
+
 /**
  * Jendela sempit (Slide Over, HP): sebagian soal lebih tinggi dari panggung. Anak diberi tombol panah selama masih ada
  * isi di bawah, supaya tombol jawab di ujung bawah tetap ketemu. Hilang begitu sampai bawah.
@@ -86,10 +91,8 @@ function GulirLagi({ wadah }: { wadah: React.RefObject<HTMLDivElement | null> })
       cancelAnimationFrame(tunggu);
       tunggu = requestAnimationFrame(() => {
         const ruang = el.scrollHeight - el.clientHeight;
-        const tombol = el.parentElement?.querySelector<HTMLElement>("[data-gulir-lagi]");
         // Jangan pertahankan panah kalau isi akan muat setelah ruang tombolnya dikembalikan.
-        const tinggiTombol = tombol ? tombol.offsetHeight + (parseFloat(getComputedStyle(tombol).marginTop) || 0) : 0;
-        setArah(ruang <= tinggiTombol + 12 ? null : ruang - el.scrollTop > 12 ? "bawah" : "atas");
+        setArah(ruang <= ruangPanahGulir(el) + 12 ? null : ruang - el.scrollTop > 12 ? "bawah" : "atas");
       });
     };
     const ro = new ResizeObserver(cek);
@@ -195,8 +198,9 @@ export function LayarAktivitas({
     if (!el || !ruang) return;
     const ukur = () => {
       const w = el.clientWidth;
-      // Untuk panel padat, ukur ruang yang tersedia agar tinggi kartu tidak berubah mengikuti panel itu sendiri.
-      const h = padat ? Math.max(0, ruang.clientHeight - 12) : el.clientHeight;
+      // Ukur sebelum ruang panah diambil agar kartu tidak berganti ukuran saat panah tampil/hilang.
+      // Panel padat memakai tinggi wadah luar karena panelnya mengikuti ukuran kartu.
+      const h = padat ? Math.max(0, ruang.clientHeight - 12) : el.clientHeight + ruangPanahGulir(el);
       setUkuran((u) => (u.w === w && u.h === h ? u : { w, h }));
     };
     ukur();
