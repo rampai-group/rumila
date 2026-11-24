@@ -24,7 +24,7 @@ const TOMBOL = `${TOMBOL_DASAR} bg-[#d6ecff] text-[#083e73]`;
 const TOMBOL_UTAMA = `${TOMBOL_DASAR} bg-[#0567c2] text-white`;
 
 /** Jendela di tengah layar, muat di layar kecil (isi bisa digulir). */
-function Jendela({ judul, onTutup, children }: { judul: string; onTutup: () => void; children: ReactNode }) {
+export function Jendela({ judul, onTutup, children }: { judul: string; onTutup: () => void; children: ReactNode }) {
   useEffect(() => {
     const esc = (e: KeyboardEvent) => e.key === "Escape" && onTutup();
     window.addEventListener("keydown", esc);
@@ -103,7 +103,7 @@ function UbahPin({ m, onSelesai }: { m: Member; onSelesai: () => void }) {
 }
 
 /** Daftarkan anak: nama & warna → avatar → PIN. Jenjang ditentukan Tes Penempatan saat anak pertama masuk. */
-function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
+export function DaftarAnak({ onSelesai }: { onSelesai: () => void }) {
   const addMember = useRumila((s) => s.addMember);
   const members = useRumila((s) => s.members);
   const [langkah, setLangkah] = useState<"data" | "avatar" | "pin">("data");
