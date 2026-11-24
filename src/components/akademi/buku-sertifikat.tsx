@@ -377,7 +377,7 @@ function TabelNilaiKuis({ baris }: { baris: BarisNilaiKuis[] }) {
 }
 
 function LembarKuisLanjutan({ baris, footer }: { baris: BarisNilaiKuis[]; footer: ReactNode }) {
-  const duaKolom = baris.length > KUIS_PER_KOLOM;
+  const duaKolom = baris.length > KUIS_LEMBAR_AWAL;
   const batas = Math.ceil(baris.length / 2);
   const kolom = duaKolom ? [baris.slice(0, batas), baris.slice(batas)] : [baris];
   return (

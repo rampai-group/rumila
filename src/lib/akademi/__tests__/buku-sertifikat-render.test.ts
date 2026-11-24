@@ -26,7 +26,7 @@ function buku(level: LevelId) {
 describe("pagination hasil belajar pada buku sertifikat", () => {
   it("Legenda memuat seluruh 35 nilai modul dan memberi nomor semua lembar secara urut", () => {
     const { tabel, footer, modul } = buku("SD6");
-    expect(tabel.map((t) => (t.match(/<tr\b/g) ?? []).length)).toEqual([18, 9, 8]);
+    expect(tabel.map((t) => (t.match(/<tr\b/g) ?? []).length)).toEqual([18, 17]);
     for (const judul of modul) expect(tabel.join("")).toContain(`>${judul}</td>`);
     expect(footer).toEqual(Array.from({ length: 7 }, (_, i) => [i + 1, 7]));
   });
