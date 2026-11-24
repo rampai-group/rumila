@@ -1,6 +1,6 @@
 {
   "id": "sains-lapak-panen-bagian-tumbuhan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Lapak Panen di Pasar",
-      "instruksi": "Taruh hasil panen ke rak bagian tumbuhan yang diambil: mangga ke buah, sawi ke daun, wortel ke akar.",
+      "instruksi": "Ketuk hasil panen, lalu ketuk rak yang cocok. Mangga masuk rak buah, sawi masuk rak daun.",
       "b-buah": "buah",
       "b-daun": "daun",
       "b-akar": "akar",
@@ -24,11 +24,11 @@
       "i-daunsingkong": "daun singkong",
       "i-kemangi": "kemangi",
       "i-wortel": "wortel",
-      "i-ubiungu": "ubi ungu"
+      "i-ubiungu": "ubi jalar ungu"
     },
     "en": {
       "judul": "Harvest Stall at the Market",
-      "instruksi": "Put each crop on the shelf for the plant part we pick: mango to fruit, mustard greens to leaf, carrot to root.",
+      "instruksi": "Tap a crop, then tap its shelf. Mango goes on the fruit shelf, mustard greens on the leaf shelf.",
       "b-buah": "fruit",
       "b-daun": "leaf",
       "b-akar": "root",
@@ -118,26 +118,37 @@
       "id": "sawi",
       "labelKey": "i-sawi",
       "bin": "daun",
-      "emoji": "🥬"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-sawi"
+      }
     },
     {
       "id": "kol",
       "labelKey": "i-kol",
       "bin": "daun",
-      "emoji": "🥬",
-      "color": "#c5e1a5"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-kol"
+      }
     },
     {
       "id": "daunsingkong",
       "labelKey": "i-daunsingkong",
       "bin": "daun",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-daun-singkong"
+      }
     },
     {
       "id": "kemangi",
       "labelKey": "i-kemangi",
       "bin": "daun",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tumbuhan-perbaiki-daun-kemangi"
+      }
     },
     {
       "id": "wortel",
@@ -149,9 +160,10 @@
       "id": "ubiungu",
       "labelKey": "i-ubiungu",
       "bin": "akar",
-      "emoji": "🍠",
-      "color": "#7b1fa2",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-ubi-jalar-ungu"
+      }
     }
   ],
   "pilihan": []

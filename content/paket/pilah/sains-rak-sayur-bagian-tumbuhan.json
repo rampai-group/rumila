@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-sayur-bagian-tumbuhan",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Sayur dari Bagian Mana?",
-      "instruksi": "Taruh tiap sayur ke rak bagian tumbuhan asalnya: wortel ke akar, bayam ke daun.",
+      "instruksi": "Ketuk sayurnya, lalu ketuk rak yang cocok. Wortel masuk rak akar, bayam masuk rak daun.",
       "akar": "akar",
       "daun": "daun",
       "i-wortel": "wortel",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Which Part Is the Veggie?",
-      "instruksi": "Put each vegetable on the shelf of the plant part it comes from: carrot to root, spinach to leaf.",
+      "instruksi": "Tap a vegetable, then tap its shelf. Carrot goes on the root shelf, spinach on the leaf shelf.",
       "akar": "root",
       "daun": "leaf",
       "i-wortel": "carrot",
@@ -93,32 +93,46 @@
       "id": "ubi",
       "labelKey": "i-ubi",
       "bin": "akar",
-      "emoji": "🍠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-ubi-jalar"
+      }
     },
     {
       "id": "lobak",
       "labelKey": "i-lobak",
       "bin": "akar",
-      "color": "#e9e2d0",
-      "shape": "akar"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-lobak-putih"
+      }
     },
     {
       "id": "bayam",
       "labelKey": "i-bayam",
       "bin": "daun",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-bayam"
+      }
     },
     {
       "id": "selada",
       "labelKey": "i-selada",
       "bin": "daun",
-      "emoji": "🥬"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-selada"
+      }
     },
     {
       "id": "kangkung",
       "labelKey": "i-kangkung",
       "bin": "daun",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-kangkung"
+      }
     },
     {
       "id": "tomat",
