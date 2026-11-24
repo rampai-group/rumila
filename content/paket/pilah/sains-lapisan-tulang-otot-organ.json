@@ -1,6 +1,6 @@
 {
   "id": "sains-lapisan-tulang-otot-organ",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,11 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Lapisan Tubuh",
-      "instruksi": "Taruh tiap potongan ke lapisannya: tulang, otot, atau organ. Jantung masuk organ.",
-      "tulang": "lapisan tulang",
-      "otot": "lapisan otot",
-      "organ": "lapisan organ (jantung di sini)",
+      "judul": "Rak Bagian Tubuh",
+      "instruksi": "Pilah bagian tubuh ke rak tulang, otot, atau organ lain. Jantung masuk rak organ lain.",
+      "tulang": "tulang",
+      "otot": "otot",
+      "organ": "organ lain",
       "i-tengkorak": "tengkorak",
       "i-tulangpaha": "tulang paha",
       "i-ototlengan": "otot lengan",
@@ -23,11 +23,11 @@
       "i-otak": "otak"
     },
     "en": {
-      "judul": "Layers of the Body",
-      "instruksi": "Put each piece in its layer: bones, muscles, or organs. The heart goes with organs.",
-      "tulang": "bone layer",
-      "otot": "muscle layer",
-      "organ": "organ layer (heart goes here)",
+      "judul": "Sort the Body Parts",
+      "instruksi": "Sort each body part onto the bone, muscle, or other organs shelf. The heart goes with the other organs.",
+      "tulang": "bones",
+      "otot": "muscles",
+      "organ": "other organs",
       "i-tengkorak": "skull",
       "i-tulangpaha": "thigh bone",
       "i-ototlengan": "arm muscle",
