@@ -213,9 +213,10 @@
       "id": "anjinglaut",
       "labelKey": "i-anjinglaut",
       "bin": "kutub",
-      "emoji": "🦊",
-      "color": "#fafafa",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-hewan-rubah-kutub"
+      }
     }
   ],
   "pilihan": []
