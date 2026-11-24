@@ -2077,8 +2077,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memilah kata sandi kuat dan lemah berdasarkan panjang, kemudahan ditebak, dan campuran karakternya",
-          "en": "I can sort strong and weak passwords by length, how easy they are to guess and their mix of characters"
+          "id": "Aku bisa memilah kata sandi kuat dan lemah berdasarkan panjangnya dan seberapa sulit kata sandi itu ditebak",
+          "en": "I can sort strong and weak passwords by length and how hard they are to guess"
         },
         "depth": [
           "pakai"
@@ -2091,7 +2091,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "pilah"
         ],
-        "catatan": "Lemah: 123456, password, nama + tahun, qwerty, huruf berulang, tanggal lahir, satu kata. Kuat: frasa panjang empat kata atau campuran huruf besar-kecil, angka, simbol. Contoh kuat dikarang, bukan untuk dipakai. Jebakan: 'budi2014' terlihat campur, tetapi nama + tahun mudah ditebak. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-kata-sandi."
+        "catatan": "Lemah: 123456, password, nama + tahun, qwerty, huruf berulang, tanggal lahir, satu kata umum. Kuat: frasa panjang dari beberapa kata yang dipilih secara acak atau string panjang yang dibuat secara acak. Campuran jenis karakter saja kurang bila polanya mudah ditebak. Contoh kuat dikarang untuk latihan. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini. Paket: sd6-kode-kata-sandi dan sd6-kode-sandi-rumah."
       },
       {
         "id": "KODE.SD6.ROBOT.01",
@@ -184553,7 +184553,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-ciri-tubuh-dan-habitat",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -184571,7 +184571,7 @@ export const PAKET_RAW: unknown[] = [
         "i-bulutebal": "bulu tebal hangat",
         "i-sirip": "sirip untuk berenang",
         "i-insang": "insang untuk bernapas di air",
-        "i-punuk": "punuk penyimpan cadangan",
+        "i-punuk": "punuk untuk menyimpan lemak",
         "i-kakilebar": "kaki lebar untuk pasir",
         "i-warnahijau": "warna hijau daun untuk bersembunyi",
         "i-ekorpanjang": "ekor panjang untuk bergelantung",
@@ -184590,7 +184590,7 @@ export const PAKET_RAW: unknown[] = [
         "i-bulutebal": "thick warm fur",
         "i-sirip": "fins for swimming",
         "i-insang": "gills to breathe in water",
-        "i-punuk": "hump that stores reserves",
+        "i-punuk": "hump that stores fat",
         "i-kakilebar": "wide feet for sand",
         "i-warnahijau": "leaf-green colour to hide",
         "i-ekorpanjang": "long tail for hanging",
@@ -184652,62 +184652,83 @@ export const PAKET_RAW: unknown[] = [
         "id": "bulutebal",
         "labelKey": "i-bulutebal",
         "bin": "es",
-        "emoji": "🧥",
-        "color": "#ffffff"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-bulu-tebal"
+        }
       },
       {
         "id": "sirip",
         "labelKey": "i-sirip",
         "bin": "air",
-        "shape": "triangle",
-        "color": "#0288d1"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-sirip"
+        }
       },
       {
         "id": "insang",
         "labelKey": "i-insang",
         "bin": "air",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-insang"
+        }
       },
       {
         "id": "punuk",
         "labelKey": "i-punuk",
         "bin": "gurun",
-        "emoji": "🐪",
-        "color": "#ffe0b2"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-punuk"
+        }
       },
       {
         "id": "kakilebar",
         "labelKey": "i-kakilebar",
         "bin": "gurun",
-        "shape": "rect",
-        "color": "#d7ccc8",
-        "width": 1.8
+        "width": 1.8,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-kaki-unta"
+        }
       },
       {
         "id": "warnahijau",
         "labelKey": "i-warnahijau",
         "bin": "hutan",
-        "shape": "circle",
-        "color": "#43a047"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-warna-hijau"
+        }
       },
       {
         "id": "ekorpanjang",
         "labelKey": "i-ekorpanjang",
         "bin": "hutan",
-        "emoji": "🐒",
-        "color": "#c8e6c9"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-ekor-panjang"
+        }
       },
       {
         "id": "bulupolar",
         "labelKey": "i-bulupolar",
         "bin": "es",
-        "emoji": "🐻‍❄️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-ciri-putihsalju"
+        }
       },
       {
         "id": "selaput",
         "labelKey": "i-selaput",
         "bin": "air",
-        "emoji": "🦆"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-selaput"
+        }
       },
       {
         "id": "ramping",
@@ -184719,7 +184740,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bulumata",
         "labelKey": "i-bulumata",
         "bin": "gurun",
-        "emoji": "🐫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-bulu-mata"
+        }
       }
     ],
     "pilihan": []
@@ -186712,7 +186736,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-isi-piringku",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -186722,8 +186746,8 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Isi Piringku",
-        "instruksi": "Isi tiap bagian piring: nasi, lauk, sayur, dan buah. Jajanan tidak masuk piring.",
-        "nasi": "nasi dan makanan pokok",
+        "instruksi": "Isi tiap bagian piring: makanan pokok, lauk, sayur, dan buah. Taruh permen dan soda di luar piring.",
+        "nasi": "makanan pokok",
         "lauk": "lauk",
         "sayur": "sayur",
         "buah": "buah",
@@ -186744,8 +186768,8 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Fill My Plate",
-        "instruksi": "Fill each part of the plate: rice, protein, veggies, and fruit. Treats stay off the plate.",
-        "nasi": "rice and staple foods",
+        "instruksi": "Fill each section with a staple food, a protein dish, vegetables, or fruit. Put candy and soda outside the plate.",
+        "nasi": "staple food",
         "lauk": "protein",
         "sayur": "vegetables",
         "buah": "fruit",
@@ -186853,7 +186877,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bayam",
         "labelKey": "i-bayam",
         "bin": "sayur",
-        "emoji": "🥬"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-bayam"
+        }
       },
       {
         "id": "wortel",
@@ -186902,7 +186929,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-kandang-dua-empat-kaki",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -186912,7 +186939,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kandang Dua Kaki, Empat Kaki",
-        "instruksi": "Hitung kakinya, lalu taruh hewan ke kandang dua kaki atau empat kaki.",
+        "instruksi": "Hitung kaki hewan. Ketuk kartunya, lalu pilih kandang yang cocok. Kalau tidak ada kaki, pilih kandang tanpa kaki.",
         "dua": "dua kaki",
         "empat": "empat kaki",
         "nol": "tanpa kaki",
@@ -186927,7 +186954,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Two-Leg, Four-Leg Pens",
-        "instruksi": "Count the legs, then put each animal in the two-leg or four-leg pen.",
+        "instruksi": "Count the animal’s legs. Tap its card, then choose the matching pen. If it has no legs, choose the no-leg pen.",
         "dua": "two legs",
         "empat": "four legs",
         "nol": "no legs",
@@ -186947,7 +186974,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 3,
         "default": 2,
         "step": 1,
-        "keterangan": "2 kandang (dua kaki, empat kaki); 3 menambah kandang tanpa kaki untuk ikan sebagai pengecoh"
+        "keterangan": "dua kandang untuk 2 dan 4 kaki; tambah kandang tanpa kaki untuk ikan pada tingkat berikutnya"
       },
       "itemCount": {
         "min": 4,
@@ -186978,7 +187005,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "nol",
         "labelKey": "nol",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-nol-kaki"
+        }
       }
     ],
     "items": [
@@ -186986,43 +187016,64 @@ export const PAKET_RAW: unknown[] = [
         "id": "ayam",
         "labelKey": "i-ayam",
         "bin": "dua",
-        "emoji": "🐓"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-jago"
+        }
       },
       {
         "id": "bebek",
         "labelKey": "i-bebek",
         "bin": "dua",
-        "emoji": "🦆"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-bebek"
+        }
       },
       {
         "id": "burung",
         "labelKey": "i-burung",
         "bin": "dua",
-        "emoji": "🦜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-beo"
+        }
       },
       {
         "id": "kucing",
         "labelKey": "i-kucing",
         "bin": "empat",
-        "emoji": "🐈"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-kucing-empat-kaki"
+        }
       },
       {
         "id": "sapi",
         "labelKey": "i-sapi",
         "bin": "empat",
-        "emoji": "🐄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-sapi"
+        }
       },
       {
         "id": "kambing",
         "labelKey": "i-kambing",
         "bin": "empat",
-        "emoji": "🐐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "hewan-pilah-kambing-empat-kaki"
+        }
       },
       {
         "id": "anjing",
         "labelKey": "i-anjing",
         "bin": "empat",
-        "emoji": "🐕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tunas-anjing"
+        }
       },
       {
         "id": "ikan",
@@ -188791,7 +188842,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lengkapi-piring-dapur",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -188819,14 +188870,14 @@ export const PAKET_RAW: unknown[] = [
         "i-lolipop": "lolipop",
         "i-cokelat": "cokelat batang",
         "t-1": "Piring sudah ada lauk, sayur, dan buah. Masih kurang makanan pokok seperti nasi. Pilih yang mana?",
-        "t-2": "Piring sudah ada nasi, lauk, dan buah. Masih kurang sayur. Pilih yang mana?",
+        "t-2": "Piring sudah ada nasi, lauk, dan buah. Pilih bahan yang biasa dimasak jadi sayur.",
         "t-3": "Piring sudah ada nasi, lauk, dan sayur. Masih kurang buah. Pilih yang mana?",
         "t-4": "Piring sudah ada nasi, sayur, dan buah. Masih kurang lauk. Pilih yang mana?",
         "t-5": "Robot mau menambah sayur hijau ke piring. Pilih yang mana?",
         "t-6": "Piring masih kosong di bagian makanan pokok. Pilih yang mana?",
-        "t-7": "Bagian buah di piring masih kosong. Pilih yang mana?",
+        "t-7": "Bagian buah di piring masih kosong. Pilih buah yang biasa dimakan segar.",
         "t-8": "Bagian lauk masih kosong. Robot ingin lauk dari laut. Pilih yang mana?",
-        "t-9": "Bagian sayur masih kosong. Pilih yang mana?",
+        "t-9": "Pilih bahan hijau yang biasa dimasak jadi sayur.",
         "t-10": "Piring hampir lengkap, tinggal buah. Pilih yang mana?",
         "t-11": "Makanan pokok belum ada. Pilih yang mana?",
         "t-12": "Satu bagian lagi: buah segar. Pilih yang mana?"
@@ -188851,14 +188902,14 @@ export const PAKET_RAW: unknown[] = [
         "i-lolipop": "lollipop",
         "i-cokelat": "chocolate bar",
         "t-1": "The plate has protein, vegetables, and fruit. It still needs a staple like rice. Which one?",
-        "t-2": "The plate has rice, protein, and fruit. It still needs a vegetable. Which one?",
+        "t-2": "The plate has rice, a protein dish, and fruit. Choose something people cook as a vegetable.",
         "t-3": "The plate has rice, protein, and vegetables. It still needs fruit. Which one?",
         "t-4": "The plate has rice, vegetables, and fruit. It still needs protein. Which one?",
         "t-5": "The robot wants to add a green vegetable to the plate. Which one?",
         "t-6": "The staple part of the plate is still empty. Which one?",
-        "t-7": "The fruit part of the plate is still empty. Which one?",
+        "t-7": "The fruit section is still empty. Choose a fruit people usually eat fresh.",
         "t-8": "The protein part is still empty. The robot wants protein from the sea. Which one?",
-        "t-9": "The vegetable part is still empty. Which one?",
+        "t-9": "Choose something green that people cook as a vegetable.",
         "t-10": "The plate is almost full; only fruit is missing. Which one?",
         "t-11": "There is no staple food yet. Which one?",
         "t-12": "One more part: fresh fruit. Which one?"
@@ -248640,7 +248691,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-baterai-dan-lampu-seri",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -248650,7 +248701,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Tambah Baterai, Tambah Lampu",
-        "instruksi": "Semua rangkaian ini seri (berderet). Dengarkan perubahannya, lalu sentuh perkiraanmu: lampunya jadi lebih terang, lebih redup, atau padam.",
+        "instruksi": "Rangkaian seri memakai baterai searah dan lampu pijar sejenis dengan batas tegangan yang sesuai. Dengarkan perubahannya, lalu sentuh: lampu lebih terang, lebih redup, atau padam.",
         "b-pilihan": "pilihan",
         "i-terang": "lebih terang",
         "i-redup": "lebih redup",
@@ -248670,7 +248721,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "More Batteries, More Bulbs",
-        "instruksi": "All these circuits are in series (in a row). Listen to the change, then touch your prediction: the bulbs get brighter, dimmer, or go out.",
+        "instruksi": "These series circuits use batteries facing the same way and identical bulbs rated for the voltage. Listen to the change, then choose: brighter, dimmer or off.",
         "b-pilihan": "choices",
         "i-terang": "brighter",
         "i-redup": "dimmer",
@@ -249517,7 +249568,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-konduktor-isolator",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.LISTRIK.02"
@@ -249526,7 +249577,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Uji Celah Rangkaian",
-        "instruksi": "Tiap benda dijepit di celah rangkaian: taruh ke 'lampu menyala' atau 'lampu padam'.",
+        "instruksi": "Jepit tiap benda kering dengan rapat di celah rangkaian baterai. Taruh ke rak lampu menyala atau lampu padam.",
         "b-konduktor": "lampu menyala (konduktor)",
         "b-isolator": "lampu padam (isolator)",
         "i-paku": "baut besi",
@@ -249546,7 +249597,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Circuit Gap Test",
-        "instruksi": "Each object is clipped into a gap in the circuit: put it in 'lamp lights' or 'lamp stays off'.",
+        "instruksi": "Clip each dry object firmly into the gap in a working battery circuit. Put it on the lamp-lights shelf or the lamp-stays-off shelf.",
         "b-konduktor": "lamp lights (conductor)",
         "b-isolator": "lamp stays off (insulator)",
         "i-paku": "iron bolt",
@@ -252372,7 +252423,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-terang-atau-redup",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.LISTRIK.03"
@@ -252381,7 +252432,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Terang atau Redup?",
-        "instruksi": "Baca perubahan rangkaiannya, lalu sentuh perkiraanmu tentang lampunya.",
+        "instruksi": "Baterai dipasang searah. Lampu pijar sejenis dan sesuai dengan tegangan rangkaian. Baca perubahannya, lalu sentuh perkiraanmu.",
         "b-pilihan": "pilihan",
         "i-terang": "lebih terang",
         "i-redup": "lebih redup",
@@ -252391,7 +252442,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r3": "Dari tiga baterai berderet, satu dilepas dan rangkaian disambung lagi. Lampunya jadi…",
         "p-r4": "Tiga lampu berderet dengan satu baterai. Satu lampu dilepas dan celahnya disambung kabel. Lampu yang tersisa jadi…",
         "p-r5": "Dua lampu berderet. Kawat di dalam satu lampu putus. Lampu yang lain…",
-        "p-r6": "Baterai baru dilepas, lalu diganti baterai lama yang hampir habis. Lampunya jadi…",
+        "p-r6": "Baterai baru diganti baterai lama yang tegangannya lebih rendah, tetapi masih bisa menyalakan lampu. Lampunya jadi…",
         "p-r7": "Rangkaian seri dengan dua lampu. Sakelarnya dibuka. Lampunya…",
         "p-r8": "Dua lampu berderet diganti satu lampu saja, baterainya tetap. Lampunya jadi…",
         "p-r9": "Satu lampu dengan satu baterai. Satu kabel dilepas dari baterai sehingga ada celah. Lampunya…",
@@ -252401,7 +252452,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Brighter or Dimmer?",
-        "instruksi": "Read how the circuit changes, then touch your prediction about the lamp.",
+        "instruksi": "The batteries face the same way, and the identical bulbs are rated for the circuit voltage. Read the change, then touch your prediction.",
         "b-pilihan": "choices",
         "i-terang": "brighter",
         "i-redup": "dimmer",
@@ -252411,7 +252462,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r3": "One of three cells in a row is removed and the circuit is joined again. The lamp becomes…",
         "p-r4": "Three lamps in a row with one cell. One lamp is removed and the gap is joined with wire. The other lamps become…",
         "p-r5": "Two lamps in a row. The wire inside one lamp breaks. The other lamp…",
-        "p-r6": "The new cell is taken out and replaced with an old, nearly flat one. The lamp becomes…",
+        "p-r6": "The new battery is replaced by an old one with lower voltage that can still light the bulb. The bulb becomes…",
         "p-r7": "A series circuit with two lamps. The switch is opened. The lamps…",
         "p-r8": "Two lamps in a row are replaced by just one lamp, same cell. The lamp becomes…",
         "p-r9": "One bulb with one battery. One wire is taken off the battery, leaving a gap. The bulb…",
@@ -253663,7 +253714,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-uji-benda-gudang",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -253673,7 +253724,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Menyala Saat Dijepit?",
-        "instruksi": "Benda dari gudang dijepit di celah rangkaian. Taruh ke rak lampu menyala (konduktor) atau lampu padam (isolator).",
+        "instruksi": "Benda-benda kering dari gudang dijepit rapat di celah rangkaian baterai. Taruh ke rak lampu menyala (konduktor) atau lampu padam (isolator).",
         "b-konduktor": "lampu menyala (konduktor)",
         "b-isolator": "lampu padam (isolator)",
         "i-gunting": "bilah gunting logam",
@@ -253691,7 +253742,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Does It Light When Clipped In?",
-        "instruksi": "Things from the shed are clipped into the gap in the circuit. Put each on the lamp-lights shelf (conductor) or the lamp-stays-off shelf (insulator).",
+        "instruksi": "Dry objects from the shed are clipped firmly into a gap in a working battery circuit. Put them on the lamp-lights shelf (conductor) or the lamp-stays-off shelf (insulator).",
         "b-konduktor": "lamp lights (conductor)",
         "b-isolator": "lamp stays off (insulator)",
         "i-gunting": "the metal blade of scissors",
@@ -254155,7 +254206,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-kode-cabang-kalau-taman",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD5",
     "mechanic": "pilah",
     "competencyIds": [
@@ -254167,9 +254218,9 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Cabang Program di Taman Bermain",
         "instruksi": "Program taman bermain mengecek syarat: kalau benar, cabang pertama dijalankan; kalau salah, cabang 'kalau tidak'. Perhatikan tanda >, >=, <, == (artinya 'sama dengan?'). True = benar, False = salah. Lalu pilih hasilnya.",
         "pilihan": "pilihan",
-        "c1": "boleh berenang",
-        "c2": "jangan berenang",
-        "q1": "ombak = 2. kalau ombak > 2: tampil 'jangan berenang', kalau tidak: tampil 'boleh berenang'. Apa yang tampil?",
+        "c1": "pakai meja kecil",
+        "c2": "pakai meja besar",
+        "q1": "pemain = 2. kalau pemain > 2: tampil 'pakai meja besar', kalau tidak: tampil 'pakai meja kecil'. Apa yang tampil?",
         "c3": "masuk",
         "c4": "kurang uang",
         "q2": "uang = 5000, tiket = 5000. kalau uang >= tiket: tampil 'masuk', kalau tidak: tampil 'kurang uang'. Apa yang tampil?",
@@ -254211,9 +254262,9 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Playground Program Branches",
         "instruksi": "The playground program checks a condition: if it is true, the first branch runs; if false, the 'else' branch runs. Watch the signs >, >=, <, == (meaning 'equal to?'). True means true, False means false. Then choose the result.",
         "pilihan": "choices",
-        "c1": "swimming allowed",
-        "c2": "no swimming",
-        "q1": "waves = 2. if waves > 2: show 'no swimming', else: show 'swimming allowed'. What is shown?",
+        "c1": "use the small table",
+        "c2": "use the large table",
+        "q1": "players = 2. if players > 2: show 'use the large table', else: show 'use the small table'. What is shown?",
         "c3": "go in",
         "c4": "not enough money",
         "q2": "money = 5000, ticket = 5000. if money >= ticket: show 'go in', else: show 'not enough money'. What is shown?",
@@ -281054,7 +281105,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-kata-sandi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -281064,7 +281115,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kata Sandi Kuat atau Lemah?",
-        "instruksi": "Kata sandi kuat itu panjang, sulit ditebak, dan memakai campuran huruf, angka, atau simbol: seret tiap contoh ke kelompoknya.",
+        "instruksi": "Kata sandi kuat panjang dan sulit ditebak, misalnya rangkaian kata acak. Seret tiap contoh ke kotaknya. Buat kata sandimu sendiri.",
         "bin-kuat": "kuat",
         "bin-lemah": "lemah",
         "i1": "123456",
@@ -281075,7 +281126,7 @@ export const PAKET_RAW: unknown[] = [
         "i6": "12052014",
         "i7": "kucing",
         "i8": "Kuda-Ungu-Lompat-Pagar-7",
-        "i9": "Ma3!sTopi_Pantai",
+        "i9": "komet lemari pantun pensil kerang",
         "i10": "pisang#Terbang29Awan",
         "i11": "Hujan?Kopi&Sepeda18",
         "i12": "tiga-Gajah-Main-Biola!",
@@ -281083,7 +281134,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Strong or Weak Password?",
-        "instruksi": "A strong password is long, hard to guess and mixes letters, numbers or symbols: drag each example to its group.",
+        "instruksi": "A strong password is long and hard to guess, such as a string of unrelated random words. Drag each example to its box. Create your own password.",
         "bin-kuat": "strong",
         "bin-lemah": "weak",
         "i1": "123456",
@@ -281094,7 +281145,7 @@ export const PAKET_RAW: unknown[] = [
         "i6": "12052014",
         "i7": "kitty",
         "i8": "Purple-Horse-Jumps-Fence-7",
-        "i9": "Ha3!tBeach_Day",
+        "i9": "comet cupboard rhyme pencil shell",
         "i10": "banana#Flies29Cloud",
         "i11": "Rain?Coffee&Bike18",
         "i12": "three-Elephants-Play-Violin!",
@@ -283429,7 +283480,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-kode-sandi-rumah",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "mechanic": "pilah",
     "competencyIds": [
@@ -283439,7 +283490,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kata Sandi Wi-Fi Rumah",
-        "instruksi": "Keluarga sedang memilih kata sandi baru. Kata sandi kuat itu panjang, sulit ditebak, dan memakai campuran huruf, angka, atau simbol. Seret tiap contoh ke kelompoknya (contoh ini karangan, jangan dipakai).",
+        "instruksi": "Keluarga memilih kata sandi Wi-Fi baru. Kata sandi kuat panjang dan sulit ditebak, misalnya rangkaian kata acak. Seret tiap contoh ke kotaknya. Buat kata sandimu sendiri.",
         "bin-kuat": "kuat",
         "bin-lemah": "lemah",
         "i1": "111111",
@@ -283454,12 +283505,12 @@ export const PAKET_RAW: unknown[] = [
         "i10": "Teh!Manis_Gunung27",
         "i11": "jeruk#Bulan8Sepatu",
         "i12": "Awan_Tujuh+Rumput3",
-        "i13": "Lima-Bebek-Naik-Kereta!",
+        "i13": "bambu komet sepatu atap pepaya",
         "i14": "Rak?Buku9_Pelangi"
       },
       "en": {
         "judul": "Home Wi-Fi Passwords",
-        "instruksi": "The family is choosing a new password. A strong password is long, hard to guess, and mixes letters, numbers, or symbols. Drag each example to its group (these are made up, don't use them).",
+        "instruksi": "The family is choosing a new Wi-Fi password. A strong password is long and hard to guess, such as a string of unrelated random words. Drag each example to its box. Create your own password.",
         "bin-kuat": "strong",
         "bin-lemah": "weak",
         "i1": "111111",
@@ -283474,7 +283525,7 @@ export const PAKET_RAW: unknown[] = [
         "i10": "Teh!Manis_Gunung27",
         "i11": "jeruk#Bulan8Sepatu",
         "i12": "Awan_Tujuh+Rumput3",
-        "i13": "Lima-Bebek-Naik-Kereta!",
+        "i13": "bamboo comet shoe roof papaya",
         "i14": "Rak?Buku9_Pelangi"
       }
     },
@@ -301297,7 +301348,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-didih-uap-pantai",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.PERUBAHAN-ZAT.03"
@@ -301306,37 +301357,37 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Bergolak atau Mengering?",
-        "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap.",
+        "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap dari permukaan.",
         "b-didih": "mendidih: bergolak di seluruh cairan, saat mencapai titik didih",
-        "b-uap": "menguap: perlahan dari permukaan, pada suhu berapa pun",
+        "b-uap": "menguap: terjadi di permukaan",
         "i-ketel": "air di ketel listrik bergolak, gelembung besar naik dari dasar",
         "i-bakso": "kuah bakso bergolak di panci pedagang",
         "i-susu": "susu di panci bergolak sampai hampir meluap",
-        "i-mi": "air rebusan mi bergolak dan termometer menunjuk 100 °C",
+        "i-mi": "air untuk merebus mi bergolak dan termometer menunjuk 100 °C",
         "i-jagung": "air rebusan jagung di tungku pantai bergolak",
-        "i-kolam": "air kolam renang berkurang di musim kemarau",
+        "i-kolam": "permukaan air kolam turun selama cuaca kering, meski aliran masuk dan keluarnya ditutup",
         "i-ikanasin": "ikan asin dijemur sampai kering",
         "i-lantai": "lantai yang baru dipel kering sendiri",
         "i-spidol": "tulisan spidol di papan cepat kering",
         "i-handuk": "handuk basah di pantai kering diembus angin",
-        "i-pasir": "pasir basah di pantai menjadi kering saat air surut"
+        "i-pasir": "sampel pasir basah mengering terkena Matahari di atas piring"
       },
       "en": {
         "judul": "Bubbling or Drying?",
-        "instruksi": "Read what happens, then sort it: boiling, or evaporating.",
+        "instruksi": "Read what happens, then sort it: boiling, or evaporating from the surface.",
         "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
-        "b-uap": "evaporating: slowly from the surface, at any temperature",
+        "b-uap": "evaporating: happens at the surface",
         "i-ketel": "water in an electric kettle bubbles hard, big bubbles rising from the bottom",
         "i-bakso": "meatball soup bubbling in the seller's pot",
         "i-susu": "milk in a pan bubbling up until it nearly boils over",
-        "i-mi": "the noodle water bubbles hard and the thermometer reads 100 °C",
+        "i-mi": "water for boiling noodles bubbles hard and the thermometer reads 100 °C",
         "i-jagung": "water for boiling corn bubbles hard over a beach stove",
-        "i-kolam": "pool water goes down in the dry season",
+        "i-kolam": "the pool level falls in dry weather while the inlet and outlet are closed",
         "i-ikanasin": "salted fish dried in the sun",
         "i-lantai": "a freshly mopped floor dries by itself",
         "i-spidol": "marker writing on the board dries quickly",
         "i-handuk": "a wet towel on the beach dries in the wind",
-        "i-pasir": "wet sand on the beach dries out at low tide"
+        "i-pasir": "a sample of wet sand dries in the sun on a plate"
       }
     },
     "knobs": {
@@ -302751,7 +302802,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-mendidih-atau-menguap",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.PERUBAHAN-ZAT.03"
@@ -302760,14 +302811,14 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Mendidih atau Menguap?",
-        "instruksi": "Pilah tiap kejadian: air mendidih, atau air menguap.",
+        "instruksi": "Pilah tiap kejadian: air mendidih, atau air menguap dari permukaan.",
         "b-didih": "mendidih: gelembung di seluruh cairan, pada suhu didih",
-        "b-uap": "menguap: hanya di permukaan, pada suhu berapa pun",
+        "b-uap": "menguap: terjadi di permukaan",
         "i-panci": "air di panci bergelembung besar di atas kompor",
-        "i-ketel": "ketel bersiul di atas kompor",
-        "i-seratus": "termometer di air bergolak tetap 100 °C walau api dibesarkan",
+        "i-ketel": "air bergolak di dalam ketel, dan uap membuat ketel bersiul",
+        "i-seratus": "pada tekanan udara normal, air murni terus bergolak pada 100 °C meski api dibesarkan",
         "i-sup": "sup bergolak di panci",
-        "i-genangan": "genangan di jalan hilang setelah siang",
+        "i-genangan": "genangan diam di atas jalan kedap air menyusut saat terkena sinar Matahari",
         "i-jemuran": "jemuran kering diembus angin",
         "i-keringat": "keringat di kulit kering sendiri",
         "i-piring": "air di piring berkurang setelah beberapa hari",
@@ -302775,14 +302826,14 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Boiling or Evaporating?",
-        "instruksi": "Sort each event: water is boiling, or water is evaporating.",
+        "instruksi": "Sort each event: water boiling, or water evaporating from the surface.",
         "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
-        "b-uap": "evaporating: only at the surface, at any temperature",
+        "b-uap": "evaporating: happens at the surface",
         "i-panci": "water in a pan on the stove bubbles hard",
-        "i-ketel": "a kettle whistles on the stove",
-        "i-seratus": "the thermometer in bubbling water stays at 100 °C even on a bigger flame",
+        "i-ketel": "water bubbles hard inside a kettle, and steam makes it whistle",
+        "i-seratus": "at normal air pressure, pure water continues boiling at 100 °C even on a bigger flame",
         "i-sup": "soup bubbling in a pot",
-        "i-genangan": "a puddle on the road is gone by the afternoon",
+        "i-genangan": "a still puddle on an impermeable road shrinks in the sun",
         "i-jemuran": "washing dries in the breeze",
         "i-keringat": "sweat dries off your skin",
         "i-piring": "water in a dish goes down over a few days",

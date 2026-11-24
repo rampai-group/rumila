@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-kata-sandi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kata Sandi Kuat atau Lemah?",
-      "instruksi": "Kata sandi kuat itu panjang, sulit ditebak, dan memakai campuran huruf, angka, atau simbol: seret tiap contoh ke kelompoknya.",
+      "instruksi": "Kata sandi kuat panjang dan sulit ditebak, misalnya rangkaian kata acak. Seret tiap contoh ke kotaknya. Buat kata sandimu sendiri.",
       "bin-kuat": "kuat",
       "bin-lemah": "lemah",
       "i1": "123456",
@@ -21,7 +21,7 @@
       "i6": "12052014",
       "i7": "kucing",
       "i8": "Kuda-Ungu-Lompat-Pagar-7",
-      "i9": "Ma3!sTopi_Pantai",
+      "i9": "komet lemari pantun pensil kerang",
       "i10": "pisang#Terbang29Awan",
       "i11": "Hujan?Kopi&Sepeda18",
       "i12": "tiga-Gajah-Main-Biola!",
@@ -29,7 +29,7 @@
     },
     "en": {
       "judul": "Strong or Weak Password?",
-      "instruksi": "A strong password is long, hard to guess and mixes letters, numbers or symbols: drag each example to its group.",
+      "instruksi": "A strong password is long and hard to guess, such as a string of unrelated random words. Drag each example to its box. Create your own password.",
       "bin-kuat": "strong",
       "bin-lemah": "weak",
       "i1": "123456",
@@ -40,7 +40,7 @@
       "i6": "12052014",
       "i7": "kitty",
       "i8": "Purple-Horse-Jumps-Fence-7",
-      "i9": "Ha3!tBeach_Day",
+      "i9": "comet cupboard rhyme pencil shell",
       "i10": "banana#Flies29Cloud",
       "i11": "Rain?Coffee&Bike18",
       "i12": "three-Elephants-Play-Violin!",

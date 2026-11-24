@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-mendidih-atau-menguap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.03"
@@ -9,14 +9,14 @@
   "locale": {
     "id": {
       "judul": "Mendidih atau Menguap?",
-      "instruksi": "Pilah tiap kejadian: air mendidih, atau air menguap.",
+      "instruksi": "Pilah tiap kejadian: air mendidih, atau air menguap dari permukaan.",
       "b-didih": "mendidih: gelembung di seluruh cairan, pada suhu didih",
-      "b-uap": "menguap: hanya di permukaan, pada suhu berapa pun",
+      "b-uap": "menguap: terjadi di permukaan",
       "i-panci": "air di panci bergelembung besar di atas kompor",
-      "i-ketel": "ketel bersiul di atas kompor",
-      "i-seratus": "termometer di air bergolak tetap 100 °C walau api dibesarkan",
+      "i-ketel": "air bergolak di dalam ketel, dan uap membuat ketel bersiul",
+      "i-seratus": "pada tekanan udara normal, air murni terus bergolak pada 100 °C meski api dibesarkan",
       "i-sup": "sup bergolak di panci",
-      "i-genangan": "genangan di jalan hilang setelah siang",
+      "i-genangan": "genangan diam di atas jalan kedap air menyusut saat terkena sinar Matahari",
       "i-jemuran": "jemuran kering diembus angin",
       "i-keringat": "keringat di kulit kering sendiri",
       "i-piring": "air di piring berkurang setelah beberapa hari",
@@ -24,14 +24,14 @@
     },
     "en": {
       "judul": "Boiling or Evaporating?",
-      "instruksi": "Sort each event: water is boiling, or water is evaporating.",
+      "instruksi": "Sort each event: water boiling, or water evaporating from the surface.",
       "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
-      "b-uap": "evaporating: only at the surface, at any temperature",
+      "b-uap": "evaporating: happens at the surface",
       "i-panci": "water in a pan on the stove bubbles hard",
-      "i-ketel": "a kettle whistles on the stove",
-      "i-seratus": "the thermometer in bubbling water stays at 100 °C even on a bigger flame",
+      "i-ketel": "water bubbles hard inside a kettle, and steam makes it whistle",
+      "i-seratus": "at normal air pressure, pure water continues boiling at 100 °C even on a bigger flame",
       "i-sup": "soup bubbling in a pot",
-      "i-genangan": "a puddle on the road is gone by the afternoon",
+      "i-genangan": "a still puddle on an impermeable road shrinks in the sun",
       "i-jemuran": "washing dries in the breeze",
       "i-keringat": "sweat dries off your skin",
       "i-piring": "water in a dish goes down over a few days",

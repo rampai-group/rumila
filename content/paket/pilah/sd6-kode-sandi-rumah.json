@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-sandi-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kata Sandi Wi-Fi Rumah",
-      "instruksi": "Keluarga sedang memilih kata sandi baru. Kata sandi kuat itu panjang, sulit ditebak, dan memakai campuran huruf, angka, atau simbol. Seret tiap contoh ke kelompoknya (contoh ini karangan, jangan dipakai).",
+      "instruksi": "Keluarga memilih kata sandi Wi-Fi baru. Kata sandi kuat panjang dan sulit ditebak, misalnya rangkaian kata acak. Seret tiap contoh ke kotaknya. Buat kata sandimu sendiri.",
       "bin-kuat": "kuat",
       "bin-lemah": "lemah",
       "i1": "111111",
@@ -25,12 +25,12 @@
       "i10": "Teh!Manis_Gunung27",
       "i11": "jeruk#Bulan8Sepatu",
       "i12": "Awan_Tujuh+Rumput3",
-      "i13": "Lima-Bebek-Naik-Kereta!",
+      "i13": "bambu komet sepatu atap pepaya",
       "i14": "Rak?Buku9_Pelangi"
     },
     "en": {
       "judul": "Home Wi-Fi Passwords",
-      "instruksi": "The family is choosing a new password. A strong password is long, hard to guess, and mixes letters, numbers, or symbols. Drag each example to its group (these are made up, don't use them).",
+      "instruksi": "The family is choosing a new Wi-Fi password. A strong password is long and hard to guess, such as a string of unrelated random words. Drag each example to its box. Create your own password.",
       "bin-kuat": "strong",
       "bin-lemah": "weak",
       "i1": "111111",
@@ -45,7 +45,7 @@
       "i10": "Teh!Manis_Gunung27",
       "i11": "jeruk#Bulan8Sepatu",
       "i12": "Awan_Tujuh+Rumput3",
-      "i13": "Lima-Bebek-Naik-Kereta!",
+      "i13": "bamboo comet shoe roof papaya",
       "i14": "Rak?Buku9_Pelangi"
     }
   },
