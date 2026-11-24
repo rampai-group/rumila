@@ -2920,6 +2920,7 @@ export const SUARA: Record<string, string> = {
   "kertas yang tadi tidak ditarik magnet": "/akademi/suara/b382b5d6350a.mp3",
   "Kerupuk dijemur supaya kering. Taruh di mana?": "/akademi/suara/9732a823d93d.mp3",
   "Ketinggian balon cuaca (m) — dari terbesar": "/akademi/suara/250a4469edba.mp3",
+  "Ketuk dua kartu yang tertukar. Susun tahapnya dari biji, lalu tunas, tanaman berdaun, sampai berbunga.": "/akademi/suara/2ea4f784e3df.mp3",
   "Ketuk hasil panen, lalu ketuk rak yang cocok. Mangga masuk rak buah, sawi masuk rak daun.": "/akademi/suara/ec8a219cf905.mp3",
   "Ketuk kartu di rumah untuk dengar petunjuknya, lalu pilih indra yang cocok.": "/akademi/suara/8559ddb5f18f.mp3",
   "Ketuk kartu, lalu ketuk kotak bernomor.": "/akademi/suara/c0cccffc3de7.mp3",

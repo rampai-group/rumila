@@ -317334,7 +317334,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-biji-sampai-berbunga",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "TKA",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -317416,7 +317416,7 @@ export const PAKET_RAW: unknown[] = [
         "merahmuda-biji": "seed in the soil",
         "merahmuda-tunas": "a little sprout",
         "merahmuda-bunga": "it blooms",
-        "t-teratai": "A lotus grows",
+        "t-teratai": "A water lily grows",
         "teratai-biji": "seed in the pond",
         "teratai-tunas": "a little sprout",
         "teratai-bunga": "it blooms",
@@ -317463,26 +317463,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "bungamatahari-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-bungamatahari-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "bungamatahari-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-bungamatahari-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "bungamatahari-daun",
-            "emoji": "🌿",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-bungamatahari-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "bungamatahari-bunga",
-            "emoji": "🌻",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-bungamatahari-bunga"
+            }
           }
         ]
       },
@@ -317494,25 +317506,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "biji",
             "labelKey": "kacang-biji",
             "scale": 0.6,
-            "emoji": "🥜"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacang-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "kacang-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacang-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "kacang-daun",
-            "emoji": "🪴",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacang-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kacang-bunga",
-            "emoji": "🌼",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacang-bunga"
+            }
           }
         ]
       },
@@ -317523,26 +317547,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "kenikir-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kenikir-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "kenikir-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kenikir-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "kenikir-daun",
-            "emoji": "🌿",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kenikir-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kenikir-bunga",
-            "emoji": "🌼",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kenikir-bunga"
+            }
           }
         ]
       },
@@ -317553,26 +317589,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "mawar-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mawar-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "mawar-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mawar-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "mawar-daun",
-            "emoji": "🌿",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mawar-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "mawar-bunga",
-            "emoji": "🌹",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mawar-bunga"
+            }
           }
         ]
       },
@@ -317583,26 +317631,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "sepatu-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-sepatu-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "sepatu-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-sepatu-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "sepatu-daun",
-            "emoji": "🪴",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-sepatu-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "sepatu-bunga",
-            "emoji": "🌺",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-sepatu-bunga"
+            }
           }
         ]
       },
@@ -317613,26 +317673,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "merahmuda-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-merahmuda-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "merahmuda-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-merahmuda-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "merahmuda-daun",
-            "emoji": "🌿",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-merahmuda-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "merahmuda-bunga",
-            "emoji": "🌸",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-merahmuda-bunga"
+            }
           }
         ]
       },
@@ -317643,26 +317715,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "teratai-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-teratai-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "teratai-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-teratai-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "teratai-daun",
-            "emoji": "🍃",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-teratai-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "teratai-bunga",
             "scale": 1.3,
-            "emoji": "🌸"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-teratai-bunga"
+            }
           }
         ]
       },
@@ -317673,26 +317757,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "kacangtanah-biji",
-            "emoji": "🥜",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangtanah-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "kacangtanah-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangtanah-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "kacangtanah-daun",
-            "emoji": "🌿",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangtanah-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kacangtanah-bunga",
-            "emoji": "🌼",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangtanah-bunga"
+            }
           }
         ]
       },
@@ -317703,26 +317799,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "melati-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-melati-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "melati-tunas",
-            "emoji": "🌱",
-            "scale": 0.8
+            "scale": 0.8,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-melati-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "melati-daun",
-            "emoji": "🪴",
-            "scale": 1.1
+            "scale": 1.1,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-melati-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "melati-bunga",
-            "emoji": "💮",
-            "scale": 1.3
+            "scale": 1.3,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-melati-bunga"
+            }
           }
         ]
       }
@@ -319343,7 +319451,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-perbaiki-tanaman-tumbuh",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -319352,8 +319460,8 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Tanaman Pot yang Tertukar",
-        "instruksi": "Gambar pertumbuhan tanaman di pot ada yang tertukar. Tukar supaya urut: biji, tunas, berdaun, berbunga.",
+        "judul": "Perbaiki Urutan Tumbuh Tanaman",
+        "instruksi": "Ketuk dua kartu yang tertukar. Susun tahapnya dari biji, lalu tunas, tanaman berdaun, sampai berbunga.",
         "s-cabai": "Cabai tumbuh",
         "cabai-biji": "biji cabai",
         "cabai-tunas": "tunas cabai",
@@ -319406,8 +319514,8 @@ export const PAKET_RAW: unknown[] = [
         "pepaya-bunga": "pepaya berbunga putih"
       },
       "en": {
-        "judul": "Mixed-Up Pot Plants",
-        "instruksi": "Two growing pictures are swapped. Swap them back: seed, sprout, leaves, flower.",
+        "judul": "Fix the Plant Growth Order",
+        "instruksi": "Tap the two cards that were swapped. Put the stages in order: seed, sprout, leafy plant, then flowering plant.",
         "s-cabai": "Chilli grows",
         "cabai-biji": "chilli seed",
         "cabai-tunas": "chilli sprout",
@@ -319482,24 +319590,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "cabai-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-cabai-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "cabai-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-cabai-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "cabai-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-cabai-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "cabai-bunga",
-            "emoji": "🌼",
-            "color": "#ffffff"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-cabai-bunga"
+            }
           }
         ]
       },
@@ -319510,24 +319629,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "tomat-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-tomat-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "tomat-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-tomat-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "tomat-daun",
-            "emoji": "🪴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-tomat-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "tomat-bunga",
-            "emoji": "🌼",
-            "color": "#fdd835"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-tomat-bunga"
+            }
           }
         ]
       },
@@ -319538,24 +319668,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "terung-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-terung-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "terung-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-terung-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "terung-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-terung-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "terung-bunga",
-            "emoji": "🌸",
-            "color": "#9575cd"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-terung-bunga"
+            }
           }
         ]
       },
@@ -319566,24 +319707,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "mentimun-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mentimun-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "mentimun-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mentimun-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "mentimun-daun",
-            "emoji": "🪴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mentimun-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "mentimun-bunga",
-            "emoji": "🌼",
-            "color": "#ffeb3b"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-mentimun-bunga"
+            }
           }
         ]
       },
@@ -319594,24 +319746,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "labu-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-labu-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "labu-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-labu-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "labu-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-labu-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "labu-bunga",
-            "emoji": "🌼",
-            "color": "#fbc02d"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-labu-bunga"
+            }
           }
         ]
       },
@@ -319622,24 +319785,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "semangka-biji",
-            "emoji": "🌰",
-            "scale": 0.6
+            "scale": 0.6,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-semangka-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "semangka-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-semangka-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "semangka-daun",
-            "emoji": "🪴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-semangka-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "semangka-bunga",
-            "emoji": "🌼",
-            "color": "#fff176"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-semangka-bunga"
+            }
           }
         ]
       },
@@ -319650,23 +319824,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "kacangpanjang-biji",
-            "emoji": "🥜"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangpanjang-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "kacangpanjang-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangpanjang-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "kacangpanjang-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangpanjang-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kacangpanjang-bunga",
-            "emoji": "🌸",
-            "color": "#b39ddb"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacangpanjang-bunga"
+            }
           }
         ]
       },
@@ -319677,23 +319862,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "buncis-biji",
-            "emoji": "🥜"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-buncis-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "buncis-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-buncis-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "buncis-daun",
-            "emoji": "🪴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-buncis-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "buncis-bunga",
-            "emoji": "🌸",
-            "color": "#f5f5f5"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-buncis-bunga"
+            }
           }
         ]
       },
@@ -319704,24 +319900,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "kacanghijau-biji",
-            "color": "#66bb6a",
-            "emoji": "🥜"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacanghijau-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "kacanghijau-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacanghijau-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "kacanghijau-daun",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacanghijau-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "kacanghijau-bunga",
-            "emoji": "🌼",
-            "color": "#fdd835"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-kacanghijau-bunga"
+            }
           }
         ]
       },
@@ -319732,25 +319938,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "biji",
             "labelKey": "pepaya-biji",
-            "shape": "circle",
-            "color": "#212121",
-            "scale": 0.4
+            "scale": 0.4,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-pepaya-biji"
+            }
           },
           {
             "id": "tunas",
             "labelKey": "pepaya-tunas",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-pepaya-tunas"
+            }
           },
           {
             "id": "daun",
             "labelKey": "pepaya-daun",
-            "emoji": "🪴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-pepaya-daun"
+            }
           },
           {
             "id": "bunga",
             "labelKey": "pepaya-bunga",
-            "emoji": "🌼",
-            "color": "#fffde7"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tumbuhan-tumbuh-pepaya-bunga"
+            }
           }
         ]
       }
