@@ -204256,7 +204256,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-berbunyi-atau-diam-jalan",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -204347,13 +204347,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "peluit",
         "labelKey": "i-peluit",
         "bin": "bunyi",
-        "emoji": "😗"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-peluit-ditiup"
+        }
       },
       {
         "id": "peluitsaku",
         "labelKey": "i-peluitsaku",
         "bin": "diam",
-        "emoji": "👖"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-peluit-di-saku"
+        }
       },
       {
         "id": "sirene",
@@ -204371,8 +204377,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kentongan",
         "labelKey": "i-kentongan",
         "bin": "bunyi",
-        "shape": "rect",
-        "color": "#a1887f"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-kentongan-dipukul"
+        }
       },
       {
         "id": "burungkicau",
@@ -204399,8 +204407,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tiang",
         "labelKey": "i-tiang",
         "bin": "diam",
-        "color": "#bdbdbd",
-        "shape": "rect"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tiang-lampu"
+        }
       },
       {
         "id": "pohon",
@@ -220194,7 +220204,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-sumber-cahaya-malam",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -220215,7 +220225,7 @@ export const PAKET_RAW: unknown[] = [
         "i-bulan": "Bulan",
         "i-reflektor": "stiker pemantul di sepeda",
         "i-genangan": "genangan air mengilap",
-        "i-matakucing": "mata kucing berkilau",
+        "i-matakucing": "mata kucing berkilau kena cahaya",
         "i-rambu": "rambu jalan mengilap"
       },
       "en": {
@@ -220231,7 +220241,7 @@ export const PAKET_RAW: unknown[] = [
         "i-bulan": "the Moon",
         "i-reflektor": "reflector on a bike",
         "i-genangan": "shiny puddle",
-        "i-matakucing": "cat's shining eyes",
+        "i-matakucing": "cat eyes shining when light falls on them",
         "i-rambu": "shiny road sign"
       }
     },
@@ -220292,7 +220302,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "lampujalan",
         "labelKey": "i-lampujalan",
         "bin": "sumber",
-        "emoji": "🏮"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-lampu-jalan-nyala"
+        }
       },
       {
         "id": "bulan",
@@ -220304,7 +220317,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "reflektor",
         "labelKey": "i-reflektor",
         "bin": "bukan",
-        "emoji": "🚲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-reflektor-sepeda"
+        }
       },
       {
         "id": "genangan",
@@ -220316,7 +220332,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "matakucing",
         "labelKey": "i-matakucing",
         "bin": "bukan",
-        "emoji": "🐈‍⬛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-mata-kucing-terpantul"
+        }
       },
       {
         "id": "rambu",
@@ -220329,7 +220348,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-sumber-cahaya-rumah",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -220339,7 +220358,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Sumber Cahaya di Rumah",
-        "instruksi": "Apakah tiap benda membuat cahaya sendiri? Taruh ke rak sumber cahaya atau bukan.",
+        "instruksi": "Mana yang sedang menghasilkan cahaya sendiri? Taruh tiap benda di rak yang cocok.",
         "b-sumber": "sumber cahaya",
         "b-bukan": "bukan sumber cahaya",
         "i-lampu": "lampu menyala",
@@ -220355,7 +220374,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Light Sources at Home",
-        "instruksi": "Does each thing make its own light? Put it on the light-source shelf or the not-a-light-source shelf.",
+        "instruksi": "Which things are making their own light right now? Put each on the matching shelf.",
         "b-sumber": "light source",
         "b-bukan": "not a light source",
         "i-lampu": "lamp switched on",
@@ -220403,10 +220422,9 @@ export const PAKET_RAW: unknown[] = [
         "id": "lampu",
         "labelKey": "i-lampu",
         "bin": "sumber",
-        "emoji": "💡",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "✨"
+          "jenis": "ilustrasi",
+          "varian": "qc-bohlam-nyala"
         }
       },
       {
@@ -220437,11 +220455,9 @@ export const PAKET_RAW: unknown[] = [
         "id": "lampumati",
         "labelKey": "i-lampumati",
         "bin": "bukan",
-        "emoji": "💡",
-        "color": "#bdbdbd",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "❌"
+          "jenis": "ilustrasi",
+          "varian": "qc-bohlam-mati"
         }
       },
       {
@@ -234133,7 +234149,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-logam-ditarik-magnet",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -234148,8 +234164,8 @@ export const PAKET_RAW: unknown[] = [
         "b-tidak": "tidak ditarik",
         "i-paku": "baut besi",
         "i-klip": "klip kertas baja",
-        "i-peniti": "peniti",
-        "i-tutup": "tutup botol kaleng",
+        "i-peniti": "peniti dari besi",
+        "i-tutup": "tutup botol dari baja",
         "i-sekrup": "sekrup besi",
         "i-bautbesi": "mur baja",
         "i-kalengalu": "kaleng minuman aluminium",
@@ -234166,8 +234182,8 @@ export const PAKET_RAW: unknown[] = [
         "b-tidak": "not pulled",
         "i-paku": "iron bolt",
         "i-klip": "steel paper clip",
-        "i-peniti": "safety pin",
-        "i-tutup": "metal bottle cap",
+        "i-peniti": "iron safety pin",
+        "i-tutup": "steel bottle cap",
         "i-sekrup": "iron screw",
         "i-bautbesi": "steel nut",
         "i-kalengalu": "aluminium drink can",
@@ -234229,9 +234245,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tutup",
         "labelKey": "i-tutup",
         "bin": "tarik",
-        "shape": "circle",
-        "color": "#b0bec5",
-        "scale": 0.6
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-tutup-botol-baja"
+        }
       },
       {
         "id": "sekrup",

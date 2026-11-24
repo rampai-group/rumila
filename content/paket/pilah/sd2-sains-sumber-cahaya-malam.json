@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-malam",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "i-bulan": "Bulan",
       "i-reflektor": "stiker pemantul di sepeda",
       "i-genangan": "genangan air mengilap",
-      "i-matakucing": "mata kucing berkilau",
+      "i-matakucing": "mata kucing berkilau kena cahaya",
       "i-rambu": "rambu jalan mengilap"
     },
     "en": {
@@ -37,7 +37,7 @@
       "i-bulan": "the Moon",
       "i-reflektor": "reflector on a bike",
       "i-genangan": "shiny puddle",
-      "i-matakucing": "cat's shining eyes",
+      "i-matakucing": "cat eyes shining when light falls on them",
       "i-rambu": "shiny road sign"
     }
   },
@@ -98,7 +98,10 @@
       "id": "lampujalan",
       "labelKey": "i-lampujalan",
       "bin": "sumber",
-      "emoji": "🏮"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-lampu-jalan-nyala"
+      }
     },
     {
       "id": "bulan",
@@ -110,7 +113,10 @@
       "id": "reflektor",
       "labelKey": "i-reflektor",
       "bin": "bukan",
-      "emoji": "🚲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-reflektor-sepeda"
+      }
     },
     {
       "id": "genangan",
@@ -122,7 +128,10 @@
       "id": "matakucing",
       "labelKey": "i-matakucing",
       "bin": "bukan",
-      "emoji": "🐈‍⬛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-mata-kucing-terpantul"
+      }
     },
     {
       "id": "rambu",
