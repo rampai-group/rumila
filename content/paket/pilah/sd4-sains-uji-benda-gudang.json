@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-uji-benda-gudang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Menyala Saat Dijepit?",
-      "instruksi": "Benda dari gudang dijepit di celah rangkaian. Taruh ke rak lampu menyala (konduktor) atau lampu padam (isolator).",
+      "instruksi": "Benda-benda kering dari gudang dijepit rapat di celah rangkaian baterai. Taruh ke rak lampu menyala (konduktor) atau lampu padam (isolator).",
       "b-konduktor": "lampu menyala (konduktor)",
       "b-isolator": "lampu padam (isolator)",
       "i-gunting": "bilah gunting logam",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Does It Light When Clipped In?",
-      "instruksi": "Things from the shed are clipped into the gap in the circuit. Put each on the lamp-lights shelf (conductor) or the lamp-stays-off shelf (insulator).",
+      "instruksi": "Dry objects from the shed are clipped firmly into a gap in a working battery circuit. Put them on the lamp-lights shelf (conductor) or the lamp-stays-off shelf (insulator).",
       "b-konduktor": "lamp lights (conductor)",
       "b-isolator": "lamp stays off (insulator)",
       "i-gunting": "the metal blade of scissors",

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-didih-uap-pantai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.03"
@@ -9,37 +9,37 @@
   "locale": {
     "id": {
       "judul": "Bergolak atau Mengering?",
-      "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap.",
+      "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap dari permukaan.",
       "b-didih": "mendidih: bergolak di seluruh cairan, saat mencapai titik didih",
-      "b-uap": "menguap: perlahan dari permukaan, pada suhu berapa pun",
+      "b-uap": "menguap: terjadi di permukaan",
       "i-ketel": "air di ketel listrik bergolak, gelembung besar naik dari dasar",
       "i-bakso": "kuah bakso bergolak di panci pedagang",
       "i-susu": "susu di panci bergolak sampai hampir meluap",
-      "i-mi": "air rebusan mi bergolak dan termometer menunjuk 100 °C",
+      "i-mi": "air untuk merebus mi bergolak dan termometer menunjuk 100 °C",
       "i-jagung": "air rebusan jagung di tungku pantai bergolak",
-      "i-kolam": "air kolam renang berkurang di musim kemarau",
+      "i-kolam": "permukaan air kolam turun selama cuaca kering, meski aliran masuk dan keluarnya ditutup",
       "i-ikanasin": "ikan asin dijemur sampai kering",
       "i-lantai": "lantai yang baru dipel kering sendiri",
       "i-spidol": "tulisan spidol di papan cepat kering",
       "i-handuk": "handuk basah di pantai kering diembus angin",
-      "i-pasir": "pasir basah di pantai menjadi kering saat air surut"
+      "i-pasir": "sampel pasir basah mengering terkena Matahari di atas piring"
     },
     "en": {
       "judul": "Bubbling or Drying?",
-      "instruksi": "Read what happens, then sort it: boiling, or evaporating.",
+      "instruksi": "Read what happens, then sort it: boiling, or evaporating from the surface.",
       "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
-      "b-uap": "evaporating: slowly from the surface, at any temperature",
+      "b-uap": "evaporating: happens at the surface",
       "i-ketel": "water in an electric kettle bubbles hard, big bubbles rising from the bottom",
       "i-bakso": "meatball soup bubbling in the seller's pot",
       "i-susu": "milk in a pan bubbling up until it nearly boils over",
-      "i-mi": "the noodle water bubbles hard and the thermometer reads 100 °C",
+      "i-mi": "water for boiling noodles bubbles hard and the thermometer reads 100 °C",
       "i-jagung": "water for boiling corn bubbles hard over a beach stove",
-      "i-kolam": "pool water goes down in the dry season",
+      "i-kolam": "the pool level falls in dry weather while the inlet and outlet are closed",
       "i-ikanasin": "salted fish dried in the sun",
       "i-lantai": "a freshly mopped floor dries by itself",
       "i-spidol": "marker writing on the board dries quickly",
       "i-handuk": "a wet towel on the beach dries in the wind",
-      "i-pasir": "wet sand on the beach dries out at low tide"
+      "i-pasir": "a sample of wet sand dries in the sun on a plate"
     }
   },
   "knobs": {
