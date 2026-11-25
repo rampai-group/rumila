@@ -52,7 +52,7 @@ function visualItem(x: Item | undefined, label?: string): VisualSpec {
 }
 
 /** Robot pemandu + balon kalimat (ketuk untuk dibacakan). */
-function Instruksi({ teks, anak, hasil }: { teks: string; anak?: ReactNode; hasil: Props["hasil"] }) {
+function Instruksi({ teks, anak, hasil, lang }: { teks: string; anak?: ReactNode; hasil: Props["hasil"]; lang?: string }) {
   const muka = hasil ? (hasil.benar ? "🤖✨" : "🤖💭") : "🤖";
   const st = useSkalaTeks();
   return (
@@ -62,8 +62,8 @@ function Instruksi({ teks, anak, hasil }: { teks: string; anak?: ReactNode; hasi
       </div>
       <button
         type="button"
-        onClick={() => { sfx.tap(); ucapkan(teks); }}
-        aria-label={`Dengar: ${teks}`}
+        onClick={() => { sfx.tap(); ucapkan(teks, lang); }}
+        aria-label={`${lang === "en-US" ? "Listen" : "Dengar"}: ${teks}`}
         className="relative min-h-14 flex-1 rounded-[20px] bg-white px-3 py-2 text-left active:scale-[.98]"
         style={{ boxShadow: BAYANG, color: INK }}
       >
@@ -1294,17 +1294,32 @@ function ModeAlat(c: Ctx) {
 type Tempat = "keranjang" | "kiri" | "kanan";
 
 function ModeBagi(c: Ctx) {
-  const { ronde, onJawab, hasil, terkunci, visual } = c;
-  const benda = useMemo(() => ronde.items.find((i) => i.role === "benda") ?? ronde.items[0], [ronde.items]);
-  const v = benda ? visual(benda.id) : { emoji: "🐟" };
+  const { paket, ronde, onJawab, hasil, terkunci, visual, nama, t } = c;
+  const benda = ronde.items.find((i) => i.role === "benda") ?? ronde.items[0];
+  const label = benda ? nama(benda.id) : "ikan";
+  const v = benda ? { ...visual(benda.id), label } : { emoji: "🐟", label };
+  const piknik = paket.id === "sd1-mat-bagi-dua-piknik";
+  const hasilLaut = paket.id === "bagi-ikan-laut-adil";
+  const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
+  const lang = inggris ? "en-US" : "id-ID";
+  const jenisTujuan = piknik ? (inggris ? "mat" : "tikar") : (inggris ? "plate" : "piring");
+  const namaKeranjang = inggris ? "basket" : "keranjang";
+  const teks = inggris
+    ? `Tap a ${jenisTujuan}, then tap one ${piknik ? "snack" : hasilLaut ? "piece of seafood" : "fish"} in the basket. Share them equally.`
+    : piknik ? KS.bagiPiknik : hasilLaut ? KS.bagiLaut : KS.bagi;
+  const teksBantu = inggris
+    ? "Put one on the left and one on the right. Repeat until the basket is empty."
+    : piknik ? KS.bagiBantuPiknik : KS.bagiBantu;
+
   const [tempat, setTempat] = useState<Tempat[]>(() => Array.from({ length: ronde.target }, () => "keranjang"));
   const [aktif, setAktif] = useState<"kiri" | "kanan">("kiri");
   const { hint, bantu } = useBantu(c.onHint);
-  const { skala } = usePanggung();
+  const { skala, w, h } = usePanggung();
+  const tabletTegak = w >= 620 && h >= 680 && w < h * 1.2;
+  const ukuranKartu = Math.round((tabletTegak ? 72 : 56) * skala);
   const st = useSkalaTeks();
   const jumlah = (tp: Tempat) => tempat.filter((x) => x === tp).length;
   const kiri = jumlah("kiri"), kanan = jumlah("kanan"), sisa = jumlah("keranjang");
-  const teks = KS.bagi;
 
   const pindah = (i: number) => {
     if (terkunci) return;
@@ -1312,57 +1327,72 @@ function ModeBagi(c: Ctx) {
     if (tempat[i] === "keranjang") sfxAkademi.ambil(); else sfxAkademi.taruh();
   };
 
-  const piring = (sisi: "kiri" | "kanan") => {
+  const gambarTujuan = (sisi: "kiri" | "kanan") => {
     const n = jumlah(sisi);
     const aktifIni = aktif === sisi;
     const kurang = hint && n < (sisi === "kiri" ? kanan : kiri);
+    const arah = sisi === "kiri" ? "left" : "right";
+    const labelTujuan = inggris ? `${arah} ${jenisTujuan}` : `${jenisTujuan} ${sisi}`;
+    const judul = piknik ? labelTujuan : inggris ? `${arah} cat` : `kucing ${sisi}`;
+    const jumlahBenda = inggris ? `${label}, count ${n}` : `${n} ${label}`;
+    const pilih = inggris ? "Choose" : "Pilih";
+    const tandaAktif = aktifIni ? (inggris ? " (active)" : " (aktif)") : "";
+    const ikon = piknik ? (sisi === "kiri" ? "👧" : "🧒") : (sisi === "kiri" ? "🐱" : "🐈");
     return (
       <Wadah
         className={kurang ? "akademi-bounce" : ""}
         ring={aktifIni ? KUNING : "transparent"}
         minIsi={72}
-        style={{ minHeight: 132 * skala }}
+        style={{ minHeight: (tabletTegak ? 212 : 132) * skala }}
         label={
-          <button type="button" disabled={terkunci} onClick={() => { sfx.tap(); setAktif(sisi); }} aria-label={`Pilih piring ${sisi}${aktifIni ? " (aktif)" : ""}, ${n} ikan`} aria-pressed={aktifIni} className="flex min-h-14 items-center justify-center gap-2 rounded-full px-2 active:scale-95" style={{ minHeight: 52 * skala, background: aktifIni ? "#fff1c2" : undefined }}>
-            <span style={{ fontSize: 40 * st, lineHeight: 1 }} aria-hidden>{sisi === "kiri" ? "🐱" : "🐈"}</span>
-            <span style={{ ...Tebal, fontSize: 15 * st }}>Kucing {sisi}</span>
+          <button type="button" disabled={terkunci} onClick={() => { sfx.tap(); setAktif(sisi); }} aria-label={`${pilih} ${labelTujuan}${tandaAktif}, ${jumlahBenda}`} aria-pressed={aktifIni} className="flex min-h-14 items-center justify-center gap-2 rounded-full px-2 active:scale-95" style={{ minHeight: 52 * skala, background: aktifIni ? "#fff1c2" : undefined }}>
+            <span style={{ fontSize: 40 * st, lineHeight: 1 }} aria-hidden>{ikon}</span>
+            <span className="capitalize" style={{ ...Tebal, fontSize: 15 * st }}>{judul}</span>
             <span className="rounded-full px-2" style={{ ...Tebal, fontSize: 20 * st, background: hasil ? (kiri === kanan && kiri + kanan === ronde.target ? "#e4f8ee" : "#ffe9ec") : "#fff1c2", boxShadow: "inset 0 0 0 2px rgba(11,37,69,.2)" }}>{n}</span>
           </button>
         }
       >
-        <div className="flex w-full flex-1 flex-wrap content-center items-center justify-center gap-1 self-stretch rounded-[999px]" style={{ minHeight: 72 * skala, background: "radial-gradient(ellipse at center,#fff 58%,#e3e6f3 59%,#fff 64%)", boxShadow: "inset 0 0 0 3px #b9bfd6" }} aria-label={`Piring ${sisi}: ${n} ikan`}>
-          {tempat.map((tp, i) => tp === sisi && <KartuBenda key={i} v={v} size={Math.round(36 * skala)} keterangan={false} onClick={() => pindah(i)} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * skala, minWidth: 56 * skala }} />)}
-          {n === 0 && <span className="font-bold" style={{ fontSize: 13 * st, color: INK }}>kosong</span>}
+        <div
+          className={`flex w-full flex-1 flex-wrap content-center items-center justify-center gap-1 self-stretch ${piknik ? "rounded-[16px] p-1" : "rounded-[999px]"}`}
+          style={{
+            minHeight: (tabletTegak ? 132 : 72) * skala,
+            background: piknik ? "repeating-linear-gradient(96deg,#fff2cd 0 9px,#edd9a4 9px 12px)" : "radial-gradient(ellipse at center,#fff 58%,#e3e6f3 59%,#fff 64%)",
+            boxShadow: piknik ? "inset 0 0 0 3px #d2b268" : "inset 0 0 0 3px #b9bfd6",
+          }}
+          aria-label={`${labelTujuan}, ${jumlahBenda}`}
+        >
+          {tempat.map((tp, i) => tp === sisi && <KartuBenda key={i} v={v} size={Math.round((tabletTegak ? 50 : 36) * skala)} keterangan={false} ariaLabel={inggris ? `Return to the basket. ${label}` : `Kembalikan ${label} ke keranjang`} disabled={terkunci} onClick={() => pindah(i)} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: ukuranKartu, minWidth: ukuranKartu }} />)}
+          {n === 0 && <span className="font-bold" style={{ fontSize: 13 * st, color: INK }}>{inggris ? "empty" : "kosong"}</span>}
         </div>
       </Wadah>
     );
   };
 
   return (
-    <Kunci terkunci={terkunci}>
-      <Instruksi teks={teks} hasil={hasil} />
-      <Umpan hasil={hasil} benar={`${ronde.target / 2} dan ${ronde.target / 2}`} />
-      <Papan>
+    <Kunci terkunci={terkunci} tengah={tabletTegak}>
+      <Instruksi teks={teks} hasil={hasil} lang={lang} />
+      <Umpan hasil={hasil} benar={`${ronde.target / 2} ${inggris ? "and" : "dan"} ${ronde.target / 2}`} />
+      <Papan style={tabletTegak ? { flex: "0 0 auto" } : undefined}>
         <div className="rounded-[22px] p-3" style={{ background: "linear-gradient(180deg,#f7e2b6,#e9c98a)", boxShadow: "0 5px 0 #b48a4e, inset 0 0 0 3px #b48a4e" }}>
-          <div className="mb-1 flex items-center gap-2" style={{ ...Tebal, fontSize: 16 * st }}>
-            <span style={{ fontSize: 28 * st, lineHeight: 1 }}>🧺</span>
-            <span className="rounded-full bg-white px-3">Keranjang</span>
+          <div className="mb-1 flex items-center gap-2" style={{ fontSize: 16 * st }}>
+            <span style={{ fontSize: 28 * st, lineHeight: 1 }} aria-hidden>🧺</span>
+            <span className="rounded-full bg-white px-3 capitalize">{namaKeranjang}</span>
             <span className="ml-auto rounded-full bg-white px-3" style={{ fontSize: 18 * st }}>{sisa}</span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2" style={{ minHeight: 72 * skala, gap: 8 * skala }}>
-            {sisa === 0 && <span className="w-full text-center font-bold" style={{ fontSize: 14 * st, color: INK }}>Keranjang kosong</span>}
-            {tempat.map((tp, i) => tp === "keranjang" && <KartuBenda key={i} v={v} size={Math.round(40 * skala)} onClick={() => pindah(i)} className={`min-h-14 min-w-14 ${hint ? "akademi-bounce" : ""}`} style={{ minHeight: 56 * skala, minWidth: 56 * skala }} />)}
+            {sisa === 0 && <span className="w-full text-center font-bold" style={{ fontSize: 14 * st, color: INK }}>{inggris ? "Basket empty" : "Keranjang kosong"}</span>}
+            {tempat.map((tp, i) => tp === "keranjang" && <KartuBenda key={i} v={v} size={Math.round((tabletTegak ? 54 : 40) * skala)} keterangan={false} ariaLabel={inggris ? `Take from the basket. ${label}` : `Ambil ${label} dari keranjang`} disabled={terkunci} onClick={() => pindah(i)} className={`min-h-14 min-w-14 ${hint ? "akademi-bounce" : ""}`} style={{ minHeight: ukuranKartu, minWidth: ukuranKartu }} />)}
           </div>
         </div>
         <div className="mt-3 grid flex-1 grid-cols-2 gap-2" style={{ gap: 12 * skala }}>
-          {piring("kiri")}
-          {piring("kanan")}
+          {gambarTujuan("kiri")}
+          {gambarTujuan("kanan")}
         </div>
-        {hint && <Petunjuk className="mt-2">Satu untuk kiri, satu untuk kanan, bergantian sampai habis.</Petunjuk>}
+        {hint && <Petunjuk className="mt-2">{teksBantu}</Petunjuk>}
       </Papan>
       <div className="flex gap-2" style={{ gap: 8 * skala }}>
-        <TombolBantu onClick={() => { bantu(); ucapkan(KS.bagiBantu); }} disabled={terkunci} />
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ kiri, kanan }); }} disabled={terkunci || kiri + kanan === 0}><Icon name="balance" size={26} /> Sudah adil</TombolBesar>
+        <TombolBantu onClick={() => { bantu(); ucapkan(teksBantu, lang); }} disabled={terkunci} />
+        <TombolBesar onClick={() => { sfx.tap(); onJawab({ kiri, kanan }); }} disabled={terkunci || kiri + kanan === 0}><Icon name="balance" size={26} /> {inggris ? "Check the shares" : "Sudah adil"}</TombolBesar>
       </div>
     </Kunci>
   );
