@@ -362,6 +362,28 @@ const objectArt: Record<string, ReactNode> = {
   ...PAKAN,
   ...KEGIATAN,
   ...GERAK_APUNG,
+  "lebah-di-bunga": <g {...RINGKAS}>
+    <path d="M71 94Q65 77 70 61M69 83Q50 74 49 87Q58 94 69 83M69 88Q82 72 91 80Q84 91 69 88Z" fill="#83b95e" stroke="#417850" />
+    <path d="M65 58C50 39 37 58 52 68C33 75 49 90 65 77C68 95 87 85 79 71C97 67 90 49 73 62C75 47 59 47 65 58Z" fill="#eca9d1" stroke="#a95e88" />
+    <circle cx="68" cy="69" r="10" fill="#ffd66c" stroke="#a96128" />
+    <path d="M69 45Q55 31 68 22Q81 24 81 40Q79 22 89 19Q102 24 92 41Z" fill="#d9f0f4" stroke="#6997a4" />
+    <path d="M79 54L75 64M87 55L84 64" fill="none" stroke="#725033" />
+    <ellipse cx="81" cy="46" rx="19" ry="11" fill="#f9bd46" stroke="#725033" />
+    <path d="M80 36Q74 45 79 55M91 39Q85 46 90 54" fill="none" stroke="#725033" strokeWidth="4" />
+    <circle cx="65" cy="49" r="8" fill="#f4aa3a" stroke="#725033" />
+    <path d="M62 42L56 36M66 42L63 35" fill="none" stroke="#725033" />
+    <circle cx="63" cy="48" r="2" fill={INK} stroke="none" />
+  </g>,
+  "madu-di-sarang": <g {...RINGKAS}>
+    {[[27, 23], [57, 23], [87, 23], [42, 49], [72, 49], [102, 49], [27, 75], [57, 75], [87, 75]].map(([x, y]) => (
+      <g key={x + "," + y} transform={`translate(${x} ${y})`}>
+        <path d="M-15-8.5L0-17L15-8.5V8.5L0 17L-15 8.5Z" fill="#f9c962" stroke="#a66c2e" />
+        <path d="M-10-6L0-12L10-6V6L0 12L-10 6Z" fill="#d68a2d" stroke="#c27a2b" strokeWidth="1.5" />
+        <path d="M-8 3Q0-1 8 3L0 11Z" fill="#f4a93c" stroke="none" />
+        <path d="M-6-4L0-8L4-5" fill="none" stroke="#ffe5a0" strokeWidth="2" />
+      </g>
+    ))}
+  </g>,
   "kupu-enam-kaki": <Serangga kupu />,
   "lalat-enam-kaki": <Serangga kupu={false} />,
   "televisi-menyala": <Televisi nyala />,

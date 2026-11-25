@@ -316845,7 +316845,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "perbaiki-urutan-kebun",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "TKA",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -317151,12 +317151,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lebah",
             "labelKey": "lebah-lebah",
-            "emoji": "🐝"
+            "scale": 0.65,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-lebah-di-bunga"
+            }
           },
           {
             "id": "madu",
             "labelKey": "lebah-madu",
-            "emoji": "🍯"
+            "scale": 0.65,
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-madu-di-sarang"
+            }
           }
         ]
       },
