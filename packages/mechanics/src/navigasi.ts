@@ -11,6 +11,8 @@ const PUTAR: Record<Arah, { kiri: Arah; kanan: Arah }> = {
 };
 
 type Dasar = "maju" | "lompat" | "kiri" | "kanan" | "kalau";
+const perintahDasar = (c: NavCommand): c is Dasar => c === "maju" || c === "lompat" || c === "kiri" || c === "kanan" || c === "kalau";
+const kunciPosisi = (s: NavState) => `${s.x},${s.y},${s.dir}`;
 
 const samaSel = (a: { x: number; y: number }, b: { x: number; y: number }) => a.x === b.x && a.y === b.y;
 const diLuar = (g: NavGrid, c: { x: number; y: number }) => c.x < 0 || c.y < 0 || c.x >= g.w || c.y >= g.h;
@@ -69,11 +71,10 @@ export function jalankan(grid: NavGrid, program: NavBlock[], opts: { stopAtFlag?
 
 /** Panjang program terpendek (blok dasar: maju/lompat/kiri/kanan/kalau yang tersedia) ke bintang; null bila tak terjangkau. */
 export function optimal(grid: NavGrid, commands: NavCommand[]): number | null {
-  const aksi = commands.filter((c): c is Dasar => c === "maju" || c === "lompat" || c === "kiri" || c === "kanan" || c === "kalau");
-  const kunci = (s: NavState) => `${s.x},${s.y},${s.dir}`;
+  const aksi = commands.filter(perintahDasar);
   const awal: NavState = { x: grid.start.x, y: grid.start.y, dir: grid.start.dir };
   if (samaSel(awal, grid.goal)) return 0;
-  const dilihat = new Set<string>([kunci(awal)]);
+  const dilihat = new Set<string>([kunciPosisi(awal)]);
   let lapis: NavState[] = [awal];
   for (let jarak = 1; lapis.length; jarak++) {
     const berikut: NavState[] = [];
@@ -81,8 +82,33 @@ export function optimal(grid: NavGrid, commands: NavCommand[]): number | null {
       const l = langkahDasar(grid, s, a);
       if (l.berhenti) continue;
       if (samaSel(l.after, grid.goal)) return jarak;
-      const k = kunci(l.after);
+      const k = kunciPosisi(l.after);
       if (!dilihat.has(k)) { dilihat.add(k); berikut.push(l.after); }
+    }
+    lapis = berikut;
+  }
+  return null;
+}
+
+/** Hitung kebutuhan belok terendah. Gerak lurus tetap berada pada lapis jumlah belokan yang sama. */
+function belokanMinimum(grid: NavGrid, commands: NavCommand[]): number | null {
+  const aksi = commands.filter(perintahDasar);
+  const dilihat = new Set<string>();
+  let lapis: NavState[] = [grid.start];
+  for (let belokan = 0; lapis.length; belokan++) {
+    const berikut: NavState[] = [];
+    for (let i = 0; i < lapis.length; i++) {
+      const s = lapis[i];
+      const kunci = kunciPosisi(s);
+      if (dilihat.has(kunci)) continue;
+      if (samaSel(s, grid.goal)) return belokan;
+      dilihat.add(kunci);
+      for (const a of aksi) {
+        const l = langkahDasar(grid, s, a);
+        if (l.berhenti) continue;
+        if (l.kind === "turn") berikut.push(l.after);
+        else lapis.push(l.after);
+      }
     }
     lapis = berikut;
   }
@@ -105,25 +131,31 @@ export function dariJson(blok: NavBlockJson[]): NavBlock[] {
 }
 
 /** Saring bertahap: tiap saringan hanya dipakai bila masih menyisakan kandidat. */
-function saring<T>(daftar: T[], ...saringan: Array<((x: T) => boolean) | null>): T[] {
+function saring<T>(daftar: T[], saringan: Array<(x: T) => boolean>): T[] {
   let hasil = daftar;
   for (const f of saringan) {
-    if (!f) continue;
     const sisa = hasil.filter(f);
     if (sisa.length) hasil = sisa;
   }
   return hasil;
 }
 
+/** Saringan ronde juga dipakai saat menambah stok peta. Untuk misi menyusun program,
+ * utamakan jumlah belokan jika bank soal tidak memuat kombinasi dengan jarak yang diminta. */
+export function saringanGridNavigasi(p: PaketNavigasi, knobs: Knobs): Array<(g: NavGrid) => boolean> {
+  const saringan: Array<(g: NavGrid) => boolean> = [];
+  if (p.execMode === "program" && knobs.turns !== undefined) {
+    saringan.push((g) => belokanMinimum(g, p.commands) === knobs.turns);
+  }
+  if (knobs.distance !== undefined) saringan.push((g) => (optimal(g, p.commands) ?? g.optimal) === knobs.distance);
+  if (knobs.rocks !== undefined) saringan.push((g) => g.rocks.length === knobs.rocks);
+  if (knobs.walls !== undefined) saringan.push((g) => g.walls.length === knobs.walls);
+  return saringan;
+}
+
 export function buatRondeNavigasi(p: PaketNavigasi, knobs: Knobs, seed: number): RondeNavigasi {
   const r = rng(seed);
-  const jarak = (g: NavGrid) => optimal(g, p.commands) ?? g.optimal;
-  const kandidat = saring(
-    p.grids,
-    knobs.distance !== undefined ? g => jarak(g) === knobs.distance : null,
-    knobs.rocks !== undefined ? g => g.rocks.length === knobs.rocks : null,
-    knobs.walls !== undefined ? g => g.walls.length === knobs.walls : null,
-  );
+  const kandidat = saring(p.grids, saringanGridNavigasi(p, knobs));
   const utama = pilihSatu(kandidat, r);
   const grids = p.semuaGrid && utama.group ? p.grids.filter(g => g.group === utama.group) : [utama];
   return {

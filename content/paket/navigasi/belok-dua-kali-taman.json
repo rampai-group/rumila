@@ -1,6 +1,6 @@
 {
   "id": "belok-dua-kali-taman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -26,9 +26,9 @@
       "keterangan": "jumlah belokan yang dibutuhkan: 1 → 2"
     },
     "distance": {
-      "min": 2,
+      "min": 3,
       "max": 4,
-      "default": 2,
+      "default": 3,
       "step": 1,
       "keterangan": "jumlah perintah terpendek"
     }

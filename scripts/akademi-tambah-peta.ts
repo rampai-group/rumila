@@ -8,10 +8,10 @@
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { ContentPack, type NavBlockJson, type NavGrid, type PaketNavigasi } from "../packages/schema/src/index";
-import { dariJson, jalankan, optimal } from "../packages/mechanics/src/index";
+import { dariJson, jalankan, knobDefaults, optimal, saringanGridNavigasi } from "../packages/mechanics/src/index";
 
 const TARGET = 16;
-/** Minimal soal berbeda pada nilai knob bawaan (distance/rocks/walls) — sesi pertama memakai knob bawaan. */
+/** Minimal soal berbeda pada nilai knob bawaan — sesi pertama memakai knob bawaan. */
 const TARGET_KNOB = 12;
 const DIR = "content/paket/navigasi";
 const tulis = process.argv.includes("--tulis");
@@ -122,11 +122,7 @@ for (const f of readdirSync(DIR).filter((x) => x.endsWith(".json")).sort()) {
     return out;
   };
   // knob bawaan: saringan sama dengan buatRondeNavigasi (tiap saringan dipakai hanya bila menyisakan kandidat)
-  const bawaan = Object.fromEntries(Object.entries((raw.knobs ?? {}) as Record<string, { default?: number }>).map(([k, v]) => [k, v.default]));
-  const saringan: Array<(g: NavGrid) => boolean> = [];
-  if (bawaan.distance !== undefined) saringan.push((g) => (optimal(g, p.commands) ?? g.optimal) === bawaan.distance);
-  if (bawaan.rocks !== undefined) saringan.push((g) => g.rocks.length === bawaan.rocks);
-  if (bawaan.walls !== undefined) saringan.push((g) => g.walls.length === bawaan.walls);
+  const saringan = saringanGridNavigasi(p, knobDefaults(p));
   const aktif: Array<(g: NavGrid) => boolean> = [];
   for (const f of saringan) if (kelompok.some((k) => [...aktif, f].every((h) => h(k[0])))) aktif.push(f);
   const cocokKnob = (g: NavGrid) => aktif.every((h) => h(g));
