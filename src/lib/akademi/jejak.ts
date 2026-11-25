@@ -9,15 +9,17 @@
 // - tarikEvents(): dipanggil loadFamily — event rumah dari server digabung dengan lokal (dedupe id).
 // Hook useEvents() memakai React; fungsi lain tidak menyentuh React saat dipanggil.
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { GameEvent } from "@akademi/schema";
 import { uuid } from "@/lib/uuid";
 import { supabase } from "@/lib/supabase/client";
 import { useCloud } from "@/lib/supabase/family";
 import type { Json } from "@/lib/supabase/types";
+import { hariWIB } from "./kalender";
 
 const PREFIX = "rumila-akademi-events-";
 const KEY = (memberId: string) => PREFIX + memberId;
+const KEY_HARI_AKTIF = (memberId: string) => `rumila-akademi-hari-aktif-${memberId}`;
 const ANTREAN = "rumila-akademi-antrean";
 const MAKS_LOKAL = 3000;
 const DEBOUNCE = 2000;
@@ -50,13 +52,140 @@ const urutWaktu = (a: GameEvent, b: GameEvent) => (a.clientAt < b.clientAt ? -1 
 
 function simpanAnak(memberId: string, events: GameEvent[]) {
   const urut = events.slice().sort(urutWaktu);
-  tulisJson(KEY(memberId), urut.length > MAKS_LOKAL ? urut.slice(-MAKS_LOKAL) : urut);
+  const kelebihan = Math.max(0, urut.length - MAKS_LOKAL);
+  if (kelebihan) simpanHariAktif(memberId, waktuPercobaan(urut.slice(0, kelebihan), memberId));
+  tulisJson(KEY(memberId), kelebihan ? urut.slice(kelebihan) : urut);
 }
 
 /** Event anak dari cache lokal (server + lokal yang sudah digabung), urut clientAt. */
 export function eventsAnak(learnerId: string): GameEvent[] {
   const arr = bacaJson<unknown>(KEY(learnerId), []);
   return Array.isArray(arr) ? (arr as GameEvent[]) : [];
+}
+
+/* ---------------- tanggal aktif ---------------- */
+
+const SEHARI = 24 * 60 * 60 * 1000;
+const HARI_AKTIF = 7;
+const JEDA_TARIK_HARI = 60_000;
+
+function waktuPercobaan(events: GameEvent[], learnerId: string): number[] {
+  return events.filter((e) => e.type === "attempt" && e.learnerId === learnerId).map((e) => Date.parse(e.clientAt));
+}
+
+function bacaHariAktif(learnerId: string): number[] {
+  const simpanan = bacaJson<unknown>(KEY_HARI_AKTIF(learnerId), []);
+  return Array.isArray(simpanan) ? simpanan.filter((w) => typeof w === "number") : [];
+}
+
+/** Simpan hanya percobaan terakhir tiap tanggal WIB agar batas 168 jam tetap akurat. */
+function kelompokHariAktif(waktu: number[], sekarang: Date): Map<string, number> {
+  const sejak = sekarang.getTime() - HARI_AKTIF * SEHARI;
+  const hariIni = hariWIB(sekarang);
+  const terbaru = new Map<string, number>();
+  for (const at of waktu) {
+    if (!Number.isFinite(at) || at < sejak) continue;
+    const hari = hariWIB(new Date(at));
+    if (hari && hari <= hariIni && at > (terbaru.get(hari) ?? -Infinity)) terbaru.set(hari, at);
+  }
+  return terbaru;
+}
+
+function simpanHariAktif(learnerId: string, waktu: number[]) {
+  if (!waktu.length) return;
+  const lama = bacaHariAktif(learnerId);
+  const baru = [...kelompokHariAktif([...lama, ...waktu], new Date()).values()].sort((a, b) => a - b);
+  if (baru.join() !== lama.join()) tulisJson(KEY_HARI_AKTIF(learnerId), baru);
+}
+
+export function hariAktifAnak(learnerId: string, sekarang = new Date(), events = eventsAnak(learnerId)): Map<string, number> {
+  const waktu = waktuPercobaan(events, learnerId);
+  return kelompokHariAktif([...waktu, ...bacaHariAktif(learnerId)], sekarang);
+}
+
+async function ambilHariAktif(familyId: string, learnerId: string, sekarang: Date): Promise<boolean> {
+  const lokal = hariAktifAnak(learnerId, sekarang);
+  const sejak = sekarang.getTime() - HARI_AKTIF * SEHARI;
+  // Satu jendela 168 jam dapat menyentuh delapan tanggal. Periksa ulang tanggal terlama untuk cutoff parsial.
+  const tanggal = Array.from({ length: HARI_AKTIF + 1 }, (_, i) => hariWIB(new Date(sejak + i * SEHARI)));
+  const belumLengkap = tanggal.filter((hari, index) => index === 0 || !lokal.has(hari));
+  const hasil = await Promise.allSettled(belumLengkap.map(async (hari) => {
+    const awal = new Date(`${hari}T00:00:00+07:00`).getTime();
+    const { data, error } = await supabase().from("learner_event")
+      .select("client_at")
+      .eq("family_id", familyId)
+      .eq("member_id", learnerId)
+      .eq("type", "attempt")
+      .gte("client_at", new Date(Math.max(awal, sejak)).toISOString())
+      .lt("client_at", new Date(awal + SEHARI).toISOString())
+      .order("client_at", { ascending: false })
+      .limit(1);
+    if (error) throw error;
+    return data?.[0] ? Date.parse(data[0].client_at) : undefined;
+  }));
+  if (useCloud.getState().familyId !== familyId) return false;
+  const waktu = hasil.flatMap((r) => r.status === "fulfilled" && r.value !== undefined ? [r.value] : []);
+  simpanHariAktif(learnerId, waktu);
+  return hasil.every((r) => r.status === "fulfilled");
+}
+
+const tarikanHari = new Map<string, { hari: string; mulai: number; selesai: boolean; janji: Promise<void> }>();
+
+/** Pulihkan tanggal yang hilang dengan paling banyak satu timestamp per tanggal. */
+export function tarikHariAktif(familyId: string, learnerId: string, sekarang = new Date()): Promise<void> {
+  const kunci = `${familyId}:${learnerId}`;
+  const hari = hariWIB(sekarang);
+  const mulai = sekarang.getTime();
+  const sebelumnya = tarikanHari.get(kunci);
+  if (sebelumnya?.hari === hari) {
+    const umur = mulai - sebelumnya.mulai;
+    if (!sebelumnya.selesai || (umur >= 0 && umur < JEDA_TARIK_HARI)) return sebelumnya.janji;
+  }
+  const janji = ambilHariAktif(familyId, learnerId, sekarang).then((berhasil) => {
+    const tarikan = tarikanHari.get(kunci);
+    if (tarikan?.janji !== janji) return;
+    if (berhasil) tarikan.selesai = true;
+    else tarikanHari.delete(kunci);
+  });
+  tarikanHari.set(kunci, { hari, mulai, selesai: false, janji });
+  return janji;
+}
+
+export function useHariAktif(learnerId: string, tanggal: Date, events: GameEvent[]): number {
+  const familyId = useCloud((s) => s.familyId);
+  const [sekarang, setSekarang] = useState(() => new Date());
+  const aktifSekarang = useMemo(() => hariAktifAnak(learnerId, sekarang, events), [learnerId, sekarang, events]);
+  const berakhir = Math.min(...aktifSekarang.values()) + HARI_AKTIF * SEHARI + 1;
+
+  useEffect(() => {
+    if (!Number.isFinite(berakhir)) return;
+    const timer = window.setTimeout(() => setSekarang(new Date()), Math.max(0, berakhir - Date.now()));
+    return () => window.clearTimeout(timer);
+  }, [berakhir]);
+
+  useEffect(() => {
+    let aktif = true;
+    const perbarui = () => { if (aktif) setSekarang(new Date()); };
+    const segarkan = () => {
+      perbarui();
+      if (familyId && navigator.onLine) void tarikHariAktif(familyId, learnerId).then(perbarui, perbarui);
+    };
+    const dariTabLain = (e: StorageEvent) => {
+      if (e.key === KEY(learnerId)) simpanHariAktif(learnerId, waktuPercobaan(eventsAnak(learnerId), learnerId));
+      if (e.key === KEY(learnerId) || e.key === KEY_HARI_AKTIF(learnerId)) perbarui();
+    };
+    segarkan();
+    window.addEventListener("storage", dariTabLain);
+    window.addEventListener("focus", segarkan);
+    window.addEventListener("online", segarkan);
+    return () => {
+      aktif = false;
+      window.removeEventListener("storage", dariTabLain);
+      window.removeEventListener("focus", segarkan);
+      window.removeEventListener("online", segarkan);
+    };
+  }, [familyId, learnerId, tanggal]);
+  return aktifSekarang.size;
 }
 
 function bacaAntrean(): string[] {
