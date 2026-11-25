@@ -4529,6 +4529,7 @@ export const SUARA: Record<string, string> = {
   "Pesanan toko kue: 836 − 291 = …": "/akademi/suara/88c5fc0635e2.mp3",
   "Pesanan toko kue: 924 − 163 = …": "/akademi/suara/7b15b7950cf0.mp3",
   "Pesawat lepas landas di bandara": "/akademi/suara/fc95869c5361.mp3",
+  "pesawat mainan": "/akademi/suara/5757f6c42b3d.mp3",
   "Pesepeda membungkuk rendah agar melaju lebih cepat, karena ini mengurangi…": "/akademi/suara/9e2d547e349e.mp3",
   "Pesta ulang tahun": "/akademi/suara/0553ae645c5c.mp3",
   "Pestisida di sawah: padi → belalang → katak → elang. Siapa yang menumpuk racun paling sedikit?": "/akademi/suara/6ee2fcd9db40.mp3",

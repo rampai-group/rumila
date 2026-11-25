@@ -15244,7 +15244,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kasir-kembalian-toko-mainan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -15259,7 +15259,12 @@ export const PAKET_RAW: unknown[] = [
         "yoyo": "yoyo",
         "balon": "balon",
         "mobil": "mobil-mobilan",
-        "boneka": "boneka beruang"
+        "boneka": "boneka beruang",
+        "dadu": "dadu",
+        "layang-layang": "layang-layang",
+        "kereta-mainan": "kereta mainan",
+        "bola-sepak": "bola sepak",
+        "pesawat-mainan": "pesawat mainan"
       },
       "en": {
         "judul": "Toy Shop Cashier",
@@ -15268,7 +15273,12 @@ export const PAKET_RAW: unknown[] = [
         "yoyo": "yo-yo",
         "balon": "balloon",
         "mobil": "toy car",
-        "boneka": "teddy bear"
+        "boneka": "teddy bear",
+        "dadu": "die",
+        "layang-layang": "kite",
+        "kereta-mainan": "toy train",
+        "bola-sepak": "soccer ball",
+        "pesawat-mainan": "toy plane"
       }
     },
     "knobs": {
@@ -15325,6 +15335,36 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "boneka",
         "price": 9000,
         "emoji": "🧸"
+      },
+      {
+        "id": "dadu",
+        "labelKey": "dadu",
+        "price": 5000,
+        "emoji": "🎲"
+      },
+      {
+        "id": "layang-layang",
+        "labelKey": "layang-layang",
+        "price": 6000,
+        "emoji": "🪁"
+      },
+      {
+        "id": "kereta-mainan",
+        "labelKey": "kereta-mainan",
+        "price": 7000,
+        "emoji": "🚂"
+      },
+      {
+        "id": "bola-sepak",
+        "labelKey": "bola-sepak",
+        "price": 8000,
+        "emoji": "⚽"
+      },
+      {
+        "id": "pesawat-mainan",
+        "labelKey": "pesawat-mainan",
+        "price": 9000,
+        "emoji": "✈️"
       }
     ],
     "customerRule": {
@@ -15338,7 +15378,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kasir-kembalian-warung",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -15353,7 +15393,12 @@ export const PAKET_RAW: unknown[] = [
         "susu": "susu",
         "roti": "roti",
         "telur": "telur",
-        "selai": "selai"
+        "selai": "selai",
+        "pisang": "pisang",
+        "kue-kering": "kue kering",
+        "jagung": "jagung",
+        "keju": "keju",
+        "madu": "madu"
       },
       "en": {
         "judul": "Change at the Shop",
@@ -15362,7 +15407,12 @@ export const PAKET_RAW: unknown[] = [
         "susu": "milk",
         "roti": "bread",
         "telur": "eggs",
-        "selai": "jam"
+        "selai": "jam",
+        "pisang": "banana",
+        "kue-kering": "cookie",
+        "jagung": "corn",
+        "keju": "cheese",
+        "madu": "honey"
       }
     },
     "knobs": {
@@ -15419,6 +15469,36 @@ export const PAKET_RAW: unknown[] = [
           "jenis": "ilustrasi",
           "varian": "navigator-selai"
         }
+      },
+      {
+        "id": "pisang",
+        "labelKey": "pisang",
+        "price": 5000,
+        "emoji": "🍌"
+      },
+      {
+        "id": "kue-kering",
+        "labelKey": "kue-kering",
+        "price": 6000,
+        "emoji": "🍪"
+      },
+      {
+        "id": "jagung",
+        "labelKey": "jagung",
+        "price": 7000,
+        "emoji": "🌽"
+      },
+      {
+        "id": "keju",
+        "labelKey": "keju",
+        "price": 8000,
+        "emoji": "🧀"
+      },
+      {
+        "id": "madu",
+        "labelKey": "madu",
+        "price": 9000,
+        "emoji": "🍯"
       }
     ],
     "customerRule": {

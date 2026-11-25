@@ -1,6 +1,6 @@
 {
   "id": "kasir-kembalian-warung",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,12 @@
       "susu": "susu",
       "roti": "roti",
       "telur": "telur",
-      "selai": "selai"
+      "selai": "selai",
+      "pisang": "pisang",
+      "kue-kering": "kue kering",
+      "jagung": "jagung",
+      "keju": "keju",
+      "madu": "madu"
     },
     "en": {
       "judul": "Change at the Shop",
@@ -24,7 +29,12 @@
       "susu": "milk",
       "roti": "bread",
       "telur": "eggs",
-      "selai": "jam"
+      "selai": "jam",
+      "pisang": "banana",
+      "kue-kering": "cookie",
+      "jagung": "corn",
+      "keju": "cheese",
+      "madu": "honey"
     }
   },
   "knobs": {
@@ -81,6 +91,36 @@
         "jenis": "ilustrasi",
         "varian": "navigator-selai"
       }
+    },
+    {
+      "id": "pisang",
+      "labelKey": "pisang",
+      "price": 5000,
+      "emoji": "🍌"
+    },
+    {
+      "id": "kue-kering",
+      "labelKey": "kue-kering",
+      "price": 6000,
+      "emoji": "🍪"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "jagung",
+      "price": 7000,
+      "emoji": "🌽"
+    },
+    {
+      "id": "keju",
+      "labelKey": "keju",
+      "price": 8000,
+      "emoji": "🧀"
+    },
+    {
+      "id": "madu",
+      "labelKey": "madu",
+      "price": 9000,
+      "emoji": "🍯"
     }
   ],
   "customerRule": {
