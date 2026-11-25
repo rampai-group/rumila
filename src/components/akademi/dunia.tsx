@@ -41,7 +41,7 @@ export function jendelaPenuh(layar: { w: number; h: number }, lebarJendela: numb
   return !lebarJendela || Math.abs(lebarJendela - layar.w) < 24 || Math.abs(lebarJendela - layar.h) < 24;
 }
 
-/** Tinggi jendela dalam px layar; hasilnya sama sebelum dan sesudah viewport diperbesar, jadi tidak bolak-balik. */
+/** Tinggi jendela dalam px layar, dikonversi dari ukuran viewport yang sudah diskalakan. */
 function tinggiTerlihat(layar: { w: number; h: number }, landscape: boolean): number {
   if (!window.innerWidth) return 0;
   const lebarLayar = landscape ? Math.max(layar.w, layar.h) : Math.min(layar.w, layar.h);
@@ -55,9 +55,15 @@ function useSkalaTablet() {
     const asli = meta.content;
     // ukuran layar fisik (CSS px); jendela awal dipakai bila screen.* lebih kecil (mis. WebView/emulator)
     const layar = { w: Math.max(window.screen.width, window.innerWidth), h: Math.max(window.screen.height, window.innerHeight) };
+    let terakhir: { landscape: boolean; penuh: boolean; tinggi: number } | undefined;
     const atur = () => {
       const landscape = window.matchMedia("(orientation: landscape)").matches;
-      const isi = jendelaPenuh(layar, window.outerWidth) ? viewportTablet(layar, landscape, tinggiTerlihat(layar, landscape)) : null;
+      const penuh = jendelaPenuh(layar, window.outerWidth);
+      const tinggi = tinggiTerlihat(layar, landscape);
+      // Menulis meta viewport memicu resize. Pembulatan WebKit bisa mengubah tinggi hasil konversi sedikit saja.
+      if (terakhir && terakhir.landscape === landscape && terakhir.penuh === penuh && Math.abs(terakhir.tinggi - tinggi) <= 2) return;
+      terakhir = { landscape, penuh, tinggi };
+      const isi = penuh ? viewportTablet(layar, landscape, tinggi) : null;
       const baru = isi ?? asli;
       if (meta.content !== baru) meta.content = baru;
     };
