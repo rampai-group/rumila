@@ -123,6 +123,15 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     items.every((i) => visualBergambar(i) && t(i.labelKey).length <= 70);
   const tataLega = wadahLega || wadahBergambar;
   const kartuDiTengah = tataLega || rakAngkaLega;
+  // Jumlah benda pada Rak Angka perlu terdengar meski hanya ada satu kartu sejenis.
+  const namaJumlahRak = (item: ItemPilah) =>
+    rakAngka && item.count !== undefined ? `${item.count} ${t(item.labelKey)}` : undefined;
+  const namaAmbil = (item: ItemPilah, bin: BinPilah) => {
+    const nama = namaJumlahRak(item) ?? t(item.altKey ?? item.labelKey);
+    const nomor = t(bin.labelKey);
+    const wadah = rakAngka ? `${lang === "en-US" ? "shelf" : "rak"} ${nomor}` : nomor;
+    return lang === "en-US" ? `Remove ${nama} from ${wadah}` : `Ambil ${nama} dari ${wadah}`;
+  };
 
   // reset saat ronde berganti
   useEffect(() => {
@@ -314,7 +323,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             v={visual(i, t)}
             size={Math.min(gambarTerpasang, lebarIsi - (piktogram ? 8 : 16)) / skalaLebar(i)}
             keterangan={false}
-            ariaLabel={lang === "en-US" ? `Remove ${t(i.altKey ?? i.labelKey)} from ${t(b.labelKey)}` : `Ambil ${t(i.altKey ?? i.labelKey)} dari ${t(b.labelKey)}`}
+            ariaLabel={namaAmbil(i, b)}
             disabled={kunci}
             wrong={salah(i)}
             right={kunci && !salah(i)}
@@ -353,7 +362,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                 <KartuBenda
                   penuh
                   v={visual(i, t)}
-                  ariaLabel={namaPilihan(i, items, t, lang === "en-US")}
+                  ariaLabel={namaJumlahRak(i) ?? namaPilihan(i, items, t, lang === "en-US")}
                   size={Math.min(gambarKartu, (lebarKartu - (rakAngka ? 32 : 16)) / skalaLebar(i))}
                   labelSize={Math.round((wadahBergambar ? 19 : wadahLega ? 17 : rakAngkaLega ? 16 : 14) * Math.min(sk, 1.3))}
                   selected={dipilih}
