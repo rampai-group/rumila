@@ -193,7 +193,7 @@ export interface RondeSimulasi {
   flashMs: number;
 }
 export type JawabanSimulasi =
-  | { angka: number }                                   // jam-baca, jam-putar, kubus, taksir
+  | { angka: number }                                   // jam-baca, jam-putar, putar-bumi, kubus, taksir
   | { pilih: string }                                   // timbangan, alat
   | { posisi: number[]; angka: number }                 // jengkal: posisi awal tiap jengkal (satuan jengkal) + jumlah yang disebut
   | { turus: Record<string, number> }                   // turus

@@ -1,6 +1,6 @@
 {
   "id": "sains-senter-bola-dunia",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,57 +10,49 @@
   "locale": {
     "id": {
       "judul": "Senter dan Bola Dunia",
-      "instruksi": "Senter menyinari bola dunia seperti Matahari. Sisi yang terang sedang siang. Dengarkan, lalu sentuh jawabannya.",
+      "instruksi": "Senter berperan sebagai Matahari. Pilih jawaban dari model bola dunia.",
       "pilihan": "pilihan",
-      "i-layang": "anak bermain layang-layang",
-      "i-sekolah": "anak berangkat sekolah",
-      "i-jemur": "ibu menjemur baju",
-      "i-tidur": "anak tidur lelap",
-      "i-bintang": "langit penuh bintang",
-      "i-lampu": "lampu jalan menyala",
       "i-hadap": "menghadap senter",
       "i-jauh": "berada di sisi gelap",
-      "t-1": "Bola dunia diputar sampai Bali menghadap senter. Kegiatan mana yang cocok saat siang?",
-      "t-2": "Aceh kini membelakangi senter. Apa yang terlihat di langit Aceh?",
-      "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Kegiatan mana yang cocok saat siang?",
-      "t-4": "London ada di sisi bola dunia yang gelap. Kegiatan mana yang cocok saat malam?",
-      "t-5": "Sydney menghadap senter. Kegiatan mana yang biasanya dilakukan pagi atau siang?",
-      "t-6": "Riyadh membelakangi senter. Apa yang terlihat di jalan?",
-      "t-7": "Bola dunia berputar, Seoul pindah ke sisi yang kena cahaya. Kegiatan mana yang cocok saat siang?",
-      "t-8": "Manado ada di sisi gelap. Kegiatan mana yang cocok saat malam?",
-      "t-9": "Palembang kena cahaya senter. Kegiatan mana yang cocok saat siang?",
-      "t-10": "Lombok diputar menjauh dari senter. Apa yang terlihat di langit?",
+      "t-1": "Bali menghadap senter. Dalam model ini, Bali sedang siang atau malam?",
+      "t-2": "Aceh membelakangi senter. Dalam model ini, Aceh sedang siang atau malam?",
+      "t-3": "Pontianak pindah ke sisi terang. Sekarang di Pontianak siang atau malam?",
+      "t-4": "London ada di sisi gelap. Sekarang di London siang atau malam?",
+      "t-5": "Cahaya senter jatuh tepat pada Sydney. Di sana siang atau malam?",
+      "t-6": "Cahaya senter tidak sampai ke Riyadh. Di sana siang atau malam?",
+      "t-7": "Bola dunia berputar sampai Seoul menghadap senter. Di sana siang atau malam?",
+      "t-8": "Bola dunia berputar sampai Manado membelakangi senter. Di sana siang atau malam?",
+      "t-9": "Palembang termasuk sisi yang terang. Di sana siang atau malam?",
+      "t-10": "Lombok termasuk sisi yang gelap. Di sana siang atau malam?",
       "t-11": "Agar siang di Kupang, robot memutar bola dunia sampai Kupang…",
       "t-12": "Agar siang di Dubai, robot memutar bola dunia sampai Dubai…",
-      "t-13": "Anak di Ambon ingin melihat bintang. Robot memutar bola dunia sampai Ambon…",
-      "t-14": "Agar siang di Paris, robot memutar bola dunia sampai Paris…"
+      "t-13": "Agar malam di Ambon, robot memutar bola dunia sampai Ambon…",
+      "t-14": "Agar siang di Paris, robot memutar bola dunia sampai Paris…",
+      "i-siang": "siang",
+      "i-malam": "malam"
     },
     "en": {
       "judul": "Flashlight and Globe",
-      "instruksi": "A flashlight shines on the globe like the Sun. The bright side has daytime. Listen, then touch the answer.",
+      "instruksi": "The flashlight represents the Sun. Choose the answer using the globe model.",
       "pilihan": "choices",
-      "i-layang": "children flying kites",
-      "i-sekolah": "children going to school",
-      "i-jemur": "clothes drying in the sun",
-      "i-tidur": "children fast asleep",
-      "i-bintang": "a sky full of stars",
-      "i-lampu": "street lights are on",
       "i-hadap": "facing the flashlight",
       "i-jauh": "on the dark side",
-      "t-1": "The globe turns until Bali faces the flashlight. Which activity suits daytime?",
-      "t-2": "Aceh now faces away from the flashlight. What is in the sky over Aceh?",
-      "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. Which activity suits daytime?",
-      "t-4": "London is on the dark side of the globe. Which activity suits nighttime?",
-      "t-5": "Sydney faces the flashlight. Which activity usually happens in the morning or daytime?",
-      "t-6": "Riyadh faces away from the flashlight. What can be seen on the streets?",
-      "t-7": "The globe turns and Seoul moves to the lit side. Which activity suits daytime?",
-      "t-8": "Manado is on the dark side. Which activity suits nighttime?",
-      "t-9": "Palembang is in the flashlight's light. Which activity suits daytime?",
-      "t-10": "Lombok is turned away from the flashlight. What is in the sky?",
+      "t-1": "Bali faces the flashlight. In the model, is it day or night in Bali?",
+      "t-2": "Aceh faces away from the flashlight. In the model, is it day or night in Aceh?",
+      "t-3": "Pontianak moves into the light. Is it day or night there now?",
+      "t-4": "London is on the dark side. Is it day or night there now?",
+      "t-5": "The flashlight shines right on Sydney. Is it day or night there?",
+      "t-6": "The light from the flashlight does not reach Riyadh. Is it day or night there?",
+      "t-7": "The globe turns until Seoul faces the flashlight. Is it day or night there?",
+      "t-8": "The globe turns until Manado faces away from the flashlight. Is it day or night there?",
+      "t-9": "Palembang is on the lit side. Is it day or night there?",
+      "t-10": "Lombok is on the dark side. Is it day or night there?",
       "t-11": "For daytime in Kupang, the robot turns the globe until Kupang is…",
       "t-12": "For daytime in Dubai, the robot turns the globe until Dubai is…",
-      "t-13": "The children in Ambon want to see the stars. The robot turns the globe until Ambon is…",
-      "t-14": "For daytime in Paris, the robot turns the globe until Paris is…"
+      "t-13": "For nighttime in Ambon, the robot turns the globe until Ambon is…",
+      "t-14": "For daytime in Paris, the robot turns the globe until Paris is…",
+      "i-siang": "daytime",
+      "i-malam": "nighttime"
     }
   },
   "knobs": {
@@ -69,7 +61,7 @@
       "max": 2,
       "default": 2,
       "step": 1,
-      "keterangan": "selalu 2 pilihan: kegiatan siang lawan kegiatan malam, atau menghadap lawan menjauhi senter"
+      "keterangan": "selalu 2 pilihan: siang atau malam, atau arah terhadap senter"
     }
   },
   "assets": [],
@@ -85,44 +77,16 @@
   ],
   "items": [
     {
-      "id": "layang",
-      "labelKey": "i-layang",
+      "id": "siang",
+      "labelKey": "i-siang",
       "bin": "pilihan",
-      "emoji": "🪁"
+      "emoji": "☀️"
     },
     {
-      "id": "sekolah",
-      "labelKey": "i-sekolah",
+      "id": "malam",
+      "labelKey": "i-malam",
       "bin": "pilihan",
-      "emoji": "🎒"
-    },
-    {
-      "id": "jemur",
-      "labelKey": "i-jemur",
-      "bin": "pilihan",
-      "adegan": {
-        "jenis": "ilustrasi",
-        "varian": "tk-jemuran",
-        "t": 0
-      }
-    },
-    {
-      "id": "tidur",
-      "labelKey": "i-tidur",
-      "bin": "pilihan",
-      "emoji": "🛌"
-    },
-    {
-      "id": "bintang",
-      "labelKey": "i-bintang",
-      "bin": "pilihan",
-      "emoji": "🌌"
-    },
-    {
-      "id": "lampu",
-      "labelKey": "i-lampu",
-      "bin": "pilihan",
-      "emoji": "🌃"
+      "emoji": "🌙"
     },
     {
       "id": "hadap",
@@ -150,91 +114,91 @@
       "id": "soal-1",
       "promptKey": "t-1",
       "choices": [
-        "layang",
-        "tidur"
+        "siang",
+        "malam"
       ],
-      "correct": "layang"
+      "correct": "siang"
     },
     {
       "id": "soal-2",
       "promptKey": "t-2",
       "choices": [
-        "bintang",
-        "jemur"
+        "siang",
+        "malam"
       ],
-      "correct": "bintang"
+      "correct": "malam"
     },
     {
       "id": "soal-3",
       "promptKey": "t-3",
       "choices": [
-        "jemur",
-        "lampu"
+        "siang",
+        "malam"
       ],
-      "correct": "jemur"
+      "correct": "siang"
     },
     {
       "id": "soal-4",
       "promptKey": "t-4",
       "choices": [
-        "tidur",
-        "sekolah"
+        "siang",
+        "malam"
       ],
-      "correct": "tidur"
+      "correct": "malam"
     },
     {
       "id": "soal-5",
       "promptKey": "t-5",
       "choices": [
-        "sekolah",
-        "bintang"
+        "siang",
+        "malam"
       ],
-      "correct": "sekolah"
+      "correct": "siang"
     },
     {
       "id": "soal-6",
       "promptKey": "t-6",
       "choices": [
-        "lampu",
-        "layang"
+        "siang",
+        "malam"
       ],
-      "correct": "lampu"
+      "correct": "malam"
     },
     {
       "id": "soal-7",
       "promptKey": "t-7",
       "choices": [
-        "layang",
-        "bintang"
+        "siang",
+        "malam"
       ],
-      "correct": "layang"
+      "correct": "siang"
     },
     {
       "id": "soal-8",
       "promptKey": "t-8",
       "choices": [
-        "tidur",
-        "jemur"
+        "siang",
+        "malam"
       ],
-      "correct": "tidur"
+      "correct": "malam"
     },
     {
       "id": "soal-9",
       "promptKey": "t-9",
       "choices": [
-        "jemur",
-        "tidur"
+        "siang",
+        "malam"
       ],
-      "correct": "jemur"
+      "correct": "siang"
     },
     {
       "id": "soal-10",
       "promptKey": "t-10",
       "choices": [
-        "bintang",
-        "sekolah"
+        "siang",
+        "malam"
       ],
-      "correct": "bintang"
+      "correct": "malam"
     },
     {
       "id": "soal-11",

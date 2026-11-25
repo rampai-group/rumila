@@ -1,0 +1,116 @@
+{
+  "id": "sains-putar-bumi-siang",
+  "version": "1.1.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Putar Bumi, Siang di Mana?",
+      "instruksi": "Putar Bumi. Sisi yang menghadap Matahari sedang siang.",
+      "sisi-siang": "sisi siang",
+      "sisi-malam": "sisi malam",
+      "peralihan": "batas siang–malam",
+      "kiri": "Putar ke kiri",
+      "kanan": "Putar ke kanan",
+      "pas": "Sudah pas",
+      "penanda": "Penanda kota",
+      "model": "Model Bumi dengan Matahari di sebelah kiri",
+      "petunjuk": "Sisi yang menghadap Matahari terang. Sisi sebaliknya gelap.",
+      "tanya-jakarta": "Putar Bumi sampai Jakarta berada di sisi siang.",
+      "tanya-tokyo": "Putar Bumi sampai Tokyo berada di sisi malam.",
+      "tanya-medan": "Putar Bumi sampai Medan berada di sisi siang.",
+      "tanya-makassar": "Putar Bumi sampai Makassar berada di sisi malam.",
+      "tanya-bandung": "Putar Bumi sampai Bandung berada di sisi siang.",
+      "tanya-surabaya": "Putar Bumi sampai Surabaya berada di sisi malam.",
+      "tanya-kairo": "Putar Bumi sampai Kairo berada di sisi siang.",
+      "tanya-jayapura": "Putar Bumi sampai Jayapura berada di sisi malam.",
+      "tanya-ambon": "Putar Bumi sampai Ambon berada di sisi siang.",
+      "tanya-padang": "Putar Bumi sampai Padang berada di sisi malam."
+    },
+    "en": {
+      "judul": "Turn the Earth: Where Is It Day?",
+      "instruksi": "Turn the Earth. The side facing the Sun has daytime.",
+      "sisi-siang": "day side",
+      "sisi-malam": "night side",
+      "peralihan": "day–night boundary",
+      "kiri": "Turn left",
+      "kanan": "Turn right",
+      "pas": "Done",
+      "penanda": "City marker",
+      "model": "Earth model with the Sun on the left",
+      "petunjuk": "The side facing the Sun is lit. The opposite side is dark.",
+      "tanya-jakarta": "Turn the Earth until Jakarta is on the day side.",
+      "tanya-tokyo": "Turn the Earth until Tokyo is on the night side.",
+      "tanya-medan": "Turn the Earth until Medan is on the day side.",
+      "tanya-makassar": "Turn the Earth until Makassar is on the night side.",
+      "tanya-bandung": "Turn the Earth until Bandung is on the day side.",
+      "tanya-surabaya": "Turn the Earth until Surabaya is on the night side.",
+      "tanya-kairo": "Turn the Earth until Cairo is on the day side.",
+      "tanya-jayapura": "Turn the Earth until Jayapura is on the night side.",
+      "tanya-ambon": "Turn the Earth until Ambon is on the day side.",
+      "tanya-padang": "Turn the Earth until Padang is on the night side."
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mode": "putar-bumi",
+  "items": [
+    {
+      "id": "jakarta",
+      "labelKey": "tanya-jakarta",
+      "value": 3
+    },
+    {
+      "id": "tokyo",
+      "labelKey": "tanya-tokyo",
+      "value": 1
+    },
+    {
+      "id": "medan",
+      "labelKey": "tanya-medan",
+      "value": 3
+    },
+    {
+      "id": "makassar",
+      "labelKey": "tanya-makassar",
+      "value": 1
+    },
+    {
+      "id": "bandung",
+      "labelKey": "tanya-bandung",
+      "value": 3
+    },
+    {
+      "id": "surabaya",
+      "labelKey": "tanya-surabaya",
+      "value": 1
+    },
+    {
+      "id": "kairo",
+      "labelKey": "tanya-kairo",
+      "value": 3
+    },
+    {
+      "id": "jayapura",
+      "labelKey": "tanya-jayapura",
+      "value": 1
+    },
+    {
+      "id": "ambon",
+      "labelKey": "tanya-ambon",
+      "value": 3
+    },
+    {
+      "id": "padang",
+      "labelKey": "tanya-padang",
+      "value": 1
+    }
+  ]
+}

@@ -55,20 +55,34 @@ function Pot({ x = 65, y = 69, scale = 1 }: { x?: number; y?: number; scale?: nu
     <path d="M0-16Q-24-36-24-15Q-16-4 0-12M0-26Q24-44 22-24Q14-15 0-22" fill="#62bb53" stroke="#39863e" strokeWidth="2" />
   </g>;
 }
-function World({ night, torch }: { night: boolean; torch: boolean }) {
+function World({ night, torch, putaran }: { night: boolean; torch: boolean; putaran?: number }) {
+  const animasiPutar = putaran === undefined ? undefined : { transform: `rotate(${putaran * 90}deg)`, transformOrigin: "88px 50px" };
+  const posisiRumah = putaran === undefined ? `translate(${night ? 106 : 68} 50)` : "translate(88 30)";
   return <>
     <rect width="130" height="100" rx="12" fill="#192b50" />
     {torch ? <g><path d="M5 43H22V58H5Z" fill="#90a4b8" /><path d="M22 39L32 34V66L22 61Z" fill="#d6e0ea" /></g> : <circle cx="18" cy="50" r="13" fill="#ffd54c" />}
     {[32,46,60].map((y) => <path key={y} d={`M34 ${y}H48l-4-3m4 3-4 3`} fill="none" stroke="#ffe18b" strokeWidth="2.5" />)}
     <circle cx="88" cy="50" r="33" fill="#4ea8e4" stroke="#d6ecff" strokeWidth="2" />
-    <path d="M72 22L83 25 82 38 67 43 70 54 81 60 78 77 68 74 59 55 60 35ZM96 22L108 30 109 41 102 45 105 57 116 60 111 72 99 78 94 65 87 59 93 48 89 37Z" fill="#79c875" />
+    <path d="M72 22L83 25 82 38 67 43 70 54 81 60 78 77 68 74 59 55 60 35ZM96 22L108 30 109 41 102 45 105 57 116 60 111 72 99 78 94 65 87 59 93 48 89 37Z" fill="#79c875" style={animasiPutar} className="motion-safe:transition-transform motion-safe:duration-300" />
     <path d="M88 17A33 33 0 0 1 88 83Z" fill="#09142d" opacity=".78" />
-    <path d="M78 10Q105 4 118 24l-1-8m1 8-8-1" fill="none" stroke="#fff" strokeWidth="2" />
-    <g transform={`translate(${night ? 106 : 68} 50)`}>
-      <circle r="11" fill="#fff" stroke="#f76c5e" strokeWidth="2" />
-      <path d="M-7 1L0-6 7 1V8H-7Z" fill="#f76c5e" /><path d="M-2 8V2H2V8" fill="#fff" />
+    {putaran === undefined && <path d="M78 10Q105 4 118 24l-1-8m1 8-8-1" fill="none" stroke="#fff" strokeWidth="2" />}
+    <g style={animasiPutar} className="motion-safe:transition-transform motion-safe:duration-300">
+      <g transform={posisiRumah}>
+        <circle r="11" fill="#fff" stroke="#f76c5e" strokeWidth="2" />
+        <g style={putaran === undefined ? undefined : { transform: `rotate(${-putaran * 90}deg)` }} className="motion-safe:transition-transform motion-safe:duration-300">
+          <path d="M-7 1L0-6 7 1V8H-7Z" fill="#f76c5e" /><path d="M-2 8V2H2V8" fill="#fff" />
+        </g>
+      </g>
     </g>
   </>;
+}
+
+export function GambarBumiPutar({ putaran, lebar, label }: { putaran: number; lebar: number; label: string }) {
+  return (
+    <svg width={lebar} viewBox="0 0 130 100" className="h-auto max-w-full" role="img" aria-label={label}>
+      <World night={false} torch={false} putaran={putaran} />
+    </svg>
+  );
 }
 
 function PenyuLaut() {

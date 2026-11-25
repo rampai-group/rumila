@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { ContentPack, type PaketPola, type PaketSimulasi } from "@akademi/schema";
 import {
-  ALAT_BERAT, ALAT_PANJANG, buatRonde, buatRondePola, buatRondeSimulasi, knobDefaults, nilai, nilaiPola, nilaiSimulasi,
+  ALAT_BERAT, ALAT_PANJANG, BUMI_MALAM, BUMI_SIANG, buatRonde, buatRondePola, buatRondeSimulasi, buatRondeUnik, knobDefaults, kunciRonde, nilai, nilaiPola, nilaiSimulasi,
   type RondePola, type RondeSimulasi,
 } from "../src";
+import putarBumi from "../../../content/paket/simulasi/sains-putar-bumi-siang.json";
 
 /* ---------------- pabrik paket uji ---------------- */
 
@@ -191,6 +192,30 @@ describe("simulasi jam", () => {
     expect(r.target).toBe(r.items[0].value);
     expect(nilaiSimulasi(r, { angka: r.target }).benar).toBe(true);
     expect(nilaiSimulasi(r, { angka: r.target + 1 }).benar).toBe(false);
+  });
+});
+
+describe("simulasi putar Bumi", () => {
+  it("requires moving the marker to the requested side in every city", () => {
+    const p = ContentPack.parse(putarBumi);
+    const knobs = knobDefaults(p);
+    const seen: string[] = [];
+    const sides = new Set<number>();
+    for (let i = 0; i < p.rounds; i++) {
+      const r = buatRondeUnik(p, knobs, i, seen);
+      if (r?.mechanic !== "simulasi") throw Error(`Missing simulation round ${i + 1}`);
+      const { target, offset } = r.ronde;
+      const prompt = p.locale.id[r.ronde.items[0].labelKey];
+      expect(prompt).toMatch(target === BUMI_SIANG ? /sisi siang\.$/ : /sisi malam\.$/);
+      expect(offset).not.toBe(target);
+      for (const angka of [0, BUMI_MALAM, 2, BUMI_SIANG]) {
+        expect(nilai(p, r, { angka }).benar).toBe(angka === target);
+      }
+      seen.push(kunciRonde(r));
+      sides.add(target);
+    }
+    expect(new Set(seen).size).toBe(10);
+    expect(sides).toEqual(new Set([BUMI_MALAM, BUMI_SIANG]));
   });
 });
 
