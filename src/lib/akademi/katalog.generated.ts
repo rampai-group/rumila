@@ -19934,7 +19934,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "belok-menghadap-bintang",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -19944,11 +19944,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Menghadap Bintang",
-        "instruksi": "Robot belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
+        "instruksi": "Lihat arah robot. Susun blok maju, kiri, atau kanan sampai robot tiba di bintang."
       },
       "en": {
         "judul": "Face the Star",
-        "instruksi": "The robot is not facing the star yet: use a left or right block, then forward."
+        "instruksi": "Look at which way the robot faces. Use the forward, left, or right blocks to reach the star."
       }
     },
     "knobs": {
