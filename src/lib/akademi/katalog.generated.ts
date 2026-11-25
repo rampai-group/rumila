@@ -14633,7 +14633,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "hitung-biji-kebun-11-20",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -14659,7 +14659,7 @@ export const PAKET_RAW: unknown[] = [
         "min": 11,
         "max": 20,
         "default": 12,
-        "step": 1,
+        "step": 2,
         "keterangan": "jumlah benda yang dihitung; boleh dikelompokkan dulu, yang sudah disentuh meredup"
       },
       "kinds": {
@@ -14862,7 +14862,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "hitung-kelereng-11-20",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -14888,7 +14888,7 @@ export const PAKET_RAW: unknown[] = [
         "min": 11,
         "max": 20,
         "default": 12,
-        "step": 1,
+        "step": 2,
         "keterangan": "jumlah benda yang dihitung; boleh dikelompokkan dulu, yang sudah disentuh meredup"
       },
       "kinds": {
@@ -14914,13 +14914,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelereng",
         "labelKey": "kelereng",
         "price": 1000,
-        "emoji": "🔵"
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing",
         "labelKey": "kancing",
         "price": 1000,
-        "emoji": "🟤"
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       }
     ],
     "customerRule": {
@@ -180559,7 +180567,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "rak-angka-11-20-kelereng",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -180605,7 +180613,7 @@ export const PAKET_RAW: unknown[] = [
         "min": 15,
         "max": 20,
         "default": 15,
-        "step": 1,
+        "step": 2,
         "keterangan": "angka terbesar yang aktif: 11–15 dulu, lalu sampai 20; rak berurutan supaya posisi membantu"
       },
       "itemCount": {
@@ -180669,167 +180677,227 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelereng-11",
         "labelKey": "kelereng",
         "bin": "r11",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 11
+        "count": 11,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-11",
         "labelKey": "kancing",
         "bin": "r11",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 11
+        "count": 11,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-12",
         "labelKey": "kelereng",
         "bin": "r12",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 12
+        "count": 12,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-12",
         "labelKey": "kancing",
         "bin": "r12",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 12
+        "count": 12,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-13",
         "labelKey": "kelereng",
         "bin": "r13",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 13
+        "count": 13,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-13",
         "labelKey": "kancing",
         "bin": "r13",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 13
+        "count": 13,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-14",
         "labelKey": "kelereng",
         "bin": "r14",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 14
+        "count": 14,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-14",
         "labelKey": "kancing",
         "bin": "r14",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 14
+        "count": 14,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-15",
         "labelKey": "kelereng",
         "bin": "r15",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 15
+        "count": 15,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-15",
         "labelKey": "kancing",
         "bin": "r15",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 15
+        "count": 15,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-16",
         "labelKey": "kelereng",
         "bin": "r16",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 16
+        "count": 16,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-16",
         "labelKey": "kancing",
         "bin": "r16",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 16
+        "count": 16,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-17",
         "labelKey": "kelereng",
         "bin": "r17",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 17
+        "count": 17,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-17",
         "labelKey": "kancing",
         "bin": "r17",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 17
+        "count": 17,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-18",
         "labelKey": "kelereng",
         "bin": "r18",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 18
+        "count": 18,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-18",
         "labelKey": "kancing",
         "bin": "r18",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 18
+        "count": 18,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-19",
         "labelKey": "kelereng",
         "bin": "r19",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 19
+        "count": 19,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-19",
         "labelKey": "kancing",
         "bin": "r19",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 19
+        "count": 19,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       },
       {
         "id": "kelereng-20",
         "labelKey": "kelereng",
         "bin": "r20",
-        "shape": "circle",
-        "color": "#1e88e5",
-        "count": 20
+        "count": 20,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kancing-20",
         "labelKey": "kancing",
         "bin": "r20",
-        "shape": "circle",
-        "color": "#e53935",
-        "count": 20
+        "count": 20,
+        "scale": 0.9,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kancing-baju"
+        }
       }
     ]
   },
   {
     "id": "rak-angka-11-20-telur",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -180875,7 +180943,7 @@ export const PAKET_RAW: unknown[] = [
         "min": 15,
         "max": 20,
         "default": 15,
-        "step": 1,
+        "step": 2,
         "keterangan": "angka terbesar yang aktif: 11–15 dulu, lalu sampai 20; rak berurutan supaya posisi membantu"
       },
       "itemCount": {
@@ -183360,7 +183428,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-bekerja-dulu-di-taman",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -183434,13 +183502,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "kaki",
         "labelKey": "i-kaki",
         "bin": "pilihan",
-        "emoji": "🦵"
+        "scale": 0.65,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tubuh-paha"
+        }
       },
       {
         "id": "lengan",
         "labelKey": "i-lengan",
         "bin": "pilihan",
-        "emoji": "💪"
+        "scale": 0.65,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-otot-lengan"
+        }
       },
       {
         "id": "paru",
@@ -188430,7 +188506,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-lapisan-tulang-otot-organ",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -188485,20 +188561,29 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "tulang",
         "labelKey": "tulang",
-        "emoji": "☠️",
-        "color": "#f5f5f5"
+        "color": "#f5f5f5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tubuh-tulang"
+        }
       },
       {
         "id": "otot",
         "labelKey": "otot",
-        "emoji": "🏋️",
-        "color": "#ef9a9a"
+        "color": "#ef9a9a",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tubuh-otot"
+        }
       },
       {
         "id": "organ",
         "labelKey": "organ",
-        "emoji": "🩺",
-        "color": "#ffe0b2"
+        "color": "#ffe0b2",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tubuh-organ"
+        }
       }
     ],
     "items": [
@@ -188518,13 +188603,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "ototlengan",
         "labelKey": "i-ototlengan",
         "bin": "otot",
-        "emoji": "💪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-otot-lengan"
+        }
       },
       {
         "id": "ototbetis",
         "labelKey": "i-ototbetis",
         "bin": "otot",
-        "emoji": "🦵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-otot-betis"
+        }
       },
       {
         "id": "jantung",
@@ -191035,7 +191126,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-mana-organ-tubuh",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -191135,7 +191226,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "otot",
         "labelKey": "i-otot",
         "bin": "pilihan",
-        "emoji": "💪"
+        "scale": 0.65,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tubuh-otot"
+        }
       }
     ],
     "pilihan": [
@@ -196714,7 +196809,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-siapa-yang-bekerja",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -196804,22 +196899,34 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kaki",
         "labelKey": "kaki",
-        "emoji": "🦵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-tubuh-paha"
+        }
       },
       {
         "id": "paru",
         "labelKey": "paru",
-        "emoji": "🫁"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-paru-paru"
+        }
       },
       {
         "id": "lengan",
         "labelKey": "lengan",
-        "emoji": "💪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-otot-lengan"
+        }
       },
       {
         "id": "otak",
         "labelKey": "otak",
-        "emoji": "🧠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-otak"
+        }
       }
     ],
     "items": [
@@ -196911,7 +197018,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelembung",
         "labelKey": "i-gelembung",
         "bin": "paru",
-        "emoji": "🧼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-gelembung-sabun"
+        }
       },
       {
         "id": "saksofon",

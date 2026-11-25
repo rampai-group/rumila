@@ -1,6 +1,6 @@
 {
   "id": "sains-bekerja-dulu-di-taman",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -74,13 +74,21 @@
       "id": "kaki",
       "labelKey": "i-kaki",
       "bin": "pilihan",
-      "emoji": "🦵"
+      "scale": 0.65,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-tubuh-paha"
+      }
     },
     {
       "id": "lengan",
       "labelKey": "i-lengan",
       "bin": "pilihan",
-      "emoji": "💪"
+      "scale": 0.65,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-otot-lengan"
+      }
     },
     {
       "id": "paru",

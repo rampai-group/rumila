@@ -371,6 +371,48 @@ const objectArt: Record<string, ReactNode> = {
   ...PAKAN,
   ...KEGIATAN,
   ...GERAK_APUNG,
+  "kancing-baju": <g {...RINGKAS}>
+    <circle cx="65" cy="50" r="43" fill="#dba077" stroke="#804b40" />
+    <circle cx="65" cy="50" r="34" fill="#edb38a" stroke="#ac6955" />
+    <path d="M36 32Q48 19 65 17" fill="none" stroke="#f8d2b2" strokeWidth="4" />
+    <path d="M91 69Q79 83 64 83" fill="none" stroke="#bd785d" strokeWidth="4" />
+    {[[55, 40], [75, 40], [55, 60], [75, 60]].map(([x, y]) => (
+      <circle key={x + "," + y} cx={x} cy={y} r="6" fill="#644536" stroke="#f8d2b2" strokeWidth="1.7" />
+    ))}
+  </g>,
+  "otot-lengan": <g {...RINGKAS}>
+    <path d="M42 13Q59 5 72 17Q79 24 76 37L73 55Q75 61 84 70L104 79Q110 84 103 92L99 94Q83 91 69 80Q57 70 51 58Q44 48 45 39L39 25Q36 17 42 13Z" fill="#f7e9de" stroke="#ab8475" />
+    <path d="M49 16Q60 15 64 26Q62 42 59 55Q52 48 52 33Z" fill="#dd958b" stroke="#a65458" />
+    <path d="M66 19Q77 25 73 38L67 58L62 55Q67 39 66 19Z" fill="#c27079" stroke="#954b58" />
+    <path d="M55 24Q59 32 55 44M70 28Q70 43 65 51" fill="none" stroke="#ffe2d5" strokeWidth="2" />
+  </g>,
+  "otot-betis": <g {...RINGKAS}>
+    <path d="M45 10Q63 6 78 14Q80 24 79 35Q77 56 66 70L62 79Q65 86 78 87L92 86Q101 88 98 93Q95 98 70 97L52 96Q43 94 45 85L51 69Q47 56 45 47Q39 23 45 10Z" fill="#f7e9de" stroke="#ab8475" />
+    <path d="M64 19Q75 15 77 29Q77 47 69 61Q65 68 62 70Q61 61 65 48Q66 35 64 19Z" fill="#c27079" stroke="#954b58" />
+    <path d="M55 19Q63 20 64 32Q63 50 59 59Q53 54 51 37Q50 26 55 19Z" fill="#dd958b" stroke="#a65458" />
+    <path d="M70 27Q73 38 67 52M56 28Q56 39 59 47" fill="none" stroke="#ffe2d5" strokeWidth="2" />
+  </g>,
+  "paru-paru": <g {...RINGKAS} stroke="#9d5260">
+    <path d="M48 28C33 31 26 53 24 74Q22 87 33 88Q50 86 60 74V39Q57 25 48 28Z" fill="#f4a4a5" />
+    <path d="M82 28C97 31 104 53 106 74Q108 87 97 88Q80 86 70 74V39Q73 25 82 28Z" fill="#f49a9e" />
+    <path d="M65 13V45M65 43L49 56M65 43L81 56" fill="none" strokeWidth="9" />
+    <path d="M65 13V45M65 43L49 56M65 43L81 56" fill="none" stroke="#ffddc4" strokeWidth="5" />
+    <path d="M49 56L39 65M49 56L47 70M81 56L91 65M81 56L83 70" fill="none" stroke="#c66d78" />
+  </g>,
+  "otak": <g {...RINGKAS} stroke="#a65370">
+    <path d="M26 64Q18 56 25 47Q20 35 32 31Q34 19 46 20Q57 9 70 19Q82 16 89 25Q103 26 103 37Q114 43 107 55Q113 68 100 73Q94 84 81 79L77 89Q73 92 70 86L68 77Q56 80 48 73Q33 77 26 64Z" fill="#f1a7b3" />
+    <path d="M35 62Q45 52 56 61M27 47Q36 51 44 44Q47 33 59 37M46 20Q45 27 49 31M58 20Q69 27 64 38Q58 43 61 52M79 26Q73 30 77 41Q88 37 94 46M72 51Q80 57 90 51M54 71Q62 64 73 70M81 79Q94 73 89 63Q99 65 107 55" fill="none" stroke="#bb657d" />
+  </g>,
+  "gelembung-sabun": <g {...RINGKAS}>
+    <path d="M35 80L47 60" fill="none" stroke="#a35c83" strokeWidth="6" />
+    <ellipse cx="51" cy="54" rx="11" ry="8" transform="rotate(-62 51 54)" fill="#e8fbff" stroke="#a35c83" strokeWidth="4" />
+    <path d="M62 43L69 39M65 57L73 54" fill="none" stroke="#8ac2cd" />
+    <circle cx="89" cy="32" r="18" fill="#e0f8fd" stroke="#70aebf" />
+    <path d="M80 26Q85 20 90 22M98 36L94 42" fill="none" stroke="#fff" strokeWidth="3" />
+    <circle cx="110" cy="58" r="10" fill="#e1f6ee" stroke="#7db9ba" />
+    <path d="M106 55L109 52" fill="none" stroke="#fff" strokeWidth="2" />
+    <circle cx="85" cy="68" r="7" fill="#f5e7f7" stroke="#b0a0cc" />
+  </g>,
   "lebah-di-bunga": <g {...RINGKAS}>
     <path d="M71 94Q65 77 70 61M69 83Q50 74 49 87Q58 94 69 83M69 88Q82 72 91 80Q84 91 69 88Z" fill="#83b95e" stroke="#417850" />
     <path d="M65 58C50 39 37 58 52 68C33 75 49 90 65 77C68 95 87 85 79 71C97 67 90 49 73 62C75 47 59 47 65 58Z" fill="#eca9d1" stroke="#a95e88" />

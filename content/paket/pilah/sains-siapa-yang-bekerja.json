@@ -1,6 +1,6 @@
 {
   "id": "sains-siapa-yang-bekerja",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -90,22 +90,34 @@
     {
       "id": "kaki",
       "labelKey": "kaki",
-      "emoji": "🦵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-tubuh-paha"
+      }
     },
     {
       "id": "paru",
       "labelKey": "paru",
-      "emoji": "🫁"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-paru-paru"
+      }
     },
     {
       "id": "lengan",
       "labelKey": "lengan",
-      "emoji": "💪"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-otot-lengan"
+      }
     },
     {
       "id": "otak",
       "labelKey": "otak",
-      "emoji": "🧠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-otak"
+      }
     }
   ],
   "items": [
@@ -197,7 +209,10 @@
       "id": "gelembung",
       "labelKey": "i-gelembung",
       "bin": "paru",
-      "emoji": "🧼"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-gelembung-sabun"
+      }
     },
     {
       "id": "saksofon",
