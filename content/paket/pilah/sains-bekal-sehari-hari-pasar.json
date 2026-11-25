@@ -1,6 +1,6 @@
 {
   "id": "sains-bekal-sehari-hari-pasar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-donat": "donat",
       "i-cokelat": "cokelat",
       "i-cupcake": "kue mangkuk krim",
-      "i-pancake": "panekuk",
+      "i-pancake": "panekuk sirup",
       "i-biskuit": "biskuit"
     },
     "en": {
@@ -43,7 +43,7 @@
       "i-donat": "doughnut",
       "i-cokelat": "chocolate bar",
       "i-cupcake": "cupcake",
-      "i-pancake": "pancake",
+      "i-pancake": "pancakes with syrup",
       "i-biskuit": "biscuit"
     }
   },
@@ -78,8 +78,11 @@
     {
       "id": "toples",
       "labelKey": "toples",
-      "emoji": "🍬",
-      "color": "#ffe0b2"
+      "color": "#ffe0b2",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-toples-jajanan"
+      }
     }
   ],
   "items": [
@@ -111,8 +114,10 @@
       "id": "tempe",
       "labelKey": "i-tempe",
       "bin": "piring",
-      "shape": "rect",
-      "color": "#e6c27a"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-tempe"
+      }
     },
     {
       "id": "semangka",
@@ -154,7 +159,10 @@
       "id": "pancake",
       "labelKey": "i-pancake",
       "bin": "toples",
-      "emoji": "🥞"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-panekuk-sirup"
+      }
     },
     {
       "id": "biskuit",

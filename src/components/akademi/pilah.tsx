@@ -111,8 +111,9 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const titikLega = kartuTitik && lebarArea >= 620 && h >= 680;
   const wadahLega = paket.level === "PAUD" && !kartuTitik && !piktogram &&
     bins.length >= 2 && bins.length <= 3 && lebarArea >= 620 && h >= 680;
+  const batasWadahBergambar = paket.id === "sains-isi-piringku" ? 5 : 3;
   const wadahBergambar = paket.level !== "PAUD" && !carroll && !kartuTitik && !piktogram &&
-    bins.length >= 2 && bins.length <= 3 && items.length <= 8 && lebarArea >= 620 && h >= 680 &&
+    bins.length >= 2 && bins.length <= batasWadahBergambar && items.length <= 8 && lebarArea >= 620 && h >= 680 &&
     bins.every((b) => visualBergambar(b) && t(b.labelKey).length <= 50) &&
     items.every((i) => visualBergambar(i) && t(i.labelKey).length <= 70);
   const tataLega = wadahLega || wadahBergambar;

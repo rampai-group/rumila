@@ -1,6 +1,6 @@
 {
   "id": "tebak-petak-angkasa",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Tebak Petak di Angkasa",
-      "instruksi": "Sebelum tiap blok jalan, tunjuk petak tujuan robot, lalu tekan langkah."
+      "instruksi": "Saat belok, robot tetap di petaknya. Tebak petak berikutnya, lalu ketuk Langkah."
     },
     "en": {
       "judul": "Guess the Square in Space",
-      "instruksi": "Before each block runs, point to the robot's next square, then press step."
+      "instruksi": "When turning, the robot stays on its square. Guess the next square, then tap Langkah."
     }
   },
   "knobs": {

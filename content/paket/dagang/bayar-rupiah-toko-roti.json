@@ -1,6 +1,6 @@
 {
   "id": "bayar-rupiah-toko-roti",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Bayar di Toko Roti",
-      "instruksi": "Lihat harga rotinya, lalu bayar pas dengan gabungan uang seribu, dua ribu, dan lima ribu.",
+      "instruksi": "Lihat harganya. Pakai uang di laci untuk membayar pas.",
       "donat": "donat",
       "roti": "roti tawar",
       "kuecangkir": "kue mangkuk",
@@ -23,7 +23,7 @@
     },
     "en": {
       "judul": "Paying at the Bakery",
-      "instruksi": "Read the bread price, then pay exactly using thousand, two-thousand and five-thousand money.",
+      "instruksi": "Read the price. Use the money in the drawer to pay the exact amount.",
       "donat": "doughnut",
       "roti": "loaf",
       "kuecangkir": "cupcake",
@@ -125,5 +125,6 @@
     "payExact": true,
     "maxTotal": 10000,
     "kindsMax": 1
-  }
+  },
+  "barangIkutHarga": true
 }

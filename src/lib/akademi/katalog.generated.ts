@@ -14134,7 +14134,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "bayar-rupiah-alat-tulis",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -14244,13 +14244,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "tas",
         "labelKey": "tas",
         "price": 9000,
-        "emoji": "👝"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-tempat-pensil"
+        }
       },
       {
         "id": "catair",
         "labelKey": "catair",
         "price": 10000,
-        "emoji": "🎨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-cat-air"
+        }
       }
     ],
     "customerRule": {
@@ -14259,11 +14265,12 @@ export const PAKET_RAW: unknown[] = [
       "payExact": true,
       "maxTotal": 10000,
       "kindsMax": 1
-    }
+    },
+    "barangIkutHarga": true
   },
   {
     "id": "bayar-rupiah-toko-roti",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -14273,7 +14280,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Bayar di Toko Roti",
-        "instruksi": "Lihat harga rotinya, lalu bayar pas dengan gabungan uang seribu, dua ribu, dan lima ribu.",
+        "instruksi": "Lihat harganya. Pakai uang di laci untuk membayar pas.",
         "donat": "donat",
         "roti": "roti tawar",
         "kuecangkir": "kue mangkuk",
@@ -14286,7 +14293,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Paying at the Bakery",
-        "instruksi": "Read the bread price, then pay exactly using thousand, two-thousand and five-thousand money.",
+        "instruksi": "Read the price. Use the money in the drawer to pay the exact amount.",
         "donat": "doughnut",
         "roti": "loaf",
         "kuecangkir": "cupcake",
@@ -14388,7 +14395,8 @@ export const PAKET_RAW: unknown[] = [
       "payExact": true,
       "maxTotal": 10000,
       "kindsMax": 1
-    }
+    },
+    "barangIkutHarga": true
   },
   {
     "id": "gabung-bebek-kolam",
@@ -15228,7 +15236,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kasir-kembalian-toko-mainan",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -15243,7 +15251,7 @@ export const PAKET_RAW: unknown[] = [
         "yoyo": "yoyo",
         "balon": "balon",
         "mobil": "mobil-mobilan",
-        "boneka": "boneka"
+        "boneka": "boneka beruang"
       },
       "en": {
         "judul": "Toy Shop Cashier",
@@ -15252,7 +15260,7 @@ export const PAKET_RAW: unknown[] = [
         "yoyo": "yo-yo",
         "balon": "balloon",
         "mobil": "toy car",
-        "boneka": "doll"
+        "boneka": "teddy bear"
       }
     },
     "knobs": {
@@ -15281,7 +15289,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelereng",
         "labelKey": "kelereng",
         "price": 5000,
-        "emoji": "🔵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-kelereng"
+        }
       },
       {
         "id": "yoyo",
@@ -15314,11 +15325,12 @@ export const PAKET_RAW: unknown[] = [
       "payExact": true,
       "maxTotal": 10000,
       "kindsMax": 1
-    }
+    },
+    "barangIkutHarga": true
   },
   {
     "id": "kasir-kembalian-warung",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -15395,7 +15407,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "selai",
         "labelKey": "selai",
         "price": 9000,
-        "emoji": "🍯"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-selai"
+        }
       }
     ],
     "customerRule": {
@@ -15404,7 +15419,8 @@ export const PAKET_RAW: unknown[] = [
       "payExact": true,
       "maxTotal": 10000,
       "kindsMax": 1
-    }
+    },
+    "barangIkutHarga": true
   },
   {
     "id": "kios-peternakan-ambil-1-5",
@@ -15713,7 +15729,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "mesin-tukar-koin",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -15723,13 +15739,13 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Mesin Tukar Koin",
-        "instruksi": "Masukkan uang kertas ke mesin tukar, lalu susun koin seribu sebanyak nilainya.",
+        "instruksi": "Lihat nilai uang kertasnya. Tambahkan koin seribu sampai jumlahnya sama.",
         "duaribu": "uang dua ribu",
         "limaribu": "uang lima ribu"
       },
       "en": {
         "judul": "Coin Exchange Machine",
-        "instruksi": "Put the note into the change machine, then lay out thousand coins worth the same.",
+        "instruksi": "Look at the banknotes. Add one-thousand coins until the total matches.",
         "duaribu": "2,000 note",
         "limaribu": "5,000 note"
       }
@@ -29825,7 +29841,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "perbaiki-dua-langkah",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -29835,11 +29851,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Meleset Dua Kali",
-        "instruksi": "Jalankan program awal dan lihat dua kesalahannya. Ubah paling banyak dua blok."
+        "instruksi": "Coba program awal. Ubah dua blok yang salah agar robot sampai ke bintang."
       },
       "en": {
         "judul": "Missed Twice",
-        "instruksi": "Run the starter program and spot two mistakes. Change up to two blocks."
+        "instruksi": "Try the starter program. Change the two wrong blocks so the robot reaches the star."
       }
     },
     "knobs": {
@@ -171890,7 +171906,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "tebak-petak-angkasa",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -171900,11 +171916,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Tebak Petak di Angkasa",
-        "instruksi": "Sebelum tiap blok jalan, tunjuk petak tujuan robot, lalu tekan langkah."
+        "instruksi": "Saat belok, robot tetap di petaknya. Tebak petak berikutnya, lalu ketuk Langkah."
       },
       "en": {
         "judul": "Guess the Square in Space",
-        "instruksi": "Before each block runs, point to the robot's next square, then press step."
+        "instruksi": "When turning, the robot stays on its square. Guess the next square, then tap Langkah."
       }
     },
     "knobs": {
@@ -172680,7 +172696,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "tebak-petak-berikutnya",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -172690,11 +172706,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Tebak Petak Berikutnya",
-        "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat robot akan berdiri, lalu tekan langkah."
+        "instruksi": "Saat belok, robot tetap di petaknya. Tebak petak berikutnya, lalu ketuk Langkah."
       },
       "en": {
         "judul": "Guess the Next Square",
-        "instruksi": "Before each block runs, point to the square where the robot will stand, then press step."
+        "instruksi": "When turning, the robot stays on its square. Guess the next square, then tap Langkah."
       }
     },
     "knobs": {
@@ -183193,7 +183209,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-bekal-sehari-hari-pasar",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -183217,7 +183233,7 @@ export const PAKET_RAW: unknown[] = [
         "i-donat": "donat",
         "i-cokelat": "cokelat",
         "i-cupcake": "kue mangkuk krim",
-        "i-pancake": "panekuk",
+        "i-pancake": "panekuk sirup",
         "i-biskuit": "biskuit"
       },
       "en": {
@@ -183236,7 +183252,7 @@ export const PAKET_RAW: unknown[] = [
         "i-donat": "doughnut",
         "i-cokelat": "chocolate bar",
         "i-cupcake": "cupcake",
-        "i-pancake": "pancake",
+        "i-pancake": "pancakes with syrup",
         "i-biskuit": "biscuit"
       }
     },
@@ -183271,8 +183287,11 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "toples",
         "labelKey": "toples",
-        "emoji": "🍬",
-        "color": "#ffe0b2"
+        "color": "#ffe0b2",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-toples-jajanan"
+        }
       }
     ],
     "items": [
@@ -183304,8 +183323,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tempe",
         "labelKey": "i-tempe",
         "bin": "piring",
-        "shape": "rect",
-        "color": "#e6c27a"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-tempe"
+        }
       },
       {
         "id": "semangka",
@@ -183347,7 +183368,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pancake",
         "labelKey": "i-pancake",
         "bin": "toples",
-        "emoji": "🥞"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-panekuk-sirup"
+        }
       },
       {
         "id": "biskuit",
@@ -186872,7 +186896,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-isi-piringku",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -186882,7 +186906,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Isi Piringku",
-        "instruksi": "Isi tiap bagian piring: makanan pokok, lauk, sayur, dan buah. Taruh permen dan soda di luar piring.",
+        "instruksi": "Isi piring dengan makanan pokok, lauk, sayur, dan buah. Kalau ada permen atau soda, taruh di luar piring.",
         "nasi": "makanan pokok",
         "lauk": "lauk",
         "sayur": "sayur",
@@ -186904,7 +186928,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Fill My Plate",
-        "instruksi": "Fill each section with a staple food, a protein dish, vegetables, or fruit. Put candy and soda outside the plate.",
+        "instruksi": "Fill the plate with staple foods, protein, vegetables, and fruit. If you see candy or soda, put it outside the plate.",
         "nasi": "staple food",
         "lauk": "protein",
         "sayur": "vegetables",
@@ -187058,7 +187082,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "soda",
         "labelKey": "i-soda",
         "bin": "bukan",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-soda"
+        }
       }
     ],
     "pilihan": []
@@ -191802,7 +191829,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-murah-belum-tentu-sehat",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -191826,15 +191853,15 @@ export const PAKET_RAW: unknown[] = [
         "i-cokelat": "cokelat batang",
         "i-donat": "donat",
         "t-1": "Permen paling murah, cuma satu koin. Pir dua koin. Mana bekal yang sehat?",
-        "t-2": "Lolipop murah sekali. Brokoli sedikit lebih mahal. Mana bekal yang sehat?",
-        "t-3": "Cokelat satu koin, anggur tiga koin. Mana yang membuat tubuh sehat?",
+        "t-2": "Jajanan manis lebih murah. Mana sayur yang cocok untuk bekal sekolah?",
+        "t-3": "Mana buah yang cocok untuk bekal, meski harganya lebih mahal?",
         "t-4": "Uang robot cukup untuk semuanya. Mana bekal sehat untuk sekolah?",
         "t-5": "Donat sedang murah. Jagung rebus harganya biasa. Mana bekal yang sehat?",
-        "t-6": "Penjual berkata: permen paling murah! Tapi robot butuh buah. Pilih buahnya.",
-        "t-7": "Tiga jajanan manis murah dan satu buah. Mana bekal yang sehat?",
+        "t-6": "Penjual menawarkan jajanan murah. Robot butuh buah. Pilih buahnya.",
+        "t-7": "Jajanan manis lebih murah. Mana buah untuk bekal robot?",
         "t-8": "Mana yang lebih sehat untuk dibawa ke sekolah?",
-        "t-9": "Lolipop dan permen murah. Anggur lebih mahal. Pilih bekal yang sehat.",
-        "t-10": "Mana pilihan bekal yang lebih baik untuk dibawa setiap hari: jagung rebus, permen, atau cokelat?",
+        "t-9": "Jajanan manis lebih murah. Pilih buah yang cocok untuk bekal sehari-hari.",
+        "t-10": "Mana bekal yang lebih baik dibawa setiap hari?",
         "t-11": "Cokelat sedang murah. Tomat harganya biasa. Mana bekal yang sehat?",
         "t-12": "Robot hanya boleh membeli satu. Mana bekal sayur yang sehat?"
       },
@@ -191854,15 +191881,15 @@ export const PAKET_RAW: unknown[] = [
         "i-cokelat": "chocolate bar",
         "i-donat": "doughnut",
         "t-1": "The candy is cheapest, only one coin. The pear is two coins. Which snack is healthy?",
-        "t-2": "The lollipop is very cheap. The broccoli costs a bit more. Which snack is healthy?",
-        "t-3": "The chocolate is one coin, the grapes are three coins. Which one keeps the body healthy?",
+        "t-2": "The sweets cost less. Which vegetable is good to pack for school?",
+        "t-3": "Which fruit is good to pack, even though it costs more?",
         "t-4": "The robot has enough money for all of them. Which is a healthy school snack?",
         "t-5": "The doughnut is cheap today. The boiled corn is the usual price. Which snack is healthy?",
-        "t-6": "The seller says: candy is cheapest! But the robot needs fruit. Pick the fruit.",
-        "t-7": "Three cheap sweets and one fruit. Which snack is healthy?",
+        "t-6": "The seller offers a cheap treat. The robot needs fruit. Pick the fruit.",
+        "t-7": "The sweets cost less. Which fruit should go in the robot's lunchbox?",
         "t-8": "Which is healthier to bring to school?",
-        "t-9": "The lollipop and candy are cheap. The grapes cost more. Pick the healthy snack.",
-        "t-10": "Which is a better everyday snack to pack: boiled corn, candy, or chocolate?",
+        "t-9": "The sweets cost less. Choose a fruit to pack any day.",
+        "t-10": "Which is a better snack to pack every day?",
         "t-11": "The chocolate is cheap today. The tomato is the usual price. Which snack is healthy?",
         "t-12": "The robot may buy only one. Which vegetable snack is healthy?"
       }
@@ -193558,7 +193585,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-piring-sehari-hari",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -193598,7 +193625,7 @@ export const PAKET_RAW: unknown[] = [
         "i-susu": "milk",
         "i-air": "water",
         "i-permen": "candy",
-        "i-keripik": "chips",
+        "i-keripik": "French fries",
         "i-soda": "fizzy drink",
         "i-kuekrim": "cream cake",
         "i-rotimanis": "sweet bun",
@@ -193636,8 +193663,11 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "toples",
         "labelKey": "toples",
-        "emoji": "🍪",
-        "color": "#ffe0b2"
+        "color": "#ffe0b2",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-toples-jajanan"
+        }
       }
     ],
     "items": [
@@ -193699,7 +193729,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "soda",
         "labelKey": "i-soda",
         "bin": "toples",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-soda"
+        }
       },
       {
         "id": "kuekrim",
@@ -193711,7 +193744,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rotimanis",
         "labelKey": "i-rotimanis",
         "bin": "toples",
-        "emoji": "🥐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-roti-manis"
+        }
       },
       {
         "id": "wafel",
