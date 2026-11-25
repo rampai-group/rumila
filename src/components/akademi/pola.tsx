@@ -299,11 +299,13 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const { tema, skala: sk, w, h } = usePanggung();
   const padat = paket.level === "PAUD";
   const aksiMenetap = !padat && w > 0 && w < 600 && mode !== "perbaiki";
-  const tablet = padat && w >= 620 && h >= 680;
+  const tabletTegak = w >= 620 && h >= 680 && h > w;
+  const tabletTunas = padat && w >= 620 && h >= 680;
+  const papanRapat = padat || tabletTegak;
   const gap = Math.round(8 * sk);
   const lebarDalam = w > 0 ? w - 24 * sk - 6 : 0;
   // palet: benda membesar mengikuti lebar & tinggi panggung (±16% tinggi), tanpa pindah baris
-  const basePalet = palette.length > 5 ? 64 : 72;
+  const basePalet = tabletTegak && !padat ? 90 : palette.length > 5 ? 64 : 72;
   const lebarKartu = sisiMuat(lebarDalam, 0, palette.length, (basePalet + 16) * sk, 200 * sk, gap);
   const kartuPx = Math.round(Math.max(basePalet * sk, Math.min((lebarKartu - 16 * sk) * 0.8, h > 0 ? h * 0.16 : 0, 130)));
   const barisPalet = Math.ceil(palette.length / Math.max(1, Math.floor((lebarDalam + gap) / (lebarKartu + gap)) || 1));
@@ -313,12 +315,13 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const baseSlot = urutan.length > 9 ? 56 : urutan.length > 6 ? 64 : 72;
   const tegak = w > 0 && h > w;
   const slotPx = sisiMuat(lebarDalam, tegak ? tinggiKalung - 16 : tinggiKalung, urutan.length, baseSlot * sk, 150, gap, tegak);
+  const satuBaris = urutan.length * slotPx + Math.max(0, urutan.length - 1) * gap <= lebarDalam;
 
   const judul =
     mode === "lanjut" ? "Lanjutkan polanya!" : mode === "perbaiki" ? "Ada yang tertukar. Betulkan satu!" : fasePilih ? `Pilih ${butuhPilih} benda untuk polamu` : "Susun polamu berulang-ulang";
 
   return (
-    <div className={`flex flex-1 flex-col gap-3 ${tablet ? "justify-center" : ""}`} style={{ color: INK, minHeight: tablet ? Math.min(620, Math.round(h * 0.64)) : undefined }}>
+    <div className={`flex flex-1 flex-col gap-3 ${tabletTegak || tabletTunas ? "justify-center" : ""}`} style={{ color: INK, minHeight: tabletTunas ? Math.min(620, Math.round(h * 0.64)) : undefined }}>
       {/* judul + bantu */}
       <div className="flex items-start gap-2">
         <div className="flex-1 px-1 text-center" style={{ fontFamily: BALOO, fontSize: 21 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar-tua)" }}>
@@ -327,9 +330,9 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
         <TombolBantu onClick={bantu} disabled={kunci} />
       </div>
 
-      {/* Rak pola Tunas mengikuti tinggi slot supaya palet tetap dekat. */}
+      {/* Di layar tegak yang luas, tinggi papan mengikuti baris slot supaya palet tetap dekat. */}
       <div
-        className={`relative flex ${padat ? "shrink-0" : "flex-1"} flex-col justify-center ${hiasan ? "akademi-pop" : ""}`}
+        className={`relative flex ${papanRapat ? "shrink-0" : "flex-1"} flex-col justify-center ${hiasan ? "akademi-pop" : ""}`}
         style={{
           borderRadius: 26 * sk,
           padding: `${16 * sk}px ${12 * sk}px`,
@@ -337,8 +340,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
           boxShadow: hiasan ? `0 6px 0 rgba(11,37,69,.12), 0 0 0 4px ${EMAS}` : bayangKartu(),
         }}
       >
-        {/* tali kalung di belakang kotak */}
-        <div aria-hidden className="pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 rounded-full" style={{ height: Math.max(4, 5 * sk), background: hiasan ? EMAS : tema.wadahGelap }} />
+        {satuBaris && <div aria-hidden className="pointer-events-none absolute inset-x-6 top-1/2 -translate-y-1/2 rounded-full" style={{ height: Math.max(4, 5 * sk), background: hiasan ? EMAS : tema.wadahGelap }} />}
         <div className="relative flex flex-wrap items-center justify-center" style={{ gap }}>
           {urutan.map((id, i) => {
             const item = id !== null ? palette.find((p) => p.id === id) : undefined;
@@ -365,9 +367,8 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                   background: kosong ? "rgba(255,255,255,.9)" : benar === true ? "#e6f8ef" : benar === false ? "#ffe9ec" : "#fff",
                   border: kosong ? `3px dashed ${dipilih ? UNGU : disorot ? SOROT : tema.wadahGelap}` : "3px solid transparent",
                   boxShadow: kosong
-                    ? `inset 0 4px 10px rgba(0,0,0,.14)${ring !== "transparent" && !dipilih && !disorot ? `, 0 0 0 3px ${ring}` : ""}`
-                    : `0 4px 0 rgba(0,0,0,.18), 0 0 0 3px ${ring}`,
-                  transform: berbunyi ? "scale(1.14)" : dipilih ? "scale(1.08)" : undefined,
+                    ? `inset 0 4px 10px rgba(0,0,0,.14)${ring !== "transparent" && !dipilih && !disorot ? `, inset 0 0 0 3px ${ring}` : ""}`
+                    : `0 4px 0 rgba(0,0,0,.18), inset 0 0 0 3px ${ring}`,
 
                   cursor: bisaKetuk ? "pointer" : "default",
                   animationDelay: hiasan ? `${i * 60}ms` : undefined,
