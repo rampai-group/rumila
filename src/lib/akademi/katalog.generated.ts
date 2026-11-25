@@ -23346,21 +23346,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "grid-3x3-satu-belokan",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.TKA.NAVIGASI.03"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Maju Lalu Belok",
-        "instruksi": "Susun maju dan belok di rak supaya robot sampai bintang, lalu tekan jalan."
+        "instruksi": "Susun maju dan belok di rak supaya robot sampai bintang, lalu tekan jalan.",
+        "instruksi-ujian": "Susun blok maju dan belok di rak supaya robot sampai ke bintang. Lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Forward, Then Turn",
-        "instruksi": "Arrange forward and turn blocks on the rack so the robot reaches the star, then press go."
+        "instruksi": "Arrange forward and turn blocks on the rack so the robot reaches the star, then press go.",
+        "instruksi-ujian": "Arrange forward and turn blocks on the rack to guide the robot to the star. Then tap Kirim program to submit."
       }
     },
     "knobs": {
@@ -23598,21 +23601,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "grid-4x4-dua-belokan",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.TKB.PROGRAM-5-8.01"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Program Sampai Delapan Blok",
-        "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan."
+        "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan.",
+        "instruksi-ujian": "Susun program sampai delapan blok. Pakai blok maju dan belok supaya robot sampai ke bintang, lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Programs of Up to Eight Blocks",
-        "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go."
+        "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go.",
+        "instruksi-ujian": "Build a program of up to eight forward and turn blocks to guide the robot to the star. Then tap Kirim program to submit."
       }
     },
     "knobs": {
@@ -24198,21 +24204,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "grid-4x4-tembok-taman",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.TKB.PROGRAM-5-8.01"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Tembok di Taman Luas",
-        "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan."
+        "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan.",
+        "instruksi-ujian": "Lihat letak tembok dan arah hadap robot. Susun semua blok untuk sampai ke bintang, lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Wall in the Big Garden",
-        "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it."
+        "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it.",
+        "instruksi-ujian": "Look at the walls and which way the robot is facing. Arrange all the blocks needed to reach the star, then tap Kirim program to submit."
       }
     },
     "knobs": {
@@ -28037,21 +28046,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "lompati-batu-jalur-kanan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.TKA.KALAU.01"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Lompat di Petak Batu",
-        "instruksi": "Lihat di mana batunya: taruh 'lompat' tepat di situ dan 'maju' di petak kosong, lalu jalan."
+        "instruksi": "Lihat di mana batunya: taruh 'lompat' tepat di situ dan 'maju' di petak kosong, lalu jalan.",
+        "instruksi-ujian": "Pakai blok lompat saat ada batu di depan robot dan blok maju untuk petak kosong. Lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Jump at the Rock",
-        "instruksi": "See where the rock is: put 'jump' right there and 'forward' for the empty squares, then go."
+        "instruksi": "See where the rock is: put 'jump' right there and 'forward' for the empty squares, then go.",
+        "instruksi-ujian": "Use a jump block when there is a rock ahead and a forward block for empty squares. Then tap Kirim program to submit."
       }
     },
     "knobs": {
@@ -33032,21 +33044,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "rak-maju-lurus-atas",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.TKA.NAVIGASI.01"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Naik ke Bintang",
-        "instruksi": "Robot mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
+        "instruksi": "Robot mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan.",
+        "instruksi-ujian": "Susun blok maju di rak sebanyak langkah yang dibutuhkan robot untuk naik ke bintang. Lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Up to the Star",
-        "instruksi": "The robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
+        "instruksi": "The robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go.",
+        "instruksi-ujian": "Put enough forward blocks on the rack for the robot to move up to the star. Then tap Kirim program to submit."
       }
     },
     "knobs": {
@@ -33411,21 +33426,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "rak-maju-lurus-kanan",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.TKA.NAVIGASI.01"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Rak Blok Maju",
-        "instruksi": "Susun blok 'maju' di rak sebanyak langkah ke bintang, lalu tekan jalan."
+        "instruksi": "Susun blok 'maju' di rak sebanyak langkah ke bintang, lalu tekan jalan.",
+        "instruksi-ujian": "Susun satu blok maju untuk tiap langkah ke bintang. Lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Forward Block Rack",
-        "instruksi": "Put 'forward' blocks on the rack, one for each step to the star, then press go."
+        "instruksi": "Put 'forward' blocks on the rack, one for each step to the star, then press go.",
+        "instruksi-ujian": "Put one forward block on the rack for each step to the star. Then tap Kirim program to submit."
       }
     },
     "knobs": {
@@ -53790,21 +53808,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-program-gudang-5x5",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD2",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.SD2.PROGRAM.01"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Lorong Rak Gudang",
-        "instruksi": "Rak barang menghalangi jalan. Susun seluruh program dulu, lalu jalankan supaya robot sampai bintang tanpa menabrak rak."
+        "instruksi": "Rak barang menghalangi jalan. Susun seluruh program dulu, lalu jalankan supaya robot sampai bintang tanpa menabrak rak.",
+        "instruksi-ujian": "Susun seluruh program supaya robot sampai ke bintang tanpa menabrak rak barang. Lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Warehouse Shelf Aisles",
-        "instruksi": "Shelves block the way. Build the whole program first, then run it so the robot reaches the star without hitting a shelf."
+        "instruksi": "Shelves block the way. Build the whole program first, then run it so the robot reaches the star without hitting a shelf.",
+        "instruksi-ujian": "Build the whole program to guide the robot to the star without hitting the shelves. Then tap Kirim program to submit."
       }
     },
     "knobs": {
@@ -54606,21 +54627,24 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-program-tepat-5x5",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "navigasi",
     "competencyIds": [
       "KODE.SD2.PROGRAM.01"
     ],
     "instructionKey": "instruksi",
+    "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
         "judul": "Program Tepat 5×5",
-        "instruksi": "Susun semua blok dulu, lalu jalankan: robot harus sampai bintang tanpa menabrak dinding."
+        "instruksi": "Susun semua blok dulu, lalu jalankan: robot harus sampai bintang tanpa menabrak dinding.",
+        "instruksi-ujian": "Susun seluruh program supaya robot sampai ke bintang tanpa menabrak dinding. Lalu ketuk Kirim program."
       },
       "en": {
         "judul": "Precise 5×5 Program",
-        "instruksi": "Build all the blocks first, then run: the robot must reach the star without hitting a wall."
+        "instruksi": "Build all the blocks first, then run: the robot must reach the star without hitting a wall.",
+        "instruksi-ujian": "Build the whole program to guide the robot to the star without hitting a wall. Then tap Kirim program to submit."
       }
     },
     "knobs": {

@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { buatRonde, buatRondeUnik, geserKnob, knobDefaults, kunciRonde } from "@akademi/mechanics";
+import { kunciInstruksiUjian } from "@akademi/schema";
 import { KOMPETENSI, PAKET, paketById } from "../katalog";
 import { cakupanUjian } from "../ruang-ujian";
+import { SUARA } from "../suara-manifest.generated";
 import { bolehMengulang, hariWIB, hashUjian, lulusDari, nilaiDari, predikat, rencanaUjian, sudahDikerjakan, sudahLulus, terbaik, type HasilUjian } from "../ujian";
 import { paket } from "./helper";
 
@@ -53,6 +55,28 @@ describe("rencanaUjian", () => {
       return p.id + "|" + kunciRonde(buatRonde(p, knobDefaults(p), x.seed));
     });
     expect(new Set(kunci).size).toBe(8);
+  });
+});
+
+describe("instruksi navigasi ujian", () => {
+  it.each([
+    "rak-maju-lurus-atas",
+    "rak-maju-lurus-kanan",
+    "grid-3x3-satu-belokan",
+    "lompati-batu-jalur-kanan",
+    "grid-4x4-dua-belokan",
+    "grid-4x4-tembok-taman",
+    "sd2-kode-program-gudang-5x5",
+    "sd2-kode-program-tepat-5x5",
+  ])("%s menyebut tombol Kirim program dalam teks dan audio ujian", (id) => {
+    const p = paketById(id)!;
+    const kunci = kunciInstruksiUjian(p);
+    expect(kunci).not.toBe(p.instructionKey);
+    for (const bahasa of ["id", "en"] as const) {
+      expect(p.locale[bahasa][kunci]).toContain("Kirim program");
+      expect(p.locale[bahasa][p.instructionKey]).not.toContain("Kirim program");
+    }
+    expect(SUARA[p.locale.id[kunci]]).toMatch(/^\/akademi\/suara\/.+\.mp3$/);
   });
 });
 

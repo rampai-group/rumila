@@ -1,20 +1,23 @@
 {
   "id": "sd2-kode-program-gudang-5x5",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "navigasi",
   "competencyIds": [
     "KODE.SD2.PROGRAM.01"
   ],
   "instructionKey": "instruksi",
+  "examInstructionKey": "instruksi-ujian",
   "locale": {
     "id": {
       "judul": "Lorong Rak Gudang",
-      "instruksi": "Rak barang menghalangi jalan. Susun seluruh program dulu, lalu jalankan supaya robot sampai bintang tanpa menabrak rak."
+      "instruksi": "Rak barang menghalangi jalan. Susun seluruh program dulu, lalu jalankan supaya robot sampai bintang tanpa menabrak rak.",
+      "instruksi-ujian": "Susun seluruh program supaya robot sampai ke bintang tanpa menabrak rak barang. Lalu ketuk Kirim program."
     },
     "en": {
       "judul": "Warehouse Shelf Aisles",
-      "instruksi": "Shelves block the way. Build the whole program first, then run it so the robot reaches the star without hitting a shelf."
+      "instruksi": "Shelves block the way. Build the whole program first, then run it so the robot reaches the star without hitting a shelf.",
+      "instruksi-ujian": "Build the whole program to guide the robot to the star without hitting the shelves. Then tap Kirim program to submit."
     }
   },
   "knobs": {

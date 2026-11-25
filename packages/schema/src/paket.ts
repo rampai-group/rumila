@@ -274,6 +274,8 @@ export type NavGrid = z.infer<typeof NavGrid>;
 export const PaketNavigasiObj = z.object({
   ...Base,
   mechanic: z.literal("navigasi"),
+  /** Instruksi opsional ketika kontrol navigasi ujian berbeda dari misi. */
+  examInstructionKey: Key.optional(),
   /** langsung: tiap tombol dijalankan seketika (PAUD) · program: susun di rak lalu jalan · langkah: satu blok per ketukan (prediksi) */
   execMode: z.enum(["langsung", "program", "langkah"]).default("program"),
   commands: z.array(NavCommand).min(1),
@@ -377,10 +379,14 @@ export type ContentPack = z.infer<typeof ContentPack>;
 /** Mekanik yang sudah punya skema paket. Mekanik lain menyusul. */
 export const PACK_MECHANICS: readonly MechanicId[] = ["pilah", "urutkan", "dagang", "navigasi", "pola", "simulasi"];
 
+export function kunciInstruksiUjian(paket: ContentPack): string {
+  return (paket.mechanic === "navigasi" ? paket.examInstructionKey : undefined) ?? paket.instructionKey;
+}
+
 /** Semua kunci locale yang dipakai sebuah paket (untuk validasi dwibahasa). */
 export function kunciLocale(d: ContentPack): Set<string> {
   // "judul" wajib: nama aktivitas ramah anak yang tampil di peta pelajaran dan misi
-  const k = new Set<string>([d.instructionKey, "judul"]);
+  const k = new Set<string>([d.instructionKey, kunciInstruksiUjian(d), "judul"]);
   if (d.mechanic === "pilah") {
     d.bins.forEach(b => k.add(b.labelKey));
     d.items.forEach(i => { k.add(i.labelKey); if (i.altKey) k.add(i.altKey); });

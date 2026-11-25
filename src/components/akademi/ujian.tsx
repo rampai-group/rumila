@@ -8,7 +8,7 @@ import Link from "next/link";
 import { duniaPaket, pilarPaket, rintanganPaket, wadahPaket } from "@/lib/akademi/tema-dunia";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { isiBarang, levelMeta, type ContentPack, type LevelId } from "@akademi/schema";
+import { isiBarang, kunciInstruksiUjian, levelMeta, type ContentPack, type LevelId } from "@akademi/schema";
 import { buatRonde, knobDefaults, nilai, type Hasil, type Jawaban, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent, eventsAnak } from "@/lib/akademi/jejak";
@@ -289,7 +289,7 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
 }
 
 function teksInstruksi(paket: ContentPack, ronde: Ronde, t: (k: string) => string) {
-  const teks = t(paket.instructionKey);
+  const teks = t(kunciInstruksiUjian(paket));
   if (!teks.includes("arang}") || ronde.mechanic !== "dagang" || paket.mechanic !== "dagang") return teks;
   const r = ronde.ronde;
   const id = Object.keys(r.tersedia)[0] ?? r.benda[0] ?? r.pesanan[0]?.goodId;

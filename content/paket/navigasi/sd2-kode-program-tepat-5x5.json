@@ -1,20 +1,23 @@
 {
   "id": "sd2-kode-program-tepat-5x5",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "navigasi",
   "competencyIds": [
     "KODE.SD2.PROGRAM.01"
   ],
   "instructionKey": "instruksi",
+  "examInstructionKey": "instruksi-ujian",
   "locale": {
     "id": {
       "judul": "Program Tepat 5×5",
-      "instruksi": "Susun semua blok dulu, lalu jalankan: robot harus sampai bintang tanpa menabrak dinding."
+      "instruksi": "Susun semua blok dulu, lalu jalankan: robot harus sampai bintang tanpa menabrak dinding.",
+      "instruksi-ujian": "Susun seluruh program supaya robot sampai ke bintang tanpa menabrak dinding. Lalu ketuk Kirim program."
     },
     "en": {
       "judul": "Precise 5×5 Program",
-      "instruksi": "Build all the blocks first, then run: the robot must reach the star without hitting a wall."
+      "instruksi": "Build all the blocks first, then run: the robot must reach the star without hitting a wall.",
+      "instruksi-ujian": "Build the whole program to guide the robot to the star without hitting a wall. Then tap Kirim program to submit."
     }
   },
   "knobs": {
