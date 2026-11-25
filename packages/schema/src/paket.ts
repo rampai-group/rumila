@@ -285,6 +285,8 @@ export const PaketNavigasiObj = z.object({
   semuaGrid: z.boolean().default(false),
   /** mode prediksi (langkah): anak menunjuk petak tujuan sebelum tiap blok dijalankan */
   prediksi: z.boolean().default(false),
+  /** Latihan hitung pengulangan: program harus habis tepat saat mencapai bintang. */
+  tepatDiBintang: z.boolean().optional(),
   grids: z.array(NavGrid).min(1),
 });
 export const PaketNavigasi = PaketNavigasiObj.superRefine(refineNavigasi);

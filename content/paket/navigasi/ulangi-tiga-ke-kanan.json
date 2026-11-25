@@ -1,6 +1,6 @@
 {
   "id": "ulangi-tiga-ke-kanan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -31,6 +31,7 @@
   "rounds": 10,
   "world": "kebun-pasar",
   "execMode": "program",
+  "tepatDiBintang": true,
   "commands": [
     "maju",
     "ulangi"
