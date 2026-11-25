@@ -120,6 +120,15 @@ export function hitungBlok(program: NavBlock[]): number {
   return program.reduce((n, b) => n + (b.cmd === "ulangi" ? 1 + hitungBlok(b.body) : 1), 0);
 }
 
+function hitungPerintah(program: NavBlock[]): number {
+  return program.reduce((n, b) => n + (b.cmd === "ulangi" ? b.n * hitungPerintah(b.body) : 1), 0);
+}
+
+/** Interpreter berhenti di bintang; latihan Ulangi juga memeriksa sisa perintah. */
+export function adaPerintahSetelahBintang(program: NavBlock[], lari: NavRun): boolean {
+  return lari.outcome === "bintang" && lari.executed < hitungPerintah(program);
+}
+
 /** Jika batas rak debug tidak ditulis, rak harus muat program yang disediakan. */
 export function kapasitasRakNavigasi(r: Pick<RondeNavigasi, "rackSlots" | "debug" | "program">): number {
   return r.rackSlots ?? Math.max(8, r.debug ? hitungBlok(r.program) : 0);
@@ -167,6 +176,7 @@ export function buatRondeNavigasi(p: PaketNavigasi, knobs: Knobs, seed: number):
     fixes: utama.fixes,
     debug: p.debug,
     prediksi: p.prediksi,
+    tepatDiBintang: p.tepatDiBintang,
   };
 }
 
@@ -189,6 +199,7 @@ export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
   }
 
   const semuaBintang = outcomes.length > 0 && outcomes.every(o => o === "bintang");
+  const programHabis = !r.tepatDiBintang || runs.every(lari => !adaPerintahSetelahBintang(program, lari));
   // debug: anak boleh menemukan perbaikan yang lebih hemat dari target (dulu wajib tepat sama → salah dinilai)
   const debugBeres = !r.debug || r.fixes === undefined || (typeof j.edits === "number" && j.edits <= r.fixes);
   // mode bendera: batas berlaku per bagian. Debug memakai kapasitas yang sama dengan editor.
@@ -201,7 +212,7 @@ export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
   const programDisediakan = r.execMode === "langkah" && r.prediksi;
   const benar = programDisediakan
     ? prediksiTotal > 0 && prediksiBeres
-    : semuaBintang && debugBeres && rakBeres && prediksiBeres && benderaTepat !== false;
+    : semuaBintang && programHabis && debugBeres && rakBeres && prediksiBeres && benderaTepat !== false;
 
   return {
     benar,

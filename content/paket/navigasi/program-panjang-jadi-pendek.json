@@ -1,6 +1,6 @@
 {
   "id": "program-panjang-jadi-pendek",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -31,6 +31,7 @@
   "rounds": 10,
   "world": "kebun-pasar",
   "execMode": "program",
+  "tepatDiBintang": true,
   "commands": [
     "maju",
     "kanan",

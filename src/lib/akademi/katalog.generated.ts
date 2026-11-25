@@ -32294,7 +32294,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "program-panjang-jadi-pendek",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -32325,6 +32325,7 @@ export const PAKET_RAW: unknown[] = [
     "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
+    "tepatDiBintang": true,
     "commands": [
       "maju",
       "kanan",
@@ -33883,7 +33884,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "ringkas-program-ulangi",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -33914,6 +33915,7 @@ export const PAKET_RAW: unknown[] = [
     "rounds": 10,
     "world": "taman",
     "execMode": "program",
+    "tepatDiBintang": true,
     "commands": [
       "maju",
       "lompat",
@@ -173273,7 +173275,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "ulangi-berapa-kali-lurus",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -173304,6 +173306,7 @@ export const PAKET_RAW: unknown[] = [
     "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
+    "tepatDiBintang": true,
     "commands": [
       "maju",
       "ulangi"
@@ -173691,7 +173694,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "ulangi-maju-dan-belok",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -173722,6 +173725,7 @@ export const PAKET_RAW: unknown[] = [
     "rounds": 10,
     "world": "taman",
     "execMode": "program",
+    "tepatDiBintang": true,
     "commands": [
       "maju",
       "lompat",
@@ -174482,7 +174486,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "ulangi-tiga-ke-atas",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -174513,6 +174517,7 @@ export const PAKET_RAW: unknown[] = [
     "rounds": 10,
     "world": "menara",
     "execMode": "program",
+    "tepatDiBintang": true,
     "commands": [
       "maju",
       "ulangi"
@@ -174810,7 +174815,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "ulangi-tiga-ke-kanan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -174841,6 +174846,7 @@ export const PAKET_RAW: unknown[] = [
     "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
+    "tepatDiBintang": true,
     "commands": [
       "maju",
       "ulangi"

@@ -11,7 +11,7 @@
 import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { NavCommand, PaketNavigasi } from "@akademi/schema";
-import { hitungBlok, jalankan, kapasitasRakNavigasi, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
+import { adaPerintahSetelahBintang, hitungBlok, jalankan, kapasitasRakNavigasi, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
 import { TombolBantu } from "./bantu";
 import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
@@ -399,7 +399,9 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
       } else {
         const lari = jalankan(g, program);
         if (!(await animasikan(lari.steps, id, { x: g.start.x, y: g.start.y, dir: g.start.dir }))) return;
-        outcome = lari.outcome;
+        const masihAdaPerintah = ronde.tepatDiBintang && adaPerintahSetelahBintang(program, lari);
+        outcome = masihAdaPerintah ? "meleset" : lari.outcome;
+        if (masihAdaPerintah) pesanKhusus = "Agam sudah sampai di bintang, tapi masih ada perintah. Cek angka Ulangi dan susunan bloknya.";
       }
 
       if (outcome !== "bintang") {

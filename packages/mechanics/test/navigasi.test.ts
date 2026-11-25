@@ -9,6 +9,8 @@ import duaBelokan from "../../../content/paket/navigasi/grid-3x3-dua-belokan.jso
 import tebakPetak from "../../../content/paket/navigasi/tebak-petak-berikutnya.json";
 import putarSeperempat from "../../../content/paket/navigasi/sd2-mat-putar-robot-seperempat.json";
 import debugTigaJalur from "../../../content/paket/navigasi/sd5-kode-perbaiki-kalau.json";
+import ulangiTiga from "../../../content/paket/navigasi/ulangi-tiga-ke-kanan.json";
+import ulangiPasangan from "../../../content/paket/navigasi/ulangi-maju-dan-belok.json";
 
 const grid = (over: Partial<NavGrid> = {}): NavGrid => ({
   id: "g", w: 5, h: 3, start: { x: 0, y: 1, dir: "E" }, goal: { x: 3, y: 1 }, walls: [], rocks: [], optimal: 3, ...over,
@@ -105,6 +107,20 @@ describe("optimal & hitungBlok", () => {
 
 describe("buatRondeNavigasi + nilaiNavigasi", () => {
   const p = ContentPack.parse(lurus) as PaketNavigasi;
+  it("latihan Ulangi menolak perintah yang masih tersisa saat Agam sampai", () => {
+    const ronde = buatRondeNavigasi(ContentPack.parse(ulangiTiga) as PaketNavigasi, { distance: 3 }, 1);
+    const terlaluBanyak: NavBlock[] = [{ cmd: "ulangi", n: 4, body: [M] }];
+    expect(jalankan(ronde.grids[0], terlaluBanyak).outcome).toBe("bintang");
+    expect(nilaiNavigasi(ronde, { program: terlaluBanyak }).benar).toBe(false);
+    expect(nilaiNavigasi(ronde, { program: [{ cmd: "ulangi", n: 3, body: [M] }] }).benar).toBe(true);
+    expect(nilaiNavigasi({ ...ronde, tepatDiBintang: undefined }, { program: terlaluBanyak }).benar).toBe(true);
+  });
+  it("latihan Ulangi dua perintah memeriksa sisa kedua perintah", () => {
+    const ronde = buatRondeNavigasi(ContentPack.parse(ulangiPasangan) as PaketNavigasi, { distance: 4 }, 1);
+    const program = (n: number): NavBlock[] => [{ cmd: "ulangi", n, body: [M, L] }];
+    expect(nilaiNavigasi(ronde, { program: program(2) }).benar).toBe(true);
+    expect(nilaiNavigasi(ronde, { program: program(3) }).benar).toBe(false);
+  });
   it("knob distance memilih grid dengan optimal == distance", () => {
     for (const d of [1, 2, 3, 4]) {
       const r = buatRondeNavigasi(p, { distance: d }, 7);

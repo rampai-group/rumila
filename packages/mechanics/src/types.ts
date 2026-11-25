@@ -133,6 +133,7 @@ export interface RondeNavigasi {
   fixes?: number;
   debug: boolean;
   prediksi: boolean;
+  tepatDiBintang?: boolean;
 }
 
 export interface JawabanNavigasi {
