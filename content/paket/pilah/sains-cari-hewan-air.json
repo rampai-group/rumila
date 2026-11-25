@@ -1,6 +1,6 @@
 {
   "id": "sains-cari-hewan-air",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -148,7 +148,11 @@
       "id": "penyu",
       "labelKey": "i-penyu",
       "bin": "pilihan",
-      "emoji": "🐢"
+      "scale": 0.65,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-penyu-laut"
+      }
     },
     {
       "id": "anjinglaut",

@@ -181055,7 +181055,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "rak-bentuk-ruang-dapur",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -181170,7 +181170,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelas",
         "labelKey": "gelas",
         "bin": "tabung",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gelas-silinder"
+        }
       },
       {
         "id": "kaleng",
@@ -181194,7 +181197,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "rak-bentuk-ruang-mainan",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -181203,8 +181206,8 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Rak Bentuk Mainan",
-        "instruksi": "Taruh tiap mainan di rak yang bentuknya sama.",
+        "judul": "Rak Bentuk Benda",
+        "instruksi": "Taruh tiap benda di rak yang bentuknya sama.",
         "bola": "bola",
         "kubus": "kubus",
         "tabung": "tabung",
@@ -181219,8 +181222,8 @@ export const PAKET_RAW: unknown[] = [
         "kayu": "gelondong kayu"
       },
       "en": {
-        "judul": "Toy Shape Shelf",
-        "instruksi": "Put each toy on the shelf with the same shape.",
+        "judul": "Object Shape Shelf",
+        "instruksi": "Put each object on the shelf with the same shape.",
         "bola": "sphere",
         "kubus": "cube",
         "tabung": "cylinder",
@@ -184055,7 +184058,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-cari-hewan-air",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -184203,7 +184206,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "penyu",
         "labelKey": "i-penyu",
         "bin": "pilihan",
-        "emoji": "🐢"
+        "scale": 0.65,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-penyu-laut"
+        }
       },
       {
         "id": "anjinglaut",
@@ -185083,7 +185090,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-darat-air-udara-kebun",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -185200,7 +185207,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "penyu",
         "labelKey": "i-penyu",
         "bin": "air",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-penyu-laut"
+        }
       },
       {
         "id": "burung",

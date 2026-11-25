@@ -17,7 +17,7 @@ import { ILUSTRASI_WARNA_PAUD_IDS, IlustrasiWarnaPaud } from "./ilustrasi-warna-
 
 /** Concrete early-years objects. Each identifier names a visible feature, never an answer state. */
 export const ILUSTRASI_AWAL_IDS = [
-  "polong", "anggur", "roda", "keju", "lambung", "gelas", "talenan",
+  "polong", "anggur", "roda", "keju", "lambung", "gelas", "gelas-silinder", "talenan",
   "bahan-kayu", "bahan-logam", "bahan-plastik", "bahan-kaca", "jas-hujan", "jaket",
   "pot-jendela", "pot-teras", "pot-lemari", "pot-kotak", "pot-kebun", "pot-gudang", "pot-kolong",
   "bumi-siang", "bumi-malam", "bola-siang", "bola-malam",
@@ -155,6 +155,14 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   else if (ILUSTRASI_JENGKAL_SAYUR_IDS.includes(gambar)) art = <IlustrasiJengkalSayur id={gambar} />;
   else if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
   else if (id === "penyu-laut") art = <PenyuLaut />;
+  else if (id === "gelas-silinder") art = (
+    <g stroke="#247490" strokeWidth="3" strokeLinejoin="round">
+      <path d="M35 19H95V80A30 9 0 0 1 35 80Z" fill="#aee5f3" />
+      <ellipse cx="65" cy="19" rx="30" ry="9" fill="#e0f6fb" />
+      <path d="M43 19A22 4 0 0 0 87 19" fill="none" stroke="#68aabd" strokeWidth="2" />
+      <path d="M45 34V71M51 39V59" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
+    </g>
+  );
   else if (id === "polong") art = <g stroke="#267343" strokeWidth="2.5"><path d="M14 71Q29 18 112 25Q100 78 22 81Z" fill="#43a94c" /><path d="M21 72Q45 38 105 31Q81 78 21 72Z" fill="#c7e880" />{[35,56,77,96].map((x,i) => <circle key={x} cx={x} cy={63-i*8} r="9" fill="#73bf45" />)}<path d="M110 26Q117 12 108 13" fill="none" /></g>;
   else if (id === "anggur") art = <g><path d="M64 22Q62 9 71 6" fill="none" stroke="#5e8048" strokeWidth="5" /><path d="M68 16Q92 0 96 18Q81 28 68 16" fill="#68a54f" /><ellipse cx="65" cy="57" rx="31" ry="34" fill="#9463bd" stroke="#62428f" strokeWidth="3" /><ellipse cx="52" cy="41" rx="8" ry="11" fill="#c6a1e0" /></g>;
   else if (id === "roda") art = <g><circle cx="65" cy="50" r="39" fill="#fff" stroke="#384d59" strokeWidth="8" /><circle cx="65" cy="50" r="31" fill="none" stroke="#a6bac7" strokeWidth="3" />{Array.from({length:8},(_,i) => <path key={i} d="M65 20V80" stroke="#698692" strokeWidth="2" transform={`rotate(${i*22.5} 65 50)`} />)}<circle cx="65" cy="50" r="6" fill="#fcba3c" stroke={INK} strokeWidth="2" /></g>;
