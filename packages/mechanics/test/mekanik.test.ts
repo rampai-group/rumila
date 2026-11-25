@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ContentPack, type PaketDagang, type PaketPilah, type PaketUrutkan } from "@akademi/schema";
 import {
-  acak, buatRonde, buatRondeBaru, buatRondeDagang, buatRondePilah, buatRondeUrutkan, hitungSwap, knobDefaults, kunciRonde, nilai, nilaiDagang, nilaiPilah, nilaiUrutkan, rng,
+  acak, buatRonde, buatRondeBaru, buatRondeDagang, buatRondePilah, buatRondeUrutkan, geserKnob, hitungSwap, knobDefaults, kunciRonde, nilai, nilaiDagang, nilaiPilah, nilaiUrutkan, rng,
   type RondeDagang, type RondePilahKelompok, type RondePilahPilih,
 } from "../src";
 // salinan beku: konten golden boleh bertambah tanpa mematahkan tes perilaku
@@ -9,6 +9,12 @@ import keranjang from "./fixtures/paket-keranjang-warna.json";
 import hitungJari from "./fixtures/paket-hitung-jari.json";
 import pagi from "../../../content/golden/paket-urutan-pagi-hari.json";
 import pasar from "../../../content/golden/paket-pasar-buah-1-5.json";
+import hitungBiji from "../../../content/paket/dagang/hitung-biji-kebun-11-20.json";
+import hitungKelereng from "../../../content/paket/dagang/hitung-kelereng-11-20.json";
+import rakKelereng from "../../../content/paket/pilah/rak-angka-11-20-kelereng.json";
+import rakTelur from "../../../content/paket/pilah/rak-angka-11-20-telur.json";
+import taksirApel from "../../../content/paket/simulasi/taksir-keranjang-apel.json";
+import taksirPetik from "../../../content/paket/simulasi/taksir-petik-kebun.json";
 
 describe("rng", () => {
   it("deterministik untuk seed sama, beda untuk seed beda", () => {
@@ -27,6 +33,34 @@ describe("rng", () => {
   });
   it("knobDefaults membaca default tiap knob", () => {
     expect(knobDefaults(ContentPack.parse(keranjang))).toEqual({ binCount: 2, itemCount: 6 });
+  });
+});
+
+describe("latihan jumlah benda Navigator", () => {
+  it.each([
+    [hitungBiji, "itemsMax", [12, 12, 14, 14, 16, 16, 18, 18, 20, 20]],
+    [hitungKelereng, "itemsMax", [12, 12, 14, 14, 16, 16, 18, 18, 20, 20]],
+    [rakKelereng, "maxCount", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
+    [rakTelur, "maxCount", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
+    [taksirApel, "max", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
+    [taksirPetik, "max", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
+  ] as const)("membuka jumlah 20 dalam satu latihan (%#)", (raw, kunci, jadwal) => {
+    const paket = ContentPack.parse(raw);
+    let knobs = knobDefaults(paket);
+    const jadwalAktual = Array.from({ length: paket.rounds }, (_, i) => {
+      const batas = knobs[kunci];
+      if (i % 2 === 1 && i + 1 < paket.rounds) knobs = geserKnob(paket, knobs, 1);
+      return batas;
+    });
+    expect(jadwalAktual).toEqual(jadwal);
+
+    const tersediaDariSeedBerbeda = Array.from({ length: 64 }, (_, seed) => {
+      const r = buatRonde(paket, knobs, seed);
+      if (r.mechanic === "dagang") return r.ronde.benda.length === 20;
+      if (r.mechanic === "simulasi") return r.ronde.target === 20;
+      return r.mechanic === "pilah" && r.ronde.mode === "kelompok" && r.ronde.items.some(i => i.count === 20);
+    }).filter(Boolean);
+    expect(tersediaDariSeedBerbeda.length).toBeGreaterThan(1);
   });
 });
 

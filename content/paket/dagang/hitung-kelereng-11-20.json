@@ -1,6 +1,6 @@
 {
   "id": "hitung-kelereng-11-20",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -26,7 +26,7 @@
       "min": 11,
       "max": 20,
       "default": 12,
-      "step": 1,
+      "step": 2,
       "keterangan": "jumlah benda yang dihitung; boleh dikelompokkan dulu, yang sudah disentuh meredup"
     },
     "kinds": {
@@ -52,13 +52,21 @@
       "id": "kelereng",
       "labelKey": "kelereng",
       "price": 1000,
-      "emoji": "🔵"
+      "scale": 0.9,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-kaca-padat"
+      }
     },
     {
       "id": "kancing",
       "labelKey": "kancing",
       "price": 1000,
-      "emoji": "🟤"
+      "scale": 0.9,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kancing-baju"
+      }
     }
   ],
   "customerRule": {
