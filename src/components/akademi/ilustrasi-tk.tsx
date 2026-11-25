@@ -519,6 +519,53 @@ function PantulanCermin() {
   </>;
 }
 
+function HalteHujan() {
+  return <>
+    <rect x="3" y="3" width="124" height="94" rx="12" fill="#e4f4fa" />
+    <path d="M9 89H121" stroke="#9ebbc2" strokeWidth="4" />
+    <path d="M15 12L12 19M24 9L21 16M105 10L102 17M118 15L115 22M13 48L10 55M120 54L117 61" stroke="#5ba2c8" strokeWidth="3" />
+    <path d="M24 35H96V83H24Z" fill="#c6e5eb" stroke="#428098" strokeWidth="3" />
+    <path d="M16 35L27 23H92L104 35Z" fill="#247c97" stroke={INK} strokeWidth="3" />
+    <path d="M39 59H80V66H39Z" fill="#e6a552" stroke="#88582d" strokeWidth="2.5" />
+    <path d="M43 66V82M76 66V82M24 35V88M96 35V88M111 50V88" stroke={INK} strokeWidth="3" />
+    <rect x="102" y="33" width="18" height="18" rx="4" fill="#fff" stroke="#237a96" strokeWidth="2.5" />
+    <path d="M107 39H116V46H107Z" fill="#237a96" />
+    <path d="M108 46V47M115 46V47" stroke={INK} strokeWidth="2" />
+  </>;
+}
+
+function PerahuLayarMainan() {
+  return <>
+    <path d="M12 75Q25 69 38 75T64 75T90 75T116 75M24 87Q37 81 50 87T76 87T102 87" fill="none" stroke="#6bb7d3" strokeWidth="4" />
+    <path d="M34 62H100L87 75H44Z" fill="#ed8e5e" stroke="#a5533a" strokeWidth="3" />
+    <path d="M65 20V63" stroke={INK} strokeWidth="3" />
+    <path d="M66 23Q89 34 92 56H66Z" fill="#ffd871" stroke="#a97132" strokeWidth="2.5" />
+    <path d="M61 31L40 55H61Z" fill="#96d3e8" stroke="#397c9a" strokeWidth="2.5" />
+    <path d="M11 18H32M16 27H39M103 38H119" stroke="#a1cedc" strokeWidth="3" />
+  </>;
+}
+
+function MainPasir() {
+  return <>
+    <rect x="3" y="3" width="124" height="94" rx="11" fill="#fff0cc" />
+    <path d="M9 82Q31 77 50 83T88 83T121 82V95H9Z" fill="#b7e3ed" />
+    <path d="M18 74H83L80 59H72V35H66V42H61V35H54V45H47V35H40V42H34V35H28V60H21Z" fill="#e6af63" stroke="#916130" strokeWidth="2.6" />
+    <path d="M48 74V62Q52 55 57 62V74" fill="#b88345" stroke="#916130" strokeWidth="2.2" />
+    <path d="M87 56Q88 39 101 39Q114 39 116 56" fill="none" stroke="#a95346" strokeWidth="2.8" />
+    <path d="M86 55H117L111 77H92Z" fill="#e78871" stroke="#a95346" strokeWidth="2.6" />
+  </>;
+}
+
+function SepatuBotHujan() {
+  return <>
+    <path d="M13 81Q21 78 31 82T52 82T77 80T114 83" fill="none" stroke="#88cfe2" strokeWidth="4" />
+    <path d="M68 23H92V51Q97 59 113 63Q118 65 115 72H72Q67 72 67 66Z" fill="#71c1a5" stroke="#2d7364" strokeWidth="3" />
+    <path d="M26 24H55V57Q61 65 81 68Q88 69 87 78H32Q25 78 25 72Z" fill="#ffcb58" stroke="#936332" strokeWidth="3" />
+    <path d="M25 32H55M68 30H92M27 71H83" stroke="#856137" strokeWidth="3" />
+    <path d="M102 22L98 29M112 27L108 35M13 31L9 39" stroke="#5ba2c8" strokeWidth="3" />
+  </>;
+}
+
 export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: string; s: number; style?: CSSProperties; className?: string }) {
   const id = gambar.slice(3);
   let art: ReactNode;
@@ -540,6 +587,10 @@ export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: str
   else if (id === "mars") art = <Mars />;
   else if (id.startsWith("kue-")) art = <KuePesta id={id.slice(4)} />;
   else if (id === "dalam-rumah") art = <DalamRumah />;
+  else if (id === "halte-hujan") art = <HalteHujan />;
+  else if (id === "perahu-layar-mainan") art = <PerahuLayarMainan />;
+  else if (id === "main-pasir") art = <MainPasir />;
+  else if (id === "sepatu-bot-hujan") art = <SepatuBotHujan />;
   else if (JATUH_DI_ALAM[id]) art = <JatuhDiAlam {...JATUH_DI_ALAM[id]} />;
   else if (id === "apel-berbunga" || id === "apel-berbuah") art = <PohonApel berbuah={id === "apel-berbuah"} />;
   else if (id === "salim-di-gerbang") art = <SalimDiGerbang />;

@@ -27623,7 +27623,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "lompati-batu-jalur-atas",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -27633,11 +27633,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Mendaki Bukit Berbatu",
-        "instruksi": "Robot mendaki bukit berbatu: taruh 'lompat' hanya di petak batu, sisanya 'maju'."
+        "instruksi": "Susun blok. Lompat saat batu tepat di depan, Maju saat kosong."
       },
       "en": {
         "judul": "Climbing the Rocky Hill",
-        "instruksi": "The robot climbs a rocky hill: put 'jump' only on the rock squares, 'forward' for the rest."
+        "instruksi": "Build the program. Rock directly ahead? Use Lompat (jump). Empty square ahead? Use Maju (forward)."
       }
     },
     "knobs": {
@@ -28046,7 +28046,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "lompati-batu-jalur-kanan",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -28056,13 +28056,13 @@ export const PAKET_RAW: unknown[] = [
     "examInstructionKey": "instruksi-ujian",
     "locale": {
       "id": {
-        "judul": "Lompat di Petak Batu",
-        "instruksi": "Lihat di mana batunya: taruh 'lompat' tepat di situ dan 'maju' di petak kosong, lalu jalan.",
+        "judul": "Lompati Batu di Jalan",
+        "instruksi": "Susun blok. Lompat saat batu tepat di depan, Maju saat kosong.",
         "instruksi-ujian": "Pakai blok lompat saat ada batu di depan robot dan blok maju untuk petak kosong. Lalu ketuk Kirim program."
       },
       "en": {
-        "judul": "Jump at the Rock",
-        "instruksi": "See where the rock is: put 'jump' right there and 'forward' for the empty squares, then go.",
+        "judul": "Jump Over Rocks",
+        "instruksi": "Build the program. Rock directly ahead? Use Lompat (jump). Empty square ahead? Use Maju (forward).",
         "instruksi-ujian": "Use a jump block when there is a rock ahead and a forward block for empty squares. Then tap Kirim program to submit."
       }
     },
@@ -184844,7 +184844,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-cuaca-begini-main-apa",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -184865,14 +184865,14 @@ export const PAKET_RAW: unknown[] = [
         "t-cerah1": "Langit cerah, tidak ada angin. Main apa yang cocok?",
         "t-cerah2": "Lapangan kering dan matahari bersinar. Main apa?",
         "t-cerah3": "Pantai cerah dan hangat, tidak hujan. Main apa?",
-        "t-cerah4": "Matahari terik dan halaman kering. Apa yang cocok dikerjakan?",
-        "t-hujan1": "Hujan deras turun. Apa yang sebaiknya dilakukan?",
+        "t-cerah4": "Matahari bersinar dan baju baru dicuci. Apa yang bisa dilakukan agar baju kering?",
+        "t-hujan1": "Hujan turun tanpa guntur saat kamu menunggu bus. Di mana kamu bisa berteduh?",
         "t-hujan2": "Terdengar guntur dan terlihat kilat. Di mana kita bisa berlindung dengan aman?",
         "t-hujan3": "Hujan turun saat kita harus berjalan ke masjid. Apa yang dilakukan?",
-        "t-hujan4": "Tiba-tiba hujan saat pulang sekolah. Apa yang dilakukan?",
-        "t-angin1": "Angin bertiup kencang dan tidak hujan. Main apa?",
-        "t-angin2": "Angin kencang bertiup di kolam taman. Main apa yang cocok?",
-        "t-angin3": "Daun-daun beterbangan tertiup angin di lapangan. Main apa?",
+        "t-hujan4": "Saat pulang sekolah, hujan turun tanpa guntur. Di mana kamu bisa menunggu sampai hujan reda?",
+        "t-angin1": "Angin bertiup sedang di lapangan terbuka. Kegiatan mana yang memakai angin?",
+        "t-angin2": "Angin sepoi-sepoi bertiup di kolam taman. Mainan apa yang memakai layar untuk menangkap angin?",
+        "t-angin3": "Bendera berkibar pelan di lapangan terbuka. Main apa yang memanfaatkan angin?",
         "i-payung": "berjalan memakai payung",
         "i-jemur": "menjemur baju",
         "i-rumah": "masuk ke dalam rumah"
@@ -184890,14 +184890,14 @@ export const PAKET_RAW: unknown[] = [
         "t-cerah1": "Clear sky, no wind at all. What fits?",
         "t-cerah2": "The field is dry and the sun is shining. What shall we play?",
         "t-cerah3": "The beach is sunny and warm, no rain. What shall we play?",
-        "t-cerah4": "The sun is hot and the yard is dry. What is good to do?",
-        "t-hujan1": "Heavy rain is falling. What should we do?",
+        "t-cerah4": "The sun is shining and your clothes have just been washed. What can you do to dry them?",
+        "t-hujan1": "It starts raining without thunder while you wait for the bus. Where can you take shelter?",
         "t-hujan2": "You hear thunder and see lightning. Where can you take shelter safely?",
         "t-hujan3": "It rains while we must walk to the mosque. What do we do?",
-        "t-hujan4": "Suddenly it rains on the way home from school. What do we do?",
-        "t-angin1": "The wind is strong and it isn't raining. What shall we play?",
-        "t-angin2": "A strong wind blows over the park pond. What fits?",
-        "t-angin3": "Leaves fly in the wind over the field. What shall we play?",
+        "t-hujan4": "It starts raining without thunder on the way home from school. Where can you wait for the rain to stop?",
+        "t-angin1": "A steady breeze blows across an open field. Which activity uses the wind?",
+        "t-angin2": "A light breeze blows over the park pond. Which toy uses a sail to catch the wind?",
+        "t-angin3": "A flag flutters gently in an open field. Which activity uses the wind?",
         "i-payung": "walk with an umbrella",
         "i-jemur": "hang clothes out to dry",
         "i-rumah": "go inside the house"
@@ -184934,13 +184934,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "perahu",
         "labelKey": "i-perahu",
         "bin": "pilihan",
-        "emoji": "⛵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-perahu-layar-mainan",
+          "t": 0
+        }
       },
       {
         "id": "halte",
         "labelKey": "i-halte",
         "bin": "pilihan",
-        "emoji": "🚏"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-halte-hujan",
+          "t": 0
+        }
       },
       {
         "id": "sepeda",
@@ -184958,7 +184966,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "pilihan",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-main-pasir",
+          "t": 0
+        }
       },
       {
         "id": "rumah",
@@ -185083,8 +185095,8 @@ export const PAKET_RAW: unknown[] = [
         "promptKey": "t-angin2",
         "choices": [
           "perahu",
-          "rumah",
-          "halte"
+          "bola",
+          "sepeda"
         ],
         "correct": "perahu"
       },
@@ -187183,7 +187195,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-kegiatan-sesuai-cuaca",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -187202,9 +187214,9 @@ export const PAKET_RAW: unknown[] = [
         "i-eskrim": "matahari terik, makan es krim di taman",
         "i-payung": "hujan turun, pakai payung",
         "i-berteduh": "hujan deras, berteduh di rumah",
-        "i-layang": "angin kencang, waktunya main layang-layang",
+        "i-layang": "angin bertiup sedang, main layang-layang di lapangan terbuka",
         "i-kincir": "angin bertiup, lonceng angin berbunyi",
-        "i-layar": "angin kencang, perahu layar melaju",
+        "i-layar": "angin sepoi-sepoi mendorong perahu layar mainan",
         "i-sepatubot": "hujan turun, pakai sepatu bot"
       },
       "en": {
@@ -187218,9 +187230,9 @@ export const PAKET_RAW: unknown[] = [
         "i-eskrim": "hot sun, eat ice cream in the park",
         "i-payung": "rain is falling, use an umbrella",
         "i-berteduh": "heavy rain, shelter at home",
-        "i-layang": "strong wind, time to fly a kite",
+        "i-layang": "fly a kite in an open field with a steady breeze",
         "i-kincir": "the wind blows, the wind chimes ring",
-        "i-layar": "strong wind, the sailboat speeds along",
+        "i-layar": "a light breeze pushes the toy sailboat",
         "i-sepatubot": "rain is falling, wear rain boots"
       }
     },
@@ -187267,7 +187279,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jemur",
         "labelKey": "i-jemur",
         "bin": "cerah",
-        "emoji": "🧺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-jemuran",
+          "t": 0
+        }
       },
       {
         "id": "renang",
@@ -187291,13 +187307,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "berteduh",
         "labelKey": "i-berteduh",
         "bin": "hujan",
-        "emoji": "🏠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-dalam-rumah",
+          "t": 0
+        }
       },
       {
         "id": "sepatubot",
         "labelKey": "i-sepatubot",
         "bin": "hujan",
-        "emoji": "🥾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-sepatu-bot-hujan",
+          "t": 0
+        }
       },
       {
         "id": "layang",
@@ -187315,7 +187339,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "layar",
         "labelKey": "i-layar",
         "bin": "angin",
-        "emoji": "⛵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-perahu-layar-mainan",
+          "t": 0
+        }
       }
     ],
     "pilihan": []
