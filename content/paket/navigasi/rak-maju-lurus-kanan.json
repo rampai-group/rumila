@@ -1,20 +1,23 @@
 {
   "id": "rak-maju-lurus-kanan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
     "KODE.TKA.NAVIGASI.01"
   ],
   "instructionKey": "instruksi",
+  "examInstructionKey": "instruksi-ujian",
   "locale": {
     "id": {
       "judul": "Rak Blok Maju",
-      "instruksi": "Susun blok 'maju' di rak sebanyak langkah ke bintang, lalu tekan jalan."
+      "instruksi": "Susun blok 'maju' di rak sebanyak langkah ke bintang, lalu tekan jalan.",
+      "instruksi-ujian": "Susun satu blok maju untuk tiap langkah ke bintang. Lalu ketuk Kirim program."
     },
     "en": {
       "judul": "Forward Block Rack",
-      "instruksi": "Put 'forward' blocks on the rack, one for each step to the star, then press go."
+      "instruksi": "Put 'forward' blocks on the rack, one for each step to the star, then press go.",
+      "instruksi-ujian": "Put one forward block on the rack for each step to the star. Then tap Kirim program to submit."
     }
   },
   "knobs": {

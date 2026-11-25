@@ -1,20 +1,23 @@
 {
   "id": "grid-4x4-tembok-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
     "KODE.TKB.PROGRAM-5-8.01"
   ],
   "instructionKey": "instruksi",
+  "examInstructionKey": "instruksi-ujian",
   "locale": {
     "id": {
       "judul": "Tembok di Taman Luas",
-      "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan."
+      "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan.",
+      "instruksi-ujian": "Lihat letak tembok dan arah hadap robot. Susun semua blok untuk sampai ke bintang, lalu ketuk Kirim program."
     },
     "en": {
       "judul": "Wall in the Big Garden",
-      "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it."
+      "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it.",
+      "instruksi-ujian": "Look at the walls and which way the robot is facing. Arrange all the blocks needed to reach the star, then tap Kirim program to submit."
     }
   },
   "knobs": {

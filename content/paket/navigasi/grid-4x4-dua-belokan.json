@@ -1,20 +1,23 @@
 {
   "id": "grid-4x4-dua-belokan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
     "KODE.TKB.PROGRAM-5-8.01"
   ],
   "instructionKey": "instruksi",
+  "examInstructionKey": "instruksi-ujian",
   "locale": {
     "id": {
       "judul": "Program Sampai Delapan Blok",
-      "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan."
+      "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan.",
+      "instruksi-ujian": "Susun program sampai delapan blok. Pakai blok maju dan belok supaya robot sampai ke bintang, lalu ketuk Kirim program."
     },
     "en": {
       "judul": "Programs of Up to Eight Blocks",
-      "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go."
+      "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go.",
+      "instruksi-ujian": "Build a program of up to eight forward and turn blocks to guide the robot to the star. Then tap Kirim program to submit."
     }
   },
   "knobs": {

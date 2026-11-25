@@ -1,20 +1,23 @@
 {
   "id": "rak-maju-lurus-atas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
     "KODE.TKA.NAVIGASI.01"
   ],
   "instructionKey": "instruksi",
+  "examInstructionKey": "instruksi-ujian",
   "locale": {
     "id": {
       "judul": "Naik ke Bintang",
-      "instruksi": "Robot mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
+      "instruksi": "Robot mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan.",
+      "instruksi-ujian": "Susun blok maju di rak sebanyak langkah yang dibutuhkan robot untuk naik ke bintang. Lalu ketuk Kirim program."
     },
     "en": {
       "judul": "Up to the Star",
-      "instruksi": "The robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
+      "instruksi": "The robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go.",
+      "instruksi-ujian": "Put enough forward blocks on the rack for the robot to move up to the star. Then tap Kirim program to submit."
     }
   },
   "knobs": {

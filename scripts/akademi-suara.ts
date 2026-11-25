@@ -5,7 +5,7 @@
 //
 // Sumber kalimat:
 //   - content/paket/**/*.json dan content/golden/paket-*.json (ContentPack dari @akademi/schema):
-//     locale.id[instructionKey], pilah mode pilih → pilihan[].promptKey, urutkan → sequences[].titleKey,
+//     locale.id[instructionKey], instruksi ujian navigasi, pilah mode pilih → pilihan[].promptKey, urutkan → sequences[].titleKey,
 //     dagang → nama tiap barang (goods[].labelKey) sebagai potongan frasa dinamis,
 //     pola/simulasi → nama tiap benda/hewan/alat (items[].labelKey).
 //   - Kalimat yang diucapkan dari kode (src/lib/akademi/kalimat-suara.ts, dipakai juga oleh komponen):
@@ -118,6 +118,7 @@ for (const f of berkasPaket) {
     // instruksi dengan {barang}: satu kalimat per barang yang mungkin muncul
     for (const g of p.goods) if (id[g.labelKey]) tambah(isiBarang(id[p.instructionKey], id[g.labelKey]), `${p.id}:${p.instructionKey}:${g.id}`, undefined, p.id);
   } else ambil(p.instructionKey, "instructionKey");
+  if (p.mechanic === "navigasi" && p.examInstructionKey) ambil(p.examInstructionKey, "examInstructionKey");
   if (p.mechanic === "pilah" && p.mode === "pilih") for (const r of p.pilihan) ambil(r.promptKey, "promptKey");
   if (p.mechanic === "urutkan") for (const s of p.sequences) ambil(s.titleKey, "titleKey");
   if (p.mechanic === "dagang") for (const g of p.goods) ambil(g.labelKey, "goods.labelKey");
