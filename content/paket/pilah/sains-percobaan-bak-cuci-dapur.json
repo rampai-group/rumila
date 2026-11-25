@@ -1,6 +1,6 @@
 {
   "id": "sains-percobaan-bak-cuci-dapur",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -118,7 +118,10 @@
       "id": "garpu",
       "labelKey": "i-garpu",
       "bin": "tenggelam",
-      "emoji": "🍴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-garpu-logam"
+      }
     },
     {
       "id": "telur",
@@ -142,7 +145,10 @@
       "id": "batu",
       "labelKey": "i-batu",
       "bin": "tenggelam",
-      "emoji": "🪨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-batu-ulekan"
+      }
     }
   ],
   "pilihan": []

@@ -356,6 +356,15 @@ const GERAK_APUNG: Record<string, ReactNode> = {
     <path d="M23 52Q40 47 55 52T80 52M23 62Q38 59 50 64T80 61M26 73Q50 68 79 72M39 34H86" fill="none" stroke="#9e683a" strokeWidth="2" />
     <path d="M97 50L108 41M98 63L108 54" fill="none" stroke="#8a5e39" strokeWidth="2" />
   </g>,
+  "garpu-logam": <g {...RINGKAS} transform="rotate(27 65 50)">
+    <path d="M44 11H49V34H55V11H60V34H66V11H71V34H77V11H82V36Q82 47 69 51L72 86Q73 93 65 93Q57 93 58 86L60 51Q44 47 44 36Z" fill="#bdcbd6" stroke="#526c82" />
+    <path d="M50 40Q56 45 62 45M63 59L62 85" fill="none" stroke="#f6fbfd" strokeWidth="3" />
+  </g>,
+  "batu-ulekan": <g {...RINGKAS} transform="rotate(-29 65 53)">
+    <path d="M56 17Q65 9 74 17Q79 23 75 38L73 55Q90 64 88 77Q86 90 66 92Q42 91 42 76Q42 66 57 55L55 38Q50 23 56 17Z" fill="#758385" stroke="#354648" />
+    <path d="M61 20Q58 26 62 39M50 71Q46 82 58 86M64 82Q74 82 80 78" fill="none" stroke="#a8b3af" strokeWidth="3" />
+    <path d="M69 25h1M65 53h1M60 66h1M77 70h1M51 77h1M64 74h1M70 87h1" fill="none" stroke="#354648" />
+  </g>,
 };
 
 const objectArt: Record<string, ReactNode> = {

@@ -1,6 +1,6 @@
 {
   "id": "sains-hasil-percobaan-bak-air",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -90,7 +90,10 @@
       "id": "botol",
       "labelKey": "i-botol",
       "bin": "apung",
-      "emoji": "🧴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-botol-kosong"
+      }
     },
     {
       "id": "balon",

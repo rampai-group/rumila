@@ -185611,7 +185611,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-hasil-percobaan-bak-air",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -185701,7 +185701,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "botol",
         "labelKey": "i-botol",
         "bin": "apung",
-        "emoji": "🧴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-botol-kosong"
+        }
       },
       {
         "id": "balon",
@@ -192809,7 +192812,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-percobaan-bak-cuci-dapur",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -192927,7 +192930,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "garpu",
         "labelKey": "i-garpu",
         "bin": "tenggelam",
-        "emoji": "🍴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-garpu-logam"
+        }
       },
       {
         "id": "telur",
@@ -192951,7 +192957,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "batu",
         "labelKey": "i-batu",
         "bin": "tenggelam",
-        "emoji": "🪨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-ulekan"
+        }
       }
     ],
     "pilihan": []
