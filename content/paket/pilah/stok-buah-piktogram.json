@@ -1,6 +1,6 @@
 {
   "id": "stok-buah-piktogram",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,7 +17,15 @@
       "jeruk": "jeruk",
       "anggur": "buah anggur",
       "tSedikit": "Tukang antar datang. Rak mana yang isinya paling sedikit, supaya diisi?",
-      "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?"
+      "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?",
+      "jumlah-apel-a": "2 apel",
+      "jumlah-apel-b": "7 apel",
+      "jumlah-pisang-a": "4 pisang",
+      "jumlah-pisang-b": "6 pisang",
+      "jumlah-jeruk-a": "6 jeruk",
+      "jumlah-jeruk-b": "5 jeruk",
+      "jumlah-anggur-a": "8 tandan anggur",
+      "jumlah-anggur-b": "4 tandan anggur"
     },
     "en": {
       "judul": "Fruit Stock on the Shelf",
@@ -28,7 +36,15 @@
       "jeruk": "oranges",
       "anggur": "grape",
       "tSedikit": "The delivery is here. Which shelf has the fewest, so we can refill it?",
-      "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?"
+      "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?",
+      "jumlah-apel-a": "2 apples",
+      "jumlah-apel-b": "7 apples",
+      "jumlah-pisang-a": "4 bananas",
+      "jumlah-pisang-b": "6 bananas",
+      "jumlah-jeruk-a": "6 oranges",
+      "jumlah-jeruk-b": "5 oranges",
+      "jumlah-anggur-a": "8 bunches of grapes",
+      "jumlah-anggur-b": "4 bunches of grapes"
     }
   },
   "knobs": {
@@ -57,42 +73,48 @@
       "labelKey": "apel",
       "bin": "pilihan",
       "emoji": "🍎",
-      "count": 2
+      "count": 2,
+      "altKey": "jumlah-apel-a"
     },
     {
       "id": "apel-b",
       "labelKey": "apel",
       "bin": "pilihan",
       "emoji": "🍎",
-      "count": 7
+      "count": 7,
+      "altKey": "jumlah-apel-b"
     },
     {
       "id": "pisang-a",
       "labelKey": "pisang",
       "bin": "pilihan",
       "emoji": "🍌",
-      "count": 4
+      "count": 4,
+      "altKey": "jumlah-pisang-a"
     },
     {
       "id": "pisang-b",
       "labelKey": "pisang",
       "bin": "pilihan",
       "emoji": "🍌",
-      "count": 6
+      "count": 6,
+      "altKey": "jumlah-pisang-b"
     },
     {
       "id": "jeruk-a",
       "labelKey": "jeruk",
       "bin": "pilihan",
       "emoji": "🍊",
-      "count": 6
+      "count": 6,
+      "altKey": "jumlah-jeruk-a"
     },
     {
       "id": "jeruk-b",
       "labelKey": "jeruk",
       "bin": "pilihan",
       "emoji": "🍊",
-      "count": 5
+      "count": 5,
+      "altKey": "jumlah-jeruk-b"
     },
     {
       "id": "anggur-a",
@@ -103,7 +125,8 @@
         "jenis": "ilustrasi",
         "varian": "awal-anggur",
         "t": 0
-      }
+      },
+      "altKey": "jumlah-anggur-a"
     },
     {
       "id": "anggur-b",
@@ -114,7 +137,8 @@
         "jenis": "ilustrasi",
         "varian": "awal-anggur",
         "t": 0
-      }
+      },
+      "altKey": "jumlah-anggur-b"
     }
   ],
   "pilihan": [

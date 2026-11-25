@@ -305431,7 +305431,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "stok-buah-piktogram",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -305448,7 +305448,15 @@ export const PAKET_RAW: unknown[] = [
         "jeruk": "jeruk",
         "anggur": "buah anggur",
         "tSedikit": "Tukang antar datang. Rak mana yang isinya paling sedikit, supaya diisi?",
-        "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?"
+        "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?",
+        "jumlah-apel-a": "2 apel",
+        "jumlah-apel-b": "7 apel",
+        "jumlah-pisang-a": "4 pisang",
+        "jumlah-pisang-b": "6 pisang",
+        "jumlah-jeruk-a": "6 jeruk",
+        "jumlah-jeruk-b": "5 jeruk",
+        "jumlah-anggur-a": "8 tandan anggur",
+        "jumlah-anggur-b": "4 tandan anggur"
       },
       "en": {
         "judul": "Fruit Stock on the Shelf",
@@ -305459,7 +305467,15 @@ export const PAKET_RAW: unknown[] = [
         "jeruk": "oranges",
         "anggur": "grape",
         "tSedikit": "The delivery is here. Which shelf has the fewest, so we can refill it?",
-        "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?"
+        "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?",
+        "jumlah-apel-a": "2 apples",
+        "jumlah-apel-b": "7 apples",
+        "jumlah-pisang-a": "4 bananas",
+        "jumlah-pisang-b": "6 bananas",
+        "jumlah-jeruk-a": "6 oranges",
+        "jumlah-jeruk-b": "5 oranges",
+        "jumlah-anggur-a": "8 bunches of grapes",
+        "jumlah-anggur-b": "4 bunches of grapes"
       }
     },
     "knobs": {
@@ -305488,42 +305504,48 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "apel",
         "bin": "pilihan",
         "emoji": "🍎",
-        "count": 2
+        "count": 2,
+        "altKey": "jumlah-apel-a"
       },
       {
         "id": "apel-b",
         "labelKey": "apel",
         "bin": "pilihan",
         "emoji": "🍎",
-        "count": 7
+        "count": 7,
+        "altKey": "jumlah-apel-b"
       },
       {
         "id": "pisang-a",
         "labelKey": "pisang",
         "bin": "pilihan",
         "emoji": "🍌",
-        "count": 4
+        "count": 4,
+        "altKey": "jumlah-pisang-a"
       },
       {
         "id": "pisang-b",
         "labelKey": "pisang",
         "bin": "pilihan",
         "emoji": "🍌",
-        "count": 6
+        "count": 6,
+        "altKey": "jumlah-pisang-b"
       },
       {
         "id": "jeruk-a",
         "labelKey": "jeruk",
         "bin": "pilihan",
         "emoji": "🍊",
-        "count": 6
+        "count": 6,
+        "altKey": "jumlah-jeruk-a"
       },
       {
         "id": "jeruk-b",
         "labelKey": "jeruk",
         "bin": "pilihan",
         "emoji": "🍊",
-        "count": 5
+        "count": 5,
+        "altKey": "jumlah-jeruk-b"
       },
       {
         "id": "anggur-a",
@@ -305534,7 +305556,8 @@ export const PAKET_RAW: unknown[] = [
           "jenis": "ilustrasi",
           "varian": "awal-anggur",
           "t": 0
-        }
+        },
+        "altKey": "jumlah-anggur-a"
       },
       {
         "id": "anggur-b",
@@ -305545,7 +305568,8 @@ export const PAKET_RAW: unknown[] = [
           "jenis": "ilustrasi",
           "varian": "awal-anggur",
           "t": 0
-        }
+        },
+        "altKey": "jumlah-anggur-b"
       }
     ],
     "pilihan": [
@@ -305665,7 +305689,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "stok-sayur-piktogram",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -305682,7 +305706,15 @@ export const PAKET_RAW: unknown[] = [
         "tomat": "tomat",
         "terong": "terong",
         "tSedikit": "Tukang antar datang. Rak mana yang isinya paling sedikit, supaya diisi?",
-        "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?"
+        "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?",
+        "jumlah-wortel-a": "2 wortel",
+        "jumlah-wortel-b": "7 wortel",
+        "jumlah-jagung-a": "4 tongkol jagung",
+        "jumlah-jagung-b": "6 tongkol jagung",
+        "jumlah-tomat-a": "6 tomat",
+        "jumlah-tomat-b": "5 tomat",
+        "jumlah-terong-a": "8 terong",
+        "jumlah-terong-b": "4 terong"
       },
       "en": {
         "judul": "Shop Vegetable Stock",
@@ -305693,7 +305725,15 @@ export const PAKET_RAW: unknown[] = [
         "tomat": "tomatoes",
         "terong": "eggplants",
         "tSedikit": "The delivery is here. Which shelf has the fewest, so we can refill it?",
-        "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?"
+        "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?",
+        "jumlah-wortel-a": "2 carrots",
+        "jumlah-wortel-b": "7 carrots",
+        "jumlah-jagung-a": "4 ears of corn",
+        "jumlah-jagung-b": "6 ears of corn",
+        "jumlah-tomat-a": "6 tomatoes",
+        "jumlah-tomat-b": "5 tomatoes",
+        "jumlah-terong-a": "8 eggplants",
+        "jumlah-terong-b": "4 eggplants"
       }
     },
     "knobs": {
@@ -305722,56 +305762,64 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "wortel",
         "bin": "pilihan",
         "emoji": "🥕",
-        "count": 2
+        "count": 2,
+        "altKey": "jumlah-wortel-a"
       },
       {
         "id": "wortel-b",
         "labelKey": "wortel",
         "bin": "pilihan",
         "emoji": "🥕",
-        "count": 7
+        "count": 7,
+        "altKey": "jumlah-wortel-b"
       },
       {
         "id": "jagung-a",
         "labelKey": "jagung",
         "bin": "pilihan",
         "emoji": "🌽",
-        "count": 4
+        "count": 4,
+        "altKey": "jumlah-jagung-a"
       },
       {
         "id": "jagung-b",
         "labelKey": "jagung",
         "bin": "pilihan",
         "emoji": "🌽",
-        "count": 6
+        "count": 6,
+        "altKey": "jumlah-jagung-b"
       },
       {
         "id": "tomat-a",
         "labelKey": "tomat",
         "bin": "pilihan",
         "emoji": "🍅",
-        "count": 6
+        "count": 6,
+        "altKey": "jumlah-tomat-a"
       },
       {
         "id": "tomat-b",
         "labelKey": "tomat",
         "bin": "pilihan",
         "emoji": "🍅",
-        "count": 5
+        "count": 5,
+        "altKey": "jumlah-tomat-b"
       },
       {
         "id": "terong-a",
         "labelKey": "terong",
         "bin": "pilihan",
         "emoji": "🍆",
-        "count": 8
+        "count": 8,
+        "altKey": "jumlah-terong-a"
       },
       {
         "id": "terong-b",
         "labelKey": "terong",
         "bin": "pilihan",
         "emoji": "🍆",
-        "count": 4
+        "count": 4,
+        "altKey": "jumlah-terong-b"
       }
     ],
     "pilihan": [
