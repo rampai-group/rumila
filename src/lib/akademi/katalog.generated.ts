@@ -183757,7 +183757,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-benda-dibuat-dari-apa",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -183890,7 +183890,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pondok",
         "labelKey": "i-pondok",
         "bin": "kayu",
-        "emoji": "🛖"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-dinding-pondok-kayu"
+        }
       },
       {
         "id": "rel",
@@ -183930,7 +183933,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "teropong",
         "labelKey": "i-teropong",
         "bin": "kaca",
-        "emoji": "🔭"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lensa-teropong"
+        }
       },
       {
         "id": "sikatgigi",
@@ -194368,7 +194374,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-rak-bahan-dapur",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -194442,25 +194448,37 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kayu",
         "labelKey": "kayu",
-        "emoji": "🌳",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kayu"
+        },
         "color": "#d7ccc8"
       },
       {
         "id": "logam",
         "labelKey": "logam",
-        "emoji": "🔩",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-logam"
+        },
         "color": "#cfd8dc"
       },
       {
         "id": "plastik",
         "labelKey": "plastik",
-        "emoji": "♻️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-plastik"
+        },
         "color": "#ffe0b2"
       },
       {
         "id": "kaca",
         "labelKey": "kaca",
-        "emoji": "🪟",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca"
+        },
         "color": "#e1f5fe"
       }
     ],
@@ -194503,7 +194521,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "sedotan",
         "labelKey": "i-sedotan",
         "bin": "plastik",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sedotan-plastik"
+        }
       },
       {
         "id": "gelaskaca",
@@ -194541,7 +194562,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "garpu",
         "labelKey": "i-garpu",
         "bin": "logam",
-        "emoji": "🍴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-garpu-logam"
+        }
       },
       {
         "id": "pisau",
@@ -194554,7 +194578,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-rak-bahan-halaman",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -194632,25 +194656,37 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kayu",
         "labelKey": "kayu",
-        "emoji": "🌳",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kayu"
+        },
         "color": "#d7ccc8"
       },
       {
         "id": "logam",
         "labelKey": "logam",
-        "emoji": "⚙️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-logam"
+        },
         "color": "#cfd8dc"
       },
       {
         "id": "plastik",
         "labelKey": "plastik",
-        "emoji": "🧴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-plastik"
+        },
         "color": "#ffe0b2"
       },
       {
         "id": "kaca",
         "labelKey": "kaca",
-        "emoji": "🔍",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca"
+        },
         "color": "#e1f5fe"
       }
     ],
@@ -194665,8 +194701,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pagar",
         "labelKey": "i-pagar",
         "bin": "kayu",
-        "emoji": "🪵",
-        "scale": 1.2
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pagar-kayu"
+        }
       },
       {
         "id": "kunci",

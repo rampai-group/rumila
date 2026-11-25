@@ -371,6 +371,42 @@ const objectArt: Record<string, ReactNode> = {
   ...PAKAN,
   ...KEGIATAN,
   ...GERAK_APUNG,
+  "pagar-kayu": <g {...RINGKAS} stroke="#815332">
+    <rect x="8" y="46" width="114" height="11" rx="2" fill="#bd864f" />
+    <rect x="8" y="68" width="114" height="10" rx="2" fill="#bd864f" />
+    {[15, 43, 71, 99].map((x) => <g key={x} transform={`translate(${x} 0)`}>
+      <path d="M0 87V32L8 21L16 32V87Z" fill="#dfa969" />
+      <path d="M7 33Q4 43 7 55T7 79" fill="none" stroke="#a67145" strokeWidth="1.5" />
+      <circle cx="12" cy="50" r="1.3" fill="#815332" stroke="none" />
+      <circle cx="12" cy="72" r="1.3" fill="#815332" stroke="none" />
+    </g>)}
+  </g>,
+  "sedotan-plastik": <g {...RINGKAS}>
+    <path d="M32 85L60 45Q65 37 71 34L104 16" fill="none" stroke="#a63162" strokeWidth="17" />
+    <path d="M32 85L60 45Q65 37 71 34L104 16" fill="none" stroke="#f282a5" strokeWidth="12" />
+    <path d="M34 80L57 47M76 35L99 22" fill="none" stroke="#ffd1de" strokeWidth="3" />
+    <path d="M58 48l7 5M62 43l7 6M66 39l7 6M71 36l5 6" fill="none" stroke="#ba3c73" strokeWidth="2" />
+    <ellipse cx="104" cy="16" rx="3.5" ry="7" transform="rotate(-30 104 16)" fill="#712646" stroke="#f8a7be" strokeWidth="1.8" />
+  </g>,
+  "lensa-teropong": <g {...RINGKAS}>
+    <path d="M17 66L31 58L40 73L26 81Z" fill="#4e6e8c" stroke="#254355" />
+    <path d="M28 57L75 24L98 58L44 79Q36 78 28 57Z" fill="#6289a8" stroke="#335772" />
+    <path d="M36 56L70 34" fill="none" stroke="#b4d0e0" strokeWidth="4" />
+    <path d="M53 71L51 91M53 71L75 90" fill="none" stroke="#496880" strokeWidth="4" />
+    <ellipse cx="90" cy="41" rx="23" ry="30" transform="rotate(-33 90 41)" fill="#315d78" stroke="#234456" />
+    <ellipse cx="92" cy="39" rx="17" ry="24" transform="rotate(-33 92 39)" fill="#b2eaf6" stroke="#ecfbfd" strokeWidth="2" />
+    <path d="M84 22Q80 30 86 39M98 50L103 55" fill="none" stroke="#fff" strokeWidth="3.5" />
+  </g>,
+  "dinding-pondok-kayu": <g {...RINGKAS} stroke="#785135">
+    <path d="M19 41H112V91H19Z" fill="#dfa164" />
+    <path d="M19 41H112V51H19Z" fill="#bc8555" stroke="none" />
+    <path d="M31 49V91M45 49V91M86 49V91M99 49V91" fill="none" />
+    <path d="M54 91V58H77V91" fill="#925935" />
+    <path d="M65 61V87M36 59Q39 64 37 72M92 54Q96 66 92 79M105 56V80" fill="none" stroke="#b5784a" strokeWidth="1.7" />
+    <circle cx="71" cy="75" r="2.4" fill="#efd48c" stroke="none" />
+    <path d="M7 44L64 13L122 43L109 48L64 26L21 49Z" fill="#b3764d" />
+    <path d="M23 36L64 13L105 35" fill="none" stroke="#e4aa75" strokeWidth="3" />
+  </g>,
   "kancing-baju": <g {...RINGKAS}>
     <circle cx="65" cy="50" r="43" fill="#dba077" stroke="#804b40" />
     <circle cx="65" cy="50" r="34" fill="#edb38a" stroke="#ac6955" />
