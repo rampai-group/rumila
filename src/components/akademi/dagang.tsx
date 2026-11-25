@@ -330,7 +330,7 @@ function Penanda() {
 }
 
 /** Keranjang 🧺: isi bisa diketuk untuk dikembalikan. */
-function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, disabled, className = "", padat = false }: { isi: { key: string; v: VisualSpec; label?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; disabled?: boolean; className?: string; padat?: boolean }) {
+function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, disabled, className = "", padat = false }: { isi: { key: string; v: VisualSpec; label?: string; ariaLabel?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; disabled?: boolean; className?: string; padat?: boolean }) {
   const sk = useSk();
   return (
     <Wadah
@@ -347,7 +347,7 @@ function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang
     >
       {isi.length === 0 && <span className="w-full rounded-full bg-white/80 px-3 py-1 text-center font-bold" style={{ fontSize: 14 * sk, color: INK }}>{kosong}</span>}
       {isi.map((b) => (
-        <KartuBenda key={b.key} v={b.v} size={Math.round(44 * sk)} label={b.label} labelSize={Math.round(13 * sk)} disabled={disabled} onClick={onKembali ? () => onKembali(b.key) : undefined} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
+        <KartuBenda key={b.key} v={b.v} size={Math.round(44 * sk)} label={b.label} ariaLabel={b.ariaLabel} labelSize={Math.round(13 * sk)} disabled={disabled} onClick={onKembali ? () => onKembali(b.key) : undefined} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
       ))}
     </Wadah>
   );
@@ -518,7 +518,11 @@ function ModeAmbil(c: Ctx) {
     sfxAkademi.taruh();
     setKeranjang((k) => ({ ...k, [id]: Math.max(0, (k[id] ?? 0) - 1) }));
   };
-  const isi = goods.flatMap((id) => Array.from({ length: keranjang[id] ?? 0 }, (_, k) => ({ key: `${id}-${k}`, v: visual(id), label: nama(id) })));
+  const isi = goods.flatMap((id) => {
+    const label = nama(id);
+    const ariaLabel = bahasa === "en" ? `Return ${label} to the stall` : `Kembalikan ${label} ke lapak`;
+    return Array.from({ length: keranjang[id] ?? 0 }, (_, k) => ({ key: `${id}-${k}`, v: visual(id), label, ariaLabel }));
+  });
   const sk = useSk();
 
   return (
@@ -531,13 +535,15 @@ function ModeAmbil(c: Ctx) {
       <Lapak>
         <div className="flex flex-1 flex-col justify-around" style={{ gap: 8 * sk }}>
           {goods.map((id) => {
+            const label = nama(id);
+            const ariaLabel = bahasa === "en" ? `Add ${label} to the basket` : `Masukkan ${label} ke keranjang`;
             const sisa = (ronde.tersedia[id] ?? 0) - (keranjang[id] ?? 0);
             const sorot = hint && kurang(id) > 0;
             return (
               <div key={id} className="flex flex-wrap items-center gap-2 rounded-[16px] px-2 py-1" style={{ background: sorot ? "rgba(255,210,63,.75)" : "rgba(255,255,255,.3)", gap: 8 * sk, padding: `${4 * sk}px ${8 * sk}px` }}>
-                <span className="shrink-0 rounded-full bg-white px-2 py-0.5 text-center" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 14 * sk, color: INK, minWidth: 64 * sk }}>{nama(id)}</span>
+                <span className="shrink-0 rounded-full bg-white px-2 py-0.5 text-center" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 14 * sk, color: INK, minWidth: 64 * sk }}>{label}</span>
                 {Array.from({ length: sisa }, (_, k) => (
-                  <KartuBenda key={k} v={visual(id)} size={Math.round(44 * sk)} keterangan={false} onClick={() => ambil(id)} className={`min-h-14 min-w-14 shrink-0 ${sorot && k < kurang(id) ? "akademi-bounce" : ""}`} style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
+                  <KartuBenda key={k} v={visual(id)} size={Math.round(44 * sk)} keterangan={false} ariaLabel={ariaLabel} onClick={() => ambil(id)} className={`min-h-14 min-w-14 shrink-0 ${sorot && k < kurang(id) ? "akademi-bounce" : ""}`} style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
                 ))}
                 {sisa === 0 && <span className="rounded-full bg-white px-2 py-0.5 font-bold" style={{ fontSize: 13 * sk, color: INK }}>habis</span>}
               </div>
