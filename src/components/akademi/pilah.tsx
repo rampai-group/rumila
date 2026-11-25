@@ -282,6 +282,9 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     const ikonBin = mukaDadu >= 0
       ? <GambarTitik indeks={mukaDadu} ukuran={ukuranIkonBin} />
       : visualBergambar(b) ? <Benda v={visual(b, t)} size={ukuranIkonBin / skalaLebar(b)} /> : undefined;
+    const gambar = paket.id === "sains-habitat-hewan-lain" && ikonBin
+      ? <span className="inline-flex items-center justify-center" style={{ height: ukuranIkonBin * 0.86 }}>{ikonBin}</span>
+      : ikonBin;
     return (
       <Wadah
         key={b.id}
@@ -301,7 +304,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               <span className="block text-center" style={{ fontFamily: BALOO, fontSize: 30 * Math.min(sk, 1.2), fontWeight: 800 }}>
                 {t(b.labelKey)}
               </span>
-            ) : <LabelWadah teks={t(b.labelKey)} rata={(titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={ikonBin} />}
+            ) : <LabelWadah teks={t(b.labelKey)} rata={(titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={gambar} />}
           </button>
         }
       >
