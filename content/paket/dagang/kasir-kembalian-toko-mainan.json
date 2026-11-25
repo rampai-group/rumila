@@ -1,6 +1,6 @@
 {
   "id": "kasir-kembalian-toko-mainan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,12 @@
       "yoyo": "yoyo",
       "balon": "balon",
       "mobil": "mobil-mobilan",
-      "boneka": "boneka beruang"
+      "boneka": "boneka beruang",
+      "dadu": "dadu",
+      "layang-layang": "layang-layang",
+      "kereta-mainan": "kereta mainan",
+      "bola-sepak": "bola sepak",
+      "pesawat-mainan": "pesawat mainan"
     },
     "en": {
       "judul": "Toy Shop Cashier",
@@ -24,7 +29,12 @@
       "yoyo": "yo-yo",
       "balon": "balloon",
       "mobil": "toy car",
-      "boneka": "teddy bear"
+      "boneka": "teddy bear",
+      "dadu": "die",
+      "layang-layang": "kite",
+      "kereta-mainan": "toy train",
+      "bola-sepak": "soccer ball",
+      "pesawat-mainan": "toy plane"
     }
   },
   "knobs": {
@@ -81,6 +91,36 @@
       "labelKey": "boneka",
       "price": 9000,
       "emoji": "🧸"
+    },
+    {
+      "id": "dadu",
+      "labelKey": "dadu",
+      "price": 5000,
+      "emoji": "🎲"
+    },
+    {
+      "id": "layang-layang",
+      "labelKey": "layang-layang",
+      "price": 6000,
+      "emoji": "🪁"
+    },
+    {
+      "id": "kereta-mainan",
+      "labelKey": "kereta-mainan",
+      "price": 7000,
+      "emoji": "🚂"
+    },
+    {
+      "id": "bola-sepak",
+      "labelKey": "bola-sepak",
+      "price": 8000,
+      "emoji": "⚽"
+    },
+    {
+      "id": "pesawat-mainan",
+      "labelKey": "pesawat-mainan",
+      "price": 9000,
+      "emoji": "✈️"
     }
   ],
   "customerRule": {
