@@ -1,6 +1,6 @@
 {
   "id": "rak-bentuk-ruang-mainan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Rak Bentuk Mainan",
-      "instruksi": "Taruh tiap mainan di rak yang bentuknya sama.",
+      "judul": "Rak Bentuk Benda",
+      "instruksi": "Taruh tiap benda di rak yang bentuknya sama.",
       "bola": "bola",
       "kubus": "kubus",
       "tabung": "tabung",
@@ -25,8 +25,8 @@
       "kayu": "gelondong kayu"
     },
     "en": {
-      "judul": "Toy Shape Shelf",
-      "instruksi": "Put each toy on the shelf with the same shape.",
+      "judul": "Object Shape Shelf",
+      "instruksi": "Put each object on the shelf with the same shape.",
       "bola": "sphere",
       "kubus": "cube",
       "tabung": "cylinder",

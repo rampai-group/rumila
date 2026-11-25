@@ -5521,6 +5521,7 @@ export const SUARA: Record<string, string> = {
   "Taruh tiap benda di dapur ke rak padat, cair, atau gas.": "/akademi/suara/4f72f5858342.mp3",
   "Taruh tiap benda di halaman ke rak padat, cair, atau gas.": "/akademi/suara/c72b46df9bac.mp3",
   "Taruh tiap benda di pantai ke rak hidup atau tidak pernah hidup.": "/akademi/suara/859b18c067bb.mp3",
+  "Taruh tiap benda di rak yang bentuknya sama.": "/akademi/suara/515a0348c165.mp3",
   "Taruh tiap benda di rumah ke rak yang tepat.": "/akademi/suara/9ba0d42ffa81.mp3",
   "Taruh tiap benda di sekolah ke rak bahannya.": "/akademi/suara/112cc29eec82.mp3",
   "Taruh tiap benda ke bahan yang paling cocok: kayu, logam, kaca, atau plastik.": "/akademi/suara/abda4e02fb9c.mp3",

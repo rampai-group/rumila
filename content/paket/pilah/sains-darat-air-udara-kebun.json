@@ -1,6 +1,6 @@
 {
   "id": "sains-darat-air-udara-kebun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -117,7 +117,10 @@
       "id": "penyu",
       "labelKey": "i-penyu",
       "bin": "air",
-      "emoji": "🐢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-penyu-laut"
+      }
     },
     {
       "id": "burung",

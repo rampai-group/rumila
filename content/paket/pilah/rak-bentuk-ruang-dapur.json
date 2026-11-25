@@ -1,6 +1,6 @@
 {
   "id": "rak-bentuk-ruang-dapur",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -115,7 +115,10 @@
       "id": "gelas",
       "labelKey": "gelas",
       "bin": "tabung",
-      "emoji": "🥤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gelas-silinder"
+      }
     },
     {
       "id": "kaleng",
