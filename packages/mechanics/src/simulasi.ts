@@ -1,4 +1,4 @@
-// Mekanik simulasi: tiga belas mode (jam-baca, jam-putar, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi,
+// Mekanik simulasi (jam-baca, jam-putar, putar-bumi, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi,
 // menara, bantuan, telusur). Satu buatRonde dengan switch mode; field yang tidak relevan diisi nilai kosong ([], {}, 0, false).
 // Knob yang dibaca bila ada: hourMax, tipuan, maxSpans, snap, offset, count, kinds, gapMs, max, flashMs, pairs,
 // tinggi & benda (menara), batas (bantuan), max & panah (telusur).
@@ -11,6 +11,9 @@ type Item = PaketSimulasi["items"][number];
 
 export const ALAT_PANJANG = "penggaris-kubus";
 export const ALAT_BERAT = "timbangan";
+// Empat posisi dilihat dari atas, searah jarum jam. Matahari tetap di kiri.
+export const BUMI_MALAM = 1;
+export const BUMI_SIANG = 3;
 /** toleransi taksir (selisih mutlak) dan jengkal (celah/tumpang tindih dalam satuan jengkal) */
 const TOLERANSI_TAKSIR = 3;
 export const TOLERANSI_JENGKAL = 0.2;
@@ -58,6 +61,12 @@ export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number):
     case "jam-putar": {
       const k = pilihSatu(bernilai(p, "kegiatan"), r);
       return { ...dasar, items: [k], target: k.value ?? 0, correctId: k.id };
+    }
+    case "putar-bumi": {
+      const kota = pilihSatu(p.items, r);
+      const target = kota.value ?? BUMI_SIANG;
+      const offset = pilihSatu([0, 1, 2, 3].filter(posisi => posisi !== target), r);
+      return { ...dasar, items: [kota], target, offset };
     }
     case "timbangan": {
       const benda = bernilai(p, "benda");
@@ -170,6 +179,7 @@ export function nilaiSimulasi(r: RondeSimulasi, j: JawabanSimulasi): Hasil {
   switch (r.mode) {
     case "jam-baca":
     case "jam-putar":
+    case "putar-bumi":
     case "kubus": {
       const angka = angkaDari(j);
       return { benar: angka === r.target, detail: { angka, target: r.target } };

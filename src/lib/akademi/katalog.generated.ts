@@ -194260,202 +194260,6 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
-    "id": "sains-putar-bumi-siang",
-    "version": "1.0.1",
-    "level": "TKB",
-    "mechanic": "pilah",
-    "competencyIds": [
-      "SAINS.TKB.MATAHARI-BUMI-BULAN.03"
-    ],
-    "instructionKey": "instruksi",
-    "locale": {
-      "id": {
-        "judul": "Putar Bumi, Siang di Mana?",
-        "instruksi": "Bagian Bumi yang menghadap Matahari sedang siang. Dengarkan, lalu sentuh jawabannya.",
-        "pilihan": "pilihan",
-        "i-siang": "siang",
-        "i-malam": "malam",
-        "i-hadap": "menghadap Matahari",
-        "i-belakang": "membelakangi Matahari",
-        "t1": "Jakarta sedang menghadap Matahari. Di Jakarta sekarang…",
-        "t2": "Tokyo sedang membelakangi Matahari. Di Tokyo sekarang…",
-        "t3": "Supaya Medan jadi siang, Medan harus…",
-        "t4": "Di Makassar sedang malam. Berarti Makassar sedang…",
-        "t5": "Bumi diputar sampai Bandung menghadap Matahari. Di Bandung sekarang…",
-        "t6": "Bumi berputar terus, Surabaya kini membelakangi Matahari. Di Surabaya sekarang…",
-        "t7": "Di Kairo matahari bersinar terang. Berarti Kairo sedang…",
-        "t8": "Supaya Papua jadi malam, Bumi harus berputar sampai Papua…",
-        "t9": "Sisi Bumi yang terang terkena cahaya Matahari sedang…",
-        "t10": "Sisi Bumi yang gelap, tidak terkena cahaya Matahari, sedang…"
-      },
-      "en": {
-        "judul": "Spin the Earth: Where Is It Day?",
-        "instruksi": "The part of Earth facing the Sun has daytime. Listen, then touch the answer.",
-        "pilihan": "choices",
-        "i-siang": "daytime",
-        "i-malam": "night-time",
-        "i-hadap": "facing the Sun",
-        "i-belakang": "facing away from the Sun",
-        "t1": "Jakarta is facing the Sun. In Jakarta it is now…",
-        "t2": "Tokyo is facing away from the Sun. In Tokyo it is now…",
-        "t3": "For Medan to have daytime, Medan must be…",
-        "t4": "It is night in Makassar. So Makassar is…",
-        "t5": "Earth turns until Bandung faces the Sun. In Bandung it is now…",
-        "t6": "Earth keeps turning and Surabaya now faces away from the Sun. In Surabaya it is now…",
-        "t7": "The sun is shining brightly in Cairo. So Cairo is…",
-        "t8": "For Papua to have night, Earth must turn until Papua is…",
-        "t9": "The side of Earth lit by the Sun has…",
-        "t10": "The dark side of Earth, with no sunlight, has…"
-      }
-    },
-    "knobs": {
-      "itemCount": {
-        "min": 2,
-        "max": 4,
-        "default": 3,
-        "step": 1,
-        "keterangan": "selalu 2 pilihan (siang/malam atau menghadap/membelakangi)"
-      }
-    },
-    "assets": [],
-    "generatif": true,
-    "rounds": 10,
-    "world": "angkasa",
-    "mode": "pilih",
-    "bins": [
-      {
-        "id": "pilihan",
-        "labelKey": "pilihan"
-      }
-    ],
-    "items": [
-      {
-        "id": "siang",
-        "labelKey": "i-siang",
-        "bin": "pilihan",
-        "emoji": "☀️"
-      },
-      {
-        "id": "malam",
-        "labelKey": "i-malam",
-        "bin": "pilihan",
-        "emoji": "🌙"
-      },
-      {
-        "id": "hadap",
-        "labelKey": "i-hadap",
-        "bin": "pilihan",
-        "adegan": {
-          "jenis": "ilustrasi",
-          "varian": "awal-bumi-siang",
-          "t": 0
-        }
-      },
-      {
-        "id": "belakang",
-        "labelKey": "i-belakang",
-        "bin": "pilihan",
-        "adegan": {
-          "jenis": "ilustrasi",
-          "varian": "awal-bumi-malam",
-          "t": 0
-        }
-      }
-    ],
-    "pilihan": [
-      {
-        "id": "r1",
-        "promptKey": "t1",
-        "choices": [
-          "siang",
-          "malam"
-        ],
-        "correct": "siang"
-      },
-      {
-        "id": "r2",
-        "promptKey": "t2",
-        "choices": [
-          "malam",
-          "siang"
-        ],
-        "correct": "malam"
-      },
-      {
-        "id": "r3",
-        "promptKey": "t3",
-        "choices": [
-          "hadap",
-          "belakang"
-        ],
-        "correct": "hadap"
-      },
-      {
-        "id": "r4",
-        "promptKey": "t4",
-        "choices": [
-          "belakang",
-          "hadap"
-        ],
-        "correct": "belakang"
-      },
-      {
-        "id": "r5",
-        "promptKey": "t5",
-        "choices": [
-          "siang",
-          "malam"
-        ],
-        "correct": "siang"
-      },
-      {
-        "id": "r6",
-        "promptKey": "t6",
-        "choices": [
-          "malam",
-          "siang"
-        ],
-        "correct": "malam"
-      },
-      {
-        "id": "r7",
-        "promptKey": "t7",
-        "choices": [
-          "hadap",
-          "belakang"
-        ],
-        "correct": "hadap"
-      },
-      {
-        "id": "r8",
-        "promptKey": "t8",
-        "choices": [
-          "belakang",
-          "hadap"
-        ],
-        "correct": "belakang"
-      },
-      {
-        "id": "r9",
-        "promptKey": "t9",
-        "choices": [
-          "siang",
-          "malam"
-        ],
-        "correct": "siang"
-      },
-      {
-        "id": "r10",
-        "promptKey": "t10",
-        "choices": [
-          "malam",
-          "siang"
-        ],
-        "correct": "malam"
-      }
-    ]
-  },
-  {
     "id": "sains-rak-bahan-dapur",
     "version": "1.1.6",
     "level": "TKB",
@@ -195759,7 +195563,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-senter-bola-dunia",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -195769,57 +195573,49 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Senter dan Bola Dunia",
-        "instruksi": "Senter menyinari bola dunia seperti Matahari. Sisi yang terang sedang siang. Dengarkan, lalu sentuh jawabannya.",
+        "instruksi": "Senter berperan sebagai Matahari. Pilih jawaban dari model bola dunia.",
         "pilihan": "pilihan",
-        "i-layang": "anak bermain layang-layang",
-        "i-sekolah": "anak berangkat sekolah",
-        "i-jemur": "ibu menjemur baju",
-        "i-tidur": "anak tidur lelap",
-        "i-bintang": "langit penuh bintang",
-        "i-lampu": "lampu jalan menyala",
         "i-hadap": "menghadap senter",
         "i-jauh": "berada di sisi gelap",
-        "t-1": "Bola dunia diputar sampai Bali menghadap senter. Kegiatan mana yang cocok saat siang?",
-        "t-2": "Aceh kini membelakangi senter. Apa yang terlihat di langit Aceh?",
-        "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Kegiatan mana yang cocok saat siang?",
-        "t-4": "London ada di sisi bola dunia yang gelap. Kegiatan mana yang cocok saat malam?",
-        "t-5": "Sydney menghadap senter. Kegiatan mana yang biasanya dilakukan pagi atau siang?",
-        "t-6": "Riyadh membelakangi senter. Apa yang terlihat di jalan?",
-        "t-7": "Bola dunia berputar, Seoul pindah ke sisi yang kena cahaya. Kegiatan mana yang cocok saat siang?",
-        "t-8": "Manado ada di sisi gelap. Kegiatan mana yang cocok saat malam?",
-        "t-9": "Palembang kena cahaya senter. Kegiatan mana yang cocok saat siang?",
-        "t-10": "Lombok diputar menjauh dari senter. Apa yang terlihat di langit?",
+        "t-1": "Bali menghadap senter. Dalam model ini, Bali sedang siang atau malam?",
+        "t-2": "Aceh membelakangi senter. Dalam model ini, Aceh sedang siang atau malam?",
+        "t-3": "Pontianak pindah ke sisi terang. Sekarang di Pontianak siang atau malam?",
+        "t-4": "London ada di sisi gelap. Sekarang di London siang atau malam?",
+        "t-5": "Cahaya senter jatuh tepat pada Sydney. Di sana siang atau malam?",
+        "t-6": "Cahaya senter tidak sampai ke Riyadh. Di sana siang atau malam?",
+        "t-7": "Bola dunia berputar sampai Seoul menghadap senter. Di sana siang atau malam?",
+        "t-8": "Bola dunia berputar sampai Manado membelakangi senter. Di sana siang atau malam?",
+        "t-9": "Palembang termasuk sisi yang terang. Di sana siang atau malam?",
+        "t-10": "Lombok termasuk sisi yang gelap. Di sana siang atau malam?",
         "t-11": "Agar siang di Kupang, robot memutar bola dunia sampai Kupang…",
         "t-12": "Agar siang di Dubai, robot memutar bola dunia sampai Dubai…",
-        "t-13": "Anak di Ambon ingin melihat bintang. Robot memutar bola dunia sampai Ambon…",
-        "t-14": "Agar siang di Paris, robot memutar bola dunia sampai Paris…"
+        "t-13": "Agar malam di Ambon, robot memutar bola dunia sampai Ambon…",
+        "t-14": "Agar siang di Paris, robot memutar bola dunia sampai Paris…",
+        "i-siang": "siang",
+        "i-malam": "malam"
       },
       "en": {
         "judul": "Flashlight and Globe",
-        "instruksi": "A flashlight shines on the globe like the Sun. The bright side has daytime. Listen, then touch the answer.",
+        "instruksi": "The flashlight represents the Sun. Choose the answer using the globe model.",
         "pilihan": "choices",
-        "i-layang": "children flying kites",
-        "i-sekolah": "children going to school",
-        "i-jemur": "clothes drying in the sun",
-        "i-tidur": "children fast asleep",
-        "i-bintang": "a sky full of stars",
-        "i-lampu": "street lights are on",
         "i-hadap": "facing the flashlight",
         "i-jauh": "on the dark side",
-        "t-1": "The globe turns until Bali faces the flashlight. Which activity suits daytime?",
-        "t-2": "Aceh now faces away from the flashlight. What is in the sky over Aceh?",
-        "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. Which activity suits daytime?",
-        "t-4": "London is on the dark side of the globe. Which activity suits nighttime?",
-        "t-5": "Sydney faces the flashlight. Which activity usually happens in the morning or daytime?",
-        "t-6": "Riyadh faces away from the flashlight. What can be seen on the streets?",
-        "t-7": "The globe turns and Seoul moves to the lit side. Which activity suits daytime?",
-        "t-8": "Manado is on the dark side. Which activity suits nighttime?",
-        "t-9": "Palembang is in the flashlight's light. Which activity suits daytime?",
-        "t-10": "Lombok is turned away from the flashlight. What is in the sky?",
+        "t-1": "Bali faces the flashlight. In the model, is it day or night in Bali?",
+        "t-2": "Aceh faces away from the flashlight. In the model, is it day or night in Aceh?",
+        "t-3": "Pontianak moves into the light. Is it day or night there now?",
+        "t-4": "London is on the dark side. Is it day or night there now?",
+        "t-5": "The flashlight shines right on Sydney. Is it day or night there?",
+        "t-6": "The light from the flashlight does not reach Riyadh. Is it day or night there?",
+        "t-7": "The globe turns until Seoul faces the flashlight. Is it day or night there?",
+        "t-8": "The globe turns until Manado faces away from the flashlight. Is it day or night there?",
+        "t-9": "Palembang is on the lit side. Is it day or night there?",
+        "t-10": "Lombok is on the dark side. Is it day or night there?",
         "t-11": "For daytime in Kupang, the robot turns the globe until Kupang is…",
         "t-12": "For daytime in Dubai, the robot turns the globe until Dubai is…",
-        "t-13": "The children in Ambon want to see the stars. The robot turns the globe until Ambon is…",
-        "t-14": "For daytime in Paris, the robot turns the globe until Paris is…"
+        "t-13": "For nighttime in Ambon, the robot turns the globe until Ambon is…",
+        "t-14": "For daytime in Paris, the robot turns the globe until Paris is…",
+        "i-siang": "daytime",
+        "i-malam": "nighttime"
       }
     },
     "knobs": {
@@ -195828,7 +195624,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 2,
         "default": 2,
         "step": 1,
-        "keterangan": "selalu 2 pilihan: kegiatan siang lawan kegiatan malam, atau menghadap lawan menjauhi senter"
+        "keterangan": "selalu 2 pilihan: siang atau malam, atau arah terhadap senter"
       }
     },
     "assets": [],
@@ -195844,44 +195640,16 @@ export const PAKET_RAW: unknown[] = [
     ],
     "items": [
       {
-        "id": "layang",
-        "labelKey": "i-layang",
+        "id": "siang",
+        "labelKey": "i-siang",
         "bin": "pilihan",
-        "emoji": "🪁"
+        "emoji": "☀️"
       },
       {
-        "id": "sekolah",
-        "labelKey": "i-sekolah",
+        "id": "malam",
+        "labelKey": "i-malam",
         "bin": "pilihan",
-        "emoji": "🎒"
-      },
-      {
-        "id": "jemur",
-        "labelKey": "i-jemur",
-        "bin": "pilihan",
-        "adegan": {
-          "jenis": "ilustrasi",
-          "varian": "tk-jemuran",
-          "t": 0
-        }
-      },
-      {
-        "id": "tidur",
-        "labelKey": "i-tidur",
-        "bin": "pilihan",
-        "emoji": "🛌"
-      },
-      {
-        "id": "bintang",
-        "labelKey": "i-bintang",
-        "bin": "pilihan",
-        "emoji": "🌌"
-      },
-      {
-        "id": "lampu",
-        "labelKey": "i-lampu",
-        "bin": "pilihan",
-        "emoji": "🌃"
+        "emoji": "🌙"
       },
       {
         "id": "hadap",
@@ -195909,91 +195677,91 @@ export const PAKET_RAW: unknown[] = [
         "id": "soal-1",
         "promptKey": "t-1",
         "choices": [
-          "layang",
-          "tidur"
+          "siang",
+          "malam"
         ],
-        "correct": "layang"
+        "correct": "siang"
       },
       {
         "id": "soal-2",
         "promptKey": "t-2",
         "choices": [
-          "bintang",
-          "jemur"
+          "siang",
+          "malam"
         ],
-        "correct": "bintang"
+        "correct": "malam"
       },
       {
         "id": "soal-3",
         "promptKey": "t-3",
         "choices": [
-          "jemur",
-          "lampu"
+          "siang",
+          "malam"
         ],
-        "correct": "jemur"
+        "correct": "siang"
       },
       {
         "id": "soal-4",
         "promptKey": "t-4",
         "choices": [
-          "tidur",
-          "sekolah"
+          "siang",
+          "malam"
         ],
-        "correct": "tidur"
+        "correct": "malam"
       },
       {
         "id": "soal-5",
         "promptKey": "t-5",
         "choices": [
-          "sekolah",
-          "bintang"
+          "siang",
+          "malam"
         ],
-        "correct": "sekolah"
+        "correct": "siang"
       },
       {
         "id": "soal-6",
         "promptKey": "t-6",
         "choices": [
-          "lampu",
-          "layang"
+          "siang",
+          "malam"
         ],
-        "correct": "lampu"
+        "correct": "malam"
       },
       {
         "id": "soal-7",
         "promptKey": "t-7",
         "choices": [
-          "layang",
-          "bintang"
+          "siang",
+          "malam"
         ],
-        "correct": "layang"
+        "correct": "siang"
       },
       {
         "id": "soal-8",
         "promptKey": "t-8",
         "choices": [
-          "tidur",
-          "jemur"
+          "siang",
+          "malam"
         ],
-        "correct": "tidur"
+        "correct": "malam"
       },
       {
         "id": "soal-9",
         "promptKey": "t-9",
         "choices": [
-          "jemur",
-          "tidur"
+          "siang",
+          "malam"
         ],
-        "correct": "jemur"
+        "correct": "siang"
       },
       {
         "id": "soal-10",
         "promptKey": "t-10",
         "choices": [
-          "bintang",
-          "sekolah"
+          "siang",
+          "malam"
         ],
-        "correct": "bintang"
+        "correct": "malam"
       },
       {
         "id": "soal-11",
@@ -311075,6 +310843,122 @@ export const PAKET_RAW: unknown[] = [
         "role": "kegiatan",
         "emoji": "🥛",
         "value": 5
+      }
+    ]
+  },
+  {
+    "id": "sains-putar-bumi-siang",
+    "version": "1.1.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "SAINS.TKB.MATAHARI-BUMI-BULAN.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Putar Bumi, Siang di Mana?",
+        "instruksi": "Putar Bumi. Sisi yang menghadap Matahari sedang siang.",
+        "sisi-siang": "sisi siang",
+        "sisi-malam": "sisi malam",
+        "peralihan": "batas siang–malam",
+        "kiri": "Putar ke kiri",
+        "kanan": "Putar ke kanan",
+        "pas": "Sudah pas",
+        "penanda": "Penanda kota",
+        "model": "Model Bumi dengan Matahari di sebelah kiri",
+        "petunjuk": "Sisi yang menghadap Matahari terang. Sisi sebaliknya gelap.",
+        "tanya-jakarta": "Putar Bumi sampai Jakarta berada di sisi siang.",
+        "tanya-tokyo": "Putar Bumi sampai Tokyo berada di sisi malam.",
+        "tanya-medan": "Putar Bumi sampai Medan berada di sisi siang.",
+        "tanya-makassar": "Putar Bumi sampai Makassar berada di sisi malam.",
+        "tanya-bandung": "Putar Bumi sampai Bandung berada di sisi siang.",
+        "tanya-surabaya": "Putar Bumi sampai Surabaya berada di sisi malam.",
+        "tanya-kairo": "Putar Bumi sampai Kairo berada di sisi siang.",
+        "tanya-jayapura": "Putar Bumi sampai Jayapura berada di sisi malam.",
+        "tanya-ambon": "Putar Bumi sampai Ambon berada di sisi siang.",
+        "tanya-padang": "Putar Bumi sampai Padang berada di sisi malam."
+      },
+      "en": {
+        "judul": "Turn the Earth: Where Is It Day?",
+        "instruksi": "Turn the Earth. The side facing the Sun has daytime.",
+        "sisi-siang": "day side",
+        "sisi-malam": "night side",
+        "peralihan": "day–night boundary",
+        "kiri": "Turn left",
+        "kanan": "Turn right",
+        "pas": "Done",
+        "penanda": "City marker",
+        "model": "Earth model with the Sun on the left",
+        "petunjuk": "The side facing the Sun is lit. The opposite side is dark.",
+        "tanya-jakarta": "Turn the Earth until Jakarta is on the day side.",
+        "tanya-tokyo": "Turn the Earth until Tokyo is on the night side.",
+        "tanya-medan": "Turn the Earth until Medan is on the day side.",
+        "tanya-makassar": "Turn the Earth until Makassar is on the night side.",
+        "tanya-bandung": "Turn the Earth until Bandung is on the day side.",
+        "tanya-surabaya": "Turn the Earth until Surabaya is on the night side.",
+        "tanya-kairo": "Turn the Earth until Cairo is on the day side.",
+        "tanya-jayapura": "Turn the Earth until Jayapura is on the night side.",
+        "tanya-ambon": "Turn the Earth until Ambon is on the day side.",
+        "tanya-padang": "Turn the Earth until Padang is on the night side."
+      }
+    },
+    "knobs": {},
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "angkasa",
+    "mode": "putar-bumi",
+    "items": [
+      {
+        "id": "jakarta",
+        "labelKey": "tanya-jakarta",
+        "value": 3
+      },
+      {
+        "id": "tokyo",
+        "labelKey": "tanya-tokyo",
+        "value": 1
+      },
+      {
+        "id": "medan",
+        "labelKey": "tanya-medan",
+        "value": 3
+      },
+      {
+        "id": "makassar",
+        "labelKey": "tanya-makassar",
+        "value": 1
+      },
+      {
+        "id": "bandung",
+        "labelKey": "tanya-bandung",
+        "value": 3
+      },
+      {
+        "id": "surabaya",
+        "labelKey": "tanya-surabaya",
+        "value": 1
+      },
+      {
+        "id": "kairo",
+        "labelKey": "tanya-kairo",
+        "value": 3
+      },
+      {
+        "id": "jayapura",
+        "labelKey": "tanya-jayapura",
+        "value": 1
+      },
+      {
+        "id": "ambon",
+        "labelKey": "tanya-ambon",
+        "value": 3
+      },
+      {
+        "id": "padang",
+        "labelKey": "tanya-padang",
+        "value": 1
       }
     ]
   },

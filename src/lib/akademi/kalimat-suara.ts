@@ -305,6 +305,9 @@ function kalimatPaketSimulasi(p: PaketSimulasi, nama: (key: string) => string, t
         tambah(kalimatSimulasi.jamPutarBantu(k.value ?? 0));
       }
       return;
+    case "putar-bumi":
+      tambah(nama("petunjuk"));
+      return;
     case "jengkal":
       for (const b of bernilai(p, "benda")) tambah(kalimatSimulasi.jengkal(nama(b.labelKey)));
       return;

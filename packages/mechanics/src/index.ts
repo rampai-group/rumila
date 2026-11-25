@@ -164,6 +164,7 @@ export function kunciRonde(r: Ronde): string {
     case "dagang":
       return JSON.stringify(["dagang", { ...r.ronde, laci: [...r.ronde.laci].sort((a, b) => a - b), lembar: [...r.ronde.lembar].sort((a, b) => a - b), benda: [...r.ronde.benda].sort(), pesanan: urut(r.ronde.pesanan) }]);
     case "simulasi":
+      if (r.ronde.mode === "putar-bumi") return JSON.stringify(["simulasi", r.ronde.mode, r.ronde.items[0].id]);
       return JSON.stringify(["simulasi", { ...r.ronde, items: r.ronde.items.map((i) => i.id).sort(), options: [...r.ronde.options].sort((a, b) => a - b) }]);
     default:
       return JSON.stringify(r);

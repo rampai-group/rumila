@@ -1,19 +1,20 @@
 "use client";
 
-// Presenter mekanik simulasi: tiga belas mode (jam-baca, jam-putar, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi,
+// Presenter mekanik simulasi (jam-baca, jam-putar, putar-bumi, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi,
 // menara, bantuan, telusur) lewat switch `ronde.mode` → sub-komponen. Presenter hanya menampilkan dan mengirim jawaban; kebenaran dinilai runner
 // (nilaiSimulasi). Setelah `hasil` terisi interaksi dikunci dan jawaban benar ditunjukkan.
 
 import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent, type ReactNode } from "react";
 import type { PaketSimulasi } from "@akademi/schema";
-import { TOLERANSI_JENGKAL, type JawabanSimulasi, type RondeSimulasi } from "@akademi/mechanics";
+import { BUMI_MALAM, BUMI_SIANG, TOLERANSI_JENGKAL, type JawabanSimulasi, type RondeSimulasi } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { KALIMAT_SIMULASI as KS, kalimatSimulasi as ks } from "@/lib/akademi/kalimat-suara";
 import { ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { GambarAdegan } from "./adegan-gambar";
 import { Benda, KartuBenda, skalaLebar, type VisualSpec } from "./benda";
+import { GambarBumiPutar } from "./ilustrasi-awal";
 import { AksiBawah, usePanggung } from "./dunia";
 import { TombolBantu } from "./bantu";
 import { Wadah } from "./wadah";
@@ -263,6 +264,7 @@ export function PresenterSimulasi(props: Props) {
   switch (ronde.mode) {
     case "jam-baca": return <ModeJamBaca {...ctx} />;
     case "jam-putar": return <ModeJamPutar {...ctx} />;
+    case "putar-bumi": return <ModePutarBumi {...ctx} />;
     case "timbangan": return <ModeTimbangan {...ctx} />;
     case "jengkal": return <ModeJengkal {...ctx} />;
     case "kubus": return <ModeKubus {...ctx} />;
@@ -455,6 +457,57 @@ function ModeJamPutar(c: Ctx) {
             <TombolBantu onClick={() => { bantu(); ucapkan(ks.jamPutarBantu(ronde.target)); }} disabled={terkunci} />
             <TombolBesar onClick={() => { sfx.tap(); onJawab({ angka: jam }); }} disabled={terkunci}><Icon name="check" size={26} /> Sudah</TombolBesar>
           </div>
+        }
+      />
+    </Kunci>
+  );
+}
+
+/* ---------------- putar-bumi ---------------- */
+
+function ModePutarBumi({ ronde, t, onJawab, hasil, terkunci, onHint }: Ctx) {
+  const [putaran, setPutaran] = useState(ronde.offset);
+  const { hint, bantu } = useBantu(onHint);
+  const { skala } = usePanggung();
+  const posisi = ((putaran % 4) + 4) % 4;
+  const fase = t(posisi === BUMI_SIANG ? "sisi-siang" : posisi === BUMI_MALAM ? "sisi-malam" : "peralihan");
+  const tujuan = t(ronde.target === BUMI_SIANG ? "sisi-siang" : "sisi-malam");
+  const teks = t(ronde.items[0].labelKey);
+
+  useEffect(() => {
+    const id = setTimeout(() => ucapkan(teks), 900);
+    return () => clearTimeout(id);
+  }, [teks]);
+
+  const putar = (arah: -1 | 1) => { sfx.clink(); setPutaran(p => p + arah); };
+
+  return (
+    <Kunci terkunci={terkunci}>
+      <Tata
+        atas={<><Instruksi teks={teks} hasil={hasil} /><Umpan hasil={hasil} benar={tujuan} /></>}
+        adegan={
+          <Papan style={{ background: "#192b50" }}>
+            <Adegan min={230}>
+              {({ w, h }) => <GambarBumiPutar putaran={putaran} lebar={Math.max(0, Math.min(w, h * 1.3, 760))} label={t("model")} />}
+            </Adegan>
+          </Papan>
+        }
+        kendali={
+          <>
+            <div className="flex items-center gap-2">
+              <TombolIkon ikon="chevron_left" label={t("kiri")} onClick={() => putar(-1)} disabled={terkunci} />
+              <div className="flex min-w-0 flex-1 flex-col justify-center rounded-[16px] bg-white px-2 py-1 text-center" style={{ ...Tebal, minHeight: 56 * skala, lineHeight: 1.15, boxShadow: BAYANG }} aria-live="polite">
+                <span className="text-sm">{t("penanda")}</span>
+                <span>{fase}</span>
+              </div>
+              <TombolIkon ikon="chevron_right" label={t("kanan")} onClick={() => putar(1)} disabled={terkunci} />
+            </div>
+            {hint && <Petunjuk>{t("petunjuk")}</Petunjuk>}
+            <div className="flex gap-2" style={{ gap: 8 * skala }}>
+              <TombolBantu onClick={() => { bantu(); ucapkan(t("petunjuk")); }} disabled={terkunci} />
+              <TombolBesar onClick={() => { sfx.tap(); onJawab({ angka: posisi }); }} disabled={terkunci}><Icon name="check" size={26} /> {t("pas")}</TombolBesar>
+            </div>
+          </>
         }
       />
     </Kunci>

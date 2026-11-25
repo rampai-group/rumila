@@ -328,6 +328,8 @@ export const SIMULASI_MODES = [
   "jam-baca",
   /** kalimat kegiatan "sekolah pukul 7"; anak memutar jarum pendek */
   "jam-putar",
+  /** putar globe sampai penanda kota berada di sisi yang diminta */
+  "putar-bumi",
   /** dua benda di jungkat-jungkit; anak memilih yang lebih berat setelah melihat timbangan */
   "timbangan",
   /** mengukur panjang benda dengan jengkal tangan (snap atau bebas) lalu menyebut jumlah */
@@ -358,7 +360,7 @@ export const SimulasiItem = z.object({
   id: Slug, labelKey: Key, assetId: Slug.optional(), ...Visual,
   /** peran dalam mode: benda (timbangan/jengkal/kubus/taksir/bagi/menara/telusur), hewan (turus/alat), tombol & alat (tombol/bantuan), kegiatan (jam-putar) */
   role: z.enum(["benda", "hewan", "tombol", "alat", "kegiatan"]).default("benda"),
-  /** nilai tersembunyi: berat relatif (timbangan), panjang dalam jengkal/kubus, jam kegiatan (1–12), besaran yang diminta (alat: 1 = panjang, 2 = berat),
+  /** nilai tersembunyi: berat relatif (timbangan), panjang dalam jengkal/kubus, jam kegiatan (1–12), sisi Bumi (1 malam, 3 siang), besaran yang diminta (alat: 1 = panjang, 2 = berat),
    *  menara: 1 = bisa ditumpuk, 0 = menggelinding, 2 = tabung (bisa bila tegak) */
   value: z.number().optional(),
 });
@@ -375,6 +377,11 @@ export const ContentPack = z.discriminatedUnion("mechanic", [PaketPilahObj, Pake
   if (p.mechanic === "pilah") refinePilah(p, ctx);
   else if (p.mechanic === "urutkan") refineUrutkan(p, ctx);
   else if (p.mechanic === "navigasi") refineNavigasi(p, ctx);
+  else if (p.mechanic === "simulasi" && p.mode === "putar-bumi") {
+    p.items.forEach((item, i) => {
+      if (item.value !== 1 && item.value !== 3) ctx.addIssue({ code: "custom", path: ["items", i, "value"], message: "Sisi Bumi harus 1 (malam) atau 3 (siang)" });
+    });
+  }
 });
 export type ContentPack = z.infer<typeof ContentPack>;
 

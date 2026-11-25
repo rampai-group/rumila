@@ -352,7 +352,7 @@ function kunci(r: Ronde): Jawaban | null {
     case "simulasi": {
       const x = r.ronde;
       switch (x.mode) {
-        case "jam-baca": case "jam-putar": case "kubus": case "taksir": return { angka: x.target };
+        case "jam-baca": case "jam-putar": case "putar-bumi": case "kubus": case "taksir": return { angka: x.target };
         case "timbangan": case "alat": return { pilih: x.correctId ?? "" };
         case "jengkal": return { posisi: Array.from({ length: x.target }, (_, i) => i + x.offset), angka: x.target };
         case "turus": { const t: Record<string, number> = {}; for (const id of x.urutan) t[id] = (t[id] ?? 0) + 1; return { turus: t }; }
