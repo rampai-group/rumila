@@ -13934,7 +13934,7 @@ export const KURIKULUM_RAW = [
 export const PAKET_RAW: unknown[] = [
   {
     "id": "bayar-koin-kantin-sekolah",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "dagang",
     "competencyIds": [
@@ -13985,31 +13985,51 @@ export const PAKET_RAW: unknown[] = [
         "id": "sate",
         "labelKey": "sate",
         "price": 1000,
-        "emoji": "🍢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-sate",
+          "t": 0
+        }
       },
       {
         "id": "pastel",
         "labelKey": "pastel",
         "price": 2000,
-        "emoji": "🥟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-pastel-goreng",
+          "t": 0
+        }
       },
       {
         "id": "pisanggoreng",
         "labelKey": "pisanggoreng",
         "price": 3000,
-        "emoji": "🍌"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-pisang-goreng",
+          "t": 0
+        }
       },
       {
         "id": "tehmanis",
         "labelKey": "tehmanis",
         "price": 4000,
-        "emoji": "🍵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-teh-manis",
+          "t": 0
+        }
       },
       {
         "id": "nasikotak",
         "labelKey": "nasikotak",
         "price": 5000,
-        "emoji": "🍱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-nasi-kotak",
+          "t": 0
+        }
       }
     ],
     "customerRule": {
@@ -14022,7 +14042,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "bayar-koin-warung",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKA",
     "mechanic": "dagang",
     "competencyIds": [
@@ -14085,7 +14105,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "susu",
         "labelKey": "susu",
         "price": 3000,
-        "emoji": "🧃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-susu-kotak",
+          "t": 0
+        }
       },
       {
         "id": "jeruk",
