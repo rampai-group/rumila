@@ -203,6 +203,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const layarRapat = layarPendek || bandingRingkas;
   const tataTunas = paket.level === "PAUD";
   const tataLanjutHitung = urutanHitungLanjut(paket);
+  const hitungLega = tataLanjutHitung && w >= 620 && h >= 650;
   const tataRingkas = tataTunas || tataTumbuhan || tataLanjutHitung;
   const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
   const labelAkses = (s: Langkah) => {
@@ -226,7 +227,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const kolomMaks = layarPendek || (tataTumbuhan && tegak && n === 3) ? 2 : n;
   // Deret angka pendek tetap satu baris agar urutan dibaca dari kiri ke kanan.
   const sel = tataLanjutHitung
-    ? selMuat(lebarDalam, n, 44, 168, gap)
+    ? selMuat(lebarDalam, n, 44, hitungLega ? 222 : 168, gap)
     : selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? (tataTumbuhan ? 340 : 300) : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75, 2, kolomMaks);
   const rasio = tegak ? 1.6 : 1.15;
   const isiLebar = tegak ? 0.68 : 0.6;
@@ -235,7 +236,8 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const jarakSlot = layarPendek ? 6 : gap;
   const lebarSlot = layarPendek ? Math.floor((w - 18 - jarakSlot * (n - 1)) / n) : sel.s;
   const selaBarisSlot = gap * (barisSlot - 1);
-  const tinggiSlot = tataLanjutHitung ? batas(58, lebarSlot * 0.82, 138)
+  const tinggiSlot = hitungLega ? batas(148, lebarSlot * 0.9, 200)
+    : tataLanjutHitung ? batas(58, lebarSlot * 0.82, 138)
     : layarPendek ? batas(52, lebarSlot, 60)
     : tataTumbuhan
     ? batas(82, Math.min(sel.s * 1.18, (tinggi * 0.51 - selaBarisSlot) / sel.baris), 290)
@@ -284,7 +286,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   );
 
   return (
-    <div className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataLanjutHitung ? "" : "flex-1"}`} style={{ color: INK }}>
+    <div data-urut-tengah={hitungLega ? "" : undefined} className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataLanjutHitung ? "" : "flex-1"}`} style={{ color: INK }}>
       {tataTumbuhan ? (
         <div ref={kepalaTumbuhan} className="flex shrink-0 flex-col gap-1">
           {judul}

@@ -107,6 +107,9 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const hp = lebarArea < 600;
   const piktogram = paket.layoutBin === "piktogram";
   const piktogramLega = piktogram && lebarArea >= 620 && h >= 760;
+  const rakAngka = paket.competencyIds.includes("MAT.TKB.BILANGAN-20.02");
+  const rakAngkaHp = rakAngka && hp;
+  const rakAngkaLega = rakAngka && lebarArea >= 620 && h >= 650;
   const carroll = paket.carroll;
   const kartuTitik = bins.length > 0 && bins.every((b) => b.emoji && MUKA_DADU.includes(b.emoji));
   const titikLega = kartuTitik && lebarArea >= 620 && h >= 680;
@@ -119,6 +122,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     bins.every((b) => visualBergambar(b) && t(b.labelKey).length <= 50) &&
     items.every((i) => visualBergambar(i) && t(i.labelKey).length <= 70);
   const tataLega = wadahLega || wadahBergambar;
+  const kartuDiTengah = tataLega || rakAngkaLega;
 
   // reset saat ronde berganti
   useEffect(() => {
@@ -220,6 +224,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
 
   const lepasDiAtas = items.filter((i) => !peta[i.id]);
   const satuKartu = lepasDiAtas.length === 1;
+  const kartuTerakhirLega = satuKartu && (piktogramLega || rakAngkaLega);
   const salah = (i: ItemPilah) => kunci && peta[i.id] !== i.bin;
   const benarBin = (b: BinPilah) => kunci && items.some((i) => peta[i.id] === b.id) && items.filter((i) => peta[i.id] === b.id).every((i) => i.bin === b.id);
   const n = bins.length;
@@ -227,16 +232,16 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   // (label kiri, isi kanan) — kolom selebar ±100 px membuat nama & ciri terlipat per kata.
   // Empat atau lima tujuan Isi Piringku harus tetap dekat agar kartu bisa diseret langsung.
   const piringRingkas = isiPiringku && hp;
-  const baris = !carroll && !piktogram && !kartuTitik && hp && !piringRingkas &&
+  const baris = !carroll && !piktogram && !kartuTitik && hp && !piringRingkas && !rakAngkaHp &&
     (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
   const titikRapat = kartuTitik && hp;
-  const jarakBin = (carroll ? 7 : piktogram || titikRapat ? 8 : baris ? 10 : 12) * sk;
-  const lebarMinBin = piringRingkas ? 94 + jarakBin : titikRapat ? 84 + jarakBin : Math.min(148, 114 * sk + jarakBin);
+  const jarakBin = (carroll ? 7 : piktogram || titikRapat || rakAngkaHp ? 8 : baris ? 10 : 12) * sk;
+  const lebarMinBin = piringRingkas ? 94 + jarakBin : titikRapat ? 84 + jarakBin : rakAngkaHp ? 84 : Math.min(148, 114 * sk + jarakBin);
   const kapasitasKolom = Math.max(1, Math.floor((lebarArea + jarakBin) / lebarMinBin));
   const kolomBin = carroll ? 2 : piktogram ? n : baris ? 1 : Math.ceil(n / Math.ceil(n / kapasitasKolom));
   const lebarJudulBaris = carroll ? Math.min(124, lebarArea * 0.22) : 0;
   const lebarBin = (lebarArea - lebarJudulBaris - jarakBin * (carroll ? 4 : kolomBin - 1)) / kolomBin;
-  const lebarIsi = Math.max(28, (baris ? lebarBin * 0.56 : lebarBin) - (piktogram ? 20 : 36) * sk);
+  const lebarIsi = Math.max(28, (baris ? lebarBin * 0.56 : lebarBin) - (piktogram ? 20 : rakAngkaHp ? 24 : 36) * sk);
   const ukuranIkonBin = Math.min((wadahBergambar ? 104 : wadahLega ? 86 : piktogramLega ? 70 : titikLega ? 64 : hp ? 42 : 52) * sk, lebarBin - (piktogram ? 16 : 24) * sk);
   const itemSeret = seret?.aktif ? items.find((i) => i.id === seret.id) : undefined;
   // kartu bergambar berlabel panjang (deskripsi) dibuat lebih lebar supaya teksnya tidak terlipat terlalu banyak
@@ -244,21 +249,24 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const kartuBeruraian = wadahBergambar && items.some((i) => t(i.labelKey).length > 32);
   const lebarMinKartu = Math.round((labelPanjang ? 132 : titikRapat ? 78 : hp ? 92 : 112) * sk);
   const kolomMuat = Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8)));
-  const maksKolomKartu = Math.min(items.length, wadahBergambar ? Math.min(3, kolomMuat) : titikLega ? Math.min(4, kolomMuat) : kolomMuat);
+  // Sisakan dua baris untuk kelompok 5–6 kartu agar kisi berisi hingga 20 benda tetap terbaca.
+  const rakDuaBaris = rakAngkaLega && h >= 840 && items.length >= 5;
+  const maksKolomKartu = Math.min(items.length, kolomMuat, wadahBergambar || rakDuaBaris ? 3 : titikLega ? 4 : Infinity);
   const kolomKartu = kartuTitik
     ? Math.ceil(items.length / Math.ceil(items.length / maksKolomKartu))
     : items.length === 4 && maksKolomKartu === 3 ? 2 : maksKolomKartu;
   const lebarKolomKartu = (lebarArea - 8 * (kolomKartu - 1)) / kolomKartu;
   const lebarKartu = wadahBergambar ? satuKartu ? Math.min(300, lebarArea) : Math.min(230, lebarKolomKartu)
-    : wadahLega ? Math.min(180, lebarKolomKartu) : piktogramLega && satuKartu ? 184 : lebarKolomKartu;
+    : wadahLega ? Math.min(180, lebarKolomKartu) : kartuTerakhirLega ? (rakAngkaLega ? 228 : 184) : lebarKolomKartu;
   const tinggiBaki = wadahBergambar ? Math.min(satuKartu ? 320 : 204, Math.round(h * (satuKartu ? 0.32 : 0.205)))
-    : wadahLega ? Math.min(224, Math.round(h * 0.23)) : piktogramLega ? 172 : 84 * sk;
-  const tinggiIsi = wadahBergambar ? Math.min(152, Math.round(h * 0.17 / sk))
+    : wadahLega ? Math.min(224, Math.round(h * 0.23)) : piktogramLega ? 172 : rakAngkaLega ? 188 : 84 * sk;
+  const tinggiIsi = rakAngkaLega ? (n > kapasitasKolom ? Math.min(118, Math.round(h * 0.14 / sk)) : 176)
+    : rakAngkaHp ? 54 : wadahBergambar ? Math.min(152, Math.round(h * 0.17 / sk))
     : wadahLega ? Math.min(220, Math.round(h * 0.22 / sk)) : piktogramLega ? 190 : piktogram || titikLega ? 112 : titikRapat || piringRingkas ? 58 : baris || carroll ? 52 : 84;
-  const gambarKartu = Math.round((wadahBergambar ? satuKartu ? 230 : kartuBeruraian ? 144 : 176 : wadahLega ? 132 : piktogramLega && satuKartu ? 128 : titikLega ? 112 : hp ? 56 : 80) * Math.min(sk, 1.2));
+  const gambarKartu = Math.round((wadahBergambar ? satuKartu ? 230 : kartuBeruraian ? 144 : 176 : wadahLega ? 132 : rakAngkaLega ? (satuKartu ? 156 : 142) : kartuTerakhirLega ? 128 : titikLega ? 112 : rakAngkaHp ? 68 : hp ? 56 : 80) * Math.min(sk, 1.2));
   // Jaga ukuran ikon sepanjang ronde, termasuk saat semua kartu ditaruh di satu kolom.
   const gambarTerpasang = piktogramLega ? Math.max(32, Math.min(64 * sk, (h - tinggiBaki - 152 * sk) / items.length - 14))
-    : wadahBergambar ? Math.min(96 * sk, Math.max(42, lebarIsi / 2 - 20))
+    : rakAngkaLega ? 88 * sk : wadahBergambar ? Math.min(96 * sk, Math.max(42, lebarIsi / 2 - 20))
       : (piktogram ? 46 : wadahLega ? 96 : titikLega ? 80 : hp ? 52 : 64) * sk;
   const urutanIsi = Object.keys(peta);
 
@@ -280,7 +288,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
         ref={(el) => { binRefs.current[b.id] = el; }}
         onClick={() => ketukBin(b.id)}
         arah={piktogram ? "piktogram" : baris ? "baris" : "kolom"}
-        style={piringRingkas ? { width: lebarBin } : undefined}
+        style={piringRingkas ? { width: lebarBin } : rakAngkaHp ? { padding: 4 * sk, gap: 4 * sk } : undefined}
         isiDariAtas={!baris && !tataLega}
         minIsi={tinggiIsi}
         ring={ring}
@@ -289,7 +297,11 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
         bentuk={bentukDariTeks(t(b.labelKey)) ?? undefined}
         label={
           <button type="button" aria-label={t(b.labelKey)} disabled={kunci} onClick={(e) => { e.stopPropagation(); ketukBin(b.id); }} className="min-h-11 w-full min-w-0 rounded-md py-1 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0786eb]">
-            <LabelWadah teks={t(b.labelKey)} rata={(titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={ikonBin} />
+            {rakAngkaLega ? (
+              <span className="block text-center" style={{ fontFamily: BALOO, fontSize: 30 * Math.min(sk, 1.2), fontWeight: 800 }}>
+                {t(b.labelKey)}
+              </span>
+            ) : <LabelWadah teks={t(b.labelKey)} rata={(titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={ikonBin} />}
           </button>
         }
       >
@@ -305,7 +317,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             right={kunci && !salah(i)}
             onClick={(e) => { e.stopPropagation(); ambil(i.id); }}
             className={`shrink-0 ${salah(i) ? "akademi-shake" : ""}`}
-            style={{ minHeight: 46 * sk, minWidth: Math.min(lebarIsi, 46 * sk), maxWidth: "100%", padding: piktogram ? 4 : undefined, pointerEvents: kunci ? "none" : undefined }}
+            style={{ minHeight: 46 * sk, minWidth: Math.min(lebarIsi, 46 * sk), maxWidth: "100%", padding: piktogram || rakAngkaHp ? 4 : undefined, pointerEvents: kunci ? "none" : undefined }}
           />
         ))}
         {isi.length === 0 && <span aria-hidden className="w-full text-center" style={{ fontFamily: BALOO, fontSize: (baris ? 24 : 30) * sk, fontWeight: 900, lineHeight: 1, color: tema.wadahGelap, opacity: 0.7 }}>{baris ? "+" : "↓"}</span>}
@@ -315,7 +327,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
 
   return (
     <div
-      data-pilah-tengah={piktogramLega ? "" : undefined}
+      data-pilah-tengah={piktogramLega || rakAngkaLega ? "" : undefined}
       className={`mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${tataLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: wadahBergambar ? Math.min(780, Math.round(h * 0.78)) : wadahLega ? Math.min(680, Math.round(h * 0.72)) : undefined }}
     >
@@ -325,8 +337,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
       {/* kartu langsung di atas latar layar (tanpa panel pembungkus: satu lapis kartu) */}
       <div className="relative shrink-0" style={{ minHeight: tinggiBaki }}>
         <div
-          className={tataLega ? "flex flex-wrap justify-center gap-2" : "grid gap-2"}
-          style={tataLega ? undefined : { gridTemplateColumns: `repeat(${kolomKartu}, minmax(0, 1fr))`, gridAutoRows: "1fr" }}
+          className={kartuDiTengah ? "flex flex-wrap justify-center gap-2" : "grid gap-2"}
+          style={kartuDiTengah ? undefined : { gridTemplateColumns: `repeat(${kolomKartu}, minmax(0, 1fr))`, gridAutoRows: "1fr" }}
         >
           {lepasDiAtas.map((i) => {
             const dipilih = terpilih === i.id;
@@ -334,13 +346,13 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             const sedangDiseret = seret?.aktif && seret.id === i.id;
             return (
               // pointer capture di tombol; move/up menggelembung ke pembungkus ini
-              <div key={i.id} className={`flex min-w-0 ${satuKartu ? "col-span-full justify-self-center" : ""}`} style={tataLega || satuKartu ? { width: lebarKartu } : undefined} onPointerMove={(e) => gerak(e, i.id)} onPointerUp={(e) => lepas(e, i.id)} onPointerCancel={batal}>
+              <div key={i.id} className={`flex min-w-0 ${satuKartu ? "col-span-full justify-self-center" : ""}`} style={kartuDiTengah || satuKartu ? { width: lebarKartu } : undefined} onPointerMove={(e) => gerak(e, i.id)} onPointerUp={(e) => lepas(e, i.id)} onPointerCancel={batal}>
                 <KartuBenda
                   penuh
                   v={visual(i, t)}
                   ariaLabel={namaPilihan(i, items, t, lang === "en-US")}
-                  size={Math.min(gambarKartu, (lebarKartu - 16) / skalaLebar(i))}
-                  labelSize={Math.round((wadahBergambar ? 19 : wadahLega ? 17 : 14) * Math.min(sk, 1.3))}
+                  size={Math.min(gambarKartu, (lebarKartu - (rakAngka ? 32 : 16)) / skalaLebar(i))}
+                  labelSize={Math.round((wadahBergambar ? 19 : wadahLega ? 17 : rakAngkaLega ? 16 : 14) * Math.min(sk, 1.3))}
                   selected={dipilih}
                   disabled={kunci}
                   onClick={(e) => {
@@ -351,7 +363,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                   onPointerDown={(e) => turun(e, i.id)}
                   className={`w-full touch-none select-none ${disorot ? "akademi-bounce" : ""}`}
                   style={{
-                    minHeight: tataLega || (piktogramLega && satuKartu) ? tinggiBaki : 76 * sk,
+                    minHeight: tataLega || rakAngkaLega || kartuTerakhirLega ? tinggiBaki : 76 * sk,
                     opacity: sedangDiseret ? 0.25 : 1,
                     boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
                     zIndex: dipilih ? 2 : undefined,
@@ -361,7 +373,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             );
           })}
           {lepasDiAtas.length === 0 && (
-            <div className="col-span-full flex w-full items-center justify-center" style={{ height: tataLega || piktogramLega ? tinggiBaki : 76, fontFamily: BALOO, fontSize: 20, fontWeight: 800, opacity: 0.6 }}>
+            <div className="col-span-full flex w-full items-center justify-center" style={{ height: tataLega || piktogramLega || rakAngkaLega ? tinggiBaki : 76, fontFamily: BALOO, fontSize: 20, fontWeight: 800, opacity: 0.6 }}>
               Semua sudah dipilah
             </div>
           )}
