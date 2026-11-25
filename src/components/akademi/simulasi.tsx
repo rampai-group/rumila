@@ -855,6 +855,7 @@ function Lewat({ v, durasi, size = 56 }: { v: VisualSpec; durasi: number; size?:
 function ModeTurus(c: Ctx) {
   const { ronde, onJawab, hasil, terkunci, visual, nama, paket, t } = c;
   const hewan = useMemo(() => ronde.items.filter((i) => i.role === "hewan"), [ronde.items]);
+  const [mulai, setMulai] = useState(false);
   const [giliran, setGiliran] = useState(0); // indeks hewan yang sedang lewat
   const [turus, setTurus] = useState<Record<string, number>>(() => Object.fromEntries(hewan.map((h) => [h.id, 0])));
   const { hint, bantu } = useBantu(c.onHint);
@@ -862,31 +863,37 @@ function ModeTurus(c: Ctx) {
   const st = useSkalaTeks();
   const samping = useSamping();
   const jeda = Math.max(600, ronde.flashMs || 1500);
-  const selesaiLewat = giliran >= ronde.urutan.length;
+  const jumlahLewat = ronde.urutan.length;
+  const selesaiLewat = mulai && giliran >= jumlahLewat;
   const benar = useMemo(() => { const m: Record<string, number> = {}; for (const id of ronde.urutan) m[id] = (m[id] ?? 0) + 1; return m; }, [ronde.urutan]);
 
   useEffect(() => {
-    if (selesaiLewat) return;
+    if (!mulai || selesaiLewat) return;
     const id = setTimeout(() => setGiliran((g) => g + 1), jeda);
     return () => clearTimeout(id);
-  }, [giliran, selesaiLewat, jeda]);
+  }, [mulai, giliran, selesaiLewat, jeda]);
 
-  const sedang = selesaiLewat ? null : ronde.urutan[giliran];
+  const sedang = mulai && !selesaiLewat ? ronde.urutan[giliran] : null;
   // Instruksi milik paket (tema bisa hewan, serangga, pengunjung, kendaraan…); cadangan netral.
   const instruksi = paket.instructionKey ? t(paket.instructionKey) : "";
   const teks = instruksi && instruksi !== paket.instructionKey ? instruksi : KS.turusCadangan;
   const inggris = teks === paket.locale.en[paket.instructionKey] && teks !== paket.locale.id[paket.instructionKey];
+  const pesanSelesai = inggris ? "All have passed. Tap Done." : "Semua sudah lewat. Tekan Selesai.";
+  const statusLewat = sedang
+    ? inggris ? `${giliran + 1} of ${jumlahLewat}. Passing ${nama(sedang)}.` : `${giliran + 1} dari ${jumlahLewat}. ${nama(sedang)} lewat.`
+    : selesaiLewat ? pesanSelesai : "";
   // di tablet baris tabel lebih tinggi; bila baris banyak & bertumpuk, jangan sampai mendesak jalur
   const sb = samping ? Math.min(skala * 1.1, 1.6) : skala;
 
   const jalur = (
     <Adegan min={80} className="overflow-hidden rounded-[16px]" style={{ background: "linear-gradient(180deg,#d6f0ff 0 45%,#bfe8a6 45% 78%,#8fcf6d 78%)", boxShadow: "inset 0 0 0 3px rgba(11,37,69,.18)" }}>
       {({ h }) => (
-        <div className="absolute inset-0" aria-live="polite" aria-label={sedang ? `${nama(sedang)} lewat` : "Semua sudah lewat"}>
+        <div className="absolute inset-0">
+          <span className="sr-only" role="status" aria-atomic="true">{statusLewat}</span>
           {sedang && <Lewat key={giliran} v={visual(sedang)} durasi={jeda * 0.9} size={Math.round(Math.max(56, Math.min(h * 0.62, 200)))} />}
           {selesaiLewat && !hasil && (
             <div className="akademi-fade absolute inset-0 flex items-center justify-center">
-              <span className="rounded-full bg-white px-4 py-1" style={{ ...Tebal, fontSize: 16 * st, boxShadow: BAYANG }}>Semua sudah lewat. Tekan Selesai.</span>
+              <span className="rounded-full bg-white px-4 py-1" style={{ ...Tebal, fontSize: 16 * st, boxShadow: BAYANG }} aria-hidden>{pesanSelesai}</span>
             </div>
           )}
         </div>
@@ -895,7 +902,7 @@ function ModeTurus(c: Ctx) {
   );
 
   const tabel = (
-    <div className="flex flex-col gap-2 rounded-[20px] p-2" style={{ gap: 8 * skala, background: tema.panel, boxShadow: bayangKartu() }} role="group" aria-label="Tabel turus">
+    <div className="flex flex-col gap-2 rounded-[20px] p-2" style={{ gap: 8 * skala, background: tema.panel, boxShadow: bayangKartu() }} role="group" aria-label={inggris ? "Tally table" : "Tabel turus"}>
       {hewan.map((h) => {
         const n = turus[h.id] ?? 0;
         const label = nama(h.id);
@@ -904,7 +911,7 @@ function ModeTurus(c: Ctx) {
           <div key={h.id} className="flex min-w-0 items-center gap-2">
             <button
               type="button"
-              disabled={terkunci}
+              disabled={terkunci || !mulai}
               onClick={() => { sfx.tap(); setTurus((tr) => ({ ...tr, [h.id]: (tr[h.id] ?? 0) + 1 })); }}
               className={`flex min-w-0 flex-1 items-center gap-2 rounded-[16px] bg-white px-2 py-1 text-left active:scale-[.98] ${sorot ? "akademi-bounce" : ""}`}
               style={{ minHeight: 64 * sb, boxShadow: `${BAYANG}, inset 0 0 0 2px rgba(11,37,69,.16)${sorot ? `, 0 0 0 4px ${KUNING}` : ""}` }}
@@ -938,7 +945,9 @@ function ModeTurus(c: Ctx) {
   const tombol = (
     <div className="flex gap-2" style={{ gap: 8 * skala }}>
       <TombolBantu onClick={() => { bantu(); ucapkan(KS.turusBantu); }} disabled={terkunci} />
-      <TombolBesar onClick={() => { sfx.tap(); onJawab({ turus }); }} disabled={terkunci || !selesaiLewat}><Icon name="check" size={26} /> Selesai</TombolBesar>
+      {mulai
+        ? <TombolBesar onClick={() => { sfx.tap(); onJawab({ turus }); }} disabled={terkunci || !selesaiLewat}><Icon name="check" size={26} /> {inggris ? "Done" : "Selesai"}</TombolBesar>
+        : <TombolBesar onClick={() => { sfx.tap(); setMulai(true); }} disabled={terkunci}><Icon name="play_arrow" size={26} /> {inggris ? "Start counting" : "Mulai hitung"}</TombolBesar>}
     </div>
   );
 
