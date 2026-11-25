@@ -170,7 +170,7 @@ export function panggungPadat(paket: ContentPack): boolean {
     (paket.mechanic === "dagang" && paket.mode === "subitasi") ||
     (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanHitungLanjut(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
-    (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || (paket.mode === "tombol" && paket.level === "PAUD")));
+    (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" || (paket.mode === "tombol" && paket.level === "PAUD")));
 }
 
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
