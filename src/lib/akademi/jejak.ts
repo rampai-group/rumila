@@ -153,19 +153,19 @@ export function tarikHariAktif(familyId: string, learnerId: string, sekarang = n
 
 export function useHariAktif(learnerId: string, tanggal: Date, events: GameEvent[]): number {
   const familyId = useCloud((s) => s.familyId);
-  const [versi, ubah] = useState(0);
-  const aktifSekarang = useMemo(() => hariAktifAnak(learnerId, new Date(), events), [learnerId, tanggal, events, versi]);
+  const [sekarang, setSekarang] = useState(() => new Date());
+  const aktifSekarang = useMemo(() => hariAktifAnak(learnerId, sekarang, events), [learnerId, sekarang, events]);
   const berakhir = Math.min(...aktifSekarang.values()) + HARI_AKTIF * SEHARI + 1;
 
   useEffect(() => {
     if (!Number.isFinite(berakhir)) return;
-    const timer = window.setTimeout(() => ubah((versi) => versi + 1), Math.max(0, berakhir - Date.now()));
+    const timer = window.setTimeout(() => setSekarang(new Date()), Math.max(0, berakhir - Date.now()));
     return () => window.clearTimeout(timer);
   }, [berakhir]);
 
   useEffect(() => {
     let aktif = true;
-    const perbarui = () => { if (aktif) ubah((versi) => versi + 1); };
+    const perbarui = () => { if (aktif) setSekarang(new Date()); };
     const segarkan = () => {
       perbarui();
       if (familyId && navigator.onLine) void tarikHariAktif(familyId, learnerId).then(perbarui, perbarui);
