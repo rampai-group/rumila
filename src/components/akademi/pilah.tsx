@@ -484,20 +484,22 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const lebar = lebarArea >= 600;
   const adeganLega = paket.level === "PAUD" && !!ronde.adegan && lebarArea >= 620 && h >= 680;
   const gambarLega = !pilihanTulisan && !ronde.bacaPilihan && h >= 560;
-  const gridGambar = !tulisLabel && !ronde.adegan && !ronde.bacaPilihan &&
+  const potAudioLega = paket.id === "sains-pot-mana-yang-layu" && ronde.bacaPilihan && lebarArea >= 620 && h >= 560;
+  const gridGambar = !tulisLabel && !ronde.adegan && (!ronde.bacaPilihan || potAudioLega) &&
     (n === 3 || n === 4) && choices.every(visualBergambar);
   // Dua kolom menjaga lebar gambar tetap sama ketika satu pilihan hilang di layar potret.
   const gridPotret = gridGambar && h >= lebarArea;
   const tigaLanskap = gridGambar && !gridPotret && n === 3 && lebar && gambarLega;
+  const ukurKepala = gridGambar || potAudioLega;
   useLayoutEffect(() => {
     const kepala = kepalaSoal.current;
-    if (!gridGambar || !kepala) return;
+    if (!ukurKepala || !kepala) return;
     const ukur = () => setTinggiKepala(kepala.offsetHeight);
     ukur();
     const pengamat = new ResizeObserver(ukur);
     pengamat.observe(kepala);
     return () => pengamat.disconnect();
-  }, [gridGambar]);
+  }, [ukurKepala]);
   const gridSempit = gridPotret && lebarArea < 320;
   const pilihanRingkas = gambarLega && !ronde.adegan && n <= 3;
   const muat = n === 2 ? 2 : n === 3 ? 3 : n === 4 ? (lebar ? 4 : 2) : lebar ? 3 : 2;
@@ -518,26 +520,29 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const skalaTinggiMaks = Math.max(1, ...choices.map((c) => c.scale ?? 1));
   const labelPanjang = tulisLabel && choices.some((c) => visualBergambar(c) && t(c.labelKey).length > 34);
   const ukuranAdegan = adeganLega ? Math.min(190, Math.round(h * 0.21)) : Math.max(60, Math.min(100, h * 0.18));
-  const tinggiSoal = gridGambar && tinggiKepala ? tinggiKepala + 26
+  const tinggiSoal = ukurKepala && tinggiKepala ? tinggiKepala + 26
     : ronde.adegan ? Math.max(176 * sk, ukuranAdegan + 70 * sk) : 68 * sk;
-  const tinggiAudio = ronde.bacaPilihan ? 48 : 0;
+  const tinggiAudio = ronde.bacaPilihan ? (potAudioLega ? 56 : 48) : 0;
   const tinggiBaris = h > 0 ? (h - tinggiSoal - jarak * (baris - 1)) / baris - tinggiAudio : 160;
   const tinggiMaks = jmlKolom === 1 ? (pilihanTulisan ? 126 : 148)
-    : tigaLanskap ? 500
+    : potAudioLega ? (gridPotret ? 276 : 368)
+      : tigaLanskap ? 500
       : gridPotret && lebar ? 432
         : pilihanRingkas && lebar ? 390
           : gambarLega ? 322 : 240;
-  const rasioKartu = tigaLanskap ? 1.8 : labelPanjang || gambarLega ? 1.42 : 1.03;
+  const rasioKartu = potAudioLega ? 1.22 : tigaLanskap ? 1.8 : labelPanjang || gambarLega ? 1.42 : 1.03;
   const tinggiBatas = Math.min(tinggiMaks * Math.min(sk, 1.2), lebarKartu * rasioKartu);
   const tinggiKartu = Math.round(Math.max(pilihanTulisan ? 88 : gridSempit ? 96 : 112, Math.min(tinggiBaris, tinggiBatas)));
   // Benda mengalikan ukuran dasar dengan scale. Sisakan ruang di kartu untuk gambar yang diperbesar.
-  const batasTinggiGambar = Math.min((pilihanRingkas || gridPotret) && lebar ? 296 : gambarLega ? 252 : 200, tinggiKartu * (tulisLabel ? 0.6 : 0.77));
-  const lebarGambar = Math.min(lebarKartu - 24, lebarKartu * (labelPanjang ? 0.55 : tigaLanskap ? 0.92 : gambarLega ? 0.84 : 0.78));
+  const bagianTinggiGambar = potAudioLega ? 0.84 : tulisLabel ? 0.6 : 0.77;
+  const batasTinggiGambar = Math.min(potAudioLega ? 300 : (pilihanRingkas || gridPotret) && lebar ? 296 : gambarLega ? 252 : 200, tinggiKartu * bagianTinggiGambar);
+  const lebarGambar = Math.min(lebarKartu - 24, lebarKartu * (potAudioLega ? 0.9 : labelPanjang ? 0.55 : tigaLanskap ? 0.92 : gambarLega ? 0.84 : 0.78));
   const ukuran = Math.round(Math.min(batasTinggiGambar / skalaTinggiMaks, lebarGambar / skalaLebarMaks));
+  const letakSendiri = { gridColumn: "1 / -1", justifySelf: "center", width: `calc((100% - ${jarak}px) / 2)` } as const;
 
   return (
     <div
-      data-pilih-tengah={gambarLega && n <= 3 && !adeganLega && !gridGambar ? "" : undefined}
+      data-pilih-tengah={potAudioLega || (gambarLega && n <= 3 && !adeganLega && !gridGambar) ? "" : undefined}
       className={`mx-auto flex w-full min-w-0 max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${adeganLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: adeganLega ? Math.min(620, Math.round(h * 0.66)) : undefined }}
     >
@@ -588,16 +593,16 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
                 minHeight: tinggiKartu,
                 background: benar ? "#8fe6b6" : salah ? "#ffc08a" : pilihanTulisan ? WARNA_PILIHAN[i % WARNA_PILIHAN.length] : undefined,
                 pointerEvents: kunci ? "none" : undefined,
-                ...(sendiri ? { gridColumn: "1 / -1", justifySelf: "center", width: `calc((100% - ${jarak}px) / 2)` } : {}),
+                ...(sendiri && !ronde.bacaPilihan ? letakSendiri : {}),
               }}
             />
           );
           if (!ronde.bacaPilihan) return kartu;
           return (
-            <div key={c.id} className="flex min-w-0 flex-col gap-1">
+            <div key={c.id} className="flex min-w-0 flex-col gap-1" style={sendiri ? letakSendiri : undefined}>
               {kartu}
-              <button type="button" onClick={() => ucapkan(t(c.altKey ?? c.labelKey), lang)} aria-label={lang === "en-US" ? `Listen to option ${i + 1}` : `Dengarkan pilihan ${i + 1}`} className="flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white px-2 text-sm font-extrabold text-[#0567c2]">
-                <Icon name="volume_up" size={20} />
+              <button type="button" onClick={() => ucapkan(t(c.altKey ?? c.labelKey), lang)} aria-label={lang === "en-US" ? `Listen to option ${i + 1}` : `Dengarkan pilihan ${i + 1}`} className={`flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-white px-2 font-extrabold text-[#0567c2] ${potAudioLega ? "h-[52px] text-base" : "h-11 text-sm"}`}>
+                <Icon name="volume_up" size={potAudioLega ? 22 : 20} />
                 {lang === "en-US" ? "Listen" : "Dengar"}
               </button>
             </div>
