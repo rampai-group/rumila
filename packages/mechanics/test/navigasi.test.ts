@@ -2,6 +2,11 @@ import { describe, expect, it } from "vitest";
 import { ContentPack, type PaketNavigasi } from "@akademi/schema";
 import { buatRonde, buatRondeNavigasi, hitungBlok, jalankan, kapasitasRakNavigasi, knobDefaults, nilai, nilaiNavigasi, optimal, type NavBlock, type NavGrid } from "../src";
 import lurus from "../../../content/golden/paket-robot-ke-bintang-lurus.json";
+import belokBintang from "../../../content/paket/navigasi/belok-menghadap-bintang.json";
+import belokTaman from "../../../content/paket/navigasi/belok-dua-kali-taman.json";
+import satuBelokan from "../../../content/paket/navigasi/grid-3x3-satu-belokan.json";
+import duaBelokan from "../../../content/paket/navigasi/grid-3x3-dua-belokan.json";
+import tebakPetak from "../../../content/paket/navigasi/tebak-petak-berikutnya.json";
 import putarSeperempat from "../../../content/paket/navigasi/sd2-mat-putar-robot-seperempat.json";
 import debugTigaJalur from "../../../content/paket/navigasi/sd5-kode-perbaiki-kalau.json";
 
@@ -177,6 +182,50 @@ describe("buatRondeNavigasi + nilaiNavigasi", () => {
     const salah = nilaiNavigasi(r, { program: [L, M, M] });
     expect(salah.benar).toBe(false);
     expect(salah.detail.batu).toBe(1);
+  });
+});
+
+describe("jumlah belokan pada paket navigasi TKA", () => {
+  const bintang = ContentPack.parse(belokBintang) as PaketNavigasi;
+  const taman = ContentPack.parse(belokTaman) as PaketNavigasi;
+
+  it.each([
+    { paket: bintang, turns: 1, distance: 2, jarak: 2, id: /^(kiri-lalu-maju|kanan-lalu-maju|kiri-dari-utara)/ },
+    { paket: bintang, turns: 1, distance: 4, jarak: 4, id: /^naik-jauh-lalu-kanan/ },
+    { paket: bintang, turns: 2, distance: 3, jarak: 3, id: /^putar-balik-ke-timur/ },
+    { paket: taman, turns: 1, distance: 4, jarak: 4, id: /^naik-lalu-(kiri|kanan)/ },
+    { paket: taman, turns: 2, distance: 4, jarak: 4, id: /^putar-balik-jauh/ },
+    { paket: bintang, turns: 2, distance: 2, jarak: 3, id: /^putar-balik-ke-timur/ },
+    { paket: taman, turns: 2, distance: 3, jarak: 4, id: /^putar-balik-jauh/ },
+  ])("$paket.id memilih $turns belokan dan jarak $jarak saat diminta $distance", ({ paket, turns, distance, jarak, id }) => {
+    for (let seed = 0; seed < 32; seed++) {
+      const ronde = buatRondeNavigasi(paket, { turns, distance }, seed);
+      expect(ronde.grids[0].id).toMatch(id);
+      expect(optimal(ronde.grids[0], ronde.commands)).toBe(jarak);
+    }
+  });
+
+  it.each([{ data: satuBelokan, turns: 1 }, { data: duaBelokan, turns: 2 }])(
+    "$data.id memakai jumlah belokan tetap yang didukung peta",
+    ({ data, turns }) => {
+      const paket = ContentPack.parse(data) as PaketNavigasi;
+      expect(paket.knobs.turns).toMatchObject({ min: turns, max: turns, default: turns });
+      for (let seed = 0; seed < 32; seed++) {
+        expect(buatRondeNavigasi(paket, { turns }, seed)).toEqual(buatRondeNavigasi(paket, {}, seed));
+      }
+    },
+  );
+
+  it("jumlah belokan lama yang sudah tidak tersedia masih menghasilkan soal", () => {
+    const paket = ContentPack.parse(duaBelokan) as PaketNavigasi;
+    expect(buatRondeNavigasi(paket, { turns: 1, distance: 5 }, 0)).toEqual(buatRondeNavigasi(paket, { distance: 5 }, 0));
+  });
+
+  it("mode prediksi tetap memakai program bawaan", () => {
+    const paket = ContentPack.parse(tebakPetak) as PaketNavigasi;
+    for (let seed = 0; seed < 32; seed++) {
+      expect(buatRondeNavigasi(paket, { turns: 1, distance: 5 }, seed)).toEqual(buatRondeNavigasi(paket, { distance: 5 }, seed));
+    }
   });
 });
 

@@ -1,6 +1,6 @@
 {
   "id": "grid-3x3-dua-belokan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -19,11 +19,11 @@
   },
   "knobs": {
     "turns": {
-      "min": 1,
+      "min": 2,
       "max": 2,
-      "default": 1,
+      "default": 2,
       "step": 1,
-      "keterangan": "jumlah belokan di jalur: 1 → 2 (tembok memaksa belokan kedua)"
+      "keterangan": "jumlah belokan minimum untuk mencapai bintang: 2"
     },
     "distance": {
       "min": 5,
