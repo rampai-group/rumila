@@ -1,6 +1,6 @@
 {
   "id": "sains-benda-dibuat-dari-apa",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -133,7 +133,10 @@
       "id": "pondok",
       "labelKey": "i-pondok",
       "bin": "kayu",
-      "emoji": "🛖"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-dinding-pondok-kayu"
+      }
     },
     {
       "id": "rel",
@@ -173,7 +176,10 @@
       "id": "teropong",
       "labelKey": "i-teropong",
       "bin": "kaca",
-      "emoji": "🔭"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lensa-teropong"
+      }
     },
     {
       "id": "sikatgigi",
