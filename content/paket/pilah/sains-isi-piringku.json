@@ -1,6 +1,6 @@
 {
   "id": "sains-isi-piringku",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Isi Piringku",
-      "instruksi": "Isi tiap bagian piring: makanan pokok, lauk, sayur, dan buah. Taruh permen dan soda di luar piring.",
+      "instruksi": "Isi piring dengan makanan pokok, lauk, sayur, dan buah. Kalau ada permen atau soda, taruh di luar piring.",
       "nasi": "makanan pokok",
       "lauk": "lauk",
       "sayur": "sayur",
@@ -32,7 +32,7 @@
     },
     "en": {
       "judul": "Fill My Plate",
-      "instruksi": "Fill each section with a staple food, a protein dish, vegetables, or fruit. Put candy and soda outside the plate.",
+      "instruksi": "Fill the plate with staple foods, protein, vegetables, and fruit. If you see candy or soda, put it outside the plate.",
       "nasi": "staple food",
       "lauk": "protein",
       "sayur": "vegetables",
@@ -186,7 +186,10 @@
       "id": "soda",
       "labelKey": "i-soda",
       "bin": "bukan",
-      "emoji": "🥤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-soda"
+      }
     }
   ],
   "pilihan": []

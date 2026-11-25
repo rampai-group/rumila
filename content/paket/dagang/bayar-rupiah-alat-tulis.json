@@ -1,6 +1,6 @@
 {
   "id": "bayar-rupiah-alat-tulis",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -110,13 +110,19 @@
       "id": "tas",
       "labelKey": "tas",
       "price": 9000,
-      "emoji": "👝"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-tempat-pensil"
+      }
     },
     {
       "id": "catair",
       "labelKey": "catair",
       "price": 10000,
-      "emoji": "🎨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-cat-air"
+      }
     }
   ],
   "customerRule": {
@@ -125,5 +131,6 @@
     "payExact": true,
     "maxTotal": 10000,
     "kindsMax": 1
-  }
+  },
+  "barangIkutHarga": true
 }

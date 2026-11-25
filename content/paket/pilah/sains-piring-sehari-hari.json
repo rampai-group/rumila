@@ -1,6 +1,6 @@
 {
   "id": "sains-piring-sehari-hari",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -40,7 +40,7 @@
       "i-susu": "milk",
       "i-air": "water",
       "i-permen": "candy",
-      "i-keripik": "chips",
+      "i-keripik": "French fries",
       "i-soda": "fizzy drink",
       "i-kuekrim": "cream cake",
       "i-rotimanis": "sweet bun",
@@ -78,8 +78,11 @@
     {
       "id": "toples",
       "labelKey": "toples",
-      "emoji": "🍪",
-      "color": "#ffe0b2"
+      "color": "#ffe0b2",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-toples-jajanan"
+      }
     }
   ],
   "items": [
@@ -141,7 +144,10 @@
       "id": "soda",
       "labelKey": "i-soda",
       "bin": "toples",
-      "emoji": "🥤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-soda"
+      }
     },
     {
       "id": "kuekrim",
@@ -153,7 +159,10 @@
       "id": "rotimanis",
       "labelKey": "i-rotimanis",
       "bin": "toples",
-      "emoji": "🥐"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-roti-manis"
+      }
     },
     {
       "id": "wafel",

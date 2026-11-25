@@ -111,8 +111,10 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const titikLega = kartuTitik && lebarArea >= 620 && h >= 680;
   const wadahLega = paket.level === "PAUD" && !kartuTitik && !piktogram &&
     bins.length >= 2 && bins.length <= 3 && lebarArea >= 620 && h >= 680;
+  const isiPiringku = paket.id === "sains-isi-piringku";
+  const batasWadahBergambar = isiPiringku ? 5 : 3;
   const wadahBergambar = paket.level !== "PAUD" && !carroll && !kartuTitik && !piktogram &&
-    bins.length >= 2 && bins.length <= 3 && items.length <= 8 && lebarArea >= 620 && h >= 680 &&
+    bins.length >= 2 && bins.length <= batasWadahBergambar && items.length <= 8 && lebarArea >= 620 && h >= 680 &&
     bins.every((b) => visualBergambar(b) && t(b.labelKey).length <= 50) &&
     items.every((i) => visualBergambar(i) && t(i.labelKey).length <= 70);
   const tataLega = wadahLega || wadahBergambar;
@@ -222,10 +224,13 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const n = bins.length;
   // HP dengan ≥ 4 wadah, atau 3 wadah bernama panjang ("mamalia (berambut, menyusui)"): wadah disusun per baris
   // (label kiri, isi kanan) — kolom selebar ±100 px membuat nama & ciri terlipat per kata.
-  const baris = !carroll && !piktogram && !kartuTitik && hp && (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
+  // Empat atau lima tujuan Isi Piringku harus tetap dekat agar kartu bisa diseret langsung.
+  const piringRingkas = isiPiringku && hp;
+  const baris = !carroll && !piktogram && !kartuTitik && hp && !piringRingkas &&
+    (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
   const titikRapat = kartuTitik && hp;
   const jarakBin = (carroll ? 7 : piktogram || titikRapat ? 8 : baris ? 10 : 12) * sk;
-  const lebarMinBin = titikRapat ? 84 + jarakBin : Math.min(148, 114 * sk + jarakBin);
+  const lebarMinBin = piringRingkas ? 94 + jarakBin : titikRapat ? 84 + jarakBin : Math.min(148, 114 * sk + jarakBin);
   const kapasitasKolom = Math.max(1, Math.floor((lebarArea + jarakBin) / lebarMinBin));
   const kolomBin = carroll ? 2 : piktogram ? n : baris ? 1 : Math.ceil(n / Math.ceil(n / kapasitasKolom));
   const lebarJudulBaris = carroll ? Math.min(124, lebarArea * 0.22) : 0;
@@ -248,7 +253,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const tinggiBaki = wadahBergambar ? Math.min(satuKartu ? 320 : 204, Math.round(h * (satuKartu ? 0.32 : 0.205)))
     : wadahLega ? Math.min(224, Math.round(h * 0.23)) : 84 * sk;
   const tinggiIsi = wadahBergambar ? Math.min(152, Math.round(h * 0.17 / sk))
-    : wadahLega ? Math.min(220, Math.round(h * 0.22 / sk)) : piktogram || titikLega ? 112 : titikRapat ? 58 : baris || carroll ? 52 : 84;
+    : wadahLega ? Math.min(220, Math.round(h * 0.22 / sk)) : piktogram || titikLega ? 112 : titikRapat || piringRingkas ? 58 : baris || carroll ? 52 : 84;
   const gambarKartu = Math.round((wadahBergambar ? satuKartu ? 230 : kartuBeruraian ? 144 : 176 : wadahLega ? 132 : titikLega ? 112 : hp ? 56 : 80) * Math.min(sk, 1.2));
   const gambarTerpasang = wadahBergambar ? Math.min(96 * sk, Math.max(42, lebarIsi / 2 - 20))
     : (piktogram ? 46 : wadahLega ? 96 : titikLega ? 80 : hp ? 52 : 64) * sk;
@@ -272,6 +277,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
         ref={(el) => { binRefs.current[b.id] = el; }}
         onClick={() => ketukBin(b.id)}
         arah={piktogram ? "piktogram" : baris ? "baris" : "kolom"}
+        style={piringRingkas ? { width: lebarBin } : undefined}
         isiDariAtas={!baris && !tataLega}
         minIsi={tinggiIsi}
         ring={ring}
@@ -389,7 +395,11 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
           </tbody>
         </table>
       ) : (
-        <div data-wadah-kelompok className="grid shrink-0" style={{ gap: jarakBin, gridTemplateColumns: `repeat(${kolomBin}, minmax(0,1fr))` }}>
+        <div
+          data-wadah-kelompok
+          className={piringRingkas ? "flex shrink-0 flex-wrap justify-center" : "grid shrink-0"}
+          style={{ gap: jarakBin, gridTemplateColumns: piringRingkas ? undefined : `repeat(${kolomBin}, minmax(0,1fr))` }}
+        >
           {bins.map(gambarWadah)}
         </div>
       )}

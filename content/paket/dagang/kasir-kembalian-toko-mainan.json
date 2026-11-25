@@ -1,6 +1,6 @@
 {
   "id": "kasir-kembalian-toko-mainan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "yoyo": "yoyo",
       "balon": "balon",
       "mobil": "mobil-mobilan",
-      "boneka": "boneka"
+      "boneka": "boneka beruang"
     },
     "en": {
       "judul": "Toy Shop Cashier",
@@ -24,7 +24,7 @@
       "yoyo": "yo-yo",
       "balon": "balloon",
       "mobil": "toy car",
-      "boneka": "doll"
+      "boneka": "teddy bear"
     }
   },
   "knobs": {
@@ -53,7 +53,10 @@
       "id": "kelereng",
       "labelKey": "kelereng",
       "price": 5000,
-      "emoji": "🔵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-kelereng"
+      }
     },
     {
       "id": "yoyo",
@@ -86,5 +89,6 @@
     "payExact": true,
     "maxTotal": 10000,
     "kindsMax": 1
-  }
+  },
+  "barangIkutHarga": true
 }

@@ -1,6 +1,6 @@
 {
   "id": "mesin-tukar-koin",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Mesin Tukar Koin",
-      "instruksi": "Masukkan uang kertas ke mesin tukar, lalu susun koin seribu sebanyak nilainya.",
+      "instruksi": "Lihat nilai uang kertasnya. Tambahkan koin seribu sampai jumlahnya sama.",
       "duaribu": "uang dua ribu",
       "limaribu": "uang lima ribu"
     },
     "en": {
       "judul": "Coin Exchange Machine",
-      "instruksi": "Put the note into the change machine, then lay out thousand coins worth the same.",
+      "instruksi": "Look at the banknotes. Add one-thousand coins until the total matches.",
       "duaribu": "2,000 note",
       "limaribu": "5,000 note"
     }

@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-dua-langkah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Meleset Dua Kali",
-      "instruksi": "Jalankan program awal dan lihat dua kesalahannya. Ubah paling banyak dua blok."
+      "instruksi": "Coba program awal. Ubah dua blok yang salah agar robot sampai ke bintang."
     },
     "en": {
       "judul": "Missed Twice",
-      "instruksi": "Run the starter program and spot two mistakes. Change up to two blocks."
+      "instruksi": "Try the starter program. Change the two wrong blocks so the robot reaches the star."
     }
   },
   "knobs": {

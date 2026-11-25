@@ -530,9 +530,14 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const tanah = TANAH[tema.id];
   const mendatar = pw >= 760 && ph > 0 && pw / ph >= 1.2;
   const adaMini = grids.length > 1;
-  // Peta satu baris yang muat di layar: dekatkan Jalan ke rak dan palet.
-  const aksiDiPanggung = !mendatar && ph >= 540 && ronde.execMode === "program" &&
+  // Di tablet tegak yang lega, tombol tetap dekat dengan tempat menyusun atau menebak langkah.
+  const latihanNavigator = !ujian && paket.competencyIds.some((id) =>
+    id === "KODE.TKB.PROGRAM-5-8.01" || id === "KODE.TKB.PROGRAM-5-8.02" || id === "KODE.TKB.DEBUG-BANYAK.01",
+  );
+  const tabletTegakLega = latihanNavigator && pw >= 620 && ph >= 680;
+  const programSatuBaris = ph >= 540 && ronde.execMode === "program" &&
     grid.h === 1 && !ronde.debug && !modeBendera && !adaMini && palet.length <= 3;
+  const aksiDiPanggung = !mendatar && (tabletTegakLega || programSatuBaris);
   // program panjang (banyak slot, ulangi, palet > 4 blok): kendali dirapatkan supaya Jalan selalu kelihatan
   const panjang = ronde.execMode === "program" && (!!ronde.debug || slotMaks > 6 || palet.length > 4);
   // Slide Over / jendela sempit: kendali bertumpuk dan membungkus baris, jadi ikut dirapatkan
@@ -695,7 +700,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
       {ronde.execMode === "langkah" && lariLangkah && (
         <>
           <Rak judul={`Program Agam · blok ${Math.min(langkahKe + 1, Math.max(1, hitungBlok(ronde.program)))} dari ${hitungBlok(ronde.program)}`} blok={ronde.program} slot={Math.max(hitungBlok(ronde.program), 1)} aktif sel={null} bacaSaja />
-          <AksiBawah aktif={!mendatar}>
+          <AksiBawah aktif={!mendatar && !aksiDiPanggung}>
             <div className={`flex gap-2 ${mendatar ? "flex-col items-stretch" : "items-center"}`}>
               <div className="min-w-0 flex-1 rounded-[16px] bg-white px-3 py-2 font-bold" style={{ fontSize: 15 * skt }}>
                 {ronde.prediksi
@@ -801,8 +806,8 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
       >
         <defs>{COMMON_DEFS}</defs>
         {sel}
-        <circle cx={grid.start.x * SEL + SEL / 2} cy={grid.start.y * SEL + SEL / 2} r={30} fill="none" stroke={INK} strokeOpacity={0.55} strokeWidth={5} strokeDasharray="8 8" />
-        <g className="akademi-agam" style={{ transform: `translate(${agam.x * SEL + SEL / 2}px, ${agam.y * SEL + SEL / 2}px)` }}>
+        <circle cx={grid.start.x * SEL + SEL / 2} cy={grid.start.y * SEL + SEL / 2} r={30} fill="none" stroke={INK} strokeOpacity={0.55} strokeWidth={5} strokeDasharray="8 8" pointerEvents="none" />
+        <g className="akademi-agam" pointerEvents="none" style={{ transform: `translate(${agam.x * SEL + SEL / 2}px, ${agam.y * SEL + SEL / 2}px)` }}>
           <g key={agam.goyang} className={agam.goyang ? "akademi-shake" : undefined}>
             <g className={agam.senang ? "akademi-bounce" : undefined}>
               <g style={{ transform: `scale(${agam.lompat ? 1.3 : 0.82})`, transition: "transform 220ms cubic-bezier(0.3, 1.4, 0.5, 1)" }}>

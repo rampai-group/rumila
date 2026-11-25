@@ -1,6 +1,6 @@
 {
   "id": "kasir-kembalian-warung",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -77,7 +77,10 @@
       "id": "selai",
       "labelKey": "selai",
       "price": 9000,
-      "emoji": "🍯"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-selai"
+      }
     }
   ],
   "customerRule": {
@@ -86,5 +89,6 @@
     "payExact": true,
     "maxTotal": 10000,
     "kindsMax": 1
-  }
+  },
+  "barangIkutHarga": true
 }
