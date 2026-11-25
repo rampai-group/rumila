@@ -758,6 +758,8 @@ function ModeJengkal(c: Ctx) {
 
 /* ---------------- kubus ---------------- */
 
+const WARNA_KUBUS = ["#ff8fa3", "#ffd23f", "#7ec8a0", "#6ab0e8", "#c59be8", "#ffb86b"];
+
 function ModeKubus(c: Ctx) {
   const { ronde, onJawab, hasil, terkunci, visual, nama } = c;
   const benda = useMemo(() => ronde.items.find((i) => i.role === "benda") ?? ronde.items[0], [ronde.items]);
@@ -767,7 +769,6 @@ function ModeKubus(c: Ctx) {
   const tabletTegak = w >= 620 && h >= 650 && w < h * 1.25;
   const st = useSkalaTeks();
   const N = 12;
-  const warna = ["#ff8fa3", "#ffd23f", "#7ec8a0", "#6ab0e8", "#c59be8", "#ffb86b"];
   const teks = ks.kubus(benda ? nama(benda.id) : "bendanya");
   const awal = ronde.offset, akhir = ronde.offset + ronde.target;
   const namaBenda = benda ? nama(benda.id) : "benda";
@@ -802,7 +803,7 @@ function ModeKubus(c: Ctx) {
                   {Array.from({ length: N }, (_, k) => {
                     const ditandai = k >= awal && k < akhir && (hint || hasil);
                     return (
-                      <li key={k} data-ukur-kubus className="aspect-square" style={{ background: warna[k % warna.length], borderRight: k === N - 1 ? undefined : "2px solid rgba(11,37,69,.4)", boxShadow: ditandai ? `inset 0 0 0 4px ${UNGU}` : "inset 0 -5px 0 rgba(0,0,0,.12)" }}>
+                      <li key={k} data-ukur-kubus className="aspect-square" style={{ background: WARNA_KUBUS[k % WARNA_KUBUS.length], borderRight: k === N - 1 ? undefined : "2px solid rgba(11,37,69,.4)", boxShadow: ditandai ? `inset 0 0 0 4px ${UNGU}` : "inset 0 -5px 0 rgba(0,0,0,.12)" }}>
                         <span className="sr-only">{k === awal && "Awal benda, "}kubus{k + 1 === akhir && ", akhir benda"}</span>
                       </li>
                     );
@@ -1283,6 +1284,7 @@ function ModeAlat(c: Ctx) {
   const jenisAlat = (a: Item) => (emojiAlat(a, a.id) === "⚖️" || a.id.includes("timbang") ? "timbangan" : "penggaris");
   const dipakai = dipilih ? itemById(dipilih) : undefined;
   const jenisDipakai = dipakai ? jenisAlat(dipakai) : null;
+  const ukuranIkonAlat = 52 * skala * (samping ? 1.2 : 1.5);
 
   const pilih = (id: string) => {
     if (terkunci || dipilih) return;
@@ -1319,8 +1321,8 @@ function ModeAlat(c: Ctx) {
                       </div>
                     )}
                     {/* penggaris kubus masuk di bawah hewan */}
-                    <div className="flex overflow-hidden transition-all duration-700 ease-out" style={{ height: 36 * f, width: jenisDipakai === "penggaris" ? 240 * f : 0, opacity: jenisDipakai === "penggaris" ? 1 : 0 }} aria-hidden>
-                      {Array.from({ length: 6 }, (_, k) => <div key={k} className="flex shrink-0 items-center justify-center" style={{ width: 36 * f, height: 36 * f, background: ["#ff8fa3", "#ffd23f", "#7ec8a0", "#6ab0e8", "#c59be8", "#ffb86b"][k], ...Tebal, fontSize: 14 * f, borderRight: "2px solid rgba(11,37,69,.35)" }}>{k + 1}</div>)}
+                    <div className="flex overflow-hidden transition-all duration-700 ease-out" style={{ height: 36 * f, width: jenisDipakai === "penggaris" ? WARNA_KUBUS.length * 36 * f : 0, opacity: jenisDipakai === "penggaris" ? 1 : 0 }} aria-hidden>
+                      {WARNA_KUBUS.map((warna, k) => <div key={warna} className="flex shrink-0 items-center justify-center" style={{ width: 36 * f, height: 36 * f, background: warna, ...Tebal, fontSize: 14 * f, borderRight: "2px solid rgba(11,37,69,.35)" }}>{k + 1}</div>)}
                     </div>
                     {/* timbangan naik dari bawah */}
                     <div className="transition-all duration-700 ease-out" style={{ height: jenisDipakai === "timbangan" ? 44 * f : 0, opacity: jenisDipakai === "timbangan" ? 1 : 0, overflow: "hidden" }} aria-hidden>
@@ -1348,7 +1350,15 @@ function ModeAlat(c: Ctx) {
                   className={`flex min-h-24 flex-col items-center justify-center gap-1 overflow-hidden rounded-[20px] bg-white active:scale-95 ${hint && a.id === ronde.correctId ? "akademi-bounce" : ""}`}
                   style={{ minHeight: 96 * skala * (samping ? 1.35 : 1.75), boxShadow: `${BAYANG}, 0 0 0 3px ${hasil && a.id === ronde.correctId ? BENAR : hasil && a.id === dipilih ? SALAH : dipilih === a.id ? UNGU : "rgba(11,37,69,.16)"}`, opacity: dipilih && dipilih !== a.id ? 0.55 : 1 }}
                 >
-                  <span style={{ fontSize: 52 * skala * (samping ? 1.2 : 1.5), lineHeight: 1 }} aria-hidden>{emojiAlat(a, a.id)}</span>
+                  <span className="flex w-full items-center justify-center" style={{ height: ukuranIkonAlat, fontSize: ukuranIkonAlat, lineHeight: 1 }} aria-hidden>
+                    {jenisAlat(a) === "penggaris" ? (
+                      <span className="flex w-40 max-w-[82%] overflow-hidden rounded-md border-2 border-[#627087]">
+                        {WARNA_KUBUS.map((warna) => (
+                          <span key={warna} className="aspect-square min-w-0 flex-1 border-r border-[#627087] last:border-r-0" style={{ background: warna }} />
+                        ))}
+                      </span>
+                    ) : emojiAlat(a, a.id)}
+                  </span>
                   <span style={{ ...Tebal, fontSize: 19 * st }}>{nama(a.id)}</span>
                 </button>
               ))}
