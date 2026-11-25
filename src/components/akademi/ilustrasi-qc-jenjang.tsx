@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { HEWAN_HABITAT } from "./ilustrasi-hewan-habitat";
+import { ILUSTRASI_HABITAT } from "./ilustrasi-hewan-habitat";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -372,7 +372,7 @@ const objectArt: Record<string, ReactNode> = {
   ...PAKAN,
   ...KEGIATAN,
   ...GERAK_APUNG,
-  ...HEWAN_HABITAT,
+  ...ILUSTRASI_HABITAT,
   "pagar-kayu": <g {...RINGKAS} stroke="#815332">
     <rect x="8" y="46" width="114" height="11" rx="2" fill="#bd864f" />
     <rect x="8" y="68" width="114" height="10" rx="2" fill="#bd864f" />

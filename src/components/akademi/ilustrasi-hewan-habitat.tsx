@@ -2,7 +2,16 @@ import type { ReactNode } from "react";
 
 const kontur = { strokeWidth: 2.4, strokeLinecap: "round", strokeLinejoin: "round" } as const;
 
-export const HEWAN_HABITAT: Record<string, ReactNode> = {
+export const ILUSTRASI_HABITAT: Record<string, ReactNode> = {
+  "habitat-arktik": <g {...kontur}>
+    <rect x="5" y="11" width="120" height="78" rx="9" fill="#daeff7" stroke="#5c89a3" />
+    <path d="M7 53L25 33 42 45 58 26 81 49 100 35 123 52V65H7Z" fill="#9cc8db" stroke="#689ab2" />
+    <path d="M37 48L58 26 72 40 60 37 51 42 47 40ZM86 45L100 35 113 43 103 40 95 44Z" fill="#fff" />
+    <path d="M7 55Q33 49 46 61L65 63 81 58Q104 57 123 60V80Q123 87 116 87H14Q7 87 7 80Z" fill="#68b3d1" />
+    <path d="M7 56Q30 46 53 59L66 62 57 69 36 72 29 79 7 78Z" fill="#f6fafc" stroke="#8cbad1" />
+    <path d="M77 64L87 61 100 64 93 69 80 69ZM97 77L106 73 117 75 113 80 102 81Z" fill="#f6fafc" stroke="#4389a9" />
+    <path d="M47 80H63M70 74H80M87 84H94" fill="none" stroke="#c5e7f1" />
+  </g>,
   "rubah-fennec": <g {...kontur} stroke="#966542">
     <path d="M46 68Q33 59 25 65Q14 75 10 70Q14 84 29 84Q41 85 48 79" fill="#dcaf79" />
     <path d="M12 70Q21 77 29 67L31 65Q22 64 19 69Q14 72 10 70Z" fill="#8f5e45" stroke="none" />

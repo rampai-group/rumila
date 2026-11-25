@@ -185656,7 +185656,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Rumah Hewan di Seluruh Dunia",
         "instruksi": "Robot keliling dunia: antar tiap hewan ke habitat tempat tinggalnya.",
         "gurun": "gurun",
-        "es": "es",
+        "es": "Arktik",
         "hutan": "hutan",
         "terumbu": "terumbu karang",
         "i-rusakutub": "rusa kutub",
@@ -185676,7 +185676,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Animal Homes Around the World",
         "instruksi": "Robot travels the world: take each animal to the habitat where it lives.",
         "gurun": "desert",
-        "es": "ice",
+        "es": "Arctic",
         "hutan": "forest",
         "terumbu": "coral reef",
         "i-rusakutub": "reindeer",
@@ -185724,8 +185724,11 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "es",
         "labelKey": "es",
-        "emoji": "🧊",
-        "color": "#e1f5fe"
+        "color": "#e1f5fe",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-arktik"
+        }
       },
       {
         "id": "hutan",
