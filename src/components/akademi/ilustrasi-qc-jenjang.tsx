@@ -310,9 +310,58 @@ function Batuan({ id }: { id: string }) {
   </g>;
 }
 
+const GERAK_APUNG: Record<string, ReactNode> = {
+  "sirip-ikan": <g {...RINGKAS}>
+    <path d="M36 52Q59 29 88 44L112 29V72L87 59Q51 77 29 65Q17 59 36 52Z" fill="#c0d9e0" stroke="#6c929e" />
+    <path d="M44 49Q45 35 58 22L72 44Q57 43 44 49Z" fill="#3aa6d0" stroke="#236c92" />
+    <path d="M53 57Q74 48 87 55Q82 69 57 71Z" fill="#3aa6d0" stroke="#236c92" />
+    <circle cx="35" cy="58" r="3" fill={INK} stroke="none" />
+  </g>,
+  sayap: <g {...RINGKAS}>
+    <path d="M17 74Q15 44 40 29Q61 37 112 12Q115 29 98 40L116 34Q110 55 86 60L105 58Q97 75 72 75L87 77Q73 89 48 85Q30 84 17 74Z" fill="#ede2c5" stroke="#705840" />
+    <path d="M25 67Q44 53 57 47Q73 46 98 40M39 75Q60 61 86 60M53 80Q65 75 72 75M34 57L45 59M49 48L61 50" fill="none" stroke="#9c805f" />
+  </g>,
+  "kaki-hewan": <g {...RINGKAS}>
+    <path d="M36 18Q50 12 62 25L53 53L55 75Q59 84 51 86H27Q20 84 25 77L35 67L32 43Z" fill="#d8a060" stroke="#784e2c" />
+    <path d="M78 18Q91 12 103 26L93 54L96 75Q100 84 92 86H69Q62 84 67 77L76 67L74 43Z" fill="#e8b77b" stroke="#784e2c" />
+    <path d="M31 79v7m10-7v7m32-7v7m10-7v7" fill="none" stroke="#784e2c" strokeWidth="2" />
+  </g>,
+  "monyet-berjalan": <g {...RINGKAS}>
+    <path d="M43 47Q24 48 17 36Q7 23 20 15Q30 11 35 20" fill="none" stroke="#75462f" strokeWidth="5" />
+    <path d="M44 59L35 70L38 83H51M72 59L78 77L92 82" fill="none" stroke="#75462f" strokeWidth="7" />
+    <ellipse cx="58" cy="51" rx="27" ry="16" fill="#a3623e" stroke="#75462f" />
+    <path d="M47 57L47 72L30 82M78 55L89 69L106 74" fill="none" stroke="#a3623e" strokeWidth="8" />
+    <path d="M27 83H35M102 74L113 76" fill="none" stroke="#d2a172" strokeWidth="5" />
+    <circle cx="86" cy="35" r="17" fill="#a3623e" stroke="#75462f" />
+    <circle cx="77" cy="34" r="7" fill="#e5ad80" stroke="#75462f" />
+    <path d="M91 27Q109 29 108 39Q109 51 94 51Q85 48 85 39Q85 31 91 27Z" fill="#edbe94" stroke="#75462f" />
+    <circle cx="99" cy="35" r="2.7" fill={INK} stroke="none" />
+    <path d="M98 46Q103 46 107 43" fill="none" stroke="#75462f" strokeWidth="2" />
+  </g>,
+  "bebek-karet-mainan": <g {...RINGKAS}>
+    <path d="M42 54Q32 48 34 36Q35 20 54 19Q73 18 77 32Q81 41 73 51Q89 57 111 46Q113 77 88 83Q63 91 40 82Q23 75 28 65Q31 56 42 54Z" fill="#ffd54c" stroke="#a9641f" />
+    <path d="M35 37Q25 35 15 40Q21 51 36 48" fill="#ff932f" stroke="#a65526" />
+    <path d="M53 30Q57 27 63 31M46 69Q62 82 85 74" fill="none" stroke="#fff3af" strokeWidth="4" />
+    <circle cx="50" cy="36" r="3.6" stroke="none" fill={INK} />
+  </g>,
+  "tutup-gabus": <g {...RINGKAS} stroke="#946237">
+    <path d="M37 29H93L86 75Q65 89 44 75Z" fill="#c89257" />
+    <ellipse cx="65" cy="29" rx="28" ry="10" fill="#e4b57b" />
+    <path d="M50 27l4-2m9 7 4-4m10 1 4-2M46 48l4 3m12-7 3 3m10-3 6 2M49 65l4-2m11 5 4 2m9-12 5 3M72 76l4-3" fill="none" strokeWidth="2" />
+  </g>,
+  "balok-kayu": <g {...RINGKAS} stroke="#784e2c">
+    <path d="M14 42L40 22H115L90 42Z" fill="#e5b57e" />
+    <path d="M90 42L115 22V61L90 81Z" fill="#af7843" />
+    <path d="M14 42H90V81H14Z" fill="#c88a4d" />
+    <path d="M23 52Q40 47 55 52T80 52M23 62Q38 59 50 64T80 61M26 73Q50 68 79 72M39 34H86" fill="none" stroke="#9e683a" strokeWidth="2" />
+    <path d="M97 50L108 41M98 63L108 54" fill="none" stroke="#8a5e39" strokeWidth="2" />
+  </g>,
+};
+
 const objectArt: Record<string, ReactNode> = {
   ...PAKAN,
   ...KEGIATAN,
+  ...GERAK_APUNG,
   "kupu-enam-kaki": <Serangga kupu />,
   "lalat-enam-kaki": <Serangga kupu={false} />,
   "televisi-menyala": <Televisi nyala />,
