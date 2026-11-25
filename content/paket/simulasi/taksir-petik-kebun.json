@@ -1,6 +1,6 @@
 {
   "id": "taksir-petik-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -28,7 +28,7 @@
       "min": 8,
       "max": 20,
       "default": 15,
-      "step": 1,
+      "step": 2,
       "keterangan": "jumlah buah terbanyak yang bisa muncul (target acak 8..max, paling banyak 20); benar bila meleset paling banyak 3"
     },
     "flashMs": {

@@ -907,7 +907,8 @@ function ModeTurus(c: Ctx) {
 function GarisBilangan({ min, max, nilai, onUbah, disabled, benar }: { min: number; max: number; nilai: number; onUbah: (n: number) => void; disabled?: boolean; benar?: number | null }) {
   const [ref, lebar] = useLebar<HTMLDivElement>();
   const s = Math.min(usePanggung().skala, 1.4);
-  const pad = 28 * s;
+  const bulat = 64 * s;
+  const pad = bulat / 2 + 2 * s;
   const span = Math.max(1, max - min);
   const pos = (n: number) => pad + ((n - min) / span) * Math.max(0, lebar - 2 * pad);
   const dariX = (clientX: number) => {
@@ -920,7 +921,6 @@ function GarisBilangan({ min, max, nilai, onUbah, disabled, benar }: { min: numb
   const gerak = (e: RPointerEvent<HTMLDivElement>) => { if (seret.current) { const n = dariX(e.clientX); if (n !== nilai) onUbah(n); } };
   const lepas = () => { seret.current = false; };
   const rapat = lebar > 0 && lebar / (span + 1) < 22 * s;
-  const bulat = 64 * s;
   return (
     <div ref={ref} className="relative w-full select-none rounded-[20px] bg-white" style={{ height: 120 * s, touchAction: "none", boxShadow: `${BAYANG}, inset 0 0 0 2px rgba(11,37,69,.16)` }} onPointerDown={turun} onPointerMove={gerak} onPointerUp={lepas} onPointerCancel={lepas} role="slider" aria-valuemin={min} aria-valuemax={max} aria-valuenow={nilai} aria-label="Garis bilangan" tabIndex={0}
       onKeyDown={(e) => { if (disabled) return; if (e.key === "ArrowRight") onUbah(Math.min(max, nilai + 1)); if (e.key === "ArrowLeft") onUbah(Math.max(min, nilai - 1)); }}>

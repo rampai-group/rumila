@@ -312501,7 +312501,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "taksir-keranjang-apel",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "TKB",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312527,7 +312527,7 @@ export const PAKET_RAW: unknown[] = [
         "min": 8,
         "max": 20,
         "default": 15,
-        "step": 1,
+        "step": 2,
         "keterangan": "jumlah apel terbanyak yang bisa muncul (target acak 8..max)"
       },
       "flashMs": {
@@ -312560,7 +312560,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "taksir-petik-kebun",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312588,7 +312588,7 @@ export const PAKET_RAW: unknown[] = [
         "min": 8,
         "max": 20,
         "default": 15,
-        "step": 1,
+        "step": 2,
         "keterangan": "jumlah buah terbanyak yang bisa muncul (target acak 8..max, paling banyak 20); benar bila meleset paling banyak 3"
       },
       "flashMs": {

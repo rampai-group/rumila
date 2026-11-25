@@ -13,6 +13,8 @@ import hitungBiji from "../../../content/paket/dagang/hitung-biji-kebun-11-20.js
 import hitungKelereng from "../../../content/paket/dagang/hitung-kelereng-11-20.json";
 import rakKelereng from "../../../content/paket/pilah/rak-angka-11-20-kelereng.json";
 import rakTelur from "../../../content/paket/pilah/rak-angka-11-20-telur.json";
+import taksirApel from "../../../content/paket/simulasi/taksir-keranjang-apel.json";
+import taksirPetik from "../../../content/paket/simulasi/taksir-petik-kebun.json";
 
 describe("rng", () => {
   it("deterministik untuk seed sama, beda untuk seed beda", () => {
@@ -40,7 +42,9 @@ describe("latihan jumlah benda Navigator", () => {
     [hitungKelereng, "itemsMax", [12, 12, 14, 14, 16, 16, 18, 18, 20, 20]],
     [rakKelereng, "maxCount", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
     [rakTelur, "maxCount", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
-  ] as const)("membuka jumlah 20 dalam satu latihan ($id)", (raw, kunci, jadwal) => {
+    [taksirApel, "max", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
+    [taksirPetik, "max", [15, 15, 17, 17, 19, 19, 20, 20, 20, 20]],
+  ] as const)("membuka jumlah 20 dalam satu latihan (%#)", (raw, kunci, jadwal) => {
     const paket = ContentPack.parse(raw);
     let knobs = knobDefaults(paket);
     const jadwalAktual = Array.from({ length: paket.rounds }, (_, i) => {
@@ -53,6 +57,7 @@ describe("latihan jumlah benda Navigator", () => {
     const tersediaDariSeedBerbeda = Array.from({ length: 64 }, (_, seed) => {
       const r = buatRonde(paket, knobs, seed);
       if (r.mechanic === "dagang") return r.ronde.benda.length === 20;
+      if (r.mechanic === "simulasi") return r.ronde.target === 20;
       return r.mechanic === "pilah" && r.ronde.mode === "kelompok" && r.ronde.items.some(i => i.count === 20);
     }).filter(Boolean);
     expect(tersediaDariSeedBerbeda.length).toBeGreaterThan(1);
