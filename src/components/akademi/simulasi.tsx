@@ -217,9 +217,9 @@ function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: numb
 }
 
 /** Pembungkus tiap mode: mengunci interaksi saat hasil terisi; mengisi panggung. */
-function Kunci({ terkunci, children }: { terkunci: boolean; children: ReactNode }) {
+function Kunci({ terkunci, tengah = false, children }: { terkunci: boolean; tengah?: boolean; children: ReactNode }) {
   const { skala } = usePanggung();
-  return <div className="flex flex-1 flex-col gap-3" style={{ gap: 12 * skala, ...(terkunci ? { pointerEvents: "none" } : undefined) }} aria-busy={terkunci}>{children}</div>;
+  return <div className={`flex flex-1 flex-col gap-3${tengah ? " justify-center" : ""}`} style={{ gap: 12 * skala, ...(terkunci ? { pointerEvents: "none" } : undefined) }} aria-busy={terkunci}>{children}</div>;
 }
 
 /** Bantuan: memanggil onHint lalu menandai hint lokal. */
@@ -1377,17 +1377,20 @@ function ModeMenara(c: Ctx) {
   const [tumpukan, setTumpukan] = useState<string[]>([]);
   const [jatuh, setJatuh] = useState<{ id: string; fase: "atas" | "gelinding" } | null>(null);
   const { hint, bantu } = useBantu(c.onHint);
-  const { skala } = usePanggung();
+  const { w, h, skala } = usePanggung();
   const st = useSkalaTeks();
   const samping = useSamping();
+  const tabletTegak = w >= 620 && h >= 680 && h > w;
+  const kartuBesar = tabletTegak || samping;
   const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
   useEffect(() => () => { timers.current.forEach(clearTimeout); }, []);
 
   const nilaiBenda = (id: string) => itemById(id)?.value ?? 1;
   const lantai = ronde.items.filter((i) => !tumpukan.includes(i.id) && jatuh?.id !== i.id);
   const penuh = tumpukan.length >= ronde.target;
-  const BMIN = 42; // tinggi tingkat terkecil (HP sempit) supaya panggung tidak perlu digulir
-  const tinggiPapan = (ronde.target + 1) * BMIN + 36;
+  const tinggiMinimumTingkat = tabletTegak ? 66 : 42;
+  const tinggiMaksimumTingkat = tabletTegak ? 72 : Math.floor(B * 1.8);
+  const tinggiPapan = (ronde.target + 1) * tinggiMinimumTingkat + (tabletTegak ? 44 : 36);
   const teks = ks.menara(ronde.target);
 
   const ketukLantai = (id: string) => {
@@ -1405,21 +1408,37 @@ function ModeMenara(c: Ctx) {
   };
   const ambilAtas = () => { if (terkunci || !tumpukan.length || jatuh) return; sfx.whoosh(); setTumpukan((tp) => tp.slice(0, -1)); };
 
-  const kartuLantai = Math.round(48 * skala * (samping ? 1.1 : 1));
+  const porsiKendali = 0.4;
+  const lebarKendali = Math.min(480, w * porsiKendali);
+  const lebarKartuSamping = Math.floor((lebarKendali - 24 - 16 * skala) / 3);
+  const lebarKartuTegak = Math.floor((w - 36 * skala - (ronde.items.length - 1) * 8 * skala) / ronde.items.length);
+  const lebarKartu = Math.round(Math.min((kartuBesar ? 112 : 80) * skala, samping ? lebarKartuSamping : tabletTegak ? lebarKartuTegak : Infinity));
+  const kartuLantai = Math.round((kartuBesar ? 80 : 48) * skala);
   const benLantai = (
     <div className="flex flex-wrap justify-center gap-2" style={{ gap: 8 * skala }} role="group" aria-label="Benda di lantai">
-      {lantai.map((b) => (
-        <KartuBenda
-          key={b.id}
-          v={visual(b.id)}
-          size={kartuLantai}
-          labelSize={Math.round(13 * st)}
-          label={nama(b.id)}
-          onClick={() => ketukLantai(b.id)}
-          className={`min-h-20 min-w-20 ${hint && (b.value ?? 1) !== 0 && !penuh ? "akademi-bounce" : ""}`}
-          style={{ minHeight: 80 * skala, minWidth: 80 * skala, opacity: penuh || jatuh ? 0.6 : 1, boxShadow: hint && (b.value ?? 1) !== 0 ? `${BAYANG}, 0 0 0 4px ${KUNING}` : undefined }}
-        />
-      ))}
+      {lantai.map((b) => {
+        const v = visual(b.id);
+        const ukuran = kartuBesar ? Math.round(Math.min(kartuLantai, (lebarKartu - 16) / skalaLebar(v))) : kartuLantai;
+        return (
+          <KartuBenda
+            key={b.id}
+            v={v}
+            size={ukuran}
+            labelSize={Math.round((kartuBesar ? 16 : 13) * st)}
+            label={nama(b.id)}
+            onClick={() => ketukLantai(b.id)}
+            penuh={kartuBesar}
+            className={hint && (b.value ?? 1) !== 0 && !penuh ? "akademi-bounce" : ""}
+            style={{
+              width: kartuBesar ? lebarKartu : undefined,
+              minWidth: lebarKartu,
+              minHeight: (kartuBesar ? 116 : 80) * skala,
+              opacity: penuh || jatuh ? 0.6 : 1,
+              boxShadow: hint && (b.value ?? 1) !== 0 ? `${BAYANG}, 0 0 0 4px ${KUNING}` : kartuBesar ? BAYANG : undefined,
+            }}
+          />
+        );
+      })}
       {!lantai.length && <span className="rounded-full bg-white px-3 py-1 font-bold" style={{ fontSize: 14 * st, color: INK }}>Lantai kosong</span>}
     </div>
   );
@@ -1435,16 +1454,16 @@ function ModeMenara(c: Ctx) {
   const petunjuk = hint && <Petunjuk className="mt-2">Bola menggelinding. Pilih benda yang rata bawahnya.</Petunjuk>;
 
   return (
-    <Kunci terkunci={terkunci}>
+    <Kunci terkunci={terkunci} tengah={tabletTegak}>
       <Tata
-        lebar={0.4}
+        lebar={porsiKendali}
         atas={<><Instruksi teks={teks} hasil={hasil} /><Umpan hasil={hasil} benar={hasil?.benar ? `menara ${ronde.target} tingkat berdiri!` : "pakai benda yang rata bawahnya, bola menggelinding"} /></>}
         adegan={
-          <Papan>
+          <Papan style={tabletTegak ? { flex: "0 0 auto" } : undefined}>
             <Adegan min={tinggiPapan}>
               {({ w, h }) => {
                 // tinggi tingkat mengisi tinggi adegan; lebar balok & benda ikut
-                const b = Math.max(BMIN, Math.min(Math.floor((h - 8 - 36) / (ronde.target + 1)), Math.floor(B * 1.8)));
+                const b = Math.max(tinggiMinimumTingkat, Math.min(Math.floor((h - 44) / (ronde.target + 1)), tinggiMaksimumTingkat));
                 const f = b / B;
                 const tinggi = (ronde.target + 1) * b + 36;
                 // posisi memakai left/calc (bukan translateX) supaya tidak bentrok dengan transform animasi akademi-pop/shake
@@ -1459,6 +1478,14 @@ function ModeMenara(c: Ctx) {
                     </div>
                     {/* lantai */}
                     <div className="absolute right-0 bottom-0 left-0" style={{ height: 8, background: "#4a3f8a", borderRadius: 4 }} aria-hidden />
+                    {Array.from({ length: ronde.target - tumpukan.length }, (_, i) => (
+                      <div
+                        key={i}
+                        aria-hidden
+                        className="pointer-events-none absolute rounded-[14px] border-2 border-dashed border-[#d6d5ec] bg-[#f8f8fd]"
+                        style={{ left: `calc(50% - ${38 * f}px)`, bottom: (tumpukan.length + i) * b + 8, width: 76 * f, height: b - 4 }}
+                      />
+                    ))}
                     {/* tingkat menara */}
                     {tumpukan.map((id, i) => {
                       const tabung = nilaiBenda(id) === 2;
