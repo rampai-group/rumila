@@ -3298,6 +3298,7 @@ export const SUARA: Record<string, string> = {
   "Letak batu berbeda di tiap jalur, dan tiap jalur berbelok tiga kali. Susun satu program sebelas keping: empat ulangi berisi kalau dan tiga belokan, yang lolos di ketiganya.": "/akademi/suara/bbb8674cc2c7.mp3",
   "Lho, ceritanya berhenti di sini.": "/akademi/suara/5406a70cf18b.mp3",
   "Lihat angka satuan tiap bilangan. Tanpa menghitung, apakah hasilnya genap atau ganjil? Taruh di raknya.": "/akademi/suara/7d3a415ac62c.mp3",
+  "Lihat arah robot. Susun blok maju, kiri, atau kanan sampai robot tiba di bintang.": "/akademi/suara/dce5e171afa9.mp3",
   "Lihat bagaimana bentuk tiap benda berubah, lalu taruh ke rak caranya.": "/akademi/suara/74fe81270546.mp3",
   "Lihat bagaimana bentuknya berubah, lalu taruh ke rak caranya.": "/akademi/suara/5e225e398aa4.mp3",
   "Lihat bahan-bahan di dapur. Taruh tiap bahan ke rak alami atau buatan manusia.": "/akademi/suara/3797150c7534.mp3",
