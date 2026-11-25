@@ -183571,7 +183571,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-benda-dibuat-dari-apa",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -183581,7 +183581,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Bahan Mana yang Cocok?",
-        "instruksi": "Taruh tiap benda ke bahan yang paling cocok: kayu, logam, kaca, atau plastik.",
+        "instruksi": "Pilah menurut bahannya. Ketuk benda, lalu wadah yang sesuai.",
         "b-kayu": "kayu",
         "b-logam": "logam",
         "b-kaca": "kaca",
@@ -183591,7 +183591,7 @@ export const PAKET_RAW: unknown[] = [
         "i-rel": "rel kereta",
         "i-gembok": "gembok",
         "i-koin": "uang koin",
-        "i-akuarium": "dinding akuarium supaya ikan terlihat",
+        "i-akuarium": "dinding kaca akuarium",
         "i-jendela": "kaca jendela",
         "i-teropong": "lensa teropong",
         "b-plastik": "plastik",
@@ -183601,7 +183601,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Which Material Fits?",
-        "instruksi": "Put each thing with the material that suits it best: wood, metal, glass, or plastic.",
+        "instruksi": "Sort by material. Tap an object, then the matching bin.",
         "b-kayu": "wood",
         "b-logam": "metal",
         "b-kaca": "glass",
@@ -183611,7 +183611,7 @@ export const PAKET_RAW: unknown[] = [
         "i-rel": "train tracks",
         "i-gembok": "padlock",
         "i-koin": "coins",
-        "i-akuarium": "fish tank walls so the fish can be seen",
+        "i-akuarium": "glass walls of the fish tank",
         "i-jendela": "window glass",
         "i-teropong": "telescope lens",
         "b-plastik": "plastic",
@@ -183645,26 +183645,42 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kayu",
         "labelKey": "b-kayu",
-        "emoji": "🪵",
-        "color": "#d7ccc8"
+        "color": "#d7ccc8",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kayu",
+          "t": 0
+        }
       },
       {
         "id": "logam",
         "labelKey": "b-logam",
-        "emoji": "🔩",
-        "color": "#cfd8dc"
+        "color": "#cfd8dc",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-logam",
+          "t": 0
+        }
       },
       {
         "id": "kaca",
         "labelKey": "b-kaca",
-        "emoji": "🔍",
-        "color": "#e1f5fe"
+        "color": "#e1f5fe",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca",
+          "t": 0
+        }
       },
       {
         "id": "plastik",
         "labelKey": "b-plastik",
-        "emoji": "🥤",
-        "color": "#fff59d"
+        "color": "#fff59d",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-plastik",
+          "t": 0
+        }
       }
     ],
     "items": [
@@ -183678,7 +183694,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "perahu",
         "labelKey": "i-perahu",
         "bin": "kayu",
-        "emoji": "🛶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-perahu-kayu",
+          "t": 0
+        }
       },
       {
         "id": "pondok",
@@ -183708,8 +183728,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "akuarium",
         "labelKey": "i-akuarium",
         "bin": "kaca",
-        "shape": "rect",
-        "color": "#b3e5fc"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-akuarium",
+          "t": 0
+        }
       },
       {
         "id": "jendela",
@@ -183739,7 +183762,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "kresek",
         "labelKey": "i-kresek",
         "bin": "plastik",
-        "emoji": "🛍️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-kantong-kresek",
+          "t": 0
+        }
       }
     ],
     "pilihan": []
