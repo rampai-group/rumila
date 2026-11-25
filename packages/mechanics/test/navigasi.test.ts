@@ -1,12 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { ContentPack, type PaketNavigasi } from "@akademi/schema";
-import { buatRonde, buatRondeNavigasi, hitungBlok, jalankan, kapasitasRakNavigasi, knobDefaults, nilai, nilaiNavigasi, optimal, type NavBlock, type NavGrid } from "../src";
+import { buatRonde, buatRondeNavigasi, hitungBlok, indeksBlokTabrak, jalankan, kapasitasRakNavigasi, knobDefaults, nilai, nilaiNavigasi, optimal, type NavBlock, type NavGrid } from "../src";
 import lurus from "../../../content/golden/paket-robot-ke-bintang-lurus.json";
 import belokBintang from "../../../content/paket/navigasi/belok-menghadap-bintang.json";
 import belokTaman from "../../../content/paket/navigasi/belok-dua-kali-taman.json";
 import satuBelokan from "../../../content/paket/navigasi/grid-3x3-satu-belokan.json";
 import duaBelokan from "../../../content/paket/navigasi/grid-3x3-dua-belokan.json";
 import tebakPetak from "../../../content/paket/navigasi/tebak-petak-berikutnya.json";
+import berhentiSebelumTabrak from "../../../content/paket/navigasi/berhenti-sebelum-tabrak.json";
 import putarSeperempat from "../../../content/paket/navigasi/sd2-mat-putar-robot-seperempat.json";
 import debugTigaJalur from "../../../content/paket/navigasi/sd5-kode-perbaiki-kalau.json";
 import ulangiTiga from "../../../content/paket/navigasi/ulangi-tiga-ke-kanan.json";
@@ -263,21 +264,25 @@ describe("nilaiNavigasi — bendera & prediksi", () => {
   });
 });
 
-describe("mode langkah + prediksi dengan program yang sengaja menabrak (audit 15 Nov 2026)", async () => {
-  const { readFileSync } = await import("node:fs");
-  const { ContentPack } = await import("@akademi/schema");
-  const { buatRonde, jalankan: jalan, knobDefaults, nilai } = await import("../src/index");
-  const p = ContentPack.parse(JSON.parse(readFileSync(new URL("../../../content/paket/navigasi/berhenti-sebelum-tabrak.json", import.meta.url), "utf8")));
-  it("tebakan benar semua → lulus walau program bawaan menabrak", () => {
-    for (let seed = 0; seed < 20; seed++) {
-      const r = buatRonde(p, knobDefaults(p), seed);
-      if (r.mechanic !== "navigasi") throw new Error("bukan navigasi");
-      expect(jalan(r.ronde.grids[0], r.ronde.program).outcome).not.toBe("bintang");
-      const n = jalan(r.ronde.grids[0], r.ronde.program).steps.length;
-      expect(nilai(p, r, { program: r.ronde.program, prediksi: Array(n).fill(true), runs: 1 }).benar).toBe(true);
-      expect(nilai(p, r, { program: r.ronde.program, prediksi: Array(n).fill(false), runs: 1 }).benar).toBe(false);
-      expect(nilai(p, r, { program: r.ronde.program, prediksi: [], runs: 1 }).benar).toBe(false);
-    }
+describe("Berhenti Sebelum Tabrak", () => {
+  const paket = ContentPack.parse(berhentiSebelumTabrak) as PaketNavigasi;
+
+  it.each(paket.grids)("$id memiliki satu pilihan blok yang benar", (g) => {
+    const r = buatRondeNavigasi({ ...paket, grids: [g] }, {}, 0);
+    const awal = jalankan(g, r.program);
+    expect(awal.outcome).toBe("tabrak");
+    const target = indeksBlokTabrak(awal);
+    expect(target).toBeDefined();
+    expect(nilaiNavigasi(r, { program: r.program, prediksi: awal.steps.map(() => true) }).benar).toBe(false);
+    const jawaban = r.program.map((_, blokDipilih) => nilaiNavigasi(r, { program: [], blokDipilih }).benar);
+    expect(jawaban).toEqual(r.program.map((_, i) => i === target));
+  });
+
+  it.each([[0, 5, 7], [1, 5, 5], [1, 6, 6], [1, 7, 7]])("posisi %i dengan panjang %i menghasilkan program %i blok", (posisi, distance, panjang) => {
+    const r = buatRondeNavigasi(paket, { posisi, distance }, 7);
+    expect(r.program).toHaveLength(panjang);
+    const indeks = indeksBlokTabrak(jalankan(r.grids[0], r.program))!;
+    expect(indeks < panjang / 2 ? 0 : 1).toBe(posisi);
   });
 });
 

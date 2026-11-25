@@ -21238,7 +21238,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "berhenti-sebelum-tabrak",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -21248,11 +21248,11 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Berhenti Sebelum Tabrak",
-        "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum robot menabrak, lalu tunjuk blok penabraknya."
+        "instruksi": "Ketuk blok penabrak. Tekan Langkah untuk coba satu blok."
       },
       "en": {
         "judul": "Stop Before the Crash",
-        "instruksi": "Run the program one step at a time and stop right before the robot crashes, then point to the crashing block."
+        "instruksi": "Tap the crash block. Use Langkah to run one block."
       }
     },
     "knobs": {
@@ -21265,7 +21265,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "distance": {
         "min": 5,
-        "max": 8,
+        "max": 7,
         "default": 5,
         "step": 1,
         "keterangan": "panjang program yang diberikan"
@@ -21276,7 +21276,7 @@ export const PAKET_RAW: unknown[] = [
     "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "langkah",
-    "prediksi": true,
+    "tunjukTabrak": true,
     "commands": [
       "maju",
       "kiri",

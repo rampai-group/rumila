@@ -19,7 +19,7 @@
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { ContentPack, KurikulumFile, LEVEL_IDS, levelIndex, type Competency } from "../packages/schema/src/index";
-import { buatRonde, buatRondeUnik, dariJson, jalankan, knobDefaults, kunciRonde, nilai, optimal, type Jawaban, type NavBlock, type NavGrid, type Ronde } from "../packages/mechanics/src/index";
+import { buatRonde, buatRondeUnik, dariJson, indeksBlokTabrak, jalankan, knobDefaults, kunciRonde, nilai, optimal, type Jawaban, type NavBlock, type NavGrid, type Ronde } from "../packages/mechanics/src/index";
 import type { NavCommand } from "../packages/schema/src/index";
 
 /**
@@ -363,6 +363,7 @@ function kunci(r: Ronde): Jawaban | null {
     }
     case "navigasi": {
       const x = r.ronde;
+      if (x.tunjukTabrak) return { program: x.program, blokDipilih: indeksBlokTabrak(jalankan(x.grids[0], x.program)) };
       // langkah + prediksi: anak menebak semua langkah program bawaan dengan benar → harus dinilai benar
       if (x.execMode === "langkah" && x.prediksi) {
         const n = jalankan(x.grids[0], x.program).steps.length;

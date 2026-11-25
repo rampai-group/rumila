@@ -69,6 +69,11 @@ export function jalankan(grid: NavGrid, program: NavBlock[], opts: { stopAtFlag?
   return { steps, outcome, final: state, executed };
 }
 
+/** Indeks keping rak yang menyebabkan tabrakan pertama. */
+export function indeksBlokTabrak(lari: NavRun): number | undefined {
+  return lari.steps.find((s) => s.kind === "bump")?.path[0];
+}
+
 /** Panjang program terpendek (blok dasar: maju/lompat/kiri/kanan/kalau yang tersedia) ke bintang; null bila tak terjangkau. */
 export function optimal(grid: NavGrid, commands: NavCommand[]): number | null {
   const aksi = commands.filter(perintahDasar);
@@ -156,7 +161,14 @@ export function saringanGridNavigasi(p: PaketNavigasi, knobs: Knobs): Array<(g: 
   if (p.execMode === "program" && knobs.turns !== undefined) {
     saringan.push((g) => belokanMinimum(g, p.commands) === knobs.turns);
   }
-  if (knobs.distance !== undefined) saringan.push((g) => (optimal(g, p.commands) ?? g.optimal) === knobs.distance);
+  if (p.tunjukTabrak && knobs.posisi !== undefined) {
+    saringan.push((g) => {
+      const program = dariJson(g.program ?? []);
+      const tabrak = indeksBlokTabrak(jalankan(g, program));
+      return tabrak !== undefined && (tabrak < program.length / 2 ? 0 : 1) === knobs.posisi;
+    });
+  }
+  if (knobs.distance !== undefined) saringan.push((g) => (p.tunjukTabrak ? g.program?.length : (optimal(g, p.commands) ?? g.optimal)) === knobs.distance);
   if (knobs.rocks !== undefined) saringan.push((g) => g.rocks.length === knobs.rocks);
   if (knobs.walls !== undefined) saringan.push((g) => g.walls.length === knobs.walls);
   return saringan;
@@ -177,11 +189,12 @@ export function buatRondeNavigasi(p: PaketNavigasi, knobs: Knobs, seed: number):
     debug: p.debug,
     prediksi: p.prediksi,
     tepatDiBintang: p.tepatDiBintang,
+    ...(p.tunjukTabrak ? { tunjukTabrak: true } : {}),
   };
 }
 
 export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
-  const program = r.execMode === "langsung" ? (j.langsung ?? j.program ?? []) : (j.program ?? []);
+  const program = r.tunjukTabrak ? r.program : r.execMode === "langsung" ? (j.langsung ?? j.program ?? []) : (j.program ?? []);
   const runs = r.grids.map(g => jalankan(g, program));
   const outcomes = runs.map(x => x.outcome);
   const utama = r.grids[0];
@@ -207,12 +220,14 @@ export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
   const rakBeres = batasRak === undefined || (j.bendera ? j.bendera.bagian.every(b => hitungBlok(b) <= batasRak) : blocks <= batasRak);
   // mode prediksi: program sudah disediakan, jadi buktinya tebakan anak (minimal 60% benar, sama dengan ambang misi)
   const prediksiBeres = !r.prediksi || prediksiTotal === 0 || prediksiBenar / prediksiTotal >= 0.6;
-  // mode langkah + prediksi: program disediakan mesin (boleh sengaja berakhir menabrak, mis. "berhenti sebelum
-  // tabrak"), jadi kelulusan ditentukan tebakan anak, bukan apakah program itu sampai bintang (bug audit 15 Nov 2026)
+  // Mode langkah + prediksi menilai tebakan anak dari program bawaan.
   const programDisediakan = r.execMode === "langkah" && r.prediksi;
-  const benar = programDisediakan
-    ? prediksiTotal > 0 && prediksiBeres
-    : semuaBintang && programHabis && debugBeres && rakBeres && prediksiBeres && benderaTepat !== false;
+  const indeksTabrak = r.tunjukTabrak && runs[0] ? indeksBlokTabrak(runs[0]) : undefined;
+  const benar = r.tunjukTabrak
+    ? indeksTabrak !== undefined && j.blokDipilih === indeksTabrak
+    : programDisediakan
+      ? prediksiTotal > 0 && prediksiBeres
+      : semuaBintang && programHabis && debugBeres && rakBeres && prediksiBeres && benderaTepat !== false;
 
   return {
     benar,
@@ -228,6 +243,7 @@ export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
       runs: j.runs,
       prediksiBenar,
       prediksiTotal,
+      ...(r.tunjukTabrak ? { blokDipilih: j.blokDipilih, blokTabrak: indeksTabrak } : {}),
       ...(benderaTepat !== undefined ? { benderaTepat } : {}),
     },
   };

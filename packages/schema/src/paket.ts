@@ -287,14 +287,20 @@ export const PaketNavigasiObj = z.object({
   prediksi: z.boolean().default(false),
   /** Latihan hitung pengulangan: program harus habis tepat saat mencapai bintang. */
   tepatDiBintang: z.boolean().optional(),
+  /** mode langkah dengan program bawaan: anak menunjuk blok yang akan menabrak */
+  tunjukTabrak: z.boolean().default(false),
   grids: z.array(NavGrid).min(1),
 });
 export const PaketNavigasi = PaketNavigasiObj.superRefine(refineNavigasi);
 function refineNavigasi(p: z.infer<typeof PaketNavigasiObj>, ctx: z.RefinementCtx) {
+  if (p.tunjukTabrak && (p.execMode !== "langkah" || p.prediksi || p.debug || p.semuaGrid || p.tepatDiBintang)) {
+    ctx.addIssue({ code: "custom", path: ["tunjukTabrak"], message: "tunjukTabrak memakai satu grid dalam mode langkah dengan tujuan menunjuk blok penabrak" });
+  }
   for (const g of p.grids) {
     const inside = (c: { x: number; y: number }) => c.x < g.w && c.y < g.h;
     if (!inside(g.start) || !inside(g.goal)) ctx.addIssue({ code: "custom", path: ["grids"], message: `grid ${g.id}: start/goal di luar grid` });
     if (p.debug && (!g.program || !g.fixes)) ctx.addIssue({ code: "custom", path: ["grids"], message: `grid ${g.id}: mode debug butuh program dan fixes` });
+    if (p.tunjukTabrak && !g.program?.length) ctx.addIssue({ code: "custom", path: ["grids"], message: `grid ${g.id}: tunjukTabrak butuh program bawaan` });
     if (g.rocks.length && !p.commands.includes("lompat") && !p.commands.includes("kalau")) ctx.addIssue({ code: "custom", path: ["grids"], message: `grid ${g.id}: ada batu tetapi tidak ada perintah lompat/kalau` });
   }
   if (p.semuaGrid && p.grids.some(g => !g.group)) ctx.addIssue({ code: "custom", path: ["grids"], message: "semuaGrid: tiap grid harus punya group" });
