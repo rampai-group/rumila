@@ -201,6 +201,14 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const tataTunas = paket.level === "PAUD";
   const tataRingkas = tataTunas || tataTumbuhan;
   const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
+  const bandingPanjang = paket.competencyIds.includes("MAT.TKA.BANDING.02");
+  const labelAkses = (s: Langkah) => {
+    const nama = t(s.labelKey);
+    // Satuan relatif terhadap lebar gambar, sama di kartu sumber dan slot.
+    if (!bandingPanjang || s.width === undefined) return nama;
+    const panjang = (s.width * 10).toLocaleString(inggris ? "en-US" : "id-ID");
+    return inggris ? `${nama}, length ${panjang} units` : `${nama}, panjang ${panjang} satuan`;
+  };
   const caraSusun = inggris ? "Tap a card, then tap a numbered box." : KALIMAT_URUTKAN.caraSusun;
   const base = n <= 4 ? 64 : 52;
   const jarakBagian = layarPendek ? 8 : GAP_ROOT;
@@ -283,7 +291,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               type="button"
               onClick={() => ketukSlot(i)}
               disabled={kunci}
-              aria-label={id ? `Slot ${i + 1}: ${t(langkah(id).labelKey)}` : `Slot ${i + 1}`}
+              aria-label={id ? `Slot ${i + 1}: ${labelAkses(langkah(id))}` : `Slot ${i + 1}`}
               className={`relative flex flex-col items-center justify-center gap-1 p-1.5 transition-transform active:scale-95 ${salah ? "akademi-shake" : ""} ${disorot && !tataTumbuhan ? "akademi-bounce" : ""}`}
               style={{
                 width: lebarSlot,
@@ -318,6 +326,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               key={s.id}
               v={visual(s, t)}
               size={ukuranKartu}
+              ariaLabel={bandingPanjang ? labelAkses(s) : undefined}
               labelSize={layarPendek ? 12 : batas(14 * sk, lebarKartu * 0.07, 22)}
               selected={dipilih}
               onClick={() => ketukKartu(s.id)}
