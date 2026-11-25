@@ -19614,7 +19614,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "belok-dua-kali-taman",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -19640,9 +19640,9 @@ export const PAKET_RAW: unknown[] = [
         "keterangan": "jumlah belokan yang dibutuhkan: 1 → 2"
       },
       "distance": {
-        "min": 2,
+        "min": 3,
         "max": 4,
-        "default": 2,
+        "default": 3,
         "step": 1,
         "keterangan": "jumlah perintah terpendek"
       }
@@ -23034,7 +23034,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "grid-3x3-dua-belokan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -23053,11 +23053,11 @@ export const PAKET_RAW: unknown[] = [
     },
     "knobs": {
       "turns": {
-        "min": 1,
+        "min": 2,
         "max": 2,
-        "default": 1,
+        "default": 2,
         "step": 1,
-        "keterangan": "jumlah belokan di jalur: 1 → 2 (tembok memaksa belokan kedua)"
+        "keterangan": "jumlah belokan minimum untuk mencapai bintang: 2"
       },
       "distance": {
         "min": 5,
@@ -23346,7 +23346,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "grid-3x3-satu-belokan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKA",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -23366,10 +23366,10 @@ export const PAKET_RAW: unknown[] = [
     "knobs": {
       "turns": {
         "min": 1,
-        "max": 2,
+        "max": 1,
         "default": 1,
         "step": 1,
-        "keterangan": "jumlah belokan di jalur: 1 → 2"
+        "keterangan": "jumlah belokan minimum untuk mencapai bintang: 1"
       },
       "distance": {
         "min": 3,
