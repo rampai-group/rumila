@@ -313136,7 +313136,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "turus-hewan-lewat-gerbang",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "TKB",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -313146,7 +313146,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Catat Hewan Lewat",
-        "instruksi": "Tiap ada hewan lewat gerbang, sentuh baris hewan itu supaya satu turus tercatat.",
+        "instruksi": "Saat hewan lewat, ketuk barisnya.",
         "kucing": "kucing",
         "bebek": "bebek",
         "kambing": "kambing",
@@ -313154,7 +313154,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Tally the Animals",
-        "instruksi": "Each time an animal passes the gate, touch that animal's row so one tally mark is recorded.",
+        "instruksi": "Tap its row each time an animal passes.",
         "kucing": "cat",
         "bebek": "duck",
         "kambing": "goat",
@@ -313218,7 +313218,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "turus-hewan-pulang-kandang",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -313228,7 +313228,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Hewan Pulang Kandang",
-        "instruksi": "Sore ini hewan pulang satu per satu, sentuh baris hewan yang lewat supaya turusnya bertambah.",
+        "instruksi": "Ketuk baris hewan yang sedang lewat.",
         "ayam": "ayam",
         "sapi": "sapi",
         "domba": "domba",
@@ -313236,7 +313236,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Animals Coming Home",
-        "instruksi": "This evening the animals come home one by one; touch the row of the one passing to add a tally.",
+        "instruksi": "Tap the row of each passing animal.",
         "ayam": "chicken",
         "sapi": "cow",
         "domba": "sheep",

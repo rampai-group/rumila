@@ -1,6 +1,6 @@
 {
   "id": "turus-hewan-pulang-kandang",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Hewan Pulang Kandang",
-      "instruksi": "Sore ini hewan pulang satu per satu, sentuh baris hewan yang lewat supaya turusnya bertambah.",
+      "instruksi": "Ketuk baris hewan yang sedang lewat.",
       "ayam": "ayam",
       "sapi": "sapi",
       "domba": "domba",
@@ -18,7 +18,7 @@
     },
     "en": {
       "judul": "Animals Coming Home",
-      "instruksi": "This evening the animals come home one by one; touch the row of the one passing to add a tally.",
+      "instruksi": "Tap the row of each passing animal.",
       "ayam": "chicken",
       "sapi": "cow",
       "domba": "sheep",
