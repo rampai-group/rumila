@@ -185644,7 +185644,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-habitat-hewan-lain",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -185656,7 +185656,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Rumah Hewan di Seluruh Dunia",
         "instruksi": "Robot keliling dunia: antar tiap hewan ke habitat tempat tinggalnya.",
         "gurun": "gurun",
-        "es": "es",
+        "es": "Arktik",
         "hutan": "hutan",
         "terumbu": "terumbu karang",
         "i-rusakutub": "rusa kutub",
@@ -185676,7 +185676,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Animal Homes Around the World",
         "instruksi": "Robot travels the world: take each animal to the habitat where it lives.",
         "gurun": "desert",
-        "es": "ice",
+        "es": "Arctic",
         "hutan": "forest",
         "terumbu": "coral reef",
         "i-rusakutub": "reindeer",
@@ -185724,8 +185724,11 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "es",
         "labelKey": "es",
-        "emoji": "🧊",
-        "color": "#e1f5fe"
+        "color": "#e1f5fe",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-arktik"
+        }
       },
       {
         "id": "hutan",
@@ -185745,9 +185748,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rubahgurun",
         "labelKey": "i-rubahgurun",
         "bin": "gurun",
-        "emoji": "🦊",
-        "color": "#ffe0b2",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rubah-fennec"
+        }
       },
       {
         "id": "landakgurun",
@@ -185761,17 +185765,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "beluga",
         "labelKey": "i-beluga",
         "bin": "es",
-        "emoji": "🐋",
-        "color": "#eceff1",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-paus-beluga"
+        }
       },
       {
         "id": "rusakutub",
         "labelKey": "i-rusakutub",
         "bin": "es",
-        "emoji": "🦌",
-        "color": "#e1f5fe",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rusa-kutub"
+        }
       },
       {
         "id": "burungbeo",
@@ -185813,17 +185819,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "burunghantusalju",
         "labelKey": "i-burunghantusalju",
         "bin": "es",
-        "emoji": "🦉",
-        "color": "#ffffff",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-burung-hantu-salju"
+        }
       },
       {
         "id": "serigalakutub",
         "labelKey": "i-serigalakutub",
         "bin": "es",
-        "emoji": "🐺",
-        "color": "#ffffff",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-serigala-kutub"
+        }
       }
     ],
     "pilihan": []
