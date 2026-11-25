@@ -437,6 +437,10 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const langkah = async () => {
     if (sibuk || terkunci || !lariLangkah) return;
     const s = lariLangkah.steps[langkahKe];
+    if (ronde.tunjukTabrak && (!s || s.kind === "bump")) {
+      kirim({ program: ronde.program });
+      return;
+    }
     if (!s) { kirim({ program: ronde.program, prediksi, runs: 1 }); return; }
     if (ronde.prediksi && !tebakan) { sfxAkademi.tolak(); setPesan("Ketuk petak tujuan Agam dulu, ya"); return; }
     const id = ++jalanId.current;
@@ -484,6 +488,10 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const bantu = () => {
     if (terkunci) return;
     onHint?.();
+    if (ronde.tunjukTabrak) {
+      setPesan("Perhatikan arah hadap Agam dan petak di depannya.");
+      return;
+    }
     const dari: NavState = { x: agam.x, y: agam.y, dir: agam.dir };
     const jalur = jalurBantuan(grid, dari, ronde.commands);
     setSorot(jalur);
@@ -504,8 +512,9 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
       setPesan("");
       return;
     }
-    const d = hasil.detail as { outcome?: NavRun["outcome"]; edits?: number; blocks?: number };
-    if (ronde.debug && ronde.fixes !== undefined && d.edits !== undefined && d.edits > ronde.fixes) setPesan(`Ubah paling banyak ${ronde.fixes} blok ya`);
+    const d = hasil.detail as { outcome?: NavRun["outcome"]; edits?: number; blocks?: number; blokDipilih?: number };
+    if (ronde.tunjukTabrak) setPesan(d.blokDipilih === undefined ? "Agam hampir menabrak. Ketuk blok penabraknya sebelum menekan Langkah." : "Blok itu bukan yang membuat Agam menabrak. Coba lagi.");
+    else if (ronde.debug && ronde.fixes !== undefined && d.edits !== undefined && d.edits > ronde.fixes) setPesan(`Ubah paling banyak ${ronde.fixes} blok ya`);
     else if ((ronde.debug || ronde.rackSlots !== undefined) && !modeBendera && (d.blocks ?? 0) > slotMaks) setPesan("Rak tidak muat");
     else if (ronde.prediksi && d.outcome === "bintang") setPesan("Agam sampai, tapi tebakanmu masih banyak meleset. Coba lagi!");
     else if (d.outcome) setPesan(pesanGagal(d.outcome));
@@ -589,6 +598,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
         bisaKetuk={bisaKetukPetak}
         onKetuk={ketukPetak}
         menang={!!hasil?.benar}
+        tampilkanBintang={!ronde.tunjukTabrak}
         tanah={tanah}
         perahu={perahu}
         petak={mendatar ? petakDatar : undefined}
@@ -699,11 +709,20 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
       {/* ---------- mode langkah ---------- */}
       {ronde.execMode === "langkah" && lariLangkah && (
         <>
-          <Rak judul={`Program Agam · blok ${Math.min(langkahKe + 1, Math.max(1, hitungBlok(ronde.program)))} dari ${hitungBlok(ronde.program)}`} blok={ronde.program} slot={Math.max(hitungBlok(ronde.program), 1)} aktif sel={null} bacaSaja />
+          <Rak
+            judul={ronde.tunjukTabrak ? `Program Agam · blok berikutnya ${blokLangkah ? blokLangkah.path[0] + 1 : ronde.program.length}` : `Program Agam · blok ${Math.min(langkahKe + 1, Math.max(1, hitungBlok(ronde.program)))} dari ${hitungBlok(ronde.program)}`}
+            blok={ronde.program}
+            slot={Math.max(hitungBlok(ronde.program), 1)}
+            aktif
+            sel={ronde.tunjukTabrak ? (blokLangkah?.path[0] ?? null) : null}
+            bacaSaja={!ronde.tunjukTabrak || sibuk || terkunci}
+            pilihTabrak={ronde.tunjukTabrak}
+            onKetuk={ronde.tunjukTabrak ? (i) => { if (!sibuk && !terkunci) kirim({ program: ronde.program, blokDipilih: i }); } : undefined}
+          />
           <AksiBawah aktif={!mendatar && !aksiDiPanggung}>
             <div className={`flex gap-2 ${mendatar ? "flex-col items-stretch" : "items-center"}`}>
               <div className="min-w-0 flex-1 rounded-[16px] bg-white px-3 py-2 font-bold" style={{ fontSize: 15 * skt }}>
-                {ronde.prediksi
+                {ronde.tunjukTabrak ? "Ketuk blok yang akan membuat Agam menabrak." : ronde.prediksi
                   ? blokLangkah
                     ? `Blok berikutnya: ${BLOK[blokLangkah.cmd === "bendera" ? "bendera" : blokLangkah.cmd].label}. Ketuk petak tujuannya, lalu tekan Langkah.`
                     : "Program habis."
@@ -748,9 +767,10 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
 
 /* ---------------- panggung ---------------- */
 
-function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tanah, perahu, petak, petakMaks, petakMin }: {
+function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tampilkanBintang, tanah, perahu, petak, petakMaks, petakMin }: {
   grid: NavGrid; agam: Agam; bendera: { x: number; y: number } | null; sorot: Set<string>; tebakan: { x: number; y: number } | null;
   bisaKetuk: boolean; onKetuk: (x: number, y: number) => void; menang: boolean;
+  tampilkanBintang: boolean;
   tanah: [string, string];
   perahu: boolean;
   /** ukuran petak tetap (px) di tata letak mendatar; kosong = lebar penuh dengan batas `petakMaks` */
@@ -768,7 +788,7 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
       const X = x * SEL, Y = y * SEL;
       const dinding = grid.walls.some((w) => samaSel(w, { x, y }));
       const batu = grid.rocks.some((b) => samaSel(b, { x, y }));
-      const goal = samaSel(grid.goal, { x, y });
+      const goal = tampilkanBintang && samaSel(grid.goal, { x, y });
       const nyala = sorot.has(`${x},${y}`);
       const tebak = tebakan && samaSel(tebakan, { x, y });
       sel.push(
@@ -893,8 +913,8 @@ function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat, arahMaju }: {
   );
 }
 
-function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, onPilihRak, onKetuk, onN, onHapusIsi }: {
-  judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean; gantiBlok?: boolean;
+function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, onPilihRak, onKetuk, onN, onHapusIsi }: {
+  judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean; gantiBlok?: boolean; pilihTabrak?: boolean;
   onPilihRak?: () => void; onKetuk?: (i: number) => void; onN?: (i: number) => void; onHapusIsi?: (i: number, j: number) => void;
 }) {
   const { tema, skala: sk, w } = usePanggung();
@@ -917,7 +937,7 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, onPilihRak, o
       <div className="mb-1.5 inline-flex rounded-full bg-white/95 px-3 py-0.5 font-extrabold shadow-[0_2px_0_rgba(0,0,0,.12)]" style={{ fontSize: 13 * skt, color: INK }}>{judul}</div>
       <div className="flex flex-wrap items-center rounded-[14px]" style={{ gap: 6 * sk, padding: 6 * sk, background: "#ffffff", boxShadow: "inset 0 4px 10px rgba(0,0,0,.14)" }}>
         {blok.map((b, i) => (
-          <Keping key={i} blok={b} nomor={i + 1} dipilih={sel === i} bacaSaja={bacaSaja} gantiBlok={gantiBlok} onKetuk={() => onKetuk?.(i)} onN={() => onN?.(i)} onHapusIsi={(j) => onHapusIsi?.(i, j)} />
+          <Keping key={i} blok={b} nomor={i + 1} dipilih={sel === i} bacaSaja={bacaSaja} gantiBlok={gantiBlok} pilihTabrak={pilihTabrak} onKetuk={() => onKetuk?.(i)} onN={() => onN?.(i)} onHapusIsi={(j) => onHapusIsi?.(i, j)} />
         ))}
         {Array.from({ length: kosong }, (_, k) => (
           <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56 * sk, height: 56 * sk, border: `3px dashed ${tema.wadahGelap}`, background: `${tema.wadahWarna}1f` }} aria-hidden />
@@ -928,8 +948,8 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, onPilihRak, o
   );
 }
 
-function Keping({ blok, nomor, dipilih, bacaSaja, gantiBlok, onKetuk, onN, onHapusIsi }: {
-  blok: NavBlock; nomor: number; dipilih: boolean; bacaSaja?: boolean; gantiBlok?: boolean; onKetuk: () => void; onN: () => void; onHapusIsi: (j: number) => void;
+function Keping({ blok, nomor, dipilih, bacaSaja, gantiBlok, pilihTabrak, onKetuk, onN, onHapusIsi }: {
+  blok: NavBlock; nomor: number; dipilih: boolean; bacaSaja?: boolean; gantiBlok?: boolean; pilihTabrak?: boolean; onKetuk: () => void; onN: () => void; onHapusIsi: (j: number) => void;
 }) {
   const { skala: sk } = usePanggung();
   const b = BLOK[blok.cmd];
@@ -938,10 +958,10 @@ function Keping({ blok, nomor, dipilih, bacaSaja, gantiBlok, onKetuk, onN, onHap
   if (blok.cmd === "ulangi") {
     return (
       <div className="relative flex items-center gap-1 rounded-[14px] p-1 pl-2" style={gaya} aria-label={`Blok ${nomor}: ulangi ${blok.n} kali`}>
-        <button onClick={(e) => { e.stopPropagation(); onKetuk(); }} disabled={bacaSaja} className="flex items-center gap-1 self-stretch" style={{ minWidth: 44 * sk, minHeight: 48 * sk }} aria-label={dipilih ? "Hapus blok ulangi" : "Isi blok ulangi"}>
+        <button onClick={(e) => { e.stopPropagation(); onKetuk(); }} disabled={bacaSaja} className="flex items-center gap-1 self-stretch" style={{ minWidth: 44 * sk, minHeight: 48 * sk }} aria-label={pilihTabrak ? `Blok ${nomor}: ulangi ${blok.n} kali, ketuk untuk menjawab` : dipilih ? "Hapus blok ulangi" : "Isi blok ulangi"}>
           <span style={{ fontSize: 22 * sk }}>🔁</span>
         </button>
-        <button onClick={(e) => { e.stopPropagation(); onN(); }} disabled={bacaSaja} className="rounded-[10px] bg-white px-2 font-black text-[#a84a08] shadow-[0_2px_0_rgba(0,0,0,.15)] active:scale-95" style={{ minWidth: 44 * sk, minHeight: 44 * sk, fontSize: 20 * sk }} aria-label={`Ulangi ${blok.n} kali, ketuk untuk mengubah`}>
+        <button onClick={(e) => { e.stopPropagation(); onN(); }} disabled={bacaSaja || pilihTabrak} className="rounded-[10px] bg-white px-2 font-black text-[#a84a08] shadow-[0_2px_0_rgba(0,0,0,.15)] active:scale-95" style={{ minWidth: 44 * sk, minHeight: 44 * sk, fontSize: 20 * sk }} aria-label={`Ulangi ${blok.n} kali${pilihTabrak ? "" : ", ketuk untuk mengubah"}`}>
           {blok.n}×
         </button>
         <div className="flex items-center gap-1 rounded-[10px] bg-white p-1 shadow-[inset_0_2px_4px_rgba(0,0,0,.15)]" style={{ minWidth: 48 * sk, minHeight: 48 * sk }}>
@@ -949,7 +969,7 @@ function Keping({ blok, nomor, dipilih, bacaSaja, gantiBlok, onKetuk, onN, onHap
             const k = BLOK[c.cmd];
             const px = Math.round(22 * sk);
             return (
-              <button key={j} onClick={(e) => { e.stopPropagation(); onHapusIsi(j); }} disabled={bacaSaja} className="flex items-center justify-center rounded-[10px]" style={{ background: muka(k.c), border: `2px solid ${k.c}`, color: k.d, boxShadow: `0 2px 0 ${k.d}`, width: 44 * sk, height: 44 * sk }} aria-label={`${k.label}, ketuk untuk menghapus`}>
+              <button key={j} onClick={(e) => { e.stopPropagation(); onHapusIsi(j); }} disabled={bacaSaja || pilihTabrak} className="flex items-center justify-center rounded-[10px]" style={{ background: muka(k.c), border: `2px solid ${k.c}`, color: k.d, boxShadow: `0 2px 0 ${k.d}`, width: 44 * sk, height: 44 * sk }} aria-label={`${k.label}${pilihTabrak ? "" : ", ketuk untuk menghapus"}`}>
                 {c.cmd === "maju" ? <Icon name="arrow_upward" size={px} /> : c.cmd === "kiri" ? <Icon name="turn_left" size={px} /> : c.cmd === "kanan" ? <Icon name="turn_right" size={px} /> : <span style={{ fontSize: 20 * sk }}>{c.cmd === "lompat" ? "🦘" : c.cmd === "kalau" ? "🤔" : "🚩"}</span>}
               </button>
             );
@@ -961,7 +981,8 @@ function Keping({ blok, nomor, dipilih, bacaSaja, gantiBlok, onKetuk, onN, onHap
     );
   }
   const tindakan = bacaSaja ? ""
-    : dipilih ? ", ketuk lagi untuk menghapus"
+    : pilihTabrak ? ", ketuk untuk menjawab"
+      : dipilih ? ", ketuk lagi untuk menghapus"
       : gantiBlok ? ", ketuk untuk memilih blok yang akan diganti" : ", ketuk untuk menghapus";
   return (
     <button

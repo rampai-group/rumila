@@ -134,6 +134,7 @@ export interface RondeNavigasi {
   debug: boolean;
   prediksi: boolean;
   tepatDiBintang?: boolean;
+  tunjukTabrak?: boolean;
 }
 
 export interface JawabanNavigasi {
@@ -147,6 +148,8 @@ export interface JawabanNavigasi {
   langsung?: NavBlock[];
   /** prediksi: benar/salah per langkah */
   prediksi?: boolean[];
+  /** mode tunjuk tabrak: indeks blok yang dipilih dari program bawaan */
+  blokDipilih?: number;
   /** posisi bendera yang dipilih anak (dekomposisi) + dua bagian program */
   bendera?: { x: number; y: number; bagian: [NavBlock[], NavBlock[]] };
 }
