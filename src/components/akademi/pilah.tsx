@@ -488,6 +488,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const lebar = lebarArea >= 600;
   const adeganLega = paket.level === "PAUD" && !!ronde.adegan && lebarArea >= 620 && h >= 680;
   const gambarLega = !pilihanTulisan && !ronde.bacaPilihan && h >= 560;
+  const modelBolaDunia = paket.id === "sains-senter-bola-dunia" && !!ronde.adegan;
   const stokPiktogram = paket.competencyIds.includes("MAT.TKB.DATA.03");
   const potAudioLega = paket.id === "sains-pot-mana-yang-layu" && ronde.bacaPilihan && lebarArea >= 620 && h >= 560;
   const gridGambar = !tulisLabel && !ronde.adegan && (!ronde.bacaPilihan || potAudioLega) &&
@@ -524,7 +525,9 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const skalaLebarMaks = Math.max(1, ...choices.map(skalaLebar));
   const skalaTinggiMaks = Math.max(1, ...choices.map((c) => c.scale ?? 1));
   const labelPanjang = tulisLabel && choices.some((c) => visualBergambar(c) && t(c.labelKey).length > 34);
-  const ukuranAdegan = adeganLega ? Math.min(190, Math.round(h * 0.21)) : Math.max(60, Math.min(100, h * 0.18));
+  const ukuranAdegan = modelBolaDunia
+    ? Math.round(Math.min(lebarArea / 1.45, 228, Math.max(84, h * 0.28)))
+    : adeganLega ? Math.min(190, Math.round(h * 0.21)) : Math.max(60, Math.min(100, h * 0.18));
   const tinggiSoal = ukurKepala && tinggiKepala ? tinggiKepala + (stokPiktogram ? 36 : 26)
     : ronde.adegan ? Math.max(176 * sk, ukuranAdegan + 70 * sk) : 68 * sk;
   const tinggiAudio = ronde.bacaPilihan ? (potAudioLega ? 56 : 48) : 0;
@@ -549,7 +552,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
 
   return (
     <div
-      data-pilah-tengah={stokPiktogram || potAudioLega || (gambarLega && n <= 3 && !adeganLega && !gridGambar) ? "" : undefined}
+      data-pilah-tengah={stokPiktogram || potAudioLega || (gambarLega && n <= 3 && !adeganLega && !gridGambar && !modelBolaDunia) ? "" : undefined}
       className={`mx-auto flex w-full min-w-0 max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${adeganLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: adeganLega ? Math.min(620, Math.round(h * 0.66)) : undefined }}
     >

@@ -1,6 +1,6 @@
 {
   "id": "sains-senter-bola-dunia",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -117,7 +117,11 @@
         "siang",
         "malam"
       ],
-      "correct": "siang"
+      "correct": "siang",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-siang"
+      }
     },
     {
       "id": "soal-2",
@@ -126,7 +130,11 @@
         "siang",
         "malam"
       ],
-      "correct": "malam"
+      "correct": "malam",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-malam"
+      }
     },
     {
       "id": "soal-3",
@@ -135,7 +143,11 @@
         "siang",
         "malam"
       ],
-      "correct": "siang"
+      "correct": "siang",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-siang"
+      }
     },
     {
       "id": "soal-4",
@@ -144,7 +156,11 @@
         "siang",
         "malam"
       ],
-      "correct": "malam"
+      "correct": "malam",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-malam"
+      }
     },
     {
       "id": "soal-5",
@@ -153,7 +169,11 @@
         "siang",
         "malam"
       ],
-      "correct": "siang"
+      "correct": "siang",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-siang"
+      }
     },
     {
       "id": "soal-6",
@@ -162,7 +182,11 @@
         "siang",
         "malam"
       ],
-      "correct": "malam"
+      "correct": "malam",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-malam"
+      }
     },
     {
       "id": "soal-7",
@@ -171,7 +195,11 @@
         "siang",
         "malam"
       ],
-      "correct": "siang"
+      "correct": "siang",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-siang"
+      }
     },
     {
       "id": "soal-8",
@@ -180,7 +208,11 @@
         "siang",
         "malam"
       ],
-      "correct": "malam"
+      "correct": "malam",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-malam"
+      }
     },
     {
       "id": "soal-9",
@@ -189,7 +221,11 @@
         "siang",
         "malam"
       ],
-      "correct": "siang"
+      "correct": "siang",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-siang"
+      }
     },
     {
       "id": "soal-10",
@@ -198,7 +234,11 @@
         "siang",
         "malam"
       ],
-      "correct": "malam"
+      "correct": "malam",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-malam"
+      }
     },
     {
       "id": "soal-11",
@@ -207,7 +247,11 @@
         "hadap",
         "jauh"
       ],
-      "correct": "hadap"
+      "correct": "hadap",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-acuan"
+      }
     },
     {
       "id": "soal-12",
@@ -216,7 +260,11 @@
         "hadap",
         "jauh"
       ],
-      "correct": "hadap"
+      "correct": "hadap",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-acuan"
+      }
     },
     {
       "id": "soal-13",
@@ -225,7 +273,11 @@
         "jauh",
         "hadap"
       ],
-      "correct": "jauh"
+      "correct": "jauh",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-acuan"
+      }
     },
     {
       "id": "soal-14",
@@ -234,7 +286,11 @@
         "hadap",
         "jauh"
       ],
-      "correct": "hadap"
+      "correct": "hadap",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bola-acuan"
+      }
     }
   ]
 }
