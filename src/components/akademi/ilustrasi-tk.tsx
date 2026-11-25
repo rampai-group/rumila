@@ -566,6 +566,76 @@ function SepatuBotHujan() {
   </>;
 }
 
+function Sate() {
+  return <>
+    <ellipse cx="65" cy="64" rx="58" ry="29" fill="#eaf8ee" stroke="#65a784" strokeWidth="2.8" />
+    {[0, 17, 34].map((x) => <g key={x} transform={`translate(${x} 0) rotate(30 47 53)`}>
+      <path d="M47 13V87" stroke="#926333" strokeWidth="3" />
+      <path d="M38 23Q44 18 55 21L58 33 53 38H39L36 32ZM37 40L43 37 57 41 59 52 54 56H39L35 51ZM39 59L52 56 57 61 56 72 49 76 36 72 35 65Z" fill="#b76b3d" stroke="#663822" strokeWidth="2.7" />
+      <path d="M42 29L50 26M42 47L51 44M41 66L49 63" stroke="#663822" strokeWidth="2.5" />
+    </g>)}
+  </>;
+}
+
+function PastelGoreng() {
+  return <>
+    <ellipse cx="65" cy="72" rx="56" ry="20" fill="#e9f4fa" stroke="#8db6ce" strokeWidth="2.6" />
+    <path d="M15 63C17 38 37 22 61 17C87 12 108 27 118 49C118 60 105 72 81 80C57 88 31 83 17 74Z" fill="#e6a257" stroke="#8d572d" strokeWidth="3" />
+    <path d="M17 63C31 71 52 74 77 67C96 62 108 55 117 48C124 59 106 74 82 81C58 88 31 83 17 74Z" fill="#f2c278" stroke="#8d572d" strokeWidth="2.8" />
+    <path d="M21 66q-2 5 3 10m7-6q-1 5 4 10m8-8q0 7 5 10m8-10q1 6 6 10m7-12q1 5 6 10m6-13q2 5 7 8m5-13q3 5 7 6m4-12q3 3 8 4" fill="none" stroke="#a86a30" strokeWidth="2.2" />
+    <path d="M33 44L39 39M57 28L62 27M78 26L84 28M55 49L58 47M91 43L95 46" stroke="#fbd089" strokeWidth="2.5" />
+  </>;
+}
+
+function PisangGoreng() {
+  return <>
+    <ellipse cx="65" cy="64" rx="59" ry="30" fill="#e4f2f5" stroke="#85aebc" strokeWidth="2.8" />
+    <path d="M15 66Q36 40 109 50Q91 81 29 82Z" fill="#84b869" stroke="#527d48" strokeWidth="2" />
+    {[{ d: "M21 61Q36 39 61 29Q68 22 77 24Q88 26 88 34Q82 41 69 43Q53 50 42 66Q32 75 22 71Z", x: 0, y: 0 },
+      { d: "M33 71Q47 44 78 38Q84 33 94 36Q105 38 104 46Q99 55 84 56Q68 60 57 75Q46 86 35 82Z", x: 13, y: 10 }].map(({ d, x, y }) => <g key={x} transform={`translate(${x} ${y})`}>
+      <path d={d} fill="#efac4e" stroke="#985b28" strokeWidth="3" />
+      <path d={x ? "M44 73Q63 50 94 43" : "M30 61Q48 42 76 32"} fill="none" stroke="#ffd985" strokeWidth="4" />
+    </g>)}
+    <path d="M38 59h1m12-10h1m13-9h1m-7 38h1m11-9h1m11-8h1m12-7h1" stroke="#b77832" strokeWidth="3" />
+  </>;
+}
+
+function TehManis() {
+  return <>
+    <ellipse cx="68" cy="87" rx="48" ry="6" fill="#e0edee" />
+    <path d="M31 16H81L75 81Q55 89 38 81Z" fill="#d9f2f6" stroke="#497989" strokeWidth="3" />
+    <path d="M35 37Q56 43 78 37L73 79Q55 84 40 79Z" fill="#bd6932" stroke="#985127" strokeWidth="2.3" />
+    <ellipse cx="56" cy="37" rx="21" ry="5" fill="#e9a157" stroke="#985127" strokeWidth="2.3" />
+    <path d="M42 49L45 74M69 51L67 72" stroke="#ffe3af" strokeWidth="2.7" />
+    <path d="M84 67L96 63 106 68 105 78 93 82 84 76ZM103 78L113 74 123 79 121 89 110 93 102 88Z" fill="#fff9ee" stroke="#bda88b" strokeWidth="2.2" />
+    <path d="M85 67L94 72 106 68M94 72L93 82M103 78L111 83 123 79M111 83L110 93" fill="none" stroke="#d0bc9c" strokeWidth="1.5" />
+  </>;
+}
+
+function NasiKotak() {
+  return <>
+    <path d="M21 49L17 17 100 12 111 40 91 55H21Z" fill="#f8f0db" stroke="#917f61" strokeWidth="2.7" />
+    <path d="M20 48L35 40H105L115 54 105 84 26 91 15 60Z" fill="#e8d7ab" stroke="#917f61" strokeWidth="3" />
+    <path d="M26 59L104 53 97 79 30 85Z" fill="#fcf7e6" stroke="#b5a17d" strokeWidth="2" />
+    <path d="M29 69Q28 61 36 59Q43 50 51 57Q58 52 65 59Q76 60 76 71Q64 81 33 82Z" fill="#fffdf1" stroke="#b6a582" strokeWidth="2.3" />
+    <path d="M38 66l3-2m7 7 4-2m6-5 3 1m-24 9 4-1m18 3 3-2" stroke="#dfd1b8" strokeWidth="1.8" />
+    <path d="M76 57L91 53 99 60 93 68 77 69Z" fill="#ba7848" stroke="#805236" strokeWidth="2.2" />
+    <path d="M82 60l4-1m2 4 4-1" stroke="#f0c482" strokeWidth="2.2" />
+    <ellipse cx="86" cy="74" rx="9" ry="5.5" fill="#8dc978" stroke="#518755" strokeWidth="2" />
+  </>;
+}
+
+function SusuKotak() {
+  return <>
+    <ellipse cx="66" cy="87" rx="40" ry="6" fill="#e8f1f6" />
+    <path d="M39 29L50 16H78L93 31V82L80 90H39Z" fill="#ecf4fc" stroke="#42678e" strokeWidth="3" />
+    <path d="M39 29H78V90H39ZM78 29L93 31V82L78 90Z" fill="#fff" stroke="#42678e" strokeWidth="2.8" />
+    <path d="M39 72H78V90H39ZM78 71L93 66V82L78 90Z" fill="#5392cf" stroke="#42678e" strokeWidth="2.7" />
+    <path d="M50 16V9H77V16M77 16L78 29" fill="#b6d5ed" stroke="#42678e" strokeWidth="2.7" />
+    <path d="M58 38C54 47 48 51 48 59A10 10 0 0 0 68 59C68 51 62 47 58 38Z" fill="#cbe5f6" stroke="#5288b4" strokeWidth="2.2" />
+  </>;
+}
+
 export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: string; s: number; style?: CSSProperties; className?: string }) {
   const id = gambar.slice(3);
   let art: ReactNode;
@@ -591,6 +661,12 @@ export function GambarIlustrasiTk({ gambar, s, style, className }: { gambar: str
   else if (id === "perahu-layar-mainan") art = <PerahuLayarMainan />;
   else if (id === "main-pasir") art = <MainPasir />;
   else if (id === "sepatu-bot-hujan") art = <SepatuBotHujan />;
+  else if (id === "sate") art = <Sate />;
+  else if (id === "pastel-goreng") art = <PastelGoreng />;
+  else if (id === "pisang-goreng") art = <PisangGoreng />;
+  else if (id === "teh-manis") art = <TehManis />;
+  else if (id === "nasi-kotak") art = <NasiKotak />;
+  else if (id === "susu-kotak") art = <SusuKotak />;
   else if (JATUH_DI_ALAM[id]) art = <JatuhDiAlam {...JATUH_DI_ALAM[id]} />;
   else if (id === "apel-berbunga" || id === "apel-berbuah") art = <PohonApel berbuah={id === "apel-berbuah"} />;
   else if (id === "salim-di-gerbang") art = <SalimDiGerbang />;

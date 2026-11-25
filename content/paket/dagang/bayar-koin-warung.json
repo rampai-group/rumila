@@ -1,6 +1,6 @@
 {
   "id": "bayar-koin-warung",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "dagang",
   "competencyIds": [
@@ -63,7 +63,7 @@
       "id": "susu",
       "labelKey": "susu",
       "price": 3000,
-      "emoji": "🧃"
+      "adegan": { "jenis": "ilustrasi", "varian": "tk-susu-kotak", "t": 0 }
     },
     {
       "id": "jeruk",

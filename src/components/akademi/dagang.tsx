@@ -46,8 +46,8 @@ const EMOJI_BARANG: Record<string, string> = {
 
 function visualGood(g: Good | undefined, id: string): VisualSpec {
   if (!g) return { emoji: EMOJI_BARANG[id] ?? "🛍️" };
-  const { emoji, color, scale, shape, width, angka, latar } = g;
-  return { emoji: emoji ?? (shape ? undefined : EMOJI_BARANG[id] ?? "🛍️"), color, scale, shape, width, angka, latar };
+  const { emoji, color, scale, shape, width, angka, latar, adegan } = g;
+  return { emoji: emoji ?? (shape || adegan ? undefined : EMOJI_BARANG[id] ?? "🛍️"), color, scale, shape, width, angka, latar, adegan };
 }
 
 function visualUang(nilai: number): VisualSpec & { label: string } {
@@ -61,6 +61,12 @@ function visualUang(nilai: number): VisualSpec & { label: string } {
 }
 
 const rupiah = (n: number) => `Rp${formatRibuan(n)}`;
+const labelAmbilUang = (nilai: number, bahasa: BahasaAnak) => bahasa === "en"
+  ? `Add ${nilai.toLocaleString("en-US")} rupiah from the cash drawer`
+  : `Ambil ${formatRibuan(nilai)} rupiah dari laci`;
+const labelKembalikanUang = (nilai: number, bahasa: BahasaAnak) => bahasa === "en"
+  ? `Return ${nilai.toLocaleString("en-US")} rupiah to the cash drawer`
+  : `Kembalikan ${formatRibuan(nilai)} rupiah ke laci`;
 
 const TANGAN: Record<number, string> = { 0: "✊", 1: "☝️", 2: "✌️", 3: "🤟", 4: "🖖", 5: "🖐️" };
 function tangan(n: number): string {
@@ -347,7 +353,7 @@ function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang
 }
 
 /** Laci uang: tombol per pecahan (dikelompokkan), tampil sisa lembar. */
-function Laci({ laci, dipakai, onAmbil, sorot, disabled, penuh }: { laci: number[]; dipakai: number[]; onAmbil: (nilai: number) => void; sorot?: number | null; disabled?: boolean; /** mengisi sisa tinggi kolom */ penuh?: boolean }) {
+function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh }: { laci: number[]; dipakai: number[]; onAmbil: (nilai: number) => void; bahasa: BahasaAnak; sorot?: number | null; disabled?: boolean; /** mengisi sisa tinggi kolom */ penuh?: boolean }) {
   const kelompok = useMemo(() => {
     const m = new Map<number, number>();
     for (const d of laci) m.set(d, (m.get(d) ?? 0) + 1);
@@ -373,10 +379,12 @@ function Laci({ laci, dipakai, onAmbil, sorot, disabled, penuh }: { laci: number
               v={v}
               size={Math.round((padat ? 26 : 44) * sk)}
               label={v.label}
+              ariaLabel={labelAmbilUang(nilai, bahasa)}
               labelSize={Math.round(13 * sk)}
               dim={sisa <= 0}
               selected={sorot === nilai}
-              onClick={() => { if (!disabled && sisa > 0) onAmbil(nilai); }}
+              disabled={disabled || sisa <= 0}
+              onClick={() => onAmbil(nilai)}
               className={`relative ${padat ? "min-h-14 min-w-[64px] !p-1" : "min-h-16 min-w-[72px]"} ${sorot === nilai ? "akademi-bounce" : ""}`}
               style={{ minHeight: (padat ? 56 : 64) * sk, minWidth: (padat ? 64 : 72) * sk, background: `linear-gradient(180deg,#fff,${v.color}33)`, ...(disabled || sisa <= 0 ? { pointerEvents: "none" } : {}) }}
             />
@@ -388,7 +396,7 @@ function Laci({ laci, dipakai, onAmbil, sorot, disabled, penuh }: { laci: number
 }
 
 /** Nampan uang: uang yang sudah ditaruh (ketuk untuk ambil lagi) + total kecil. */
-function Nampan({ uang, onAmbil, judul = "Nampan", sorot, kosong = "Ketuk uang di laci" }: { uang: number[]; onAmbil?: (i: number) => void; judul?: string; sorot?: boolean; kosong?: string }) {
+function Nampan({ uang, onAmbil, bahasa, disabled, judul = "Nampan", sorot, kosong = "Ketuk uang di laci" }: { uang: number[]; onAmbil: (i: number) => void; bahasa: BahasaAnak; disabled?: boolean; judul?: string; sorot?: boolean; kosong?: string }) {
   const total = uang.reduce((s, x) => s + x, 0);
   const { tema, skala: sk } = usePanggung();
   return (
@@ -403,7 +411,7 @@ function Nampan({ uang, onAmbil, judul = "Nampan", sorot, kosong = "Ketuk uang d
         {uang.length === 0 && <span className="w-full text-center font-bold" style={{ fontSize: 14 * sk, color: "#2f4260" }}>{kosong}</span>}
         {uang.map((nilai, i) => {
           const v = visualUang(nilai);
-          return <KartuBenda key={`${i}-${nilai}`} v={v} size={Math.round(36 * sk)} label={v.label} labelSize={Math.round(13 * sk)} onClick={onAmbil ? () => onAmbil(i) : undefined} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />;
+          return <KartuBenda key={`${i}-${nilai}`} v={v} size={Math.round(36 * sk)} label={v.label} ariaLabel={labelKembalikanUang(nilai, bahasa)} labelSize={Math.round(13 * sk)} disabled={disabled} onClick={() => onAmbil(i)} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />;
         })}
       </div>
     </div>
@@ -413,10 +421,11 @@ function Nampan({ uang, onAmbil, judul = "Nampan", sorot, kosong = "Ketuk uang d
 /** Harga: "koin" → deretan 🪙 sebanyak harga/1000 ; "rupiah" → Rp besar + emoji barang. */
 function Harga({ harga, priceLabel, barang }: { harga: number; priceLabel: RondeDagang["priceLabel"]; barang: VisualSpec[] }) {
   const koin = Math.max(0, Math.round(harga / KOIN));
-  const sk = useSk();
+  const { skala: sk, w } = usePanggung();
+  const ringkas = w > 0 && w < 300;
   return (
     <div className="flex flex-wrap items-center gap-2 rounded-[18px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}>
-      {barang.slice(0, 3).map((v, k) => <Benda key={k} v={v} size={Math.round(44 * sk)} />)}
+      {barang.slice(0, 3).map((v, k) => <Benda key={k} v={v} size={Math.round((ringkas && v.adegan ? 33 : 44) * sk)} />)}
       <span aria-hidden style={{ ...Tebal, fontSize: 22 * sk }}>=</span>
       {priceLabel === "koin" ? (
         <span className="flex flex-wrap items-center gap-0.5" aria-label={`${koin} koin`}>
@@ -749,8 +758,8 @@ function ModeBayar(c: Ctx) {
         : <Harga harga={ronde.harga} priceLabel={ronde.priceLabel} barang={barang.map((p) => ({ ...visual(p.goodId), count: p.qty }))} />}</div>} jawabanBenar={ronde.priceLabel === "koin" ? `${Math.round(ronde.harga / KOIN)} koin` : rupiah(ronde.harga)} />
       <Lapak><div className="flex flex-wrap justify-center" style={{ gap: 8 * sk }}>{barang.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={Math.round(52 * meja)} label={nama(p.goodId)} labelSize={Math.round(14 * sk)} className="min-h-14 min-w-14" />)}</div></Lapak>
     </>} kanan={<>
-      <Nampan uang={uang} onAmbil={kembalikan} judul="Nampan bayar" sorot={hint && total === ronde.harga} />
-      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} sorot={sorot} disabled={terkunci} />
+      <Nampan uang={uang} onAmbil={kembalikan} bahasa={c.bahasa} disabled={terkunci} judul="Nampan bayar" sorot={hint && total === ronde.harga} />
+      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={sorot} disabled={terkunci} />
       <AksiBawah>
         <div className="flex shrink-0 gap-2">
           <TombolBantu onClick={bantu} disabled={terkunci} />
@@ -816,8 +825,8 @@ function ModeKembalian(c: Ctx) {
         )}
       </Lapak>
     </>} kanan={<>
-      <Nampan uang={uang} onAmbil={kembalikan} judul="Kembalian" sorot={hint && total === kembalian} />
-      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} sorot={sorot} disabled={terkunci} />
+      <Nampan uang={uang} onAmbil={kembalikan} bahasa={c.bahasa} disabled={terkunci} judul="Kembalian" sorot={hint && total === kembalian} />
+      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={sorot} disabled={terkunci} />
       <AksiBawah aktif={!lebar}>
       <div className="flex shrink-0 gap-2">
         <TombolBantu onClick={bantu} disabled={terkunci} />
@@ -857,14 +866,14 @@ function ModeTukar(c: Ctx) {
       <div className="flex flex-1 flex-col rounded-[26px]" style={{ background: `linear-gradient(180deg,${tema.wadahWarna},${tema.wadahGelap})`, boxShadow: `0 6px 0 ${tema.wadahGelap}`, padding: 10 * sk, gap: 8 * sk }}>
         <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ gap: 6 * sk, padding: 10 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }} aria-label="Cetakan koin">
           {Array.from({ length: Math.max(slot, uang.length) }, (_, k) => (
-            <button key={k} type="button" onClick={() => { if (k < uang.length) kembalikan(k); }} disabled={k >= uang.length} aria-label={k < uang.length ? `Koin ke-${k + 1}, ketuk untuk ambil` : "Cetakan kosong"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ width: slotPx, height: slotPx, border: k < uang.length ? "none" : "3px dashed rgba(11,37,69,.55)", background: k < uang.length ? "#fff" : k >= slot ? "#ffe9ec" : "#fff", boxShadow: k < uang.length ? "0 3px 0 rgba(11,37,69,.18), inset 0 0 0 2px #e0b400" : "none", fontSize: 30 * sk, lineHeight: 1 }}>
+            <button key={k} type="button" onClick={() => kembalikan(k)} disabled={terkunci || k >= uang.length} aria-label={k < uang.length ? labelKembalikanUang(uang[k], c.bahasa) : "Cetakan kosong"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ width: slotPx, height: slotPx, border: k < uang.length ? "none" : "3px dashed rgba(11,37,69,.55)", background: k < uang.length ? "#fff" : k >= slot ? "#ffe9ec" : "#fff", boxShadow: k < uang.length ? "0 3px 0 rgba(11,37,69,.18), inset 0 0 0 2px #e0b400" : "none", fontSize: 30 * sk, lineHeight: 1 }}>
               {k < uang.length ? <span className="akademi-pop">🪙</span> : hint && k === uang.length ? <span className="akademi-bounce opacity-60">🪙</span> : null}
             </button>
           ))}
         </div>
         <div className="self-center rounded-full bg-white px-3 py-0.5 text-center" style={{ ...Tebal, fontSize: 15 * sk }}>{uang.length} koin = {rupiah(total)}</div>
       </div>
-      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} sorot={hint && total < ronde.dibayar ? KOIN : null} disabled={terkunci} />
+      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={hint && total < ronde.dibayar ? KOIN : null} disabled={terkunci} />
       <AksiBawah>
         <div className="flex shrink-0 gap-2">
           <TombolBantu onClick={bantu} disabled={terkunci} />
@@ -927,19 +936,19 @@ function ModeLengkapi(c: Ctx) {
               const idx = k - ditunjukkan;
               const terisi = !milikPembeli && idx < uang.length;
               return (
-                <button key={k} type="button" disabled={!terisi} onClick={() => { if (terisi) kembalikan(idx); }} aria-label={milikPembeli ? (tampil ? "Koin pembeli" : "Koin pembeli (tersembunyi)") : terisi ? "Koin kamu, ketuk untuk ambil" : "Belum terisi"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ width: slotPx, height: slotPx, border: terisi || (milikPembeli && tampil) ? "none" : milikPembeli ? "3px solid rgba(91,75,255,.55)" : "3px dashed rgba(11,37,69,.55)", background: terisi ? "#fff" : milikPembeli ? "#ece9ff" : "#fff", boxShadow: terisi ? "0 3px 0 rgba(11,37,69,.18), inset 0 0 0 2px #e0b400" : "none", fontSize: 30 * sk, lineHeight: 1 }}>
+                <button key={k} type="button" disabled={terkunci || !terisi} onClick={() => kembalikan(idx)} aria-label={milikPembeli ? (tampil ? "Koin pembeli" : "Koin pembeli (tersembunyi)") : terisi ? labelKembalikanUang(uang[idx], c.bahasa) : "Belum terisi"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ width: slotPx, height: slotPx, border: terisi || (milikPembeli && tampil) ? "none" : milikPembeli ? "3px solid rgba(91,75,255,.55)" : "3px dashed rgba(11,37,69,.55)", background: terisi ? "#fff" : milikPembeli ? "#ece9ff" : "#fff", boxShadow: terisi ? "0 3px 0 rgba(11,37,69,.18), inset 0 0 0 2px #e0b400" : "none", fontSize: 30 * sk, lineHeight: 1 }}>
                   {milikPembeli ? (tampil ? "🪙" : <span style={{ ...Tebal, fontSize: 18 * sk, color: "#5b4bff" }}>?</span>) : terisi ? <span className="akademi-pop">🪙</span> : hint && idx === uang.length ? <span className="akademi-bounce opacity-60">🪙</span> : null}
                 </button>
               );
             })}
             {uang.length > kurang && Array.from({ length: uang.length - kurang }, (_, k) => (
-              <button key={`lebih-${k}`} type="button" onClick={() => kembalikan(kurang + k)} aria-label="Koin berlebih, ketuk untuk ambil" className="flex size-14 items-center justify-center rounded-full bg-[#ffe9ec] active:scale-90" style={{ width: slotPx, height: slotPx, boxShadow: "inset 0 0 0 3px #ff5a6e", fontSize: 30 * sk, lineHeight: 1 }}>🪙</button>
+              <button key={`lebih-${k}`} type="button" disabled={terkunci} onClick={() => kembalikan(kurang + k)} aria-label={labelKembalikanUang(uang[kurang + k], c.bahasa)} className="flex size-14 items-center justify-center rounded-full bg-[#ffe9ec] active:scale-90" style={{ width: slotPx, height: slotPx, boxShadow: "inset 0 0 0 3px #ff5a6e", fontSize: 30 * sk, lineHeight: 1 }}>🪙</button>
             ))}
           </div>
         </div>
       </Lapak>
     </>} kanan={<>
-      <Laci laci={ronde.laci} dipakai={uang} onAmbil={(n) => { if (!tampil) ambil(n); }} sorot={hint && uang.length < kurang ? KOIN : null} disabled={terkunci || tampil} penuh />
+      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={hint && uang.length < kurang ? KOIN : null} disabled={terkunci || tampil} penuh />
       <AksiBawah>
         <div className="flex shrink-0 gap-2">
           <TombolBantu onClick={bantu} disabled={terkunci || tampil} label="Lihat lagi" />
