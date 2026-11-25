@@ -1,6 +1,6 @@
 {
   "id": "lompati-batu-jalur-kanan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "examInstructionKey": "instruksi-ujian",
   "locale": {
     "id": {
-      "judul": "Lompat di Petak Batu",
-      "instruksi": "Lihat di mana batunya: taruh 'lompat' tepat di situ dan 'maju' di petak kosong, lalu jalan.",
+      "judul": "Lompati Batu di Jalan",
+      "instruksi": "Susun blok. Lompat saat batu tepat di depan, Maju saat kosong.",
       "instruksi-ujian": "Pakai blok lompat saat ada batu di depan robot dan blok maju untuk petak kosong. Lalu ketuk Kirim program."
     },
     "en": {
-      "judul": "Jump at the Rock",
-      "instruksi": "See where the rock is: put 'jump' right there and 'forward' for the empty squares, then go.",
+      "judul": "Jump Over Rocks",
+      "instruksi": "Build the program. Rock directly ahead? Use Lompat (jump). Empty square ahead? Use Maju (forward).",
       "instruksi-ujian": "Use a jump block when there is a rock ahead and a forward block for empty squares. Then tap Kirim program to submit."
     }
   },

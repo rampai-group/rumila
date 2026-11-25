@@ -1,6 +1,6 @@
 {
   "id": "sains-cuaca-begini-main-apa",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,14 +21,14 @@
       "t-cerah1": "Langit cerah, tidak ada angin. Main apa yang cocok?",
       "t-cerah2": "Lapangan kering dan matahari bersinar. Main apa?",
       "t-cerah3": "Pantai cerah dan hangat, tidak hujan. Main apa?",
-      "t-cerah4": "Matahari terik dan halaman kering. Apa yang cocok dikerjakan?",
-      "t-hujan1": "Hujan deras turun. Apa yang sebaiknya dilakukan?",
+      "t-cerah4": "Matahari bersinar dan baju baru dicuci. Apa yang bisa dilakukan agar baju kering?",
+      "t-hujan1": "Hujan turun tanpa guntur saat kamu menunggu bus. Di mana kamu bisa berteduh?",
       "t-hujan2": "Terdengar guntur dan terlihat kilat. Di mana kita bisa berlindung dengan aman?",
       "t-hujan3": "Hujan turun saat kita harus berjalan ke masjid. Apa yang dilakukan?",
-      "t-hujan4": "Tiba-tiba hujan saat pulang sekolah. Apa yang dilakukan?",
-      "t-angin1": "Angin bertiup kencang dan tidak hujan. Main apa?",
-      "t-angin2": "Angin kencang bertiup di kolam taman. Main apa yang cocok?",
-      "t-angin3": "Daun-daun beterbangan tertiup angin di lapangan. Main apa?",
+      "t-hujan4": "Saat pulang sekolah, hujan turun tanpa guntur. Di mana kamu bisa menunggu sampai hujan reda?",
+      "t-angin1": "Angin bertiup sedang di lapangan terbuka. Kegiatan mana yang memakai angin?",
+      "t-angin2": "Angin sepoi-sepoi bertiup di kolam taman. Mainan apa yang memakai layar untuk menangkap angin?",
+      "t-angin3": "Bendera berkibar pelan di lapangan terbuka. Main apa yang memanfaatkan angin?",
       "i-payung": "berjalan memakai payung",
       "i-jemur": "menjemur baju",
       "i-rumah": "masuk ke dalam rumah"
@@ -46,14 +46,14 @@
       "t-cerah1": "Clear sky, no wind at all. What fits?",
       "t-cerah2": "The field is dry and the sun is shining. What shall we play?",
       "t-cerah3": "The beach is sunny and warm, no rain. What shall we play?",
-      "t-cerah4": "The sun is hot and the yard is dry. What is good to do?",
-      "t-hujan1": "Heavy rain is falling. What should we do?",
+      "t-cerah4": "The sun is shining and your clothes have just been washed. What can you do to dry them?",
+      "t-hujan1": "It starts raining without thunder while you wait for the bus. Where can you take shelter?",
       "t-hujan2": "You hear thunder and see lightning. Where can you take shelter safely?",
       "t-hujan3": "It rains while we must walk to the mosque. What do we do?",
-      "t-hujan4": "Suddenly it rains on the way home from school. What do we do?",
-      "t-angin1": "The wind is strong and it isn't raining. What shall we play?",
-      "t-angin2": "A strong wind blows over the park pond. What fits?",
-      "t-angin3": "Leaves fly in the wind over the field. What shall we play?",
+      "t-hujan4": "It starts raining without thunder on the way home from school. Where can you wait for the rain to stop?",
+      "t-angin1": "A steady breeze blows across an open field. Which activity uses the wind?",
+      "t-angin2": "A light breeze blows over the park pond. Which toy uses a sail to catch the wind?",
+      "t-angin3": "A flag flutters gently in an open field. Which activity uses the wind?",
       "i-payung": "walk with an umbrella",
       "i-jemur": "hang clothes out to dry",
       "i-rumah": "go inside the house"
@@ -90,13 +90,21 @@
       "id": "perahu",
       "labelKey": "i-perahu",
       "bin": "pilihan",
-      "emoji": "⛵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-perahu-layar-mainan",
+        "t": 0
+      }
     },
     {
       "id": "halte",
       "labelKey": "i-halte",
       "bin": "pilihan",
-      "emoji": "🚏"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-halte-hujan",
+        "t": 0
+      }
     },
     {
       "id": "sepeda",
@@ -114,7 +122,11 @@
       "id": "pasir",
       "labelKey": "i-pasir",
       "bin": "pilihan",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-main-pasir",
+        "t": 0
+      }
     },
     {
       "id": "rumah",
@@ -239,8 +251,8 @@
       "promptKey": "t-angin2",
       "choices": [
         "perahu",
-        "rumah",
-        "halte"
+        "bola",
+        "sepeda"
       ],
       "correct": "perahu"
     },

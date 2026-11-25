@@ -1,6 +1,6 @@
 {
   "id": "sains-kegiatan-sesuai-cuaca",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,9 +19,9 @@
       "i-eskrim": "matahari terik, makan es krim di taman",
       "i-payung": "hujan turun, pakai payung",
       "i-berteduh": "hujan deras, berteduh di rumah",
-      "i-layang": "angin kencang, waktunya main layang-layang",
+      "i-layang": "angin bertiup sedang, main layang-layang di lapangan terbuka",
       "i-kincir": "angin bertiup, lonceng angin berbunyi",
-      "i-layar": "angin kencang, perahu layar melaju",
+      "i-layar": "angin sepoi-sepoi mendorong perahu layar mainan",
       "i-sepatubot": "hujan turun, pakai sepatu bot"
     },
     "en": {
@@ -35,9 +35,9 @@
       "i-eskrim": "hot sun, eat ice cream in the park",
       "i-payung": "rain is falling, use an umbrella",
       "i-berteduh": "heavy rain, shelter at home",
-      "i-layang": "strong wind, time to fly a kite",
+      "i-layang": "fly a kite in an open field with a steady breeze",
       "i-kincir": "the wind blows, the wind chimes ring",
-      "i-layar": "strong wind, the sailboat speeds along",
+      "i-layar": "a light breeze pushes the toy sailboat",
       "i-sepatubot": "rain is falling, wear rain boots"
     }
   },
@@ -84,7 +84,11 @@
       "id": "jemur",
       "labelKey": "i-jemur",
       "bin": "cerah",
-      "emoji": "🧺"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-jemuran",
+        "t": 0
+      }
     },
     {
       "id": "renang",
@@ -108,13 +112,21 @@
       "id": "berteduh",
       "labelKey": "i-berteduh",
       "bin": "hujan",
-      "emoji": "🏠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-dalam-rumah",
+        "t": 0
+      }
     },
     {
       "id": "sepatubot",
       "labelKey": "i-sepatubot",
       "bin": "hujan",
-      "emoji": "🥾"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-sepatu-bot-hujan",
+        "t": 0
+      }
     },
     {
       "id": "layang",
@@ -132,7 +144,11 @@
       "id": "layar",
       "labelKey": "i-layar",
       "bin": "angin",
-      "emoji": "⛵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-perahu-layar-mainan",
+        "t": 0
+      }
     }
   ],
   "pilihan": []
