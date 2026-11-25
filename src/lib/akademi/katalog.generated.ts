@@ -185644,7 +185644,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-habitat-hewan-lain",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -185745,9 +185745,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rubahgurun",
         "labelKey": "i-rubahgurun",
         "bin": "gurun",
-        "emoji": "🦊",
-        "color": "#ffe0b2",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rubah-fennec"
+        }
       },
       {
         "id": "landakgurun",
@@ -185761,17 +185762,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "beluga",
         "labelKey": "i-beluga",
         "bin": "es",
-        "emoji": "🐋",
-        "color": "#eceff1",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-paus-beluga"
+        }
       },
       {
         "id": "rusakutub",
         "labelKey": "i-rusakutub",
         "bin": "es",
-        "emoji": "🦌",
-        "color": "#e1f5fe",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rusa-kutub"
+        }
       },
       {
         "id": "burungbeo",
@@ -185813,17 +185816,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "burunghantusalju",
         "labelKey": "i-burunghantusalju",
         "bin": "es",
-        "emoji": "🦉",
-        "color": "#ffffff",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-burung-hantu-salju"
+        }
       },
       {
         "id": "serigalakutub",
         "labelKey": "i-serigalakutub",
         "bin": "es",
-        "emoji": "🐺",
-        "color": "#ffffff",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-serigala-kutub"
+        }
       }
     ],
     "pilihan": []
