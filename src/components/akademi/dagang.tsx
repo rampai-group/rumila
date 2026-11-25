@@ -147,12 +147,13 @@ function Keterangan({ children, className = "" }: { children: ReactNode; classNa
  * (kiri = pembeli + lapak, kanan = wadah/laci/tombol) supaya isi menyebar memenuhi panggung, bukan pita tengah.
  * Interaksi dikunci saat hasil terisi.
  */
-function Kunci({ terkunci, kiri, kanan }: { terkunci: boolean; kiri: ReactNode; kanan: ReactNode }) {
+function Kunci({ terkunci, kiri, kanan, tengah = false }: { terkunci: boolean; kiri: ReactNode; kanan: ReactNode; tengah?: boolean }) {
   const { skala } = usePanggung();
   const lebar = useLebar();
   const gap = 12 * skala;
+  const posisi = tengah ? (lebar ? "[align-items:safe_center]" : "[justify-content:safe_center]") : "";
   return (
-    <div className={`flex flex-1 ${lebar ? "flex-row" : "flex-col"}`} style={{ gap: lebar ? 16 * skala : gap, ...(terkunci ? { pointerEvents: "none" } : {}) }} aria-busy={terkunci}>
+    <div className={`flex flex-1 ${lebar ? "flex-row" : "flex-col"} ${posisi}`} style={{ gap: lebar ? 16 * skala : gap, ...(terkunci ? { pointerEvents: "none" } : {}) }} aria-busy={terkunci}>
       {lebar ? (
         <>
           <div className="flex min-w-0 flex-[1.15] flex-col" style={{ gap }}>{kiri}</div>
@@ -396,22 +397,23 @@ function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh }: { laci
 }
 
 /** Nampan uang: uang yang sudah ditaruh (ketuk untuk ambil lagi) + total kecil. */
-function Nampan({ uang, onAmbil, bahasa, disabled, judul = "Nampan", sorot, kosong = "Ketuk uang di laci" }: { uang: number[]; onAmbil: (i: number) => void; bahasa: BahasaAnak; disabled?: boolean; judul?: string; sorot?: boolean; kosong?: string }) {
+function Nampan({ uang, onAmbil, bahasa, disabled, judul = "Nampan", sorot, kosong = "Ketuk uang di laci", padat = false }: { uang: number[]; onAmbil: (i: number) => void; bahasa: BahasaAnak; disabled?: boolean; judul?: string; sorot?: boolean; kosong?: string; padat?: boolean }) {
   const total = uang.reduce((s, x) => s + x, 0);
   const { tema, skala: sk } = usePanggung();
+  const ukuranUang = padat ? 72 : 56 * sk;
   return (
     // baki: bibir tebal warna wadah dunia, alas terang cekung tempat uang ditaruh
-    <div className="flex flex-1 flex-col rounded-[26px]" style={{ background: `linear-gradient(180deg,${tema.wadahWarna},${tema.wadahGelap})`, boxShadow: `0 6px 0 ${tema.wadahGelap}${sorot ? ", 0 0 0 4px #ffd23f" : ""}`, padding: 10 * sk, gap: 8 * sk }}>
+    <div className={`flex ${padat ? "shrink-0" : "flex-1"} flex-col rounded-[26px]`} style={{ background: `linear-gradient(180deg,${tema.wadahWarna},${tema.wadahGelap})`, boxShadow: `0 6px 0 ${tema.wadahGelap}${sorot ? ", 0 0 0 4px #ffd23f" : ""}`, padding: 10 * sk, gap: 8 * sk }}>
       <div className="flex items-center gap-2 self-stretch rounded-full bg-white/95 px-3 py-1 shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ ...Tebal, fontSize: 16 * sk }}>
         <span style={{ fontSize: 24 * sk, lineHeight: 1 }}>🍽️</span>
         <span>{judul}</span>
         <span className="ml-auto rounded-full px-3" style={{ fontSize: 15 * sk, background: "#fff1c2" }}>{rupiah(total)}</span>
       </div>
-      <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ minHeight: 64 * sk, gap: 8 * sk, padding: 8 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }}>
+      <div className="flex flex-1 flex-wrap content-center items-center justify-center rounded-[20px]" style={{ minHeight: (padat ? 104 : 64) * sk, gap: 8 * sk, padding: 8 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }}>
         {uang.length === 0 && <span className="w-full text-center font-bold" style={{ fontSize: 14 * sk, color: "#2f4260" }}>{kosong}</span>}
         {uang.map((nilai, i) => {
           const v = visualUang(nilai);
-          return <KartuBenda key={`${i}-${nilai}`} v={v} size={Math.round(36 * sk)} label={v.label} ariaLabel={labelKembalikanUang(nilai, bahasa)} labelSize={Math.round(13 * sk)} disabled={disabled} onClick={() => onAmbil(i)} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />;
+          return <KartuBenda key={`${i}-${nilai}`} v={v} size={Math.round(padat ? 50 : 36 * sk)} label={v.label} ariaLabel={labelKembalikanUang(nilai, bahasa)} labelSize={Math.round(13 * sk)} disabled={disabled} onClick={() => onAmbil(i)} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: ukuranUang, minWidth: ukuranUang }} />;
         })}
       </div>
     </div>
@@ -784,11 +786,14 @@ function ModeKembalian(c: Ctx) {
   const teks = ucapan.teks;
   const sorot = hint ? pecahanBerikut(ronde.laci, uang, kembalian - total) : null;
   const langkah = useMemo(() => { const out: number[] = []; for (let v = ronde.harga; v <= ronde.dibayar; v += KOIN) out.push(v); return out.length <= 12 ? out : []; }, [ronde.harga, ronde.dibayar]);
-  const sk = useSk();
+  const { skala: sk, w, h } = usePanggung();
   const meja = useSkMeja();
+  const tabletPadat = c.paket.level === "TKB" && w >= 620 && h >= (lebar ? 500 : 680);
+  const ukuranBarang = Math.round(tabletPadat ? 96 * Math.min(sk, 1.2) : 48 * meja);
+  const ukuranBayar = Math.round(tabletPadat ? 72 * Math.min(sk, 1.2) : 48 * meja);
 
   return (
-    <Kunci terkunci={terkunci} kiri={<>
+    <Kunci terkunci={terkunci} tengah={tabletPadat} kiri={<>
       <Pembeli
         wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil}
         balon={rincian ? (
@@ -808,10 +813,10 @@ function ModeKembalian(c: Ctx) {
         )}
         jawabanBenar={rincian ? `Total ${rupiah(ronde.harga)} · kembalian ${rupiah(kembalian)}` : `Kembalian ${rupiah(kembalian)}`}
       />
-      <Lapak>
+      <Lapak padat={tabletPadat}>
         <div className="flex flex-wrap items-center justify-center" style={{ gap: 12 * sk }}>
-          <div className="flex items-center gap-2 rounded-[16px] bg-white px-3 py-2" style={{ color: INK, boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}><Benda v={vBayar} size={Math.round(48 * meja)} /><span style={{ ...Tebal, fontSize: 18 * meja }}>{vBayar.label}</span></div>
-          {ronde.pesanan.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={Math.round(48 * meja)} label={nama(p.goodId)} labelSize={Math.round(13 * sk)} className="min-h-14 min-w-14" />)}
+          <div className="flex items-center gap-2 rounded-[16px] bg-white px-3 py-2" style={{ color: INK, boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}><Benda v={vBayar} size={ukuranBayar} /><span style={{ ...Tebal, fontSize: 18 * meja }}>{vBayar.label}</span></div>
+          {ronde.pesanan.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={ukuranBarang} label={nama(p.goodId)} labelSize={Math.round((tabletPadat ? 16 : 13) * sk)} className="min-h-14 min-w-14" />)}
         </div>
         {hint && langkah.length > 0 && (
           <div className="akademi-pop mt-2 flex flex-wrap items-center justify-center gap-1 rounded-[16px] bg-white p-2" aria-label="Hitung maju dari harga ke uang pembeli">
@@ -825,9 +830,9 @@ function ModeKembalian(c: Ctx) {
         )}
       </Lapak>
     </>} kanan={<>
-      <Nampan uang={uang} onAmbil={kembalikan} bahasa={c.bahasa} disabled={terkunci} judul="Kembalian" sorot={hint && total === kembalian} />
+      <Nampan uang={uang} onAmbil={kembalikan} bahasa={c.bahasa} disabled={terkunci} judul="Kembalian" padat={tabletPadat} sorot={hint && total === kembalian} />
       <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={sorot} disabled={terkunci} />
-      <AksiBawah aktif={!lebar}>
+      <AksiBawah aktif={!lebar && !tabletPadat}>
       <div className="flex shrink-0 gap-2">
         <TombolBantu onClick={bantu} disabled={terkunci} />
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang }); }} disabled={terkunci || uang.length === 0}><Icon name="currency_exchange" size={26} /> Beri kembalian</TombolBesar>
