@@ -21,7 +21,7 @@ export const ILUSTRASI_AWAL_IDS = [
   "polong", "anggur", "roda", "keju", "lambung", "gelas", "gelas-silinder", "talenan",
   "bahan-kayu", "bahan-logam", "bahan-plastik", "bahan-kaca", "akuarium", "kantong-kresek", "perahu-kayu", "jas-hujan", "jaket",
   "pot-jendela", "pot-teras", "pot-lemari", "pot-kotak", "pot-kebun", "pot-gudang", "pot-kolong",
-  "bumi-siang", "bumi-malam", "bola-siang", "bola-malam",
+  "bumi-siang", "bumi-malam", "bola-siang", "bola-malam", "bola-acuan",
   "penyu-laut",
   "ikan-sungut", "ikan-siput", "hiu-goblin", "paus-sperma", "gurita-dumbo", "udang-palung", "cumi-raksasa",
   "robot-kepala", "robot-badan", "robot-tangan", "robot-kaki",
@@ -57,7 +57,7 @@ function Pot({ x = 65, y = 69, scale = 1 }: { x?: number; y?: number; scale?: nu
     <path d="M0-16Q-24-36-24-15Q-16-4 0-12M0-26Q24-44 22-24Q14-15 0-22" fill="#62bb53" stroke="#39863e" strokeWidth="2" />
   </g>;
 }
-function World({ night, torch, putaran }: { night: boolean; torch: boolean; putaran?: number }) {
+function World({ night, torch, putaran, showMarker = true }: { night: boolean; torch: boolean; putaran?: number; showMarker?: boolean }) {
   const animasiPutar = putaran === undefined ? undefined : { transform: `rotate(${putaran * 90}deg)`, transformOrigin: "88px 50px" };
   const posisiRumah = putaran === undefined ? `translate(${night ? 106 : 68} 50)` : "translate(88 30)";
   return <>
@@ -68,14 +68,14 @@ function World({ night, torch, putaran }: { night: boolean; torch: boolean; puta
     <path d="M72 22L83 25 82 38 67 43 70 54 81 60 78 77 68 74 59 55 60 35ZM96 22L108 30 109 41 102 45 105 57 116 60 111 72 99 78 94 65 87 59 93 48 89 37Z" fill="#79c875" style={animasiPutar} className="motion-safe:transition-transform motion-safe:duration-300" />
     <path d="M88 17A33 33 0 0 1 88 83Z" fill="#09142d" opacity=".78" />
     {putaran === undefined && <path d="M78 10Q105 4 118 24l-1-8m1 8-8-1" fill="none" stroke="#fff" strokeWidth="2" />}
-    <g style={animasiPutar} className="motion-safe:transition-transform motion-safe:duration-300">
+    {showMarker && <g style={animasiPutar} className="motion-safe:transition-transform motion-safe:duration-300">
       <g transform={posisiRumah}>
         <circle r="11" fill="#fff" stroke="#f76c5e" strokeWidth="2" />
         <g style={putaran === undefined ? undefined : { transform: `rotate(${-putaran * 90}deg)` }} className="motion-safe:transition-transform motion-safe:duration-300">
           <path d="M-7 1L0-6 7 1V8H-7Z" fill="#f76c5e" /><path d="M-2 8V2H2V8" fill="#fff" />
         </g>
       </g>
-    </g>
+    </g>}
   </>;
 }
 
@@ -233,7 +233,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
     </>;
   } else if (/^(robot|boneka)-(tanpa-)?/.test(id)) {
     const [kind,...rest]=id.split("-");art=<Body kind={kind} missing={rest[0]==="tanpa"} part={rest.at(-1)!}/>;
-  } else if (["bumi-siang","bumi-malam","bola-siang","bola-malam"].includes(id)) art=<World night={id.endsWith("malam")} torch={id.startsWith("bola")}/>;
+  } else if (["bumi-siang","bumi-malam","bola-siang","bola-malam","bola-acuan"].includes(id)) art=<World night={id.endsWith("malam")} torch={id.startsWith("bola")} showMarker={id !== "bola-acuan"}/>;
   else if (id === "jas-hujan" || id === "jaket") {
     const rain=id==="jas-hujan";art=<g stroke={INK} strokeWidth="2.5" strokeLinejoin="round">
       {rain&&<path d="M46 30Q42 1 65 5Q88 1 84 30L76 36H54Z" fill="#ffdc54"/>}

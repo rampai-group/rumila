@@ -195708,7 +195708,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-senter-bola-dunia",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -195825,7 +195825,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "siang"
+        "correct": "siang",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-siang"
+        }
       },
       {
         "id": "soal-2",
@@ -195834,7 +195838,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "malam"
+        "correct": "malam",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-malam"
+        }
       },
       {
         "id": "soal-3",
@@ -195843,7 +195851,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "siang"
+        "correct": "siang",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-siang"
+        }
       },
       {
         "id": "soal-4",
@@ -195852,7 +195864,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "malam"
+        "correct": "malam",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-malam"
+        }
       },
       {
         "id": "soal-5",
@@ -195861,7 +195877,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "siang"
+        "correct": "siang",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-siang"
+        }
       },
       {
         "id": "soal-6",
@@ -195870,7 +195890,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "malam"
+        "correct": "malam",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-malam"
+        }
       },
       {
         "id": "soal-7",
@@ -195879,7 +195903,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "siang"
+        "correct": "siang",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-siang"
+        }
       },
       {
         "id": "soal-8",
@@ -195888,7 +195916,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "malam"
+        "correct": "malam",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-malam"
+        }
       },
       {
         "id": "soal-9",
@@ -195897,7 +195929,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "siang"
+        "correct": "siang",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-siang"
+        }
       },
       {
         "id": "soal-10",
@@ -195906,7 +195942,11 @@ export const PAKET_RAW: unknown[] = [
           "siang",
           "malam"
         ],
-        "correct": "malam"
+        "correct": "malam",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-malam"
+        }
       },
       {
         "id": "soal-11",
@@ -195915,7 +195955,11 @@ export const PAKET_RAW: unknown[] = [
           "hadap",
           "jauh"
         ],
-        "correct": "hadap"
+        "correct": "hadap",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-acuan"
+        }
       },
       {
         "id": "soal-12",
@@ -195924,7 +195968,11 @@ export const PAKET_RAW: unknown[] = [
           "hadap",
           "jauh"
         ],
-        "correct": "hadap"
+        "correct": "hadap",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-acuan"
+        }
       },
       {
         "id": "soal-13",
@@ -195933,7 +195981,11 @@ export const PAKET_RAW: unknown[] = [
           "jauh",
           "hadap"
         ],
-        "correct": "jauh"
+        "correct": "jauh",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-acuan"
+        }
       },
       {
         "id": "soal-14",
@@ -195942,7 +195994,11 @@ export const PAKET_RAW: unknown[] = [
           "hadap",
           "jauh"
         ],
-        "correct": "hadap"
+        "correct": "hadap",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bola-acuan"
+        }
       }
     ]
   },
