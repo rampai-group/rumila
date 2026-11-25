@@ -181563,7 +181563,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-alat-gerak-hewan-pantai",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -181573,41 +181573,41 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Bergerak dengan Apa?",
-        "instruksi": "Lihat hewan di sekitar pantai. Taruh ke papan sirip, sayap, atau kaki sesuai cara bergeraknya.",
+        "instruksi": "Dengar geraknya. Pilih bagian tubuh yang dipakai.",
         "b-sirip": "sirip",
         "b-sayap": "sayap",
         "b-kaki": "kaki",
-        "i-buntal": "ikan buntal",
-        "i-paus": "paus",
-        "i-ikanmas": "ikan",
-        "i-anjinglaut": "anjing laut",
-        "i-lalat": "lalat",
-        "i-kepiting": "kepiting",
-        "i-monyet": "monyet",
-        "i-kadal": "kadal",
-        "i-kuda": "kuda",
-        "i-kupu": "kupu-kupu",
-        "i-lebah": "lebah",
-        "i-kelelawar": "kelelawar"
+        "i-buntal": "ikan buntal sedang berenang",
+        "i-paus": "paus sedang berenang",
+        "i-ikanmas": "ikan sedang berenang",
+        "i-anjinglaut": "anjing laut sedang berenang",
+        "i-lalat": "lalat sedang terbang",
+        "i-kepiting": "kepiting berjalan menyamping",
+        "i-monyet": "monyet sedang berjalan",
+        "i-kadal": "kadal sedang merayap",
+        "i-kuda": "kuda sedang berlari",
+        "i-kupu": "kupu-kupu sedang terbang",
+        "i-lebah": "lebah sedang terbang",
+        "i-kelelawar": "kelelawar sedang terbang"
       },
       "en": {
         "judul": "What Do They Move With?",
-        "instruksi": "Look at the animals around the beach. Put each on the fin, wing, or leg board by how it moves.",
+        "instruksi": "Listen to the movement. Pick the body part the animal uses.",
         "b-sirip": "fins",
         "b-sayap": "wings",
         "b-kaki": "legs",
-        "i-buntal": "pufferfish",
-        "i-paus": "whale",
-        "i-ikanmas": "fish",
-        "i-anjinglaut": "seal",
-        "i-lalat": "fly",
-        "i-kepiting": "crab",
-        "i-monyet": "monkey",
-        "i-kadal": "lizard",
-        "i-kuda": "horse",
-        "i-kupu": "butterfly",
-        "i-lebah": "bee",
-        "i-kelelawar": "bat"
+        "i-buntal": "A pufferfish is swimming",
+        "i-paus": "A whale is swimming",
+        "i-ikanmas": "A fish is swimming",
+        "i-anjinglaut": "A seal is swimming",
+        "i-lalat": "A fly is flying",
+        "i-kepiting": "A crab is walking sideways",
+        "i-monyet": "A monkey is walking",
+        "i-kadal": "A lizard is crawling",
+        "i-kuda": "A horse is running",
+        "i-kupu": "A butterfly is flying",
+        "i-lebah": "A bee is flying",
+        "i-kelelawar": "A bat is flying"
       }
     },
     "knobs": {
@@ -181635,17 +181635,26 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "sirip",
         "labelKey": "b-sirip",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sirip-ikan"
+        }
       },
       {
         "id": "sayap",
         "labelKey": "b-sayap",
-        "emoji": "🪶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sayap"
+        }
       },
       {
         "id": "kaki",
         "labelKey": "b-kaki",
-        "emoji": "🐾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kaki-hewan"
+        }
       }
     ],
     "items": [
@@ -181690,7 +181699,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "monyet",
         "labelKey": "i-monyet",
         "bin": "kaki",
-        "emoji": "🐒"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-monyet-berjalan"
+        }
       },
       {
         "id": "kadal",
@@ -191470,7 +191482,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-mana-yang-tenggelam",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -191480,7 +191492,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Tebak Mana yang Tenggelam",
-        "instruksi": "Tebak dulu sebelum dicoba: sentuh benda yang akan tenggelam atau terapung sesuai pertanyaan.",
+        "instruksi": "Tebak dulu. Sentuh benda sesuai pertanyaan.",
         "pilihan": "pilihan",
         "i-kayu": "balok kayu",
         "i-batu": "batu",
@@ -191506,7 +191518,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Guess Which One Sinks",
-        "instruksi": "Guess before we test: touch the thing that will sink or float as asked.",
+        "instruksi": "Guess first. Tap the thing that answers the question.",
         "pilihan": "choices",
         "i-kayu": "wooden block",
         "i-batu": "stone",
@@ -191556,8 +191568,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "kayu",
         "labelKey": "i-kayu",
         "bin": "pilihan",
-        "emoji": "🪵",
-        "scale": 1.3
+        "scale": 0.84,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-balok-kayu"
+        }
       },
       {
         "id": "batu",
@@ -197328,7 +197343,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-sirip-sayap-kaki",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -197338,35 +197353,35 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Sirip, Sayap, atau Kaki?",
-        "instruksi": "Lihat tubuh hewannya: taruh di rak yang sesuai dengan cara geraknya.",
+        "instruksi": "Dengar geraknya. Pilih bagian tubuh yang dipakai.",
         "sirip": "sirip",
         "sayap": "sayap",
         "kaki": "kaki",
-        "i-ikan": "ikan",
-        "i-hiu": "hiu",
-        "i-lumba": "lumba-lumba",
-        "i-kupu": "kupu-kupu",
-        "i-lebah": "lebah",
-        "i-kelelawar": "kelelawar",
-        "i-kucing": "kucing",
-        "i-sapi": "sapi",
-        "i-gajah": "gajah"
+        "i-ikan": "ikan sedang berenang",
+        "i-hiu": "hiu sedang berenang",
+        "i-lumba": "lumba-lumba sedang berenang",
+        "i-kupu": "kupu-kupu sedang terbang",
+        "i-lebah": "lebah sedang terbang",
+        "i-kelelawar": "kelelawar sedang terbang",
+        "i-kucing": "kucing sedang berjalan",
+        "i-sapi": "sapi sedang berjalan",
+        "i-gajah": "gajah sedang berjalan"
       },
       "en": {
         "judul": "Fins, Wings, or Legs?",
-        "instruksi": "Look at the animal's body: put it on the shelf that matches how it moves.",
+        "instruksi": "Listen to the movement. Pick the body part the animal uses.",
         "sirip": "fins",
         "sayap": "wings",
         "kaki": "legs",
-        "i-ikan": "fish",
-        "i-hiu": "shark",
-        "i-lumba": "dolphin",
-        "i-kupu": "butterfly",
-        "i-lebah": "bee",
-        "i-kelelawar": "bat",
-        "i-kucing": "cat",
-        "i-sapi": "cow",
-        "i-gajah": "elephant"
+        "i-ikan": "A fish is swimming",
+        "i-hiu": "A shark is swimming",
+        "i-lumba": "A dolphin is swimming",
+        "i-kupu": "A butterfly is flying",
+        "i-lebah": "A bee is flying",
+        "i-kelelawar": "A bat is flying",
+        "i-kucing": "A cat is walking",
+        "i-sapi": "A cow is walking",
+        "i-gajah": "An elephant is walking"
       }
     },
     "knobs": {
@@ -197382,7 +197397,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 9,
         "default": 6,
         "step": 1,
-        "keterangan": "jumlah hewan per putaran; burung (sayap dan kaki) tidak dipakai"
+        "keterangan": "jumlah hewan per putaran; setiap kartu menyebut satu gerakan"
       }
     },
     "assets": [],
@@ -197394,17 +197409,26 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "sirip",
         "labelKey": "sirip",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sirip-ikan"
+        }
       },
       {
         "id": "kaki",
         "labelKey": "kaki",
-        "emoji": "🐾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kaki-hewan"
+        }
       },
       {
         "id": "sayap",
         "labelKey": "sayap",
-        "emoji": "🪶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sayap"
+        }
       }
     ],
     "items": [
@@ -197738,7 +197762,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-tebak-apung-tenggelam",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -197748,35 +197772,35 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Tebak: Apung atau Tenggelam?",
-        "instruksi": "Sebelum dicoba di air, tebak dulu: taruh benda ke kolom apung atau tenggelam.",
+        "instruksi": "Tebak dulu. Taruh benda di rak apung atau tenggelam.",
         "apung": "terapung",
         "tenggelam": "tenggelam",
         "i-bola": "bola plastik berongga yang tertutup rapat",
         "i-daun": "daun",
         "i-kayu": "balok kayu besar",
-        "i-bebekkaret": "bebek karet",
+        "i-bebekkaret": "mainan bebek karet yang tertutup rapat",
         "i-gabus": "tutup gabus",
         "i-batu": "batu",
         "i-sendok": "sendok logam",
         "i-koin": "koin",
-        "i-kelereng": "kelereng kecil",
-        "i-kunci": "kunci"
+        "i-kelereng": "kelereng kaca kecil",
+        "i-kunci": "kunci logam"
       },
       "en": {
         "judul": "Guess: Float or Sink?",
-        "instruksi": "Before we try it in water, guess first: put each thing in the float or sink column.",
+        "instruksi": "Guess first. Put each thing on the float or sink shelf.",
         "apung": "floats",
         "tenggelam": "sinks",
         "i-bola": "sealed, hollow plastic ball",
         "i-daun": "leaf",
         "i-kayu": "big wooden block",
-        "i-bebekkaret": "rubber duck",
+        "i-bebekkaret": "sealed rubber duck toy",
         "i-gabus": "cork",
         "i-batu": "stone",
         "i-sendok": "metal spoon",
         "i-koin": "coin",
-        "i-kelereng": "little marble",
-        "i-kunci": "key"
+        "i-kelereng": "small glass marble",
+        "i-kunci": "metal key"
       }
     },
     "knobs": {
@@ -197827,24 +197851,30 @@ export const PAKET_RAW: unknown[] = [
         "id": "kayu",
         "labelKey": "i-kayu",
         "bin": "apung",
-        "emoji": "🪵",
-        "scale": 1.5
+        "scale": 1.3,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-balok-kayu"
+        }
       },
       {
         "id": "bebekkaret",
         "labelKey": "i-bebekkaret",
         "bin": "apung",
-        "emoji": "🦆",
-        "color": "#fff176",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bebek-karet-mainan"
+        }
       },
       {
         "id": "gabus",
         "labelKey": "i-gabus",
         "bin": "apung",
-        "scale": 0.5,
-        "shape": "circle",
-        "color": "#d7a86e"
+        "scale": 0.7,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tutup-gabus"
+        }
       },
       {
         "id": "batu",
@@ -197868,9 +197898,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelereng",
         "labelKey": "i-kelereng",
         "bin": "tenggelam",
-        "scale": 0.4,
-        "shape": "circle",
-        "color": "#4fc3f7"
+        "scale": 0.62,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-kaca-padat"
+        }
       },
       {
         "id": "kunci",

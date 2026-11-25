@@ -1,6 +1,6 @@
 {
   "id": "sains-tebak-apung-tenggelam",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,35 +10,35 @@
   "locale": {
     "id": {
       "judul": "Tebak: Apung atau Tenggelam?",
-      "instruksi": "Sebelum dicoba di air, tebak dulu: taruh benda ke kolom apung atau tenggelam.",
+      "instruksi": "Tebak dulu. Taruh benda di rak apung atau tenggelam.",
       "apung": "terapung",
       "tenggelam": "tenggelam",
       "i-bola": "bola plastik berongga yang tertutup rapat",
       "i-daun": "daun",
       "i-kayu": "balok kayu besar",
-      "i-bebekkaret": "bebek karet",
+      "i-bebekkaret": "mainan bebek karet yang tertutup rapat",
       "i-gabus": "tutup gabus",
       "i-batu": "batu",
       "i-sendok": "sendok logam",
       "i-koin": "koin",
-      "i-kelereng": "kelereng kecil",
-      "i-kunci": "kunci"
+      "i-kelereng": "kelereng kaca kecil",
+      "i-kunci": "kunci logam"
     },
     "en": {
       "judul": "Guess: Float or Sink?",
-      "instruksi": "Before we try it in water, guess first: put each thing in the float or sink column.",
+      "instruksi": "Guess first. Put each thing on the float or sink shelf.",
       "apung": "floats",
       "tenggelam": "sinks",
       "i-bola": "sealed, hollow plastic ball",
       "i-daun": "leaf",
       "i-kayu": "big wooden block",
-      "i-bebekkaret": "rubber duck",
+      "i-bebekkaret": "sealed rubber duck toy",
       "i-gabus": "cork",
       "i-batu": "stone",
       "i-sendok": "metal spoon",
       "i-koin": "coin",
-      "i-kelereng": "little marble",
-      "i-kunci": "key"
+      "i-kelereng": "small glass marble",
+      "i-kunci": "metal key"
     }
   },
   "knobs": {
@@ -89,24 +89,30 @@
       "id": "kayu",
       "labelKey": "i-kayu",
       "bin": "apung",
-      "emoji": "🪵",
-      "scale": 1.5
+      "scale": 1.3,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-balok-kayu"
+      }
     },
     {
       "id": "bebekkaret",
       "labelKey": "i-bebekkaret",
       "bin": "apung",
-      "emoji": "🦆",
-      "color": "#fff176",
-      "latar": true
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bebek-karet-mainan"
+      }
     },
     {
       "id": "gabus",
       "labelKey": "i-gabus",
       "bin": "apung",
-      "scale": 0.5,
-      "shape": "circle",
-      "color": "#d7a86e"
+      "scale": 0.7,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tutup-gabus"
+      }
     },
     {
       "id": "batu",
@@ -130,9 +136,11 @@
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "tenggelam",
-      "scale": 0.4,
-      "shape": "circle",
-      "color": "#4fc3f7"
+      "scale": 0.62,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-kaca-padat"
+      }
     },
     {
       "id": "kunci",
