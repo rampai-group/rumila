@@ -1,6 +1,6 @@
 {
   "id": "turus-hewan-lewat-gerbang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Catat Hewan Lewat",
-      "instruksi": "Tiap ada hewan lewat gerbang, sentuh baris hewan itu supaya satu turus tercatat.",
+      "instruksi": "Saat hewan lewat, ketuk barisnya.",
       "kucing": "kucing",
       "bebek": "bebek",
       "kambing": "kambing",
@@ -18,7 +18,7 @@
     },
     "en": {
       "judul": "Tally the Animals",
-      "instruksi": "Each time an animal passes the gate, touch that animal's row so one tally mark is recorded.",
+      "instruksi": "Tap its row each time an animal passes.",
       "kucing": "cat",
       "bebek": "duck",
       "kambing": "goat",
