@@ -19,7 +19,7 @@ import { ILUSTRASI_WARNA_PAUD_IDS, IlustrasiWarnaPaud } from "./ilustrasi-warna-
 /** Concrete early-years objects. Each identifier names a visible feature, never an answer state. */
 export const ILUSTRASI_AWAL_IDS = [
   "polong", "anggur", "roda", "keju", "lambung", "gelas", "gelas-silinder", "talenan",
-  "bahan-kayu", "bahan-logam", "bahan-plastik", "bahan-kaca", "jas-hujan", "jaket",
+  "bahan-kayu", "bahan-logam", "bahan-plastik", "bahan-kaca", "akuarium", "kantong-kresek", "perahu-kayu", "jas-hujan", "jaket",
   "pot-jendela", "pot-teras", "pot-lemari", "pot-kotak", "pot-kebun", "pot-gudang", "pot-kolong",
   "bumi-siang", "bumi-malam", "bola-siang", "bola-malam",
   "penyu-laut",
@@ -105,6 +105,41 @@ function PenyuLaut() {
     <circle cx="112" cy="39" r="2.8" fill="#173a3b" stroke="none" />
     <circle cx="112.8" cy="38.2" r=".9" fill="#fff" stroke="none" />
   </g>;
+}
+
+function Akuarium() {
+  return <>
+    <rect x="10" y="12" width="110" height="78" rx="8" fill="#e4f8ff" />
+    <path d="M11 37Q27 31 44 36T79 35T119 37V82Q119 89 112 89H18Q11 89 11 82Z" fill="#99daf0" />
+    <path d="M13 78Q43 70 66 78T117 78V86H13Z" fill="#e7c789" />
+    <path d="M100 81C87 65 96 62 90 57M100 80Q108 70 107 59" fill="none" stroke="#419466" strokeWidth="4" strokeLinecap="round" />
+    <path d="M34 59L20 52V66Z" fill="#d77838" />
+    <ellipse cx="47" cy="59" rx="15" ry="10" fill="#f4a84c" />
+    <circle cx="53" cy="56" r="2.5" fill="#213b53" />
+    <circle cx="61" cy="43" r="3" fill="#edfaff" />
+    <circle cx="69" cy="36" r="2.5" fill="#edfaff" />
+    <path d="M18 27L31 18M102 34L112 26" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
+    <rect x="10" y="12" width="110" height="78" rx="8" fill="none" stroke="#4386a2" strokeWidth="4" />
+  </>;
+}
+
+function KantongKresek() {
+  return <>
+    <path d="M31 40L34 14Q35 9 41 9L48 9Q53 9 54 14L56 30H74L76 14Q77 9 82 9H89Q95 9 96 14L99 40L107 79Q108 91 97 92H33Q22 91 23 79Z" fill="#c2e8f5" fillOpacity=".62" stroke="#4f91ab" strokeWidth="3" strokeLinejoin="round" />
+    <path d="M31 41L40 59L36 83M99 41L90 59L94 83M52 46L56 69M79 52L75 79" fill="none" stroke="#72b6cd" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M42 33L36 52M65 39L61 57M84 73L83 85" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinecap="round" />
+  </>;
+}
+
+function PerahuKayu() {
+  return <>
+    <path d="M9 48Q43 60 119 37L110 64Q105 75 95 80Q54 92 31 78Q20 68 9 48Z" fill="#d79e59" stroke="#754928" strokeWidth="3" strokeLinejoin="round" />
+    <path d="M9 48Q48 24 119 37Q80 59 30 57Z" fill="#a76e3e" stroke="#754928" strokeWidth="3" strokeLinejoin="round" />
+    <path d="M34 45L46 53M76 35L87 43" stroke="#eabd79" strokeWidth="6" strokeLinecap="round" />
+    <path d="M22 63Q62 74 113 51M28 74Q59 83 104 65" fill="none" stroke="#a66a3a" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M79 17L42 74" fill="none" stroke="#754928" strokeWidth="6" strokeLinecap="round" />
+    <path d="M44 67L36 77L29 89Q28 94 34 93L46 84L53 73Z" fill="#efba73" stroke="#754928" strokeWidth="2.5" strokeLinejoin="round" />
+  </>;
 }
 
 const LENGAN_BONEKA = "M48 47Q42 43 36 48L28 56L24 54Q21 53 19 56Q18 59 22 61L16 64Q13 66 15 69L18 70L14 73Q13 76 16 77L20 76Q19 80 23 81Q25 82 28 77Q29 80 32 78L38 67L49 55Z";
@@ -222,7 +257,10 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
     else if(id==="udang-palung")animal=<><path d="M33 31Q90 17 106 49Q113 78 69 84L79 72Q110 59 82 48L39 55Z" fill="#f3d5c4" stroke="#c5988c" strokeWidth="2"/>{[43,55,67,79].map((x,i)=><path key={x} d={`M${x} ${32+i*2}L${x+3} 53M${x+1} 53L${x-7} ${75-i*2}`} fill="none" stroke="#b88981" strokeWidth="2"/>)}<path d="M35 35Q22 15 8 22M36 40Q14 28 5 40" fill="none" stroke="#f9e1cc" strokeWidth="2"/><circle cx="36" cy="39" r="3" fill={INK}/></>;
     else animal=<><path d="M65 7Q38 32 44 54H86Q93 32 65 7Z" fill="#bf706c"/><path d="M43 36L20 51 44 51M87 36L111 51 86 51" fill="#da8e81"/><circle cx="53" cy="58" r="6" fill="#f7e1cf"/><circle cx="77" cy="58" r="6" fill="#f7e1cf"/><circle cx="53" cy="58" r="3" fill={INK}/><circle cx="77" cy="58" r="3" fill={INK}/>{[44,52,60,68,76,84].map((x,i)=><path key={x} d={`M${x} 65Q${x+(i%2?12:-12)} 85 ${x+(i%2?14:-14)} 95`} fill="none" stroke="#d88e82" strokeWidth="5" strokeLinecap="round"/>)}</>;
     art=<><rect width="130" height="100" rx="12" fill={dark}/>{animal}</>;
-  } else if(id.startsWith("ciri-")) {
+  } else if (id === "akuarium") art = <Akuarium />;
+  else if (id === "kantong-kresek") art = <KantongKresek />;
+  else if (id === "perahu-kayu") art = <PerahuKayu />;
+  else if(id.startsWith("ciri-")) {
     const feature=id.slice(5);
     if(feature==="kakiberbulu")art=<><path d="M0 79L130 65V100H0Z" fill="#bde8fa"/><path d="M32 9H78L84 51 104 66 95 84H27L20 66 31 46Z" fill="#f8f4e6" stroke="#b9bdb6" strokeWidth="2"/>{[33,44,55,66,77,88].map(x=><path key={x} d={`M${x} 54l-5 18 7-8-2 17`} fill="none" stroke="#b9bdb6" strokeWidth="2"/>)}<path d="M29 87L110 80" stroke="#72badb" strokeWidth="3"/></>;
     else if(feature==="sayapsirip")art=<><path d="M0 73Q30 62 60 73T130 73V100H0Z" fill="#8ed2e8"/><ellipse cx="64" cy="49" rx="27" ry="40" fill="#243c4f"/><ellipse cx="65" cy="57" rx="17" ry="29" fill="#fff"/><path d="M39 37Q13 42 16 70Q36 66 44 48M89 37Q115 42 112 70Q92 66 84 48" fill="#35576a" stroke="#f7c650" strokeWidth="3"/><circle cx="56" cy="24" r="3" fill="#fff"/><circle cx="73" cy="24" r="3" fill="#fff"/><path d="M59 33H71L65 39Z" fill="#edab49"/></>;
