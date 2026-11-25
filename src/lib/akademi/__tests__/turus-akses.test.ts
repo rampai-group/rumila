@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import { ContentPack } from "@akademi/schema";
 import { buatRondeSimulasi, knobDefaults } from "@akademi/mechanics";
 import { ModeUjianProvider } from "@/components/akademi/mode-ujian";
+import { panggungPadat } from "@/components/akademi/dunia";
 import { PresenterSimulasi } from "@/components/akademi/simulasi";
 import gerbang from "../../../../content/paket/simulasi/turus-hewan-lewat-gerbang.json";
 import kandang from "../../../../content/paket/simulasi/turus-hewan-pulang-kandang.json";
@@ -27,6 +28,8 @@ describe("turus sebelum ronde dimulai", () => {
     const barisHitung = buttons.filter(b => b.includes(baris));
 
     expect(tombolMulai).toBeDefined();
+    expect(panggungPadat(paket)).toBe(true);
+    expect(html).not.toContain(t(paket.instructionKey));
     expect(tombolMulai).not.toContain('disabled=""');
     expect(barisHitung).toHaveLength(3);
     expect(barisHitung.every(b => b.includes('disabled=""'))).toBe(true);
