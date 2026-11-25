@@ -12,7 +12,7 @@ import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { tintaPada } from "@/lib/brand";
 import { PLAY } from "@/lib/catalog";
-import { useEvents } from "@/lib/akademi/jejak";
+import { useEvents, useHariAktif } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, judulPaket, levelAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { terbitkan } from "@/lib/akademi/sertifikat";
 import { alasanKunci } from "@/lib/akademi/akses";
@@ -23,7 +23,7 @@ import { jenjangBerikut, paketMisi, petaDariBukti, type MisiPeta, type PetaJenja
 import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
 import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
-import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, trackMeta } from "./bersama";
+import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, trackMeta } from "./bersama";
 import { labelSisaPenguasaan, tautanRincianPenguasaan } from "./penguasaan";
 import { LatarDunia } from "../latar-dunia";
 import { duniaPaket, type DuniaId } from "@/lib/akademi/tema-dunia";
@@ -44,7 +44,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
     ambilUjian(me.id).catch((e) => console.error("[akademi] ambil ujian gagal", e));
   }, [me.id]);
   const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian, tanggal), [events, level, hasilUjian, tanggal]);
-  const streak = useMemo(() => hitungStreak(events), [events]);
+  const streak = useHariAktif(me.id, tanggal, events);
   const berikut = jenjangBerikut(level, KOMPETENSI);
 
   // Naik jenjang: pangkat tercapai → server menghitung ulang, menerbitkan sertifikat, dan membuka jenjang berikut.
