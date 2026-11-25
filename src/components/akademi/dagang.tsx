@@ -421,10 +421,11 @@ function Nampan({ uang, onAmbil, bahasa, disabled, judul = "Nampan", sorot, koso
 /** Harga: "koin" → deretan 🪙 sebanyak harga/1000 ; "rupiah" → Rp besar + emoji barang. */
 function Harga({ harga, priceLabel, barang }: { harga: number; priceLabel: RondeDagang["priceLabel"]; barang: VisualSpec[] }) {
   const koin = Math.max(0, Math.round(harga / KOIN));
-  const sk = useSk();
+  const { skala: sk, w } = usePanggung();
+  const ringkas = w > 0 && w < 300;
   return (
     <div className="flex flex-wrap items-center gap-2 rounded-[18px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}>
-      {barang.slice(0, 3).map((v, k) => <Benda key={k} v={v} size={Math.round(44 * sk)} />)}
+      {barang.slice(0, 3).map((v, k) => <Benda key={k} v={v} size={Math.round((ringkas && v.adegan ? 33 : 44) * sk)} />)}
       <span aria-hidden style={{ ...Tebal, fontSize: 22 * sk }}>=</span>
       {priceLabel === "koin" ? (
         <span className="flex flex-wrap items-center gap-0.5" aria-label={`${koin} koin`}>
