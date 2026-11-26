@@ -322459,7 +322459,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-algoritma-di-kota",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -322809,7 +322809,7 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🐠",
             "adegan": {
               "jenis": "tanda",
-              "tanda": "🫳"
+              "tanda": "⬇️"
             }
           },
           {

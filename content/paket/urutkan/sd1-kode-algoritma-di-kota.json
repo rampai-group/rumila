@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-di-kota",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -350,7 +350,7 @@
           "emoji": "🐠",
           "adegan": {
             "jenis": "tanda",
-            "tanda": "🫳"
+            "tanda": "⬇️"
           }
         },
         {
