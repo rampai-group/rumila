@@ -1,0 +1,3142 @@
+{
+  "device": "hp",
+  "mechanic": "pilah",
+  "slug": "sd1-kode-ya-tidak-roda",
+  "seed": "3a03bd4e-8dde-4e9d-ad01-000000000007",
+  "rounds": [
+    {
+      "i": 1,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.338,
+        "fullViewportBlankBelowRatio": 0.289,
+        "fullViewportBlankBelowPx": 244,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          600.1
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          594.1
+        ],
+        "textButtons": [
+          [
+            "kano",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "papan luncur",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "bus",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "perahu layar",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "balon",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "mobil",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              376,
+              175,
+              446.1
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              376,
+              356,
+              446.1
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "car",
+        "bus",
+        "skateboard",
+        "sailboat",
+        "canoe",
+        "balloon"
+      ],
+      "itemLabels": [
+        "mobil",
+        "bus",
+        "papan luncur",
+        "perahu layar",
+        "kano",
+        "balon"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 36,
+          "blankBelowRatio": 0.074,
+          "fullViewportBlankBelowRatio": 0.233,
+          "fullViewportBlankBelowPx": 197,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            647
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            641
+          ],
+          "textButtons": [
+            [
+              "balon",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil papan luncur dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil bus dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "Ambil mobil dari ya",
+              [
+                82.5,
+                561,
+                126.5,
+                605
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil kano dari tidak",
+              [
+                238.5,
+                511,
+                282.5,
+                555
+              ]
+            ],
+            [
+              "Ambil perahu layar dari tidak",
+              [
+                288.5,
+                511,
+                332.5,
+                555
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "car",
+          "label": "mobil",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚗"
+        },
+        {
+          "id": "bus",
+          "label": "bus",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚌"
+        },
+        {
+          "id": "skateboard",
+          "label": "papan luncur",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛹"
+        },
+        {
+          "id": "sailboat",
+          "label": "perahu layar",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "⛵"
+        },
+        {
+          "id": "canoe",
+          "label": "kano",
+          "bin": "tidak",
+          "art": {
+            "variant": "pilot-bumi-kano",
+            "bounds": [
+              39.265625,
+              166.390625,
+              112.0625,
+              222.390625
+            ],
+            "card": [
+              20,
+              158.390625,
+              131.328125,
+              251.1875
+            ],
+            "fits": true
+          }
+        },
+        {
+          "id": "balloon",
+          "label": "balon",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🎈"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 6
+      }
+    },
+    {
+      "i": 2,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.338,
+        "fullViewportBlankBelowRatio": 0.289,
+        "fullViewportBlankBelowPx": 244,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          600.1
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          594.1
+        ],
+        "textButtons": [
+          [
+            "tangga",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "truk",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "kursi kayu",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "troli belanja",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "skuter",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "payung",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              376,
+              175,
+              446.1
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              376,
+              356,
+              446.1
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "scooter",
+        "shopping-cart",
+        "truck",
+        "wooden-chair",
+        "ladder",
+        "umbrella"
+      ],
+      "itemLabels": [
+        "skuter",
+        "troli belanja",
+        "truk",
+        "kursi kayu",
+        "tangga",
+        "payung"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 36,
+          "blankBelowRatio": 0.074,
+          "fullViewportBlankBelowRatio": 0.233,
+          "fullViewportBlankBelowPx": 197,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            647
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            641
+          ],
+          "textButtons": [
+            [
+              "payung",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil truk dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil troli belanja dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "Ambil skuter dari ya",
+              [
+                82.5,
+                561,
+                126.5,
+                605
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil tangga dari tidak",
+              [
+                238.5,
+                511,
+                282.5,
+                555
+              ]
+            ],
+            [
+              "Ambil kursi kayu dari tidak",
+              [
+                288.5,
+                511,
+                332.5,
+                555
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "scooter",
+          "label": "skuter",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛴"
+        },
+        {
+          "id": "shopping-cart",
+          "label": "troli belanja",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛒"
+        },
+        {
+          "id": "truck",
+          "label": "truk",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚚"
+        },
+        {
+          "id": "wooden-chair",
+          "label": "kursi kayu",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪑"
+        },
+        {
+          "id": "ladder",
+          "label": "tangga",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪜"
+        },
+        {
+          "id": "umbrella",
+          "label": "payung",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "☂️"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 6
+      }
+    },
+    {
+      "i": 3,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "mobil",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "sepeda",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "layang-layang",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "balon",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "truk",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "kano",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "perahu layar",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "sailboat",
+        "canoe",
+        "kite",
+        "balloon",
+        "car",
+        "bicycle",
+        "truck"
+      ],
+      "itemLabels": [
+        "perahu layar",
+        "kano",
+        "layang-layang",
+        "balon",
+        "mobil",
+        "sepeda",
+        "truk"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 36,
+          "blankBelowRatio": 0.074,
+          "fullViewportBlankBelowRatio": 0.233,
+          "fullViewportBlankBelowPx": 197,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            647
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            641
+          ],
+          "textButtons": [
+            [
+              "truk",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil mobil dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil sepeda dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil layang-layang dari tidak",
+              [
+                238.5,
+                511,
+                282.5,
+                555
+              ]
+            ],
+            [
+              "Ambil balon dari tidak",
+              [
+                288.5,
+                511,
+                332.5,
+                555
+              ]
+            ],
+            [
+              "Ambil kano dari tidak",
+              [
+                238.5,
+                561,
+                282.5,
+                605
+              ]
+            ],
+            [
+              "Ambil perahu layar dari tidak",
+              [
+                288.5,
+                561,
+                332.5,
+                605
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "sailboat",
+          "label": "perahu layar",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "⛵"
+        },
+        {
+          "id": "canoe",
+          "label": "kano",
+          "bin": "tidak",
+          "art": {
+            "variant": "pilot-bumi-kano",
+            "bounds": [
+              277.921875,
+              267.1875,
+              350.71875,
+              323.1875
+            ],
+            "card": [
+              258.65625,
+              259.1875,
+              369.984375,
+              351.984375
+            ],
+            "fits": true
+          }
+        },
+        {
+          "id": "kite",
+          "label": "layang-layang",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪁"
+        },
+        {
+          "id": "balloon",
+          "label": "balon",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🎈"
+        },
+        {
+          "id": "car",
+          "label": "mobil",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚗"
+        },
+        {
+          "id": "bicycle",
+          "label": "sepeda",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚲"
+        },
+        {
+          "id": "truck",
+          "label": "truk",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚚"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 8
+      }
+    },
+    {
+      "i": 4,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "skuter",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "kursi kayu",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "layang-layang",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "payung",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "tangga",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "troli belanja",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "papan luncur",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "wooden-chair",
+        "ladder",
+        "kite",
+        "umbrella",
+        "scooter",
+        "shopping-cart",
+        "skateboard"
+      ],
+      "itemLabels": [
+        "kursi kayu",
+        "tangga",
+        "layang-layang",
+        "payung",
+        "skuter",
+        "troli belanja",
+        "papan luncur"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 36,
+          "blankBelowRatio": 0.074,
+          "fullViewportBlankBelowRatio": 0.233,
+          "fullViewportBlankBelowPx": 197,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            647
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            641
+          ],
+          "textButtons": [
+            [
+              "papan luncur",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil skuter dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil troli belanja dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil kursi kayu dari tidak",
+              [
+                238.5,
+                511,
+                282.5,
+                555
+              ]
+            ],
+            [
+              "Ambil layang-layang dari tidak",
+              [
+                288.5,
+                511,
+                332.5,
+                555
+              ]
+            ],
+            [
+              "Ambil payung dari tidak",
+              [
+                238.5,
+                561,
+                282.5,
+                605
+              ]
+            ],
+            [
+              "Ambil tangga dari tidak",
+              [
+                288.5,
+                561,
+                332.5,
+                605
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "wooden-chair",
+          "label": "kursi kayu",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪑"
+        },
+        {
+          "id": "ladder",
+          "label": "tangga",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪜"
+        },
+        {
+          "id": "kite",
+          "label": "layang-layang",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪁"
+        },
+        {
+          "id": "umbrella",
+          "label": "payung",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "☂️"
+        },
+        {
+          "id": "scooter",
+          "label": "skuter",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛴"
+        },
+        {
+          "id": "shopping-cart",
+          "label": "troli belanja",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛒"
+        },
+        {
+          "id": "skateboard",
+          "label": "papan luncur",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛹"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 8
+      }
+    },
+    {
+      "i": 5,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "papan luncur",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "perahu layar",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "troli belanja",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "sepeda",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "mobil",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "truk",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "bus",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "car",
+        "bus",
+        "bicycle",
+        "shopping-cart",
+        "skateboard",
+        "truck",
+        "sailboat"
+      ],
+      "itemLabels": [
+        "mobil",
+        "bus",
+        "sepeda",
+        "troli belanja",
+        "papan luncur",
+        "truk",
+        "perahu layar"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 22,
+          "blankBelowRatio": 0.042,
+          "fullViewportBlankBelowRatio": 0.191,
+          "fullViewportBlankBelowPx": 161,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            683
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            677
+          ],
+          "textButtons": [
+            [
+              "perahu layar",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil papan luncur dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil troli belanja dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "Ambil sepeda dari ya",
+              [
+                57.5,
+                561,
+                101.5,
+                605
+              ]
+            ],
+            [
+              "Ambil mobil dari ya",
+              [
+                107.5,
+                561,
+                151.5,
+                605
+              ]
+            ],
+            [
+              "Ambil truk dari ya",
+              [
+                57.5,
+                611,
+                101.5,
+                655
+              ]
+            ],
+            [
+              "Ambil bus dari ya",
+              [
+                107.5,
+                611,
+                151.5,
+                655
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "car",
+          "label": "mobil",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚗"
+        },
+        {
+          "id": "bus",
+          "label": "bus",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚌"
+        },
+        {
+          "id": "bicycle",
+          "label": "sepeda",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚲"
+        },
+        {
+          "id": "shopping-cart",
+          "label": "troli belanja",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛒"
+        },
+        {
+          "id": "skateboard",
+          "label": "papan luncur",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛹"
+        },
+        {
+          "id": "truck",
+          "label": "truk",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚚"
+        },
+        {
+          "id": "sailboat",
+          "label": "perahu layar",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "⛵"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 10
+      }
+    },
+    {
+      "i": 6,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "mobil",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "payung",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "balon",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "tangga",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "kano",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "skuter",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "sepeda",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "canoe",
+        "ladder",
+        "umbrella",
+        "balloon",
+        "car",
+        "bicycle",
+        "scooter"
+      ],
+      "itemLabels": [
+        "kano",
+        "tangga",
+        "payung",
+        "balon",
+        "mobil",
+        "sepeda",
+        "skuter"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 36,
+          "blankBelowRatio": 0.074,
+          "fullViewportBlankBelowRatio": 0.233,
+          "fullViewportBlankBelowPx": 197,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            647
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            641
+          ],
+          "textButtons": [
+            [
+              "skuter",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil mobil dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil sepeda dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil payung dari tidak",
+              [
+                238.5,
+                511,
+                282.5,
+                555
+              ]
+            ],
+            [
+              "Ambil balon dari tidak",
+              [
+                288.5,
+                511,
+                332.5,
+                555
+              ]
+            ],
+            [
+              "Ambil tangga dari tidak",
+              [
+                238.5,
+                561,
+                282.5,
+                605
+              ]
+            ],
+            [
+              "Ambil kano dari tidak",
+              [
+                288.5,
+                561,
+                332.5,
+                605
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "canoe",
+          "label": "kano",
+          "bin": "tidak",
+          "art": {
+            "variant": "pilot-bumi-kano",
+            "bounds": [
+              158.59375,
+              267.1875,
+              231.390625,
+              323.1875
+            ],
+            "card": [
+              139.328125,
+              259.1875,
+              250.65625,
+              351.984375
+            ],
+            "fits": true
+          }
+        },
+        {
+          "id": "ladder",
+          "label": "tangga",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪜"
+        },
+        {
+          "id": "umbrella",
+          "label": "payung",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "☂️"
+        },
+        {
+          "id": "balloon",
+          "label": "balon",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🎈"
+        },
+        {
+          "id": "car",
+          "label": "mobil",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚗"
+        },
+        {
+          "id": "bicycle",
+          "label": "sepeda",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚲"
+        },
+        {
+          "id": "scooter",
+          "label": "skuter",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛴"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 10
+      }
+    },
+    {
+      "i": 7,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "papan luncur",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "bus",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "kursi kayu",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "perahu layar",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "skuter",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "troli belanja",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "truk",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "bus",
+        "scooter",
+        "shopping-cart",
+        "skateboard",
+        "truck",
+        "sailboat",
+        "wooden-chair"
+      ],
+      "itemLabels": [
+        "bus",
+        "skuter",
+        "troli belanja",
+        "papan luncur",
+        "truk",
+        "perahu layar",
+        "kursi kayu"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 22,
+          "blankBelowRatio": 0.042,
+          "fullViewportBlankBelowRatio": 0.191,
+          "fullViewportBlankBelowPx": 161,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            683
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            677
+          ],
+          "textButtons": [
+            [
+              "kursi kayu",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil papan luncur dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil bus dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "Ambil skuter dari ya",
+              [
+                57.5,
+                561,
+                101.5,
+                605
+              ]
+            ],
+            [
+              "Ambil troli belanja dari ya",
+              [
+                107.5,
+                561,
+                151.5,
+                605
+              ]
+            ],
+            [
+              "Ambil truk dari ya",
+              [
+                82.5,
+                611,
+                126.5,
+                655
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil perahu layar dari tidak",
+              [
+                263.5,
+                511,
+                307.5,
+                555
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "bus",
+          "label": "bus",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚌"
+        },
+        {
+          "id": "scooter",
+          "label": "skuter",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛴"
+        },
+        {
+          "id": "shopping-cart",
+          "label": "troli belanja",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛒"
+        },
+        {
+          "id": "skateboard",
+          "label": "papan luncur",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛹"
+        },
+        {
+          "id": "truck",
+          "label": "truk",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚚"
+        },
+        {
+          "id": "sailboat",
+          "label": "perahu layar",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "⛵"
+        },
+        {
+          "id": "wooden-chair",
+          "label": "kursi kayu",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪑"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 10
+      }
+    },
+    {
+      "i": 8,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "tangga",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "kano",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "balon",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "layang-layang",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "kursi kayu",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "sepeda",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "troli belanja",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "canoe",
+        "wooden-chair",
+        "ladder",
+        "kite",
+        "balloon",
+        "bicycle",
+        "shopping-cart"
+      ],
+      "itemLabels": [
+        "kano",
+        "kursi kayu",
+        "tangga",
+        "layang-layang",
+        "balon",
+        "sepeda",
+        "troli belanja"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 22,
+          "blankBelowRatio": 0.042,
+          "fullViewportBlankBelowRatio": 0.191,
+          "fullViewportBlankBelowPx": 161,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            683
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            677
+          ],
+          "textButtons": [
+            [
+              "troli belanja",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil sepeda dari ya",
+              [
+                82.5,
+                511,
+                126.5,
+                555
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil tangga dari tidak",
+              [
+                238.5,
+                511,
+                282.5,
+                555
+              ]
+            ],
+            [
+              "Ambil kano dari tidak",
+              [
+                288.5,
+                511,
+                332.5,
+                555
+              ]
+            ],
+            [
+              "Ambil balon dari tidak",
+              [
+                238.5,
+                561,
+                282.5,
+                605
+              ]
+            ],
+            [
+              "Ambil layang-layang dari tidak",
+              [
+                288.5,
+                561,
+                332.5,
+                605
+              ]
+            ],
+            [
+              "Ambil kursi kayu dari tidak",
+              [
+                263.5,
+                611,
+                307.5,
+                655
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "canoe",
+          "label": "kano",
+          "bin": "tidak",
+          "art": {
+            "variant": "pilot-bumi-kano",
+            "bounds": [
+              158.59375,
+              166.390625,
+              231.390625,
+              222.390625
+            ],
+            "card": [
+              139.328125,
+              158.390625,
+              250.65625,
+              251.1875
+            ],
+            "fits": true
+          }
+        },
+        {
+          "id": "wooden-chair",
+          "label": "kursi kayu",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪑"
+        },
+        {
+          "id": "ladder",
+          "label": "tangga",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪜"
+        },
+        {
+          "id": "kite",
+          "label": "layang-layang",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪁"
+        },
+        {
+          "id": "balloon",
+          "label": "balon",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🎈"
+        },
+        {
+          "id": "bicycle",
+          "label": "sepeda",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚲"
+        },
+        {
+          "id": "shopping-cart",
+          "label": "troli belanja",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛒"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 10
+      }
+    },
+    {
+      "i": 9,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "payung",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "truk",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "mobil",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "perahu layar",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "papan luncur",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "skuter",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "bus",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "car",
+        "bus",
+        "scooter",
+        "skateboard",
+        "truck",
+        "sailboat",
+        "umbrella"
+      ],
+      "itemLabels": [
+        "mobil",
+        "bus",
+        "skuter",
+        "papan luncur",
+        "truk",
+        "perahu layar",
+        "payung"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 22,
+          "blankBelowRatio": 0.042,
+          "fullViewportBlankBelowRatio": 0.191,
+          "fullViewportBlankBelowPx": 161,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            683
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            677
+          ],
+          "textButtons": [
+            [
+              "payung",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil truk dari ya",
+              [
+                57.5,
+                511,
+                101.5,
+                555
+              ]
+            ],
+            [
+              "Ambil mobil dari ya",
+              [
+                107.5,
+                511,
+                151.5,
+                555
+              ]
+            ],
+            [
+              "Ambil papan luncur dari ya",
+              [
+                57.5,
+                561,
+                101.5,
+                605
+              ]
+            ],
+            [
+              "Ambil skuter dari ya",
+              [
+                107.5,
+                561,
+                151.5,
+                605
+              ]
+            ],
+            [
+              "Ambil bus dari ya",
+              [
+                82.5,
+                611,
+                126.5,
+                655
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil perahu layar dari tidak",
+              [
+                263.5,
+                511,
+                307.5,
+                555
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "car",
+          "label": "mobil",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚗"
+        },
+        {
+          "id": "bus",
+          "label": "bus",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚌"
+        },
+        {
+          "id": "scooter",
+          "label": "skuter",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛴"
+        },
+        {
+          "id": "skateboard",
+          "label": "papan luncur",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛹"
+        },
+        {
+          "id": "truck",
+          "label": "truk",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚚"
+        },
+        {
+          "id": "sailboat",
+          "label": "perahu layar",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "⛵"
+        },
+        {
+          "id": "umbrella",
+          "label": "payung",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "☂️"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 10
+      }
+    },
+    {
+      "i": 10,
+      "before": {
+        "viewport": [
+          390,
+          844,
+          1
+        ],
+        "verticalScroll": 0,
+        "horizontalScroll": 0,
+        "out": [],
+        "clippedTexts": [],
+        "below": [],
+        "blankBelowCss": 148,
+        "blankBelowRatio": 0.275,
+        "fullViewportBlankBelowRatio": 0.17,
+        "fullViewportBlankBelowPx": 143,
+        "outerPanel": [
+          12,
+          150.4,
+          378,
+          700.9
+        ],
+        "canScroll": false,
+        "stage": [
+          18,
+          156.4,
+          372,
+          694.9
+        ],
+        "textButtons": [
+          [
+            "perahu layar",
+            [
+              20,
+              158.4,
+              131.3,
+              251.2
+            ]
+          ],
+          [
+            "kano",
+            [
+              139.3,
+              158.4,
+              250.7,
+              251.2
+            ]
+          ],
+          [
+            "sepeda",
+            [
+              258.7,
+              158.4,
+              370,
+              251.2
+            ]
+          ],
+          [
+            "troli belanja",
+            [
+              20,
+              259.2,
+              131.3,
+              352
+            ]
+          ],
+          [
+            "layang-layang",
+            [
+              139.3,
+              259.2,
+              250.7,
+              352
+            ]
+          ],
+          [
+            "tangga",
+            [
+              258.7,
+              259.2,
+              370,
+              352
+            ]
+          ],
+          [
+            "kursi kayu",
+            [
+              20,
+              360,
+              131.3,
+              452.8
+            ]
+          ],
+          [
+            "ya",
+            [
+              34,
+              476.8,
+              175,
+              546.9
+            ]
+          ],
+          [
+            "tidak",
+            [
+              215,
+              476.8,
+              356,
+              546.9
+            ]
+          ]
+        ]
+      },
+      "itemIds": [
+        "sailboat",
+        "canoe",
+        "wooden-chair",
+        "ladder",
+        "kite",
+        "bicycle",
+        "shopping-cart"
+      ],
+      "itemLabels": [
+        "perahu layar",
+        "kano",
+        "kursi kayu",
+        "tangga",
+        "layang-layang",
+        "sepeda",
+        "troli belanja"
+      ],
+      "bins": [
+        "ya",
+        "tidak"
+      ],
+      "late": [
+        {
+          "viewport": [
+            390,
+            844,
+            1
+          ],
+          "verticalScroll": 0,
+          "horizontalScroll": 0,
+          "out": [],
+          "clippedTexts": [],
+          "below": [],
+          "blankBelowCss": 22,
+          "blankBelowRatio": 0.042,
+          "fullViewportBlankBelowRatio": 0.191,
+          "fullViewportBlankBelowPx": 161,
+          "outerPanel": [
+            12,
+            150.4,
+            378,
+            683
+          ],
+          "canScroll": false,
+          "stage": [
+            18,
+            156.4,
+            372,
+            677
+          ],
+          "textButtons": [
+            [
+              "troli belanja",
+              [
+                63,
+                158.4,
+                327,
+                398.9
+              ]
+            ],
+            [
+              "ya",
+              [
+                34,
+                422.9,
+                175,
+                493
+              ]
+            ],
+            [
+              "Ambil sepeda dari ya",
+              [
+                82.5,
+                511,
+                126.5,
+                555
+              ]
+            ],
+            [
+              "tidak",
+              [
+                215,
+                422.9,
+                356,
+                493
+              ]
+            ],
+            [
+              "Ambil perahu layar dari tidak",
+              [
+                238.5,
+                511,
+                282.5,
+                555
+              ]
+            ],
+            [
+              "Ambil kano dari tidak",
+              [
+                288.5,
+                511,
+                332.5,
+                555
+              ]
+            ],
+            [
+              "Ambil layang-layang dari tidak",
+              [
+                238.5,
+                561,
+                282.5,
+                605
+              ]
+            ],
+            [
+              "Ambil tangga dari tidak",
+              [
+                288.5,
+                561,
+                332.5,
+                605
+              ]
+            ],
+            [
+              "Ambil kursi kayu dari tidak",
+              [
+                263.5,
+                611,
+                307.5,
+                655
+              ]
+            ]
+          ]
+        }
+      ],
+      "assets": [
+        {
+          "id": "sailboat",
+          "label": "perahu layar",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "⛵"
+        },
+        {
+          "id": "canoe",
+          "label": "kano",
+          "bin": "tidak",
+          "art": {
+            "variant": "pilot-bumi-kano",
+            "bounds": [
+              158.59375,
+              166.390625,
+              231.390625,
+              222.390625
+            ],
+            "card": [
+              139.328125,
+              158.390625,
+              250.65625,
+              251.1875
+            ],
+            "fits": true
+          }
+        },
+        {
+          "id": "wooden-chair",
+          "label": "kursi kayu",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪑"
+        },
+        {
+          "id": "ladder",
+          "label": "tangga",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪜"
+        },
+        {
+          "id": "kite",
+          "label": "layang-layang",
+          "bin": "tidak",
+          "art": null,
+          "emoji": "🪁"
+        },
+        {
+          "id": "bicycle",
+          "label": "sepeda",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🚲"
+        },
+        {
+          "id": "shopping-cart",
+          "label": "troli belanja",
+          "bin": "ya",
+          "art": null,
+          "emoji": "🛒"
+        }
+      ],
+      "drag": [],
+      "score": {
+        "mode": "kelompok",
+        "percobaan": 1,
+        "salah": []
+      },
+      "knobs": {
+        "itemCount": 10
+      }
+    }
+  ],
+  "final": {
+    "outcome": "selesai",
+    "successCount": 10,
+    "failCount": 0,
+    "hintCount": 0,
+    "durationMs": 31382
+  },
+  "errors": []
+}

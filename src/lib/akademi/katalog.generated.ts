@@ -205614,7 +205614,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-cepat-atau-lambat-hangat",
-    "version": "1.0.2",
+    "version": "1.0.4",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -205751,21 +205751,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "genangan",
         "labelKey": "i-genangan",
         "bin": "cepat",
-        "emoji": "💧",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "☀️"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-genangan-terik"
         }
       },
       {
         "id": "genanganteduh",
         "labelKey": "i-genanganteduh",
         "bin": "lambat",
-        "emoji": "💧",
         "color": "#80cbc4",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🌳"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-genangan-teduh"
         }
       },
       {
@@ -205782,11 +205780,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "batugua",
         "labelKey": "i-batugua",
         "bin": "lambat",
-        "emoji": "🪨",
         "color": "#9e9e9e",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🌑"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-batu-gua"
         }
       }
     ],
