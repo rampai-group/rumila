@@ -6,6 +6,7 @@ import { ILUSTRASI_HASIL_PANEN_IDS, IlustrasiHasilPanen } from "./ilustrasi-hasi
 import { ILUSTRASI_HEWAN_PILAH_IDS, IlustrasiHewanPilah } from "./ilustrasi-hewan-pilah";
 import { ILUSTRASI_JENGKAL_SAYUR_IDS, IlustrasiJengkalSayur } from "./ilustrasi-jengkal-sayur";
 import { ILUSTRASI_NAVIGATOR_IDS, IlustrasiNavigator } from "./ilustrasi-navigator";
+import { ILUSTRASI_PILOT_BUMI_IDS, IlustrasiPilotBumi } from "./ilustrasi-pilot-bumi";
 import { ILUSTRASI_PILOT_AKTIVITAS_IDS, IlustrasiPilotAktivitas } from "./ilustrasi-pilot-aktivitas";
 import { ILUSTRASI_PERTUMBUHAN_TANAMAN_IDS, IlustrasiPertumbuhanTanaman } from "./ilustrasi-pertumbuhan-tanaman";
 import { ILUSTRASI_KEADAAN_BENDA_IDS, IlustrasiKeadaanBenda } from "./ilustrasi-keadaan-benda";
@@ -46,6 +47,7 @@ export const ILUSTRASI_AWAL_IDS = [
   ILUSTRASI_JENGKAL_SAYUR_IDS,
   ILUSTRASI_NAVIGATOR_IDS,
   ILUSTRASI_PILOT_AKTIVITAS_IDS,
+  ILUSTRASI_PILOT_BUMI_IDS,
 );
 const dikenal = new Set(ILUSTRASI_AWAL_IDS);
 export const isIlustrasiAwal = (gambar: string) => dikenal.has(gambar);
@@ -207,6 +209,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   else if (ILUSTRASI_WARNA_PAUD_IDS.includes(gambar)) art = <IlustrasiWarnaPaud id={gambar} />;
   else if (ILUSTRASI_JENGKAL_SAYUR_IDS.includes(gambar)) art = <IlustrasiJengkalSayur id={gambar} />;
   else if (ILUSTRASI_NAVIGATOR_IDS.includes(gambar)) art = <IlustrasiNavigator id={gambar} />;
+  else if (ILUSTRASI_PILOT_BUMI_IDS.includes(gambar)) art = <IlustrasiPilotBumi id={gambar} />;
   else if (ILUSTRASI_PILOT_AKTIVITAS_IDS.includes(gambar)) art = <IlustrasiPilotAktivitas id={gambar} />;
   else if (ILUSTRASI_AWAL_SD_IDS.includes(gambar)) art = <IlustrasiAwalSD id={id} />;
   else if (id === "penyu-laut") art = <PenyuLaut />;

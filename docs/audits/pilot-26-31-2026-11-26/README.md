@@ -1,6 +1,6 @@
 # QA lokal Pilot (SD1), Misi 26–31 — 26 November 2026
 
-Worktree terpisah `codex/qa-pilot-misi-26-31`, berawal dari `6de92cca`, disinkronkan ke `6044a55c` (PR #238 dan QA M21–25 dari PR #239). Nomor misi dihitung dengan `petaJenjang` atas kurikulum MAT, KODE, SAINS, bukan urutan nama berkas.
+Worktree terpisah `codex/qa-pilot-misi-26-31`, berawal dari `6de92cca`, disinkronkan ke `262c4255` (PR #238, QA M21–25 dari PR #239, dan QA M32–36 dari PR #241). Nomor misi dihitung dengan `petaJenjang` atas kurikulum MAT, KODE, SAINS, bukan urutan nama berkas.
 
 ## Hasil
 
