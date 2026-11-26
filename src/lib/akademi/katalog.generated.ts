@@ -273635,7 +273635,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-biji-menjelajah-bukit",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -273644,12 +273644,12 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Biji Menjelajah",
-        "instruksi": "Lihat bentuk buah atau bijinya, lalu taruh di cara biji itu tersebar.",
+        "instruksi": "Amati bentuk buah atau biji, lalu pilah cara bijinya tersebar. Buah pletekan matang pecah dan melontarkan bijinya.",
         "b-angin": "terbawa angin",
         "b-hewan": "dibawa hewan",
         "b-air": "terbawa air",
-        "b-letup": "meletup sendiri",
-        "i-meranti": "biji meranti bersayap, berputar saat jatuh",
+        "b-letup": "meletup, biji terlontar",
+        "i-meranti": "buah meranti bersayap, berputar saat jatuh",
         "i-anggrek": "biji anggrek sehalus debu",
         "i-ilalang": "biji ilalang berbulu putih halus",
         "i-tabebuya": "biji tabebuya pipih bersayap tipis",
@@ -273657,34 +273657,34 @@ export const PAKET_RAW: unknown[] = [
         "i-kopi": "buah kopi merah dimakan luwak",
         "i-jarum": "biji rumput jarum berkait, menempel di bulu kambing",
         "i-tupai": "biji kenari disimpan tupai di tanah lalu terlupa",
-        "i-ketapang": "buah ketapang berongga udara, mengapung di laut",
+        "i-ketapang": "buah ketapang berserat, mengapung di laut",
         "i-pandan": "buah pandan laut mengapung terbawa ombak",
         "i-nyamplung": "buah nyamplung bulat mengapung di sungai",
         "i-keben": "buah keben (butun) bergabus, mengapung di laut",
-        "i-pletekan": "buah pletekan pecah sendiri dan melontarkan biji",
+        "i-pletekan": "buah pletekan matang pecah dan melontarkan biji",
         "i-jarak": "buah jarak kering pecah dan melontarkan biji",
         "i-lamtoro": "polong lamtoro kering terbelah dan memuntir"
       },
       "en": {
         "judul": "Seeds on the Move",
-        "instruksi": "Look at the shape of the fruit or seed, then put it with the way it spreads.",
+        "instruksi": "Look at the shape of the fruit or seed, then sort it by how the seeds spread. A ripe popping pod splits and flings out its seeds.",
         "b-angin": "carried by wind",
         "b-hewan": "carried by animals",
         "b-air": "carried by water",
-        "b-letup": "bursts open by itself",
-        "i-meranti": "winged meranti seed that spins as it falls",
+        "b-letup": "fruit bursts and flings seeds",
+        "i-meranti": "winged meranti fruit that spins as it falls",
         "i-anggrek": "orchid seeds as fine as dust",
         "i-ilalang": "cogon grass seed with fine white hairs",
         "i-tabebuya": "flat trumpet-tree seed with thin wings",
         "i-beringin": "small banyan fruit eaten by birds",
         "i-kopi": "red coffee cherry eaten by a civet",
-        "i-jarum": "hooked beggar-tick seed that sticks to goat fur",
+        "i-jarum": "hooked lovegrass seeds that stick to goat fur",
         "i-tupai": "nut buried by a squirrel and then forgotten",
-        "i-ketapang": "sea almond fruit with air pockets, floating at sea",
+        "i-ketapang": "fibrous sea almond fruit that floats at sea",
         "i-pandan": "screwpine fruit floating on the waves",
         "i-nyamplung": "round Alexandrian laurel fruit floating down a river",
         "i-keben": "corky keben (sea poison tree) fruit floating on the sea",
-        "i-pletekan": "popping-pod fruit that bursts by itself and flings its seeds",
+        "i-pletekan": "a ripe popping pod that splits and flings out its seeds",
         "i-jarak": "dry castor fruit that splits and shoots out seeds",
         "i-lamtoro": "dry leucaena pod that splits and twists open"
       }
@@ -273735,31 +273735,46 @@ export const PAKET_RAW: unknown[] = [
         "id": "meranti",
         "labelKey": "i-meranti",
         "bin": "angin",
-        "emoji": "🍂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-meranti"
+        }
       },
       {
         "id": "anggrek",
         "labelKey": "i-anggrek",
         "bin": "angin",
-        "emoji": "✨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-anggrek"
+        }
       },
       {
         "id": "ilalang",
         "labelKey": "i-ilalang",
         "bin": "angin",
-        "emoji": "☁️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-ilalang"
+        }
       },
       {
         "id": "tabebuya",
         "labelKey": "i-tabebuya",
         "bin": "angin",
-        "emoji": "🍃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-tabebuya"
+        }
       },
       {
         "id": "beringin",
         "labelKey": "i-beringin",
         "bin": "hewan",
-        "emoji": "🐦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-beringin"
+        }
       },
       {
         "id": "kopi",
@@ -273774,55 +273789,82 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum",
         "labelKey": "i-jarum",
         "bin": "hewan",
-        "emoji": "🐐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-rumput-berkait"
+        }
       },
       {
         "id": "tupai",
         "labelKey": "i-tupai",
         "bin": "hewan",
-        "emoji": "🐿️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-kenari"
+        }
       },
       {
         "id": "ketapang",
         "labelKey": "i-ketapang",
         "bin": "air",
-        "emoji": "🌰"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-ketapang"
+        }
       },
       {
         "id": "pandan",
         "labelKey": "i-pandan",
         "bin": "air",
-        "emoji": "🍍"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-pandan-laut"
+        }
       },
       {
         "id": "nyamplung",
         "labelKey": "i-nyamplung",
         "bin": "air",
-        "emoji": "🟤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-nyamplung"
+        }
       },
       {
         "id": "keben",
         "labelKey": "i-keben",
         "bin": "air",
-        "emoji": "🌰"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-keben"
+        }
       },
       {
         "id": "pletekan",
         "labelKey": "i-pletekan",
         "bin": "letup",
-        "emoji": "🌺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-pletekan"
+        }
       },
       {
         "id": "jarak",
         "labelKey": "i-jarak",
         "bin": "letup",
-        "emoji": "🥜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-jarak"
+        }
       },
       {
         "id": "lamtoro",
         "labelKey": "i-lamtoro",
         "bin": "letup",
-        "emoji": "🥜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-lamtoro"
+        }
       }
     ],
     "pilihan": []
@@ -275761,7 +275803,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-penyebaran-biji",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-TUMBUHAN.03"
@@ -275770,43 +275812,43 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Biji Bertualang",
-        "instruksi": "Lihat ciri biji atau buahnya, lalu taruh ke cara biji itu tersebar.",
+        "instruksi": "Perhatikan ciri biji atau buah, lalu pilah cara bijinya tersebar. Buah pacar air yang matang pecah saat disentuh dan melontarkan bijinya.",
         "b-angin": "terbawa angin",
         "b-hewan": "dibawa hewan",
         "b-air": "terbawa air",
-        "b-letup": "meletup sendiri",
-        "i-dandelion": "dandelion: biji berparasut halus",
+        "b-letup": "meletup, biji terlontar",
+        "i-dandelion": "buah dandelion berbiji satu dengan rambut seperti parasut",
         "i-mahoni": "biji mahoni bersayap tipis",
         "i-kapuk": "biji kapuk berserabut ringan",
         "i-jambu": "buah jambu manis dimakan kelelawar",
         "i-rumputjarum": "biji rumput berduri pengait, menempel di kaus kaki",
         "i-beri": "buah beri kecil dimakan burung",
         "i-kelapa": "buah kelapa berserabut mengapung di laut",
-        "i-bakau": "buah bakau panjang mengapung di air pasang",
+        "i-bakau": "kecambah bakau yang panjang mengapung saat pasang",
         "i-nipah": "buah nipah mengapung terbawa arus sungai",
-        "i-polong": "polong kacang kering pecah dan melontarkan biji",
+        "i-polong": "polong kacang liar kering pecah dan melontarkan biji",
         "i-karet": "buah karet meletup saat kering",
-        "i-pacarair": "buah pacar air terlontar saat disentuh"
+        "i-pacarair": "buah pacar air matang pecah saat disentuh dan melontarkan biji"
       },
       "en": {
         "judul": "Travelling Seeds",
-        "instruksi": "Look at the seed or fruit, then put it with the way it is spread.",
+        "instruksi": "Look at the seed or fruit and sort it by how the seeds spread. A ripe garden balsam pod bursts when touched and flings out its seeds.",
         "b-angin": "carried by wind",
         "b-hewan": "carried by animals",
         "b-air": "carried by water",
-        "b-letup": "bursts open",
-        "i-dandelion": "dandelion: seeds with fluffy parachutes",
+        "b-letup": "fruit bursts and flings seeds",
+        "i-dandelion": "single-seeded dandelion fruit with a parachute of fine hairs",
         "i-mahoni": "mahogany seed with a thin wing",
         "i-kapuk": "kapok seed with light fluff",
         "i-jambu": "sweet guava eaten by bats",
         "i-rumputjarum": "hooked grass seed that sticks to socks",
         "i-beri": "small berries eaten by birds",
         "i-kelapa": "fibrous coconut floating at sea",
-        "i-bakau": "long mangrove fruit floating on the tide",
+        "i-bakau": "long mangrove seedling floating on the tide",
         "i-nipah": "nipa palm fruit floating down a river",
-        "i-polong": "dry bean pod splits and flings out seeds",
+        "i-polong": "dry wild bean pod splits and flings out seeds",
         "i-karet": "rubber tree fruit bursts when dry",
-        "i-pacarair": "busy lizzie pod bursts when touched"
+        "i-pacarair": "a ripe garden balsam pod bursts when touched and flings out seeds"
       }
     },
     "knobs": {
@@ -275855,31 +275897,46 @@ export const PAKET_RAW: unknown[] = [
         "id": "dandelion",
         "labelKey": "i-dandelion",
         "bin": "angin",
-        "emoji": "🌼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-dandelion"
+        }
       },
       {
         "id": "mahoni",
         "labelKey": "i-mahoni",
         "bin": "angin",
-        "emoji": "🍂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-mahoni"
+        }
       },
       {
         "id": "kapuk",
         "labelKey": "i-kapuk",
         "bin": "angin",
-        "emoji": "☁️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-kapuk"
+        }
       },
       {
         "id": "jambu",
         "labelKey": "i-jambu",
         "bin": "hewan",
-        "emoji": "🦇"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-jambu"
+        }
       },
       {
         "id": "rumputjarum",
         "labelKey": "i-rumputjarum",
         "bin": "hewan",
-        "emoji": "🧦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "biji-rumput-berkait"
+        }
       },
       {
         "id": "beri",
@@ -275891,39 +275948,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelapa",
         "labelKey": "i-kelapa",
         "bin": "air",
-        "emoji": "🥥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-kelapa-utuh"
+        }
       },
       {
         "id": "bakau",
         "labelKey": "i-bakau",
         "bin": "air",
-        "color": "#6d8b3a",
-        "shape": "square",
-        "width": 0.25
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "kecambah-bakau"
+        }
       },
       {
         "id": "nipah",
         "labelKey": "i-nipah",
         "bin": "air",
-        "emoji": "🌴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-nipah"
+        }
       },
       {
         "id": "polong",
         "labelKey": "i-polong",
         "bin": "letup",
-        "emoji": "🥜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-kacang-terbelah"
+        }
       },
       {
         "id": "karet",
         "labelKey": "i-karet",
         "bin": "letup",
-        "emoji": "🌰"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-karet"
+        }
       },
       {
         "id": "pacarair",
         "labelKey": "i-pacarair",
         "bin": "letup",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "buah-pacar-air"
+        }
       }
     ],
     "pilihan": []
