@@ -820,8 +820,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memilah perangkat untuk memasukkan perintah ke komputer dan perangkat untuk mengeluarkan hasil",
-          "en": "I can sort devices that put commands into a computer from devices that give out the results"
+          "id": "Aku bisa memilah perangkat yang mengirim data atau perintah ke komputer dan perangkat yang menyampaikan hasilnya",
+          "en": "I can sort devices that send data or commands to a computer from devices that present its results"
         },
         "depth": [
           "pakai"
@@ -834,7 +834,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "pilah"
         ],
-        "catatan": "Masukan: keyboard, mouse, mikrofon, kamera, layar sentuh dipilih hati-hati (dihindari karena dua-duanya). Keluaran (mengeluarkan hasil berupa gambar, suara, atau cetakan): monitor, speaker, printer, headphone, proyektor. Label kotak memakai \"mengeluarkan hasil\", bukan \"menampilkan hasil\", karena suara dan cetakan tidak ditampilkan. Jebakan: webcam di atas monitor; headphone dengan mikrofon (dihindari). Kode Computer Systems Stage 2 belum ada di kamus; refs kosong. Knob: itemCount 6 → 10."
+        "catatan": "Masukan mengirim data atau perintah ke komputer: keyboard, mouse, mikrofon, dan kamera. Keluaran menyampaikan hasil berupa gambar, suara, atau cetakan: monitor, speaker, printer, headphone, dan proyektor. Layar sentuh dan headset dengan mikrofon dihindari karena dapat menjadi masukan sekaligus keluaran. Kode Computer Systems Stage 2 belum ada di kamus, refs kosong. Knob: itemCount 6 → 10."
       },
       {
         "id": "KODE.SD2.DEKOMPOSISI.01",
@@ -209103,7 +209103,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-masukan-keluaran",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209113,9 +209113,9 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Masuk atau Keluar?",
-        "instruksi": "Perangkat ini memasukkan perintah ke komputer atau mengeluarkan hasilnya? Taruh di kotak yang cocok.",
-        "bin-masuk": "untuk memasukkan",
-        "bin-keluar": "untuk mengeluarkan hasil",
+        "instruksi": "Taruh tiap perangkat di kotak masukan atau keluaran. Perangkat masukan mengirim data atau perintah ke komputer. Perangkat keluaran menyampaikan hasilnya.",
+        "bin-masuk": "masukan",
+        "bin-keluar": "keluaran",
         "i-keyboard": "keyboard",
         "i-mouse": "mouse",
         "i-microphone": "mikrofon",
@@ -209129,9 +209129,9 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "In or Out?",
-        "instruksi": "Does this device put commands into the computer or give out the results? Put it in the right box.",
-        "bin-masuk": "puts information in",
-        "bin-keluar": "gives out the results",
+        "instruksi": "Sort each device into input or output. Input devices send data or commands to the computer. Output devices present its results.",
+        "bin-masuk": "input",
+        "bin-keluar": "output",
         "i-keyboard": "keyboard",
         "i-mouse": "mouse",
         "i-microphone": "microphone",
@@ -209236,7 +209236,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-perangkat-masuk-tampil",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209246,9 +209246,9 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Memasukkan atau Mengeluarkan?",
-        "instruksi": "Di toko elektronik ini, taruh tiap perangkat di kotak memasukkan perintah atau kotak mengeluarkan hasil.",
-        "bin-masuk": "memasukkan perintah",
-        "bin-tampil": "mengeluarkan hasil",
+        "instruksi": "Taruh tiap perangkat di kotak masukan atau keluaran. Perangkat masukan mengirim data atau perintah ke komputer. Perangkat keluaran menyampaikan hasilnya.",
+        "bin-masuk": "masukan",
+        "bin-tampil": "keluaran",
         "i-pena": "pena digital",
         "i-gamepad": "gamepad",
         "i-touchpad": "touchpad laptop",
@@ -209264,9 +209264,9 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Input or Output?",
-        "instruksi": "In this electronics shop, put each device in the box for putting in commands or the box for giving out results.",
-        "bin-masuk": "puts commands in",
-        "bin-tampil": "gives out the results",
+        "instruksi": "Sort each device into input or output. Input devices send data or commands to the computer. Output devices present its results.",
+        "bin-masuk": "input",
+        "bin-tampil": "output",
         "i-pena": "digital pen",
         "i-gamepad": "gamepad",
         "i-touchpad": "laptop touchpad",
@@ -218077,7 +218077,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-alami-atau-buatan-dapur",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218091,7 +218091,7 @@ export const PAKET_RAW: unknown[] = [
         "b-alami": "alami",
         "b-buatan": "buatan manusia",
         "i-bambu": "bambu",
-        "i-rotan": "rotan",
+        "i-rotan": "batang rotan",
         "i-tanahliat": "tanah liat",
         "i-batukali": "batu kali",
         "i-bulu": "bulu ayam",
@@ -218109,7 +218109,7 @@ export const PAKET_RAW: unknown[] = [
         "b-alami": "natural",
         "b-buatan": "made by people",
         "i-bambu": "bamboo",
-        "i-rotan": "rattan",
+        "i-rotan": "rattan cane",
         "i-tanahliat": "clay",
         "i-batukali": "river stone",
         "i-bulu": "chicken feather",
@@ -218161,7 +218161,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rotan",
         "labelKey": "i-rotan",
         "bin": "alami",
-        "emoji": "🧺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rotan-mentah"
+        }
       },
       {
         "id": "tanahliat",
@@ -219350,7 +219353,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -219370,7 +219373,7 @@ export const PAKET_RAW: unknown[] = [
         "i-unta": "unta",
         "i-kalajengking": "kalajengking gurun",
         "i-teratai": "teratai",
-        "i-katak": "katak",
+        "i-katak": "katak di tepi kolam",
         "i-bebek": "bebek",
         "i-monyet": "orang utan",
         "i-pakis": "pakis",
@@ -219395,7 +219398,7 @@ export const PAKET_RAW: unknown[] = [
         "i-unta": "camel",
         "i-kalajengking": "desert scorpion",
         "i-teratai": "water lily",
-        "i-katak": "frog",
+        "i-katak": "frog by the pond",
         "i-bebek": "duck",
         "i-monyet": "orangutan",
         "i-pakis": "fern",
@@ -219485,7 +219488,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "teratai",
         "labelKey": "i-teratai",
         "bin": "kolam",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-susun-bunga-teratai"
+        }
       },
       {
         "id": "katak",
@@ -219573,7 +219579,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-habitat-sekitar-rumah",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -219717,7 +219723,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "teratai",
         "labelKey": "i-teratai",
         "bin": "kolam",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-susun-bunga-teratai"
+        }
       },
       {
         "id": "cacing",

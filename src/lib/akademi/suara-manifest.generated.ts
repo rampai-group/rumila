@@ -5629,6 +5629,7 @@ export const SUARA: Record<string, string> = {
   "Taruh tiap kue di nampan yang bentuknya sama supaya toko rapi.": "/akademi/suara/2343307dd1d9.mp3",
   "Taruh tiap mainan di rak yang bentuknya sama.": "/akademi/suara/3bc96a701722.mp3",
   "Taruh tiap pecahan di rak pecahan yang nilainya sama.": "/akademi/suara/84bc45ea2558.mp3",
+  "Taruh tiap perangkat di kotak masukan atau keluaran. Perangkat masukan mengirim data atau perintah ke komputer. Perangkat keluaran menyampaikan hasilnya.": "/akademi/suara/c28a14761958.mp3",
   "Taruh tiap pertanyaan ke alat ukur yang tepat.": "/akademi/suara/50d0b1841249.mp3",
   "Taruh tiap potongan ke lapisannya: tulang, otot, atau organ. Jantung masuk organ.": "/akademi/suara/7fb06aec263f.mp3",
   "Taruh tiap sayur ke rak bagian tumbuhan asalnya: wortel ke akar, bayam ke daun.": "/akademi/suara/f359cfadb701.mp3",

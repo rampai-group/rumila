@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-alami-atau-buatan-dapur",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -14,7 +14,7 @@
       "b-alami": "alami",
       "b-buatan": "buatan manusia",
       "i-bambu": "bambu",
-      "i-rotan": "rotan",
+      "i-rotan": "batang rotan",
       "i-tanahliat": "tanah liat",
       "i-batukali": "batu kali",
       "i-bulu": "bulu ayam",
@@ -32,7 +32,7 @@
       "b-alami": "natural",
       "b-buatan": "made by people",
       "i-bambu": "bamboo",
-      "i-rotan": "rattan",
+      "i-rotan": "rattan cane",
       "i-tanahliat": "clay",
       "i-batukali": "river stone",
       "i-bulu": "chicken feather",
@@ -84,7 +84,10 @@
       "id": "rotan",
       "labelKey": "i-rotan",
       "bin": "alami",
-      "emoji": "🧺"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-rotan-mentah"
+      }
     },
     {
       "id": "tanahliat",

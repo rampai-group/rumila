@@ -406,6 +406,16 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_GERAK_PILOT,
   ...ILUSTRASI_UKUR_PILOT,
   ...ILUSTRASI_MATAHARI_PILOT,
+  "rotan-mentah": <g {...RINGKAS}>
+    <path d="M19 80Q53 75 96 45M29 91Q69 83 114 57" fill="none" stroke="#7e5d41" strokeWidth="12" />
+    <path d="M19 80Q53 75 96 45M29 91Q69 83 114 57" fill="none" stroke="#dcb57b" strokeWidth="7" />
+    <path d="M13 66Q50 55 84 19" fill="none" stroke="#37624a" strokeWidth="11" />
+    <path d="M13 66Q50 55 84 19" fill="none" stroke="#83a758" strokeWidth="6" />
+    <path d="M36 55L31 47M55 44L49 36M46 73L44 67M68 65L66 58M70 79L67 74M92 70L89 65" fill="none" stroke="#7e5d41" />
+    <path d="M65 34Q66 13 53 9Q52 24 65 34ZM73 27Q91 30 104 17Q88 12 73 27Z" fill="#79a75e" stroke="#3c714c" />
+    <ellipse cx="96" cy="45" rx="4" ry="5" transform="rotate(-27 96 45)" fill="#edcb94" stroke="#7e5d41" />
+    <ellipse cx="114" cy="57" rx="4" ry="5" transform="rotate(-27 114 57)" fill="#edcb94" stroke="#7e5d41" />
+  </g>,
   "lembar-kertas": <g {...RINGKAS} stroke="#8a9baa">
     <path d="M39 15H88L102 28V86H39Z" fill="#dce6ed" />
     <path d="M27 13H77L94 29V82H27Z" fill="#fffdf6" />

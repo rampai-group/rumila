@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-sekitar-rumah",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -144,7 +144,10 @@
       "id": "teratai",
       "labelKey": "i-teratai",
       "bin": "kolam",
-      "emoji": "🌸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tumbuhan-susun-bunga-teratai"
+      }
     },
     {
       "id": "cacing",
