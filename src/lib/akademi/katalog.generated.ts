@@ -13801,7 +13801,7 @@ export const KURIKULUM_RAW = [
           "urutkan",
           "pilah"
         ],
-        "catatan": "Simulasi: Matahari diam di tengah; anak menaruh Bumi pada lintasan besar dan Bulan pada lintasan kecil di sekitar Bumi, lalu menekan jalan. Bukti: kedua benda pada lintasan yang benar (Bulan tidak langsung mengitari Matahari). Umpan balik: bila Bulan ditaruh di lintasan besar, Bulan 'tersesat' jauh dari Bumi. Satu kemampuan: menata susunan pusat–pengiring. Pengaya. Knob: lintasan berlabel bayangan → tanpa bayangan. Varian urutkan: menyusun Matahari, Bumi, Bulan dari tengah ke luar (atau dari luar ke tengah) sesuai susunan pusat–pengiring; urutan ukuran tidak dipakai karena bukan kemampuan ini. [QC 21 Nov 2026] Tanpa kode kerangka di kamus."
+        "catatan": "Pada simulasi, Matahari diletakkan di pusat model; anak menaruh Bumi pada lintasan besar dan Bulan pada lintasan kecil di sekitar Bumi, lalu menekan jalan. Bukti: Bumi mengikuti lintasan di sekeliling Matahari, dan Bulan mengikuti lintasan di sekeliling Bumi. Umpan balik: bila Bulan ditaruh di lintasan besar, Bulan 'tersesat' jauh dari Bumi. Satu kemampuan: menata susunan pusat–pengiring. Pengaya. Knob: lintasan berlabel bayangan → tanpa bayangan. Varian urutkan: menyusun Matahari, Bumi, Bulan dari tengah ke luar (atau dari luar ke tengah) sesuai susunan pusat–pengiring; urutan ukuran tidak dipakai karena bukan kemampuan ini. [QC 21 Nov 2026] Tanpa kode kerangka di kamus."
       },
       {
         "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.03",
@@ -196612,7 +196612,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-siapa-mengitari-siapa",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -196633,7 +196633,7 @@ export const PAKET_RAW: unknown[] = [
         "t-4": "Siapa yang mengitari Bumi?",
         "t-5": "Siapa yang mengitari Matahari sambil membawa Bulan?",
         "t-6": "Matahari sudah di tengah, Bumi di lintasannya. Bola kecil yang berputar di dekat Bumi adalah…",
-        "t-7": "Benda yang diam di tengah dan dikitari Bumi adalah…",
+        "t-7": "Benda di pusat tata surya yang dikelilingi Bumi adalah…",
         "t-8": "Bulan selalu dekat dan mengitari…",
         "t-9": "Lintasan kecil di sekeliling Bumi kita pasang untuk…",
         "t-10": "Lintasan besar di sekeliling Matahari kita pasang untuk…",
@@ -196653,7 +196653,7 @@ export const PAKET_RAW: unknown[] = [
         "t-4": "Who goes around Earth?",
         "t-5": "Who goes around the Sun while taking the Moon along?",
         "t-6": "The Sun is in the middle and Earth is on its path. The small ball circling near Earth is…",
-        "t-7": "The one that stays in the middle while Earth goes around it is…",
+        "t-7": "The object at the centre of the solar system that Earth goes around is…",
         "t-8": "The Moon always stays close to and goes around…",
         "t-9": "The small path around Earth is for…",
         "t-10": "The big path around the Sun is for…",
