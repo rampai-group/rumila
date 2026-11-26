@@ -356,7 +356,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             key={i.id}
             penuh={rakNilaiTempat || rakDobelHp}
             v={visual(i, t)}
-            size={rakDobelHp ? 30 : rakSetengahHp ? Math.min(44, lebarIsi) / skalaLebar(i) : Math.min(gambarTerpasang, lebarIsi - (piktogram ? 8 : 16)) / skalaLebar(i)}
+            size={rakDobelHp ? 30 : Math.min(gambarTerpasang, rakSetengahHp ? lebarIsi / 1.3 : lebarIsi - (piktogram ? 8 : 16)) / skalaLebar(i)}
             keterangan={false}
             ariaLabel={namaAmbil(i, b)}
             disabled={kunci}
