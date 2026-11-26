@@ -302,6 +302,10 @@ async function solve(page, stage, model, i, path, prefix, seen) {
     const marks=await stage.evaluate(el=>['awal','akhir'].map(k=>{const r=el.querySelector('[data-jengkal-'+k+']').getBoundingClientRect();return r.left+r.width/2;}));
     assert.ok(Math.abs(marks[0]-edges[0].left)<1 && Math.abs(marks[1]-edges.at(-1).right)<1,JSON.stringify({marks,edges}));
     await tap(page,stage.getByRole('button',{name:"Angka "+target,exact:true}));
+    if(path) {
+      await item.evaluate(el=>{el.parentElement.parentElement.scrollLeft=el.parentElement.parentElement.scrollWidth;});
+      await page.screenshot({path:path.replace('.png','-ujung-kanan.png'),animations:'disabled'});
+    }
     return {target,edges};
   }
   if(model.mode==='kubus') {
@@ -382,7 +386,7 @@ async function run(browser, device, preset) {
       assert.deepEqual(before.clippedTexts, []);
       const id = prefix + "-" + String(i).padStart(2, "0");
       await page.screenshot({ path: id + "-awal.png", animations: "disabled" });
-      const retainLate = i === 1 || i === 5 || i === 9 || i === limit;
+      const retainLate = model.mode === "jengkal" || i === 1 || i === 5 || i === 9 || i === limit;
       const solution = await solve(page, stage, model, i, retainLate ? id + "-satu-kartu.png" : undefined, prefix, seen);
       const attempted = await event(page, slug + "#" + (i - 1), slug);
       assert.equal(attempted.payload.correct, true, JSON.stringify(attempted.payload.detail));
