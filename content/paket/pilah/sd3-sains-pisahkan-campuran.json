@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-pisahkan-campuran",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,39 +10,39 @@
   "locale": {
     "id": {
       "judul": "Pisahkan Campurannya!",
-      "instruksi": "Dengarkan campurannya, lalu sentuh alat untuk memisahkannya.",
+      "instruksi": "Pilih alat yang cocok. Ayakan kasar untuk dua bahan kering yang berbeda ukuran, magnet untuk besi atau baja, dan kain saring halus untuk ampas di dalam cairan.",
       "pilihan": "pilihan",
-      "i-ayakan": "ayakan",
+      "i-ayakan": "ayakan kasar",
       "i-magnet": "magnet",
-      "i-saring": "kain saring",
+      "i-saring": "kain saring halus",
       "t-kerikil": "Pasir bercampur kerikil.",
       "t-paku": "Paku besi tercampur pasir.",
-      "t-pasirair": "Pasir di dalam segelas air.",
-      "t-klip": "Klip kertas besi bercampur kancing plastik.",
+      "t-pasirair": "Pasir halus dalam air lolos dari ayakan kasar. Alat mana yang dapat menahan pasirnya?",
+      "t-klip": "Klip kertas besi bercampur kancing plastik yang berukuran mirip.",
       "t-kacang": "Kacang merah besar bercampur beras.",
-      "t-teh": "Ampas daun teh di dalam air teh.",
-      "t-serbuk": "Serbuk besi bercampur pasir.",
+      "t-teh": "Ampas teh halus lolos dari ayakan kasar. Alat mana yang dapat menahan ampas dan melewatkan air teh?",
+      "t-serbuk": "Serbuk besi bercampur dengan pasir yang ukuran butirnya mirip.",
       "t-kelereng": "Kelereng bercampur tepung.",
-      "t-lumpur": "Santan bercampur ampas kelapa. Pisahkan ampasnya dari santan.",
+      "t-lumpur": "Ampas kelapa halus lolos dari ayakan kasar. Alat mana yang dapat menahan ampas dan melewatkan santan?",
       "t-jepit": "Jepit rambut besi jatuh ke kotak pasir.",
       "t-batu": "Batu kecil bercampur pasir halus di kebun."
     },
     "en": {
       "judul": "Separate the Mixture!",
-      "instruksi": "Listen to the mixture, then touch the tool that separates it.",
+      "instruksi": "Pick the right tool. Use a coarse sieve for two dry materials of different sizes, a magnet for iron or steel, and a fine cloth filter for bits in a liquid.",
       "pilihan": "choices",
-      "i-ayakan": "sieve",
+      "i-ayakan": "coarse sieve",
       "i-magnet": "magnet",
-      "i-saring": "cloth filter",
+      "i-saring": "fine cloth filter",
       "t-kerikil": "Sand mixed with gravel.",
       "t-paku": "Iron nails mixed into sand.",
-      "t-pasirair": "Sand in a glass of water.",
-      "t-klip": "Steel paper clips mixed with plastic buttons.",
+      "t-pasirair": "Fine sand in water slips through the coarse sieve. Which tool can catch the sand?",
+      "t-klip": "Steel paper clips are mixed with plastic buttons of a similar size.",
       "t-kacang": "Big red beans mixed with rice.",
-      "t-teh": "Tea leaves floating in tea.",
-      "t-serbuk": "Iron filings mixed with sand.",
+      "t-teh": "Fine tea bits slip through the coarse sieve. Which tool can catch the bits and let the tea through?",
+      "t-serbuk": "Iron filings are mixed with sand grains of a similar size.",
       "t-kelereng": "Marbles mixed with flour.",
-      "t-lumpur": "Coconut milk is mixed with pieces of coconut pulp. Separate the pulp from the liquid.",
+      "t-lumpur": "Fine coconut pulp slips through the coarse sieve. Which tool can catch the pulp and let the coconut milk through?",
       "t-jepit": "Steel hair grips dropped in a sandpit.",
       "t-batu": "Small stones mixed with fine garden sand."
     }
@@ -72,8 +72,7 @@
       "id": "ayakan",
       "labelKey": "i-ayakan",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#bcaaa4"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-ayakan-kasar" }
     },
     {
       "id": "magnet",
@@ -85,8 +84,7 @@
       "id": "saring",
       "labelKey": "i-saring",
       "bin": "pilihan",
-      "shape": "square",
-      "color": "#fafafa"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-kain-saring-halus" }
     }
   ],
   "pilihan": [

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-alat-pemisah",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,39 +10,39 @@
   "locale": {
     "id": {
       "judul": "Rak Alat Pemisah",
-      "instruksi": "Taruh tiap campuran ke alat yang bisa memisahkannya.",
-      "b-ayakan": "ayakan",
+      "instruksi": "Cocokkan campurannya. Ayakan kasar untuk dua bahan kering yang berbeda ukuran, magnet untuk besi atau baja, dan kain saring halus untuk ampas di dalam cairan.",
+      "b-ayakan": "ayakan kasar",
       "b-magnet": "magnet",
-      "b-saring": "kain saring",
+      "b-saring": "kain saring halus",
       "i-kerikil": "pasir + kerikil",
       "i-kacang": "beras + kacang merah",
       "i-kelereng": "tepung + kelereng",
       "i-batu": "pasir halus + batu kecil",
-      "i-paku": "manik-manik plastik + mur baja kecil",
-      "i-klip": "kancing plastik + klip baja",
-      "i-serbuk": "pasir + serbuk besi",
-      "i-pasirair": "air + pasir",
-      "i-teh": "air teh + ampas daun teh",
-      "i-lumpur": "air + tanah",
-      "i-kopi": "air + ampas kopi tubruk"
+      "i-paku": "manik plastik + mur baja seukuran",
+      "i-klip": "kancing plastik + klip baja seukuran",
+      "i-serbuk": "pasir + serbuk besi seukuran",
+      "i-pasirair": "air + pasir halus",
+      "i-teh": "air teh + ampas halus",
+      "i-lumpur": "air + butiran tanah halus",
+      "i-kopi": "air + ampas kopi halus"
     },
     "en": {
       "judul": "Separating Tool Shelves",
-      "instruksi": "Put each mixture on the tool that can separate it.",
-      "b-ayakan": "sieve",
+      "instruksi": "Match each mixture to its tool. Use a coarse sieve for two dry materials of different sizes, a magnet for iron or steel, and a fine cloth filter for bits in a liquid.",
+      "b-ayakan": "coarse sieve",
       "b-magnet": "magnet",
-      "b-saring": "cloth filter",
+      "b-saring": "fine cloth filter",
       "i-kerikil": "sand + gravel",
       "i-kacang": "rice + red beans",
       "i-kelereng": "flour + marbles",
       "i-batu": "fine sand + small stones",
-      "i-paku": "plastic beads + small steel nuts",
-      "i-klip": "plastic buttons + steel clips",
-      "i-serbuk": "sand + iron filings",
-      "i-pasirair": "water + sand",
-      "i-teh": "tea + tea leaves",
-      "i-lumpur": "water + soil",
-      "i-kopi": "water + coffee grounds"
+      "i-paku": "plastic beads + steel nuts of similar size",
+      "i-klip": "plastic buttons + steel clips of similar size",
+      "i-serbuk": "sand grains + iron filings of similar size",
+      "i-pasirair": "water + fine sand",
+      "i-teh": "tea + fine tea bits",
+      "i-lumpur": "water + fine soil grains",
+      "i-kopi": "water + fine coffee grounds"
     }
   },
   "knobs": {
@@ -70,8 +70,7 @@
     {
       "id": "ayakan",
       "labelKey": "b-ayakan",
-      "color": "#bcaaa4",
-      "shape": "circle"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-ayakan-kasar" }
     },
     {
       "id": "magnet",
@@ -82,8 +81,7 @@
     {
       "id": "saring",
       "labelKey": "b-saring",
-      "color": "#fafafa",
-      "shape": "square"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-kain-saring-halus" }
     }
   ],
   "items": [
