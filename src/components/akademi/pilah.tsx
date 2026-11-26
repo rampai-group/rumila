@@ -122,6 +122,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const hewanMakanLega = hewanMakan && lebarArea >= 620 && h >= 680;
   const pilahBahan = paket.competencyIds.includes("SAINS.SD1.BAHAN.01");
   const ubahBentuk = paket.competencyIds.includes("SAINS.SD1.BAHAN.04");
+  const dorongTarik = paket.competencyIds.includes("SAINS.SD1.GAYA.01");
   const rakBahan = pilahBahan && bins.length >= 4;
   const rakBahanHp = rakBahan && hp;
   const rakBentukHp = ubahBentuk && bins.length >= 3 && hp;
@@ -250,8 +251,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
 
   const lepasDiAtas = items.filter((i) => !peta[i.id]);
   const satuKartu = lepasDiAtas.length === 1;
-  const satuKartuBahanHp = satuKartu && hp && (kelompokBahan || (ubahBentuk && bins.length === 2));
-  const kartuTerakhirLega = satuKartuBahanHp || (satuKartu && (piktogramLega || rakAngkaLega || rakBahanLega));
+  const satuKartuBesarHp = satuKartu && hp && (kelompokBahan || ((ubahBentuk || dorongTarik) && bins.length === 2));
+  const kartuTerakhirLega = satuKartuBesarHp || (satuKartu && (piktogramLega || rakAngkaLega || rakBahanLega));
   const salah = (i: ItemPilah) => kunci && peta[i.id] !== i.bin;
   const benarBin = (b: BinPilah) => kunci && items.some((i) => peta[i.id] === b.id) && items.filter((i) => peta[i.id] === b.id).every((i) => i.bin === b.id);
   const n = bins.length;
@@ -293,7 +294,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const tinggiBaki = wadahBergambar ? Math.min(satuKartu ? 320 : 204, Math.round(h * (satuKartu ? 0.32 : 0.205)))
     : paritasLega ? Math.min(satuKartu ? 205 : 174, Math.round(h * (satuKartu ? 0.27 : 0.2)))
       : wadahLega || (rakBahanLega && satuKartu) ? Math.min(224, Math.round(h * 0.23))
-        : satuKartuBahanHp ? 152 : piktogramLega ? 172 : rakAngkaLega ? 188 : 84 * sk;
+        : satuKartuBesarHp ? 152 : piktogramLega ? 172 : rakAngkaLega ? 188 : 84 * sk;
   const tinggiIsi = rakAngkaLega ? (n > kapasitasKolom ? Math.min(118, Math.round(h * 0.14 / sk)) : 176)
     : rakDobelHp ? 42 : hewanMakanHp ? 48 : rakAngkaHp || rakHitungHp ? 54 : paritasLega ? Math.min(176, Math.round(h * 0.19 / sk)) : wadahBergambar ? Math.min(152, Math.round(h * 0.17 / sk))
     : wadahLega ? Math.min(220, Math.round(h * 0.22 / sk)) : piktogramLega ? 190 : piktogram || titikLega ? 112 : titikRapat || piringRingkas ? 58 : rakBahanHp || rakBentukHp ? 44 : baris || carroll ? 52 : 84;
