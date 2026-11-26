@@ -51,6 +51,9 @@ function Masuk() {
     router.replace("/beranda");
   };
 
+  // Layar akun punya kerangka layar penuh sendiri (gambar kampus + lembar bawah).
+  if (ready && cloud.status === "noSession") return <AccountStage theme={theme} />;
+
   return (
     <div
       className={`fixed inset-0 z-30 flex overflow-y-auto px-5 ${ready && play ? "bg-[#eef6ff]" : "bg-page"}`}
@@ -70,9 +73,7 @@ function Masuk() {
       ))}
 
       <div className="relative m-auto flex w-full justify-center">
-      {!ready ? null : cloud.status === "noSession" ? (
-        <AccountStage theme={theme} />
-      ) : cloud.status === "noFamily" ? (
+      {!ready ? null : cloud.status === "noFamily" ? (
         <SetupStage theme={theme} email={cloud.email} />
       ) : cloud.status === "error" ? (
         <div className="relative flex max-w-[400px] flex-col items-center gap-3 rounded-[28px] bg-white p-7 text-center">
