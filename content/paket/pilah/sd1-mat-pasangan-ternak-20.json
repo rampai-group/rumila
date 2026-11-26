@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-pasangan-ternak-20",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,12 +80,16 @@
     {
       "id": "genap",
       "labelKey": "b-genap",
-      "emoji": "🥢"
+      "emoji": "🐥",
+      "count": 2,
+      "kolom": 2
     },
     {
       "id": "ganjil",
       "labelKey": "b-ganjil",
-      "emoji": "☝️"
+      "emoji": "🐥",
+      "count": 3,
+      "kolom": 2
     }
   ],
   "items": [
