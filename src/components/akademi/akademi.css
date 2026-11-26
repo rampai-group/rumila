@@ -31,6 +31,54 @@
 /* Kelompok kartu tetap rapat dalam panel yang ditengahkan. */
 .akademi-ruang-panggung:has([data-pilah-tengah], [data-urut-tengah]) { justify-content: safe center; }
 
+/* Rel, sambungan, dan roda memperjelas urutan gerbong dalam satu baris. */
+.akademi-rel-gerbong {
+  position: relative;
+  padding-top: 4px;
+  padding-bottom: 22px;
+}
+.akademi-rel-gerbong::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 2px;
+  height: 10px;
+  border-block: 2px solid #574477;
+  border-radius: 3px;
+  background: repeating-linear-gradient(90deg, transparent 0 9px, #9a80b6 9px 13px);
+  pointer-events: none;
+}
+.akademi-rel-gerbong > div + div::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: 13px;
+  width: 8px;
+  height: 4px;
+  background: #574477;
+  pointer-events: none;
+}
+.akademi-rel-gerbong .akademi-badan-gerbong {
+  border: solid #574477;
+  border-width: 5px 2px 3px;
+  border-radius: 12px 12px 5px 5px;
+}
+.akademi-roda-gerbong {
+  position: absolute;
+  inset: auto 18% -12px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.akademi-roda-gerbong::before,
+.akademi-roda-gerbong::after {
+  content: "";
+  width: clamp(12px, 2.4vw, 19px);
+  aspect-ratio: 1;
+  border: 3px solid #33304f;
+  border-radius: 50%;
+  background: #cab9e0;
+}
+
 /* Peta Petualangan: denyut di titik "kamu di sini" */
 @keyframes akademi-denyut {
   0% { box-shadow: 0 0 0 0 rgba(7, 134, 235, 0.45); }
