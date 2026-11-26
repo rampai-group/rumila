@@ -426,6 +426,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const [terkirim, setTerkirim] = useState(false);
   const tataTumbuhan = paket.id === "sains-perbaiki-tumbuhan-utuh";
   const tanamanTumbuh = paket.id === "sains-perbaiki-tanaman-tumbuh";
+  const kartuPencernaan = paket.id === "sd5-sains-jalan-makanan-perbaiki";
   const tataGerbong = paket.id === "sd1-mat-gerbong-urut-0-20";
   const kartuTumbuhan = tataTumbuhan || tanamanTumbuh;
   const inggris = (kartuTumbuhan || tataGerbong) && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
@@ -493,7 +494,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   // tetap besar dan kata tidak perlu diperkecil/terpotong
   const teksSaja = urutan.every((id) => {
     const l = langkah(id);
-    return !l.emoji && !l.shape && !(kartuTumbuhan && l.adegan);
+    return !l.emoji && !l.shape && !((kartuTumbuhan || kartuPencernaan) && l.adegan);
   });
   const kataPanjang = Math.max(0, ...urutan.flatMap((id) => t(langkah(id).labelKey).split(/\s+/).map((k) => k.length)));
   const duaKolom = layarPendek || tumbuhTablet;
@@ -542,6 +543,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
                   v={visual(langkah(id), t)}
                   ariaLabel={tataGerbong ? (inggris ? `Train car ${t(langkah(id).labelKey)}, position ${i + 1}` : `Gerbong nomor ${t(langkah(id).labelKey)}, posisi ${i + 1}`) : undefined}
                   size={ukuran}
+                  labelPenuh={kartuPencernaan}
                   labelSize={layarPendek ? 12 : batas(14 * sk, sel.s * (kalimatPanjang ? 0.076 : 0.115), 24)}
                   selected={dipilih}
                   right={benar}

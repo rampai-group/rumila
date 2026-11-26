@@ -41,7 +41,10 @@ describe("nama aksesibel kartu urutkan", () => {
 
   it("lebar ilustrasi pada tugas lain tidak dibacakan sebagai panjang", () => {
     const paket = PaketUrutkan.parse(jalanMakanan);
-    const { ronde, t, kartu } = renderKartu(paket, "id", paket.knobs.steps.max);
+    const [urutan] = paket.sequences;
+    const steps = urutan.steps.map((langkah) => ({ ...langkah, width: 0.7 }));
+    const contoh = { ...paket, sequences: [{ ...urutan, steps }] };
+    const { ronde, t, kartu } = renderKartu(contoh, "id", paket.knobs.steps.max);
     expect(ronde.shown.some((s) => s.width !== undefined)).toBe(true);
     expect(kartu.map((k) => k[1])).toEqual(ronde.shown.map((s) => t(s.labelKey)));
   });

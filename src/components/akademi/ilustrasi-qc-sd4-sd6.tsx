@@ -138,16 +138,41 @@ function OtotPaha({ belakang }: { belakang: boolean }) {
   </>;
 }
 
-function LubangAnus() {
+function Kerongkongan() {
   return <>
-    <path d="M33 62V32Q33 21 45 21H86Q97 21 97 32V49Q97 62 84 62H74" fill="none" stroke="#ae7477" strokeWidth="15" strokeLinecap="round" />
-    <path d="M33 62V32Q33 21 45 21H86Q97 21 97 32V49Q97 62 84 62H74" fill="none" stroke="#f2c7c3" strokeWidth="11" strokeLinecap="round" />
-    <path d="M45 18V25M56 18V25M67 18V25M78 18V25M93 31H101M93 43H101M29 34H37M29 46H37M29 58H37" fill="none" stroke="#ca9797" strokeWidth="2" />
-    <path d="M76 56C66 56 59 62 62 71L65 78V85Q69 90 74 85V77L77 70Q80 63 84 62Z" fill="#e79e9e" stroke="#ae7477" strokeWidth="2.3" />
-    <ellipse cx="69.5" cy="85.5" rx="5" ry="2.8" fill="#83475e" />
-    <circle cx="69.5" cy="85.5" r="11" fill="none" stroke="#29768a" strokeWidth="2.3" />
-    <path d="M112 74H95L82 82" fill="none" stroke="#29768a" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M83 77L80 84L88 84" fill="none" stroke="#29768a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M38 17Q42 5 57 7Q76 8 76 28V41L97 53L103 92H27L33 57L54 45V38Q43 39 40 30L35 27Z" fill="#f1e5dc" stroke="#c5b1a8" strokeWidth="2.2" strokeLinejoin="round" />
+    <path d="M66 70Q80 59 87 71Q98 89 78 92Q66 93 62 85Q58 79 50 85" fill="#f2c7c3" stroke="#ae7477" strokeWidth="2.3" strokeLinecap="round" />
+    <path d="M44 27H52Q62 27 62 38V59Q62 67 67 74" fill="none" stroke="#a94b62" strokeWidth="11" strokeLinecap="round" />
+    <path d="M44 27H52Q62 27 62 38V59Q62 67 67 74" fill="none" stroke="#ec929f" strokeWidth="6.5" strokeLinecap="round" />
+  </>;
+}
+
+function UsusHalus() {
+  const lilitan = "M84 16Q79 15 75 20L66 29Q60 34 48 34H42Q33 34 33 41Q33 48 42 48H90Q98 48 98 55Q98 62 90 62H40Q32 62 32 69Q32 76 40 76H82Q90 76 90 83Q90 90 82 90H55";
+  return <>
+    <path d={lilitan} fill="none" stroke="#ac5c6a" strokeWidth="12" strokeLinecap="round" />
+    <path d={lilitan} fill="none" stroke="#f0a9a9" strokeWidth="8" strokeLinecap="round" />
+  </>;
+}
+
+function SaluranBawah({ bagian }: { bagian: "usus" | "rektum" | "anus" }) {
+  const kolon = "M33 62V32Q33 21 45 21H86Q97 21 97 32V49Q97 62 84 62H74";
+  return <>
+    <g opacity={bagian === "rektum" ? 0.52 : 1}>
+      <path d={kolon} fill="none" stroke="#ae7477" strokeWidth="15" strokeLinecap="round" />
+      <path d={kolon} fill="none" stroke={bagian === "usus" ? "#eb929d" : "#f2c7c3"} strokeWidth="11" strokeLinecap="round" />
+      <path d="M45 18V25M56 18V25M67 18V25M78 18V25M93 31H101M93 43H101M29 34H37M29 46H37M29 58H37" fill="none" stroke="#ca9797" strokeWidth="2" />
+    </g>
+    <g opacity={bagian === "usus" ? 0.4 : 1}>
+      <path d="M76 56C66 56 59 62 62 71L65 78V85Q69 90 74 85V77L77 70Q80 63 84 62Z" fill={bagian === "rektum" ? "#eb929d" : "#e79e9e"} stroke="#ae7477" strokeWidth="2.3" />
+      <ellipse cx="69.5" cy="85.5" rx="5" ry="2.8" fill="#83475e" />
+    </g>
+    {bagian === "rektum" && <path d="M54 59H49V80H54" fill="none" stroke="#29768a" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />}
+    {bagian === "anus" && <>
+      <circle cx="69.5" cy="85.5" r="11" fill="none" stroke="#29768a" strokeWidth="2.3" />
+      <path d="M112 74H95L82 82" fill="none" stroke="#29768a" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M83 77L80 84L88 84" fill="none" stroke="#29768a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </>}
   </>;
 }
 
@@ -184,7 +209,11 @@ const ILUSTRASI: Record<string, () => ReactNode> = {
   "qc-sd5-pipa-tembaga": PipaTembaga,
   "qc-sd5-tutup-baja": TutupBaja,
   "qc-sd5-kelereng-kaca": KelerengKaca,
-  "qc-sd5-lubang-anus": LubangAnus,
+  "qc-sd5-kerongkongan": Kerongkongan,
+  "qc-sd5-usus-halus": UsusHalus,
+  "qc-sd5-usus-besar": () => <SaluranBawah bagian="usus" />,
+  "qc-sd5-rektum": () => <SaluranBawah bagian="rektum" />,
+  "qc-sd5-lubang-anus": () => <SaluranBawah bagian="anus" />,
   "qc-sd6-capung": Capung,
 };
 

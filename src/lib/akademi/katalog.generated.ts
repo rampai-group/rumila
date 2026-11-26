@@ -275487,7 +275487,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-pencernaan-hewan-ternak",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.02"
@@ -275571,7 +275571,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "kerongkongan",
         "labelKey": "i-kerongkongan",
         "bin": "pilihan",
-        "emoji": "🔽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-kerongkongan",
+          "t": 0
+        }
       },
       {
         "id": "lambung",
@@ -275587,13 +275591,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "usushalus",
         "labelKey": "i-usushalus",
         "bin": "pilihan",
-        "emoji": "〰️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-usus-halus",
+          "t": 0
+        }
       },
       {
         "id": "ususbesar",
         "labelKey": "i-ususbesar",
         "bin": "pilihan",
-        "emoji": "🌀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-usus-besar",
+          "t": 0
+        }
       },
       {
         "id": "anus",
@@ -277672,7 +277684,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-tugas-organ-cerna",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.02"
@@ -277756,7 +277768,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "kerongkongan",
         "labelKey": "i-kerongkongan",
         "bin": "pilihan",
-        "emoji": "⬇️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-kerongkongan",
+          "t": 0
+        }
       },
       {
         "id": "lambung",
@@ -277772,13 +277788,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "usushalus",
         "labelKey": "i-usushalus",
         "bin": "pilihan",
-        "emoji": "〰️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-usus-halus",
+          "t": 0
+        }
       },
       {
         "id": "ususbesar",
         "labelKey": "i-ususbesar",
         "bin": "pilihan",
-        "emoji": "🌀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-usus-besar",
+          "t": 0
+        }
       },
       {
         "id": "anus",
@@ -358109,7 +358133,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-jalan-makanan-perbaiki",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -358317,7 +358341,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "cerna-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358331,22 +358359,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "cerna-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "cerna-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "cerna-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358366,7 +358401,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "roti-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358380,22 +358419,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "roti-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "roti-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "roti-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358420,7 +358466,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "pisang-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358434,22 +358484,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "pisang-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "pisang-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "pisang-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358474,7 +358531,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "telur-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358488,22 +358549,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "telur-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "telur-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "telur-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358528,7 +358596,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "bayam-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358542,22 +358614,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "bayam-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "bayam-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "bayam-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358586,22 +358665,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "apel-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "apel-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "apel-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358621,7 +358707,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "sate-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358635,22 +358725,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "sate-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "sate-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "sate-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358675,7 +358772,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "jagung-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358689,22 +358790,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "jagung-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "jagung-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "jagung-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358724,7 +358832,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "ikan-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358738,22 +358850,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "ikan-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "ikan-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "ikan-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358778,7 +358897,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "tempe-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358792,22 +358915,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "tempe-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "tempe-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "tempe-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358827,7 +358957,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "kentang-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -358841,22 +358975,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "kentang-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "kentang-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "kentang-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -358873,7 +359014,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-jalan-makanan",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -359081,7 +359222,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "cerna-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359095,22 +359240,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "cerna-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "cerna-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "cerna-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359130,7 +359282,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "roti-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359144,22 +359300,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "roti-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "roti-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "roti-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359184,7 +359347,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "pisang-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359198,22 +359365,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "pisang-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "pisang-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "pisang-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359238,7 +359412,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "telur-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359252,22 +359430,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "telur-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "telur-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "telur-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359292,7 +359477,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "bayam-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359306,22 +359495,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "bayam-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "bayam-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "bayam-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359350,22 +359546,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "apel-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "apel-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "apel-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359385,7 +359588,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "sate-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359399,22 +359606,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "sate-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "sate-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "sate-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359439,7 +359653,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "jagung-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359453,22 +359671,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "jagung-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "jagung-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "jagung-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359488,7 +359713,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "ikan-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359502,22 +359731,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "ikan-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "ikan-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "ikan-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359542,7 +359778,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "tempe-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359556,22 +359796,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "tempe-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "tempe-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "tempe-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
@@ -359591,7 +359838,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kerongkongan",
             "labelKey": "kentang-kerongkongan",
-            "emoji": "⬇️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-kerongkongan",
+              "t": 0
+            }
           },
           {
             "id": "lambung",
@@ -359605,22 +359856,29 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "usushalus",
             "labelKey": "kentang-usushalus",
-            "shape": "rect",
-            "color": "#f48fb1"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-halus",
+              "t": 0
+            }
           },
           {
             "id": "ususbesar",
             "labelKey": "kentang-ususbesar",
-            "shape": "rect",
-            "color": "#ce93d8",
-            "width": 1.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-usus-besar",
+              "t": 0
+            }
           },
           {
             "id": "rektum",
             "labelKey": "kentang-rektum",
-            "shape": "rect",
-            "color": "#a1887f",
-            "width": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-rektum",
+              "t": 0
+            }
           },
           {
             "id": "anus",
