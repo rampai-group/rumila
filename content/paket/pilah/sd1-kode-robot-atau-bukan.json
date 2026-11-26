@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-robot-atau-bukan",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -77,37 +77,55 @@
       "id": "robot-vacuum-cleaner",
       "labelKey": "i-robot-vacuum-cleaner",
       "bin": "robot",
-      "emoji": "🤖"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-vakum"
+      }
     },
     {
       "id": "automatic-factory-arm",
       "labelKey": "i-automatic-factory-arm",
       "bin": "robot",
-      "emoji": "🦾"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-lengan"
+      }
     },
     {
       "id": "parcel-delivery-drone",
       "labelKey": "i-parcel-delivery-drone",
       "bin": "robot",
-      "emoji": "🚁"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-drone"
+      }
     },
     {
       "id": "self-driving-bus",
       "labelKey": "i-self-driving-bus",
       "bin": "robot",
-      "emoji": "🚌"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-bus"
+      }
     },
     {
       "id": "driverless-train",
       "labelKey": "i-driverless-train",
       "bin": "robot",
-      "emoji": "🚇"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-kereta"
+      }
     },
     {
       "id": "restaurant-serving-robot",
       "labelKey": "i-restaurant-serving-robot",
       "bin": "robot",
-      "emoji": "🤖"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-makanan"
+      }
     },
     {
       "id": "teddy-bear",
@@ -137,7 +155,10 @@
       "id": "cardboard-toy-robot",
       "labelKey": "i-cardboard-toy-robot",
       "bin": "bukan",
-      "emoji": "📦"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-kardus"
+      }
     },
     {
       "id": "ordinary-broom",
