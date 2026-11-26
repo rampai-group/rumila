@@ -301,11 +301,11 @@ async function solve(page, stage, model, i, path, prefix, seen) {
     for(let j=1;j<edges.length;j++) assert.ok(Math.abs(edges[j].left-edges[j-1].right)<1,JSON.stringify(edges));
     const marks=await stage.evaluate(el=>['awal','akhir'].map(k=>{const r=el.querySelector('[data-jengkal-'+k+']').getBoundingClientRect();return r.left+r.width/2;}));
     assert.ok(Math.abs(marks[0]-edges[0].left)<1 && Math.abs(marks[1]-edges.at(-1).right)<1,JSON.stringify({marks,edges}));
-    await tap(page,stage.getByRole('button',{name:"Angka "+target,exact:true}));
     if(path) {
       await item.evaluate(el=>{el.parentElement.parentElement.scrollLeft=el.parentElement.parentElement.scrollWidth;});
       await page.screenshot({path:path.replace('.png','-ujung-kanan.png'),animations:'disabled'});
     }
+    await tap(page,stage.getByRole('button',{name:"Angka "+target,exact:true}));
     return {target,edges};
   }
   if(model.mode==='kubus') {

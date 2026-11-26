@@ -1,6 +1,6 @@
 # QA lokal Pilot (SD 1), Misi 37–42
 
-26 November 2026 (Asia/Jakarta). Repo `rampai-group/rumila`; worktree terpisah `/private/tmp/rumila-pilot-m37-42`, branch `codex/qa-pilot-m37-42`, basis awal `origin/main` **6de92cca**.
+[PR #240](https://github.com/rampai-group/rumila/pull/240). 26 November 2026 (Asia/Jakarta). Repo `rampai-group/rumila`; worktree terpisah `/private/tmp/rumila-pilot-m37-42`, branch `codex/qa-pilot-m37-42`, basis awal `origin/main` **6de92cca**.
 
 Nomor berasal dari `petaJenjang({}, new Set(), KOMPETENSI, "SD1", ["MAT", "KODE", "SAINS"])`: total **42**, bukan urutan berkas satu pelajaran. Enam misi terakhir memuat tepat **12 paket utama**.
 
