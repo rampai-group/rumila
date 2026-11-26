@@ -19,7 +19,7 @@ import { COMMON_DEFS } from "@/components/koding/art";
 import { AgamTop } from "@/components/koding/stage";
 import { sfx } from "@/lib/sfx";
 import type { DuniaId } from "@/lib/akademi/tema-dunia";
-import { AksiBawah, usePanggung } from "./dunia";
+import { AksiBawah, navigasiSatuBaris, usePanggung } from "./dunia";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps, bayangKartu } from "./jenis";
 import "@/components/koding/koding.css";
 
@@ -552,9 +552,8 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
     id === "KODE.TKB.PROGRAM-5-8.01" || id === "KODE.TKB.PROGRAM-5-8.02" || id === "KODE.TKB.DEBUG-BANYAK.01",
   );
   const tabletTegakLega = latihanNavigator && pw >= 620 && ph >= 680;
-  const programSatuBaris = ph >= 540 && ronde.execMode === "program" &&
-    grid.h === 1 && !ronde.debug && !modeBendera && !adaMini && palet.length <= 3;
-  const aksiDiPanggung = !mendatar && (tabletTegakLega || programSatuBaris);
+  const programSatuBaris = navigasiSatuBaris(ronde);
+  const aksiDiPanggung = !mendatar && (tabletTegakLega || (programSatuBaris && ph >= 540));
   // program panjang (banyak slot, ulangi, palet > 4 blok): kendali dirapatkan supaya Jalan selalu kelihatan
   const panjang = ronde.execMode === "program" && (!!ronde.debug || slotMaks > 6 || palet.length > 4);
   // Slide Over / jendela sempit: kendali bertumpuk dan membungkus baris, jadi ikut dirapatkan
@@ -641,7 +640,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const kendali = (
     <>
       {/* pesan */}
-      <div className={`rounded-full text-center font-extrabold ${!pesan && (rapat || langsung) ? "sr-only" : ""}`} style={{ minHeight: 28 * skt, fontSize: 17 * skt, color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0, background: "#ffffff", padding: "4px 12px" }} aria-live="polite">
+      <div className={`rounded-full text-center font-extrabold ${!pesan && (rapat || langsung || programSatuBaris) ? "sr-only" : ""}`} style={{ minHeight: 28 * skt, fontSize: 17 * skt, color: hasil ? (hasil.benar ? BENAR : SALAH) : INK, opacity: pesan ? 1 : 0, background: "#ffffff", padding: "4px 12px" }} aria-live="polite">
         {pesan || "·"}
       </div>
 
@@ -766,7 +765,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   }
 
   return (
-    <div className={`flex flex-col gap-3 ${langsung ? "pb-2" : ""} ${aksiDiPanggung ? "flex-1 [justify-content:safe_center]" : ""}`} style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
+    <div className={`flex flex-col gap-3 ${langsung || (programSatuBaris && aksiDiPanggung) ? "pb-2" : ""} ${aksiDiPanggung && !programSatuBaris ? "flex-1 [justify-content:safe_center]" : ""}`} style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
       {peta}
       <div ref={kendaliRef} className={`flex flex-col ${rapat ? "gap-2" : "gap-3"}`}>
         {kendali}

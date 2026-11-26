@@ -5,6 +5,7 @@
 
 import { useRouter } from "next/navigation";
 import type { ContentPack } from "@akademi/schema";
+import type { Ronde, RondeNavigasi } from "@akademi/mechanics";
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { PILAR, TEMA, temaBersih, type BentukWadah, type DuniaId, type Pilar, type Tema } from "@/lib/akademi/tema-dunia";
@@ -166,9 +167,15 @@ export function urutanAngkaRingkas(paket: ContentPack): boolean {
     paket.id === "sd1-mat-loncat-sepuluh";
 }
 
-export function panggungPadat(paket: ContentPack): boolean {
+export function navigasiSatuBaris(ronde: RondeNavigasi): boolean {
+  return ronde.execMode === "program" && ronde.grids.length === 1 && ronde.grids[0].h === 1 &&
+    !ronde.debug && !ronde.commands.includes("bendera") && ronde.commands.length <= 3;
+}
+
+export function panggungPadat(paket: ContentPack, ronde?: Ronde): boolean {
   return paket.mechanic === "pilah" ||
-    (paket.mechanic === "navigasi" && paket.execMode === "langsung") ||
+    (paket.mechanic === "navigasi" && (paket.execMode === "langsung" ||
+      (ronde?.mechanic === "navigasi" && navigasiSatuBaris(ronde.ronde)))) ||
     (paket.mechanic === "dagang" && paket.mode === "subitasi") ||
     (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanAngkaRingkas(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
