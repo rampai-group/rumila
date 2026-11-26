@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-di-kota",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -216,7 +216,11 @@
         {
           "id": "celengan-5",
           "labelKey": "celengan-5",
-          "emoji": "🔓"
+          "emoji": "🐷",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🔓"
+          }
         },
         {
           "id": "celengan-6",
@@ -237,17 +241,26 @@
         {
           "id": "sepeda-1",
           "labelKey": "sepeda-1",
-          "emoji": "⛑️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-helm-sepeda"
+          }
         },
         {
           "id": "sepeda-2",
           "labelKey": "sepeda-2",
-          "emoji": "🪑"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-sepeda-sadel"
+          }
         },
         {
           "id": "sepeda-3",
           "labelKey": "sepeda-3",
-          "emoji": "🦶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-sepeda-pedal"
+          }
         },
         {
           "id": "sepeda-4",
@@ -257,7 +270,10 @@
         {
           "id": "sepeda-5",
           "labelKey": "sepeda-5",
-          "emoji": "✋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-sepeda-rem"
+          }
         },
         {
           "id": "sepeda-6",
@@ -309,12 +325,19 @@
         {
           "id": "ikan-1",
           "labelKey": "ikan-1",
-          "emoji": "🥣"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-pelet-ikan"
+          }
         },
         {
           "id": "ikan-2",
           "labelKey": "ikan-2",
-          "emoji": "🔓"
+          "emoji": "🥣",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🔓"
+          }
         },
         {
           "id": "ikan-3",
@@ -324,7 +347,11 @@
         {
           "id": "ikan-4",
           "labelKey": "ikan-4",
-          "emoji": "🐠"
+          "emoji": "🐠",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🫳"
+          }
         },
         {
           "id": "ikan-5",
@@ -396,7 +423,10 @@
         {
           "id": "tas-4",
           "labelKey": "tas-4",
-          "emoji": "🤐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-tas-ritsleting"
+          }
         },
         {
           "id": "tas-5",
@@ -530,12 +560,19 @@
         {
           "id": "hujan-2",
           "labelKey": "hujan-2",
-          "emoji": "🎒"
+          "emoji": "🎒",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🧥"
+          }
         },
         {
           "id": "hujan-3",
           "labelKey": "hujan-3",
-          "emoji": "🧥"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-jas-hujan"
+          }
         },
         {
           "id": "hujan-4",

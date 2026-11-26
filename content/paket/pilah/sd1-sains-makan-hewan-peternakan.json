@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-makan-hewan-peternakan",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -103,19 +103,28 @@
       "id": "rumput",
       "labelKey": "i-rumput",
       "bin": "sapi",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-rumput-segar"
+      }
     },
     {
       "id": "jerami",
       "labelKey": "i-jerami",
       "bin": "sapi",
-      "emoji": "🌾"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-jerami"
+      }
     },
     {
       "id": "jagung",
       "labelKey": "i-jagung",
       "bin": "ayam",
-      "emoji": "🌽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-jagung-pipil"
+      }
     },
     {
       "id": "cacing",
@@ -139,20 +148,29 @@
       "id": "murbei",
       "labelKey": "i-murbei",
       "bin": "ulat",
-      "emoji": "🍃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-daun-murbei"
+      }
     },
     {
       "id": "kubis",
       "labelKey": "i-kubis",
       "bin": "ulat",
-      "emoji": "🍃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tumbuhan-perbaiki-daun-jeruk"
+      }
     },
     {
       "id": "semanggi",
       "labelKey": "i-semanggi",
       "bin": "sapi",
-      "emoji": "🌿",
-      "color": "#558b2f"
+      "color": "#558b2f",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-rumput-gajah"
+      }
     },
     {
       "id": "nasi",
@@ -170,13 +188,19 @@
       "id": "bungasepatu",
       "labelKey": "i-bungasepatu",
       "bin": "lebah",
-      "emoji": "🌺"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bunga-sepatu"
+      }
     },
     {
       "id": "tulip",
       "labelKey": "i-tulip",
       "bin": "lebah",
-      "emoji": "🌼"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-bunga-kuning"
+      }
     }
   ],
   "pilihan": []

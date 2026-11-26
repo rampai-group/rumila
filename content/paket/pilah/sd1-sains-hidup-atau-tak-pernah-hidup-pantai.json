@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-hidup-atau-tak-pernah-hidup-pantai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -96,20 +96,29 @@
       "id": "penyu",
       "labelKey": "i-penyu",
       "bin": "hidup",
-      "emoji": "🐢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-penyu-laut"
+      }
     },
     {
       "id": "camar",
       "labelKey": "i-camar",
       "bin": "hidup",
-      "emoji": "🐦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-camar"
+      }
     },
     {
       "id": "rumputlaut",
       "labelKey": "i-rumputlaut",
       "bin": "hidup",
-      "emoji": "🌿",
-      "color": "#7cb342"
+      "color": "#7cb342",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-rumput-laut"
+      }
     },
     {
       "id": "ombak",
@@ -145,7 +154,10 @@
       "id": "bolapantai",
       "labelKey": "i-bolapantai",
       "bin": "takpernah",
-      "emoji": "🏐"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-bola-pantai"
+      }
     }
   ],
   "pilihan": []

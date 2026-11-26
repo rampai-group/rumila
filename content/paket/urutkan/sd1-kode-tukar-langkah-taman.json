@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tukar-langkah-taman",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -46,10 +46,10 @@
       "balon-5": "tempel di dinding",
       "balon-6": "pesta dimulai",
       "t-akuarium": "Mengisi akuarium baru",
-      "akuarium-1": "isi ember dengan air",
+      "akuarium-1": "isi ember dengan air yang sudah disiapkan",
       "akuarium-2": "tuang air ke akuarium",
-      "akuarium-3": "tunggu airnya jernih",
-      "akuarium-4": "masukkan ikan",
+      "akuarium-3": "tunggu orang dewasa memastikan air aman",
+      "akuarium-4": "masukkan ikan bersama orang dewasa",
       "akuarium-5": "beri makan ikan",
       "akuarium-6": "ikan memakan pakannya",
       "t-perahu": "Naik perahu di danau",
@@ -127,10 +127,10 @@
       "balon-5": "stick it on the wall",
       "balon-6": "the party starts",
       "t-akuarium": "Filling a new fish tank",
-      "akuarium-1": "fill a bucket with water",
+      "akuarium-1": "fill the bucket with prepared aquarium water",
       "akuarium-2": "pour the water into the tank",
-      "akuarium-3": "wait for the water to clear",
-      "akuarium-4": "put in the fish",
+      "akuarium-3": "wait for an adult to check the water is safe",
+      "akuarium-4": "add the fish with an adult",
       "akuarium-5": "feed the fish",
       "akuarium-6": "the fish eat the food",
       "t-perahu": "Riding a boat on the lake",
@@ -193,32 +193,52 @@
         {
           "id": "telur-1",
           "labelKey": "telur-1",
-          "emoji": "🧴"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-wajan-minyak"
+          }
         },
         {
           "id": "telur-2",
           "labelKey": "telur-2",
-          "emoji": "🔥"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-wajan-panas"
+          }
         },
         {
           "id": "telur-3",
           "labelKey": "telur-3",
-          "emoji": "🥚"
+          "emoji": "🥚",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "↘️"
+          }
         },
         {
           "id": "telur-4",
           "labelKey": "telur-4",
-          "emoji": "⏳"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-wajan-telur"
+          }
         },
         {
           "id": "telur-5",
           "labelKey": "telur-5",
-          "emoji": "🔄"
+          "emoji": "🍳",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "🔄"
+          }
         },
         {
           "id": "telur-6",
           "labelKey": "telur-6",
-          "emoji": "🍽️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-piring-telur"
+          }
         }
       ]
     },
@@ -337,7 +357,10 @@
         {
           "id": "nasi-1",
           "labelKey": "nasi-1",
-          "emoji": "🌾"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-beras"
+          }
         },
         {
           "id": "nasi-2",
@@ -347,12 +370,18 @@
         {
           "id": "nasi-3",
           "labelKey": "nasi-3",
-          "emoji": "🍲"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-penanak-nasi"
+          }
         },
         {
           "id": "nasi-4",
           "labelKey": "nasi-4",
-          "emoji": "🔘"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-tombol-penanak-nasi"
+          }
         },
         {
           "id": "nasi-5",
@@ -414,27 +443,45 @@
         {
           "id": "akuarium-2",
           "labelKey": "akuarium-2",
-          "emoji": "💧"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-isi-akuarium"
+          }
         },
         {
           "id": "akuarium-3",
           "labelKey": "akuarium-3",
-          "emoji": "⏳"
+          "emoji": "💧",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "✅"
+          }
         },
         {
           "id": "akuarium-4",
           "labelKey": "akuarium-4",
-          "emoji": "🐠"
+          "emoji": "🐠",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "↘️"
+          }
         },
         {
           "id": "akuarium-5",
           "labelKey": "akuarium-5",
-          "emoji": "🍤"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "pilot-pelet-ikan"
+          }
         },
         {
           "id": "akuarium-6",
           "labelKey": "akuarium-6",
-          "emoji": "😋"
+          "emoji": "🐠",
+          "adegan": {
+            "jenis": "tanda",
+            "tanda": "•"
+          }
         }
       ]
     },
