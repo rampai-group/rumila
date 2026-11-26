@@ -81,7 +81,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const tanggal = useTanggalAkademi();
   const uji = usePemantapanUji(me.id, level);
   const hasilUjian = useUjian(me.id);
-  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilUjian, tanggal, uji), [events, level, hasilUjian, tanggal, uji]);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilUjian, uji ? new Date() : tanggal, uji), [events, level, hasilUjian, tanggal, uji]);
   const meta = levelMeta(level);
   const jenjangAktif = levelAnak(me.id);
   const tautanLatih = useMemo(() => {

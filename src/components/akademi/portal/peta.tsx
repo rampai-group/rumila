@@ -45,7 +45,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   useEffect(() => {
     ambilUjian(me.id).catch((e) => console.error("[akademi] ambil ujian gagal", e));
   }, [me.id]);
-  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian, tanggal, uji), [events, level, hasilUjian, tanggal, uji]);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian, uji ? new Date() : tanggal, uji), [events, level, hasilUjian, tanggal, uji]);
   const streak = useHariAktif(me.id, tanggal, events);
   const berikut = jenjangBerikut(level, KOMPETENSI);
 

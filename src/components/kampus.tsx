@@ -57,7 +57,7 @@ export function useKelasHariIni(me: Member) {
     ambilUjian(me.id).catch(() => {});
   }, [me.id]);
   const peta = useMemo(
-    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, tanggal, uji),
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, uji ? new Date() : tanggal, uji),
     [events, level, ujian, tanggal, uji],
   );
   const lv = levelMeta(level);

@@ -527,7 +527,7 @@ function Ringkasan({ anak }: { anak: Member }) {
   const lv = levelMeta(level);
   const tanggal = useTanggalAkademi();
   const uji = usePemantapanUji(anak.id, level);
-  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasil, tanggal, uji), [events, level, hasil, tanggal, uji]);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasil, uji ? new Date() : tanggal, uji), [events, level, hasil, tanggal, uji]);
   const seminggu = Date.now() - 7 * 86400_000;
   const pekan = events.filter((e) => Date.parse(e.clientAt) >= seminggu);
   const menit = Math.round(pekan.filter((e) => e.type === "activity_end").reduce((n, e) => n + (Number((e.payload as { durationMs?: number }).durationMs) || 0), 0) / 60000);

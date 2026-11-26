@@ -32,7 +32,7 @@ export function useAksesAkademi(memberId: string): { peta: PetaJenjang; level: L
       .finally(() => setSiap(true));
   }, [memberId]);
   const peta = useMemo(
-    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, tanggal, uji),
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, uji ? new Date() : tanggal, uji),
     [events, level, ujian, tanggal, uji],
   );
   const akses = useMemo(() => (p: ContentPack) => aksesPaket(p, peta, INDEKS, bahasa === "en" ? "en" : "id"), [peta, bahasa]);
