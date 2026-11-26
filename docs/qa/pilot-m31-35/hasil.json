@@ -1,0 +1,677 @@
+[
+  {
+    "paket": "sd1-mat-jam-setengah-pagi",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22978
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 10,
+    "knobs": {
+      "binCount": 10,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 52
+  },
+  {
+    "paket": "sd1-mat-jam-setengah-siang",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23960
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 10,
+    "knobs": {
+      "binCount": 10,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 52
+  },
+  {
+    "paket": "sd1-mat-urutan-bulan",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22204
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 0,
+    "knobs": {
+      "steps": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.017,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-urutan-hari",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21522
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 0,
+    "knobs": {
+      "steps": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.017,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-perbaiki-ulangi-gudang",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 51079
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 7,
+    "kepadatan": 7,
+    "rak": 0,
+    "knobs": {
+      "letak": 2
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.017,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-perbaiki-ulangi",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 48030
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 3,
+    "kepadatan": 7,
+    "rak": 0,
+    "knobs": {
+      "letak": 1,
+      "panjang": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.017,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-sains-air-atau-daratan-dari-pesawat",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22229
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 2,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.211,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-air-atau-daratan",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22389
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "rak": 2,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.211,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-mat-carroll-kuning-bulat",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22114
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 4,
+    "knobs": {
+      "binCount": 4,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.246,
+    "dragCount": 32
+  },
+  {
+    "paket": "sd1-mat-carroll-merah-bulat",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22079
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "rak": 4,
+    "knobs": {
+      "binCount": 4,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.246,
+    "dragCount": 32
+  },
+  {
+    "paket": "sd1-mat-jam-setengah-pagi",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22836
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 10,
+    "knobs": {
+      "binCount": 10,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.077,
+    "dragCount": 52
+  },
+  {
+    "paket": "sd1-mat-jam-setengah-siang",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23970
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 10,
+    "knobs": {
+      "binCount": 10,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.077,
+    "dragCount": 52
+  },
+  {
+    "paket": "sd1-mat-urutan-bulan",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22400
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 0,
+    "knobs": {
+      "steps": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-urutan-hari",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21377
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 0,
+    "knobs": {
+      "steps": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-perbaiki-ulangi-gudang",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 50820
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 4,
+    "kepadatan": 7,
+    "rak": 0,
+    "knobs": {
+      "letak": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-perbaiki-ulangi",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 49516
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 4,
+    "kepadatan": 7,
+    "rak": 0,
+    "knobs": {
+      "letak": 1,
+      "panjang": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-sains-air-atau-daratan-dari-pesawat",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21705
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 2,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-air-atau-daratan",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22949
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "rak": 2,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-mat-carroll-kuning-bulat",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21591
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 4,
+    "knobs": {
+      "binCount": 4,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.279,
+    "dragCount": 32
+  },
+  {
+    "paket": "sd1-mat-carroll-merah-bulat",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22319
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "rak": 4,
+    "knobs": {
+      "binCount": 4,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.279,
+    "dragCount": 32
+  },
+  {
+    "paket": "sd1-mat-jam-setengah-pagi",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23332
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 10,
+    "knobs": {
+      "binCount": 10,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.045,
+    "dragCount": 52
+  },
+  {
+    "paket": "sd1-mat-jam-setengah-siang",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24295
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 10,
+    "knobs": {
+      "binCount": 10,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.045,
+    "dragCount": 52
+  },
+  {
+    "paket": "sd1-mat-urutan-bulan",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21456
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 0,
+    "knobs": {
+      "steps": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-urutan-hari",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22358
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 0,
+    "knobs": {
+      "steps": 5
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-perbaiki-ulangi-gudang",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 48821
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 0,
+    "knobs": {
+      "letak": 2
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-perbaiki-ulangi",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 46599
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 6,
+    "kepadatan": 6,
+    "rak": 0,
+    "knobs": {
+      "letak": 2,
+      "panjang": 6
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-sains-air-atau-daratan-dari-pesawat",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21437
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "rak": 2,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.194,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-air-atau-daratan",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22864
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "rak": 2,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.194,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-mat-carroll-kuning-bulat",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21703
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "rak": 4,
+    "knobs": {
+      "binCount": 4,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.254,
+    "dragCount": 32
+  },
+  {
+    "paket": "sd1-mat-carroll-merah-bulat",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21574
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "rak": 4,
+    "knobs": {
+      "binCount": 4,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.254,
+    "dragCount": 32
+  }
+]
