@@ -765,7 +765,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   }
 
   return (
-    <div className={`flex flex-col gap-3 ${langsung || programSatuBaris ? "pb-2" : ""} ${aksiDiPanggung && !programSatuBaris ? "flex-1 [justify-content:safe_center]" : ""}`} style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
+    <div className={`flex flex-col gap-3 ${langsung || (programSatuBaris && aksiDiPanggung) ? "pb-2" : ""} ${aksiDiPanggung && !programSatuBaris ? "flex-1 [justify-content:safe_center]" : ""}`} style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
       {peta}
       <div ref={kendaliRef} className={`flex flex-col ${rapat ? "gap-2" : "gap-3"}`}>
         {kendali}
