@@ -305321,7 +305321,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-rangkaian-lampu-rumah",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.LISTRIK.01"
@@ -305401,61 +305401,101 @@ export const PAKET_RAW: unknown[] = [
         "id": "seri",
         "labelKey": "i-seri",
         "bin": "pilihan",
-        "emoji": "➰"
+        "emoji": "➰",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "dua-lampu-seri"
+        }
       },
       {
         "id": "paralel",
         "labelKey": "i-paralel",
         "bin": "pilihan",
-        "emoji": "🔀"
+        "emoji": "🔀",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "dua-lampu-paralel"
+        }
       },
       {
         "id": "redup",
         "labelKey": "i-redup",
         "bin": "pilihan",
-        "emoji": "🌑"
+        "emoji": "🌑",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "lampu-lebih-redup"
+        }
       },
       {
         "id": "terang",
         "labelKey": "i-terang",
         "bin": "pilihan",
-        "emoji": "🌕"
+        "emoji": "🌕",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "lampu-lebih-terang"
+        }
       },
       {
         "id": "sama",
         "labelKey": "i-sama",
         "bin": "pilihan",
-        "emoji": "🌗"
+        "emoji": "🌗",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "lampu-sama-terang"
+        }
       },
       {
         "id": "menyala",
         "labelKey": "i-menyala",
         "bin": "pilihan",
-        "emoji": "💡"
+        "emoji": "💡",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "lampu-sama-terang"
+        }
       },
       {
         "id": "padam",
         "labelKey": "i-padam",
         "bin": "pilihan",
-        "emoji": "⚫"
+        "emoji": "⚫",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "lampu-ikut-padam"
+        }
       },
       {
         "id": "duaparalel",
         "labelKey": "i-duaparalel",
         "bin": "pilihan",
-        "emoji": "🔀"
+        "emoji": "🔀",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "dua-lampu-paralel"
+        }
       },
       {
         "id": "duaseri",
         "labelKey": "i-duaseri",
         "bin": "pilihan",
-        "emoji": "➰"
+        "emoji": "➰",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "dua-lampu-seri"
+        }
       },
       {
         "id": "tigaseri",
         "labelKey": "i-tigaseri",
         "bin": "pilihan",
-        "emoji": "🔗"
+        "emoji": "🔗",
+        "adegan": {
+          "jenis": "rangkaian",
+          "varian": "tiga-lampu-seri"
+        }
       }
     ],
     "pilihan": [
