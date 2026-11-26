@@ -109,7 +109,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const terbit = async () => {
     setSibuk(true);
     try {
-      const s = await terbitkan(me.id, level);
+      const s = await terbitkan(me.id, level, uji);
       showToast(s.pending ? "Sertifikat terbit. Akan disinkronkan saat online." : "Sertifikat terbit! 🎓");
     } catch (e) {
       console.error("[akademi] terbitkan sertifikat gagal", e);

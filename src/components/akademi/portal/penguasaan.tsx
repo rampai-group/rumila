@@ -14,8 +14,8 @@ export function labelSisaPenguasaan(sisa: number, bahasa: BahasaAnak): string {
 
 export function labelPemantapanUji(bahasa: BahasaAnak): string {
   return bahasa === "en"
-    ? "For this test profile, Navigator Mastery Practice can be completed on the same day. Each skill requires a new correct answer."
-    : "Profil uji ini bisa menuntaskan Pemantapan Navigator pada tanggal yang sama. Setiap kemampuan memerlukan jawaban benar baru.";
+    ? "For this test profile, Navigator Mastery Practice can be completed on the same day. Each skill requires a new correct answer without hints."
+    : "Profil uji ini bisa menuntaskan Pemantapan Navigator pada tanggal yang sama. Setiap kemampuan memerlukan jawaban benar baru tanpa bantuan.";
 }
 
 function labelSyarat({ jenis, jumlah, target }: RincianPemantapan["syarat"][number], bahasa: BahasaAnak): string {

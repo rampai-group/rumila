@@ -60,7 +60,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
     diminta.current = kunci;
     void (async () => {
       try {
-        await terbitkan(me.id, level);
+        await terbitkan(me.id, level, uji);
       } catch (e) {
         console.error("[akademi] naik jenjang ditolak", e);
         return;
@@ -75,7 +75,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
       } catch {}
       setRayakan({ dari: level, ke: berikut });
     })();
-  }, [peta.lulusJenjang, berikut, me.id, level]);
+  }, [peta.lulusJenjang, berikut, me.id, level, uji]);
 
   const target = peta.sekarang ?? peta.pemantapan;
   const unitAktif = peta.sekarang ? (peta.sekarang.kompetensi.unit.nama[bahasa] ?? peta.sekarang.kompetensi.unit.nama.id) : undefined;

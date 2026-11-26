@@ -18,7 +18,7 @@ import { useCloud } from "@/lib/supabase/family";
 import { eventsAnak } from "./jejak";
 import { pangkat } from "./koleksi";
 import { KOMPETENSI, levelAnak, setLevelAnak } from "./konten";
-import { proyeksi } from "./mastery";
+import { pemantapanUjiAktif, proyeksi, type PemantapanUji } from "./mastery";
 import { jenjangBerikut } from "./peta";
 import { bacaSnapshot, buatKode, snapshotSertifikat, type SnapshotSertifikat } from "./sertifikat-inti";
 
@@ -239,7 +239,7 @@ export class PangkatBelumTercapai extends Error {
  * bila kompetensi inti belum semua dikuasai (menurut perangkat atau menurut server). Bila sudah pernah terbit →
  * mengembalikan yang ada. Lulus = jenjang anak dinaikkan server dan salinan lokal ikut diperbarui.
  */
-export async function terbitkan(memberId: string, level: LevelId): Promise<Sertifikat> {
+export async function terbitkan(memberId: string, level: LevelId, uji?: PemantapanUji): Promise<Sertifikat> {
   const bisaKeServer = useCloud.getState().familyId && UUID.test(memberId);
   const sudah = sertifikatAnak(memberId).find((s) => s.level === level && !s.track && !s.pending);
   if (sudah) {
@@ -250,7 +250,8 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
     return sudah;
   }
 
-  const peng = proyeksi(eventsAnak(memberId), KOMPETENSI);
+  const ujiAktif = bisaKeServer && level === "TKB" && pemantapanUjiAktif(uji, new Date()) ? uji : undefined;
+  const peng = proyeksi(eventsAnak(memberId), KOMPETENSI, ujiAktif);
   const p = pangkat(peng, KOMPETENSI, [level])[0];
   if (!p?.tercapai) throw new PangkatBelumTercapai(level);
 
@@ -272,6 +273,7 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
     if (h.alasan === "belum_ujian") throw new PangkatBelumTercapai(level, "Ujian Akhir belum dikerjakan.");
     if (h.alasan === "jenjang_beda" || h.alasan === "tidak_berhak") throw new Error(`Sertifikat ditolak server: ${h.alasan}`);
   }
+  if (ujiAktif) throw new Error("Sertifikat uji perlu konfirmasi server.");
   // Offline / server penerbit belum aktif / anggota demo: simpan lokal dulu (belum bisa diverifikasi).
   taruhLokal(cadangan);
   return cadangan;
