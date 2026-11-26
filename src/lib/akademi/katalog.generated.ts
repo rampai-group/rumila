@@ -275469,7 +275469,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-pencernaan-hewan-ternak",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.02"
@@ -275559,9 +275559,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "lambung",
         "labelKey": "i-lambung",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#f48fb1",
-        "scale": 0.8
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-lambung",
+          "t": 0
+        }
       },
       {
         "id": "usushalus",
@@ -275579,7 +275581,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "anus",
         "labelKey": "i-anus",
         "bin": "pilihan",
-        "emoji": "⭕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-lubang-anus",
+          "t": 0
+        }
       },
       {
         "id": "mirip",
@@ -277648,7 +277654,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-tugas-organ-cerna",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.02"
@@ -277738,8 +277744,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "lambung",
         "labelKey": "i-lambung",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#ffab91"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-lambung",
+          "t": 0
+        }
       },
       {
         "id": "usushalus",
@@ -277757,7 +277766,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "anus",
         "labelKey": "i-anus",
         "bin": "pilihan",
-        "emoji": "🚽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-lubang-anus",
+          "t": 0
+        }
       },
       {
         "id": "mirip",
@@ -358078,7 +358091,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-jalan-makanan-perbaiki",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -358291,8 +358304,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "cerna-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358317,7 +358333,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "cerna-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358333,8 +358353,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "roti-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358359,7 +358382,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "roti-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358380,8 +358407,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "pisang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358406,7 +358436,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "pisang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358427,8 +358461,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "telur-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358453,7 +358490,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "telur-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358474,8 +358515,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "bayam-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358500,7 +358544,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "bayam-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358511,8 +358559,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "apel-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358537,7 +358588,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "apel-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358553,8 +358608,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "sate-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358579,7 +358637,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "sate-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358600,8 +358662,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "jagung-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358626,7 +358691,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "jagung-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358642,8 +358711,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "ikan-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358668,7 +358740,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "ikan-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358689,8 +358765,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "tempe-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358715,7 +358794,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "tempe-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358731,8 +358814,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "kentang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358757,7 +358843,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "kentang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       }
@@ -358765,7 +358855,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-jalan-makanan",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -358978,8 +359068,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "cerna-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359004,7 +359097,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "cerna-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359020,8 +359117,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "roti-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359046,7 +359146,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "roti-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359067,8 +359171,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "pisang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359093,7 +359200,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "pisang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359114,8 +359225,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "telur-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359140,7 +359254,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "telur-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359161,8 +359279,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "bayam-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359187,7 +359308,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "bayam-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359198,8 +359323,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "apel-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359224,7 +359352,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "apel-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359240,8 +359372,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "sate-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359266,7 +359401,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "sate-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359287,8 +359426,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "jagung-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359313,7 +359455,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "jagung-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359329,8 +359475,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "ikan-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359355,7 +359504,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "ikan-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359376,8 +359529,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "tempe-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359402,7 +359558,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "tempe-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359418,8 +359578,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "kentang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359444,7 +359607,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "kentang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       }
@@ -368367,7 +368534,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-jalur-energi-sawah-perbaiki",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.JARING-MAKANAN.01"
@@ -368601,9 +368768,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "capung",
             "labelKey": "capung-capung",
-            "shape": "rect",
-            "color": "#29b6f6",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd6-capung",
+              "t": 0
+            }
           },
           {
             "id": "katak",
@@ -370534,7 +370703,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-terbentuknya-fosil-perbaiki",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.BATUAN.02"
@@ -370852,9 +371021,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mati",
             "labelKey": "capung-mati",
-            "shape": "rect",
-            "color": "#29b6f6",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd6-capung",
+              "t": 0
+            }
           },
           {
             "id": "timbun",
