@@ -1,0 +1,551 @@
+[
+  {
+    "paket": "sd1-sains-gelinding-luncur-putar",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28061
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "binCount": 3,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 55
+  },
+  {
+    "paket": "sd1-sains-gerak-taman-kota",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26807
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "binCount": 3,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 106
+  },
+  {
+    "paket": "sd1-mat-pilah-sisi-bangun",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27660
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 9
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-sisi-bentuk-kota",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28450
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-datar-atau-ruang",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28398
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-rak-mainan-datar-ruang",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29324
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-kalau-di-dalam-ulangi",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 103310
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "rocks": 2,
+      "panjang": 7
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-kalau-ulangi-sungai",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 120505
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "panjang": 9
+    },
+    "clippedText": 0,
+    "scrollMaks": 1
+  },
+  {
+    "paket": "sd1-sains-berbunyi-atau-diam-jalan",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26918
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-berbunyi-atau-diam",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26908
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-gelinding-luncur-putar",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28347
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "binCount": 3,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-gerak-taman-kota",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27023
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "binCount": 3,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-pilah-sisi-bangun",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28151
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 9
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-sisi-bentuk-kota",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27877
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-datar-atau-ruang",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28471
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-rak-mainan-datar-ruang",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29608
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-kalau-di-dalam-ulangi",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 105460
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "rocks": 2,
+      "panjang": 7
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-kalau-ulangi-sungai",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 115891
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "panjang": 9
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-berbunyi-atau-diam-jalan",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26989
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-berbunyi-atau-diam",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27317
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-gelinding-luncur-putar",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28238
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "binCount": 3,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-gerak-taman-kota",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26825
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "binCount": 3,
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-pilah-sisi-bangun",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27773
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 9
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-sisi-bentuk-kota",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28852
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-datar-atau-ruang",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28464
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-rak-mainan-datar-ruang",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 30039
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-kalau-di-dalam-ulangi",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 105549
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "rocks": 2,
+      "panjang": 7
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-kalau-ulangi-sungai",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 116040
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "panjang": 9
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-berbunyi-atau-diam-jalan",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27018
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-berbunyi-atau-diam",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27209
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0
+  }
+]
