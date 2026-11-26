@@ -340,6 +340,9 @@ function LayarNilai({ h, judul, kembaliKe, latihan, mengirim, galat, onUlang }: 
   const pred = predikat(h.nilai, h.jenis);
   const ujianAkhir = !latihan && SEKALI.has(h.jenis);
   const tamatAkademi = ujianAkhir && !jenjangBerikut(h.level, KOMPETENSI);
+  const pesanLatihan = h.benar === h.total
+    ? "Semua jawaban benar. Nilai latihan tidak disimpan. Kamu bisa mulai Ujian Akhir saat siap."
+    : "Nilai latihan tidak disimpan. Ulangi materi yang masih salah, lalu ikuti Ujian Akhir.";
   return (
     <Bingkai>
       <p className="text-[13px] font-black tracking-[0.12em] text-[#a34a00] uppercase">
@@ -356,7 +359,7 @@ function LayarNilai({ h, judul, kembaliKe, latihan, mengirim, galat, onUlang }: 
       </p>
       <p className="mt-1 text-[15px] font-bold text-[#4a5a75]">
         {latihan
-          ? "Nilai latihan tidak disimpan. Ulangi materi yang masih salah, lalu ikuti Ujian Akhir."
+          ? pesanLatihan
           : ujianAkhir
             ? tamatAkademi ? "Kamu sudah menuntaskan Akademi Rinoya. Nilai ini dicantumkan di sertifikat." : "Ujian Akhir selesai. Nilai ini dicantumkan di sertifikat."
             : h.lulus
