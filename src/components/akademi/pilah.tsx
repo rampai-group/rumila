@@ -112,7 +112,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const rakHitungPilot = paket.id === "sd1-mat-rak-kurang-berapa-sepuluh" || paket.id === "sd1-mat-rak-dobel";
   const rakHitungHp = rakHitungPilot && hp;
   const rakDobelHp = paket.id === "sd1-mat-rak-dobel" && hp;
-  const rakBernomor = rakAngka || rakNilaiTempat;
+  const rakSetengahPiring = paket.id === "sd1-mat-rak-setengah-piring";
+  const rakBernomor = rakAngka || rakNilaiTempat || rakSetengahPiring;
   const rakAngkaHp = rakBernomor && hp;
   const rakAngkaLega = rakBernomor && lebarArea >= 620 && h >= 650;
   const paritas = paket.competencyIds.includes("MAT.SD1.BILANGAN-100.04");
@@ -386,7 +387,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                   penuh
                   v={visual(i, t)}
                   ariaLabel={namaJumlahRak(i) ?? namaPilihan(i, items, t, lang === "en-US")}
-                  size={Math.min(gambarKartu, (lebarKartu - (rakAngka || (paritas && i.count !== undefined) ? 32 : 16)) / skalaLebar(i))}
+                  size={Math.min(gambarKartu, (lebarKartu - (rakAngka || rakSetengahPiring || (paritas && i.count !== undefined) ? 32 : 16)) / skalaLebar(i))}
                   labelSize={Math.round((wadahBergambar ? 19 : wadahLega ? 17 : rakAngkaLega || paritasLega ? 16 : rakBahanHp || hewanMakanHp ? 13 : 14) * Math.min(sk, 1.3))}
                   selected={dipilih}
                   disabled={kunci}

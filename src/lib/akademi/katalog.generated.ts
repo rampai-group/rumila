@@ -203529,7 +203529,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-rak-setengah-piring",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -203611,8 +203611,8 @@ export const PAKET_RAW: unknown[] = [
         "min": 5,
         "max": 10,
         "default": 5,
-        "step": 1,
-        "keterangan": "setengah 1–5 dulu, lalu sampai 10"
+        "step": 2,
+        "keterangan": "rak setengah bertambah 5 → 7 → 9 → 10 dalam satu sesi"
       },
       "itemCount": {
         "min": 4,
