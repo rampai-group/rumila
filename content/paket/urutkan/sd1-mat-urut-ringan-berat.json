@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-urut-ringan-berat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Dari Ringan ke Berat",
-      "instruksi": "Bayangkan mengangkat tiap benda. Susun dari yang paling ringan ke yang paling berat.",
+      "instruksi": "Lihat batang di bawah gambar. Batang lebih panjang berarti benda lebih berat. Susun dari paling ringan ke paling berat.",
       "s-bulu": "bulu",
       "s-pensil": "pensil",
       "s-buku": "buku",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "From Light to Heavy",
-      "instruksi": "Imagine lifting each one. Put them in order from lightest to heaviest.",
+      "instruksi": "Look at the bars below the pictures. A longer bar means a heavier object. Order from lightest to heaviest.",
       "s-bulu": "feather",
       "s-pensil": "pencil",
       "s-buku": "book",
@@ -64,25 +64,49 @@
           "id": "bulu",
           "labelKey": "s-bulu",
           "emoji": "🪶",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🪶"
+          }
         },
         {
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "buku",
           "labelKey": "s-buku",
           "emoji": "📘",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.456,
+            "tanda": "📘"
+          }
         },
         {
           "id": "kucing",
           "labelKey": "s-kucing",
           "emoji": "🐈",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.624,
+            "tanda": "🐈"
+          }
         }
       ]
     },
@@ -94,25 +118,49 @@
           "id": "bulu",
           "labelKey": "s-bulu",
           "emoji": "🪶",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🪶"
+          }
         },
         {
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "sepeda",
           "labelKey": "s-sepeda",
           "emoji": "🚲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.792,
+            "tanda": "🚲"
+          }
         },
         {
           "id": "gajah",
           "labelKey": "s-gajah",
           "emoji": "🐘",
-          "scale": 0.6
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐘"
+          }
         }
       ]
     },
@@ -124,25 +172,49 @@
           "id": "bulu",
           "labelKey": "s-bulu",
           "emoji": "🪶",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🪶"
+          }
         },
         {
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
           "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.708,
+            "tanda": "🍉"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         }
       ]
     },
@@ -154,25 +226,49 @@
           "id": "bulu",
           "labelKey": "s-bulu",
           "emoji": "🪶",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🪶"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
           "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.708,
+            "tanda": "🍉"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         },
         {
           "id": "gajah",
           "labelKey": "s-gajah",
           "emoji": "🐘",
-          "scale": 0.6
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐘"
+          }
         }
       ]
     },
@@ -184,25 +280,49 @@
           "id": "daun",
           "labelKey": "s-daun",
           "emoji": "🍃",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.204,
+            "tanda": "🍃"
+          }
         },
         {
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "kucing",
           "labelKey": "s-kucing",
           "emoji": "🐈",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.624,
+            "tanda": "🐈"
+          }
         },
         {
           "id": "sepeda",
           "labelKey": "s-sepeda",
           "emoji": "🚲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.792,
+            "tanda": "🚲"
+          }
         }
       ]
     },
@@ -214,25 +334,49 @@
           "id": "balon",
           "labelKey": "s-balon",
           "emoji": "🎈",
-          "scale": 1.6
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.288,
+            "tanda": "🎈"
+          }
         },
         {
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "sepeda",
           "labelKey": "s-sepeda",
           "emoji": "🚲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.792,
+            "tanda": "🚲"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         }
       ]
     },
@@ -244,25 +388,49 @@
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "batu-besar",
           "labelKey": "s-batu-besar",
           "emoji": "🪨",
-          "scale": 0.7
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.54,
+            "tanda": "🪨"
+          }
         },
         {
           "id": "sepeda",
           "labelKey": "s-sepeda",
           "emoji": "🚲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.792,
+            "tanda": "🚲"
+          }
         },
         {
           "id": "gajah",
           "labelKey": "s-gajah",
           "emoji": "🐘",
-          "scale": 0.6
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐘"
+          }
         }
       ]
     },
@@ -274,25 +442,49 @@
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "buku",
           "labelKey": "s-buku",
           "emoji": "📘",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.456,
+            "tanda": "📘"
+          }
         },
         {
           "id": "sepeda",
           "labelKey": "s-sepeda",
           "emoji": "🚲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.792,
+            "tanda": "🚲"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         }
       ]
     },
@@ -304,25 +496,49 @@
           "id": "bulu",
           "labelKey": "s-bulu",
           "emoji": "🪶",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🪶"
+          }
         },
         {
           "id": "buku",
           "labelKey": "s-buku",
           "emoji": "📘",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.456,
+            "tanda": "📘"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
           "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.708,
+            "tanda": "🍉"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         }
       ]
     },
@@ -334,25 +550,49 @@
           "id": "daun",
           "labelKey": "s-daun",
           "emoji": "🍃",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.204,
+            "tanda": "🍃"
+          }
         },
         {
           "id": "pensil",
           "labelKey": "s-pensil",
           "emoji": "✏️",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.372,
+            "tanda": "✏️"
+          }
         },
         {
           "id": "kucing",
           "labelKey": "s-kucing",
           "emoji": "🐈",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.624,
+            "tanda": "🐈"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         }
       ]
     },
@@ -364,25 +604,49 @@
           "id": "buku",
           "labelKey": "s-buku",
           "emoji": "📘",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.456,
+            "tanda": "📘"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
           "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.708,
+            "tanda": "🍉"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         },
         {
           "id": "gajah",
           "labelKey": "s-gajah",
           "emoji": "🐘",
-          "scale": 0.6
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐘"
+          }
         }
       ]
     },
@@ -394,25 +658,49 @@
           "id": "daun",
           "labelKey": "s-daun",
           "emoji": "🍃",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.204,
+            "tanda": "🍃"
+          }
         },
         {
           "id": "kucing",
           "labelKey": "s-kucing",
           "emoji": "🐈",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.624,
+            "tanda": "🐈"
+          }
         },
         {
           "id": "sepeda",
           "labelKey": "s-sepeda",
           "emoji": "🚲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.792,
+            "tanda": "🚲"
+          }
         },
         {
           "id": "motor",
           "labelKey": "s-motor",
           "emoji": "🛵",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.876,
+            "tanda": "🛵"
+          }
         }
       ]
     }

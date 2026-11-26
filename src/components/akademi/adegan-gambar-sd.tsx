@@ -312,7 +312,14 @@ export function GambarAdeganSd({
       break;
     case "ilustrasi-sd":
       lebar = 130;
-      isi = varian.startsWith("alat-") ? <PerangkatPilot varian={varian} /> : varian.startsWith("robot-") ? <RobotPilot varian={varian} /> : <PenandaSd varian={varian} />;
+      isi = varian === "banding-berat" || varian === "banding-kapasitas" ? (
+        <g data-petunjuk-banding={varian} data-nilai={adegan.t}>
+          <text x="65" y="58" textAnchor="middle" fontSize="52">{adegan.tanda}</text>
+          {/* Panjang batang adalah petunjuk perbandingan, bukan ukuran emoji atau satuan ukur. */}
+          <rect x="10" y="73" width="110" height="18" rx="5" fill="#e8edf3" stroke="#39516b" strokeWidth="2" />
+          <rect x="10" y="73" width={110 * (adegan.t ?? 0)} height="18" rx="5" fill={varian === "banding-berat" ? "#d97b15" : "#087db4"} />
+        </g>
+      ) : varian.startsWith("alat-") ? <PerangkatPilot varian={varian} /> : varian.startsWith("robot-") ? <RobotPilot varian={varian} /> : <PenandaSd varian={varian} />;
       break;
     case "potong":
       if (adegan.pembilang === undefined || adegan.penyebut === undefined) return null;

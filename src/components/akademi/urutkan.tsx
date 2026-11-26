@@ -129,6 +129,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const kepalaTumbuhan = useRef<HTMLDivElement>(null);
   const [tinggiKepalaTumbuhan, setTinggiKepalaTumbuhan] = useState(0);
   const tataTumbuhan = paket.id === "sains-susun-tumbuhan-utuh";
+  const tataBunyi = paket.competencyIds.includes("SAINS.SD1.BUNYI.02");
   const kalenderPilot = paket.competencyIds.includes("MAT.SD1.WAKTU.02");
   const tujuan = useRef<(HTMLButtonElement | null)[]>([]);
   const gerakan = useRef<{ id: string; x: number; y: number; aktif: boolean } | null>(null);
@@ -388,6 +389,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               v={visual(s, t)}
               size={ukuranPanjang ?? ukuranKartu}
               ariaLabel={bandingPanjang ? labelAkses(s) : undefined}
+              labelPenuh={tataBunyi}
               labelSize={layarRapat ? 12 : batas(14 * sk, lebarKartu * 0.07, 22)}
               selected={dipilih}
               onClick={(e) => { if (e.detail !== 0 && abaikanKlik.current) return; ketukKartu(s.id); }}

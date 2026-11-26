@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-wadah-halaman-isi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Mana yang Muat Paling Banyak?",
-      "instruksi": "Kalau semua diisi air sampai penuh, wadah mana yang airnya paling sedikit? Susun sampai yang airnya paling banyak.",
+      "instruksi": "Semua wadah diisi sampai penuh. Batang lebih panjang berarti muat lebih banyak air. Susun dari yang muat paling sedikit ke paling banyak.",
       "j-isi-sedikit-banyak": "Isi paling sedikit ke paling banyak",
       "s-sendok": "sendok",
       "s-cangkir": "cangkir",
@@ -21,7 +21,7 @@
     },
     "en": {
       "judul": "Which Holds the Most Water?",
-      "instruksi": "If every container is filled with water to the top, which holds the least? Line them up to the one that holds the most.",
+      "instruksi": "Every container is filled to the top. A longer bar means it holds more water. Order from least to most.",
       "j-isi-sedikit-banyak": "Holds least to holds most",
       "s-sendok": "spoon",
       "s-cangkir": "cup",
@@ -54,25 +54,49 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.12,
+            "tanda": "🥄"
+          }
         },
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
           "emoji": "🍵",
-          "scale": 1.2
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.288,
+            "tanda": "🍵"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         }
       ]
     },
@@ -84,25 +108,49 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.12,
+            "tanda": "🥄"
+          }
         },
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
           "emoji": "🍵",
-          "scale": 1.2
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.288,
+            "tanda": "🍵"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         }
       ]
     },
@@ -114,25 +162,49 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.12,
+            "tanda": "🥄"
+          }
         },
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
           "emoji": "🍵",
-          "scale": 1.2
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.288,
+            "tanda": "🍵"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -144,25 +216,49 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.12,
+            "tanda": "🥄"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -174,25 +270,49 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.12,
+            "tanda": "🥄"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -204,25 +324,49 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.12,
+            "tanda": "🥄"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -234,25 +378,49 @@
           "id": "cangkir",
           "labelKey": "s-cangkir",
           "emoji": "🍵",
-          "scale": 1.2
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.288,
+            "tanda": "🍵"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         }
       ]
     },
@@ -264,25 +432,49 @@
           "id": "cangkir",
           "labelKey": "s-cangkir",
           "emoji": "🍵",
-          "scale": 1.2
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.288,
+            "tanda": "🍵"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -294,25 +486,49 @@
           "id": "cangkir",
           "labelKey": "s-cangkir",
           "emoji": "🍵",
-          "scale": 1.2
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.288,
+            "tanda": "🍵"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -324,25 +540,49 @@
           "id": "cangkir",
           "labelKey": "s-cangkir",
           "emoji": "🍵",
-          "scale": 1.2
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.288,
+            "tanda": "🍵"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -354,25 +594,49 @@
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.96,
+            "tanda": "🛢️"
+          }
         }
       ]
     },
@@ -384,25 +648,49 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.12,
+            "tanda": "🥄"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
           "emoji": "🥣",
-          "scale": 1.1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.456,
+            "tanda": "🥣"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
           "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.624,
+            "tanda": "🍲"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-kapasitas",
+            "t": 0.792,
+            "tanda": "🪣"
+          }
         }
       ]
     }
