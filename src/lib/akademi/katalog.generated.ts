@@ -335894,7 +335894,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-hewan-tumbuh-besar",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -336246,25 +336246,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "kelinci-1",
             "labelKey": "kelinci-1",
             "emoji": "🐰",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-baru-lahir"
+            }
           },
           {
             "id": "kelinci-2",
             "labelKey": "kelinci-2",
             "emoji": "🐰",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-mata-terbuka"
+            }
           },
           {
             "id": "kelinci-3",
             "labelKey": "kelinci-3",
             "emoji": "🐇",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-muda"
+            }
           },
           {
             "id": "kelinci-4",
             "labelKey": "kelinci-4",
             "emoji": "🐇",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-dewasa"
+            }
           }
         ]
       },
@@ -337134,7 +337146,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -337486,25 +337498,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "kelinci-1",
             "labelKey": "kelinci-1",
             "emoji": "🐰",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-baru-lahir"
+            }
           },
           {
             "id": "kelinci-2",
             "labelKey": "kelinci-2",
             "emoji": "🐰",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-mata-terbuka"
+            }
           },
           {
             "id": "kelinci-3",
             "labelKey": "kelinci-3",
             "emoji": "🐇",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-muda"
+            }
           },
           {
             "id": "kelinci-4",
             "labelKey": "kelinci-4",
             "emoji": "🐇",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-dewasa"
+            }
           }
         ]
       },
