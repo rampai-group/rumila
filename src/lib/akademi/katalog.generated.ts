@@ -206013,7 +206013,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-hidup-atau-tak-pernah-hidup-pantai",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -206109,20 +206109,29 @@ export const PAKET_RAW: unknown[] = [
         "id": "penyu",
         "labelKey": "i-penyu",
         "bin": "hidup",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-penyu-laut"
+        }
       },
       {
         "id": "camar",
         "labelKey": "i-camar",
         "bin": "hidup",
-        "emoji": "🐦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-camar"
+        }
       },
       {
         "id": "rumputlaut",
         "labelKey": "i-rumputlaut",
         "bin": "hidup",
-        "emoji": "🌿",
-        "color": "#7cb342"
+        "color": "#7cb342",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-rumput-laut"
+        }
       },
       {
         "id": "ombak",
@@ -206158,14 +206167,17 @@ export const PAKET_RAW: unknown[] = [
         "id": "bolapantai",
         "labelKey": "i-bolapantai",
         "bin": "takpernah",
-        "emoji": "🏐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bola-pantai"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd1-sains-hidup-atau-tak-pernah-hidup-taman",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -206303,7 +206315,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "mobil",
         "labelKey": "i-mobil",
         "bin": "takpernah",
-        "emoji": "🚗"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-mobil-mainan"
+        }
       },
       {
         "id": "sepeda",
@@ -206469,7 +206484,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-makan-hewan-peliharaan",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -206559,8 +206574,11 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "burung",
         "labelKey": "b-burung",
-        "emoji": "🐦",
-        "color": "#e3f2fd"
+        "color": "#e3f2fd",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-burung-biji"
+        }
       },
       {
         "id": "ikanhias",
@@ -206601,19 +206619,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "biji",
         "labelKey": "i-biji",
         "bin": "burung",
-        "emoji": "🌾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-biji-campur"
+        }
       },
       {
         "id": "pepaya",
         "labelKey": "i-pepaya",
         "bin": "burung",
-        "emoji": "🌾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-gabah"
+        }
       },
       {
         "id": "pelet",
         "labelKey": "i-pelet",
         "bin": "ikanhias",
-        "emoji": "🟤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-pelet-ikan"
+        }
       },
       {
         "id": "jentik",
@@ -206629,7 +206656,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rumput",
         "labelKey": "i-rumput",
         "bin": "kelinci",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-rumput-segar"
+        }
       },
       {
         "id": "brokoli",
@@ -206647,13 +206677,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "kaleng",
         "labelKey": "i-kaleng",
         "bin": "kucing",
-        "emoji": "🥫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-kaleng-kucing"
+        }
       },
       {
         "id": "jagung",
         "labelKey": "i-jagung",
         "bin": "burung",
-        "emoji": "🌽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-jagung-pipil"
+        }
       },
       {
         "id": "bijimatahari",
@@ -206669,7 +206705,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-makan-hewan-peternakan",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -206772,19 +206808,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "rumput",
         "labelKey": "i-rumput",
         "bin": "sapi",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-rumput-segar"
+        }
       },
       {
         "id": "jerami",
         "labelKey": "i-jerami",
         "bin": "sapi",
-        "emoji": "🌾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-jerami"
+        }
       },
       {
         "id": "jagung",
         "labelKey": "i-jagung",
         "bin": "ayam",
-        "emoji": "🌽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-jagung-pipil"
+        }
       },
       {
         "id": "cacing",
@@ -206808,20 +206853,29 @@ export const PAKET_RAW: unknown[] = [
         "id": "murbei",
         "labelKey": "i-murbei",
         "bin": "ulat",
-        "emoji": "🍃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-daun-murbei"
+        }
       },
       {
         "id": "kubis",
         "labelKey": "i-kubis",
         "bin": "ulat",
-        "emoji": "🍃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-perbaiki-daun-jeruk"
+        }
       },
       {
         "id": "semanggi",
         "labelKey": "i-semanggi",
         "bin": "sapi",
-        "emoji": "🌿",
-        "color": "#558b2f"
+        "color": "#558b2f",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-rumput-gajah"
+        }
       },
       {
         "id": "nasi",
@@ -206839,13 +206893,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "bungasepatu",
         "labelKey": "i-bungasepatu",
         "bin": "lebah",
-        "emoji": "🌺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-bunga-sepatu"
+        }
       },
       {
         "id": "tulip",
         "labelKey": "i-tulip",
         "bin": "lebah",
-        "emoji": "🌼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bunga-kuning"
+        }
       }
     ],
     "pilihan": []
@@ -322135,7 +322195,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-algoritma-di-kota",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -322351,7 +322411,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "celengan-5",
             "labelKey": "celengan-5",
-            "emoji": "🔓"
+            "emoji": "🐷",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "🔓"
+            }
           },
           {
             "id": "celengan-6",
@@ -322372,17 +322436,26 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "sepeda-1",
             "labelKey": "sepeda-1",
-            "emoji": "⛑️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-helm-sepeda"
+            }
           },
           {
             "id": "sepeda-2",
             "labelKey": "sepeda-2",
-            "emoji": "🪑"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-sepeda-sadel"
+            }
           },
           {
             "id": "sepeda-3",
             "labelKey": "sepeda-3",
-            "emoji": "🦶"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-sepeda-pedal"
+            }
           },
           {
             "id": "sepeda-4",
@@ -322392,7 +322465,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "sepeda-5",
             "labelKey": "sepeda-5",
-            "emoji": "✋"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-sepeda-rem"
+            }
           },
           {
             "id": "sepeda-6",
@@ -322444,12 +322520,19 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "ikan-1",
             "labelKey": "ikan-1",
-            "emoji": "🥣"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-pelet-ikan"
+            }
           },
           {
             "id": "ikan-2",
             "labelKey": "ikan-2",
-            "emoji": "🔓"
+            "emoji": "🥣",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "🔓"
+            }
           },
           {
             "id": "ikan-3",
@@ -322459,7 +322542,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "ikan-4",
             "labelKey": "ikan-4",
-            "emoji": "🐠"
+            "emoji": "🐠",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "🫳"
+            }
           },
           {
             "id": "ikan-5",
@@ -322531,7 +322618,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "tas-4",
             "labelKey": "tas-4",
-            "emoji": "🤐"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-tas-ritsleting"
+            }
           },
           {
             "id": "tas-5",
@@ -322665,12 +322755,19 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "hujan-2",
             "labelKey": "hujan-2",
-            "emoji": "🎒"
+            "emoji": "🎒",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "🧥"
+            }
           },
           {
             "id": "hujan-3",
             "labelKey": "hujan-3",
-            "emoji": "🧥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-jas-hujan"
+            }
           },
           {
             "id": "hujan-4",
@@ -322729,7 +322826,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-algoritma-sehari-hari",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -322902,7 +322999,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "cuci-tangan-1",
             "labelKey": "cuci-tangan-1",
-            "emoji": "🚰"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-keran-buka"
+            }
           },
           {
             "id": "cuci-tangan-2",
@@ -322917,12 +323017,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "cuci-tangan-4",
             "labelKey": "cuci-tangan-4",
-            "emoji": "🚿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-keran-bilas"
+            }
           },
           {
             "id": "cuci-tangan-5",
             "labelKey": "cuci-tangan-5",
-            "emoji": "🔒"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-keran-tutup"
+            }
           },
           {
             "id": "cuci-tangan-6",
@@ -323072,7 +323178,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "roti-selai-1",
             "labelKey": "roti-selai-1",
-            "emoji": "🍯"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-selai-terbuka"
+            }
           },
           {
             "id": "roti-selai-2",
@@ -323244,7 +323353,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-perbaiki-algoritma",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -323627,7 +323736,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kue-4",
             "labelKey": "kue-4",
-            "emoji": "🔥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-oven-kue"
+            }
           },
           {
             "id": "kue-5",
@@ -323658,7 +323770,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "belanja-3",
             "labelKey": "belanja-3",
-            "emoji": "🏪"
+            "emoji": "🏪",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "🚶"
+            }
           },
           {
             "id": "belanja-4",
@@ -323789,7 +323905,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-tukar-langkah-taman",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -323835,10 +323951,10 @@ export const PAKET_RAW: unknown[] = [
         "balon-5": "tempel di dinding",
         "balon-6": "pesta dimulai",
         "t-akuarium": "Mengisi akuarium baru",
-        "akuarium-1": "isi ember dengan air",
+        "akuarium-1": "isi ember dengan air yang sudah disiapkan",
         "akuarium-2": "tuang air ke akuarium",
-        "akuarium-3": "tunggu airnya jernih",
-        "akuarium-4": "masukkan ikan",
+        "akuarium-3": "tunggu orang dewasa memastikan air aman",
+        "akuarium-4": "masukkan ikan bersama orang dewasa",
         "akuarium-5": "beri makan ikan",
         "akuarium-6": "ikan memakan pakannya",
         "t-perahu": "Naik perahu di danau",
@@ -323916,10 +324032,10 @@ export const PAKET_RAW: unknown[] = [
         "balon-5": "stick it on the wall",
         "balon-6": "the party starts",
         "t-akuarium": "Filling a new fish tank",
-        "akuarium-1": "fill a bucket with water",
+        "akuarium-1": "fill the bucket with prepared aquarium water",
         "akuarium-2": "pour the water into the tank",
-        "akuarium-3": "wait for the water to clear",
-        "akuarium-4": "put in the fish",
+        "akuarium-3": "wait for an adult to check the water is safe",
+        "akuarium-4": "add the fish with an adult",
         "akuarium-5": "feed the fish",
         "akuarium-6": "the fish eat the food",
         "t-perahu": "Riding a boat on the lake",
@@ -323982,32 +324098,52 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur-1",
             "labelKey": "telur-1",
-            "emoji": "🧴"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-wajan-minyak"
+            }
           },
           {
             "id": "telur-2",
             "labelKey": "telur-2",
-            "emoji": "🔥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-wajan-panas"
+            }
           },
           {
             "id": "telur-3",
             "labelKey": "telur-3",
-            "emoji": "🥚"
+            "emoji": "🥚",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "↘️"
+            }
           },
           {
             "id": "telur-4",
             "labelKey": "telur-4",
-            "emoji": "⏳"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-wajan-telur"
+            }
           },
           {
             "id": "telur-5",
             "labelKey": "telur-5",
-            "emoji": "🔄"
+            "emoji": "🍳",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "🔄"
+            }
           },
           {
             "id": "telur-6",
             "labelKey": "telur-6",
-            "emoji": "🍽️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-piring-telur"
+            }
           }
         ]
       },
@@ -324126,7 +324262,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "nasi-1",
             "labelKey": "nasi-1",
-            "emoji": "🌾"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-beras"
+            }
           },
           {
             "id": "nasi-2",
@@ -324136,12 +324275,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "nasi-3",
             "labelKey": "nasi-3",
-            "emoji": "🍲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-penanak-nasi"
+            }
           },
           {
             "id": "nasi-4",
             "labelKey": "nasi-4",
-            "emoji": "🔘"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-tombol-penanak-nasi"
+            }
           },
           {
             "id": "nasi-5",
@@ -324203,27 +324348,45 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akuarium-2",
             "labelKey": "akuarium-2",
-            "emoji": "💧"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-akuarium"
+            }
           },
           {
             "id": "akuarium-3",
             "labelKey": "akuarium-3",
-            "emoji": "⏳"
+            "emoji": "💧",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "✅"
+            }
           },
           {
             "id": "akuarium-4",
             "labelKey": "akuarium-4",
-            "emoji": "🐠"
+            "emoji": "🐠",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "↘️"
+            }
           },
           {
             "id": "akuarium-5",
             "labelKey": "akuarium-5",
-            "emoji": "🍤"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-pelet-ikan"
+            }
           },
           {
             "id": "akuarium-6",
             "labelKey": "akuarium-6",
-            "emoji": "😋"
+            "emoji": "🐠",
+            "adegan": {
+              "jenis": "tanda",
+              "tanda": "•"
+            }
           }
         ]
       },

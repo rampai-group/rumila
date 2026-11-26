@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-hidup-atau-tak-pernah-hidup-taman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -138,7 +138,10 @@
       "id": "mobil",
       "labelKey": "i-mobil",
       "bin": "takpernah",
-      "emoji": "🚗"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-mobil-mainan"
+      }
     },
     {
       "id": "sepeda",

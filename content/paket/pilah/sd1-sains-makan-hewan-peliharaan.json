@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-makan-hewan-peliharaan",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -90,8 +90,11 @@
     {
       "id": "burung",
       "labelKey": "b-burung",
-      "emoji": "🐦",
-      "color": "#e3f2fd"
+      "color": "#e3f2fd",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-burung-biji"
+      }
     },
     {
       "id": "ikanhias",
@@ -132,19 +135,28 @@
       "id": "biji",
       "labelKey": "i-biji",
       "bin": "burung",
-      "emoji": "🌾"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-biji-campur"
+      }
     },
     {
       "id": "pepaya",
       "labelKey": "i-pepaya",
       "bin": "burung",
-      "emoji": "🌾"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-gabah"
+      }
     },
     {
       "id": "pelet",
       "labelKey": "i-pelet",
       "bin": "ikanhias",
-      "emoji": "🟤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-pelet-ikan"
+      }
     },
     {
       "id": "jentik",
@@ -160,7 +172,10 @@
       "id": "rumput",
       "labelKey": "i-rumput",
       "bin": "kelinci",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-rumput-segar"
+      }
     },
     {
       "id": "brokoli",
@@ -178,13 +193,19 @@
       "id": "kaleng",
       "labelKey": "i-kaleng",
       "bin": "kucing",
-      "emoji": "🥫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-kaleng-kucing"
+      }
     },
     {
       "id": "jagung",
       "labelKey": "i-jagung",
       "bin": "burung",
-      "emoji": "🌽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-jagung-pipil"
+      }
     },
     {
       "id": "bijimatahari",

@@ -200,7 +200,8 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const bandingPanjang = paket.competencyIds.includes("MAT.TKA.BANDING.02");
   const layarPendek = tataTumbuhan && layarPendekUrutan(w, h);
   const bandingRingkas = bandingPanjang && w > 0 && w <= 360 && h > 0 && h < 520;
-  const layarRapat = layarPendek || bandingRingkas;
+  const algoritmaHp = paket.competencyIds.includes("KODE.SD1.ALGORITMA.01") && w > 0 && w < 600;
+  const layarRapat = layarPendek || bandingRingkas || algoritmaHp;
   const tataTunas = paket.level === "PAUD";
   const tataAngkaRingkas = urutanAngkaRingkas(paket);
   const hitungLega = tataAngkaRingkas && w >= 620 && h >= 650;
