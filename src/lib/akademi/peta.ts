@@ -14,7 +14,7 @@
 import { percobaanUlang } from "./percobaan";
 import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import { AMBANG_STIKER, statusLencana, type StatusLencana } from "./koleksi";
-import { aturanUntuk, proyeksi, syaratPenguasaan, type Penguasaan, type SyaratPenguasaan } from "./mastery";
+import { aturanUntuk, pemantapanUjiAktif, proyeksi, syaratPenguasaan, type PemantapanUji, type Penguasaan, type SyaratPenguasaan } from "./mastery";
 import { hariWIB } from "./kalender";
 import { sudahDikerjakan, sudahLulus, ruangSemester, type HasilUjian, type JenisUjian } from "./ujian";
 import { normalisasiHasilUjian, ruangKuis, urutModul } from "./modul";
@@ -65,6 +65,8 @@ export interface RincianPemantapan {
   syarat: SyaratPenguasaan[];
   tungguHariBerbeda: boolean;
   bisaDilatihHariIni: boolean;
+  /** Bukti latihan baru dapat memenuhi syarat hari selama periode QA ini. */
+  latihanUji?: true;
   /** Paket yang sudah memberi jawaban benar saat syarat paket berbeda masih kurang. */
   paketBenar?: readonly string[];
 }
@@ -116,13 +118,14 @@ export function ujianTerbuka(peta: PetaJenjang, jenis: JenisUjian, ruang: string
 }
 
 /** Nilai sementara tidak boleh membuat ujian yang sedang dikerjakan terkunci saat halaman dibuka ulang. */
-export function petaDariBukti(events: GameEvent[], paket: ContentPack[], kompetensi: Competency[], level: LevelId, tracks: readonly TrackId[], ujian: HasilUjian[], waktu = new Date()): PetaJenjang {
+export function petaDariBukti(events: GameEvent[], paket: ContentPack[], kompetensi: Competency[], level: LevelId, tracks: readonly TrackId[], ujian: HasilUjian[], waktu = new Date(), uji?: PemantapanUji): PetaJenjang {
   const resmi = new Set(ujian.filter((h) => !h.pending).map((h) => h.sessionId));
   const bukti = events.filter((e) => {
     const jenis = (e.payload as { detail?: { ujian?: string } }).detail?.ujian;
     return e.type !== "attempt" || !jenis || resmi.has(e.sessionId);
   });
-  return petaJenjang(proyeksi(bukti, kompetensi), kompetensiSelesai(bukti, paket), kompetensi, level, tracks, progresMisi(bukti, paket), ujian, waktu);
+  const aktif = level === "TKB" && pemantapanUjiAktif(uji, waktu) ? uji : undefined;
+  return petaJenjang(proyeksi(bukti, kompetensi, aktif), kompetensiSelesai(bukti, paket), kompetensi, level, tracks, progresMisi(bukti, paket), ujian, waktu, aktif);
 }
 
 /** Kompetensi yang punya paket tamat dengan sukses ≥ AMBANG_STIKER. */
@@ -168,6 +171,7 @@ export function petaJenjang(
   /** hasil ujian anak; tanpa ini peta berjalan seperti sebelum Tahap 3 (tanpa kuis/ujian) */
   ujian?: HasilUjian[],
   waktu = new Date(),
+  uji?: PemantapanUji,
 ): PetaJenjang {
   const urutUnit = urutModul(kompetensi, level, tracks);
   const hasilUjian = ujian ? normalisasiHasilUjian(ujian, kompetensi, tracks) : [];
@@ -179,8 +183,10 @@ export function petaJenjang(
   const lulus = (jenis: JenisUjian, ruang: string) => !pakaiUjian || sudahLulus(hasilUjian, jenis, level, ruang);
   const unit: UnitPeta[] = urutUnit.map(({ track, ke, isi }) => {
     const misi = isi.map((c) => {
-      const dikuasai = peng[c.id]?.status === "dikuasai";
-      const selesai = dikuasai || selesaiSet.has(c.id);
+      const hasil = peng[c.id];
+      const dikuasai = hasil?.status === "dikuasai";
+      // Pengecualian Pemantapan tidak menggantikan penyelesaian misi.
+      const selesai = (dikuasai && hasil.pemantapanUji !== "terpenuhi") || selesaiSet.has(c.id);
       const m: MisiPeta = { nomor: ++nomor, kompetensi: c, selesai, dikuasai, sekarang: false, terkunci: false, progres: selesai ? 1 : (progres.get(c.id) ?? 0) };
       if (selesai) jumlahSelesai++;
       if (c.core) {
@@ -228,16 +234,19 @@ export function petaJenjang(
   const semesterAktif: 1 | 2 = terbukaS2 ? 2 : 1;
 
   const hariIni = hariWIB(waktu);
+  const ujiAktif = level === "TKB" && pemantapanUjiAktif(uji, waktu);
   const misiIntiBelum = unit.flatMap((u) => u.misi).filter((m) => m.kompetensi.core && !m.dikuasai);
   const rincianPemantapan: RincianPemantapan[] = misiIntiBelum.map(({ kompetensi: c }) => {
     const hasil = peng[c.id];
     const syarat = syaratPenguasaan(hasil, aturanUntuk(c));
-    const tungguHariBerbeda = syarat.some((s) => s.jenis === "hari") && (hasil?.hariBenar?.includes(hariIni) ?? false);
+    const bisaUji = ujiAktif && hasil?.pemantapanUji === "perlu-latihan";
+    const tungguHariBerbeda = !bisaUji && syarat.some((s) => s.jenis === "hari") && (hasil?.hariBenar?.includes(hariIni) ?? false);
     return {
       kompetensi: c,
       syarat,
       tungguHariBerbeda,
       bisaDilatihHariIni: syarat.some((s) => s.jenis !== "hari" || !tungguHariBerbeda),
+      ...(bisaUji ? { latihanUji: true as const } : {}),
       paketBenar: syarat.some((s) => s.jenis === "paket") ? hasil?.paketBenar : undefined,
     };
   });

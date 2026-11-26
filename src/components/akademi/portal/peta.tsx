@@ -21,10 +21,11 @@ import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { jenjangBerikut, paketMisi, petaDariBukti, type MisiPeta, type PetaJenjang, type SemesterPeta, type UnitPeta } from "@/lib/akademi/peta";
 import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
+import { usePemantapanUji } from "@/lib/akademi/pemantapan-uji-klien";
 import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, trackMeta } from "./bersama";
-import { labelSisaPenguasaan, tautanRincianPenguasaan } from "./penguasaan";
+import { labelSisaPenguasaan, labelPemantapanUji, tautanRincianPenguasaan } from "./penguasaan";
 import { LatarDunia } from "../latar-dunia";
 import { duniaPaket, type DuniaId } from "@/lib/akademi/tema-dunia";
 import "../akademi.css";
@@ -40,10 +41,11 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   const bahasa = useBahasaAnak(me.id);
   const hasilUjian = useUjian(me.id);
   const tanggal = useTanggalAkademi();
+  const uji = usePemantapanUji(me.id, level);
   useEffect(() => {
     ambilUjian(me.id).catch((e) => console.error("[akademi] ambil ujian gagal", e));
   }, [me.id]);
-  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian, tanggal), [events, level, hasilUjian, tanggal]);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasilUjian, uji ? new Date() : tanggal, uji), [events, level, hasilUjian, tanggal, uji]);
   const streak = useHariAktif(me.id, tanggal, events);
   const berikut = jenjangBerikut(level, KOMPETENSI);
 
@@ -58,7 +60,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
     diminta.current = kunci;
     void (async () => {
       try {
-        await terbitkan(me.id, level);
+        await terbitkan(me.id, level, uji);
       } catch (e) {
         console.error("[akademi] naik jenjang ditolak", e);
         return;
@@ -73,7 +75,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
       } catch {}
       setRayakan({ dari: level, ke: berikut });
     })();
-  }, [peta.lulusJenjang, berikut, me.id, level]);
+  }, [peta.lulusJenjang, berikut, me.id, level, uji]);
 
   const target = peta.sekarang ?? peta.pemantapan;
   const unitAktif = peta.sekarang ? (peta.sekarang.kompetensi.unit.nama[bahasa] ?? peta.sekarang.kompetensi.unit.nama.id) : undefined;
@@ -125,6 +127,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
               <p className="text-sm font-bold text-ink-3">{labelSisaPenguasaan(peta.rincianPemantapan.length, bahasa)}.</p>
             </>
           )}
+          {uji && <p className="px-2 text-sm font-bold text-ink-3">{labelPemantapanUji(bahasa)}</p>}
           <Link href={tautanRincianPenguasaan(level)} className="inline-flex min-h-11 items-center gap-2 rounded-lg px-2 text-sm font-extrabold text-[#0567c2] underline underline-offset-2">
             {inggris ? "View core skill progress" : "Lihat rincian penguasaan"}
           </Link>

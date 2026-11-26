@@ -13,6 +13,13 @@ import { DEFAULT_MASTERY, type Competency, type GameEvent, type LevelId, type Ma
 
 export type Status = "belum" | "berkembang" | "dikuasai";
 
+/** Periode QA yang telah disahkan untuk profil uji aktif. */
+export type PemantapanUji = { mulai: Date; berakhir: Date };
+
+export function pemantapanUjiAktif(uji: PemantapanUji | undefined, waktu: Date): uji is PemantapanUji {
+  return !!uji && waktu >= uji.mulai && waktu < uji.berakhir;
+}
+
 export interface Penguasaan {
   status: Status;
   success: number;
@@ -25,6 +32,7 @@ export interface Penguasaan {
   hariBenar?: readonly string[];
   paketBenar?: readonly string[];
   tanpaBantuTerakhir?: number;
+  pemantapanUji?: "perlu-latihan" | "terpenuhi";
 }
 
 export interface SyaratPenguasaan {
@@ -38,6 +46,7 @@ interface Bukti {
   correct: boolean;
   hintUsed: boolean;
   konteks: string;
+  latihanBiasa: boolean;
 }
 
 const KOSONG: Penguasaan = { status: "belum", success: 0, fail: 0, contexts: 0, days: 0, ratioLast10: 0, hintTail: 0 };
@@ -51,7 +60,9 @@ export function syaratPenguasaan(peng: Penguasaan | undefined, aturan: MasteryRu
     { jenis: "akurasi", jumlah: p.ratioLast10, target: aturan.minRatioLast10 },
     { jenis: "tanpaBantu", jumlah: p.tanpaBantuTerakhir ?? 0, target: aturan.noHintLast },
   ];
-  return syarat.filter(({ jumlah, target }) => jumlah < target).map((s) =>
+  return syarat.filter(({ jenis, jumlah, target }) =>
+    jumlah < target && !(jenis === "hari" && target === 2 && p.pemantapanUji === "terpenuhi"),
+  ).map((s) =>
     s.jenis === "akurasi" ? { ...s, jumlah: s.jumlah * 100, target: s.target * 100 } : s,
   );
 }
@@ -64,13 +75,14 @@ function kumpulkanBukti(events: GameEvent[], saring: (e: GameEvent) => boolean =
     .slice()
     .sort((a, b) => (a.clientAt < b.clientAt ? -1 : a.clientAt > b.clientAt ? 1 : 0));
   for (const e of urut) {
-    const p = e.payload as { correct?: unknown; hintUsed?: unknown; competencyIds?: unknown; imported?: unknown };
+    const p = e.payload as { correct?: unknown; hintUsed?: unknown; competencyIds?: unknown; imported?: unknown; detail?: { ujian?: unknown } };
     if (!Array.isArray(p.competencyIds) || p.competencyIds.length === 0) continue;
     const b: Bukti = {
       at: e.clientAt,
       correct: p.correct === true,
       hintUsed: p.hintUsed === true,
       konteks: p.imported === true ? "import" : e.activityId,
+      latihanBiasa: p.imported !== true && p.detail?.ujian === undefined && typeof p.hintUsed === "boolean",
     };
     for (const cid of p.competencyIds) {
       if (typeof cid !== "string") continue;
@@ -82,7 +94,7 @@ function kumpulkanBukti(events: GameEvent[], saring: (e: GameEvent) => boolean =
   return per;
 }
 
-export function nilaiPenguasaan(bukti: Bukti[], aturan: MasteryRule): Penguasaan {
+export function nilaiPenguasaan(bukti: Bukti[], aturan: MasteryRule, uji?: PemantapanUji): Penguasaan {
   if (!bukti.length) return { ...KOSONG };
   const benar = bukti.filter((b) => b.correct);
   const success = benar.length;
@@ -101,6 +113,18 @@ export function nilaiPenguasaan(bukti: Bukti[], aturan: MasteryRule): Penguasaan
     tanpaBantuTerakhir: terakhir.hintUsed ? 0 : berturut,
     hariBenar, paketBenar,
   };
+  if (uji && aturan.minDays === 2 && hariBenar.length === 1 && uji.mulai < uji.berakhir) {
+    const mulai = uji.mulai.getTime();
+    const berakhir = uji.berakhir.getTime();
+    const latihan = benar.filter((b) => b.latihanBiasa);
+    if (latihan.some((b) => Date.parse(b.at) < mulai)) {
+      const baru = latihan.some((b) => {
+        const waktu = Date.parse(b.at);
+        return !b.hintUsed && waktu >= mulai && waktu < berakhir;
+      });
+      peng.pemantapanUji = baru ? "terpenuhi" : "perlu-latihan";
+    }
+  }
   if (!syaratPenguasaan(peng, aturan).length) peng.status = "dikuasai";
   return peng;
 }
@@ -110,15 +134,20 @@ export function aturanUntuk(c: Competency): MasteryRule {
 }
 
 /** Penguasaan tiap kompetensi (kompetensi tanpa bukti → "belum" dengan angka 0). */
-export function proyeksi(events: GameEvent[], kompetensi: Competency[]): Record<string, Penguasaan> {
-  return proyeksiDari(events, kompetensi);
+export function proyeksi(events: GameEvent[], kompetensi: Competency[], uji?: PemantapanUji): Record<string, Penguasaan> {
+  return proyeksikan(kumpulkanBukti(events), kompetensi, uji);
 }
 
 /** Proyeksi dengan saringan event sendiri (mis. hanya jejak gedung kampus untuk Penilaian Praktik). */
 export function proyeksiDari(events: GameEvent[], kompetensi: Competency[], saring?: (e: GameEvent) => boolean): Record<string, Penguasaan> {
-  const bukti = kumpulkanBukti(events, saring);
+  return proyeksikan(kumpulkanBukti(events, saring), kompetensi);
+}
+
+function proyeksikan(bukti: Map<string, Bukti[]>, kompetensi: Competency[], uji?: PemantapanUji): Record<string, Penguasaan> {
   const out: Record<string, Penguasaan> = {};
-  for (const c of kompetensi) out[c.id] = nilaiPenguasaan(bukti.get(c.id) ?? [], aturanUntuk(c));
+  for (const c of kompetensi) {
+    out[c.id] = nilaiPenguasaan(bukti.get(c.id) ?? [], aturanUntuk(c), c.level === "TKB" && c.core ? uji : undefined);
+  }
   return out;
 }
 
