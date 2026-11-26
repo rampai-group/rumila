@@ -373,6 +373,45 @@ const objectArt: Record<string, ReactNode> = {
   ...KEGIATAN,
   ...GERAK_APUNG,
   ...ILUSTRASI_HABITAT,
+  "lembar-kertas": <g {...RINGKAS} stroke="#8a9baa">
+    <path d="M39 15H88L102 28V86H39Z" fill="#dce6ed" />
+    <path d="M27 13H77L94 29V82H27Z" fill="#fffdf6" />
+    <path d="M77 13V29H94" fill="#e0e9f1" />
+  </g>,
+  "potongan-kain": <g {...RINGKAS} stroke="#8c4793">
+    <path d="M22 23L103 17 101 29 112 38 103 49 112 60 101 71 104 83 25 88 27 77 17 68 26 57 17 46 25 35Z" fill="#d892d9" />
+    <path d="M32 36L92 29M35 48L92 41M35 60L92 53M36 72L92 65" fill="none" stroke="#bb65c4" strokeWidth="2" />
+  </g>,
+  "taplak-meja": <g {...RINGKAS}>
+    <path d="M28 49V89M101 49V89" fill="none" stroke="#815332" strokeWidth="7" />
+    <path d="M24 26H106L118 57 106 72 93 63 80 72 66 63 52 72 38 63 25 72 12 57Z" fill="#ea8e8d" stroke="#9b494f" />
+    <path d="M19 53H111M39 28L34 51M64 28V51M91 28L95 51" fill="none" stroke="#fff0de" strokeWidth="3" />
+  </g>,
+  "rak-buku-kayu": <g {...RINGKAS}>
+    <rect x="28" y="12" width="75" height="77" rx="4" fill="#b08057" stroke="#735033" />
+    <path d="M35 23H96V48H35ZM35 55H96V78H35Z" fill="#764d38" />
+    <path d="M45 47V29H53V47M57 47V25H66V47M73 47L68 31 75 29 81 47M67 78V61H75V78M79 78V58H87V78" fill="#f4b457" stroke="#f4b457" strokeLinejoin="round" />
+    <path d="M35 49H96M35 79H96" stroke="#e4b983" strokeWidth="3" />
+  </g>,
+  "selang-air": <g {...RINGKAS}>
+    <path d="M111 73H61C20 73 17 28 54 26C83 23 94 58 68 64C43 70 36 42 55 38C65 36 71 45 66 51" fill="none" stroke="#286249" strokeWidth="12" />
+    <path d="M111 73H61C20 73 17 28 54 26C83 23 94 58 68 64C43 70 36 42 55 38C65 36 71 45 66 51" fill="none" stroke="#6db887" strokeWidth="7" />
+    <path d="M105 67H117V79H105Z" fill="#e4b35d" stroke="#735033" strokeWidth="2" />
+  </g>,
+  "handuk-lipat": <g {...RINGKAS}>
+    <path d="M23 64L44 37 109 50 91 80 23 71Z" fill="#79b8dd" stroke="#406e97" />
+    <path d="M24 63L85 73 103 49 44 38Z" fill="#a1d7ed" stroke="#406e97" />
+    <path d="M28 66L87 76M48 43L93 51M43 49L88 57M38 56L83 64" fill="none" stroke="#e3f7fc" strokeWidth="2" />
+  </g>,
+  "gumpalan-kapas": <g {...RINGKAS} stroke="#879aa8">
+    <path d="M29 69Q16 55 30 43Q31 30 46 31Q56 16 70 28Q86 21 94 35Q108 38 104 54Q119 70 100 78Q91 88 74 83Q60 92 46 81Q34 83 29 69Z" fill="#f3f8fb" />
+    <path d="M32 58Q38 49 49 54M51 39Q61 32 70 41M71 63Q80 53 92 60M47 73Q54 66 62 73" fill="none" stroke="#b9cbd4" strokeWidth="2" />
+  </g>,
+  "piring-kaca": <g {...RINGKAS} stroke="#347e95">
+    <ellipse cx="65" cy="55" rx="47" ry="29" fill="#d2eef3" />
+    <ellipse cx="65" cy="52" rx="37" ry="20" fill="#e7f8fb" stroke="#73b4c6" />
+    <path d="M38 51Q48 38 68 38M77 64Q91 62 96 53" fill="none" stroke="#fff" strokeWidth="4" />
+  </g>,
   "pagar-kayu": <g {...RINGKAS} stroke="#815332">
     <rect x="8" y="46" width="114" height="11" rx="2" fill="#bd864f" />
     <rect x="8" y="68" width="114" height="10" rx="2" fill="#bd864f" />
