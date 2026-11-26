@@ -218082,7 +218082,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-alami-atau-buatan-dapur",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218160,7 +218160,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bambu",
         "labelKey": "i-bambu",
         "bin": "alami",
-        "emoji": "🎋"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-bahan-bambu"
+        }
       },
       {
         "id": "rotan",
@@ -218175,7 +218178,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tanahliat",
         "labelKey": "i-tanahliat",
         "bin": "alami",
-        "emoji": "🟤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-bahan-tanah-liat"
+        }
       },
       {
         "id": "batukali",
@@ -218205,8 +218211,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "foil",
         "labelKey": "i-foil",
         "bin": "buatan",
-        "color": "#e0e0e0",
-        "shape": "rect"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-bahan-aluminium-foil"
+        }
       },
       {
         "id": "plastikwrap",
@@ -218240,7 +218248,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-alami-atau-buatan",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218330,20 +218338,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "wol",
         "labelKey": "i-wol",
         "bin": "alami",
-        "emoji": "🐑"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-bahan-wol"
+        }
       },
       {
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "alami",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-bahan-pasir"
+        }
       },
       {
         "id": "kapas",
         "labelKey": "i-kapas",
         "bin": "alami",
-        "shape": "circle",
-        "color": "#fafafa"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-bahan-kapas"
+        }
       },
       {
         "id": "daun",
@@ -218387,9 +218403,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "semen",
         "labelKey": "i-semen",
         "bin": "buatan",
-        "emoji": "🪣",
-        "color": "#9e9e9e",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-bahan-semen"
+        }
       }
     ],
     "pilihan": []
