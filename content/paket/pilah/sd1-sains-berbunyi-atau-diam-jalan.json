@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-berbunyi-atau-diam-jalan",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -115,7 +115,10 @@
       "id": "bakso",
       "labelKey": "i-bakso",
       "bin": "bunyi",
-      "emoji": "🍜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-mangkuk-dipukul"
+      }
     },
     {
       "id": "kentongan",

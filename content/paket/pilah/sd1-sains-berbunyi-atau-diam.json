@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-berbunyi-atau-diam",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -150,7 +150,10 @@
       "id": "bantal",
       "labelKey": "i-bantal",
       "bin": "diam",
-      "emoji": "🛏️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-bantal"
+      }
     },
     {
       "id": "batu",
