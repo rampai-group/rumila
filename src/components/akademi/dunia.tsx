@@ -176,7 +176,8 @@ export function panggungPadat(paket: ContentPack, ronde?: Ronde): boolean {
   return paket.mechanic === "pilah" ||
     (paket.mechanic === "navigasi" && (paket.execMode === "langsung" ||
       (ronde?.mechanic === "navigasi" && navigasiSatuBaris(ronde.ronde)))) ||
-    (paket.mechanic === "dagang" && paket.mode === "subitasi") ||
+    (paket.mechanic === "dagang" && (paket.mode === "subitasi" || paket.mode === "tukar" ||
+      (paket.mode === "lengkapi" && paket.level === "TKB"))) ||
     (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanAngkaRingkas(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
     (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" || (paket.mode === "tombol" && paket.level === "PAUD")));
