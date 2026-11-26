@@ -298,6 +298,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const hiasan = mode === "cipta" && !!hasil?.benar;
   const { tema, skala: sk, w, h } = usePanggung();
   const padat = paket.level === "PAUD";
+  const polaPilot = paket.competencyIds.includes("MAT.SD1.POLA.01");
   const aksiMenetap = !padat && w > 0 && w < 600 && mode !== "perbaiki";
   const tabletTegak = w >= 620 && h >= 680 && h > w;
   const tabletTunas = padat && w >= 620 && h >= 680;
@@ -309,7 +310,9 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const lebarKartu = sisiMuat(lebarDalam, 0, palette.length, (basePalet + 16) * sk, 200 * sk, gap);
   const kartuPx = Math.round(Math.max(basePalet * sk, Math.min((lebarKartu - 16 * sk) * 0.8, h > 0 ? h * 0.16 : 0, 130)));
   const barisPalet = Math.ceil(palette.length / Math.max(1, Math.floor((lebarDalam + gap) / (lebarKartu + gap)) || 1));
-  const tinggiPalet = barisPalet * (kartuPx + 16 + 20 * sk) + 24 * sk + (mode === "cipta" ? 60 * sk : 0);
+  // Palet Pilot memuat gambar berbeda skala dan label sampai tiga baris.
+  // Gunakan lebar kartu yang sama dengan perhitungan, agar label tidak menambah baris palet.
+  const tinggiPalet = barisPalet * (kartuPx * (polaPilot ? Math.max(1, ...palette.map(p => p.scale ?? 1)) : 1) + 16 + (polaPilot ? 52 : 20) * sk) + 24 * sk + (mode === "cipta" ? 60 * sk : 0);
   // kalung mengisi sisa tinggi: panggung − judul − palet − baris aksi − jarak − padding kalung
   const tinggiKalung = h > 0 ? h - 58 * Math.min(sk, 1.3) - tinggiPalet - (aksiMenetap ? 0 : 56 * Math.min(sk, 1.3)) - 3 * 12 - 32 * sk - (hiasan ? 36 * sk : 0) : 0;
   const baseSlot = urutan.length > 9 ? 56 : urutan.length > 6 ? 64 : 72;
@@ -414,6 +417,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 onClick={() => ketukPalette(p.id)}
                 className={disorot ? "akademi-bounce" : ""}
                 style={{
+                  width: polaPilot ? lebarKartu : undefined,
                   minWidth: 72 * sk,
                   minHeight: 72 * sk,
                   boxShadow: disorot

@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-cari-robot-pabrik",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -79,37 +79,55 @@
       "id": "lengan-pengecat",
       "labelKey": "i-lengan-pengecat",
       "bin": "robot",
-      "emoji": "🦾"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-pengecat"
+      }
     },
     {
       "id": "mobil-otomatis",
       "labelKey": "i-mobil-otomatis",
       "bin": "robot",
-      "emoji": "🚘"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-mobil"
+      }
     },
     {
       "id": "kereta-otomatis",
       "labelKey": "i-kereta-otomatis",
       "bin": "robot",
-      "emoji": "🚈"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-kereta"
+      }
     },
     {
       "id": "pengangkut-gudang",
       "labelKey": "i-pengangkut-gudang",
       "bin": "robot",
-      "emoji": "🤖"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-gudang"
+      }
     },
     {
       "id": "traktor",
       "labelKey": "i-traktor",
       "bin": "robot",
-      "emoji": "🚜"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-traktor"
+      }
     },
     {
       "id": "penyambut",
       "labelKey": "i-penyambut",
       "bin": "robot",
-      "emoji": "🤖"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-penyambut"
+      }
     },
     {
       "id": "palu",
@@ -133,7 +151,10 @@
       "id": "patung-kayu",
       "labelKey": "i-patung-kayu",
       "bin": "bukan",
-      "emoji": "🪵"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "robot-kayu"
+      }
     },
     {
       "id": "troli",

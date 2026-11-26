@@ -1,6 +1,8 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Adegan } from "@akademi/schema";
 
+import { PerangkatPilot, RobotPilot } from "./ilustrasi-perangkat";
+
 type Titik = readonly [number, number];
 
 function poligonBeraturan(sisi: number, radius: number, rotasi = 0): Titik[] {
@@ -317,7 +319,7 @@ export function GambarAdeganSd({
           <rect x="10" y="73" width="110" height="18" rx="5" fill="#e8edf3" stroke="#39516b" strokeWidth="2" />
           <rect x="10" y="73" width={110 * (adegan.t ?? 0)} height="18" rx="5" fill={varian === "banding-berat" ? "#d97b15" : "#087db4"} />
         </g>
-      ) : <PenandaSd varian={varian} />;
+      ) : varian.startsWith("alat-") ? <PerangkatPilot varian={varian} /> : varian.startsWith("robot-") ? <RobotPilot varian={varian} /> : <PenandaSd varian={varian} />;
       break;
     case "potong":
       if (adegan.pembilang === undefined || adegan.penyebut === undefined) return null;

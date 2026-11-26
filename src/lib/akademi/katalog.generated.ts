@@ -198941,7 +198941,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-cari-robot-pabrik",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -199020,37 +199020,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "lengan-pengecat",
         "labelKey": "i-lengan-pengecat",
         "bin": "robot",
-        "emoji": "🦾"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-pengecat"
+        }
       },
       {
         "id": "mobil-otomatis",
         "labelKey": "i-mobil-otomatis",
         "bin": "robot",
-        "emoji": "🚘"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-mobil"
+        }
       },
       {
         "id": "kereta-otomatis",
         "labelKey": "i-kereta-otomatis",
         "bin": "robot",
-        "emoji": "🚈"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-kereta"
+        }
       },
       {
         "id": "pengangkut-gudang",
         "labelKey": "i-pengangkut-gudang",
         "bin": "robot",
-        "emoji": "🤖"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-gudang"
+        }
       },
       {
         "id": "traktor",
         "labelKey": "i-traktor",
         "bin": "robot",
-        "emoji": "🚜"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-traktor"
+        }
       },
       {
         "id": "penyambut",
         "labelKey": "i-penyambut",
         "bin": "robot",
-        "emoji": "🤖"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-penyambut"
+        }
       },
       {
         "id": "palu",
@@ -199074,7 +199092,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "patung-kayu",
         "labelKey": "i-patung-kayu",
         "bin": "bukan",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-kayu"
+        }
       },
       {
         "id": "troli",
@@ -199098,7 +199119,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-kabel-tanpa-kabel",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -199175,79 +199196,115 @@ export const PAKET_RAW: unknown[] = [
         "id": "corded-home-phone",
         "labelKey": "i-corded-home-phone",
         "bin": "kabel",
-        "emoji": "☎️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-telepon"
+        }
       },
       {
         "id": "wired-mouse",
         "labelKey": "i-wired-mouse",
         "bin": "kabel",
-        "emoji": "🖱️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-mouse"
+        }
       },
       {
         "id": "wired-desktop-computer",
         "labelKey": "i-wired-desktop-computer",
         "bin": "kabel",
-        "emoji": "🖥️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-komputer"
+        }
       },
       {
         "id": "wired-keyboard",
         "labelKey": "i-wired-keyboard",
         "bin": "kabel",
-        "emoji": "⌨️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-keyboard"
+        }
       },
       {
         "id": "wired-headphones",
         "labelKey": "i-wired-headphones",
         "bin": "kabel",
-        "emoji": "🎧"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-headphone"
+        }
       },
       {
         "id": "wired-printer",
         "labelKey": "i-wired-printer",
         "bin": "kabel",
-        "emoji": "🖨️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-printer"
+        }
       },
       {
         "id": "mobile-phone",
         "labelKey": "i-mobile-phone",
         "bin": "nirkabel",
-        "emoji": "📱"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-ponsel"
+        }
       },
       {
         "id": "smartwatch",
         "labelKey": "i-smartwatch",
         "bin": "nirkabel",
-        "emoji": "⌚"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-jam"
+        }
       },
       {
         "id": "toy-drone",
         "labelKey": "i-toy-drone",
         "bin": "nirkabel",
-        "emoji": "🚁"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-drone"
+        }
       },
       {
         "id": "wireless-game-controller",
         "labelKey": "i-wireless-game-controller",
         "bin": "nirkabel",
-        "emoji": "🎮"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-game"
+        }
       },
       {
         "id": "bluetooth-speaker",
         "labelKey": "i-bluetooth-speaker",
         "bin": "nirkabel",
-        "emoji": "🔊"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-speaker"
+        }
       },
       {
         "id": "tablet",
         "labelKey": "i-tablet",
         "bin": "nirkabel",
-        "emoji": "📲"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-tablet"
+        }
       }
     ]
   },
   {
     "id": "sd1-kode-robot-atau-bukan",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -199324,37 +199381,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "robot-vacuum-cleaner",
         "labelKey": "i-robot-vacuum-cleaner",
         "bin": "robot",
-        "emoji": "🤖"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-vakum"
+        }
       },
       {
         "id": "automatic-factory-arm",
         "labelKey": "i-automatic-factory-arm",
         "bin": "robot",
-        "emoji": "🦾"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-lengan"
+        }
       },
       {
         "id": "parcel-delivery-drone",
         "labelKey": "i-parcel-delivery-drone",
         "bin": "robot",
-        "emoji": "🚁"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-drone"
+        }
       },
       {
         "id": "self-driving-bus",
         "labelKey": "i-self-driving-bus",
         "bin": "robot",
-        "emoji": "🚌"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-bus"
+        }
       },
       {
         "id": "driverless-train",
         "labelKey": "i-driverless-train",
         "bin": "robot",
-        "emoji": "🚇"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-kereta"
+        }
       },
       {
         "id": "restaurant-serving-robot",
         "labelKey": "i-restaurant-serving-robot",
         "bin": "robot",
-        "emoji": "🤖"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-makanan"
+        }
       },
       {
         "id": "teddy-bear",
@@ -199384,7 +199459,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "cardboard-toy-robot",
         "labelKey": "i-cardboard-toy-robot",
         "bin": "bukan",
-        "emoji": "📦"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "robot-kardus"
+        }
       },
       {
         "id": "ordinary-broom",
@@ -199396,7 +199474,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-sambungan-perangkat",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -199477,85 +199555,127 @@ export const PAKET_RAW: unknown[] = [
         "id": "mik-kabel",
         "labelKey": "i-mik-kabel",
         "bin": "kabel",
-        "emoji": "🎤"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-mik"
+        }
       },
       {
         "id": "proyektor-kabel",
         "labelKey": "i-proyektor-kabel",
         "bin": "kabel",
-        "emoji": "📽️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-proyektor"
+        }
       },
       {
         "id": "piano-kabel",
         "labelKey": "i-piano-kabel",
         "bin": "kabel",
-        "emoji": "🎹"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-piano"
+        }
       },
       {
         "id": "gitar-kabel",
         "labelKey": "i-gitar-kabel",
         "bin": "kabel",
-        "emoji": "🎸"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-gitar"
+        }
       },
       {
         "id": "tv-antena",
         "labelKey": "i-tv-antena",
         "bin": "kabel",
-        "emoji": "📺"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-tv"
+        }
       },
       {
         "id": "joystick-kabel",
         "labelKey": "i-joystick-kabel",
         "bin": "kabel",
-        "emoji": "🕹️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-game"
+        }
       },
       {
         "id": "mouse-kabel",
         "labelKey": "i-mouse-kabel",
         "bin": "kabel",
-        "emoji": "🖱️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-kabel-mouse"
+        }
       },
       {
         "id": "drone",
         "labelKey": "i-drone",
         "bin": "nirkabel",
-        "emoji": "🚁"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-drone"
+        }
       },
       {
         "id": "mobil-remot",
         "labelKey": "i-mobil-remot",
         "bin": "nirkabel",
-        "emoji": "🏎️"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-mobil"
+        }
       },
       {
         "id": "walkie",
         "labelKey": "i-walkie",
         "bin": "nirkabel",
-        "emoji": "📻"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-walkie"
+        }
       },
       {
         "id": "kunci-remot",
         "labelKey": "i-kunci-remot",
         "bin": "nirkabel",
-        "emoji": "🔑"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-kunci"
+        }
       },
       {
         "id": "laptop-wifi",
         "labelKey": "i-laptop-wifi",
         "bin": "nirkabel",
-        "emoji": "💻"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-laptop"
+        }
       },
       {
         "id": "bel-nirkabel",
         "labelKey": "i-bel-nirkabel",
         "bin": "nirkabel",
-        "emoji": "🔔"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-bel"
+        }
       },
       {
         "id": "kamera-wifi",
         "labelKey": "i-kamera-wifi",
         "bin": "nirkabel",
-        "emoji": "📹"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "alat-nirkabel-kamera"
+        }
       }
     ]
   },
