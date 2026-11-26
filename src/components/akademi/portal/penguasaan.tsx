@@ -48,7 +48,7 @@ export function RincianPenguasaan({ rincian, bahasa, tautanLatih, uji = false }:
         <p className="mt-2 text-sm font-bold text-ink-3">{inggris ? "Core skills for this rank are not available yet." : "Kemampuan inti untuk jenjang ini belum tersedia."}</p>
       )}
       <ul className="mt-2 divide-y divide-[#f0e4d2]">
-        {urut.map(({ kompetensi, syarat, tungguHariBerbeda, bisaDilatihHariIni }) => {
+        {urut.map(({ kompetensi, syarat, tungguHariBerbeda, bisaDilatihHariIni, latihanUji }) => {
           const nama = kompetensi.statement[bahasa] ?? kompetensi.statement.id;
           const unit = kompetensi.unit.nama[bahasa] ?? kompetensi.unit.nama.id;
           const href = tautanLatih.get(kompetensi.id);
@@ -60,7 +60,9 @@ export function RincianPenguasaan({ rincian, bahasa, tautanLatih, uji = false }:
                 <ul className="mt-2 flex flex-wrap gap-1.5" aria-label={inggris ? "Requirements left" : "Syarat yang masih kurang"}>
                   {syarat.map((s) => (
                     <li key={s.jenis} className="max-w-full rounded-[12px] bg-[#edf4fb] px-2.5 py-1 text-[13px] font-extrabold leading-snug text-[#17446f] [overflow-wrap:anywhere]">
-                      {labelSyarat(s, bahasa)}
+                      {latihanUji && s.jenis === "hari"
+                        ? inggris ? "1 new correct answer without hints" : "1 jawaban benar baru tanpa bantuan"
+                        : labelSyarat(s, bahasa)}
                     </li>
                   ))}
                 </ul>
