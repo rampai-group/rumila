@@ -27,15 +27,48 @@ function TasRitsleting() {
   </>;
 }
 
-function Sepeda({ fokus }: { fokus: "sadel" | "pedal" | "rem" }) {
+function SadelSepeda() {
   return <>
-    <g fill="#e5f8f9" stroke="#345662" strokeWidth="4">
-      <circle cx="29" cy="70" r="19" /><circle cx="103" cy="70" r="19" />
+    <path d="M63 85L55 62" stroke="#277f81" strokeWidth="14" strokeLinecap="round" />
+    <path d="M23 48Q21 38 39 39Q55 40 68 47H97Q109 47 107 55Q104 64 86 64H42Q26 64 23 48Z" fill="#495773" stroke={garis} strokeWidth="4" />
+    <path d="M37 48Q48 45 59 49" fill="none" stroke="#8291ad" strokeWidth="4" strokeLinecap="round" />
+    <path d="M65 11V30M53 23L65 35L77 23" fill="none" stroke="#236bb3" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+  </>;
+}
+
+function PedalSepeda() {
+  return <>
+    <circle cx="37" cy="76" r="17" fill="#9ccacc" stroke={garis} strokeWidth="4" />
+    <path d="M37 76L75 61" stroke="#3c7980" strokeWidth="10" strokeLinecap="round" />
+    <rect x="67" y="57" width="46" height="12" rx="4" fill="#edab38" stroke="#96591e" strokeWidth="3" />
+    <path d="M68 26H80L84 39Q88 43 99 44Q112 45 114 55H62Q55 53 58 46Z" fill="#e9774f" stroke="#763d47" strokeWidth="4" strokeLinejoin="round" />
+    <path d="M72 34H82M70 40H84" stroke="#fff0df" strokeWidth="3" strokeLinecap="round" />
+    <path d="M34 21V42M24 34L34 45L44 34" fill="none" stroke="#236bb3" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+  </>;
+}
+
+function RemSepeda() {
+  return <>
+    <path d="M17 55H107" stroke="#829aa6" strokeWidth="10" strokeLinecap="round" />
+    <rect x="53" y="46" width="59" height="18" rx="8" fill="#4b6177" stroke={garis} strokeWidth="3" />
+    <path d="M44 58Q51 79 84 83L108 83" fill="none" stroke="#d25647" strokeWidth="7" strokeLinecap="round" />
+    <path d="M103 16L119 25 112 43Q109 49 102 60L88 76Q84 81 79 77Q75 74 79 69L85 60 71 68Q65 70 63 65Q61 61 66 57L80 44 75 47Q69 50 65 46Q61 42 66 38L83 25Z" fill="#ffbf91" stroke="#915543" strokeWidth="3" strokeLinejoin="round" />
+    <path d="M92 39L80 53M101 45L91 59" fill="none" stroke="#b36c51" strokeWidth="3" strokeLinecap="round" />
+    <path d="M28 76V61M21 68L28 59L35 68" fill="none" stroke="#236bb3" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+  </>;
+}
+
+function SepedaMelaju() {
+  return <>
+    <path d="M10 33H32M6 46H24M11 59H19" stroke="#4eaec9" strokeWidth="4" strokeLinecap="round" />
+    <g transform="translate(13 3) scale(.89)">
+      <g fill="#e5f8f9" stroke="#345662" strokeWidth="4">
+        <circle cx="29" cy="70" r="19" /><circle cx="103" cy="70" r="19" />
+      </g>
+      <path d="M29 70L48 41H82L63 70H29M63 70L49 33M82 41L103 70M82 41L89 26 106 26" fill="none" stroke="#2b9993" strokeWidth="5" />
+      <path d="M40 31H60" stroke="#34434f" strokeWidth="7" />
+      <path d="M63 69L70 78H78M100 28L110 34" stroke="#34434f" strokeWidth="4" />
     </g>
-    <path d="M29 70L48 41H82L63 70H29M63 70L49 33M82 41L103 70M82 41L89 26 106 26" fill="none" stroke="#2b9993" strokeWidth="5" />
-    <path d="M40 31H60" stroke={fokus === "sadel" ? "#e66643" : "#34434f"} strokeWidth={fokus === "sadel" ? 10 : 7} />
-    <path d="M63 69L70 78H78" stroke={fokus === "pedal" ? "#e66643" : "#34434f"} strokeWidth={fokus === "pedal" ? 7 : 4} />
-    <path d="M100 28L110 34" stroke={fokus === "rem" ? "#e66643" : "#34434f"} strokeWidth={fokus === "rem" ? 7 : 4} />
   </>;
 }
 
@@ -233,9 +266,10 @@ const gambar: Record<string, () => ReactNode> = {
   "pilot-keran-bilas": () => <Keran keadaan="bilas" />,
   "pilot-keran-tutup": () => <Keran keadaan="tutup" />,
   "pilot-tas-ritsleting": TasRitsleting,
-  "pilot-sepeda-sadel": () => <Sepeda fokus="sadel" />,
-  "pilot-sepeda-pedal": () => <Sepeda fokus="pedal" />,
-  "pilot-sepeda-rem": () => <Sepeda fokus="rem" />,
+  "pilot-sepeda-sadel": SadelSepeda,
+  "pilot-sepeda-pedal": PedalSepeda,
+  "pilot-sepeda-melaju": SepedaMelaju,
+  "pilot-sepeda-rem": RemSepeda,
   "pilot-selai-terbuka": Selai,
   "pilot-wajan-minyak": () => <Wajan keadaan="minyak" />,
   "pilot-wajan-panas": () => <Wajan keadaan="panas" />,
