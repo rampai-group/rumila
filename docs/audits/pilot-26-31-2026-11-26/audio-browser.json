@@ -1,0 +1,366 @@
+[
+  {
+    "device": "hp",
+    "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/ea90eb18ae19.mp3",
+        "duration": 3.813877551020408
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-sains-bunyi-dekat-jauh-jalan",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/891b7aef12f5.mp3",
+        "duration": 7.2359183673469385
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/891b7aef12f5.mp3",
+        "duration": 7.2359183673469385
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-urut-ringan-berat",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-belanja-ringan-berat",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-urut-isi-wadah",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/60b70d1a853a.mp3",
+        "duration": 10.553469387755102
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/60b70d1a853a.mp3",
+        "duration": 10.553469387755102
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-wadah-halaman-isi",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/60b70d1a853a.mp3",
+        "duration": 10.553469387755102
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/60b70d1a853a.mp3",
+        "duration": 10.553469387755102
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-kode-tebak-petak-angkasa",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/fc631d6e0828.mp3",
+        "duration": 6.347755102040816
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/fc631d6e0828.mp3",
+        "duration": 6.347755102040816
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-kode-tebak-petak-ulangi",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/90847e64f0a3.mp3",
+        "duration": 5.642448979591837
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/90847e64f0a3.mp3",
+        "duration": 5.642448979591837
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-sains-butuh-listrik-sekolah",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/3fdd33894c62.mp3",
+        "duration": 3.9706122448979593
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/3fdd33894c62.mp3",
+        "duration": 3.9706122448979593
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-sains-butuh-listrik-rumah",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/44053576568c.mp3",
+        "duration": 5.877551020408164
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-jam-setengah-pagi",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/4e83fdb8fef4.mp3",
+        "duration": 8.881632653061224
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/4e83fdb8fef4.mp3",
+        "duration": 8.881632653061224
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-jam-setengah-siang",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/8c1ecf66b066.mp3",
+        "duration": 8.594285714285714
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/8c1ecf66b066.mp3",
+        "duration": 8.594285714285714
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/ea90eb18ae19.mp3",
+        "duration": 3.813877551020408
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-sains-bunyi-dekat-jauh-jalan",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/891b7aef12f5.mp3",
+        "duration": 7.2359183673469385
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/891b7aef12f5.mp3",
+        "duration": 7.2359183673469385
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-urut-ringan-berat",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-belanja-ringan-berat",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/9f70557be49c.mp3",
+        "duration": 8.672653061224489
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-urut-isi-wadah",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/60b70d1a853a.mp3",
+        "duration": 10.553469387755102
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/60b70d1a853a.mp3",
+        "duration": 10.553469387755102
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-wadah-halaman-isi",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/60b70d1a853a.mp3",
+        "duration": 10.553469387755102
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-kode-tebak-petak-angkasa",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/fc631d6e0828.mp3",
+        "duration": 6.347755102040816
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/fc631d6e0828.mp3",
+        "duration": 6.347755102040816
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-kode-tebak-petak-ulangi",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/90847e64f0a3.mp3",
+        "duration": 5.642448979591837
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/90847e64f0a3.mp3",
+        "duration": 5.642448979591837
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-sains-butuh-listrik-sekolah",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/3fdd33894c62.mp3",
+        "duration": 3.9706122448979593
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/3fdd33894c62.mp3",
+        "duration": 3.9706122448979593
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-sains-butuh-listrik-rumah",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/44053576568c.mp3",
+        "duration": 5.877551020408164
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/44053576568c.mp3",
+        "duration": 5.877551020408164
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-jam-setengah-pagi",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/4e83fdb8fef4.mp3",
+        "duration": 8.881632653061224
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/4e83fdb8fef4.mp3",
+        "duration": 8.881632653061224
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-jam-setengah-siang",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/8c1ecf66b066.mp3",
+        "duration": 8.594285714285714
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3876/akademi/suara/8c1ecf66b066.mp3",
+        "duration": 8.594285714285714
+      }
+    ]
+  }
+]

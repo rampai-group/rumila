@@ -66,7 +66,7 @@ async function geometry(page) {
       horizontalScroll: Math.max(stage.scrollWidth - stage.clientWidth, doc.scrollWidth - doc.clientWidth),
       out: offSides, clippedTexts: overflow, below,
       outsideViewport: buttons.filter(b=>{ const r=b.getBoundingClientRect(); return r.width && (r.left < -1 || r.right > innerWidth+1 || r.top < -1 || r.bottom > innerHeight+1); }).map(b=>b.getAttribute("aria-label")??b.textContent),
-      artOut: [...stage.querySelectorAll("button")].flatMap(b=>{const r=b.getBoundingClientRect();return [...b.querySelectorAll("svg[data-adegan],svg[data-ilustrasi],img")].filter(a=>{const q=a.getBoundingClientRect();return q.left<r.left-1||q.right>r.right+1||q.top<r.top-1||q.bottom>r.bottom+1;}).map(a=>b.getAttribute("aria-label"));}),
+      artOut: [...stage.querySelectorAll("button")].flatMap(b=>{const r=b.getBoundingClientRect();return [...b.querySelectorAll("svg[data-adegan],svg[data-ilustrasi],img")].filter(a=>{const q=a.getBoundingClientRect();return q.left<r.left-1||q.right>r.right+1||q.top<r.top-1||q.bottom>r.bottom+1;}).map(()=>b.getAttribute("aria-label"));}),
       blankBelowCss: Math.round(Math.max(0, frame.bottom - bottom)),
       blankBelowRatio: Math.round(1000 * Math.max(0, frame.bottom - bottom) / frame.height) / 1000,
       fullViewportBlankBelowRatio: Math.round(1000 * fullBlankBelow / visualViewport.height) / 1000,
@@ -153,7 +153,7 @@ async function run(browser, device, preset) {
   });
   const page = await ctx.newPage();
   const prefix = dest + "/" + name + "-m" + mission + "-" + slug;
-  const rounds = [], errors = [], seen = new Set();
+  const rounds = [], errors = [];
   page.on("pageerror", e => errors.push(e.message));
   await page.addInitScript(id => {
     window.__name = (fn) => fn; sessionStorage.setItem("rinoya-intro", "1");
@@ -172,7 +172,6 @@ async function run(browser, device, preset) {
       const before = await geometry(page);
       const id = prefix + "-" + String(i).padStart(2, "0");
       await page.screenshot({ path: id + "-awal.png", animations: "disabled" });
-      const retainLate = i === 1 || i === 5 || i === 9 || i === limit;
       page.qaPrefix=id;
       const solution = mechanic === "urutkan" ? await solveOrder(page, stage, pack) : mechanic === "navigasi" ? await solveNav(page, stage, pack, i, seed) : await solvePilah(page, stage, model);
       const attempted = await event(page, slug + "#" + (i - 1), slug);
@@ -194,6 +193,14 @@ async function run(browser, device, preset) {
       assert.equal(final.hintCount, 0);
       assert.ok(await page.getByText(new RegExp(rounds.length + " dari " + rounds.length + " benar")).isVisible());
       await page.screenshot({ path: prefix + "-hasil.png", animations: "disabled" });
+    }
+    for(const round of rounds) for(const layout of [round.before, ...(round.phases ?? [])]) {
+      assert.deepEqual(layout.out, [], "Card outside panel sides");
+      assert.deepEqual(layout.below, [], "Card below panel");
+      assert.deepEqual(layout.artOut, [], "Picture outside card");
+      assert.deepEqual(layout.outsideViewport, [], "Control outside viewport");
+      assert.deepEqual(layout.clippedTexts, [], "Clipped label");
+      assert.ok(layout.horizontalScroll <= 1, "Horizontal overflow");
     }
     const report = { device: name, mechanic, slug, seed, rounds, final, errors };
     await writeFile(prefix + ".json", JSON.stringify(report, null, 2));

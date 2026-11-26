@@ -337,7 +337,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
         ref={(el) => { binRefs.current[b.id] = el; }}
         onClick={() => ketukBin(b.id)}
         arah={piktogram ? "piktogram" : baris ? "baris" : "kolom"}
-        className={rakSetengahHp ? "[&>div]:px-0.5 [&>div]:py-0" : undefined}
+        className={rakJamHp || rakSetengahHp ? "[&>div]:px-0.5 [&>div]:py-0" : undefined}
         style={rakJamHp || rakSetengahHp ? { padding: 4, gap: 2 } : piringRingkas ? { width: lebarBin } : rakKisiHp ? { padding: 4 * sk, gap: 4 * sk } : undefined}
         isiDariAtas={!baris && !tataLega}
         minIsi={tinggiIsi}
@@ -369,9 +369,9 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             onClick={(e) => { e.stopPropagation(); ambil(i.id); }}
             className={`shrink-0 ${salah(i) ? "akademi-shake" : ""}`}
             style={{
-              width: rakDobelHp ? "100%" : rakNilaiTempat ? lebarIsi : undefined,
-              minHeight: rakDobelHp || rakSetengahHp ? 44 : 46 * sk,
-              minWidth: Math.min(lebarIsi, 46 * sk),
+              width: rakJamHp ? 44 : rakDobelHp ? "100%" : rakNilaiTempat ? lebarIsi : undefined,
+              minHeight: rakJamHp || rakDobelHp || rakSetengahHp ? 44 : 46 * sk,
+              minWidth: rakJamHp ? 44 : Math.min(lebarIsi, 46 * sk),
               maxWidth: "100%",
               padding: rakJamHp || rakSetengahHp ? 0 : rakDobelHp ? 2 : piktogram || rakAngkaHp || hewanMakanHp ? 4 : undefined,
               paddingBlock: pelengkapPadat && h < 650 ? 4 : undefined,
