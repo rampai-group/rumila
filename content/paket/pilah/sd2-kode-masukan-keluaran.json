@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-masukan-keluaran",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Masuk atau Keluar?",
-      "instruksi": "Perangkat ini memasukkan perintah ke komputer atau mengeluarkan hasilnya? Taruh di kotak yang cocok.",
-      "bin-masuk": "untuk memasukkan",
-      "bin-keluar": "untuk mengeluarkan hasil",
+      "instruksi": "Taruh tiap perangkat di kotak masukan atau keluaran. Perangkat masukan mengirim data atau perintah ke komputer. Perangkat keluaran menyampaikan hasilnya.",
+      "bin-masuk": "masukan",
+      "bin-keluar": "keluaran",
       "i-keyboard": "keyboard",
       "i-mouse": "mouse",
       "i-microphone": "mikrofon",
@@ -26,9 +26,9 @@
     },
     "en": {
       "judul": "In or Out?",
-      "instruksi": "Does this device put commands into the computer or give out the results? Put it in the right box.",
-      "bin-masuk": "puts information in",
-      "bin-keluar": "gives out the results",
+      "instruksi": "Sort each device into input or output. Input devices send data or commands to the computer. Output devices present its results.",
+      "bin-masuk": "input",
+      "bin-keluar": "output",
       "i-keyboard": "keyboard",
       "i-mouse": "mouse",
       "i-microphone": "microphone",

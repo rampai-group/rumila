@@ -250,8 +250,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilah perangkat untuk memasukkan perintah ke komputer dan perangkat untuk mengeluarkan hasil",
-        "en": "I can sort devices that put commands into a computer from devices that give out the results"
+        "id": "Aku bisa memilah perangkat yang mengirim data atau perintah ke komputer dan perangkat yang menyampaikan hasilnya",
+        "en": "I can sort devices that send data or commands to a computer from devices that present its results"
       },
       "depth": [
         "pakai"
@@ -264,7 +264,7 @@
       "mechanics": [
         "pilah"
       ],
-      "catatan": "Masukan: keyboard, mouse, mikrofon, kamera, layar sentuh dipilih hati-hati (dihindari karena dua-duanya). Keluaran (mengeluarkan hasil berupa gambar, suara, atau cetakan): monitor, speaker, printer, headphone, proyektor. Label kotak memakai \"mengeluarkan hasil\", bukan \"menampilkan hasil\", karena suara dan cetakan tidak ditampilkan. Jebakan: webcam di atas monitor; headphone dengan mikrofon (dihindari). Kode Computer Systems Stage 2 belum ada di kamus; refs kosong. Knob: itemCount 6 → 10."
+      "catatan": "Masukan mengirim data atau perintah ke komputer: keyboard, mouse, mikrofon, dan kamera. Keluaran menyampaikan hasil berupa gambar, suara, atau cetakan: monitor, speaker, printer, headphone, dan proyektor. Layar sentuh dan headset dengan mikrofon dihindari karena dapat menjadi masukan sekaligus keluaran. Kode Computer Systems Stage 2 belum ada di kamus, refs kosong. Knob: itemCount 6 → 10."
     },
     {
       "id": "KODE.SD2.DEKOMPOSISI.01",

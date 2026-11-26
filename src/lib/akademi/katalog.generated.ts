@@ -820,8 +820,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memilah perangkat untuk memasukkan perintah ke komputer dan perangkat untuk mengeluarkan hasil",
-          "en": "I can sort devices that put commands into a computer from devices that give out the results"
+          "id": "Aku bisa memilah perangkat yang mengirim data atau perintah ke komputer dan perangkat yang menyampaikan hasilnya",
+          "en": "I can sort devices that send data or commands to a computer from devices that present its results"
         },
         "depth": [
           "pakai"
@@ -834,7 +834,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "pilah"
         ],
-        "catatan": "Masukan: keyboard, mouse, mikrofon, kamera, layar sentuh dipilih hati-hati (dihindari karena dua-duanya). Keluaran (mengeluarkan hasil berupa gambar, suara, atau cetakan): monitor, speaker, printer, headphone, proyektor. Label kotak memakai \"mengeluarkan hasil\", bukan \"menampilkan hasil\", karena suara dan cetakan tidak ditampilkan. Jebakan: webcam di atas monitor; headphone dengan mikrofon (dihindari). Kode Computer Systems Stage 2 belum ada di kamus; refs kosong. Knob: itemCount 6 → 10."
+        "catatan": "Masukan mengirim data atau perintah ke komputer: keyboard, mouse, mikrofon, dan kamera. Keluaran menyampaikan hasil berupa gambar, suara, atau cetakan: monitor, speaker, printer, headphone, dan proyektor. Layar sentuh dan headset dengan mikrofon dihindari karena dapat menjadi masukan sekaligus keluaran. Kode Computer Systems Stage 2 belum ada di kamus, refs kosong. Knob: itemCount 6 → 10."
       },
       {
         "id": "KODE.SD2.DEKOMPOSISI.01",
@@ -209103,7 +209103,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-masukan-keluaran",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209113,9 +209113,9 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Masuk atau Keluar?",
-        "instruksi": "Perangkat ini memasukkan perintah ke komputer atau mengeluarkan hasilnya? Taruh di kotak yang cocok.",
-        "bin-masuk": "untuk memasukkan",
-        "bin-keluar": "untuk mengeluarkan hasil",
+        "instruksi": "Taruh tiap perangkat di kotak masukan atau keluaran. Perangkat masukan mengirim data atau perintah ke komputer. Perangkat keluaran menyampaikan hasilnya.",
+        "bin-masuk": "masukan",
+        "bin-keluar": "keluaran",
         "i-keyboard": "keyboard",
         "i-mouse": "mouse",
         "i-microphone": "mikrofon",
@@ -209129,9 +209129,9 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "In or Out?",
-        "instruksi": "Does this device put commands into the computer or give out the results? Put it in the right box.",
-        "bin-masuk": "puts information in",
-        "bin-keluar": "gives out the results",
+        "instruksi": "Sort each device into input or output. Input devices send data or commands to the computer. Output devices present its results.",
+        "bin-masuk": "input",
+        "bin-keluar": "output",
         "i-keyboard": "keyboard",
         "i-mouse": "mouse",
         "i-microphone": "microphone",
@@ -209236,7 +209236,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-perangkat-masuk-tampil",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209246,9 +209246,9 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Memasukkan atau Mengeluarkan?",
-        "instruksi": "Di toko elektronik ini, taruh tiap perangkat di kotak memasukkan perintah atau kotak mengeluarkan hasil.",
-        "bin-masuk": "memasukkan perintah",
-        "bin-tampil": "mengeluarkan hasil",
+        "instruksi": "Taruh tiap perangkat di kotak masukan atau keluaran. Perangkat masukan mengirim data atau perintah ke komputer. Perangkat keluaran menyampaikan hasilnya.",
+        "bin-masuk": "masukan",
+        "bin-tampil": "keluaran",
         "i-pena": "pena digital",
         "i-gamepad": "gamepad",
         "i-touchpad": "touchpad laptop",
@@ -209264,9 +209264,9 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Input or Output?",
-        "instruksi": "In this electronics shop, put each device in the box for putting in commands or the box for giving out results.",
-        "bin-masuk": "puts commands in",
-        "bin-tampil": "gives out the results",
+        "instruksi": "Sort each device into input or output. Input devices send data or commands to the computer. Output devices present its results.",
+        "bin-masuk": "input",
+        "bin-tampil": "output",
         "i-pena": "digital pen",
         "i-gamepad": "gamepad",
         "i-touchpad": "laptop touchpad",
@@ -218077,7 +218077,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-alami-atau-buatan-dapur",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218091,7 +218091,7 @@ export const PAKET_RAW: unknown[] = [
         "b-alami": "alami",
         "b-buatan": "buatan manusia",
         "i-bambu": "bambu",
-        "i-rotan": "rotan",
+        "i-rotan": "batang rotan",
         "i-tanahliat": "tanah liat",
         "i-batukali": "batu kali",
         "i-bulu": "bulu ayam",
@@ -218109,7 +218109,7 @@ export const PAKET_RAW: unknown[] = [
         "b-alami": "natural",
         "b-buatan": "made by people",
         "i-bambu": "bamboo",
-        "i-rotan": "rattan",
+        "i-rotan": "rattan cane",
         "i-tanahliat": "clay",
         "i-batukali": "river stone",
         "i-bulu": "chicken feather",
@@ -218161,7 +218161,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rotan",
         "labelKey": "i-rotan",
         "bin": "alami",
-        "emoji": "🧺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rotan-mentah"
+        }
       },
       {
         "id": "tanahliat",
@@ -219350,7 +219353,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -219370,7 +219373,7 @@ export const PAKET_RAW: unknown[] = [
         "i-unta": "unta",
         "i-kalajengking": "kalajengking gurun",
         "i-teratai": "teratai",
-        "i-katak": "katak",
+        "i-katak": "katak di tepi kolam",
         "i-bebek": "bebek",
         "i-monyet": "orang utan",
         "i-pakis": "pakis",
@@ -219395,7 +219398,7 @@ export const PAKET_RAW: unknown[] = [
         "i-unta": "camel",
         "i-kalajengking": "desert scorpion",
         "i-teratai": "water lily",
-        "i-katak": "frog",
+        "i-katak": "frog by the pond",
         "i-bebek": "duck",
         "i-monyet": "orangutan",
         "i-pakis": "fern",
@@ -219485,7 +219488,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "teratai",
         "labelKey": "i-teratai",
         "bin": "kolam",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-susun-bunga-teratai"
+        }
       },
       {
         "id": "katak",
@@ -219573,7 +219579,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-habitat-sekitar-rumah",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -219717,7 +219723,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "teratai",
         "labelKey": "i-teratai",
         "bin": "kolam",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-susun-bunga-teratai"
+        }
       },
       {
         "id": "cacing",
@@ -235810,7 +235819,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-pisahkan-campuran",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -235820,39 +235829,39 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Pisahkan Campurannya!",
-        "instruksi": "Dengarkan campurannya, lalu sentuh alat untuk memisahkannya.",
+        "instruksi": "Pilih alat yang cocok. Ayakan kasar untuk dua bahan kering yang berbeda ukuran, magnet untuk besi atau baja, dan kain saring halus untuk ampas di dalam cairan.",
         "pilihan": "pilihan",
-        "i-ayakan": "ayakan",
+        "i-ayakan": "ayakan kasar",
         "i-magnet": "magnet",
-        "i-saring": "kain saring",
+        "i-saring": "kain saring halus",
         "t-kerikil": "Pasir bercampur kerikil.",
         "t-paku": "Paku besi tercampur pasir.",
-        "t-pasirair": "Pasir di dalam segelas air.",
-        "t-klip": "Klip kertas besi bercampur kancing plastik.",
+        "t-pasirair": "Pasir halus dalam air lolos dari ayakan kasar. Alat mana yang dapat menahan pasirnya?",
+        "t-klip": "Klip kertas besi bercampur kancing plastik yang berukuran mirip.",
         "t-kacang": "Kacang merah besar bercampur beras.",
-        "t-teh": "Ampas daun teh di dalam air teh.",
-        "t-serbuk": "Serbuk besi bercampur pasir.",
+        "t-teh": "Ampas teh halus lolos dari ayakan kasar. Alat mana yang dapat menahan ampas dan melewatkan air teh?",
+        "t-serbuk": "Serbuk besi bercampur dengan pasir yang ukuran butirnya mirip.",
         "t-kelereng": "Kelereng bercampur tepung.",
-        "t-lumpur": "Santan bercampur ampas kelapa. Pisahkan ampasnya dari santan.",
+        "t-lumpur": "Ampas kelapa halus lolos dari ayakan kasar. Alat mana yang dapat menahan ampas dan melewatkan santan?",
         "t-jepit": "Jepit rambut besi jatuh ke kotak pasir.",
         "t-batu": "Batu kecil bercampur pasir halus di kebun."
       },
       "en": {
         "judul": "Separate the Mixture!",
-        "instruksi": "Listen to the mixture, then touch the tool that separates it.",
+        "instruksi": "Pick the right tool. Use a coarse sieve for two dry materials of different sizes, a magnet for iron or steel, and a fine cloth filter for bits in a liquid.",
         "pilihan": "choices",
-        "i-ayakan": "sieve",
+        "i-ayakan": "coarse sieve",
         "i-magnet": "magnet",
-        "i-saring": "cloth filter",
+        "i-saring": "fine cloth filter",
         "t-kerikil": "Sand mixed with gravel.",
         "t-paku": "Iron nails mixed into sand.",
-        "t-pasirair": "Sand in a glass of water.",
-        "t-klip": "Steel paper clips mixed with plastic buttons.",
+        "t-pasirair": "Fine sand in water slips through the coarse sieve. Which tool can catch the sand?",
+        "t-klip": "Steel paper clips are mixed with plastic buttons of a similar size.",
         "t-kacang": "Big red beans mixed with rice.",
-        "t-teh": "Tea leaves floating in tea.",
-        "t-serbuk": "Iron filings mixed with sand.",
+        "t-teh": "Fine tea bits slip through the coarse sieve. Which tool can catch the bits and let the tea through?",
+        "t-serbuk": "Iron filings are mixed with sand grains of a similar size.",
         "t-kelereng": "Marbles mixed with flour.",
-        "t-lumpur": "Coconut milk is mixed with pieces of coconut pulp. Separate the pulp from the liquid.",
+        "t-lumpur": "Fine coconut pulp slips through the coarse sieve. Which tool can catch the pulp and let the coconut milk through?",
         "t-jepit": "Steel hair grips dropped in a sandpit.",
         "t-batu": "Small stones mixed with fine garden sand."
       }
@@ -235882,8 +235891,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ayakan",
         "labelKey": "i-ayakan",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#bcaaa4"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-ayakan-kasar"
+        }
       },
       {
         "id": "magnet",
@@ -235895,8 +235906,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "saring",
         "labelKey": "i-saring",
         "bin": "pilihan",
-        "shape": "square",
-        "color": "#fafafa"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-kain-saring-halus"
+        }
       }
     ],
     "pilihan": [
@@ -236307,7 +236320,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-rak-alat-pemisah",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -236317,39 +236330,39 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Rak Alat Pemisah",
-        "instruksi": "Taruh tiap campuran ke alat yang bisa memisahkannya.",
-        "b-ayakan": "ayakan",
+        "instruksi": "Cocokkan campurannya. Ayakan kasar untuk dua bahan kering yang berbeda ukuran, magnet untuk besi atau baja, dan kain saring halus untuk ampas di dalam cairan.",
+        "b-ayakan": "ayakan kasar",
         "b-magnet": "magnet",
-        "b-saring": "kain saring",
+        "b-saring": "kain saring halus",
         "i-kerikil": "pasir + kerikil",
         "i-kacang": "beras + kacang merah",
         "i-kelereng": "tepung + kelereng",
         "i-batu": "pasir halus + batu kecil",
-        "i-paku": "manik-manik plastik + mur baja kecil",
-        "i-klip": "kancing plastik + klip baja",
-        "i-serbuk": "pasir + serbuk besi",
-        "i-pasirair": "air + pasir",
-        "i-teh": "air teh + ampas daun teh",
-        "i-lumpur": "air + tanah",
-        "i-kopi": "air + ampas kopi tubruk"
+        "i-paku": "manik plastik + mur baja seukuran",
+        "i-klip": "kancing plastik + klip baja seukuran",
+        "i-serbuk": "pasir + serbuk besi seukuran",
+        "i-pasirair": "air + pasir halus",
+        "i-teh": "air teh + ampas halus",
+        "i-lumpur": "air + butiran tanah halus",
+        "i-kopi": "air + ampas kopi halus"
       },
       "en": {
         "judul": "Separating Tool Shelves",
-        "instruksi": "Put each mixture on the tool that can separate it.",
-        "b-ayakan": "sieve",
+        "instruksi": "Match each mixture to its tool. Use a coarse sieve for two dry materials of different sizes, a magnet for iron or steel, and a fine cloth filter for bits in a liquid.",
+        "b-ayakan": "coarse sieve",
         "b-magnet": "magnet",
-        "b-saring": "cloth filter",
+        "b-saring": "fine cloth filter",
         "i-kerikil": "sand + gravel",
         "i-kacang": "rice + red beans",
         "i-kelereng": "flour + marbles",
         "i-batu": "fine sand + small stones",
-        "i-paku": "plastic beads + small steel nuts",
-        "i-klip": "plastic buttons + steel clips",
-        "i-serbuk": "sand + iron filings",
-        "i-pasirair": "water + sand",
-        "i-teh": "tea + tea leaves",
-        "i-lumpur": "water + soil",
-        "i-kopi": "water + coffee grounds"
+        "i-paku": "plastic beads + steel nuts of similar size",
+        "i-klip": "plastic buttons + steel clips of similar size",
+        "i-serbuk": "sand grains + iron filings of similar size",
+        "i-pasirair": "water + fine sand",
+        "i-teh": "tea + fine tea bits",
+        "i-lumpur": "water + fine soil grains",
+        "i-kopi": "water + fine coffee grounds"
       }
     },
     "knobs": {
@@ -236377,8 +236390,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "ayakan",
         "labelKey": "b-ayakan",
-        "color": "#bcaaa4",
-        "shape": "circle"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-ayakan-kasar"
+        }
       },
       {
         "id": "magnet",
@@ -236389,8 +236404,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "saring",
         "labelKey": "b-saring",
-        "color": "#fafafa",
-        "shape": "square"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-kain-saring-halus"
+        }
       }
     ],
     "items": [
@@ -312666,7 +312683,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-timbang-batu-koleksi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD2",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312676,7 +312693,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Koleksi Batu di Timbangan",
-        "instruksi": "Taruh dua batu koleksi di timbangan. Batu yang besar belum tentu lebih berat. Lihat sisi yang turun, lalu pilih yang lebih berat.",
+        "instruksi": "Dua benda ada di timbangan. Lihat sisi yang turun, lalu sentuh benda yang lebih berat.",
         "apung": "batu apung besar",
         "pasir": "batu pasir",
         "basal": "batu basal",
@@ -312688,7 +312705,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Rock Collection on the Balance",
-        "instruksi": "Put two rocks from the collection on the balance. A big rock is not always heavier. Watch which side goes down, then pick the heavier one.",
+        "instruksi": "Two rocks are on the balance. Watch which side goes down, then tap the heavier rock.",
         "apung": "big pumice stone",
         "pasir": "sandstone",
         "basal": "basalt",
@@ -312721,7 +312738,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 35,
         "scale": 1.8,
-        "color": "#e0e0e0"
+        "color": "#e0e0e0",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-apung"
+        }
       },
       {
         "id": "pasir",
@@ -312730,7 +312751,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 63,
         "scale": 1.4,
-        "color": "#e6c48a"
+        "color": "#e6c48a",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-pasir"
+        }
       },
       {
         "id": "basal",
@@ -312739,7 +312764,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 30,
         "scale": 1,
-        "color": "#455a64"
+        "color": "#455a64",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-basalt"
+        }
       },
       {
         "id": "kuarsa",
@@ -312748,7 +312777,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 14,
         "scale": 0.8,
-        "color": "#f3e5f5"
+        "color": "#f3e5f5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kristal-kuarsa"
+        }
       },
       {
         "id": "sabak",
@@ -312757,7 +312790,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 48,
         "scale": 1.2,
-        "color": "#607d8b"
+        "color": "#607d8b",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sabak"
+        }
       },
       {
         "id": "galena",
@@ -312766,7 +312803,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 38,
         "scale": 0.8,
-        "color": "#9e9e9e"
+        "color": "#9e9e9e",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-galena"
+        }
       },
       {
         "id": "hematit",
@@ -312775,7 +312816,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 18,
         "scale": 0.7,
-        "color": "#8e2c1b"
+        "color": "#8e2c1b",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-hematit"
+        }
       },
       {
         "id": "obsidian",
@@ -312784,13 +312829,17 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 32,
         "scale": 1.1,
-        "color": "#212121"
+        "color": "#212121",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-obsidian"
+        }
       }
     ]
   },
   {
     "id": "sd2-sains-timbang-batuan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312800,7 +312849,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Batu Mana yang Lebih Berat?",
-        "instruksi": "Taruh dua batu di timbangan. Lihat sisi yang turun, lalu pilih yang lebih berat.",
+        "instruksi": "Dua benda ada di timbangan. Lihat sisi yang turun, lalu sentuh benda yang lebih berat.",
         "apung": "batu apung",
         "kerikil": "kerikil",
         "kali": "batu kali",
@@ -312812,7 +312861,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Which Rock Is Heavier?",
-        "instruksi": "Put two rocks on the balance. Watch which side goes down, then pick the heavier one.",
+        "instruksi": "Two rocks are on the balance. Watch which side goes down, then tap the heavier rock.",
         "apung": "pumice",
         "kerikil": "pebble",
         "kali": "river stone",
@@ -312845,7 +312894,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 3,
         "scale": 1.7,
-        "color": "#eeeeee"
+        "color": "#eeeeee",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-apung"
+        }
       },
       {
         "id": "kerikil",
@@ -312853,7 +312906,11 @@ export const PAKET_RAW: unknown[] = [
         "role": "benda",
         "emoji": "🪨",
         "value": 1,
-        "scale": 0.5
+        "scale": 0.5,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kerikil"
+        }
       },
       {
         "id": "kali",
@@ -312862,7 +312919,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 4,
         "scale": 0.9,
-        "color": "#78909c"
+        "color": "#78909c",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-kali"
+        }
       },
       {
         "id": "marmer",
@@ -312871,7 +312932,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 7,
         "scale": 1,
-        "color": "#f5f5f5"
+        "color": "#f5f5f5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-marmer"
+        }
       },
       {
         "id": "granit",
@@ -312880,7 +312945,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 8,
         "scale": 1.1,
-        "color": "#8d6e63"
+        "color": "#8d6e63",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-granit"
+        }
       },
       {
         "id": "kapur",
@@ -312889,7 +312958,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 2,
         "scale": 0.8,
-        "color": "#fff8e1"
+        "color": "#fff8e1",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-kapur"
+        }
       },
       {
         "id": "batubara",
@@ -312898,7 +312971,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 5,
         "scale": 1.2,
-        "color": "#424242"
+        "color": "#424242",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-bara"
+        }
       },
       {
         "id": "besi",
@@ -312907,7 +312984,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 6,
         "scale": 0.8,
-        "color": "#a1522d"
+        "color": "#a1522d",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bijih-besi"
+        }
       }
     ]
   },

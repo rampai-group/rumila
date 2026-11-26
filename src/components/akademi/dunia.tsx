@@ -180,7 +180,7 @@ export function panggungPadat(paket: ContentPack, ronde?: Ronde): boolean {
       (paket.mode === "lengkapi" && paket.level === "TKB"))) ||
     (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanAngkaRingkas(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
-    (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" || (paket.mode === "tombol" && paket.level === "PAUD")));
+    (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" || paket.mode === "timbangan" || (paket.mode === "tombol" && paket.level === "PAUD")));
 }
 
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;

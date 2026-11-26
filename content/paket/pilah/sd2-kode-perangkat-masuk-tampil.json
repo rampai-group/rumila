@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-perangkat-masuk-tampil",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Memasukkan atau Mengeluarkan?",
-      "instruksi": "Di toko elektronik ini, taruh tiap perangkat di kotak memasukkan perintah atau kotak mengeluarkan hasil.",
-      "bin-masuk": "memasukkan perintah",
-      "bin-tampil": "mengeluarkan hasil",
+      "instruksi": "Taruh tiap perangkat di kotak masukan atau keluaran. Perangkat masukan mengirim data atau perintah ke komputer. Perangkat keluaran menyampaikan hasilnya.",
+      "bin-masuk": "masukan",
+      "bin-tampil": "keluaran",
       "i-pena": "pena digital",
       "i-gamepad": "gamepad",
       "i-touchpad": "touchpad laptop",
@@ -28,9 +28,9 @@
     },
     "en": {
       "judul": "Input or Output?",
-      "instruksi": "In this electronics shop, put each device in the box for putting in commands or the box for giving out results.",
-      "bin-masuk": "puts commands in",
-      "bin-tampil": "gives out the results",
+      "instruksi": "Sort each device into input or output. Input devices send data or commands to the computer. Output devices present its results.",
+      "bin-masuk": "input",
+      "bin-tampil": "output",
       "i-pena": "digital pen",
       "i-gamepad": "gamepad",
       "i-touchpad": "laptop touchpad",

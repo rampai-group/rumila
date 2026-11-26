@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "i-unta": "unta",
       "i-kalajengking": "kalajengking gurun",
       "i-teratai": "teratai",
-      "i-katak": "katak",
+      "i-katak": "katak di tepi kolam",
       "i-bebek": "bebek",
       "i-monyet": "orang utan",
       "i-pakis": "pakis",
@@ -45,7 +45,7 @@
       "i-unta": "camel",
       "i-kalajengking": "desert scorpion",
       "i-teratai": "water lily",
-      "i-katak": "frog",
+      "i-katak": "frog by the pond",
       "i-bebek": "duck",
       "i-monyet": "orangutan",
       "i-pakis": "fern",
@@ -135,7 +135,10 @@
       "id": "teratai",
       "labelKey": "i-teratai",
       "bin": "kolam",
-      "emoji": "🌸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tumbuhan-susun-bunga-teratai"
+      }
     },
     {
       "id": "katak",
