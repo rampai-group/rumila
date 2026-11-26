@@ -1260,6 +1260,7 @@ export const SUARA: Record<string, string> = {
   "Berapa pasang sisi sejajar pada layang-layang yang bukan belah ketupat?": "/akademi/suara/7125cf178bc1.mp3",
   "Berapa semuanya? Bayar dengan uang pas.": "/akademi/suara/8da3272cf20b.mp3",
   "Berapa utuh, sisa berapa bagian? Taruh tiap pecahan tidak wajar di rak pecahan campurannya.": "/akademi/suara/0aa4099a4be4.mp3",
+  "Berapa volume air yang sudah disiapkan untuk menyiram satu pot?": "/akademi/suara/0fef5861b869.mp3",
   "Beras dibungkus": "/akademi/suara/2fbd7b7342ef.mp3",
   "Beras kering tercampur butiran pasir yang lebih kecil dari beras.": "/akademi/suara/3bfdf5b8d4ae.mp3",
   "berat = [5, 9, 2]. Berapa berat[1] + berat[2]?": "/akademi/suara/1105ebe781d9.mp3",

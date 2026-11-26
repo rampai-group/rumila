@@ -235662,7 +235662,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-pilih-alat-ukur",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -235688,7 +235688,7 @@ export const PAKET_RAW: unknown[] = [
         "t-tas": "Tas siapa yang paling berat?",
         "t-mobil": "Berapa lama mobil mainan meluncur sampai ujung papan?",
         "t-ulat": "Seberapa panjang ulat yang merayap di daun?",
-        "t-siram": "Berapa banyak air untuk menyiram satu pot?"
+        "t-siram": "Berapa volume air yang sudah disiapkan untuk menyiram satu pot?"
       },
       "en": {
         "judul": "Measuring Tools for Investigations",
@@ -235697,7 +235697,7 @@ export const PAKET_RAW: unknown[] = [
         "i-termometer": "thermometer",
         "i-timbangan": "scales",
         "i-penggaris": "ruler",
-        "i-gelasukur": "measuring jug",
+        "i-gelasukur": "measuring cylinder",
         "i-stopwatch": "stopwatch",
         "t-kolam": "How warm is the pond water this afternoon?",
         "t-semangka": "How heavy is the harvested watermelon?",
@@ -235708,7 +235708,7 @@ export const PAKET_RAW: unknown[] = [
         "t-tas": "Whose school bag is the heaviest?",
         "t-mobil": "How long does the toy car take to reach the end of the board?",
         "t-ulat": "How long is the caterpillar crawling on the leaf?",
-        "t-siram": "How much water to water one pot?"
+        "t-siram": "What is the volume of the water set out for one pot?"
       }
     },
     "knobs": {
@@ -235754,7 +235754,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelasukur",
         "labelKey": "i-gelasukur",
         "bin": "pilihan",
-        "emoji": "🧪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-gelas-ukur"
+        }
       },
       {
         "id": "stopwatch",
@@ -236531,7 +236534,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-rak-alat-ukur",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -236545,7 +236548,7 @@ export const PAKET_RAW: unknown[] = [
         "b-termometer": "termometer (suhu)",
         "b-timbangan": "timbangan (berat)",
         "b-penggaris": "penggaris (panjang)",
-        "b-gelasukur": "gelas ukur (banyak air)",
+        "b-gelasukur": "gelas ukur (volume)",
         "b-stopwatch": "stopwatch (lama waktu)",
         "i-airkolam": "seberapa hangat air kolam?",
         "i-kelas": "seberapa panas kelas siang ini?",
@@ -236554,7 +236557,7 @@ export const PAKET_RAW: unknown[] = [
         "i-kacang": "seberapa tinggi tanaman kacang?",
         "i-ulat": "seberapa panjang ulat?",
         "i-hujan": "berapa banyak air hujan tertampung?",
-        "i-siram": "berapa banyak air untuk satu pot?",
+        "i-siram": "berapa volume air yang disiapkan untuk satu pot?",
         "i-es": "berapa lama es mencair?",
         "i-lari": "berapa lama berlari keliling lapangan?",
         "i-teh": "seberapa panas teh di gelas?",
@@ -236573,7 +236576,7 @@ export const PAKET_RAW: unknown[] = [
         "b-termometer": "thermometer (temperature)",
         "b-timbangan": "scales (weight)",
         "b-penggaris": "ruler (length)",
-        "b-gelasukur": "measuring jug (amount of water)",
+        "b-gelasukur": "measuring cylinder (volume)",
         "b-stopwatch": "stopwatch (how long)",
         "i-airkolam": "how warm is the pond?",
         "i-kelas": "how hot is the classroom at noon?",
@@ -236582,7 +236585,7 @@ export const PAKET_RAW: unknown[] = [
         "i-kacang": "how tall is the bean plant?",
         "i-ulat": "how long is the caterpillar?",
         "i-hujan": "how much rain was collected?",
-        "i-siram": "how much water for one pot?",
+        "i-siram": "what is the volume of the water set out for one pot?",
         "i-es": "how long does the ice take to melt?",
         "i-lari": "how long to run round the field?",
         "i-teh": "how hot is the tea in the cup?",
@@ -236639,7 +236642,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "gelasukur",
         "labelKey": "b-gelasukur",
-        "emoji": "🧪",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-gelas-ukur"
+        },
         "color": "#e1f5fe"
       },
       {
@@ -250608,7 +250614,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-konduktor-isolator",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.LISTRIK.02"
@@ -250631,7 +250637,7 @@ export const PAKET_RAW: unknown[] = [
         "i-penggaris": "penggaris plastik",
         "i-tusukgigi": "tusuk gigi kayu",
         "i-kertas": "kertas",
-        "i-gelas": "toples kaca",
+        "i-gelas": "toples kaca kosong",
         "i-tali": "tali kain",
         "i-sedotan": "sedotan plastik"
       },
@@ -250651,7 +250657,7 @@ export const PAKET_RAW: unknown[] = [
         "i-penggaris": "plastic ruler",
         "i-tusukgigi": "wooden toothpick",
         "i-kertas": "paper",
-        "i-gelas": "glass jar",
+        "i-gelas": "empty glass jar",
         "i-tali": "cloth string",
         "i-sedotan": "plastic straw"
       }
@@ -250750,7 +250756,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tusukgigi",
         "labelKey": "i-tusukgigi",
         "bin": "isolator",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-tusuk-gigi-kayu"
+        }
       },
       {
         "id": "kertas",
@@ -250762,7 +250771,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelas",
         "labelKey": "i-gelas",
         "bin": "isolator",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd4-toples-kaca-kosong"
+        }
       },
       {
         "id": "tali",
@@ -274581,7 +274593,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-magnet-gudang-logam",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.MAGNET.01"
@@ -274593,7 +274605,7 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Dekatkan magnet ke tiap benda di gudang. Pilah: tertarik magnet, atau tidak. Ingat, tidak semua logam tertarik.",
         "b-tertarik": "tertarik magnet",
         "b-tidak": "tidak tertarik magnet",
-        "i-tutupbotol": "tutup botol kaca dari baja",
+        "i-tutupbotol": "tutup baja dari botol kaca",
         "i-staples": "isi staples dari baja",
         "i-obeng": "ujung obeng baja",
         "i-mur": "mur besi",
@@ -274614,7 +274626,7 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Hold the magnet near each thing in the shed. Sort it: attracted or not. Remember, not every metal is attracted.",
         "b-tertarik": "attracted to the magnet",
         "b-tidak": "not attracted",
-        "i-tutupbotol": "steel bottle cap",
+        "i-tutupbotol": "steel cap from a glass bottle",
         "i-staples": "steel staples",
         "i-obeng": "steel screwdriver tip",
         "i-mur": "iron nut",
@@ -274665,9 +274677,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tutupbotol",
         "labelKey": "i-tutupbotol",
         "bin": "tertarik",
-        "shape": "circle",
-        "color": "#bdbdbd",
-        "scale": 0.5
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-tutup-baja"
+        }
       },
       {
         "id": "staples",
@@ -274711,7 +274724,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pipa",
         "labelKey": "i-pipa",
         "bin": "tidak",
-        "emoji": "🟠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-pipa-tembaga"
+        }
       },
       {
         "id": "terompet",

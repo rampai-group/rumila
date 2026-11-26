@@ -1,5 +1,42 @@
 import type { ReactNode } from "react";
 
+function ToplesKacaKosong() {
+  return <g stroke="#427888" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M39 21v13Q22 42 22 57v20q0 12 43 12t43-12V57q0-15-17-23V21" fill="#d9f3f7" fillOpacity=".7" />
+    <ellipse cx="65" cy="21" rx="26" ry="8" fill="#f3fcfe" />
+    <path d="M39 29q26 11 52 0M26 75q39 14 78 0" fill="none" stroke="#88b7c3" />
+    <path d="M33 69V57q0-8 8-13M97 59v13" fill="none" stroke="#fff" strokeWidth="4" />
+  </g>;
+}
+
+function TusukGigiKayu() {
+  return <g stroke="#855d2c" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m12 78 21-18 59-30 25-6-21 15-60 30Z" fill="#efc987" />
+    <path d="m33 65 60-31" fill="none" stroke="#b38449" strokeWidth="1.8" />
+    <path d="m38 61 50-25" fill="none" stroke="#fff0c4" strokeWidth="1.8" />
+  </g>;
+}
+
+function PipaTembaga() {
+  return <g stroke="#794129" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m13 39 79-25c9-3 22 8 26 20s1 24-8 27L31 86Z" fill="#ce7b4e" />
+    <path d="m32 42 62-20q7-2 12 4L41 48Z" fill="#efb28b" stroke="none" />
+    <path d="m49 72 61-19" fill="none" stroke="#a65935" strokeWidth="2" />
+    <ellipse cx="23" cy="63" rx="16" ry="25" transform="rotate(-20 23 63)" fill="#efaa83" />
+    <ellipse cx="23" cy="63" rx="10" ry="18" transform="rotate(-20 23 63)" fill="#733f32" />
+    <path d="M19 52q-2 12 8 22" fill="none" stroke="#a75f44" strokeWidth="2" />
+  </g>;
+}
+
+function TutupBaja() {
+  return <g stroke="#556d7b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M23 48v14l5 7 5-1 5 7 6-1 6 5 6-2 6 5 6-3 6 3 6-5 6 2 6-5 6 1 5-7 5 1 5-7V48" fill="#a8bac6" />
+    <ellipse cx="65" cy="48" rx="42" ry="23" fill="#dce5eb" />
+    <ellipse cx="65" cy="47" rx="33" ry="16" fill="#b7cad4" stroke="#8196a5" strokeWidth="2" />
+    <path d="M39 47q11-10 30-10M43 52q8-6 20-7" fill="none" stroke="#eef5f9" strokeWidth="2" />
+  </g>;
+}
+
 function RubahKutub() {
   const garis = "#51677d";
   return <>
@@ -100,6 +137,10 @@ const ILUSTRASI: Record<string, () => ReactNode> = {
   "qc-sd4-otot-triseps": () => <OtotLengan belakang />,
   "qc-sd4-otot-paha-depan": () => <OtotPaha belakang={false} />,
   "qc-sd4-otot-paha-belakang": () => <OtotPaha belakang />,
+  "qc-sd4-toples-kaca-kosong": ToplesKacaKosong,
+  "qc-sd4-tusuk-gigi-kayu": TusukGigiKayu,
+  "qc-sd5-pipa-tembaga": PipaTembaga,
+  "qc-sd5-tutup-baja": TutupBaja,
 };
 
 export const ILUSTRASI_QC_SD4_SD6_IDS = Object.keys(ILUSTRASI);

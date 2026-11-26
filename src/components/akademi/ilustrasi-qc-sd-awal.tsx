@@ -4,9 +4,19 @@ export const ILUSTRASI_QC_SD_AWAL_IDS = [
   "qc-serigala-kutub",
   "qc-ayakan-kasar",
   "qc-kain-saring-halus",
+  "qc-gelas-ukur",
 ];
 
 export function IlustrasiQcSdAwal({ id }: { id: string }) {
+  if (id === "qc-gelas-ukur") return (
+    <g stroke="#286278" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="65" cy="86" rx="26" ry="7" fill="#bce5ed" />
+      <path d="M45 16v63q0 6 20 6t20-6V16" fill="#d8f2f6" />
+      <path d="M45 16c0-7 40-7 40 0s-40 7-40 0Z" fill="#f1fcff" />
+      <path d="M52 31v39" fill="none" stroke="#fff" strokeWidth="4" />
+      <path d="M65 32h13m-8 8h8m-13 8h13m-8 8h8m-13 8h13m-8 8h8" fill="none" strokeWidth="2.6" />
+    </g>
+  );
   if (id === "qc-ayakan-kasar") return (
     <g stroke="#774e35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
       <path d="M11 43v15c0 12 20 22 46 22s46-10 46-22V43" fill="#ca8950" />
