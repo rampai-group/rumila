@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-ya-tidak-roda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -129,7 +129,10 @@
       "id": "canoe",
       "labelKey": "i-canoe",
       "bin": "tidak",
-      "emoji": "🛶"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "pilot-bumi-kano"
+      }
     },
     {
       "id": "wooden-chair",

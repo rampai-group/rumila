@@ -199718,7 +199718,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-ya-tidak-roda",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -199847,7 +199847,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "canoe",
         "labelKey": "i-canoe",
         "bin": "tidak",
-        "emoji": "🛶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-kano"
+        }
       },
       {
         "id": "wooden-chair",
@@ -203991,7 +203994,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-air-atau-daratan-dari-pesawat",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -204052,14 +204055,20 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "air",
         "labelKey": "b-air",
-        "emoji": "🚤",
-        "color": "#e1f5fe"
+        "color": "#e1f5fe",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-laut"
+        }
       },
       {
         "id": "darat",
         "labelKey": "b-darat",
-        "emoji": "⛰️",
-        "color": "#efebe9"
+        "color": "#efebe9",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-gunung"
+        }
       }
     ],
     "items": [
@@ -204067,75 +204076,108 @@ export const PAKET_RAW: unknown[] = [
         "id": "lautbiru",
         "labelKey": "i-lautbiru",
         "bin": "air",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-laut"
+        }
       },
       {
         "id": "sungai",
         "labelKey": "i-sungai",
         "bin": "air",
-        "emoji": "🏞️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-sungai"
+        }
       },
       {
         "id": "waduk",
         "labelKey": "i-waduk",
         "bin": "air",
-        "emoji": "💧"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-waduk"
+        }
       },
       {
         "id": "danau",
         "labelKey": "i-danau",
         "bin": "air",
-        "emoji": "🛶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-danau"
+        }
       },
       {
         "id": "teluk",
         "labelKey": "i-teluk",
         "bin": "air",
-        "emoji": "⛵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-teluk"
+        }
       },
       {
         "id": "gunungapi",
         "labelKey": "i-gunungapi",
         "bin": "darat",
-        "emoji": "🌋"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-gunungapi"
+        }
       },
       {
         "id": "lembah",
         "labelKey": "i-lembah",
         "bin": "darat",
-        "emoji": "🏕️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-lembah"
+        }
       },
       {
         "id": "kota",
         "labelKey": "i-kota",
         "bin": "darat",
-        "emoji": "🏙️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-kota"
+        }
       },
       {
         "id": "kebunteh",
         "labelKey": "i-kebunteh",
         "bin": "darat",
-        "emoji": "🌿",
-        "color": "#2e7d32"
+        "color": "#2e7d32",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-kebunteh"
+        }
       },
       {
         "id": "pulau",
         "labelKey": "i-pulau",
         "bin": "darat",
-        "emoji": "🏝️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-pulau"
+        }
       },
       {
         "id": "pantai",
         "labelKey": "i-pantai",
         "bin": "darat",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-pantai"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd1-sains-air-atau-daratan",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -204198,14 +204240,20 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "air",
         "labelKey": "b-air",
-        "emoji": "💧",
-        "color": "#e1f5fe"
+        "color": "#e1f5fe",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-laut"
+        }
       },
       {
         "id": "darat",
         "labelKey": "b-darat",
-        "emoji": "🗺️",
-        "color": "#efebe9"
+        "color": "#efebe9",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-gunung"
+        }
       }
     ],
     "items": [
@@ -204213,73 +204261,109 @@ export const PAKET_RAW: unknown[] = [
         "id": "laut",
         "labelKey": "i-laut",
         "bin": "air",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-laut"
+        }
       },
       {
         "id": "danau",
         "labelKey": "i-danau",
         "bin": "air",
-        "emoji": "🏞️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-danau"
+        }
       },
       {
         "id": "sungai",
         "labelKey": "i-sungai",
         "bin": "air",
-        "emoji": "🛶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-sungai"
+        }
       },
       {
         "id": "kolam",
         "labelKey": "i-kolam",
         "bin": "air",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-kolam"
+        }
       },
       {
         "id": "airterjun",
         "labelKey": "i-airterjun",
         "bin": "air",
-        "emoji": "💦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-airterjun"
+        }
       },
       {
         "id": "samudra",
         "labelKey": "i-samudra",
         "bin": "air",
-        "emoji": "🐋"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-laut"
+        }
       },
       {
         "id": "gunung",
         "labelKey": "i-gunung",
         "bin": "darat",
-        "emoji": "⛰️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-gunung"
+        }
       },
       {
         "id": "sawah",
         "labelKey": "i-sawah",
         "bin": "darat",
-        "emoji": "🌾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-sawah"
+        }
       },
       {
         "id": "gurun",
         "labelKey": "i-gurun",
         "bin": "darat",
-        "emoji": "🏜️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-gurun"
+        }
       },
       {
         "id": "hutan",
         "labelKey": "i-hutan",
         "bin": "darat",
-        "emoji": "🌲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-hutan"
+        }
       },
       {
         "id": "pulau",
         "labelKey": "i-pulau",
         "bin": "darat",
-        "emoji": "🏝️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-pulau"
+        }
       },
       {
         "id": "bukit",
         "labelKey": "i-bukit",
         "bin": "darat",
-        "emoji": "🪨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "pilot-bumi-bukit"
+        }
       }
     ],
     "pilihan": []

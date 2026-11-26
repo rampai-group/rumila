@@ -5,7 +5,7 @@
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
 import { sfxAkademi } from "@/lib/sfx-akademi";
-import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from "react";
 import type { PaketUrutkan } from "@akademi/schema";
 import type { JawabanUrutkan, LabelUrutan, RondeUrutkan } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
@@ -129,6 +129,11 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const kepalaTumbuhan = useRef<HTMLDivElement>(null);
   const [tinggiKepalaTumbuhan, setTinggiKepalaTumbuhan] = useState(0);
   const tataTumbuhan = paket.id === "sains-susun-tumbuhan-utuh";
+  const kalenderPilot = paket.competencyIds.includes("MAT.SD1.WAKTU.02");
+  const tujuan = useRef<(HTMLButtonElement | null)[]>([]);
+  const gerakan = useRef<{ id: string; x: number; y: number; aktif: boolean } | null>(null);
+  const abaikanKlik = useRef(false);
+  const [bayanganSeret, setBayanganSeret] = useState<{ id: string; x: number; y: number } | null>(null);
   const kunci = !!hasil;
   const langkah = (id: string) => shown.find((s) => s.id === id)!;
 
@@ -147,6 +152,9 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     setTerpilih(null);
     setHint(null);
     terkirim.current = false;
+    gerakan.current = null;
+    setBayanganSeret(null);
+    abaikanKlik.current = false;
   }, [ronde, shown.length]);
 
   useEffect(() => {
@@ -188,6 +196,35 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     }
     if (terpilih) isiSlot(i, terpilih);
   };
+  const mulaiSeret = (e: ReactPointerEvent<Element>, id: string) => {
+    if (!kalenderPilot || kunci) return;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    abaikanKlik.current = false;
+    gerakan.current = { id, x: e.clientX, y: e.clientY, aktif: false };
+  };
+  const geserKartu = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const g = gerakan.current;
+    if (!g) return;
+    g.aktif ||= Math.hypot(e.clientX - g.x, e.clientY - g.y) > 10;
+    if (g.aktif) {
+      setTerpilih(g.id);
+      setBayanganSeret({ id: g.id, x: e.clientX, y: e.clientY });
+    }
+  };
+  const selesaiSeret = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const g = gerakan.current;
+    gerakan.current = null;
+    setBayanganSeret(null);
+    if (!g?.aktif) return;
+    abaikanKlik.current = true;
+    const i = tujuan.current.findIndex((el, index) => {
+      if (!el || slot[index]) return false;
+      const r = el.getBoundingClientRect();
+      return e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+    });
+    if (i >= 0) isiSlot(i, g.id);
+  };
+
   const bantu = () => {
     if (kunci) return;
     onHint?.();
@@ -289,7 +326,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   );
 
   return (
-    <div data-urut-tengah={hitungLega || hitungLegaHp ? "" : undefined} className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataAngkaRingkas ? "" : "flex-1"}`} style={{ color: INK }}>
+    <div onPointerMove={geserKartu} onPointerUp={selesaiSeret} onPointerCancel={() => { gerakan.current = null; setBayanganSeret(null); }} data-urut-tengah={hitungLega || hitungLegaHp ? "" : undefined} className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataAngkaRingkas ? "" : "flex-1"}`} style={{ color: INK }}>
       {tataTumbuhan ? (
         <div ref={kepalaTumbuhan} className="flex shrink-0 flex-col gap-1">
           {judul}
@@ -311,6 +348,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
           return (
             <button
               key={i}
+              ref={(el) => { tujuan.current[i] = el; }}
               type="button"
               onClick={() => ketukSlot(i)}
               disabled={kunci}
@@ -352,9 +390,11 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               ariaLabel={bandingPanjang ? labelAkses(s) : undefined}
               labelSize={layarRapat ? 12 : batas(14 * sk, lebarKartu * 0.07, 22)}
               selected={dipilih}
-              onClick={() => ketukKartu(s.id)}
+              onClick={(e) => { if (e.detail !== 0 && abaikanKlik.current) return; ketukKartu(s.id); }}
+              onPointerDown={kalenderPilot ? (e) => mulaiSeret(e, s.id) : undefined}
               className={layarRapat ? "p-1.5!" : disorot && !tataTumbuhan ? "akademi-bounce" : ""}
               style={{
+                touchAction: kalenderPilot ? "none" : undefined,
                 width: lebarKartu,
                 minHeight: tinggiMinKartu,
                 ...(tataTumbuhan ? sorotKartuUrutan(dipilih, disorot) : { boxShadow: disorot ? BAYANG_SOROT : undefined }),
@@ -364,6 +404,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
           );
         })}
       </div>
+      {bayanganSeret && <div aria-hidden className="pointer-events-none fixed z-50 rounded-xl border-2 border-[#0786eb] bg-white px-4 py-3 font-extrabold shadow-lg" style={{ left: bayanganSeret.x, top: bayanganSeret.y, transform: "translate(-50%, -50%)" }}>{t(langkah(bayanganSeret.id).labelKey)}</div>}
     </div>
   );
 }
