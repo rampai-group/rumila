@@ -275469,7 +275469,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-pencernaan-hewan-ternak",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.02"
@@ -275559,9 +275559,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "lambung",
         "labelKey": "i-lambung",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#f48fb1",
-        "scale": 0.8
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-lambung",
+          "t": 0
+        }
       },
       {
         "id": "usushalus",
@@ -275579,7 +275581,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "anus",
         "labelKey": "i-anus",
         "bin": "pilihan",
-        "emoji": "⭕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-lubang-anus",
+          "t": 0
+        }
       },
       {
         "id": "mirip",
@@ -276710,7 +276716,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-tamu-bunga-taman",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.BUNGA.01"
@@ -276719,7 +276725,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Tamu-Tamu Bunga Taman",
-        "instruksi": "Baca kejadian di taman, lalu sentuh bagian bunga yang sedang bekerja.",
+        "instruksi": "Baca kejadian di taman, lalu pilih gambar yang menyorot bagian bunga yang bekerja.",
         "b-pilihan": "pilihan",
         "i-mahkota": "mahkota bunga",
         "i-kepalasari": "kepala sari",
@@ -276730,7 +276736,7 @@ export const PAKET_RAW: unknown[] = [
         "i-daun": "daun",
         "p-r1": "Lebah terbang ke bunga sepatu karena tertarik warna merahnya yang cerah. Bagian merah itu adalah…",
         "p-r2": "Melati berwarna putih dan harum sehingga ngengat datang di malam hari. Bagian yang harum dan putih itu adalah…",
-        "p-r3": "Kaki lebah jadi kuning penuh serbuk setelah menyentuh satu bagian bunga. Bagian itu adalah…",
+        "p-r3": "Kaki lebah menyentuh ujung tangkai sari dan terkena serbuk sari dari sana. Bagian yang disentuh adalah…",
         "p-r4": "Bunga jagung jantan di pucuk menebarkan serbuk sari ditiup angin. Serbuk itu dibuat oleh…",
         "p-r5": "Kupu-kupu membawa serbuk kuning dari bunga lain. Serbuk itu menempel di bagian bunga yang lengket, yaitu…",
         "p-r6": "Petani salak mengoleskan serbuk sari ke bunga betina dengan kuas. Kuas harus menyentuh…",
@@ -276738,12 +276744,12 @@ export const PAKET_RAW: unknown[] = [
         "p-r8": "Bunga rumput tidak berwarna cerah karena serbuknya dibawa angin, bukan serangga. Bagian yang biasanya cerah untuk menarik serangga adalah…",
         "p-r9": "Pada bunga lili, ujung putik terasa basah dan lengket supaya bisa menangkap serbuk. Bagian itu adalah…",
         "p-r10": "Bagian hijau di bawah mahkota yang dulu membungkus kuncup bunga mawar.",
-        "p-r11": "Sesudah serbuk sampai di kepala putik, bagian di pangkal putik membesar menjadi buah. Bagian itu adalah…",
+        "p-r11": "Setelah pembuahan, bagian di pangkal putik biasanya membesar menjadi buah. Bagian itu adalah…",
         "p-r12": "Burung madu mencari bunga berwarna merah menyala. Bagian bunga yang menarik perhatiannya adalah…"
       },
       "en": {
         "judul": "Visitors to the Park Flowers",
-        "instruksi": "Read what happens in the park, then touch the flower part that is doing the job.",
+        "instruksi": "Read what happens in the park, then choose the picture that highlights the flower part doing the job.",
         "b-pilihan": "choices",
         "i-mahkota": "petals",
         "i-kepalasari": "anther",
@@ -276754,7 +276760,7 @@ export const PAKET_RAW: unknown[] = [
         "i-daun": "leaf",
         "p-r1": "A bee flies to the hibiscus because its bright red colour attracts it. The red part is the…",
         "p-r2": "Jasmine is white and sweet-smelling, so moths come at night. The white, fragrant part is the…",
-        "p-r3": "The bee's legs turn yellow with powder after touching one part of the flower. That part is the…",
+        "p-r3": "A bee's legs touch the tip of a filament and pick up pollen there. The part they touch is the…",
         "p-r4": "The male maize flowers at the top release pollen into the wind. The pollen is made by the…",
         "p-r5": "A butterfly carries yellow powder from another flower. The powder sticks to the sticky part of the flower, the…",
         "p-r6": "A salak farmer brushes pollen onto the female flower. The brush must touch the…",
@@ -276762,7 +276768,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r8": "Grass flowers are not brightly coloured because the wind carries their pollen, not insects. The part that is usually bright to attract insects is the…",
         "p-r9": "In a lily, the top of the pistil is wet and sticky so it can catch pollen. That part is the…",
         "p-r10": "The green parts under the petals that once wrapped the rose bud.",
-        "p-r11": "After the pollen lands on the stigma, the part at the base of the pistil swells into a fruit. That part is the…",
+        "p-r11": "After fertilization, the part at the base of the pistil usually develops into a fruit. That part is the…",
         "p-r12": "Sunbirds look for bright red flowers. The flower part that catches their eye is the…"
       }
     },
@@ -276784,45 +276790,64 @@ export const PAKET_RAW: unknown[] = [
         "id": "mahkota",
         "labelKey": "i-mahkota",
         "bin": "pilihan",
-        "emoji": "🌺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-mahkota"
+        }
       },
       {
         "id": "kepalasari",
         "labelKey": "i-kepalasari",
         "bin": "pilihan",
-        "emoji": "🟡"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-kepala-sari"
+        }
       },
       {
         "id": "kepalaputik",
         "labelKey": "i-kepalaputik",
         "bin": "pilihan",
-        "emoji": "🟢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-kepala-putik"
+        }
       },
       {
         "id": "kelopak",
         "labelKey": "i-kelopak",
         "bin": "pilihan",
-        "emoji": "🍃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-kelopak"
+        }
       },
       {
         "id": "tangkai",
         "labelKey": "i-tangkai",
         "bin": "pilihan",
-        "shape": "rect",
-        "color": "#66bb6a",
-        "scale": 0.8
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-tangkai"
+        }
       },
       {
         "id": "bakalbuah",
         "labelKey": "i-bakalbuah",
         "bin": "pilihan",
-        "emoji": "🫒"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-bakal-buah"
+        }
       },
       {
         "id": "daun",
         "labelKey": "i-daun",
         "bin": "pilihan",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-daun"
+        }
       }
     ],
     "pilihan": [
@@ -277372,7 +277397,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-tugas-bagian-bunga",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.BUNGA.01"
@@ -277381,7 +277406,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Siapa Bekerja di Bunga?",
-        "instruksi": "Baca tugasnya, lalu sentuh bagian bunga yang melakukannya.",
+        "instruksi": "Baca tugasnya, lalu pilih gambar yang menyorot bagian bunga yang melakukannya.",
         "b-pilihan": "pilihan",
         "i-mahkota": "mahkota bunga",
         "i-kelopak": "kelopak (sepal)",
@@ -277393,19 +277418,19 @@ export const PAKET_RAW: unknown[] = [
         "i-benangsari": "benang sari (stamen)",
         "i-putik": "putik (pistil)",
         "p-r1": "Bagian berwarna cerah dan harum yang menarik lebah datang.",
-        "p-r2": "Bagian di ujung benang yang menghasilkan serbuk kuning halus untuk penyerbukan.",
+        "p-r2": "Bagian di ujung tangkai sari yang menghasilkan serbuk sari.",
         "p-r3": "Bagian lengket paling atas di tengah bunga yang menangkap serbuk kuning dari bunga lain.",
         "p-r4": "Bagian bunga yang biasanya membesar menjadi buah setelah pembuahan. Di dalamnya ada bakal biji.",
-        "p-r5": "Daun kecil hijau yang membungkus kuncup sebelum mekar.",
+        "p-r5": "Bagian hijau di bawah mahkota yang membungkus kuncup sebelum mekar.",
         "p-r6": "Batang tipis yang mengangkat kepala sari.",
-        "p-r7": "Saluran dari kepala putik turun ke bakal buah.",
-        "p-r8": "Sesudah penyerbukan mahkota layu dan rontok. Bagian yang membesar menjadi buah adalah…",
+        "p-r7": "Bagian putik yang menghubungkan kepala putik dengan bakal buah.",
+        "p-r8": "Mahkota bunga tomat layu setelah pembuahan. Bagian putik mana yang membesar menjadi buah tomat?",
         "p-r9": "Kepala sari dan tangkai sari bersama-sama disebut…",
         "p-r10": "Kepala putik, tangkai putik, dan bakal buah bersama-sama disebut…"
       },
       "en": {
         "judul": "Who Works in the Flower?",
-        "instruksi": "Read the job, then touch the part of the flower that does it.",
+        "instruksi": "Read the job, then choose the picture that highlights the flower part that does it.",
         "b-pilihan": "choices",
         "i-mahkota": "petals",
         "i-kelopak": "sepals",
@@ -277417,13 +277442,13 @@ export const PAKET_RAW: unknown[] = [
         "i-benangsari": "stamen",
         "i-putik": "pistil",
         "p-r1": "The bright, sweet-smelling part that attracts bees.",
-        "p-r2": "The part at the tip of the thread that makes the fine yellow powder used in pollination.",
+        "p-r2": "The part at the tip of a filament that makes pollen.",
         "p-r3": "The sticky top part in the middle of the flower that catches yellow powder from other flowers.",
         "p-r4": "The flower part that usually grows into a fruit after fertilization. It contains the ovules.",
-        "p-r5": "The small green leaves that wrap the bud before it opens.",
+        "p-r5": "The green parts below the petals that wrap the bud before it opens.",
         "p-r6": "The thin stalk that holds up the anther.",
-        "p-r7": "The tube from the stigma down to the ovary.",
-        "p-r8": "After pollination the petals wilt and fall. The part that swells into a fruit is the…",
+        "p-r7": "The part of the pistil that connects the stigma to the ovary.",
+        "p-r8": "The tomato flower's petals wilt after fertilization. Which part of the pistil grows into the tomato?",
         "p-r9": "The anther and filament together are called the…",
         "p-r10": "The stigma, style and ovary together are called the…"
       }
@@ -277446,57 +277471,82 @@ export const PAKET_RAW: unknown[] = [
         "id": "mahkota",
         "labelKey": "i-mahkota",
         "bin": "pilihan",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-mahkota"
+        }
       },
       {
         "id": "kelopak",
         "labelKey": "i-kelopak",
         "bin": "pilihan",
-        "emoji": "🍃"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-kelopak"
+        }
       },
       {
         "id": "kepalasari",
         "labelKey": "i-kepalasari",
         "bin": "pilihan",
-        "emoji": "🟡"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-kepala-sari"
+        }
       },
       {
         "id": "tangkaisari",
         "labelKey": "i-tangkaisari",
         "bin": "pilihan",
-        "emoji": "➖"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-tangkai-sari"
+        }
       },
       {
         "id": "kepalaputik",
         "labelKey": "i-kepalaputik",
         "bin": "pilihan",
-        "emoji": "🟢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-kepala-putik"
+        }
       },
       {
         "id": "tangkaiputik",
         "labelKey": "i-tangkaiputik",
         "bin": "pilihan",
-        "shape": "rect",
-        "color": "#81c784",
-        "scale": 0.6
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-tangkai-putik"
+        }
       },
       {
         "id": "bakalbuah",
         "labelKey": "i-bakalbuah",
         "bin": "pilihan",
-        "emoji": "🫒"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-bakal-buah"
+        }
       },
       {
         "id": "benangsari",
         "labelKey": "i-benangsari",
         "bin": "pilihan",
-        "emoji": "🌼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-benang-sari"
+        }
       },
       {
         "id": "putik",
         "labelKey": "i-putik",
         "bin": "pilihan",
-        "emoji": "🌷"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "bunga-putik"
+        }
       }
     ],
     "pilihan": [
@@ -277604,7 +277654,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-tugas-organ-cerna",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.02"
@@ -277694,8 +277744,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "lambung",
         "labelKey": "i-lambung",
         "bin": "pilihan",
-        "shape": "circle",
-        "color": "#ffab91"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-lambung",
+          "t": 0
+        }
       },
       {
         "id": "usushalus",
@@ -277713,7 +277766,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "anus",
         "labelKey": "i-anus",
         "bin": "pilihan",
-        "emoji": "🚽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-lubang-anus",
+          "t": 0
+        }
       },
       {
         "id": "mirip",
@@ -358034,7 +358091,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-jalan-makanan-perbaiki",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -358247,8 +358304,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "cerna-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358273,7 +358333,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "cerna-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358289,8 +358353,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "roti-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358315,7 +358382,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "roti-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358336,8 +358407,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "pisang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358362,7 +358436,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "pisang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358383,8 +358461,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "telur-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358409,7 +358490,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "telur-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358430,8 +358515,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "bayam-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358456,7 +358544,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "bayam-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358467,8 +358559,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "apel-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358493,7 +358588,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "apel-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358509,8 +358608,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "sate-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358535,7 +358637,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "sate-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358556,8 +358662,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "jagung-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358582,7 +358691,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "jagung-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358598,8 +358711,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "ikan-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358624,7 +358740,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "ikan-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358645,8 +358765,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "tempe-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358671,7 +358794,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "tempe-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358687,8 +358814,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "kentang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358713,7 +358843,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "kentang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       }
@@ -358721,7 +358855,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-jalan-makanan",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -358934,8 +359068,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "cerna-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -358960,7 +359097,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "cerna-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -358976,8 +359117,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "roti-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359002,7 +359146,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "roti-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359023,8 +359171,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "pisang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359049,7 +359200,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "pisang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359070,8 +359225,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "telur-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359096,7 +359254,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "telur-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359117,8 +359279,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "bayam-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359143,7 +359308,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "bayam-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359154,8 +359323,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "apel-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359180,7 +359352,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "apel-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359196,8 +359372,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "sate-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359222,7 +359401,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "sate-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359243,8 +359426,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "jagung-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359269,7 +359455,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "jagung-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359285,8 +359475,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "ikan-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359311,7 +359504,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "ikan-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359332,8 +359529,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "tempe-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359358,7 +359558,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "tempe-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       },
@@ -359374,8 +359578,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lambung",
             "labelKey": "kentang-lambung",
-            "shape": "circle",
-            "color": "#ffab91"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-lambung",
+              "t": 0
+            }
           },
           {
             "id": "usushalus",
@@ -359400,7 +359607,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "anus",
             "labelKey": "kentang-anus",
-            "emoji": "🚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd5-lubang-anus",
+              "t": 0
+            }
           }
         ]
       }
@@ -368323,7 +368534,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-jalur-energi-sawah-perbaiki",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.JARING-MAKANAN.01"
@@ -368557,9 +368768,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "capung",
             "labelKey": "capung-capung",
-            "shape": "rect",
-            "color": "#29b6f6",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd6-capung",
+              "t": 0
+            }
           },
           {
             "id": "katak",
@@ -370490,7 +370703,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-terbentuknya-fosil-perbaiki",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.BATUAN.02"
@@ -370808,9 +371021,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mati",
             "labelKey": "capung-mati",
-            "shape": "rect",
-            "color": "#29b6f6",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-sd6-capung",
+              "t": 0
+            }
           },
           {
             "id": "timbun",

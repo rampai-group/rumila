@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pencernaan-hewan-ternak",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.02"
@@ -90,9 +90,11 @@
       "id": "lambung",
       "labelKey": "i-lambung",
       "bin": "pilihan",
-      "shape": "circle",
-      "color": "#f48fb1",
-      "scale": 0.8
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-lambung",
+        "t": 0
+      }
     },
     {
       "id": "usushalus",
@@ -110,7 +112,11 @@
       "id": "anus",
       "labelKey": "i-anus",
       "bin": "pilihan",
-      "emoji": "⭕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd5-lubang-anus",
+        "t": 0
+      }
     },
     {
       "id": "mirip",

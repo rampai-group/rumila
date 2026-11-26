@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-jalan-makanan-perbaiki",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.01"
@@ -213,8 +213,11 @@
         {
           "id": "lambung",
           "labelKey": "cerna-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -239,7 +242,11 @@
         {
           "id": "anus",
           "labelKey": "cerna-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -255,8 +262,11 @@
         {
           "id": "lambung",
           "labelKey": "roti-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -281,7 +291,11 @@
         {
           "id": "anus",
           "labelKey": "roti-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -302,8 +316,11 @@
         {
           "id": "lambung",
           "labelKey": "pisang-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -328,7 +345,11 @@
         {
           "id": "anus",
           "labelKey": "pisang-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -349,8 +370,11 @@
         {
           "id": "lambung",
           "labelKey": "telur-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -375,7 +399,11 @@
         {
           "id": "anus",
           "labelKey": "telur-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -396,8 +424,11 @@
         {
           "id": "lambung",
           "labelKey": "bayam-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -422,7 +453,11 @@
         {
           "id": "anus",
           "labelKey": "bayam-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -433,8 +468,11 @@
         {
           "id": "lambung",
           "labelKey": "apel-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -459,7 +497,11 @@
         {
           "id": "anus",
           "labelKey": "apel-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -475,8 +517,11 @@
         {
           "id": "lambung",
           "labelKey": "sate-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -501,7 +546,11 @@
         {
           "id": "anus",
           "labelKey": "sate-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -522,8 +571,11 @@
         {
           "id": "lambung",
           "labelKey": "jagung-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -548,7 +600,11 @@
         {
           "id": "anus",
           "labelKey": "jagung-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -564,8 +620,11 @@
         {
           "id": "lambung",
           "labelKey": "ikan-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -590,7 +649,11 @@
         {
           "id": "anus",
           "labelKey": "ikan-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -611,8 +674,11 @@
         {
           "id": "lambung",
           "labelKey": "tempe-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -637,7 +703,11 @@
         {
           "id": "anus",
           "labelKey": "tempe-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     },
@@ -653,8 +723,11 @@
         {
           "id": "lambung",
           "labelKey": "kentang-lambung",
-          "shape": "circle",
-          "color": "#ffab91"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-lambung",
+            "t": 0
+          }
         },
         {
           "id": "usushalus",
@@ -679,7 +752,11 @@
         {
           "id": "anus",
           "labelKey": "kentang-anus",
-          "emoji": "🚽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd5-lubang-anus",
+            "t": 0
+          }
         }
       ]
     }

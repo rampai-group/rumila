@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tamu-bunga-taman",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNGA.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Tamu-Tamu Bunga Taman",
-      "instruksi": "Baca kejadian di taman, lalu sentuh bagian bunga yang sedang bekerja.",
+      "instruksi": "Baca kejadian di taman, lalu pilih gambar yang menyorot bagian bunga yang bekerja.",
       "b-pilihan": "pilihan",
       "i-mahkota": "mahkota bunga",
       "i-kepalasari": "kepala sari",
@@ -20,7 +20,7 @@
       "i-daun": "daun",
       "p-r1": "Lebah terbang ke bunga sepatu karena tertarik warna merahnya yang cerah. Bagian merah itu adalah…",
       "p-r2": "Melati berwarna putih dan harum sehingga ngengat datang di malam hari. Bagian yang harum dan putih itu adalah…",
-      "p-r3": "Kaki lebah jadi kuning penuh serbuk setelah menyentuh satu bagian bunga. Bagian itu adalah…",
+      "p-r3": "Kaki lebah menyentuh ujung tangkai sari dan terkena serbuk sari dari sana. Bagian yang disentuh adalah…",
       "p-r4": "Bunga jagung jantan di pucuk menebarkan serbuk sari ditiup angin. Serbuk itu dibuat oleh…",
       "p-r5": "Kupu-kupu membawa serbuk kuning dari bunga lain. Serbuk itu menempel di bagian bunga yang lengket, yaitu…",
       "p-r6": "Petani salak mengoleskan serbuk sari ke bunga betina dengan kuas. Kuas harus menyentuh…",
@@ -28,12 +28,12 @@
       "p-r8": "Bunga rumput tidak berwarna cerah karena serbuknya dibawa angin, bukan serangga. Bagian yang biasanya cerah untuk menarik serangga adalah…",
       "p-r9": "Pada bunga lili, ujung putik terasa basah dan lengket supaya bisa menangkap serbuk. Bagian itu adalah…",
       "p-r10": "Bagian hijau di bawah mahkota yang dulu membungkus kuncup bunga mawar.",
-      "p-r11": "Sesudah serbuk sampai di kepala putik, bagian di pangkal putik membesar menjadi buah. Bagian itu adalah…",
+      "p-r11": "Setelah pembuahan, bagian di pangkal putik biasanya membesar menjadi buah. Bagian itu adalah…",
       "p-r12": "Burung madu mencari bunga berwarna merah menyala. Bagian bunga yang menarik perhatiannya adalah…"
     },
     "en": {
       "judul": "Visitors to the Park Flowers",
-      "instruksi": "Read what happens in the park, then touch the flower part that is doing the job.",
+      "instruksi": "Read what happens in the park, then choose the picture that highlights the flower part doing the job.",
       "b-pilihan": "choices",
       "i-mahkota": "petals",
       "i-kepalasari": "anther",
@@ -44,7 +44,7 @@
       "i-daun": "leaf",
       "p-r1": "A bee flies to the hibiscus because its bright red colour attracts it. The red part is the…",
       "p-r2": "Jasmine is white and sweet-smelling, so moths come at night. The white, fragrant part is the…",
-      "p-r3": "The bee's legs turn yellow with powder after touching one part of the flower. That part is the…",
+      "p-r3": "A bee's legs touch the tip of a filament and pick up pollen there. The part they touch is the…",
       "p-r4": "The male maize flowers at the top release pollen into the wind. The pollen is made by the…",
       "p-r5": "A butterfly carries yellow powder from another flower. The powder sticks to the sticky part of the flower, the…",
       "p-r6": "A salak farmer brushes pollen onto the female flower. The brush must touch the…",
@@ -52,7 +52,7 @@
       "p-r8": "Grass flowers are not brightly coloured because the wind carries their pollen, not insects. The part that is usually bright to attract insects is the…",
       "p-r9": "In a lily, the top of the pistil is wet and sticky so it can catch pollen. That part is the…",
       "p-r10": "The green parts under the petals that once wrapped the rose bud.",
-      "p-r11": "After the pollen lands on the stigma, the part at the base of the pistil swells into a fruit. That part is the…",
+      "p-r11": "After fertilization, the part at the base of the pistil usually develops into a fruit. That part is the…",
       "p-r12": "Sunbirds look for bright red flowers. The flower part that catches their eye is the…"
     }
   },
@@ -74,45 +74,43 @@
       "id": "mahkota",
       "labelKey": "i-mahkota",
       "bin": "pilihan",
-      "emoji": "🌺"
+      "adegan": { "jenis": "ilustrasi", "varian": "bunga-mahkota" }
     },
     {
       "id": "kepalasari",
       "labelKey": "i-kepalasari",
       "bin": "pilihan",
-      "emoji": "🟡"
+      "adegan": { "jenis": "ilustrasi", "varian": "bunga-kepala-sari" }
     },
     {
       "id": "kepalaputik",
       "labelKey": "i-kepalaputik",
       "bin": "pilihan",
-      "emoji": "🟢"
+      "adegan": { "jenis": "ilustrasi", "varian": "bunga-kepala-putik" }
     },
     {
       "id": "kelopak",
       "labelKey": "i-kelopak",
       "bin": "pilihan",
-      "emoji": "🍃"
+      "adegan": { "jenis": "ilustrasi", "varian": "bunga-kelopak" }
     },
     {
       "id": "tangkai",
       "labelKey": "i-tangkai",
       "bin": "pilihan",
-      "shape": "rect",
-      "color": "#66bb6a",
-      "scale": 0.8
+      "adegan": { "jenis": "ilustrasi", "varian": "bunga-tangkai" }
     },
     {
       "id": "bakalbuah",
       "labelKey": "i-bakalbuah",
       "bin": "pilihan",
-      "emoji": "🫒"
+      "adegan": { "jenis": "ilustrasi", "varian": "bunga-bakal-buah" }
     },
     {
       "id": "daun",
       "labelKey": "i-daun",
       "bin": "pilihan",
-      "emoji": "🌿"
+      "adegan": { "jenis": "ilustrasi", "varian": "bunga-daun" }
     }
   ],
   "pilihan": [

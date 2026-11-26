@@ -138,6 +138,38 @@ function OtotPaha({ belakang }: { belakang: boolean }) {
   </>;
 }
 
+function LubangAnus() {
+  return <>
+    <path d="M33 62V32Q33 21 45 21H86Q97 21 97 32V49Q97 62 84 62H74" fill="none" stroke="#ae7477" strokeWidth="15" strokeLinecap="round" />
+    <path d="M33 62V32Q33 21 45 21H86Q97 21 97 32V49Q97 62 84 62H74" fill="none" stroke="#f2c7c3" strokeWidth="11" strokeLinecap="round" />
+    <path d="M45 18V25M56 18V25M67 18V25M78 18V25M93 31H101M93 43H101M29 34H37M29 46H37M29 58H37" fill="none" stroke="#ca9797" strokeWidth="2" />
+    <path d="M76 56C66 56 59 62 62 71L65 78V85Q69 90 74 85V77L77 70Q80 63 84 62Z" fill="#e79e9e" stroke="#ae7477" strokeWidth="2.3" />
+    <ellipse cx="69.5" cy="85.5" rx="5" ry="2.8" fill="#83475e" />
+    <circle cx="69.5" cy="85.5" r="11" fill="none" stroke="#29768a" strokeWidth="2.3" />
+    <path d="M112 74H95L82 82" fill="none" stroke="#29768a" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M83 77L80 84L88 84" fill="none" stroke="#29768a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  </>;
+}
+
+function Capung() {
+  return <g strokeLinecap="round" strokeLinejoin="round">
+    {["", "translate(130 0) scale(-1 1)"].map((transform) => <g key={transform} transform={transform}>
+      <path d="M61 34C49 25 20 17 9 23Q2 29 12 35C25 43 47 44 61 39Z" fill="#d4eef2" stroke="#4b8c99" strokeWidth="2.2" />
+      <path d="M61 43C53 44 23 45 11 51Q2 57 12 64C26 70 53 59 62 49Z" fill="#bbdfe8" stroke="#4b8c99" strokeWidth="2.2" />
+      <path d="M12 27Q36 30 57 37M21 29L25 37M34 32L38 39M45 34L48 40M12 58Q35 56 57 47M20 57L25 62M33 54L39 58M46 51L49 55" fill="none" stroke="#70a9b5" strokeWidth="1.3" />
+      <path d="M60 28L49 22L42 24M60 37L49 36L41 40M60 46L49 52L45 60" fill="none" stroke="#365a59" strokeWidth="2.5" />
+    </g>)}
+    <path d="M60 45C57 58 59 76 61 89Q65 96 69 89C71 76 73 58 70 45Z" fill="#68a49b" stroke="#265f59" strokeWidth="2.3" />
+    <path d="M59 56H71M59 64H71M60 72H70M61 80H69M62 87H68" stroke="#265f59" strokeWidth="1.9" />
+    <ellipse cx="65" cy="36" rx="9" ry="13" fill="#429384" stroke="#265f59" strokeWidth="2.5" />
+    <path d="M62 28L65 35L69 29M65 35V45" fill="none" stroke="#99c5ad" strokeWidth="1.7" />
+    <ellipse cx="65" cy="21" rx="12" ry="9" fill="#55a893" stroke="#265f59" strokeWidth="2" />
+    <ellipse cx="59" cy="19" rx="6" ry="6.5" fill="#285c53" />
+    <ellipse cx="71" cy="19" rx="6" ry="6.5" fill="#285c53" />
+    <path d="M57 17L59 16M69 17L71 16" stroke="#d8efe5" strokeWidth="1.6" />
+  </g>;
+}
+
 const ILUSTRASI: Record<string, () => ReactNode> = {
   "qc-hewan-rubah-kutub": RubahKutub,
   "qc-sd5-buah-kopi": () => <TanamanKopi berbuah />,
@@ -152,6 +184,8 @@ const ILUSTRASI: Record<string, () => ReactNode> = {
   "qc-sd5-pipa-tembaga": PipaTembaga,
   "qc-sd5-tutup-baja": TutupBaja,
   "qc-sd5-kelereng-kaca": KelerengKaca,
+  "qc-sd5-lubang-anus": LubangAnus,
+  "qc-sd6-capung": Capung,
 };
 
 export const ILUSTRASI_QC_SD4_SD6_IDS = Object.keys(ILUSTRASI);

@@ -129,6 +129,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const kepalaTumbuhan = useRef<HTMLDivElement>(null);
   const [tinggiKepalaTumbuhan, setTinggiKepalaTumbuhan] = useState(0);
   const tataTumbuhan = paket.id === "sains-susun-tumbuhan-utuh";
+  const tataPencernaan = paket.id === "sd5-sains-jalan-makanan";
   const tataBunyi = paket.competencyIds.includes("SAINS.SD1.BUNYI.02");
   const kalenderPilot = paket.competencyIds.includes("MAT.SD1.WAKTU.02");
   const tujuan = useRef<(HTMLButtonElement | null)[]>([]);
@@ -306,6 +307,8 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const ukuranKartu = bandingPilot ? Math.max(42, Math.min(tinggiMinKartu - (w < 600 ? 70 : 86), lebarKartu / 1.5, 180)) / skalaMaks : tataAngkaRingkas ? ukuran : (tataTumbuhan
     ? Math.min(tinggiMinKartu * (layarPendek ? 0.56 : 0.64), lebarKartu * 0.76, 186)
     : batas((padat || sel.baris >= 3 ? 36 : base + 8) * sk, Math.min(tinggiKartu * (padat ? 0.24 : 0.5), sel.s * (tegak ? 0.68 : 0.58)), 160)) / skalaMaks;
+  // Label organ memakai lebar kartu sehingga gambar sumber dapat mendekati ukuran gambar di slot.
+  const ukuranSumber = tataPencernaan ? Math.max(ukuranKartu, Math.min(ukuran, 48 * sk)) : ukuranKartu;
   // Tugas membandingkan panjang memakai skala gambar yang sama sebelum dan sesudah dipindahkan.
   const ukuranPanjang = bandingPanjang ? Math.min(
     Math.min(lebarSlot, lebarKartu) * 0.86 / skalaMaks,
@@ -388,9 +391,9 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               penuh
               key={s.id}
               v={visual(s, t)}
-              size={ukuranPanjang ?? ukuranKartu}
+              size={ukuranPanjang ?? ukuranSumber}
               ariaLabel={bandingPanjang ? labelAkses(s) : undefined}
-              labelPenuh={tataBunyi}
+              labelPenuh={tataBunyi || tataPencernaan}
               labelSize={layarRapat ? 12 : batas(14 * sk, lebarKartu * 0.07, 22)}
               selected={dipilih}
               onClick={(e) => { if (e.detail !== 0 && abaikanKlik.current) return; ketukKartu(s.id); }}

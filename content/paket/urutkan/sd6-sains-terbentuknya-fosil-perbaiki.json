@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-terbentuknya-fosil-perbaiki",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.02"
@@ -318,9 +318,11 @@
         {
           "id": "mati",
           "labelKey": "capung-mati",
-          "shape": "rect",
-          "color": "#29b6f6",
-          "scale": 0.7
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-sd6-capung",
+            "t": 0
+          }
         },
         {
           "id": "timbun",
