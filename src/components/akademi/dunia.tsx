@@ -161,7 +161,7 @@ export function skalaPanggung(w: number, h: number): number {
 }
 
 export function urutanHitungLanjut(paket: ContentPack): boolean {
-  return paket.competencyIds.includes("MAT.TKB.BILANGAN-20.03");
+  return paket.competencyIds.includes("MAT.TKB.BILANGAN-20.03") || paket.id === "sd1-mat-loncat-sepuluh";
 }
 
 export function panggungPadat(paket: ContentPack): boolean {

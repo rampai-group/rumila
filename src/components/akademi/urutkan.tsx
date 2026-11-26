@@ -204,6 +204,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const tataTunas = paket.level === "PAUD";
   const tataLanjutHitung = urutanHitungLanjut(paket);
   const hitungLega = tataLanjutHitung && w >= 620 && h >= 650;
+  const hitungLegaHp = tataLanjutHitung && paket.level === "SD1" && w > 0 && w < 620 && h >= 540;
   const tataRingkas = tataTunas || tataTumbuhan || tataLanjutHitung;
   const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
   const labelAkses = (s: Langkah) => {
@@ -237,6 +238,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const lebarSlot = layarPendek ? Math.floor((w - 18 - jarakSlot * (n - 1)) / n) : sel.s;
   const selaBarisSlot = gap * (barisSlot - 1);
   const tinggiSlot = hitungLega ? batas(148, lebarSlot * 0.9, 200)
+    : hitungLegaHp ? batas(92, lebarSlot, 138)
     : tataLanjutHitung ? batas(58, lebarSlot * 0.82, 138)
     : layarPendek ? batas(52, lebarSlot, 60)
     : tataTumbuhan
@@ -286,7 +288,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   );
 
   return (
-    <div data-urut-tengah={hitungLega ? "" : undefined} className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataLanjutHitung ? "" : "flex-1"}`} style={{ color: INK }}>
+    <div data-urut-tengah={hitungLega || hitungLegaHp ? "" : undefined} className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataLanjutHitung ? "" : "flex-1"}`} style={{ color: INK }}>
       {tataTumbuhan ? (
         <div ref={kepalaTumbuhan} className="flex shrink-0 flex-col gap-1">
           {judul}
