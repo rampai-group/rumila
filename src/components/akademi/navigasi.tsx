@@ -147,6 +147,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const ujian = useModeUjian();
   const grids = ronde.grids;
   const perahu = paket.id === "perahu-robot-maju";
+  const papanKota = paket.id === "sd1-kode-ulangi-belok-kota";
   const langsung = ronde.execMode === "langsung";
   const slotMaks = kapasitasRakNavigasi(ronde);
   const modeBendera = ronde.execMode === "program" && ronde.commands.includes("bendera");
@@ -332,6 +333,13 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
     sfx.close();
     setRakKe(k, (r) => r.filter((_, j) => j !== i));
     setSel(null);
+  };
+
+  const selesaiIsiUlangi = () => {
+    if (sibuk || terkunci) return;
+    sfx.tap();
+    setSel(null);
+    setPesan("");
   };
 
   const putarN = (k: 0 | 1, i: number) => {
@@ -601,6 +609,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
         tampilkanBintang={!ronde.tunjukTabrak}
         tanah={tanah}
         perahu={perahu}
+        kota={papanKota}
         petak={mendatar ? petakDatar : undefined}
         petakMaks={petakTegak}
         petakMin={petakMin}
@@ -660,14 +669,15 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
         <>
           {modeBendera ? (
             <div className="flex flex-col gap-2">
-              <Rak judul="Bagian 1 · sampai 🚩" blok={rak} slot={slotMaks} aktif={rakAktif === 0} sel={sel?.rak === 0 ? sel.i : null} onPilihRak={() => setRakAktif(0)} onKetuk={(i) => ketukRak(0, i)} onN={(i) => putarN(0, i)} onHapusIsi={(i, j) => hapusIsiUlangi(0, i, j)} />
-              <Rak judul="Bagian 2 · dari 🚩 ke ⭐" blok={rak2} slot={slotMaks} aktif={rakAktif === 1} sel={sel?.rak === 1 ? sel.i : null} onPilihRak={() => setRakAktif(1)} onKetuk={(i) => ketukRak(1, i)} onN={(i) => putarN(1, i)} onHapusIsi={(i, j) => hapusIsiUlangi(1, i, j)} />
+              <Rak judul="Bagian 1 · sampai 🚩" blok={rak} slot={slotMaks} aktif={rakAktif === 0} sel={sel?.rak === 0 ? sel.i : null} onPilihRak={() => setRakAktif(0)} onSelesaiIsi={sel?.rak === 0 && !sibuk && !terkunci ? selesaiIsiUlangi : undefined} onKetuk={(i) => ketukRak(0, i)} onN={(i) => putarN(0, i)} onHapusIsi={(i, j) => hapusIsiUlangi(0, i, j)} />
+              <Rak judul="Bagian 2 · dari 🚩 ke ⭐" blok={rak2} slot={slotMaks} aktif={rakAktif === 1} sel={sel?.rak === 1 ? sel.i : null} onPilihRak={() => setRakAktif(1)} onSelesaiIsi={sel?.rak === 1 && !sibuk && !terkunci ? selesaiIsiUlangi : undefined} onKetuk={(i) => ketukRak(1, i)} onN={(i) => putarN(1, i)} onHapusIsi={(i, j) => hapusIsiUlangi(1, i, j)} />
             </div>
           ) : (
             <Rak
               judul={ronde.debug ? `Ubah paling banyak ${ronde.fixes ?? 1} blok` : `Program Agam · ${hitungBlok(rak)}/${slotMaks} blok`}
               blok={rak} slot={slotMaks} aktif sel={sel?.rak === 0 ? sel.i : null}
               gantiBlok={ronde.debug}
+              onSelesaiIsi={!ronde.debug && !sibuk && !terkunci ? selesaiIsiUlangi : undefined}
               onKetuk={(i) => ketukRak(0, i)} onN={(i) => putarN(0, i)} onHapusIsi={(i, j) => hapusIsiUlangi(0, i, j)}
             />
           )}
@@ -767,12 +777,13 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
 
 /* ---------------- panggung ---------------- */
 
-function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tampilkanBintang, tanah, perahu, petak, petakMaks, petakMin }: {
+function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, menang, tampilkanBintang, tanah, perahu, kota, petak, petakMaks, petakMin }: {
   grid: NavGrid; agam: Agam; bendera: { x: number; y: number } | null; sorot: Set<string>; tebakan: { x: number; y: number } | null;
   bisaKetuk: boolean; onKetuk: (x: number, y: number) => void; menang: boolean;
   tampilkanBintang: boolean;
   tanah: [string, string];
   perahu: boolean;
+  kota?: boolean;
   /** ukuran petak tetap (px) di tata letak mendatar; kosong = lebar penuh dengan batas `petakMaks` */
   petak?: number;
   petakMaks: number;
@@ -797,7 +808,7 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
           <rect x={X + 3} y={Y + 3} width={SEL - 6} height={SEL - 6} rx={16} fill="url(#ka-bevel)" />
           {nyala && <rect x={X + 6} y={Y + 6} width={SEL - 12} height={SEL - 12} rx={14} fill={tebak ? "#3a86ff" : "#ffd23f"} opacity={tebak ? 0.45 : 0.55} className="goal-pulse" />}
           {nyala && <rect x={X + 6} y={Y + 6} width={SEL - 12} height={SEL - 12} rx={14} fill="none" stroke={tebak ? "#3a86ff" : "#ffb000"} strokeWidth={5} />}
-          {dinding && <text x={X + SEL / 2} y={Y + SEL / 2 + 24} textAnchor="middle" fontSize={66}>{rintangan}</text>}
+          {dinding && <text x={X + SEL / 2} y={Y + SEL / 2 + 24} textAnchor="middle" fontSize={66}>{kota ? "🏢" : rintangan}</text>}
           {batu && <ellipse cx={X + SEL / 2} cy={Y + SEL / 2 + 22} rx={32} ry={10} fill="#0b2545" opacity={0.3} />}
           {batu && <text x={X + SEL / 2} y={Y + SEL / 2 + 20} textAnchor="middle" fontSize={56}>🪨</text>}
           {goal && (
@@ -822,7 +833,7 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
         className="mx-auto block"
         style={{ ...ukuranSvg, touchAction: "manipulation" }}
         role="img"
-        aria-label={`${perahu ? "Laut" : "Kebun"} ${grid.w} kali ${grid.h} petak`}
+        aria-label={`${perahu ? "Laut" : kota ? "Jalan kota" : "Kebun"} ${grid.w} kali ${grid.h} petak`}
       >
         <defs>{COMMON_DEFS}</defs>
         {sel}
@@ -913,9 +924,9 @@ function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat, arahMaju }: {
   );
 }
 
-function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, onPilihRak, onKetuk, onN, onHapusIsi }: {
+function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, onPilihRak, onSelesaiIsi, onKetuk, onN, onHapusIsi }: {
   judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean; gantiBlok?: boolean; pilihTabrak?: boolean;
-  onPilihRak?: () => void; onKetuk?: (i: number) => void; onN?: (i: number) => void; onHapusIsi?: (i: number, j: number) => void;
+  onPilihRak?: () => void; onSelesaiIsi?: () => void; onKetuk?: (i: number) => void; onN?: (i: number) => void; onHapusIsi?: (i: number, j: number) => void;
 }) {
   const { tema, skala: sk, w } = usePanggung();
   const skt = Math.min(sk, 1.35);
@@ -923,6 +934,7 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, 
   const terpakai = hitungBlok(blok);
   const kosong = Math.max(0, slot - terpakai);
   const sorotRak = aktif && onPilihRak;
+  const dipilih = sel === null ? undefined : blok[sel];
   // rak bertema dunia: badan berwarna wadah, area slot terang di dalamnya (selaras komponen Wadah)
   return (
     <div
@@ -934,7 +946,21 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, 
         padding: `${10 * sk}px ${10 * sk}px ${12 * sk}px`,
       }}
     >
-      <div className="mb-1.5 inline-flex rounded-full bg-white/95 px-3 py-0.5 font-extrabold shadow-[0_2px_0_rgba(0,0,0,.12)]" style={{ fontSize: 13 * skt, color: INK }}>{judul}</div>
+      <div className="mb-1.5 flex flex-wrap items-center justify-between gap-1.5">
+        <div className="inline-flex rounded-full bg-white/95 px-3 py-0.5 font-extrabold shadow-[0_2px_0_rgba(0,0,0,.12)]" style={{ fontSize: 13 * skt, color: INK }}>{judul}</div>
+        {onSelesaiIsi && dipilih?.cmd === "ulangi" && (
+          <button
+            type="button"
+            onClick={(e) => { e.stopPropagation(); onSelesaiIsi(); }}
+            disabled={dipilih.body.length === 0}
+            className="flex min-h-11 items-center gap-1 rounded-full bg-white px-3 text-[#134d34] shadow-[0_2px_0_rgba(0,0,0,.12)] disabled:opacity-70"
+            style={{ fontSize: 13 * skt, fontWeight: 900 }}
+          >
+            <span aria-hidden><Icon name="check" size={18} /></span>
+            Selesai isi Ulangi
+          </button>
+        )}
+      </div>
       <div className="flex flex-wrap items-center rounded-[14px]" style={{ gap: 6 * sk, padding: 6 * sk, background: "#ffffff", boxShadow: "inset 0 4px 10px rgba(0,0,0,.14)" }}>
         {blok.map((b, i) => (
           <Keping key={i} blok={b} nomor={i + 1} dipilih={sel === i} bacaSaja={bacaSaja} gantiBlok={gantiBlok} pilihTabrak={pilihTabrak} onKetuk={() => onKetuk?.(i)} onN={() => onN?.(i)} onHapusIsi={(j) => onHapusIsi?.(i, j)} />
