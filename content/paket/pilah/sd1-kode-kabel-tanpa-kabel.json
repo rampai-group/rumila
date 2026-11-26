@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-kabel-tanpa-kabel",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -77,73 +77,109 @@
       "id": "corded-home-phone",
       "labelKey": "i-corded-home-phone",
       "bin": "kabel",
-      "emoji": "☎️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-telepon"
+      }
     },
     {
       "id": "wired-mouse",
       "labelKey": "i-wired-mouse",
       "bin": "kabel",
-      "emoji": "🖱️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-mouse"
+      }
     },
     {
       "id": "wired-desktop-computer",
       "labelKey": "i-wired-desktop-computer",
       "bin": "kabel",
-      "emoji": "🖥️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-komputer"
+      }
     },
     {
       "id": "wired-keyboard",
       "labelKey": "i-wired-keyboard",
       "bin": "kabel",
-      "emoji": "⌨️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-keyboard"
+      }
     },
     {
       "id": "wired-headphones",
       "labelKey": "i-wired-headphones",
       "bin": "kabel",
-      "emoji": "🎧"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-headphone"
+      }
     },
     {
       "id": "wired-printer",
       "labelKey": "i-wired-printer",
       "bin": "kabel",
-      "emoji": "🖨️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-printer"
+      }
     },
     {
       "id": "mobile-phone",
       "labelKey": "i-mobile-phone",
       "bin": "nirkabel",
-      "emoji": "📱"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-ponsel"
+      }
     },
     {
       "id": "smartwatch",
       "labelKey": "i-smartwatch",
       "bin": "nirkabel",
-      "emoji": "⌚"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-jam"
+      }
     },
     {
       "id": "toy-drone",
       "labelKey": "i-toy-drone",
       "bin": "nirkabel",
-      "emoji": "🚁"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-drone"
+      }
     },
     {
       "id": "wireless-game-controller",
       "labelKey": "i-wireless-game-controller",
       "bin": "nirkabel",
-      "emoji": "🎮"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-game"
+      }
     },
     {
       "id": "bluetooth-speaker",
       "labelKey": "i-bluetooth-speaker",
       "bin": "nirkabel",
-      "emoji": "🔊"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-speaker"
+      }
     },
     {
       "id": "tablet",
       "labelKey": "i-tablet",
       "bin": "nirkabel",
-      "emoji": "📲"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-tablet"
+      }
     }
   ]
 }

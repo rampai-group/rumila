@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-sambungan-perangkat",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -81,85 +81,127 @@
       "id": "mik-kabel",
       "labelKey": "i-mik-kabel",
       "bin": "kabel",
-      "emoji": "🎤"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-mik"
+      }
     },
     {
       "id": "proyektor-kabel",
       "labelKey": "i-proyektor-kabel",
       "bin": "kabel",
-      "emoji": "📽️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-proyektor"
+      }
     },
     {
       "id": "piano-kabel",
       "labelKey": "i-piano-kabel",
       "bin": "kabel",
-      "emoji": "🎹"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-piano"
+      }
     },
     {
       "id": "gitar-kabel",
       "labelKey": "i-gitar-kabel",
       "bin": "kabel",
-      "emoji": "🎸"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-gitar"
+      }
     },
     {
       "id": "tv-antena",
       "labelKey": "i-tv-antena",
       "bin": "kabel",
-      "emoji": "📺"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-tv"
+      }
     },
     {
       "id": "joystick-kabel",
       "labelKey": "i-joystick-kabel",
       "bin": "kabel",
-      "emoji": "🕹️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-game"
+      }
     },
     {
       "id": "mouse-kabel",
       "labelKey": "i-mouse-kabel",
       "bin": "kabel",
-      "emoji": "🖱️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-kabel-mouse"
+      }
     },
     {
       "id": "drone",
       "labelKey": "i-drone",
       "bin": "nirkabel",
-      "emoji": "🚁"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-drone"
+      }
     },
     {
       "id": "mobil-remot",
       "labelKey": "i-mobil-remot",
       "bin": "nirkabel",
-      "emoji": "🏎️"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-mobil"
+      }
     },
     {
       "id": "walkie",
       "labelKey": "i-walkie",
       "bin": "nirkabel",
-      "emoji": "📻"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-walkie"
+      }
     },
     {
       "id": "kunci-remot",
       "labelKey": "i-kunci-remot",
       "bin": "nirkabel",
-      "emoji": "🔑"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-kunci"
+      }
     },
     {
       "id": "laptop-wifi",
       "labelKey": "i-laptop-wifi",
       "bin": "nirkabel",
-      "emoji": "💻"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-laptop"
+      }
     },
     {
       "id": "bel-nirkabel",
       "labelKey": "i-bel-nirkabel",
       "bin": "nirkabel",
-      "emoji": "🔔"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-bel"
+      }
     },
     {
       "id": "kamera-wifi",
       "labelKey": "i-kamera-wifi",
       "bin": "nirkabel",
-      "emoji": "📹"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "alat-nirkabel-kamera"
+      }
     }
   ]
 }
