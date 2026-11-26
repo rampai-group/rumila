@@ -204780,7 +204780,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-berbunyi-atau-diam-jalan",
-    "version": "1.0.3",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -204895,7 +204895,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bakso",
         "labelKey": "i-bakso",
         "bin": "bunyi",
-        "emoji": "🍜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-mangkuk-dipukul"
+        }
       },
       {
         "id": "kentongan",
@@ -204954,7 +204957,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-berbunyi-atau-diam",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -205104,7 +205107,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bantal",
         "labelKey": "i-bantal",
         "bin": "diam",
-        "emoji": "🛏️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-bantal"
+        }
       },
       {
         "id": "batu",
@@ -205940,7 +205946,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-gelinding-luncur-putar",
-    "version": "1.1.4",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -206047,7 +206053,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ban",
         "labelKey": "i-ban",
         "bin": "gelinding",
-        "emoji": "⭕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-ban-bukit"
+        }
       },
       {
         "id": "jeruk",
@@ -206059,7 +206068,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "perosotan",
         "labelKey": "i-perosotan",
         "bin": "luncur",
-        "emoji": "🎢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-anak-perosotan"
+        }
       },
       {
         "id": "kotak",
@@ -206083,7 +206095,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "gasing",
         "labelKey": "i-gasing",
         "bin": "putar",
-        "emoji": "🚲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-sepeda-terbalik"
+        }
       },
       {
         "id": "kincir",
@@ -206095,7 +206110,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kipas",
         "labelKey": "i-kipas",
         "bin": "putar",
-        "emoji": "🌀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-kipas-berputar"
+        }
       },
       {
         "id": "baling",

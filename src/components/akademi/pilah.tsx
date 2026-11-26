@@ -137,7 +137,10 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     bins.length >= 2 && bins.length <= 3 && lebarArea >= 620 && h >= 680;
   const isiPiringku = paket.id === "sains-isi-piringku";
   const batasWadahBergambar = isiPiringku ? 5 : hewanMakan ? 4 : 3;
-  const wadahBergambar = paket.level !== "PAUD" && !carroll && !kartuTitik && !piktogram && !paritas &&
+  // M21–23 dan M25 memakai rak teks; tetap beri gambar ruang yang layak di tablet.
+  const pilahPilotLega = !hp && h >= 680 && paket.competencyIds.some(id =>
+    ["SAINS.SD1.GAYA.02", "MAT.SD1.BANGUN.01", "MAT.SD1.BANGUN.02", "SAINS.SD1.BUNYI.01"].includes(id));
+  const wadahBergambar = pilahPilotLega || paket.level !== "PAUD" && !carroll && !kartuTitik && !piktogram && !paritas &&
     bins.length >= 2 && bins.length <= batasWadahBergambar && items.length <= 8 && lebarArea >= 620 && h >= 680 &&
     bins.every((b) => visualBergambar(b) && t(b.labelKey).length <= 50) &&
     items.every((i) => visualBergambar(i) && t(i.labelKey).length <= 70);
@@ -289,7 +292,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   // Sisakan dua baris pada rak tablet tinggi dan papan paritas agar setiap kelompok tetap terbaca.
   const rakDuaBaris = rakAngkaLega && h >= 840 && items.length >= 5;
   const batasKolomKartu = piringPadatHp ? 4 : rakDuaBaris || paritasLega || hewanMakanLega ? Math.max(3, Math.ceil(items.length / 2))
-    : perangkatLega ? 4 : wadahBergambar ? (kelompokBahan && items.length > 6 ? 4 : 3) : titikLega ? 4 : Infinity;
+    : perangkatLega ? 4 : wadahBergambar ? ((kelompokBahan || pilahPilotLega) && items.length > 6 ? 4 : 3) : titikLega ? 4 : Infinity;
   const maksKolomKartu = Math.min(items.length, kolomMuat, batasKolomKartu);
   // Enam sampai delapan kartu pelengkap memakai paling banyak dua baris bila lebar HP mencukupi.
   const pelengkapPadat = hp && items.length >= 6 && paket.id === "sd1-mat-rak-kurang-berapa-sepuluh";
