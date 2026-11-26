@@ -14,11 +14,11 @@
       "b-dorong": "dorong",
       "b-tarik": "tarik",
       "i-pintu": "mendorong pintu sampai tertutup",
-      "i-bel": "menekan bel",
+      "i-bel": "menekan tombol bel",
       "i-kursimasuk": "mendorong kursi ke meja",
       "i-troli": "mendorong troli belanja",
       "i-tombol": "menekan tombol lampu",
-      "i-bukalaci": "membuka laci",
+      "i-bukalaci": "menarik laci hingga terbuka",
       "i-tisu": "menarik tisu dari kotak",
       "i-selimut": "menarik selimut",
       "i-koper": "menarik koper beroda",
@@ -34,7 +34,7 @@
       "i-kursimasuk": "pushing a chair in",
       "i-troli": "pushing a shopping cart",
       "i-tombol": "pressing the light switch",
-      "i-bukalaci": "opening a drawer",
+      "i-bukalaci": "pulling a drawer open",
       "i-tisu": "pulling a tissue from the box",
       "i-selimut": "pulling up a blanket",
       "i-koper": "pulling a wheeled suitcase",
@@ -74,61 +74,91 @@
       "id": "pintu",
       "labelKey": "i-pintu",
       "bin": "dorong",
-      "emoji": "🚪"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-dorong-pintu"
+      }
     },
     {
       "id": "bel",
       "labelKey": "i-bel",
       "bin": "dorong",
-      "emoji": "🔔"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tekan-bel"
+      }
     },
     {
       "id": "kursimasuk",
       "labelKey": "i-kursimasuk",
       "bin": "dorong",
-      "emoji": "🪑"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-dorong-kursi"
+      }
     },
     {
       "id": "troli",
       "labelKey": "i-troli",
       "bin": "dorong",
-      "emoji": "🛒"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-dorong-troli"
+      }
     },
     {
       "id": "tombol",
       "labelKey": "i-tombol",
       "bin": "dorong",
-      "emoji": "💡"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tekan-saklar"
+      }
     },
     {
       "id": "bukalaci",
       "labelKey": "i-bukalaci",
       "bin": "tarik",
-      "emoji": "🗄️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-laci"
+      }
     },
     {
       "id": "tisu",
       "labelKey": "i-tisu",
       "bin": "tarik",
-      "emoji": "🧻"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-tisu-kotak"
+      }
     },
     {
       "id": "selimut",
       "labelKey": "i-selimut",
       "bin": "tarik",
-      "emoji": "🛏️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-selimut"
+      }
     },
     {
       "id": "koper",
       "labelKey": "i-koper",
       "bin": "tarik",
-      "emoji": "🧳"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-koper"
+      }
     },
     {
       "id": "tirai",
       "labelKey": "i-tirai",
       "bin": "tarik",
-      "emoji": "🪟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-tirai"
+      }
     }
   ],
   "pilihan": []

@@ -74,7 +74,10 @@
       "id": "tendang",
       "labelKey": "i-tendang",
       "bin": "dorong",
-      "emoji": "⚽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tendang-bola"
+      }
     },
     {
       "id": "ayunan",
@@ -89,50 +92,73 @@
       "id": "gerobak",
       "labelKey": "i-gerobak",
       "bin": "dorong",
-      "emoji": "🛒",
-      "color": "#bcaaa4"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-dorong-gerobak-pasir"
+      }
     },
     {
       "id": "kereta",
       "labelKey": "i-kereta",
       "bin": "dorong",
-      "emoji": "👶"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-dorong-kereta-bayi"
+      }
     },
     {
       "id": "lempar",
       "labelKey": "i-lempar",
       "bin": "dorong",
-      "emoji": "🏀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-lempar-bola"
+      }
     },
     {
       "id": "layang",
       "labelKey": "i-layang",
       "bin": "tarik",
-      "emoji": "🪁"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-layang"
+      }
     },
     {
       "id": "tambang",
       "labelKey": "i-tambang",
       "bin": "tarik",
-      "emoji": "🪢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-tambang"
+      }
     },
     {
       "id": "mainan",
       "labelKey": "i-mainan",
       "bin": "tarik",
-      "emoji": "🚙"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-tarik-mobil-mainan"
+      }
     },
     {
       "id": "rumput",
       "labelKey": "i-rumput",
       "bin": "tarik",
-      "emoji": "🌱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-cabut-rumput"
+      }
     },
     {
       "id": "timba",
       "labelKey": "i-timba",
       "bin": "tarik",
-      "emoji": "🪣"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-timba-sumur"
+      }
     }
   ],
   "pilihan": []
