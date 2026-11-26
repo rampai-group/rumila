@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-perangkat-masuk-tampil",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -107,7 +107,10 @@
       "id": "webcam",
       "labelKey": "i-webcam",
       "bin": "masuk",
-      "emoji": "📹"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kamera-web"
+      }
     },
     {
       "id": "tv",

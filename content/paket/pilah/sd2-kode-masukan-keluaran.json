@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-masukan-keluaran",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -91,7 +91,10 @@
       "id": "laptop-camera",
       "labelKey": "i-laptop-camera",
       "bin": "masuk",
-      "emoji": "📷"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kamera-laptop"
+      }
     },
     {
       "id": "joystick",

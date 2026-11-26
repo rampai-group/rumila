@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-langkah",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -83,7 +83,7 @@
       "t-keramas": "Mencuci rambut",
       "keramas-1": "nyalakan pancuran",
       "keramas-2": "basahi rambut",
-      "keramas-3": "tuang sampo ke tangan",
+      "keramas-3": "tuang sampo ke tangan saat rambut basah",
       "keramas-4": "gosok rambut sampai berbusa",
       "keramas-5": "bilas busanya sampai bersih",
       "keramas-6": "matikan pancuran",
@@ -164,7 +164,7 @@
       "t-keramas": "Washing your hair",
       "keramas-1": "turn on the shower",
       "keramas-2": "wet your hair",
-      "keramas-3": "pour shampoo into your hand",
+      "keramas-3": "pour shampoo into your hand once your hair is wet",
       "keramas-4": "rub your hair until foamy",
       "keramas-5": "rinse out all the foam",
       "keramas-6": "turn off the shower",

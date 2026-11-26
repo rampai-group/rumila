@@ -209103,7 +209103,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-masukan-keluaran",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209194,7 +209194,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "laptop-camera",
         "labelKey": "i-laptop-camera",
         "bin": "masuk",
-        "emoji": "📷"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kamera-laptop"
+        }
       },
       {
         "id": "joystick",
@@ -209236,7 +209239,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-perangkat-masuk-tampil",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209343,7 +209346,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "webcam",
         "labelKey": "i-webcam",
         "bin": "masuk",
-        "emoji": "📹"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kamera-web"
+        }
       },
       {
         "id": "tv",
@@ -218077,7 +218083,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-alami-atau-buatan-dapur",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218207,7 +218213,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "plastikwrap",
         "labelKey": "i-plastikwrap",
         "bin": "buatan",
-        "emoji": "🧴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-plastik-pembungkus"
+        }
       },
       {
         "id": "tisu",
@@ -331347,7 +331356,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-kartu-langkah",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -331430,7 +331439,7 @@ export const PAKET_RAW: unknown[] = [
         "t-keramas": "Mencuci rambut",
         "keramas-1": "nyalakan pancuran",
         "keramas-2": "basahi rambut",
-        "keramas-3": "tuang sampo ke tangan",
+        "keramas-3": "tuang sampo ke tangan saat rambut basah",
         "keramas-4": "gosok rambut sampai berbusa",
         "keramas-5": "bilas busanya sampai bersih",
         "keramas-6": "matikan pancuran",
@@ -331511,7 +331520,7 @@ export const PAKET_RAW: unknown[] = [
         "t-keramas": "Washing your hair",
         "keramas-1": "turn on the shower",
         "keramas-2": "wet your hair",
-        "keramas-3": "pour shampoo into your hand",
+        "keramas-3": "pour shampoo into your hand once your hair is wet",
         "keramas-4": "rub your hair until foamy",
         "keramas-5": "rinse out all the foam",
         "keramas-6": "turn off the shower",
@@ -331940,7 +331949,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-kartu-tugas-kelas",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -331953,7 +331962,7 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Baca tiap kartu tugas, lalu susun dari langkah pertama sampai terakhir.",
         "t-sepatu-kotor": "Membersihkan sepatu",
         "sepatu-kotor-1": "lepas tali sepatu",
-        "sepatu-kotor-2": "sikat lumpurnya",
+        "sepatu-kotor-2": "sikat lumpur dari lubang tali yang terbuka",
         "sepatu-kotor-3": "cuci dengan sabun",
         "sepatu-kotor-4": "bilas sampai bersih",
         "sepatu-kotor-5": "jemur sampai kering",
@@ -332045,7 +332054,7 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Read each task card, then put them in order from the first step to the last.",
         "t-sepatu-kotor": "Cleaning shoes",
         "sepatu-kotor-1": "take out the laces",
-        "sepatu-kotor-2": "brush off the mud",
+        "sepatu-kotor-2": "brush mud from the exposed lace holes",
         "sepatu-kotor-3": "wash with soap",
         "sepatu-kotor-4": "rinse until clean",
         "sepatu-kotor-5": "dry it in the sun",

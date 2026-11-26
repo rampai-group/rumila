@@ -408,6 +408,33 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_UKUR_PILOT,
   ...ILUSTRASI_MATAHARI_PILOT,
   ...ILUSTRASI_LISTRIK_LUAR_SD2,
+  "plastik-pembungkus": <g {...RINGKAS}>
+    <path d="M32 56L85 54 116 72 70 89Z" fill="#d9f3f7" stroke="#6ea4ad" />
+    <path d="M51 62L92 61M65 72L103 69M76 80L111 74" fill="none" stroke="#9ecbd2" strokeWidth="1.5" />
+    <path d="M26 40L98 22C108 19 116 37 108 44L36 65Z" fill="#d5e8eb" stroke="#6c929d" />
+    <path d="M29 46L101 28M33 56L106 38" fill="none" stroke="#fafdff" strokeWidth="3" />
+    <ellipse cx="31" cy="53" rx="11" ry="14" transform="rotate(-17 31 53)" fill="#f4e4ca" stroke="#9c7950" />
+    <ellipse cx="31" cy="53" rx="5" ry="8" transform="rotate(-17 31 53)" fill="#8c6e51" stroke="#725a42" />
+  </g>,
+  "kamera-laptop": <g {...RINGKAS}>
+    <rect x="12" y="24" width="106" height="59" rx="11" fill="#3f5365" />
+    <path d="M19 56H111V77H19Z" fill="#b7dee9" stroke="none" />
+    <circle cx="65" cy="41" r="10" fill="#93aebc" />
+    <circle cx="65" cy="41" r="5.5" fill="#25354f" />
+    <circle cx="63" cy="39" r="2" fill="#a0d7ef" stroke="none" />
+    <circle cx="84" cy="41" r="2.6" fill="#d6e6ee" stroke="none" />
+    <path d="M28 63H45M28 70H36" fill="none" stroke="#d9f1f7" />
+  </g>,
+  "kamera-web": <g {...RINGKAS}>
+    <path d="M48 61H80L88 77H41Z" fill="#768e9e" />
+    <rect x="31" y="76" width="68" height="10" rx="4" fill="#526878" />
+    <rect x="19" y="29" width="92" height="36" rx="16" fill="#4b5e6e" />
+    <circle cx="65" cy="47" r="12" fill="#a3bac6" />
+    <circle cx="65" cy="47" r="7" fill="#21344d" />
+    <circle cx="62" cy="44" r="2.6" fill="#d0edf8" stroke="none" />
+    <circle cx="91" cy="46" r="2.6" fill="#c8dfeb" stroke="none" />
+    <path d="M29 43h9M29 50h9" fill="none" stroke="#9eb4c1" />
+  </g>,
   "rotan-mentah": <g {...RINGKAS}>
     <path d="M19 80Q53 75 96 45M29 91Q69 83 114 57" fill="none" stroke="#7e5d41" strokeWidth="12" />
     <path d="M19 80Q53 75 96 45M29 91Q69 83 114 57" fill="none" stroke="#dcb57b" strokeWidth="7" />
