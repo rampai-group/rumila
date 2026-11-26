@@ -14,6 +14,7 @@
 import { JENIS_UJIAN, JUMLAH_SOAL, SEKALI, bolehMengulang, lulusDari, nilaiDari, type HasilUjian, type JenisUjian } from "@/lib/akademi/ujian";
 import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
 import { KOMPETENSI, PAKET, TRACK_AKTIF } from "@/lib/akademi/katalog";
+import { pemantapanUjiUntuk } from "@/lib/akademi/pemantapan-uji";
 import { petaDariBukti, ujianTerbuka } from "@/lib/akademi/peta";
 import { eventDariBaris } from "@/lib/akademi/sertifikat-inti";
 import { UUID, anggotaMilik, jawab, klien, semuaEvent, type Admin } from "@/lib/akademi/server";
@@ -92,14 +93,16 @@ export async function POST(req: Request) {
   const { data: riwayat, error: gagalCekRiwayat } = await admin.from("akademi_ujian").select(KOLOM).eq("member_id", memberId).eq("level", level);
   if (gagalCekRiwayat) return jawab(500, { error: "galat" });
   const hasilSebelumnya = (riwayat ?? []).map(keHasil);
-  const boleh = bolehMengulang(hasilSebelumnya, jenis, level, ruang);
+  const waktu = new Date();
+  const boleh = bolehMengulang(hasilSebelumnya, jenis, level, ruang, waktu);
   if (!boleh.boleh) return jawab(409, { error: boleh.sekali ? "sudah_dikerjakan" : boleh.besok ? "tunggu_besok" : "sudah_lulus" });
 
   if (jenis !== "penempatan") {
     const jejak = await semuaEvent(admin, memberId);
     if (!jejak) return jawab(500, { error: "galat" });
     const bukti = eventDariBaris(jejak.filter((e) => e.session_id !== sessionId));
-    const peta = petaDariBukti(bukti, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilSebelumnya);
+    const uji = jenis === "kenaikan" ? await pemantapanUjiUntuk(member.id, level, waktu) : undefined;
+    const peta = petaDariBukti(bukti, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilSebelumnya, waktu, uji);
     if (!ujianTerbuka(peta, jenis, ruang)) return jawab(409, { error: "ujian_terkunci" });
   }
 
