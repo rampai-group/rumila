@@ -322776,7 +322776,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-algoritma-di-kota",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -322794,11 +322794,11 @@ export const PAKET_RAW: unknown[] = [
         "celengan-5": "buka celengan",
         "celengan-6": "hitung uangnya",
         "t-sepeda": "Naik sepeda",
-        "sepeda-1": "pakai helm",
-        "sepeda-2": "duduk di sadel",
-        "sepeda-3": "kayuh pedal",
+        "sepeda-1": "kaitkan tali helm",
+        "sepeda-2": "naik setelah helm terkunci",
+        "sepeda-3": "mulai kayuh pedal",
         "sepeda-4": "sepeda melaju",
-        "sepeda-5": "tarik rem untuk berhenti",
+        "sepeda-5": "tarik rem hingga berhenti",
         "sepeda-6": "parkir sepeda",
         "t-es-krim": "Membeli es krim",
         "es-krim-1": "masuk ke toko es krim",
@@ -322875,11 +322875,11 @@ export const PAKET_RAW: unknown[] = [
         "celengan-5": "open the piggy bank",
         "celengan-6": "count the money",
         "t-sepeda": "Riding a bike",
-        "sepeda-1": "put on a helmet",
-        "sepeda-2": "sit on the seat",
-        "sepeda-3": "push the pedals",
+        "sepeda-1": "fasten the helmet strap",
+        "sepeda-2": "mount with helmet fastened",
+        "sepeda-3": "start pedalling",
         "sepeda-4": "the bike moves along",
-        "sepeda-5": "pull the brake to stop",
+        "sepeda-5": "squeeze the brake to stop",
         "sepeda-6": "park the bike",
         "t-es-krim": "Buying ice cream",
         "es-krim-1": "go into the ice cream shop",
@@ -323041,7 +323041,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "sepeda-4",
             "labelKey": "sepeda-4",
-            "emoji": "🚲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "pilot-sepeda-melaju"
+            }
           },
           {
             "id": "sepeda-5",
