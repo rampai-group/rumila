@@ -20,14 +20,14 @@
       "b-kaca": "kaca",
       "i-bukutulis": "buku tulis",
       "i-kertaslipat": "kertas lipat",
-      "i-taplak": "taplak meja",
+      "i-taplak": "taplak kain",
       "i-topi": "topi kain",
       "i-batukali": "batu kali",
       "i-patung": "patung batu",
       "i-pensil": "pensil kayu",
       "i-rak": "rak buku kayu",
       "i-paku": "baut",
-      "i-bel": "bel sekolah",
+      "i-bel": "bel logam",
       "i-penggaris": "penggaris plastik",
       "i-ember": "ember plastik",
       "i-jendela": "kaca jendela",
@@ -36,7 +36,7 @@
       "i-amplop": "amplop surat",
       "i-kaos": "kaus olahraga",
       "i-kauskaki": "kaus kaki",
-      "i-bendera": "bendera merah putih"
+      "i-bendera": "bendera kain"
     },
     "en": {
       "judul": "Seven Material Shelves at School",
@@ -50,14 +50,14 @@
       "b-kaca": "glass",
       "i-bukutulis": "notebook",
       "i-kertaslipat": "origami paper",
-      "i-taplak": "tablecloth",
+      "i-taplak": "cloth tablecloth",
       "i-topi": "cloth hat",
       "i-batukali": "river stone",
       "i-patung": "stone statue",
       "i-pensil": "wooden pencil",
       "i-rak": "wooden bookshelf",
       "i-paku": "bolt",
-      "i-bel": "school bell",
+      "i-bel": "metal bell",
       "i-penggaris": "plastic ruler",
       "i-ember": "plastic bucket",
       "i-jendela": "window glass",
@@ -66,7 +66,7 @@
       "i-amplop": "paper envelope",
       "i-kaos": "sports T-shirt",
       "i-kauskaki": "socks",
-      "i-bendera": "red-and-white flag"
+      "i-bendera": "cloth flag"
     }
   },
   "knobs": {
@@ -100,8 +100,10 @@
     {
       "id": "kain",
       "labelKey": "b-kain",
-      "emoji": "🧵",
-      "color": "#fce4ec"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-potongan-kain"
+      }
     },
     {
       "id": "batu",
@@ -124,14 +126,18 @@
     {
       "id": "plastik",
       "labelKey": "b-plastik",
-      "emoji": "🧴",
-      "color": "#ffe0b2"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-plastik-bening"
+      }
     },
     {
       "id": "kaca",
       "labelKey": "b-kaca",
-      "emoji": "🔍",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kaca"
+      }
     }
   ],
   "items": [
@@ -151,8 +157,10 @@
       "id": "taplak",
       "labelKey": "i-taplak",
       "bin": "kain",
-      "emoji": "🟥",
-      "color": "#ef9a9a"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-taplak-meja"
+      }
     },
     {
       "id": "topi",
@@ -182,8 +190,10 @@
       "id": "rak",
       "labelKey": "i-rak",
       "bin": "kayu",
-      "color": "#a1887f",
-      "shape": "rect"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-rak-buku-kayu"
+      }
     },
     {
       "id": "paku",
@@ -219,7 +229,10 @@
       "id": "toples",
       "labelKey": "i-toples",
       "bin": "kaca",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-toples"
+      }
     },
     {
       "id": "koran",

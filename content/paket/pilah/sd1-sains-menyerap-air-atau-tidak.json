@@ -20,7 +20,7 @@
       "i-koran": "koran",
       "i-kapas": "kapas",
       "i-jashujan": "jas hujan plastik",
-      "i-payung": "payung",
+      "i-payung": "payung tahan air",
       "i-sendok": "sendok logam",
       "i-botol": "botol plastik",
       "i-gelas": "gelas kaca",
@@ -38,7 +38,7 @@
       "i-koran": "newspaper",
       "i-kapas": "cotton ball",
       "i-jashujan": "plastic raincoat",
-      "i-payung": "umbrella",
+      "i-payung": "waterproof umbrella",
       "i-sendok": "metal spoon",
       "i-botol": "plastic bottle",
       "i-gelas": "glass cup",
@@ -84,8 +84,10 @@
       "id": "handuk",
       "labelKey": "i-handuk",
       "bin": "serap",
-      "emoji": "🟦",
-      "color": "#81d4fa"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-handuk-lipat"
+      }
     },
     {
       "id": "tisu",
@@ -109,8 +111,10 @@
       "id": "kapas",
       "labelKey": "i-kapas",
       "bin": "serap",
-      "shape": "circle",
-      "color": "#fafafa"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-gumpalan-kapas"
+      }
     },
     {
       "id": "jashujan",
@@ -143,7 +147,10 @@
       "id": "gelas",
       "labelKey": "i-gelas",
       "bin": "kedap",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gelas-silinder"
+      }
     },
     {
       "id": "sepatubot",

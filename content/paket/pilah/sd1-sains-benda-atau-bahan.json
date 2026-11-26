@@ -10,43 +10,43 @@
   "locale": {
     "id": {
       "judul": "Benda atau Bahan?",
-      "instruksi": "Benda dibuat dari bahan. Taruh tiap kartu ke rak benda atau rak bahan.",
-      "b-benda": "benda",
+      "instruksi": "Pilah benda jadi dan bahan pembuatnya. Contoh: kursi dari kayu.",
+      "b-benda": "benda jadi",
       "b-bahan": "bahan",
       "i-kursi": "kursi",
       "i-kayu": "kayu",
       "i-baju": "baju",
-      "i-kain": "kain",
+      "i-kain": "potongan kain",
       "i-gelas": "gelas",
-      "i-kaca": "kaca",
+      "i-kaca": "lembar kaca",
       "i-kunci": "kunci",
-      "i-logam": "logam",
+      "i-logam": "lembar logam",
       "i-buku": "buku",
       "i-kertas": "kertas",
       "i-patung": "patung",
       "i-batu": "batu",
       "i-botol": "botol",
-      "i-plastik": "plastik"
+      "i-plastik": "lembar plastik"
     },
     "en": {
       "judul": "Object or Material?",
-      "instruksi": "Objects are made from materials. Put each card on the object shelf or the material shelf.",
-      "b-benda": "object",
+      "instruksi": "Sort finished objects and their materials. Example: a chair made of wood.",
+      "b-benda": "finished objects",
       "b-bahan": "material",
       "i-kursi": "chair",
       "i-kayu": "wood",
       "i-baju": "shirt",
-      "i-kain": "fabric",
+      "i-kain": "fabric sample",
       "i-gelas": "cup",
-      "i-kaca": "glass",
+      "i-kaca": "glass sheet",
       "i-kunci": "key",
-      "i-logam": "metal",
+      "i-logam": "metal sheet",
       "i-buku": "book",
       "i-kertas": "paper",
       "i-patung": "statue",
       "i-batu": "rock",
       "i-botol": "bottle",
-      "i-plastik": "plastic"
+      "i-plastik": "plastic sheet"
     }
   },
   "knobs": {
@@ -73,8 +73,10 @@
     {
       "id": "bahan",
       "labelKey": "b-bahan",
-      "emoji": "🧱",
-      "color": "#e8eaf6"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kayu"
+      }
     }
   ],
   "items": [
@@ -100,20 +102,28 @@
       "id": "kain",
       "labelKey": "i-kain",
       "bin": "bahan",
-      "emoji": "🧵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-potongan-kain"
+      }
     },
     {
       "id": "gelas",
       "labelKey": "i-gelas",
       "bin": "benda",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gelas-silinder"
+      }
     },
     {
       "id": "kaca",
       "labelKey": "i-kaca",
       "bin": "bahan",
-      "emoji": "🔷",
-      "color": "#b3e5fc"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kaca"
+      }
     },
     {
       "id": "kunci",
@@ -125,8 +135,10 @@
       "id": "logam",
       "labelKey": "i-logam",
       "bin": "bahan",
-      "shape": "square",
-      "color": "#90a4ae"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-logam"
+      }
     },
     {
       "id": "buku",
@@ -138,7 +150,10 @@
       "id": "kertas",
       "labelKey": "i-kertas",
       "bin": "bahan",
-      "emoji": "📄"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lembar-kertas"
+      }
     },
     {
       "id": "patung",
@@ -162,8 +177,10 @@
       "id": "plastik",
       "labelKey": "i-plastik",
       "bin": "bahan",
-      "emoji": "🟧",
-      "color": "#ffcc80"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-plastik-bening"
+      }
     }
   ],
   "pilihan": []
