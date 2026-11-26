@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-gabung-keranjang-20",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Dua Keranjang Jadi Satu",
-      "instruksi": "Dua keranjang digabung. Hitung maju dari yang lebih banyak, lalu geser penanda ke jumlahnya.",
+      "instruksi": "Gabungkan isi dua keranjang. Hitung maju dari yang lebih banyak. Kalau sama, mulai dari mana saja. Ketuk hasilnya.",
       "g-jeruk": "jeruk",
       "g-apel": "apel",
       "g-telur": "telur",
@@ -18,7 +18,7 @@
     },
     "en": {
       "judul": "Two Baskets Into One",
-      "instruksi": "Two baskets are put together. Count on from the bigger one, then slide the marker to the total.",
+      "instruksi": "Join the contents of the two baskets. Count on from the larger group. When they are equal, start with either group. Tap the total.",
       "g-jeruk": "oranges",
       "g-apel": "apples",
       "g-telur": "eggs",

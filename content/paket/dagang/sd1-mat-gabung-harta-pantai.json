@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-gabung-harta-pantai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tumpukan Harta Pantai",
-      "instruksi": "Dua tumpukan harta pantai digabung. Mulai dari tumpukan yang lebih banyak, hitung maju, lalu geser penanda ke jumlahnya.",
+      "instruksi": "Gabungkan dua tumpukan. Hitung maju dari yang lebih banyak. Kalau sama, mulai dari mana saja. Ketuk hasilnya.",
       "g-kerang": "kerang",
       "g-kepiting": "kepiting",
       "g-ikan": "ikan hias",
@@ -18,7 +18,7 @@
     },
     "en": {
       "judul": "Beach Treasure Piles",
-      "instruksi": "Two piles of beach treasure are put together. Start from the bigger pile, count on, then slide the marker to the total.",
+      "instruksi": "Join the two piles. Count on from the larger group. When they are equal, start with either group. Tap the total.",
       "g-kerang": "shells",
       "g-kepiting": "crabs",
       "g-ikan": "tropical fish",
