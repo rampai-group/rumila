@@ -1,7 +1,7 @@
 import { ILUSTRASI_QC_JENJANG_IDS, IlustrasiQcJenjang } from "./ilustrasi-qc-jenjang";
 import { HurufSimetri } from "./huruf-simetri";
 
-const OBJEK = ["ayam-utuh", "katak-utuh", "tikus-utuh", "belut", "burung-unta", "air-gelas", "plastik-bening", "kotak-pensil-bening", "kotak-pensil-logam", "tirai-tipis", "kacang-hijau", "kacang-merah", "meja", "bot-karet", "semangka-utuh", "karang", "injak-karang", "peluit", "tunas-timur", "tunas-atas", "tunas-barat", "gula-halus", "kulkas", "freezer"];
+const OBJEK = ["ayam-utuh", "katak-utuh", "tikus-utuh", "belut", "burung-unta", "air-gelas", "plastik-bening", "kotak-pensil-bening", "kotak-pensil-logam", "tirai-tipis", "kacang-hijau", "kacang-merah", "meja", "bot-karet", "semangka-utuh", "karang", "injak-karang", "peluit", "tunas-timur", "tunas-atas", "tunas-barat", "gula-halus", "kulkas", "freezer", "kipas-angin"];
 const KATA = ["KODE", "KATA", "BOLA", "SAPI", "HOBI", "HUJAN", "BATU", "MEJA", "TAAT", "TAPI", "TOKO", "MATA", "AHA", "ADA", "API", "AKU"];
 export const ILUSTRASI_AWAL_SD_IDS = [...ILUSTRASI_QC_JENJANG_IDS, ...OBJEK.map((x) => `awal-${x}`), ...[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ", ...KATA].map((x) => `awal-huruf-${x.toLowerCase()}`)];
 const INK = "#16364b";
@@ -44,6 +44,18 @@ export function IlustrasiAwalSD({ id }: { id: string }) {
   if (id === "bot-karet") return <g stroke="#48613e" strokeWidth="2.5" strokeLinejoin="round"><path d="M20 12H52L50 65Q60 67 63 79V89H11V75L20 64Z" fill="#8bbd55" /><path d="M75 10H107L105 63Q117 66 119 79V89H65V75L75 62Z" fill="#a2cc65" /><path d="M19 18H51M74 17H106M12 84H62M66 84H118" fill="none" strokeWidth="5" /><path d="M31 30V58M86 28V54" stroke="#d9ecb5" strokeWidth="5" strokeLinecap="round" /></g>;
   if (id === "semangka-utuh") return <g><ellipse cx="65" cy="53" rx="52" ry="36" fill="#77b44e" stroke="#367b3f" strokeWidth="3" /><path d="M34 24Q13 50 33 82M49 19Q31 52 49 87M65 17Q51 52 65 89M81 19Q74 53 82 87M96 25Q98 53 98 80" fill="none" stroke="#398945" strokeWidth="7" /><path d="M111 38Q124 30 116 18" fill="none" stroke="#708a45" strokeWidth="4" /></g>;
   if (id === "karang" || id === "injak-karang") return <><rect width="130" height="100" rx="10" fill="#d5eef6" /><Karang />{id.startsWith("injak")&&<><path d="M35 1H56L59 24 91 35Q102 43 92 49L51 37 32 30Z" fill="#e5b298" stroke="#aa785f" strokeWidth="2" /><path d="M42 40L34 52M83 53L92 62M53 44L57 55" stroke="#d34b43" strokeWidth="3" strokeLinecap="round" /></>}</>;
+  if (id === "kipas-angin") return (
+    <g stroke={INK} strokeWidth="2.5" strokeLinejoin="round">
+      <path d="M60 60H70V85H60Z" fill="#8fb9cc" />
+      <path d="M42 91Q42 82 65 82Q88 82 88 91Z" fill="#4f94b5" />
+      <circle cx="65" cy="36" r="29" fill="#e8f5fb" />
+      {[0, 120, 240].map((angle) => <path key={angle} transform={`rotate(${angle} 65 36)`} d="M65 36Q43 29 52 16Q67 7 70 30Z" fill="#55afcf" />)}
+      <circle cx="65" cy="36" r="5" fill="#f5be58" />
+      <circle cx="65" cy="36" r="26" fill="none" strokeWidth="1" />
+      <path d="M37 36H93M65 8V64" fill="none" strokeWidth="1" />
+      <path d="M85 88H102V73M98 73H106M100 73V67M104 73V67" fill="none" strokeLinecap="round" />
+    </g>
+  );
   if (id === "kulkas" || id === "freezer") return (
     <g stroke={INK} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
       <rect x="37" y="8" width="56" height="83" rx="7" fill="#e1eff5" />

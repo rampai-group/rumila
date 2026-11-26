@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-butuh-listrik-rumah",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,7 +78,11 @@
       "id": "kipas",
       "labelKey": "i-kipas",
       "bin": "listrik",
-      "emoji": "🌀"
+      "emoji": "🌀",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kipas-angin"
+      }
     },
     {
       "id": "lampu",
@@ -97,7 +101,11 @@
       "labelKey": "i-kulkas",
       "bin": "listrik",
       "shape": "rect",
-      "color": "#eceff1"
+      "color": "#eceff1",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kulkas"
+      }
     },
     {
       "id": "senter",

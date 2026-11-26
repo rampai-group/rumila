@@ -129,6 +129,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const kepalaTumbuhan = useRef<HTMLDivElement>(null);
   const [tinggiKepalaTumbuhan, setTinggiKepalaTumbuhan] = useState(0);
   const tataTumbuhan = paket.id === "sains-susun-tumbuhan-utuh";
+  const tataBunyi = paket.competencyIds.includes("SAINS.SD1.BUNYI.02");
   const kunci = !!hasil;
   const langkah = (id: string) => shown.find((s) => s.id === id)!;
 
@@ -350,6 +351,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               v={visual(s, t)}
               size={ukuranPanjang ?? ukuranKartu}
               ariaLabel={bandingPanjang ? labelAkses(s) : undefined}
+              labelPenuh={tataBunyi}
               labelSize={layarRapat ? 12 : batas(14 * sk, lebarKartu * 0.07, 22)}
               selected={dipilih}
               onClick={() => ketukKartu(s.id)}
