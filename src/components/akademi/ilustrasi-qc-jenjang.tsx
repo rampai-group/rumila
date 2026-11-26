@@ -46,6 +46,42 @@ function Serangga({ kupu }: { kupu: boolean }) {
   </g>;
 }
 
+function Lebah() {
+  return <g {...RINGKAS}>
+    <path d="M54 46Q24 12 14 28Q8 44 49 54ZM76 46Q106 12 116 28Q122 44 81 54Z" fill="#d1edf2" stroke="#65959f" />
+    <g fill="none" strokeWidth="4">
+      <path d="M53 43L37 48 20 47" /><path d="M77 43L93 48 110 47" />
+      <path d="M51 49L36 60 16 65" /><path d="M79 49L94 60 114 65" />
+      <path d="M53 55L39 74 24 85" /><path d="M77 55L91 74 106 85" />
+    </g>
+    <path d="M65 91L59 82H71Z" fill="#4e493f" />
+    <ellipse cx="65" cy="68" rx="17" ry="19" fill="#ffc55d" />
+    <path d="M50 61Q65 67 80 61M50 72Q65 77 80 72" fill="none" stroke="#5a4837" strokeWidth="5" />
+    <ellipse cx="65" cy="48" rx="15" ry="12" fill="#795437" />
+    <circle cx="65" cy="31" r="12" fill="#4c4943" />
+    <path d="M59 21Q56 13 51 12M71 21Q74 13 79 12" fill="none" />
+    <circle cx="60" cy="30" r="2.4" fill="#fff5da" stroke="none" />
+    <circle cx="70" cy="30" r="2.4" fill="#fff5da" stroke="none" />
+  </g>;
+}
+
+function KunangKunang() {
+  return <g {...RINGKAS}>
+    <rect x="7" y="6" width="116" height="88" rx="13" fill="#25516a" stroke="none" />
+    <circle cx="23" cy="25" r="2" fill="#dcf4f4" stroke="none" />
+    <circle cx="102" cy="34" r="2.5" fill="#dcf4f4" stroke="none" />
+    <circle cx="28" cy="73" r="1.5" fill="#dcf4f4" stroke="none" />
+    <ellipse cx="65" cy="74" rx="27" ry="20" fill="#e8f77c" opacity=".36" stroke="none" />
+    <path d="M53 47L44 44 39 48M53 54L43 55 38 61M54 60L47 66 43 74M77 47L86 44 91 48M77 54L87 55 92 61M76 60L83 66 87 74" fill="none" stroke="#e4d9a2" />
+    <path d="M51 62Q65 53 79 62V71Q77 86 65 87Q53 86 51 71Z" fill="#f2ff82" stroke="#d2e75c" />
+    <path d="M52 73Q65 76 78 73M57 81Q65 83 73 81" fill="none" stroke="#b3c74e" />
+    <path d="M65 38Q45 41 51 70Q59 70 65 64Q72 70 79 70Q85 41 65 38Z" fill="#415064" stroke="#b8af7f" />
+    <path d="M65 43V64" fill="none" stroke="#d0c995" />
+    <circle cx="65" cy="33" r="9" fill="#424d57" stroke="#b8af7f" />
+    <path d="M60 26Q57 18 51 19M70 26Q73 18 79 19" fill="none" stroke="#e4d9a2" />
+  </g>;
+}
+
 function Televisi({ nyala }: { nyala: boolean }) {
   return <g {...RINGKAS}>
     {nyala && <path d="M7 24L14 29M6 48H15M8 72L15 66M123 24L115 30M125 48H116M123 71L115 66M49 15L45 8M81 15L85 8" fill="none" stroke="#eca526" strokeWidth="3" />}
@@ -586,6 +622,8 @@ const objectArt: Record<string, ReactNode> = {
   </g>,
   "kupu-enam-kaki": <Serangga kupu />,
   "lalat-enam-kaki": <Serangga kupu={false} />,
+  "lebah-enam-kaki": <Lebah />,
+  "kunang-kunang": <KunangKunang />,
   "televisi-menyala": <Televisi nyala />,
   "televisi-mati": <Televisi nyala={false} />,
 };

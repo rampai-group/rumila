@@ -1,6 +1,6 @@
 {
   "id": "sains-siang-malam-di-kebun",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -110,10 +110,9 @@
       "id": "kunang",
       "labelKey": "i-kunang",
       "bin": "malam",
-      "emoji": "✨",
       "adegan": {
-        "jenis": "tanda",
-        "tanda": "🌌"
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kunang-kunang"
       }
     },
     {

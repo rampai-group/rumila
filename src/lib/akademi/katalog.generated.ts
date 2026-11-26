@@ -196016,7 +196016,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-siang-malam-di-kebun",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -196126,10 +196126,9 @@ export const PAKET_RAW: unknown[] = [
         "id": "kunang",
         "labelKey": "i-kunang",
         "bin": "malam",
-        "emoji": "✨",
         "adegan": {
-          "jenis": "tanda",
-          "tanda": "🌌"
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kunang-kunang"
         }
       },
       {
@@ -220013,7 +220012,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-hitung-kaki-hewan",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -220192,7 +220191,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "lebah",
         "labelKey": "i-lebah",
         "bin": "k6",
-        "emoji": "🐝"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lebah-enam-kaki"
+        }
       },
       {
         "id": "kupu",
@@ -221222,7 +221224,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-sumber-cahaya-malam",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221302,7 +221304,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kunang",
         "labelKey": "i-kunang",
         "bin": "sumber",
-        "emoji": "✨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kunang-kunang"
+        }
       },
       {
         "id": "unggun",
@@ -250270,7 +250275,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-cahaya-di-kota",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -250352,9 +250357,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kunang",
         "labelKey": "i-kunang",
         "bin": "sumber",
-        "emoji": "🪲",
-        "color": "#fff176",
-        "latar": true
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kunang-kunang"
+        }
       },
       {
         "id": "lampumerah",

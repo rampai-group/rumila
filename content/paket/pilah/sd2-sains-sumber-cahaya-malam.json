@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-malam",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,7 +80,10 @@
       "id": "kunang",
       "labelKey": "i-kunang",
       "bin": "sumber",
-      "emoji": "✨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kunang-kunang"
+      }
     },
     {
       "id": "unggun",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-hitung-kaki-hewan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -179,7 +179,10 @@
       "id": "lebah",
       "labelKey": "i-lebah",
       "bin": "k6",
-      "emoji": "🐝"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lebah-enam-kaki"
+      }
     },
     {
       "id": "kupu",
