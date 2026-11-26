@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-pantul-bias-di-kota",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.CAHAYA.01"
@@ -20,7 +20,7 @@
       "i-matakucing": "pemantul mata kucing di aspal bersinar saat disorot lampu",
       "i-salon": "cermin di salon dipakai melihat rambut bagian belakang",
       "i-kaki": "kaki tampak lebih pendek saat berdiri di kolam renang",
-      "i-pelangi": "pelangi muncul saat cahaya melewati titik-titik hujan",
+      "i-pelangi": "cahaya Matahari membelok saat masuk ke butir air pembentuk pelangi",
       "i-teropong": "lensa teropong membuat Bulan tampak lebih besar",
       "i-akuarium": "ikan di akuarium bulat tampak lebih besar dari samping",
       "i-sendok": "sendok tampak bengkok di mangkuk sup bening",
@@ -39,7 +39,7 @@
       "i-matakucing": "cat's-eye road studs glow when lit by headlights",
       "i-salon": "salon mirrors are used to see the back of your hair",
       "i-kaki": "your legs look shorter when you stand in a swimming pool",
-      "i-pelangi": "a rainbow appears when light passes through raindrops",
+      "i-pelangi": "sunlight bends as it enters a raindrop that helps form a rainbow",
       "i-teropong": "a telescope's lenses make the Moon look bigger",
       "i-akuarium": "a fish in a round fishbowl looks bigger from the side",
       "i-sendok": "a spoon looks bent in a bowl of clear soup",

@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-tulang-di-tempatnya",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,22 +80,38 @@
     {
       "id": "kepala",
       "labelKey": "b-kepala",
-      "emoji": "🙂"
+      "emoji": "🙂",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-bagian-kepala"
+      }
     },
     {
       "id": "badan",
       "labelKey": "b-badan",
-      "emoji": "🫁"
+      "emoji": "🫁",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-bagian-badan"
+      }
     },
     {
       "id": "kaki",
       "labelKey": "b-kaki",
-      "emoji": "🏃"
+      "emoji": "🏃",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-bagian-kaki"
+      }
     },
     {
       "id": "lengan",
       "labelKey": "b-lengan",
-      "emoji": "🙌"
+      "emoji": "🙌",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-bagian-lengan"
+      }
     }
   ],
   "items": [
@@ -103,91 +119,151 @@
       "id": "tengkorak",
       "labelKey": "i-tengkorak",
       "bin": "kepala",
-      "emoji": "💀"
+      "emoji": "💀",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-tengkorak"
+      }
     },
     {
       "id": "rahang",
       "labelKey": "i-rahang",
       "bin": "kepala",
-      "emoji": "😬"
+      "emoji": "😬",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-rahang"
+      }
     },
     {
       "id": "hidung",
       "labelKey": "i-hidung",
       "bin": "kepala",
-      "emoji": "👃"
+      "emoji": "👃",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-hidung"
+      }
     },
     {
       "id": "pipi",
       "labelKey": "i-pipi",
       "bin": "kepala",
-      "emoji": "😊"
+      "emoji": "😊",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-pipi"
+      }
     },
     {
       "id": "rusuk",
       "labelKey": "i-rusuk",
       "bin": "badan",
-      "emoji": "🦴"
+      "emoji": "🦴",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-rusuk"
+      }
     },
     {
       "id": "panggul",
       "labelKey": "i-panggul",
       "bin": "badan",
-      "emoji": "🦴"
+      "emoji": "🦴",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-panggul"
+      }
     },
     {
       "id": "dada",
       "labelKey": "i-dada",
       "bin": "badan",
-      "emoji": "🦴"
+      "emoji": "🦴",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-dada"
+      }
     },
     {
       "id": "punggung",
       "labelKey": "i-punggung",
       "bin": "badan",
-      "emoji": "🦴"
+      "emoji": "🦴",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-punggung"
+      }
     },
     {
       "id": "paha",
       "labelKey": "i-paha",
       "bin": "kaki",
-      "emoji": "🦵"
+      "emoji": "🦵",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-paha"
+      }
     },
     {
       "id": "betis",
       "labelKey": "i-betis",
       "bin": "kaki",
-      "emoji": "🦵"
+      "emoji": "🦵",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-betis"
+      }
     },
     {
       "id": "tumit",
       "labelKey": "i-tumit",
       "bin": "kaki",
-      "emoji": "🦶"
+      "emoji": "🦶",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-tumit"
+      }
     },
     {
       "id": "jarikaki",
       "labelKey": "i-jarikaki",
       "bin": "kaki",
-      "emoji": "🦶"
+      "emoji": "🦶",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-jarikaki"
+      }
     },
     {
       "id": "hasta",
       "labelKey": "i-hasta",
       "bin": "lengan",
-      "emoji": "💪"
+      "emoji": "💪",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-hasta"
+      }
     },
     {
       "id": "pengumpil",
       "labelKey": "i-pengumpil",
       "bin": "lengan",
-      "emoji": "💪"
+      "emoji": "💪",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-pengumpil"
+      }
     },
     {
       "id": "telapak",
       "labelKey": "i-telapak",
       "bin": "lengan",
-      "emoji": "🖐️"
+      "emoji": "🖐️",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd4-tulang-telapak"
+      }
     }
   ],
   "pilihan": []

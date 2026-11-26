@@ -221667,7 +221667,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-kode-butuh-internet",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221681,15 +221681,15 @@ export const PAKET_RAW: unknown[] = [
         "bin-butuh": "butuh internet",
         "bin-tanpa": "bisa tanpa internet",
         "i-video-call-with-grandma": "panggilan video dengan nenek",
-        "i-send-a-message-to-a-friend": "kirim pesan lewat aplikasi obrolan",
+        "i-send-a-message-to-a-friend": "kirim pesan lewat aplikasi obrolan daring",
         "i-watch-a-video-from-the-internet": "nonton video dari internet",
         "i-find-the-way-on-an-online-map": "cari jalan di peta daring",
         "i-send-a-photo-to-uncle": "kirim foto lewat aplikasi daring ke paman di kota lain",
-        "i-work-it-out-on-the-calculator": "berhitung dengan kalkulator",
+        "i-work-it-out-on-the-calculator": "berhitung dengan kalkulator bawaan tablet",
         "i-take-a-photo-of-a-flower": "memotret bunga",
-        "i-draw-in-a-drawing-app": "menggambar di aplikasi gambar",
+        "i-draw-in-a-drawing-app": "menggambar di aplikasi gambar bawaan tablet",
         "i-set-an-alarm": "menyalakan alarm",
-        "i-look-at-photos-in-the-gallery": "melihat foto di galeri"
+        "i-look-at-photos-in-the-gallery": "melihat foto yang tersimpan di galeri tablet"
       },
       "en": {
         "judul": "Internet or Not?",
@@ -221697,15 +221697,15 @@ export const PAKET_RAW: unknown[] = [
         "bin-butuh": "needs the internet",
         "bin-tanpa": "works without it",
         "i-video-call-with-grandma": "video call with grandma",
-        "i-send-a-message-to-a-friend": "send a message in a chat app",
+        "i-send-a-message-to-a-friend": "send a message in an online chat app",
         "i-watch-a-video-from-the-internet": "watch a video from the internet",
         "i-find-the-way-on-an-online-map": "find the way on an online map",
         "i-send-a-photo-to-uncle": "send a photo through an online app to uncle in another town",
-        "i-work-it-out-on-the-calculator": "work it out on the calculator",
+        "i-work-it-out-on-the-calculator": "do a calculation with the tablet’s built-in calculator",
         "i-take-a-photo-of-a-flower": "take a photo of a flower",
-        "i-draw-in-a-drawing-app": "draw in a drawing app",
+        "i-draw-in-a-drawing-app": "draw in the tablet’s built-in drawing app",
         "i-set-an-alarm": "set an alarm",
-        "i-look-at-photos-in-the-gallery": "look at photos in the gallery"
+        "i-look-at-photos-in-the-gallery": "look at photos saved in the tablet’s gallery"
       }
     },
     "knobs": {
@@ -221740,61 +221740,101 @@ export const PAKET_RAW: unknown[] = [
         "id": "video-call-with-grandma",
         "labelKey": "i-video-call-with-grandma",
         "bin": "butuh",
-        "emoji": "📹"
+        "emoji": "📹",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-video-nenek"
+        }
       },
       {
         "id": "send-a-message-to-a-friend",
         "labelKey": "i-send-a-message-to-a-friend",
         "bin": "butuh",
-        "emoji": "💬"
+        "emoji": "💬",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-pesan-daring"
+        }
       },
       {
         "id": "watch-a-video-from-the-internet",
         "labelKey": "i-watch-a-video-from-the-internet",
         "bin": "butuh",
-        "emoji": "📺"
+        "emoji": "📺",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-video-daring"
+        }
       },
       {
         "id": "find-the-way-on-an-online-map",
         "labelKey": "i-find-the-way-on-an-online-map",
         "bin": "butuh",
-        "emoji": "🗺️"
+        "emoji": "🗺️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-peta-daring"
+        }
       },
       {
         "id": "send-a-photo-to-uncle",
         "labelKey": "i-send-a-photo-to-uncle",
         "bin": "butuh",
-        "emoji": "📤"
+        "emoji": "📤",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-kirim-foto"
+        }
       },
       {
         "id": "work-it-out-on-the-calculator",
         "labelKey": "i-work-it-out-on-the-calculator",
         "bin": "tanpa",
-        "emoji": "🧮"
+        "emoji": "🧮",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-kalkulator"
+        }
       },
       {
         "id": "take-a-photo-of-a-flower",
         "labelKey": "i-take-a-photo-of-a-flower",
         "bin": "tanpa",
-        "emoji": "📷"
+        "emoji": "📷",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-kamera-bunga"
+        }
       },
       {
         "id": "draw-in-a-drawing-app",
         "labelKey": "i-draw-in-a-drawing-app",
         "bin": "tanpa",
-        "emoji": "🎨"
+        "emoji": "🎨",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-menggambar"
+        }
       },
       {
         "id": "set-an-alarm",
         "labelKey": "i-set-an-alarm",
         "bin": "tanpa",
-        "emoji": "⏰"
+        "emoji": "⏰",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-alarm"
+        }
       },
       {
         "id": "look-at-photos-in-the-gallery",
         "labelKey": "i-look-at-photos-in-the-gallery",
         "bin": "tanpa",
-        "emoji": "🖼️"
+        "emoji": "🖼️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-galeri"
+        }
       }
     ]
   },
@@ -253929,7 +253969,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-tulang-di-tempatnya",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -254009,22 +254049,38 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kepala",
         "labelKey": "b-kepala",
-        "emoji": "🙂"
+        "emoji": "🙂",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-kepala"
+        }
       },
       {
         "id": "badan",
         "labelKey": "b-badan",
-        "emoji": "🫁"
+        "emoji": "🫁",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-badan"
+        }
       },
       {
         "id": "kaki",
         "labelKey": "b-kaki",
-        "emoji": "🏃"
+        "emoji": "🏃",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-kaki"
+        }
       },
       {
         "id": "lengan",
         "labelKey": "b-lengan",
-        "emoji": "🙌"
+        "emoji": "🙌",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-lengan"
+        }
       }
     ],
     "items": [
@@ -254032,91 +254088,151 @@ export const PAKET_RAW: unknown[] = [
         "id": "tengkorak",
         "labelKey": "i-tengkorak",
         "bin": "kepala",
-        "emoji": "💀"
+        "emoji": "💀",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-tengkorak"
+        }
       },
       {
         "id": "rahang",
         "labelKey": "i-rahang",
         "bin": "kepala",
-        "emoji": "😬"
+        "emoji": "😬",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-rahang"
+        }
       },
       {
         "id": "hidung",
         "labelKey": "i-hidung",
         "bin": "kepala",
-        "emoji": "👃"
+        "emoji": "👃",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-hidung"
+        }
       },
       {
         "id": "pipi",
         "labelKey": "i-pipi",
         "bin": "kepala",
-        "emoji": "😊"
+        "emoji": "😊",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-pipi"
+        }
       },
       {
         "id": "rusuk",
         "labelKey": "i-rusuk",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-rusuk"
+        }
       },
       {
         "id": "panggul",
         "labelKey": "i-panggul",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-panggul"
+        }
       },
       {
         "id": "dada",
         "labelKey": "i-dada",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-dada"
+        }
       },
       {
         "id": "punggung",
         "labelKey": "i-punggung",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-punggung"
+        }
       },
       {
         "id": "paha",
         "labelKey": "i-paha",
         "bin": "kaki",
-        "emoji": "🦵"
+        "emoji": "🦵",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-paha"
+        }
       },
       {
         "id": "betis",
         "labelKey": "i-betis",
         "bin": "kaki",
-        "emoji": "🦵"
+        "emoji": "🦵",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-betis"
+        }
       },
       {
         "id": "tumit",
         "labelKey": "i-tumit",
         "bin": "kaki",
-        "emoji": "🦶"
+        "emoji": "🦶",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-tumit"
+        }
       },
       {
         "id": "jarikaki",
         "labelKey": "i-jarikaki",
         "bin": "kaki",
-        "emoji": "🦶"
+        "emoji": "🦶",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-jarikaki"
+        }
       },
       {
         "id": "hasta",
         "labelKey": "i-hasta",
         "bin": "lengan",
-        "emoji": "💪"
+        "emoji": "💪",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-hasta"
+        }
       },
       {
         "id": "pengumpil",
         "labelKey": "i-pengumpil",
         "bin": "lengan",
-        "emoji": "💪"
+        "emoji": "💪",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-pengumpil"
+        }
       },
       {
         "id": "telapak",
         "labelKey": "i-telapak",
         "bin": "lengan",
-        "emoji": "🖐️"
+        "emoji": "🖐️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-telapak"
+        }
       }
     ],
     "pilihan": []
@@ -302416,7 +302532,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-didih-uap-pantai",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.PERUBAHAN-ZAT.03"
@@ -302427,7 +302543,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Bergolak atau Mengering?",
         "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap dari permukaan.",
         "b-didih": "mendidih: bergolak di seluruh cairan, saat mencapai titik didih",
-        "b-uap": "menguap: terjadi di permukaan",
+        "b-uap": "menguap: hanya dari permukaan",
         "i-ketel": "air di ketel listrik bergolak, gelembung besar naik dari dasar",
         "i-bakso": "kuah bakso bergolak di panci pedagang",
         "i-susu": "susu di panci bergolak sampai hampir meluap",
@@ -302444,7 +302560,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Bubbling or Drying?",
         "instruksi": "Read what happens, then sort it: boiling, or evaporating from the surface.",
         "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
-        "b-uap": "evaporating: happens at the surface",
+        "b-uap": "evaporating: only at the surface",
         "i-ketel": "water in an electric kettle bubbles hard, big bubbles rising from the bottom",
         "i-bakso": "meatball soup bubbling in the seller's pot",
         "i-susu": "milk in a pan bubbling up until it nearly boils over",
@@ -302478,13 +302594,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "didih",
         "labelKey": "b-didih",
         "emoji": "🫕",
-        "color": "#ffccbc"
+        "color": "#ffccbc",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-jenis-mendidih"
+        }
       },
       {
         "id": "uap",
         "labelKey": "b-uap",
         "emoji": "🌬️",
-        "color": "#e0f7fa"
+        "color": "#e0f7fa",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-jenis-menguap"
+        }
       }
     ],
     "items": [
@@ -302492,67 +302616,111 @@ export const PAKET_RAW: unknown[] = [
         "id": "ketel",
         "labelKey": "i-ketel",
         "bin": "didih",
-        "emoji": "🫖"
+        "emoji": "🫖",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-ketel"
+        }
       },
       {
         "id": "bakso",
         "labelKey": "i-bakso",
         "bin": "didih",
-        "emoji": "🍲"
+        "emoji": "🍲",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-bakso"
+        }
       },
       {
         "id": "susu",
         "labelKey": "i-susu",
         "bin": "didih",
-        "emoji": "🥛"
+        "emoji": "🥛",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-susu"
+        }
       },
       {
         "id": "mi",
         "labelKey": "i-mi",
         "bin": "didih",
-        "emoji": "🍜"
+        "emoji": "🍜",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-mi"
+        }
       },
       {
         "id": "jagung",
         "labelKey": "i-jagung",
         "bin": "didih",
-        "emoji": "🌽"
+        "emoji": "🌽",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-jagung"
+        }
       },
       {
         "id": "kolam",
         "labelKey": "i-kolam",
         "bin": "uap",
-        "emoji": "🏊"
+        "emoji": "🏊",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-kolam"
+        }
       },
       {
         "id": "ikanasin",
         "labelKey": "i-ikanasin",
         "bin": "uap",
-        "emoji": "🐟"
+        "emoji": "🐟",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-ikan-asin"
+        }
       },
       {
         "id": "lantai",
         "labelKey": "i-lantai",
         "bin": "uap",
-        "emoji": "🧹"
+        "emoji": "🧹",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-lantai"
+        }
       },
       {
         "id": "spidol",
         "labelKey": "i-spidol",
         "bin": "uap",
-        "emoji": "🖊️"
+        "emoji": "🖊️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-spidol"
+        }
       },
       {
         "id": "handuk",
         "labelKey": "i-handuk",
         "bin": "uap",
-        "emoji": "🏖️"
+        "emoji": "🏖️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-handuk"
+        }
       },
       {
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "uap",
-        "emoji": "🏝️"
+        "emoji": "🏝️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-pasir"
+        }
       }
     ],
     "pilihan": []
@@ -304148,7 +304316,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-pantul-bias-di-kota",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.CAHAYA.01"
@@ -304168,7 +304336,7 @@ export const PAKET_RAW: unknown[] = [
         "i-matakucing": "pemantul mata kucing di aspal bersinar saat disorot lampu",
         "i-salon": "cermin di salon dipakai melihat rambut bagian belakang",
         "i-kaki": "kaki tampak lebih pendek saat berdiri di kolam renang",
-        "i-pelangi": "pelangi muncul saat cahaya melewati titik-titik hujan",
+        "i-pelangi": "cahaya Matahari membelok saat masuk ke butir air pembentuk pelangi",
         "i-teropong": "lensa teropong membuat Bulan tampak lebih besar",
         "i-akuarium": "ikan di akuarium bulat tampak lebih besar dari samping",
         "i-sendok": "sendok tampak bengkok di mangkuk sup bening",
@@ -304187,7 +304355,7 @@ export const PAKET_RAW: unknown[] = [
         "i-matakucing": "cat's-eye road studs glow when lit by headlights",
         "i-salon": "salon mirrors are used to see the back of your hair",
         "i-kaki": "your legs look shorter when you stand in a swimming pool",
-        "i-pelangi": "a rainbow appears when light passes through raindrops",
+        "i-pelangi": "sunlight bends as it enters a raindrop that helps form a rainbow",
         "i-teropong": "a telescope's lenses make the Moon look bigger",
         "i-akuarium": "a fish in a round fishbowl looks bigger from the side",
         "i-sendok": "a spoon looks bent in a bowl of clear soup",
@@ -304981,7 +305149,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-rangkaian-lampu-rumah",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.LISTRIK.01"
@@ -305006,13 +305174,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r2": "Arus listrik bercabang, dan tiap lampu ada di cabangnya sendiri. Ini…",
         "p-r3": "Lampu jalan di kompleks rumah: satu lampu mati, lampu lain tetap menyala. Lampu-lampu itu dipasang dalam…",
         "p-r4": "Lampu kamar dan kipas angin di rumahmu bisa dinyalakan sendiri-sendiri. Keduanya dipasang dalam…",
-        "p-r5": "Rangkaian seri dengan satu baterai: dari dua lampu ditambah menjadi tiga lampu. Tiap lampu menjadi…",
-        "p-r6": "Rangkaian paralel dengan baterai yang sama: satu lampu ditambah di cabang baru. Lampu lain menyala…",
+        "p-r5": "Dua lampu identik dirangkai seri. Jika ditambah lampu ketiga yang sama dan tegangan baterai tetap, tiap lampu menyala…",
+        "p-r6": "Satu lampu ditambah di cabang baru rangkaian paralel. Jika tegangan baterai tetap, lampu lain menyala…",
         "p-r7": "Rangkaian seri tiga lampu: satu lampu longgar dari dudukannya. Lampu yang lain…",
         "p-r8": "Rangkaian paralel tiga lampu: satu lampu putus. Dua lampu lainnya…",
         "p-r9": "Lampu hias di pagar dirangkai seri. Satu lampu dicabut. Lampu lainnya…",
-        "p-r10": "Satu baterai yang sama. Rangkaian manakah yang lampunya paling terang?",
-        "p-r11": "Rangkaian seri dua lampu. Satu lampu dilepas, lalu kabelnya disambung langsung tanpa lampu itu. Lampu yang tersisa…",
+        "p-r10": "Semua lampu identik dan tegangan baterai tetap. Di rangkaian mana tiap lampu menyala paling terang?",
+        "p-r11": "Dua lampu identik dirangkai seri. Satu diganti dengan kabel. Jika tegangan baterai tetap, lampu yang tersisa menyala…",
         "p-r12": "Ayah ingin lampu teras tetap menyala walau lampu dapur rusak. Pilih rangkaian…"
       },
       "en": {
@@ -305033,13 +305201,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r2": "The current splits into branches, and each bulb is on its own branch. This is a…",
         "p-r3": "Streetlights on a housing estate: one goes out and the others stay on. They are wired in a…",
         "p-r4": "Your bedroom light and fan can be switched on separately. They are wired in a…",
-        "p-r5": "A series circuit with one battery: two bulbs become three. Each bulb becomes…",
-        "p-r6": "A parallel circuit with the same battery: one more bulb is added on a new branch. The other bulbs shine…",
+        "p-r5": "Two identical bulbs are wired in series. If a third identical bulb is added and the battery voltage stays constant, each bulb shines…",
+        "p-r6": "A bulb is added on a new branch of a parallel circuit. If the battery voltage stays constant, the other bulbs shine…",
         "p-r7": "Three bulbs in series: one bulb comes loose from its holder. The other bulbs…",
         "p-r8": "Three bulbs in parallel: one bulb blows. The other two…",
         "p-r9": "Fairy lights on the fence are wired in series. One bulb is pulled out. The rest…",
-        "p-r10": "The same single battery. Which circuit has the brightest bulbs?",
-        "p-r11": "Two bulbs in series. One is removed and the wires are joined straight across without it. The remaining bulb becomes…",
+        "p-r10": "All the bulbs are identical and the battery voltage stays constant. In which circuit does each bulb shine brightest?",
+        "p-r11": "Two identical bulbs are wired in series. One is replaced with a wire. If the battery voltage stays constant, the remaining bulb shines…",
         "p-r12": "Dad wants the porch light to stay on even if the kitchen light breaks. Choose a…"
       }
     },
@@ -305235,7 +305403,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-seri-atau-paralel",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.LISTRIK.01"
@@ -305255,15 +305423,15 @@ export const PAKET_RAW: unknown[] = [
         "i-tetapnyala": "tetap menyala",
         "p-r1": "Dua lampu disusun berderet dalam satu jalur dengan satu baterai. Rangkaian ini…",
         "p-r2": "Dua lampu masing-masing punya jalur sendiri ke baterai. Rangkaian ini…",
-        "p-r3": "Dibanding satu lampu sendirian, tiap lampu di rangkaian seri dua lampu menyala…",
-        "p-r4": "Dibanding dua lampu seri, dua lampu paralel dengan baterai yang sama menyala…",
+        "p-r3": "Bandingkan satu lampu dengan dua lampu identik yang dirangkai seri pada tegangan baterai yang sama. Tiap lampu seri menyala…",
+        "p-r4": "Dua lampu identik diuji secara seri lalu paralel pada tegangan yang sama. Dibandingkan saat seri, tiap lampu saat paralel menyala…",
         "p-r5": "Rangkaian seri: satu lampu dilepas. Lampu yang lain…",
         "p-r6": "Rangkaian paralel: satu lampu dilepas. Lampu yang lain…",
         "p-r7": "Lampu di rumah bisa dimatikan satu per satu tanpa memadamkan yang lain. Rumah memakai rangkaian…",
         "p-r8": "Untaian lampu hias: satu lampu putus, semuanya padam. Lampunya disusun…",
-        "p-r9": "Dua lampu harus sama-sama paling terang dengan satu baterai. Pilih rangkaian…",
+        "p-r9": "Dua lampu identik memakai satu baterai dengan tegangan tetap. Agar kedua lampu menyala paling terang, pilih…",
         "p-r10": "Tiga lampu disusun berderet dalam satu jalur dengan baterai. Rangkaian ini…",
-        "p-r11": "Dibanding satu lampu sendirian, tiap lampu di rangkaian paralel dua lampu dengan baterai yang sama menyala…",
+        "p-r11": "Bandingkan satu lampu dengan dua lampu identik yang dirangkai paralel pada tegangan baterai yang sama. Tiap lampu paralel menyala…",
         "p-r12": "Rangkaian seri: sakelarnya dibuka. Semua lampu…",
         "p-r13": "Tiap lampu punya jalur dan sakelar sendiri ke baterai. Satu sakelar dibuka. Lampu yang lain…"
       },
@@ -305280,15 +305448,15 @@ export const PAKET_RAW: unknown[] = [
         "i-tetapnyala": "stays lit",
         "p-r1": "Two lamps are joined one after another in a single loop with one cell. This circuit is…",
         "p-r2": "Two lamps each have their own loop to the cell. This circuit is…",
-        "p-r3": "Compared with one lamp on its own, each lamp in a two-lamp series circuit is…",
-        "p-r4": "Compared with two lamps in series, two lamps in parallel with the same cell are…",
+        "p-r3": "Compare one bulb on its own with two identical bulbs in series at the same battery voltage. Each bulb in series shines…",
+        "p-r4": "Two identical bulbs are tested in series and then in parallel at the same voltage. Compared with series, each bulb in parallel shines…",
         "p-r5": "Series circuit: one lamp is taken out. The other lamp…",
         "p-r6": "Parallel circuit: one lamp is taken out. The other lamp…",
         "p-r7": "Lights at home can be switched off one at a time without the others going out. Homes use a…",
         "p-r8": "A string of fairy lights: one bulb fails and they all go out. The bulbs are wired in…",
-        "p-r9": "Two lamps must both be as bright as possible with one cell. Choose a…",
+        "p-r9": "Two identical bulbs use one battery whose voltage stays constant. To make both bulbs shine as brightly as possible, choose a…",
         "p-r10": "Three bulbs are placed in a row in one path with a battery. This circuit is…",
-        "p-r11": "Compared with one bulb on its own, each bulb in a two-bulb parallel circuit with the same battery shines…",
+        "p-r11": "Compare one bulb on its own with two identical bulbs in parallel at the same battery voltage. Each bulb in parallel shines…",
         "p-r12": "Series circuit: the switch is opened. All the bulbs…",
         "p-r13": "Each bulb has its own path and switch to the battery. One switch is opened. The other bulbs…"
       }
@@ -305785,7 +305953,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-timbang-massa-berat",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.MASSA-BERAT.01"
@@ -305829,7 +305997,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r9": "Batu dari Bulan dibawa ke Bumi yang gravitasinya lebih besar. Massanya…",
         "p-r10": "Di Bumi, benda bermassa 1 kg beratnya sekitar 10 N. Berapa kira-kira berat karung beras 5 kg di Bumi?",
         "p-r11": "Karung beras 5 kg beratnya sekitar 50 N di Bumi. Di Bulan yang gravitasinya jauh lebih kecil, beratnya…",
-        "p-r12": "Bila sebuah benda dibawa ke planet lain, yang berubah adalah…"
+        "p-r12": "Sebuah batu dipindah dari Bumi ke Bulan yang gravitasinya lebih lemah. Besaran apa yang berubah?"
       },
       "en": {
         "judul": "Scales and Spring Balances",
@@ -305868,7 +306036,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r9": "A Moon rock is brought to Earth, where gravity is stronger. Its mass…",
         "p-r10": "On Earth, a 1 kg object weighs about 10 N. About how much does a 5 kg sack of rice weigh on Earth?",
         "p-r11": "A 5 kg sack of rice weighs about 50 N on Earth. On the Moon, where gravity is much weaker, it weighs…",
-        "p-r12": "When an object is taken to another planet, the thing that changes is its…"
+        "p-r12": "A rock is moved from Earth to the Moon, where gravity is weaker. Which quantity changes?"
       }
     },
     "knobs": {},

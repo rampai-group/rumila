@@ -151,7 +151,12 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   // M21–23 dan M25 memakai rak teks; tetap beri gambar ruang yang layak di tablet.
   const pilahPilotLega = !hp && h >= 680 && paket.competencyIds.some(id =>
     ["SAINS.SD1.GAYA.02", "MAT.SD1.BANGUN.01", "MAT.SD1.BANGUN.02", "SAINS.SD1.BUNYI.01"].includes(id));
-  const wadahBergambar = pilahPilotLega || paket.level !== "PAUD" && !carroll && !kartuTitik && !piktogram && !paritas &&
+  const pilahAdegan = [
+    "sd3-kode-butuh-internet", "sd4-sains-tulang-di-tempatnya", "sd6-sains-didih-uap-pantai",
+  ].includes(paket.id);
+  const pilahAdeganLega = pilahAdegan && lebarArea >= 620 && h >= 680;
+  const pilahAdeganPadatLega = pilahAdeganLega && items.length > 8;
+  const wadahBergambar = pilahPilotLega || pilahAdeganLega || paket.level !== "PAUD" && !carroll && !kartuTitik && !piktogram && !paritas &&
     bins.length >= 2 && bins.length <= batasWadahBergambar && items.length <= 8 && lebarArea >= 620 && h >= 680 &&
     bins.every((b) => visualBergambar(b) && t(b.labelKey).length <= 50) &&
     items.every((i) => visualBergambar(i) && t(i.labelKey).length <= 70);
@@ -283,8 +288,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
 
   const lepasDiAtas = items.filter((i) => !peta[i.id]);
   const satuKartu = lepasDiAtas.length === 1;
-  const listrikLuarLegaHp = paket.id === "sd2-sains-aman-listrik-di-luar" && h >= 550;
-  const satuKartuBesarHp = satuKartu && hp && (kelompokBahan || listrikLuarLegaHp || ((ubahBentuk || dorongTarik) && bins.length === 2));
+  const adeganBesarHp = (paket.id === "sd2-sains-aman-listrik-di-luar" || pilahAdegan) && h >= 550;
+  const satuKartuBesarHp = satuKartu && hp && (kelompokBahan || adeganBesarHp || ((ubahBentuk || dorongTarik) && bins.length === 2));
   const kartuTerakhirLega = satuKartuBesarHp || (satuKartu && (piktogramLega || rakAngkaLega || rakBahanLega || rakPecahanLega));
   const salah = (i: ItemPilah) => kunci && peta[i.id] !== i.bin;
   const benarBin = (b: BinPilah) => kunci && items.some((i) => peta[i.id] === b.id) && items.filter((i) => peta[i.id] === b.id).every((i) => i.bin === b.id);
@@ -312,12 +317,12 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const kartuBeruraian = wadahBergambar && items.some((i) => t(i.labelKey).length > 32);
   // Tujuh piring memerlukan empat kolom di HP agar rak terbawah tetap bisa dituju langsung.
   const piringPadatHp = rakSetengahHp && items.length >= 7;
-  const lebarMinKartu = Math.round((rakJamHp ? 68 : piringPadatHp ? 62 : rakBahanHp ? 78 : labelPanjang && !hewanMakanHp ? 132 : rakNilaiTempat && hp ? 74 : titikRapat ? 78 : hp ? 92 : 112) * sk);
+  const lebarMinKartu = Math.round((rakJamHp ? 68 : piringPadatHp ? 62 : rakBahanHp ? 78 : pilahAdeganPadatLega ? 106 : labelPanjang && !hewanMakanHp ? 132 : rakNilaiTempat && hp ? 74 : titikRapat ? 78 : hp ? 92 : 112) * sk);
   const kolomMuat = Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8)));
   // Sisakan dua baris pada rak tablet tinggi dan papan paritas agar setiap kelompok tetap terbaca.
   const rakDuaBaris = rakAngkaLega && h >= 840 && items.length >= 5;
   const batasKolomKartu = piringPadatHp ? 4 : rakDuaBaris || paritasLega || hewanMakanLega ? Math.max(3, Math.ceil(items.length / 2))
-    : perangkatLega ? 4 : wadahBergambar ? ((kelompokBahan || pilahPilotLega || klasifikasiPilot) && items.length > 6 ? 4 : 3) : titikLega ? 4 : Infinity;
+    : pilahAdeganPadatLega ? 5 : perangkatLega || (pilahAdeganLega && items.length > 6) ? 4 : wadahBergambar ? ((kelompokBahan || pilahPilotLega || klasifikasiPilot) && items.length > 6 ? 4 : 3) : titikLega ? 4 : Infinity;
   const maksKolomKartu = Math.min(items.length, kolomMuat, batasKolomKartu);
   // Enam sampai delapan kartu pelengkap memakai paling banyak dua baris bila lebar HP mencukupi.
   const pelengkapPadat = hp && items.length >= 6 && paket.id === "sd1-mat-rak-kurang-berapa-sepuluh";
@@ -442,7 +447,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                   v={visual(i, t)}
                   ariaLabel={namaJumlahRak(i) ?? namaJarumJam(i) ?? namaPilihan(i, items, t, lang === "en-US")}
                   size={Math.min(gambarKartu, (lebarKartu - (rakAngka || rakSetengahPiring || (paritas && i.count !== undefined) ? 32 : 16)) / skalaLebar(i))}
-                  labelSize={carrollPilotHp ? 12 :Math.round((perangkatLega ? 16 : wadahBergambar ? 19 : wadahLega ? 17 : rakAngkaLega || paritasLega ? 16 : rakBahanHp || hewanMakanHp ? 13 : 14) * Math.min(sk, 1.3))}
+                  labelSize={carrollPilotHp ? 12 :Math.round((perangkatLega || pilahAdeganPadatLega ? 16 : wadahBergambar ? 19 : wadahLega ? 17 : rakAngkaLega || paritasLega ? 16 : rakBahanHp || hewanMakanHp ? 13 : 14) * Math.min(sk, 1.3))}
                   selected={dipilih}
                   disabled={kunci}
                   onClick={(e) => {

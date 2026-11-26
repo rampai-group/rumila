@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-didih-uap-pantai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.03"
@@ -11,7 +11,7 @@
       "judul": "Bergolak atau Mengering?",
       "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap dari permukaan.",
       "b-didih": "mendidih: bergolak di seluruh cairan, saat mencapai titik didih",
-      "b-uap": "menguap: terjadi di permukaan",
+      "b-uap": "menguap: hanya dari permukaan",
       "i-ketel": "air di ketel listrik bergolak, gelembung besar naik dari dasar",
       "i-bakso": "kuah bakso bergolak di panci pedagang",
       "i-susu": "susu di panci bergolak sampai hampir meluap",
@@ -28,7 +28,7 @@
       "judul": "Bubbling or Drying?",
       "instruksi": "Read what happens, then sort it: boiling, or evaporating from the surface.",
       "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
-      "b-uap": "evaporating: happens at the surface",
+      "b-uap": "evaporating: only at the surface",
       "i-ketel": "water in an electric kettle bubbles hard, big bubbles rising from the bottom",
       "i-bakso": "meatball soup bubbling in the seller's pot",
       "i-susu": "milk in a pan bubbling up until it nearly boils over",
@@ -62,13 +62,21 @@
       "id": "didih",
       "labelKey": "b-didih",
       "emoji": "🫕",
-      "color": "#ffccbc"
+      "color": "#ffccbc",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-jenis-mendidih"
+      }
     },
     {
       "id": "uap",
       "labelKey": "b-uap",
       "emoji": "🌬️",
-      "color": "#e0f7fa"
+      "color": "#e0f7fa",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-jenis-menguap"
+      }
     }
   ],
   "items": [
@@ -76,67 +84,111 @@
       "id": "ketel",
       "labelKey": "i-ketel",
       "bin": "didih",
-      "emoji": "🫖"
+      "emoji": "🫖",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-didih-ketel"
+      }
     },
     {
       "id": "bakso",
       "labelKey": "i-bakso",
       "bin": "didih",
-      "emoji": "🍲"
+      "emoji": "🍲",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-didih-bakso"
+      }
     },
     {
       "id": "susu",
       "labelKey": "i-susu",
       "bin": "didih",
-      "emoji": "🥛"
+      "emoji": "🥛",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-didih-susu"
+      }
     },
     {
       "id": "mi",
       "labelKey": "i-mi",
       "bin": "didih",
-      "emoji": "🍜"
+      "emoji": "🍜",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-didih-mi"
+      }
     },
     {
       "id": "jagung",
       "labelKey": "i-jagung",
       "bin": "didih",
-      "emoji": "🌽"
+      "emoji": "🌽",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-didih-jagung"
+      }
     },
     {
       "id": "kolam",
       "labelKey": "i-kolam",
       "bin": "uap",
-      "emoji": "🏊"
+      "emoji": "🏊",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-uap-kolam"
+      }
     },
     {
       "id": "ikanasin",
       "labelKey": "i-ikanasin",
       "bin": "uap",
-      "emoji": "🐟"
+      "emoji": "🐟",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-uap-ikan-asin"
+      }
     },
     {
       "id": "lantai",
       "labelKey": "i-lantai",
       "bin": "uap",
-      "emoji": "🧹"
+      "emoji": "🧹",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-uap-lantai"
+      }
     },
     {
       "id": "spidol",
       "labelKey": "i-spidol",
       "bin": "uap",
-      "emoji": "🖊️"
+      "emoji": "🖊️",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-uap-spidol"
+      }
     },
     {
       "id": "handuk",
       "labelKey": "i-handuk",
       "bin": "uap",
-      "emoji": "🏖️"
+      "emoji": "🏖️",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-uap-handuk"
+      }
     },
     {
       "id": "pasir",
       "labelKey": "i-pasir",
       "bin": "uap",
-      "emoji": "🏝️"
+      "emoji": "🏝️",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd6-uap-pasir"
+      }
     }
   ],
   "pilihan": []

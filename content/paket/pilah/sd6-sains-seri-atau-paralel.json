@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-seri-atau-paralel",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.LISTRIK.01"
@@ -20,15 +20,15 @@
       "i-tetapnyala": "tetap menyala",
       "p-r1": "Dua lampu disusun berderet dalam satu jalur dengan satu baterai. Rangkaian ini…",
       "p-r2": "Dua lampu masing-masing punya jalur sendiri ke baterai. Rangkaian ini…",
-      "p-r3": "Dibanding satu lampu sendirian, tiap lampu di rangkaian seri dua lampu menyala…",
-      "p-r4": "Dibanding dua lampu seri, dua lampu paralel dengan baterai yang sama menyala…",
+      "p-r3": "Bandingkan satu lampu dengan dua lampu identik yang dirangkai seri pada tegangan baterai yang sama. Tiap lampu seri menyala…",
+      "p-r4": "Dua lampu identik diuji secara seri lalu paralel pada tegangan yang sama. Dibandingkan saat seri, tiap lampu saat paralel menyala…",
       "p-r5": "Rangkaian seri: satu lampu dilepas. Lampu yang lain…",
       "p-r6": "Rangkaian paralel: satu lampu dilepas. Lampu yang lain…",
       "p-r7": "Lampu di rumah bisa dimatikan satu per satu tanpa memadamkan yang lain. Rumah memakai rangkaian…",
       "p-r8": "Untaian lampu hias: satu lampu putus, semuanya padam. Lampunya disusun…",
-      "p-r9": "Dua lampu harus sama-sama paling terang dengan satu baterai. Pilih rangkaian…",
+      "p-r9": "Dua lampu identik memakai satu baterai dengan tegangan tetap. Agar kedua lampu menyala paling terang, pilih…",
       "p-r10": "Tiga lampu disusun berderet dalam satu jalur dengan baterai. Rangkaian ini…",
-      "p-r11": "Dibanding satu lampu sendirian, tiap lampu di rangkaian paralel dua lampu dengan baterai yang sama menyala…",
+      "p-r11": "Bandingkan satu lampu dengan dua lampu identik yang dirangkai paralel pada tegangan baterai yang sama. Tiap lampu paralel menyala…",
       "p-r12": "Rangkaian seri: sakelarnya dibuka. Semua lampu…",
       "p-r13": "Tiap lampu punya jalur dan sakelar sendiri ke baterai. Satu sakelar dibuka. Lampu yang lain…"
     },
@@ -45,15 +45,15 @@
       "i-tetapnyala": "stays lit",
       "p-r1": "Two lamps are joined one after another in a single loop with one cell. This circuit is…",
       "p-r2": "Two lamps each have their own loop to the cell. This circuit is…",
-      "p-r3": "Compared with one lamp on its own, each lamp in a two-lamp series circuit is…",
-      "p-r4": "Compared with two lamps in series, two lamps in parallel with the same cell are…",
+      "p-r3": "Compare one bulb on its own with two identical bulbs in series at the same battery voltage. Each bulb in series shines…",
+      "p-r4": "Two identical bulbs are tested in series and then in parallel at the same voltage. Compared with series, each bulb in parallel shines…",
       "p-r5": "Series circuit: one lamp is taken out. The other lamp…",
       "p-r6": "Parallel circuit: one lamp is taken out. The other lamp…",
       "p-r7": "Lights at home can be switched off one at a time without the others going out. Homes use a…",
       "p-r8": "A string of fairy lights: one bulb fails and they all go out. The bulbs are wired in…",
-      "p-r9": "Two lamps must both be as bright as possible with one cell. Choose a…",
+      "p-r9": "Two identical bulbs use one battery whose voltage stays constant. To make both bulbs shine as brightly as possible, choose a…",
       "p-r10": "Three bulbs are placed in a row in one path with a battery. This circuit is…",
-      "p-r11": "Compared with one bulb on its own, each bulb in a two-bulb parallel circuit with the same battery shines…",
+      "p-r11": "Compare one bulb on its own with two identical bulbs in parallel at the same battery voltage. Each bulb in parallel shines…",
       "p-r12": "Series circuit: the switch is opened. All the bulbs…",
       "p-r13": "Each bulb has its own path and switch to the battery. One switch is opened. The other bulbs…"
     }
