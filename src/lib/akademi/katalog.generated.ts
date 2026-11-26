@@ -221667,7 +221667,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-kode-butuh-internet",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221681,15 +221681,15 @@ export const PAKET_RAW: unknown[] = [
         "bin-butuh": "butuh internet",
         "bin-tanpa": "bisa tanpa internet",
         "i-video-call-with-grandma": "panggilan video dengan nenek",
-        "i-send-a-message-to-a-friend": "kirim pesan lewat aplikasi obrolan",
+        "i-send-a-message-to-a-friend": "kirim pesan lewat aplikasi obrolan daring",
         "i-watch-a-video-from-the-internet": "nonton video dari internet",
         "i-find-the-way-on-an-online-map": "cari jalan di peta daring",
         "i-send-a-photo-to-uncle": "kirim foto lewat aplikasi daring ke paman di kota lain",
-        "i-work-it-out-on-the-calculator": "berhitung dengan kalkulator",
+        "i-work-it-out-on-the-calculator": "berhitung dengan kalkulator bawaan tablet",
         "i-take-a-photo-of-a-flower": "memotret bunga",
-        "i-draw-in-a-drawing-app": "menggambar di aplikasi gambar",
+        "i-draw-in-a-drawing-app": "menggambar di aplikasi gambar bawaan tablet",
         "i-set-an-alarm": "menyalakan alarm",
-        "i-look-at-photos-in-the-gallery": "melihat foto di galeri"
+        "i-look-at-photos-in-the-gallery": "melihat foto yang tersimpan di galeri tablet"
       },
       "en": {
         "judul": "Internet or Not?",
@@ -221697,15 +221697,15 @@ export const PAKET_RAW: unknown[] = [
         "bin-butuh": "needs the internet",
         "bin-tanpa": "works without it",
         "i-video-call-with-grandma": "video call with grandma",
-        "i-send-a-message-to-a-friend": "send a message in a chat app",
+        "i-send-a-message-to-a-friend": "send a message in an online chat app",
         "i-watch-a-video-from-the-internet": "watch a video from the internet",
         "i-find-the-way-on-an-online-map": "find the way on an online map",
         "i-send-a-photo-to-uncle": "send a photo through an online app to uncle in another town",
-        "i-work-it-out-on-the-calculator": "work it out on the calculator",
+        "i-work-it-out-on-the-calculator": "do a calculation with the tablet’s built-in calculator",
         "i-take-a-photo-of-a-flower": "take a photo of a flower",
-        "i-draw-in-a-drawing-app": "draw in a drawing app",
+        "i-draw-in-a-drawing-app": "draw in the tablet’s built-in drawing app",
         "i-set-an-alarm": "set an alarm",
-        "i-look-at-photos-in-the-gallery": "look at photos in the gallery"
+        "i-look-at-photos-in-the-gallery": "look at photos saved in the tablet’s gallery"
       }
     },
     "knobs": {
@@ -221740,61 +221740,101 @@ export const PAKET_RAW: unknown[] = [
         "id": "video-call-with-grandma",
         "labelKey": "i-video-call-with-grandma",
         "bin": "butuh",
-        "emoji": "📹"
+        "emoji": "📹",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-video-nenek"
+        }
       },
       {
         "id": "send-a-message-to-a-friend",
         "labelKey": "i-send-a-message-to-a-friend",
         "bin": "butuh",
-        "emoji": "💬"
+        "emoji": "💬",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-pesan-daring"
+        }
       },
       {
         "id": "watch-a-video-from-the-internet",
         "labelKey": "i-watch-a-video-from-the-internet",
         "bin": "butuh",
-        "emoji": "📺"
+        "emoji": "📺",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-video-daring"
+        }
       },
       {
         "id": "find-the-way-on-an-online-map",
         "labelKey": "i-find-the-way-on-an-online-map",
         "bin": "butuh",
-        "emoji": "🗺️"
+        "emoji": "🗺️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-peta-daring"
+        }
       },
       {
         "id": "send-a-photo-to-uncle",
         "labelKey": "i-send-a-photo-to-uncle",
         "bin": "butuh",
-        "emoji": "📤"
+        "emoji": "📤",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-kirim-foto"
+        }
       },
       {
         "id": "work-it-out-on-the-calculator",
         "labelKey": "i-work-it-out-on-the-calculator",
         "bin": "tanpa",
-        "emoji": "🧮"
+        "emoji": "🧮",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-kalkulator"
+        }
       },
       {
         "id": "take-a-photo-of-a-flower",
         "labelKey": "i-take-a-photo-of-a-flower",
         "bin": "tanpa",
-        "emoji": "📷"
+        "emoji": "📷",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-kamera-bunga"
+        }
       },
       {
         "id": "draw-in-a-drawing-app",
         "labelKey": "i-draw-in-a-drawing-app",
         "bin": "tanpa",
-        "emoji": "🎨"
+        "emoji": "🎨",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-menggambar"
+        }
       },
       {
         "id": "set-an-alarm",
         "labelKey": "i-set-an-alarm",
         "bin": "tanpa",
-        "emoji": "⏰"
+        "emoji": "⏰",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-alarm"
+        }
       },
       {
         "id": "look-at-photos-in-the-gallery",
         "labelKey": "i-look-at-photos-in-the-gallery",
         "bin": "tanpa",
-        "emoji": "🖼️"
+        "emoji": "🖼️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-internet-galeri"
+        }
       }
     ]
   },
@@ -253929,7 +253969,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-tulang-di-tempatnya",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -254009,22 +254049,38 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kepala",
         "labelKey": "b-kepala",
-        "emoji": "🙂"
+        "emoji": "🙂",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-kepala"
+        }
       },
       {
         "id": "badan",
         "labelKey": "b-badan",
-        "emoji": "🫁"
+        "emoji": "🫁",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-badan"
+        }
       },
       {
         "id": "kaki",
         "labelKey": "b-kaki",
-        "emoji": "🏃"
+        "emoji": "🏃",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-kaki"
+        }
       },
       {
         "id": "lengan",
         "labelKey": "b-lengan",
-        "emoji": "🙌"
+        "emoji": "🙌",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-bagian-lengan"
+        }
       }
     ],
     "items": [
@@ -254032,91 +254088,151 @@ export const PAKET_RAW: unknown[] = [
         "id": "tengkorak",
         "labelKey": "i-tengkorak",
         "bin": "kepala",
-        "emoji": "💀"
+        "emoji": "💀",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-tengkorak"
+        }
       },
       {
         "id": "rahang",
         "labelKey": "i-rahang",
         "bin": "kepala",
-        "emoji": "😬"
+        "emoji": "😬",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-rahang"
+        }
       },
       {
         "id": "hidung",
         "labelKey": "i-hidung",
         "bin": "kepala",
-        "emoji": "👃"
+        "emoji": "👃",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-hidung"
+        }
       },
       {
         "id": "pipi",
         "labelKey": "i-pipi",
         "bin": "kepala",
-        "emoji": "😊"
+        "emoji": "😊",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-pipi"
+        }
       },
       {
         "id": "rusuk",
         "labelKey": "i-rusuk",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-rusuk"
+        }
       },
       {
         "id": "panggul",
         "labelKey": "i-panggul",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-panggul"
+        }
       },
       {
         "id": "dada",
         "labelKey": "i-dada",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-dada"
+        }
       },
       {
         "id": "punggung",
         "labelKey": "i-punggung",
         "bin": "badan",
-        "emoji": "🦴"
+        "emoji": "🦴",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-punggung"
+        }
       },
       {
         "id": "paha",
         "labelKey": "i-paha",
         "bin": "kaki",
-        "emoji": "🦵"
+        "emoji": "🦵",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-paha"
+        }
       },
       {
         "id": "betis",
         "labelKey": "i-betis",
         "bin": "kaki",
-        "emoji": "🦵"
+        "emoji": "🦵",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-betis"
+        }
       },
       {
         "id": "tumit",
         "labelKey": "i-tumit",
         "bin": "kaki",
-        "emoji": "🦶"
+        "emoji": "🦶",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-tumit"
+        }
       },
       {
         "id": "jarikaki",
         "labelKey": "i-jarikaki",
         "bin": "kaki",
-        "emoji": "🦶"
+        "emoji": "🦶",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-jarikaki"
+        }
       },
       {
         "id": "hasta",
         "labelKey": "i-hasta",
         "bin": "lengan",
-        "emoji": "💪"
+        "emoji": "💪",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-hasta"
+        }
       },
       {
         "id": "pengumpil",
         "labelKey": "i-pengumpil",
         "bin": "lengan",
-        "emoji": "💪"
+        "emoji": "💪",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-pengumpil"
+        }
       },
       {
         "id": "telapak",
         "labelKey": "i-telapak",
         "bin": "lengan",
-        "emoji": "🖐️"
+        "emoji": "🖐️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd4-tulang-telapak"
+        }
       }
     ],
     "pilihan": []
@@ -302416,7 +302532,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-didih-uap-pantai",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.PERUBAHAN-ZAT.03"
@@ -302427,7 +302543,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Bergolak atau Mengering?",
         "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap dari permukaan.",
         "b-didih": "mendidih: bergolak di seluruh cairan, saat mencapai titik didih",
-        "b-uap": "menguap: terjadi di permukaan",
+        "b-uap": "menguap: hanya dari permukaan",
         "i-ketel": "air di ketel listrik bergolak, gelembung besar naik dari dasar",
         "i-bakso": "kuah bakso bergolak di panci pedagang",
         "i-susu": "susu di panci bergolak sampai hampir meluap",
@@ -302444,7 +302560,7 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Bubbling or Drying?",
         "instruksi": "Read what happens, then sort it: boiling, or evaporating from the surface.",
         "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
-        "b-uap": "evaporating: happens at the surface",
+        "b-uap": "evaporating: only at the surface",
         "i-ketel": "water in an electric kettle bubbles hard, big bubbles rising from the bottom",
         "i-bakso": "meatball soup bubbling in the seller's pot",
         "i-susu": "milk in a pan bubbling up until it nearly boils over",
@@ -302478,13 +302594,21 @@ export const PAKET_RAW: unknown[] = [
         "id": "didih",
         "labelKey": "b-didih",
         "emoji": "🫕",
-        "color": "#ffccbc"
+        "color": "#ffccbc",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-jenis-mendidih"
+        }
       },
       {
         "id": "uap",
         "labelKey": "b-uap",
         "emoji": "🌬️",
-        "color": "#e0f7fa"
+        "color": "#e0f7fa",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-jenis-menguap"
+        }
       }
     ],
     "items": [
@@ -302492,67 +302616,111 @@ export const PAKET_RAW: unknown[] = [
         "id": "ketel",
         "labelKey": "i-ketel",
         "bin": "didih",
-        "emoji": "🫖"
+        "emoji": "🫖",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-ketel"
+        }
       },
       {
         "id": "bakso",
         "labelKey": "i-bakso",
         "bin": "didih",
-        "emoji": "🍲"
+        "emoji": "🍲",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-bakso"
+        }
       },
       {
         "id": "susu",
         "labelKey": "i-susu",
         "bin": "didih",
-        "emoji": "🥛"
+        "emoji": "🥛",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-susu"
+        }
       },
       {
         "id": "mi",
         "labelKey": "i-mi",
         "bin": "didih",
-        "emoji": "🍜"
+        "emoji": "🍜",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-mi"
+        }
       },
       {
         "id": "jagung",
         "labelKey": "i-jagung",
         "bin": "didih",
-        "emoji": "🌽"
+        "emoji": "🌽",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-didih-jagung"
+        }
       },
       {
         "id": "kolam",
         "labelKey": "i-kolam",
         "bin": "uap",
-        "emoji": "🏊"
+        "emoji": "🏊",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-kolam"
+        }
       },
       {
         "id": "ikanasin",
         "labelKey": "i-ikanasin",
         "bin": "uap",
-        "emoji": "🐟"
+        "emoji": "🐟",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-ikan-asin"
+        }
       },
       {
         "id": "lantai",
         "labelKey": "i-lantai",
         "bin": "uap",
-        "emoji": "🧹"
+        "emoji": "🧹",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-lantai"
+        }
       },
       {
         "id": "spidol",
         "labelKey": "i-spidol",
         "bin": "uap",
-        "emoji": "🖊️"
+        "emoji": "🖊️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-spidol"
+        }
       },
       {
         "id": "handuk",
         "labelKey": "i-handuk",
         "bin": "uap",
-        "emoji": "🏖️"
+        "emoji": "🏖️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-handuk"
+        }
       },
       {
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "uap",
-        "emoji": "🏝️"
+        "emoji": "🏝️",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd6-uap-pasir"
+        }
       }
     ],
     "pilihan": []

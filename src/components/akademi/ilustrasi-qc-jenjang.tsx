@@ -5,6 +5,9 @@ import { ILUSTRASI_MATAHARI_PILOT } from "./ilustrasi-pilot-matahari";
 import { ILUSTRASI_UKUR_PILOT } from "./ilustrasi-pilot-ukur";
 import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
 import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
+import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
+import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
+import { ILUSTRASI_DIDIH_UAP_SD6 } from "./ilustrasi-sd6-didih-uap";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -444,6 +447,9 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_UKUR_PILOT,
   ...ILUSTRASI_MATAHARI_PILOT,
   ...ILUSTRASI_LISTRIK_LUAR_SD2,
+  ...ILUSTRASI_INTERNET_SD3,
+  ...ILUSTRASI_TULANG_SD4,
+  ...ILUSTRASI_DIDIH_UAP_SD6,
   "plastik-pembungkus": <g {...RINGKAS}>
     <path d="M32 56L85 54 116 72 70 89Z" fill="#d9f3f7" stroke="#6ea4ad" />
     <path d="M51 62L92 61M65 72L103 69M76 80L111 74" fill="none" stroke="#9ecbd2" strokeWidth="1.5" />
