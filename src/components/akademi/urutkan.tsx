@@ -236,15 +236,16 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const sisa = shown.filter((s) => !slot.includes(s.id));
   const { tema, skala: sk, w, h } = usePanggung();
   const bandingPanjang = paket.competencyIds.includes("MAT.TKA.BANDING.02");
+  const bandingPilot = paket.competencyIds.some(id => ["SAINS.SD1.BUNYI.02", "MAT.SD1.UKUR.01", "MAT.SD1.UKUR.02"].includes(id));
   const layarPendek = tataTumbuhan && layarPendekUrutan(w, h);
   const bandingRingkas = bandingPanjang && w > 0 && w <= 360 && h > 0 && h < 520;
   const algoritmaHp = paket.competencyIds.includes("KODE.SD1.ALGORITMA.01") && w > 0 && w < 600;
-  const layarRapat = layarPendek || bandingRingkas || algoritmaHp;
+  const layarRapat = layarPendek || bandingRingkas || algoritmaHp || (bandingPilot && w < 600);
   const tataTunas = paket.level === "PAUD";
   const tataAngkaRingkas = urutanAngkaRingkas(paket);
   const hitungLega = tataAngkaRingkas && w >= 620 && h >= 650;
   const hitungLegaHp = tataAngkaRingkas && paket.level === "SD1" && w > 0 && w < 620 && h >= 540;
-  const tataRingkas = tataTunas || tataTumbuhan || tataAngkaRingkas;
+  const tataRingkas = tataTunas || tataTumbuhan || tataAngkaRingkas || bandingPilot;
   const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
   const labelAkses = (s: Langkah) => {
     const nama = t(s.labelKey);
@@ -272,11 +273,11 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const rasio = tegak ? 1.6 : 1.15;
   const isiLebar = tegak ? 0.68 : 0.6;
   // Di HP pendek, slot bernomor berjajar supaya kartu sumber tetap bisa dibaca dalam dua kolom.
-  const barisSlot = layarPendek ? 1 : sel.baris;
+  const barisSlot = layarPendek || bandingPilot ? 1 : sel.baris;
   const jarakSlot = layarPendek ? 6 : gap;
-  const lebarSlot = layarPendek ? Math.floor((w - 18 - jarakSlot * (n - 1)) / n) : sel.s;
+  const lebarSlot = bandingPilot ? Math.floor((w - 24 - gap * (n - 1)) / n) : layarPendek ? Math.floor((w - 18 - jarakSlot * (n - 1)) / n) : sel.s;
   const selaBarisSlot = gap * (barisSlot - 1);
-  const tinggiSlot = hitungLega ? batas(148, lebarSlot * 0.9, 200)
+  const tinggiSlot = bandingPilot ? Math.min(w < 600 ? 84 : 150, lebarSlot * 0.85) : hitungLega ? batas(148, lebarSlot * 0.9, 200)
     : hitungLegaHp ? batas(92, lebarSlot, 138)
     : tataAngkaRingkas ? batas(58, lebarSlot * 0.82, 138)
     : layarPendek ? batas(52, lebarSlot, 60)
@@ -285,7 +286,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     : batas((bandingRingkas ? 60 : 96) * sk, Math.min(sel.s * rasio, (tinggi * 0.55 - 2 * pad - selaBarisSlot) / sel.baris), tataTunas ? 240 : 400);
   // benda berskala (mis. planet besar) dibagi skala terbesarnya supaya tidak meluap dari kartu/slot
   const skalaMaks = Math.max(1, ...shown.map((x) => skalaLebar(visual(x, t))));
-  const ukuran = (tataAngkaRingkas ? Math.min(lebarSlot * 0.72, tinggiSlot * 0.76)
+  const ukuran = (bandingPilot ? Math.min(lebarSlot * 0.74, tinggiSlot * 0.74) : tataAngkaRingkas ? Math.min(lebarSlot * 0.72, tinggiSlot * 0.76)
     : layarPendek ? Math.min(tinggiSlot * 0.62, lebarSlot * 0.7)
     : tataTumbuhan
     ? Math.min(tinggiSlot * 0.74, sel.s * 0.74, 190)
@@ -293,16 +294,16 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const tinggiKartu = (tinggi * 0.45 - 2 * pad - selaBarisSlot) / sel.baris;
   const padat = sel.baris >= 2 && shown.some((x) => t(x.labelKey).length > 50);
   const barisSumber = Math.max(1, Math.ceil(sisa.length / Math.ceil(n / sel.baris)));
-  const lebarKartu = tataTumbuhan && sisa.length === 1 ? Math.min(Math.max(100, w - 32), Math.max(sel.s, w >= 600 ? 330 : 162)) : sel.s;
+  const lebarKartu = bandingPilot ? (Math.min(w, 920) - 32 - gap) / 2 : tataTumbuhan && sisa.length === 1 ? Math.min(Math.max(100, w - 32), Math.max(sel.s, w >= 600 ? 330 : 162)) : sel.s;
   const sisaTinggi = tinggi - tinggiSlot * barisSlot - selaBarisSlot;
-  const tinggiMinKartu = tataAngkaRingkas ? tinggiSlot
+  const tinggiMinKartu = bandingPilot ? Math.max(110, Math.min(w < 600 ? 200 : 250, (h - tinggiSlot - 200 - 3 * gap) / Math.ceil(n / 2))) : tataAngkaRingkas ? tinggiSlot
     : tataTumbuhan
     ? batas(layarPendek ? 70 : 86, Math.min((sisaTinggi - gap * (barisSumber - 1)) / barisSumber, lebarKartu * 1.24), w >= 600 ? 340 : layarPendek ? 162 : 226)
     : tataTunas ? batas(84 * sk, Math.min(tinggiKartu, sel.s * (tegak ? 1.12 : 0.9)), 220)
       : bandingRingkas ? batas(69 * sk, Math.min(tinggiKartu, sel.s), 140)
       : bandingPanjang && !tegak ? batas(84 * sk, Math.min(tinggiKartu, sel.s * 0.78), 170 * sk)
       : tegak ? batas(84 * sk, Math.min(tinggiKartu, sel.s * 1.6), 400) : 84 * sk;
-  const ukuranKartu = tataAngkaRingkas ? ukuran : (tataTumbuhan
+  const ukuranKartu = bandingPilot ? Math.max(42, Math.min(tinggiMinKartu - (w < 600 ? 70 : 86), lebarKartu / 1.5, 180)) / skalaMaks : tataAngkaRingkas ? ukuran : (tataTumbuhan
     ? Math.min(tinggiMinKartu * (layarPendek ? 0.56 : 0.64), lebarKartu * 0.76, 186)
     : batas((padat || sel.baris >= 3 ? 36 : base + 8) * sk, Math.min(tinggiKartu * (padat ? 0.24 : 0.5), sel.s * (tegak ? 0.68 : 0.58)), 160)) / skalaMaks;
   // Tugas membandingkan panjang memakai skala gambar yang sama sebelum dan sesudah dipindahkan.
@@ -312,7 +313,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     tinggiMinKartu - (bandingRingkas ? 34 : 48) * sk,
     150,
   ) : undefined;
-  const lebarRak = sel.blok ? sel.blok + 8 * sk : undefined;
+  const lebarRak = bandingPilot ? Math.min(w, 920) : sel.blok ? sel.blok + 8 * sk : undefined;
 
   const judul = <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />;
   const petunjuk = tataRingkas && (
@@ -327,7 +328,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   );
 
   return (
-    <div onPointerMove={geserKartu} onPointerUp={selesaiSeret} onPointerCancel={() => { gerakan.current = null; setBayanganSeret(null); }} data-urut-tengah={hitungLega || hitungLegaHp ? "" : undefined} className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataAngkaRingkas ? "" : "flex-1"}`} style={{ color: INK }}>
+    <div onPointerMove={geserKartu} onPointerUp={selesaiSeret} onPointerCancel={() => { gerakan.current = null; setBayanganSeret(null); }} data-urut-tengah={hitungLega || hitungLegaHp ? "" : undefined} className={`flex flex-col ${layarRapat ? "gap-2" : "gap-3"} ${tataRingkas ? "mx-auto w-full max-w-[920px] px-1 pt-1 pb-2" : ""} ${tataTunas || tataAngkaRingkas || bandingPilot ? "" : "flex-1"}`} style={{ color: INK }}>
       {tataTumbuhan ? (
         <div ref={kepalaTumbuhan} className="flex shrink-0 flex-col gap-1">
           {judul}

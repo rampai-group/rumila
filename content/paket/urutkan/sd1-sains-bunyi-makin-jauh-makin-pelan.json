@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
-  "version": "1.1.2",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -235,7 +235,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0,
-            "tanda": "🍦"
+            "tanda": "qc-jenjang-pilot-mobil-eskrim"
           }
         },
         {
@@ -245,7 +245,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.3,
-            "tanda": "🍦"
+            "tanda": "qc-jenjang-pilot-mobil-eskrim"
           }
         },
         {
@@ -255,7 +255,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.65,
-            "tanda": "🍦"
+            "tanda": "qc-jenjang-pilot-mobil-eskrim"
           }
         },
         {
@@ -265,7 +265,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 1,
-            "tanda": "🍦"
+            "tanda": "qc-jenjang-pilot-mobil-eskrim"
           }
         }
       ]
@@ -327,7 +327,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0,
-            "tanda": "📣"
+            "tanda": "awal-peluit"
           }
         },
         {
@@ -337,7 +337,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.3,
-            "tanda": "📣"
+            "tanda": "awal-peluit"
           }
         },
         {
@@ -347,7 +347,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.65,
-            "tanda": "📣"
+            "tanda": "awal-peluit"
           }
         },
         {
@@ -357,7 +357,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 1,
-            "tanda": "📣"
+            "tanda": "awal-peluit"
           }
         }
       ]
@@ -511,7 +511,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0,
-            "tanda": "🥁"
+            "tanda": "qc-jenjang-pilot-beduk"
           }
         },
         {
@@ -521,7 +521,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.3,
-            "tanda": "🥁"
+            "tanda": "qc-jenjang-pilot-beduk"
           }
         },
         {
@@ -531,7 +531,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.65,
-            "tanda": "🥁"
+            "tanda": "qc-jenjang-pilot-beduk"
           }
         },
         {
@@ -541,7 +541,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 1,
-            "tanda": "🥁"
+            "tanda": "qc-jenjang-pilot-beduk"
           }
         }
       ]

@@ -24,7 +24,8 @@ describe("Pilot misi 26–31", () => {
         values.set(step.id, t);
         const svg = renderToStaticMarkup(createElement(GambarAdeganSd, { adegan: step.adegan!, s: 100 }));
         expect(svg).toContain('data-petunjuk-banding=');
-        expect(svg).toContain(step.emoji);
+        const gambar: Record<string, string> = { "🍉": "awal-semangka-utuh", "🍵": "qc-jenjang-pilot-cangkir-kosong", "🥣": "qc-jenjang-pilot-mangkuk-kosong", "🍲": "qc-jenjang-pilot-panci-kosong" };
+        expect(svg).toContain(gambar[step.emoji!] ? `data-ilustrasi="${gambar[step.emoji!]}"` : step.emoji);
         return t;
       });
       expect(clues.every((t, i) => i === 0 || t > clues[i - 1])).toBe(true);

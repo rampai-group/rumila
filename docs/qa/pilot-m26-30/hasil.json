@@ -1,0 +1,1193 @@
+[
+  {
+    "paket": "sd1-sains-bunyi-dekat-jauh-jalan",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29206
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29945
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-belanja-ringan-berat",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29371
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-urut-ringan-berat",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28723
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-urut-isi-wadah",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29361
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-wadah-halaman-isi",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 33020
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-tebak-petak-angkasa",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 89825
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 6,
+    "knobs": {
+      "turns": 2
+    },
+    "prediksi": [
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.",
+        "state": {
+          "x": 4,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 3,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(1/1 tebakan benar)",
+        "state": {
+          "x": 3,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 2,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(2/2 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 1,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(3/3 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 1,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(4/4 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 3,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(5/5 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 2,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(6/6 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 1,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(7/7 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 1,
+          "angle": 90
+        },
+        "target": {
+          "x": 2,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(8/8 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 1,
+          "angle": 90
+        },
+        "target": {
+          "x": 3,
+          "y": 1
+        }
+      }
+    ],
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-tebak-petak-ulangi",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 94147
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 9,
+    "knobs": {
+      "turns": 2,
+      "panjang": 6
+    },
+    "prediksi": [
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.",
+        "state": {
+          "x": 0,
+          "y": 0,
+          "angle": 90
+        },
+        "target": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(1/1 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 0,
+          "angle": 90
+        },
+        "target": {
+          "x": 2,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(2/2 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 0,
+          "angle": 90
+        },
+        "target": {
+          "x": 3,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(3/3 tebakan benar)",
+        "state": {
+          "x": 3,
+          "y": 0,
+          "angle": 90
+        },
+        "target": {
+          "x": 4,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(4/4 tebakan benar)",
+        "state": {
+          "x": 4,
+          "y": 0,
+          "angle": 90
+        },
+        "target": {
+          "x": 4,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(5/5 tebakan benar)",
+        "state": {
+          "x": 4,
+          "y": 0,
+          "angle": 180
+        },
+        "target": {
+          "x": 4,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(6/6 tebakan benar)",
+        "state": {
+          "x": 4,
+          "y": 1,
+          "angle": 180
+        },
+        "target": {
+          "x": 4,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(7/7 tebakan benar)",
+        "state": {
+          "x": 4,
+          "y": 1,
+          "angle": 270
+        },
+        "target": {
+          "x": 3,
+          "y": 1
+        }
+      }
+    ],
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-butuh-listrik-rumah",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27928
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-butuh-listrik-sekolah",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28131
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-bunyi-dekat-jauh-jalan",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29917
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 30079
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-belanja-ringan-berat",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29468
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-urut-ringan-berat",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29437
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-urut-isi-wadah",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28280
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-wadah-halaman-isi",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 31983
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-tebak-petak-angkasa",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 97579
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 7,
+    "knobs": {
+      "turns": 3
+    },
+    "prediksi": [
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.",
+        "state": {
+          "x": 4,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 3,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(1/1 tebakan benar)",
+        "state": {
+          "x": 3,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 2,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(2/2 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 1,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(3/3 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 3,
+          "angle": 270
+        },
+        "target": {
+          "x": 1,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(4/4 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 3,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(5/5 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 2,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(6/6 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 1,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(7/7 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 1,
+          "angle": 90
+        },
+        "target": {
+          "x": 2,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(8/8 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 1,
+          "angle": 90
+        },
+        "target": {
+          "x": 3,
+          "y": 1
+        }
+      }
+    ],
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-tebak-petak-ulangi",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 97817
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "turns": 2,
+      "panjang": 6
+    },
+    "prediksi": [
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.",
+        "state": {
+          "x": 2,
+          "y": 0,
+          "angle": 180
+        },
+        "target": {
+          "x": 2,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(1/1 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 1,
+          "angle": 180
+        },
+        "target": {
+          "x": 2,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(2/2 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 2,
+          "angle": 180
+        },
+        "target": {
+          "x": 2,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(3/3 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 2,
+          "angle": 270
+        },
+        "target": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(4/4 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 2,
+          "angle": 270
+        },
+        "target": {
+          "x": 0,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kiri. Ketuk petak tujuannya, lalu tekan Langkah.(5/5 tebakan benar)",
+        "state": {
+          "x": 0,
+          "y": 2,
+          "angle": 270
+        },
+        "target": {
+          "x": 0,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(6/6 tebakan benar)",
+        "state": {
+          "x": 0,
+          "y": 2,
+          "angle": 180
+        },
+        "target": {
+          "x": 0,
+          "y": 3
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(7/7 tebakan benar)",
+        "state": {
+          "x": 0,
+          "y": 3,
+          "angle": 180
+        },
+        "target": {
+          "x": 0,
+          "y": 4
+        }
+      }
+    ],
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-butuh-listrik-rumah",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27492
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-butuh-listrik-sekolah",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28706
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-bunyi-dekat-jauh-jalan",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 30163
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 30082
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-belanja-ringan-berat",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29341
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-urut-ringan-berat",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28674
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-urut-isi-wadah",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 29381
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-mat-wadah-halaman-isi",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 33061
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "steps": 4
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-tebak-petak-angkasa",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 91459
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 6,
+    "knobs": {
+      "turns": 2
+    },
+    "prediksi": [
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.",
+        "state": {
+          "x": 4,
+          "y": 2,
+          "angle": 270
+        },
+        "target": {
+          "x": 3,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(1/1 tebakan benar)",
+        "state": {
+          "x": 3,
+          "y": 2,
+          "angle": 270
+        },
+        "target": {
+          "x": 2,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(2/2 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 2,
+          "angle": 270
+        },
+        "target": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(3/3 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 2,
+          "angle": 270
+        },
+        "target": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(4/4 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 2,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(5/5 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 1,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kanan. Ketuk petak tujuannya, lalu tekan Langkah.(6/6 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 0,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(7/7 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 0,
+          "angle": 90
+        },
+        "target": {
+          "x": 2,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(8/8 tebakan benar)",
+        "state": {
+          "x": 2,
+          "y": 0,
+          "angle": 90
+        },
+        "target": {
+          "x": 3,
+          "y": 0
+        }
+      }
+    ],
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-kode-tebak-petak-ulangi",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 94140
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 8,
+    "knobs": {
+      "turns": 2,
+      "panjang": 5
+    },
+    "prediksi": [
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.",
+        "state": {
+          "x": 1,
+          "y": 3,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 2
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(1/1 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 2,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(2/2 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 1,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kiri. Ketuk petak tujuannya, lalu tekan Langkah.(3/3 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 0,
+          "angle": 0
+        },
+        "target": {
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(4/4 tebakan benar)",
+        "state": {
+          "x": 1,
+          "y": 0,
+          "angle": 270
+        },
+        "target": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: kiri. Ketuk petak tujuannya, lalu tekan Langkah.(5/5 tebakan benar)",
+        "state": {
+          "x": 0,
+          "y": 0,
+          "angle": 270
+        },
+        "target": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(6/6 tebakan benar)",
+        "state": {
+          "x": 0,
+          "y": 0,
+          "angle": 180
+        },
+        "target": {
+          "x": 0,
+          "y": 1
+        }
+      },
+      {
+        "cmdText": "Blok berikutnya: maju. Ketuk petak tujuannya, lalu tekan Langkah.(7/7 tebakan benar)",
+        "state": {
+          "x": 0,
+          "y": 1,
+          "angle": 180
+        },
+        "target": {
+          "x": 0,
+          "y": 2
+        }
+      }
+    ],
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-butuh-listrik-rumah",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27923
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  },
+  {
+    "paket": "sd1-sains-butuh-listrik-sekolah",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26418
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "knobs": {
+      "itemCount": 8
+    },
+    "prediksi": null,
+    "clippedText": 0,
+    "scrollMaks": 0
+  }
+]

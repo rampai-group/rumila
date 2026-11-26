@@ -7,7 +7,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Adegan } from "@akademi/schema";
 import { BALOO } from "./jenis";
-import { GambarIlustrasiAwal } from "./ilustrasi-awal";
+import { GambarIlustrasiAwal, ILUSTRASI_AWAL_IDS } from "./ilustrasi-awal";
 import { GambarAdeganSd } from "./adegan-gambar-sd";
 
 /** Kanvas 130 × 100; `s` = tinggi px. */
@@ -90,7 +90,9 @@ export function GambarAdegan({ adegan, emoji = "", s, style, className = "" }: {
     );
     depan = (
       <>
-        {E(tanda ?? "🔔", 22, 62, 38)}
+        {tanda && ILUSTRASI_AWAL_IDS.includes(tanda)
+          ? <span style={{ position: "absolute", left: 2 * k, top: 34 * k }}><GambarIlustrasiAwal gambar={tanda} s={31 * k} /></span>
+          : E(tanda ?? "🔔", 22, 62, 38)}
         {E(emoji, 52 + 64 * t, 72 - 14 * t, 46 - 28 * t)}
       </>
     );

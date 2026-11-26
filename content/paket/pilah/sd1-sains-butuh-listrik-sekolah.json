@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-butuh-listrik-sekolah",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -84,7 +84,10 @@
       "id": "belistrik",
       "labelKey": "i-belistrik",
       "bin": "listrik",
-      "emoji": "🔔"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-bel-listrik"
+      }
     },
     {
       "id": "printer",

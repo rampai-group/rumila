@@ -1,7 +1,13 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Adegan } from "@akademi/schema";
 
+import { GambarIlustrasiAwal } from "./ilustrasi-awal";
 import { PerangkatPilot, RobotPilot } from "./ilustrasi-perangkat";
+
+const GAMBAR_BANDING: Record<string, string> = {
+  "🍉": "awal-semangka-utuh", "🍵": "qc-jenjang-pilot-cangkir-kosong",
+  "🥣": "qc-jenjang-pilot-mangkuk-kosong", "🍲": "qc-jenjang-pilot-panci-kosong",
+};
 
 type Titik = readonly [number, number];
 
@@ -314,7 +320,9 @@ export function GambarAdeganSd({
       lebar = 130;
       isi = varian === "banding-berat" || varian === "banding-kapasitas" ? (
         <g data-petunjuk-banding={varian} data-nilai={adegan.t}>
-          <text x="65" y="58" textAnchor="middle" fontSize="52">{adegan.tanda}</text>
+          {GAMBAR_BANDING[adegan.tanda ?? ""]
+            ? <g transform="translate(29 6)"><GambarIlustrasiAwal gambar={GAMBAR_BANDING[adegan.tanda!]} s={55} /></g>
+            : <text x="65" y="58" textAnchor="middle" fontSize="52">{adegan.tanda}</text>}
           {/* Panjang batang adalah petunjuk perbandingan, bukan ukuran emoji atau satuan ukur. */}
           <rect x="10" y="73" width="110" height="18" rx="5" fill="#e8edf3" stroke="#39516b" strokeWidth="2" />
           <rect x="10" y="73" width={110 * (adegan.t ?? 0)} height="18" rx="5" fill={varian === "banding-berat" ? "#d97b15" : "#087db4"} />

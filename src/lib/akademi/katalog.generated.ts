@@ -205214,7 +205214,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-butuh-listrik-rumah",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -205331,7 +205331,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam",
         "labelKey": "i-jam",
         "bin": "listrik",
-        "emoji": "🕰️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-jam-baterai"
+        }
       },
       {
         "id": "sapu",
@@ -205374,7 +205377,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-butuh-listrik-sekolah",
-    "version": "1.0.3",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -205458,7 +205461,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "belistrik",
         "labelKey": "i-belistrik",
         "bin": "listrik",
-        "emoji": "🔔"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-bel-listrik"
+        }
       },
       {
         "id": "printer",
@@ -329944,7 +329950,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-bunyi-dekat-jauh-jalan",
-    "version": "1.0.4",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -330225,7 +330231,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0,
-              "tanda": "🍲"
+              "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
             }
           },
           {
@@ -330235,7 +330241,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.3,
-              "tanda": "🍲"
+              "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
             }
           },
           {
@@ -330245,7 +330251,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.65,
-              "tanda": "🍲"
+              "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
             }
           },
           {
@@ -330255,7 +330261,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 1,
-              "tanda": "🍲"
+              "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
             }
           }
         ]
@@ -330271,7 +330277,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0,
-              "tanda": "🪵"
+              "tanda": "qc-kentongan-dipukul"
             }
           },
           {
@@ -330281,7 +330287,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.3,
-              "tanda": "🪵"
+              "tanda": "qc-kentongan-dipukul"
             }
           },
           {
@@ -330291,7 +330297,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.65,
-              "tanda": "🪵"
+              "tanda": "qc-kentongan-dipukul"
             }
           },
           {
@@ -330301,7 +330307,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 1,
-              "tanda": "🪵"
+              "tanda": "qc-kentongan-dipukul"
             }
           }
         ]
@@ -330540,7 +330546,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
-    "version": "1.1.2",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -330775,7 +330781,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0,
-              "tanda": "🍦"
+              "tanda": "qc-jenjang-pilot-mobil-eskrim"
             }
           },
           {
@@ -330785,7 +330791,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.3,
-              "tanda": "🍦"
+              "tanda": "qc-jenjang-pilot-mobil-eskrim"
             }
           },
           {
@@ -330795,7 +330801,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.65,
-              "tanda": "🍦"
+              "tanda": "qc-jenjang-pilot-mobil-eskrim"
             }
           },
           {
@@ -330805,7 +330811,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 1,
-              "tanda": "🍦"
+              "tanda": "qc-jenjang-pilot-mobil-eskrim"
             }
           }
         ]
@@ -330867,7 +330873,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0,
-              "tanda": "📣"
+              "tanda": "awal-peluit"
             }
           },
           {
@@ -330877,7 +330883,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.3,
-              "tanda": "📣"
+              "tanda": "awal-peluit"
             }
           },
           {
@@ -330887,7 +330893,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.65,
-              "tanda": "📣"
+              "tanda": "awal-peluit"
             }
           },
           {
@@ -330897,7 +330903,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 1,
-              "tanda": "📣"
+              "tanda": "awal-peluit"
             }
           }
         ]
@@ -331051,7 +331057,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0,
-              "tanda": "🥁"
+              "tanda": "qc-jenjang-pilot-beduk"
             }
           },
           {
@@ -331061,7 +331067,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.3,
-              "tanda": "🥁"
+              "tanda": "qc-jenjang-pilot-beduk"
             }
           },
           {
@@ -331071,7 +331077,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 0.65,
-              "tanda": "🥁"
+              "tanda": "qc-jenjang-pilot-beduk"
             }
           },
           {
@@ -331081,7 +331087,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "jauh",
               "t": 1,
-              "tanda": "🥁"
+              "tanda": "qc-jenjang-pilot-beduk"
             }
           }
         ]
