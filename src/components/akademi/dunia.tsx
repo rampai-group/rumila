@@ -160,15 +160,17 @@ export function skalaPanggung(w: number, h: number): number {
   return Math.round(Math.max(1, Math.min(1.6, w / 880, h / 500)) * 100) / 100;
 }
 
-export function urutanHitungLanjut(paket: ContentPack): boolean {
-  return paket.competencyIds.includes("MAT.TKB.BILANGAN-20.03") || paket.id === "sd1-mat-loncat-sepuluh";
+export function urutanAngkaRingkas(paket: ContentPack): boolean {
+  return paket.competencyIds.includes("MAT.TKB.BILANGAN-20.03") ||
+    paket.competencyIds.includes("MAT.SD1.BILANGAN-100.03") ||
+    paket.id === "sd1-mat-loncat-sepuluh";
 }
 
 export function panggungPadat(paket: ContentPack): boolean {
   return paket.mechanic === "pilah" ||
     (paket.mechanic === "navigasi" && paket.execMode === "langsung") ||
     (paket.mechanic === "dagang" && paket.mode === "subitasi") ||
-    (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanHitungLanjut(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
+    (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanAngkaRingkas(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
     (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" || (paket.mode === "tombol" && paket.level === "PAUD")));
 }
