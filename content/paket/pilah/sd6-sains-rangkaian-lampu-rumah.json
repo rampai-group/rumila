@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-rangkaian-lampu-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.LISTRIK.01"
@@ -25,13 +25,13 @@
       "p-r2": "Arus listrik bercabang, dan tiap lampu ada di cabangnya sendiri. Ini…",
       "p-r3": "Lampu jalan di kompleks rumah: satu lampu mati, lampu lain tetap menyala. Lampu-lampu itu dipasang dalam…",
       "p-r4": "Lampu kamar dan kipas angin di rumahmu bisa dinyalakan sendiri-sendiri. Keduanya dipasang dalam…",
-      "p-r5": "Rangkaian seri dengan satu baterai: dari dua lampu ditambah menjadi tiga lampu. Tiap lampu menjadi…",
-      "p-r6": "Rangkaian paralel dengan baterai yang sama: satu lampu ditambah di cabang baru. Lampu lain menyala…",
+      "p-r5": "Dua lampu identik dirangkai seri. Jika ditambah lampu ketiga yang sama dan tegangan baterai tetap, tiap lampu menyala…",
+      "p-r6": "Satu lampu ditambah di cabang baru rangkaian paralel. Jika tegangan baterai tetap, lampu lain menyala…",
       "p-r7": "Rangkaian seri tiga lampu: satu lampu longgar dari dudukannya. Lampu yang lain…",
       "p-r8": "Rangkaian paralel tiga lampu: satu lampu putus. Dua lampu lainnya…",
       "p-r9": "Lampu hias di pagar dirangkai seri. Satu lampu dicabut. Lampu lainnya…",
-      "p-r10": "Satu baterai yang sama. Rangkaian manakah yang lampunya paling terang?",
-      "p-r11": "Rangkaian seri dua lampu. Satu lampu dilepas, lalu kabelnya disambung langsung tanpa lampu itu. Lampu yang tersisa…",
+      "p-r10": "Semua lampu identik dan tegangan baterai tetap. Di rangkaian mana tiap lampu menyala paling terang?",
+      "p-r11": "Dua lampu identik dirangkai seri. Satu diganti dengan kabel. Jika tegangan baterai tetap, lampu yang tersisa menyala…",
       "p-r12": "Ayah ingin lampu teras tetap menyala walau lampu dapur rusak. Pilih rangkaian…"
     },
     "en": {
@@ -52,13 +52,13 @@
       "p-r2": "The current splits into branches, and each bulb is on its own branch. This is a…",
       "p-r3": "Streetlights on a housing estate: one goes out and the others stay on. They are wired in a…",
       "p-r4": "Your bedroom light and fan can be switched on separately. They are wired in a…",
-      "p-r5": "A series circuit with one battery: two bulbs become three. Each bulb becomes…",
-      "p-r6": "A parallel circuit with the same battery: one more bulb is added on a new branch. The other bulbs shine…",
+      "p-r5": "Two identical bulbs are wired in series. If a third identical bulb is added and the battery voltage stays constant, each bulb shines…",
+      "p-r6": "A bulb is added on a new branch of a parallel circuit. If the battery voltage stays constant, the other bulbs shine…",
       "p-r7": "Three bulbs in series: one bulb comes loose from its holder. The other bulbs…",
       "p-r8": "Three bulbs in parallel: one bulb blows. The other two…",
       "p-r9": "Fairy lights on the fence are wired in series. One bulb is pulled out. The rest…",
-      "p-r10": "The same single battery. Which circuit has the brightest bulbs?",
-      "p-r11": "Two bulbs in series. One is removed and the wires are joined straight across without it. The remaining bulb becomes…",
+      "p-r10": "All the bulbs are identical and the battery voltage stays constant. In which circuit does each bulb shine brightest?",
+      "p-r11": "Two identical bulbs are wired in series. One is replaced with a wire. If the battery voltage stays constant, the remaining bulb shines…",
       "p-r12": "Dad wants the porch light to stay on even if the kitchen light breaks. Choose a…"
     }
   },

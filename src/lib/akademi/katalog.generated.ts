@@ -304148,7 +304148,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-pantul-bias-di-kota",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.CAHAYA.01"
@@ -304168,7 +304168,7 @@ export const PAKET_RAW: unknown[] = [
         "i-matakucing": "pemantul mata kucing di aspal bersinar saat disorot lampu",
         "i-salon": "cermin di salon dipakai melihat rambut bagian belakang",
         "i-kaki": "kaki tampak lebih pendek saat berdiri di kolam renang",
-        "i-pelangi": "pelangi muncul saat cahaya melewati titik-titik hujan",
+        "i-pelangi": "cahaya Matahari membelok saat masuk ke butir air pembentuk pelangi",
         "i-teropong": "lensa teropong membuat Bulan tampak lebih besar",
         "i-akuarium": "ikan di akuarium bulat tampak lebih besar dari samping",
         "i-sendok": "sendok tampak bengkok di mangkuk sup bening",
@@ -304187,7 +304187,7 @@ export const PAKET_RAW: unknown[] = [
         "i-matakucing": "cat's-eye road studs glow when lit by headlights",
         "i-salon": "salon mirrors are used to see the back of your hair",
         "i-kaki": "your legs look shorter when you stand in a swimming pool",
-        "i-pelangi": "a rainbow appears when light passes through raindrops",
+        "i-pelangi": "sunlight bends as it enters a raindrop that helps form a rainbow",
         "i-teropong": "a telescope's lenses make the Moon look bigger",
         "i-akuarium": "a fish in a round fishbowl looks bigger from the side",
         "i-sendok": "a spoon looks bent in a bowl of clear soup",
@@ -304981,7 +304981,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-rangkaian-lampu-rumah",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.LISTRIK.01"
@@ -305006,13 +305006,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r2": "Arus listrik bercabang, dan tiap lampu ada di cabangnya sendiri. Ini…",
         "p-r3": "Lampu jalan di kompleks rumah: satu lampu mati, lampu lain tetap menyala. Lampu-lampu itu dipasang dalam…",
         "p-r4": "Lampu kamar dan kipas angin di rumahmu bisa dinyalakan sendiri-sendiri. Keduanya dipasang dalam…",
-        "p-r5": "Rangkaian seri dengan satu baterai: dari dua lampu ditambah menjadi tiga lampu. Tiap lampu menjadi…",
-        "p-r6": "Rangkaian paralel dengan baterai yang sama: satu lampu ditambah di cabang baru. Lampu lain menyala…",
+        "p-r5": "Dua lampu identik dirangkai seri. Jika ditambah lampu ketiga yang sama dan tegangan baterai tetap, tiap lampu menyala…",
+        "p-r6": "Satu lampu ditambah di cabang baru rangkaian paralel. Jika tegangan baterai tetap, lampu lain menyala…",
         "p-r7": "Rangkaian seri tiga lampu: satu lampu longgar dari dudukannya. Lampu yang lain…",
         "p-r8": "Rangkaian paralel tiga lampu: satu lampu putus. Dua lampu lainnya…",
         "p-r9": "Lampu hias di pagar dirangkai seri. Satu lampu dicabut. Lampu lainnya…",
-        "p-r10": "Satu baterai yang sama. Rangkaian manakah yang lampunya paling terang?",
-        "p-r11": "Rangkaian seri dua lampu. Satu lampu dilepas, lalu kabelnya disambung langsung tanpa lampu itu. Lampu yang tersisa…",
+        "p-r10": "Semua lampu identik dan tegangan baterai tetap. Di rangkaian mana tiap lampu menyala paling terang?",
+        "p-r11": "Dua lampu identik dirangkai seri. Satu diganti dengan kabel. Jika tegangan baterai tetap, lampu yang tersisa menyala…",
         "p-r12": "Ayah ingin lampu teras tetap menyala walau lampu dapur rusak. Pilih rangkaian…"
       },
       "en": {
@@ -305033,13 +305033,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r2": "The current splits into branches, and each bulb is on its own branch. This is a…",
         "p-r3": "Streetlights on a housing estate: one goes out and the others stay on. They are wired in a…",
         "p-r4": "Your bedroom light and fan can be switched on separately. They are wired in a…",
-        "p-r5": "A series circuit with one battery: two bulbs become three. Each bulb becomes…",
-        "p-r6": "A parallel circuit with the same battery: one more bulb is added on a new branch. The other bulbs shine…",
+        "p-r5": "Two identical bulbs are wired in series. If a third identical bulb is added and the battery voltage stays constant, each bulb shines…",
+        "p-r6": "A bulb is added on a new branch of a parallel circuit. If the battery voltage stays constant, the other bulbs shine…",
         "p-r7": "Three bulbs in series: one bulb comes loose from its holder. The other bulbs…",
         "p-r8": "Three bulbs in parallel: one bulb blows. The other two…",
         "p-r9": "Fairy lights on the fence are wired in series. One bulb is pulled out. The rest…",
-        "p-r10": "The same single battery. Which circuit has the brightest bulbs?",
-        "p-r11": "Two bulbs in series. One is removed and the wires are joined straight across without it. The remaining bulb becomes…",
+        "p-r10": "All the bulbs are identical and the battery voltage stays constant. In which circuit does each bulb shine brightest?",
+        "p-r11": "Two identical bulbs are wired in series. One is replaced with a wire. If the battery voltage stays constant, the remaining bulb shines…",
         "p-r12": "Dad wants the porch light to stay on even if the kitchen light breaks. Choose a…"
       }
     },
@@ -305235,7 +305235,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-seri-atau-paralel",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.LISTRIK.01"
@@ -305255,15 +305255,15 @@ export const PAKET_RAW: unknown[] = [
         "i-tetapnyala": "tetap menyala",
         "p-r1": "Dua lampu disusun berderet dalam satu jalur dengan satu baterai. Rangkaian ini…",
         "p-r2": "Dua lampu masing-masing punya jalur sendiri ke baterai. Rangkaian ini…",
-        "p-r3": "Dibanding satu lampu sendirian, tiap lampu di rangkaian seri dua lampu menyala…",
-        "p-r4": "Dibanding dua lampu seri, dua lampu paralel dengan baterai yang sama menyala…",
+        "p-r3": "Bandingkan satu lampu dengan dua lampu identik yang dirangkai seri pada tegangan baterai yang sama. Tiap lampu seri menyala…",
+        "p-r4": "Dua lampu identik diuji secara seri lalu paralel pada tegangan yang sama. Dibandingkan saat seri, tiap lampu saat paralel menyala…",
         "p-r5": "Rangkaian seri: satu lampu dilepas. Lampu yang lain…",
         "p-r6": "Rangkaian paralel: satu lampu dilepas. Lampu yang lain…",
         "p-r7": "Lampu di rumah bisa dimatikan satu per satu tanpa memadamkan yang lain. Rumah memakai rangkaian…",
         "p-r8": "Untaian lampu hias: satu lampu putus, semuanya padam. Lampunya disusun…",
-        "p-r9": "Dua lampu harus sama-sama paling terang dengan satu baterai. Pilih rangkaian…",
+        "p-r9": "Dua lampu identik memakai satu baterai dengan tegangan tetap. Agar kedua lampu menyala paling terang, pilih…",
         "p-r10": "Tiga lampu disusun berderet dalam satu jalur dengan baterai. Rangkaian ini…",
-        "p-r11": "Dibanding satu lampu sendirian, tiap lampu di rangkaian paralel dua lampu dengan baterai yang sama menyala…",
+        "p-r11": "Bandingkan satu lampu dengan dua lampu identik yang dirangkai paralel pada tegangan baterai yang sama. Tiap lampu paralel menyala…",
         "p-r12": "Rangkaian seri: sakelarnya dibuka. Semua lampu…",
         "p-r13": "Tiap lampu punya jalur dan sakelar sendiri ke baterai. Satu sakelar dibuka. Lampu yang lain…"
       },
@@ -305280,15 +305280,15 @@ export const PAKET_RAW: unknown[] = [
         "i-tetapnyala": "stays lit",
         "p-r1": "Two lamps are joined one after another in a single loop with one cell. This circuit is…",
         "p-r2": "Two lamps each have their own loop to the cell. This circuit is…",
-        "p-r3": "Compared with one lamp on its own, each lamp in a two-lamp series circuit is…",
-        "p-r4": "Compared with two lamps in series, two lamps in parallel with the same cell are…",
+        "p-r3": "Compare one bulb on its own with two identical bulbs in series at the same battery voltage. Each bulb in series shines…",
+        "p-r4": "Two identical bulbs are tested in series and then in parallel at the same voltage. Compared with series, each bulb in parallel shines…",
         "p-r5": "Series circuit: one lamp is taken out. The other lamp…",
         "p-r6": "Parallel circuit: one lamp is taken out. The other lamp…",
         "p-r7": "Lights at home can be switched off one at a time without the others going out. Homes use a…",
         "p-r8": "A string of fairy lights: one bulb fails and they all go out. The bulbs are wired in…",
-        "p-r9": "Two lamps must both be as bright as possible with one cell. Choose a…",
+        "p-r9": "Two identical bulbs use one battery whose voltage stays constant. To make both bulbs shine as brightly as possible, choose a…",
         "p-r10": "Three bulbs are placed in a row in one path with a battery. This circuit is…",
-        "p-r11": "Compared with one bulb on its own, each bulb in a two-bulb parallel circuit with the same battery shines…",
+        "p-r11": "Compare one bulb on its own with two identical bulbs in parallel at the same battery voltage. Each bulb in parallel shines…",
         "p-r12": "Series circuit: the switch is opened. All the bulbs…",
         "p-r13": "Each bulb has its own path and switch to the battery. One switch is opened. The other bulbs…"
       }
@@ -305785,7 +305785,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-timbang-massa-berat",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.MASSA-BERAT.01"
@@ -305829,7 +305829,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r9": "Batu dari Bulan dibawa ke Bumi yang gravitasinya lebih besar. Massanya…",
         "p-r10": "Di Bumi, benda bermassa 1 kg beratnya sekitar 10 N. Berapa kira-kira berat karung beras 5 kg di Bumi?",
         "p-r11": "Karung beras 5 kg beratnya sekitar 50 N di Bumi. Di Bulan yang gravitasinya jauh lebih kecil, beratnya…",
-        "p-r12": "Bila sebuah benda dibawa ke planet lain, yang berubah adalah…"
+        "p-r12": "Sebuah batu dipindah dari Bumi ke Bulan yang gravitasinya lebih lemah. Besaran apa yang berubah?"
       },
       "en": {
         "judul": "Scales and Spring Balances",
@@ -305868,7 +305868,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r9": "A Moon rock is brought to Earth, where gravity is stronger. Its mass…",
         "p-r10": "On Earth, a 1 kg object weighs about 10 N. About how much does a 5 kg sack of rice weigh on Earth?",
         "p-r11": "A 5 kg sack of rice weighs about 50 N on Earth. On the Moon, where gravity is much weaker, it weighs…",
-        "p-r12": "When an object is taken to another planet, the thing that changes is its…"
+        "p-r12": "A rock is moved from Earth to the Moon, where gravity is weaker. Which quantity changes?"
       }
     },
     "knobs": {},
