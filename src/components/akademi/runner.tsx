@@ -233,7 +233,7 @@ function Runner({ paket, onLagi }: { paket: ContentPack; onLagi: () => void }) {
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
-    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} percobaan={percobaan} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)} musik={musik} padat={panggungPadat(paket)}>
+    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} percobaan={percobaan} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)} musik={musik} padat={panggungPadat(paket, ronde)}>
       <div key={`${idx}-${percobaan}`} className="akademi-fade flex flex-1 flex-col justify-center">
         <SisaBantuProvider value={sisaBantu}>
         <LatarWarnaProvider paket={paket}>

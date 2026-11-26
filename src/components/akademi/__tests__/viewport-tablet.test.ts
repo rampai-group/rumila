@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { jendelaPenuh, viewportTablet } from "../dunia";
+import { buatRondeNavigasi, knobDefaults } from "@akademi/mechanics";
+import { ContentPack } from "@akademi/schema";
+import ulangi from "../../../../content/paket/navigasi/ulangi-berapa-kali-lurus.json";
+import { jendelaPenuh, panggungPadat, viewportTablet } from "../dunia";
 
 describe("viewport tablet", () => {
   const ipad = { w: 820, h: 1180 };
@@ -19,5 +22,20 @@ describe("viewport tablet", () => {
     expect(viewportTablet({ w: 744, h: 1133 }, true, 611)).toBeNull();
     expect(viewportTablet(ipad, true, 687)).toBeNull();
     expect(viewportTablet(ipad, true, 776)).toContain("width=1064");
+  });
+});
+
+describe("panel navigasi ringkas", () => {
+  it("mengikuti bentuk papan setiap ronde dalam paket yang sama", () => {
+    const paket = ContentPack.parse(ulangi);
+    if (paket.mechanic !== "navigasi") throw Error("Paket Ulangi harus memakai navigasi");
+    const ronde = buatRondeNavigasi(paket, knobDefaults(paket), 1);
+    const satuBaris = paket.grids.find((g) => g.h === 1)!;
+    const duaBaris = paket.grids.find((g) => g.h === 2)!;
+
+    expect(panggungPadat(paket, { mechanic: "navigasi", ronde: { ...ronde, grids: [satuBaris] } })).toBe(true);
+    expect(panggungPadat(paket, { mechanic: "navigasi", ronde: { ...ronde, grids: [duaBaris] } })).toBe(false);
+    expect(panggungPadat(paket, { mechanic: "navigasi", ronde: { ...ronde, grids: [satuBaris, duaBaris] } })).toBe(false);
+    expect(panggungPadat(paket, { mechanic: "navigasi", ronde: { ...ronde, grids: [satuBaris], debug: true } })).toBe(false);
   });
 });

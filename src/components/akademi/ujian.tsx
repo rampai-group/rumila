@@ -265,7 +265,7 @@ function Soal({ jenis, level, ruang, judul, sessionId, soal, learnerId, latihan,
   const props = { paket, ronde, t, onJawab, hasil: null } as const;
   return (
     <ModeUjianProvider value={true}>
-      <LayarAktivitas judul={`${latihan ? "Latihan " : ""}${NAMA_UJIAN[jenis]} · ${judul}`} ronde={idx + 1} total={soal.length} instruksi={instruksi} onUcap={ucap} kembaliKe={kembaliKe} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)} padat={panggungPadat(paket)}>
+      <LayarAktivitas judul={`${latihan ? "Latihan " : ""}${NAMA_UJIAN[jenis]} · ${judul}`} ronde={idx + 1} total={soal.length} instruksi={instruksi} onUcap={ucap} kembaliKe={kembaliKe} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} pilar={pilarPaket(paket)} padat={panggungPadat(paket, ronde)}>
         <div key={idx} inert={!!hasil} className="akademi-fade flex flex-1 flex-col justify-center">
           <LatarWarnaProvider paket={paket}>
           {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
