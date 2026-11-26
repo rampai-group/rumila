@@ -205504,11 +205504,11 @@ export const PAKET_RAW: unknown[] = [
         "b-dorong": "dorong",
         "b-tarik": "tarik",
         "i-pintu": "mendorong pintu sampai tertutup",
-        "i-bel": "menekan bel",
+        "i-bel": "menekan tombol bel",
         "i-kursimasuk": "mendorong kursi ke meja",
         "i-troli": "mendorong troli belanja",
         "i-tombol": "menekan tombol lampu",
-        "i-bukalaci": "membuka laci",
+        "i-bukalaci": "menarik laci hingga terbuka",
         "i-tisu": "menarik tisu dari kotak",
         "i-selimut": "menarik selimut",
         "i-koper": "menarik koper beroda",
@@ -205524,7 +205524,7 @@ export const PAKET_RAW: unknown[] = [
         "i-kursimasuk": "pushing a chair in",
         "i-troli": "pushing a shopping cart",
         "i-tombol": "pressing the light switch",
-        "i-bukalaci": "opening a drawer",
+        "i-bukalaci": "pulling a drawer open",
         "i-tisu": "pulling a tissue from the box",
         "i-selimut": "pulling up a blanket",
         "i-koper": "pulling a wheeled suitcase",
@@ -205564,61 +205564,91 @@ export const PAKET_RAW: unknown[] = [
         "id": "pintu",
         "labelKey": "i-pintu",
         "bin": "dorong",
-        "emoji": "🚪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-dorong-pintu"
+        }
       },
       {
         "id": "bel",
         "labelKey": "i-bel",
         "bin": "dorong",
-        "emoji": "🔔"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tekan-bel"
+        }
       },
       {
         "id": "kursimasuk",
         "labelKey": "i-kursimasuk",
         "bin": "dorong",
-        "emoji": "🪑"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-dorong-kursi"
+        }
       },
       {
         "id": "troli",
         "labelKey": "i-troli",
         "bin": "dorong",
-        "emoji": "🛒"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-dorong-troli"
+        }
       },
       {
         "id": "tombol",
         "labelKey": "i-tombol",
         "bin": "dorong",
-        "emoji": "💡"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tekan-saklar"
+        }
       },
       {
         "id": "bukalaci",
         "labelKey": "i-bukalaci",
         "bin": "tarik",
-        "emoji": "🗄️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-laci"
+        }
       },
       {
         "id": "tisu",
         "labelKey": "i-tisu",
         "bin": "tarik",
-        "emoji": "🧻"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-tisu-kotak"
+        }
       },
       {
         "id": "selimut",
         "labelKey": "i-selimut",
         "bin": "tarik",
-        "emoji": "🛏️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-selimut"
+        }
       },
       {
         "id": "koper",
         "labelKey": "i-koper",
         "bin": "tarik",
-        "emoji": "🧳"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-koper"
+        }
       },
       {
         "id": "tirai",
         "labelKey": "i-tirai",
         "bin": "tarik",
-        "emoji": "🪟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-tirai"
+        }
       }
     ],
     "pilihan": []
@@ -205699,7 +205729,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "tendang",
         "labelKey": "i-tendang",
         "bin": "dorong",
-        "emoji": "⚽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tendang-bola"
+        }
       },
       {
         "id": "ayunan",
@@ -205714,50 +205747,73 @@ export const PAKET_RAW: unknown[] = [
         "id": "gerobak",
         "labelKey": "i-gerobak",
         "bin": "dorong",
-        "emoji": "🛒",
-        "color": "#bcaaa4"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-dorong-gerobak-pasir"
+        }
       },
       {
         "id": "kereta",
         "labelKey": "i-kereta",
         "bin": "dorong",
-        "emoji": "👶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-dorong-kereta-bayi"
+        }
       },
       {
         "id": "lempar",
         "labelKey": "i-lempar",
         "bin": "dorong",
-        "emoji": "🏀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-lempar-bola"
+        }
       },
       {
         "id": "layang",
         "labelKey": "i-layang",
         "bin": "tarik",
-        "emoji": "🪁"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-layang"
+        }
       },
       {
         "id": "tambang",
         "labelKey": "i-tambang",
         "bin": "tarik",
-        "emoji": "🪢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-tambang"
+        }
       },
       {
         "id": "mainan",
         "labelKey": "i-mainan",
         "bin": "tarik",
-        "emoji": "🚙"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-tarik-mobil-mainan"
+        }
       },
       {
         "id": "rumput",
         "labelKey": "i-rumput",
         "bin": "tarik",
-        "emoji": "🌱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-cabut-rumput"
+        }
       },
       {
         "id": "timba",
         "labelKey": "i-timba",
         "bin": "tarik",
-        "emoji": "🪣"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pilot-timba-sumur"
+        }
       }
     ],
     "pilihan": []
@@ -207796,76 +207852,112 @@ export const PAKET_RAW: unknown[] = [
         "id": "karet",
         "labelKey": "i-karet",
         "bin": "regang",
-        "emoji": "⭕",
-        "color": "#ff8a65"
+        "color": "#ff8a65",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-karet-regang"
+        }
       },
       {
         "id": "pegas",
         "labelKey": "i-pegas",
         "bin": "regang",
-        "emoji": "🌀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pegas-regang"
+        }
       },
       {
         "id": "adonan",
         "labelKey": "i-adonan",
         "bin": "regang",
-        "emoji": "🍜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-adonan-mi-regang"
+        }
       },
       {
         "id": "spons",
         "labelKey": "i-spons",
         "bin": "tekan",
-        "emoji": "🧽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-spons-gepeng"
+        }
       },
       {
         "id": "kaleng",
         "labelKey": "i-kaleng",
         "bin": "tekan",
-        "emoji": "🥫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kaleng-penyok"
+        }
       },
       {
         "id": "plastisin",
         "labelKey": "i-plastisin",
         "bin": "tekan",
-        "emoji": "🟣",
-        "color": "#ba68c8"
+        "color": "#ba68c8",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-plastisin-pipih"
+        }
       },
       {
         "id": "sedotan",
         "labelKey": "i-sedotan",
         "bin": "tekuk",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sedotan-plastik"
+        }
       },
       {
         "id": "kawat",
         "labelKey": "i-kawat",
         "bin": "tekuk",
-        "emoji": "🪝"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kawat-bengkok"
+        }
       },
       {
         "id": "kertas",
         "labelKey": "i-kertas",
         "bin": "tekuk",
-        "emoji": "📄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kertas-lipat"
+        }
       },
       {
         "id": "handuk",
         "labelKey": "i-handuk",
         "bin": "puntir",
-        "emoji": "🟦",
-        "color": "#81d4fa"
+        "color": "#81d4fa",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-handuk-diperas"
+        }
       },
       {
         "id": "tali",
         "labelKey": "i-tali",
         "bin": "puntir",
-        "emoji": "🪢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tali-dipilin"
+        }
       },
       {
         "id": "kain",
         "labelKey": "i-kain",
         "bin": "puntir",
-        "emoji": "🧣"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kain-dipelintir"
+        }
       }
     ],
     "pilihan": []
@@ -208191,75 +208283,111 @@ export const PAKET_RAW: unknown[] = [
         "id": "tali",
         "labelKey": "i-tali",
         "bin": "regang",
-        "emoji": "➰"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tali-lompat-regang"
+        }
       },
       {
         "id": "kauskaki",
         "labelKey": "i-kauskaki",
         "bin": "regang",
-        "emoji": "🧦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kaus-kaki-regang"
+        }
       },
       {
         "id": "ketapel",
         "labelKey": "i-ketapel",
         "bin": "regang",
-        "emoji": "⭕",
-        "color": "#ff8a65"
+        "color": "#ff8a65",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-karet-ketapel-regang"
+        }
       },
       {
         "id": "bola",
         "labelKey": "i-bola",
         "bin": "tekan",
-        "emoji": "🔴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bola-karet-gepeng"
+        }
       },
       {
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "tekan",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pasir-cetakan"
+        }
       },
       {
         "id": "roti",
         "labelKey": "i-roti",
         "bin": "tekan",
-        "emoji": "🍞"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-roti-tawar-pipih"
+        }
       },
       {
         "id": "ranting",
         "labelKey": "i-ranting",
         "bin": "tekuk",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-ranting-bengkok"
+        }
       },
       {
         "id": "kardus",
         "labelKey": "i-kardus",
         "bin": "tekuk",
-        "emoji": "📦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kardus-lipat"
+        }
       },
       {
         "id": "pipa",
         "labelKey": "i-pipa",
         "bin": "tekuk",
-        "emoji": "🟢",
-        "color": "#66bb6a"
+        "color": "#66bb6a",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-selang-air"
+        }
       },
       {
         "id": "pel",
         "labelKey": "i-pel",
         "bin": "puntir",
-        "emoji": "🧹"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kain-pel-diperas"
+        }
       },
       {
         "id": "tambang",
         "labelKey": "i-tambang",
         "bin": "puntir",
-        "emoji": "🪢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tali-dipilin"
+        }
       },
       {
         "id": "kawat",
         "labelKey": "i-kawat",
         "bin": "puntir",
-        "emoji": "🌀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kawat-dipuntir"
+        }
       }
     ],
     "pilihan": []

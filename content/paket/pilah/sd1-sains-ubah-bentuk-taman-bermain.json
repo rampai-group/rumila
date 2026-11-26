@@ -101,75 +101,111 @@
       "id": "tali",
       "labelKey": "i-tali",
       "bin": "regang",
-      "emoji": "➰"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tali-lompat-regang"
+      }
     },
     {
       "id": "kauskaki",
       "labelKey": "i-kauskaki",
       "bin": "regang",
-      "emoji": "🧦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kaus-kaki-regang"
+      }
     },
     {
       "id": "ketapel",
       "labelKey": "i-ketapel",
       "bin": "regang",
-      "emoji": "⭕",
-      "color": "#ff8a65"
+      "color": "#ff8a65",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-karet-ketapel-regang"
+      }
     },
     {
       "id": "bola",
       "labelKey": "i-bola",
       "bin": "tekan",
-      "emoji": "🔴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bola-karet-gepeng"
+      }
     },
     {
       "id": "pasir",
       "labelKey": "i-pasir",
       "bin": "tekan",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pasir-cetakan"
+      }
     },
     {
       "id": "roti",
       "labelKey": "i-roti",
       "bin": "tekan",
-      "emoji": "🍞"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-roti-tawar-pipih"
+      }
     },
     {
       "id": "ranting",
       "labelKey": "i-ranting",
       "bin": "tekuk",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-ranting-bengkok"
+      }
     },
     {
       "id": "kardus",
       "labelKey": "i-kardus",
       "bin": "tekuk",
-      "emoji": "📦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kardus-lipat"
+      }
     },
     {
       "id": "pipa",
       "labelKey": "i-pipa",
       "bin": "tekuk",
-      "emoji": "🟢",
-      "color": "#66bb6a"
+      "color": "#66bb6a",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-selang-air"
+      }
     },
     {
       "id": "pel",
       "labelKey": "i-pel",
       "bin": "puntir",
-      "emoji": "🧹"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kain-pel-diperas"
+      }
     },
     {
       "id": "tambang",
       "labelKey": "i-tambang",
       "bin": "puntir",
-      "emoji": "🪢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tali-dipilin"
+      }
     },
     {
       "id": "kawat",
       "labelKey": "i-kawat",
       "bin": "puntir",
-      "emoji": "🌀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kawat-dipuntir"
+      }
     }
   ],
   "pilihan": []

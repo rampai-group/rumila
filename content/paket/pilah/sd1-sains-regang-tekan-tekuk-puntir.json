@@ -101,76 +101,112 @@
       "id": "karet",
       "labelKey": "i-karet",
       "bin": "regang",
-      "emoji": "⭕",
-      "color": "#ff8a65"
+      "color": "#ff8a65",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-karet-regang"
+      }
     },
     {
       "id": "pegas",
       "labelKey": "i-pegas",
       "bin": "regang",
-      "emoji": "🌀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pegas-regang"
+      }
     },
     {
       "id": "adonan",
       "labelKey": "i-adonan",
       "bin": "regang",
-      "emoji": "🍜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-adonan-mi-regang"
+      }
     },
     {
       "id": "spons",
       "labelKey": "i-spons",
       "bin": "tekan",
-      "emoji": "🧽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-spons-gepeng"
+      }
     },
     {
       "id": "kaleng",
       "labelKey": "i-kaleng",
       "bin": "tekan",
-      "emoji": "🥫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kaleng-penyok"
+      }
     },
     {
       "id": "plastisin",
       "labelKey": "i-plastisin",
       "bin": "tekan",
-      "emoji": "🟣",
-      "color": "#ba68c8"
+      "color": "#ba68c8",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-plastisin-pipih"
+      }
     },
     {
       "id": "sedotan",
       "labelKey": "i-sedotan",
       "bin": "tekuk",
-      "emoji": "🥤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sedotan-plastik"
+      }
     },
     {
       "id": "kawat",
       "labelKey": "i-kawat",
       "bin": "tekuk",
-      "emoji": "🪝"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kawat-bengkok"
+      }
     },
     {
       "id": "kertas",
       "labelKey": "i-kertas",
       "bin": "tekuk",
-      "emoji": "📄"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kertas-lipat"
+      }
     },
     {
       "id": "handuk",
       "labelKey": "i-handuk",
       "bin": "puntir",
-      "emoji": "🟦",
-      "color": "#81d4fa"
+      "color": "#81d4fa",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-handuk-diperas"
+      }
     },
     {
       "id": "tali",
       "labelKey": "i-tali",
       "bin": "puntir",
-      "emoji": "🪢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tali-dipilin"
+      }
     },
     {
       "id": "kain",
       "labelKey": "i-kain",
       "bin": "puntir",
-      "emoji": "🧣"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kain-dipelintir"
+      }
     }
   ],
   "pilihan": []

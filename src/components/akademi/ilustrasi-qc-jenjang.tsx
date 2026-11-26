@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import { ILUSTRASI_HABITAT } from "./ilustrasi-hewan-habitat";
+import { ILUSTRASI_BENTUK_PILOT } from "./ilustrasi-pilot-bentuk";
+import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -373,6 +375,8 @@ const objectArt: Record<string, ReactNode> = {
   ...KEGIATAN,
   ...GERAK_APUNG,
   ...ILUSTRASI_HABITAT,
+  ...ILUSTRASI_BENTUK_PILOT,
+  ...ILUSTRASI_GERAK_PILOT,
   "lembar-kertas": <g {...RINGKAS} stroke="#8a9baa">
     <path d="M39 15H88L102 28V86H39Z" fill="#dce6ed" />
     <path d="M27 13H77L94 29V82H27Z" fill="#fffdf6" />
