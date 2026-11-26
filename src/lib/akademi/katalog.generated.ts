@@ -179495,7 +179495,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "piktogram-buah-keranjang",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -179561,7 +179561,11 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "anggur",
         "labelKey": "anggur",
-        "emoji": "🍇"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-anggur",
+          "t": 0
+        }
       }
     ],
     "items": [
