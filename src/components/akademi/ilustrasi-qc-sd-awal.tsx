@@ -4,9 +4,31 @@ export const ILUSTRASI_QC_SD_AWAL_IDS = [
   "qc-serigala-kutub",
   "qc-ayakan-kasar",
   "qc-kain-saring-halus",
+  "qc-gelas-ukur",
+  "qc-pasir-halus-batu-kecil",
 ];
 
 export function IlustrasiQcSdAwal({ id }: { id: string }) {
+  if (id === "qc-pasir-halus-batu-kecil") return (
+    <g strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 74c17-5 28-10 43-22 7-6 19-11 28-5 9 6 19 13 36 25q5 7-8 10H23q-13-1-11-8Z"
+        fill="#f3cc7e" stroke="#bd8d4a" strokeWidth="2.5" />
+      <path d="m27 75 12-4m-3 8 11-3m8-13 7-3m-2 14 9 1m19-1 9 4m10-7 5 3"
+        stroke="#a97946" strokeWidth="2" strokeDasharray="1 3" />
+      <path d="m45 47 8-12 13-1 6 7-5 11-13 3Zm21 16 8-11 13-2 8 8-3 10-17 1Zm25-16 2-9 9-4 8 5 2 9-10 4Z"
+        fill="#929eaa" stroke="#586776" strokeWidth="2.7" />
+      <path d="m50 44 9-4 6 2m7 18 9-4 7 2m9-15 5-3 4 2" fill="none" stroke="#d9e0e4" strokeWidth="2.1" />
+    </g>
+  );
+  if (id === "qc-gelas-ukur") return (
+    <g stroke="#286278" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="65" cy="86" rx="26" ry="7" fill="#bce5ed" />
+      <path d="M45 16v63q0 6 20 6t20-6V16" fill="#d8f2f6" />
+      <path d="M45 16c0-7 40-7 40 0s-40 7-40 0Z" fill="#f1fcff" />
+      <path d="M52 31v39" fill="none" stroke="#fff" strokeWidth="4" />
+      <path d="M65 32h13m-8 8h8m-13 8h13m-8 8h8m-13 8h13m-8 8h8" fill="none" strokeWidth="2.6" />
+    </g>
+  );
   if (id === "qc-ayakan-kasar") return (
     <g stroke="#774e35" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
       <path d="M11 43v15c0 12 20 22 46 22s46-10 46-22V43" fill="#ca8950" />

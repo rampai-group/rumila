@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-alami-atau-buatan-dapur",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -130,7 +130,10 @@
       "id": "plastikwrap",
       "labelKey": "i-plastikwrap",
       "bin": "buatan",
-      "emoji": "🧴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-plastik-pembungkus"
+      }
     },
     {
       "id": "tisu",

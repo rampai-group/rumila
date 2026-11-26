@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-alat-ukur",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -14,7 +14,7 @@
       "b-termometer": "termometer (suhu)",
       "b-timbangan": "timbangan (berat)",
       "b-penggaris": "penggaris (panjang)",
-      "b-gelasukur": "gelas ukur (banyak air)",
+      "b-gelasukur": "gelas ukur (volume)",
       "b-stopwatch": "stopwatch (lama waktu)",
       "i-airkolam": "seberapa hangat air kolam?",
       "i-kelas": "seberapa panas kelas siang ini?",
@@ -23,7 +23,7 @@
       "i-kacang": "seberapa tinggi tanaman kacang?",
       "i-ulat": "seberapa panjang ulat?",
       "i-hujan": "berapa banyak air hujan tertampung?",
-      "i-siram": "berapa banyak air untuk satu pot?",
+      "i-siram": "berapa volume air yang disiapkan untuk satu pot?",
       "i-es": "berapa lama es mencair?",
       "i-lari": "berapa lama berlari keliling lapangan?",
       "i-teh": "seberapa panas teh di gelas?",
@@ -42,7 +42,7 @@
       "b-termometer": "thermometer (temperature)",
       "b-timbangan": "scales (weight)",
       "b-penggaris": "ruler (length)",
-      "b-gelasukur": "measuring jug (amount of water)",
+      "b-gelasukur": "measuring cylinder (volume)",
       "b-stopwatch": "stopwatch (how long)",
       "i-airkolam": "how warm is the pond?",
       "i-kelas": "how hot is the classroom at noon?",
@@ -51,7 +51,7 @@
       "i-kacang": "how tall is the bean plant?",
       "i-ulat": "how long is the caterpillar?",
       "i-hujan": "how much rain was collected?",
-      "i-siram": "how much water for one pot?",
+      "i-siram": "what is the volume of the water set out for one pot?",
       "i-es": "how long does the ice take to melt?",
       "i-lari": "how long to run round the field?",
       "i-teh": "how hot is the tea in the cup?",
@@ -108,7 +108,7 @@
     {
       "id": "gelasukur",
       "labelKey": "b-gelasukur",
-      "emoji": "🧪",
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-gelas-ukur" },
       "color": "#e1f5fe"
     },
     {

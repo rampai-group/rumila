@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-tugas-kelas",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Baca tiap kartu tugas, lalu susun dari langkah pertama sampai terakhir.",
       "t-sepatu-kotor": "Membersihkan sepatu",
       "sepatu-kotor-1": "lepas tali sepatu",
-      "sepatu-kotor-2": "sikat lumpurnya",
+      "sepatu-kotor-2": "sikat lumpur dari lubang tali yang terbuka",
       "sepatu-kotor-3": "cuci dengan sabun",
       "sepatu-kotor-4": "bilas sampai bersih",
       "sepatu-kotor-5": "jemur sampai kering",
@@ -105,7 +105,7 @@
       "instruksi": "Read each task card, then put them in order from the first step to the last.",
       "t-sepatu-kotor": "Cleaning shoes",
       "sepatu-kotor-1": "take out the laces",
-      "sepatu-kotor-2": "brush off the mud",
+      "sepatu-kotor-2": "brush mud from the exposed lace holes",
       "sepatu-kotor-3": "wash with soap",
       "sepatu-kotor-4": "rinse until clean",
       "sepatu-kotor-5": "dry it in the sun",

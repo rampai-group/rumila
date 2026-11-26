@@ -4,6 +4,7 @@ import { ILUSTRASI_BENTUK_PILOT } from "./ilustrasi-pilot-bentuk";
 import { ILUSTRASI_MATAHARI_PILOT } from "./ilustrasi-pilot-matahari";
 import { ILUSTRASI_UKUR_PILOT } from "./ilustrasi-pilot-ukur";
 import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
+import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -42,6 +43,42 @@ function Serangga({ kupu }: { kupu: boolean }) {
     <circle cx="59" cy="29" r={kupu ? 2 : 4} fill={kupu ? "#fceac4" : "#c36a59"} stroke="none" />
     <circle cx="71" cy="29" r={kupu ? 2 : 4} fill={kupu ? "#fceac4" : "#c36a59"} stroke="none" />
     <path d={kupu ? "M61 23Q54 10 47 12M69 23Q76 10 83 12" : "M60 22L57 17M70 22L73 17"} fill="none" strokeWidth={kupu ? 2 : 1.7} />
+  </g>;
+}
+
+function Lebah() {
+  return <g {...RINGKAS}>
+    <path d="M54 46Q24 12 14 28Q8 44 49 54ZM76 46Q106 12 116 28Q122 44 81 54Z" fill="#d1edf2" stroke="#65959f" />
+    <g fill="none" strokeWidth="4">
+      <path d="M53 43L37 48 20 47" /><path d="M77 43L93 48 110 47" />
+      <path d="M51 49L36 60 16 65" /><path d="M79 49L94 60 114 65" />
+      <path d="M53 55L39 74 24 85" /><path d="M77 55L91 74 106 85" />
+    </g>
+    <path d="M65 91L59 82H71Z" fill="#4e493f" />
+    <ellipse cx="65" cy="68" rx="17" ry="19" fill="#ffc55d" />
+    <path d="M50 61Q65 67 80 61M50 72Q65 77 80 72" fill="none" stroke="#5a4837" strokeWidth="5" />
+    <ellipse cx="65" cy="48" rx="15" ry="12" fill="#795437" />
+    <circle cx="65" cy="31" r="12" fill="#4c4943" />
+    <path d="M59 21Q56 13 51 12M71 21Q74 13 79 12" fill="none" />
+    <circle cx="60" cy="30" r="2.4" fill="#fff5da" stroke="none" />
+    <circle cx="70" cy="30" r="2.4" fill="#fff5da" stroke="none" />
+  </g>;
+}
+
+function KunangKunang() {
+  return <g {...RINGKAS}>
+    <rect x="7" y="6" width="116" height="88" rx="13" fill="#25516a" stroke="none" />
+    <circle cx="23" cy="25" r="2" fill="#dcf4f4" stroke="none" />
+    <circle cx="102" cy="34" r="2.5" fill="#dcf4f4" stroke="none" />
+    <circle cx="28" cy="73" r="1.5" fill="#dcf4f4" stroke="none" />
+    <ellipse cx="65" cy="74" rx="27" ry="20" fill="#e8f77c" opacity=".36" stroke="none" />
+    <path d="M53 47L44 44 39 48M53 54L43 55 38 61M54 60L47 66 43 74M77 47L86 44 91 48M77 54L87 55 92 61M76 60L83 66 87 74" fill="none" stroke="#e4d9a2" />
+    <path d="M51 62Q65 53 79 62V71Q77 86 65 87Q53 86 51 71Z" fill="#f2ff82" stroke="#d2e75c" />
+    <path d="M52 73Q65 76 78 73M57 81Q65 83 73 81" fill="none" stroke="#b3c74e" />
+    <path d="M65 38Q45 41 51 70Q59 70 65 64Q72 70 79 70Q85 41 65 38Z" fill="#415064" stroke="#b8af7f" />
+    <path d="M65 43V64" fill="none" stroke="#d0c995" />
+    <circle cx="65" cy="33" r="9" fill="#424d57" stroke="#b8af7f" />
+    <path d="M60 26Q57 18 51 19M70 26Q73 18 79 19" fill="none" stroke="#e4d9a2" />
   </g>;
 }
 
@@ -406,6 +443,34 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_GERAK_PILOT,
   ...ILUSTRASI_UKUR_PILOT,
   ...ILUSTRASI_MATAHARI_PILOT,
+  ...ILUSTRASI_LISTRIK_LUAR_SD2,
+  "plastik-pembungkus": <g {...RINGKAS}>
+    <path d="M32 56L85 54 116 72 70 89Z" fill="#d9f3f7" stroke="#6ea4ad" />
+    <path d="M51 62L92 61M65 72L103 69M76 80L111 74" fill="none" stroke="#9ecbd2" strokeWidth="1.5" />
+    <path d="M26 40L98 22C108 19 116 37 108 44L36 65Z" fill="#d5e8eb" stroke="#6c929d" />
+    <path d="M29 46L101 28M33 56L106 38" fill="none" stroke="#fafdff" strokeWidth="3" />
+    <ellipse cx="31" cy="53" rx="11" ry="14" transform="rotate(-17 31 53)" fill="#f4e4ca" stroke="#9c7950" />
+    <ellipse cx="31" cy="53" rx="5" ry="8" transform="rotate(-17 31 53)" fill="#8c6e51" stroke="#725a42" />
+  </g>,
+  "kamera-laptop": <g {...RINGKAS}>
+    <rect x="12" y="24" width="106" height="59" rx="11" fill="#3f5365" />
+    <path d="M19 56H111V77H19Z" fill="#b7dee9" stroke="none" />
+    <circle cx="65" cy="41" r="10" fill="#93aebc" />
+    <circle cx="65" cy="41" r="5.5" fill="#25354f" />
+    <circle cx="63" cy="39" r="2" fill="#a0d7ef" stroke="none" />
+    <circle cx="84" cy="41" r="2.6" fill="#d6e6ee" stroke="none" />
+    <path d="M28 63H45M28 70H36" fill="none" stroke="#d9f1f7" />
+  </g>,
+  "kamera-web": <g {...RINGKAS}>
+    <path d="M48 61H80L88 77H41Z" fill="#768e9e" />
+    <rect x="31" y="76" width="68" height="10" rx="4" fill="#526878" />
+    <rect x="19" y="29" width="92" height="36" rx="16" fill="#4b5e6e" />
+    <circle cx="65" cy="47" r="12" fill="#a3bac6" />
+    <circle cx="65" cy="47" r="7" fill="#21344d" />
+    <circle cx="62" cy="44" r="2.6" fill="#d0edf8" stroke="none" />
+    <circle cx="91" cy="46" r="2.6" fill="#c8dfeb" stroke="none" />
+    <path d="M29 43h9M29 50h9" fill="none" stroke="#9eb4c1" />
+  </g>,
   "rotan-mentah": <g {...RINGKAS}>
     <path d="M19 80Q53 75 96 45M29 91Q69 83 114 57" fill="none" stroke="#7e5d41" strokeWidth="12" />
     <path d="M19 80Q53 75 96 45M29 91Q69 83 114 57" fill="none" stroke="#dcb57b" strokeWidth="7" />
@@ -557,6 +622,8 @@ const objectArt: Record<string, ReactNode> = {
   </g>,
   "kupu-enam-kaki": <Serangga kupu />,
   "lalat-enam-kaki": <Serangga kupu={false} />,
+  "lebah-enam-kaki": <Lebah />,
+  "kunang-kunang": <KunangKunang />,
   "televisi-menyala": <Televisi nyala />,
   "televisi-mati": <Televisi nyala={false} />,
 };

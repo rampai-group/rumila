@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-pilih-alat-ukur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -26,7 +26,7 @@
       "t-tas": "Tas siapa yang paling berat?",
       "t-mobil": "Berapa lama mobil mainan meluncur sampai ujung papan?",
       "t-ulat": "Seberapa panjang ulat yang merayap di daun?",
-      "t-siram": "Berapa banyak air untuk menyiram satu pot?"
+      "t-siram": "Berapa volume air yang sudah disiapkan untuk menyiram satu pot?"
     },
     "en": {
       "judul": "Measuring Tools for Investigations",
@@ -35,7 +35,7 @@
       "i-termometer": "thermometer",
       "i-timbangan": "scales",
       "i-penggaris": "ruler",
-      "i-gelasukur": "measuring jug",
+      "i-gelasukur": "measuring cylinder",
       "i-stopwatch": "stopwatch",
       "t-kolam": "How warm is the pond water this afternoon?",
       "t-semangka": "How heavy is the harvested watermelon?",
@@ -46,7 +46,7 @@
       "t-tas": "Whose school bag is the heaviest?",
       "t-mobil": "How long does the toy car take to reach the end of the board?",
       "t-ulat": "How long is the caterpillar crawling on the leaf?",
-      "t-siram": "How much water to water one pot?"
+      "t-siram": "What is the volume of the water set out for one pot?"
     }
   },
   "knobs": {
@@ -92,7 +92,7 @@
       "id": "gelasukur",
       "labelKey": "i-gelasukur",
       "bin": "pilihan",
-      "emoji": "🧪"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-gelas-ukur" }
     },
     {
       "id": "stopwatch",

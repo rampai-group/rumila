@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-magnet-gudang-logam",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.MAGNET.01"
@@ -12,7 +12,7 @@
       "instruksi": "Dekatkan magnet ke tiap benda di gudang. Pilah: tertarik magnet, atau tidak. Ingat, tidak semua logam tertarik.",
       "b-tertarik": "tertarik magnet",
       "b-tidak": "tidak tertarik magnet",
-      "i-tutupbotol": "tutup botol kaca dari baja",
+      "i-tutupbotol": "tutup baja dari botol kaca",
       "i-staples": "isi staples dari baja",
       "i-obeng": "ujung obeng baja",
       "i-mur": "mur besi",
@@ -33,7 +33,7 @@
       "instruksi": "Hold the magnet near each thing in the shed. Sort it: attracted or not. Remember, not every metal is attracted.",
       "b-tertarik": "attracted to the magnet",
       "b-tidak": "not attracted",
-      "i-tutupbotol": "steel bottle cap",
+      "i-tutupbotol": "steel cap from a glass bottle",
       "i-staples": "steel staples",
       "i-obeng": "steel screwdriver tip",
       "i-mur": "iron nut",
@@ -84,9 +84,7 @@
       "id": "tutupbotol",
       "labelKey": "i-tutupbotol",
       "bin": "tertarik",
-      "shape": "circle",
-      "color": "#bdbdbd",
-      "scale": 0.5
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-sd5-tutup-baja" }
     },
     {
       "id": "staples",
@@ -130,7 +128,7 @@
       "id": "pipa",
       "labelKey": "i-pipa",
       "bin": "tidak",
-      "emoji": "🟠"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-sd5-pipa-tembaga" }
     },
     {
       "id": "terompet",
@@ -160,7 +158,7 @@
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "tidak",
-      "emoji": "🔮"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-sd5-kelereng-kaca" }
     },
     {
       "id": "penghapus",
