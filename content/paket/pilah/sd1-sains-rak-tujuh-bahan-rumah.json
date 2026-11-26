@@ -29,11 +29,11 @@
       "i-kursi": "kursi kayu",
       "i-sendokkayu": "sumpit kayu",
       "i-kunci": "kunci",
-      "i-panci": "wajan",
+      "i-panci": "wajan logam",
       "i-botol": "botol plastik",
-      "i-sedotan": "sedotan",
+      "i-sedotan": "sedotan plastik",
       "i-gelas": "gelas kaca",
-      "i-cermin": "cermin"
+      "i-cermin": "cermin kaca"
     },
     "en": {
       "judul": "Seven Material Shelves at Home",
@@ -58,9 +58,9 @@
       "i-kunci": "key",
       "i-panci": "metal frying pan",
       "i-botol": "plastic bottle",
-      "i-sedotan": "straw",
+      "i-sedotan": "plastic straw",
       "i-gelas": "glass cup",
-      "i-cermin": "mirror"
+      "i-cermin": "glass mirror"
     }
   },
   "knobs": {
@@ -94,8 +94,10 @@
     {
       "id": "kain",
       "labelKey": "b-kain",
-      "emoji": "🧵",
-      "color": "#fce4ec"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-potongan-kain"
+      }
     },
     {
       "id": "batu",
@@ -118,14 +120,18 @@
     {
       "id": "plastik",
       "labelKey": "b-plastik",
-      "emoji": "♻️",
-      "color": "#ffe0b2"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-plastik-bening"
+      }
     },
     {
       "id": "kaca",
       "labelKey": "b-kaca",
-      "emoji": "🪟",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kaca"
+      }
     }
   ],
   "items": [
@@ -169,8 +175,10 @@
       "id": "ulekan",
       "labelKey": "i-ulekan",
       "bin": "batu",
-      "emoji": "🪨",
-      "color": "#9e9e9e"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-batu-ulekan"
+      }
     },
     {
       "id": "kerikil",
@@ -201,7 +209,10 @@
       "id": "panci",
       "labelKey": "i-panci",
       "bin": "logam",
-      "emoji": "🍳"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tk-bahan-wajan"
+      }
     },
     {
       "id": "botol",
@@ -213,13 +224,19 @@
       "id": "sedotan",
       "labelKey": "i-sedotan",
       "bin": "plastik",
-      "emoji": "🥤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sedotan-plastik"
+      }
     },
     {
       "id": "gelas",
       "labelKey": "i-gelas",
       "bin": "kaca",
-      "emoji": "🥛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-gelas-silinder"
+      }
     },
     {
       "id": "cermin",

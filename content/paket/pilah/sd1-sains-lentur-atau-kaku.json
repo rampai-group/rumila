@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Lentur atau Kaku?",
-      "instruksi": "Bayangkan kamu menekuk tiap benda. Taruh ke rak lentur atau kaku.",
-      "b-lentur": "lentur, bisa ditekuk",
-      "b-kaku": "kaku, tidak bisa ditekuk",
+      "instruksi": "Pilah yang mudah ditekuk dan yang sulit ditekuk dengan tangan.",
+      "b-lentur": "lentur, mudah ditekuk",
+      "b-kaku": "kaku, sulit ditekuk",
       "i-karet": "karet gelang",
       "i-tali": "tali",
       "i-kain": "kain",
@@ -28,9 +28,9 @@
     },
     "en": {
       "judul": "Bendy or Stiff?",
-      "instruksi": "Imagine bending each object. Put it on the bendy shelf or the stiff shelf.",
-      "b-lentur": "bendy",
-      "b-kaku": "stiff",
+      "instruksi": "Sort the objects that are easy or hard to bend by hand.",
+      "b-lentur": "flexible, easy to bend",
+      "b-kaku": "rigid, hard to bend",
       "i-karet": "rubber band",
       "i-tali": "rope",
       "i-kain": "cloth",
@@ -91,14 +91,19 @@
       "id": "kain",
       "labelKey": "i-kain",
       "bin": "lentur",
-      "emoji": "🧣"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-potongan-kain"
+      }
     },
     {
       "id": "selang",
       "labelKey": "i-selang",
       "bin": "lentur",
-      "emoji": "🟢",
-      "color": "#66bb6a"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-selang-air"
+      }
     },
     {
       "id": "kertas",
@@ -128,19 +133,28 @@
       "id": "balok",
       "labelKey": "i-balok",
       "bin": "kaku",
-      "emoji": "🪵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-balok-kayu"
+      }
     },
     {
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "kaku",
-      "emoji": "🔮"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "navigator-kelereng"
+      }
     },
     {
       "id": "piring",
       "labelKey": "i-piring",
       "bin": "kaku",
-      "emoji": "🍽️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-piring-kaca"
+      }
     },
     {
       "id": "pensil",

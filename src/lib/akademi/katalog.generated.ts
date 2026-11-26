@@ -204242,41 +204242,41 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Benda atau Bahan di Sekolah?",
-        "instruksi": "Taruh tiap kartu ke rak benda atau rak bahan.",
-        "b-benda": "benda",
+        "instruksi": "Pilah benda jadi dan bahan pembuatnya. Contoh: meja dari kayu.",
+        "b-benda": "benda jadi",
         "b-bahan": "bahan",
         "i-meja": "meja",
         "i-kayu": "kayu",
         "i-tas": "tas",
-        "i-kain": "kain",
+        "i-kain": "potongan kain",
         "i-jendela": "jendela",
-        "i-kaca": "kaca",
+        "i-kaca": "lembar kaca",
         "i-paku": "baut",
-        "i-logam": "logam",
+        "i-logam": "lembar logam",
         "i-bukutulis": "buku tulis",
         "i-kertas": "kertas",
         "i-ember": "ember",
-        "i-plastik": "plastik",
+        "i-plastik": "lembar plastik",
         "i-cobek": "patung",
         "i-batu": "batu"
       },
       "en": {
         "judul": "Object or Material at School?",
-        "instruksi": "Put each card on the object shelf or the material shelf.",
-        "b-benda": "object",
+        "instruksi": "Sort finished objects and their materials. Example: a desk made of wood.",
+        "b-benda": "finished objects",
         "b-bahan": "material",
         "i-meja": "table",
         "i-kayu": "wood",
         "i-tas": "bag",
-        "i-kain": "fabric",
+        "i-kain": "fabric sample",
         "i-jendela": "window",
-        "i-kaca": "glass",
+        "i-kaca": "glass sheet",
         "i-paku": "bolt",
-        "i-logam": "metal",
+        "i-logam": "metal sheet",
         "i-bukutulis": "exercise book",
         "i-kertas": "paper",
         "i-ember": "bucket",
-        "i-plastik": "plastic",
+        "i-plastik": "plastic sheet",
         "i-cobek": "statue",
         "i-batu": "rock"
       }
@@ -204305,8 +204305,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "bahan",
         "labelKey": "b-bahan",
-        "emoji": "🧱",
-        "color": "#e8eaf6"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kayu"
+        }
       }
     ],
     "items": [
@@ -204335,7 +204337,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kain",
         "labelKey": "i-kain",
         "bin": "bahan",
-        "emoji": "🧵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-potongan-kain"
+        }
       },
       {
         "id": "jendela",
@@ -204347,8 +204352,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kaca",
         "labelKey": "i-kaca",
         "bin": "bahan",
-        "emoji": "🔷",
-        "color": "#b3e5fc"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca"
+        }
       },
       {
         "id": "paku",
@@ -204360,8 +204367,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "logam",
         "labelKey": "i-logam",
         "bin": "bahan",
-        "color": "#90a4ae",
-        "shape": "square"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-logam"
+        }
       },
       {
         "id": "bukutulis",
@@ -204373,7 +204382,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kertas",
         "labelKey": "i-kertas",
         "bin": "bahan",
-        "emoji": "📄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lembar-kertas"
+        }
       },
       {
         "id": "ember",
@@ -204385,8 +204397,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "plastik",
         "labelKey": "i-plastik",
         "bin": "bahan",
-        "emoji": "🟧",
-        "color": "#ffcc80"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-plastik-bening"
+        }
       },
       {
         "id": "cobek",
@@ -204415,43 +204429,43 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Benda atau Bahan?",
-        "instruksi": "Benda dibuat dari bahan. Taruh tiap kartu ke rak benda atau rak bahan.",
-        "b-benda": "benda",
+        "instruksi": "Pilah benda jadi dan bahan pembuatnya. Contoh: kursi dari kayu.",
+        "b-benda": "benda jadi",
         "b-bahan": "bahan",
         "i-kursi": "kursi",
         "i-kayu": "kayu",
         "i-baju": "baju",
-        "i-kain": "kain",
+        "i-kain": "potongan kain",
         "i-gelas": "gelas",
-        "i-kaca": "kaca",
+        "i-kaca": "lembar kaca",
         "i-kunci": "kunci",
-        "i-logam": "logam",
+        "i-logam": "lembar logam",
         "i-buku": "buku",
         "i-kertas": "kertas",
         "i-patung": "patung",
         "i-batu": "batu",
         "i-botol": "botol",
-        "i-plastik": "plastik"
+        "i-plastik": "lembar plastik"
       },
       "en": {
         "judul": "Object or Material?",
-        "instruksi": "Objects are made from materials. Put each card on the object shelf or the material shelf.",
-        "b-benda": "object",
+        "instruksi": "Sort finished objects and their materials. Example: a chair made of wood.",
+        "b-benda": "finished objects",
         "b-bahan": "material",
         "i-kursi": "chair",
         "i-kayu": "wood",
         "i-baju": "shirt",
-        "i-kain": "fabric",
+        "i-kain": "fabric sample",
         "i-gelas": "cup",
-        "i-kaca": "glass",
+        "i-kaca": "glass sheet",
         "i-kunci": "key",
-        "i-logam": "metal",
+        "i-logam": "metal sheet",
         "i-buku": "book",
         "i-kertas": "paper",
         "i-patung": "statue",
         "i-batu": "rock",
         "i-botol": "bottle",
-        "i-plastik": "plastic"
+        "i-plastik": "plastic sheet"
       }
     },
     "knobs": {
@@ -204478,8 +204492,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "bahan",
         "labelKey": "b-bahan",
-        "emoji": "🧱",
-        "color": "#e8eaf6"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kayu"
+        }
       }
     ],
     "items": [
@@ -204505,20 +204521,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "kain",
         "labelKey": "i-kain",
         "bin": "bahan",
-        "emoji": "🧵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-potongan-kain"
+        }
       },
       {
         "id": "gelas",
         "labelKey": "i-gelas",
         "bin": "benda",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gelas-silinder"
+        }
       },
       {
         "id": "kaca",
         "labelKey": "i-kaca",
         "bin": "bahan",
-        "emoji": "🔷",
-        "color": "#b3e5fc"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca"
+        }
       },
       {
         "id": "kunci",
@@ -204530,8 +204554,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "logam",
         "labelKey": "i-logam",
         "bin": "bahan",
-        "shape": "square",
-        "color": "#90a4ae"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-logam"
+        }
       },
       {
         "id": "buku",
@@ -204543,7 +204569,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kertas",
         "labelKey": "i-kertas",
         "bin": "bahan",
-        "emoji": "📄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lembar-kertas"
+        }
       },
       {
         "id": "patung",
@@ -204567,8 +204596,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "plastik",
         "labelKey": "i-plastik",
         "bin": "bahan",
-        "emoji": "🟧",
-        "color": "#ffcc80"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-plastik-bening"
+        }
       }
     ],
     "pilihan": []
@@ -206326,9 +206357,9 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Lentur atau Kaku?",
-        "instruksi": "Bayangkan kamu menekuk tiap benda. Taruh ke rak lentur atau kaku.",
-        "b-lentur": "lentur, bisa ditekuk",
-        "b-kaku": "kaku, tidak bisa ditekuk",
+        "instruksi": "Pilah yang mudah ditekuk dan yang sulit ditekuk dengan tangan.",
+        "b-lentur": "lentur, mudah ditekuk",
+        "b-kaku": "kaku, sulit ditekuk",
         "i-karet": "karet gelang",
         "i-tali": "tali",
         "i-kain": "kain",
@@ -206344,9 +206375,9 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Bendy or Stiff?",
-        "instruksi": "Imagine bending each object. Put it on the bendy shelf or the stiff shelf.",
-        "b-lentur": "bendy",
-        "b-kaku": "stiff",
+        "instruksi": "Sort the objects that are easy or hard to bend by hand.",
+        "b-lentur": "flexible, easy to bend",
+        "b-kaku": "rigid, hard to bend",
         "i-karet": "rubber band",
         "i-tali": "rope",
         "i-kain": "cloth",
@@ -206407,14 +206438,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "kain",
         "labelKey": "i-kain",
         "bin": "lentur",
-        "emoji": "🧣"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-potongan-kain"
+        }
       },
       {
         "id": "selang",
         "labelKey": "i-selang",
         "bin": "lentur",
-        "emoji": "🟢",
-        "color": "#66bb6a"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-selang-air"
+        }
       },
       {
         "id": "kertas",
@@ -206444,19 +206480,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "balok",
         "labelKey": "i-balok",
         "bin": "kaku",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-balok-kayu"
+        }
       },
       {
         "id": "kelereng",
         "labelKey": "i-kelereng",
         "bin": "kaku",
-        "emoji": "🔮"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "navigator-kelereng"
+        }
       },
       {
         "id": "piring",
         "labelKey": "i-piring",
         "bin": "kaku",
-        "emoji": "🍽️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-piring-kaca"
+        }
       },
       {
         "id": "pensil",
@@ -206872,7 +206917,7 @@ export const PAKET_RAW: unknown[] = [
         "i-koran": "koran",
         "i-kapas": "kapas",
         "i-jashujan": "jas hujan plastik",
-        "i-payung": "payung",
+        "i-payung": "payung tahan air",
         "i-sendok": "sendok logam",
         "i-botol": "botol plastik",
         "i-gelas": "gelas kaca",
@@ -206890,7 +206935,7 @@ export const PAKET_RAW: unknown[] = [
         "i-koran": "newspaper",
         "i-kapas": "cotton ball",
         "i-jashujan": "plastic raincoat",
-        "i-payung": "umbrella",
+        "i-payung": "waterproof umbrella",
         "i-sendok": "metal spoon",
         "i-botol": "plastic bottle",
         "i-gelas": "glass cup",
@@ -206936,8 +206981,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "handuk",
         "labelKey": "i-handuk",
         "bin": "serap",
-        "emoji": "🟦",
-        "color": "#81d4fa"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-handuk-lipat"
+        }
       },
       {
         "id": "tisu",
@@ -206961,8 +207008,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kapas",
         "labelKey": "i-kapas",
         "bin": "serap",
-        "shape": "circle",
-        "color": "#fafafa"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-gumpalan-kapas"
+        }
       },
       {
         "id": "jashujan",
@@ -206995,7 +207044,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "gelas",
         "labelKey": "i-gelas",
         "bin": "kedap",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gelas-silinder"
+        }
       },
       {
         "id": "sepatubot",
@@ -207040,11 +207092,11 @@ export const PAKET_RAW: unknown[] = [
         "i-kursi": "kursi kayu",
         "i-sendokkayu": "sumpit kayu",
         "i-kunci": "kunci",
-        "i-panci": "wajan",
+        "i-panci": "wajan logam",
         "i-botol": "botol plastik",
-        "i-sedotan": "sedotan",
+        "i-sedotan": "sedotan plastik",
         "i-gelas": "gelas kaca",
-        "i-cermin": "cermin"
+        "i-cermin": "cermin kaca"
       },
       "en": {
         "judul": "Seven Material Shelves at Home",
@@ -207069,9 +207121,9 @@ export const PAKET_RAW: unknown[] = [
         "i-kunci": "key",
         "i-panci": "metal frying pan",
         "i-botol": "plastic bottle",
-        "i-sedotan": "straw",
+        "i-sedotan": "plastic straw",
         "i-gelas": "glass cup",
-        "i-cermin": "mirror"
+        "i-cermin": "glass mirror"
       }
     },
     "knobs": {
@@ -207105,8 +207157,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kain",
         "labelKey": "b-kain",
-        "emoji": "🧵",
-        "color": "#fce4ec"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-potongan-kain"
+        }
       },
       {
         "id": "batu",
@@ -207129,14 +207183,18 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "plastik",
         "labelKey": "b-plastik",
-        "emoji": "♻️",
-        "color": "#ffe0b2"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-plastik-bening"
+        }
       },
       {
         "id": "kaca",
         "labelKey": "b-kaca",
-        "emoji": "🪟",
-        "color": "#e1f5fe"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca"
+        }
       }
     ],
     "items": [
@@ -207180,8 +207238,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ulekan",
         "labelKey": "i-ulekan",
         "bin": "batu",
-        "emoji": "🪨",
-        "color": "#9e9e9e"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-ulekan"
+        }
       },
       {
         "id": "kerikil",
@@ -207212,7 +207272,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "panci",
         "labelKey": "i-panci",
         "bin": "logam",
-        "emoji": "🍳"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-bahan-wajan"
+        }
       },
       {
         "id": "botol",
@@ -207224,13 +207287,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "sedotan",
         "labelKey": "i-sedotan",
         "bin": "plastik",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sedotan-plastik"
+        }
       },
       {
         "id": "gelas",
         "labelKey": "i-gelas",
         "bin": "kaca",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-gelas-silinder"
+        }
       },
       {
         "id": "cermin",
@@ -207263,14 +207332,14 @@ export const PAKET_RAW: unknown[] = [
         "b-kaca": "kaca",
         "i-bukutulis": "buku tulis",
         "i-kertaslipat": "kertas lipat",
-        "i-taplak": "taplak meja",
+        "i-taplak": "taplak kain",
         "i-topi": "topi kain",
         "i-batukali": "batu kali",
         "i-patung": "patung batu",
         "i-pensil": "pensil kayu",
         "i-rak": "rak buku kayu",
         "i-paku": "baut",
-        "i-bel": "bel sekolah",
+        "i-bel": "bel logam",
         "i-penggaris": "penggaris plastik",
         "i-ember": "ember plastik",
         "i-jendela": "kaca jendela",
@@ -207279,7 +207348,7 @@ export const PAKET_RAW: unknown[] = [
         "i-amplop": "amplop surat",
         "i-kaos": "kaus olahraga",
         "i-kauskaki": "kaus kaki",
-        "i-bendera": "bendera merah putih"
+        "i-bendera": "bendera kain"
       },
       "en": {
         "judul": "Seven Material Shelves at School",
@@ -207293,14 +207362,14 @@ export const PAKET_RAW: unknown[] = [
         "b-kaca": "glass",
         "i-bukutulis": "notebook",
         "i-kertaslipat": "origami paper",
-        "i-taplak": "tablecloth",
+        "i-taplak": "cloth tablecloth",
         "i-topi": "cloth hat",
         "i-batukali": "river stone",
         "i-patung": "stone statue",
         "i-pensil": "wooden pencil",
         "i-rak": "wooden bookshelf",
         "i-paku": "bolt",
-        "i-bel": "school bell",
+        "i-bel": "metal bell",
         "i-penggaris": "plastic ruler",
         "i-ember": "plastic bucket",
         "i-jendela": "window glass",
@@ -207309,7 +207378,7 @@ export const PAKET_RAW: unknown[] = [
         "i-amplop": "paper envelope",
         "i-kaos": "sports T-shirt",
         "i-kauskaki": "socks",
-        "i-bendera": "red-and-white flag"
+        "i-bendera": "cloth flag"
       }
     },
     "knobs": {
@@ -207343,8 +207412,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kain",
         "labelKey": "b-kain",
-        "emoji": "🧵",
-        "color": "#fce4ec"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-potongan-kain"
+        }
       },
       {
         "id": "batu",
@@ -207367,14 +207438,18 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "plastik",
         "labelKey": "b-plastik",
-        "emoji": "🧴",
-        "color": "#ffe0b2"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-plastik-bening"
+        }
       },
       {
         "id": "kaca",
         "labelKey": "b-kaca",
-        "emoji": "🔍",
-        "color": "#e1f5fe"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca"
+        }
       }
     ],
     "items": [
@@ -207394,8 +207469,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "taplak",
         "labelKey": "i-taplak",
         "bin": "kain",
-        "emoji": "🟥",
-        "color": "#ef9a9a"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-taplak-meja"
+        }
       },
       {
         "id": "topi",
@@ -207425,8 +207502,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "rak",
         "labelKey": "i-rak",
         "bin": "kayu",
-        "color": "#a1887f",
-        "shape": "rect"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rak-buku-kayu"
+        }
       },
       {
         "id": "paku",
@@ -207462,7 +207541,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "toples",
         "labelKey": "i-toples",
         "bin": "kaca",
-        "emoji": "🥛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tk-toples"
+        }
       },
       {
         "id": "koran",
