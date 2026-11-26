@@ -1,6 +1,6 @@
 # QA lokal Pilot M36–40 — 26 November 2026
 
-Worktree `codex/qa-pilot-m36-40` dari main `3ea7d78f`, disinkronkan dengan main `b5d3746d`. Nomor diambil dari `petaJenjang` SD1 track MAT, KODE, SAINS. Perbaikan sesi sebelumnya dipertahankan, termasuk PR #245 dan #246.
+Worktree `codex/qa-pilot-m36-40` dari main `3ea7d78f`, disinkronkan dengan main `b5d3746d` dan `565753d8`. Nomor diambil dari `petaJenjang` SD1 track MAT, KODE, SAINS. Perbaikan sesi sebelumnya dipertahankan, termasuk PR #245, #246, dan #247.
 
 **30 sesi akhir / 300 ronde: semua paket mencapai hasil 10/10 tanpa Bantu, gagal, atau error JavaScript.** WebKit dengan emulasi sentuh 390×844, 820×1180, dan 820×1067 (screen 820×1180), bukan perangkat fisik. Sebelum putaran akhir dengan seret, semua paket juga ditamatkan melalui ketuk/keyboard. Ditambah satu sesi 10 ronde HP dengan seed yang menghasilkan enam kartu pada kategori yang sama, selesai 10/10.
 
@@ -30,13 +30,13 @@ Worktree `codex/qa-pilot-m36-40` dari main `3ea7d78f`, disinkronkan dengan main 
 
 ## Validasi dan batas pengujian
 
-869 tes dalam 104 berkas lulus, 810 paket valid, TypeScript `--noEmit`, lint berkas perubahan, dan `git diff --check` lulus. Tes baru mencakup peta gabungan, konteks visual genangan/gua, serta rasio ukuran dan unit pola. Tidak ada perubahan kunci atau narasi.
+883 tes dalam 104 berkas lulus, 810 paket valid, TypeScript `--noEmit`, lint berkas perubahan, dan `git diff --check` lulus. Tes baru mencakup peta gabungan, konteks visual genangan/gua, serta rasio ukuran dan unit pola. Tidak ada perubahan kunci atau narasi.
 
 Pengukuran tampilan awal semua ronde serta tahap akhir pilah tidak menemukan teks terpotong atau elemen keluar samping. Gulir panggung maksimum 3 CSS px pada sebagian keadaan HP (pembulatan layout), tanpa konten tersembunyi. Instruksi panjang HP dibuka melalui tombol baca lengkap dan direkam. Sepuluh audio instruksi serta sepuluh audio soal M37 memuat HTTP 200 dan dapat didekode dengan durasi positif (`audio.json`, `audio-soal.json`); ini pemeriksaan teknis, bukan penilaian pelafalan melalui pendengaran.
 
 Jawaban diberikan melalui UI. Pola dipecahkan dari unit yang terlihat; hasil dicocokkan dengan event `attempt` dan `activity_end`, bukan hanya layar skor. Skrip QA awal salah mengonversi koordinat mouse ketika viewport iPad berubah skala; koordinat diperbaiki dan seluruh 30 sesi akhir diulang, sehingga kegagalan skrip tersebut tidak dihitung sebagai bug aplikasi. Interaksi sentuh tetap memakai transform viewport yang sesuai.
 
-Bukti berasal dari server worktree sendiri pada port 39865, tanpa akun anak atau penulisan progres ke server. Data 30 sesi: `hasil.json`; uji tambahan enam kartu satu kategori: `uji-rak-padat.json`. Screenshot hasil, ronde padat, tahap akhir, instruksi, dan pembanding ada di `bukti/`. Bukti mentah tiap ronde: `/tmp/m36-verified`.
+Seluruh 30 sesi diulang setelah integrasi main `565753d8`; screenshot hasil/padat/tahap akhir diganti dengan hasil integrasi ini. Bukti berasal dari server worktree sendiri pada port 39865, tanpa akun anak atau penulisan progres ke server. Data 30 sesi: `hasil.json`; uji tambahan enam kartu satu kategori: `uji-rak-padat.json`. Screenshot hasil, ronde padat, tahap akhir, instruksi, dan pembanding ada di `bukti/`. Bukti mentah tiap ronde: `/tmp/m36-integrated`.
 
 ```sh
 npm run dev -- --port 39865
