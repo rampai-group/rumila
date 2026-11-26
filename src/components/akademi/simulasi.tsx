@@ -702,8 +702,8 @@ function ModeJengkal(c: Ctx) {
                   </div>
                   {/* garis dasar */}
                   <div className="absolute" style={{ left: kiri, top: 88 * f, width: lebarJalur, height: 4 * f, background: INK, borderRadius: 2 }} />
-                  <div className="absolute" style={{ left: kiri, top: 80 * f, width: 4 * f, height: 20 * f, background: INK, borderRadius: 2 }} />
-                  <div className="absolute" style={{ left: kiri + ronde.target * jp - 2 * f, top: 80 * f, width: 4 * f, height: 20 * f, background: INK, borderRadius: 2 }} />
+                  <div className="absolute" data-jengkal-awal style={{ left: kiri - 2 * f, top: 80 * f, width: 4 * f, height: 20 * f, background: INK, borderRadius: 2 }} />
+                  <div className="absolute" data-jengkal-akhir style={{ left: kiri + ronde.target * jp - 2 * f, top: 80 * f, width: 4 * f, height: 20 * f, background: INK, borderRadius: 2 }} />
                   {/* garis bayang tiap jengkal */}
                   {bayang && Array.from({ length: ronde.target + 1 }, (_, k) => (
                     <div key={k} className="absolute" style={{ left: kiri + k * jp, top: 96 * f, height: 88 * f, borderLeft: "2px dashed rgba(7,134,235,.65)" }} aria-hidden />

@@ -1,6 +1,8 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Adegan } from "@akademi/schema";
 
+import { PerangkatPilot, RobotPilot } from "./ilustrasi-perangkat";
+
 type Titik = readonly [number, number];
 
 function poligonBeraturan(sisi: number, radius: number, rotasi = 0): Titik[] {
@@ -310,7 +312,7 @@ export function GambarAdeganSd({
       break;
     case "ilustrasi-sd":
       lebar = 130;
-      isi = <PenandaSd varian={varian} />;
+      isi = varian.startsWith("alat-") ? <PerangkatPilot varian={varian} /> : varian.startsWith("robot-") ? <RobotPilot varian={varian} /> : <PenandaSd varian={varian} />;
       break;
     case "potong":
       if (adegan.pembilang === undefined || adegan.penyebut === undefined) return null;
