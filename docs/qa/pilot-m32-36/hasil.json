@@ -1,0 +1,638 @@
+[
+  {
+    "misi": 33,
+    "paket": "sd1-kode-perbaiki-ulangi",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 50440
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 7,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 33,
+    "paket": "sd1-kode-perbaiki-ulangi",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 52113
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 7,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 33,
+    "paket": "sd1-kode-perbaiki-ulangi",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 49160
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 33,
+    "paket": "sd1-kode-perbaiki-ulangi-gudang",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 52907
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 7,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 33,
+    "paket": "sd1-kode-perbaiki-ulangi-gudang",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 53451
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 7,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 33,
+    "paket": "sd1-kode-perbaiki-ulangi-gudang",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 52467
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 36,
+    "paket": "sd1-kode-ya-tidak-listrik",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25080
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "tidak",
+      "ya"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 36,
+    "paket": "sd1-kode-ya-tidak-listrik",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25746
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "tidak",
+      "ya"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 36,
+    "paket": "sd1-kode-ya-tidak-listrik",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25642
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "tidak",
+      "ya"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 36,
+    "paket": "sd1-kode-ya-tidak-roda",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24807
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 7,
+    "dragTargets": [
+      "tidak",
+      "ya"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 36,
+    "paket": "sd1-kode-ya-tidak-roda",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25063
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 7,
+    "dragTargets": [
+      "tidak",
+      "ya"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 36,
+    "paket": "sd1-kode-ya-tidak-roda",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25019
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 7,
+    "dragTargets": [
+      "tidak",
+      "ya"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 35,
+    "paket": "sd1-mat-carroll-kuning-bulat",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22838
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 8,
+    "dragTargets": [
+      "bukan kuning · bersudut",
+      "bukan kuning · bulat",
+      "kuning · bersudut",
+      "kuning · bulat"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 35,
+    "paket": "sd1-mat-carroll-kuning-bulat",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23867
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 8,
+    "dragTargets": [
+      "bukan kuning · bersudut",
+      "bukan kuning · bulat",
+      "kuning · bersudut",
+      "kuning · bulat"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 35,
+    "paket": "sd1-mat-carroll-kuning-bulat",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24563
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 8,
+    "dragTargets": [
+      "bukan kuning · bersudut",
+      "bukan kuning · bulat",
+      "kuning · bersudut",
+      "kuning · bulat"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 35,
+    "paket": "sd1-mat-carroll-merah-bulat",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22233
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "bukan merah · bersudut",
+      "bukan merah · bulat",
+      "merah · bersudut",
+      "merah · bulat"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 35,
+    "paket": "sd1-mat-carroll-merah-bulat",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24236
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "bukan merah · bersudut",
+      "bukan merah · bulat",
+      "merah · bersudut",
+      "merah · bulat"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 35,
+    "paket": "sd1-mat-carroll-merah-bulat",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24234
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "bukan merah · bersudut",
+      "bukan merah · bulat",
+      "merah · bersudut",
+      "merah · bulat"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 32,
+    "paket": "sd1-mat-urutan-bulan",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23970
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 32,
+    "paket": "sd1-mat-urutan-bulan",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23896
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 32,
+    "paket": "sd1-mat-urutan-bulan",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23823
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 32,
+    "paket": "sd1-mat-urutan-hari",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23569
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 32,
+    "paket": "sd1-mat-urutan-hari",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23897
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 32,
+    "paket": "sd1-mat-urutan-hari",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23609
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 34,
+    "paket": "sd1-sains-air-atau-daratan",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25576
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "daratan",
+      "perairan"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 34,
+    "paket": "sd1-sains-air-atau-daratan",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25726
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "daratan",
+      "perairan"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 34,
+    "paket": "sd1-sains-air-atau-daratan",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25582
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 6,
+    "dragTargets": [
+      "daratan",
+      "perairan"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 34,
+    "paket": "sd1-sains-air-atau-daratan-dari-pesawat",
+    "device": "hp",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22488
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [
+      "daratan",
+      "perairan"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 34,
+    "paket": "sd1-sains-air-atau-daratan-dari-pesawat",
+    "device": "ipad",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22509
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [
+      "daratan",
+      "perairan"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "misi": 34,
+    "paket": "sd1-sains-air-atau-daratan-dari-pesawat",
+    "device": "ipad-pendek",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22507
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "maxCardsOrBlocks": 5,
+    "dragTargets": [
+      "daratan",
+      "perairan"
+    ],
+    "maxStageScroll": 0,
+    "maxHorizontalScroll": 0,
+    "consoleErrors": []
+  }
+]
