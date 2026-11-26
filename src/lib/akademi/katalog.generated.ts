@@ -236372,7 +236372,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-rak-alat-pemisah",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -236485,7 +236485,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "batu",
         "labelKey": "i-batu",
         "bin": "ayakan",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-pasir-halus-batu-kecil"
+        }
       },
       {
         "id": "paku",
@@ -274593,7 +274596,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-magnet-gudang-logam",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.MAGNET.01"
@@ -274757,7 +274760,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelereng",
         "labelKey": "i-kelereng",
         "bin": "tidak",
-        "emoji": "🔮"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-kelereng-kaca"
+        }
       },
       {
         "id": "penghapus",

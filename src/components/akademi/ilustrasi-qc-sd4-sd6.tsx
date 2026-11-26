@@ -37,6 +37,16 @@ function TutupBaja() {
   </g>;
 }
 
+function KelerengKaca() {
+  return <g strokeLinecap="round">
+    <circle cx="65" cy="50" r="35" fill="#b0e1ed" fillOpacity=".78" stroke="#447688" strokeWidth="3" />
+    <path d="M38 64c25 13 53-13 46-39" fill="none" stroke="#2a9e87" strokeWidth="5" />
+    <path d="M42 71c23 7 48-8 51-29" fill="none" stroke="#4ebf89" strokeWidth="3" />
+    <path d="M39 48q3-14 16-21M75 76q9-3 15-12" fill="none" stroke="#f1fbff" strokeWidth="4" />
+    <circle cx="59" cy="25" r="2" fill="#f1fbff" />
+  </g>;
+}
+
 function RubahKutub() {
   const garis = "#51677d";
   return <>
@@ -141,6 +151,7 @@ const ILUSTRASI: Record<string, () => ReactNode> = {
   "qc-sd4-tusuk-gigi-kayu": TusukGigiKayu,
   "qc-sd5-pipa-tembaga": PipaTembaga,
   "qc-sd5-tutup-baja": TutupBaja,
+  "qc-sd5-kelereng-kaca": KelerengKaca,
 };
 
 export const ILUSTRASI_QC_SD4_SD6_IDS = Object.keys(ILUSTRASI);

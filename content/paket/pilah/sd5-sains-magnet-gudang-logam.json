@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-magnet-gudang-logam",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.MAGNET.01"
@@ -158,7 +158,7 @@
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "tidak",
-      "emoji": "🔮"
+      "adegan": { "jenis": "ilustrasi", "varian": "qc-sd5-kelereng-kaca" }
     },
     {
       "id": "penghapus",
