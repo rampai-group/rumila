@@ -4,6 +4,7 @@
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
 import { bentukDariTeks } from "@/lib/akademi/tema-dunia";
+import { bacaJamWaktu } from "@/lib/akademi/jam-waktu";
 import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useEffect, useLayoutEffect, useRef, useState, type PointerEvent as RPointerEvent } from "react";
 import { createPortal } from "react-dom";
@@ -160,8 +161,21 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   // Jumlah benda pada Rak Angka perlu terdengar meski hanya ada satu kartu sejenis.
   const namaJumlahRak = (item: ItemPilah) =>
     rakAngka && item.count !== undefined ? `${item.count} ${t(item.labelKey)}` : undefined;
+  const namaJarumJam = (item: ItemPilah) => {
+    if (!rakJam || item.adegan?.jenis !== "geometri") return;
+    const waktu = bacaJamWaktu(item.adegan.varian);
+    if (!waktu) return;
+    const { jam, menit } = waktu;
+    const berikut = jam % 12 + 1;
+    if (lang === "en-US") {
+      const pendek = menit === 0 ? `at ${jam}` : `between ${jam} and ${berikut}`;
+      return `Clock, short hand ${pendek}, long hand at ${menit === 0 ? 12 : 6}`;
+    }
+    const pendek = menit === 0 ? `di angka ${jam}` : `di antara angka ${jam} dan ${berikut}`;
+    return `Jam, jarum pendek ${pendek}, jarum panjang di angka ${menit === 0 ? 12 : 6}`;
+  };
   const namaAmbil = (item: ItemPilah, bin: BinPilah) => {
-    const nama = namaJumlahRak(item) ?? t(item.altKey ?? item.labelKey);
+    const nama = namaJumlahRak(item) ?? namaJarumJam(item) ?? t(item.altKey ?? item.labelKey);
     const nomor = t(bin.labelKey);
     const wadah = rakBernomor ? `${lang === "en-US" ? "shelf" : "rak"} ${nomor}` : nomor;
     return lang === "en-US" ? `Remove ${nama} from ${wadah}` : `Ambil ${nama} dari ${wadah}`;
@@ -399,6 +413,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
 
   return (
     <div
+      lang={rakJam ? lang : undefined}
       data-pilah-tengah={piktogramLega || rakAngkaLega || paritasLega || hewanMakanLega || (rakHitungPilot && !hp && h >= 650) ? "" : undefined}
       className={`mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${tataLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: wadahBergambar ? Math.min(780, Math.round(h * 0.78)) : wadahLega ? Math.min(680, Math.round(h * 0.72)) : undefined }}
@@ -422,7 +437,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
                 <KartuBenda
                   penuh
                   v={visual(i, t)}
-                  ariaLabel={namaJumlahRak(i) ?? namaPilihan(i, items, t, lang === "en-US")}
+                  ariaLabel={namaJumlahRak(i) ?? namaJarumJam(i) ?? namaPilihan(i, items, t, lang === "en-US")}
                   size={Math.min(gambarKartu, (lebarKartu - (rakAngka || rakSetengahPiring || (paritas && i.count !== undefined) ? 32 : 16)) / skalaLebar(i))}
                   labelSize={carrollPilotHp ? 12 :Math.round((perangkatLega ? 16 : wadahBergambar ? 19 : wadahLega ? 17 : rakAngkaLega || paritasLega ? 16 : rakBahanHp || hewanMakanHp ? 13 : 14) * Math.min(sk, 1.3))}
                   selected={dipilih}
