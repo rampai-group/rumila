@@ -324350,7 +324350,7 @@ export const PAKET_RAW: unknown[] = [
             "labelKey": "akuarium-2",
             "adegan": {
               "jenis": "ilustrasi",
-              "varian": "awal-akuarium"
+              "varian": "pilot-isi-akuarium"
             }
           },
           {

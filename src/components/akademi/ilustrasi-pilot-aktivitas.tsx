@@ -214,6 +214,20 @@ function BurungBiji() {
   </>;
 }
 
+function IsiAkuarium() {
+  return <>
+    <rect x="19" y="37" width="88" height="49" rx="6" fill="#edf9fc" stroke="#527f90" strokeWidth="3.5" />
+    <path d="M23 62Q44 56 63 62T103 62V80Q103 83 100 83H26Q23 83 23 80Z" fill="#6fc6df" />
+    <path d="M26 44V59M100 44V55" stroke="#acdce8" strokeWidth="3" />
+    <g transform="rotate(-34 91 28)">
+      <path d="M77 18H104L100 37Q90 44 81 37Z" fill="#7cb1c6" stroke="#527f90" strokeWidth="2.5" />
+      <path d="M79 18Q81 6 91 8Q102 8 102 18" fill="none" stroke={garis} strokeWidth="2.5" />
+      <ellipse cx="91" cy="18" rx="13" ry="4" fill="#9fddee" stroke="#527f90" strokeWidth="2.5" />
+    </g>
+    <path d="M79 21Q71 32 75 41Q78 50 68 62" fill="none" stroke="#329bd1" strokeWidth="4" />
+  </>;
+}
+
 const gambar: Record<string, () => ReactNode> = {
   "pilot-keran-buka": () => <Keran keadaan="buka" />,
   "pilot-keran-bilas": () => <Keran keadaan="bilas" />,
@@ -247,6 +261,7 @@ const gambar: Record<string, () => ReactNode> = {
   "pilot-bunga-kuning": BungaKuning,
   "pilot-helm-sepeda": HelmSepeda,
   "pilot-burung-biji": BurungBiji,
+  "pilot-isi-akuarium": IsiAkuarium,
 };
 
 export const ILUSTRASI_PILOT_AKTIVITAS_IDS = Object.keys(gambar);
