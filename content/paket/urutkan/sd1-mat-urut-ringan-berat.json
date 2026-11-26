@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-urut-ringan-berat",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -135,8 +135,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1.0,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "motor",
@@ -159,8 +162,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1.0,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "motor",
@@ -315,8 +321,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1.0,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "motor",
@@ -369,8 +378,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1.0
+          "scale": 1.0,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "motor",

@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-bunyi-dekat-jauh-jalan",
-  "version": "1.0.4",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -281,7 +281,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0,
-            "tanda": "🍲"
+            "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
           }
         },
         {
@@ -291,7 +291,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.3,
-            "tanda": "🍲"
+            "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
           }
         },
         {
@@ -301,7 +301,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.65,
-            "tanda": "🍲"
+            "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
           }
         },
         {
@@ -311,7 +311,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 1,
-            "tanda": "🍲"
+            "tanda": "qc-jenjang-pilot-mangkuk-dipukul"
           }
         }
       ]
@@ -327,7 +327,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0,
-            "tanda": "🪵"
+            "tanda": "qc-kentongan-dipukul"
           }
         },
         {
@@ -337,7 +337,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.3,
-            "tanda": "🪵"
+            "tanda": "qc-kentongan-dipukul"
           }
         },
         {
@@ -347,7 +347,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 0.65,
-            "tanda": "🪵"
+            "tanda": "qc-kentongan-dipukul"
           }
         },
         {
@@ -357,7 +357,7 @@
           "adegan": {
             "jenis": "jauh",
             "t": 1,
-            "tanda": "🪵"
+            "tanda": "qc-kentongan-dipukul"
           }
         }
       ]

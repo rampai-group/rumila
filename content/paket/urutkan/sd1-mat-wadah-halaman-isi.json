@@ -54,25 +54,34 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 0.6
         },
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
-          "emoji": "🍵",
-          "scale": 1.2
+          "scale": 0.8,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-cangkir-kosong"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         }
       ]
     },
@@ -84,25 +93,31 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 0.6
         },
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
-          "emoji": "🍵",
-          "scale": 1.2
+          "scale": 0.8,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-cangkir-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         }
       ]
     },
@@ -114,25 +129,28 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 0.6
         },
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
-          "emoji": "🍵",
-          "scale": 1.2
+          "scale": 0.8,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-cangkir-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -144,25 +162,28 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 0.6
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -174,25 +195,31 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 0.6
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -204,25 +231,28 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 0.6
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -233,26 +263,35 @@
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
-          "emoji": "🍵",
-          "scale": 1.2
+          "scale": 0.8,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-cangkir-kosong"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         }
       ]
     },
@@ -263,26 +302,32 @@
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
-          "emoji": "🍵",
-          "scale": 1.2
+          "scale": 0.8,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-cangkir-kosong"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -293,26 +338,32 @@
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
-          "emoji": "🍵",
-          "scale": 1.2
+          "scale": 0.8,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-cangkir-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -323,26 +374,35 @@
         {
           "id": "cangkir",
           "labelKey": "s-cangkir",
-          "emoji": "🍵",
-          "scale": 1.2
+          "scale": 0.8,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-cangkir-kosong"
+          }
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -353,26 +413,32 @@
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.85
+          "scale": 1.3
         }
       ]
     },
@@ -384,25 +450,31 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.4
+          "scale": 0.6
         },
         {
           "id": "mangkuk",
           "labelKey": "s-mangkuk",
-          "emoji": "🥣",
-          "scale": 1.1
+          "scale": 0.95,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-mangkuk-kosong"
+          }
         },
         {
           "id": "panci",
           "labelKey": "s-panci",
-          "emoji": "🍲",
-          "scale": 1.0
+          "scale": 1.1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pilot-panci-kosong"
+          }
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         }
       ]
     }

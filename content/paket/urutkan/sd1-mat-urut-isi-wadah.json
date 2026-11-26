@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-urut-isi-wadah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -54,25 +54,25 @@
           "id": "gelas",
           "labelKey": "s-gelas",
           "emoji": "🥛",
-          "scale": 1.2
+          "scale": 0.8
         },
         {
           "id": "teko",
           "labelKey": "s-teko",
           "emoji": "🫖",
-          "scale": 1.0
+          "scale": 1.05
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "bak-mandi",
           "labelKey": "s-bak-mandi",
           "emoji": "🛁",
-          "scale": 0.8
+          "scale": 1.4
         }
       ]
     },
@@ -84,25 +84,25 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.6
+          "scale": 0.6
         },
         {
           "id": "teko",
           "labelKey": "s-teko",
           "emoji": "🫖",
-          "scale": 1.0
+          "scale": 1.05
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.8
+          "scale": 1.3
         }
       ]
     },
@@ -114,25 +114,25 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.6
+          "scale": 0.6
         },
         {
           "id": "teko",
           "labelKey": "s-teko",
           "emoji": "🫖",
-          "scale": 1.0
+          "scale": 1.05
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "bak-mandi",
           "labelKey": "s-bak-mandi",
           "emoji": "🛁",
-          "scale": 0.8
+          "scale": 1.4
         }
       ]
     },
@@ -144,25 +144,25 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.6
+          "scale": 0.6
         },
         {
           "id": "gelas",
           "labelKey": "s-gelas",
           "emoji": "🥛",
-          "scale": 1.2
+          "scale": 0.8
         },
         {
           "id": "teko",
           "labelKey": "s-teko",
           "emoji": "🫖",
-          "scale": 1.0
+          "scale": 1.05
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         }
       ]
     },
@@ -174,25 +174,25 @@
           "id": "gelas",
           "labelKey": "s-gelas",
           "emoji": "🥛",
-          "scale": 1.2
+          "scale": 0.8
         },
         {
           "id": "teko",
           "labelKey": "s-teko",
           "emoji": "🫖",
-          "scale": 1.0
+          "scale": 1.05
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.8
+          "scale": 1.3
         }
       ]
     },
@@ -204,25 +204,25 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.6
+          "scale": 0.6
         },
         {
           "id": "gelas",
           "labelKey": "s-gelas",
           "emoji": "🥛",
-          "scale": 1.2
+          "scale": 0.8
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "bak-mandi",
           "labelKey": "s-bak-mandi",
           "emoji": "🛁",
-          "scale": 0.8
+          "scale": 1.4
         }
       ]
     },
@@ -234,25 +234,25 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.6
+          "scale": 0.6
         },
         {
           "id": "gelas",
           "labelKey": "s-gelas",
           "emoji": "🥛",
-          "scale": 1.2
+          "scale": 0.8
         },
         {
           "id": "teko",
           "labelKey": "s-teko",
           "emoji": "🫖",
-          "scale": 1.0
+          "scale": 1.05
         },
         {
           "id": "bak-mandi",
           "labelKey": "s-bak-mandi",
           "emoji": "🛁",
-          "scale": 0.8
+          "scale": 1.4
         }
       ]
     },
@@ -264,25 +264,25 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.6
+          "scale": 0.6
         },
         {
           "id": "gelas",
           "labelKey": "s-gelas",
           "emoji": "🥛",
-          "scale": 1.2
+          "scale": 0.8
         },
         {
           "id": "ember",
           "labelKey": "s-ember",
           "emoji": "🪣",
-          "scale": 0.9
+          "scale": 1.2
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.8
+          "scale": 1.3
         }
       ]
     },
@@ -294,25 +294,25 @@
           "id": "sendok",
           "labelKey": "s-sendok",
           "emoji": "🥄",
-          "scale": 1.6
+          "scale": 0.6
         },
         {
           "id": "gelas",
           "labelKey": "s-gelas",
           "emoji": "🥛",
-          "scale": 1.2
+          "scale": 0.8
         },
         {
           "id": "teko",
           "labelKey": "s-teko",
           "emoji": "🫖",
-          "scale": 1.0
+          "scale": 1.05
         },
         {
           "id": "tong",
           "labelKey": "s-tong",
           "emoji": "🛢️",
-          "scale": 0.8
+          "scale": 1.3
         }
       ]
     }

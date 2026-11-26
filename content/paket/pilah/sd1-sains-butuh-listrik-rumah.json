@@ -78,7 +78,10 @@
       "id": "kipas",
       "labelKey": "i-kipas",
       "bin": "listrik",
-      "emoji": "🌀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-kipas-berputar"
+      }
     },
     {
       "id": "lampu",
@@ -96,8 +99,10 @@
       "id": "kulkas",
       "labelKey": "i-kulkas",
       "bin": "listrik",
-      "shape": "rect",
-      "color": "#eceff1"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-kulkas"
+      }
     },
     {
       "id": "senter",
@@ -109,7 +114,10 @@
       "id": "jam",
       "labelKey": "i-jam",
       "bin": "listrik",
-      "emoji": "🕰️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-jam-baterai"
+      }
     },
     {
       "id": "sapu",

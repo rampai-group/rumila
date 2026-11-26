@@ -103,8 +103,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         }
       ]
     },
@@ -157,8 +160,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "kambing",
@@ -253,8 +259,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         }
       ]
     },
@@ -277,8 +286,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "kambing",
@@ -307,8 +319,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "kambing",
@@ -331,8 +346,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "kambing",
@@ -367,8 +385,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "kambing",
@@ -391,8 +412,11 @@
         {
           "id": "semangka",
           "labelKey": "s-semangka",
-          "emoji": "🍉",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-semangka-utuh"
+          }
         },
         {
           "id": "kambing",
