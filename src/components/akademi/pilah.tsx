@@ -163,8 +163,10 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   // Perangkat berlabel panjang perlu empat kolom tablet agar rak tetap terlihat.
   const perangkatPilot = paket.competencyIds.some(id => id.startsWith("KODE.SD1.PERANGKAT."));
   const perangkatLega = perangkatPilot && wadahBergambar;
+  const penyebaranBijiTablet = bins.length === 4 && paket.competencyIds.includes("SAINS.SD5.SIKLUS-TUMBUHAN.03") &&
+    (lebarArea >= 880 || (lebarArea >= 620 && h >= 650));
   const tataLega = wadahLega || wadahBergambar || paritasLega;
-  const kartuDiTengah = tataLega || rakAngkaLega || rakPecahanLega;
+  const kartuDiTengah = tataLega || rakAngkaLega || rakPecahanLega || penyebaranBijiTablet;
   // Jumlah benda pada Rak Angka perlu terdengar meski hanya ada satu kartu sejenis.
   const namaJumlahRak = (item: ItemPilah) =>
     rakAngka && item.count !== undefined ? `${item.count} ${t(item.labelKey)}` : undefined;
@@ -321,7 +323,10 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const kolomMuat = Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8)));
   // Sisakan dua baris pada rak tablet tinggi dan papan paritas agar setiap kelompok tetap terbaca.
   const rakDuaBaris = rakAngkaLega && h >= 840 && items.length >= 5;
-  const batasKolomKartu = piringPadatHp ? 4 : rakDuaBaris || paritasLega || hewanMakanLega ? Math.max(3, Math.ceil(items.length / 2))
+  // Layar pendek memakai satu baris bila muat. Kartu yang perlu dua baris dibagi merata.
+  const kolomBiji = lepasDiAtas.length <= 4 ? 4
+    : h < 650 && lepasDiAtas.length <= kolomMuat ? lepasDiAtas.length : Math.ceil(lepasDiAtas.length / 2);
+  const batasKolomKartu = penyebaranBijiTablet ? kolomBiji : piringPadatHp ? 4 : rakDuaBaris || paritasLega || hewanMakanLega ? Math.max(3, Math.ceil(items.length / 2))
     : pilahAdeganPadatLega ? 5 : perangkatLega || (pilahAdeganLega && items.length > 6) ? 4 : wadahBergambar ? ((kelompokBahan || pilahPilotLega || klasifikasiPilot) && items.length > 6 ? 4 : 3) : titikLega ? 4 : Infinity;
   const maksKolomKartu = Math.min(items.length, kolomMuat, batasKolomKartu);
   // Enam sampai delapan kartu pelengkap memakai paling banyak dua baris bila lebar HP mencukupi.
@@ -330,7 +335,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     : kartuTitik ? Math.ceil(items.length / Math.ceil(items.length / maksKolomKartu))
       : items.length === 4 && maksKolomKartu === 3 ? 2 : maksKolomKartu;
   const lebarKolomKartu = (lebarArea - 8 * (kolomKartu - 1)) / kolomKartu;
-  const lebarKartu = rakPecahanLega && satuKartu ? 224 : akhirPilotHp && satuKartu ? Math.min(264, lebarArea) : bumiPilotHp && satuKartu ? Math.min(240, lebarArea) : carrollPilotHp && satuKartu ? Math.min(180, lebarArea) : wadahBergambar ? satuKartu ? Math.min(300, lebarArea) : Math.min(230, lebarKolomKartu)
+  const lebarKartu = penyebaranBijiTablet && satuKartu ? 244 : rakPecahanLega && satuKartu ? 224 : akhirPilotHp && satuKartu ? Math.min(264, lebarArea) : bumiPilotHp && satuKartu ? Math.min(240, lebarArea) : carrollPilotHp && satuKartu ? Math.min(180, lebarArea) : wadahBergambar ? satuKartu ? Math.min(300, lebarArea) : Math.min(230, lebarKolomKartu)
     : paritasLega ? satuKartu ? 224 : Math.min(232, lebarKolomKartu)
       : wadahLega ? Math.min(180, lebarKolomKartu) : kartuTerakhirLega ? (rakAngkaLega ? 228 : rakBahanLega ? 216 : 184)
         : (pelengkapPadat || piringPadatHp) && satuKartu ? Math.min(112, lebarArea) : lebarKolomKartu;
@@ -344,7 +349,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const tinggiIsi = rakPecahanLega ? 82 / sk : klasifikasiPilot && hp ? 120 / sk : bumiPilotHp ? Math.min(180, h * 0.25) / sk : rakJam && !hp ? 112 / sk : carrollPilotHp ? 72 / sk : rakJamHp ? 40 / sk : rakSetengahHp ? 48 / sk : rakAngkaLega ? (n > kapasitasKolom ? Math.min(118, Math.round(h * 0.14 / sk)) : 176)
     : rakDobelHp ? 42 : hewanMakanHp ? 48 : rakAngkaHp || rakHitungHp ? 54 : paritasLega ? Math.min(176, Math.round(h * 0.19 / sk)) : wadahBergambar ? Math.min(152, Math.round(h * 0.17 / sk))
     : wadahLega ? Math.min(220, Math.round(h * 0.22 / sk)) : piktogramLega ? 190 : piktogram || titikLega ? 112 : titikRapat || piringRingkas ? 58 : rakBahanHp || rakBentukHp ? 44 : baris || carroll ? 52 : 84;
-  const gambarKartu = akhirPilotHp && satuKartu ? Math.min(156, tinggiBaki - 70) : bumiPilotHp ? (satuKartu ? 156 : 72) : carrollPilot && satuKartu ? (hp ? 120 : 160) : carrollPilot && !hp ? 100 : rakJam ? gambarJam : carrollPilotHp ? 40 : perangkatLega ? Math.min(satuKartu ? 150 : 100, tinggiBaki - 64) : paritasLega ? Math.min(152, tinggiBaki - 36) : Math.round((wadahBergambar ? satuKartu ? 230 : kartuBeruraian ? 144 : 176 : wadahLega ? 132 : rakAngkaLega ? (satuKartu ? 156 : 142) : kartuTerakhirLega ? 128 : titikLega ? 112 : rakAngkaHp ? 68 : rakBahanHp ? 48 : hewanMakanHp ? 46 : hp ? 56 : 80) * Math.min(sk, 1.2));
+  const gambarKartu = penyebaranBijiTablet && h >= 650 ? (satuKartu ? 124 : 104) : akhirPilotHp && satuKartu ? Math.min(156, tinggiBaki - 70) : bumiPilotHp ? (satuKartu ? 156 : 72) : carrollPilot && satuKartu ? (hp ? 120 : 160) : carrollPilot && !hp ? 100 : rakJam ? gambarJam : carrollPilotHp ? 40 : perangkatLega ? Math.min(satuKartu ? 150 : 100, tinggiBaki - 64) : paritasLega ? Math.min(152, tinggiBaki - 36) : Math.round((wadahBergambar ? satuKartu ? 230 : kartuBeruraian ? 144 : 176 : wadahLega ? 132 : rakAngkaLega ? (satuKartu ? 156 : 142) : kartuTerakhirLega ? 128 : titikLega ? 112 : rakAngkaHp ? 68 : rakBahanHp ? 48 : hewanMakanHp ? 46 : hp ? 56 : 80) * Math.min(sk, 1.2));
   // Jaga ukuran ikon sepanjang ronde, termasuk saat semua kartu ditaruh di satu kolom.
   const gambarTerpasang = akhirPilotHp ? 32 : carrollPilotHp ? 28 : rakJamHp ? 32 : piktogramLega ? Math.max(32, Math.min(64 * sk, (h - tinggiBaki - 152 * sk) / items.length - 14))
     : rakAngkaLega ? 88 * sk : paritasLega ? 72 * sk : wadahBergambar ? Math.min(96 * sk, Math.max(42, lebarIsi / 2 - 20))
@@ -422,7 +427,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   return (
     <div
       lang={rakJam ? lang : undefined}
-      data-pilah-tengah={piktogramLega || rakAngkaLega || paritasLega || hewanMakanLega || rakPecahanLega || (rakHitungPilot && !hp && h >= 650) ? "" : undefined}
+      data-pilah-tengah={piktogramLega || rakAngkaLega || paritasLega || hewanMakanLega || rakPecahanLega || (penyebaranBijiTablet && h >= 650) || (rakHitungPilot && !hp && h >= 650) ? "" : undefined}
       className={`mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${tataLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: wadahBergambar ? Math.min(780, Math.round(h * 0.78)) : wadahLega ? Math.min(680, Math.round(h * 0.72)) : undefined }}
     >
