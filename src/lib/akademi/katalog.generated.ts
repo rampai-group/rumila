@@ -312666,7 +312666,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-timbang-batu-koleksi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD2",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312676,7 +312676,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Koleksi Batu di Timbangan",
-        "instruksi": "Taruh dua batu koleksi di timbangan. Batu yang besar belum tentu lebih berat. Lihat sisi yang turun, lalu pilih yang lebih berat.",
+        "instruksi": "Dua benda ada di timbangan. Lihat sisi yang turun, lalu sentuh benda yang lebih berat.",
         "apung": "batu apung besar",
         "pasir": "batu pasir",
         "basal": "batu basal",
@@ -312688,7 +312688,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Rock Collection on the Balance",
-        "instruksi": "Put two rocks from the collection on the balance. A big rock is not always heavier. Watch which side goes down, then pick the heavier one.",
+        "instruksi": "Two rocks are on the balance. Watch which side goes down, then tap the heavier rock.",
         "apung": "big pumice stone",
         "pasir": "sandstone",
         "basal": "basalt",
@@ -312721,7 +312721,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 35,
         "scale": 1.8,
-        "color": "#e0e0e0"
+        "color": "#e0e0e0",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-apung"
+        }
       },
       {
         "id": "pasir",
@@ -312730,7 +312734,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 63,
         "scale": 1.4,
-        "color": "#e6c48a"
+        "color": "#e6c48a",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-pasir"
+        }
       },
       {
         "id": "basal",
@@ -312739,7 +312747,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 30,
         "scale": 1,
-        "color": "#455a64"
+        "color": "#455a64",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-basalt"
+        }
       },
       {
         "id": "kuarsa",
@@ -312748,7 +312760,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 14,
         "scale": 0.8,
-        "color": "#f3e5f5"
+        "color": "#f3e5f5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kristal-kuarsa"
+        }
       },
       {
         "id": "sabak",
@@ -312757,7 +312773,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 48,
         "scale": 1.2,
-        "color": "#607d8b"
+        "color": "#607d8b",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sabak"
+        }
       },
       {
         "id": "galena",
@@ -312766,7 +312786,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 38,
         "scale": 0.8,
-        "color": "#9e9e9e"
+        "color": "#9e9e9e",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-galena"
+        }
       },
       {
         "id": "hematit",
@@ -312775,7 +312799,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 18,
         "scale": 0.7,
-        "color": "#8e2c1b"
+        "color": "#8e2c1b",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-hematit"
+        }
       },
       {
         "id": "obsidian",
@@ -312784,13 +312812,17 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 32,
         "scale": 1.1,
-        "color": "#212121"
+        "color": "#212121",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-obsidian"
+        }
       }
     ]
   },
   {
     "id": "sd2-sains-timbang-batuan",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312800,7 +312832,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Batu Mana yang Lebih Berat?",
-        "instruksi": "Taruh dua batu di timbangan. Lihat sisi yang turun, lalu pilih yang lebih berat.",
+        "instruksi": "Dua benda ada di timbangan. Lihat sisi yang turun, lalu sentuh benda yang lebih berat.",
         "apung": "batu apung",
         "kerikil": "kerikil",
         "kali": "batu kali",
@@ -312812,7 +312844,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Which Rock Is Heavier?",
-        "instruksi": "Put two rocks on the balance. Watch which side goes down, then pick the heavier one.",
+        "instruksi": "Two rocks are on the balance. Watch which side goes down, then tap the heavier rock.",
         "apung": "pumice",
         "kerikil": "pebble",
         "kali": "river stone",
@@ -312845,7 +312877,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 3,
         "scale": 1.7,
-        "color": "#eeeeee"
+        "color": "#eeeeee",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-apung"
+        }
       },
       {
         "id": "kerikil",
@@ -312853,7 +312889,11 @@ export const PAKET_RAW: unknown[] = [
         "role": "benda",
         "emoji": "🪨",
         "value": 1,
-        "scale": 0.5
+        "scale": 0.5,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-kerikil"
+        }
       },
       {
         "id": "kali",
@@ -312862,7 +312902,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 4,
         "scale": 0.9,
-        "color": "#78909c"
+        "color": "#78909c",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-kali"
+        }
       },
       {
         "id": "marmer",
@@ -312871,7 +312915,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 7,
         "scale": 1,
-        "color": "#f5f5f5"
+        "color": "#f5f5f5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-marmer"
+        }
       },
       {
         "id": "granit",
@@ -312880,7 +312928,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 8,
         "scale": 1.1,
-        "color": "#8d6e63"
+        "color": "#8d6e63",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-granit"
+        }
       },
       {
         "id": "kapur",
@@ -312889,7 +312941,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 2,
         "scale": 0.8,
-        "color": "#fff8e1"
+        "color": "#fff8e1",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-kapur"
+        }
       },
       {
         "id": "batubara",
@@ -312898,7 +312954,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 5,
         "scale": 1.2,
-        "color": "#424242"
+        "color": "#424242",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-batu-bara"
+        }
       },
       {
         "id": "besi",
@@ -312907,7 +312967,11 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🪨",
         "value": 6,
         "scale": 0.8,
-        "color": "#a1522d"
+        "color": "#a1522d",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bijih-besi"
+        }
       }
     ]
   },

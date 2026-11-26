@@ -49,7 +49,7 @@ function useSamping() {
 
 function visualItem(x: Item | undefined, label?: string): VisualSpec {
   if (!x) return { emoji: "❓", label };
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, label };
+  return { adegan: x.adegan, emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, latar: x.latar, label };
 }
 
 /** Robot pemandu + balon kalimat (ketuk untuk dibacakan). */
@@ -529,15 +529,16 @@ function Pan({ x, y }: { x: number; y: number }) {
 }
 
 function ModeTimbangan(c: Ctx) {
-  const { ronde, onJawab, hasil, terkunci, nama, visual } = c;
+  const { paket, ronde, onJawab, hasil, terkunci, nama, visual, t } = c;
   const benda = useMemo(() => ronde.items.filter((i) => i.role === "benda").slice(0, 2), [ronde.items]);
   const [kiri, kanan] = benda;
   const [fase, setFase] = useState<"taruh" | "miring">("taruh");
   const [dipilih, setDipilih] = useState<string | null>(null);
   const { hint, bantu } = useBantu(c.onHint);
-  const { skala } = usePanggung();
+  const { skala, w } = usePanggung();
   const st = useSkalaTeks();
   const samping = useSamping();
+  const [adeganRef, lebarAdegan] = useLebar<HTMLDivElement>();
   useEffect(() => {
     const id = setTimeout(() => { setFase("miring"); sfx.thud(); }, 900);
     return () => clearTimeout(id);
@@ -548,65 +549,69 @@ function ModeTimbangan(c: Ctx) {
   const L = 150, PX = 200, PY = 150;
   const ujung = (sisi: -1 | 1) => ({ x: PX + sisi * L * Math.cos(rad), y: PY - sisi * L * Math.sin(rad) });
   const uk = ujung(-1), uka = ujung(1);
-  const teks = KS.timbangan;
+  const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
+  const lang = inggris ? "en-US" : "id-ID";
+  const teks = inggris ? "Which is heavier?" : KS.timbangan;
+  const teksBantu = inggris ? "Look at the beam. The lower pan holds the heavier object." : KS.timbanganBantu;
   const berat = ronde.correctId ?? (beratKiri ? kiri?.id : kanan?.id);
+  const labelTimbangan = inggris
+    ? `Balance${fase === "miring" ? ` tilts ${beratKiri ? "left" : "right"}` : ""}`
+    : fase === "miring" ? `Timbangan miring ke ${beratKiri ? "kiri" : "kanan"}` : "Benda diletakkan di timbangan";
+  const namaSisi = inggris ? ["Left", "Right"] : ["Kiri", "Kanan"];
+  const ukuranBenda = (v: VisualSpec) => Math.min(lebarAdegan * 0.15, lebarAdegan * 0.21 / skalaLebar(v));
 
-  const posBenda = (p: { x: number; y: number }): CSSProperties => ({ left: `${p.x / 400 * 100}%`, top: `${(p.y + 46) / 260 * 100}%`, transform: "translate(-50%,-100%)", transition: "left 900ms cubic-bezier(.3,1.3,.5,1), top 900ms cubic-bezier(.3,1.3,.5,1)" });
+  const batasAtas = 88, tinggi = 172;
+  const posBenda = (p: { x: number; y: number }): CSSProperties => ({ left: `${p.x / 400 * 100}%`, top: `${(p.y + 54 - batasAtas) / tinggi * 100}%`, transform: "translate(-50%,-100%)", transition: "left 900ms cubic-bezier(.3,1.3,.5,1), top 900ms cubic-bezier(.3,1.3,.5,1)" });
+
+  const papan = <Papan className="w-full min-w-0" style={{ flex: "none", maxWidth: 730, marginInline: "auto" }}>
+    <div ref={adeganRef} className="relative w-full" style={{ aspectRatio: `400 / ${tinggi}` }} role="img" aria-label={labelTimbangan}>
+      <svg viewBox={`0 ${batasAtas} 400 ${tinggi}`} className="absolute inset-0 h-full w-full" aria-hidden>
+        <path d="M160 250 L200 160 L240 250 Z" fill="#8a7ac9" stroke="#4a3f8a" strokeWidth="3" strokeLinejoin="round" />
+        <rect x="120" y="248" width="160" height="10" rx="5" fill="#4a3f8a" />
+        <line x1={uk.x} y1={uk.y} x2={uka.x} y2={uka.y} stroke="#4a3f8a" strokeWidth="12" strokeLinecap="round" style={{ transition: "all 900ms cubic-bezier(.3,1.3,.5,1)" }} />
+        <circle cx={PX} cy={PY} r="10" fill="#2d2560" />
+        <Pan x={uk.x} y={uk.y} />
+        <Pan x={uka.x} y={uka.y} />
+      </svg>
+      {benda.map((b, indeks) => {
+        const v = visual(b.id);
+        return <div key={b.id} className="absolute leading-none" style={posBenda(indeks === 0 ? uk : uka)}><Benda v={v} size={ukuranBenda(v)} /></div>;
+      })}
+    </div>
+    {hint && <Petunjuk>{teksBantu}</Petunjuk>}
+  </Papan>;
 
   return (
     <Kunci terkunci={terkunci}>
-      <Tata
-        atas={<><Instruksi teks={teks} hasil={hasil} /><Umpan hasil={hasil} benar={berat ? `${nama(berat)} lebih berat` : "-"} /></>}
-        adegan={
-          <Papan>
-            <Adegan min={200}>
-              {({ w, h }) => {
-                // lebar timbangan: muat lebar & tinggi adegan (rasio 400:260); benda ikut membesar
-                const lebar = Math.max(1, Math.min(w - 8, ((h - 8) * 400) / 260, 1000));
-                const ukuranBenda = (v: VisualSpec) => Math.min(Math.round(56 * Math.max(0.6, lebar / 440)), lebar * 0.21 / skalaLebar(v));
-                return (
-                  <div className="relative" style={{ width: lebar, aspectRatio: "400 / 260" }} role="img" aria-label={fase === "miring" ? `Timbangan miring ke ${beratKiri ? "kiri" : "kanan"}` : "Benda diletakkan di timbangan"}>
-                    <svg viewBox="0 0 400 260" className="absolute inset-0 h-full w-full" aria-hidden>
-                      <path d="M160 250 L200 160 L240 250 Z" fill="#8a7ac9" stroke="#4a3f8a" strokeWidth="3" strokeLinejoin="round" />
-                      <rect x="120" y="248" width="160" height="10" rx="5" fill="#4a3f8a" />
-                      <line x1={uk.x} y1={uk.y} x2={uka.x} y2={uka.y} stroke="#4a3f8a" strokeWidth="12" strokeLinecap="round" style={{ transition: "all 900ms cubic-bezier(.3,1.3,.5,1)" }} />
-                      <circle cx={PX} cy={PY} r="10" fill="#2d2560" />
-                      <Pan x={uk.x} y={uk.y} />
-                      <Pan x={uka.x} y={uka.y} />
-                    </svg>
-                    {kiri && <div className={`absolute ${fase === "taruh" ? "akademi-pop" : ""}`} style={posBenda(uk)}><Benda v={visual(kiri.id)} size={ukuranBenda(visual(kiri.id))} /></div>}
-                    {kanan && <div className={`absolute ${fase === "taruh" ? "akademi-pop" : ""}`} style={{ ...posBenda(uka), animationDelay: "200ms" }}><Benda v={visual(kanan.id)} size={ukuranBenda(visual(kanan.id))} /></div>}
-                  </div>
-                );
-              }}
-            </Adegan>
-            {hint && <Petunjuk>Sisi yang turun ke bawah itu yang lebih berat.</Petunjuk>}
-          </Papan>
-        }
-        kendali={
-          <div className={`flex gap-2 ${samping ? "flex-col" : ""}`} style={{ gap: 8 * skala }}>
-            <TombolBantu onClick={() => { bantu(); ucapkan(KS.timbanganBantu); }} disabled={terkunci} />
-            <div className="grid min-w-0 flex-1 grid-cols-2 gap-2" style={{ gap: 8 * skala }}>
-              {benda.map((b) => (
-                <KartuBenda
-                  penuh
-                  key={b.id}
-                  v={visual(b.id)}
-                  size={Math.round(56 * skala * (samping ? 1.15 : 1)) / skalaLebar(visual(b.id))}
-                  labelSize={Math.round(13 * st)}
-                  label={nama(b.id)}
-                  selected={dipilih === b.id}
-                  right={!!hasil && b.id === berat}
-                  wrong={!!hasil && b.id === dipilih && b.id !== berat}
-                  onClick={() => { if (terkunci || fase !== "miring") return; setDipilih(b.id); sfx.tap(); onJawab({ pilih: b.id }); }}
-                  className={`min-h-24 min-w-0 ${hint && b.id === berat ? "akademi-bounce" : ""}`}
-                  style={{ minHeight: 96 * skala * (samping ? 1.4 : 1), ...(fase !== "miring" ? { opacity: 0.6 } : undefined) }}
-                />
-              ))}
-            </div>
+      <Instruksi teks={teks} hasil={hasil} lang={lang} />
+      <Umpan hasil={hasil} benar={berat ? (inggris ? `${nama(berat)} is heavier` : `${nama(berat)} lebih berat`) : "-"} />
+      <div className={`mx-auto flex w-full ${samping ? "items-center" : "flex-col"}`} style={{ maxWidth: samping ? 1100 : 730, gap: 12 * skala }}>
+        <div className="min-w-0 flex-1">{papan}</div>
+        <div className="flex min-w-0 flex-col gap-2" style={{ width: samping ? Math.min(360, w * 0.34) : undefined }}>
+          <TombolBantu onClick={() => { bantu(); ucapkan(teksBantu, lang); }} disabled={terkunci} />
+          <div className="grid grid-cols-2 gap-2" style={{ gap: 8 * skala }}>
+            {benda.map((b, indeks) => {
+              const v = visual(b.id);
+              return <KartuBenda
+                penuh
+                labelPenuh
+                key={b.id}
+                v={v}
+                size={Math.round((w >= 620 ? 102 : 81) * Math.min(skala, 1.2)) / skalaLebar(v)}
+                labelSize={Math.round(16 * st)}
+                label={`${namaSisi[indeks]} · ${nama(b.id)}`}
+                selected={dipilih === b.id}
+                right={!!hasil && b.id === berat}
+                wrong={!!hasil && b.id === dipilih && b.id !== berat}
+                disabled={terkunci || fase !== "miring"}
+                onClick={() => { setDipilih(b.id); sfx.tap(); onJawab({ pilih: b.id }); }}
+                className={`min-h-28 min-w-0 ${hint && b.id === berat ? "akademi-bounce" : ""}`}
+                style={fase !== "miring" ? { opacity: 0.6 } : undefined}
+              />;
+            })}
           </div>
-        }
-      />
+        </div>
+      </div>
     </Kunci>
   );
 }

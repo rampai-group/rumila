@@ -248,7 +248,7 @@ function Fosil({ id }: { id: string }) {
   </g>;
 }
 
-type CiriBatu = "bintik" | "kristal" | "kristal-halus" | "lubang" | "lamina" | "foliasi" | "butir" | "kerikil" | "bersudut" | "kaca" | "fosil" | "urat" | "pita" | "batu-bara";
+type CiriBatu = "bintik" | "kristal" | "kristal-halus" | "lubang" | "lamina" | "foliasi" | "butir" | "kerikil" | "bersudut" | "kaca" | "fosil" | "urat" | "pita" | "batu-bara" | "bulat" | "bidang" | "kuarsa";
 const JENIS_BATU: Record<string, { warna: string; aksen: string; gelap: string; ciri: CiriBatu }> = {
   andesit: { warna: "#888a84", aksen: "#b9bcb0", gelap: "#696b65", ciri: "kristal-halus" },
   gabro: { warna: "#42484b", aksen: "#a1a598", gelap: "#222a31", ciri: "kristal" },
@@ -272,6 +272,12 @@ const JENIS_BATU: Record<string, { warna: string; aksen: string; gelap: string; 
   konglomerat: { warna: "#aa8c71", aksen: "#e5c8aa", gelap: "#655e60", ciri: "kerikil" },
   sabak: { warna: "#61747f", aksen: "#a8bbc5", gelap: "#425661", ciri: "lamina" },
   kuarsit: { warna: "#d2adab", aksen: "#f5dcd2", gelap: "#9e7479", ciri: "butir" },
+  kerikil: { warna: "#b99e81", aksen: "#d7bca0", gelap: "#8e755e", ciri: "bulat" },
+  "batu-kali": { warna: "#617982", aksen: "#9bb7be", gelap: "#445a62", ciri: "bulat" },
+  "bijih-besi": { warna: "#65504a", aksen: "#b37154", gelap: "#443937", ciri: "bersudut" },
+  galena: { warna: "#7b8495", aksen: "#d5dce5", gelap: "#41495b", ciri: "bidang" },
+  hematit: { warna: "#a65b49", aksen: "#c9846b", gelap: "#5a403f", ciri: "urat" },
+  "kristal-kuarsa": { warna: "#e9e5ee", aksen: "#fcfbfd", gelap: "#9388a6", ciri: "kuarsa" },
 };
 
 const TITIK_BATU = [[29,39],[44,31],[62,36],[77,33],[92,43],[104,41],[30,55],[51,54],[67,49],[83,57],[97,59],[38,68],[55,69],[75,67],[91,70]];
@@ -280,6 +286,25 @@ function Batuan({ id }: { id: string }) {
   const data = JENIS_BATU[id];
   const { warna, aksen, gelap, ciri } = data;
   const bintik = ciri === "bintik" || ciri === "kristal" || ciri === "kristal-halus" || ciri === "butir";
+  if (ciri === "bulat") return <g {...RINGKAS} stroke={gelap}>
+    <path d={id === "kerikil" ? "M28 61Q23 46 42 33Q65 18 87 35Q104 45 103 60Q102 77 76 81Q43 85 28 61Z" : "M17 56Q20 38 43 29Q63 23 89 31Q112 36 117 53Q122 68 109 78Q91 89 51 84Q16 81 17 56Z"} fill={warna} />
+    <path d="M37 53Q55 35 87 44" fill="none" stroke={aksen} strokeWidth="3" strokeLinecap="round" />
+  </g>;
+  if (ciri === "bidang") return <g {...RINGKAS} stroke={gelap}>
+    <path d="M19 51L46 40 66 51 67 78 40 88 19 76Z" fill={warna} />
+    <path d="M19 51L40 61 66 51M40 61V88" fill="none" />
+    <path d="M47 29L81 17 107 31 106 68 73 81 48 68Z" fill={warna} />
+    <path d="M47 29L81 17 107 31 74 43Z" fill={aksen} />
+    <path d="M74 43L107 31 106 68 73 81Z" fill={gelap} />
+    <path d="M57 35L65 39M82 48L96 42" fill="none" stroke={aksen} strokeWidth="2" />
+  </g>;
+  if (ciri === "kuarsa") return <g {...RINGKAS} stroke={gelap}>
+    <path d="M20 81L20 53 33 39 49 53 53 76 46 88 30 91Z" fill={warna} />
+    <path d="M75 84L80 51 96 38 109 54 106 82 93 91Z" fill={warna} />
+    <path d="M40 81L44 28 66 8 84 29 84 80 66 92Z" fill={warna} />
+    <path d="M44 28L66 8 66 39 40 81Z" fill={aksen} />
+    <path d="M66 39L84 29M66 39V92M20 53L33 60 49 53M33 60V89M80 51L93 62 109 54M93 62V90" fill="none" />
+  </g>;
   return <g {...RINGKAS}>
     {ciri === "lamina"
       ? <><path d="M15 32L37 21 96 22 117 40 110 73 88 81 27 75 12 60Z" fill={warna} stroke={gelap} /><path d="M17 43L39 41 58 48 84 42 114 45M16 55L43 51 69 57 91 52 112 55M20 65L44 62 70 67 91 62 111 66M38 72L87 74 102 69" fill="none" stroke={aksen} strokeWidth="3" /></>
