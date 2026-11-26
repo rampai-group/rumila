@@ -6,7 +6,7 @@ import type { SnapshotPraktik } from "./praktik-kampus";
 import { GameEvent, LEVELS, type Competency, type LevelId, type StandardRef, type TrackId } from "@akademi/schema";
 import { pangkat } from "./koleksi";
 import { jenjangBerikut } from "./peta";
-import { proyeksi, type Penguasaan, type Status } from "./mastery";
+import { proyeksi, type PemantapanUji, type Penguasaan, type Status } from "./mastery";
 
 /* ---------------- kode ---------------- */
 
@@ -155,8 +155,8 @@ export interface Kelulusan {
 }
 
 /** Nilai kelulusan satu jenjang dari event (fungsi murni; dipakai server penerbit). */
-export function nilaiKelulusan(events: GameEvent[], kompetensi: Competency[], level: LevelId): Kelulusan {
-  const peng = proyeksi(events, kompetensi);
+export function nilaiKelulusan(events: GameEvent[], kompetensi: Competency[], level: LevelId, uji?: PemantapanUji): Kelulusan {
+  const peng = proyeksi(events, kompetensi, uji);
   const p = pangkat(peng, kompetensi, [level])[0];
   const snapshot = snapshotSertifikat(peng, kompetensi, level);
   return { level, lulus: !!p?.tercapai, dikuasai: snapshot.dikuasai, total: snapshot.total, snapshot, berikut: jenjangBerikut(level, kompetensi) };

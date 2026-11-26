@@ -20,6 +20,7 @@ import { KOMPETENSI, PAKET, levelAnak, useBahasaAnak } from "@/lib/akademi/konte
 import { paketMisi, petaDariBukti, ujianTerbuka } from "@/lib/akademi/peta";
 import { TRACK_AKTIF } from "@/lib/akademi/katalog";
 import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
+import { usePemantapanUji } from "@/lib/akademi/pemantapan-uji-klien";
 import { ambilSertifikat, PangkatBelumTercapai, terbitkan, URL_VERIFIKASI, useSertifikat } from "@/lib/akademi/sertifikat";
 import { useCloud } from "@/lib/supabase/family";
 import { useMe, useUI } from "@/lib/store";
@@ -78,8 +79,9 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const bahasa = useBahasaAnak(me.id);
   const inggris = bahasa === "en";
   const tanggal = useTanggalAkademi();
+  const uji = usePemantapanUji(me.id, level);
   const hasilUjian = useUjian(me.id);
-  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilUjian, tanggal), [events, level, hasilUjian, tanggal]);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_AKTIF, hasilUjian, uji ? new Date() : tanggal, uji), [events, level, hasilUjian, tanggal, uji]);
   const meta = levelMeta(level);
   const jenjangAktif = levelAnak(me.id);
   const tautanLatih = useMemo(() => {
@@ -107,7 +109,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const terbit = async () => {
     setSibuk(true);
     try {
-      const s = await terbitkan(me.id, level);
+      const s = await terbitkan(me.id, level, uji);
       showToast(s.pending ? "Sertifikat terbit. Akan disinkronkan saat online." : "Sertifikat terbit! 🎓");
     } catch (e) {
       console.error("[akademi] terbitkan sertifikat gagal", e);
@@ -229,7 +231,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
         </div>
         <p className="text-[13px] font-bold text-ink-3">{labelSisaPenguasaan(peta.rincianPemantapan.length, bahasa)}</p>
       </div>
-      <RincianPenguasaan rincian={peta.rincianPemantapan} bahasa={bahasa} tautanLatih={tautanLatih} />
+      <RincianPenguasaan rincian={peta.rincianPemantapan} bahasa={bahasa} tautanLatih={tautanLatih} uji={!!uji} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { hariWIB, jedaKeHariWIBBerikut } from "../kalender";
-import { proyeksi, ringkasTrack } from "../mastery";
+import { aturanUntuk, proyeksi, ringkasTrack, syaratPenguasaan } from "../mastery";
 import { attempt, buktiKuat, kompetensi } from "./helper";
 
 const C1 = "MAT.PAUD.BILANGAN-1-5.01";
@@ -103,6 +103,62 @@ describe("proyeksi", () => {
     const p = proyeksi([polos, attempt([C1, C2])], k);
     expect(p[C1].success).toBe(1);
     expect(p[C2].success).toBe(1);
+  });
+});
+
+describe("Pemantapan uji Navigator", () => {
+  const id = "MAT.TKB.BILANGAN.01";
+  const mulai = new Date("2026-11-26T11:00:00Z");
+  const berakhir = new Date("2026-11-26T12:00:00Z");
+  const uji = { mulai, berakhir };
+  const inti = kompetensi(id, { core: true });
+  const lama = ["a", "b", "a"].map((activityId, i) => ({
+    ...attempt([id], { activityId }),
+    clientAt: new Date(mulai.getTime() - (3 - i) * 1000).toISOString(),
+  }));
+  const baru = { ...attempt([id], { activityId: "a" }), clientAt: mulai.toISOString() };
+
+  it("memerlukan dua jawaban latihan, lalu memenuhi syarat tanpa menambah jumlah hari", () => {
+    expect(proyeksi(lama, [inti], uji)[id]).toMatchObject({ status: "berkembang", pemantapanUji: "perlu-latihan" });
+    const bukti = [...lama, baru];
+    expect(proyeksi(bukti, [inti])[id]).toMatchObject({ status: "berkembang", days: 1 });
+    const hasil = proyeksi(bukti, [inti], uji)[id];
+    expect(hasil).toMatchObject({ status: "dikuasai", days: 1, hariBenar: ["2026-11-26"], pemantapanUji: "terpenuhi" });
+    expect(syaratPenguasaan(hasil, aturanUntuk(inti))).toEqual([]);
+
+    const hanyaBaru = lama.map((e) => ({ ...e, clientAt: mulai.toISOString() }));
+    expect(proyeksi([...hanyaBaru, baru], [inti], uji)[id]).not.toHaveProperty("pemantapanUji");
+  });
+
+  it.each([
+    ["jawaban salah", { correct: false }],
+    ["Bantu", { hintUsed: true }],
+    ["status Bantu yang tidak diketahui", { hintUsed: undefined }],
+    ["impor", { imported: true }],
+    ["latihan ujian", { detail: { ujian: "latihan" } }],
+    ["ujian resmi", { detail: { ujian: "kenaikan" } }],
+    ["jawaban ulang", { detail: { percobaan: 2 } }],
+  ])("%s tidak menjadi bukti baru", (_label, payload) => {
+    const bukti = [...lama, { ...baru, payload: { ...baru.payload, ...payload } }];
+    expect(proyeksi(bukti, [inti], uji)[id]).toMatchObject({ status: "berkembang", pemantapanUji: "perlu-latihan" });
+  });
+
+  it("tidak menghitung jawaban pada batas akhir, di luar periode, atau dari ujian sebelum periode", () => {
+    const terlambat = { ...baru, clientAt: berakhir.toISOString() };
+    expect(proyeksi([...lama, terlambat], [inti], uji)[id]).toMatchObject({ status: "berkembang", pemantapanUji: "perlu-latihan" });
+    expect(proyeksi([...lama, baru], [inti], { mulai: berakhir, berakhir: mulai })[id]).not.toHaveProperty("pemantapanUji");
+    const ujianLama = lama.map((e) => ({ ...e, payload: { ...e.payload, detail: { ujian: "semester" } } }));
+    expect(proyeksi([...ujianLama, baru], [inti], uji)[id]).not.toHaveProperty("pemantapanUji");
+  });
+
+  it("mempertahankan pengecekan konteks dan hanya berlaku untuk inti Navigator bersyarat dua hari", () => {
+    const bukti = [...lama, baru];
+    const satuPaket = bukti.map((e) => ({ ...e, activityId: "a" }));
+    expect(proyeksi(satuPaket, [inti], uji)[id]).toMatchObject({ status: "berkembang", pemantapanUji: "terpenuhi", contexts: 1 });
+    for (const c of [kompetensi(id), { ...inti, level: "SD1" as const }, { ...inti, mastery: { minDays: 3 } }]) {
+      expect(proyeksi(bukti, [c], uji)[id]).not.toHaveProperty("pemantapanUji");
+      expect(proyeksi(bukti, [c], uji)[id].status).toBe("berkembang");
+    }
   });
 });
 

@@ -15,7 +15,8 @@ export function UjianAkhirTerkunci({ peta, bahasa = "id" }: { peta: PetaJenjang;
   const semesterBelum = semester.map((sm) => sm.ke).join(en ? " and " : " dan ");
   const rincian = peta.rincianPemantapan;
   const kemampuan = peta.inti.total - peta.inti.dikuasai;
-  const perluHari = rincian.filter((r) => r.syarat.some((s) => s.jenis === "hari" && s.target > 1)).length;
+  const perluHari = rincian.filter((r) => !r.latihanUji && r.syarat.some((s) => s.jenis === "hari" && s.target > 1)).length;
+  const perluLatihanUji = rincian.filter((r) => r.latihanUji).length;
   const perluPaket = rincian.filter((r) => r.syarat.some((s) => s.jenis === "paket" && s.target > 1)).length;
   const punyaSyarat = misi > 0 || kuis > 0 || semester.length > 0 || kemampuan > 0;
   const isiHalaman = en ? `The ${level.pangkat} Final Exam is locked` : `Ujian Akhir ${level.pangkat} masih terkunci`;
@@ -37,9 +38,10 @@ export function UjianAkhirTerkunci({ peta, bahasa = "id" }: { peta: PetaJenjang;
             {kemampuan > 0 && (
               <li>
                 {labelSisaPenguasaan(kemampuan, bahasa)}.
-                {(perluHari > 0 || perluPaket > 0) && (
+                {(perluHari > 0 || perluPaket > 0 || perluLatihanUji > 0) && (
                   <ul className="mt-1 list-[circle] space-y-0.5 pl-4 text-sm font-semibold text-[#3d4f66]">
                     {perluHari > 0 && <li>{en ? `${perluHari} ${perluHari === 1 ? "skill needs" : "skills need"} practice on another day.` : `${perluHari} kemampuan perlu bukti latihan pada hari berbeda.`}</li>}
+                    {perluLatihanUji > 0 && <li>{en ? `${perluLatihanUji} ${perluLatihanUji === 1 ? "skill needs" : "skills need"} a new correct answer without hints.` : `${perluLatihanUji} kemampuan perlu jawaban benar baru tanpa bantuan.`}</li>}
                     {perluPaket > 0 && <li>{en ? `${perluPaket} ${perluPaket === 1 ? "skill needs" : "skills need"} practice in different packs.` : `${perluPaket} kemampuan perlu bukti latihan dari paket yang berbeda.`}</li>}
                   </ul>
                 )}

@@ -80,6 +80,48 @@ describe("petaJenjang", () => {
   });
 });
 
+describe("peta Pemantapan uji Navigator", () => {
+  const idA = "MAT.TKB.BILANGAN.01";
+  const idB = "MAT.TKB.BILANGAN.02";
+  const kurikulum = [kompetensi(idA, { core: true }), kompetensi(idB, { core: true })];
+  const daftar = [paket("a1", "TKB", [idA]), paket("a2", "TKB", [idA]), paket("b1", "TKB", [idB]), paket("b2", "TKB", [idB])];
+  const mulai = new Date("2026-11-26T11:00:00Z");
+  const berakhir = new Date("2026-11-26T12:00:00Z");
+  const uji = { mulai, berakhir };
+  const sebelum = new Date(mulai.getTime() - 1);
+  const ujian = ([{ jenis: "kuis", ruang: "MAT:BILANGAN" }, { jenis: "semester", ruang: "S1" }] as const).map((ruang) => ({
+    ...ruang, level: "TKB" as const, sessionId: idBaru(), benar: 8, total: 8, nilai: 100, lulus: true, at: sebelum.toISOString(),
+  }));
+  const jawab = (id: string, activityId: string, waktu: Date): GameEvent => ({ ...attempt([id], { activityId }), clientAt: waktu.toISOString() });
+  const lama = [jawab(idA, "a1", sebelum), jawab(idA, "a2", sebelum), jawab(idA, "a1", sebelum), jawab(idB, "b1", sebelum), jawab(idB, "b2", sebelum), jawab(idB, "b1", sebelum)];
+  const misi = [tamat("a1", 5, 0), tamat("b1", 5, 0)];
+  const baruA = jawab(idA, "a1", mulai);
+  const baruB = jawab(idB, "b1", mulai);
+  const peta = (events: GameEvent[], waktu: Date, riwayat: HasilUjian[] = ujian) =>
+    petaDariBukti(events, daftar, kurikulum, "TKB", TRACKS, riwayat, waktu, uji);
+
+  it("membuka Pemantapan hanya pada periode aktif dan menunggu latihan terpisah untuk setiap kemampuan", () => {
+    const bukti = [...misi, ...lama];
+    expect(peta(bukti, sebelum).pemantapanMenungguHari).toBe(true);
+    expect(peta(bukti, sebelum).rincianPemantapan[0]).not.toHaveProperty("latihanUji");
+    expect(peta(bukti, mulai).pemantapan?.kompetensi.id).toBe(idA);
+    expect(peta(bukti, mulai).rincianPemantapan).toHaveLength(2);
+    expect(peta(bukti, mulai).rincianPemantapan[0]).toMatchObject({ latihanUji: true });
+    expect(ujianTerbuka(peta(bukti, mulai), "kenaikan", "")).toBe(false);
+    expect(peta([...bukti, baruA], mulai).pemantapan?.kompetensi.id).toBe(idB);
+    expect(ujianTerbuka(peta([...bukti, baruA], mulai), "kenaikan", "")).toBe(false);
+    expect(ujianTerbuka(peta([...bukti, baruA, baruB], mulai), "kenaikan", "")).toBe(true);
+    expect(peta([...bukti, baruA, baruB], berakhir).pemantapanMenungguHari).toBe(true);
+  });
+
+  it("tetap membutuhkan misi, ulangan modul, dan ujian semester sebelum Ujian Akhir", () => {
+    const bukti = [...lama, baruA, baruB];
+    expect(peta(bukti, mulai).sekarang?.kompetensi.id).toBe(idA);
+    expect(peta([...misi, ...bukti], mulai, []).ujian?.jenis).toBe("kuis");
+    expect(peta([...misi, ...bukti], mulai, ujian.slice(0, 1)).ujian?.jenis).toBe("semester");
+  });
+});
+
 describe("kompetensiSelesai", () => {
   const PAKET = [paket("a", "PAUD", [M1, M2]), paket("b", "PAUD", [K1])];
   it("paket tamat ≥ 60% menandai semua kompetensinya; di bawah ambang & paket asing diabaikan", () => {

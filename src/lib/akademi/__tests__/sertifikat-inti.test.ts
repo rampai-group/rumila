@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GameEvent } from "@akademi/schema";
 import { eventDariBaris, nilaiKelulusan, type BarisEvent } from "../sertifikat-inti";
-import { buktiKuat, kompetensi } from "./helper";
+import { attempt, buktiKuat, kompetensi } from "./helper";
 
 const C1 = "MAT.PAUD.BILANGAN-1-5.01";
 const K1 = "KODE.PAUD.URUTAN.01";
@@ -51,6 +51,22 @@ describe("nilaiKelulusan", () => {
     const k = nilaiKelulusan(eventDariBaris(rows), daftar, "PAUD");
     expect(k.lulus).toBe(false);
     expect(k.dikuasai).toBe(0);
+  });
+
+  it("menerbitkan kelulusan uji Navigator hanya dengan bukti baru yang diterima server dalam jendela uji", () => {
+    const navigator = "MAT.TKB.BILANGAN-20.01";
+    const kurikulum = [kompetensi(navigator, { core: true }), kompetensi("MAT.SD1.BILANGAN-100.01")];
+    const uji = { mulai: new Date("2026-11-26T10:00:00Z"), berakhir: new Date("2026-11-26T17:00:00Z") };
+    const awal = ["paket-a", "paket-b", "paket-a"].map((activityId) =>
+      keBaris(attempt([navigator], { activityId }), "2026-11-26T03:00:00Z"),
+    );
+    const jawaban = { ...attempt([navigator], { activityId: "paket-b" }), clientAt: "2026-11-26T11:00:00Z" };
+    const diterimaSebelum = eventDariBaris([...awal, keBaris(jawaban, "2026-11-26T09:59:59Z")]);
+    const diterimaDalam = eventDariBaris([...awal, keBaris(jawaban, "2026-11-26T10:01:00Z")]);
+
+    expect(nilaiKelulusan(diterimaSebelum, kurikulum, "TKB", uji).lulus).toBe(false);
+    expect(nilaiKelulusan(diterimaDalam, kurikulum, "TKB").lulus).toBe(false);
+    expect(nilaiKelulusan(diterimaDalam, kurikulum, "TKB", uji)).toMatchObject({ lulus: true, dikuasai: 1, berikut: "SD1" });
   });
 
   it("satu kompetensi inti kurang → belum lulus", () => {

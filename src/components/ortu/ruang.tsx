@@ -27,6 +27,7 @@ import { proyeksi } from "@/lib/akademi/mastery";
 import { petaDariBukti } from "@/lib/akademi/peta";
 import { sinkronSiswa } from "@/lib/akademi/siswa";
 import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
+import { usePemantapanUji } from "@/lib/akademi/pemantapan-uji-klien";
 import { NAMA_UJIAN, predikat, type HasilUjian } from "@/lib/akademi/ujian";
 import { adminBerPin, bukaDenganPin, bukaRuang, ruangTerbuka, sisaKunci, tutupRuang } from "@/lib/ortu";
 import { isOrangTua, profilTerbuka } from "@/lib/profil";
@@ -525,7 +526,8 @@ function Ringkasan({ anak }: { anak: Member }) {
   const level = levelAnak(anak.id);
   const lv = levelMeta(level);
   const tanggal = useTanggalAkademi();
-  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasil, tanggal), [events, level, hasil, tanggal]);
+  const uji = usePemantapanUji(anak.id, level);
+  const peta = useMemo(() => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, hasil, uji ? new Date() : tanggal, uji), [events, level, hasil, tanggal, uji]);
   const seminggu = Date.now() - 7 * 86400_000;
   const pekan = events.filter((e) => Date.parse(e.clientAt) >= seminggu);
   const menit = Math.round(pekan.filter((e) => e.type === "activity_end").reduce((n, e) => n + (Number((e.payload as { durationMs?: number }).durationMs) || 0), 0) / 60000);

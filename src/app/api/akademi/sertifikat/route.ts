@@ -14,6 +14,7 @@ import { createClient } from "@supabase/supabase-js";
 import { LevelId } from "@akademi/schema";
 import { KOMPETENSI, TRACK_AKTIF } from "@/lib/akademi/katalog";
 import { ruangKuisKanonik } from "@/lib/akademi/modul";
+import { pemantapanUjiUntuk } from "@/lib/akademi/pemantapan-uji";
 import { jenjangBerikut } from "@/lib/akademi/peta";
 import { buatKode, eventDariBaris, nilaiKelulusan, type BarisEvent } from "@/lib/akademi/sertifikat-inti";
 import type { Admin } from "@/lib/akademi/server";
@@ -116,7 +117,9 @@ export async function POST(req: Request) {
     rows.push(...((data ?? []) as BarisEvent[]));
     if (!data || data.length < HALAMAN) break;
   }
-  const hasil = nilaiKelulusan(eventDariBaris(rows), KOMPETENSI, level);
+  const events = eventDariBaris(rows);
+  const uji = await pemantapanUjiUntuk(member.id, level, new Date());
+  const hasil = nilaiKelulusan(events, KOMPETENSI, level, uji);
   if (!hasil.lulus) return json(422, { error: "belum_lulus", dikuasai: hasil.dikuasai, total: hasil.total });
 
   // Ujian Akhir (sekali-jalan) wajib sudah dikerjakan; nilainya dibekukan apa adanya (<75 = predikat "Cukup")
@@ -135,7 +138,7 @@ export async function POST(req: Request) {
   }
   hasil.snapshot.ujian = [...terbaikUjian.values()];
   // Penilaian Praktik Kampus (pelengkap, bukan syarat): dihitung dari jejak gedung kampus di server
-  const praktik = snapshotPraktik(penilaianKampus(eventDariBaris(rows), KOMPETENSI, level));
+  const praktik = snapshotPraktik(penilaianKampus(events, KOMPETENSI, level));
   if (praktik) hasil.snapshot.praktik = praktik;
 
   // 4. terbitkan (kode unik; coba ulang bila kebetulan sama)

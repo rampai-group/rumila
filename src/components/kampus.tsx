@@ -14,6 +14,7 @@ import { KOMPETENSI, PAKET, levelAnak, useProfilAkademiVersi } from "@/lib/akade
 import { keadaanLab, type KeadaanLab } from "@/lib/akademi/lab";
 import { kompetensiSelesai, petaDariBukti } from "@/lib/akademi/peta";
 import { useTanggalAkademi } from "@/lib/akademi/tanggal-akademi";
+import { usePemantapanUji } from "@/lib/akademi/pemantapan-uji-klien";
 import { NAMA_UJIAN } from "@/lib/akademi/ujian";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import { PLAY, canonicalToolId } from "@/lib/catalog";
@@ -51,12 +52,13 @@ export function useKelasHariIni(me: Member) {
   const ujian = useUjian(me.id);
   const level = useLevel(me.id);
   const tanggal = useTanggalAkademi();
+  const uji = usePemantapanUji(me.id, level);
   useEffect(() => {
     ambilUjian(me.id).catch(() => {});
   }, [me.id]);
   const peta = useMemo(
-    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, tanggal),
-    [events, level, ujian, tanggal],
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, uji ? new Date() : tanggal, uji),
+    [events, level, ujian, tanggal, uji],
   );
   const lv = levelMeta(level);
   const sm = peta.semester[peta.semesterAktif - 1];
