@@ -1,0 +1,798 @@
+{
+  "rounds": 360,
+  "layouts": 1464,
+  "runs": [
+    {
+      "mission": 26,
+      "slug": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 30618
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 26,
+      "slug": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 30434
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 26,
+      "slug": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 30917
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 26,
+      "slug": "sd1-sains-bunyi-dekat-jauh-jalan",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24438
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 26,
+      "slug": "sd1-sains-bunyi-dekat-jauh-jalan",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24714
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 26,
+      "slug": "sd1-sains-bunyi-dekat-jauh-jalan",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24624
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 27,
+      "slug": "sd1-mat-urut-ringan-berat",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25036
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 27,
+      "slug": "sd1-mat-urut-ringan-berat",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25103
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 27,
+      "slug": "sd1-mat-urut-ringan-berat",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25481
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 27,
+      "slug": "sd1-mat-belanja-ringan-berat",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24204
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 27,
+      "slug": "sd1-mat-belanja-ringan-berat",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25405
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 27,
+      "slug": "sd1-mat-belanja-ringan-berat",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24810
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 28,
+      "slug": "sd1-mat-urut-isi-wadah",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26120
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 28,
+      "slug": "sd1-mat-urut-isi-wadah",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26404
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 28,
+      "slug": "sd1-mat-urut-isi-wadah",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26201
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 28,
+      "slug": "sd1-mat-wadah-halaman-isi",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25765
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 28,
+      "slug": "sd1-mat-wadah-halaman-isi",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25673
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 28,
+      "slug": "sd1-mat-wadah-halaman-isi",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26049
+      },
+      "denseRound": 3,
+      "layouts": 38,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 29,
+      "slug": "sd1-kode-tebak-petak-angkasa",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 101931
+      },
+      "denseRound": 6,
+      "layouts": 10,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 63
+    },
+    {
+      "mission": 29,
+      "slug": "sd1-kode-tebak-petak-angkasa",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 110768
+      },
+      "denseRound": 7,
+      "layouts": 10,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 70
+    },
+    {
+      "mission": 29,
+      "slug": "sd1-kode-tebak-petak-angkasa",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 104115
+      },
+      "denseRound": 8,
+      "layouts": 10,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 65
+    },
+    {
+      "mission": 29,
+      "slug": "sd1-kode-tebak-petak-ulangi",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 107642
+      },
+      "denseRound": 2,
+      "layouts": 10,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 67
+    },
+    {
+      "mission": 29,
+      "slug": "sd1-kode-tebak-petak-ulangi",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 110170
+      },
+      "denseRound": 1,
+      "layouts": 10,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 70
+    },
+    {
+      "mission": 29,
+      "slug": "sd1-kode-tebak-petak-ulangi",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 106296
+      },
+      "denseRound": 7,
+      "layouts": 10,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 67
+    },
+    {
+      "mission": 30,
+      "slug": "sd1-sains-butuh-listrik-sekolah",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26183
+      },
+      "denseRound": 1,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 30,
+      "slug": "sd1-sains-butuh-listrik-sekolah",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26515
+      },
+      "denseRound": 1,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 30,
+      "slug": "sd1-sains-butuh-listrik-sekolah",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25768
+      },
+      "denseRound": 1,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 30,
+      "slug": "sd1-sains-butuh-listrik-rumah",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 25794
+      },
+      "denseRound": 1,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 30,
+      "slug": "sd1-sains-butuh-listrik-rumah",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26207
+      },
+      "denseRound": 1,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 30,
+      "slug": "sd1-sains-butuh-listrik-rumah",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 26528
+      },
+      "denseRound": 1,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 31,
+      "slug": "sd1-mat-jam-setengah-pagi",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 23870
+      },
+      "denseRound": 9,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 31,
+      "slug": "sd1-mat-jam-setengah-pagi",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24085
+      },
+      "denseRound": 9,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 31,
+      "slug": "sd1-mat-jam-setengah-pagi",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 23830
+      },
+      "denseRound": 9,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    },
+    {
+      "mission": 31,
+      "slug": "sd1-mat-jam-setengah-siang",
+      "device": "hp",
+      "size": [
+        390,
+        844
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24146
+      },
+      "denseRound": 9,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+      "predictions": 0
+    },
+    {
+      "mission": 31,
+      "slug": "sd1-mat-jam-setengah-siang",
+      "device": "ipad",
+      "size": [
+        820,
+        1180
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 23947
+      },
+      "denseRound": 9,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+      "predictions": 0
+    },
+    {
+      "mission": 31,
+      "slug": "sd1-mat-jam-setengah-siang",
+      "device": "ipad-pendek",
+      "size": [
+        820,
+        1067
+      ],
+      "rounds": 10,
+      "result": {
+        "outcome": "selesai",
+        "successCount": 10,
+        "failCount": 0,
+        "hintCount": 0,
+        "durationMs": 24000
+      },
+      "denseRound": 9,
+      "layouts": 60,
+      "overflow": 0,
+      "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+      "predictions": 0
+    }
+  ]
+}

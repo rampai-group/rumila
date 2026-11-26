@@ -34,11 +34,11 @@ describe("Pilot M26–30", () => {
       }
     }
   });
-  it("ukuran gambar wadah tidak membalik urutan kapasitas", () => {
+  it("petunjuk batang wadah mendukung kunci kapasitas", () => {
     for (const p of paket(28)) {
       if (p.mechanic !== "urutkan") throw Error(p.id);
       for (const seq of p.sequences) {
-        const ukuran = seq.steps.map(x => x.scale ?? 1);
+        const ukuran = seq.steps.map(x => x.adegan!.t!);
         for (let i = 1; i < ukuran.length; i++) expect(ukuran[i], seq.id).toBeGreaterThan(ukuran[i - 1]);
       }
     }

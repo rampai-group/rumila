@@ -320,9 +320,9 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
 
 /** Kartu benda yang bisa disentuh/diseret: latar putih, bayangan tebal gaya Rumila. */
 export function KartuBenda({
-  v, size = 56, label, ariaLabel, labelSize = 13, keterangan = true, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "", penuh, disabled,
+  v, size = 56, label, ariaLabel, labelSize = 13, labelPenuh = false, keterangan = true, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "", penuh, disabled,
 }: {
-  v: VisualSpec; size?: number; label?: string; ariaLabel?: string; labelSize?: number; disabled?: boolean;
+  v: VisualSpec; size?: number; label?: string; ariaLabel?: string; labelSize?: number; labelPenuh?: boolean; disabled?: boolean;
   /** tampilkan teks label di bawah gambar bila kartu bergambar (emoji/bentuk); false untuk kartu kecil di dalam rak/slot */
   keterangan?: boolean;
   selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
@@ -354,7 +354,7 @@ export function KartuBenda({
       <Benda v={v} size={size} />
       {teks && (
         <span
-          style={{ fontFamily: NUNITO, fontSize: `max(12px, min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi))`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: `min(100%, ${Math.max(96, size * 2.6)}px)`, overflowWrap: "anywhere" }}
+          style={{ fontFamily: NUNITO, fontSize: `max(12px, min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi))`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: labelPenuh ? "100%" : `min(100%, ${Math.max(96, size * 2.6)}px)`, overflowWrap: "anywhere" }}
           className="text-center text-balance"
         >
           {teks}

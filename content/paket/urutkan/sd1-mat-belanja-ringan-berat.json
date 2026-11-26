@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-belanja-ringan-berat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Timbang Barang di Pasar",
-      "instruksi": "Bayangkan menimbang tiap barang di pasar. Susun dari yang paling ringan sampai yang paling berat.",
+      "instruksi": "Lihat batang di bawah gambar. Batang lebih panjang berarti benda lebih berat. Susun dari paling ringan ke paling berat.",
       "j-ringan-berat": "Paling ringan ke paling berat",
       "s-cabai": "cabai",
       "s-telur": "telur",
@@ -22,7 +22,7 @@
     },
     "en": {
       "judul": "Weighing Things at the Market",
-      "instruksi": "Imagine weighing each thing at the market. Line them up from the lightest to the heaviest.",
+      "instruksi": "Look at the bars below the pictures. A longer bar means a heavier object. Order from lightest to heaviest.",
       "j-ringan-berat": "Lightest to heaviest",
       "s-cabai": "chili",
       "s-telur": "egg",
@@ -56,25 +56,49 @@
           "id": "cabai",
           "labelKey": "s-cabai",
           "emoji": "🌶️",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🌶️"
+          }
         },
         {
           "id": "telur",
           "labelKey": "s-telur",
           "emoji": "🥚",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.26,
+            "tanda": "🥚"
+          }
         },
         {
           "id": "apel",
           "labelKey": "s-apel",
           "emoji": "🍎",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.4,
+            "tanda": "🍎"
+          }
         },
         {
           "id": "kelapa",
           "labelKey": "s-kelapa",
           "emoji": "🥥",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.54,
+            "tanda": "🥥"
+          }
         }
       ]
     },
@@ -86,27 +110,48 @@
           "id": "cabai",
           "labelKey": "s-cabai",
           "emoji": "🌶️",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🌶️"
+          }
         },
         {
           "id": "telur",
           "labelKey": "s-telur",
           "emoji": "🥚",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.26,
+            "tanda": "🥚"
+          }
         },
         {
           "id": "kelapa",
           "labelKey": "s-kelapa",
           "emoji": "🥥",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.54,
+            "tanda": "🥥"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         }
       ]
@@ -119,25 +164,49 @@
           "id": "cabai",
           "labelKey": "s-cabai",
           "emoji": "🌶️",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🌶️"
+          }
         },
         {
           "id": "telur",
           "labelKey": "s-telur",
           "emoji": "🥚",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.26,
+            "tanda": "🥚"
+          }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "sapi",
           "labelKey": "s-sapi",
           "emoji": "🐄",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐄"
+          }
         }
       ]
     },
@@ -149,28 +218,49 @@
           "id": "cabai",
           "labelKey": "s-cabai",
           "emoji": "🌶️",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🌶️"
+          }
         },
         {
           "id": "apel",
           "labelKey": "s-apel",
           "emoji": "🍎",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.4,
+            "tanda": "🍎"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         }
       ]
     },
@@ -182,25 +272,49 @@
           "id": "cabai",
           "labelKey": "s-cabai",
           "emoji": "🌶️",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🌶️"
+          }
         },
         {
           "id": "apel",
           "labelKey": "s-apel",
           "emoji": "🍎",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.4,
+            "tanda": "🍎"
+          }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "sapi",
           "labelKey": "s-sapi",
           "emoji": "🐄",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐄"
+          }
         }
       ]
     },
@@ -212,25 +326,49 @@
           "id": "cabai",
           "labelKey": "s-cabai",
           "emoji": "🌶️",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.12,
+            "tanda": "🌶️"
+          }
         },
         {
           "id": "kelapa",
           "labelKey": "s-kelapa",
           "emoji": "🥥",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.54,
+            "tanda": "🥥"
+          }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "sapi",
           "labelKey": "s-sapi",
           "emoji": "🐄",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐄"
+          }
         }
       ]
     },
@@ -242,27 +380,48 @@
           "id": "telur",
           "labelKey": "s-telur",
           "emoji": "🥚",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.26,
+            "tanda": "🥚"
+          }
         },
         {
           "id": "apel",
           "labelKey": "s-apel",
           "emoji": "🍎",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.4,
+            "tanda": "🍎"
+          }
         },
         {
           "id": "kelapa",
           "labelKey": "s-kelapa",
           "emoji": "🥥",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.54,
+            "tanda": "🥥"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         }
       ]
@@ -275,28 +434,49 @@
           "id": "telur",
           "labelKey": "s-telur",
           "emoji": "🥚",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.26,
+            "tanda": "🥚"
+          }
         },
         {
           "id": "apel",
           "labelKey": "s-apel",
           "emoji": "🍎",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.4,
+            "tanda": "🍎"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         }
       ]
     },
@@ -308,28 +488,49 @@
           "id": "telur",
           "labelKey": "s-telur",
           "emoji": "🥚",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.26,
+            "tanda": "🥚"
+          }
         },
         {
           "id": "kelapa",
           "labelKey": "s-kelapa",
           "emoji": "🥥",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.54,
+            "tanda": "🥥"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         }
       ]
     },
@@ -341,28 +542,49 @@
           "id": "telur",
           "labelKey": "s-telur",
           "emoji": "🥚",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.26,
+            "tanda": "🥚"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "sapi",
           "labelKey": "s-sapi",
           "emoji": "🐄",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐄"
+          }
         }
       ]
     },
@@ -374,28 +596,49 @@
           "id": "apel",
           "labelKey": "s-apel",
           "emoji": "🍎",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.4,
+            "tanda": "🍎"
+          }
         },
         {
           "id": "kelapa",
           "labelKey": "s-kelapa",
           "emoji": "🥥",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.54,
+            "tanda": "🥥"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         }
       ]
     },
@@ -407,28 +650,49 @@
           "id": "apel",
           "labelKey": "s-apel",
           "emoji": "🍎",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.4,
+            "tanda": "🍎"
+          }
         },
         {
           "id": "semangka",
           "labelKey": "s-semangka",
+          "emoji": "🍉",
           "scale": 1,
           "adegan": {
-            "jenis": "ilustrasi",
-            "varian": "awal-semangka-utuh"
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.68,
+            "tanda": "🍉"
           }
         },
         {
           "id": "kambing",
           "labelKey": "s-kambing",
           "emoji": "🐐",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.82,
+            "tanda": "🐐"
+          }
         },
         {
           "id": "sapi",
           "labelKey": "s-sapi",
           "emoji": "🐄",
-          "scale": 1
+          "scale": 1,
+          "adegan": {
+            "jenis": "ilustrasi-sd",
+            "varian": "banding-berat",
+            "t": 0.96,
+            "tanda": "🐄"
+          }
         }
       ]
     }
