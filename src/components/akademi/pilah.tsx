@@ -572,6 +572,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const pilihanTulisan = choices.every((c) => !visualBergambar(c) && !c.color);
   const lebarArea = Math.min(w || 390, 920) - 4;
   const lebar = lebarArea >= 600;
+  const bakiBertumpuk = !!soalKue && !lebar && h >= 530;
   const adeganLega = paket.level === "PAUD" && !!ronde.adegan && lebarArea >= 620 && h >= 680;
   const gambarLega = !pilihanTulisan && !ronde.bacaPilihan && h >= 560;
   const modelBolaDunia = paket.id === "sains-senter-bola-dunia" && !!ronde.adegan;
@@ -582,7 +583,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   // Dua kolom menjaga lebar gambar tetap sama ketika satu pilihan hilang di layar potret.
   const gridPotret = gridGambar && h >= lebarArea;
   const tigaLanskap = gridGambar && !gridPotret && n === 3 && lebar && gambarLega;
-  const ukurKepala = gridGambar || potAudioLega;
+  const ukurKepala = gridGambar || potAudioLega || !!soalKue;
   useLayoutEffect(() => {
     const kepala = kepalaSoal.current;
     if (!ukurKepala || !kepala) return;
@@ -639,7 +640,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
 
   return (
     <div
-      data-pilah-tengah={stokPiktogram || potAudioLega || (soalKue && h >= 650) || (gambarLega && n <= 3 && !adeganLega && !gridGambar && !modelBolaDunia) ? "" : undefined}
+      data-pilah-tengah={stokPiktogram || potAudioLega || (gambarLega && n <= 3 && !adeganLega && !gridGambar && !modelBolaDunia) ? "" : undefined}
       className={`mx-auto flex w-full min-w-0 max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${adeganLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: adeganLega ? Math.min(620, Math.round(h * 0.66)) : undefined }}
     >
@@ -655,16 +656,22 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
             ) : soal}
           </button>
           {soalKue && (
-            <div className="mx-auto grid w-full max-w-[590px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 py-1">
+            <div className={`mx-auto grid w-full gap-1.5 py-1 ${bakiBertumpuk ? "max-w-[400px] grid-cols-1" : "max-w-[760px] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]"}`}>
               {[Number(soalKue[1]), Number(soalKue[2])].map((jumlah, i) => (
-                <div key={i} role="img" aria-label={lang === "en-US" ? `${jumlah} slices of cake` : `${jumlah} potong kue`}
-                  className={`flex min-h-[76px] min-w-0 items-center justify-center rounded-2xl border-b-4 border-[#d2a396] bg-[#fff3e4] p-2 sm:min-h-[104px] ${i ? "col-start-3" : "col-start-1"} row-start-1`}>
-                  <span className="grid grid-cols-5 place-items-center gap-x-0.5 gap-y-1 text-[clamp(16px,4.5vw,28px)] leading-none" aria-hidden>
+                <div
+                  key={i}
+                  role="img"
+                  aria-label={lang === "en-US" ? `${jumlah} slices of cake` : `${jumlah} potong kue`}
+                  className={`flex min-w-0 items-start justify-center rounded-2xl border-b-4 border-[#d2a396] bg-[#fff3e4] px-1 py-2 sm:p-3 ${bakiBertumpuk ? (i ? "col-start-1 row-start-3" : "col-start-1 row-start-1") : (i ? "col-start-3 row-start-1" : "col-start-1 row-start-1")}`}
+                  style={{ containerType: "inline-size" }}
+                >
+                  {/* Lima potong per baris memberi acuan yang sama untuk kedua baki. */}
+                  <span className="grid w-full max-w-[288px] grid-cols-5 place-items-center gap-x-0.5 gap-y-1.5 leading-none" style={{ fontSize: "min(52px, calc(20cqi - 1.6px))" }} aria-hidden>
                     {Array.from({ length: jumlah }, (_, j) => <span key={j}>🍰</span>)}
                   </span>
                 </div>
               ))}
-              <span aria-hidden className="col-start-2 row-start-1 text-xl">+</span>
+              <span aria-hidden className={`self-center text-xl ${bakiBertumpuk ? "col-start-1 row-start-2" : "col-start-2 row-start-1"}`}>+</span>
             </div>
           )}
           {ronde.adegan && <div className="mt-1 flex justify-center"><GambarAdegan adegan={ronde.adegan} s={ukuranAdegan} /></div>}
