@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Adegan } from "@akademi/schema";
+import { bacaJamWaktu } from "@/lib/akademi/jam-waktu";
 
 import { GambarIlustrasiAwal } from "./ilustrasi-awal";
 import { PerangkatPilot, RobotPilot } from "./ilustrasi-perangkat";
@@ -96,8 +97,8 @@ function JamWaktu({ jam, menit, varian }: { jam: number; menit: number; varian: 
 }
 
 function Geometri({ varian }: { varian: string }) {
-  const waktu = /^jam-waktu-(1[0-2]|[1-9])-(00|30)$/.exec(varian);
-  if (waktu) return <JamWaktu jam={Number(waktu[1])} menit={Number(waktu[2])} varian={varian} />;
+  const waktu = bacaJamWaktu(varian);
+  if (waktu) return <JamWaktu {...waktu} varian={varian} />;
   const jam = /^pukul-(1[01]|[1-9])$/.exec(varian);
   if (jam) return <JamSudut pukul={Number(jam[1])} />;
   if (varian === "sudut-buku") {
