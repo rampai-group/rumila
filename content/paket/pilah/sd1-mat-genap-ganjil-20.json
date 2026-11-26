@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-genap-ganjil-20",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -94,12 +94,16 @@
     {
       "id": "genap",
       "labelKey": "b-genap",
-      "emoji": "👫"
+      "adegan": { "jenis": "kaus-kaki" },
+      "count": 2,
+      "kolom": 2
     },
     {
       "id": "ganjil",
       "labelKey": "b-ganjil",
-      "emoji": "🧍"
+      "adegan": { "jenis": "kaus-kaki" },
+      "count": 3,
+      "kolom": 2
     }
   ],
   "items": [

@@ -200873,7 +200873,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-genap-ganjil-20",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -200967,12 +200967,20 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "genap",
         "labelKey": "b-genap",
-        "emoji": "👫"
+        "adegan": {
+          "jenis": "kaus-kaki"
+        },
+        "count": 2,
+        "kolom": 2
       },
       {
         "id": "ganjil",
         "labelKey": "b-ganjil",
-        "emoji": "🧍"
+        "adegan": {
+          "jenis": "kaus-kaki"
+        },
+        "count": 3,
+        "kolom": 2
       }
     ],
     "items": [
@@ -201891,7 +201899,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-pasangan-ternak-20",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -201971,12 +201979,16 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "genap",
         "labelKey": "b-genap",
-        "emoji": "🥢"
+        "emoji": "🐥",
+        "count": 2,
+        "kolom": 2
       },
       {
         "id": "ganjil",
         "labelKey": "b-ganjil",
-        "emoji": "☝️"
+        "emoji": "🐥",
+        "count": 3,
+        "kolom": 2
       }
     ],
     "items": [
