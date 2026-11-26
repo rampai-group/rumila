@@ -1,6 +1,6 @@
 # QA lokal Pilot (SD1), Misi 26–31 — 26 November 2026
 
-Worktree terpisah `codex/qa-pilot-misi-26-31`, berawal dari `6de92cca`, disinkronkan ke `13557511` (PR #238). Nomor misi dihitung dengan `petaJenjang` atas kurikulum MAT, KODE, SAINS, bukan urutan nama berkas.
+Worktree terpisah `codex/qa-pilot-misi-26-31`, berawal dari `6de92cca`, disinkronkan ke `6044a55c` (PR #238 dan QA M21–25 dari PR #239). Nomor misi dihitung dengan `petaJenjang` atas kurikulum MAT, KODE, SAINS, bukan urutan nama berkas.
 
 ## Hasil
 
@@ -28,7 +28,7 @@ Semua **12 paket × 3 viewport = 36 sesi** dimainkan sampai layar hasil, **360 r
 1. **M26 — label kartu bunyi keluar panel pada iPad.** Lebar label sebelumnya terikat ukuran ilustrasi kecil, sehingga deskripsi membungkus menjadi terlalu banyak baris. Label kini boleh memakai lebar kartu penuh, terbatas pada kompetensi bunyi SD1. [Sebelum](bunyi-sebelum.png), [sesudah](bunyi-sesudah.png).
 2. **M27–28 — ukuran emoji tidak menyediakan bukti berat/kapasitas yang cukup.** Tambahkan batang petunjuk perbandingan yang tetap konsisten untuk benda yang sama, di kartu sumber dan slot. Instruksi menjelaskan bahwa batang lebih panjang berarti lebih berat / muat lebih banyak saat penuh. Batang menunjukkan perbandingan, bukan satuan atau ukuran fisik emoji. Dua rekaman instruksi baru dibuat lokal dengan suara Indonesia Damayanti dan ditautkan melalui manifes; rekaman lain dipertahankan.
 3. **M30 — gambar kipas berupa pusaran dan kulkas hanya tulisan.** Ganti dengan ilustrasi kipas berkabel serta kulkas. Kunci listrik, baterai, dan benda tanpa listrik diperiksa seluruh bank; label bel listrik, robot berbaterai, senter berbaterai, dan jam berbaterai membedakan sumber dayanya.
-4. **M31 — rak memanjang di HP.** Sepuluh rak sebelumnya membentuk satu kolom dan membutuhkan gulir hingga 454 px. Kini kisi tiga kolom dengan kartu sumber empat kolom; seluruh rak tetap dapat disentuh saat kosong maupun terisi. [Rak terisi](jam-hp-terisi.png).
+4. **M31 — rak memanjang di HP.** Sepuluh rak sebelumnya membentuk satu kolom dan membutuhkan gulir hingga 454 px. Kini kisi tiga kolom dengan kartu sumber empat kolom; seluruh rak tetap dapat disentuh saat kosong maupun terisi. Dua kartu dalam rak yang sama dijaga berjajar dengan target sentuh 44 px. [Rak terisi](jam-hp-terisi.png).
 5. **M29 — tidak ditemukan bug penilaian.** Semua prediksi langkah benar pada semua sesi (bukan sekadar melewati ambang 60%). Belok tetap menempati petak yang sama. Tes bank lengkap juga memastikan semua tebakan salah ditolak.
 6. **M31 — tidak ditemukan ketidaksesuaian waktu.** Seluruh emoji jam penuh/setengah dan angka digital cocok dengan raknya; `setengah N` berarti `(N−1).30`. Jarum pada screenshot WebKit diperiksa, termasuk posisi jarum pendek di antara dua jam.
 
