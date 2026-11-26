@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sd1-kode-kalau-di-dalam-ulangi",
+    "src": "/akademi/suara/55d98ae35eec.mp3",
+    "status": 200,
+    "duration": 6.739591836734694
+  },
+  {
+    "id": "sd1-kode-kalau-ulangi-sungai",
+    "src": "/akademi/suara/943dd7a951d7.mp3",
+    "status": 200,
+    "duration": 7.000816326530612
+  },
+  {
+    "id": "sd1-mat-datar-atau-ruang",
+    "src": "/akademi/suara/a4329f22aa3a.mp3",
+    "status": 200,
+    "duration": 7.68
+  },
+  {
+    "id": "sd1-mat-pilah-sisi-bangun",
+    "src": "/akademi/suara/a43b0077ae90.mp3",
+    "status": 200,
+    "duration": 6.608979591836735
+  },
+  {
+    "id": "sd1-mat-rak-mainan-datar-ruang",
+    "src": "/akademi/suara/dd61fbdc8b00.mp3",
+    "status": 200,
+    "duration": 8.646530612244899
+  },
+  {
+    "id": "sd1-mat-sisi-bentuk-kota",
+    "src": "/akademi/suara/a643f6213699.mp3",
+    "status": 200,
+    "duration": 8.359183673469389
+  },
+  {
+    "id": "sd1-sains-berbunyi-atau-diam-jalan",
+    "src": "/akademi/suara/400507502222.mp3",
+    "status": 200,
+    "duration": 4.153469387755102
+  },
+  {
+    "id": "sd1-sains-berbunyi-atau-diam",
+    "src": "/akademi/suara/2a17164c5eb8.mp3",
+    "status": 200,
+    "duration": 4.440816326530612
+  },
+  {
+    "id": "sd1-sains-gelinding-luncur-putar",
+    "src": "/akademi/suara/32b6aba23f6a.mp3",
+    "status": 200,
+    "duration": 3.5787755102040815
+  },
+  {
+    "id": "sd1-sains-gerak-taman-kota",
+    "src": "/akademi/suara/d1f9e15398d3.mp3",
+    "status": 200,
+    "duration": 4.022857142857143
+  }
+]
