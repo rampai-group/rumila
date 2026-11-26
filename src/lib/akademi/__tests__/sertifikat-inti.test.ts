@@ -55,7 +55,7 @@ describe("nilaiKelulusan", () => {
 
   it("menerbitkan kelulusan uji Navigator hanya dengan bukti baru yang diterima server dalam jendela uji", () => {
     const navigator = "MAT.TKB.BILANGAN-20.01";
-    const kurikulum = [kompetensi(navigator, { core: true })];
+    const kurikulum = [kompetensi(navigator, { core: true }), kompetensi("MAT.SD1.BILANGAN-100.01")];
     const uji = { mulai: new Date("2026-11-26T10:00:00Z"), berakhir: new Date("2026-11-26T17:00:00Z") };
     const awal = ["paket-a", "paket-b", "paket-a"].map((activityId) =>
       keBaris(attempt([navigator], { activityId }), "2026-11-26T03:00:00Z"),
