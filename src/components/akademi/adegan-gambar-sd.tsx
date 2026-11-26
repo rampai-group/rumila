@@ -262,7 +262,71 @@ const KAWAT = "#243b62";
 const BUKA_SAKELAR = new Set(["sakelar-buka", "sakelar-pisau-buka", "senter-off"]);
 const TUTUP_SAKELAR = new Set(["sakelar-tutup", "sakelar-pisau-tutup", "senter-on", "mobil-on", "lentera-on"]);
 
+function SimbolLampu({ x, y }: { x: number; y: number }) {
+  return <g transform={`translate(${x} ${y})`} data-simbol-lampu="">
+    <circle r="10" fill="#fff" />
+    <path d="m-5-5 10 10m0-10-10 10" />
+  </g>;
+}
+
+function DiagramLampu({ paralel, tiga }: { paralel: boolean; tiga: boolean }) {
+  const posisi = paralel ? [[81, 25], [81, 55]] : (tiga ? [[42, 28], [77, 28], [112, 28]] : [[53, 28], [102, 28]]);
+  return <g data-topologi={paralel ? "paralel" : "seri"}>
+    <rect x="1" y="1" width="153" height="98" rx="11" fill="#f0f7ff" />
+    <g fill="none" stroke={KAWAT} strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
+      {paralel ? (
+        <>
+          <path d="M73 82H28V25H127V82H82M28 55H127" />
+          <circle cx="28" cy="55" r="3.5" fill={KAWAT} stroke="none" />
+          <circle cx="127" cy="55" r="3.5" fill={KAWAT} stroke="none" />
+        </>
+      ) : <path d="M73 82H20V28H135V82H82" />}
+      {posisi.map(([x, y]) => <SimbolLampu key={`${x}-${y}`} x={x} y={y} />)}
+      <path d="M73 72v20m9-16v12" />
+      <path d="M62 71h6m-3-3v6m21-3h6" strokeWidth="1.8" />
+    </g>
+  </g>;
+}
+
+const NYALA = {
+  padam: { warna: "#f4f7fa", halo: "transparent", radius: 0 },
+  redup: { warna: "#ffe49b", halo: "#ffefa0", radius: 19 },
+  biasa: { warna: "#ffd46c", halo: "#ffe486", radius: 24 },
+  terang: { warna: "#ffbf41", halo: "#ffdc63", radius: 30 },
+} as const;
+
+function LampuNyata({ x, tingkat }: { x: number; tingkat: keyof typeof NYALA }) {
+  const { warna, halo, radius } = NYALA[tingkat];
+  return <g transform={`translate(${x} 48)`} data-nyala={tingkat}>
+    {radius > 0 && <circle cy="-5" r={radius} fill={halo} opacity=".68" stroke="none" />}
+    <path d="M-10 11q1-7-5-12q-4-4-4-10a19 19 0 0 1 38 0q0 6-4 10q-6 5-5 12Z" fill={warna} />
+    <path d="M-10 11h20v8q0 6-7 6h-6q-7 0-7-6Z" fill="#9caec1" />
+    <path d="m-10-3 4 3 4-8 4 8 4-8 4 5M-9 17H9m-8 4h5" fill="none" strokeWidth="2" />
+  </g>;
+}
+
+const HASIL_NYALA = new Map<string, keyof typeof NYALA>([
+  ["lampu-lebih-redup", "redup"],
+  ["lampu-lebih-terang", "terang"],
+  ["lampu-sama-terang", "biasa"],
+  ["lampu-ikut-padam", "padam"],
+]);
+
+function BandingNyalaLampu({ akhir }: { akhir: keyof typeof NYALA }) {
+  return <g stroke={KAWAT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="1" y="1" width="153" height="98" rx="11" fill="#f0f7ff" stroke="none" />
+    <LampuNyata x={37} tingkat="biasa" />
+    <path d="M68 48h19m-7-7 7 7-7 7" fill="none" />
+    <LampuNyata x={117} tingkat={akhir} />
+  </g>;
+}
+
 function Rangkaian({ varian }: { varian: string }) {
+  if (varian === "dua-lampu-seri" || varian === "tiga-lampu-seri" || varian === "dua-lampu-paralel") {
+    return <DiagramLampu paralel={varian === "dua-lampu-paralel"} tiga={varian === "tiga-lampu-seri"} />;
+  }
+  const akhir = HASIL_NYALA.get(varian);
+  if (akhir) return <BandingNyalaLampu akhir={akhir} />;
   if (varian === "baterai-lemah") {
     return (
       <g stroke="#243b62" strokeWidth="3">

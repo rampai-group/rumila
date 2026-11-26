@@ -2,6 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import { ILUSTRASI_BAGIAN_BUNGA_IDS, IlustrasiBagianBunga } from "./ilustrasi-bagian-bunga";
+import { ILUSTRASI_BIJI_IDS, IlustrasiBiji } from "./ilustrasi-biji";
 import { ILUSTRASI_AWAL_SD_IDS, IlustrasiAwalSD } from "./ilustrasi-awal-sd";
 import { ILUSTRASI_HASIL_PANEN_IDS, IlustrasiHasilPanen } from "./ilustrasi-hasil-panen";
 import { ILUSTRASI_HEWAN_PILAH_IDS, IlustrasiHewanPilah } from "./ilustrasi-hewan-pilah";
@@ -36,6 +37,7 @@ export const ILUSTRASI_AWAL_IDS = [
 ].map((id) => `awal-${id}`).concat(
   ILUSTRASI_AWAL_SD_IDS,
   ILUSTRASI_BAGIAN_BUNGA_IDS,
+  ILUSTRASI_BIJI_IDS,
   ILUSTRASI_QC_TUNAS_IDS,
   ILUSTRASI_TUMBUHAN_PERBAIKI_IDS,
   ILUSTRASI_TUMBUHAN_SUSUN_IDS,
@@ -200,6 +202,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   const id = gambar.replace(/^awal-/, "");
   let art: ReactNode = null;
   if (ILUSTRASI_BAGIAN_BUNGA_IDS.includes(gambar)) art = <IlustrasiBagianBunga id={gambar} />;
+  else if (ILUSTRASI_BIJI_IDS.includes(gambar)) art = <IlustrasiBiji id={gambar} />;
   else if (ILUSTRASI_QC_TUNAS_IDS.includes(gambar)) art = <IlustrasiQcTunas id={gambar} />;
   else if (ILUSTRASI_TUMBUHAN_PERBAIKI_IDS.includes(gambar)) art = <IlustrasiTumbuhanPerbaiki id={gambar} />;
   else if (ILUSTRASI_TUMBUHAN_SUSUN_IDS.includes(gambar)) art = <IlustrasiTumbuhanSusun id={gambar} />;

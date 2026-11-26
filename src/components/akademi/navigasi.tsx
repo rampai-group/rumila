@@ -538,7 +538,8 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
     if (tebakan) s.add(`${tebakan.x},${tebakan.y}`);
     return s;
   }, [sorot, tebakan]);
-  const bisaKetukPetak = !sibuk && !terkunci && ((ronde.execMode === "langkah" && ronde.prediksi) || modeBendera);
+  const petakInteraktif = modeBendera || (ronde.execMode === "langkah" && ronde.prediksi);
+  const bisaKetukPetak = !sibuk && !terkunci && petakInteraktif;
   const blokLangkah = ronde.execMode === "langkah" ? lariLangkah?.steps[langkahKe] : undefined;
 
   // tata letak: tablet/desktop mendatar → peta di kiri, rak + tombol di kanan; HP/tegak → bertumpuk
@@ -561,8 +562,8 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const ukMini = Math.round((rapat ? 48 : 72) * sk);
   const tinggiMini = adaMini ? Math.max(56, ukMini + 8) + 16 : 0;
   const lebarKanan = Math.round(Math.min(600, Math.max(340, pw * (panjang ? 0.52 : 0.42))));
-  // petak 44 px hanya wajib bila diketuk; peta tontonan boleh lebih kecil
-  const petakMin = modeBendera || (ronde.execMode === "langkah" && ronde.prediksi) ? PETAK_MIN : 30;
+  // Papan tontonan dapat mengecil agar semua petak terlihat; petak interaktif harus tetap mudah diketuk.
+  const petakMin = petakInteraktif ? PETAK_MIN : 30;
   // ukuran petak dihitung dari ruang panggung (px), bukan tetap
   const petakDatar = mendatar
     ? Math.floor(Math.max(petakMin, Math.min(PETAK_PLAFON, (pw - lebarKanan - 16 - 28) / grid.w, (ph - 28 - tinggiMini) / grid.h)))
@@ -611,7 +612,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
         kota={papanKota}
         petak={mendatar ? petakDatar : undefined}
         petakMaks={petakTegak}
-        petakMin={petakMin}
+        petakMin={petakInteraktif ? petakMin : 0}
       />
       {adaMini && (
         <div className="mt-2 flex flex-wrap items-center justify-center gap-2" aria-label="Semua kebun">
@@ -822,9 +823,10 @@ function Panggung({ grid, agam, bendera, sorot, tebakan, bisaKetuk, onKetuk, men
       );
     }
   }
-  const ukuranSvg = petak
-    ? { width: grid.w * petak, height: grid.h * petak }
-    : { width: "100%", minWidth: grid.w * petakMin, maxWidth: grid.w * Math.max(petakMin, petakMaks) };
+  const lebarPapan = grid.w * (petak || Math.max(petakMin, petakMaks));
+  const ukuranSvg = petak && petakMin > 0
+    ? { width: lebarPapan, height: grid.h * petak }
+    : { width: "100%", minWidth: grid.w * petakMin, maxWidth: lebarPapan };
   return (
     <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: "touch" }}>
       <svg

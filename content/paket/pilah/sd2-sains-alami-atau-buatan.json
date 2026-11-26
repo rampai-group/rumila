@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-alami-atau-buatan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -90,20 +90,28 @@
       "id": "wol",
       "labelKey": "i-wol",
       "bin": "alami",
-      "emoji": "🐑"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-bahan-wol"
+      }
     },
     {
       "id": "pasir",
       "labelKey": "i-pasir",
       "bin": "alami",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-bahan-pasir"
+      }
     },
     {
       "id": "kapas",
       "labelKey": "i-kapas",
       "bin": "alami",
-      "shape": "circle",
-      "color": "#fafafa"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-bahan-kapas"
+      }
     },
     {
       "id": "daun",
@@ -147,9 +155,11 @@
       "id": "semen",
       "labelKey": "i-semen",
       "bin": "buatan",
-      "emoji": "🪣",
-      "color": "#9e9e9e",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-bahan-semen"
+      }
     }
   ],
   "pilihan": []

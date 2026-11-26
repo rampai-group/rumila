@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-alami-atau-buatan-dapur",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,7 +78,10 @@
       "id": "bambu",
       "labelKey": "i-bambu",
       "bin": "alami",
-      "emoji": "🎋"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-bahan-bambu"
+      }
     },
     {
       "id": "rotan",
@@ -93,7 +96,10 @@
       "id": "tanahliat",
       "labelKey": "i-tanahliat",
       "bin": "alami",
-      "emoji": "🟤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-bahan-tanah-liat"
+      }
     },
     {
       "id": "batukali",
@@ -123,8 +129,10 @@
       "id": "foil",
       "labelKey": "i-foil",
       "bin": "buatan",
-      "color": "#e0e0e0",
-      "shape": "rect"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-bahan-aluminium-foil"
+      }
     },
     {
       "id": "plastikwrap",

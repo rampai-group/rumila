@@ -6,9 +6,74 @@ export const ILUSTRASI_QC_SD_AWAL_IDS = [
   "qc-kain-saring-halus",
   "qc-gelas-ukur",
   "qc-pasir-halus-batu-kecil",
+  "qc-bahan-pasir",
+  "qc-bahan-semen",
+  "qc-bahan-wol",
+  "qc-bahan-kapas",
+  "qc-bahan-bambu",
+  "qc-bahan-tanah-liat",
+  "qc-bahan-aluminium-foil",
 ];
 
 export function IlustrasiQcSdAwal({ id }: { id: string }) {
+  if (id === "qc-bahan-pasir") return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <path d="M13 78q12-8 24-16 8-5 16-14 7-7 14-7 8 2 17 10l35 24q7 8-7 11H28q-14 0-15-8Z" fill="#edc37c" stroke="#ac7841" strokeWidth="3" />
+      <path d="M25 79l21-10m-6 12 15-5m1-22 8-6m-3 15 14-2m-8 16 17 2m6-15 13 7m-3 8 11 2" fill="none" stroke="#9e6c3c" strokeWidth="2" strokeDasharray="1 4" />
+    </g>
+  );
+  if (id === "qc-bahan-semen") return (
+    <g stroke="#665b4c" strokeWidth="3" strokeLinejoin="round">
+      <path d="M30 24q24 7 55 2l9 44-7 17H33l-8-11Z" fill="#dfbb80" />
+      <path d="M29 24q22-16 55 1-16 14-52 4Z" fill="#aaa39a" />
+      <path d="M43 42H72L77 66H40Z" fill="#a6a8a4" />
+      <path d="M44 54l28 1m-22-12 1 11m13 1 1 10" fill="none" stroke="#727875" strokeWidth="2" />
+      <path d="M60 87q12-5 20-14 6-7 14-3l26 17Z" fill="#adb0ad" stroke="#686965" />
+      <path d="m84 79 12 1m4 4 9 1" fill="none" stroke="#6a6c66" strokeWidth="2" />
+    </g>
+  );
+  if (id === "qc-bahan-wol") return (
+    <g stroke="#8e6e4c" strokeLinejoin="round" strokeLinecap="round">
+      <path d="M16 67q-2-16 13-19-1-12 14-15 9-13 22-6 15-4 23 9 16-2 20 12 13 2 11 15 6 15-12 20-13 7-24 2-15 6-32 0-17 4-28-4-8-2-7-14Z" fill="#ead3ae" strokeWidth="3" />
+      <path d="M27 65q7-14 15-5 4 11-4 12-6 0-5-5m16-20q2-14 14-9 11 5 6 12-6 6-10-1m17 19q3-14 14-12 10 1 7 11-4 7-11 3m12-26q8 1 9 8M48 76q8-9 18-5m37 6q6-2 8-7" fill="none" strokeWidth="2.5" />
+    </g>
+  );
+  if (id === "qc-bahan-kapas") return (
+    <g strokeLinejoin="round" strokeLinecap="round">
+      <path d="M60 89l-4-56m4 37-24-17m23 12 35-17" stroke="#735745" fill="none" strokeWidth="5" />
+      <path d="M60 83q9-16 30-13-7 15-30 13Zm-2-9q-18 0-26-10 16-7 26 10Z" fill="#78ac56" stroke="#527946" strokeWidth="2" />
+      <path d="M48 40q-10-4-8-15 0-7 9-9 4-10 14-6 9 4 9 10 10 6 4 14-6 9-20 9Z M24 64q-10-3-9-13 2-8 11-8 6-9 15-4 11 6 7 14-3 12-24 11Z M82 57q-5-5-5-11 2-9 11-10 1-8 12-7 9 1 12 12 9 2 5 12-5 11-35 4Z" fill="#fff8ef" stroke="#89765c" strokeWidth="2.7" />
+      <path d="m48 38 9 7 11-7M22 60l10 6 10-7m42-6 11 9 12-7" fill="none" stroke="#906444" strokeWidth="3" />
+    </g>
+  );
+  if (id === "qc-bahan-bambu") return (
+    <g stroke="#4c7150" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round">
+      <path d="M21 76 70 15l14 9-50 62Z" fill="#9cc86b" />
+      <path d="m45 50 13 8m-31 9 12 10m20-46 13 9" fill="none" />
+      <path d="M48 83 99 26l13 10-54 56Z" fill="#7bb45c" />
+      <path d="m73 55 12 9m-25 5 11 9M89 38l12 10" fill="none" />
+      <path d="M76 32q7-17 27-18-6 14-27 18Zm1 2q21-3 27 11-16 0-27-11Z" fill="#6cab55" />
+      <ellipse cx="77" cy="20" rx="8" ry="4" transform="rotate(34 77 20)" fill="#e5ebae" />
+      <ellipse cx="105" cy="31" rx="8" ry="4" transform="rotate(36 105 31)" fill="#dce8a0" />
+    </g>
+  );
+  if (id === "qc-bahan-tanah-liat") return (
+    <g stroke="#7d4b3d" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 69q9-9 10-24l12-13 26-7 23 6 21 22-1 18-20 13-48-2Z" fill="#b27661" />
+      <path d="m32 47 19-9 17 4 20-4 15 13M40 69l19-9 14 7 22-10" fill="none" stroke="#d69a7f" />
+      <path d="m16 79 17-5 9 8-8 8-22-3Zm83-4 16-1 7 10-10 6-15-4Z" fill="#c28870" />
+    </g>
+  );
+  if (id === "qc-bahan-aluminium-foil") return (
+    <g stroke="#697782" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round">
+      <path d="M22 62l49-21 50 28-46 20Z" fill="#cbd7e0" />
+      <path d="m36 65 43-16 17 8-43 16Zm24 14 43-18 12 7-44 17Z" fill="#f6fafd" stroke="none" />
+      <path d="M22 44 89 19q11-3 17 5t-2 18L35 69Z" fill="#b5c5d1" />
+      <path d="m26 50 72-27m-68 36 74-27" fill="none" stroke="#f3f8fb" />
+      <ellipse cx="28" cy="57" rx="11" ry="14" transform="rotate(-25 28 57)" fill="#dce5ed" />
+      <ellipse cx="28" cy="57" rx="5" ry="7" transform="rotate(-25 28 57)" fill="#8e6752" />
+    </g>
+  );
   if (id === "qc-pasir-halus-batu-kecil") return (
     <g strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 74c17-5 28-10 43-22 7-6 19-11 28-5 9 6 19 13 36 25q5 7-8 10H23q-13-1-11-8Z"
