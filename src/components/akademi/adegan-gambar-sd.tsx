@@ -78,7 +78,26 @@ function JamSudut({ pukul }: { pukul: number }) {
   );
 }
 
+function JamWaktu({ jam, menit, varian }: { jam: number; menit: number; varian: string }) {
+  const ujung = (sudut: number, panjang: number) => {
+    const rad = sudut * Math.PI / 180;
+    return { x2: 50 + panjang * Math.sin(rad), y2: 50 - panjang * Math.cos(rad) };
+  };
+  return <g data-jam-waktu={varian}>
+    <circle cx="50" cy="50" r="47" fill="#fff" stroke="#243b62" strokeWidth="3" />
+    {Array.from({ length: 12 }, (_, i) => {
+      const p = ujung((i + 1) * 30, 36);
+      return <text key={i} x={p.x2} y={p.y2} textAnchor="middle" dominantBaseline="central" fill="#243b62" fontSize="11" fontWeight="700">{i + 1}</text>;
+    })}
+    <line data-jarum="menit" x1="50" y1="50" {...ujung(menit * 6, 29)} stroke="#087db4" strokeWidth="3" strokeLinecap="round" />
+    <line data-jarum="jam" x1="50" y1="50" {...ujung(jam * 30 + menit / 2, 20)} stroke="#243b62" strokeWidth="5" strokeLinecap="round" />
+    <circle cx="50" cy="50" r="3" fill="#243b62" />
+  </g>;
+}
+
 function Geometri({ varian }: { varian: string }) {
+  const waktu = /^jam-waktu-(1[0-2]|[1-9])-(00|30)$/.exec(varian);
+  if (waktu) return <JamWaktu jam={Number(waktu[1])} menit={Number(waktu[2])} varian={varian} />;
   const jam = /^pukul-(1[01]|[1-9])$/.exec(varian);
   if (jam) return <JamSudut pukul={Number(jam[1])} />;
   if (varian === "sudut-buku") {

@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-jam-setengah-pagi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -146,7 +146,11 @@
       "id": "jam-6",
       "labelKey": "i-jam-pukul-6",
       "bin": "pukul-6",
-      "emoji": "🕕"
+      "emoji": "🕕",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-6-00"
+      }
     },
     {
       "id": "digital-6",
@@ -158,7 +162,11 @@
       "id": "jam-6-30",
       "labelKey": "i-jam-6t30",
       "bin": "setengah-7",
-      "emoji": "🕡"
+      "emoji": "🕡",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-6-30"
+      }
     },
     {
       "id": "digital-6-30",
@@ -170,7 +178,11 @@
       "id": "jam-7",
       "labelKey": "i-jam-pukul-7",
       "bin": "pukul-7",
-      "emoji": "🕖"
+      "emoji": "🕖",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-7-00"
+      }
     },
     {
       "id": "digital-7",
@@ -182,7 +194,11 @@
       "id": "jam-7-30",
       "labelKey": "i-jam-7t30",
       "bin": "setengah-8",
-      "emoji": "🕢"
+      "emoji": "🕢",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-7-30"
+      }
     },
     {
       "id": "digital-7-30",
@@ -194,7 +210,11 @@
       "id": "jam-8",
       "labelKey": "i-jam-pukul-8",
       "bin": "pukul-8",
-      "emoji": "🕗"
+      "emoji": "🕗",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-8-00"
+      }
     },
     {
       "id": "digital-8",
@@ -206,7 +226,11 @@
       "id": "jam-8-30",
       "labelKey": "i-jam-8t30",
       "bin": "setengah-9",
-      "emoji": "🕣"
+      "emoji": "🕣",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-8-30"
+      }
     },
     {
       "id": "digital-8-30",
@@ -218,7 +242,11 @@
       "id": "jam-9",
       "labelKey": "i-jam-pukul-9",
       "bin": "pukul-9",
-      "emoji": "🕘"
+      "emoji": "🕘",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-9-00"
+      }
     },
     {
       "id": "digital-9",
@@ -230,7 +258,11 @@
       "id": "jam-9-30",
       "labelKey": "i-jam-9t30",
       "bin": "setengah-10",
-      "emoji": "🕤"
+      "emoji": "🕤",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-9-30"
+      }
     },
     {
       "id": "digital-9-30",
@@ -242,7 +274,11 @@
       "id": "jam-10",
       "labelKey": "i-jam-pukul-10",
       "bin": "pukul-10",
-      "emoji": "🕙"
+      "emoji": "🕙",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-10-00"
+      }
     },
     {
       "id": "digital-10",
@@ -254,7 +290,11 @@
       "id": "jam-10-30",
       "labelKey": "i-jam-10t30",
       "bin": "setengah-11",
-      "emoji": "🕥"
+      "emoji": "🕥",
+      "adegan": {
+        "jenis": "geometri",
+        "varian": "jam-waktu-10-30"
+      }
     },
     {
       "id": "digital-10-30",

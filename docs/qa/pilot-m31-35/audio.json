@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sd1-kode-perbaiki-ulangi-gudang",
+    "src": "/akademi/suara/d24c5aac6a0b.mp3",
+    "status": 200,
+    "duration": 7.183673469387755
+  },
+  {
+    "id": "sd1-kode-perbaiki-ulangi",
+    "src": "/akademi/suara/0ffa2b38e22f.mp3",
+    "status": 200,
+    "duration": 6.530612244897959
+  },
+  {
+    "id": "sd1-mat-carroll-kuning-bulat",
+    "src": "/akademi/suara/4667ea17e9b4.mp3",
+    "status": 200,
+    "duration": 7.157551020408163
+  },
+  {
+    "id": "sd1-mat-carroll-merah-bulat",
+    "src": "/akademi/suara/9f0443cfaca9.mp3",
+    "status": 200,
+    "duration": 7.39265306122449
+  },
+  {
+    "id": "sd1-mat-jam-setengah-pagi",
+    "src": "/akademi/suara/4e83fdb8fef4.mp3",
+    "status": 200,
+    "duration": 8.881632653061224
+  },
+  {
+    "id": "sd1-mat-jam-setengah-siang",
+    "src": "/akademi/suara/8c1ecf66b066.mp3",
+    "status": 200,
+    "duration": 8.594285714285714
+  },
+  {
+    "id": "sd1-sains-air-atau-daratan-dari-pesawat",
+    "src": "/akademi/suara/889d4fc78a39.mp3",
+    "status": 200,
+    "duration": 4.780408163265306
+  },
+  {
+    "id": "sd1-sains-air-atau-daratan",
+    "src": "/akademi/suara/53ad6d8ccdb4.mp3",
+    "status": 200,
+    "duration": 3.3436734693877552
+  },
+  {
+    "id": "sd1-mat-urutan-bulan",
+    "src": "/akademi/suara/d28e4ccf9784.mp3",
+    "status": 200,
+    "duration": 6.1387755102040815
+  },
+  {
+    "id": "sd1-mat-urutan-hari",
+    "src": "/akademi/suara/79238ea3b035.mp3",
+    "status": 200,
+    "duration": 5.328979591836735
+  }
+]

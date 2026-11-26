@@ -201490,7 +201490,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-jam-setengah-pagi",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -201636,7 +201636,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-6",
         "labelKey": "i-jam-pukul-6",
         "bin": "pukul-6",
-        "emoji": "🕕"
+        "emoji": "🕕",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-6-00"
+        }
       },
       {
         "id": "digital-6",
@@ -201648,7 +201652,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-6-30",
         "labelKey": "i-jam-6t30",
         "bin": "setengah-7",
-        "emoji": "🕡"
+        "emoji": "🕡",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-6-30"
+        }
       },
       {
         "id": "digital-6-30",
@@ -201660,7 +201668,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-7",
         "labelKey": "i-jam-pukul-7",
         "bin": "pukul-7",
-        "emoji": "🕖"
+        "emoji": "🕖",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-7-00"
+        }
       },
       {
         "id": "digital-7",
@@ -201672,7 +201684,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-7-30",
         "labelKey": "i-jam-7t30",
         "bin": "setengah-8",
-        "emoji": "🕢"
+        "emoji": "🕢",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-7-30"
+        }
       },
       {
         "id": "digital-7-30",
@@ -201684,7 +201700,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-8",
         "labelKey": "i-jam-pukul-8",
         "bin": "pukul-8",
-        "emoji": "🕗"
+        "emoji": "🕗",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-8-00"
+        }
       },
       {
         "id": "digital-8",
@@ -201696,7 +201716,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-8-30",
         "labelKey": "i-jam-8t30",
         "bin": "setengah-9",
-        "emoji": "🕣"
+        "emoji": "🕣",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-8-30"
+        }
       },
       {
         "id": "digital-8-30",
@@ -201708,7 +201732,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-9",
         "labelKey": "i-jam-pukul-9",
         "bin": "pukul-9",
-        "emoji": "🕘"
+        "emoji": "🕘",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-9-00"
+        }
       },
       {
         "id": "digital-9",
@@ -201720,7 +201748,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-9-30",
         "labelKey": "i-jam-9t30",
         "bin": "setengah-10",
-        "emoji": "🕤"
+        "emoji": "🕤",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-9-30"
+        }
       },
       {
         "id": "digital-9-30",
@@ -201732,7 +201764,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-10",
         "labelKey": "i-jam-pukul-10",
         "bin": "pukul-10",
-        "emoji": "🕙"
+        "emoji": "🕙",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-10-00"
+        }
       },
       {
         "id": "digital-10",
@@ -201744,7 +201780,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-10-30",
         "labelKey": "i-jam-10t30",
         "bin": "setengah-11",
-        "emoji": "🕥"
+        "emoji": "🕥",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-10-30"
+        }
       },
       {
         "id": "digital-10-30",
@@ -201756,7 +201796,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-jam-setengah-siang",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -201902,7 +201942,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-1",
         "labelKey": "i-jam-pukul-1",
         "bin": "pukul-1",
-        "emoji": "🕐"
+        "emoji": "🕐",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-1-00"
+        }
       },
       {
         "id": "digital-1",
@@ -201914,7 +201958,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-1-30",
         "labelKey": "i-jam-1t30",
         "bin": "setengah-2",
-        "emoji": "🕜"
+        "emoji": "🕜",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-1-30"
+        }
       },
       {
         "id": "digital-1-30",
@@ -201926,7 +201974,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-2",
         "labelKey": "i-jam-pukul-2",
         "bin": "pukul-2",
-        "emoji": "🕑"
+        "emoji": "🕑",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-2-00"
+        }
       },
       {
         "id": "digital-2",
@@ -201938,7 +201990,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-2-30",
         "labelKey": "i-jam-2t30",
         "bin": "setengah-3",
-        "emoji": "🕝"
+        "emoji": "🕝",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-2-30"
+        }
       },
       {
         "id": "digital-2-30",
@@ -201950,7 +202006,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-3",
         "labelKey": "i-jam-pukul-3",
         "bin": "pukul-3",
-        "emoji": "🕒"
+        "emoji": "🕒",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-3-00"
+        }
       },
       {
         "id": "digital-3",
@@ -201962,7 +202022,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-3-30",
         "labelKey": "i-jam-3t30",
         "bin": "setengah-4",
-        "emoji": "🕞"
+        "emoji": "🕞",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-3-30"
+        }
       },
       {
         "id": "digital-3-30",
@@ -201974,7 +202038,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-4",
         "labelKey": "i-jam-pukul-4",
         "bin": "pukul-4",
-        "emoji": "🕓"
+        "emoji": "🕓",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-4-00"
+        }
       },
       {
         "id": "digital-4",
@@ -201986,7 +202054,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-4-30",
         "labelKey": "i-jam-4t30",
         "bin": "setengah-5",
-        "emoji": "🕟"
+        "emoji": "🕟",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-4-30"
+        }
       },
       {
         "id": "digital-4-30",
@@ -201998,7 +202070,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-5",
         "labelKey": "i-jam-pukul-5",
         "bin": "pukul-5",
-        "emoji": "🕔"
+        "emoji": "🕔",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-5-00"
+        }
       },
       {
         "id": "digital-5",
@@ -202010,7 +202086,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jam-5-30",
         "labelKey": "i-jam-5t30",
         "bin": "setengah-6",
-        "emoji": "🕠"
+        "emoji": "🕠",
+        "adegan": {
+          "jenis": "geometri",
+          "varian": "jam-waktu-5-30"
+        }
       },
       {
         "id": "digital-5-30",
