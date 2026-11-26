@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sd1-kode-cari-robot-pabrik",
+    "src": "/akademi/suara/1de83bc4f2e2.mp3",
+    "status": 200,
+    "duration": 6.556734693877551
+  },
+  {
+    "id": "sd1-kode-kabel-tanpa-kabel",
+    "src": "/akademi/suara/71eabdf5c2df.mp3",
+    "status": 200,
+    "duration": 5.668571428571428
+  },
+  {
+    "id": "sd1-kode-robot-atau-bukan",
+    "src": "/akademi/suara/842733df4122.mp3",
+    "status": 200,
+    "duration": 6.2693877551020405
+  },
+  {
+    "id": "sd1-kode-sambungan-perangkat",
+    "src": "/akademi/suara/c90c46a40d50.mp3",
+    "status": 200,
+    "duration": 5.485714285714286
+  },
+  {
+    "id": "sd1-kode-ya-tidak-listrik",
+    "src": "/akademi/suara/8a9204a67464.mp3",
+    "status": 200,
+    "duration": 5.12
+  },
+  {
+    "id": "sd1-kode-ya-tidak-roda",
+    "src": "/akademi/suara/8f835878c7fd.mp3",
+    "status": 200,
+    "duration": 4.83265306122449
+  },
+  {
+    "id": "sd1-sains-cepat-atau-lambat-hangat",
+    "src": "/akademi/suara/2706f0dad9eb.mp3",
+    "status": 200,
+    "duration": 5.5902040816326535
+  },
+  {
+    "id": "sd1-sains-tebak-panas-matahari",
+    "src": "/akademi/suara/a2a505db7964.mp3",
+    "status": 200,
+    "duration": 2.899591836734694
+  },
+  {
+    "id": "sd1-mat-pola-besar-kecil-arah",
+    "src": "/akademi/suara/7b8be7f7e574.mp3",
+    "status": 200,
+    "duration": 5.3028571428571425
+  },
+  {
+    "id": "sd1-mat-pola-tangan-bintang",
+    "src": "/akademi/suara/f421b95f5d11.mp3",
+    "status": 200,
+    "duration": 6.765714285714286
+  }
+]

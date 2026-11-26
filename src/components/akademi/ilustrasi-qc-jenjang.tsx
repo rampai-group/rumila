@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ILUSTRASI_HABITAT } from "./ilustrasi-hewan-habitat";
 import { ILUSTRASI_BENTUK_PILOT } from "./ilustrasi-pilot-bentuk";
+import { ILUSTRASI_MATAHARI_PILOT } from "./ilustrasi-pilot-matahari";
 import { ILUSTRASI_UKUR_PILOT } from "./ilustrasi-pilot-ukur";
 import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
 
@@ -379,6 +380,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_BENTUK_PILOT,
   ...ILUSTRASI_GERAK_PILOT,
   ...ILUSTRASI_UKUR_PILOT,
+  ...ILUSTRASI_MATAHARI_PILOT,
   "lembar-kertas": <g {...RINGKAS} stroke="#8a9baa">
     <path d="M39 15H88L102 28V86H39Z" fill="#dce6ed" />
     <path d="M27 13H77L94 29V82H27Z" fill="#fffdf6" />

@@ -1,0 +1,638 @@
+[
+  {
+    "paket": "sd1-kode-ya-tidak-listrik",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 31025
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.289,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-ya-tidak-roda",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25346
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 7,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.289,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-cepat-atau-lambat-hangat",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 27140
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.233,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-tebak-panas-matahari",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23687
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 3,
+    "knobs": {
+      "itemCount": 4
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.27,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-pola-besar-kecil-arah",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 30191
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 9,
+    "kepadatan": 12,
+    "knobs": {
+      "blanks": 3,
+      "distractor": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.017,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-pola-tangan-bintang",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22451
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 12,
+    "knobs": {
+      "blanks": 3,
+      "distractor": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.017,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-kabel-tanpa-kabel",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22133
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.292,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-sambungan-perangkat",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23555
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 7,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 3,
+    "ruangKosongLuarMaks": 0.25,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-cari-robot-pabrik",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26200
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.25,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-robot-atau-bukan",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24646
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.25,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-ya-tidak-listrik",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 30950
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.165,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-ya-tidak-roda",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25189
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 7,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.165,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-cepat-atau-lambat-hangat",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26960
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-tebak-panas-matahari",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25451
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 9,
+    "kepadatan": 3,
+    "knobs": {
+      "itemCount": 4
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.248,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-pola-besar-kecil-arah",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 28796
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 12,
+    "knobs": {
+      "blanks": 3,
+      "distractor": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-pola-tangan-bintang",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22429
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 12,
+    "knobs": {
+      "blanks": 3,
+      "distractor": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-kabel-tanpa-kabel",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22007
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-sambungan-perangkat",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25562
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 7,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-cari-robot-pabrik",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 25657
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-robot-atau-bukan",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24583
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.196,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-ya-tidak-listrik",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 31350
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.137,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-ya-tidak-roda",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26596
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 7,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.137,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-cepat-atau-lambat-hangat",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26895
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 5,
+    "knobs": {
+      "itemCount": 8
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.194,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-sains-tebak-panas-matahari",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 23892
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 3,
+    "knobs": {
+      "itemCount": 4
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.228,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-pola-besar-kecil-arah",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 31117
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 12,
+    "knobs": {
+      "blanks": 3,
+      "distractor": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-mat-pola-tangan-bintang",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22246
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 12,
+    "knobs": {
+      "blanks": 3,
+      "distractor": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.014,
+    "dragCount": 0
+  },
+  {
+    "paket": "sd1-kode-kabel-tanpa-kabel",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22320
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.194,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-sambungan-perangkat",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24060
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 7,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.194,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-cari-robot-pabrik",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 26319
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.194,
+    "dragCount": 16
+  },
+  {
+    "paket": "sd1-kode-robot-atau-bukan",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 24751
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 6,
+    "knobs": {
+      "itemCount": 10
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "ruangKosongLuarMaks": 0.194,
+    "dragCount": 16
+  }
+]
