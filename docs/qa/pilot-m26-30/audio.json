@@ -25,27 +25,27 @@
   },
   {
     "id": "sd1-mat-belanja-ringan-berat",
-    "src": "/akademi/suara/dcd569b57de1.mp3",
+    "src": "/akademi/suara/9f70557be49c.mp3",
     "status": 200,
-    "duration": 5.668571428571428
+    "duration": 8.672653061224489
   },
   {
     "id": "sd1-mat-urut-isi-wadah",
-    "src": "/akademi/suara/090365b727e6.mp3",
+    "src": "/akademi/suara/60b70d1a853a.mp3",
     "status": 200,
-    "duration": 6.4
+    "duration": 10.553469387755102
   },
   {
     "id": "sd1-mat-urut-ringan-berat",
-    "src": "/akademi/suara/2e97141c2f0c.mp3",
+    "src": "/akademi/suara/9f70557be49c.mp3",
     "status": 200,
-    "duration": 5.198367346938776
+    "duration": 8.672653061224489
   },
   {
     "id": "sd1-mat-wadah-halaman-isi",
-    "src": "/akademi/suara/8aecd44486a7.mp3",
+    "src": "/akademi/suara/60b70d1a853a.mp3",
     "status": 200,
-    "duration": 7.862857142857143
+    "duration": 10.553469387755102
   },
   {
     "id": "sd1-sains-bunyi-dekat-jauh-jalan",
