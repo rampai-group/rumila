@@ -221,11 +221,11 @@ function Tanya({ children, sebaris }: { children: ReactNode; sebaris?: boolean }
 }
 
 /** Baris pesanan di balon: emoji diulang qty kali + angka kecil. */
-function BarisPesanan({ v, qty, label, tampilLabel }: { v: VisualSpec; qty: number; label: string; tampilLabel?: boolean }) {
+function BarisPesanan({ v, qty, label, tampilLabel, ringkas }: { v: VisualSpec; qty: number; label: string; tampilLabel?: boolean; ringkas?: boolean }) {
   const sk = useSk();
   return (
     <div className="flex flex-wrap items-center gap-1">
-      {Array.from({ length: qty }, (_, k) => <Benda key={k} v={v} size={Math.round(30 * sk)} />)}
+      {Array.from({ length: ringkas ? Math.min(qty, 1) : qty }, (_, k) => <Benda key={k} v={v} size={Math.round(30 * sk)} />)}
       <span className="ml-1 rounded-full px-2" style={{ ...Tebal, fontSize: 16 * sk, background: "#fff1c2" }}>{qty}</span>
       <span className={tampilLabel ? "font-bold" : "sr-only"} style={{ fontSize: 16 * sk }}>{label}</span>
     </div>
@@ -330,8 +330,10 @@ function Penanda() {
 }
 
 /** Keranjang 🧺: isi bisa diketuk untuk dikembalikan. */
-function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, disabled, className = "", padat = false }: { isi: { key: string; v: VisualSpec; label?: string; ariaLabel?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; disabled?: boolean; className?: string; padat?: boolean }) {
+function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang di lapak", ikon = "🧺", sorot, disabled, className = "", padat = false, kurangiSatu }: { isi: { key: string; v: VisualSpec; label?: string; ariaLabel?: string }[]; onKembali?: (key: string) => void; judul?: string; kosong?: string; ikon?: string; sorot?: boolean; disabled?: boolean; className?: string; padat?: boolean; kurangiSatu?: string }) {
   const sk = useSk();
+  const { w } = usePanggung();
+  const ukuranSatuan = Math.round((w < 350 ? 21 : 26) * Math.min(sk, 1.24));
   return (
     <Wadah
       className={`${padat ? "shrink-0" : "flex-1"} ${className}`}
@@ -346,7 +348,20 @@ function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang
       }
     >
       {isi.length === 0 && <span className="w-full rounded-full bg-white/80 px-3 py-1 text-center font-bold" style={{ fontSize: 14 * sk, color: INK }}>{kosong}</span>}
-      {isi.map((b) => (
+      {kurangiSatu && isi.length > 0 && (
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() => onKembali?.(isi[isi.length - 1].key)}
+          className="flex w-full min-w-0 flex-col items-center gap-1 rounded-2xl bg-white px-1.5 py-2 active:scale-[.98]"
+        >
+          <span aria-hidden className="grid grid-cols-5 place-items-center gap-x-0.5 gap-y-1">
+            {isi.map((b) => <Benda key={b.key} v={b.v} size={ukuranSatuan} />)}
+          </span>
+          <span className="text-center text-xs font-extrabold text-[#254164]">{kurangiSatu}</span>
+        </button>
+      )}
+      {!kurangiSatu && isi.map((b) => (
         <KartuBenda key={b.key} v={b.v} size={Math.round(44 * sk)} label={b.label} ariaLabel={b.ariaLabel} labelSize={Math.round(13 * sk)} disabled={disabled} onClick={onKembali ? () => onKembali(b.key) : undefined} className="min-h-14 min-w-14 akademi-pop" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
       ))}
     </Wadah>
@@ -354,7 +369,7 @@ function Keranjang({ isi, onKembali, judul = "Keranjang", kosong = "Ketuk barang
 }
 
 /** Laci uang: tombol per pecahan (dikelompokkan), tampil sisa lembar. */
-function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh }: { laci: number[]; dipakai: number[]; onAmbil: (nilai: number) => void; bahasa: BahasaAnak; sorot?: number | null; disabled?: boolean; /** mengisi sisa tinggi kolom */ penuh?: boolean }) {
+function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh, hitungKoin }: { laci: number[]; dipakai: number[]; onAmbil: (nilai: number) => void; bahasa: BahasaAnak; sorot?: number | null; disabled?: boolean; /** mengisi sisa tinggi kolom */ penuh?: boolean; hitungKoin?: boolean }) {
   const kelompok = useMemo(() => {
     const m = new Map<number, number>();
     for (const d of laci) m.set(d, (m.get(d) ?? 0) + 1);
@@ -373,14 +388,14 @@ function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh }: { laci
       <div className={`flex flex-wrap content-center justify-center rounded-[14px] ${penuh ? "flex-1" : ""}`} style={{ gap: 8 * sk, padding: 6 * sk, background: "#dcecff" }}>
         {kelompok.map(([nilai, jumlah]) => {
           const sisa = jumlah - terpakai(nilai);
-          const v = visualUang(nilai);
+          const v = hitungKoin ? { shape: "koin" as const, color: "#f2c230", label: bahasa === "en" ? "1 coin" : "1 koin" } : visualUang(nilai);
           return (
             <KartuBenda
               key={nilai}
               v={v}
               size={Math.round((padat ? 26 : 44) * sk)}
               label={v.label}
-              ariaLabel={labelAmbilUang(nilai, bahasa)}
+              ariaLabel={hitungKoin ? (bahasa === "en" ? "Add one coin" : "Ambil satu koin") : labelAmbilUang(nilai, bahasa)}
               labelSize={Math.round(13 * sk)}
               dim={sisa <= 0}
               selected={sorot === nilai}
@@ -922,9 +937,12 @@ function ModeLengkapi(c: Ctx) {
   const kurang = Math.max(0, totalKoin - ditunjukkan);
   const { tema, skala: sk } = usePanggung();
   const slotPx = Math.round(56 * sk);
+  const hitungKoin = c.paket.id === "sd1-mat-genap-sepuluh-koin";
+  const gambarKoin = hitungKoin ? <Benda v={{ shape: "koin", color: "#f2c230" }} size={Math.round(28 * sk)} /> : "🪙";
+  const labelKembali = (nilai: number) => hitungKoin ? (c.bahasa === "en" ? "Return one coin" : "Kembalikan satu koin") : labelKembalikanUang(nilai, c.bahasa);
 
   return (
-    <Kunci terkunci={terkunci} kiri={<>
+    <Kunci terkunci={terkunci} tengah={hitungKoin} kiri={<>
       <Pembeli
         wajah={wajah} teksUcap={teks} hasil={hasil}
         balon={
@@ -942,7 +960,7 @@ function ModeLengkapi(c: Ctx) {
         }
         jawabanBenar={`Kurang ${ronde.target} koin`}
       />
-      <Lapak>
+      <Lapak padat={hitungKoin}>
         <div className="flex flex-1 flex-col rounded-[18px]" style={{ padding: 12 * sk, background: tema.panel, boxShadow: bayangKartu() }}>
           <div className="mb-2 flex items-center justify-between" style={{ ...Tebal, fontSize: 17 * sk }}><span>Harga: {totalKoin} koin</span><span className="rounded-full px-3" style={{ background: "#fff1c2", fontSize: 15 * sk }}>{uang.length} ditambah</span></div>
           <div className="flex flex-1 flex-wrap content-center justify-center" style={{ gap: 6 * sk }} aria-label="Deretan koin harga">
@@ -951,19 +969,19 @@ function ModeLengkapi(c: Ctx) {
               const idx = k - ditunjukkan;
               const terisi = !milikPembeli && idx < uang.length;
               return (
-                <button key={k} type="button" disabled={terkunci || !terisi} onClick={() => kembalikan(idx)} aria-label={milikPembeli ? (tampil ? "Koin pembeli" : "Koin pembeli (tersembunyi)") : terisi ? labelKembalikanUang(uang[idx], c.bahasa) : "Belum terisi"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ width: slotPx, height: slotPx, border: terisi || (milikPembeli && tampil) ? "none" : milikPembeli ? "3px solid rgba(91,75,255,.55)" : "3px dashed rgba(11,37,69,.55)", background: terisi ? "#fff" : milikPembeli ? "#ece9ff" : "#fff", boxShadow: terisi ? "0 3px 0 rgba(11,37,69,.18), inset 0 0 0 2px #e0b400" : "none", fontSize: 30 * sk, lineHeight: 1 }}>
-                  {milikPembeli ? (tampil ? "🪙" : <span style={{ ...Tebal, fontSize: 18 * sk, color: "#5b4bff" }}>?</span>) : terisi ? <span className="akademi-pop">🪙</span> : hint && idx === uang.length ? <span className="akademi-bounce opacity-60">🪙</span> : null}
+                <button key={k} type="button" disabled={terkunci || !terisi} onClick={() => kembalikan(idx)} aria-label={milikPembeli ? (tampil ? "Koin pembeli" : "Koin pembeli (tersembunyi)") : terisi ? labelKembali(uang[idx]) : "Belum terisi"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ width: slotPx, height: slotPx, border: terisi || (milikPembeli && tampil) ? "none" : milikPembeli ? "3px solid rgba(91,75,255,.55)" : "3px dashed rgba(11,37,69,.55)", background: terisi ? "#fff" : milikPembeli ? "#ece9ff" : "#fff", boxShadow: terisi ? "0 3px 0 rgba(11,37,69,.18), inset 0 0 0 2px #e0b400" : "none", fontSize: 30 * sk, lineHeight: 1 }}>
+                  {milikPembeli ? (tampil ? gambarKoin : <span style={{ ...Tebal, fontSize: 18 * sk, color: "#5b4bff" }}>?</span>) : terisi ? <span className="akademi-pop">{gambarKoin}</span> : hint && idx === uang.length ? <span className="akademi-bounce opacity-60">{gambarKoin}</span> : null}
                 </button>
               );
             })}
             {uang.length > kurang && Array.from({ length: uang.length - kurang }, (_, k) => (
-              <button key={`lebih-${k}`} type="button" disabled={terkunci} onClick={() => kembalikan(kurang + k)} aria-label={labelKembalikanUang(uang[kurang + k], c.bahasa)} className="flex size-14 items-center justify-center rounded-full bg-[#ffe9ec] active:scale-90" style={{ width: slotPx, height: slotPx, boxShadow: "inset 0 0 0 3px #ff5a6e", fontSize: 30 * sk, lineHeight: 1 }}>🪙</button>
+              <button key={`lebih-${k}`} type="button" disabled={terkunci} onClick={() => kembalikan(kurang + k)} aria-label={labelKembali(uang[kurang + k])} className="flex size-14 items-center justify-center rounded-full bg-[#ffe9ec] active:scale-90" style={{ width: slotPx, height: slotPx, boxShadow: "inset 0 0 0 3px #ff5a6e", fontSize: 30 * sk, lineHeight: 1 }}>{gambarKoin}</button>
             ))}
           </div>
         </div>
       </Lapak>
     </>} kanan={<>
-      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={hint && uang.length < kurang ? KOIN : null} disabled={terkunci || tampil} penuh />
+      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={hint && uang.length < kurang ? KOIN : null} disabled={terkunci || tampil} penuh={!hitungKoin} hitungKoin={hitungKoin} />
       <AksiBawah>
         <div className="flex shrink-0 gap-2">
           <TombolBantu onClick={bantu} disabled={terkunci || tampil} label="Lihat lagi" />
@@ -980,6 +998,9 @@ function ModeGabung(c: Ctx) {
   const { ronde, onJawab, hasil, terkunci, nama, visual } = c;
   const id = Object.keys(ronde.tersedia)[0] ?? "";
   const [a, b] = ronde.kelompok;
+  const ringkas = c.paket.competencyIds.includes("MAT.SD1.TAMBAH-KURANG-20.02");
+  const awalHitung = ringkas ? Math.max(a, b) : a;
+  const langkahHitung = ringkas ? Math.min(a, b) : b;
   const [fase, setFase] = useState<"pisah" | "gabung">("pisah");
   const [dipilih, setDipilih] = useState<number | null>(null);
   const { hint, bantu } = useBantu(c.onHint);
@@ -992,39 +1013,40 @@ function ModeGabung(c: Ctx) {
   const min = Math.max(1, ronde.strip[0]);
   const { tema, skala: sk } = usePanggung();
   const meja = useSkMeja();
-  const bs = Math.round(36 * meja);
+  const bs = Math.round(ringkas ? 27 * Math.min(sk, 1.2) : 36 * meja);
+  const kelompokTerpisah = ringkas && fase === "pisah";
   const wadahB = { borderRadius: 24, background: `linear-gradient(180deg,${tema.wadahWarna},${tema.wadahGelap})`, boxShadow: `0 6px 0 ${tema.wadahGelap}` };
 
   return (
-    <Kunci terkunci={terkunci} kiri={<>
+    <Kunci terkunci={terkunci} tengah={ringkas} kiri={<>
       <div className="grid shrink-0 grid-cols-2 gap-2">
-        <Pembeli wajah={PEMBELI[0]} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} kecil balon={<BarisPesanan v={visual(id)} qty={a} label={nama(id)} />} />
-        <Pembeli wajah={PEMBELI[1]} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} kecil kanan balon={<BarisPesanan v={visual(id)} qty={b} label={nama(id)} />} jawabanBenar={`${a} + ${b} = ${ronde.target}`} />
+        <Pembeli wajah={PEMBELI[0]} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} kecil balon={<BarisPesanan v={visual(id)} qty={a} label={nama(id)} ringkas={ringkas} />} />
+        <Pembeli wajah={PEMBELI[1]} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} kecil kanan balon={<BarisPesanan v={visual(id)} qty={b} label={nama(id)} ringkas={ringkas} />} jawabanBenar={`${a} + ${b} = ${ronde.target}`} />
       </div>
-      <Lapak>
-        <div className="relative flex flex-1 flex-col justify-end" style={{ minHeight: 160 * sk }}>
+      <Lapak padat={ringkas}>
+        <div className={kelompokTerpisah ? "grid grid-cols-2 gap-2" : ringkas ? "flex flex-col justify-center" : "relative flex flex-1 flex-col justify-end"} style={{ minHeight: (ringkas ? 138 : 160) * sk }}>
           {/* dua tumpukan (di panel terang supaya jelas di dunia gelap) → satu wadah bertema dunia */}
-          {[a, b].map((n, sisi) => (
-            <div key={sisi} className="absolute flex max-w-[42%] flex-wrap justify-center gap-0.5 rounded-[16px] bg-white/90 p-1.5 transition-all duration-700 ease-in-out" style={{ top: "8%", left: sisi === 0 ? "6%" : undefined, right: sisi === 1 ? "6%" : undefined, transform: fase === "gabung" ? `translate(${sisi === 0 ? "60%" : "-60%"}, ${60 * sk}px) scale(.6)` : "none", opacity: fase === "gabung" ? 0 : 1, boxShadow: "0 4px 0 rgba(11,37,69,.12)" }} aria-hidden>
+          {(!ringkas || kelompokTerpisah) && [a, b].map((n, sisi) => (
+            <div key={sisi} className={kelompokTerpisah ? "flex flex-wrap content-center justify-center gap-1 rounded-[16px] bg-violet-50 p-2" : "absolute flex max-w-[42%] flex-wrap justify-center gap-0.5 rounded-[16px] bg-white/90 p-1.5 transition-all duration-700 ease-in-out"} style={kelompokTerpisah ? undefined : { top: "8%", left: sisi === 0 ? "6%" : undefined, right: sisi === 1 ? "6%" : undefined, transform: fase === "gabung" ? `translate(${sisi === 0 ? "60%" : "-60%"}, ${60 * sk}px) scale(.6)` : "none", opacity: fase === "gabung" ? 0 : 1, boxShadow: "0 4px 0 rgba(11,37,69,.12)" }} aria-hidden>
               {Array.from({ length: n }, (_, k) => <Benda key={k} v={visual(id)} size={bs} />)}
             </div>
           ))}
-          <div className="relative mx-auto flex w-full flex-col items-center transition-transform duration-500" style={{ ...wadahB, maxWidth: 420 * sk, padding: 10 * sk, gap: 8 * sk, transform: fase === "gabung" ? "scale(1.02)" : "none" }}>
+          {!kelompokTerpisah && <div className="relative mx-auto flex w-full flex-col items-center transition-transform duration-500" style={{ ...wadahB, maxWidth: 420 * sk, padding: 10 * sk, gap: 8 * sk, transform: fase === "gabung" && !ringkas ? "scale(1.02)" : "none" }}>
             <div className="flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ ...Tebal, fontSize: 16 * sk }}><span style={{ fontSize: 26 * sk, lineHeight: 1 }}>🧺</span>{fase === "gabung" ? "Semua jadi satu" : "Keranjang bersama"}</div>
             <div className="flex w-full flex-wrap content-center justify-center gap-1 rounded-[16px]" style={{ minHeight: 56 * sk, padding: 6 * sk, background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef" }} aria-label={fase === "gabung" ? `${a + b} ${nama(id)}` : undefined}>
               {fase === "gabung" && Array.from({ length: a + b }, (_, k) => (
-                <span key={k} className="akademi-pop" style={{ animationDelay: `${k * 60}ms`, borderRadius: 999, padding: 2, background: hint ? (k < a ? "rgba(91,75,255,.22)" : "rgba(34,181,115,.25)") : "transparent" }}><Benda v={visual(id)} size={bs} /></span>
+                <span key={k} className="akademi-pop" style={{ animationDelay: `${k * 60}ms`, borderRadius: 999, padding: 2, background: hint ? (k < awalHitung ? "rgba(91,75,255,.22)" : "rgba(34,181,115,.25)") : "transparent" }}><Benda v={visual(id)} size={bs} /></span>
               ))}
             </div>
-          </div>
+          </div>}
         </div>
       </Lapak>
     </>} kanan={<>
       <div className="flex shrink-0 items-center gap-2">
         <TombolBantu onClick={bantu} disabled={terkunci} />
-        <Keterangan>{hint ? `Hitung semuanya: ${a} lalu lanjut ${ulang("•", b)}` : "Berapa semuanya?"}</Keterangan>
+        <Keterangan>{hint ? (ringkas ? "Mulai dari" : "Hitung semuanya:") + ` ${awalHitung}, lalu lanjut ${ulang("•", langkahHitung)}` : "Berapa semuanya?"}</Keterangan>
       </div>
-      <div className="flex flex-1 flex-col justify-center">
+      <div className={ringkas ? "flex shrink-0 flex-col" : "flex flex-1 flex-col justify-center"}>
         <StripAngka min={min} max={ronde.strip[1]} dipilih={hasil ? ronde.target : dipilih} disabled={terkunci || fase !== "gabung"} onPilih={(n) => { setDipilih(n); sfx.tap(); onJawab({ angka: n }); }} />
       </div>
     </>} />
@@ -1047,7 +1069,7 @@ const TEMA_SISA: Record<string, TemaSisa> = {
 const TEMA_SISA_UMUM: TemaSisa = { latar: "radial-gradient(ellipse at 50% 40%,#fffaf0,#f1dcb4)", ditangkap: "✋", tutupIkon: "📦", tutup: "Kotak ditutup", wadah: "Taruh di sini", wadahIkon: "🧺", tombol: "Selesai", ikonTombol: "check", kerja: kerjaSisa(undefined) };
 
 /** Posisi benda pada adegan pengurangan, sebelum sebagian diambil. */
-function posisiBenda(n: number): { left: string; top: string }[] {
+function posisiBenda(n: number, rapi: boolean): { left: string; top: string }[] {
   const cols = Math.max(1, Math.ceil(Math.sqrt(n * 1.8)));
   const rows = Math.max(1, Math.ceil(n / cols));
   const noise = (i: number, s: number) => {
@@ -1055,8 +1077,8 @@ function posisiBenda(n: number): { left: string; top: string }[] {
     return x - Math.floor(x);
   };
   return Array.from({ length: n }, (_, i) => {
-    const cx = (i % cols + 0.5 + (noise(i, 1) - 0.5) * 0.5) / cols;
-    const cy = (Math.floor(i / cols) + 0.5 + (noise(i, 2) - 0.5) * 0.5) / rows;
+    const cx = (i % cols + 0.5 + (rapi ? 0 : (noise(i, 1) - 0.5) * 0.5)) / cols;
+    const cy = (Math.floor(i / cols) + 0.5 + (rapi ? 0 : (noise(i, 2) - 0.5) * 0.5)) / rows;
     return { left: `${cx * 100}%`, top: `${cy * 100}%` };
   });
 }
@@ -1068,7 +1090,13 @@ function ModeSisa(c: Ctx) {
   const benda = Object.keys(ronde.tersedia)[0] ?? "";
   const penanda = ronde.pesanan[0]?.goodId ?? benda;
   const kolam = paket.world === "kolam";
+  const satuanSisa = paket.competencyIds.includes("MAT.SD1.TAMBAH-KURANG-20.03");
   const tema = TEMA_SISA[paket.world ?? ""] ?? TEMA_SISA_UMUM;
+  const latarTutup = satuanSisa
+    ? paket.world === "kebun"
+      ? "repeating-linear-gradient(140deg,#b0db85 0 22px,#a3cf78 22px 44px)"
+      : "linear-gradient(155deg,#e7ba84,#c28e56)"
+    : "repeating-radial-gradient(circle at 30% 50%, rgba(255,255,255,.95) 0 18px, rgba(240,246,255,.92) 18px 36px)";
   const [fase, setFase] = useState<"kolam" | "tangkap" | "kabut">("kolam");
   const [taruh, setTaruh] = useState(0);
   const { hint, bantu } = useBantu(c.onHint);
@@ -1077,7 +1105,7 @@ function ModeSisa(c: Ctx) {
     const t2 = setTimeout(() => setFase("kabut"), 2600);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
-  const pos = useMemo(() => posisiBenda(awal), [awal]);
+  const pos = useMemo(() => posisiBenda(awal, satuanSisa), [awal, satuanSisa]);
   const nb = nama(benda), np = nama(penanda);
   const vBenda = visual(benda), vPenanda = visual(penanda);
   const ucapan = kd.sisa({ kolam, awal, diambil, benda: nb, penanda: np, samaPenanda: penanda === benda, kerja: tema.kerja });
@@ -1088,11 +1116,11 @@ function ModeSisa(c: Ctx) {
     <Kunci terkunci={terkunci} kiri={<>
       <Pembeli
         wajah={wajah} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil}
-        balon={<div className="flex flex-wrap items-center gap-1"><Tanya>Berapa yang tersisa?</Tanya><BarisPesanan v={vBenda} qty={awal} label={nb} /><span style={{ ...Tebal, fontSize: 20 * sk }}>−</span><BarisPesanan v={{ emoji: tema.ditangkap }} qty={diambil} label={tema.kerja} /><span style={{ ...Tebal, fontSize: 20 * sk }}>= ?</span></div>}
+        balon={<div className="flex flex-wrap items-center gap-1"><Tanya>Berapa yang tersisa?</Tanya><BarisPesanan v={vBenda} qty={awal} label={nb} ringkas={satuanSisa} /><span style={{ ...Tebal, fontSize: 20 * sk }}>−</span><BarisPesanan v={satuanSisa ? vBenda : { emoji: tema.ditangkap }} qty={diambil} label={satuanSisa ? `${nb} ${tema.kerja}` : tema.kerja} ringkas={satuanSisa} /><span style={{ ...Tebal, fontSize: 20 * sk }}>= ?</span></div>}
         jawabanBenar={`${awal} − ${diambil} = ${ronde.target} ${nb}`}
       />
-      <Lapak>
-        <div className="relative flex-1 overflow-hidden rounded-[18px]" style={{ minHeight: (awal <= 5 ? 150 : awal <= 10 ? 200 : 250) * sk, background: tema.latar, boxShadow: "inset 0 4px 0 rgba(0,0,0,.08)" }} aria-label={fase === "kabut" ? tema.tutup : `${fase === "kolam" ? awal : awal - diambil} ${nb}`}>
+      <Lapak padat={satuanSisa}>
+        <div className="relative flex-1 overflow-hidden rounded-[18px]" style={{ minHeight: (satuanSisa ? (awal <= 5 ? 154 : 202) : awal <= 5 ? 150 : awal <= 10 ? 200 : 250) * sk, background: tema.latar, boxShadow: "inset 0 4px 0 rgba(0,0,0,.08)" }} aria-label={fase === "kabut" ? tema.tutup : `${fase === "kolam" ? awal : awal - diambil} ${nb}`}>
           {Array.from({ length: awal }, (_, i) => {
             const pergi = i >= awal - diambil;
             return (
@@ -1100,7 +1128,7 @@ function ModeSisa(c: Ctx) {
             );
           })}
           {fase === "tangkap" && <span className="akademi-pop absolute top-2 right-3" style={{ fontSize: 40 * sk }} aria-hidden>{tema.ditangkap}</span>}
-          <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-700" style={{ background: "repeating-radial-gradient(circle at 30% 50%, rgba(255,255,255,.95) 0 18px, rgba(240,246,255,.92) 18px 36px)", opacity: fase === "kabut" && !(hint || hasil) ? 1 : 0, pointerEvents: "none" }} aria-hidden>
+          <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-700" style={{ background: latarTutup, opacity: fase === "kabut" && !(hint || hasil) ? 1 : 0, pointerEvents: "none" }} aria-hidden>
             <span className="rounded-full bg-white px-4 py-1.5" style={{ ...Tebal, fontSize: 20 * sk, boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}>{tema.tutupIkon} Berapa {nb} tersisa?</span>
           </div>
         </div>
@@ -1122,13 +1150,17 @@ function ModeSisa(c: Ctx) {
           ikon={tema.wadahIkon} judul={tema.wadah}
           kosong={`Ketuk untuk menaruh ${np}`}
           isi={Array.from({ length: taruh }, (_, k) => ({ key: String(k), v: vPenanda }))}
+          disabled={satuanSisa ? terkunci : undefined}
+          kurangiSatu={satuanSisa ? `Kurangi satu ${np}` : undefined}
           onKembali={() => { sfxAkademi.taruh(); setTaruh((n) => Math.max(0, n - 1)); }}
         />
       </div>
-      <div className="flex shrink-0 gap-2">
-        <TombolBantu onClick={bantu} disabled={terkunci} />
-        <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [penanda]: taruh } }); }} disabled={terkunci || fase !== "kabut" || taruh === 0}><Icon name={tema.ikonTombol} size={26} /> {tema.tombol}</TombolBesar>
-      </div>
+      <AksiBawah aktif={satuanSisa}>
+        <div className="flex shrink-0 gap-2">
+          <TombolBantu onClick={bantu} disabled={terkunci} />
+          <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [penanda]: taruh } }); }} disabled={terkunci || fase !== "kabut" || taruh === 0}><Icon name={tema.ikonTombol} size={26} /> {tema.tombol}</TombolBesar>
+        </div>
+      </AksiBawah>
     </>} />
   );
 }

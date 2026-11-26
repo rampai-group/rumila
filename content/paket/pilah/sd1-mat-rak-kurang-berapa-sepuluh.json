@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-rak-kurang-berapa-sepuluh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -28,7 +28,25 @@
       "i-6": "6",
       "i-7": "7",
       "i-8": "8",
-      "i-9": "9"
+      "i-9": "9",
+      "a-titik-1": "1 titik",
+      "a-angka-1": "angka 1",
+      "a-titik-2": "2 titik",
+      "a-angka-2": "angka 2",
+      "a-titik-3": "3 titik",
+      "a-angka-3": "angka 3",
+      "a-titik-4": "4 titik",
+      "a-angka-4": "angka 4",
+      "a-titik-5": "5 titik",
+      "a-angka-5": "angka 5",
+      "a-titik-6": "6 titik",
+      "a-angka-6": "angka 6",
+      "a-titik-7": "7 titik",
+      "a-angka-7": "angka 7",
+      "a-titik-8": "8 titik",
+      "a-angka-8": "angka 8",
+      "a-titik-9": "9 titik",
+      "a-angka-9": "angka 9"
     },
     "en": {
       "judul": "How Many More to Make 10?",
@@ -50,7 +68,25 @@
       "i-6": "6",
       "i-7": "7",
       "i-8": "8",
-      "i-9": "9"
+      "i-9": "9",
+      "a-titik-1": "1 dot",
+      "a-angka-1": "number 1",
+      "a-titik-2": "2 dots",
+      "a-angka-2": "number 2",
+      "a-titik-3": "3 dots",
+      "a-angka-3": "number 3",
+      "a-titik-4": "4 dots",
+      "a-angka-4": "number 4",
+      "a-titik-5": "5 dots",
+      "a-angka-5": "number 5",
+      "a-titik-6": "6 dots",
+      "a-angka-6": "number 6",
+      "a-titik-7": "7 dots",
+      "a-angka-7": "number 7",
+      "a-titik-8": "8 dots",
+      "a-angka-8": "number 8",
+      "a-titik-9": "9 dots",
+      "a-angka-9": "number 9"
     }
   },
   "knobs": {
@@ -58,7 +94,7 @@
       "min": 4,
       "max": 9,
       "default": 4,
-      "step": 1,
+      "step": 2,
       "keterangan": "rak kurang 1–4 dulu, lalu sampai 9"
     },
     "itemCount": {
@@ -119,117 +155,135 @@
       "labelKey": "i-1",
       "bin": "k9",
       "emoji": "🔴",
-      "count": 1
+      "count": 1,
+      "altKey": "a-titik-1"
     },
     {
       "id": "angka-1",
       "labelKey": "i-1",
       "bin": "k9",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-1"
     },
     {
       "id": "titik-2",
       "labelKey": "i-2",
       "bin": "k8",
       "emoji": "🔴",
-      "count": 2
+      "count": 2,
+      "altKey": "a-titik-2"
     },
     {
       "id": "angka-2",
       "labelKey": "i-2",
       "bin": "k8",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-2"
     },
     {
       "id": "titik-3",
       "labelKey": "i-3",
       "bin": "k7",
       "emoji": "🔴",
-      "count": 3
+      "count": 3,
+      "altKey": "a-titik-3"
     },
     {
       "id": "angka-3",
       "labelKey": "i-3",
       "bin": "k7",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-3"
     },
     {
       "id": "titik-4",
       "labelKey": "i-4",
       "bin": "k6",
       "emoji": "🔴",
-      "count": 4
+      "count": 4,
+      "altKey": "a-titik-4"
     },
     {
       "id": "angka-4",
       "labelKey": "i-4",
       "bin": "k6",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-4"
     },
     {
       "id": "titik-5",
       "labelKey": "i-5",
       "bin": "k5",
       "emoji": "🔴",
-      "count": 5
+      "count": 5,
+      "altKey": "a-titik-5"
     },
     {
       "id": "angka-5",
       "labelKey": "i-5",
       "bin": "k5",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-5"
     },
     {
       "id": "titik-6",
       "labelKey": "i-6",
       "bin": "k4",
       "emoji": "🔴",
-      "count": 6
+      "count": 6,
+      "altKey": "a-titik-6"
     },
     {
       "id": "angka-6",
       "labelKey": "i-6",
       "bin": "k4",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-6"
     },
     {
       "id": "titik-7",
       "labelKey": "i-7",
       "bin": "k3",
       "emoji": "🔴",
-      "count": 7
+      "count": 7,
+      "altKey": "a-titik-7"
     },
     {
       "id": "angka-7",
       "labelKey": "i-7",
       "bin": "k3",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-7"
     },
     {
       "id": "titik-8",
       "labelKey": "i-8",
       "bin": "k2",
       "emoji": "🔴",
-      "count": 8
+      "count": 8,
+      "altKey": "a-titik-8"
     },
     {
       "id": "angka-8",
       "labelKey": "i-8",
       "bin": "k2",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-8"
     },
     {
       "id": "titik-9",
       "labelKey": "i-9",
       "bin": "k1",
       "emoji": "🔴",
-      "count": 9
+      "count": 9,
+      "altKey": "a-titik-9"
     },
     {
       "id": "angka-9",
       "labelKey": "i-9",
       "bin": "k1",
-      "scale": 1
+      "scale": 1,
+      "altKey": "a-angka-9"
     }
   ]
 }

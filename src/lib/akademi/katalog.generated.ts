@@ -16191,7 +16191,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-gabung-harta-pantai",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "dagang",
     "competencyIds": [
@@ -16201,7 +16201,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Tumpukan Harta Pantai",
-        "instruksi": "Dua tumpukan harta pantai digabung. Mulai dari tumpukan yang lebih banyak, hitung maju, lalu geser penanda ke jumlahnya.",
+        "instruksi": "Gabungkan dua tumpukan. Hitung maju dari yang lebih banyak. Kalau sama, mulai dari mana saja. Ketuk hasilnya.",
         "g-kerang": "kerang",
         "g-kepiting": "kepiting",
         "g-ikan": "ikan hias",
@@ -16209,7 +16209,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Beach Treasure Piles",
-        "instruksi": "Two piles of beach treasure are put together. Start from the bigger pile, count on, then slide the marker to the total.",
+        "instruksi": "Join the two piles. Count on from the larger group. When they are equal, start with either group. Tap the total.",
         "g-kerang": "shells",
         "g-kepiting": "crabs",
         "g-ikan": "tropical fish",
@@ -16272,7 +16272,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-gabung-keranjang-20",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD1",
     "mechanic": "dagang",
     "competencyIds": [
@@ -16282,7 +16282,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Dua Keranjang Jadi Satu",
-        "instruksi": "Dua keranjang digabung. Hitung maju dari yang lebih banyak, lalu geser penanda ke jumlahnya.",
+        "instruksi": "Gabungkan isi dua keranjang. Hitung maju dari yang lebih banyak. Kalau sama, mulai dari mana saja. Ketuk hasilnya.",
         "g-jeruk": "jeruk",
         "g-apel": "apel",
         "g-telur": "telur",
@@ -16290,7 +16290,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Two Baskets Into One",
-        "instruksi": "Two baskets are put together. Count on from the bigger one, then slide the marker to the total.",
+        "instruksi": "Join the contents of the two baskets. Count on from the larger group. When they are equal, start with either group. Tap the total.",
         "g-jeruk": "oranges",
         "g-apel": "apples",
         "g-telur": "eggs",
@@ -200475,7 +200475,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-dobel-etalase-kue",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -200485,21 +200485,21 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kue Dobel di Etalase",
-        "instruksi": "Cari dobel yang paling dekat dulu, misalnya 6 + 7 = dobel 6 tambah 1. Sentuh jawaban yang benar.",
+        "instruksi": "Gabungkan dua baki kue. Pakai dobel atau dobel tambah satu untuk memilih jawaban.",
         "b-pilihan": "pilihan",
-        "t-6p7-dobel": "6 + 7 sama dengan …",
+        "t-6p7-dobel": "6 + 7. Pilih bentuk dobel tambah satu.",
         "i-dobel-6p1": "dobel 6 + 1",
         "i-dobel-7p1": "dobel 7 + 1",
         "i-dobel-5p1": "dobel 5 + 1",
-        "t-8p9-dobel": "8 + 9 sama dengan …",
+        "t-8p9-dobel": "8 + 9. Pilih bentuk dobel tambah satu.",
         "i-dobel-8p1": "dobel 8 + 1",
         "i-dobel-9p1": "dobel 9 + 1",
-        "t-4p5-dobel": "4 + 5 sama dengan …",
+        "t-4p5-dobel": "4 + 5. Pilih bentuk dobel tambah satu.",
         "i-dobel-4p1": "dobel 4 + 1",
         "i-dobel-3p1": "dobel 3 + 1",
-        "t-9p10-dobel": "9 + 10 sama dengan …",
-        "t-6p5-dobel": "6 + 5 sama dengan …",
-        "t-8p7-dobel": "8 + 7 sama dengan …",
+        "t-9p10-dobel": "9 + 10. Pilih bentuk dobel tambah satu.",
+        "t-6p5-dobel": "6 + 5. Pilih bentuk dobel tambah satu.",
+        "t-8p7-dobel": "8 + 7. Pilih bentuk dobel tambah satu.",
         "t-7p8": "7 + 8 = ?",
         "i-15": "15",
         "i-14": "14",
@@ -200527,21 +200527,21 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Double Treats in the Display Case",
-        "instruksi": "Find the nearest double first, like 6 + 7 = double 6 plus 1. Tap the right answer.",
+        "instruksi": "Put the two trays of cake together. Use a double or a double plus one to choose an answer.",
         "b-pilihan": "choices",
-        "t-6p7-dobel": "6 + 7 is the same as …",
+        "t-6p7-dobel": "6 + 7. Choose a double plus one.",
         "i-dobel-6p1": "double 6 + 1",
         "i-dobel-7p1": "double 7 + 1",
         "i-dobel-5p1": "double 5 + 1",
-        "t-8p9-dobel": "8 + 9 is the same as …",
+        "t-8p9-dobel": "8 + 9. Choose a double plus one.",
         "i-dobel-8p1": "double 8 + 1",
         "i-dobel-9p1": "double 9 + 1",
-        "t-4p5-dobel": "4 + 5 is the same as …",
+        "t-4p5-dobel": "4 + 5. Choose a double plus one.",
         "i-dobel-4p1": "double 4 + 1",
         "i-dobel-3p1": "double 3 + 1",
-        "t-9p10-dobel": "9 + 10 is the same as …",
-        "t-6p5-dobel": "6 + 5 is the same as …",
-        "t-8p7-dobel": "8 + 7 is the same as …",
+        "t-9p10-dobel": "9 + 10. Choose a double plus one.",
+        "t-6p5-dobel": "6 + 5. Choose a double plus one.",
+        "t-8p7-dobel": "8 + 7. Choose a double plus one.",
         "t-7p8": "7 + 8 = ?",
         "i-15": "15",
         "i-14": "14",
@@ -202659,7 +202659,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-rak-kurang-berapa-sepuluh",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -202687,7 +202687,25 @@ export const PAKET_RAW: unknown[] = [
         "i-6": "6",
         "i-7": "7",
         "i-8": "8",
-        "i-9": "9"
+        "i-9": "9",
+        "a-titik-1": "1 titik",
+        "a-angka-1": "angka 1",
+        "a-titik-2": "2 titik",
+        "a-angka-2": "angka 2",
+        "a-titik-3": "3 titik",
+        "a-angka-3": "angka 3",
+        "a-titik-4": "4 titik",
+        "a-angka-4": "angka 4",
+        "a-titik-5": "5 titik",
+        "a-angka-5": "angka 5",
+        "a-titik-6": "6 titik",
+        "a-angka-6": "angka 6",
+        "a-titik-7": "7 titik",
+        "a-angka-7": "angka 7",
+        "a-titik-8": "8 titik",
+        "a-angka-8": "angka 8",
+        "a-titik-9": "9 titik",
+        "a-angka-9": "angka 9"
       },
       "en": {
         "judul": "How Many More to Make 10?",
@@ -202709,7 +202727,25 @@ export const PAKET_RAW: unknown[] = [
         "i-6": "6",
         "i-7": "7",
         "i-8": "8",
-        "i-9": "9"
+        "i-9": "9",
+        "a-titik-1": "1 dot",
+        "a-angka-1": "number 1",
+        "a-titik-2": "2 dots",
+        "a-angka-2": "number 2",
+        "a-titik-3": "3 dots",
+        "a-angka-3": "number 3",
+        "a-titik-4": "4 dots",
+        "a-angka-4": "number 4",
+        "a-titik-5": "5 dots",
+        "a-angka-5": "number 5",
+        "a-titik-6": "6 dots",
+        "a-angka-6": "number 6",
+        "a-titik-7": "7 dots",
+        "a-angka-7": "number 7",
+        "a-titik-8": "8 dots",
+        "a-angka-8": "number 8",
+        "a-titik-9": "9 dots",
+        "a-angka-9": "number 9"
       }
     },
     "knobs": {
@@ -202717,7 +202753,7 @@ export const PAKET_RAW: unknown[] = [
         "min": 4,
         "max": 9,
         "default": 4,
-        "step": 1,
+        "step": 2,
         "keterangan": "rak kurang 1–4 dulu, lalu sampai 9"
       },
       "itemCount": {
@@ -202778,117 +202814,135 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-1",
         "bin": "k9",
         "emoji": "🔴",
-        "count": 1
+        "count": 1,
+        "altKey": "a-titik-1"
       },
       {
         "id": "angka-1",
         "labelKey": "i-1",
         "bin": "k9",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-1"
       },
       {
         "id": "titik-2",
         "labelKey": "i-2",
         "bin": "k8",
         "emoji": "🔴",
-        "count": 2
+        "count": 2,
+        "altKey": "a-titik-2"
       },
       {
         "id": "angka-2",
         "labelKey": "i-2",
         "bin": "k8",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-2"
       },
       {
         "id": "titik-3",
         "labelKey": "i-3",
         "bin": "k7",
         "emoji": "🔴",
-        "count": 3
+        "count": 3,
+        "altKey": "a-titik-3"
       },
       {
         "id": "angka-3",
         "labelKey": "i-3",
         "bin": "k7",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-3"
       },
       {
         "id": "titik-4",
         "labelKey": "i-4",
         "bin": "k6",
         "emoji": "🔴",
-        "count": 4
+        "count": 4,
+        "altKey": "a-titik-4"
       },
       {
         "id": "angka-4",
         "labelKey": "i-4",
         "bin": "k6",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-4"
       },
       {
         "id": "titik-5",
         "labelKey": "i-5",
         "bin": "k5",
         "emoji": "🔴",
-        "count": 5
+        "count": 5,
+        "altKey": "a-titik-5"
       },
       {
         "id": "angka-5",
         "labelKey": "i-5",
         "bin": "k5",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-5"
       },
       {
         "id": "titik-6",
         "labelKey": "i-6",
         "bin": "k4",
         "emoji": "🔴",
-        "count": 6
+        "count": 6,
+        "altKey": "a-titik-6"
       },
       {
         "id": "angka-6",
         "labelKey": "i-6",
         "bin": "k4",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-6"
       },
       {
         "id": "titik-7",
         "labelKey": "i-7",
         "bin": "k3",
         "emoji": "🔴",
-        "count": 7
+        "count": 7,
+        "altKey": "a-titik-7"
       },
       {
         "id": "angka-7",
         "labelKey": "i-7",
         "bin": "k3",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-7"
       },
       {
         "id": "titik-8",
         "labelKey": "i-8",
         "bin": "k2",
         "emoji": "🔴",
-        "count": 8
+        "count": 8,
+        "altKey": "a-titik-8"
       },
       {
         "id": "angka-8",
         "labelKey": "i-8",
         "bin": "k2",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-8"
       },
       {
         "id": "titik-9",
         "labelKey": "i-9",
         "bin": "k1",
         "emoji": "🔴",
-        "count": 9
+        "count": 9,
+        "altKey": "a-titik-9"
       },
       {
         "id": "angka-9",
         "labelKey": "i-9",
         "bin": "k1",
-        "scale": 1
+        "scale": 1,
+        "altKey": "a-angka-9"
       }
     ]
   },
