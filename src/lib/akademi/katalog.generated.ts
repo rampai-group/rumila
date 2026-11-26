@@ -15671,7 +15671,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "lengkapi-koin-lima-kantin",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -15680,13 +15680,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Pas Lima di Kantin",
+        "judul": "Lengkapi Koin di Kantin",
         "instruksi": "Teman robot menunjukkan koinnya sekejap: taruh koin tambahan dari laci supaya pas dengan harganya.",
         "nasikuning": "nasi kuning",
         "eskrim": "es krim"
       },
       "en": {
-        "judul": "Make Five at the Canteen",
+        "judul": "Add Coins at the Canteen",
         "instruksi": "The robot's friend flashes their coins: put extra coins from the drawer to make exactly the price.",
         "nasikuning": "yellow rice",
         "eskrim": "ice cream"
@@ -15744,7 +15744,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "lengkapi-koin-lima-pasar",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -15753,13 +15753,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Pas Lima di Pasar",
+        "judul": "Lengkapi Koin di Pasar",
         "instruksi": "Pembeli menunjukkan koinnya sebentar lalu menggenggamnya: taruh koin tambahan supaya pas dengan harganya.",
         "mangga": "mangga",
         "nanas": "nanas"
       },
       "en": {
-        "judul": "Make Five at the Market",
+        "judul": "Add Coins at the Market",
         "instruksi": "The customer flashes their coins then hides them: put extra coins down to make exactly the price.",
         "mangga": "mango",
         "nanas": "pineapple"
