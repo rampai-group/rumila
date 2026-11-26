@@ -114,7 +114,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const rakAngkaLega = rakBernomor && lebarArea >= 620 && h >= 650;
   const paritas = paket.competencyIds.includes("MAT.SD1.BILANGAN-100.04");
   const paritasLega = paritas && lebarArea >= 620 && h >= 650;
-  const rakBahan = paket.competencyIds.includes("SAINS.SD1.BAHAN.01") && bins.length >= 4;
+  const pilahBahan = paket.competencyIds.includes("SAINS.SD1.BAHAN.01");
+  const rakBahan = pilahBahan && bins.length >= 4;
   const rakBahanHp = rakBahan && hp;
   const rakBahanLega = rakBahan && lebarArea >= 620 && h >= 680;
   const kelompokBahan = paket.competencyIds.includes("SAINS.SD1.BAHAN.02") || paket.competencyIds.includes("SAINS.SD1.BAHAN.03");
@@ -305,7 +306,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     const ikonBin = mukaDadu >= 0
       ? <GambarTitik indeks={mukaDadu} ukuran={ukuranIkonBin} />
       : visualBergambar(b) ? <Benda v={visual(b, t)} size={ukuranIkonBin / skalaLebar(b)} /> : undefined;
-    const gambar = paket.id === "sains-habitat-hewan-lain" && ikonBin
+    const gambar = ikonBin && (paket.id === "sains-habitat-hewan-lain" || pilahBahan || kelompokBahan)
       ? <span className="inline-flex items-center justify-center" style={{ height: ukuranIkonBin * 0.86 }}>{ikonBin}</span>
       : ikonBin;
     return (
