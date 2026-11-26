@@ -27,6 +27,42 @@ function Roda({ x, y, r = 8 }: { x: number; y: number; r?: number }) {
 }
 
 export const ILUSTRASI_GERAK_PILOT: Record<string, ReactNode> = {
+  "pilot-mangkuk-dipukul": <g {...GARIS}>
+    <path d="M27 48Q31 83 66 83Q101 83 105 48Z" fill="#edf5fa" stroke="#567a90" />
+    <ellipse cx="66" cy="48" rx="39" ry="12" fill="#dcb878" />
+    <circle cx="50" cy="47" r="8" fill="#aa8265" /><circle cx="74" cy="48" r="8" fill="#aa8265" />
+    <path d="M98 53L119 23" stroke="#8b684b" strokeWidth="5" />
+    <path d="M107 57L121 59M107 47L121 44M102 35L105 23" fill="none" stroke="#d89027" />
+  </g>,
+  "pilot-bantal": <g {...GARIS}>
+    <path d="M10 75H120V91H10Z" fill="#ba936a" />
+    <path d="M18 28Q64 20 112 28Q106 49 112 69Q64 76 18 69Q25 48 18 28Z" fill="#b9dbe7" stroke="#5b889c" />
+    <path d="M28 35Q65 29 101 35M28 61Q65 67 101 61" fill="none" stroke="#8cb5c6" />
+  </g>,
+  "pilot-ban-bukit": <g {...GARIS}>
+    <path d="M8 47L122 84V94H8Z" fill="#a8ce85" stroke="#54834e" />
+    <circle cx="58" cy="40" r="24" fill="#374454" /><circle cx="58" cy="40" r="13" fill="#dce5eb" />
+    <path d="M58 28V52M46 40H70M21 22L32 26M15 32L28 36" fill="none" stroke="#8395a6" />
+  </g>,
+  "pilot-anak-perosotan": <g {...GARIS}>
+    <path d="M28 79V22H49L111 80H95L41 35H28" fill="#e9b443" stroke="#a56c32" />
+    <path d="M15 80L29 26M19 66H28M23 52H28M27 38H29" fill="none" stroke="#4f8c98" strokeWidth="4" />
+    <circle cx="62" cy="28" r="8" fill={KULIT} />
+    <path d="M59 38L64 49 81 51" fill="none" stroke="#e66b55" strokeWidth="9" />
+    <path d="M81 51L91 60M65 43L78 39" fill="none" stroke={KULIT} strokeWidth="5" />
+  </g>,
+  "pilot-sepeda-terbalik": <g {...GARIS}>
+    <circle cx="30" cy="35" r="21" fill="#f5fafb" /><circle cx="102" cy="35" r="21" fill="#f5fafb" />
+    <path d="M30 35L48 65 71 35H30L57 51 77 65 102 35M71 35L77 65M42 65H54M77 65H88V57" fill="none" stroke="#4388a7" strokeWidth="4" />
+    <path d="M30 17V53M12 35H48M102 17V53M84 35H120" fill="none" stroke="#98aab4" strokeWidth="1.5" />
+    <path d="M11 80H119M9 10Q29 -2 49 10M47 3L49 10 42 12" fill="none" stroke="#67846b" />
+  </g>,
+  "pilot-kipas-berputar": <g {...GARIS}>
+    <path d="M62 58V82M44 87H86" fill="none" stroke="#54758a" strokeWidth="7" />
+    <circle cx="65" cy="36" r="30" fill="#e7f4f7" />
+    <path d="M65 35Q39 29 45 16Q56 6 65 35Q78 11 88 24Q94 38 65 35Q78 60 63 61Q47 58 65 35" fill="#71bbc6" />
+    <circle cx="65" cy="35" r="5" fill="#f6c25b" />
+  </g>,
   "pilot-dorong-pintu": <g {...GARIS}>
     <path d="M55 88V13H112V88M61 83V20H106V83" fill="#e9d3a7" stroke="#7a5539" />
     <path d="M61 20L94 28V80L61 83Z" fill="#b87b52" stroke="#7a5539" />

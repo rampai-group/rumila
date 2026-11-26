@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gelinding-luncur-putar",
-  "version": "1.1.4",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -107,7 +107,10 @@
       "id": "ban",
       "labelKey": "i-ban",
       "bin": "gelinding",
-      "emoji": "⭕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-ban-bukit"
+      }
     },
     {
       "id": "jeruk",
@@ -119,7 +122,10 @@
       "id": "perosotan",
       "labelKey": "i-perosotan",
       "bin": "luncur",
-      "emoji": "🎢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-anak-perosotan"
+      }
     },
     {
       "id": "kotak",
@@ -143,7 +149,10 @@
       "id": "gasing",
       "labelKey": "i-gasing",
       "bin": "putar",
-      "emoji": "🚲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-sepeda-terbalik"
+      }
     },
     {
       "id": "kincir",
@@ -155,7 +164,10 @@
       "id": "kipas",
       "labelKey": "i-kipas",
       "bin": "putar",
-      "emoji": "🌀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pilot-kipas-berputar"
+      }
     },
     {
       "id": "baling",
