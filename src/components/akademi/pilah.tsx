@@ -281,7 +281,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
 
   const lepasDiAtas = items.filter((i) => !peta[i.id]);
   const satuKartu = lepasDiAtas.length === 1;
-  const satuKartuBesarHp = satuKartu && hp && (kelompokBahan || ((ubahBentuk || dorongTarik) && bins.length === 2));
+  const listrikLuarLegaHp = paket.id === "sd2-sains-aman-listrik-di-luar" && h >= 550;
+  const satuKartuBesarHp = satuKartu && hp && (kelompokBahan || listrikLuarLegaHp || ((ubahBentuk || dorongTarik) && bins.length === 2));
   const kartuTerakhirLega = satuKartuBesarHp || (satuKartu && (piktogramLega || rakAngkaLega || rakBahanLega));
   const salah = (i: ItemPilah) => kunci && peta[i.id] !== i.bin;
   const benarBin = (b: BinPilah) => kunci && items.some((i) => peta[i.id] === b.id) && items.filter((i) => peta[i.id] === b.id).every((i) => i.bin === b.id);
