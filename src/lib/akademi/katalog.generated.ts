@@ -336869,7 +336869,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-penyebab-gerak",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -337017,12 +337017,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "kelereng-awal",
-            "emoji": "🔮"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-kelereng-bertabrakan",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "kelereng-akhir",
-            "emoji": "🟢"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-kelereng-kedua-menggelinding",
+              "t": 0
+            }
           }
         ]
       },
@@ -340503,7 +340511,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-kode-sunting-algoritma",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -340518,7 +340526,7 @@ export const PAKET_RAW: unknown[] = [
         "surel-1": "nyalakan laptop",
         "surel-2": "buka aplikasi email",
         "surel-3": "klik tulis pesan baru",
-        "surel-4": "ketik isi pesan",
+        "surel-4": "isi alamat penerima dan ketik pesan",
         "surel-5": "klik kirim",
         "surel-6": "tunggu tanda terkirim",
         "surel-7": "matikan laptop",
@@ -340608,7 +340616,7 @@ export const PAKET_RAW: unknown[] = [
         "surel-1": "turn on the laptop",
         "surel-2": "open the email app",
         "surel-3": "click write new message",
-        "surel-4": "type the message",
+        "surel-4": "enter the recipient’s email address and type the message",
         "surel-5": "click send",
         "surel-6": "wait for the sent mark",
         "surel-7": "shut down the laptop",
@@ -341159,7 +341167,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-kode-sunting-kartu-percobaan",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -341266,7 +341274,7 @@ export const PAKET_RAW: unknown[] = [
         "sop-3": "masukkan potongan wortel dan kentang ke air mendidih",
         "sop-4": "rebus sampai sayurnya empuk",
         "sop-5": "tambahkan garam ke sayur yang sudah empuk",
-        "sop-6": "aduk selagi kompor menyala",
+        "sop-6": "aduk sampai garam larut selagi kompor menyala",
         "sop-7": "matikan kompor",
         "sop-8": "tuang sop ke mangkuk"
       },
@@ -341369,7 +341377,7 @@ export const PAKET_RAW: unknown[] = [
         "sop-3": "put the cut carrots and potatoes into the boiling water",
         "sop-4": "boil until the vegetables are soft",
         "sop-5": "add salt to the soft vegetables",
-        "sop-6": "stir while the stove is still on",
+        "sop-6": "stir until the salt dissolves while the stove is still on",
         "sop-7": "turn off the stove",
         "sop-8": "pour the soup into bowls"
       }
@@ -347546,7 +347554,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-rantai-makanan",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -347556,7 +347564,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Rantai Makanan Kacau",
-        "instruksi": "Dua makhluk tertukar. Tukar sekali supaya rantainya benar.",
+        "instruksi": "Dua mata rantai tertukar tempat. Tukar keduanya sekali supaya urut lagi: mulai dari produsen, lalu pemakannya, dan seterusnya.",
         "s-sawah": "Rantai makanan di sawah",
         "sawah-padi": "padi",
         "sawah-tikus": "tikus",
@@ -347614,7 +347622,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Mixed-Up Food Chain",
-        "instruksi": "Two living things are swapped. Swap them once to fix the chain.",
+        "instruksi": "Two links have swapped places. Swap them once so the chain is in order again: start with the producer, then what eats it, and so on.",
         "s-sawah": "A rice field food chain",
         "sawah-padi": "rice plant",
         "sawah-tikus": "rat",
@@ -347975,7 +347983,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-air",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -347985,7 +347993,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Perbaiki Siklus Hidup di Air",
-        "instruksi": "Ini siklus hidup hewan di air dan tepi air. Ada yang berubah bentuk, ada yang hanya membesar. Dua tahap tertukar: tukar sekali supaya benar.",
+        "instruksi": "Susun gambar sesuai urutan hidupnya, dari yang paling awal.",
         "s-katak": "Siklus hidup katak",
         "katak-telur": "telur katak di air",
         "katak-berudu": "berudu berekor",
@@ -348016,7 +348024,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Fix the Water Life Cycles",
-        "instruksi": "These are life cycles of animals in and near water. Some change shape, some just grow bigger. Two stages are swapped: swap once to fix it.",
+        "instruksi": "Swap the two misplaced cards once. Start with the earliest life stage shown.",
         "s-katak": "Frog life cycle",
         "katak-telur": "frogspawn in water",
         "katak-berudu": "tadpole with a tail",
@@ -348380,7 +348388,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -348390,7 +348398,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Perbaiki Siklus Hidup di Kebun",
-        "instruksi": "Ini siklus hidup hewan di kebun. Ada yang melewati kepompong, ada yang hanya membesar. Dua tahap tertukar: tukar sekali supaya benar.",
+        "instruksi": "Susun gambar sesuai urutan hidupnya, dari yang paling awal.",
         "s-kupu": "Siklus hidup kupu-kupu",
         "kupu-telur": "telur di daun",
         "kupu-ulat": "ulat makan daun",
@@ -348445,7 +348453,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Fix the Garden Life Cycles",
-        "instruksi": "These are life cycles of garden animals. Some go through a pupa, some just grow bigger. Two stages are swapped: swap once to fix it.",
+        "instruksi": "Swap the two misplaced cards once. Start with the earliest life stage shown.",
         "s-kupu": "Butterfly life cycle",
         "kupu-telur": "egg on a leaf",
         "kupu-ulat": "caterpillar eating leaves",

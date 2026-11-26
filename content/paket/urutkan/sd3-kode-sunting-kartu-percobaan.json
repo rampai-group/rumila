@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-kartu-percobaan",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -107,7 +107,7 @@
       "sop-3": "masukkan potongan wortel dan kentang ke air mendidih",
       "sop-4": "rebus sampai sayurnya empuk",
       "sop-5": "tambahkan garam ke sayur yang sudah empuk",
-      "sop-6": "aduk selagi kompor menyala",
+      "sop-6": "aduk sampai garam larut selagi kompor menyala",
       "sop-7": "matikan kompor",
       "sop-8": "tuang sop ke mangkuk"
     },
@@ -210,7 +210,7 @@
       "sop-3": "put the cut carrots and potatoes into the boiling water",
       "sop-4": "boil until the vegetables are soft",
       "sop-5": "add salt to the soft vegetables",
-      "sop-6": "stir while the stove is still on",
+      "sop-6": "stir until the salt dissolves while the stove is still on",
       "sop-7": "turn off the stove",
       "sop-8": "pour the soup into bowls"
     }

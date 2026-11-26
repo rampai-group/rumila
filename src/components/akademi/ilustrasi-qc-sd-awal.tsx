@@ -13,7 +13,35 @@ export const ILUSTRASI_QC_SD_AWAL_IDS = [
   "qc-bahan-bambu",
   "qc-bahan-tanah-liat",
   "qc-bahan-aluminium-foil",
+  "qc-kelereng-bertabrakan",
+  "qc-kelereng-kedua-menggelinding",
 ];
+
+function KelerengGerak({ setelah }: { setelah: boolean }) {
+  const xPertama = setelah ? 44 : 49;
+  const xKedua = setelah ? 93 : 85;
+  return <g strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 76H123" stroke="#b0c8c9" strokeWidth="2" />
+    <ellipse cx={xPertama} cy="72" rx="17" ry="4" fill="#c8e1e1" />
+    <ellipse cx={xKedua} cy="72" rx="17" ry="4" fill="#c8e1e1" />
+    <g transform={`translate(${xPertama} 54)`}>
+      <circle r="18" fill="#a8deea" stroke="#356878" strokeWidth="2.6" />
+      <path d="M-10 8Q5 11 9-12" fill="none" stroke="#388aba" strokeWidth="3.5" />
+      <path d="M-11-5Q-10-11-4-12" fill="none" stroke="#eafaff" strokeWidth="2.9" />
+    </g>
+    <g transform={`translate(${xKedua} 54)`}>
+      <circle r="18" fill="#aceaaf" stroke="#397963" strokeWidth="2.6" />
+      <path d="M-10 8Q5 11 9-12" fill="none" stroke="#399777" strokeWidth="3.5" />
+      <path d="M-11-5Q-10-11-4-12" fill="none" stroke="#effff4" strokeWidth="2.9" />
+    </g>
+    {setelah
+      ? <path d="M83 26H118M112 20L118 26L112 32M67 48H73M63 56H72" fill="none" stroke="#397963" strokeWidth="3.6" />
+      : <>
+        <path d="M8 26H41M35 20L41 26L35 32M11 48H25M15 56H24" fill="none" stroke="#356878" strokeWidth="3.6" />
+        <path d="M63 39L60 34M70 38L74 33M67 34V28" fill="none" stroke="#ad692b" strokeWidth="2.8" />
+      </>}
+  </g>;
+}
 
 export function IlustrasiQcSdAwal({ id }: { id: string }) {
   if (id === "qc-bahan-pasir") return (
@@ -74,6 +102,9 @@ export function IlustrasiQcSdAwal({ id }: { id: string }) {
       <ellipse cx="28" cy="57" rx="5" ry="7" transform="rotate(-25 28 57)" fill="#8e6752" />
     </g>
   );
+  if (id === "qc-kelereng-bertabrakan" || id === "qc-kelereng-kedua-menggelinding") {
+    return <KelerengGerak setelah={id === "qc-kelereng-kedua-menggelinding"} />;
+  }
   if (id === "qc-pasir-halus-batu-kecil") return (
     <g strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 74c17-5 28-10 43-22 7-6 19-11 28-5 9 6 19 13 36 25q5 7-8 10H23q-13-1-11-8Z"
