@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sd1-kode-tebak-petak-angkasa",
+    "src": "/akademi/suara/fc631d6e0828.mp3",
+    "status": 200,
+    "duration": 6.347755102040816
+  },
+  {
+    "id": "sd1-kode-tebak-petak-ulangi",
+    "src": "/akademi/suara/90847e64f0a3.mp3",
+    "status": 200,
+    "duration": 5.642448979591837
+  },
+  {
+    "id": "sd1-sains-butuh-listrik-rumah",
+    "src": "/akademi/suara/44053576568c.mp3",
+    "status": 200,
+    "duration": 5.877551020408164
+  },
+  {
+    "id": "sd1-sains-butuh-listrik-sekolah",
+    "src": "/akademi/suara/3fdd33894c62.mp3",
+    "status": 200,
+    "duration": 3.9706122448979593
+  },
+  {
+    "id": "sd1-mat-belanja-ringan-berat",
+    "src": "/akademi/suara/dcd569b57de1.mp3",
+    "status": 200,
+    "duration": 5.668571428571428
+  },
+  {
+    "id": "sd1-mat-urut-isi-wadah",
+    "src": "/akademi/suara/090365b727e6.mp3",
+    "status": 200,
+    "duration": 6.4
+  },
+  {
+    "id": "sd1-mat-urut-ringan-berat",
+    "src": "/akademi/suara/2e97141c2f0c.mp3",
+    "status": 200,
+    "duration": 5.198367346938776
+  },
+  {
+    "id": "sd1-mat-wadah-halaman-isi",
+    "src": "/akademi/suara/8aecd44486a7.mp3",
+    "status": 200,
+    "duration": 7.862857142857143
+  },
+  {
+    "id": "sd1-sains-bunyi-dekat-jauh-jalan",
+    "src": "/akademi/suara/891b7aef12f5.mp3",
+    "status": 200,
+    "duration": 7.2359183673469385
+  },
+  {
+    "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+    "src": "/akademi/suara/ea90eb18ae19.mp3",
+    "status": 200,
+    "duration": 3.813877551020408
+  }
+]
