@@ -10,6 +10,7 @@ import { useEvents } from "./jejak";
 import { KOMPETENSI, PAKET, levelAnak, useBahasaAnak } from "./konten";
 import { petaDariBukti, type PetaJenjang } from "./peta";
 import { useTanggalAkademi } from "./tanggal-akademi";
+import { usePemantapanUji } from "./pemantapan-uji-klien";
 import { ambilUjian, useUjian } from "./ujian-klien";
 
 const INDEKS = new Map(KOMPETENSI.map((c) => [c.id, c]));
@@ -22,6 +23,7 @@ export function useAksesAkademi(memberId: string): { peta: PetaJenjang; level: L
   const tanggal = useTanggalAkademi();
   const [siap, setSiap] = useState(false);
   const [level, setLevel] = useState<LevelId>(() => levelAnak(memberId));
+  const uji = usePemantapanUji(memberId, level);
   useEffect(() => {
     setLevel(levelAnak(memberId));
     setSiap(false);
@@ -30,8 +32,8 @@ export function useAksesAkademi(memberId: string): { peta: PetaJenjang; level: L
       .finally(() => setSiap(true));
   }, [memberId]);
   const peta = useMemo(
-    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, tanggal),
-    [events, level, ujian, tanggal],
+    () => petaDariBukti(events, PAKET, KOMPETENSI, level, TRACK_SLICE, ujian, tanggal, uji),
+    [events, level, ujian, tanggal, uji],
   );
   const akses = useMemo(() => (p: ContentPack) => aksesPaket(p, peta, INDEKS, bahasa === "en" ? "en" : "id"), [peta, bahasa]);
   return { peta, level, siap, akses };
