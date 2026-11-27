@@ -235012,7 +235012,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-hidup-pernah-tidak-pernah-rumah",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -235021,7 +235021,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Hidup atau Tak Hidup?",
+        "judul": "Makhluk Hidup dan Bahan di Rumah",
         "instruksi": "Pilah: masih hidup, benda mati dari makhluk hidup, atau benda mati dari bahan lain.",
         "b-hidup": "masih hidup",
         "b-pernah": "dari makhluk hidup",
@@ -235042,7 +235042,7 @@ export const PAKET_RAW: unknown[] = [
         "i-air": "air minum"
       },
       "en": {
-        "judul": "Living or Nonliving?",
+        "judul": "Living Things and Materials at Home",
         "instruksi": "Sort what is alive, nonliving things from living things, and nonliving things from other materials.",
         "b-hidup": "still alive",
         "b-pernah": "from living things",
