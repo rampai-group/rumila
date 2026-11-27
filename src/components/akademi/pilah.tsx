@@ -158,6 +158,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     ["SAINS.SD1.GAYA.02", "MAT.SD1.BANGUN.01", "MAT.SD1.BANGUN.02", "SAINS.SD1.BUNYI.01"].includes(id));
   const pilahAdegan = [
     "sd2-mat-pilah-segi-banyak", "sd3-kode-butuh-internet", "sd4-sains-tulang-di-tempatnya", "sd6-sains-didih-uap-pantai",
+    "sd2-kode-masukan-keluaran", "sd2-kode-perangkat-masuk-tampil",
   ].includes(paket.id);
   const pilahAdeganLega = pilahAdegan && lebarArea >= 620 && h >= 680;
   const pilahAdeganPadatLega = pilahAdeganLega && items.length > 8;
