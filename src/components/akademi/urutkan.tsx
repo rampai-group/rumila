@@ -620,12 +620,14 @@ function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
   const { tema, skala: sk, w, h } = usePanggung();
   const adaJudul = !/^mana yang lebih dulu/i.test(t(ronde.titleKey));
   const gerakLega = paket.id === "sd2-sains-penyebab-gerak" && w >= 600 && h >= 650 && h >= w * 1.15;
-  const panggungLuas = gerakLega || (paket.level === "PAUD" && w >= 600 && h >= 460);
-  const potretLuas = panggungLuas && h >= w * 1.15;
+  const bahanBaruLega = paket.id === "sd2-sains-mana-dulu-bahan-baru" && w >= 600 && h >= 650 && h >= w;
+  const pilihanLega = gerakLega || bahanBaruLega;
+  const panggungLuas = pilihanLega || (paket.level === "PAUD" && w >= 600 && h >= 460);
+  const potretLuas = pilihanLega || (panggungLuas && h >= w * 1.15);
   const lebarMaks = potretLuas ? 680 : panggungLuas ? 920 : 800;
   const lebar = Math.min(w || 390, lebarMaks) - 8;
   const gap = Math.round(12 * sk);
-  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT - (gerakLega ? 12 : 0) : 160;
+  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT - (pilihanLega ? 12 : 0) : 160;
   // Di potret tablet, dua kartu memanfaatkan tinggi layar dan tetap dekat dengan pertanyaan.
   const tumpuk = potretLuas || (lebar < 540 && tinggiSisa > lebar * 1.2);
   const lebarKartu = tumpuk ? lebar : (lebar - gap) / 2;
@@ -637,7 +639,7 @@ function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
   const ukuran = Math.round(Math.min(panggungLuas ? 340 : 196, tinggiKartu - ruangLabel, (lebarKartu - 24) / skalaTerlebar));
 
   return (
-    <div data-urut-tengah={gerakLega ? "" : undefined} className="mx-auto flex w-full flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK, maxWidth: lebarMaks }}>
+    <div data-urut-tengah={pilihanLega ? "" : undefined} className="mx-auto flex w-full flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK, maxWidth: lebarMaks }}>
       {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
       {adaJudul && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
@@ -659,7 +661,7 @@ function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
               right={benar}
               wrong={salah}
               onClick={() => pilih(s.id)}
-              className={`min-w-0 ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
+              className={`min-w-0 ${bahanBaruLega ? "" : salah ? "akademi-shake" : benar ? "akademi-pop" : ""}`}
               style={{ minHeight: tinggiKartu, background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined, pointerEvents: kunci ? "none" : undefined, boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 3px ${benar ? BENAR : salah ? SALAH : !hasil && dipilih === s.id ? "#0786eb" : `${tema.aksen}55`}` }}
             />
           );
