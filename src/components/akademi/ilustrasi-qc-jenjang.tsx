@@ -12,10 +12,12 @@ import { ILUSTRASI_TUMBUH_KELINCI_SD2 } from "./ilustrasi-sd2-pertumbuhan-kelinc
 import { ILUSTRASI_TUMBUH_SAPI_KAMBING_GAJAH_SD2 } from "./ilustrasi-sd2-tumbuh-sapi-kambing-gajah";
 import { ILUSTRASI_TUMBUH_PELIHARAAN_SD2 } from "./ilustrasi-sd2-tumbuh-hewan-peliharaan";
 import { ILUSTRASI_TUMBUH_TERNAK_SD2 } from "./ilustrasi-sd2-tumbuh-hewan-ternak";
+import { ILUSTRASI_PENYEBAB_GERAK_SD2 } from "./ilustrasi-sd2-penyebab-gerak";
 import { ILUSTRASI_DIDIH_UAP_SD6 } from "./ilustrasi-sd6-didih-uap";
 import { ILUSTRASI_KONDISI_TEMPAT_SD2 } from "./ilustrasi-sd2-kondisi-tempat";
 import { ILUSTRASI_BAHAN_SD2 } from "./ilustrasi-sd2-bahan";
 import { ILUSTRASI_SUMBER_CAHAYA_SD2 } from "./ilustrasi-sd2-sumber-cahaya";
+import { ILUSTRASI_JARUM_MENIT_SD2 } from "./ilustrasi-sd2-jarum-menit";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -446,6 +448,7 @@ const GERAK_APUNG: Record<string, ReactNode> = {
 };
 
 const objectArt: Record<string, ReactNode> = {
+  ...ILUSTRASI_JARUM_MENIT_SD2,
   ...ILUSTRASI_BAHAN_SD2,
   ...ILUSTRASI_SUMBER_CAHAYA_SD2,
   ...PAKAN,
@@ -464,6 +467,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_TUMBUH_SAPI_KAMBING_GAJAH_SD2,
   ...ILUSTRASI_TUMBUH_PELIHARAAN_SD2,
   ...ILUSTRASI_TUMBUH_TERNAK_SD2,
+  ...ILUSTRASI_PENYEBAB_GERAK_SD2,
   ...ILUSTRASI_DIDIH_UAP_SD6,
   ...ILUSTRASI_KONDISI_TEMPAT_SD2,
   "plastik-pembungkus": <g {...RINGKAS}>
