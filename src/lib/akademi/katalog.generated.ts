@@ -219509,26 +219509,38 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kolam",
         "labelKey": "b-kolam",
-        "emoji": "💧",
-        "color": "#e1f5fe"
+        "color": "#e1f5fe",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-kolam"
+        }
       },
       {
         "id": "hutan",
         "labelKey": "b-hutan",
-        "emoji": "🌳",
-        "color": "#c8e6c9"
+        "color": "#c8e6c9",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-hutan-hujan"
+        }
       },
       {
         "id": "laut",
         "labelKey": "b-laut",
-        "emoji": "🌊",
-        "color": "#b3e5fc"
+        "color": "#b3e5fc",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-laut"
+        }
       },
       {
         "id": "kutub",
         "labelKey": "b-kutub",
-        "emoji": "🧊",
-        "color": "#eceff1"
+        "color": "#eceff1",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-arktik"
+        }
       }
     ],
     "items": [
@@ -219548,7 +219560,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kalajengking",
         "labelKey": "i-kalajengking",
         "bin": "gurun",
-        "emoji": "🦂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-kalajengking-gurun"
+        }
       },
       {
         "id": "teratai",
@@ -219563,7 +219578,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "katak",
         "labelKey": "i-katak",
         "bin": "kolam",
-        "emoji": "🐸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-katak-tepi-kolam"
+        }
       },
       {
         "id": "bebek",
@@ -219581,7 +219599,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pakis",
         "labelKey": "i-pakis",
         "bin": "hutan",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-pakis"
+        }
       },
       {
         "id": "harimau",
@@ -219620,7 +219641,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "beruangkutub",
         "labelKey": "i-beruangkutub",
         "bin": "kutub",
-        "emoji": "🐻‍❄️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-beruang-kutub"
+        }
       },
       {
         "id": "penguin",
@@ -219717,8 +219741,11 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "batu",
         "labelKey": "b-batu",
-        "emoji": "🪨",
-        "color": "#e0e0e0"
+        "color": "#e0e0e0",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-bawah-batu"
+        }
       },
       {
         "id": "pohon",
@@ -219729,14 +219756,20 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kolam",
         "labelKey": "b-kolam",
-        "emoji": "💧",
-        "color": "#e1f5fe"
+        "color": "#e1f5fe",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-kolam"
+        }
       },
       {
         "id": "tanah",
         "labelKey": "b-tanah",
-        "emoji": "🟫",
-        "color": "#d7ccc8"
+        "color": "#d7ccc8",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-dalam-tanah"
+        }
       }
     ],
     "items": [
@@ -219744,46 +219777,67 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelabang",
         "labelKey": "i-kelabang",
         "bin": "batu",
-        "emoji": "🐌",
-        "color": "#8d6e63"
+        "color": "#8d6e63",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-batu-siput"
+        }
       },
       {
         "id": "kumbang",
         "labelKey": "i-kumbang",
         "bin": "batu",
-        "emoji": "🪲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-batu-kumbang"
+        }
       },
       {
         "id": "burung",
         "labelKey": "i-burung",
         "bin": "pohon",
-        "emoji": "🐦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-burung-sarang"
+        }
       },
       {
         "id": "tupai",
         "labelKey": "i-tupai",
         "bin": "pohon",
-        "emoji": "🐿️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-tupai-dahan"
+        }
       },
       {
         "id": "ulat",
         "labelKey": "i-ulat",
         "bin": "pohon",
-        "emoji": "🐛"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-ulat-daun"
+        }
       },
       {
         "id": "ikan",
         "labelKey": "i-ikan",
         "bin": "kolam",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-ikan-kecil"
+        }
       },
       {
         "id": "berudu",
         "labelKey": "i-berudu",
         "bin": "kolam",
-        "shape": "berudu",
         "color": "#3d4f3a",
-        "scale": 0.8
+        "scale": 0.8,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-katak-berudu"
+        }
       },
       {
         "id": "teratai",
@@ -219798,20 +219852,29 @@ export const PAKET_RAW: unknown[] = [
         "id": "cacing",
         "labelKey": "i-cacing",
         "bin": "tanah",
-        "emoji": "🪱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-cacing-tanah"
+        }
       },
       {
         "id": "semut",
         "labelKey": "i-semut",
         "bin": "tanah",
-        "emoji": "🐜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-semut-sarang"
+        }
       },
       {
         "id": "akar",
         "labelKey": "i-akar",
         "bin": "tanah",
-        "shape": "akar",
-        "color": "#8d6e63"
+        "color": "#8d6e63",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-akar-rumput"
+        }
       }
     ],
     "pilihan": []
