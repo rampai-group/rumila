@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-masukan-keluaran",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -130,7 +130,10 @@
       "id": "projector",
       "labelKey": "i-projector",
       "bin": "keluar",
-      "emoji": "📽️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-proyektor"
+      }
     }
   ]
 }

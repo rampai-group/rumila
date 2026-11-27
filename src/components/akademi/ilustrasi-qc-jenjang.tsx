@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { ILUSTRASI_HABITAT } from "./ilustrasi-hewan-habitat";
 import { ILUSTRASI_BENTUK_PILOT } from "./ilustrasi-pilot-bentuk";
 import { ILUSTRASI_SEGI_BANYAK_SD2 } from "./ilustrasi-sd2-segi-banyak";
+import { ILUSTRASI_CARROLL_SD2 } from "./ilustrasi-sd2-carroll";
 import { ILUSTRASI_MATAHARI_PILOT } from "./ilustrasi-pilot-matahari";
 import { ILUSTRASI_UKUR_PILOT } from "./ilustrasi-pilot-ukur";
 import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
@@ -9,6 +10,7 @@ import { ILUSTRASI_GAYA_SD2 } from "./ilustrasi-sd2-gaya";
 import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
 import { ILUSTRASI_LISTRIK_RUMAH_SD2 } from "./ilustrasi-sd2-listrik-rumah";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
+import { ILUSTRASI_PERANGKAT_SD2 } from "./ilustrasi-sd2-perangkat";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
 import { ILUSTRASI_TUMBUH_KELINCI_SD2 } from "./ilustrasi-sd2-pertumbuhan-kelinci";
@@ -452,6 +454,7 @@ const GERAK_APUNG: Record<string, ReactNode> = {
 };
 
 const objectArt: Record<string, ReactNode> = {
+  ...ILUSTRASI_PERANGKAT_SD2,
   ...ILUSTRASI_JARUM_MENIT_SD2,
   ...ILUSTRASI_BAHAN_SD2,
   ...ILUSTRASI_SUMBER_CAHAYA_SD2,
@@ -461,6 +464,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_HABITAT,
   ...ILUSTRASI_BENTUK_PILOT,
   ...ILUSTRASI_SEGI_BANYAK_SD2,
+  ...ILUSTRASI_CARROLL_SD2,
   ...ILUSTRASI_GERAK_PILOT,
   ...ILUSTRASI_GAYA_SD2,
   ...ILUSTRASI_UKUR_PILOT,

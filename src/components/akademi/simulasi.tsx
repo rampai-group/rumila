@@ -542,7 +542,7 @@ function ModeTimbangan(c: Ctx) {
   const [fase, setFase] = useState<"taruh" | "miring">("taruh");
   const [dipilih, setDipilih] = useState<string | null>(null);
   const { hint, bantu } = useBantu(c.onHint);
-  const { skala, w } = usePanggung();
+  const { skala, w, h } = usePanggung();
   const st = useSkalaTeks();
   const samping = useSamping();
   const [adeganRef, lebarAdegan] = useLebar<HTMLDivElement>();
@@ -565,10 +565,20 @@ function ModeTimbangan(c: Ctx) {
     ? `Balance${fase === "miring" ? ` tilts ${beratKiri ? "left" : "right"}` : ""}`
     : fase === "miring" ? `Timbangan miring ke ${beratKiri ? "kiri" : "kanan"}` : "Benda diletakkan di timbangan";
   const namaSisi = inggris ? ["Left", "Right"] : ["Kiri", "Kanan"];
-  const ukuranBenda = (v: VisualSpec) => Math.min(lebarAdegan * 0.15, lebarAdegan * 0.21 / skalaLebar(v));
-
+  const batuKapten = paket.competencyIds.includes("SAINS.SD2.BATUAN.01");
+  const tataBatuTegak = batuKapten && !samping && h >= 540;
+  // Satu skala untuk seluruh koleksi agar batu besar tetap terlihat besar di setiap pasangan.
+  const lebarBatuTerbesar = batuKapten ? Math.max(1, ...paket.items.map((item) => skalaLebar(visualItem(item)))) : 1;
+  const ukuranDasarDiPiring = 88 / lebarBatuTerbesar;
+  const ukuranBenda = (v: VisualSpec) => batuKapten
+    ? ukuranDasarDiPiring * lebarAdegan / 400
+    : Math.min(lebarAdegan * 0.15, lebarAdegan * 0.21 / skalaLebar(v));
+  const ukuranBatuKartu = Math.min(tataBatuTegak ? (w >= 620 ? 192 : 144) : 132, lebarAdegan * 0.4) / lebarBatuTerbesar;
   const batasAtas = 88, tinggi = 172;
-  const posBenda = (p: { x: number; y: number }): CSSProperties => ({ left: `${p.x / 400 * 100}%`, top: `${(p.y + 54 - batasAtas) / tinggi * 100}%`, transform: "translate(-50%,-100%)", transition: "left 900ms cubic-bezier(.3,1.3,.5,1), top 900ms cubic-bezier(.3,1.3,.5,1)" });
+  const posBenda = (p: { x: number; y: number }, v: VisualSpec): CSSProperties => {
+    const dasar = batuKapten ? 44 + ukuranDasarDiPiring * (v.scale ?? 1) * 0.14 : 54;
+    return { left: `${p.x / 400 * 100}%`, top: `${(p.y + dasar - batasAtas) / tinggi * 100}%`, transform: "translate(-50%,-100%)", transition: "left 900ms cubic-bezier(.3,1.3,.5,1), top 900ms cubic-bezier(.3,1.3,.5,1)" };
+  };
 
   const papan = <Papan className="w-full min-w-0" style={{ flex: "none", maxWidth: 730, marginInline: "auto" }}>
     <div ref={adeganRef} className="relative w-full" style={{ aspectRatio: `400 / ${tinggi}` }} role="img" aria-label={labelTimbangan}>
@@ -582,14 +592,14 @@ function ModeTimbangan(c: Ctx) {
       </svg>
       {benda.map((b, indeks) => {
         const v = visual(b.id);
-        return <div key={b.id} className="absolute leading-none" style={posBenda(indeks === 0 ? uk : uka)}><Benda v={v} size={ukuranBenda(v)} /></div>;
+        return <div key={b.id} className="absolute leading-none" style={posBenda(indeks === 0 ? uk : uka, v)}><Benda v={v} size={ukuranBenda(v)} /></div>;
       })}
     </div>
     {hint && <Petunjuk>{teksBantu}</Petunjuk>}
   </Papan>;
 
   return (
-    <Kunci terkunci={terkunci}>
+    <Kunci terkunci={terkunci} tengah={tataBatuTegak}>
       <Instruksi teks={teks} hasil={hasil} lang={lang} />
       <Umpan hasil={hasil} benar={berat ? (inggris ? `${nama(berat)} is heavier` : `${nama(berat)} lebih berat`) : "-"} />
       <div className={`mx-auto flex w-full ${samping ? "items-center" : "flex-col"}`} style={{ maxWidth: samping ? 1100 : 730, gap: 12 * skala }}>
@@ -604,7 +614,7 @@ function ModeTimbangan(c: Ctx) {
                 labelPenuh
                 key={b.id}
                 v={v}
-                size={Math.round((w >= 620 ? 102 : 81) * Math.min(skala, 1.2)) / skalaLebar(v)}
+                size={batuKapten ? ukuranBatuKartu : Math.round((w >= 620 ? 102 : 81) * Math.min(skala, 1.2)) / skalaLebar(v)}
                 labelSize={Math.round(16 * st)}
                 label={`${namaSisi[indeks]} · ${nama(b.id)}`}
                 selected={dipilih === b.id}
@@ -613,7 +623,7 @@ function ModeTimbangan(c: Ctx) {
                 disabled={terkunci || fase !== "miring"}
                 onClick={() => { setDipilih(b.id); sfx.tap(); onJawab({ pilih: b.id }); }}
                 className={`min-h-28 min-w-0 ${hint && b.id === berat ? "akademi-bounce" : ""}`}
-                style={fase !== "miring" ? { opacity: 0.6 } : undefined}
+                style={{ minHeight: tataBatuTegak ? (w >= 620 ? 180 : 150) : undefined, opacity: fase !== "miring" ? 0.6 : undefined }}
               />;
             })}
           </div>
