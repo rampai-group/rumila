@@ -47,6 +47,9 @@ export function GambarAdegan({ adegan, emoji = "", s, style, className = "" }: {
   if (jenis === "matahari" || jenis === "bayangan" || jenis === "hadap") {
     // timur = kanan, barat = kiri (seperti peta)
     const [atas, bawah] = langit(t);
+    const fajar = jenis === "matahari" && adegan.varian === "fajar";
+    const pantai = jenis === "matahari" && adegan.varian === "pantai";
+    const suhuPasir = t === 0 ? 5 : t < 0.5 ? 12 : t === 0.5 ? 23 : 9;
     const mx = 112 - 94 * t;
     const my = 70 - 54 * Math.sin(Math.PI * t);
     const panjang = 10 + 44 * Math.abs(t - 0.5) * 2;
@@ -57,9 +60,9 @@ export function GambarAdegan({ adegan, emoji = "", s, style, className = "" }: {
         <path d={`M0 14Q0 0 14 0H${W - 14}Q${W} 0 ${W} 14V38H0Z`} fill={atas} />
         <path d={`M0 38H${W}V52H0Z`} fill={atas} opacity=".45" />
         <path d="M18 72Q65 -38 112 72" fill="none" stroke="#fff" strokeWidth="1.6" strokeDasharray="3 4" opacity=".85" />
-        <circle cx={mx} cy={my} r="15" fill="#fff3a6" opacity=".7" />
-        <circle cx={mx} cy={my} r="10.5" fill={t >= 0.9 ? "#ff5a1f" : "#ffc400"} />
-        <path d={`M0 73H${W}V86Q${W} ${H} ${W - 14} ${H}H14Q0 ${H} 0 86Z`} fill={jenis === "bayangan" ? "#e6cf98" : "#63b95c"} />
+        <circle cx={mx} cy={fajar ? 83 : my} r={fajar ? 21 : 15} fill="#fff3a6" opacity=".7" />
+        {!fajar && <circle cx={mx} cy={my} r="10.5" fill={t >= 0.9 ? "#ff5a1f" : "#ffc400"} />}
+        <path d={`M0 73H${W}V86Q${W} ${H} ${W - 14} ${H}H14Q0 ${H} 0 86Z`} fill={jenis === "bayangan" || pantai ? "#e6cf98" : "#63b95c"} />
         {jenis === "bayangan" &&
           (arah === 0 ? (
             <ellipse cx="65" cy="88" rx="9" ry="4" fill="#3d3322" />
@@ -68,6 +71,15 @@ export function GambarAdegan({ adegan, emoji = "", s, style, className = "" }: {
           ))}
       </>
     );
+    if (pantai) {
+      svgDepan = (
+        <g>
+          <path d="M91 61a5 5 0 0 1 10 0v17a7 7 0 1 1-10 0z" fill="#fff7f5" stroke="#72384a" strokeWidth="2" />
+          <path d={`M96 83v-${suhuPasir}`} stroke="#e44f46" strokeWidth="3.5" strokeLinecap="round" />
+          <circle cx="96" cy="84" r="3.5" fill="#e44f46" />
+        </g>
+      );
+    }
     depan = (
       <>
         {E(emoji, 65, jenis === "bayangan" ? 67 : 64, jenis === "bayangan" ? 42 : 44, jenis === "hadap" ? { transform: `translate(-50%,-50%) rotate(${(0.5 - t) * 80}deg)` } : undefined)}
