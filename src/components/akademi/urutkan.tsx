@@ -618,8 +618,10 @@ function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
   };
 
   const { tema, skala: sk, w, h } = usePanggung();
-  const adaJudul = !/^mana yang lebih dulu/i.test(t(ronde.titleKey));
-  const gerakLega = paket.id === "sd2-sains-penyebab-gerak" && w >= 600 && h >= 650 && h >= w * 1.15;
+  const judul = t(ronde.titleKey);
+  const paketSebabGerak = paket.id === "sd2-sains-penyebab-gerak" || paket.id === "sd2-sains-penyebab-gerak-taman-bermain";
+  const adaJudul = !paketSebabGerak && !/^mana yang lebih dulu/i.test(judul);
+  const gerakLega = paketSebabGerak && w >= 600 && h >= 650 && h >= w * 1.15;
   const panggungLuas = gerakLega || (paket.level === "PAUD" && w >= 600 && h >= 460);
   const potretLuas = panggungLuas && h >= w * 1.15;
   const lebarMaks = potretLuas ? 680 : panggungLuas ? 920 : 800;
@@ -639,9 +641,9 @@ function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
   return (
     <div data-urut-tengah={gerakLega ? "" : undefined} className="mx-auto flex w-full flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK, maxWidth: lebarMaks }}>
       {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
-      {adaJudul && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
+      {adaJudul && <Kepala judul={judul} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>
-        Mana yang lebih dulu?
+        {paketSebabGerak ? judul : "Mana yang lebih dulu?"}
       </div>
       <div className={`grid ${tumpuk ? "grid-cols-1" : "grid-cols-2"}`} style={{ gap, gridAutoRows: "1fr" }}>
         {shown.map((s) => {
