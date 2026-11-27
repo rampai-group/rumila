@@ -1,0 +1,800 @@
+[
+  {
+    "mission": 1,
+    "competency": "MAT.SD1.BILANGAN-100.01",
+    "title": "Aku bisa menghitung loncat sepuluh maju dan mundur dari angka mana pun, misalnya 4, 14, 24, 34",
+    "packs": [
+      {
+        "id": "sd1-mat-jalan-loncat-katak",
+        "title": "Jalan Katak Loncat 10",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-loncat-sepuluh",
+        "title": "Loncat Sepuluh",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 2,
+    "competency": "MAT.SD1.BILANGAN-100.02",
+    "title": "Aku bisa menyusun bilangan 11 sampai 20 dari satu puluhan dan beberapa satuan, misalnya 10 dan 7 menjadi 17",
+    "packs": [
+      {
+        "id": "sd1-mat-bayar-puluhan-satuan",
+        "title": "Bayar Belasan Ribu",
+        "mechanic": "dagang",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-rak-puluhan-satuan",
+        "title": "Rak Sepuluh dan Satuan",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 3,
+    "competency": "MAT.SD1.BILANGAN-100.03",
+    "title": "Aku bisa mengurutkan bilangan 0 sampai 20 dari yang terkecil ke yang terbesar",
+    "packs": [
+      {
+        "id": "sd1-mat-gerbong-urut-0-20",
+        "title": "Gerbong Kereta Tertukar",
+        "mechanic": "urutkan",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-urut-kartu-0-20",
+        "title": "Antrean Kartu 0–20",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 4,
+    "competency": "MAT.SD1.BILANGAN-100.04",
+    "title": "Aku bisa memilah bilangan sampai 20 menjadi genap dan ganjil",
+    "packs": [
+      {
+        "id": "sd1-mat-genap-ganjil-20",
+        "title": "Genap atau Ganjil?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-pasangan-ternak-20",
+        "title": "Hewan Berpasangan di Kandang",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 5,
+    "competency": "KODE.SD1.ALGORITMA.01",
+    "title": "Aku bisa menyusun 5 sampai 6 gambar langkah sebuah tugas sehari-hari menjadi algoritma yang urut",
+    "packs": [
+      {
+        "id": "sd1-kode-algoritma-di-kota",
+        "title": "Langkah Tugas di Kota",
+        "mechanic": "urutkan",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-algoritma-sehari-hari",
+        "title": "Algoritma Sehari-hari",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 6,
+    "competency": "KODE.SD1.ALGORITMA.02",
+    "title": "Aku bisa menemukan satu langkah yang salah tempat dalam algoritma 5 sampai 6 langkah lalu memperbaikinya dengan satu tukar",
+    "packs": [
+      {
+        "id": "sd1-kode-perbaiki-algoritma",
+        "title": "Algoritma Tertukar",
+        "mechanic": "urutkan",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-tukar-langkah-taman",
+        "title": "Satu Tukar Beres",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 7,
+    "competency": "SAINS.SD1.MAKHLUK-HIDUP.01",
+    "title": "Aku bisa memilah benda ke makhluk hidup atau yang tidak pernah hidup: kucing dan jamur hidup, batu dan kaleng tidak",
+    "packs": [
+      {
+        "id": "sd1-sains-hidup-atau-tak-pernah-hidup-pantai",
+        "title": "Hidup atau Tak Pernah Hidup di Pantai",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-hidup-atau-tak-pernah-hidup-taman",
+        "title": "Hidup atau Tak Pernah Hidup?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 8,
+    "competency": "SAINS.SD1.MAKHLUK-HIDUP.02",
+    "title": "Aku bisa memberi tiap hewan makanan yang cocok: wortel untuk kelinci, biji untuk burung, ikan untuk kucing",
+    "packs": [
+      {
+        "id": "sd1-sains-makan-hewan-peliharaan",
+        "title": "Makan Siang Hewan Peliharaan",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-makan-hewan-peternakan",
+        "title": "Waktunya Memberi Makan Ternak",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 9,
+    "competency": "MAT.SD1.TAMBAH-KURANG-20.01",
+    "title": "Aku bisa langsung melengkapi menjadi 10: kalau sudah ada 7, aku menambah 3",
+    "packs": [
+      {
+        "id": "sd1-mat-genap-sepuluh-koin",
+        "title": "Lengkapi Sepuluh Koin",
+        "mechanic": "dagang",
+        "rounds": 9
+      },
+      {
+        "id": "sd1-mat-rak-kurang-berapa-sepuluh",
+        "title": "Kurang Berapa Supaya 10?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 10,
+    "competency": "MAT.SD1.TAMBAH-KURANG-20.02",
+    "title": "Aku bisa menggabungkan dua kelompok dan menemukan jumlahnya sampai 20 dengan menghitung maju dari kelompok yang lebih besar",
+    "packs": [
+      {
+        "id": "sd1-mat-gabung-harta-pantai",
+        "title": "Tumpukan Harta Pantai",
+        "mechanic": "dagang",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-gabung-keranjang-20",
+        "title": "Dua Keranjang Jadi Satu",
+        "mechanic": "dagang",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 11,
+    "competency": "MAT.SD1.TAMBAH-KURANG-20.03",
+    "title": "Aku bisa menunjukkan sisa setelah beberapa benda diambil, dengan bilangan sampai 20",
+    "packs": [
+      {
+        "id": "sd1-mat-panen-sisa-kebun",
+        "title": "Panen Kebun, Sisa Berapa?",
+        "mechanic": "dagang",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-sisa-kelereng-20",
+        "title": "Kelereng yang Tersisa",
+        "mechanic": "dagang",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 12,
+    "competency": "MAT.SD1.TAMBAH-KURANG-20.04",
+    "title": "Aku bisa memakai dobel sampai dobel 10 untuk menjumlah, misalnya 7 + 8 adalah dobel 7 tambah 1",
+    "packs": [
+      {
+        "id": "sd1-mat-dobel-etalase-kue",
+        "title": "Kue Dobel di Etalase",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-rak-dobel",
+        "title": "Rak Dobel dan Hampir Dobel",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 13,
+    "competency": "KODE.SD1.POLA.01",
+    "title": "Aku bisa mengisi perintah yang hilang di ujung barisan perintah robot yang berulang",
+    "packs": [
+      {
+        "id": "sd1-kode-lanjutkan-pola-perintah",
+        "title": "Lanjutkan Pola Perintah",
+        "mechanic": "pola",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-pola-robot-gudang",
+        "title": "Pola Robot Gudang",
+        "mechanic": "pola",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 14,
+    "competency": "SAINS.SD1.BAHAN.01",
+    "title": "Aku bisa memilah benda menurut bahannya: kertas, kain, batu, kayu, logam, plastik, atau kaca",
+    "packs": [
+      {
+        "id": "sd1-sains-rak-tujuh-bahan-rumah",
+        "title": "Tujuh Rak Bahan di Rumah",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-rak-tujuh-bahan-sekolah",
+        "title": "Tujuh Rak Bahan di Sekolah",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 15,
+    "competency": "SAINS.SD1.BAHAN.02",
+    "title": "Aku bisa membedakan benda dan bahannya dengan memilah kartu: kursi dan baju itu benda, kayu dan kain itu bahan",
+    "packs": [
+      {
+        "id": "sd1-sains-benda-atau-bahan-sekolah",
+        "title": "Benda atau Bahan di Sekolah?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-benda-atau-bahan",
+        "title": "Benda atau Bahan?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 16,
+    "competency": "SAINS.SD1.BAHAN.03",
+    "title": "Aku bisa memilah benda menurut satu sifat bahannya, misalnya lentur atau kaku, menyerap air atau tidak",
+    "packs": [
+      {
+        "id": "sd1-sains-lentur-atau-kaku",
+        "title": "Lentur atau Kaku?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-menyerap-air-atau-tidak",
+        "title": "Menyerap Air atau Tidak?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 17,
+    "competency": "SAINS.SD1.BAHAN.04",
+    "title": "Aku bisa memilah perubahan bentuk benda menurut caranya: diregangkan, ditekan, ditekuk, atau dipuntir",
+    "packs": [
+      {
+        "id": "sd1-sains-regang-tekan-tekuk-puntir",
+        "title": "Regang, Tekan, Tekuk, Puntir",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-ubah-bentuk-taman-bermain",
+        "title": "Ubah Bentuk di Taman Bermain",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 18,
+    "competency": "MAT.SD1.PECAHAN.01",
+    "title": "Aku bisa menemukan setengah dari sekelompok benda sampai 20 dengan membaginya menjadi dua sama banyak",
+    "packs": [
+      {
+        "id": "sd1-mat-rak-setengah-piring",
+        "title": "Setengah untuk Temanku",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-bagi-dua-piknik",
+        "title": "Bekal Piknik Berdua",
+        "mechanic": "simulasi",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 19,
+    "competency": "KODE.SD1.ULANGI.01",
+    "title": "Aku bisa memakai dua blok ulangi dalam satu program supaya robot melewati jalur berbelok yang tidak muat di rak",
+    "packs": [
+      {
+        "id": "sd1-kode-ulangi-belok-kota",
+        "title": "Dua Ulangi di Jalan Kota",
+        "mechanic": "navigasi",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-ulangi-dua-bagian",
+        "title": "Dua Ulangi, Satu Belokan",
+        "mechanic": "navigasi",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 20,
+    "competency": "SAINS.SD1.GAYA.01",
+    "title": "Aku bisa memilah gerakan ke dorong atau tarik: menutup laci dan menendang bola itu dorong, membuka laci itu tarik",
+    "packs": [
+      {
+        "id": "sd1-sains-dorong-tarik-rumah",
+        "title": "Dorong atau Tarik di Rumah",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-dorong-tarik-taman",
+        "title": "Dorong atau Tarik di Taman",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 21,
+    "competency": "SAINS.SD1.GAYA.02",
+    "title": "Aku bisa memilah benda menurut caranya bergerak: menggelinding, meluncur, atau berputar di tempat",
+    "packs": [
+      {
+        "id": "sd1-sains-gelinding-luncur-putar",
+        "title": "Menggelinding, Meluncur, Berputar",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-gerak-taman-kota",
+        "title": "Bergerak di Taman Kota",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 22,
+    "competency": "MAT.SD1.BANGUN.01",
+    "title": "Aku bisa memilah bangun datar menurut sisinya: tiga sisi lurus, empat sisi lurus, atau ada sisi lengkung",
+    "packs": [
+      {
+        "id": "sd1-mat-pilah-sisi-bangun",
+        "title": "Hitung Sisinya",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-sisi-bentuk-kota",
+        "title": "Bentuk di Jalan Kota",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 23,
+    "competency": "MAT.SD1.BANGUN.02",
+    "title": "Aku bisa membedakan bangun datar dan bangun ruang di sekitarku",
+    "packs": [
+      {
+        "id": "sd1-mat-datar-atau-ruang",
+        "title": "Datar atau Ruang?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-rak-mainan-datar-ruang",
+        "title": "Rak Mainan Datar dan Ruang",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 24,
+    "competency": "KODE.SD1.KONDISI.01",
+    "title": "Aku bisa menaruh blok kalau di dalam blok ulangi supaya program 2 blok berhasil di tiga jalur yang batunya berpindah",
+    "packs": [
+      {
+        "id": "sd1-kode-kalau-di-dalam-ulangi",
+        "title": "Kalau di Dalam Ulangi",
+        "mechanic": "navigasi",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-kalau-ulangi-sungai",
+        "title": "Kalau Batu di Sungai",
+        "mechanic": "navigasi",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 25,
+    "competency": "SAINS.SD1.BUNYI.01",
+    "title": "Aku bisa menemukan sumber bunyi dengan memilah benda yang sedang berbunyi dari yang diam",
+    "packs": [
+      {
+        "id": "sd1-sains-berbunyi-atau-diam-jalan",
+        "title": "Bunyi di Jalan",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-berbunyi-atau-diam",
+        "title": "Siapa yang Berbunyi?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 26,
+    "competency": "SAINS.SD1.BUNYI.02",
+    "title": "Aku bisa menyusun anak dari yang paling dekat ke paling jauh dari bel, yaitu dari yang mendengar paling keras ke paling pelan",
+    "packs": [
+      {
+        "id": "sd1-sains-bunyi-dekat-jauh-jalan",
+        "title": "Siapa Dengar Paling Keras?",
+        "mechanic": "urutkan",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+        "title": "Makin Jauh, Makin Pelan",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 27,
+    "competency": "MAT.SD1.UKUR.01",
+    "title": "Aku bisa mengurutkan tiga atau empat benda dari yang paling ringan ke yang paling berat",
+    "packs": [
+      {
+        "id": "sd1-mat-belanja-ringan-berat",
+        "title": "Timbang Barang di Pasar",
+        "mechanic": "urutkan",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-urut-ringan-berat",
+        "title": "Dari Ringan ke Berat",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 28,
+    "competency": "MAT.SD1.UKUR.02",
+    "title": "Aku bisa mengurutkan wadah dari yang isinya paling sedikit ke yang paling banyak",
+    "packs": [
+      {
+        "id": "sd1-mat-urut-isi-wadah",
+        "title": "Wadah Mana yang Muat Banyak?",
+        "mechanic": "urutkan",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-wadah-halaman-isi",
+        "title": "Mana yang Muat Paling Banyak?",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 29,
+    "competency": "KODE.SD1.PREDIKSI.01",
+    "title": "Aku bisa menunjuk petak tujuan robot sebelum tiap langkah dijalankan, di program yang memakai blok ulangi",
+    "packs": [
+      {
+        "id": "sd1-kode-tebak-petak-angkasa",
+        "title": "Tebak Langkah di Stasiun Bulan",
+        "mechanic": "navigasi",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-tebak-petak-ulangi",
+        "title": "Tebak Petak Saat Ulangi",
+        "mechanic": "navigasi",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 30,
+    "competency": "SAINS.SD1.LISTRIK.01",
+    "title": "Aku bisa memilah alat yang butuh listrik untuk bekerja dari yang tidak, termasuk alat yang memakai baterai",
+    "packs": [
+      {
+        "id": "sd1-sains-butuh-listrik-rumah",
+        "title": "Butuh Listrik? (Rumah)",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-butuh-listrik-sekolah",
+        "title": "Butuh Listrik? (Sekolah)",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 31,
+    "competency": "MAT.SD1.WAKTU.01",
+    "title": "Aku bisa membaca jam tepat dan jam setengah, misalnya setengah 4 adalah pukul 3.30",
+    "packs": [
+      {
+        "id": "sd1-mat-jam-setengah-pagi",
+        "title": "Jam Setengah: Pagi",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-jam-setengah-siang",
+        "title": "Jam Setengah: Pukul 1 sampai 6",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 32,
+    "competency": "MAT.SD1.WAKTU.02",
+    "title": "Aku bisa mengurutkan nama hari dan nama bulan, mulai dari hari atau bulan mana pun",
+    "packs": [
+      {
+        "id": "sd1-mat-urutan-bulan",
+        "title": "Kalender Dua Belas Bulan",
+        "mechanic": "urutkan",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-urutan-hari",
+        "title": "Hari Demi Hari",
+        "mechanic": "urutkan",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 33,
+    "competency": "KODE.SD1.DEBUG.01",
+    "title": "Aku bisa memperbaiki satu blok yang salah di program robot yang memakai blok ulangi",
+    "packs": [
+      {
+        "id": "sd1-kode-perbaiki-ulangi-gudang",
+        "title": "Satu Blok Ulangi Rusak",
+        "mechanic": "navigasi",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-perbaiki-ulangi",
+        "title": "Perbaiki Blok Ulangi",
+        "mechanic": "navigasi",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 34,
+    "competency": "SAINS.SD1.BUMI.01",
+    "title": "Aku bisa memilah bagian Bumi ke perairan atau daratan: laut, danau, dan sungai ke air; gunung dan sawah ke darat",
+    "packs": [
+      {
+        "id": "sd1-sains-air-atau-daratan-dari-pesawat",
+        "title": "Terlihat dari Pesawat",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-air-atau-daratan",
+        "title": "Air atau Daratan?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 35,
+    "competency": "MAT.SD1.DATA.01",
+    "title": "Aku bisa memilah benda ke diagram Carroll dengan dua ciri, misalnya merah atau bukan dan bulat atau bersudut",
+    "packs": [
+      {
+        "id": "sd1-mat-carroll-kuning-bulat",
+        "title": "Kotak Kuning dan Bulat",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-carroll-merah-bulat",
+        "title": "Diagram Empat Kotak",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 36,
+    "competency": "KODE.SD1.DATA.01",
+    "title": "Aku bisa memilah benda ke kotak ya dan kotak tidak untuk menjawab satu pertanyaan tentang ciri benda",
+    "packs": [
+      {
+        "id": "sd1-kode-ya-tidak-listrik",
+        "title": "Pakai Listrik atau Tidak?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-ya-tidak-roda",
+        "title": "Punya Roda atau Tidak?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 37,
+    "competency": "SAINS.SD1.MATAHARI.01",
+    "title": "Aku bisa menebak benda mana yang lebih dulu hangat, kering, atau meleleh, yaitu yang terkena sinar Matahari",
+    "packs": [
+      {
+        "id": "sd1-sains-cepat-atau-lambat-hangat",
+        "title": "Cepat atau Lambat Berubah?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-tebak-panas-matahari",
+        "title": "Tebak: Di Mana Paling Cepat?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 38,
+    "competency": "MAT.SD1.POLA.01",
+    "title": "Aku bisa melanjutkan pola berulang yang berubah ukuran atau arah, misalnya atas, kanan, bawah, atas, kanan, bawah",
+    "packs": [
+      {
+        "id": "sd1-mat-pola-besar-kecil-arah",
+        "title": "Pola Besar, Kecil, dan Arah",
+        "mechanic": "pola",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-mat-pola-tangan-bintang",
+        "title": "Pola Tangan dan Bintang",
+        "mechanic": "pola",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 39,
+    "competency": "KODE.SD1.PERANGKAT.01",
+    "title": "Aku bisa memilah perangkat yang tersambung dengan kabel dan yang tersambung tanpa kabel",
+    "packs": [
+      {
+        "id": "sd1-kode-kabel-tanpa-kabel",
+        "title": "Pakai Kabel atau Tanpa Kabel?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-sambungan-perangkat",
+        "title": "Kabel atau Sinyal?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 40,
+    "competency": "KODE.SD1.PERANGKAT.02",
+    "title": "Aku bisa memilah mesin yang termasuk robot dan benda yang bukan robot",
+    "packs": [
+      {
+        "id": "sd1-kode-cari-robot-pabrik",
+        "title": "Mana yang Robot?",
+        "mechanic": "pilah",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-kode-robot-atau-bukan",
+        "title": "Robot atau Bukan?",
+        "mechanic": "pilah",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 41,
+    "competency": "SAINS.SD1.PENGAMATAN.01",
+    "title": "Aku bisa mengukur panjang daun, ulat, atau ranting dengan satuan tidak baku: kubus atau jengkal",
+    "packs": [
+      {
+        "id": "sd1-sains-ukur-jengkal-temuan-kebun",
+        "title": "Ukur Temuan Kebun dengan Jengkal",
+        "mechanic": "simulasi",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-ukur-kubus-temuan-kebun",
+        "title": "Ukur Temuan di Kebun",
+        "mechanic": "simulasi",
+        "rounds": 10
+      }
+    ]
+  },
+  {
+    "mission": 42,
+    "competency": "SAINS.SD1.PENGAMATAN.02",
+    "title": "Aku bisa mencatat hewan yang datang ke kebun atau kolam dengan turus, satu garis untuk tiap hewan",
+    "packs": [
+      {
+        "id": "sd1-sains-turus-pengunjung-kebun",
+        "title": "Siapa Mampir ke Kebun?",
+        "mechanic": "simulasi",
+        "rounds": 10
+      },
+      {
+        "id": "sd1-sains-turus-pengunjung-kolam",
+        "title": "Siapa Mampir ke Kolam?",
+        "mechanic": "simulasi",
+        "rounds": 10
+      }
+    ]
+  }
+]
