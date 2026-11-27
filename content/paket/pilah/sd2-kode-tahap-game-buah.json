@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-tahap-game-buah",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -158,13 +158,19 @@
       "id": "b-jatuh",
       "labelKey": "i-b-jatuh",
       "bin": "buat",
-      "emoji": "🧱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tahap-game-blok-jatuh"
+      }
     },
     {
       "id": "b-tombol",
       "labelKey": "i-b-tombol",
       "bin": "buat",
-      "emoji": "⌨️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tahap-game-tombol-arah"
+      }
     },
     {
       "id": "b-skor",
@@ -206,7 +212,10 @@
       "id": "u-skor",
       "labelKey": "i-u-skor",
       "bin": "uji",
-      "emoji": "👀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tahap-game-cek-skor"
+      }
     },
     {
       "id": "u-catat",
@@ -218,7 +227,10 @@
       "id": "u-tablet",
       "labelKey": "i-u-tablet",
       "bin": "uji",
-      "emoji": "📱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tahap-game-uji-tablet"
+      }
     },
     {
       "id": "u-tombol",
@@ -230,13 +242,19 @@
       "id": "p-pelan",
       "labelKey": "i-p-pelan",
       "bin": "perbaiki",
-      "emoji": "🐢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tahap-game-perlambat-buah"
+      }
     },
     {
       "id": "p-tembus",
       "labelKey": "i-p-tembus",
       "bin": "perbaiki",
-      "emoji": "🚧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tahap-game-batas-keranjang"
+      }
     },
     {
       "id": "p-tulisan",
@@ -260,7 +278,10 @@
       "id": "p-dobel",
       "labelKey": "i-p-dobel",
       "bin": "perbaiki",
-      "emoji": "🗑️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-tahap-game-hapus-buah-ganda"
+      }
     }
   ]
 }

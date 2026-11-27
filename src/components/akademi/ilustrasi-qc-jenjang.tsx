@@ -12,6 +12,7 @@ import { ILUSTRASI_LISTRIK_RUMAH_SD2 } from "./ilustrasi-sd2-listrik-rumah";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
 import { ILUSTRASI_PERANGKAT_SD2 } from "./ilustrasi-sd2-perangkat";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
+import { ILUSTRASI_TAHAP_GAME_SD2 } from "./ilustrasi-sd2-tahap-game";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
 import { ILUSTRASI_TUMBUH_KELINCI_SD2 } from "./ilustrasi-sd2-pertumbuhan-kelinci";
 import { ILUSTRASI_TUMBUH_SAPI_KAMBING_GAJAH_SD2 } from "./ilustrasi-sd2-tumbuh-sapi-kambing-gajah";
@@ -484,6 +485,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_PENYEBAB_GERAK_SD2,
   ...ILUSTRASI_DIDIH_UAP_SD6,
   ...ILUSTRASI_KONDISI_TEMPAT_SD2,
+  ...ILUSTRASI_TAHAP_GAME_SD2,
   "plastik-pembungkus": <g {...RINGKAS}>
     <path d="M32 56L85 54 116 72 70 89Z" fill="#d9f3f7" stroke="#6ea4ad" />
     <path d="M51 62L92 61M65 72L103 69M76 80L111 74" fill="none" stroke="#9ecbd2" strokeWidth="1.5" />
