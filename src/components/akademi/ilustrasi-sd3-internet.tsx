@@ -12,6 +12,15 @@ function Tablet({ children, layar = "#eaf5fb" }: { children: ReactNode; layar?: 
   </g>;
 }
 
+function Ponsel({ children }: { children: ReactNode }) {
+  return <g {...GARIS}>
+    <rect x="35" y="5" width="60" height="90" rx="11" fill="#617c94" />
+    <rect x="41" y="13" width="48" height="72" rx="5" fill="#edf5fc" />
+    <path d="M59 89H71" stroke="#ecf1f8" />
+    {children}
+  </g>;
+}
+
 function Foto({ x = 0, y = 0, kecil = false }: { x?: number; y?: number; kecil?: boolean }) {
   return <g transform={`translate(${x} ${y}) scale(${kecil ? 0.66 : 1})`}>
     <rect width="66" height="41" rx="5" fill="#b2dff6" />
@@ -30,6 +39,49 @@ function AvatarNenek() {
 }
 
 export const ILUSTRASI_INTERNET_SD3: Record<string, ReactNode> = {
+  "sd3-internet-buku-tersimpan": <Tablet>
+    <path d="M29 35Q45 29 59 38Q74 29 89 35V64Q74 57 59 66Q44 57 29 64Z" fill="#fff5d9" />
+    <path d="M59 38V66M36 43Q47 40 53 45M36 51Q47 48 53 53M66 45Q75 39 82 43" fill="none" stroke="#9b805c" />
+    <circle cx="91" cy="64" r="12" fill="#8bc9ae" />
+    <path d="m86 63 4 4 6-7" fill="none" stroke="#f4fff5" />
+  </Tablet>,
+  "sd3-internet-rekam-suara": <Ponsel>
+    <path d="M49 44V51M56 38V57M64 32V63M72 37V58M80 44V51" fill="none" stroke="#6b8fb2" strokeWidth="3.4" />
+    <circle cx="64" cy="73" r="5.5" fill="#df7c70" />
+  </Ponsel>,
+  "sd3-internet-berita-situs": <Ponsel>
+    <rect x="46" y="22" width="38" height="51" rx="3" fill="#f6f9fc" />
+    <path d="M46 32H84M51 28H65M51 45H62M51 53H78M51 60H76M51 67H70" fill="none" stroke="#6784ac" />
+    <rect x="67" y="37" width="11" height="10" rx="2" fill="#e0a774" strokeWidth="1.1" />
+  </Ponsel>,
+  "sd3-internet-ramalan": <Ponsel>
+    <circle cx="73" cy="31" r="8" fill="#ffdb8d" />
+    <path d="M48 50Q45 43 53 42Q52 34 59 36Q64 35 68 42Q77 41 78 48Q79 54 70 54H53Q49 54 48 50Z" fill="#b6d9ec" />
+    <path d="M52 69H78M52 75H70" fill="none" stroke="#5c859b" />
+  </Ponsel>,
+  "sd3-internet-tiket": <Ponsel>
+    <path d="M48 35H82V42Q75 46 82 50V58H48V50Q55 46 48 42Z" fill="#ffd27f" />
+    <rect x="59" y="39" width="12" height="13" rx="3" fill="#83b6c8" strokeWidth="1.6" />
+    <path d="M61 49H69M55 35V39M55 53V58" strokeWidth="1.5" />
+    <path d="M51 70H79M51 75H72" stroke="#7596ae" fill="none" />
+  </Ponsel>,
+  "sd3-internet-unggah-tugas": <Ponsel>
+    <path d="M51 53V28H72L80 36V53Z" fill="#f9deb2" />
+    <path d="M72 28V36H80M56 38H66M56 45H75" fill="none" stroke="#627f92" />
+    <path d="M65 74V56M57 64L65 56 73 64" fill="none" stroke="#429d87" strokeWidth="3.5" />
+  </Ponsel>,
+  "sd3-internet-siaran": <Ponsel>
+    <rect x="46" y="27" width="38" height="35" rx="4" fill="#aad9af" />
+    <path d="M65 30V59M47 45H83" fill="none" stroke="#e7f3d7" />
+    <circle cx="58" cy="48" r="5" fill="#fff" />
+    <circle cx="77" cy="34" r="4" fill="#f1756b" stroke="none" />
+    <path d="M49 71H81M49 77H73" fill="none" stroke="#6e90a4" />
+  </Ponsel>,
+  "sd3-internet-catatan": <Ponsel>
+    <rect x="48" y="24" width="34" height="47" rx="3" fill="#fff0bd" />
+    <path d="M54 36H76M54 44H76M54 52H68M54 60H67" fill="none" stroke="#9c8059" />
+    <path d="M66 62L77 48 81 52 70 66 65 67Z" fill="#e5a064" />
+  </Ponsel>,
   "sd3-internet-video-nenek": <Tablet>
     <rect x="25" y="23" width="58" height="49" rx="5" fill="#e2e8f7" />
     <AvatarNenek />

@@ -186,11 +186,14 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   // M21–23 dan M25 memakai rak teks; tetap beri gambar ruang yang layak di tablet.
   const pilahPilotLega = !hp && h >= 680 && paket.competencyIds.some(id =>
     ["SAINS.SD1.GAYA.02", "MAT.SD1.BANGUN.01", "MAT.SD1.BANGUN.02", "SAINS.SD1.BUNYI.01"].includes(id));
-  const pilahSudut = paket.competencyIds.includes("MAT.SD3.GEOMETRI.02");
   const rakAlatUkur = paket.id === "sd3-sains-rak-alat-ukur";
   const rakAlatUkurHp = rakAlatUkur && hp;
-  const kisiPilahRapat = pilahSudut || rakAlatUkur || paket.id === "sd3-mat-segi-banyak-beraturan" ||
-    paket.competencyIds.includes("SAINS.SD3.WUJUD.01");
+  const pilahPetakSd3 = paket.competencyIds.includes("MAT.SD3.UKUR.02");
+  const banyakRakSd3 = pilahPetakSd3 || paket.id === "sd3-mat-pilih-satuan-ukur";
+  const rakSd3Ringkas = banyakRakSd3 || paket.competencyIds.some(id =>
+    ["MAT.SD3.GEOMETRI.02", "MAT.SD3.GEOMETRI.03"].includes(id));
+  const kisiPilahRapat = rakSd3Ringkas || rakAlatUkur || paket.id === "sd3-mat-segi-banyak-beraturan" ||
+    paket.competencyIds.some(id => ["SAINS.SD3.WUJUD.01", "KODE.SD3.JARINGAN.02", "KODE.SD3.PERANGKAT.01", "SAINS.SD3.CAHAYA.01"].includes(id));
   const kisiPilahLega = kisiPilahRapat && lebarArea >= 620 && h >= 650;
   const pilahAdegan = [
     "sd3-sains-hidup-pernah-tidak-pernah-pantai", "sd3-sains-hidup-pernah-tidak-pernah-rumah",
@@ -354,15 +357,16 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     (n >= 4 || (n === 3 && bins.some((b) => t(b.labelKey).length > 9)));
   const titikRapat = kartuTitik && hp;
   const jarakBin = (rakSetengahHp ? 6 : carroll ? 7 : piktogram || titikRapat || rakKisiHp ? 8 : baris ? 10 : 12) * sk;
-  const lebarMinBin = rakAritmetikaHp ? 86 : pilahSudut && hp ? 78 : (kisiPilahRapat && hp) || rakBagiHp ? 83 : rakBagiLega ? 112 : rakJamHp ? 94 : rakSetengahHp ? 62 : piringRingkas ? 94 + jarakBin : rakDobelHp ? 80 : titikRapat || rakHitungHp ? 84 + jarakBin : rakAngkaHp || rakMenitKaptenHp ? 84 : rakBahanHp ? 82 : Math.min(148, 114 * sk + jarakBin);
-  const batasKolomBin = klasifikasiKomandanHp ? 2 : rakAritmetikaHp ? (n <= 4 ? 2 : 4) : rakBagiHp ? (n <= 4 ? 2 : 4) : rakBagiLega || rakSetengahHp ? 5 : rakBentukHp ? 2 : rakBahanLega ? (n === 7 ? 4 : 3) : Infinity;
+  const lebarMinBin = rakAritmetikaHp ? 86 : rakSd3Ringkas && hp ? 78 : (kisiPilahRapat && hp) || rakBagiHp ? 83 : rakBagiLega ? 112 : rakJamHp ? 94 : rakSetengahHp ? 62 : piringRingkas ? 94 + jarakBin : rakDobelHp ? 80 : titikRapat || rakHitungHp ? 84 + jarakBin : rakAngkaHp || rakMenitKaptenHp ? 84 : rakBahanHp ? 82 : Math.min(148, 114 * sk + jarakBin);
+  const batasKolomBin = klasifikasiKomandanHp ? 2 : rakAritmetikaHp ? (n <= 4 ? 2 : 4) : banyakRakSd3 && hp ? pilahPetakSd3 ? 3 : 4
+    : rakBagiHp ? (n <= 4 ? 2 : 4) : rakBagiLega || rakSetengahHp ? 5 : rakBentukHp ? 2 : rakBahanLega ? (n === 7 ? 4 : 3) : Infinity;
   const kapasitasKolom = Math.max(1, Math.min(batasKolomBin, Math.floor((lebarArea + jarakBin) / lebarMinBin)));
   const kolomBin = aturRakBilanganKomandan ? Math.min(n, hp ? (n >= 10 ? 4 : 3) : (n > 5 ? Math.ceil(n / 2) : n))
     : rakTumbuhanHp ? Math.min(n, 2) : tahapGame ? (hp ? 2 : n) : rakPecahanLega ? Math.min(n, 3) : rakJam && !hp ? Math.ceil(n / 2) : carroll ? 2 : piktogram ? n : baris ? 1 : Math.ceil(n / Math.ceil(n / kapasitasKolom));
   const lebarJudulBaris = carroll ? Math.min(124, lebarArea * 0.22) : 0;
   const lebarBin = (lebarArea - lebarJudulBaris - jarakBin * (carroll ? 4 : kolomBin - 1)) / kolomBin;
   const lebarIsi = Math.max(28, (baris ? lebarBin * 0.56 : lebarBin) - (rakSetengahHp ? 16 : (piktogram || rakAritmetikaHp ? 20 : rakAngkaHp ? 24 : 36) * sk));
-  const ukuranIkonBin = Math.min((rakTumbuhanHp ? 32 : rakTumbuhanTablet ? 64 : tahapGameHp ? 26 : klasifikasiKomandanHp ? 36 : kisiPilahRapat ? hp ? pilahSudut ? 38 : 32 : 66 : wadahBergambar ? 104 : paritasLega ? 94 : wadahLega ? 86 : piktogramLega || rakBahanLega ? 70 : titikLega || paritas ? 64 : hewanMakanHp ? 38 : hp ? 42 : 52) * sk, lebarBin - (piktogram ? 16 : 24) * sk);
+  const ukuranIkonBin = Math.min((rakTumbuhanHp ? 32 : rakTumbuhanTablet ? 64 : tahapGameHp ? 26 : klasifikasiKomandanHp ? 36 : kisiPilahRapat ? hp ? rakSd3Ringkas ? 38 : 32 : 66 : wadahBergambar ? 104 : paritasLega ? 94 : wadahLega ? 86 : piktogramLega || rakBahanLega ? 70 : titikLega || paritas ? 64 : hewanMakanHp ? 38 : hp ? 42 : 52) * sk, lebarBin - (piktogram ? 16 : 24) * sk);
   const itemSeret = seret?.aktif ? items.find((i) => i.id === seret.id) : undefined;
   // kartu bergambar berlabel panjang (deskripsi) dibuat lebih lebar supaya teksnya tidak terlipat terlalu banyak
   const labelPanjang = items.some((i) => visualBergambar(i) && t(i.labelKey).length > 18);
@@ -424,7 +428,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
         : rakPecahanLega ? (satuKartu ? 156 : 96) : satuKartuBesarHp || adeganKaptenAkhirHp ? 152 : piktogramLega ? 172 : rakAngkaLega ? 188 : 84 * sk;
   const tinggiIsi = aturRakBilanganKomandan ? (hp ? 39 : 123) / sk
     : aturRakTumbuhan ? (hp ? 45 : 142) / sk
-    : kisiPilahRapat ? (rakAlatUkurHp ? 44 : hp ? 62 : satuKartu ? 190 : 130) / sk
+    : kisiPilahRapat ? (rakAlatUkurHp ? 44 : hp ? banyakRakSd3 ? 48 : 62 : banyakRakSd3 ? 104 : satuKartu ? 190 : 130) / sk
     : tahapGame ? (hp ? 48 : satuKartu ? 126 : 94) / sk
     : carrollKaptenTablet ? 94 / sk : carrollKaptenHp ? 54 / sk
     : hurufSimetriLega ? Math.round(h * (satuKartu ? (hp ? 0.24 : 0.32) : (hp ? 0.13 : 0.22)) / sk)
@@ -436,7 +440,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const gambarKartu = klasifikasiKomandanHp ? (satuKartu ? 74 : 52)
     : aturRakBilanganKomandan ? (hp ? (satuKartu ? 104 : 55) : (satuKartu ? 170 : 124))
     : aturRakTumbuhan ? (hp ? (satuKartu ? 78 : 48) : (satuKartu ? 136 : 96))
-    : kisiPilahRapat ? (satuKartu ? hp ? 112 : 158 : rakAlatUkurHp ? 44 : hp ? 52 : 94)
+    : kisiPilahRapat ? (satuKartu ? hp ? 112 : 158 : rakAlatUkurHp ? 44 : hp ? pilahPetakSd3 ? 60 : 52 : 94)
     : rakAritmetikaHp ? (satuKartu ? 52 : 44) : tahapGame ? (hp ? (satuKartu ? 68 : 40) : (satuKartu ? 106 : 82))
     : carrollKaptenTablet ? Math.min(satuKartu ? 136 : 106, tinggiBaki - 42)
     : carrollKaptenHp ? (satuKartu ? 54 : 42)

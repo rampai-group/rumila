@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-licin-kasar",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -139,22 +139,34 @@
         {
           "id": "es",
           "labelKey": "mobil-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "keramik",
           "labelKey": "mobil-keramik",
-          "emoji": "⬜"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-keramik"
+          }
         },
         {
           "id": "karpet",
           "labelKey": "mobil-karpet",
-          "emoji": "🟥"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-karpet"
+          }
         },
         {
           "id": "pasir",
           "labelKey": "mobil-pasir",
-          "emoji": "🏖️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-pasir"
+          }
         }
       ]
     },
@@ -165,25 +177,34 @@
         {
           "id": "kaca",
           "labelKey": "kotak-kaca",
-          "emoji": "🔷",
-          "color": "#b3e5fc"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kaca"
+          }
         },
         {
           "id": "kayu",
           "labelKey": "kotak-kayu",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kayu"
+          }
         },
         {
           "id": "handuk",
           "labelKey": "kotak-handuk",
-          "emoji": "🟦",
-          "color": "#81d4fa"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-handuk"
+          }
         },
         {
           "id": "amplas",
           "labelKey": "kotak-amplas",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-amplas"
+          }
         }
       ]
     },
@@ -194,23 +215,34 @@
         {
           "id": "ubin",
           "labelKey": "kelereng-ubin",
-          "emoji": "⬜"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-keramik"
+          }
         },
         {
           "id": "kayu",
           "labelKey": "kelereng-kayu",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kayu"
+          }
         },
         {
           "id": "handuk",
           "labelKey": "kelereng-handuk",
-          "emoji": "🟦",
-          "color": "#81d4fa"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-handuk"
+          }
         },
         {
           "id": "pasir",
           "labelKey": "kelereng-pasir",
-          "emoji": "🏖️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-pasir"
+          }
         }
       ]
     },
@@ -221,23 +253,34 @@
         {
           "id": "es",
           "labelKey": "sepatu-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "keramik",
           "labelKey": "sepatu-keramik",
-          "emoji": "⬜"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-keramik"
+          }
         },
         {
           "id": "kayu",
           "labelKey": "sepatu-kayu",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kayu"
+          }
         },
         {
           "id": "amplas",
           "labelKey": "sepatu-amplas",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-amplas"
+          }
         }
       ]
     },
@@ -248,23 +291,34 @@
         {
           "id": "es",
           "labelKey": "buku-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "keramik",
           "labelKey": "buku-keramik",
-          "emoji": "⬜"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-keramik"
+          }
         },
         {
           "id": "handuk",
           "labelKey": "buku-handuk",
-          "emoji": "🟦",
-          "color": "#81d4fa"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-handuk"
+          }
         },
         {
           "id": "pasir",
           "labelKey": "buku-pasir",
-          "emoji": "🏖️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-pasir"
+          }
         }
       ]
     },
@@ -275,24 +329,34 @@
         {
           "id": "es",
           "labelKey": "truk-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "keramik",
           "labelKey": "truk-keramik",
-          "emoji": "⬜"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-keramik"
+          }
         },
         {
           "id": "handuk",
           "labelKey": "truk-handuk",
-          "emoji": "🟦",
-          "color": "#81d4fa"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-handuk"
+          }
         },
         {
           "id": "kerikil",
           "labelKey": "truk-kerikil",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-amplas"
+          }
         }
       ]
     },
@@ -303,23 +367,34 @@
         {
           "id": "es",
           "labelKey": "balok-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "kaca",
           "labelKey": "balok-kaca",
-          "emoji": "🔷",
-          "color": "#b3e5fc"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kaca"
+          }
         },
         {
           "id": "kayu",
           "labelKey": "balok-kayu",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kayu"
+          }
         },
         {
           "id": "pasir",
           "labelKey": "balok-pasir",
-          "emoji": "🏖️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-pasir"
+          }
         }
       ]
     },
@@ -330,23 +405,34 @@
         {
           "id": "es",
           "labelKey": "kardus-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "keramik",
           "labelKey": "kardus-keramik",
-          "emoji": "⬜"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-keramik"
+          }
         },
         {
           "id": "kayu",
           "labelKey": "kardus-kayu",
-          "emoji": "🪵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kayu"
+          }
         },
         {
           "id": "kerikil",
           "labelKey": "kardus-kerikil",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-amplas"
+          }
         }
       ]
     },
@@ -357,25 +443,34 @@
         {
           "id": "es",
           "labelKey": "piring-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "kaca",
           "labelKey": "piring-kaca",
-          "emoji": "🔷",
-          "color": "#b3e5fc"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kaca"
+          }
         },
         {
           "id": "handuk",
           "labelKey": "piring-handuk",
-          "emoji": "🟦",
-          "color": "#81d4fa"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-handuk"
+          }
         },
         {
           "id": "amplas",
           "labelKey": "piring-amplas",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-amplas"
+          }
         }
       ]
     },
@@ -386,24 +481,34 @@
         {
           "id": "es",
           "labelKey": "pensil-es",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-es"
+          }
         },
         {
           "id": "kaca",
           "labelKey": "pensil-kaca",
-          "emoji": "🔷",
-          "color": "#b3e5fc"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-kaca"
+          }
         },
         {
           "id": "karpet",
           "labelKey": "pensil-karpet",
-          "emoji": "🟥"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-karpet"
+          }
         },
         {
           "id": "kerikil",
           "labelKey": "pensil-kerikil",
-          "emoji": "🟫",
-          "color": "#a1887f"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-permukaan-amplas"
+          }
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-daring-luring",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Kegiatan di ponsel ini butuh internet, atau bisa dilakukan tanpa internet? Taruh di kotak yang cocok.",
       "bin-butuh": "butuh internet",
       "bin-tanpa": "bisa tanpa internet",
-      "i-ramalan": "melihat ramalan cuaca terbaru",
+      "i-ramalan": "perbarui ramalan cuaca",
       "i-ojek": "memesan ojek daring",
       "i-tiket": "membeli tiket kereta lewat aplikasi",
       "i-game-daring": "main game bersama teman di kota lain",
@@ -21,11 +21,11 @@
       "i-berita": "membaca berita hari ini di situs",
       "i-siaran": "menonton siaran langsung pertandingan",
       "i-senter": "menyalakan senter ponsel",
-      "i-rekam": "merekam suara",
+      "i-rekam": "rekam suara di perekam bawaan",
       "i-stopwatch": "memakai stopwatch",
       "i-lagu-unduh": "memutar lagu yang sudah diunduh",
       "i-buku-unduh": "membaca buku yang sudah diunduh",
-      "i-catatan": "menulis catatan",
+      "i-catatan": "tulis di catatan bawaan",
       "i-jam": "melihat jam"
     },
     "en": {
@@ -33,7 +33,7 @@
       "instruksi": "Does this phone activity need the internet, or can it be done without it? Put it in the right box.",
       "bin-butuh": "needs the internet",
       "bin-tanpa": "works without the internet",
-      "i-ramalan": "checking the latest weather forecast",
+      "i-ramalan": "refresh the weather forecast",
       "i-ojek": "booking an online motorbike taxi",
       "i-tiket": "buying a train ticket in an app",
       "i-game-daring": "playing a game with a friend in another city",
@@ -41,11 +41,11 @@
       "i-berita": "reading today's news on a website",
       "i-siaran": "watching a live match stream",
       "i-senter": "turning on the phone torch",
-      "i-rekam": "recording your voice",
+      "i-rekam": "record sound with the built-in recorder",
       "i-stopwatch": "using the stopwatch",
       "i-lagu-unduh": "playing a song you already downloaded",
       "i-buku-unduh": "reading a book you already downloaded",
-      "i-catatan": "writing a note",
+      "i-catatan": "write in the built-in notes app",
       "i-jam": "checking the time"
     }
   },
@@ -81,7 +81,10 @@
       "id": "ramalan",
       "labelKey": "i-ramalan",
       "bin": "butuh",
-      "emoji": "🌦️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-internet-ramalan"
+      }
     },
     {
       "id": "ojek",
@@ -93,7 +96,10 @@
       "id": "tiket",
       "labelKey": "i-tiket",
       "bin": "butuh",
-      "emoji": "🎫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-internet-tiket"
+      }
     },
     {
       "id": "game-daring",
@@ -105,19 +111,28 @@
       "id": "unggah",
       "labelKey": "i-unggah",
       "bin": "butuh",
-      "emoji": "⬆️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-internet-unggah-tugas"
+      }
     },
     {
       "id": "berita",
       "labelKey": "i-berita",
       "bin": "butuh",
-      "emoji": "📰"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-internet-berita-situs"
+      }
     },
     {
       "id": "siaran",
       "labelKey": "i-siaran",
       "bin": "butuh",
-      "emoji": "📡"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-internet-siaran"
+      }
     },
     {
       "id": "senter",
@@ -129,7 +144,10 @@
       "id": "rekam",
       "labelKey": "i-rekam",
       "bin": "tanpa",
-      "emoji": "🎙️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-internet-rekam-suara"
+      }
     },
     {
       "id": "stopwatch",
@@ -153,7 +171,10 @@
       "id": "catatan",
       "labelKey": "i-catatan",
       "bin": "tanpa",
-      "emoji": "📝"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-internet-catatan"
+      }
     },
     {
       "id": "jam",

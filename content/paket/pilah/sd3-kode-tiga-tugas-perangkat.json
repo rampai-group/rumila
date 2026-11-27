@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-tiga-tugas-perangkat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -107,19 +107,28 @@
       "id": "webcam",
       "labelKey": "i-webcam",
       "bin": "masuk",
-      "emoji": "📹"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kamera-web"
+      }
     },
     {
       "id": "keypad",
       "labelKey": "i-keypad",
       "bin": "masuk",
-      "emoji": "🔢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-papan-tombol-angka"
+      }
     },
     {
       "id": "pena",
       "labelKey": "i-pena",
       "bin": "masuk",
-      "emoji": "🖊️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-pena-digital"
+      }
     },
     {
       "id": "dvd",
@@ -131,21 +140,28 @@
       "id": "ssd",
       "labelKey": "i-ssd",
       "bin": "simpan",
-      "shape": "rect",
-      "color": "#475569"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-ssd"
+      }
     },
     {
       "id": "kartu-kamera",
       "labelKey": "i-kartu-kamera",
       "bin": "simpan",
-      "shape": "square",
-      "color": "#f59e0b"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kartu-memori"
+      }
     },
     {
       "id": "hdd",
       "labelKey": "i-hdd",
       "bin": "simpan",
-      "emoji": "💽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-hard-disk-eksternal"
+      }
     },
     {
       "id": "tv",
@@ -157,19 +173,28 @@
       "id": "struk",
       "labelKey": "i-struk",
       "bin": "keluar",
-      "emoji": "🧾"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-printer-struk"
+      }
     },
     {
       "id": "speaker-laptop",
       "labelKey": "i-speaker-laptop",
       "bin": "keluar",
-      "emoji": "🔉"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-speaker-laptop"
+      }
     },
     {
       "id": "layar-laptop",
       "labelKey": "i-layar-laptop",
       "bin": "keluar",
-      "emoji": "💻"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-layar-laptop"
+      }
     },
     {
       "id": "toa",
