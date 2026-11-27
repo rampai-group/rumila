@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-produsen-atau-konsumen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Produsen atau Konsumen?",
-      "instruksi": "Membuat makanan sendiri atau makan makhluk lain? Taruh ke raknya.",
-      "b-produsen": "produsen (membuat makanan sendiri)",
-      "b-konsumen": "konsumen (makan makhluk lain)",
+      "instruksi": "Taruh ke raknya. Produsen membuat makanan sendiri. Konsumen mendapat makanan dari makhluk lain.",
+      "b-produsen": "produsen",
+      "b-konsumen": "konsumen",
       "i-rumput": "rumput",
       "i-padi": "padi",
       "i-pohon": "pohon mangga",
@@ -28,9 +28,9 @@
     },
     "en": {
       "judul": "Producer or Consumer?",
-      "instruksi": "Makes its own food or eats other living things? Put it on its shelf.",
-      "b-produsen": "producer (makes its own food)",
-      "b-konsumen": "consumer (eats other living things)",
+      "instruksi": "Put each on its shelf. Producers make their own food. Consumers get food from other living things.",
+      "b-produsen": "producer",
+      "b-konsumen": "consumer",
       "i-rumput": "grass",
       "i-padi": "rice plant",
       "i-pohon": "mango tree",
@@ -90,20 +90,28 @@
       "id": "pohon",
       "labelKey": "i-pohon",
       "bin": "produsen",
-      "emoji": "🌳"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-rantai-pohon-mangga"
+      }
     },
     {
       "id": "ganggang",
       "labelKey": "i-ganggang",
       "bin": "produsen",
-      "emoji": "🌿",
-      "color": "#26a69a"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-rantai-alga-laut"
+      }
     },
     {
       "id": "kangkung",
       "labelKey": "i-kangkung",
       "bin": "produsen",
-      "emoji": "🥬"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "panen-kangkung"
+      }
     },
     {
       "id": "kaktus",

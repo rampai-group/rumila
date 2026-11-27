@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-produsen-konsumen-sawah-laut",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Produsen atau Konsumen di Sawah dan Laut",
-      "instruksi": "Di sawah dan di laut, siapa membuat makanan sendiri dan siapa makan makhluk lain? Taruh ke raknya.",
-      "b-produsen": "produsen (membuat makanan sendiri)",
-      "b-konsumen": "konsumen (makan makhluk lain)",
+      "judul": "Produsen dan Konsumen di Sawah, Kolam, dan Laut",
+      "instruksi": "Taruh ke raknya. Produsen membuat makanan sendiri. Konsumen mendapat makanan dari makhluk lain.",
+      "b-produsen": "produsen",
+      "b-konsumen": "konsumen",
       "i-padi": "padi",
       "i-jagung": "tanaman jagung",
       "i-eceng": "teratai",
@@ -26,13 +26,13 @@
       "i-kerbau": "kerbau"
     },
     "en": {
-      "judul": "Producer or Consumer in Rice Field and Sea",
-      "instruksi": "In the rice field and the sea, who makes its own food and who eats other living things? Put each on its shelf.",
-      "b-produsen": "producer (makes its own food)",
-      "b-konsumen": "consumer (eats other living things)",
+      "judul": "Producers and Consumers in the Rice Field, Pond, and Sea",
+      "instruksi": "Put each on its shelf. Producers make their own food. Consumers get food from other living things.",
+      "b-produsen": "producer",
+      "b-konsumen": "consumer",
       "i-padi": "rice plant",
       "i-jagung": "corn plant",
-      "i-eceng": "lotus",
+      "i-eceng": "water lily",
       "i-lamun": "seagrass",
       "i-kelapa": "coconut tree",
       "i-tikus": "rice-field rat",
@@ -82,19 +82,28 @@
       "id": "jagung",
       "labelKey": "i-jagung",
       "bin": "produsen",
-      "emoji": "🌽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-pengamatan-jagung-4"
+      }
     },
     {
       "id": "eceng",
       "labelKey": "i-eceng",
       "bin": "produsen",
-      "emoji": "🌸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "tumbuhan-susun-bunga-teratai"
+      }
     },
     {
       "id": "lamun",
       "labelKey": "i-lamun",
       "bin": "produsen",
-      "emoji": "🌱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-rantai-lamun"
+      }
     },
     {
       "id": "kelapa",
