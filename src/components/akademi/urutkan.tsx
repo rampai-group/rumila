@@ -462,6 +462,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const [tukar, setTukar] = useState(0);
   const [hint, setHint] = useState<string | null>(null);
   const [terkirim, setTerkirim] = useState(false);
+  const kartuSunting = paket.id === "sd3-kode-sunting-algoritma" || paket.id === "sd3-kode-sunting-kartu-percobaan";
   const tataTumbuhan = paket.id === "sains-perbaiki-tumbuhan-utuh";
   const tanamanTumbuh = paket.id === "sains-perbaiki-tanaman-tumbuh";
   const kartuPencernaan = paket.id === "sd5-sains-jalan-makanan-perbaiki";
@@ -470,7 +471,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const kartuSiklusHewan = paket.id === "sd3-sains-perbaiki-siklus-hidup-air" || paket.id === "sd3-sains-perbaiki-siklus-hidup-kebun";
   const tataGerbong = paket.id === "sd1-mat-gerbong-urut-0-20";
   const kartuTumbuhan = tataTumbuhan || tanamanTumbuh;
-  const inggris = (kartuTumbuhan || tataGerbong || tataMatahari) && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
+  const inggris = (kartuTumbuhan || tataGerbong || tataMatahari || kartuSiklusHewan) && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
   const kunci = !!hasil || terkirim;
   const langkah = (id: string) => shown.find((s) => s.id === id)!;
 
@@ -521,13 +522,14 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
 
   const n = urutan.length;
   const { tema, skala: sk, w, h } = usePanggung();
+  const suntingPadat = kartuSunting && w >= 350 && w < 600 && h >= 550;
   const adeganHp = tataAdeganUrut && w < 600;
   const adeganTabletTegak = tataAdeganUrut && tabletTegakTumbuh(w, h);
   const layarPendek = kartuTumbuhan && layarPendekUrutan(w, h);
   const tumbuhTablet = tanamanTumbuh && n === 4 && w >= 600 && h > w * 0.9;
   const aksiMenetap = !tataTumbuhan;
   const base = n <= 4 ? 64 : 52;
-  const gap = tataGerbong ? 8 : Math.round((layarPendek ? 8 : 10) * sk);
+  const gap = suntingPadat || tataGerbong ? 8 : Math.round((layarPendek ? 8 : 10) * sk);
   const pad = 12 * sk;
   const lebarDalam = w > 0 ? w - 2 * pad - 6 : 0;
   // Cadangkan ruang untuk judul dan petunjuk yang masing-masing bisa menjadi dua baris di HP pendek.
@@ -537,13 +539,14 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   // tetap besar dan kata tidak perlu diperkecil/terpotong
   const teksSaja = urutan.every((id) => {
     const l = langkah(id);
-    return !l.emoji && !l.shape && !((kartuTumbuhan || kartuPencernaan || kartuSiklusHewan || tataMatahari) && l.adegan);
+    return !l.emoji && !l.shape && !((kartuTumbuhan || kartuPencernaan || kartuSiklusHewan || tataMatahari || kartuSunting) && l.adegan);
   });
   const kataPanjang = Math.max(0, ...urutan.flatMap((id) => t(langkah(id).labelKey).split(/\s+/).map((k) => k.length)));
   const duaKolom = layarPendek || tumbuhTablet;
   const sel = tataGerbong
     ? selMuat(lebarDalam, n, 36, 174, gap)
     : tataAdeganUrut ? selMuat(lebarDalam, n, 86 * sk, adeganTabletTegak ? 320 : 182, gap, 0, undefined, n, adeganHp || adeganTabletTegak ? 2 : n)
+    : suntingPadat ? selMuat(lebarDalam, n, 90, 145, gap, 0, undefined, n, 3)
     : selMuat(lebarDalam, n, (teksSaja && kataPanjang > 6 ? 132 : 84) * sk, (w >= 600 ? 300 : 240) * sk,
       gap, tinggi, undefined, tumbuhTablet ? 2 : n, duaKolom ? 2 : n);
   const tegak = w > 0 && h > w;
@@ -551,17 +554,21 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const tinggiKartu = tataGerbong ? batas(68, sel.s * 0.78, 130)
     : adeganTabletTegak ? batas(194, Math.min(sel.s * 0.94, (h - 176 - gap * (sel.baris - 1)) / sel.baris), 286)
     : tataAdeganUrut ? batas(tataMatahari ? 138 : 104, sel.s * 1.06, 180)
+    : suntingPadat ? batas(112, (h - 214 - gap * (sel.baris - 1)) / sel.baris, 134)
     : batas((layarPendek ? 82 : 96) * sk, Math.min(sel.s * rasioKartu, (tinggi - gap * (sel.baris - 1)) / sel.baris), 420);
   const skalaMaks = Math.max(1, ...urutan.map((id) => skalaLebar(visual(langkah(id), t))));
   // Batas gambar mengikuti tinggi dan lebar kartu, dengan ruang untuk label yang panjang.
   const kalimatPanjang = sel.baris >= 3 || urutan.some((id) => t(langkah(id).labelKey).length > 50);
-  const ukuran = (tataGerbong ? Math.min(tinggiKartu * 0.7, sel.s * 0.72)
+  const ukuran = kartuSiklusHewan
+    ? Math.min((sel.s - 16) / skalaMaks, Math.max(30, tinggiKartu - 76), w < 600 ? 86 : 152)
+    : (tataGerbong ? Math.min(tinggiKartu * 0.7, sel.s * 0.72)
     : adeganTabletTegak ? Math.min(sel.s - 20, (tinggiKartu - 96) * skalaMaks, 300)
     : tataAdeganUrut ? Math.min(sel.s * 0.94, tinggiKartu - (tataMatahari ? 68 : adeganHp ? 42 : 54), 180)
     : tumbuhTablet ? Math.min(tinggiKartu * 0.83, sel.s * 0.88)
     : tanamanTumbuh && layarPendek ? Math.min(tinggiKartu * 0.67, sel.s * 0.8)
     : tataTumbuhan
     ? Math.min(tinggiKartu * 0.52, sel.s * 0.74, 186)
+    : suntingPadat ? Math.min(49, sel.s * 0.5)
     : batas((kalimatPanjang ? 44 : base) * sk, Math.min(tinggiKartu * (kalimatPanjang ? 0.3 : 0.55), sel.s * (tegak ? 0.72 : 0.6)), 170)) / skalaMaks;
 
   return (
@@ -591,8 +598,8 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
                   v={visual(langkah(id), t)}
                   ariaLabel={tataGerbong ? (inggris ? `Train car ${t(langkah(id).labelKey)}, position ${i + 1}` : `Gerbong nomor ${t(langkah(id).labelKey)}, posisi ${i + 1}`) : undefined}
                   size={ukuran}
-                  labelPenuh={kartuPencernaan || tataAdeganUrut}
-                  labelSize={layarPendek ? 12 : batas(14 * sk, sel.s * (kalimatPanjang ? 0.076 : 0.115), 24)}
+                  labelPenuh={kartuSunting || kartuPencernaan || tataAdeganUrut || kartuSiklusHewan}
+                  labelSize={suntingPadat ? 14 : layarPendek ? 12 : batas(14 * sk, sel.s * (kalimatPanjang ? 0.076 : 0.115), 24)}
                   selected={dipilih}
                   right={benar}
                   wrong={salah}
@@ -600,7 +607,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
                   className={`w-full active:translate-y-0 ${tataGerbong ? "akademi-badan-gerbong" : ""} ${layarPendek ? "px-1.5! pb-1.5!" : ""} ${salah ? "akademi-shake" : ""}`}
                   style={{
                     minHeight: tinggiKartu,
-                    paddingTop: tataGerbong ? 12 : tataTumbuhan ? (layarPendek ? 26 : 38) * sk : 24,
+                    paddingTop: suntingPadat ? 15 : tataGerbong ? 12 : tataTumbuhan ? (layarPendek ? 26 : 38) * sk : 24,
                     background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : tataGerbong ? "#fff4d9" : undefined,
                     ...sorotKartuUrutan(!hasil && dipilih, !hasil && disorot),
                     pointerEvents: kunci ? "none" : undefined,

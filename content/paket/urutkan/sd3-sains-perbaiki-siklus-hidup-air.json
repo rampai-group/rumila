@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-siklus-hidup-air",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,12 +19,12 @@
       "katak-katak": "katak dewasa",
       "s-penyu": "Siklus hidup penyu",
       "penyu-telur": "telur di pasir",
-      "penyu-tukik": "tukik berlari ke laut",
+      "penyu-tukik": "tukik merangkak ke laut",
       "penyu-muda": "penyu muda berenang",
       "penyu-dewasa": "penyu dewasa bertelur di pantai",
       "s-ikan": "Siklus hidup ikan",
       "ikan-telur": "telur ikan",
-      "ikan-larva": "larva menetas",
+      "ikan-larva": "larva baru menetas",
       "ikan-burayak": "anak ikan kecil",
       "ikan-remaja": "ikan muda",
       "ikan-dewasa": "ikan dewasa",
@@ -50,12 +50,12 @@
       "katak-katak": "adult frog",
       "s-penyu": "Sea turtle life cycle",
       "penyu-telur": "eggs in the sand",
-      "penyu-tukik": "hatchling racing to the sea",
+      "penyu-tukik": "hatchling crawls to the sea",
       "penyu-muda": "young turtle swimming",
       "penyu-dewasa": "adult turtle laying eggs on the beach",
       "s-ikan": "Fish life cycle",
       "ikan-telur": "fish eggs",
-      "ikan-larva": "larva hatching",
+      "ikan-larva": "newly hatched fish larva",
       "ikan-burayak": "tiny young fish",
       "ikan-remaja": "young fish",
       "ikan-dewasa": "adult fish",
@@ -144,25 +144,34 @@
         {
           "id": "telur",
           "labelKey": "penyu-telur",
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-penyu-telur"
+          }
         },
         {
           "id": "tukik",
           "labelKey": "penyu-tukik",
-          "emoji": "🐢",
-          "scale": 0.5
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-lingkungan-tukik-ke-laut"
+          }
         },
         {
           "id": "muda",
           "labelKey": "penyu-muda",
-          "emoji": "🐢",
-          "scale": 0.9
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "awal-penyu-laut"
+          }
         },
         {
           "id": "dewasa",
           "labelKey": "penyu-dewasa",
-          "emoji": "🐢",
-          "scale": 1.4
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-penyu-bertelur"
+          }
         }
       ]
     },
@@ -173,30 +182,42 @@
         {
           "id": "telur",
           "labelKey": "ikan-telur",
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-telur"
+          }
         },
         {
           "id": "larva",
           "labelKey": "ikan-larva",
-          "emoji": "〰️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-larva"
+          }
         },
         {
           "id": "burayak",
           "labelKey": "ikan-burayak",
-          "emoji": "🐟",
-          "scale": 0.5
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-burayak"
+          }
         },
         {
           "id": "remaja",
           "labelKey": "ikan-remaja",
-          "emoji": "🐟",
-          "scale": 0.9
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-muda"
+          }
         },
         {
           "id": "dewasa",
           "labelKey": "ikan-dewasa",
-          "emoji": "🐟",
-          "scale": 1.3
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-dewasa"
+          }
         }
       ]
     },
@@ -207,20 +228,26 @@
         {
           "id": "telur",
           "labelKey": "nyamuk-telur",
-          "emoji": "⚪",
-          "count": 4,
-          "scale": 0.3
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-nyamuk-telur"
+          }
         },
         {
           "id": "jentik",
           "labelKey": "nyamuk-jentik",
-          "emoji": "〰️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-nyamuk-jentik"
+          }
         },
         {
           "id": "kepompong",
           "labelKey": "nyamuk-kepompong",
-          "emoji": "🟤",
-          "scale": 0.6
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-nyamuk-pupa"
+          }
         },
         {
           "id": "nyamuk",
@@ -236,25 +263,34 @@
         {
           "id": "telur",
           "labelKey": "buaya-telur",
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-buaya-telur"
+          }
         },
         {
           "id": "anak",
           "labelKey": "buaya-anak",
-          "emoji": "🐊",
-          "scale": 0.5
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-buaya-menetas"
+          }
         },
         {
           "id": "muda",
           "labelKey": "buaya-muda",
-          "emoji": "🐊",
-          "scale": 0.8
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-buaya-muda"
+          }
         },
         {
           "id": "dewasa",
           "labelKey": "buaya-dewasa",
-          "emoji": "🐊",
-          "scale": 1.3
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-buaya-bertelur"
+          }
         }
       ]
     },
@@ -391,25 +427,34 @@
         {
           "id": "telur",
           "labelKey": "ikan-telur",
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-telur"
+          }
         },
         {
           "id": "burayak",
           "labelKey": "ikan-burayak",
-          "emoji": "🐟",
-          "scale": 0.5
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-burayak"
+          }
         },
         {
           "id": "remaja",
           "labelKey": "ikan-remaja",
-          "emoji": "🐟",
-          "scale": 0.9
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-muda"
+          }
         },
         {
           "id": "dewasa",
           "labelKey": "ikan-dewasa",
-          "emoji": "🐟",
-          "scale": 1.3
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-dewasa"
+          }
         }
       ]
     },
@@ -420,25 +465,34 @@
         {
           "id": "larva",
           "labelKey": "ikan-larva",
-          "emoji": "〰️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-larva"
+          }
         },
         {
           "id": "burayak",
           "labelKey": "ikan-burayak",
-          "emoji": "🐟",
-          "scale": 0.5
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-burayak"
+          }
         },
         {
           "id": "remaja",
           "labelKey": "ikan-remaja",
-          "emoji": "🐟",
-          "scale": 0.9
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-muda"
+          }
         },
         {
           "id": "dewasa",
           "labelKey": "ikan-dewasa",
-          "emoji": "🐟",
-          "scale": 1.3
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-siklus-ikan-dewasa"
+          }
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-pilih-alat-ukur",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "t-kolam": "Seberapa hangat air kolam siang ini?",
       "t-semangka": "Seberapa berat semangka hasil panen?",
       "t-kacang": "Seberapa tinggi tanaman kacang setelah seminggu?",
-      "t-hujan": "Berapa banyak air hujan yang tertampung di botol?",
+      "t-hujan": "Berapa volume air hujan yang tertampung di botol?",
       "t-es": "Berapa lama es batu mencair di bawah Matahari?",
       "t-kelas": "Apakah ruang kelas lebih panas siang daripada pagi?",
       "t-tas": "Tas siapa yang paling berat?",
@@ -40,7 +40,7 @@
       "t-kolam": "How warm is the pond water this afternoon?",
       "t-semangka": "How heavy is the harvested watermelon?",
       "t-kacang": "How tall is the bean plant after a week?",
-      "t-hujan": "How much rainwater collected in the bottle?",
+      "t-hujan": "What volume of rainwater collected in the bottle?",
       "t-es": "How long does an ice cube take to melt in the sun?",
       "t-kelas": "Is the classroom hotter at midday than in the morning?",
       "t-tas": "Whose school bag is the heaviest?",

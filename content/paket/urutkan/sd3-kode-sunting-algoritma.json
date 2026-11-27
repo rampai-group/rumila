@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-algoritma",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -25,8 +25,8 @@
       "pohon-3": "masukkan bibit",
       "pohon-4": "timbun dengan tanah",
       "pohon-5": "siram tanah timbunannya",
-      "pohon-6": "tunggu seminggu",
-      "pohon-7": "daun baru tumbuh",
+      "pohon-6": "tunggu hingga muncul tunas baru",
+      "pohon-7": "daun baru membuka dari tunas",
       "t-game": "Bermain game di tablet",
       "game-1": "buka aplikasi game",
       "game-2": "tekan tombol mulai",
@@ -39,7 +39,7 @@
       "mesin-cuci-1": "buka pintu mesin",
       "mesin-cuci-2": "masukkan baju kotor",
       "mesin-cuci-3": "tutup pintu mesin",
-      "mesin-cuci-4": "tekan tombol mulai",
+      "mesin-cuci-4": "tambahkan deterjen, lalu tekan Mulai",
       "mesin-cuci-5": "tunggu mesin selesai",
       "mesin-cuci-6": "keluarkan baju",
       "mesin-cuci-7": "jemur baju",
@@ -52,7 +52,7 @@
       "bus-5": "tempel kartu di mesin",
       "bus-6": "duduk di kursi",
       "bus-7": "tekan bel sebelum halte tujuan",
-      "bus-8": "turun dari bus",
+      "bus-8": "turun setelah bus tiba di halte tujuan",
       "t-remote": "Mengganti baterai remote",
       "remote-1": "buka tutup belakang remote",
       "remote-2": "keluarkan baterai lama",
@@ -73,8 +73,8 @@
       "t-pesawat": "Naik pesawat",
       "pesawat-1": "bawa koper ke bandara",
       "pesawat-2": "lapor dan ambil pas naik pesawat",
-      "pesawat-3": "lewati pemeriksaan keamanan menuju ruang tunggu",
-      "pesawat-4": "tunggu di ruang tunggu",
+      "pesawat-3": "lewati pemeriksaan keamanan",
+      "pesawat-4": "masuk dan tunggu di ruang tunggu",
       "pesawat-5": "naik ke pesawat",
       "pesawat-6": "pasang sabuk pengaman",
       "pesawat-7": "pesawat lepas landas",
@@ -115,8 +115,8 @@
       "pohon-3": "put in the young tree",
       "pohon-4": "fill in with soil",
       "pohon-5": "water the filled-in soil",
-      "pohon-6": "wait a week",
-      "pohon-7": "new leaves grow",
+      "pohon-6": "wait until new buds appear",
+      "pohon-7": "new leaves unfold from the buds",
       "t-game": "Playing a tablet game",
       "game-1": "open the game app",
       "game-2": "press start",
@@ -129,7 +129,7 @@
       "mesin-cuci-1": "open the machine door",
       "mesin-cuci-2": "put in the dirty clothes",
       "mesin-cuci-3": "close the door",
-      "mesin-cuci-4": "press start",
+      "mesin-cuci-4": "add detergent, then press Start",
       "mesin-cuci-5": "wait until it finishes",
       "mesin-cuci-6": "take the clothes out",
       "mesin-cuci-7": "hang the clothes to dry",
@@ -142,7 +142,7 @@
       "bus-5": "tap your card on the reader",
       "bus-6": "sit down",
       "bus-7": "press the bell before your stop",
-      "bus-8": "get off the bus",
+      "bus-8": "get off after the bus reaches your stop",
       "t-remote": "Changing remote batteries",
       "remote-1": "open the back of the remote",
       "remote-2": "take out the old batteries",
@@ -163,8 +163,8 @@
       "t-pesawat": "Taking a plane",
       "pesawat-1": "take your suitcase to the airport",
       "pesawat-2": "check in and get a boarding pass",
-      "pesawat-3": "go through the security check to the departure lounge",
-      "pesawat-4": "wait in the departure lounge",
+      "pesawat-3": "go through security",
+      "pesawat-4": "enter and wait in the departure lounge",
       "pesawat-5": "board the plane",
       "pesawat-6": "fasten your seat belt",
       "pesawat-7": "the plane takes off",
@@ -334,42 +334,66 @@
         {
           "id": "mesin-cuci-1",
           "labelKey": "mesin-cuci-1",
-          "emoji": "🚪"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-buka"
+          }
         },
         {
           "id": "mesin-cuci-2",
           "labelKey": "mesin-cuci-2",
-          "emoji": "👕"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-masuk"
+          }
         },
         {
           "id": "mesin-cuci-3",
           "labelKey": "mesin-cuci-3",
-          "emoji": "🔒"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-tutup"
+          }
         },
         {
           "id": "mesin-cuci-4",
           "labelKey": "mesin-cuci-4",
-          "emoji": "🔘"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-mulai"
+          }
         },
         {
           "id": "mesin-cuci-5",
           "labelKey": "mesin-cuci-5",
-          "emoji": "⏳"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-tunggu"
+          }
         },
         {
           "id": "mesin-cuci-6",
           "labelKey": "mesin-cuci-6",
-          "emoji": "🧺"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-keluar"
+          }
         },
         {
           "id": "mesin-cuci-7",
           "labelKey": "mesin-cuci-7",
-          "emoji": "👚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-jemur"
+          }
         },
         {
           "id": "mesin-cuci-8",
           "labelKey": "mesin-cuci-8",
-          "emoji": "☀️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-cuci-angkat"
+          }
         }
       ]
     },

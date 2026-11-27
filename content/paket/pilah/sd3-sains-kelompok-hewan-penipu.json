@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-kelompok-hewan-penipu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "b-burung": "burung (berbulu, bertelur)",
       "b-ikan": "ikan (bersirip, insang)",
       "b-reptil": "reptil (sisik kering)",
-      "b-amfibi": "amfibi (kulit lembap)",
+      "b-amfibi": "amfibi (kulit tanpa sisik)",
       "b-serangga": "serangga (6 kaki)",
       "i-paus": "paus",
       "i-lumba": "lumba-lumba",
@@ -28,7 +28,7 @@
       "i-penyu": "penyu",
       "i-komodo": "komodo",
       "i-katakpohon": "katak pohon",
-      "i-kodok": "kodok",
+      "i-kodok": "kodok puru",
       "i-kumbang": "kumbang",
       "i-belalang": "belalang"
     },
@@ -39,7 +39,7 @@
       "b-burung": "birds (feathers, lay eggs)",
       "b-ikan": "fish (fins, gills)",
       "b-reptil": "reptiles (dry scales)",
-      "b-amfibi": "amphibians (moist skin)",
+      "b-amfibi": "amphibians (skin without scales)",
       "b-serangga": "insects (6 legs)",
       "i-paus": "whale",
       "i-lumba": "dolphin",
@@ -176,28 +176,37 @@
       "id": "penyu",
       "labelKey": "i-penyu",
       "bin": "reptil",
-      "emoji": "🐢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-penyu-laut"
+      }
     },
     {
       "id": "komodo",
       "labelKey": "i-komodo",
       "bin": "reptil",
-      "emoji": "🦎",
-      "scale": 1.4
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-komandan-komodo"
+      }
     },
     {
       "id": "katakpohon",
       "labelKey": "i-katakpohon",
       "bin": "amfibi",
-      "emoji": "🐸",
-      "color": "#8bc34a"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-komandan-katak-pohon"
+      }
     },
     {
       "id": "kodok",
       "labelKey": "i-kodok",
       "bin": "amfibi",
-      "emoji": "🐸",
-      "color": "#8d6e63"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-komandan-kodok-puru"
+      }
     },
     {
       "id": "kumbang",
@@ -209,7 +218,10 @@
       "id": "belalang",
       "labelKey": "i-belalang",
       "bin": "serangga",
-      "emoji": "🦗"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-belalang-dewasa"
+      }
     }
   ],
   "pilihan": []
