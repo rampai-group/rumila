@@ -218740,7 +218740,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218824,7 +218824,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kayu",
         "labelKey": "i-kayu",
         "bin": "baru",
-        "emoji": "🔥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-abu-kayu"
+        }
       },
       {
         "id": "roti",
@@ -218836,9 +218839,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "paku",
         "labelKey": "i-paku",
         "bin": "baru",
-        "emoji": "🔩",
-        "color": "#a1522d",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-baut-berkarat"
+        }
       },
       {
         "id": "yoghurt",
@@ -218853,50 +218858,71 @@ export const PAKET_RAW: unknown[] = [
         "id": "tempe",
         "labelKey": "i-tempe",
         "bin": "baru",
-        "emoji": "🥜"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-kedelai-jadi-tempe"
+        }
       },
       {
         "id": "es",
         "labelKey": "i-es",
         "bin": "kembali",
-        "emoji": "🧊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-es-mencair"
+        }
       },
       {
         "id": "cokelat",
         "labelKey": "i-cokelat",
         "bin": "kembali",
-        "emoji": "🍫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-cokelat-meleleh"
+        }
       },
       {
         "id": "air",
         "labelKey": "i-air",
         "bin": "kembali",
-        "emoji": "❄️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-air-membeku"
+        }
       },
       {
         "id": "lilin",
         "labelKey": "i-lilin",
         "bin": "kembali",
-        "emoji": "🕯️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-lilin-lembek"
+        }
       },
       {
         "id": "mentega",
         "labelKey": "i-mentega",
         "bin": "kembali",
-        "emoji": "🧈"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-mentega-lunak"
+        }
       },
       {
         "id": "kertas",
         "labelKey": "i-kertas",
         "bin": "kembali",
-        "emoji": "📄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-kertas-dilipat"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd2-sains-bahan-untuk-tugasnya",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218976,32 +219002,46 @@ export const PAKET_RAW: unknown[] = [
         "id": "plastik",
         "labelKey": "i-plastik",
         "bin": "pilihan",
-        "emoji": "🧴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-plastik"
+        }
       },
       {
         "id": "kaca",
         "labelKey": "i-kaca",
         "bin": "pilihan",
-        "emoji": "🔷",
-        "color": "#b3e5fc"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kaca"
+        }
       },
       {
         "id": "kayu",
         "labelKey": "i-kayu",
         "bin": "pilihan",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-kayu"
+        }
       },
       {
         "id": "logam",
         "labelKey": "i-logam",
         "bin": "pilihan",
-        "emoji": "🔩"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-bahan-logam"
+        }
       },
       {
         "id": "kain",
         "labelKey": "i-kain",
         "bin": "pilihan",
-        "emoji": "🧵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-katun"
+        }
       },
       {
         "id": "kertas",
@@ -219013,7 +219053,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "karet",
         "labelKey": "i-karet",
         "bin": "pilihan",
-        "emoji": "⚫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-karet-lembar"
+        }
       }
     ],
     "pilihan": [
@@ -221150,7 +221193,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-sifat-yang-dibutuhkan",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221263,7 +221306,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "atap",
         "labelKey": "i-atap",
         "bin": "kedap",
-        "emoji": "🏠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-genting"
+        }
       },
       {
         "id": "jendela",
@@ -221287,7 +221333,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ban",
         "labelKey": "i-ban",
         "bin": "lentur",
-        "emoji": "🚲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-ban-sepeda"
+        }
       },
       {
         "id": "karetgelang",
@@ -221306,8 +221355,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "handuk",
         "labelKey": "i-handuk",
         "bin": "serap",
-        "emoji": "🟦",
-        "color": "#81d4fa"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-handuk"
+        }
       },
       {
         "id": "kainpel",
@@ -221322,8 +221373,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "popokkain",
         "labelKey": "i-popokkain",
         "bin": "serap",
-        "shape": "rect",
-        "color": "#ffcc80"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-bahan-lap-dapur"
+        }
       }
     ],
     "pilihan": []
@@ -336633,7 +336686,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-mana-dulu-bahan-baru",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -336794,7 +336847,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "beras-awal",
-            "emoji": "🌾"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-bahan-beras-mentah"
+            }
           },
           {
             "id": "akhir",
@@ -336810,12 +336866,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "paku-awal",
-            "emoji": "🔩"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-bahan-logam-baru"
+            }
           },
           {
             "id": "akhir",
             "labelKey": "paku-akhir",
-            "emoji": "🟤"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-bahan-logam-berkarat"
+            }
           }
         ]
       },
@@ -336826,7 +336888,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "jagung-awal",
-            "emoji": "🌽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-bahan-biji-jagung"
+            }
           },
           {
             "id": "akhir",
@@ -336926,7 +336991,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akhir",
             "labelKey": "sate-akhir",
-            "emoji": "🍢"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-bahan-sate-matang"
+            }
           }
         ]
       }

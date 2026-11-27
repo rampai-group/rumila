@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sifat-yang-dibutuhkan",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -113,7 +113,10 @@
       "id": "atap",
       "labelKey": "i-atap",
       "bin": "kedap",
-      "emoji": "🏠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-genting"
+      }
     },
     {
       "id": "jendela",
@@ -137,7 +140,10 @@
       "id": "ban",
       "labelKey": "i-ban",
       "bin": "lentur",
-      "emoji": "🚲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-ban-sepeda"
+      }
     },
     {
       "id": "karetgelang",
@@ -156,8 +162,10 @@
       "id": "handuk",
       "labelKey": "i-handuk",
       "bin": "serap",
-      "emoji": "🟦",
-      "color": "#81d4fa"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-handuk"
+      }
     },
     {
       "id": "kainpel",
@@ -172,8 +180,10 @@
       "id": "popokkain",
       "labelKey": "i-popokkain",
       "bin": "serap",
-      "shape": "rect",
-      "color": "#ffcc80"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-lap-dapur"
+      }
     }
   ],
   "pilihan": []

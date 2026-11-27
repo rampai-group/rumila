@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-bahan-untuk-tugasnya",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -80,32 +80,46 @@
       "id": "plastik",
       "labelKey": "i-plastik",
       "bin": "pilihan",
-      "emoji": "🧴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-plastik"
+      }
     },
     {
       "id": "kaca",
       "labelKey": "i-kaca",
       "bin": "pilihan",
-      "emoji": "🔷",
-      "color": "#b3e5fc"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kaca"
+      }
     },
     {
       "id": "kayu",
       "labelKey": "i-kayu",
       "bin": "pilihan",
-      "emoji": "🪵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-kayu"
+      }
     },
     {
       "id": "logam",
       "labelKey": "i-logam",
       "bin": "pilihan",
-      "emoji": "🔩"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-bahan-logam"
+      }
     },
     {
       "id": "kain",
       "labelKey": "i-kain",
       "bin": "pilihan",
-      "emoji": "🧵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-katun"
+      }
     },
     {
       "id": "kertas",
@@ -117,7 +131,10 @@
       "id": "karet",
       "labelKey": "i-karet",
       "bin": "pilihan",
-      "emoji": "⚫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-karet-lembar"
+      }
     }
   ],
   "pilihan": [

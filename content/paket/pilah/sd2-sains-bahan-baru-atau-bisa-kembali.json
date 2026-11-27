@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -84,7 +84,10 @@
       "id": "kayu",
       "labelKey": "i-kayu",
       "bin": "baru",
-      "emoji": "🔥"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-abu-kayu"
+      }
     },
     {
       "id": "roti",
@@ -96,9 +99,11 @@
       "id": "paku",
       "labelKey": "i-paku",
       "bin": "baru",
-      "emoji": "🔩",
-      "color": "#a1522d",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-baut-berkarat"
+      }
     },
     {
       "id": "yoghurt",
@@ -113,43 +118,64 @@
       "id": "tempe",
       "labelKey": "i-tempe",
       "bin": "baru",
-      "emoji": "🥜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-kedelai-jadi-tempe"
+      }
     },
     {
       "id": "es",
       "labelKey": "i-es",
       "bin": "kembali",
-      "emoji": "🧊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-es-mencair"
+      }
     },
     {
       "id": "cokelat",
       "labelKey": "i-cokelat",
       "bin": "kembali",
-      "emoji": "🍫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-cokelat-meleleh"
+      }
     },
     {
       "id": "air",
       "labelKey": "i-air",
       "bin": "kembali",
-      "emoji": "❄️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-air-membeku"
+      }
     },
     {
       "id": "lilin",
       "labelKey": "i-lilin",
       "bin": "kembali",
-      "emoji": "🕯️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-lilin-lembek"
+      }
     },
     {
       "id": "mentega",
       "labelKey": "i-mentega",
       "bin": "kembali",
-      "emoji": "🧈"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-mentega-lunak"
+      }
     },
     {
       "id": "kertas",
       "labelKey": "i-kertas",
       "bin": "kembali",
-      "emoji": "📄"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-kertas-dilipat"
+      }
     }
   ],
   "pilihan": []
