@@ -793,7 +793,9 @@ function ModeKubus(c: Ctx) {
                   {/* Lebar emoji berbeda di tiap perangkat. Kedua garis ukur berbagi pembagian lebar dengan kubus. */}
                   <div data-ukur-bentang className="absolute inset-y-0 flex flex-col" style={{ left: `${awal / N * 100}%`, width: `${ronde.target / N * 100}%` }}>
                     <div className="flex min-h-0 flex-1 items-center justify-center rounded-t-[14px] bg-[#eef7ff]" role="img" aria-label={namaBenda}>
-                      {benda?.shape === "rect" ? (
+                      {benda?.adegan?.varian?.startsWith("temuan-kebun-") ? (
+                        <GambarAdegan adegan={benda.adegan} s={ukuranBenda} style={{ width: "100%", height: "100%" }} />
+                      ) : benda?.shape === "rect" ? (
                         <span className="h-5 w-full rounded-sm" style={{ background: benda.color ?? BIRU_TUA }} />
                       ) : (
                         <Benda v={{ ...visual(benda?.id ?? ""), scale: 1, width: 1 }} size={ukuranBenda} />
@@ -880,6 +882,9 @@ function ModeTurus(c: Ctx) {
   const tinggiJalur = Math.round(samping
     ? Math.min(310, Math.max(158, h * 0.55))
     : Math.min(rapat ? 140 : 232, Math.max(92, h * 0.24)));
+  const turusPilot = paket.competencyIds.includes("SAINS.SD1.PENGAMATAN.02");
+  const kolamPilot = turusPilot && paket.world === "kolam";
+  const tinggiBarisPilot = turusPilot && !samping ? Math.max(rapat ? 44 : 72, Math.min(rapat ? 150 : 190, (h - tinggiJalur - 200) / hewan.length)) : null;
   const jeda = Math.max(600, ronde.flashMs || 1500);
   const jumlahLewat = ronde.urutan.length;
   const selesaiLewat = mulai && giliran >= jumlahLewat;
@@ -899,7 +904,7 @@ function ModeTurus(c: Ctx) {
     ? inggris ? `${giliran + 1} of ${jumlahLewat}. Passing ${nama(sedang)}.` : `${giliran + 1} dari ${jumlahLewat}. ${nama(sedang)} lewat.`
     : selesaiLewat && !hasil ? pesanSelesai : "";
   const jalur = (
-    <div className="relative w-full overflow-hidden rounded-[16px]" style={{ height: tinggiJalur, background: "linear-gradient(180deg,#d6f0ff 0 45%,#bfe8a6 45% 78%,#8fcf6d 78%)", boxShadow: "inset 0 0 0 3px rgba(11,37,69,.18)" }}>
+    <div className="relative w-full overflow-hidden rounded-[16px]" style={{ height: tinggiJalur, background: kolamPilot ? "linear-gradient(180deg,#d6f0ff 0 32%,#b7dca3 32% 40%,#75c7df 40% 78%,#49abc8 78%)" : "linear-gradient(180deg,#d6f0ff 0 45%,#bfe8a6 45% 78%,#8fcf6d 78%)", boxShadow: "inset 0 0 0 3px rgba(11,37,69,.18)" }}>
       <span className="sr-only" role="status" aria-atomic="true">{statusLewat}</span>
       {sedang && <Lewat key={giliran} v={visual(sedang)} durasi={jeda * 0.9} size={Math.round(tinggiJalur * 0.62)} />}
       {selesaiLewat && (
@@ -925,10 +930,10 @@ function ModeTurus(c: Ctx) {
               disabled={terkunci || !mulai}
               onClick={() => { sfx.tap(); setTurus((tr) => ({ ...tr, [h.id]: (tr[h.id] ?? 0) + 1 })); }}
               className={`flex min-w-0 flex-1 items-center gap-2 rounded-[16px] bg-white px-2 py-1 text-left active:scale-[.98] ${sorot ? "akademi-bounce" : ""}`}
-              style={{ minHeight: rapat ? 44 : 60 * skala, boxShadow: `${BAYANG}, inset 0 0 0 2px rgba(11,37,69,.16)${sorot ? `, 0 0 0 4px ${KUNING}` : ""}` }}
+              style={{ minHeight: tinggiBarisPilot ?? (rapat ? 44 : 60 * skala), boxShadow: `${BAYANG}, inset 0 0 0 2px rgba(11,37,69,.16)${sorot ? `, 0 0 0 4px ${KUNING}` : ""}` }}
               aria-label={inggris ? `${label}: ${n} tallies, tap to add` : `${label}: ${n} turus, ketuk untuk menambah`}
             >
-              <Benda v={visual(h.id)} size={rapat ? 28 : Math.round(38 * skala)} />
+              <Benda v={visual(h.id)} size={tinggiBarisPilot ? (rapat ? 42 : 64) : rapat ? 28 : Math.round(38 * skala)} />
               <span className={`flex min-w-0 flex-1 ${rapat ? "items-center gap-1" : "flex-col"}`}>
                 <span className="min-w-0 [overflow-wrap:anywhere]" style={{ ...Tebal, fontSize: 15 * st }}>{label}</span>
                 <span aria-hidden className="min-w-0 overflow-x-auto"><Turus n={n} s={rapat ? 0.6 : Math.min(skala, 1.3)} /></span>

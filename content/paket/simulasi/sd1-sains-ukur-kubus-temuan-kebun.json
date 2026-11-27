@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ukur-kubus-temuan-kebun",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD1",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -52,41 +52,56 @@
       "id": "ulat",
       "labelKey": "ulat",
       "role": "benda",
-      "emoji": "🐛",
       "value": 3,
-      "width": 1.2
+      "width": 1.2,
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-ulat"
+      }
     },
     {
       "id": "daunjambu",
       "labelKey": "daunjambu",
       "role": "benda",
-      "emoji": "🍃",
       "value": 4,
-      "width": 1.6
+      "width": 1.6,
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-daunjambu"
+      }
     },
     {
       "id": "bulu",
       "labelKey": "bulu",
       "role": "benda",
-      "emoji": "🪶",
       "value": 5,
-      "width": 2.0
+      "width": 2.0,
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-bulu"
+      }
     },
     {
       "id": "cacing",
       "labelKey": "cacing",
       "role": "benda",
-      "emoji": "🪱",
       "value": 6,
-      "width": 2.4
+      "width": 2.4,
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-cacing"
+      }
     },
     {
       "id": "ranting",
       "labelKey": "ranting",
       "role": "benda",
-      "emoji": "🌿",
       "value": 7,
-      "width": 2.8
+      "width": 2.8,
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-ranting"
+      }
     },
     {
       "id": "buncis",
@@ -94,23 +109,32 @@
       "role": "benda",
       "value": 8,
       "width": 3.2,
-      "emoji": "🥒"
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-timun"
+      }
     },
     {
       "id": "jagung",
       "labelKey": "jagung",
       "role": "benda",
-      "emoji": "🌽",
       "value": 9,
-      "width": 3.6
+      "width": 3.6,
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-jagung"
+      }
     },
     {
       "id": "daunpisang",
       "labelKey": "daunpisang",
       "role": "benda",
-      "emoji": "🍃",
       "value": 10,
-      "width": 4.0
+      "width": 4.0,
+      "adegan": {
+        "jenis": "ilustrasi-sd",
+        "varian": "temuan-kebun-daunpisang"
+      }
     }
   ]
 }
