@@ -823,8 +823,11 @@ function ModeKubus(c: Ctx) {
                   {Array.from({ length: N }, (_, k) => {
                     const ditandai = k >= awal && k < akhir && (hint || hasil);
                     return (
-                      <li key={k} data-ukur-kubus className="aspect-square" style={{ background: WARNA_KUBUS[k % WARNA_KUBUS.length], borderRight: k === N - 1 ? undefined : "2px solid rgba(11,37,69,.4)", boxShadow: ditandai ? `inset 0 0 0 4px ${UNGU}` : "inset 0 -5px 0 rgba(0,0,0,.12)" }}>
-                        <span className="sr-only">{k === awal && "Awal benda, "}kubus{k + 1 === akhir && ", akhir benda"}</span>
+                      <li key={k} data-ukur-kubus className={`aspect-square ${ukurKapten ? "grid place-items-center" : ""}`} style={{ background: WARNA_KUBUS[k % WARNA_KUBUS.length], borderRight: k === N - 1 ? undefined : "2px solid rgba(11,37,69,.4)", boxShadow: ditandai ? `inset 0 0 0 4px ${UNGU}` : "inset 0 -5px 0 rgba(0,0,0,.12)" }}>
+                        {ukurKapten && (
+                          <span aria-hidden="true" style={{ ...Tebal, fontSize: 14 * st, lineHeight: 1 }}>{k + 1}</span>
+                        )}
+                        <span className="sr-only">{k === awal && "Awal benda, "}kubus{ukurKapten && ` ${k + 1}`}{k + 1 === akhir && ", akhir benda"}</span>
                       </li>
                     );
                   })}
