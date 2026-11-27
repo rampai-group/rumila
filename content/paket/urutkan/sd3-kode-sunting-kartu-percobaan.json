@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-kartu-percobaan",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,12 +11,12 @@
     "id": {
       "judul": "Kartu Langkah Tertukar Jauh",
       "instruksi": "Satu pasang kartu tertukar, kadang berjarak satu kartu. Temukan pasangan itu lalu tukar sekali.",
-      "t-gunung": "Percobaan gunung meletus",
+      "t-gunung": "Model Gunung Meletus dengan Busa",
       "gunung-1": "siapkan botol kosong di atas nampan",
       "gunung-2": "masukkan dua sendok soda kue ke botol",
       "gunung-3": "tuang cuka ke atas soda kue",
       "gunung-4": "busa meluap keluar botol",
-      "gunung-5": "amati busa sampai berhenti",
+      "gunung-5": "amati botol sampai busanya berhenti",
       "gunung-6": "tulis hasil pengamatanmu",
       "gunung-7": "bacakan catatanmu di depan kelas",
       "gunung-8": "teman-teman bertepuk tangan",
@@ -46,7 +46,7 @@
       "lari-5": "dengar aba-aba mulai",
       "lari-6": "lari sekencang mungkin",
       "lari-7": "lewati garis finis",
-      "lari-8": "terima medali",
+      "lari-8": "terima medali peserta yang finis",
       "t-bolu": "Membuat kue bolu",
       "bolu-1": "pecahkan telur ke mangkuk",
       "bolu-2": "kocok telur dengan gula",
@@ -68,8 +68,8 @@
       "t-ban": "Menambal ban sepeda",
       "ban-1": "lepas roda sepeda",
       "ban-2": "keluarkan ban dalam",
-      "ban-3": "celupkan ban dalam ke air untuk mencari lubang",
-      "ban-4": "tambal lubangnya",
+      "ban-3": "pompa sedikit, celupkan, lalu cari gelembung",
+      "ban-4": "keluarkan, keringkan, lalu tambal lubangnya",
       "ban-5": "masukkan lagi ban dalam lalu pompa",
       "ban-6": "pasang roda",
       "ban-7": "putar roda untuk cek tidak goyang",
@@ -103,23 +103,23 @@
       "pot-botol-8": "petik cabainya",
       "t-sop": "Memasak sayur sop",
       "sop-1": "isi panci dengan air",
-      "sop-2": "nyalakan kompor sampai air mendidih",
-      "sop-3": "masukkan potongan wortel dan kentang ke air mendidih",
+      "sop-2": "didihkan air di atas kompor",
+      "sop-3": "masukkan sayur ke air mendidih",
       "sop-4": "rebus sampai sayurnya empuk",
-      "sop-5": "tambahkan garam ke sayur yang sudah empuk",
-      "sop-6": "aduk sampai garam larut selagi kompor menyala",
+      "sop-5": "garami sayur yang sudah empuk",
+      "sop-6": "aduk garam selagi api menyala",
       "sop-7": "matikan kompor",
-      "sop-8": "tuang sop ke mangkuk"
+      "sop-8": "tuang sop setelah kompor mati"
     },
     "en": {
       "judul": "Far-Swapped Step Cards",
       "instruksi": "One pair of cards is swapped, sometimes with a card between them. Find the pair and swap once.",
-      "t-gunung": "Volcano experiment",
+      "t-gunung": "Modelling a Volcano with Foam",
       "gunung-1": "set an empty bottle on a tray",
       "gunung-2": "put two spoons of baking soda into the bottle",
       "gunung-3": "pour vinegar onto the baking soda",
       "gunung-4": "foam bubbles out of the bottle",
-      "gunung-5": "watch the foam until it stops",
+      "gunung-5": "watch the bottle until it stops foaming",
       "gunung-6": "write down what you observed",
       "gunung-7": "read your notes to the class",
       "gunung-8": "your classmates clap",
@@ -149,7 +149,7 @@
       "lari-5": "hear the start signal",
       "lari-6": "run as fast as you can",
       "lari-7": "cross the finish line",
-      "lari-8": "get a medal",
+      "lari-8": "receive your finisher medal",
       "t-bolu": "Baking a sponge cake",
       "bolu-1": "crack the eggs into a bowl",
       "bolu-2": "beat the eggs with sugar",
@@ -171,8 +171,8 @@
       "t-ban": "Fixing a flat bike tyre",
       "ban-1": "take off the wheel",
       "ban-2": "pull out the inner tube",
-      "ban-3": "dip the inner tube in water to find the hole",
-      "ban-4": "patch the hole",
+      "ban-3": "pump up the inner tube slightly, then dip it in water and look for bubbles",
+      "ban-4": "take the inner tube out, dry it and patch the hole",
       "ban-5": "put the inner tube back and pump it up",
       "ban-6": "fit the wheel",
       "ban-7": "spin the wheel to check it does not wobble",
@@ -206,13 +206,13 @@
       "pot-botol-8": "pick the chillies",
       "t-sop": "Cooking vegetable soup",
       "sop-1": "fill the pot with water",
-      "sop-2": "turn on the stove until the water boils",
-      "sop-3": "put the cut carrots and potatoes into the boiling water",
+      "sop-2": "bring the water to a boil on the stove",
+      "sop-3": "put the vegetables into the boiling water",
       "sop-4": "boil until the vegetables are soft",
-      "sop-5": "add salt to the soft vegetables",
-      "sop-6": "stir until the salt dissolves while the stove is still on",
+      "sop-5": "salt the vegetables once tender",
+      "sop-6": "stir in the salt while the stove is still on",
       "sop-7": "turn off the stove",
-      "sop-8": "pour the soup into bowls"
+      "sop-8": "pour the soup after turning off the stove"
     }
   },
   "knobs": {
@@ -237,27 +237,42 @@
         {
           "id": "gunung-1",
           "labelKey": "gunung-1",
-          "emoji": "🧴"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-gunung-botol"
+          }
         },
         {
           "id": "gunung-2",
           "labelKey": "gunung-2",
-          "emoji": "🥄"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-gunung-soda"
+          }
         },
         {
           "id": "gunung-3",
           "labelKey": "gunung-3",
-          "emoji": "🧪"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-gunung-cuka"
+          }
         },
         {
           "id": "gunung-4",
           "labelKey": "gunung-4",
-          "emoji": "🌋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-gunung-busa"
+          }
         },
         {
           "id": "gunung-5",
           "labelKey": "gunung-5",
-          "emoji": "👀"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-gunung-berhenti"
+          }
         },
         {
           "id": "gunung-6",
@@ -531,7 +546,10 @@
         {
           "id": "ban-3",
           "labelKey": "ban-3",
-          "emoji": "💧"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-ban-gelembung"
+          }
         },
         {
           "id": "ban-4",
