@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-susun-rantai-makanan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Siapa Makan Siapa?",
-      "instruksi": "Susun dari tumbuhan sampai pemakan terakhir.",
+      "instruksi": "Mulai dari produsen. Setelah itu, susun berdasarkan siapa yang memakannya.",
       "s-sawah": "Rantai makanan di sawah",
       "sawah-padi": "padi",
       "sawah-tikus": "tikus",
@@ -36,7 +36,7 @@
       "sabana-zebra": "zebra",
       "sabana-singa": "singa",
       "s-kolam": "Rantai makanan di kolam",
-      "kolam-lumut": "lumut air",
+      "kolam-lumut": "alga kolam",
       "kolam-siput": "siput air",
       "kolam-ikan": "ikan",
       "kolam-bangau": "elang",
@@ -68,7 +68,7 @@
     },
     "en": {
       "judul": "Who Eats Whom?",
-      "instruksi": "Put them in order from the plant to the last eater.",
+      "instruksi": "Start with the producer. Then put each card after the living thing it eats.",
       "s-sawah": "A rice field food chain",
       "sawah-padi": "rice plant",
       "sawah-tikus": "rat",
@@ -225,8 +225,10 @@
         {
           "id": "ganggang",
           "labelKey": "laut-ganggang",
-          "emoji": "🌿",
-          "color": "#26a69a"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-rantai-alga-laut"
+          }
         },
         {
           "id": "udang",
@@ -273,12 +275,18 @@
         {
           "id": "lumut",
           "labelKey": "kolam-lumut",
-          "emoji": "🟢"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-rantai-alga-kolam"
+          }
         },
         {
           "id": "siput",
           "labelKey": "kolam-siput",
-          "emoji": "🐌"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-rantai-siput-air"
+          }
         },
         {
           "id": "ikan",
@@ -378,8 +386,10 @@
         {
           "id": "rumputlaut",
           "labelKey": "lautlepas-rumputlaut",
-          "emoji": "🌿",
-          "color": "#26a69a"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-rantai-alga-laut"
+          }
         },
         {
           "id": "ikan",
@@ -405,8 +415,10 @@
         {
           "id": "ganggang",
           "labelKey": "karang-ganggang",
-          "emoji": "🌿",
-          "color": "#26a69a"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-rantai-alga-karang"
+          }
         },
         {
           "id": "kepiting",
