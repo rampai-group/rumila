@@ -5,6 +5,7 @@ import { ILUSTRASI_BAGIAN_BUNGA_IDS, IlustrasiBagianBunga } from "./ilustrasi-ba
 import { ILUSTRASI_BIJI_IDS, IlustrasiBiji } from "./ilustrasi-biji";
 import { ILUSTRASI_AWAL_SD_IDS, IlustrasiAwalSD } from "./ilustrasi-awal-sd";
 import { ILUSTRASI_HASIL_PANEN_IDS, IlustrasiHasilPanen } from "./ilustrasi-hasil-panen";
+import { ILUSTRASI_HEWAN_KOMANDAN_IDS, IlustrasiHewanKomandan } from "./ilustrasi-hewan-komandan";
 import { ILUSTRASI_HEWAN_PILAH_IDS, IlustrasiHewanPilah } from "./ilustrasi-hewan-pilah";
 import { ILUSTRASI_JENGKAL_SAYUR_IDS, IlustrasiJengkalSayur } from "./ilustrasi-jengkal-sayur";
 import { ILUSTRASI_NAVIGATOR_IDS, IlustrasiNavigator } from "./ilustrasi-navigator";
@@ -44,6 +45,7 @@ export const ILUSTRASI_AWAL_IDS = [
   ILUSTRASI_TUMBUHAN_SUSUN_IDS,
   ILUSTRASI_HASIL_PANEN_IDS,
   ILUSTRASI_HEWAN_PILAH_IDS,
+  ILUSTRASI_HEWAN_KOMANDAN_IDS,
   ILUSTRASI_PERTUMBUHAN_TANAMAN_IDS,
   ILUSTRASI_KEADAAN_BENDA_IDS,
   ILUSTRASI_QC_SD_AWAL_IDS,
@@ -209,6 +211,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   else if (ILUSTRASI_TUMBUHAN_PERBAIKI_IDS.includes(gambar)) art = <IlustrasiTumbuhanPerbaiki id={gambar} />;
   else if (ILUSTRASI_TUMBUHAN_SUSUN_IDS.includes(gambar)) art = <IlustrasiTumbuhanSusun id={gambar} />;
   else if (ILUSTRASI_HASIL_PANEN_IDS.includes(gambar)) art = <IlustrasiHasilPanen id={gambar} />;
+  else if (ILUSTRASI_HEWAN_KOMANDAN_IDS.includes(gambar)) art = <IlustrasiHewanKomandan id={gambar} />;
   else if (ILUSTRASI_HEWAN_PILAH_IDS.includes(gambar)) art = <IlustrasiHewanPilah id={gambar} />;
   else if (ILUSTRASI_PERTUMBUHAN_TANAMAN_IDS.includes(gambar)) art = <IlustrasiPertumbuhanTanaman id={gambar} />;
   else if (ILUSTRASI_KEADAAN_BENDA_IDS.includes(gambar)) art = <IlustrasiKeadaanBenda id={gambar} />;

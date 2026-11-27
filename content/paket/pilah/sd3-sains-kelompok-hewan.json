@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-kelompok-hewan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "b-burung": "burung (berbulu, bertelur)",
       "b-ikan": "ikan (bersirip, insang)",
       "b-reptil": "reptil (sisik kering)",
-      "b-amfibi": "amfibi (kulit lembap)",
+      "b-amfibi": "amfibi (kulit tanpa sisik)",
       "b-serangga": "serangga (6 kaki)",
       "i-kucing": "kucing",
       "i-sapi": "sapi",
@@ -30,7 +30,7 @@
       "i-buaya": "buaya",
       "i-kadal": "kadal",
       "i-katak": "katak",
-      "i-salamander": "kodok",
+      "i-salamander": "kodok puru",
       "i-semut": "semut",
       "i-lebah": "lebah",
       "i-kupu": "kupu-kupu"
@@ -42,7 +42,7 @@
       "b-burung": "birds (feathers, lay eggs)",
       "b-ikan": "fish (fins, gills)",
       "b-reptil": "reptiles (dry scales)",
-      "b-amfibi": "amphibians (moist skin)",
+      "b-amfibi": "amphibians (skin without scales)",
       "b-serangga": "insects (6 legs)",
       "i-kucing": "cat",
       "i-sapi": "cow",
@@ -163,21 +163,28 @@
       "id": "ikanmas",
       "labelKey": "i-ikanmas",
       "bin": "ikan",
-      "emoji": "🐟",
-      "color": "#ffb74d"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-komandan-ikan-mas"
+      }
     },
     {
       "id": "ikanbadut",
       "labelKey": "i-ikanbadut",
       "bin": "ikan",
-      "emoji": "🐠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-komandan-ikan-badut"
+      }
     },
     {
       "id": "lele",
       "labelKey": "i-lele",
       "bin": "ikan",
-      "emoji": "🐟",
-      "color": "#6d4c41"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-komandan-ikan-lele"
+      }
     },
     {
       "id": "ular",
@@ -201,14 +208,19 @@
       "id": "katak",
       "labelKey": "i-katak",
       "bin": "amfibi",
-      "emoji": "🐸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-katak-dewasa"
+      }
     },
     {
       "id": "salamander",
       "labelKey": "i-salamander",
       "bin": "amfibi",
-      "emoji": "🐸",
-      "color": "#5d4037"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-komandan-kodok-puru"
+      }
     },
     {
       "id": "semut",

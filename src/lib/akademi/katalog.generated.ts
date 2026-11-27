@@ -235067,7 +235067,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-kelompok-hewan-penipu",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -235082,7 +235082,7 @@ export const PAKET_RAW: unknown[] = [
         "b-burung": "burung (berbulu, bertelur)",
         "b-ikan": "ikan (bersirip, insang)",
         "b-reptil": "reptil (sisik kering)",
-        "b-amfibi": "amfibi (kulit lembap)",
+        "b-amfibi": "amfibi (kulit tanpa sisik)",
         "b-serangga": "serangga (6 kaki)",
         "i-paus": "paus",
         "i-lumba": "lumba-lumba",
@@ -235095,7 +235095,7 @@ export const PAKET_RAW: unknown[] = [
         "i-penyu": "penyu",
         "i-komodo": "komodo",
         "i-katakpohon": "katak pohon",
-        "i-kodok": "kodok",
+        "i-kodok": "kodok puru",
         "i-kumbang": "kumbang",
         "i-belalang": "belalang"
       },
@@ -235106,7 +235106,7 @@ export const PAKET_RAW: unknown[] = [
         "b-burung": "birds (feathers, lay eggs)",
         "b-ikan": "fish (fins, gills)",
         "b-reptil": "reptiles (dry scales)",
-        "b-amfibi": "amphibians (moist skin)",
+        "b-amfibi": "amphibians (skin without scales)",
         "b-serangga": "insects (6 legs)",
         "i-paus": "whale",
         "i-lumba": "dolphin",
@@ -235243,28 +235243,37 @@ export const PAKET_RAW: unknown[] = [
         "id": "penyu",
         "labelKey": "i-penyu",
         "bin": "reptil",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-penyu-laut"
+        }
       },
       {
         "id": "komodo",
         "labelKey": "i-komodo",
         "bin": "reptil",
-        "emoji": "🦎",
-        "scale": 1.4
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-komandan-komodo"
+        }
       },
       {
         "id": "katakpohon",
         "labelKey": "i-katakpohon",
         "bin": "amfibi",
-        "emoji": "🐸",
-        "color": "#8bc34a"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-komandan-katak-pohon"
+        }
       },
       {
         "id": "kodok",
         "labelKey": "i-kodok",
         "bin": "amfibi",
-        "emoji": "🐸",
-        "color": "#8d6e63"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-komandan-kodok-puru"
+        }
       },
       {
         "id": "kumbang",
@@ -235276,14 +235285,17 @@ export const PAKET_RAW: unknown[] = [
         "id": "belalang",
         "labelKey": "i-belalang",
         "bin": "serangga",
-        "emoji": "🦗"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-belalang-dewasa"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd3-sains-kelompok-hewan",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -235298,7 +235310,7 @@ export const PAKET_RAW: unknown[] = [
         "b-burung": "burung (berbulu, bertelur)",
         "b-ikan": "ikan (bersirip, insang)",
         "b-reptil": "reptil (sisik kering)",
-        "b-amfibi": "amfibi (kulit lembap)",
+        "b-amfibi": "amfibi (kulit tanpa sisik)",
         "b-serangga": "serangga (6 kaki)",
         "i-kucing": "kucing",
         "i-sapi": "sapi",
@@ -235313,7 +235325,7 @@ export const PAKET_RAW: unknown[] = [
         "i-buaya": "buaya",
         "i-kadal": "kadal",
         "i-katak": "katak",
-        "i-salamander": "kodok",
+        "i-salamander": "kodok puru",
         "i-semut": "semut",
         "i-lebah": "lebah",
         "i-kupu": "kupu-kupu"
@@ -235325,7 +235337,7 @@ export const PAKET_RAW: unknown[] = [
         "b-burung": "birds (feathers, lay eggs)",
         "b-ikan": "fish (fins, gills)",
         "b-reptil": "reptiles (dry scales)",
-        "b-amfibi": "amphibians (moist skin)",
+        "b-amfibi": "amphibians (skin without scales)",
         "b-serangga": "insects (6 legs)",
         "i-kucing": "cat",
         "i-sapi": "cow",
@@ -235446,21 +235458,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "ikanmas",
         "labelKey": "i-ikanmas",
         "bin": "ikan",
-        "emoji": "🐟",
-        "color": "#ffb74d"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-komandan-ikan-mas"
+        }
       },
       {
         "id": "ikanbadut",
         "labelKey": "i-ikanbadut",
         "bin": "ikan",
-        "emoji": "🐠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-komandan-ikan-badut"
+        }
       },
       {
         "id": "lele",
         "labelKey": "i-lele",
         "bin": "ikan",
-        "emoji": "🐟",
-        "color": "#6d4c41"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-komandan-ikan-lele"
+        }
       },
       {
         "id": "ular",
@@ -235484,14 +235503,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "katak",
         "labelKey": "i-katak",
         "bin": "amfibi",
-        "emoji": "🐸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-katak-dewasa"
+        }
       },
       {
         "id": "salamander",
         "labelKey": "i-salamander",
         "bin": "amfibi",
-        "emoji": "🐸",
-        "color": "#5d4037"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-komandan-kodok-puru"
+        }
       },
       {
         "id": "semut",
