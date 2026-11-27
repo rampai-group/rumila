@@ -90,26 +90,38 @@
     {
       "id": "kolam",
       "labelKey": "b-kolam",
-      "emoji": "💧",
-      "color": "#e1f5fe"
+      "color": "#e1f5fe",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-kolam"
+      }
     },
     {
       "id": "hutan",
       "labelKey": "b-hutan",
-      "emoji": "🌳",
-      "color": "#c8e6c9"
+      "color": "#c8e6c9",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-hutan-hujan"
+      }
     },
     {
       "id": "laut",
       "labelKey": "b-laut",
-      "emoji": "🌊",
-      "color": "#b3e5fc"
+      "color": "#b3e5fc",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-laut"
+      }
     },
     {
       "id": "kutub",
       "labelKey": "b-kutub",
-      "emoji": "🧊",
-      "color": "#eceff1"
+      "color": "#eceff1",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-arktik"
+      }
     }
   ],
   "items": [
@@ -129,7 +141,10 @@
       "id": "kalajengking",
       "labelKey": "i-kalajengking",
       "bin": "gurun",
-      "emoji": "🦂"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-kalajengking-gurun"
+      }
     },
     {
       "id": "teratai",
@@ -144,7 +159,10 @@
       "id": "katak",
       "labelKey": "i-katak",
       "bin": "kolam",
-      "emoji": "🐸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-katak-tepi-kolam"
+      }
     },
     {
       "id": "bebek",
@@ -162,7 +180,10 @@
       "id": "pakis",
       "labelKey": "i-pakis",
       "bin": "hutan",
-      "emoji": "🌿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-pakis"
+      }
     },
     {
       "id": "harimau",
@@ -201,7 +222,10 @@
       "id": "beruangkutub",
       "labelKey": "i-beruangkutub",
       "bin": "kutub",
-      "emoji": "🐻‍❄️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-beruang-kutub"
+      }
     },
     {
       "id": "penguin",

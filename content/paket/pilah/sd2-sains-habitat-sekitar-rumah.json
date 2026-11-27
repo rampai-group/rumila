@@ -72,8 +72,11 @@
     {
       "id": "batu",
       "labelKey": "b-batu",
-      "emoji": "🪨",
-      "color": "#e0e0e0"
+      "color": "#e0e0e0",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-bawah-batu"
+      }
     },
     {
       "id": "pohon",
@@ -84,14 +87,20 @@
     {
       "id": "kolam",
       "labelKey": "b-kolam",
-      "emoji": "💧",
-      "color": "#e1f5fe"
+      "color": "#e1f5fe",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-kolam"
+      }
     },
     {
       "id": "tanah",
       "labelKey": "b-tanah",
-      "emoji": "🟫",
-      "color": "#d7ccc8"
+      "color": "#d7ccc8",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-dalam-tanah"
+      }
     }
   ],
   "items": [
@@ -99,46 +108,67 @@
       "id": "kelabang",
       "labelKey": "i-kelabang",
       "bin": "batu",
-      "emoji": "🐌",
-      "color": "#8d6e63"
+      "color": "#8d6e63",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-batu-siput"
+      }
     },
     {
       "id": "kumbang",
       "labelKey": "i-kumbang",
       "bin": "batu",
-      "emoji": "🪲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-batu-kumbang"
+      }
     },
     {
       "id": "burung",
       "labelKey": "i-burung",
       "bin": "pohon",
-      "emoji": "🐦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-burung-sarang"
+      }
     },
     {
       "id": "tupai",
       "labelKey": "i-tupai",
       "bin": "pohon",
-      "emoji": "🐿️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-tupai-dahan"
+      }
     },
     {
       "id": "ulat",
       "labelKey": "i-ulat",
       "bin": "pohon",
-      "emoji": "🐛"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-ulat-daun"
+      }
     },
     {
       "id": "ikan",
       "labelKey": "i-ikan",
       "bin": "kolam",
-      "emoji": "🐟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-ikan-kecil"
+      }
     },
     {
       "id": "berudu",
       "labelKey": "i-berudu",
       "bin": "kolam",
-      "shape": "berudu",
       "color": "#3d4f3a",
-      "scale": 0.8
+      "scale": 0.8,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-katak-berudu"
+      }
     },
     {
       "id": "teratai",
@@ -153,20 +183,29 @@
       "id": "cacing",
       "labelKey": "i-cacing",
       "bin": "tanah",
-      "emoji": "🪱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-cacing-tanah"
+      }
     },
     {
       "id": "semut",
       "labelKey": "i-semut",
       "bin": "tanah",
-      "emoji": "🐜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-semut-sarang"
+      }
     },
     {
       "id": "akar",
       "labelKey": "i-akar",
       "bin": "tanah",
-      "shape": "akar",
-      "color": "#8d6e63"
+      "color": "#8d6e63",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-habitat-akar-rumput"
+      }
     }
   ],
   "pilihan": []
