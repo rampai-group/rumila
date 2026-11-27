@@ -8,6 +8,7 @@ import { ILUSTRASI_UKUR_PILOT } from "./ilustrasi-pilot-ukur";
 import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
 import { ILUSTRASI_GAYA_SD2 } from "./ilustrasi-sd2-gaya";
 import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
+import { ILUSTRASI_LISTRIK_RUMAH_SD2 } from "./ilustrasi-sd2-listrik-rumah";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
@@ -466,6 +467,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_UKUR_PILOT,
   ...ILUSTRASI_MATAHARI_PILOT,
   ...ILUSTRASI_LISTRIK_LUAR_SD2,
+  ...ILUSTRASI_LISTRIK_RUMAH_SD2,
   ...ILUSTRASI_INTERNET_SD3,
   ...ILUSTRASI_TULANG_SD4,
   ...ILUSTRASI_KARTU_LANGKAH_SD2,
@@ -658,6 +660,15 @@ const objectArt: Record<string, ReactNode> = {
   "kunang-kunang": <KunangKunang />,
   "televisi-menyala": <Televisi nyala />,
   "televisi-mati": <Televisi nyala={false} />,
+  "robot-semprot-cat": <g {...RINGKAS}>
+    <path d="M36 9H60L55 25H41Z" fill="#eca7cd" />
+    <path d="M34 9H62" fill="none" stroke="#873765" strokeWidth="4" />
+    <path d="M15 25H56Q65 25 68 34L74 46 67 57H37L29 79H16L23 56H15Z" fill="#9fb4cb" />
+    <path d="M68 38H85V50H70Z" fill="#536b83" />
+    <path d="M90 41L111 33M91 45H116M90 49L111 58" fill="none" stroke="#b94787" strokeWidth="5" />
+    <path d="M21 33H52M38 50H61" fill="none" stroke="#eef6fc" />
+    <path d="M21 82Q15 87 8 88" fill="none" stroke="#526a82" strokeWidth="4" />
+  </g>,
 };
 
 const PREFIX = "qc-jenjang-";

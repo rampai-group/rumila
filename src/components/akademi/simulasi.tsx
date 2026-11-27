@@ -189,14 +189,21 @@ function TombolIkon({ ikon, onClick, disabled, label }: { ikon: string; onClick:
 /** Angka tertinggi minimal di strip jawaban. */
 const PILIHAN_MINIMAL = 10;
 
-function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: number; max: number; dipilih?: number | null; sorot?: number | null; onPilih: (n: number) => void; disabled?: boolean }) {
+function StripAngka({ min, max, dipilih, sorot, onPilih, disabled, kolom }: {
+  min: number; max: number; dipilih?: number | null; sorot?: number | null; onPilih: (n: number) => void; disabled?: boolean; kolom?: number;
+}) {
   const { skala, tema } = usePanggung();
   // Pilihan selalu sampai minimal 10 agar anak tidak bisa menebak dari sedikit tombol; soal tetap mengikuti jenjang.
   const atas = Math.max(max, PILIHAN_MINIMAL);
   const angka = useMemo(() => Array.from({ length: Math.max(0, atas - min + 1) }, (_, k) => min + k), [min, atas]);
-  const d = Math.round(64 * Math.min(skala, 1.4));
+  const d = Math.round((kolom ? 82 : 64) * Math.min(skala, 1.4));
   return (
-    <div className="flex flex-wrap justify-center gap-2 rounded-[20px] p-2" style={{ background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef", gap: 8 * skala }} role="group" aria-label="Pilih angka">
+    <div
+      className={`rounded-[20px] p-2 ${kolom ? "grid justify-items-center" : "flex flex-wrap justify-center"}`}
+      style={{ background: tema.panel, boxShadow: "inset 0 0 0 2px #e3e7ef", gap: 8 * skala, gridTemplateColumns: kolom ? `repeat(${kolom}, minmax(0, 1fr))` : undefined }}
+      role="group"
+      aria-label="Pilih angka"
+    >
       {angka.map((n) => {
         const aktif = dipilih === n;
         return (
@@ -206,7 +213,7 @@ function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: numb
             disabled={disabled}
             onClick={() => onPilih(n)}
             className={`flex size-16 items-center justify-center rounded-full transition-transform active:scale-90 disabled:opacity-60 ${sorot === n ? "akademi-bounce" : ""}`}
-            style={{ ...Tebal, width: d, height: d, fontSize: Math.round(d * 0.44), background: aktif ? UNGU : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#0567c2" : "rgba(11,37,69,.2)"}, inset 0 0 0 2px ${aktif ? UNGU : "rgba(11,37,69,.22)"}${sorot === n ? `, 0 0 0 4px ${KUNING}` : ""}` }}
+            style={{ ...Tebal, width: kolom ? `min(100%, ${d}px)` : d, height: kolom ? "auto" : d, aspectRatio: kolom ? "1" : undefined, fontSize: Math.round(d * 0.44), background: aktif ? UNGU : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#0567c2" : "rgba(11,37,69,.2)"}, inset 0 0 0 2px ${aktif ? UNGU : "rgba(11,37,69,.22)"}${sorot === n ? `, 0 0 0 4px ${KUNING}` : ""}` }}
             aria-label={`Angka ${n}`}
           >
             {n}
@@ -772,6 +779,8 @@ function ModeKubus(c: Ctx) {
   const { hint, bantu } = useBantu(c.onHint);
   const { skala, w, h } = usePanggung();
   const tabletTegak = w >= 620 && h >= 650 && w < h * 1.25;
+  const ukurKapten = benda?.adegan?.varian?.startsWith("penggaris-kapten-");
+  const tabletKapten = tabletTegak && ukurKapten;
   const st = useSkalaTeks();
   const N = 12;
   const teks = ks.kubus(benda ? nama(benda.id) : "bendanya");
@@ -782,18 +791,22 @@ function ModeKubus(c: Ctx) {
     <Kunci terkunci={terkunci}>
       <Instruksi teks={teks} hasil={hasil} />
       <Umpan hasil={hasil} benar={`${ronde.target} kubus`} />
-      <Papan style={tabletTegak ? { flex: "none" } : undefined}>
-        <Adegan min={168} style={tabletTegak ? { minHeight: "clamp(272px, min(31dvh, 43vw), 360px)" } : undefined}>
+      <Papan style={tabletTegak && !tabletKapten ? { flex: "none" } : undefined}>
+        <Adegan min={168} style={tabletKapten ? { minHeight: "clamp(318px, min(40dvh, 49vw), 450px)" }
+          : tabletTegak ? { minHeight: "clamp(272px, min(31dvh, 43vw), 360px)" } : undefined}>
           {({ w }) => {
             const lebarBentang = Math.min(w, 760) * ronde.target / N;
             const ukuranBenda = Math.max(18, Math.min(lebarBentang * 0.9, tabletTegak ? 132 : 92));
+            const tinggiSiluet = Math.max(38, Math.min(lebarBentang * 0.55, tabletTegak ? 132 : 76));
             return (
               <div className="w-full max-w-[760px]">
                 <div className="relative" style={{ height: tabletTegak ? 168 : 118 }}>
-                  {/* Lebar emoji berbeda di tiap perangkat. Kedua garis ukur berbagi pembagian lebar dengan kubus. */}
+                  {/* Kedua garis ukur berbagi pembagian lebar dengan kubus dan siluet Kapten. */}
                   <div data-ukur-bentang className="absolute inset-y-0 flex flex-col" style={{ left: `${awal / N * 100}%`, width: `${ronde.target / N * 100}%` }}>
-                    <div className="flex min-h-0 flex-1 items-center justify-center rounded-t-[14px] bg-[#eef7ff]" role="img" aria-label={namaBenda}>
-                      {benda?.adegan?.varian?.startsWith("temuan-kebun-") ? (
+                    <div className={`flex min-h-0 flex-1 items-center rounded-t-[14px] bg-[#eef7ff] ${ukurKapten ? "justify-end flex-col" : "justify-center"}`} role="img" aria-label={namaBenda}>
+                      {ukurKapten && benda?.adegan ? (
+                        <GambarAdegan adegan={benda.adegan} s={tinggiSiluet} style={{ width: "100%", height: tinggiSiluet, marginBottom: 4 }} />
+                      ) : benda?.adegan?.varian?.startsWith("temuan-kebun-") ? (
                         <GambarAdegan adegan={benda.adegan} s={ukuranBenda} style={{ width: "100%", height: "100%" }} />
                       ) : benda?.shape === "rect" ? (
                         <span className="h-5 w-full rounded-sm" style={{ background: benda.color ?? BIRU_TUA }} />
@@ -810,8 +823,11 @@ function ModeKubus(c: Ctx) {
                   {Array.from({ length: N }, (_, k) => {
                     const ditandai = k >= awal && k < akhir && (hint || hasil);
                     return (
-                      <li key={k} data-ukur-kubus className="aspect-square" style={{ background: WARNA_KUBUS[k % WARNA_KUBUS.length], borderRight: k === N - 1 ? undefined : "2px solid rgba(11,37,69,.4)", boxShadow: ditandai ? `inset 0 0 0 4px ${UNGU}` : "inset 0 -5px 0 rgba(0,0,0,.12)" }}>
-                        <span className="sr-only">{k === awal && "Awal benda, "}kubus{k + 1 === akhir && ", akhir benda"}</span>
+                      <li key={k} data-ukur-kubus className={`aspect-square ${ukurKapten ? "grid place-items-center" : ""}`} style={{ background: WARNA_KUBUS[k % WARNA_KUBUS.length], borderRight: k === N - 1 ? undefined : "2px solid rgba(11,37,69,.4)", boxShadow: ditandai ? `inset 0 0 0 4px ${UNGU}` : "inset 0 -5px 0 rgba(0,0,0,.12)" }}>
+                        {ukurKapten && (
+                          <span aria-hidden="true" style={{ ...Tebal, fontSize: 14 * st, lineHeight: 1 }}>{k + 1}</span>
+                        )}
+                        <span className="sr-only">{k === awal && "Awal benda, "}kubus{ukurKapten && ` ${k + 1}`}{k + 1 === akhir && ", akhir benda"}</span>
                       </li>
                     );
                   })}
@@ -826,7 +842,7 @@ function ModeKubus(c: Ctx) {
         <TombolBantu onClick={() => { bantu(); ucapkan(KS.kubusBantu); }} disabled={terkunci} />
         <span className="flex-1 rounded-full bg-white px-3 py-1 text-center" style={{ ...Tebal, fontSize: 16 * st, boxShadow: BAYANG }}>Hitung kubus di antara kedua garis biru.</span>
       </div>
-      <StripAngka min={1} max={N} dipilih={hasil ? ronde.target : dipilih} disabled={terkunci} onPilih={(n) => { setDipilih(n); sfx.tap(); onJawab({ angka: n }); }} />
+      <StripAngka min={1} max={N} kolom={tabletKapten ? 6 : undefined} dipilih={hasil ? ronde.target : dipilih} disabled={terkunci} onPilih={(n) => { setDipilih(n); sfx.tap(); onJawab({ angka: n }); }} />
     </Kunci>
   );
 }
