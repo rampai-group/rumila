@@ -562,13 +562,14 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const aksiDiPanggung = !mendatar && (tabletTegakLega || (programSatuBaris && ph >= 540));
   // program panjang (banyak slot, ulangi, palet > 4 blok): kendali dirapatkan supaya Jalan selalu kelihatan
   const panjang = ronde.execMode === "program" && (!!ronde.debug || slotMaks > 6 || palet.length > 4);
+  const duaPolaPadat = pw >= 280 && pw < 460 && paket.competencyIds.includes("KODE.SD3.EFISIEN.01");
   // Slide Over / jendela sempit: kendali bertumpuk dan membungkus baris, jadi ikut dirapatkan
   const rapat = panjang || (ph > 0 && ph < 560) || (!mendatar && pw > 0 && pw < 460);
   const ukMini = Math.round((rapat ? 48 : 72) * sk);
   const tinggiMini = adaMini ? Math.max(56, ukMini + 8) + 16 : 0;
   const lebarKanan = Math.round(Math.min(600, Math.max(340, pw * (panjang ? 0.52 : 0.42))));
   // Papan tontonan dapat mengecil agar semua petak terlihat; petak interaktif harus tetap mudah diketuk.
-  const petakMin = petakInteraktif ? PETAK_MIN : 30;
+  const petakMin = petakInteraktif ? PETAK_MIN : duaPolaPadat ? 22 : 30;
   // ukuran petak dihitung dari ruang panggung (px), bukan tetap
   const petakDatar = mendatar
     ? Math.floor(Math.max(petakMin, Math.min(PETAK_PLAFON, (pw - lebarKanan - 16 - 28) / grid.w, (ph - 28 - tinggiMini) / grid.h)))
@@ -681,12 +682,13 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
             <Rak
               judul={ronde.debug ? `Ubah paling banyak ${ronde.fixes ?? 1} blok` : `Program Agam · ${hitungBlok(rak)}/${slotMaks} blok`}
               blok={rak} slot={slotMaks} aktif sel={sel?.rak === 0 ? sel.i : null}
+              slotRapat={duaPolaPadat}
               gantiBlok={ronde.debug}
               onSelesaiIsi={!ronde.debug && !sibuk && !terkunci ? selesaiIsiUlangi : undefined}
               onKetuk={(i) => ketukRak(0, i)} onN={(i) => putarN(0, i)} onHapusIsi={(i, j) => hapusIsiUlangi(0, i, j)}
             />
           )}
-          <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} penuh={mendatar} rapat={rapat} />
+          <Palet commands={palet} onTekan={tekanPalet} nonaktif={sibuk || terkunci} penuh={mendatar} rapat={rapat} limaKolom={duaPolaPadat} />
           {ujian && ronde.debug && ronde.program.length > 0 && !modeBendera && (
             <button
               type="button"
@@ -899,11 +901,11 @@ function Mini({ grid, tanah, ukuran = 72 }: { grid: NavGrid; tanah: [string, str
 
 /* ---------------- palet & rak ---------------- */
 
-function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat, arahMaju }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean; penuh?: boolean; rapat?: boolean; arahMaju?: Arah }) {
+function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat, limaKolom, arahMaju }: { commands: NavCommand[]; onTekan: (c: NavCommand) => void; nonaktif: boolean; besar?: boolean; penuh?: boolean; rapat?: boolean; limaKolom?: boolean; arahMaju?: Arah }) {
   const { skala: sk, w } = usePanggung();
   const skt = Math.min(sk, 1.35);
   // tablet: semua blok sebaris; HP: paling banyak 4 sebaris
-  const kolom = w >= 460 ? Math.min(commands.length, 6) : Math.min(commands.length, 4);
+  const kolom = Math.min(commands.length, w >= 460 ? 6 : limaKolom ? 5 : 4);
   const sesak = kolom > 4;
   // di kolom kanan (mendatar) tombol mengisi lebar kolom; di HP/tegak lebar tombol ikut skala
   const lebar = penuh ? "1fr" : `${Math.round((besar ? 160 : 140) * sk)}px`;
@@ -930,8 +932,8 @@ function Palet({ commands, onTekan, nonaktif, besar, penuh, rapat, arahMaju }: {
   );
 }
 
-function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, onPilihRak, onSelesaiIsi, onKetuk, onN, onHapusIsi }: {
-  judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean; gantiBlok?: boolean; pilihTabrak?: boolean;
+function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, slotRapat, pilihTabrak, onPilihRak, onSelesaiIsi, onKetuk, onN, onHapusIsi }: {
+  judul: string; blok: NavBlock[]; slot: number; aktif: boolean; sel: number | null; bacaSaja?: boolean; gantiBlok?: boolean; slotRapat?: boolean; pilihTabrak?: boolean;
   onPilihRak?: () => void; onSelesaiIsi?: () => void; onKetuk?: (i: number) => void; onN?: (i: number) => void; onHapusIsi?: (i: number, j: number) => void;
 }) {
   const { tema, skala: sk, w } = usePanggung();
@@ -939,6 +941,7 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, 
   const sempit = w > 0 && w < 460 && slot >= 4; // petunjuk akan turun baris dan mendorong tombol Jalan
   const terpakai = hitungBlok(blok);
   const kosong = Math.max(0, slot - terpakai);
+  const ukuranSlot = slotRapat ? Math.max(44, 44 * sk) : 56 * sk;
   const sorotRak = aktif && onPilihRak;
   const dipilih = sel === null ? undefined : blok[sel];
   // rak bertema dunia: badan berwarna wadah, area slot terang di dalamnya (selaras komponen Wadah)
@@ -972,7 +975,7 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, gantiBlok, pilihTabrak, 
           <Keping key={i} blok={b} nomor={i + 1} dipilih={sel === i} bacaSaja={bacaSaja} gantiBlok={gantiBlok} pilihTabrak={pilihTabrak} onKetuk={() => onKetuk?.(i)} onN={() => onN?.(i)} onHapusIsi={(j) => onHapusIsi?.(i, j)} />
         ))}
         {Array.from({ length: kosong }, (_, k) => (
-          <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56 * sk, height: 56 * sk, border: `3px dashed ${tema.wadahGelap}`, background: `${tema.wadahWarna}1f` }} aria-hidden />
+          <span key={`k${k}`} className="rounded-[12px]" style={{ width: ukuranSlot, height: ukuranSlot, border: `3px dashed ${tema.wadahGelap}`, background: `${tema.wadahWarna}1f` }} aria-hidden />
         ))}
         {blok.length === 0 && !bacaSaja && !sempit && <span className="ml-1 self-center font-bold" style={{ fontSize: 14 * skt, color: "#3d4f66" }}>Ketuk blok di bawah</span>}
       </div>

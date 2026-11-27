@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-dapur",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,7 @@
       "i-madu": "madu",
       "i-kecap": "kecap",
       "i-uap": "udara di dalam toples kosong",
-      "i-gelembungsoda": "gelembung dalam soda",
+      "i-gelembungsoda": "gas dalam gelembung soda",
       "i-udarabalon": "udara di dalam balon"
     },
     "en": {
@@ -43,7 +43,7 @@
       "i-madu": "honey",
       "i-kecap": "soy sauce",
       "i-uap": "air inside an empty jar",
-      "i-gelembungsoda": "bubbles in a fizzy drink",
+      "i-gelembungsoda": "gas inside soda bubbles",
       "i-udarabalon": "air inside a balloon"
     }
   },
@@ -105,9 +105,10 @@
       "id": "gula",
       "labelKey": "i-gula",
       "bin": "padat",
-      "color": "#fafafa",
-      "shape": "circle",
-      "scale": 0.5
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-gula-pasir"
+      }
     },
     {
       "id": "roti",
@@ -131,7 +132,10 @@
       "id": "minyak",
       "labelKey": "i-minyak",
       "bin": "cair",
-      "emoji": "🧴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-minyak-goreng"
+      }
     },
     {
       "id": "madu",
@@ -143,21 +147,29 @@
       "id": "kecap",
       "labelKey": "i-kecap",
       "bin": "cair",
-      "emoji": "🍶",
-      "color": "#4e342e",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kecap"
+      }
     },
     {
       "id": "uap",
       "labelKey": "i-uap",
       "bin": "gas",
-      "emoji": "🏺"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd4-toples-kaca-kosong"
+      }
     },
     {
       "id": "gelembungsoda",
       "labelKey": "i-gelembungsoda",
       "bin": "gas",
-      "emoji": "🥤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-soda"
+      }
     },
     {
       "id": "udarabalon",

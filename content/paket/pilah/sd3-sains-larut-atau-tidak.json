@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-larut-atau-tidak",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -76,9 +76,10 @@
       "id": "gula",
       "labelKey": "i-gula",
       "bin": "larut",
-      "color": "#fafafa",
-      "shape": "circle",
-      "scale": 0.5
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-gula-pasir"
+      }
     },
     {
       "id": "garam",
@@ -90,9 +91,10 @@
       "id": "gulabatu",
       "labelKey": "i-gulabatu",
       "bin": "larut",
-      "color": "#fffde7",
-      "shape": "square",
-      "scale": 0.6
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-gula-batu"
+      }
     },
     {
       "id": "susububuk",
@@ -107,13 +109,19 @@
       "id": "sirup",
       "labelKey": "i-sirup",
       "bin": "larut",
-      "emoji": "🍊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bubuk-jeruk"
+      }
     },
     {
       "id": "pasir",
       "labelKey": "i-pasir",
       "bin": "tidak",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-pasir"
+      }
     },
     {
       "id": "kerikil",
@@ -126,7 +134,10 @@
       "id": "minyak",
       "labelKey": "i-minyak",
       "bin": "tidak",
-      "emoji": "🧴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-minyak-goreng"
+      }
     },
     {
       "id": "kelereng",
@@ -147,8 +158,10 @@
       "id": "serbukkayu",
       "labelKey": "i-serbukkayu",
       "bin": "tidak",
-      "emoji": "🪵",
-      "scale": 0.6
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-serbuk-kayu"
+      }
     }
   ],
   "pilihan": []

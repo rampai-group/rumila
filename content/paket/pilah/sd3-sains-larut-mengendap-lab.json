@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-larut-mengendap-lab",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -74,7 +74,10 @@
       "id": "kopi",
       "labelKey": "i-kopi",
       "bin": "larut",
-      "emoji": "☕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kopi-bubuk"
+      }
     },
     {
       "id": "permen",
@@ -86,27 +89,37 @@
       "id": "tablet",
       "labelKey": "i-tablet",
       "bin": "larut",
-      "emoji": "💊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-tablet-berbuih"
+      }
     },
     {
       "id": "pewarna",
       "labelKey": "i-pewarna",
       "bin": "larut",
-      "emoji": "🎨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-pewarna-bubuk"
+      }
     },
     {
       "id": "gulamerah",
       "labelKey": "i-gulamerah",
       "bin": "larut",
-      "shape": "square",
-      "color": "#795548",
-      "scale": 0.7
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-gula-merah-serut"
+      }
     },
     {
       "id": "beras",
       "labelKey": "i-beras",
       "bin": "tidak",
-      "emoji": "🍚"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-bahan-beras-mentah"
+      }
     },
     {
       "id": "kacangmerah",
@@ -127,13 +140,19 @@
       "id": "kancing",
       "labelKey": "i-kancing",
       "bin": "tidak",
-      "emoji": "🔘"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kancing-baju"
+      }
     },
     {
       "id": "krayon",
       "labelKey": "i-krayon",
       "bin": "tidak",
-      "emoji": "🖍️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-potongan-krayon"
+      }
     },
     {
       "id": "manik",
