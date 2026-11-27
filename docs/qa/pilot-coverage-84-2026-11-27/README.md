@@ -17,7 +17,7 @@ Ukuran: HP 390×844, iPad 820×1180, dan iPad pendek 820×1067. Jawaban diberika
 
 Seluruh 12 instruksi cocok dengan entri manifest; MP3 ada, dapat didekode, dan benar-benar memicu `playing` di ketiga ukuran (36 pemeriksaan). [Berkas audio](audio.json), [pemutaran browser](audio-browser.json). Pemeriksaan ini tidak menyatakan transkripsi ulang dengan mendengarkan seluruh rekaman.
 
-Validasi skema: **810 paket**, Vitest **885/885**, TypeScript dan ESLint berkas perubahan lulus. Satu percobaan suite mengalami tiga timeout saat banyak proses QA berjalan; pengulangan lengkap dengan `--maxWorkers=2` lulus tanpa mengubah tes. Basis akhir `dbf4ea2d` (termasuk perbaikan sesi lain PR #259). Commit rilis dicatat pada PR.
+Validasi skema: **810 paket**, Vitest **885/885**, TypeScript dan ESLint berkas perubahan lulus. Satu percobaan suite mengalami tiga timeout saat banyak proses QA berjalan; pengulangan lengkap dengan `--maxWorkers=2` lulus tanpa mengubah tes. Pengujian lengkap pada basis `dbf4ea2d` (PR #259), lalu sinkronisasi `6a7fab22` (PR #260) mempertahankan perbaikan sesi lain; perubahan terakhir khusus urutan dan ilustrasi SD2/SD3. Commit rilis dicatat pada PR.
 
 ## Status setiap paket
 
