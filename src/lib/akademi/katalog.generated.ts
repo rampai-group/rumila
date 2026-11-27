@@ -350067,7 +350067,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-air",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -350086,12 +350086,12 @@ export const PAKET_RAW: unknown[] = [
         "katak-katak": "katak dewasa",
         "s-penyu": "Siklus hidup penyu",
         "penyu-telur": "telur di pasir",
-        "penyu-tukik": "tukik berlari ke laut",
+        "penyu-tukik": "tukik merangkak ke laut",
         "penyu-muda": "penyu muda berenang",
         "penyu-dewasa": "penyu dewasa bertelur di pantai",
         "s-ikan": "Siklus hidup ikan",
         "ikan-telur": "telur ikan",
-        "ikan-larva": "larva menetas",
+        "ikan-larva": "larva baru menetas",
         "ikan-burayak": "anak ikan kecil",
         "ikan-remaja": "ikan muda",
         "ikan-dewasa": "ikan dewasa",
@@ -350117,12 +350117,12 @@ export const PAKET_RAW: unknown[] = [
         "katak-katak": "adult frog",
         "s-penyu": "Sea turtle life cycle",
         "penyu-telur": "eggs in the sand",
-        "penyu-tukik": "hatchling racing to the sea",
+        "penyu-tukik": "hatchling crawls to the sea",
         "penyu-muda": "young turtle swimming",
         "penyu-dewasa": "adult turtle laying eggs on the beach",
         "s-ikan": "Fish life cycle",
         "ikan-telur": "fish eggs",
-        "ikan-larva": "larva hatching",
+        "ikan-larva": "newly hatched fish larva",
         "ikan-burayak": "tiny young fish",
         "ikan-remaja": "young fish",
         "ikan-dewasa": "adult fish",
@@ -350211,25 +350211,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "penyu-telur",
-            "emoji": "🥚"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-penyu-telur"
+            }
           },
           {
             "id": "tukik",
             "labelKey": "penyu-tukik",
-            "emoji": "🐢",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-lingkungan-tukik-ke-laut"
+            }
           },
           {
             "id": "muda",
             "labelKey": "penyu-muda",
-            "emoji": "🐢",
-            "scale": 0.9
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "awal-penyu-laut"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "penyu-dewasa",
-            "emoji": "🐢",
-            "scale": 1.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-penyu-bertelur"
+            }
           }
         ]
       },
@@ -350240,30 +350249,42 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "ikan-telur",
-            "emoji": "🥚"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-telur"
+            }
           },
           {
             "id": "larva",
             "labelKey": "ikan-larva",
-            "emoji": "〰️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-larva"
+            }
           },
           {
             "id": "burayak",
             "labelKey": "ikan-burayak",
-            "emoji": "🐟",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-burayak"
+            }
           },
           {
             "id": "remaja",
             "labelKey": "ikan-remaja",
-            "emoji": "🐟",
-            "scale": 0.9
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-muda"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "ikan-dewasa",
-            "emoji": "🐟",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-dewasa"
+            }
           }
         ]
       },
@@ -350274,20 +350295,26 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "nyamuk-telur",
-            "emoji": "⚪",
-            "count": 4,
-            "scale": 0.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-nyamuk-telur"
+            }
           },
           {
             "id": "jentik",
             "labelKey": "nyamuk-jentik",
-            "emoji": "〰️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-nyamuk-jentik"
+            }
           },
           {
             "id": "kepompong",
             "labelKey": "nyamuk-kepompong",
-            "emoji": "🟤",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-nyamuk-pupa"
+            }
           },
           {
             "id": "nyamuk",
@@ -350303,25 +350330,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "buaya-telur",
-            "emoji": "🥚"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-buaya-telur"
+            }
           },
           {
             "id": "anak",
             "labelKey": "buaya-anak",
-            "emoji": "🐊",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-buaya-menetas"
+            }
           },
           {
             "id": "muda",
             "labelKey": "buaya-muda",
-            "emoji": "🐊",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-buaya-muda"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "buaya-dewasa",
-            "emoji": "🐊",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-buaya-bertelur"
+            }
           }
         ]
       },
@@ -350458,25 +350494,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "ikan-telur",
-            "emoji": "🥚"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-telur"
+            }
           },
           {
             "id": "burayak",
             "labelKey": "ikan-burayak",
-            "emoji": "🐟",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-burayak"
+            }
           },
           {
             "id": "remaja",
             "labelKey": "ikan-remaja",
-            "emoji": "🐟",
-            "scale": 0.9
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-muda"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "ikan-dewasa",
-            "emoji": "🐟",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-dewasa"
+            }
           }
         ]
       },
@@ -350487,25 +350532,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "larva",
             "labelKey": "ikan-larva",
-            "emoji": "〰️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-larva"
+            }
           },
           {
             "id": "burayak",
             "labelKey": "ikan-burayak",
-            "emoji": "🐟",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-burayak"
+            }
           },
           {
             "id": "remaja",
             "labelKey": "ikan-remaja",
-            "emoji": "🐟",
-            "scale": 0.9
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-muda"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "ikan-dewasa",
-            "emoji": "🐟",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ikan-dewasa"
+            }
           }
         ]
       }
@@ -350513,7 +350567,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-    "version": "1.1.7",
+    "version": "1.1.8",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -350654,13 +350708,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "kupu-telur",
-            "emoji": "🥚",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "tk-telur-di-daun"
+            }
           },
           {
             "id": "ulat",
             "labelKey": "kupu-ulat",
-            "emoji": "🐛"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-habitat-ulat-daun"
+            }
           },
           {
             "id": "kepompong",
@@ -350673,7 +350732,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "kupu",
             "labelKey": "kupu-kupu",
-            "emoji": "🦋"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kupu-muncul"
+            }
           }
         ]
       },
@@ -350684,29 +350746,42 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "ayam-telur",
-            "emoji": "🥚"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ayam-mengeram"
+            }
           },
           {
             "id": "menetas",
             "labelKey": "ayam-menetas",
-            "emoji": "🐣"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-ayam-menetas"
+            }
           },
           {
             "id": "anak",
             "labelKey": "ayam-anak",
-            "emoji": "🐥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-1"
+            }
           },
           {
             "id": "remaja",
             "labelKey": "ayam-remaja",
-            "emoji": "🐔",
-            "scale": 0.9
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "ayam-dewasa",
-            "emoji": "🐔",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-4"
+            }
           }
         ]
       },
@@ -350717,24 +350792,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "burung-telur",
-            "emoji": "🥚"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-burung-telur"
+            }
           },
           {
             "id": "menetas",
             "labelKey": "burung-menetas",
-            "emoji": "🐣"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-burung-menetas"
+            }
           },
           {
             "id": "belajar",
             "labelKey": "burung-belajar",
-            "emoji": "🐦",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-burung-belajar"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "burung-dewasa",
-            "emoji": "🐦",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-burung-dewasa"
+            }
           }
         ]
       },
@@ -350745,22 +350830,26 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "semut-telur",
-            "emoji": "⚪",
-            "count": 4,
-            "scale": 0.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-semut-telur"
+            }
           },
           {
             "id": "larva",
             "labelKey": "semut-larva",
-            "emoji": "〰️",
-            "color": "#fafafa"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-semut-larva"
+            }
           },
           {
             "id": "kepompong",
             "labelKey": "semut-kepompong",
-            "shape": "rect",
-            "color": "#f5e6c8",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-semut-pupa"
+            }
           },
           {
             "id": "semut",
@@ -350776,23 +350865,26 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "kepik-telur",
-            "shape": "circle",
-            "color": "#fdd835",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kepik-telur"
+            }
           },
           {
             "id": "larva",
             "labelKey": "kepik-larva",
-            "shape": "rect",
-            "color": "#37474f",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kepik-larva"
+            }
           },
           {
             "id": "kepompong",
             "labelKey": "kepik-kepompong",
-            "shape": "circle",
-            "color": "#ff8f00",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kepik-pupa"
+            }
           },
           {
             "id": "dewasa",
@@ -350808,28 +350900,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "lebah-telur",
-            "shape": "circle",
-            "color": "#fafafa",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-lebah-telur"
+            }
           },
           {
             "id": "larva",
             "labelKey": "lebah-larva",
-            "shape": "rect",
-            "color": "#fff8e1",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-lebah-larva"
+            }
           },
           {
             "id": "kepompong",
             "labelKey": "lebah-kepompong",
-            "shape": "rect",
-            "color": "#ffe082",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-lebah-pupa"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "lebah-dewasa",
-            "emoji": "🐝"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-lebah-keluar"
+            }
           }
         ]
       },
@@ -350882,28 +350980,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "kumbang-telur",
-            "shape": "circle",
-            "color": "#fafafa",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kumbang-telur"
+            }
           },
           {
             "id": "larva",
             "labelKey": "kumbang-larva",
-            "shape": "rect",
-            "color": "#fff3e0",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kumbang-larva"
+            }
           },
           {
             "id": "kepompong",
             "labelKey": "kumbang-kepompong",
-            "shape": "circle",
-            "color": "#bcaaa4",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kumbang-pupa"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "kumbang-dewasa",
-            "emoji": "🪲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-kumbang-dewasa"
+            }
           }
         ]
       },
@@ -350914,27 +351018,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "siput-telur",
-            "shape": "circle",
-            "color": "#fafafa",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-siput-telur"
+            }
           },
           {
             "id": "anak",
             "labelKey": "siput-anak",
-            "emoji": "🐌",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-siput-menetas"
+            }
           },
           {
             "id": "muda",
             "labelKey": "siput-muda",
-            "emoji": "🐌",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-siput-muda"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "siput-dewasa",
-            "emoji": "🐌",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-siput-bertelur"
+            }
           }
         ]
       },
@@ -350945,27 +351056,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "labalaba-telur",
-            "shape": "circle",
-            "color": "#eeeeee",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-laba-telur"
+            }
           },
           {
             "id": "anak",
             "labelKey": "labalaba-anak",
-            "emoji": "🕷️",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-laba-menetas"
+            }
           },
           {
             "id": "muda",
             "labelKey": "labalaba-muda",
-            "emoji": "🕷️",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-laba-ganti-kulit"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "labalaba-dewasa",
-            "emoji": "🕷️",
-            "scale": 1.1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-siklus-laba-jaring"
+            }
           }
         ]
       }

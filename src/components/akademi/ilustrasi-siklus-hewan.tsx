@@ -1,5 +1,10 @@
+import { ILUSTRASI_SIKLUS_AIR } from "./ilustrasi-siklus-air";
+import { ILUSTRASI_SIKLUS_KEBUN } from "./ilustrasi-siklus-kebun";
+
 export const ILUSTRASI_SIKLUS_HEWAN_IDS = [
   "qc-katak-telur", "qc-katak-berudu", "qc-katak-berudu-berkaki", "qc-katak-muda-berekor", "qc-katak-dewasa",
+  ...Object.keys(ILUSTRASI_SIKLUS_AIR),
+  ...Object.keys(ILUSTRASI_SIKLUS_KEBUN),
   "qc-belalang-telur", "qc-belalang-nimfa", "qc-belalang-bakal-sayap", "qc-belalang-dewasa",
 ];
 
@@ -88,6 +93,6 @@ export function IlustrasiSiklusHewan({ id }: { id: string }) {
     case "qc-belalang-nimfa": return <Belalang sayap="belum" />;
     case "qc-belalang-bakal-sayap": return <Belalang sayap="bakal" />;
     case "qc-belalang-dewasa": return <Belalang sayap="penuh" />;
-    default: return null;
+    default: return ILUSTRASI_SIKLUS_AIR[id] ?? ILUSTRASI_SIKLUS_KEBUN[id] ?? null;
   }
 }
