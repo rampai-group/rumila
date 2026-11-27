@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { ILUSTRASI_HABITAT } from "./ilustrasi-hewan-habitat";
 import { ILUSTRASI_BENTUK_PILOT } from "./ilustrasi-pilot-bentuk";
 import { ILUSTRASI_SEGI_BANYAK_SD2 } from "./ilustrasi-sd2-segi-banyak";
+import { ILUSTRASI_CARROLL_SD2 } from "./ilustrasi-sd2-carroll";
 import { ILUSTRASI_MATAHARI_PILOT } from "./ilustrasi-pilot-matahari";
 import { ILUSTRASI_UKUR_PILOT } from "./ilustrasi-pilot-ukur";
 import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
@@ -459,6 +460,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_HABITAT,
   ...ILUSTRASI_BENTUK_PILOT,
   ...ILUSTRASI_SEGI_BANYAK_SD2,
+  ...ILUSTRASI_CARROLL_SD2,
   ...ILUSTRASI_GERAK_PILOT,
   ...ILUSTRASI_GAYA_SD2,
   ...ILUSTRASI_UKUR_PILOT,

@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-carroll-roda-mesin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kotak Roda dan Mesin",
-      "instruksi": "Jawab dua pertanyaan untuk tiap benda: punya roda? pakai mesin? Lalu taruh di kotak yang cocok.",
+      "instruksi": "Beroda di darat? Digerakkan mesin atau motor? Pilih kotaknya.",
       "carroll-baris-1": "Beroda",
       "carroll-baris-2": "Tanpa roda",
       "carroll-kolom-1": "Bermesin",
@@ -23,20 +23,20 @@
       "i-bus": "bus",
       "i-motorbike": "sepeda motor",
       "i-truck": "truk",
-      "i-bicycle": "sepeda",
+      "i-bicycle": "sepeda kayuh",
       "i-kick-scooter": "skuter dorong",
-      "i-skateboard": "papan luncur",
+      "i-skateboard": "papan luncur yang didorong kaki",
       "i-shopping-cart": "troli belanja",
       "i-motorboat": "perahu motor",
-      "i-ferry": "kapal feri",
-      "i-ship": "kapal besar",
-      "i-sailboat": "perahu layar",
+      "i-ferry": "kapal feri bermotor",
+      "i-ship": "kapal uap",
+      "i-sailboat": "perahu layar yang digerakkan angin",
       "i-canoe": "kano",
       "i-kite": "layang-layang"
     },
     "en": {
       "judul": "Wheels and Engine Boxes",
-      "instruksi": "Answer two questions for each thing: wheels? engine? Then put it in the matching box.",
+      "instruksi": "Wheels for land travel? Engine or motor to move? Pick a box.",
       "carroll-baris-1": "Has wheels",
       "carroll-baris-2": "No wheels",
       "carroll-kolom-1": "Has an engine",
@@ -49,14 +49,14 @@
       "i-bus": "bus",
       "i-motorbike": "motorbike",
       "i-truck": "truck",
-      "i-bicycle": "bicycle",
+      "i-bicycle": "pedal bicycle",
       "i-kick-scooter": "kick scooter",
-      "i-skateboard": "skateboard",
+      "i-skateboard": "foot-powered skateboard",
       "i-shopping-cart": "shopping cart",
       "i-motorboat": "motorboat",
-      "i-ferry": "ferry",
-      "i-ship": "ship",
-      "i-sailboat": "sailboat",
+      "i-ferry": "motor-powered ferry",
+      "i-ship": "steamship",
+      "i-sailboat": "wind-powered sailboat",
       "i-canoe": "canoe",
       "i-kite": "kite"
     }
@@ -84,8 +84,14 @@
   "mode": "kelompok",
   "pilihan": [],
   "carroll": {
-    "baris": ["carroll-baris-1", "carroll-baris-2"],
-    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+    "baris": [
+      "carroll-baris-1",
+      "carroll-baris-2"
+    ],
+    "kolom": [
+      "carroll-kolom-1",
+      "carroll-kolom-2"
+    ]
   },
   "bins": [
     {
@@ -158,7 +164,10 @@
       "id": "motorboat",
       "labelKey": "i-motorboat",
       "bin": "tanpa-mesin",
-      "emoji": "🚤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-carroll-perahu-motor"
+      }
     },
     {
       "id": "ferry",
@@ -170,13 +179,19 @@
       "id": "ship",
       "labelKey": "i-ship",
       "bin": "tanpa-mesin",
-      "emoji": "🚢"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-carroll-kapal-uap"
+      }
     },
     {
       "id": "sailboat",
       "labelKey": "i-sailboat",
       "bin": "tanpa-tanpa",
-      "emoji": "⛵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-carroll-perahu-layar"
+      }
     },
     {
       "id": "canoe",

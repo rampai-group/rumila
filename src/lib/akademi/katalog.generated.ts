@@ -208710,7 +208710,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-carroll-laut-kaki",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -208720,7 +208720,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kotak Laut dan Kaki",
-        "instruksi": "Jawab dua pertanyaan untuk tiap hewan: hidup di laut? punya kaki? Lalu taruh di kotak yang cocok.",
+        "instruksi": "Hidup di laut atau darat? Punya kaki? Pilih kotaknya.",
         "carroll-baris-1": "Laut",
         "carroll-baris-2": "Darat",
         "carroll-kolom-1": "Berkaki",
@@ -208729,8 +208729,8 @@ export const PAKET_RAW: unknown[] = [
         "bin-laut-tanpa": "laut · tanpa kaki",
         "bin-darat-kaki": "darat · berkaki",
         "bin-darat-tanpa": "darat · tanpa kaki",
-        "i-kepiting": "kepiting",
-        "i-lobster": "lobster",
+        "i-kepiting": "kepiting laut",
+        "i-lobster": "lobster laut",
         "i-udang": "udang laut",
         "i-ikan": "ikan laut",
         "i-lumba": "lumba-lumba",
@@ -208740,12 +208740,12 @@ export const PAKET_RAW: unknown[] = [
         "i-kucing": "kucing",
         "i-ayam": "ayam",
         "i-gajah": "gajah",
-        "i-ular": "ular",
+        "i-ular": "ular kobra",
         "i-cacing": "cacing tanah"
       },
       "en": {
         "judul": "Sea and Legs Boxes",
-        "instruksi": "Answer two questions for each animal: does it live in the sea? does it have legs? Then put it in the right box.",
+        "instruksi": "Sea or land? With legs or without? Pick a box.",
         "carroll-baris-1": "Sea",
         "carroll-baris-2": "Land",
         "carroll-kolom-1": "Has legs",
@@ -208754,8 +208754,8 @@ export const PAKET_RAW: unknown[] = [
         "bin-laut-tanpa": "sea · no legs",
         "bin-darat-kaki": "land · has legs",
         "bin-darat-tanpa": "land · no legs",
-        "i-kepiting": "crab",
-        "i-lobster": "lobster",
+        "i-kepiting": "sea crab",
+        "i-lobster": "marine lobster",
         "i-udang": "sea shrimp",
         "i-ikan": "sea fish",
         "i-lumba": "dolphin",
@@ -208765,7 +208765,7 @@ export const PAKET_RAW: unknown[] = [
         "i-kucing": "cat",
         "i-ayam": "chicken",
         "i-gajah": "elephant",
-        "i-ular": "snake",
+        "i-ular": "cobra",
         "i-cacing": "earthworm"
       }
     },
@@ -208824,7 +208824,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kepiting",
         "labelKey": "i-kepiting",
         "bin": "laut-kaki",
-        "emoji": "🦀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-carroll-kepiting-laut"
+        }
       },
       {
         "id": "lobster",
@@ -208890,7 +208893,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ular",
         "labelKey": "i-ular",
         "bin": "darat-tanpa",
-        "emoji": "🐍"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-carroll-ular-kobra"
+        }
       },
       {
         "id": "cacing",
@@ -208902,7 +208908,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-carroll-roda-mesin",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -208912,7 +208918,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kotak Roda dan Mesin",
-        "instruksi": "Jawab dua pertanyaan untuk tiap benda: punya roda? pakai mesin? Lalu taruh di kotak yang cocok.",
+        "instruksi": "Beroda di darat? Digerakkan mesin atau motor? Pilih kotaknya.",
         "carroll-baris-1": "Beroda",
         "carroll-baris-2": "Tanpa roda",
         "carroll-kolom-1": "Bermesin",
@@ -208925,20 +208931,20 @@ export const PAKET_RAW: unknown[] = [
         "i-bus": "bus",
         "i-motorbike": "sepeda motor",
         "i-truck": "truk",
-        "i-bicycle": "sepeda",
+        "i-bicycle": "sepeda kayuh",
         "i-kick-scooter": "skuter dorong",
-        "i-skateboard": "papan luncur",
+        "i-skateboard": "papan luncur yang didorong kaki",
         "i-shopping-cart": "troli belanja",
         "i-motorboat": "perahu motor",
-        "i-ferry": "kapal feri",
-        "i-ship": "kapal besar",
-        "i-sailboat": "perahu layar",
+        "i-ferry": "kapal feri bermotor",
+        "i-ship": "kapal uap",
+        "i-sailboat": "perahu layar yang digerakkan angin",
         "i-canoe": "kano",
         "i-kite": "layang-layang"
       },
       "en": {
         "judul": "Wheels and Engine Boxes",
-        "instruksi": "Answer two questions for each thing: wheels? engine? Then put it in the matching box.",
+        "instruksi": "Wheels for land travel? Engine or motor to move? Pick a box.",
         "carroll-baris-1": "Has wheels",
         "carroll-baris-2": "No wheels",
         "carroll-kolom-1": "Has an engine",
@@ -208951,14 +208957,14 @@ export const PAKET_RAW: unknown[] = [
         "i-bus": "bus",
         "i-motorbike": "motorbike",
         "i-truck": "truck",
-        "i-bicycle": "bicycle",
+        "i-bicycle": "pedal bicycle",
         "i-kick-scooter": "kick scooter",
-        "i-skateboard": "skateboard",
+        "i-skateboard": "foot-powered skateboard",
         "i-shopping-cart": "shopping cart",
         "i-motorboat": "motorboat",
-        "i-ferry": "ferry",
-        "i-ship": "ship",
-        "i-sailboat": "sailboat",
+        "i-ferry": "motor-powered ferry",
+        "i-ship": "steamship",
+        "i-sailboat": "wind-powered sailboat",
         "i-canoe": "canoe",
         "i-kite": "kite"
       }
@@ -209066,7 +209072,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "motorboat",
         "labelKey": "i-motorboat",
         "bin": "tanpa-mesin",
-        "emoji": "🚤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-carroll-perahu-motor"
+        }
       },
       {
         "id": "ferry",
@@ -209078,13 +209087,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "ship",
         "labelKey": "i-ship",
         "bin": "tanpa-mesin",
-        "emoji": "🚢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-carroll-kapal-uap"
+        }
       },
       {
         "id": "sailboat",
         "labelKey": "i-sailboat",
         "bin": "tanpa-tanpa",
-        "emoji": "⛵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-carroll-perahu-layar"
+        }
       },
       {
         "id": "canoe",
