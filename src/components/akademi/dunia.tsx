@@ -185,7 +185,9 @@ export function panggungPadat(paket: ContentPack, ronde?: Ronde): boolean {
     (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanAngkaRingkas(paket) ||
       urutanTumbuhHewan(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
-    (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" || paket.mode === "timbangan" || (paket.mode === "tombol" && paket.level === "PAUD")));
+    (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" ||
+      (paket.mode === "timbangan" && !paket.competencyIds.includes("SAINS.SD2.BATUAN.01")) ||
+      (paket.mode === "tombol" && paket.level === "PAUD")));
 }
 
 const useIsoLayout = typeof window === "undefined" ? useEffect : useLayoutEffect;
