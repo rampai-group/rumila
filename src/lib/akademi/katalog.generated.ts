@@ -234690,7 +234690,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-hidup-pernah-tidak-pernah-pantai",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -234700,10 +234700,10 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Temuan di Pantai",
-        "instruksi": "Taruh tiap temuan di pantai ke rak yang tepat.",
+        "instruksi": "Pilah: masih hidup, benda mati dari makhluk hidup, atau benda mati dari bahan lain.",
         "b-hidup": "masih hidup",
-        "b-pernah": "pernah hidup",
-        "b-tidak": "tidak pernah hidup",
+        "b-pernah": "dari makhluk hidup",
+        "b-tidak": "bahan lain",
         "i-kepiting": "kepiting",
         "i-kelapa": "pohon kelapa",
         "i-camar": "burung camar",
@@ -234719,10 +234719,10 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Beach Finds",
-        "instruksi": "Put each beach find on the right shelf.",
-        "b-hidup": "living",
-        "b-pernah": "once living",
-        "b-tidak": "never living",
+        "instruksi": "Sort what is alive, nonliving things from living things, and nonliving things from other materials.",
+        "b-hidup": "still alive",
+        "b-pernah": "from living things",
+        "b-tidak": "other materials",
         "i-kepiting": "crab",
         "i-kelapa": "coconut tree",
         "i-camar": "seagull",
@@ -234774,7 +234774,7 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "tidak",
         "labelKey": "b-tidak",
-        "emoji": "🧱",
+        "emoji": "🪨",
         "color": "#e0e0e0"
       }
     ],
@@ -234795,14 +234795,20 @@ export const PAKET_RAW: unknown[] = [
         "id": "camar",
         "labelKey": "i-camar",
         "bin": "hidup",
-        "emoji": "🐦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-asal-camar"
+        }
       },
       {
         "id": "rumputlaut",
         "labelKey": "i-rumputlaut",
         "bin": "hidup",
-        "emoji": "🌿",
-        "color": "#7cb342"
+        "color": "#7cb342",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-asal-rumput-laut"
+        }
       },
       {
         "id": "kerang",
@@ -234814,7 +234820,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kayuapung",
         "labelKey": "i-kayuapung",
         "bin": "pernah",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-asal-kayu-terdampar"
+        }
       },
       {
         "id": "bulucamar",
@@ -234826,7 +234835,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "batok",
         "labelKey": "i-batok",
         "bin": "pernah",
-        "emoji": "🥥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-asal-batok-kelapa"
+        }
       },
       {
         "id": "batukali",
@@ -234850,14 +234862,17 @@ export const PAKET_RAW: unknown[] = [
         "id": "botolkaca",
         "labelKey": "i-botolkaca",
         "bin": "tidak",
-        "emoji": "🍾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-asal-botol-kaca"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd3-sains-hidup-pernah-tidak-pernah-rumah",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -234866,11 +234881,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Hidup, Pernah Hidup, Tak Pernah Hidup",
-        "instruksi": "Taruh tiap benda di rumah ke rak yang tepat.",
+        "judul": "Hidup atau Tak Hidup?",
+        "instruksi": "Pilah: masih hidup, benda mati dari makhluk hidup, atau benda mati dari bahan lain.",
         "b-hidup": "masih hidup",
-        "b-pernah": "pernah hidup",
-        "b-tidak": "tidak pernah hidup",
+        "b-pernah": "dari makhluk hidup",
+        "b-tidak": "bahan lain",
         "i-kucing": "kucing",
         "i-tanaman": "tanaman di pot",
         "i-semut": "semut",
@@ -234887,11 +234902,11 @@ export const PAKET_RAW: unknown[] = [
         "i-air": "air minum"
       },
       "en": {
-        "judul": "Living, Once Living, Never Living",
-        "instruksi": "Put each thing from the house on the right shelf.",
-        "b-hidup": "living",
-        "b-pernah": "once living",
-        "b-tidak": "never living",
+        "judul": "Living or Nonliving?",
+        "instruksi": "Sort what is alive, nonliving things from living things, and nonliving things from other materials.",
+        "b-hidup": "still alive",
+        "b-pernah": "from living things",
+        "b-tidak": "other materials",
         "i-kucing": "cat",
         "i-tanaman": "potted plant",
         "i-semut": "ant",
@@ -234939,13 +234954,13 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "pernah",
         "labelKey": "b-pernah",
-        "emoji": "⌛",
+        "emoji": "🍂",
         "color": "#ffe0b2"
       },
       {
         "id": "tidak",
         "labelKey": "b-tidak",
-        "emoji": "🧱",
+        "emoji": "🪨",
         "color": "#e0e0e0"
       }
     ],
@@ -234972,7 +234987,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "ikan",
         "labelKey": "i-ikan",
         "bin": "hidup",
-        "emoji": "🐠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-akuarium"
+        }
       },
       {
         "id": "kursi",
@@ -235002,8 +235020,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "ranting",
         "labelKey": "i-ranting",
         "bin": "pernah",
-        "emoji": "🪵",
-        "scale": 0.7
+        "scale": 0.7,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-asal-ranting-kering"
+        }
       },
       {
         "id": "batu",
@@ -235021,7 +235042,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kelereng",
         "labelKey": "i-kelereng",
         "bin": "tidak",
-        "emoji": "🔵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-kelereng-kaca"
+        }
       },
       {
         "id": "garam",
@@ -235033,7 +235057,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "air",
         "labelKey": "i-air",
         "bin": "tidak",
-        "emoji": "💧"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-asal-air-minum"
+        }
       }
     ],
     "pilihan": []
