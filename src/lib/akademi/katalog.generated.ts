@@ -313341,65 +313341,97 @@ export const PAKET_RAW: unknown[] = [
         "id": "krayon",
         "labelKey": "i-krayon",
         "role": "benda",
-        "emoji": "🖍️",
         "width": 0.8,
-        "value": 2
+        "value": 2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-krayon"
+        }
       },
       {
         "id": "kunci",
         "labelKey": "i-kunci",
         "role": "benda",
-        "emoji": "🔑",
         "width": 1.2,
-        "value": 3
+        "value": 3,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-kunci"
+        }
       },
       {
         "id": "sendok",
         "labelKey": "i-sendok",
         "role": "benda",
-        "emoji": "🥄",
         "width": 1.6,
-        "value": 4
+        "value": 4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-sendok"
+        }
       },
       {
         "id": "sikat",
         "labelKey": "i-sikat-gigi",
         "role": "benda",
-        "emoji": "🪥",
         "width": 2,
-        "value": 5
+        "value": 5,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-sikat"
+        }
       },
       {
         "id": "pensil",
         "labelKey": "i-pensil",
         "role": "benda",
-        "emoji": "✏️",
         "width": 2.4,
-        "value": 6
+        "value": 6,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-pensil"
+        }
       },
       {
         "id": "wortel",
         "labelKey": "i-wortel",
         "role": "benda",
-        "emoji": "🥕",
         "width": 2.8,
-        "value": 7
+        "value": 7,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-wortel"
+        }
       },
       {
         "id": "sumpit",
         "labelKey": "i-sumpit",
         "role": "benda",
-        "emoji": "🥢",
         "width": 3.2,
-        "value": 8
+        "value": 8,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-sumpit"
+        }
       },
       {
         "id": "pisang",
         "labelKey": "i-pisang",
         "role": "benda",
-        "emoji": "🍌",
         "width": 3.6,
-        "value": 9
+        "value": 9,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-pisang"
+        }
       },
       {
         "id": "seruling",
@@ -313407,7 +313439,11 @@ export const PAKET_RAW: unknown[] = [
         "role": "benda",
         "width": 4,
         "value": 10,
-        "emoji": "🎷"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-seruling"
+        }
       },
       {
         "id": "tongkat",
@@ -313415,8 +313451,11 @@ export const PAKET_RAW: unknown[] = [
         "role": "benda",
         "width": 4,
         "value": 11,
-        "shape": "rect",
-        "color": "#8d6e63"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-tongkat"
+        }
       }
     ]
   },
@@ -313482,97 +313521,145 @@ export const PAKET_RAW: unknown[] = [
         "id": "cacing",
         "labelKey": "i-cacing",
         "role": "benda",
-        "emoji": "🪱",
         "width": 0.8,
-        "value": 2
+        "value": 2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-cacing"
+        }
       },
       {
         "id": "ulat",
         "labelKey": "i-ulat",
         "role": "benda",
-        "emoji": "🐛",
         "width": 1.2,
-        "value": 3
+        "value": 3,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-ulat"
+        }
       },
       {
         "id": "cabai",
         "labelKey": "i-cabai",
         "role": "benda",
-        "emoji": "🌶️",
         "width": 1.6,
-        "value": 4
+        "value": 4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-cabai"
+        }
       },
       {
         "id": "ubi",
         "labelKey": "i-ubi",
         "role": "benda",
-        "emoji": "🍠",
         "width": 1.6,
-        "value": 4
+        "value": 4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-ubi"
+        }
       },
       {
         "id": "timun",
         "labelKey": "i-timun",
         "role": "benda",
-        "emoji": "🥒",
         "width": 2,
-        "value": 5
+        "value": 5,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-timun"
+        }
       },
       {
         "id": "terong",
         "labelKey": "i-terong",
         "role": "benda",
-        "emoji": "🍆",
         "width": 2.4,
-        "value": 6
+        "value": 6,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-terong"
+        }
       },
       {
         "id": "sawi",
         "labelKey": "i-sawi",
         "role": "benda",
-        "emoji": "🥬",
         "width": 2.4,
-        "value": 6
+        "value": 6,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-sawi"
+        }
       },
       {
         "id": "jagung",
         "labelKey": "i-jagung",
         "role": "benda",
-        "emoji": "🌽",
         "width": 2.8,
-        "value": 7
+        "value": 7,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-jagung"
+        }
       },
       {
         "id": "kadal",
         "labelKey": "i-kadal",
         "role": "benda",
-        "emoji": "🦎",
         "width": 3.2,
-        "value": 8
+        "value": 8,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-kadal"
+        }
       },
       {
         "id": "kayu",
         "labelKey": "i-kayu",
         "role": "benda",
-        "emoji": "🪵",
         "width": 3.6,
-        "value": 9
+        "value": 9,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-kayu"
+        }
       },
       {
         "id": "ular",
         "labelKey": "i-ular",
         "role": "benda",
-        "emoji": "🐍",
         "width": 4,
-        "value": 10
+        "value": 10,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-ular"
+        }
       },
       {
         "id": "sapu-lidi",
         "labelKey": "i-sapu-lidi",
         "role": "benda",
-        "emoji": "🧹",
         "width": 4,
-        "value": 11
+        "value": 11,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "t": 0,
+          "varian": "penggaris-kapten-sapu-lidi"
+        }
       }
     ]
   },

@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from "react";
 import type { Adegan } from "@akademi/schema";
 import { bacaJamWaktu } from "@/lib/akademi/jam-waktu";
 
+import { BENDA_PENGGARIS_KAPTEN } from "./ilustrasi-penggaris-kapten";
 import { TEMUAN_KEBUN } from "./ilustrasi-temuan-kebun";
 import { GambarIlustrasiAwal } from "./ilustrasi-awal";
 import { PerangkatPilot, RobotPilot } from "./ilustrasi-perangkat";
@@ -388,6 +389,7 @@ export function GambarAdeganSd({
   adegan, s, style, className,
 }: { adegan: Adegan; s: number; style?: CSSProperties; className?: string }) {
   const varian = adegan.varian ?? "";
+  const penggarisKapten = varian.startsWith("penggaris-kapten-");
   let isi: ReactNode = null;
   let lebar = 100;
   switch (adegan.jenis) {
@@ -403,7 +405,8 @@ export function GambarAdeganSd({
       break;
     case "ilustrasi-sd":
       lebar = 130;
-      isi = varian.startsWith("temuan-kebun-") ? TEMUAN_KEBUN[varian.slice("temuan-kebun-".length)] : varian === "banding-berat" || varian === "banding-kapasitas" ? (
+      isi = penggarisKapten ? BENDA_PENGGARIS_KAPTEN[varian.slice("penggaris-kapten-".length)]
+        : varian.startsWith("temuan-kebun-") ? TEMUAN_KEBUN[varian.slice("temuan-kebun-".length)] : varian === "banding-berat" || varian === "banding-kapasitas" ? (
         <g data-petunjuk-banding={varian} data-nilai={adegan.t}>
           {GAMBAR_BANDING[adegan.tanda ?? ""]
             ? <g transform="translate(29 6)"><GambarIlustrasiAwal gambar={GAMBAR_BANDING[adegan.tanda!]} s={55} /></g>
@@ -428,7 +431,7 @@ export function GambarAdeganSd({
       aria-hidden="true"
       data-adegan={adegan.jenis}
       data-varian={varian || undefined}
-      preserveAspectRatio={varian.startsWith("temuan-kebun-") ? "none" : undefined}
+      preserveAspectRatio={penggarisKapten || varian.startsWith("temuan-kebun-") ? "none" : undefined}
       viewBox={`0 0 ${lebar} 100`}
       width={s * lebar / 100}
       height={s}
