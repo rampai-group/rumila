@@ -10,6 +10,7 @@ import { ILUSTRASI_GAYA_SD2 } from "./ilustrasi-sd2-gaya";
 import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
 import { ILUSTRASI_LISTRIK_RUMAH_SD2 } from "./ilustrasi-sd2-listrik-rumah";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
+import { ILUSTRASI_PERANGKAT_SD2 } from "./ilustrasi-sd2-perangkat";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
 import { ILUSTRASI_TUMBUH_KELINCI_SD2 } from "./ilustrasi-sd2-pertumbuhan-kelinci";
@@ -452,6 +453,7 @@ const GERAK_APUNG: Record<string, ReactNode> = {
 };
 
 const objectArt: Record<string, ReactNode> = {
+  ...ILUSTRASI_PERANGKAT_SD2,
   ...ILUSTRASI_JARUM_MENIT_SD2,
   ...ILUSTRASI_BAHAN_SD2,
   ...ILUSTRASI_SUMBER_CAHAYA_SD2,

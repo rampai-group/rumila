@@ -209117,7 +209117,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-masukan-keluaran",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209247,13 +209247,16 @@ export const PAKET_RAW: unknown[] = [
         "id": "projector",
         "labelKey": "i-projector",
         "bin": "keluar",
-        "emoji": "📽️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perangkat-proyektor"
+        }
       }
     ]
   },
   {
     "id": "sd2-kode-perangkat-masuk-tampil",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209330,7 +209333,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "pena",
         "labelKey": "i-pena",
         "bin": "masuk",
-        "emoji": "🖊️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perangkat-pena-digital"
+        }
       },
       {
         "id": "gamepad",
@@ -209342,13 +209348,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "touchpad",
         "labelKey": "i-touchpad",
         "bin": "masuk",
-        "emoji": "👆"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perangkat-touchpad"
+        }
       },
       {
         "id": "piano",
         "labelKey": "i-piano",
         "bin": "masuk",
-        "emoji": "🎹"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perangkat-keyboard-musik"
+        }
       },
       {
         "id": "trackball",
@@ -209375,7 +209387,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "layar-laptop",
         "labelKey": "i-layar-laptop",
         "bin": "tampil",
-        "emoji": "💻"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perangkat-layar-laptop"
+        }
       },
       {
         "id": "earphone",
@@ -209393,13 +209408,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "struk",
         "labelKey": "i-struk",
         "bin": "tampil",
-        "emoji": "🧾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perangkat-printer-struk"
+        }
       },
       {
         "id": "proyektor",
         "labelKey": "i-proyektor",
         "bin": "tampil",
-        "emoji": "📽️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-perangkat-proyektor"
+        }
       }
     ]
   },

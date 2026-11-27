@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-perangkat-masuk-tampil",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -77,7 +77,10 @@
       "id": "pena",
       "labelKey": "i-pena",
       "bin": "masuk",
-      "emoji": "🖊️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-pena-digital"
+      }
     },
     {
       "id": "gamepad",
@@ -89,13 +92,19 @@
       "id": "touchpad",
       "labelKey": "i-touchpad",
       "bin": "masuk",
-      "emoji": "👆"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-touchpad"
+      }
     },
     {
       "id": "piano",
       "labelKey": "i-piano",
       "bin": "masuk",
-      "emoji": "🎹"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-keyboard-musik"
+      }
     },
     {
       "id": "trackball",
@@ -122,7 +131,10 @@
       "id": "layar-laptop",
       "labelKey": "i-layar-laptop",
       "bin": "tampil",
-      "emoji": "💻"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-layar-laptop"
+      }
     },
     {
       "id": "earphone",
@@ -140,13 +152,19 @@
       "id": "struk",
       "labelKey": "i-struk",
       "bin": "tampil",
-      "emoji": "🧾"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-printer-struk"
+      }
     },
     {
       "id": "proyektor",
       "labelKey": "i-proyektor",
       "bin": "tampil",
-      "emoji": "📽️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-perangkat-proyektor"
+      }
     }
   ]
 }
