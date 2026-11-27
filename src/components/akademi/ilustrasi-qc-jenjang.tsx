@@ -15,6 +15,8 @@ import { ILUSTRASI_RANTAI_MAKANAN_SD3 } from "./ilustrasi-sd3-rantai-makanan";
 import { ILUSTRASI_PERANGKAT_SD2 } from "./ilustrasi-sd2-perangkat";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
 import { ILUSTRASI_TAHAP_GAME_SD2 } from "./ilustrasi-sd2-tahap-game";
+import { ILUSTRASI_BIBIT_TOMAT_SD3 } from "./ilustrasi-sd3-bibit-tomat";
+import { ILUSTRASI_TUGAS_TUMBUHAN_SD3 } from "./ilustrasi-sd3-tugas-tumbuhan";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
 import { ILUSTRASI_TUMBUH_KELINCI_SD2 } from "./ilustrasi-sd2-pertumbuhan-kelinci";
 import { ILUSTRASI_TUMBUH_SAPI_KAMBING_GAJAH_SD2 } from "./ilustrasi-sd2-tumbuh-sapi-kambing-gajah";
@@ -481,6 +483,8 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_ASAL_MAKHLUK_SD3,
   ...ILUSTRASI_RANTAI_MAKANAN_SD3,
   ...ILUSTRASI_TULANG_SD4,
+  ...ILUSTRASI_BIBIT_TOMAT_SD3,
+  ...ILUSTRASI_TUGAS_TUMBUHAN_SD3,
   ...ILUSTRASI_KARTU_LANGKAH_SD2,
   ...ILUSTRASI_TUMBUH_KELINCI_SD2,
   ...ILUSTRASI_TUMBUH_SAPI_KAMBING_GAJAH_SD2,

@@ -237594,7 +237594,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-rak-tugas-bagian-tumbuhan",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -237604,39 +237604,39 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Rak Tugas Bagian Tumbuhan",
-        "instruksi": "Taruh tiap tugas ke bagian tumbuhan yang mengerjakannya.",
+        "instruksi": "Pilah tiap petunjuk ke bagian tumbuhan yang sesuai.",
         "b-akar": "akar",
         "b-batang": "batang",
         "b-daun": "daun",
         "b-bunga": "bunga",
         "i-serap": "menyerap air dari tanah",
-        "i-cengkeram": "mencengkeram tanah saat angin",
-        "i-simpan": "menyimpan makanan seperti wortel",
+        "i-cengkeram": "menahan tumbuhan di tanah saat angin kencang",
+        "i-simpan": "menyimpan cadangan makanan di umbi wortel",
         "i-angkut": "membawa air naik ke daun",
-        "i-tegak": "menopang tumbuhan tetap tegak",
-        "i-warna": "jalan air berwarna menuju kelopak krisan putih",
+        "i-tegak": "menopang daun dan bunga di atas tanah",
+        "i-warna": "menyalurkan air merah dari vas ke kelopak",
         "i-masak": "membuat makanan dengan cahaya",
-        "i-kuning": "menguning bila lama di tempat gelap",
+        "i-kuning": "menangkap cahaya; pucat dalam gelap",
         "i-lebah": "didatangi lebah dan kupu-kupu",
-        "i-buah": "berubah menjadi buah dan biji"
+        "i-buah": "tempat bakal buah dan bakal biji"
       },
       "en": {
         "judul": "Plant Part Job Shelves",
-        "instruksi": "Put each job on the plant part that does it.",
+        "instruksi": "Sort each clue under the plant part it describes.",
         "b-akar": "roots",
         "b-batang": "stem",
         "b-daun": "leaves",
         "b-bunga": "flower",
         "i-serap": "takes in water from the soil",
-        "i-cengkeram": "grips the soil in the wind",
-        "i-simpan": "stores food, like a carrot",
+        "i-cengkeram": "anchors the plant in soil during strong winds",
+        "i-simpan": "stores food in the thick part of a carrot",
         "i-angkut": "carries water up to the leaves",
-        "i-tegak": "holds the plant upright",
-        "i-warna": "the path coloured water takes up to a white chrysanthemum",
+        "i-tegak": "holds leaves and flowers up above the ground",
+        "i-warna": "carries red water from a vase up to the petals",
         "i-masak": "makes food using light",
-        "i-kuning": "turns yellow after long in the dark",
+        "i-kuning": "captures light; turns pale in darkness",
         "i-lebah": "visited by bees and butterflies",
-        "i-buah": "turns into fruit and seeds"
+        "i-buah": "contains the ovary and ovules"
       }
     },
     "knobs": {
@@ -237697,7 +237697,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "cengkeram",
         "labelKey": "i-cengkeram",
         "bin": "akar",
-        "emoji": "🌬️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-tugas-akar-mencengkeram"
+        }
       },
       {
         "id": "simpan",
@@ -237715,13 +237718,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "tegak",
         "labelKey": "i-tegak",
         "bin": "batang",
-        "emoji": "🧍"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-tugas-batang-menopang"
+        }
       },
       {
         "id": "warna",
         "labelKey": "i-warna",
         "bin": "batang",
-        "emoji": "🌼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-tugas-krisan-air-berwarna"
+        }
       },
       {
         "id": "masak",
@@ -237733,7 +237742,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kuning",
         "labelKey": "i-kuning",
         "bin": "daun",
-        "emoji": "🌑"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-tugas-daun-pucat"
+        }
       },
       {
         "id": "lebah",
@@ -237752,7 +237764,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-tebak-bibit-kebun-sekolah",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -237765,13 +237777,13 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Bibit tomat muda ditaruh di beberapa tempat. Pilah kondisi yang mendukung tumbuh sehat dan yang menghambatnya.",
         "b-sehat": "mendukung tumbuh sehat",
         "b-layu": "menghambat tumbuh sehat",
-        "i-rumahkaca": "bibit di rumah kaca terang, disiram",
+        "i-rumahkaca": "bibit di rumah kaca terang, disiram secukupnya",
         "i-bedeng": "bibit di bedeng terkena cahaya, tanah lembap",
         "i-naungan": "bibit di tempat terang di bawah naungan tipis, tanah lembap",
         "i-pot": "bibit dekat jendela kelas yang terang, disiram secukupnya",
         "i-gudang": "bibit di gudang tanpa jendela",
         "i-becek": "bibit di tanah tergenang air terus",
-        "i-tembok": "bibit menempel tembok panas terik tanpa disiram",
+        "i-tembok": "bibit dekat tembok yang panas terik, tidak disiram",
         "i-es": "bibit di dalam kotak es",
         "i-tertutup": "bibit tertutup ember terbalik seminggu"
       },
@@ -237780,13 +237792,13 @@ export const PAKET_RAW: unknown[] = [
         "instruksi": "Young tomato seedlings are placed in different spots. Sort conditions that support healthy growth and those that hinder it.",
         "b-sehat": "supports healthy growth",
         "b-layu": "hinders healthy growth",
-        "i-rumahkaca": "seedling in a bright greenhouse, watered",
+        "i-rumahkaca": "seedling in a bright greenhouse, watered as needed",
         "i-bedeng": "seedling in a sunny bed, moist soil",
         "i-naungan": "seedling in a bright spot under light shade, with damp soil",
         "i-pot": "seedling by a bright classroom window, watered as needed",
         "i-gudang": "seedling in a shed with no window",
         "i-becek": "seedling in waterlogged soil",
-        "i-tembok": "seedling against a scorching wall, never watered",
+        "i-tembok": "seedling next to a scorching wall, never watered",
         "i-es": "seedling inside an ice box",
         "i-tertutup": "seedling under an upside-down bucket for a week"
       }
@@ -237824,62 +237836,89 @@ export const PAKET_RAW: unknown[] = [
         "id": "rumahkaca",
         "labelKey": "i-rumahkaca",
         "bin": "sehat",
-        "emoji": "🏡"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-rumah-kaca"
+        }
       },
       {
         "id": "bedeng",
         "labelKey": "i-bedeng",
         "bin": "sehat",
-        "emoji": "🌱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-bedeng"
+        }
       },
       {
         "id": "naungan",
         "labelKey": "i-naungan",
         "bin": "sehat",
-        "emoji": "⛱️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-naungan"
+        }
       },
       {
         "id": "pot",
         "labelKey": "i-pot",
         "bin": "sehat",
-        "emoji": "🪴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-jendela-kelas"
+        }
       },
       {
         "id": "gudang",
         "labelKey": "i-gudang",
         "bin": "layu",
-        "emoji": "🏚️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-gudang"
+        }
       },
       {
         "id": "becek",
         "labelKey": "i-becek",
         "bin": "layu",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-tanah-tergenang"
+        }
       },
       {
         "id": "tembok",
         "labelKey": "i-tembok",
         "bin": "layu",
-        "emoji": "🔥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-tembok-panas"
+        }
       },
       {
         "id": "es",
         "labelKey": "i-es",
         "bin": "layu",
-        "emoji": "🧊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-kotak-es"
+        }
       },
       {
         "id": "tertutup",
         "labelKey": "i-tertutup",
         "bin": "layu",
-        "emoji": "🪣"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-ember-terbalik"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd3-sains-tebak-tanaman-sehat",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -237900,7 +237939,7 @@ export const PAKET_RAW: unknown[] = [
         "i-lemari": "pot di dalam lemari gelap",
         "i-kering": "pot di jendela, tidak pernah disiram",
         "i-kulkas": "pot di dalam kulkas",
-        "i-kompor": "pot di samping kompor panas",
+        "i-kompor": "pot di samping kompor yang terus menyala",
         "i-rendam": "pot terendam air terus-menerus",
         "i-kardus": "pot ditutup kardus berhari-hari"
       },
@@ -237917,7 +237956,7 @@ export const PAKET_RAW: unknown[] = [
         "i-lemari": "pot inside a dark cupboard",
         "i-kering": "pot by the window, never watered",
         "i-kulkas": "pot inside the fridge",
-        "i-kompor": "pot next to a hot stove",
+        "i-kompor": "pot next to a stove that stays lit",
         "i-rendam": "pot always sitting in water",
         "i-kardus": "pot covered by a box for days"
       }
@@ -237955,67 +237994,100 @@ export const PAKET_RAW: unknown[] = [
         "id": "jendela",
         "labelKey": "i-jendela",
         "bin": "sehat",
-        "emoji": "🪴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-jendela-pot"
+        }
       },
       {
         "id": "teras",
         "labelKey": "i-teras",
         "bin": "sehat",
-        "emoji": "🪴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-teras"
+        }
       },
       {
         "id": "taman",
         "labelKey": "i-taman",
         "bin": "sehat",
-        "emoji": "🌱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-taman-pagi"
+        }
       },
       {
         "id": "kelas",
         "labelKey": "i-kelas",
         "bin": "sehat",
-        "emoji": "🌱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-kelas-sejuk"
+        }
       },
       {
         "id": "hujan",
         "labelKey": "i-hujan",
         "bin": "sehat",
-        "emoji": "🌧️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-halaman-setelah-hujan"
+        }
       },
       {
         "id": "lemari",
         "labelKey": "i-lemari",
         "bin": "layu",
-        "emoji": "🚪"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-lemari-gelap"
+        }
       },
       {
         "id": "kering",
         "labelKey": "i-kering",
         "bin": "layu",
-        "emoji": "🏜️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-jendela-kering"
+        }
       },
       {
         "id": "kulkas",
         "labelKey": "i-kulkas",
         "bin": "layu",
-        "emoji": "🧊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-kulkas"
+        }
       },
       {
         "id": "kompor",
         "labelKey": "i-kompor",
         "bin": "layu",
-        "emoji": "🔥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-kompor-menyala"
+        }
       },
       {
         "id": "rendam",
         "labelKey": "i-rendam",
         "bin": "layu",
-        "emoji": "🌊"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-pot-terendam"
+        }
       },
       {
         "id": "kardus",
         "labelKey": "i-kardus",
         "bin": "layu",
-        "emoji": "📦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd3-bibit-pot-tertutup-kardus"
+        }
       }
     ],
     "pilihan": []

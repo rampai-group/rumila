@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-tugas-bagian-tumbuhan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,39 +10,39 @@
   "locale": {
     "id": {
       "judul": "Rak Tugas Bagian Tumbuhan",
-      "instruksi": "Taruh tiap tugas ke bagian tumbuhan yang mengerjakannya.",
+      "instruksi": "Pilah tiap petunjuk ke bagian tumbuhan yang sesuai.",
       "b-akar": "akar",
       "b-batang": "batang",
       "b-daun": "daun",
       "b-bunga": "bunga",
       "i-serap": "menyerap air dari tanah",
-      "i-cengkeram": "mencengkeram tanah saat angin",
-      "i-simpan": "menyimpan makanan seperti wortel",
+      "i-cengkeram": "menahan tumbuhan di tanah saat angin kencang",
+      "i-simpan": "menyimpan cadangan makanan di umbi wortel",
       "i-angkut": "membawa air naik ke daun",
-      "i-tegak": "menopang tumbuhan tetap tegak",
-      "i-warna": "jalan air berwarna menuju kelopak krisan putih",
+      "i-tegak": "menopang daun dan bunga di atas tanah",
+      "i-warna": "menyalurkan air merah dari vas ke kelopak",
       "i-masak": "membuat makanan dengan cahaya",
-      "i-kuning": "menguning bila lama di tempat gelap",
+      "i-kuning": "menangkap cahaya; pucat dalam gelap",
       "i-lebah": "didatangi lebah dan kupu-kupu",
-      "i-buah": "berubah menjadi buah dan biji"
+      "i-buah": "tempat bakal buah dan bakal biji"
     },
     "en": {
       "judul": "Plant Part Job Shelves",
-      "instruksi": "Put each job on the plant part that does it.",
+      "instruksi": "Sort each clue under the plant part it describes.",
       "b-akar": "roots",
       "b-batang": "stem",
       "b-daun": "leaves",
       "b-bunga": "flower",
       "i-serap": "takes in water from the soil",
-      "i-cengkeram": "grips the soil in the wind",
-      "i-simpan": "stores food, like a carrot",
+      "i-cengkeram": "anchors the plant in soil during strong winds",
+      "i-simpan": "stores food in the thick part of a carrot",
       "i-angkut": "carries water up to the leaves",
-      "i-tegak": "holds the plant upright",
-      "i-warna": "the path coloured water takes up to a white chrysanthemum",
+      "i-tegak": "holds leaves and flowers up above the ground",
+      "i-warna": "carries red water from a vase up to the petals",
       "i-masak": "makes food using light",
-      "i-kuning": "turns yellow after long in the dark",
+      "i-kuning": "captures light; turns pale in darkness",
       "i-lebah": "visited by bees and butterflies",
-      "i-buah": "turns into fruit and seeds"
+      "i-buah": "contains the ovary and ovules"
     }
   },
   "knobs": {
@@ -103,7 +103,10 @@
       "id": "cengkeram",
       "labelKey": "i-cengkeram",
       "bin": "akar",
-      "emoji": "🌬️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-tugas-akar-mencengkeram"
+      }
     },
     {
       "id": "simpan",
@@ -121,13 +124,19 @@
       "id": "tegak",
       "labelKey": "i-tegak",
       "bin": "batang",
-      "emoji": "🧍"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-tugas-batang-menopang"
+      }
     },
     {
       "id": "warna",
       "labelKey": "i-warna",
       "bin": "batang",
-      "emoji": "🌼"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-tugas-krisan-air-berwarna"
+      }
     },
     {
       "id": "masak",
@@ -139,7 +148,10 @@
       "id": "kuning",
       "labelKey": "i-kuning",
       "bin": "daun",
-      "emoji": "🌑"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-tugas-daun-pucat"
+      }
     },
     {
       "id": "lebah",
