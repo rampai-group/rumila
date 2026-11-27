@@ -14,7 +14,7 @@ const POSE = {
 
 type OrangProps = { x: number; y: number; pose?: keyof typeof POSE; besar?: number; kiri?: boolean; baju?: string };
 
-function Orang({ x, y, pose = "berdiri", besar = 1, kiri = false, baju = "#e39a47" }: OrangProps) {
+export function Orang({ x, y, pose = "berdiri", besar = 1, kiri = false, baju = "#e39a47" }: OrangProps) {
   const { tangan, kaki } = POSE[pose];
   return <g transform={`translate(${x} ${y}) scale(${kiri ? -besar : besar} ${besar})`} {...GARIS}>
     <path d={kaki} fill="none" strokeWidth="3.5" />
@@ -26,7 +26,7 @@ function Orang({ x, y, pose = "berdiri", besar = 1, kiri = false, baju = "#e39a4
   </g>;
 }
 
-function Luar({ children, badai = false }: { children: ReactNode; badai?: boolean }) {
+export function Luar({ children, badai = false }: { children: ReactNode; badai?: boolean }) {
   return <g {...GARIS}>
     <rect x="3" y="3" width="124" height="94" rx="12" fill={badai ? "#e4eaf5" : "#e8f5fa"} stroke="none" />
     <path d="M3 78Q35 71 64 78Q94 71 127 78V86Q127 97 115 97H15Q3 97 3 86Z" fill="#c9dfba" stroke="none" />
@@ -62,7 +62,7 @@ function Pagar({ dari, sampai, y }: { dari: number; sampai: number; y: number })
   </g>;
 }
 
-function KabelJatuh() {
+export function KabelJatuh() {
   return <g>
     <path d="M117 60V18m-13 4h24m-24 6h24" strokeWidth="3.5" />
     <path d="M103 28q-9 1-10 20q-2 18-14 25q-7 4-18 1" fill="none" strokeWidth="4" />
@@ -79,7 +79,7 @@ function LayangTersangkut() {
   </g>;
 }
 
-function Stopkontak({ x, y }: { x: number; y: number }) {
+export function Stopkontak({ x, y }: { x: number; y: number }) {
   return <g transform={`translate(${x} ${y})`}>
     <rect x="-19" y="-18" width="38" height="36" rx="8" fill="#fff9eb" />
     <circle r="11" fill="#e8e2d7" stroke="#8b989d" />
