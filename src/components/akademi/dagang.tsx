@@ -383,7 +383,7 @@ function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh, hitungKo
     // laci kasir: badan kayu/warna wadah dunia, sekat-sekat pecahan di dalam, gagang di depan
     <div className={`relative flex flex-col rounded-[20px] bg-white ${penuh ? "flex-1" : "shrink-0"}`} style={{ boxShadow: bayangKartu(), padding: 10 * sk }}>
       <div className="mb-1.5 flex w-fit items-center gap-2 px-1" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 15 * sk, color: INK }}>
-        <Icon name="point_of_sale" size={Math.round(20 * sk)} /> Laci uang
+        <Icon name="point_of_sale" size={Math.round(20 * sk)} /> {hitungKoin ? (bahasa === "en" ? "Coin drawer" : "Laci koin") : "Laci uang"}
       </div>
       <div className={`flex flex-wrap content-center justify-center rounded-[14px] ${penuh ? "flex-1" : ""}`} style={{ gap: 8 * sk, padding: 6 * sk, background: "#dcecff" }}>
         {kelompok.map(([nilai, jumlah]) => {
@@ -956,23 +956,26 @@ function ModeLengkapi(c: Ctx) {
   const { tema, skala: sk, w } = usePanggung();
   const lebar = useLebar();
   const ringkas = c.paket.level === "TKB";
-  const tablet = ringkas && w >= 620;
+  const hitungKoin = ronde.priceLabel === "koin";
+  const kisiKoin = ringkas || (hitungKoin && totalKoin >= 20);
+  const tablet = kisiKoin && w >= 620;
   const jarakSlot = 6 * sk;
-  const lebarPapan = lebar ? (w - 16 * sk) * 0.53 : w;
-  // Kelompok lima tetap sejajar di HP. Ukuran memakai lebar papan setelah kedua bingkai.
-  const slotPx = ringkas && w > 0
-    ? Math.max(24, Math.min(tablet ? 72 : 56, Math.floor((lebarPapan - 36 * sk - 4 * jarakSlot) / 5)))
+  const lebarPapan = lebar ? (w - 16 * sk) * 1.15 / 2.15 : w;
+  const lebarIsiPapan = lebarPapan - 36 * sk;
+  // Ronde dua puluh memakai kelompok lima bila muat tanpa mengecilkan target ketuk di bawah 44 px.
+  const kolom = ringkas || !w ? 5 : Math.max(1, Math.min(5, Math.floor((lebarIsiPapan + jarakSlot) / (44 + jarakSlot))));
+  const slotPx = kisiKoin && w > 0
+    ? Math.max(ringkas ? 24 : 44, Math.min(tablet ? 72 : 56, Math.floor((lebarIsiPapan - (kolom - 1) * jarakSlot) / kolom)))
     : Math.round(56 * sk);
-  const ukuranIkon = ringkas ? Math.round(slotPx * 0.57) : 30 * sk;
-  const hitungKoin = c.paket.id === "sd1-mat-genap-sepuluh-koin";
+  const ukuranIkon = kisiKoin ? Math.round(slotPx * 0.57) : 30 * sk;
   const visualKoin: VisualSpec = { shape: "koin", color: "#f2c230" };
   const gambarKoin = ringkas || hitungKoin
-    ? <Benda v={visualKoin} size={ringkas ? ukuranIkon : Math.round(28 * sk)} />
+    ? <Benda v={visualKoin} size={kisiKoin ? ukuranIkon : Math.round(28 * sk)} />
     : "🪙";
   const labelKembali = (nilai: number) => hitungKoin ? (c.bahasa === "en" ? "Return one coin" : "Kembalikan satu koin") : labelKembalikanUang(nilai, c.bahasa);
 
   return (
-    <Kunci terkunci={terkunci} tengah={hitungKoin} kiri={<>
+    <Kunci terkunci={terkunci} tengah={hitungKoin && !ringkas} kiri={<>
       <Pembeli
         wajah={wajah} teksUcap={teks} hasil={hasil}
         balon={
@@ -990,12 +993,12 @@ function ModeLengkapi(c: Ctx) {
         }
         jawabanBenar={`Kurang ${ronde.target} koin`}
       />
-      <Lapak padat={hitungKoin || ringkas} style={ringkas ? { padding: 8 * sk } : undefined}>
-        <div className="flex flex-1 flex-col rounded-[18px]" style={{ padding: (ringkas ? 10 : 12) * sk, background: tema.panel, boxShadow: bayangKartu() }}>
+      <Lapak padat={hitungKoin || ringkas} style={kisiKoin ? { padding: 8 * sk } : undefined}>
+        <div className="flex flex-1 flex-col rounded-[18px]" style={{ padding: (kisiKoin ? 10 : 12) * sk, background: tema.panel, boxShadow: bayangKartu() }}>
           <div className="mb-2 flex items-center justify-between" style={{ ...Tebal, fontSize: 17 * sk }}><span>Harga: {totalKoin} koin</span><span className="rounded-full px-3" style={{ background: "#fff1c2", fontSize: 15 * sk }}>{uang.length} ditambah</span></div>
           <div
-            className={ringkas ? "grid justify-center" : "flex flex-1 flex-wrap content-center justify-center"}
-            style={{ gap: jarakSlot, gridTemplateColumns: ringkas ? `repeat(5, ${slotPx}px)` : undefined }}
+            className={kisiKoin ? "grid justify-center" : "flex flex-1 flex-wrap content-center justify-center"}
+            style={{ gap: jarakSlot, gridTemplateColumns: kisiKoin ? `repeat(${kolom}, ${slotPx}px)` : undefined }}
             aria-label="Deretan koin harga"
           >
             {Array.from({ length: totalKoin }, (_, k) => {
