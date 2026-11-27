@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-rumah",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -89,19 +89,28 @@
       "id": "senter",
       "labelKey": "i-senter",
       "bin": "sumber",
-      "emoji": "🔦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-senter"
+      }
     },
     {
       "id": "tv",
       "labelKey": "i-tv",
       "bin": "sumber",
-      "emoji": "📺"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-televisi-menyala"
+      }
     },
     {
       "id": "kompor",
       "labelKey": "i-kompor",
       "bin": "sumber",
-      "emoji": "🔥"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-kompor"
+      }
     },
     {
       "id": "lampumati",
@@ -116,25 +125,37 @@
       "id": "cermin",
       "labelKey": "i-cermin",
       "bin": "bukan",
-      "emoji": "🪞"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-cermin"
+      }
     },
     {
       "id": "sendok",
       "labelKey": "i-sendok",
       "bin": "bukan",
-      "emoji": "🥄"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-sendok"
+      }
     },
     {
       "id": "piring",
       "labelKey": "i-piring",
       "bin": "bukan",
-      "emoji": "🍽️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-piring"
+      }
     },
     {
       "id": "kaca",
       "labelKey": "i-kaca",
       "bin": "bukan",
-      "emoji": "🪟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-kaca"
+      }
     }
   ],
   "pilihan": []

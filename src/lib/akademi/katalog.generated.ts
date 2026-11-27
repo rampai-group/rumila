@@ -221383,7 +221383,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-sumber-cahaya-malam",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221457,7 +221457,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bintang",
         "labelKey": "i-bintang",
         "bin": "sumber",
-        "emoji": "⭐"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-bintang"
+        }
       },
       {
         "id": "kunang",
@@ -221472,13 +221475,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "unggun",
         "labelKey": "i-unggun",
         "bin": "sumber",
-        "emoji": "🔥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-unggun"
+        }
       },
       {
         "id": "kilat",
         "labelKey": "i-kilat",
         "bin": "sumber",
-        "emoji": "⚡"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-kilat"
+        }
       },
       {
         "id": "lampujalan",
@@ -221493,7 +221502,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "bulan",
         "labelKey": "i-bulan",
         "bin": "bukan",
-        "emoji": "🌕"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-bulan"
+        }
       },
       {
         "id": "reflektor",
@@ -221501,14 +221513,17 @@ export const PAKET_RAW: unknown[] = [
         "bin": "bukan",
         "adegan": {
           "jenis": "ilustrasi",
-          "varian": "qc-reflektor-sepeda"
+          "varian": "qc-jenjang-sd2-cahaya-reflektor"
         }
       },
       {
         "id": "genangan",
         "labelKey": "i-genangan",
         "bin": "bukan",
-        "emoji": "💧"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-genangan"
+        }
       },
       {
         "id": "matakucing",
@@ -221516,21 +221531,24 @@ export const PAKET_RAW: unknown[] = [
         "bin": "bukan",
         "adegan": {
           "jenis": "ilustrasi",
-          "varian": "qc-mata-kucing-terpantul"
+          "varian": "qc-jenjang-sd2-cahaya-mata-kucing"
         }
       },
       {
         "id": "rambu",
         "labelKey": "i-rambu",
         "bin": "bukan",
-        "emoji": "🚸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-rambu"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd2-sains-sumber-cahaya-rumah",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221619,19 +221637,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "senter",
         "labelKey": "i-senter",
         "bin": "sumber",
-        "emoji": "🔦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-senter"
+        }
       },
       {
         "id": "tv",
         "labelKey": "i-tv",
         "bin": "sumber",
-        "emoji": "📺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-televisi-menyala"
+        }
       },
       {
         "id": "kompor",
         "labelKey": "i-kompor",
         "bin": "sumber",
-        "emoji": "🔥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-kompor"
+        }
       },
       {
         "id": "lampumati",
@@ -221646,25 +221673,37 @@ export const PAKET_RAW: unknown[] = [
         "id": "cermin",
         "labelKey": "i-cermin",
         "bin": "bukan",
-        "emoji": "🪞"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-cermin"
+        }
       },
       {
         "id": "sendok",
         "labelKey": "i-sendok",
         "bin": "bukan",
-        "emoji": "🥄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-sendok"
+        }
       },
       {
         "id": "piring",
         "labelKey": "i-piring",
         "bin": "bukan",
-        "emoji": "🍽️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-piring"
+        }
       },
       {
         "id": "kaca",
         "labelKey": "i-kaca",
         "bin": "bukan",
-        "emoji": "🪟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-cahaya-kaca"
+        }
       }
     ],
     "pilihan": []
