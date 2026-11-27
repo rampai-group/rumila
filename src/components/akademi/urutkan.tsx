@@ -48,6 +48,7 @@ const tinggiKepala = (sk: number) => 58 * Math.min(sk, 1.3);
 /** Jarak antarbagian root (gap-3). */
 const GAP_ROOT = 12;
 const layarPendekUrutan = (w: number, h: number) => w > 0 && w < 335 && h > 0 && h < 490;
+const tabletTegakTumbuh = (w: number, h: number) => w >= 620 && h >= 680 && h > w * 0.9;
 
 /**
  * Lebar sel terbesar (≤ maks) untuk `n` sel di lebar `lebar`. Kalau `tinggi` diberikan dan ruangnya tinggi, sel dibagi
@@ -248,6 +249,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const hitungLegaHp = tataAngkaRingkas && paket.level === "SD1" && w > 0 && w < 620 && h >= 540;
   const tataTumbuhHewan = urutanTumbuhHewan(paket);
   const hewanHp = tataTumbuhHewan && w < 600;
+  const hewanTabletTegak = tataTumbuhHewan && tabletTegakTumbuh(w, h);
   const hewanHpPendek = hewanHp && h > 0 && h < 450;
   const tataRingkas = tataTunas || tataTumbuhan || tataAngkaRingkas || bandingPilot || tataTumbuhHewan;
   const inggris = t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
@@ -273,14 +275,16 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   // Deret angka pendek tetap satu baris agar urutan dibaca dari kiri ke kanan.
   const sel = tataAngkaRingkas
     ? selMuat(lebarDalam, n, 44, hitungLega ? 222 : 168, gap)
-    : tataTumbuhHewan ? selMuat(lebarDalam, n, 86 * sk, 182, gap, 0, undefined, n, hewanHp ? 2 : n)
+    : tataTumbuhHewan ? selMuat(lebarDalam, n, 86 * sk, hewanTabletTegak ? 320 : 182, gap, 0, undefined, n, hewanHp || hewanTabletTegak ? 2 : n)
     : selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? (tataTumbuhan ? 340 : 300) : 230) * sk, gap, tinggi * 0.5 - 2 * pad, 0.75, 2, kolomMaks);
   const rasio = tegak ? 1.6 : 1.15;
   const isiLebar = tegak ? 0.68 : 0.6;
   // Di HP pendek, slot bernomor berjajar supaya kartu sumber tetap bisa dibaca dalam dua kolom.
   const barisSlot = layarPendek || bandingPilot || tataTumbuhHewan ? 1 : sel.baris;
   const jarakSlot = layarPendek || hewanHp ? 6 : gap;
-  const lebarSlot = bandingPilot ? Math.floor((w - 24 - gap * (n - 1)) / n) : layarPendek || hewanHp ? Math.floor((w - 18 - jarakSlot * (n - 1)) / n) : sel.s;
+  const lebarSlot = bandingPilot ? Math.floor((w - 24 - gap * (n - 1)) / n)
+    : hewanTabletTegak ? Math.min(215, Math.floor((lebarDalam - jarakSlot * (n - 1)) / n))
+    : layarPendek || hewanHp ? Math.floor((w - 18 - jarakSlot * (n - 1)) / n) : sel.s;
   const selaBarisSlot = gap * (barisSlot - 1);
   const tinggiSlot = bandingPilot ? Math.min(w < 600 ? 84 : 150, lebarSlot * 0.85) : hitungLega ? batas(148, lebarSlot * 0.9, 200)
     : hitungLegaHp ? batas(92, lebarSlot, 138)
@@ -304,6 +308,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const lebarKartu = bandingPilot ? (Math.min(w, 920) - 32 - gap) / 2 : tataTumbuhan && sisa.length === 1 ? Math.min(Math.max(100, w - 32), Math.max(sel.s, w >= 600 ? 330 : 162)) : sel.s;
   const sisaTinggi = tinggi - tinggiSlot * barisSlot - selaBarisSlot;
   const tinggiMinKartu = bandingPilot ? Math.max(110, Math.min(w < 600 ? 200 : 250, (h - tinggiSlot - 200 - 3 * gap) / Math.ceil(n / 2))) : tataAngkaRingkas ? tinggiSlot
+    : hewanTabletTegak ? batas(172, (h - tinggiSlot - 112 - gap) / sel.baris, 252)
     : tataTumbuhHewan ? batas(104, lebarKartu * 0.92, 174)
     : tataTumbuhan
     ? batas(layarPendek ? 70 : 86, Math.min((sisaTinggi - gap * (barisSumber - 1)) / barisSumber, lebarKartu * 1.24), w >= 600 ? 340 : layarPendek ? 162 : 226)
@@ -315,7 +320,8 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     ? Math.min(tinggiMinKartu * (layarPendek ? 0.56 : 0.64), lebarKartu * 0.76, 186)
     : batas((padat || sel.baris >= 3 ? 36 : base + 8) * sk, Math.min(tinggiKartu * (padat ? 0.24 : 0.5), sel.s * (tegak ? 0.68 : 0.58)), 160)) / skalaMaks;
   // Label organ memakai lebar kartu sehingga gambar sumber dapat mendekati ukuran gambar di slot.
-  const ukuranSumber = tataTumbuhHewan ? Math.min(lebarKartu / 1.6, tinggiMinKartu - (hewanHpPendek ? 59 : hewanHp ? 46 : 58), 116)
+  const ukuranSumber = hewanTabletTegak ? Math.min((lebarKartu - 20) / skalaMaks, tinggiMinKartu - 60, 196)
+    : tataTumbuhHewan ? Math.min(lebarKartu / 1.6, tinggiMinKartu - (hewanHpPendek ? 59 : hewanHp ? 46 : 58), 116)
     : tataPencernaan ? Math.max(ukuranKartu, Math.min(ukuran, 48 * sk)) : ukuranKartu;
   // Tugas membandingkan panjang memakai skala gambar yang sama sebelum dan sesudah dipindahkan.
   const ukuranPanjang = bandingPanjang ? Math.min(
@@ -324,7 +330,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     tinggiMinKartu - (bandingRingkas ? 34 : 48) * sk,
     150,
   ) : undefined;
-  const lebarRak = bandingPilot ? Math.min(w, 920) : sel.blok ? sel.blok + 8 * sk : undefined;
+  const lebarRak = bandingPilot || hewanTabletTegak ? Math.min(w, 920) : sel.blok ? sel.blok + 8 * sk : undefined;
 
   const judul = <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />;
   const petunjuk = tataRingkas && !tataTumbuhHewan && (
@@ -491,6 +497,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const n = urutan.length;
   const { tema, skala: sk, w, h } = usePanggung();
   const hewanHp = tataTumbuhHewan && w < 600;
+  const hewanTabletTegak = tataTumbuhHewan && tabletTegakTumbuh(w, h);
   const layarPendek = kartuTumbuhan && layarPendekUrutan(w, h);
   const tumbuhTablet = tanamanTumbuh && n === 4 && w >= 600 && h > w * 0.9;
   const aksiMenetap = !tataTumbuhan;
@@ -511,18 +518,20 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const duaKolom = layarPendek || tumbuhTablet;
   const sel = tataGerbong
     ? selMuat(lebarDalam, n, 36, 174, gap)
-    : tataTumbuhHewan ? selMuat(lebarDalam, n, 86 * sk, 182, gap, 0, undefined, n, hewanHp ? 2 : n)
+    : tataTumbuhHewan ? selMuat(lebarDalam, n, 86 * sk, hewanTabletTegak ? 320 : 182, gap, 0, undefined, n, hewanHp || hewanTabletTegak ? 2 : n)
     : selMuat(lebarDalam, n, (teksSaja && kataPanjang > 6 ? 132 : 84) * sk, (w >= 600 ? 300 : 240) * sk,
       gap, tinggi, undefined, tumbuhTablet ? 2 : n, duaKolom ? 2 : n);
   const tegak = w > 0 && h > w;
   const rasioKartu = tumbuhTablet ? 1.05 : tegak ? 1.9 : 1.2;
   const tinggiKartu = tataGerbong ? batas(68, sel.s * 0.78, 130)
+    : hewanTabletTegak ? batas(194, Math.min(sel.s * 0.94, (h - 176 - gap * (sel.baris - 1)) / sel.baris), 286)
     : tataTumbuhHewan ? batas(104, sel.s * 1.06, 180)
     : batas((layarPendek ? 82 : 96) * sk, Math.min(sel.s * rasioKartu, (tinggi - gap * (sel.baris - 1)) / sel.baris), 420);
   const skalaMaks = Math.max(1, ...urutan.map((id) => skalaLebar(visual(langkah(id), t))));
   // Batas gambar mengikuti tinggi dan lebar kartu, dengan ruang untuk label yang panjang.
   const kalimatPanjang = sel.baris >= 3 || urutan.some((id) => t(langkah(id).labelKey).length > 50);
   const ukuran = (tataGerbong ? Math.min(tinggiKartu * 0.7, sel.s * 0.72)
+    : hewanTabletTegak ? Math.min(sel.s - 20, (tinggiKartu - 96) * skalaMaks, 300)
     : tataTumbuhHewan ? Math.min(sel.s * 0.94, tinggiKartu - (hewanHp ? 42 : 54), 180)
     : tumbuhTablet ? Math.min(tinggiKartu * 0.83, sel.s * 0.88)
     : tanamanTumbuh && layarPendek ? Math.min(tinggiKartu * 0.67, sel.s * 0.8)
