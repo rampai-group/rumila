@@ -340085,7 +340085,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-pola-pengamatan-kebun",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -340106,7 +340106,7 @@ export const PAKET_RAW: unknown[] = [
         "telur-b": "kulit telur mulai retak",
         "telur-c": "anak ayam keluar, bulunya basah",
         "telur-d": "anak ayam berbulu kering dan berjalan",
-        "t-bulan": "Bulan diamati tiap beberapa malam",
+        "t-bulan": "Bulan diamati setelah Bulan baru",
         "bulan-a": "Bulan sabit tipis",
         "bulan-b": "Bulan separuh",
         "bulan-c": "Bulan hampir bulat",
@@ -340160,7 +340160,7 @@ export const PAKET_RAW: unknown[] = [
         "telur-b": "the shell starts to crack",
         "telur-c": "the chick comes out, its feathers wet",
         "telur-d": "the chick is dry, fluffy and walking",
-        "t-bulan": "The Moon watched every few nights",
+        "t-bulan": "The Moon observed after the new moon",
         "bulan-a": "a thin crescent Moon",
         "bulan-b": "a half Moon",
         "bulan-c": "an almost round Moon",
@@ -340224,22 +340224,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "jagung-a",
-            "emoji": "🟫"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-jagung-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "jagung-b",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-jagung-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "jagung-c",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-jagung-3"
+            }
           },
           {
             "id": "d",
             "labelKey": "jagung-d",
-            "emoji": "🌽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-jagung-4"
+            }
           }
         ]
       },
@@ -340250,26 +340262,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "telur-a",
-            "emoji": "🥚"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-telur-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "telur-b",
-            "emoji": "🥚",
             "adegan": {
-              "jenis": "tanda",
-              "tanda": "⚡"
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-telur-2"
             }
           },
           {
             "id": "c",
             "labelKey": "telur-c",
-            "emoji": "🐣"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-telur-3"
+            }
           },
           {
             "id": "d",
             "labelKey": "telur-d",
-            "emoji": "🐥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-telur-4"
+            }
           }
         ]
       },
@@ -340432,24 +340452,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "kupu-a",
-            "emoji": "🍃"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kupu-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "kupu-b",
-            "emoji": "🐛"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kupu-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "kupu-c",
-            "shape": "rect",
-            "color": "#8d6e63",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kupu-3"
+            }
           },
           {
             "id": "d",
             "labelKey": "kupu-d",
-            "emoji": "🦋"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kupu-4"
+            }
           }
         ]
       },
@@ -340460,26 +340490,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "bungamatahari-a",
-            "emoji": "🌱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-bungamatahari-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "bungamatahari-b",
-            "emoji": "🌿"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-bungamatahari-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "bungamatahari-c",
-            "emoji": "🌿",
             "adegan": {
-              "jenis": "tanda",
-              "tanda": "🟢"
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-bungamatahari-3"
             }
           },
           {
             "id": "d",
             "labelKey": "bungamatahari-d",
-            "emoji": "🌻"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-bungamatahari-4"
+            }
           }
         ]
       },
@@ -340571,7 +340609,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-susun-pola-pengamatan",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -340708,26 +340746,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "kecambah-a",
-            "scale": 0.6,
-            "emoji": "🥜"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kecambah-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "kecambah-b",
-            "emoji": "🌱",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kecambah-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "kecambah-c",
-            "emoji": "🌱",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kecambah-3"
+            }
           },
           {
             "id": "d",
             "labelKey": "kecambah-d",
-            "emoji": "🪴",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-kecambah-4"
+            }
           }
         ]
       },
@@ -340738,26 +340784,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "es-a",
-            "emoji": "🧊",
-            "scale": 1.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "es-b",
-            "emoji": "🧊",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "es-c",
-            "emoji": "🧊",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-3"
+            }
           },
           {
             "id": "d",
             "labelKey": "es-d",
-            "emoji": "💧",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-4"
+            }
           }
         ]
       },
@@ -340768,20 +340822,26 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "lilin-a",
-            "emoji": "🕯️",
-            "scale": 1.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-lilin-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "lilin-b",
-            "emoji": "🕯️",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-lilin-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "lilin-c",
-            "emoji": "🕯️",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-lilin-3"
+            }
           }
         ]
       },
@@ -340792,26 +340852,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "genangan-a",
-            "emoji": "💧",
-            "scale": 1.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-genangan-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "genangan-b",
-            "emoji": "💧",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-genangan-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "genangan-c",
-            "emoji": "🟫",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-genangan-3"
+            }
           },
           {
             "id": "d",
             "labelKey": "genangan-d",
-            "emoji": "🟤",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-genangan-4"
+            }
           }
         ]
       },
@@ -340822,25 +340890,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "a",
             "labelKey": "pisang-a",
-            "emoji": "🍌",
-            "color": "#9ccc65"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pisang-1"
+            }
           },
           {
             "id": "b",
             "labelKey": "pisang-b",
-            "emoji": "🍌"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pisang-2"
+            }
           },
           {
             "id": "c",
             "labelKey": "pisang-c",
-            "emoji": "🍌",
-            "color": "#d4a017"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pisang-3"
+            }
           },
           {
             "id": "d",
             "labelKey": "pisang-d",
-            "emoji": "🍌",
-            "color": "#6d4c41"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pisang-4"
+            }
           }
         ]
       },
@@ -340851,26 +340928,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "balon-1",
             "labelKey": "balon-1",
-            "emoji": "🎈",
-            "scale": 1.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-balon-1"
+            }
           },
           {
             "id": "balon-2",
             "labelKey": "balon-2",
-            "emoji": "🎈",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-balon-2"
+            }
           },
           {
             "id": "balon-3",
             "labelKey": "balon-3",
-            "emoji": "🎈",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-balon-3"
+            }
           },
           {
             "id": "balon-4",
             "labelKey": "balon-4",
-            "emoji": "🎈",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-balon-4"
+            }
           }
         ]
       },
@@ -340881,26 +340966,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "sabun-1",
             "labelKey": "sabun-1",
-            "emoji": "🧼",
-            "scale": 1.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-sabun-1"
+            }
           },
           {
             "id": "sabun-2",
             "labelKey": "sabun-2",
-            "emoji": "🧼",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-sabun-2"
+            }
           },
           {
             "id": "sabun-3",
             "labelKey": "sabun-3",
-            "emoji": "🧼",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-sabun-3"
+            }
           },
           {
             "id": "sabun-4",
             "labelKey": "sabun-4",
-            "emoji": "🧼",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-sabun-4"
+            }
           }
         ]
       },
@@ -340911,26 +341004,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "pensil-1",
             "labelKey": "pensil-1",
-            "emoji": "✏️",
-            "scale": 1.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pensil-1"
+            }
           },
           {
             "id": "pensil-2",
             "labelKey": "pensil-2",
-            "emoji": "✏️",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pensil-2"
+            }
           },
           {
             "id": "pensil-3",
             "labelKey": "pensil-3",
-            "emoji": "✏️",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pensil-3"
+            }
           },
           {
             "id": "pensil-4",
             "labelKey": "pensil-4",
-            "emoji": "✏️",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-pensil-4"
+            }
           }
         ]
       },
@@ -340941,26 +341042,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "es-krim-1",
             "labelKey": "es-krim-1",
-            "emoji": "🍦",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-krim-1"
+            }
           },
           {
             "id": "es-krim-2",
             "labelKey": "es-krim-2",
-            "emoji": "🍦",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-krim-2"
+            }
           },
           {
             "id": "es-krim-3",
             "labelKey": "es-krim-3",
-            "emoji": "🍦",
-            "scale": 0.7
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-krim-3"
+            }
           },
           {
             "id": "es-krim-4",
             "labelKey": "es-krim-4",
-            "emoji": "💧",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-es-krim-4"
+            }
           }
         ]
       },
@@ -340971,26 +341080,34 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "mawar-1",
             "labelKey": "mawar-1",
-            "emoji": "🌹",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-mawar-1"
+            }
           },
           {
             "id": "mawar-2",
             "labelKey": "mawar-2",
-            "emoji": "🌹",
-            "scale": 0.85
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-mawar-2"
+            }
           },
           {
             "id": "mawar-3",
             "labelKey": "mawar-3",
-            "emoji": "🌹",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-mawar-3"
+            }
           },
           {
             "id": "mawar-4",
             "labelKey": "mawar-4",
-            "emoji": "🥀",
-            "scale": 1
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pengamatan-mawar-4"
+            }
           }
         ]
       }

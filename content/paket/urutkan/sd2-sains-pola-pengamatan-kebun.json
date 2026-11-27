@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-pola-pengamatan-kebun",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "telur-b": "kulit telur mulai retak",
       "telur-c": "anak ayam keluar, bulunya basah",
       "telur-d": "anak ayam berbulu kering dan berjalan",
-      "t-bulan": "Bulan diamati tiap beberapa malam",
+      "t-bulan": "Bulan diamati setelah Bulan baru",
       "bulan-a": "Bulan sabit tipis",
       "bulan-b": "Bulan separuh",
       "bulan-c": "Bulan hampir bulat",
@@ -75,7 +75,7 @@
       "telur-b": "the shell starts to crack",
       "telur-c": "the chick comes out, its feathers wet",
       "telur-d": "the chick is dry, fluffy and walking",
-      "t-bulan": "The Moon watched every few nights",
+      "t-bulan": "The Moon observed after the new moon",
       "bulan-a": "a thin crescent Moon",
       "bulan-b": "a half Moon",
       "bulan-c": "an almost round Moon",
@@ -139,22 +139,34 @@
         {
           "id": "a",
           "labelKey": "jagung-a",
-          "emoji": "🟫"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-jagung-1"
+          }
         },
         {
           "id": "b",
           "labelKey": "jagung-b",
-          "emoji": "🌱"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-jagung-2"
+          }
         },
         {
           "id": "c",
           "labelKey": "jagung-c",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-jagung-3"
+          }
         },
         {
           "id": "d",
           "labelKey": "jagung-d",
-          "emoji": "🌽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-jagung-4"
+          }
         }
       ]
     },
@@ -165,26 +177,34 @@
         {
           "id": "a",
           "labelKey": "telur-a",
-          "emoji": "🥚"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-telur-1"
+          }
         },
         {
           "id": "b",
           "labelKey": "telur-b",
-          "emoji": "🥚",
           "adegan": {
-            "jenis": "tanda",
-            "tanda": "⚡"
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-telur-2"
           }
         },
         {
           "id": "c",
           "labelKey": "telur-c",
-          "emoji": "🐣"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-telur-3"
+          }
         },
         {
           "id": "d",
           "labelKey": "telur-d",
-          "emoji": "🐥"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-telur-4"
+          }
         }
       ]
     },
@@ -347,24 +367,34 @@
         {
           "id": "a",
           "labelKey": "kupu-a",
-          "emoji": "🍃"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-kupu-1"
+          }
         },
         {
           "id": "b",
           "labelKey": "kupu-b",
-          "emoji": "🐛"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-kupu-2"
+          }
         },
         {
           "id": "c",
           "labelKey": "kupu-c",
-          "shape": "rect",
-          "color": "#8d6e63",
-          "scale": 0.8
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-kupu-3"
+          }
         },
         {
           "id": "d",
           "labelKey": "kupu-d",
-          "emoji": "🦋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-kupu-4"
+          }
         }
       ]
     },
@@ -375,26 +405,34 @@
         {
           "id": "a",
           "labelKey": "bungamatahari-a",
-          "emoji": "🌱"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-bungamatahari-1"
+          }
         },
         {
           "id": "b",
           "labelKey": "bungamatahari-b",
-          "emoji": "🌿"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-bungamatahari-2"
+          }
         },
         {
           "id": "c",
           "labelKey": "bungamatahari-c",
-          "emoji": "🌿",
           "adegan": {
-            "jenis": "tanda",
-            "tanda": "🟢"
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-bungamatahari-3"
           }
         },
         {
           "id": "d",
           "labelKey": "bungamatahari-d",
-          "emoji": "🌻"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-pengamatan-bungamatahari-4"
+          }
         }
       ]
     },
