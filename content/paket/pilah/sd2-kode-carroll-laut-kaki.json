@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-carroll-laut-kaki",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kotak Laut dan Kaki",
-      "instruksi": "Jawab dua pertanyaan untuk tiap hewan: hidup di laut? punya kaki? Lalu taruh di kotak yang cocok.",
+      "instruksi": "Hidup di laut atau darat? Punya kaki? Pilih kotaknya.",
       "carroll-baris-1": "Laut",
       "carroll-baris-2": "Darat",
       "carroll-kolom-1": "Berkaki",
@@ -19,8 +19,8 @@
       "bin-laut-tanpa": "laut · tanpa kaki",
       "bin-darat-kaki": "darat · berkaki",
       "bin-darat-tanpa": "darat · tanpa kaki",
-      "i-kepiting": "kepiting",
-      "i-lobster": "lobster",
+      "i-kepiting": "kepiting laut",
+      "i-lobster": "lobster laut",
       "i-udang": "udang laut",
       "i-ikan": "ikan laut",
       "i-lumba": "lumba-lumba",
@@ -30,12 +30,12 @@
       "i-kucing": "kucing",
       "i-ayam": "ayam",
       "i-gajah": "gajah",
-      "i-ular": "ular",
+      "i-ular": "ular kobra",
       "i-cacing": "cacing tanah"
     },
     "en": {
       "judul": "Sea and Legs Boxes",
-      "instruksi": "Answer two questions for each animal: does it live in the sea? does it have legs? Then put it in the right box.",
+      "instruksi": "Sea or land? With legs or without? Pick a box.",
       "carroll-baris-1": "Sea",
       "carroll-baris-2": "Land",
       "carroll-kolom-1": "Has legs",
@@ -44,8 +44,8 @@
       "bin-laut-tanpa": "sea · no legs",
       "bin-darat-kaki": "land · has legs",
       "bin-darat-tanpa": "land · no legs",
-      "i-kepiting": "crab",
-      "i-lobster": "lobster",
+      "i-kepiting": "sea crab",
+      "i-lobster": "marine lobster",
       "i-udang": "sea shrimp",
       "i-ikan": "sea fish",
       "i-lumba": "dolphin",
@@ -55,7 +55,7 @@
       "i-kucing": "cat",
       "i-ayam": "chicken",
       "i-gajah": "elephant",
-      "i-ular": "snake",
+      "i-ular": "cobra",
       "i-cacing": "earthworm"
     }
   },
@@ -82,8 +82,14 @@
   "mode": "kelompok",
   "pilihan": [],
   "carroll": {
-    "baris": ["carroll-baris-1", "carroll-baris-2"],
-    "kolom": ["carroll-kolom-1", "carroll-kolom-2"]
+    "baris": [
+      "carroll-baris-1",
+      "carroll-baris-2"
+    ],
+    "kolom": [
+      "carroll-kolom-1",
+      "carroll-kolom-2"
+    ]
   },
   "bins": [
     {
@@ -108,7 +114,10 @@
       "id": "kepiting",
       "labelKey": "i-kepiting",
       "bin": "laut-kaki",
-      "emoji": "🦀"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-carroll-kepiting-laut"
+      }
     },
     {
       "id": "lobster",
@@ -174,7 +183,10 @@
       "id": "ular",
       "labelKey": "i-ular",
       "bin": "darat-tanpa",
-      "emoji": "🐍"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-carroll-ular-kobra"
+      }
     },
     {
       "id": "cacing",
