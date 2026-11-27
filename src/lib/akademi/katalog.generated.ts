@@ -210914,7 +210914,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-mat-cari-segi-banyak-lab",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -210924,51 +210924,79 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Cari Segi Banyaknya",
-        "instruksi": "Hitung sisi lurus setiap bangun, walaupun bangunnya miring atau terbalik. Sentuh bangun yang jumlah sisinya diminta.",
-        "i-segitiga-merah": "segitiga merah",
-        "i-rambu-segitiga": "rambu segitiga",
-        "i-segitiga-biru": "segitiga biru",
-        "i-segitiga-hijau-kecil": "segitiga hijau kecil",
-        "i-persegi-biru": "persegi biru",
-        "i-persegi-hijau": "persegi hijau",
-        "i-belah-ketupat-oranye": "belah ketupat oranye",
-        "i-persegi-panjang-kuning": "persegi panjang kuning",
-        "i-segi-lima-penuh": "segi lima penuh",
-        "i-segi-lima-kosong": "segi lima kosong",
-        "i-segi-enam-penuh": "segi enam penuh",
-        "i-segi-enam-kosong": "segi enam kosong",
-        "i-segi-enam-tidur": "segi enam tidur",
-        "i-rambu-berhenti": "rambu berhenti",
+        "instruksi": "Hitung sisi di tepi luar. Pilih bangun sesuai jumlah sisinya.",
+        "i-segitiga-merah": "merah penuh",
+        "i-rambu-segitiga": "kuning bergaris",
+        "i-segitiga-biru": "biru miring",
+        "i-segitiga-hijau-kecil": "hijau kecil",
+        "i-persegi-biru": "biru penuh",
+        "i-persegi-hijau": "hijau penuh",
+        "i-belah-ketupat-oranye": "jingga miring",
+        "i-persegi-panjang-kuning": "kuning melebar",
+        "i-segi-lima-penuh": "ungu penuh",
+        "i-segi-lima-kosong": "ungu bergaris",
+        "i-segi-enam-penuh": "biru tua penuh",
+        "i-segi-enam-kosong": "toska bergaris",
+        "i-segi-enam-tidur": "jingga mendatar",
+        "i-rambu-berhenti": "merah tua penuh",
         "t-3-sisi": "Mana yang punya 3 sisi?",
         "t-4-sisi": "Mana yang punya 4 sisi?",
         "t-5-sisi": "Mana yang punya 5 sisi?",
         "t-6-sisi": "Mana yang punya 6 sisi?",
         "t-8-sisi": "Mana yang punya 8 sisi?",
-        "b-pilihan": "pilihan"
+        "b-pilihan": "pilihan",
+        "i-segitiga-merah-tepi": "Merah penuh. Susuri tepi luar dengan bergerak serong ke kanan bawah, ke kiri, lalu serong ke kanan atas kembali ke awal.",
+        "i-rambu-segitiga-tepi": "Kuning bergaris. Susuri tepi luar dengan bergerak serong ke kanan bawah, ke kiri, lalu serong ke kanan atas kembali ke awal.",
+        "i-segitiga-biru-tepi": "Biru miring. Susuri tepi luar dengan bergerak serong ke kanan bawah, serong ke kiri bawah, lalu serong ke kanan atas kembali ke awal.",
+        "i-segitiga-hijau-kecil-tepi": "Hijau kecil. Susuri tepi luar dengan bergerak serong ke kanan bawah, ke kiri, lalu serong ke kanan atas kembali ke awal.",
+        "i-persegi-biru-tepi": "Biru penuh. Susuri tepi luar dengan bergerak ke kanan, ke bawah, ke kiri, lalu ke atas kembali ke awal.",
+        "i-persegi-hijau-tepi": "Hijau penuh. Susuri tepi luar dengan bergerak ke kanan, ke bawah, ke kiri, lalu ke atas kembali ke awal.",
+        "i-belah-ketupat-oranye-tepi": "Jingga miring. Susuri tepi luar dengan bergerak serong ke kanan bawah, serong ke kiri bawah, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-persegi-panjang-kuning-tepi": "Kuning melebar. Susuri tepi luar dengan bergerak ke kanan, ke bawah, ke kiri, lalu ke atas kembali ke awal.",
+        "i-segi-lima-penuh-tepi": "Ungu penuh. Susuri tepi luar dengan bergerak serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-lima-kosong-tepi": "Ungu bergaris. Susuri tepi luar dengan bergerak serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-enam-penuh-tepi": "Biru tua penuh. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-enam-kosong-tepi": "Toska bergaris. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-enam-tidur-tepi": "Jingga mendatar. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-rambu-berhenti-tepi": "Merah tua penuh. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, ke bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, ke atas, lalu serong ke kanan atas kembali ke awal."
       },
       "en": {
         "judul": "Find the Polygon",
-        "instruksi": "Count the straight sides of each shape, even if it is tilted or upside down. Tap the shape with the number of sides asked for.",
-        "i-segitiga-merah": "red triangle",
-        "i-rambu-segitiga": "triangle sign",
-        "i-segitiga-biru": "blue triangle",
-        "i-segitiga-hijau-kecil": "small green triangle",
-        "i-persegi-biru": "blue square",
-        "i-persegi-hijau": "green square",
-        "i-belah-ketupat-oranye": "orange rhombus",
-        "i-persegi-panjang-kuning": "yellow rectangle",
-        "i-segi-lima-penuh": "solid pentagon",
-        "i-segi-lima-kosong": "outline pentagon",
-        "i-segi-enam-penuh": "solid hexagon",
-        "i-segi-enam-kosong": "outline hexagon",
-        "i-segi-enam-tidur": "flat hexagon",
-        "i-rambu-berhenti": "stop sign",
+        "instruksi": "Count the sides around the outside. Pick the shape with the number of sides asked for.",
+        "i-segitiga-merah": "solid red",
+        "i-rambu-segitiga": "yellow outline",
+        "i-segitiga-biru": "tilted blue",
+        "i-segitiga-hijau-kecil": "small green",
+        "i-persegi-biru": "solid blue",
+        "i-persegi-hijau": "solid green",
+        "i-belah-ketupat-oranye": "tilted orange",
+        "i-persegi-panjang-kuning": "wide yellow",
+        "i-segi-lima-penuh": "solid purple",
+        "i-segi-lima-kosong": "purple outline",
+        "i-segi-enam-penuh": "solid dark blue",
+        "i-segi-enam-kosong": "teal outline",
+        "i-segi-enam-tidur": "flat orange",
+        "i-rambu-berhenti": "solid dark red",
         "t-3-sisi": "Which one has 3 sides?",
         "t-4-sisi": "Which one has 4 sides?",
         "t-5-sisi": "Which one has 5 sides?",
         "t-6-sisi": "Which one has 6 sides?",
         "t-8-sisi": "Which one has 8 sides?",
-        "b-pilihan": "choices"
+        "b-pilihan": "choices",
+        "i-segitiga-merah-tepi": "Solid red. Trace the outside edge by moving down-right, left, then up-right back to the start.",
+        "i-rambu-segitiga-tepi": "Yellow outline. Trace the outside edge by moving down-right, left, then up-right back to the start.",
+        "i-segitiga-biru-tepi": "Tilted blue. Trace the outside edge by moving down-right, down-left, then up-right back to the start.",
+        "i-segitiga-hijau-kecil-tepi": "Small green. Trace the outside edge by moving down-right, left, then up-right back to the start.",
+        "i-persegi-biru-tepi": "Solid blue. Trace the outside edge by moving right, down, left, then up back to the start.",
+        "i-persegi-hijau-tepi": "Solid green. Trace the outside edge by moving right, down, left, then up back to the start.",
+        "i-belah-ketupat-oranye-tepi": "Tilted orange. Trace the outside edge by moving down-right, down-left, up-left, then up-right back to the start.",
+        "i-persegi-panjang-kuning-tepi": "Wide yellow. Trace the outside edge by moving right, down, left, then up back to the start.",
+        "i-segi-lima-penuh-tepi": "Solid purple. Trace the outside edge by moving down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-lima-kosong-tepi": "Purple outline. Trace the outside edge by moving down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-enam-penuh-tepi": "Solid dark blue. Trace the outside edge by moving right, down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-enam-kosong-tepi": "Teal outline. Trace the outside edge by moving right, down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-enam-tidur-tepi": "Flat orange. Trace the outside edge by moving right, down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-rambu-berhenti-tepi": "Solid dark red. Trace the outside edge by moving right, down-right, down, down-left, left, up-left, up, then up-right back to the start."
       }
     },
     "knobs": {},
@@ -210988,91 +211016,141 @@ export const PAKET_RAW: unknown[] = [
         "id": "segitiga-merah",
         "labelKey": "i-segitiga-merah",
         "bin": "pilihan",
-        "emoji": "🔺"
+        "altKey": "i-segitiga-merah-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-merah-penuh"
+        }
       },
       {
         "id": "rambu-segitiga",
         "labelKey": "i-rambu-segitiga",
         "bin": "pilihan",
-        "emoji": "⚠️"
+        "altKey": "i-rambu-segitiga-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-kuning-bergaris"
+        }
       },
       {
         "id": "segitiga-biru",
         "labelKey": "i-segitiga-biru",
         "bin": "pilihan",
-        "shape": "triangle",
-        "color": "#3f7fe0"
+        "altKey": "i-segitiga-biru-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-biru-miring"
+        }
       },
       {
         "id": "segitiga-hijau-kecil",
         "labelKey": "i-segitiga-hijau-kecil",
         "bin": "pilihan",
-        "shape": "triangle",
-        "color": "#2bb673",
-        "scale": 0.7
+        "altKey": "i-segitiga-hijau-kecil-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-hijau-kecil"
+        }
       },
       {
         "id": "persegi-biru",
         "labelKey": "i-persegi-biru",
         "bin": "pilihan",
-        "emoji": "🟦"
+        "altKey": "i-persegi-biru-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-biru-penuh"
+        }
       },
       {
         "id": "persegi-hijau",
         "labelKey": "i-persegi-hijau",
         "bin": "pilihan",
-        "emoji": "🟩"
+        "altKey": "i-persegi-hijau-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-hijau-penuh"
+        }
       },
       {
         "id": "belah-ketupat-oranye",
         "labelKey": "i-belah-ketupat-oranye",
         "bin": "pilihan",
-        "shape": "belah-ketupat",
-        "color": "#fb8c00"
+        "altKey": "i-belah-ketupat-oranye-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-jingga-miring"
+        }
       },
       {
         "id": "persegi-panjang-kuning",
         "labelKey": "i-persegi-panjang-kuning",
         "bin": "pilihan",
-        "shape": "rect",
-        "color": "#ffbf00",
-        "width": 2
+        "altKey": "i-persegi-panjang-kuning-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-kuning-melebar"
+        }
       },
       {
         "id": "segi-lima-penuh",
         "labelKey": "i-segi-lima-penuh",
         "bin": "pilihan",
-        "emoji": "⬟"
+        "altKey": "i-segi-lima-penuh-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-ungu-penuh"
+        }
       },
       {
         "id": "segi-lima-kosong",
         "labelKey": "i-segi-lima-kosong",
         "bin": "pilihan",
-        "emoji": "⬠"
+        "altKey": "i-segi-lima-kosong-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-ungu-bergaris"
+        }
       },
       {
         "id": "segi-enam-penuh",
         "labelKey": "i-segi-enam-penuh",
         "bin": "pilihan",
-        "emoji": "⬢"
+        "altKey": "i-segi-enam-penuh-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-biru-tua"
+        }
       },
       {
         "id": "segi-enam-kosong",
         "labelKey": "i-segi-enam-kosong",
         "bin": "pilihan",
-        "emoji": "⬡"
+        "altKey": "i-segi-enam-kosong-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-toska-bergaris"
+        }
       },
       {
         "id": "segi-enam-tidur",
         "labelKey": "i-segi-enam-tidur",
         "bin": "pilihan",
-        "emoji": "⬣"
+        "altKey": "i-segi-enam-tidur-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-jingga-mendatar"
+        }
       },
       {
         "id": "rambu-berhenti",
         "labelKey": "i-rambu-berhenti",
         "bin": "pilihan",
-        "emoji": "🛑"
+        "altKey": "i-rambu-berhenti-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-merah-tua"
+        }
       }
     ],
     "pilihan": [
@@ -215077,7 +215155,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-mat-pilah-segi-banyak",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -215087,45 +215165,69 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Hitung Sisi Segi Banyak",
-        "instruksi": "Hitung sisi lurus tiap bangun, walau posisinya miring. Taruh di rak jumlah sisinya.",
+        "instruksi": "Hitung sisi di tepi luar. Taruh di rak jumlah sisinya.",
         "b-3-sisi": "3 sisi",
         "b-4-sisi": "4 sisi",
         "b-5-sisi": "5 sisi",
         "b-6-sisi": "6 sisi",
         "b-8-sisi": "8 sisi",
-        "i-segitiga": "segitiga",
-        "i-segitiga-terbalik": "segitiga terbalik",
-        "i-penggaris-segitiga": "penggaris segitiga",
-        "i-persegi": "persegi",
-        "i-persegi-panjang": "persegi panjang",
-        "i-belah-ketupat": "belah ketupat",
-        "i-segi-lima": "segi lima",
-        "i-segi-lima-bergaris": "segi lima bergaris",
-        "i-segi-enam": "segi enam",
-        "i-segi-enam-bergaris": "segi enam bergaris",
-        "i-segi-enam-mendatar": "segi enam mendatar",
-        "i-rambu-berhenti": "rambu berhenti"
+        "i-segitiga": "merah penuh",
+        "i-segitiga-terbalik": "merah terbalik",
+        "i-penggaris-segitiga": "biru muda penuh",
+        "i-persegi": "biru penuh",
+        "i-persegi-panjang": "kuning melebar",
+        "i-belah-ketupat": "jingga miring",
+        "i-segi-lima": "ungu penuh",
+        "i-segi-lima-bergaris": "ungu bergaris",
+        "i-segi-enam": "biru tua penuh",
+        "i-segi-enam-bergaris": "toska bergaris",
+        "i-segi-enam-mendatar": "jingga mendatar",
+        "i-rambu-berhenti": "merah tua penuh",
+        "i-segitiga-tepi": "Merah penuh. Susuri tepi luar dengan bergerak serong ke kanan bawah, ke kiri, lalu serong ke kanan atas kembali ke awal.",
+        "i-segitiga-terbalik-tepi": "Merah terbalik. Susuri tepi luar dengan bergerak ke kanan, serong ke kiri bawah, lalu serong ke kiri atas kembali ke awal.",
+        "i-penggaris-segitiga-tepi": "Biru muda penuh. Susuri tepi luar dengan bergerak serong ke kanan bawah, ke kiri, lalu ke atas kembali ke awal.",
+        "i-persegi-tepi": "Biru penuh. Susuri tepi luar dengan bergerak ke kanan, ke bawah, ke kiri, lalu ke atas kembali ke awal.",
+        "i-persegi-panjang-tepi": "Kuning melebar. Susuri tepi luar dengan bergerak ke kanan, ke bawah, ke kiri, lalu ke atas kembali ke awal.",
+        "i-belah-ketupat-tepi": "Jingga miring. Susuri tepi luar dengan bergerak serong ke kanan bawah, serong ke kiri bawah, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-lima-tepi": "Ungu penuh. Susuri tepi luar dengan bergerak serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-lima-bergaris-tepi": "Ungu bergaris. Susuri tepi luar dengan bergerak serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-enam-tepi": "Biru tua penuh. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-enam-bergaris-tepi": "Toska bergaris. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-segi-enam-mendatar-tepi": "Jingga mendatar. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, lalu serong ke kanan atas kembali ke awal.",
+        "i-rambu-berhenti-tepi": "Merah tua penuh. Susuri tepi luar dengan bergerak ke kanan, serong ke kanan bawah, ke bawah, serong ke kiri bawah, ke kiri, serong ke kiri atas, ke atas, lalu serong ke kanan atas kembali ke awal."
       },
       "en": {
         "judul": "Count the Polygon Sides",
-        "instruksi": "Count the straight sides of each shape, even if it is tilted. Put it on the shelf for its number of sides.",
+        "instruksi": "Count the sides around the outside. Put each shape on the matching shelf.",
         "b-3-sisi": "3 sides",
         "b-4-sisi": "4 sides",
         "b-5-sisi": "5 sides",
         "b-6-sisi": "6 sides",
         "b-8-sisi": "8 sides",
-        "i-segitiga": "triangle",
-        "i-segitiga-terbalik": "upside-down triangle",
-        "i-penggaris-segitiga": "set square",
-        "i-persegi": "square",
-        "i-persegi-panjang": "rectangle",
-        "i-belah-ketupat": "rhombus",
-        "i-segi-lima": "pentagon",
-        "i-segi-lima-bergaris": "outlined pentagon",
-        "i-segi-enam": "hexagon",
-        "i-segi-enam-bergaris": "outlined hexagon",
-        "i-segi-enam-mendatar": "flat hexagon",
-        "i-rambu-berhenti": "stop sign"
+        "i-segitiga": "solid red",
+        "i-segitiga-terbalik": "upside-down red",
+        "i-penggaris-segitiga": "solid light blue",
+        "i-persegi": "solid blue",
+        "i-persegi-panjang": "wide yellow",
+        "i-belah-ketupat": "tilted orange",
+        "i-segi-lima": "solid purple",
+        "i-segi-lima-bergaris": "purple outline",
+        "i-segi-enam": "solid dark blue",
+        "i-segi-enam-bergaris": "teal outline",
+        "i-segi-enam-mendatar": "flat orange",
+        "i-rambu-berhenti": "solid dark red",
+        "i-segitiga-tepi": "Solid red. Trace the outside edge by moving down-right, left, then up-right back to the start.",
+        "i-segitiga-terbalik-tepi": "Upside-down red. Trace the outside edge by moving right, down-left, then up-left back to the start.",
+        "i-penggaris-segitiga-tepi": "Solid light blue. Trace the outside edge by moving down-right, left, then up back to the start.",
+        "i-persegi-tepi": "Solid blue. Trace the outside edge by moving right, down, left, then up back to the start.",
+        "i-persegi-panjang-tepi": "Wide yellow. Trace the outside edge by moving right, down, left, then up back to the start.",
+        "i-belah-ketupat-tepi": "Tilted orange. Trace the outside edge by moving down-right, down-left, up-left, then up-right back to the start.",
+        "i-segi-lima-tepi": "Solid purple. Trace the outside edge by moving down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-lima-bergaris-tepi": "Purple outline. Trace the outside edge by moving down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-enam-tepi": "Solid dark blue. Trace the outside edge by moving right, down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-enam-bergaris-tepi": "Teal outline. Trace the outside edge by moving right, down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-segi-enam-mendatar-tepi": "Flat orange. Trace the outside edge by moving right, down-right, down-left, left, up-left, then up-right back to the start.",
+        "i-rambu-berhenti-tepi": "Solid dark red. Trace the outside edge by moving right, down-right, down, down-left, left, up-left, up, then up-right back to the start."
       }
     },
     "knobs": {
@@ -215177,78 +215279,121 @@ export const PAKET_RAW: unknown[] = [
         "id": "segitiga",
         "labelKey": "i-segitiga",
         "bin": "s3",
-        "shape": "triangle",
-        "color": "#ff5a6e"
+        "altKey": "i-segitiga-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-merah-penuh"
+        }
       },
       {
         "id": "segitiga-terbalik",
         "labelKey": "i-segitiga-terbalik",
         "bin": "s3",
-        "emoji": "🔻"
+        "altKey": "i-segitiga-terbalik-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-merah-terbalik"
+        }
       },
       {
         "id": "penggaris-segitiga",
         "labelKey": "i-penggaris-segitiga",
         "bin": "s3",
-        "emoji": "📐"
+        "altKey": "i-penggaris-segitiga-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-biru-muda"
+        }
       },
       {
         "id": "persegi",
         "labelKey": "i-persegi",
         "bin": "s4",
-        "shape": "square",
-        "color": "#6ab0e8"
+        "altKey": "i-persegi-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-biru-penuh"
+        }
       },
       {
         "id": "persegi-panjang",
         "labelKey": "i-persegi-panjang",
         "bin": "s4",
-        "shape": "rect",
-        "color": "#ffd23f",
-        "width": 2
+        "altKey": "i-persegi-panjang-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-kuning-melebar"
+        }
       },
       {
         "id": "ketupat",
         "labelKey": "i-belah-ketupat",
         "bin": "s4",
-        "shape": "belah-ketupat",
-        "color": "#1e88e5"
+        "altKey": "i-belah-ketupat-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-jingga-miring"
+        }
       },
       {
         "id": "segilima",
         "labelKey": "i-segi-lima",
         "bin": "s5",
-        "emoji": "⬟"
+        "altKey": "i-segi-lima-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-ungu-penuh"
+        }
       },
       {
         "id": "segilima-garis",
         "labelKey": "i-segi-lima-bergaris",
         "bin": "s5",
-        "emoji": "⬠"
+        "altKey": "i-segi-lima-bergaris-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-ungu-bergaris"
+        }
       },
       {
         "id": "segienam",
         "labelKey": "i-segi-enam",
         "bin": "s6",
-        "emoji": "⬢"
+        "altKey": "i-segi-enam-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-biru-tua"
+        }
       },
       {
         "id": "segienam-garis",
         "labelKey": "i-segi-enam-bergaris",
         "bin": "s6",
-        "emoji": "⬡"
+        "altKey": "i-segi-enam-bergaris-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-toska-bergaris"
+        }
       },
       {
         "id": "segienam-datar",
         "labelKey": "i-segi-enam-mendatar",
         "bin": "s6",
-        "emoji": "⬣"
+        "altKey": "i-segi-enam-mendatar-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-jingga-mendatar"
+        }
       },
       {
         "id": "rambu-berhenti",
         "labelKey": "i-rambu-berhenti",
         "bin": "s8",
-        "emoji": "🛑"
+        "altKey": "i-rambu-berhenti-tepi",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-sisi-merah-tua"
+        }
       }
     ]
   },
