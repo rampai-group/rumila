@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-sumber-cahaya-malam",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -74,7 +74,10 @@
       "id": "bintang",
       "labelKey": "i-bintang",
       "bin": "sumber",
-      "emoji": "⭐"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-bintang"
+      }
     },
     {
       "id": "kunang",
@@ -89,13 +92,19 @@
       "id": "unggun",
       "labelKey": "i-unggun",
       "bin": "sumber",
-      "emoji": "🔥"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-unggun"
+      }
     },
     {
       "id": "kilat",
       "labelKey": "i-kilat",
       "bin": "sumber",
-      "emoji": "⚡"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-kilat"
+      }
     },
     {
       "id": "lampujalan",
@@ -110,7 +119,10 @@
       "id": "bulan",
       "labelKey": "i-bulan",
       "bin": "bukan",
-      "emoji": "🌕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-bulan"
+      }
     },
     {
       "id": "reflektor",
@@ -118,14 +130,17 @@
       "bin": "bukan",
       "adegan": {
         "jenis": "ilustrasi",
-        "varian": "qc-reflektor-sepeda"
+        "varian": "qc-jenjang-sd2-cahaya-reflektor"
       }
     },
     {
       "id": "genangan",
       "labelKey": "i-genangan",
       "bin": "bukan",
-      "emoji": "💧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-genangan"
+      }
     },
     {
       "id": "matakucing",
@@ -133,14 +148,17 @@
       "bin": "bukan",
       "adegan": {
         "jenis": "ilustrasi",
-        "varian": "qc-mata-kucing-terpantul"
+        "varian": "qc-jenjang-sd2-cahaya-mata-kucing"
       }
     },
     {
       "id": "rambu",
       "labelKey": "i-rambu",
       "bin": "bukan",
-      "emoji": "🚸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-cahaya-rambu"
+      }
     }
   ],
   "pilihan": []

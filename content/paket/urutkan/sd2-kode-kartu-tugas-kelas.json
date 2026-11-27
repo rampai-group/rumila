@@ -256,37 +256,65 @@
         {
           "id": "piket-kelas-1",
           "labelKey": "piket-kelas-1",
-          "emoji": "🪑"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-piket-kelas-1",
+            "t": 0
+          }
         },
         {
           "id": "piket-kelas-2",
           "labelKey": "piket-kelas-2",
-          "emoji": "🧹"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-piket-kelas-2",
+            "t": 0
+          }
         },
         {
           "id": "piket-kelas-3",
           "labelKey": "piket-kelas-3",
-          "emoji": "🗑️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-piket-kelas-3",
+            "t": 0
+          }
         },
         {
           "id": "piket-kelas-4",
           "labelKey": "piket-kelas-4",
-          "emoji": "🪣"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-piket-kelas-4",
+            "t": 0
+          }
         },
         {
           "id": "piket-kelas-5",
           "labelKey": "piket-kelas-5",
-          "emoji": "⏳"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-piket-kelas-5",
+            "t": 0
+          }
         },
         {
           "id": "piket-kelas-6",
           "labelKey": "piket-kelas-6",
-          "emoji": "⬇️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-piket-kelas-6",
+            "t": 0
+          }
         },
         {
           "id": "piket-kelas-7",
           "labelKey": "piket-kelas-7",
-          "emoji": "🙋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-piket-kelas-7",
+            "t": 0
+          }
         }
       ]
     },
@@ -386,7 +414,11 @@
         {
           "id": "telur-rebus-1",
           "labelKey": "telur-rebus-1",
-          "emoji": "🍲"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-telur-rebus-1",
+            "t": 0
+          }
         },
         {
           "id": "telur-rebus-2",
@@ -396,7 +428,11 @@
         {
           "id": "telur-rebus-3",
           "labelKey": "telur-rebus-3",
-          "emoji": "♨️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-telur-rebus-3",
+            "t": 0
+          }
         },
         {
           "id": "telur-rebus-4",
@@ -406,12 +442,20 @@
         {
           "id": "telur-rebus-5",
           "labelKey": "telur-rebus-5",
-          "emoji": "🛑"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-telur-rebus-5",
+            "t": 0
+          }
         },
         {
           "id": "telur-rebus-6",
           "labelKey": "telur-rebus-6",
-          "emoji": "🧊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-telur-rebus-6",
+            "t": 0
+          }
         },
         {
           "id": "telur-rebus-7",
@@ -447,7 +491,11 @@
         {
           "id": "salon-5",
           "labelKey": "salon-5",
-          "emoji": "💨"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-salon-5",
+            "t": 0
+          }
         },
         {
           "id": "salon-6",
@@ -468,27 +516,47 @@
         {
           "id": "bersih-akuarium-1",
           "labelKey": "bersih-akuarium-1",
-          "emoji": "🐟"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-bersih-akuarium-1",
+            "t": 0
+          }
         },
         {
           "id": "bersih-akuarium-2",
           "labelKey": "bersih-akuarium-2",
-          "emoji": "🚱"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-bersih-akuarium-2",
+            "t": 0
+          }
         },
         {
           "id": "bersih-akuarium-3",
           "labelKey": "bersih-akuarium-3",
-          "emoji": "🧽"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-bersih-akuarium-3",
+            "t": 0
+          }
         },
         {
           "id": "bersih-akuarium-4",
           "labelKey": "bersih-akuarium-4",
-          "emoji": "🚰"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-bersih-akuarium-4",
+            "t": 0
+          }
         },
         {
           "id": "bersih-akuarium-5",
           "labelKey": "bersih-akuarium-5",
-          "emoji": "🐠"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-bersih-akuarium-5",
+            "t": 0
+          }
         },
         {
           "id": "bersih-akuarium-6",
@@ -550,12 +618,20 @@
         {
           "id": "roti-panggang-1",
           "labelKey": "roti-panggang-1",
-          "emoji": "🍞"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-roti-panggang-1",
+            "t": 0
+          }
         },
         {
           "id": "roti-panggang-2",
           "labelKey": "roti-panggang-2",
-          "emoji": "⬇️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-roti-panggang-2",
+            "t": 0
+          }
         },
         {
           "id": "roti-panggang-3",
@@ -565,7 +641,11 @@
         {
           "id": "roti-panggang-4",
           "labelKey": "roti-panggang-4",
-          "emoji": "⬆️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-kartu-roti-panggang-4",
+            "t": 0
+          }
         },
         {
           "id": "roti-panggang-5",
