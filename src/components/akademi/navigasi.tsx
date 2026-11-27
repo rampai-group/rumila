@@ -541,6 +541,11 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
   const petakInteraktif = modeBendera || (ronde.execMode === "langkah" && ronde.prediksi);
   const bisaKetukPetak = !sibuk && !terkunci && petakInteraktif;
   const blokLangkah = ronde.execMode === "langkah" ? lariLangkah?.steps[langkahKe] : undefined;
+  const prediksiKomandan = ronde.prediksi && paket.competencyIds.includes("KODE.SD3.PREDIKSI.01");
+  const jumlahLangkah = lariLangkah?.steps.length ?? 0;
+  const judulLangkah = prediksiKomandan
+    ? `Program Agam · tebakan ${Math.min(langkahKe + 1, jumlahLangkah)} dari ${jumlahLangkah}`
+    : `Program Agam · blok ${Math.min(langkahKe + 1, Math.max(1, hitungBlok(ronde.program)))} dari ${hitungBlok(ronde.program)}`;
 
   // tata letak: tablet/desktop mendatar → peta di kiri, rak + tombol di kanan; HP/tegak → bertumpuk
   const { tema, w: pw, h: ph, skala: sk } = usePanggung();
@@ -720,7 +725,7 @@ export function PresenterNavigasi({ paket, ronde, onJawab, onHint, hasil }: Prop
       {ronde.execMode === "langkah" && lariLangkah && (
         <>
           <Rak
-            judul={ronde.tunjukTabrak ? `Program Agam · blok berikutnya ${blokLangkah ? blokLangkah.path[0] + 1 : ronde.program.length}` : `Program Agam · blok ${Math.min(langkahKe + 1, Math.max(1, hitungBlok(ronde.program)))} dari ${hitungBlok(ronde.program)}`}
+            judul={ronde.tunjukTabrak ? `Program Agam · blok berikutnya ${blokLangkah ? blokLangkah.path[0] + 1 : ronde.program.length}` : judulLangkah}
             blok={ronde.program}
             slot={Math.max(hitungBlok(ronde.program), 1)}
             aktif
