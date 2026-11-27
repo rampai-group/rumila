@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-mana-dulu-bahan-baru",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -121,7 +121,11 @@
         {
           "id": "awal",
           "labelKey": "roti-awal",
-          "emoji": "🫓"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-adonan-roti",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
@@ -142,7 +146,11 @@
         {
           "id": "akhir",
           "labelKey": "kayu-akhir",
-          "emoji": "🌫️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-abu-kayu",
+            "t": 0
+          }
         }
       ]
     },
@@ -206,7 +214,11 @@
         {
           "id": "akhir",
           "labelKey": "kertas-akhir",
-          "emoji": "🔥"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-abu-kertas",
+            "t": 0
+          }
         }
       ]
     },
@@ -252,12 +264,20 @@
         {
           "id": "awal",
           "labelKey": "kedelai-awal",
-          "emoji": "🥜"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-biji-kedelai",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "kedelai-akhir",
-          "emoji": "🟫"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "navigator-tempe",
+            "t": 0
+          }
         }
       ]
     },
