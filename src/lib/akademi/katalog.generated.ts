@@ -335960,7 +335960,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-hewan-tumbuh-besar",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -336312,25 +336312,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "kelinci-1",
             "labelKey": "kelinci-1",
             "emoji": "🐰",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-baru-lahir"
+            }
           },
           {
             "id": "kelinci-2",
             "labelKey": "kelinci-2",
             "emoji": "🐰",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-mata-terbuka"
+            }
           },
           {
             "id": "kelinci-3",
             "labelKey": "kelinci-3",
             "emoji": "🐇",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-muda"
+            }
           },
           {
             "id": "kelinci-4",
             "labelKey": "kelinci-4",
             "emoji": "🐇",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-dewasa"
+            }
           }
         ]
       },
@@ -336398,7 +336410,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-mana-dulu-bahan-baru",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -336519,7 +336531,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "roti-awal",
-            "emoji": "🫓"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-adonan-roti",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
@@ -336540,7 +336556,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akhir",
             "labelKey": "kayu-akhir",
-            "emoji": "🌫️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-abu-kayu",
+              "t": 0
+            }
           }
         ]
       },
@@ -336604,7 +336624,11 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "akhir",
             "labelKey": "kertas-akhir",
-            "emoji": "🔥"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-abu-kertas",
+              "t": 0
+            }
           }
         ]
       },
@@ -336650,12 +336674,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "kedelai-awal",
-            "emoji": "🥜"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-biji-kedelai",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "kedelai-akhir",
-            "emoji": "🟫"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "navigator-tempe",
+              "t": 0
+            }
           }
         ]
       },
@@ -337200,7 +337232,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -337552,25 +337584,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "kelinci-1",
             "labelKey": "kelinci-1",
             "emoji": "🐰",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-baru-lahir"
+            }
           },
           {
             "id": "kelinci-2",
             "labelKey": "kelinci-2",
             "emoji": "🐰",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-mata-terbuka"
+            }
           },
           {
             "id": "kelinci-3",
             "labelKey": "kelinci-3",
             "emoji": "🐇",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-muda"
+            }
           },
           {
             "id": "kelinci-4",
             "labelKey": "kelinci-4",
             "emoji": "🐇",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-kelinci-dewasa"
+            }
           }
         ]
       },
@@ -348049,7 +348093,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-air",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -348142,35 +348186,47 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "katak-telur",
-            "emoji": "⚪",
-            "count": 5,
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-telur",
+              "t": 0
+            }
           },
           {
             "id": "berudu",
             "labelKey": "katak-berudu",
-            "scale": 0.6,
-            "shape": "berudu",
-            "color": "#37474f"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-berudu",
+              "t": 0
+            }
           },
           {
             "id": "berkaki",
             "labelKey": "katak-berkaki",
-            "scale": 1.2,
-            "color": "#6d4c41",
-            "shape": "berudu"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-berudu-berkaki",
+              "t": 0
+            }
           },
           {
             "id": "katakmuda",
             "labelKey": "katak-katakmuda",
-            "emoji": "🐸",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-muda-berekor",
+              "t": 0
+            }
           },
           {
             "id": "katak",
             "labelKey": "katak-katak",
-            "emoji": "🐸",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-dewasa",
+              "t": 0
+            }
           }
         ]
       },
@@ -348302,28 +348358,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "katak-telur",
-            "emoji": "⚪",
-            "count": 5,
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-telur",
+              "t": 0
+            }
           },
           {
             "id": "berudu",
             "labelKey": "katak-berudu",
-            "scale": 0.6,
-            "shape": "berudu",
-            "color": "#37474f"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-berudu",
+              "t": 0
+            }
           },
           {
             "id": "katakmuda",
             "labelKey": "katak-katakmuda",
-            "emoji": "🐸",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-muda-berekor",
+              "t": 0
+            }
           },
           {
             "id": "katak",
             "labelKey": "katak-katak",
-            "emoji": "🐸",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-dewasa",
+              "t": 0
+            }
           }
         ]
       },
@@ -348334,29 +348400,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "katak-telur",
-            "emoji": "⚪",
-            "count": 5,
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-telur",
+              "t": 0
+            }
           },
           {
             "id": "berudu",
             "labelKey": "katak-berudu",
-            "scale": 0.6,
-            "shape": "berudu",
-            "color": "#37474f"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-berudu",
+              "t": 0
+            }
           },
           {
             "id": "berkaki",
             "labelKey": "katak-berkaki",
-            "scale": 1.2,
-            "color": "#6d4c41",
-            "shape": "berudu"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-berudu-berkaki",
+              "t": 0
+            }
           },
           {
             "id": "katak",
             "labelKey": "katak-katak",
-            "emoji": "🐸",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-dewasa",
+              "t": 0
+            }
           }
         ]
       },
@@ -348367,28 +348442,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "berudu",
             "labelKey": "katak-berudu",
-            "scale": 0.6,
-            "shape": "berudu",
-            "color": "#37474f"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-berudu",
+              "t": 0
+            }
           },
           {
             "id": "berkaki",
             "labelKey": "katak-berkaki",
-            "scale": 1.2,
-            "color": "#6d4c41",
-            "shape": "berudu"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-berudu-berkaki",
+              "t": 0
+            }
           },
           {
             "id": "katakmuda",
             "labelKey": "katak-katakmuda",
-            "emoji": "🐸",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-muda-berekor",
+              "t": 0
+            }
           },
           {
             "id": "katak",
             "labelKey": "katak-katak",
-            "emoji": "🐸",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-katak-dewasa",
+              "t": 0
+            }
           }
         ]
       },
@@ -348454,7 +348539,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -348781,27 +348866,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "telur",
             "labelKey": "belalang-telur",
-            "shape": "circle",
-            "color": "#a1887f",
-            "scale": 0.4
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-belalang-telur",
+              "t": 0
+            }
           },
           {
             "id": "nimfa",
             "labelKey": "belalang-nimfa",
-            "emoji": "🦗",
-            "scale": 0.5
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-belalang-nimfa",
+              "t": 0
+            }
           },
           {
             "id": "nimfabesar",
             "labelKey": "belalang-nimfabesar",
-            "emoji": "🦗",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-belalang-bakal-sayap",
+              "t": 0
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "belalang-dewasa",
-            "emoji": "🦗",
-            "scale": 1.2
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-belalang-dewasa",
+              "t": 0
+            }
           }
         ]
       },

@@ -7,6 +7,7 @@ import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
 import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
+import { ILUSTRASI_TUMBUH_KELINCI_SD2 } from "./ilustrasi-sd2-pertumbuhan-kelinci";
 import { ILUSTRASI_DIDIH_UAP_SD6 } from "./ilustrasi-sd6-didih-uap";
 
 const INK = "#203649";
@@ -449,6 +450,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_LISTRIK_LUAR_SD2,
   ...ILUSTRASI_INTERNET_SD3,
   ...ILUSTRASI_TULANG_SD4,
+  ...ILUSTRASI_TUMBUH_KELINCI_SD2,
   ...ILUSTRASI_DIDIH_UAP_SD6,
   "plastik-pembungkus": <g {...RINGKAS}>
     <path d="M32 56L85 54 116 72 70 89Z" fill="#d9f3f7" stroke="#6ea4ad" />
