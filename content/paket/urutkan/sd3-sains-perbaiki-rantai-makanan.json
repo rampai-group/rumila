@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-rantai-makanan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rantai Makanan Kacau",
-      "instruksi": "Dua makhluk tertukar. Tukar sekali supaya rantainya benar.",
+      "instruksi": "Dua mata rantai tertukar tempat. Tukar keduanya sekali supaya urut lagi: mulai dari produsen, lalu pemakannya, dan seterusnya.",
       "s-sawah": "Rantai makanan di sawah",
       "sawah-padi": "padi",
       "sawah-tikus": "tikus",
@@ -68,7 +68,7 @@
     },
     "en": {
       "judul": "Mixed-Up Food Chain",
-      "instruksi": "Two living things are swapped. Swap them once to fix the chain.",
+      "instruksi": "Two links have swapped places. Swap them once so the chain is in order again: start with the producer, then what eats it, and so on.",
       "s-sawah": "A rice field food chain",
       "sawah-padi": "rice plant",
       "sawah-tikus": "rat",

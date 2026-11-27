@@ -388,14 +388,14 @@ export function UmpanBalik({ benar, beruntun = 1, pakaiBantu: lanjut = false }: 
   const [teks] = useState(() => (benar ? acakKata(beruntun >= 3 ? PUJIAN_BERUNTUN : PUJIAN) : lanjut ? "Coba lagi, pakai Bantu ya" : acakKata(SEMANGAT)));
   const [ikon] = useState(() => (benar ? acakKata(beruntun >= 3 ? ["🔥", "🏆", "🚀"] : ["🌟", "⭐", "🎉", "👏", "😄"]) : lanjut ? "💡" : acakKata(["💪", "🙂", "🤔"])));
   return (
-    <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">
+    <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center px-4">
       {benar && <Konfeti jumlah={beruntun >= 3 ? 34 : 20} />}
       <div
-        className="akademi-pop flex flex-col items-center rounded-[28px] px-8 py-5 text-white"
+        className="akademi-fade flex max-w-full flex-col items-center rounded-[28px] px-5 py-5 text-center text-white sm:px-8"
         style={{ background: benar ? "#22b573" : lanjut ? "#e0a100" : "#ff8a5c", boxShadow: `0 6px 0 ${benar ? "#16804f" : lanjut ? "#a87600" : "#d4622f"}` }}
       >
         <span className={benar ? "akademi-bintang" : "akademi-goyang"} style={{ fontSize: 64, lineHeight: 1, display: "inline-block" }}>{ikon}</span>
-        <span style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 900 }}>{teks}</span>
+        <span className="text-balance" style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 900, lineHeight: 1.2 }}>{teks}</span>
         {benar && beruntun >= 3 && <span style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, opacity: 0.9 }}>{beruntun} benar berturut-turut</span>}
       </div>
     </div>

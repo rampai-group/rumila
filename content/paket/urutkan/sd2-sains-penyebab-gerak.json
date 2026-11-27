@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penyebab-gerak",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -148,12 +148,20 @@
         {
           "id": "awal",
           "labelKey": "kelereng-awal",
-          "emoji": "🔮"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-kelereng-bertabrakan",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "kelereng-akhir",
-          "emoji": "🟢"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-kelereng-kedua-menggelinding",
+            "t": 0
+          }
         }
       ]
     },

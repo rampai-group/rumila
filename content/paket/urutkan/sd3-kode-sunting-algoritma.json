@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-algoritma",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -15,7 +15,7 @@
       "surel-1": "nyalakan laptop",
       "surel-2": "buka aplikasi email",
       "surel-3": "klik tulis pesan baru",
-      "surel-4": "ketik isi pesan",
+      "surel-4": "isi alamat penerima dan ketik pesan",
       "surel-5": "klik kirim",
       "surel-6": "tunggu tanda terkirim",
       "surel-7": "matikan laptop",
@@ -105,7 +105,7 @@
       "surel-1": "turn on the laptop",
       "surel-2": "open the email app",
       "surel-3": "click write new message",
-      "surel-4": "type the message",
+      "surel-4": "enter the recipient’s email address and type the message",
       "surel-5": "click send",
       "surel-6": "wait for the sent mark",
       "surel-7": "shut down the laptop",
