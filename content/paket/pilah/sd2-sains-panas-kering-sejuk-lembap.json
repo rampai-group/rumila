@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-panas-kering-sejuk-lembap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -74,7 +74,10 @@
       "id": "aspal",
       "labelKey": "i-aspal",
       "bin": "panas",
-      "emoji": "🛣️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-aspal"
+      }
     },
     {
       "id": "pasir",
@@ -89,51 +92,73 @@
       "id": "atap",
       "labelKey": "i-atap",
       "bin": "panas",
-      "emoji": "🏠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-atap-seng"
+      }
     },
     {
       "id": "lapangan",
       "labelKey": "i-lapangan",
       "bin": "panas",
-      "emoji": "🏟️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-lapangan"
+      }
     },
     {
       "id": "batuterjemur",
       "labelKey": "i-batuterjemur",
       "bin": "panas",
-      "emoji": "🪨",
-      "color": "#ffcc80"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-batu-terjemur"
+      }
     },
     {
       "id": "bawahbatu",
       "labelKey": "i-bawahbatu",
       "bin": "lembap",
-      "emoji": "🟫",
-      "color": "#6d4c41"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-tanah-bawah-batu"
+      }
     },
     {
       "id": "bawahpohon",
       "labelKey": "i-bawahpohon",
       "bin": "lembap",
-      "emoji": "🌳"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-tanah-bawah-pohon"
+      }
     },
     {
       "id": "tepikolam",
       "labelKey": "i-tepikolam",
       "bin": "lembap",
-      "emoji": "💧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-tepi-kolam"
+      }
     },
     {
       "id": "daun",
       "labelKey": "i-daun",
       "bin": "lembap",
-      "emoji": "🍂"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-daun-basah"
+      }
     },
     {
       "id": "pot",
       "labelKey": "i-pot",
       "bin": "lembap",
-      "emoji": "🪴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-habitat-pot-teduh"
+      }
     }
   ],
   "pilihan": []
