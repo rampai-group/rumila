@@ -471,7 +471,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const kartuSiklusHewan = paket.id === "sd3-sains-perbaiki-siklus-hidup-air" || paket.id === "sd3-sains-perbaiki-siklus-hidup-kebun";
   const tataGerbong = paket.id === "sd1-mat-gerbong-urut-0-20";
   const kartuTumbuhan = tataTumbuhan || tanamanTumbuh;
-  const inggris = (kartuTumbuhan || tataGerbong || tataMatahari) && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
+  const inggris = (kartuTumbuhan || tataGerbong || tataMatahari || kartuSiklusHewan) && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
   const kunci = !!hasil || terkirim;
   const langkah = (id: string) => shown.find((s) => s.id === id)!;
 
@@ -559,7 +559,9 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const skalaMaks = Math.max(1, ...urutan.map((id) => skalaLebar(visual(langkah(id), t))));
   // Batas gambar mengikuti tinggi dan lebar kartu, dengan ruang untuk label yang panjang.
   const kalimatPanjang = sel.baris >= 3 || urutan.some((id) => t(langkah(id).labelKey).length > 50);
-  const ukuran = (tataGerbong ? Math.min(tinggiKartu * 0.7, sel.s * 0.72)
+  const ukuran = kartuSiklusHewan
+    ? Math.min((sel.s - 16) / skalaMaks, Math.max(30, tinggiKartu - 76), w < 600 ? 86 : 152)
+    : (tataGerbong ? Math.min(tinggiKartu * 0.7, sel.s * 0.72)
     : adeganTabletTegak ? Math.min(sel.s - 20, (tinggiKartu - 96) * skalaMaks, 300)
     : tataAdeganUrut ? Math.min(sel.s * 0.94, tinggiKartu - (tataMatahari ? 68 : adeganHp ? 42 : 54), 180)
     : tumbuhTablet ? Math.min(tinggiKartu * 0.83, sel.s * 0.88)
@@ -596,7 +598,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
                   v={visual(langkah(id), t)}
                   ariaLabel={tataGerbong ? (inggris ? `Train car ${t(langkah(id).labelKey)}, position ${i + 1}` : `Gerbong nomor ${t(langkah(id).labelKey)}, posisi ${i + 1}`) : undefined}
                   size={ukuran}
-                  labelPenuh={kartuSunting || kartuPencernaan || tataAdeganUrut}
+                  labelPenuh={kartuSunting || kartuPencernaan || tataAdeganUrut || kartuSiklusHewan}
                   labelSize={suntingPadat ? 14 : layarPendek ? 12 : batas(14 * sk, sel.s * (kalimatPanjang ? 0.076 : 0.115), 24)}
                   selected={dipilih}
                   right={benar}
