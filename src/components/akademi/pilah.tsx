@@ -187,7 +187,9 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const pilahPilotLega = !hp && h >= 680 && paket.competencyIds.some(id =>
     ["SAINS.SD1.GAYA.02", "MAT.SD1.BANGUN.01", "MAT.SD1.BANGUN.02", "SAINS.SD1.BUNYI.01"].includes(id));
   const pilahSudut = paket.competencyIds.includes("MAT.SD3.GEOMETRI.02");
-  const kisiPilahRapat = pilahSudut || paket.id === "sd3-mat-segi-banyak-beraturan" ||
+  const rakAlatUkur = paket.id === "sd3-sains-rak-alat-ukur";
+  const rakAlatUkurHp = rakAlatUkur && hp;
+  const kisiPilahRapat = pilahSudut || rakAlatUkur || paket.id === "sd3-mat-segi-banyak-beraturan" ||
     paket.competencyIds.includes("SAINS.SD3.WUJUD.01");
   const kisiPilahLega = kisiPilahRapat && lebarArea >= 620 && h >= 650;
   const pilahAdegan = [
@@ -410,7 +412,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const tinggiIsiBagi = rakBagiLega ? (rakBagiRingkas ? 94 : 206) : rakBagiRingkas ? 54 : 100;
   const tinggiBaki = aturRakBilanganKomandan ? (hp ? (satuKartu ? 100 : 48) : (satuKartu ? 216 : 112))
     : aturRakTumbuhan ? (hp ? (satuKartu ? 154 : 106) : (satuKartu ? 236 : 172))
-    : kisiPilahRapat ? (satuKartu ? hp ? 160 : 232 : hp ? 96 : 144)
+    : kisiPilahRapat ? (satuKartu ? hp ? 160 : 232 : rakAlatUkurHp ? 88 : hp ? 96 : 144)
     : tahapGame ? (hp ? (satuKartu ? 135 : 104) : (satuKartu ? 182 : 162))
     : carrollKaptenTablet ? Math.round(Math.max(112, Math.min(170, (h - 470) / barisCarrollKapten)))
     : carrollKaptenHp ? 84
@@ -422,7 +424,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
         : rakPecahanLega ? (satuKartu ? 156 : 96) : satuKartuBesarHp || adeganKaptenAkhirHp ? 152 : piktogramLega ? 172 : rakAngkaLega ? 188 : 84 * sk;
   const tinggiIsi = aturRakBilanganKomandan ? (hp ? 39 : 123) / sk
     : aturRakTumbuhan ? (hp ? 45 : 142) / sk
-    : kisiPilahRapat ? (hp ? 62 : satuKartu ? 190 : 130) / sk
+    : kisiPilahRapat ? (rakAlatUkurHp ? 44 : hp ? 62 : satuKartu ? 190 : 130) / sk
     : tahapGame ? (hp ? 48 : satuKartu ? 126 : 94) / sk
     : carrollKaptenTablet ? 94 / sk : carrollKaptenHp ? 54 / sk
     : hurufSimetriLega ? Math.round(h * (satuKartu ? (hp ? 0.24 : 0.32) : (hp ? 0.13 : 0.22)) / sk)
@@ -434,7 +436,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const gambarKartu = klasifikasiKomandanHp ? (satuKartu ? 74 : 52)
     : aturRakBilanganKomandan ? (hp ? (satuKartu ? 104 : 55) : (satuKartu ? 170 : 124))
     : aturRakTumbuhan ? (hp ? (satuKartu ? 78 : 48) : (satuKartu ? 136 : 96))
-    : kisiPilahRapat ? (satuKartu ? hp ? 112 : 158 : hp ? 52 : 94)
+    : kisiPilahRapat ? (satuKartu ? hp ? 112 : 158 : rakAlatUkurHp ? 44 : hp ? 52 : 94)
     : rakAritmetikaHp ? (satuKartu ? 52 : 44) : tahapGame ? (hp ? (satuKartu ? 68 : 40) : (satuKartu ? 106 : 82))
     : carrollKaptenTablet ? Math.min(satuKartu ? 136 : 106, tinggiBaki - 42)
     : carrollKaptenHp ? (satuKartu ? 54 : 42)

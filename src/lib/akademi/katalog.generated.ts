@@ -236547,7 +236547,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-pilih-alat-ukur",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -236567,7 +236567,7 @@ export const PAKET_RAW: unknown[] = [
         "t-kolam": "Seberapa hangat air kolam siang ini?",
         "t-semangka": "Seberapa berat semangka hasil panen?",
         "t-kacang": "Seberapa tinggi tanaman kacang setelah seminggu?",
-        "t-hujan": "Berapa banyak air hujan yang tertampung di botol?",
+        "t-hujan": "Berapa volume air hujan yang tertampung di botol?",
         "t-es": "Berapa lama es batu mencair di bawah Matahari?",
         "t-kelas": "Apakah ruang kelas lebih panas siang daripada pagi?",
         "t-tas": "Tas siapa yang paling berat?",
@@ -236587,7 +236587,7 @@ export const PAKET_RAW: unknown[] = [
         "t-kolam": "How warm is the pond water this afternoon?",
         "t-semangka": "How heavy is the harvested watermelon?",
         "t-kacang": "How tall is the bean plant after a week?",
-        "t-hujan": "How much rainwater collected in the bottle?",
+        "t-hujan": "What volume of rainwater collected in the bottle?",
         "t-es": "How long does an ice cube take to melt in the sun?",
         "t-kelas": "Is the classroom hotter at midday than in the morning?",
         "t-tas": "Whose school bag is the heaviest?",
@@ -237469,7 +237469,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-rak-alat-ukur",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -237480,19 +237480,19 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Rak Alat Ukur",
         "instruksi": "Taruh tiap pertanyaan ke alat ukur yang tepat.",
-        "b-termometer": "termometer (suhu)",
-        "b-timbangan": "timbangan (berat)",
-        "b-penggaris": "penggaris (panjang)",
-        "b-gelasukur": "gelas ukur (volume)",
-        "b-stopwatch": "stopwatch (lama waktu)",
+        "b-termometer": "termometer",
+        "b-timbangan": "timbangan",
+        "b-penggaris": "penggaris",
+        "b-gelasukur": "gelas ukur",
+        "b-stopwatch": "stopwatch",
         "i-airkolam": "seberapa hangat air kolam?",
         "i-kelas": "seberapa panas kelas siang ini?",
         "i-semangka": "seberapa berat semangka?",
         "i-tas": "seberapa berat tas sekolah?",
         "i-kacang": "seberapa tinggi tanaman kacang?",
         "i-ulat": "seberapa panjang ulat?",
-        "i-hujan": "berapa banyak air hujan tertampung?",
-        "i-siram": "berapa volume air yang disiapkan untuk satu pot?",
+        "i-hujan": "berapa volume air hujan tertampung?",
+        "i-siram": "berapa volume air untuk menyiram pot?",
         "i-es": "berapa lama es mencair?",
         "i-lari": "berapa lama berlari keliling lapangan?",
         "i-teh": "seberapa panas teh di gelas?",
@@ -237508,19 +237508,19 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Measuring Tool Shelves",
         "instruksi": "Put each question on the right measuring tool.",
-        "b-termometer": "thermometer (temperature)",
-        "b-timbangan": "scales (weight)",
-        "b-penggaris": "ruler (length)",
-        "b-gelasukur": "measuring cylinder (volume)",
-        "b-stopwatch": "stopwatch (how long)",
-        "i-airkolam": "how warm is the pond?",
+        "b-termometer": "thermometer",
+        "b-timbangan": "scales",
+        "b-penggaris": "ruler",
+        "b-gelasukur": "measuring cylinder",
+        "b-stopwatch": "stopwatch",
+        "i-airkolam": "how warm is the pond water?",
         "i-kelas": "how hot is the classroom at noon?",
         "i-semangka": "how heavy is the watermelon?",
         "i-tas": "how heavy is the school bag?",
         "i-kacang": "how tall is the bean plant?",
         "i-ulat": "how long is the caterpillar?",
-        "i-hujan": "how much rain was collected?",
-        "i-siram": "what is the volume of the water set out for one pot?",
+        "i-hujan": "what volume of rainwater was collected?",
+        "i-siram": "what volume of water is ready for the pot?",
         "i-es": "how long does the ice take to melt?",
         "i-lari": "how long to run round the field?",
         "i-teh": "how hot is the tea in the cup?",
@@ -237595,7 +237595,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "airkolam",
         "labelKey": "i-airkolam",
         "bin": "termometer",
-        "emoji": "🐟"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-habitat-kolam"
+        }
       },
       {
         "id": "kelas",
@@ -237619,7 +237622,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kacang",
         "labelKey": "i-kacang",
         "bin": "penggaris",
-        "emoji": "🌱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-tumbuh-kacang-daun"
+        }
       },
       {
         "id": "ulat",
@@ -237637,7 +237643,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "siram",
         "labelKey": "i-siram",
         "bin": "gelasukur",
-        "emoji": "🪴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "awal-air-gelas"
+        }
       },
       {
         "id": "es",
