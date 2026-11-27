@@ -1,0 +1,772 @@
+[
+  {
+    "mission": 40,
+    "slug": "sd1-kode-cari-robot-pabrik",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21305
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "bukan robot",
+      "robot"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 40,
+    "slug": "sd1-kode-cari-robot-pabrik",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21627
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "bukan robot",
+      "robot"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 40,
+    "slug": "sd1-kode-cari-robot-pabrik",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21507
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "bukan robot",
+      "robot"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 39,
+    "slug": "sd1-kode-kabel-tanpa-kabel",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21286
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "pakai kabel",
+      "tanpa kabel"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 39,
+    "slug": "sd1-kode-kabel-tanpa-kabel",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21569
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "pakai kabel",
+      "tanpa kabel"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 39,
+    "slug": "sd1-kode-kabel-tanpa-kabel",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21498
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "pakai kabel",
+      "tanpa kabel"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 40,
+    "slug": "sd1-kode-robot-atau-bukan",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21255
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "bukan robot",
+      "robot"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 40,
+    "slug": "sd1-kode-robot-atau-bukan",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21321
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "bukan robot",
+      "robot"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 40,
+    "slug": "sd1-kode-robot-atau-bukan",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21456
+    },
+    "maxDensity": 6,
+    "dragTargets": [
+      "bukan robot",
+      "robot"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 39,
+    "slug": "sd1-kode-sambungan-perangkat",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21861
+    },
+    "maxDensity": 7,
+    "dragTargets": [
+      "dengan kabel",
+      "tanpa kabel"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 3,
+    "consoleErrors": []
+  },
+  {
+    "mission": 39,
+    "slug": "sd1-kode-sambungan-perangkat",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 22033
+    },
+    "maxDensity": 7,
+    "dragTargets": [
+      "dengan kabel",
+      "tanpa kabel"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 39,
+    "slug": "sd1-kode-sambungan-perangkat",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21969
+    },
+    "maxDensity": 7,
+    "dragTargets": [
+      "dengan kabel",
+      "tanpa kabel"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 38,
+    "slug": "sd1-mat-pola-besar-kecil-arah",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 19544
+    },
+    "maxDensity": 12,
+    "dragTargets": [],
+    "dragSlots": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 38,
+    "slug": "sd1-mat-pola-besar-kecil-arah",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 19629
+    },
+    "maxDensity": 12,
+    "dragTargets": [],
+    "dragSlots": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 38,
+    "slug": "sd1-mat-pola-besar-kecil-arah",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 19650
+    },
+    "maxDensity": 12,
+    "dragTargets": [],
+    "dragSlots": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 38,
+    "slug": "sd1-mat-pola-tangan-bintang",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 19608
+    },
+    "maxDensity": 12,
+    "dragTargets": [],
+    "dragSlots": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 38,
+    "slug": "sd1-mat-pola-tangan-bintang",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 19753
+    },
+    "maxDensity": 12,
+    "dragTargets": [],
+    "dragSlots": [
+      7,
+      8,
+      10,
+      11,
+      12
+    ],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 38,
+    "slug": "sd1-mat-pola-tangan-bintang",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 19739
+    },
+    "maxDensity": 12,
+    "dragTargets": [],
+    "dragSlots": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 37,
+    "slug": "sd1-sains-cepat-atau-lambat-hangat",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21124
+    },
+    "maxDensity": 5,
+    "dragTargets": [
+      "cepat hangat, kering, atau meleleh",
+      "lambat berubah"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 37,
+    "slug": "sd1-sains-cepat-atau-lambat-hangat",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21380
+    },
+    "maxDensity": 5,
+    "dragTargets": [
+      "cepat hangat, kering, atau meleleh",
+      "lambat berubah"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 37,
+    "slug": "sd1-sains-cepat-atau-lambat-hangat",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 21407
+    },
+    "maxDensity": 5,
+    "dragTargets": [
+      "cepat hangat, kering, atau meleleh",
+      "lambat berubah"
+    ],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 37,
+    "slug": "sd1-sains-tebak-panas-matahari",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18673
+    },
+    "maxDensity": 3,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 37,
+    "slug": "sd1-sains-tebak-panas-matahari",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18664
+    },
+    "maxDensity": 3,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 37,
+    "slug": "sd1-sains-tebak-panas-matahari",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18679
+    },
+    "maxDensity": 3,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 42,
+    "slug": "sd1-sains-turus-pengunjung-kebun",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217101
+    },
+    "maxDensity": 8,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 42,
+    "slug": "sd1-sains-turus-pengunjung-kebun",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217002
+    },
+    "maxDensity": 8,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 42,
+    "slug": "sd1-sains-turus-pengunjung-kebun",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217105
+    },
+    "maxDensity": 8,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 42,
+    "slug": "sd1-sains-turus-pengunjung-kolam",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217181
+    },
+    "maxDensity": 8,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 42,
+    "slug": "sd1-sains-turus-pengunjung-kolam",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217527
+    },
+    "maxDensity": 8,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 42,
+    "slug": "sd1-sains-turus-pengunjung-kolam",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217126
+    },
+    "maxDensity": 8,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 41,
+    "slug": "sd1-sains-ukur-jengkal-temuan-kebun",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 19967
+    },
+    "maxDensity": 6,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 41,
+    "slug": "sd1-sains-ukur-jengkal-temuan-kebun",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 20061
+    },
+    "maxDensity": 7,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 41,
+    "slug": "sd1-sains-ukur-jengkal-temuan-kebun",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 20099
+    },
+    "maxDensity": 7,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 41,
+    "slug": "sd1-sains-ukur-kubus-temuan-kebun",
+    "device": "hp",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18680
+    },
+    "maxDensity": 10,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 41,
+    "slug": "sd1-sains-ukur-kubus-temuan-kebun",
+    "device": "ipad",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18724
+    },
+    "maxDensity": 10,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  },
+  {
+    "mission": 41,
+    "slug": "sd1-sains-ukur-kubus-temuan-kebun",
+    "device": "ipad-pendek",
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rounds": 10,
+    "result": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18693
+    },
+    "maxDensity": 10,
+    "dragTargets": [],
+    "dragSlots": [],
+    "maxStageScroll": 0,
+    "consoleErrors": []
+  }
+]
