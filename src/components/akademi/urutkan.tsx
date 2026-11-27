@@ -240,6 +240,11 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const bandingPanjang = paket.competencyIds.includes("MAT.TKA.BANDING.02");
   const bandingPilot = paket.competencyIds.some(id => ["SAINS.SD1.BUNYI.02", "MAT.SD1.UKUR.01", "MAT.SD1.UKUR.02"].includes(id));
   const layarPendek = tataTumbuhan && layarPendekUrutan(w, h);
+  const kartuLangkah = (paket.id === "sd2-kode-kartu-langkah" || paket.id === "sd2-kode-kartu-tugas-kelas")
+    && w >= 340 && h >= 500 && h > w;
+  const slotLangkahHp = kartuLangkah && w < 600;
+  const kolomLangkahHp = n > 6 ? 4 : 3;
+  const labelLangkahPanjang = slotLangkahHp && n > 6 && shown.some((s) => t(s.labelKey).length >= 38);
   const bandingRingkas = bandingPanjang && w > 0 && w <= 360 && h > 0 && h < 520;
   const algoritmaHp = paket.competencyIds.includes("KODE.SD1.ALGORITMA.01") && w > 0 && w < 600;
   const layarRapat = layarPendek || bandingRingkas || algoritmaHp || (bandingPilot && w < 600);
@@ -263,7 +268,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const caraSusun = inggris ? "Tap a card, then tap a numbered box." : KALIMAT_URUTKAN.caraSusun;
   const base = n <= 4 ? 64 : 52;
   const jarakBagian = layarRapat ? 8 : GAP_ROOT;
-  const gap = Math.round((layarRapat ? 8 : tataTumbuhan && w >= 600 ? 14 : 10) * sk);
+  const gap = Math.round((layarRapat || labelLangkahPanjang ? 8 : tataTumbuhan && w >= 600 ? 14 : 10) * sk);
   const pad = 12 * sk;
   const lebarDalam = w > 0 ? (tataRingkas ? Math.min(w, 920) : w) - (tataAngkaRingkas ? 2 * gap + 2 : 2 * pad + 6) : 0;
   // Cadangkan tinggi judul, petunjuk, kedua jarak vertikal, dan padding panel.
@@ -282,11 +287,13 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   // Di HP pendek, slot bernomor berjajar supaya kartu sumber tetap bisa dibaca dalam dua kolom.
   const barisSlot = layarPendek || bandingPilot || tataTumbuhHewan ? 1 : sel.baris;
   const jarakSlot = layarPendek || hewanHp ? 6 : gap;
-  const lebarSlot = bandingPilot ? Math.floor((w - 24 - gap * (n - 1)) / n)
+  const lebarSlot = slotLangkahHp ? Math.floor((lebarDalam - gap * (kolomLangkahHp - 1)) / kolomLangkahHp)
+    : bandingPilot ? Math.floor((w - 24 - gap * (n - 1)) / n)
     : hewanTabletTegak ? Math.min(215, Math.floor((lebarDalam - jarakSlot * (n - 1)) / n))
     : layarPendek || hewanHp ? Math.floor((w - 18 - jarakSlot * (n - 1)) / n) : sel.s;
   const selaBarisSlot = gap * (barisSlot - 1);
-  const tinggiSlot = bandingPilot ? Math.min(w < 600 ? 84 : 150, lebarSlot * 0.85) : hitungLega ? batas(148, lebarSlot * 0.9, 200)
+  const tinggiSlot = kartuLangkah ? batas(68, lebarSlot * 0.96, slotLangkahHp ? n > 6 ? 80 : 106 : 168)
+    : bandingPilot ? Math.min(w < 600 ? 84 : 150, lebarSlot * 0.85) : hitungLega ? batas(148, lebarSlot * 0.9, 200)
     : hitungLegaHp ? batas(92, lebarSlot, 138)
     : tataAngkaRingkas ? batas(58, lebarSlot * 0.82, 138)
     : tataTumbuhHewan ? batas(58, lebarSlot * 0.76, 148)
@@ -296,7 +303,8 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     : batas((bandingRingkas ? 60 : 96) * sk, Math.min(sel.s * rasio, (tinggi * 0.55 - 2 * pad - selaBarisSlot) / sel.baris), tataTunas ? 240 : 400);
   // benda berskala (mis. planet besar) dibagi skala terbesarnya supaya tidak meluap dari kartu/slot
   const skalaMaks = Math.max(1, ...shown.map((x) => skalaLebar(visual(x, t))));
-  const ukuran = (bandingPilot ? Math.min(lebarSlot * 0.74, tinggiSlot * 0.74) : tataAngkaRingkas ? Math.min(lebarSlot * 0.72, tinggiSlot * 0.76)
+  const ukuran = (kartuLangkah ? Math.min(lebarSlot * 0.8, tinggiSlot * 0.72, 140)
+    : bandingPilot ? Math.min(lebarSlot * 0.74, tinggiSlot * 0.74) : tataAngkaRingkas ? Math.min(lebarSlot * 0.72, tinggiSlot * 0.76)
     : tataTumbuhHewan ? Math.min(tinggiSlot * (hewanHp ? 0.78 : 1), lebarSlot * 0.9)
     : layarPendek ? Math.min(tinggiSlot * 0.62, lebarSlot * 0.7)
     : tataTumbuhan
@@ -307,7 +315,8 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const barisSumber = Math.max(1, Math.ceil(sisa.length / Math.ceil(n / sel.baris)));
   const lebarKartu = bandingPilot ? (Math.min(w, 920) - 32 - gap) / 2 : tataTumbuhan && sisa.length === 1 ? Math.min(Math.max(100, w - 32), Math.max(sel.s, w >= 600 ? 330 : 162)) : sel.s;
   const sisaTinggi = tinggi - tinggiSlot * barisSlot - selaBarisSlot;
-  const tinggiMinKartu = bandingPilot ? Math.max(110, Math.min(w < 600 ? 200 : 250, (h - tinggiSlot - 200 - 3 * gap) / Math.ceil(n / 2))) : tataAngkaRingkas ? tinggiSlot
+  const tinggiMinKartu = kartuLangkah ? slotLangkahHp ? n > 6 ? 86 : 106 : batas(140, tinggiKartu + 12, 194)
+    : bandingPilot ? Math.max(110, Math.min(w < 600 ? 200 : 250, (h - tinggiSlot - 200 - 3 * gap) / Math.ceil(n / 2))) : tataAngkaRingkas ? tinggiSlot
     : hewanTabletTegak ? batas(172, (h - tinggiSlot - 112 - gap) / sel.baris, 252)
     : tataTumbuhHewan ? batas(104, lebarKartu * 0.92, 174)
     : tataTumbuhan
@@ -320,7 +329,8 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
     ? Math.min(tinggiMinKartu * (layarPendek ? 0.56 : 0.64), lebarKartu * 0.76, 186)
     : batas((padat || sel.baris >= 3 ? 36 : base + 8) * sk, Math.min(tinggiKartu * (padat ? 0.24 : 0.5), sel.s * (tegak ? 0.68 : 0.58)), 160)) / skalaMaks;
   // Label organ memakai lebar kartu sehingga gambar sumber dapat mendekati ukuran gambar di slot.
-  const ukuranSumber = hewanTabletTegak ? Math.min((lebarKartu - 20) / skalaMaks, tinggiMinKartu - 60, 196)
+  const ukuranSumber = kartuLangkah ? Math.min((lebarKartu - 20) / skalaMaks, labelLangkahPanjang ? 44 : slotLangkahHp ? 58 : 96)
+    : hewanTabletTegak ? Math.min((lebarKartu - 20) / skalaMaks, tinggiMinKartu - 60, 196)
     : tataTumbuhHewan ? Math.min(lebarKartu / 1.6, tinggiMinKartu - (hewanHpPendek ? 59 : hewanHp ? 46 : 58), 116)
     : tataPencernaan ? Math.max(ukuranKartu, Math.min(ukuran, 48 * sk)) : ukuranKartu;
   // Tugas membandingkan panjang memakai skala gambar yang sama sebelum dan sesudah dipindahkan.
@@ -357,7 +367,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
       ) : <>{judul}{petunjuk}</>}
 
       {/* slot bernomor di rak bertema dunia */}
-      <div className={`mx-auto flex w-full justify-center ${layarPendek || tataAngkaRingkas || tataTumbuhHewan ? "flex-nowrap" : "flex-wrap"} ${tataRingkas ? "shrink-0 items-stretch" : "content-center items-center"}`} style={{ ...gayaRak(tema, sk), gap: jarakSlot, rowGap: tataTunas ? Math.max(gap, 16 * sk) : gap, paddingTop: (tataTumbuhan || tataTumbuhHewan ? 0 : bandingRingkas ? 8 : tataTunas || tataAngkaRingkas ? 14 : 18) * sk, maxWidth: layarPendek || hewanHp ? undefined : lebarRak, flex: tataRingkas ? undefined : "11 1 0%" }}>
+      <div className={`mx-auto flex w-full justify-center ${layarPendek || tataAngkaRingkas || tataTumbuhHewan ? "flex-nowrap" : "flex-wrap"} ${tataRingkas ? "shrink-0 items-stretch" : "content-center items-center"}`} style={{ ...gayaRak(tema, sk), gap: jarakSlot, rowGap: tataTunas ? Math.max(gap, 16 * sk) : gap, paddingTop: (tataTumbuhan || tataTumbuhHewan ? 0 : bandingRingkas || labelLangkahPanjang ? 8 : tataTunas || tataAngkaRingkas ? 14 : 18) * sk, maxWidth: layarPendek || hewanHp ? undefined : lebarRak, flex: kartuLangkah || tataRingkas ? undefined : "11 1 0%" }}>
         {slot.map((id, i) => {
           const benar = kunci && id === correct[i];
           const salah = kunci && id !== correct[i];
@@ -396,7 +406,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
       </div>
 
       {/* kartu langkah yang belum dipakai */}
-      <div className={`mx-auto flex w-full justify-center ${tataAngkaRingkas ? "flex-nowrap" : "flex-wrap"} ${tataRingkas ? "shrink-0 items-stretch" : "content-center items-center"}`} style={{ ...gayaPanel(tema, sk), gap, minHeight: tataAngkaRingkas ? tinggiMinKartu + 8 * sk : tataTunas ? tinggiMinKartu : tataTumbuhan || tataTumbuhHewan ? undefined : 100 * sk, maxWidth: lebarRak, flex: tataRingkas ? undefined : "9 1 0%" }}>
+      <div className={`mx-auto flex w-full justify-center ${tataAngkaRingkas ? "flex-nowrap" : "flex-wrap"} ${kartuLangkah ? "content-center items-stretch" : tataRingkas ? "shrink-0 items-stretch" : "content-center items-center"}`} style={{ ...gayaPanel(tema, sk), gap, minHeight: tataAngkaRingkas ? tinggiMinKartu + 8 * sk : tataTunas ? tinggiMinKartu : tataTumbuhan || tataTumbuhHewan ? undefined : 100 * sk, maxWidth: lebarRak, flex: kartuLangkah ? "1 0 auto" : tataRingkas ? undefined : "9 1 0%" }}>
         {sisa.map((s) => {
           const dipilih = terpilih === s.id;
           const disorot = hint?.kartu === s.id;
@@ -408,7 +418,7 @@ function Susun({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
               size={ukuranPanjang ?? ukuranSumber}
               ariaLabel={bandingPanjang ? labelAkses(s) : undefined}
               labelPenuh={tataBunyi || tataPencernaan || tataTumbuhHewan}
-              labelSize={layarRapat ? 12 : batas(14 * sk, lebarKartu * 0.07, 22)}
+              labelSize={layarRapat ? 12 : labelLangkahPanjang ? 13 : batas(14 * sk, lebarKartu * 0.07, 22)}
               selected={dipilih}
               onClick={(e) => { if (e.detail !== 0 && abaikanKlik.current) return; ketukKartu(s.id); }}
               onPointerDown={kalenderPilot ? (e) => mulaiSeret(e, s.id) : undefined}
