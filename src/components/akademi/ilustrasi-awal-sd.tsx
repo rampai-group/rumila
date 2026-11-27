@@ -70,8 +70,26 @@ export function IlustrasiAwalSD({ id }: { id: string }) {
   );
   if (id === "peluit") return <g stroke="#4c697c" strokeWidth="3"><path d="M36 21H81V41H113V60H82Q72 87 48 78Q17 68 23 43Z" fill="#b6c9d6" /><circle cx="53" cy="52" r="19" fill="#e3ecf1" /><rect x="71" y="31" width="16" height="8" rx="2" fill="#547083" /><path d="M111 43H119V58H111" fill="#8aa9bd" /><circle cx="27" cy="69" r="8" fill="none" /><path d="M21 74Q5 89 25 96Q45 101 42 88" fill="none" stroke="#d88855" /></g>;
   if (id.startsWith("tunas-")) {
-    const x=id.endsWith("timur")?36:id.endsWith("barat")?94:65;
-    return <><path d="M21 91H109" stroke="#b99a6b" strokeWidth="8" strokeLinecap="round" /><path d={`M65 88V60Q65 39 ${x} 26`} fill="none" stroke="#4a9145" strokeWidth="6" /><path d="M64 69Q36 41 29 61Q39 76 64 76M67 55Q91 36 101 55Q88 68 67 61" fill="#77b85b" stroke="#4a9145" strokeWidth="2" /><g transform={`translate(${x} 24) rotate(${id.endsWith("timur")?-50:id.endsWith("barat")?50:0})`}><ellipse rx="11" ry="17" fill="#91bd4d" stroke="#4a9145" strokeWidth="2" /><path d="M-7 7L0-8 7 7M-7 7L0 15 7 7" fill="none" stroke="#598f36" strokeWidth="2" /></g></>;
+    // Sisakan akar di tengah. Timur di kanan dan barat di kiri, seperti kartu bayangan.
+    const pagi = id.endsWith("timur");
+    const sore = id.endsWith("barat");
+    const xTunas = pagi ? 86 : sore ? 44 : 65;
+    const yTunas = pagi || sore ? 52 : 40;
+    const xMatahari = pagi ? 112 : sore ? 18 : 65;
+    const yMatahari = pagi || sore ? 67 : 15;
+    return <>
+      <rect width="130" height="100" rx="14" fill={pagi ? "#f7c99c" : sore ? "#b293cb" : "#98d6ff"} />
+      <circle cx={xMatahari} cy={yMatahari} r="13" fill="#fff1a0" />
+      <circle cx={xMatahari} cy={yMatahari} r="9.5" fill={sore ? "#f77b37" : "#ffca2b"} />
+      <path d="M0 73H130V86Q130 100 116 100H14Q0 100 0 86Z" fill="#b5cf80" />
+      <path d="M36 91H94" stroke="#a88758" strokeWidth="6" strokeLinecap="round" />
+      <path d={`M65 88V71Q65 58 ${xTunas} ${yTunas}`} fill="none" stroke="#477c3a" strokeWidth="5" />
+      <path d="M63 73Q43 53 34 63Q43 75 63 78M67 67Q84 57 98 68Q87 78 67 73" fill="#77b85b" stroke="#477c3a" strokeWidth="2" />
+      <g transform={`translate(${xTunas} ${yTunas}) rotate(${pagi ? 50 : sore ? -50 : 0})`}>
+        <ellipse rx="8" ry="13" fill="#91bd4d" stroke="#477c3a" strokeWidth="2" />
+        <path d="M-5 5L0-6 5 5M-5 5L0 11 5 5" fill="none" stroke="#598f36" strokeWidth="1.5" />
+      </g>
+    </>;
   }
   if (id === "gula-halus") return <g><ellipse cx="62" cy="81" rx="47" ry="9" fill="#d5b38a" /><path d="M21 77Q37 63 45 50Q57 30 70 48L102 78Q63 90 21 77Z" fill="#fffdf4" stroke="#d2cbbc" strokeWidth="2" />{[[45,66],[55,48],[75,69],[63,75],[81,76],[54,60]].map(([x,y])=><circle key={`${x}-${y}`} cx={x} cy={y} r="1.5" fill="#d9d2c1" />)}<path d="M82 44L114 12" stroke="#96aab5" strokeWidth="8" strokeLinecap="round" /><ellipse cx="79" cy="47" rx="13" ry="8" transform="rotate(-38 79 47)" fill="#e0ebf0" stroke="#7e939f" strokeWidth="2" /></g>;
   return null;

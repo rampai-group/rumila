@@ -338997,7 +338997,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perbaiki-perjalanan-matahari",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -339011,7 +339011,7 @@ export const PAKET_RAW: unknown[] = [
         "s-langit": "Matahari di langit",
         "langit-fajar": "langit timur mulai terang",
         "langit-pagi": "Matahari rendah di timur",
-        "langit-siang": "Matahari tinggi di atas kepala",
+        "langit-siang": "Matahari tinggi di langit",
         "langit-sore": "Matahari terbenam di barat",
         "s-bayangan": "Bayangan tiang bendera",
         "bayangan-pagi": "bayangan panjang ke arah barat",
@@ -339029,7 +339029,7 @@ export const PAKET_RAW: unknown[] = [
         "t-petani": "Petani dan Matahari",
         "petani-1": "petani berangkat, Matahari baru terbit",
         "petani-2": "petani menanam padi, Matahari masih rendah",
-        "petani-3": "petani berteduh, Matahari di atas kepala",
+        "petani-3": "petani berteduh, Matahari tinggi di langit",
         "petani-4": "petani pulang, Matahari terbenam",
         "t-bayangan-pohon": "Bayangan pohon",
         "bayangan-pohon-1": "bayangan panjang ke arah barat",
@@ -339039,17 +339039,17 @@ export const PAKET_RAW: unknown[] = [
         "t-pasir": "Pasir di pantai",
         "pasir-1": "pasir dingin, Matahari baru terbit",
         "pasir-2": "pasir hangat, Matahari masih rendah di timur",
-        "pasir-3": "pasir sangat panas, Matahari di atas kepala",
+        "pasir-3": "pasir sangat panas, Matahari tinggi di langit",
         "pasir-4": "pasir mulai dingin, Matahari terbenam",
         "t-jemuran": "Menjemur baju",
         "jemuran-1": "jemur baju basah, Matahari baru terbit di timur",
         "jemuran-2": "baju mulai kering, Matahari makin tinggi",
-        "jemuran-3": "baju kering, Matahari di atas kepala",
+        "jemuran-3": "baju kering, Matahari tinggi di langit",
         "jemuran-4": "angkat jemuran, Matahari terbenam di barat",
         "t-burung": "Burung dan Matahari",
         "burung-1": "burung berkicau, Matahari baru terbit",
         "burung-2": "burung mencari ulat, Matahari masih rendah",
-        "burung-3": "burung berteduh, Matahari di atas kepala",
+        "burung-3": "burung berteduh, Matahari tinggi di langit",
         "burung-4": "burung pulang ke sarang, Matahari terbenam",
         "t-bayangan-diri": "Bayangan tubuhmu",
         "bayangan-diri-1": "bayanganmu panjang ke arah barat",
@@ -339063,7 +339063,7 @@ export const PAKET_RAW: unknown[] = [
         "s-langit": "The Sun in the sky",
         "langit-fajar": "eastern sky getting light",
         "langit-pagi": "Sun low in the east",
-        "langit-siang": "Sun high overhead",
+        "langit-siang": "Sun high in the sky",
         "langit-sore": "Sun setting in the west",
         "s-bayangan": "The flagpole's shadow",
         "bayangan-pagi": "long shadow pointing west",
@@ -339072,7 +339072,7 @@ export const PAKET_RAW: unknown[] = [
         "s-kegiatan": "Activities and the Sun",
         "kegiatan-bangun": "rooster crows as the Sun rises",
         "kegiatan-sekolah": "off to school, the Sun is still low",
-        "kegiatan-makansiang": "lunch, the Sun is overhead",
+        "kegiatan-makansiang": "lunch, the Sun is high in the sky",
         "kegiatan-pulang": "home from play as the Sun sets",
         "s-bunga": "A young sunflower bud follows the light",
         "bunga-timur": "young bud facing east",
@@ -339081,7 +339081,7 @@ export const PAKET_RAW: unknown[] = [
         "t-petani": "The farmer and the Sun",
         "petani-1": "the farmer sets off as the Sun rises",
         "petani-2": "the farmer plants rice, the Sun is still low",
-        "petani-3": "the farmer rests in the shade, the Sun is overhead",
+        "petani-3": "the farmer rests in the shade, the Sun is high in the sky",
         "petani-4": "the farmer goes home as the Sun sets",
         "t-bayangan-pohon": "A tree's shadow",
         "bayangan-pohon-1": "long shadow pointing west",
@@ -339091,17 +339091,17 @@ export const PAKET_RAW: unknown[] = [
         "t-pasir": "Sand at the beach",
         "pasir-1": "cool sand, the Sun has just risen",
         "pasir-2": "warm sand, the Sun is still low in the east",
-        "pasir-3": "very hot sand, the Sun is overhead",
+        "pasir-3": "very hot sand, the Sun is high in the sky",
         "pasir-4": "sand cooling down, the Sun is setting",
         "t-jemuran": "Drying the washing",
         "jemuran-1": "hang up wet clothes, the Sun has just risen in the east",
         "jemuran-2": "clothes drying, the Sun climbs higher",
-        "jemuran-3": "clothes dry, the Sun is overhead",
+        "jemuran-3": "clothes dry, the Sun is high in the sky",
         "jemuran-4": "bring the washing in, the Sun sets in the west",
         "t-burung": "Birds and the Sun",
         "burung-1": "birds sing as the Sun rises",
         "burung-2": "birds hunt caterpillars, the Sun is still low",
-        "burung-3": "birds shelter in the shade, the Sun is overhead",
+        "burung-3": "birds shelter in the shade, the Sun is high in the sky",
         "burung-4": "birds fly home as the Sun sets",
         "t-bayangan-diri": "Your own shadow",
         "bayangan-diri-1": "your shadow is long, pointing west",
@@ -339133,22 +339133,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "fajar",
             "labelKey": "langit-fajar",
-            "emoji": "🌄"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0,
+              "varian": "fajar"
+            }
           },
           {
             "id": "pagi",
             "labelKey": "langit-pagi",
-            "emoji": "🌅"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16
+            }
           },
           {
             "id": "siang",
             "labelKey": "langit-siang",
-            "emoji": "☀️"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5
+            }
           },
           {
             "id": "sore",
             "labelKey": "langit-sore",
-            "emoji": "🌇"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1
+            }
           }
         ]
       },
@@ -339192,22 +339205,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bangun",
             "labelKey": "kegiatan-bangun",
-            "emoji": "🐓"
+            "emoji": "🐓",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0
+            }
           },
           {
             "id": "sekolah",
             "labelKey": "kegiatan-sekolah",
-            "emoji": "🎒"
+            "emoji": "🎒",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16
+            }
           },
           {
             "id": "makansiang",
             "labelKey": "kegiatan-makansiang",
-            "emoji": "🍱"
+            "emoji": "🍱",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5
+            }
           },
           {
             "id": "pulang",
             "labelKey": "kegiatan-pulang",
-            "emoji": "🌇"
+            "emoji": "🛝",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1
+            }
           }
         ]
       },
@@ -339248,22 +339277,41 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "petani-1",
             "labelKey": "petani-1",
-            "emoji": "🧑‍🌾"
+            "emoji": "🧑‍🌾",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0
+            }
           },
           {
             "id": "petani-2",
             "labelKey": "petani-2",
-            "emoji": "🌾"
+            "emoji": "🧑‍🌾",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16,
+              "tanda": "🌾"
+            }
           },
           {
             "id": "petani-3",
             "labelKey": "petani-3",
-            "emoji": "🌳"
+            "emoji": "🌳",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5,
+              "tanda": "🧑‍🌾"
+            }
           },
           {
             "id": "petani-4",
             "labelKey": "petani-4",
-            "emoji": "🏡"
+            "emoji": "🏡",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1,
+              "tanda": "🧑‍🌾"
+            }
           }
         ]
       },
@@ -339320,7 +339368,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "matahari",
               "t": 0,
-              "tanda": "❄️"
+              "varian": "pantai"
             }
           },
           {
@@ -339329,8 +339377,8 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🏖️",
             "adegan": {
               "jenis": "matahari",
-              "t": 0.25,
-              "tanda": "♨️"
+              "t": 0.16,
+              "varian": "pantai"
             }
           },
           {
@@ -339340,7 +339388,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "matahari",
               "t": 0.5,
-              "tanda": "🔥"
+              "varian": "pantai"
             }
           },
           {
@@ -339350,7 +339398,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "matahari",
               "t": 1,
-              "tanda": "💨"
+              "varian": "pantai"
             }
           }
         ]
@@ -339375,7 +339423,7 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "👕",
             "adegan": {
               "jenis": "matahari",
-              "t": 0.25,
+              "t": 0.16,
               "tanda": "💨"
             }
           },
@@ -339408,22 +339456,42 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "burung-1",
             "labelKey": "burung-1",
-            "emoji": "🐦"
+            "emoji": "🐦",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0,
+              "tanda": "🎵"
+            }
           },
           {
             "id": "burung-2",
             "labelKey": "burung-2",
-            "emoji": "🐛"
+            "emoji": "🐦",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16,
+              "tanda": "🐛"
+            }
           },
           {
             "id": "burung-3",
             "labelKey": "burung-3",
-            "emoji": "🌳"
+            "emoji": "🌳",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5,
+              "tanda": "🐦"
+            }
           },
           {
             "id": "burung-4",
             "labelKey": "burung-4",
-            "emoji": "🌇"
+            "emoji": "🪺",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1,
+              "tanda": "🐦"
+            }
           }
         ]
       },
@@ -339473,7 +339541,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perjalanan-matahari-sehari",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -339487,7 +339555,7 @@ export const PAKET_RAW: unknown[] = [
         "s-langit": "Matahari di langit",
         "langit-fajar": "langit timur mulai terang",
         "langit-pagi": "Matahari rendah di timur",
-        "langit-siang": "Matahari tinggi di atas kepala",
+        "langit-siang": "Matahari tinggi di langit",
         "langit-sore": "Matahari terbenam di barat",
         "s-bayangan": "Bayangan tiang bendera",
         "bayangan-pagi": "bayangan panjang ke arah barat",
@@ -339505,7 +339573,7 @@ export const PAKET_RAW: unknown[] = [
         "t-petani": "Petani dan Matahari",
         "petani-1": "petani berangkat, Matahari baru terbit",
         "petani-2": "petani menanam padi, Matahari masih rendah",
-        "petani-3": "petani berteduh, Matahari di atas kepala",
+        "petani-3": "petani berteduh, Matahari tinggi di langit",
         "petani-4": "petani pulang, Matahari terbenam",
         "t-bayangan-pohon": "Bayangan pohon",
         "bayangan-pohon-1": "bayangan panjang ke arah barat",
@@ -339515,17 +339583,17 @@ export const PAKET_RAW: unknown[] = [
         "t-pasir": "Pasir di pantai",
         "pasir-1": "pasir dingin, Matahari baru terbit",
         "pasir-2": "pasir hangat, Matahari masih rendah di timur",
-        "pasir-3": "pasir sangat panas, Matahari di atas kepala",
+        "pasir-3": "pasir sangat panas, Matahari tinggi di langit",
         "pasir-4": "pasir mulai dingin, Matahari terbenam",
         "t-jemuran": "Menjemur baju",
         "jemuran-1": "jemur baju basah, Matahari baru terbit di timur",
         "jemuran-2": "baju mulai kering, Matahari makin tinggi",
-        "jemuran-3": "baju kering, Matahari di atas kepala",
+        "jemuran-3": "baju kering, Matahari tinggi di langit",
         "jemuran-4": "angkat jemuran, Matahari terbenam di barat",
         "t-burung": "Burung dan Matahari",
         "burung-1": "burung berkicau, Matahari baru terbit",
         "burung-2": "burung mencari ulat, Matahari masih rendah",
-        "burung-3": "burung berteduh, Matahari di atas kepala",
+        "burung-3": "burung berteduh, Matahari tinggi di langit",
         "burung-4": "burung pulang ke sarang, Matahari terbenam",
         "t-bayangan-diri": "Bayangan tubuhmu",
         "bayangan-diri-1": "bayanganmu panjang ke arah barat",
@@ -339539,7 +339607,7 @@ export const PAKET_RAW: unknown[] = [
         "s-langit": "The Sun in the sky",
         "langit-fajar": "eastern sky getting light",
         "langit-pagi": "Sun low in the east",
-        "langit-siang": "Sun high overhead",
+        "langit-siang": "Sun high in the sky",
         "langit-sore": "Sun setting in the west",
         "s-bayangan": "The flagpole's shadow",
         "bayangan-pagi": "long shadow pointing west",
@@ -339548,7 +339616,7 @@ export const PAKET_RAW: unknown[] = [
         "s-kegiatan": "Activities and the Sun",
         "kegiatan-bangun": "rooster crows as the Sun rises",
         "kegiatan-sekolah": "off to school, the Sun is still low",
-        "kegiatan-makansiang": "lunch, the Sun is overhead",
+        "kegiatan-makansiang": "lunch, the Sun is high in the sky",
         "kegiatan-pulang": "home from play as the Sun sets",
         "s-bunga": "A young sunflower bud follows the light",
         "bunga-timur": "young bud facing east",
@@ -339557,7 +339625,7 @@ export const PAKET_RAW: unknown[] = [
         "t-petani": "The farmer and the Sun",
         "petani-1": "the farmer sets off as the Sun rises",
         "petani-2": "the farmer plants rice, the Sun is still low",
-        "petani-3": "the farmer rests in the shade, the Sun is overhead",
+        "petani-3": "the farmer rests in the shade, the Sun is high in the sky",
         "petani-4": "the farmer goes home as the Sun sets",
         "t-bayangan-pohon": "A tree's shadow",
         "bayangan-pohon-1": "long shadow pointing west",
@@ -339567,17 +339635,17 @@ export const PAKET_RAW: unknown[] = [
         "t-pasir": "Sand at the beach",
         "pasir-1": "cool sand, the Sun has just risen",
         "pasir-2": "warm sand, the Sun is still low in the east",
-        "pasir-3": "very hot sand, the Sun is overhead",
+        "pasir-3": "very hot sand, the Sun is high in the sky",
         "pasir-4": "sand cooling down, the Sun is setting",
         "t-jemuran": "Drying the washing",
         "jemuran-1": "hang up wet clothes, the Sun has just risen in the east",
         "jemuran-2": "clothes drying, the Sun climbs higher",
-        "jemuran-3": "clothes dry, the Sun is overhead",
+        "jemuran-3": "clothes dry, the Sun is high in the sky",
         "jemuran-4": "bring the washing in, the Sun sets in the west",
         "t-burung": "Birds and the Sun",
         "burung-1": "birds sing as the Sun rises",
         "burung-2": "birds hunt caterpillars, the Sun is still low",
-        "burung-3": "birds shelter in the shade, the Sun is overhead",
+        "burung-3": "birds shelter in the shade, the Sun is high in the sky",
         "burung-4": "birds fly home as the Sun sets",
         "t-bayangan-diri": "Your own shadow",
         "bayangan-diri-1": "your shadow is long, pointing west",
@@ -339609,22 +339677,35 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "fajar",
             "labelKey": "langit-fajar",
-            "emoji": "🌄"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0,
+              "varian": "fajar"
+            }
           },
           {
             "id": "pagi",
             "labelKey": "langit-pagi",
-            "emoji": "🌅"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16
+            }
           },
           {
             "id": "siang",
             "labelKey": "langit-siang",
-            "emoji": "☀️"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5
+            }
           },
           {
             "id": "sore",
             "labelKey": "langit-sore",
-            "emoji": "🌇"
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1
+            }
           }
         ]
       },
@@ -339668,22 +339749,38 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bangun",
             "labelKey": "kegiatan-bangun",
-            "emoji": "🐓"
+            "emoji": "🐓",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0
+            }
           },
           {
             "id": "sekolah",
             "labelKey": "kegiatan-sekolah",
-            "emoji": "🎒"
+            "emoji": "🎒",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16
+            }
           },
           {
             "id": "makansiang",
             "labelKey": "kegiatan-makansiang",
-            "emoji": "🍱"
+            "emoji": "🍱",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5
+            }
           },
           {
             "id": "pulang",
             "labelKey": "kegiatan-pulang",
-            "emoji": "🌇"
+            "emoji": "🛝",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1
+            }
           }
         ]
       },
@@ -339724,22 +339821,41 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "petani-1",
             "labelKey": "petani-1",
-            "emoji": "🧑‍🌾"
+            "emoji": "🧑‍🌾",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0
+            }
           },
           {
             "id": "petani-2",
             "labelKey": "petani-2",
-            "emoji": "🌾"
+            "emoji": "🧑‍🌾",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16,
+              "tanda": "🌾"
+            }
           },
           {
             "id": "petani-3",
             "labelKey": "petani-3",
-            "emoji": "🌳"
+            "emoji": "🌳",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5,
+              "tanda": "🧑‍🌾"
+            }
           },
           {
             "id": "petani-4",
             "labelKey": "petani-4",
-            "emoji": "🏡"
+            "emoji": "🏡",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1,
+              "tanda": "🧑‍🌾"
+            }
           }
         ]
       },
@@ -339796,7 +339912,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "matahari",
               "t": 0,
-              "tanda": "❄️"
+              "varian": "pantai"
             }
           },
           {
@@ -339805,8 +339921,8 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🏖️",
             "adegan": {
               "jenis": "matahari",
-              "t": 0.25,
-              "tanda": "♨️"
+              "t": 0.16,
+              "varian": "pantai"
             }
           },
           {
@@ -339816,7 +339932,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "matahari",
               "t": 0.5,
-              "tanda": "🔥"
+              "varian": "pantai"
             }
           },
           {
@@ -339826,7 +339942,7 @@ export const PAKET_RAW: unknown[] = [
             "adegan": {
               "jenis": "matahari",
               "t": 1,
-              "tanda": "💨"
+              "varian": "pantai"
             }
           }
         ]
@@ -339851,7 +339967,7 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "👕",
             "adegan": {
               "jenis": "matahari",
-              "t": 0.25,
+              "t": 0.16,
               "tanda": "💨"
             }
           },
@@ -339884,22 +340000,42 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "burung-1",
             "labelKey": "burung-1",
-            "emoji": "🐦"
+            "emoji": "🐦",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0,
+              "tanda": "🎵"
+            }
           },
           {
             "id": "burung-2",
             "labelKey": "burung-2",
-            "emoji": "🐛"
+            "emoji": "🐦",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.16,
+              "tanda": "🐛"
+            }
           },
           {
             "id": "burung-3",
             "labelKey": "burung-3",
-            "emoji": "🌳"
+            "emoji": "🌳",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 0.5,
+              "tanda": "🐦"
+            }
           },
           {
             "id": "burung-4",
             "labelKey": "burung-4",
-            "emoji": "🌇"
+            "emoji": "🪺",
+            "adegan": {
+              "jenis": "matahari",
+              "t": 1,
+              "tanda": "🐦"
+            }
           }
         ]
       },
