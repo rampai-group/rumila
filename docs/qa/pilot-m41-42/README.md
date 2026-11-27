@@ -1,6 +1,6 @@
 # QA lokal Pilot SD1 M41–42 — 27 November 2026
 
-Worktree `codex/qa-pilot-m41-42`, dibuat dari main `a3304f1e`, disinkronkan dengan `dbf4ea2d` (PR #259). Nomor dari petaJenjang SD1, gabungan MAT, KODE, SAINS. Perbaikan sesi lain dipertahankan.
+Worktree `codex/qa-pilot-m41-42`, dibuat dari main `a3304f1e`, disinkronkan dengan `dbf4ea2d` (PR #259) dan `6a7fab22` (PR #260). Nomor dari petaJenjang SD1, gabungan MAT, KODE, SAINS. Perbaikan sesi lain dipertahankan.
 
 **12 sesi / 120 ronde: semua selesai 10/10, tanpa gagal, Bantu, atau error JavaScript.** WebKit dengan emulasi sentuh; bukan HP/iPad fisik. Seluruh ronde dimainkan pada ketiga ukuran, termasuk iPad pendek.
 
