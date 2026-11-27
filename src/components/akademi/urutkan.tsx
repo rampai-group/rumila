@@ -436,6 +436,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const tanamanTumbuh = paket.id === "sains-perbaiki-tanaman-tumbuh";
   const kartuPencernaan = paket.id === "sd5-sains-jalan-makanan-perbaiki";
   const tataKelinci = urutanKelinci(ronde);
+  const kartuSiklusHewan = paket.id === "sd3-sains-perbaiki-siklus-hidup-air" || paket.id === "sd3-sains-perbaiki-siklus-hidup-kebun";
   const tataGerbong = paket.id === "sd1-mat-gerbong-urut-0-20";
   const kartuTumbuhan = tataTumbuhan || tanamanTumbuh;
   const inggris = (kartuTumbuhan || tataGerbong) && t(paket.instructionKey) === paket.locale.en?.[paket.instructionKey];
@@ -504,7 +505,7 @@ function Perbaiki({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   // tetap besar dan kata tidak perlu diperkecil/terpotong
   const teksSaja = urutan.every((id) => {
     const l = langkah(id);
-    return !l.emoji && !l.shape && !((kartuTumbuhan || kartuPencernaan) && l.adegan);
+    return !l.emoji && !l.shape && !((kartuTumbuhan || kartuPencernaan || kartuSiklusHewan) && l.adegan);
   });
   const kataPanjang = Math.max(0, ...urutan.flatMap((id) => t(langkah(id).labelKey).split(/\s+/).map((k) => k.length)));
   const duaKolom = layarPendek || tumbuhTablet;
@@ -618,12 +619,13 @@ function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
 
   const { tema, skala: sk, w, h } = usePanggung();
   const adaJudul = !/^mana yang lebih dulu/i.test(t(ronde.titleKey));
-  const panggungLuas = paket.level === "PAUD" && w >= 600 && h >= 460;
+  const gerakLega = paket.id === "sd2-sains-penyebab-gerak" && w >= 600 && h >= 650 && h >= w * 1.15;
+  const panggungLuas = gerakLega || (paket.level === "PAUD" && w >= 600 && h >= 460);
   const potretLuas = panggungLuas && h >= w * 1.15;
   const lebarMaks = potretLuas ? 680 : panggungLuas ? 920 : 800;
   const lebar = Math.min(w || 390, lebarMaks) - 8;
   const gap = Math.round(12 * sk);
-  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT : 160;
+  const tinggiSisa = h > 0 ? h - (adaJudul ? tinggiKepala(sk) + GAP_ROOT : 0) - 62 * Math.min(sk, 1.3) - GAP_ROOT - (gerakLega ? 12 : 0) : 160;
   // Di potret tablet, dua kartu memanfaatkan tinggi layar dan tetap dekat dengan pertanyaan.
   const tumpuk = potretLuas || (lebar < 540 && tinggiSisa > lebar * 1.2);
   const lebarKartu = tumpuk ? lebar : (lebar - gap) / 2;
@@ -635,7 +637,7 @@ function Dulu({ paket, ronde, t, onJawab, hasil }: Props) {
   const ukuran = Math.round(Math.min(panggungLuas ? 340 : 196, tinggiKartu - ruangLabel, (lebarKartu - 24) / skalaTerlebar));
 
   return (
-    <div className="mx-auto flex w-full flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK, maxWidth: lebarMaks }}>
+    <div data-urut-tengah={gerakLega ? "" : undefined} className="mx-auto flex w-full flex-col gap-3 px-1 pb-2 pt-1" style={{ color: INK, maxWidth: lebarMaks }}>
       {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
       {adaJudul && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center" style={{ fontFamily: BALOO, fontSize: 24 * Math.min(sk, 1.3), fontWeight: 900, lineHeight: 1.15, boxShadow: `0 4px 0 rgba(11,37,69,.1), inset 0 0 0 3px ${tema.aksen}33` }}>

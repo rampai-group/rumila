@@ -15,7 +15,22 @@ export const ILUSTRASI_QC_SD_AWAL_IDS = [
   "qc-bahan-aluminium-foil",
   "qc-kelereng-bertabrakan",
   "qc-kelereng-kedua-menggelinding",
+  "qc-adonan-roti",
+  "qc-biji-kedelai",
+  "qc-abu-kayu",
+  "qc-abu-kertas",
 ];
+
+function Abu({ kertas }: { kertas: boolean }) {
+  return <g strokeLinecap="round" strokeLinejoin="round">
+    {kertas
+      ? <path d="M32 57L39 21L85 25L98 35L89 45L94 63L72 69Z" fill="#b7ada1" stroke="#605852" strokeWidth="3" />
+      : <path d="M24 64L27 45L39 38L96 43L107 55L102 72L46 75Z" fill="#625652" stroke="#493d3c" strokeWidth="3" />}
+    <path d="M20 78Q29 67 52 58Q64 52 76 59Q97 62 113 75Q121 83 108 87H29Q14 87 20 78Z" fill="#c4c5c4" stroke="#737a7d" strokeWidth="3" />
+    <path d="M31 78L38 75M45 73L52 71M62 64L68 65M69 77L74 76M88 76L96 79M99 83L103 82M53 83L58 82" fill="none" stroke="#e9e7e1" strokeWidth="2.8" />
+    <path d="M14 88H15M41 89H43M115 89H117M106 63H108" fill="none" stroke="#83898a" strokeWidth="2.8" />
+  </g>;
+}
 
 function KelerengGerak({ setelah }: { setelah: boolean }) {
   const xPertama = setelah ? 44 : 49;
@@ -44,6 +59,27 @@ function KelerengGerak({ setelah }: { setelah: boolean }) {
 }
 
 export function IlustrasiQcSdAwal({ id }: { id: string }) {
+  if (id === "qc-abu-kayu" || id === "qc-abu-kertas") return <Abu kertas={id === "qc-abu-kertas"} />;
+  if (id === "qc-adonan-roti") return (
+    <g strokeLinecap="round" strokeLinejoin="round">
+      <path d="M11 63L44 49L117 59L104 80L58 91L14 82Z" fill="#b88b60" stroke="#8b674a" strokeWidth="3" />
+      <path d="M11 63L44 48L117 59L103 72L60 84L14 74Z" fill="#d7ab78" stroke="#8b674a" strokeWidth="3" />
+      <path d="M29 65C27 48 35 34 47 28Q66 19 83 33Q97 42 98 56Q99 70 83 73Q65 79 45 75Q32 73 29 65Z" fill="#f4e4be" stroke="#ae8b62" strokeWidth="3" />
+      <path d="M37 52Q43 39 54 39Q65 39 63 48M64 34Q73 35 76 43M78 48Q84 51 84 57M39 62Q48 66 60 66M100 65L106 62M21 66L25 68M74 78L82 76" fill="none" stroke="#fff4d9" strokeWidth="3" />
+    </g>
+  );
+  if (id === "qc-biji-kedelai") return (
+    <g strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="65" cy="78" rx="48" ry="10" fill="#f0dfba" />
+      {[[32, 60], [50, 67], [76, 64], [95, 59], [43, 43], [62, 43], [84, 42], [68, 25]].map(([x, y]) => (
+        <g key={x} transform={`translate(${x} ${y}) rotate(${(x + y) % 68 - 34})`}>
+          <ellipse rx="12" ry="9" fill="#ecd29b" stroke="#9a754c" strokeWidth="2.4" />
+          <path d="M2-1L8-2" stroke="#805d43" strokeWidth="2.6" />
+          <path d="M-7-2Q-5-5-1-5" fill="none" stroke="#fff3d0" strokeWidth="2.2" />
+        </g>
+      ))}
+    </g>
+  );
   if (id === "qc-bahan-pasir") return (
     <g strokeLinejoin="round" strokeLinecap="round">
       <path d="M13 78q12-8 24-16 8-5 16-14 7-7 14-7 8 2 17 10l35 24q7 8-7 11H28q-14 0-15-8Z" fill="#edc37c" stroke="#ac7841" strokeWidth="3" />
