@@ -1,11 +1,12 @@
+// Unified QA for the latest Pilot M37–42 presenters, including measurement and tally checks.
 import assert from "node:assert/strict";
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 const { webkit } = await import(process.env.RUMILA_PLAYWRIGHT_MODULE ?? "playwright-core");
 
 const worktree = fileURLToPath(new URL("../../", import.meta.url));
-const dest = process.env.RUMILA_QA_OUTPUT ?? "/tmp/rumila-pilot-m37-42-qa";
-const origin = "http://localhost:" + (process.env.RUMILA_QA_PORT ?? "3878");
+const dest = process.env.RUMILA_QA_OUTPUT ?? "/tmp/rumila-pilot-m37-42-refresh";
+const origin = "http://localhost:" + (process.env.RUMILA_QA_PORT ?? "39937");
 const options = new Set(process.argv.slice(2));
 const devices = [[390, 844, 844, "hp"], [820, 1067, 1180, "ipad-pendek"], [820, 1180, 1180, "ipad"]];
 if (options.has("--narrow")) devices.push([320, 568, 568, "hp-sempit"]);
@@ -126,7 +127,7 @@ async function tryVisibleDrag(page, from, to) {
     const r = el.getBoundingClientRect(), viewport = visualViewport, stage = el.closest("[data-panggung]").getBoundingClientRect();
     const x = (r.left + r.right) / 2, y = (r.top + r.bottom) / 2;
     const visible = x >= stage.left && x <= stage.right && y >= stage.top && y <= stage.bottom && el.contains(document.elementFromPoint(x, y));
-    return { x: (x - viewport.offsetLeft) * viewport.scale, y: (y - viewport.offsetTop) * viewport.scale, visible };
+    return { x, y, visible };
   });
   const start = await point(from), end = await point(to);
   if (!start.visible || !end.visible) return { worked: false, start, end };
@@ -201,16 +202,28 @@ async function solvePattern(page, stage, model, i, path) {
   assert.ok(shown.every((value, j) => value === pattern.labels[j % pattern.labels.length]), "Visible unit sequence changes within round");
   const empty = slots.map((slot, j) => ({ slot, j })).filter(x => x.slot.startsWith("Slot kosong"));
   assert.ok(empty.length > 0 && empty.length <= 3);
+  if (options.has("--pattern-drag")) {
+    empty.reverse(); // Membuktikan seret mengisi tujuan, bukan otomatis slot kosong pertama.
+    const initial = await stage.getByRole("button").evaluateAll(bs => bs.map(b => b.getAttribute("aria-label")));
+    const protectedSlot = stage.getByRole("button", {name: /^Slot 1:/});
+    const source = stage.getByRole("button", {name: pattern.labels[0], exact:true});
+    assert.ok((await tryVisibleDrag(page, source, protectedSlot)).worked);
+    assert.deepEqual(await stage.getByRole("button").evaluateAll(bs => bs.map(b => b.getAttribute("aria-label"))), initial, "Dragging must not overwrite the example");
+  }
   for (const [k, {j}] of empty.entries()) {
     const label = pattern.labels[j % pattern.labels.length];
-    if (k % 2 === 0) await press(page, stage.getByRole("button", { name: "Slot kosong " + (j + 1), exact: true }), i % 2 === 0);
+    if (!options.has("--pattern-drag") && k % 2 === 0) await press(page, stage.getByRole("button", { name: "Slot kosong " + (j + 1), exact: true }), i % 2 === 0);
     if (k === empty.length - 1 && path) {
       await stable(page);
       await page.screenshot({ path, animations: "disabled" });
     }
-    await press(page, stage.getByRole("button", { name: label, exact: true }), i % 2 !== 0);
+    if (options.has("--pattern-drag") && !(options.has("--mixed") && k === 0)) {
+      const outcome = await tryVisibleDrag(page, stage.getByRole("button", {name:label,exact:true}), stage.getByRole("button",{name:"Slot kosong "+(j+1),exact:true}));
+      assert.ok(outcome.worked, JSON.stringify(outcome));
+      if(k < empty.length-1) await stage.getByRole("button",{name:"Slot "+(j+1)+": "+label,exact:true}).waitFor({timeout:3000});
+    } else await press(page, stage.getByRole("button", { name: label, exact: true }), i % 2 !== 0);
   }
-  return { patternId: pattern.id, shown: shown.length, answers: empty.map(({j}) => pattern.labels[j % pattern.labels.length]) };
+  return { patternId: pattern.id, shown: shown.length, dragSlots: options.has("--pattern-drag") ? empty.map(x=>x.j+1) : [], answers: empty.map(({j}) => pattern.labels[j % pattern.labels.length]) };
 }
 
 
@@ -225,13 +238,14 @@ async function solveSort(page, stage, model, i, path, prefix, seen) {
   assert.equal(found.length, visibleCards.length, "Unexpected unsorted card labels: " + visibleCards.join(", "));
   assert.ok(found.length >= 4);
   const late = [], assets = [], drag = [];
-  const testDrag = options.has("--drag") && i === 10 && page.viewportSize().width === 390;
+  const testDrag = options.has("--drag") && i >= 3;
   if (testDrag) {
-    const bin = rackLabels.at(-1);
+    const bin = [...rackLabels].reverse().find(label => found.some(item => model.bins.get(item.bin) === label));
     const where = found.findIndex(item => model.bins.get(item.bin) === bin);
     assert.ok(where >= 0, "No object matching the last visible target");
     found.unshift(...found.splice(where, 1));
   }
+  if (options.has("--concentrated")) found.sort((a, b) => found.filter(x => x.bin === b.bin).length - found.filter(x => x.bin === a.bin).length);
   for (const item of found) {
     const card = stage.getByRole("button", { name: item.label, exact: true });
     const art = await card.evaluate(el => {
@@ -268,11 +282,11 @@ async function solveSort(page, stage, model, i, path, prefix, seen) {
     }
     const source = stage.getByRole("button", { name: item.label, exact: true });
     const target = rack.getByRole("button", { name: binName, exact: true });
-    if (testDrag && k === 0) {
+    if (testDrag && !drag.some(d => d.binName === binName)) {
       const outcome = await tryVisibleDrag(page, source, target);
       assert.ok(outcome.worked, JSON.stringify({ item: item.label, binName, ...outcome }));
       drag.push({ item: item.label, binName, ...outcome });
-      await rack.getByRole("button", { name: "Ambil " + item.label + " dari " + binName, exact: true }).waitFor({ timeout: 1500 });
+      if(k < found.length-1) await rack.getByRole("button", { name: "Ambil " + item.label + " dari " + binName, exact: true }).waitFor({ timeout: 5000 });
     } else {
       await press(page, source, (k + i) % 2 === 0);
       await press(page, target, (k + i) % 2 !== 0);
@@ -281,16 +295,7 @@ async function solveSort(page, stage, model, i, path, prefix, seen) {
   return { itemIds: found.map(x => x.id), itemLabels: found.map(x => x.label), bins: rackLabels, late, assets, drag };
 }
 
-async function solve(page, stage, model, i, path, prefix, seen) {
-  if(model.mechanic==='pola') return solvePattern(page,stage,model,i,path);
-  if(model.mode==='kelompok') return solveSort(page,stage,model,i,path,prefix,seen);
-  if(model.mode==='pilih') {
-    const body=await stage.innerText();
-    const q=model.pilihan.find(q=>body.includes(model.locale.id[q.promptKey]));
-    assert.ok(q,body);
-    await tap(page,stage.getByRole('button',{name:model.items.find(x=>x.id===q.correct).label,exact:true}));
-    return {question:q};
-  }
+async function solveObservation(page, stage, model, i, path, prefix, seen) {
   if(model.mode==='jengkal') {
     const item=stage.locator('[aria-label*="sepanjang"]');
     const target=Number((await item.getAttribute('aria-label')).match(/(\d+) jengkal/)[1]);
@@ -301,6 +306,8 @@ async function solve(page, stage, model, i, path, prefix, seen) {
     for(let j=1;j<edges.length;j++) assert.ok(Math.abs(edges[j].left-edges[j-1].right)<1,JSON.stringify(edges));
     const marks=await stage.evaluate(el=>['awal','akhir'].map(k=>{const r=el.querySelector('[data-jengkal-'+k+']').getBoundingClientRect();return r.left+r.width/2;}));
     assert.ok(Math.abs(marks[0]-edges[0].left)<1 && Math.abs(marks[1]-edges.at(-1).right)<1,JSON.stringify({marks,edges}));
+    const art=await item.locator('svg[data-varian^="temuan-kebun-"]').evaluate(el=>{const r=el.getBoundingClientRect();return [r.left,r.right];});
+    assert.ok(Math.abs(art[0]-marks[0])<1 && Math.abs(art[1]-marks[1])<1,JSON.stringify({art,marks}));
     if(path) {
       await item.evaluate(el=>{el.parentElement.parentElement.scrollLeft=el.parentElement.parentElement.scrollWidth;});
       await page.screenshot({path:path.replace('.png','-ujung-kanan.png'),animations:'disabled'});
@@ -310,6 +317,8 @@ async function solve(page, stage, model, i, path, prefix, seen) {
   }
   if(model.mode==='kubus') {
     const measure=await stage.evaluate(el=>{const span=el.querySelector('[data-ukur-bentang]').getBoundingClientRect();const cubes=[...el.querySelectorAll('[data-ukur-kubus]')].map(e=>{const r=e.getBoundingClientRect();return {left:r.left,right:r.right};});return {left:span.left,right:span.right,cubes};});
+    const art=await stage.locator('svg[data-varian^="temuan-kebun-"]').evaluate(el=>{const r=el.getBoundingClientRect();return [r.left,r.right];});
+    assert.ok(Math.abs(art[0]-measure.left)<1 && Math.abs(art[1]-measure.right)<1,JSON.stringify({art,measure}));
     const start=measure.cubes.findIndex(c=>Math.abs(c.left-measure.left)<1);
     const end=measure.cubes.findIndex(c=>Math.abs(c.right-measure.right)<1);
     assert.ok(start>=0&&end>=start,JSON.stringify(measure));
@@ -325,11 +334,17 @@ async function solve(page, stage, model, i, path, prefix, seen) {
     const rows=stage.getByRole('group',{name:'Tabel turus'});
     assert.ok(await rows.getByRole('button',{name:/0 turus, ketuk/}).first().isDisabled());
     await tap(page,ready);
+    assert.ok(await stage.getByRole("button",{name:"Selesai",exact:true}).isDisabled());
     const sequence=[], counts={};
     while(await status.textContent()!=='Semua sudah lewat. Tekan Selesai.') {
       const cue=await status.textContent();const m=/^(\d+) dari (\d+)\. (.+) lewat\.$/.exec(cue);assert.ok(m,cue);
       const n=m[3],old=counts[n]??0;
       await tap(page,rows.getByRole('button',{name:`${n}: ${old} turus, ketuk untuk menambah`,exact:true}));counts[n]=old+1;sequence.push(n);
+      if(sequence.length===1) {
+        await tap(page,rows.getByRole("button",{name:`Kurangi satu turus untuk ${n}`,exact:true}));
+        assert.ok(await rows.getByRole("button",{name:`Kurangi satu turus untuk ${n}`,exact:true}).isDisabled());
+        await tap(page,rows.getByRole("button",{name:`${n}: 0 turus, ketuk untuk menambah`,exact:true}));
+      }
       const layout=await geometry(page);assert.equal(layout.verticalScroll,0,JSON.stringify(layout));assert.deepEqual(layout.below,[]);
       if(path&&sequence.length===2) {
         await page.waitForFunction(()=>{const lane=document.querySelector('[role=status][aria-atomic=true]').parentElement;const art=lane.querySelector(':scope > div[aria-hidden=true]');return art && art.getBoundingClientRect().right<lane.getBoundingClientRect().right;});
@@ -342,6 +357,20 @@ async function solve(page, stage, model, i, path, prefix, seen) {
     return {sequence,counts,consecutive:sequence.some((x,i)=>i&&x===sequence[i-1])};
   }
   throw Error('Unknown mode '+model.mode);
+}
+
+async function solve(page, stage, model, i, path, prefix, seen) {
+  if(model.mechanic==='simulasi') return solveObservation(page,stage,model,i,path,prefix,seen);
+  if(model.mechanic==='pola') return solvePattern(page,stage,model,i,path);
+  if(model.mode==='kelompok') return solveSort(page,stage,model,i,path,prefix,seen);
+  if(model.mode==='pilih') {
+    const body=await stage.innerText();
+    const q=model.pilihan.find(q=>body.includes(model.locale.id[q.promptKey]));
+    assert.ok(q,body);
+    await tap(page,stage.getByRole('button',{name:model.items.find(x=>x.id===q.correct).label,exact:true}));
+    return {question:q};
+  }
+  throw Error('Unsupported mechanic: '+model.mechanic);
 }
 
 async function event(page, id, slug, kind = "attempt") {
@@ -374,6 +403,7 @@ async function run(browser, device, preset) {
   try {
     const result = await page.goto(origin + "/dev/akademi?paket=" + slug, { timeout: 90000, waitUntil: "domcontentloaded" });
     assert.equal(result.status(), 200);
+    await page.addStyleTag({content:"nextjs-portal { display: none !important; }"});
     const limit = options.has("--one") ? 1 : 10;
     for (let i = 1; i <= limit; i++) {
       const progress = page.getByRole("progressbar", { name: new RegExp("^Ronde " + i + " dari ") });
@@ -386,7 +416,7 @@ async function run(browser, device, preset) {
       assert.deepEqual(before.clippedTexts, []);
       const id = prefix + "-" + String(i).padStart(2, "0");
       await page.screenshot({ path: id + "-awal.png", animations: "disabled" });
-      const retainLate = model.mode === "jengkal" || i === 1 || i === 5 || i === 9 || i === limit;
+      const retainLate = options.has("--concentrated") || i === 1 || i === 5 || i === 9 || i === limit;
       const solution = await solve(page, stage, model, i, retainLate ? id + "-satu-kartu.png" : undefined, prefix, seen);
       const attempted = await event(page, slug + "#" + (i - 1), slug);
       assert.equal(attempted.payload.correct, true, JSON.stringify(attempted.payload.detail));

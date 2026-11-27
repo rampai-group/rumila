@@ -6,7 +6,7 @@
 // Presenter hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (docs/akademi/slice-1-kontrak.md §4–5).
 
 import { sfxAkademi } from "@/lib/sfx-akademi";
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode, type PointerEvent as ReactPointerEvent } from "react";
 import type { PaketPola } from "@akademi/schema";
 import type { JawabanPola, RondePola } from "@akademi/mechanics";
 import { sfx } from "@/lib/sfx";
@@ -131,6 +131,11 @@ function sisiMuat(lebar: number, tinggi: number, n: number, base: number, maks: 
 export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props) {
   const { mode, palette, correct, shown, wrongIndex, unitLen } = ronde;
   const butuhPilih = ronde.pilih ?? unitLen;
+  const seretPilot = mode === "lanjut" && paket.competencyIds.includes("MAT.SD1.POLA.01");
+  const tujuan = useRef<(HTMLButtonElement | null)[]>([]);
+  const gerakan = useRef<{ id: string; x: number; y: number; aktif: boolean } | null>(null);
+  const abaikanKlik = useRef(false);
+  const [bayangan, setBayangan] = useState<{ id: string; x: number; y: number } | null>(null);
 
   const [urutan, setUrutan] = useState<(string | null)[]>(shown);
   const [slotPilih, setSlotPilih] = useState<number | null>(null);
@@ -167,6 +172,9 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   // reset saat ronde berganti + mainkan unsur yang terlihat
   useEffect(() => {
     setUrutan(shown);
+    gerakan.current = null;
+    abaikanKlik.current = false;
+    setBayangan(null);
     setSlotPilih(null);
     setBendaCipta([]);
     setUbah(0);
@@ -209,6 +217,33 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
     setUrutan((u) => u.map((x, k) => (k === i ? id : x)));
     setSlotPilih(null);
     if (hint?.slot === i) setHint(null);
+  };
+
+  const mulaiSeret = (e: ReactPointerEvent<Element>, id: string) => {
+    if (!seretPilot || kunci) return;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    abaikanKlik.current = false;
+    gerakan.current = { id, x: e.clientX, y: e.clientY, aktif: false };
+  };
+  const geser = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const g = gerakan.current;
+    if (!g || kunci) return;
+    g.aktif ||= Math.hypot(e.clientX - g.x, e.clientY - g.y) > 10;
+    if (g.aktif) setBayangan({ id: g.id, x: e.clientX, y: e.clientY });
+  };
+  const lepas = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const g = gerakan.current;
+    gerakan.current = null;
+    setBayangan(null);
+    if (!g?.aktif || kunci) return;
+    abaikanKlik.current = true;
+    // Contoh asli dan jawaban yang sudah terisi tidak boleh tertimpa oleh seret.
+    const i = tujuan.current.findIndex((el, index) => {
+      if (!el || shown[index] !== null || urutan[index] !== null) return false;
+      const r = el.getBoundingClientRect();
+      return e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+    });
+    if (i >= 0) isi(i, g.id);
   };
 
   const ketukSlot = (i: number) => {
@@ -324,7 +359,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
     mode === "lanjut" ? "Lanjutkan polanya!" : mode === "perbaiki" ? "Ada yang tertukar. Betulkan satu!" : fasePilih ? `Pilih ${butuhPilih} benda untuk polamu` : "Susun polamu berulang-ulang";
 
   return (
-    <div className={`flex flex-1 flex-col gap-3 ${tabletTegak || tabletTunas ? "justify-center" : ""}`} style={{ color: INK, minHeight: tabletTunas ? Math.min(620, Math.round(h * 0.64)) : undefined }}>
+    <div onPointerMove={geser} onPointerUp={lepas} onPointerCancel={() => { gerakan.current = null; setBayangan(null); }} className={`flex flex-1 flex-col gap-3 ${tabletTegak || tabletTunas ? "justify-center" : ""}`} style={{ color: INK, minHeight: tabletTunas ? Math.min(620, Math.round(h * 0.64)) : undefined }}>
       {/* judul + bantu */}
       <div className="flex items-start gap-2">
         <div className="flex-1 px-1 text-center" style={{ fontFamily: BALOO, fontSize: 21 * Math.min(sk, 1.3), fontWeight: 800, lineHeight: 1.15, color: "var(--pilar-tua)" }}>
@@ -358,6 +393,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
             return (
               <button
                 key={i}
+                ref={(el) => { tujuan.current[i] = el; }}
                 type="button"
                 onClick={() => ketukSlot(i)}
                 aria-label={item ? `Slot ${i + 1}: ${t(item.labelKey)}` : `Slot kosong ${i + 1}`}
@@ -414,9 +450,12 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 labelSize={Math.round(Math.min(20, 13 * Math.max(sk, kartuPx / 72)))}
                 selected={terpilihCipta && fasePilih}
                 dim={redup}
-                onClick={() => ketukPalette(p.id)}
+                onPointerDown={seretPilot ? (e) => mulaiSeret(e, p.id) : undefined}
+                onClick={(e) => { if (e.detail !== 0 && abaikanKlik.current) return; ketukPalette(p.id); }}
                 className={disorot ? "akademi-bounce" : ""}
                 style={{
+                  touchAction: seretPilot ? "none" : undefined,
+                  userSelect: seretPilot ? "none" : undefined,
                   width: polaPilot ? lebarKartu : undefined,
                   minWidth: 72 * sk,
                   minHeight: 72 * sk,
@@ -492,6 +531,9 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
           )}
         </div>
       </AksiBawah>
+      {bayangan && <div aria-hidden className="pointer-events-none fixed z-50 rounded-xl border-2 border-[#0786eb] bg-white p-3 shadow-lg" style={{ left: bayangan.x, top: bayangan.y, transform: "translate(-50%, -50%)" }}>
+        <Benda v={visual(palette.find(p => p.id === bayangan.id)!, t)} size={56} />
+      </div>}
     </div>
   );
 }
