@@ -5,7 +5,7 @@
 
 import { useRouter } from "next/navigation";
 import type { ContentPack } from "@akademi/schema";
-import type { Ronde, RondeNavigasi, RondeUrutkan } from "@akademi/mechanics";
+import type { Ronde, RondeNavigasi } from "@akademi/mechanics";
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { PILAR, TEMA, temaBersih, type BentukWadah, type DuniaId, type Pilar, type Tema } from "@/lib/akademi/tema-dunia";
@@ -172,8 +172,8 @@ export function navigasiSatuBaris(ronde: RondeNavigasi): boolean {
     !ronde.debug && !ronde.commands.includes("bendera") && ronde.commands.length <= 3;
 }
 
-export function urutanKelinci(ronde: RondeUrutkan): boolean {
-  return ronde.shown[0]?.adegan?.varian?.startsWith("qc-jenjang-sd2-kelinci-") ?? false;
+export function urutanTumbuhHewan(paket: ContentPack): boolean {
+  return paket.id === "sd2-sains-hewan-tumbuh-besar" || paket.id === "sd2-sains-perbaiki-hewan-tumbuh-besar";
 }
 
 export function panggungPadat(paket: ContentPack, ronde?: Ronde): boolean {
@@ -183,7 +183,7 @@ export function panggungPadat(paket: ContentPack, ronde?: Ronde): boolean {
     (paket.mechanic === "dagang" && (paket.mode === "subitasi" || paket.mode === "tukar" ||
       (paket.mode === "lengkapi" && paket.level === "TKB"))) ||
     (paket.mechanic === "urutkan" && (paket.mode === "dulu" || urutanAngkaRingkas(paket) ||
-      (ronde?.mechanic === "urutkan" && urutanKelinci(ronde.ronde)) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
+      urutanTumbuhHewan(paket) || (paket.level === "PAUD" && (paket.mode ?? "susun") === "susun"))) ||
     (paket.mechanic === "pola" && paket.level === "PAUD") ||
     (paket.mechanic === "simulasi" && (paket.mode === "bantuan" || paket.mode === "turus" || paket.mode === "timbangan" || (paket.mode === "tombol" && paket.level === "PAUD")));
 }
