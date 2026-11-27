@@ -44,12 +44,17 @@ export const BENDA_PENGGARIS_KAPTEN: Record<string, ReactNode> = {
     <path d="M0 62L8 55 12 59 6 72 0 68ZM118 25L121 22 130 28 126 39 117 35Z" fill="#8a8d4e" />
     <path d="M16 66Q56 87 115 41" {...detail} stroke="#c89549" />
   </>,
+  // ID konten seruling dipakai kartu yang bernama saksofon.
   seruling: <>
-    <path d="M0 38H120Q130 39 130 50Q130 61 120 62H0Z" fill="#d8a26e" />
-    <path d="M4 41H123M4 59H124" {...detail} stroke="#efc494" />
-    <path d="M1 39V61M125 40V60" stroke="#8d5c3d" strokeWidth="2" />
-    <ellipse cx="14" cy="49" rx="5" ry="4" fill="#76543f" />
-    {[38, 51, 64, 77, 91, 104].map(x => <circle key={x} cx={x} cy="50" r="3.6" fill="#76543f" />)}
+    <path d="M1 22Q23 17 37 28Q45 35 47 52L53 69Q58 79 69 76Q81 73 85 62L99 35 115 42 100 72Q92 91 70 92Q47 94 36 75L26 45Q24 31 8 31H0Z" fill="#d8a252" />
+    <path d="M0 20L14 19 17 31 0 33Z" fill="#4c5460" />
+    <path d="M96 37L104 24Q115 19 128 31L130 39Q125 49 113 49Z" fill="#e8b765" />
+    <ellipse cx="117" cy="33" rx="13" ry="8" transform="rotate(21 117 33)" fill="#a47341" />
+    <path d="M20 25Q34 29 37 47L48 71Q56 86 70 83Q86 81 93 64L105 43" {...detail} stroke="#f5d394" />
+    <g fill="#f2d5a4" stroke="#9f7449" strokeWidth="1.7">
+      <circle cx="33" cy="39" r="4.2" /><circle cx="38" cy="50" r="4.2" /><circle cx="42" cy="60" r="4.2" />
+      <circle cx="49" cy="71" r="4.2" /><circle cx="60" cy="79" r="4" />
+    </g>
   </>,
   tongkat: <>
     <path d="M0 51Q0 44 7 43L122 35Q130 35 130 44Q130 51 124 53L7 62Q0 61 0 51Z" fill="#aa7a56" />
