@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sd1-sains-turus-pengunjung-kebun",
+    "src": "/akademi/suara/9fbc838e5173.mp3",
+    "status": 200,
+    "duration": 4.12734693877551
+  },
+  {
+    "id": "sd1-sains-turus-pengunjung-kolam",
+    "src": "/akademi/suara/431ef25111fa.mp3",
+    "status": 200,
+    "duration": 4.0751020408163265
+  },
+  {
+    "id": "sd1-sains-ukur-jengkal-temuan-kebun",
+    "src": "/akademi/suara/b7ada193894f.mp3",
+    "status": 200,
+    "duration": 3.84
+  },
+  {
+    "id": "sd1-sains-ukur-kubus-temuan-kebun",
+    "src": "/akademi/suara/25d351fef1fa.mp3",
+    "status": 200,
+    "duration": 5.015510204081632
+  }
+]

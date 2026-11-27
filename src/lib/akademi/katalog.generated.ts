@@ -312548,7 +312548,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-ukur-jengkal-temuan-kebun",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD1",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312619,119 +312619,161 @@ export const PAKET_RAW: unknown[] = [
         "id": "daunpisang",
         "labelKey": "daunpisang",
         "role": "benda",
-        "emoji": "🍃",
         "value": 3,
-        "width": 1.8
+        "width": 1.8,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-daunpisang"
+        }
       },
       {
         "id": "rantingbesar",
         "labelKey": "rantingbesar",
         "role": "benda",
-        "emoji": "🌿",
         "value": 6,
-        "width": 3.4
+        "width": 3.4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-ranting"
+        }
       },
       {
         "id": "akar",
         "labelKey": "akar",
         "role": "benda",
-        "emoji": "🪵",
         "value": 7,
-        "width": 3.7
+        "width": 3.7,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-akar"
+        }
       },
       {
         "id": "labu",
         "labelKey": "labu",
         "role": "benda",
-        "emoji": "🥒",
         "value": 2,
-        "width": 1.2
+        "width": 1.2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-timun"
+        }
       },
       {
         "id": "wortel",
         "labelKey": "wortel",
         "role": "benda",
-        "emoji": "🥕",
         "value": 2,
-        "width": 1.2
+        "width": 1.2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-wortel"
+        }
       },
       {
         "id": "terong",
         "labelKey": "terong",
         "role": "benda",
-        "emoji": "🍆",
         "value": 2,
-        "width": 1.2
+        "width": 1.2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-terong"
+        }
       },
       {
         "id": "sawi",
         "labelKey": "sawi",
         "role": "benda",
-        "emoji": "🥬",
         "value": 2,
-        "width": 1.2
+        "width": 1.2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-sawi"
+        }
       },
       {
         "id": "ubi",
         "labelKey": "ubi",
         "role": "benda",
-        "emoji": "🍠",
         "value": 2,
-        "width": 1.2
+        "width": 1.2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-ubi"
+        }
       },
       {
         "id": "jagung",
         "labelKey": "jagung",
         "role": "benda",
-        "emoji": "🌽",
         "value": 3,
-        "width": 1.8
+        "width": 1.8,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-jagung"
+        }
       },
       {
         "id": "mawar",
         "labelKey": "mawar",
         "role": "benda",
-        "emoji": "🌹",
         "value": 3,
-        "width": 1.8
+        "width": 1.8,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-mawar"
+        }
       },
       {
         "id": "nanas",
         "labelKey": "nanas",
         "role": "benda",
-        "emoji": "🍍",
         "value": 3,
-        "width": 1.8
+        "width": 1.8,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-nanas"
+        }
       },
       {
         "id": "daunjati",
         "labelKey": "daunjati",
         "role": "benda",
-        "emoji": "🍂",
         "value": 4,
-        "width": 2.4
+        "width": 2.4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-daunjati"
+        }
       },
       {
         "id": "kaktus",
         "labelKey": "kaktus",
         "role": "benda",
-        "emoji": "🌵",
         "value": 4,
-        "width": 2.4
+        "width": 2.4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-kaktus"
+        }
       },
       {
         "id": "bungamatahari",
         "labelKey": "bungamatahari",
         "role": "benda",
-        "emoji": "🌻",
         "value": 5,
-        "width": 3
+        "width": 3,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-bungamatahari"
+        }
       }
     ]
   },
   {
     "id": "sd1-sains-ukur-kubus-temuan-kebun",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD1",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -312783,41 +312825,56 @@ export const PAKET_RAW: unknown[] = [
         "id": "ulat",
         "labelKey": "ulat",
         "role": "benda",
-        "emoji": "🐛",
         "value": 3,
-        "width": 1.2
+        "width": 1.2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-ulat"
+        }
       },
       {
         "id": "daunjambu",
         "labelKey": "daunjambu",
         "role": "benda",
-        "emoji": "🍃",
         "value": 4,
-        "width": 1.6
+        "width": 1.6,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-daunjambu"
+        }
       },
       {
         "id": "bulu",
         "labelKey": "bulu",
         "role": "benda",
-        "emoji": "🪶",
         "value": 5,
-        "width": 2
+        "width": 2,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-bulu"
+        }
       },
       {
         "id": "cacing",
         "labelKey": "cacing",
         "role": "benda",
-        "emoji": "🪱",
         "value": 6,
-        "width": 2.4
+        "width": 2.4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-cacing"
+        }
       },
       {
         "id": "ranting",
         "labelKey": "ranting",
         "role": "benda",
-        "emoji": "🌿",
         "value": 7,
-        "width": 2.8
+        "width": 2.8,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-ranting"
+        }
       },
       {
         "id": "buncis",
@@ -312825,23 +312882,32 @@ export const PAKET_RAW: unknown[] = [
         "role": "benda",
         "value": 8,
         "width": 3.2,
-        "emoji": "🥒"
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-timun"
+        }
       },
       {
         "id": "jagung",
         "labelKey": "jagung",
         "role": "benda",
-        "emoji": "🌽",
         "value": 9,
-        "width": 3.6
+        "width": 3.6,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-jagung"
+        }
       },
       {
         "id": "daunpisang",
         "labelKey": "daunpisang",
         "role": "benda",
-        "emoji": "🍃",
         "value": 10,
-        "width": 4
+        "width": 4,
+        "adegan": {
+          "jenis": "ilustrasi-sd",
+          "varian": "temuan-kebun-daunpisang"
+        }
       }
     ]
   },
