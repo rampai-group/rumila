@@ -367,7 +367,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const kartuBeruraian = wadahBergambar && items.some((i) => t(i.labelKey).length > 32);
   // Tujuh piring memerlukan empat kolom di HP agar rak terbawah tetap bisa dituju langsung.
   const piringPadatHp = rakSetengahHp && items.length >= 7;
-  const lebarMinKartu = kisiPilahRapat ? (hp ? 96 : 126) : Math.round((rakJamHp ? 68 : rakMenitKaptenHp ? 74 : piringPadatHp ? 62 : rakBahanHp || rakBagiHp ? 78 : pilahAdeganPadatLega ? 106 : labelPanjang && !hewanMakanHp ? 132 : rakNilaiTempat && hp ? 74 : titikRapat ? 78 : hp ? 92 : 112) * sk);
+  const lebarMinKartu = kisiPilahRapat ? (hp ? 96 : 126) : Math.round((rakJamHp ? 68 : rakMenitKaptenHp ? 74 : piringPadatHp ? 62 : klasifikasiKomandanHp && items.length >= 7 ? 72 : rakBahanHp || rakBagiHp ? 78 : pilahAdeganPadatLega ? 106 : labelPanjang && !hewanMakanHp ? 132 : rakNilaiTempat && hp ? 74 : titikRapat ? 78 : hp ? 92 : 112) * sk);
   const kolomMuat = Math.max(1, Math.floor((lebarArea + 8) / (lebarMinKartu + 8)));
   // Sisakan dua baris pada rak tablet tinggi dan papan paritas agar setiap kelompok tetap terbaca.
   const rakDuaBaris = rakAngkaLega && h >= 840 && items.length >= 5;
@@ -390,7 +390,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
       : items.length === 4 && maksKolomKartu === 3 ? 2 : maksKolomKartu;
   const lebarKolomKartu = (lebarArea - 8 * (kolomKartu - 1)) / kolomKartu;
   const barisCarrollKapten = Math.ceil(items.length / kolomKartu);
-  const lebarKartu = (aturRakTumbuhan || aturRakBilanganKomandan) && satuKartu ? Math.min(lebarArea, hp ? 220 : 320)
+  const lebarKartu = klasifikasiKomandanHp && satuKartu ? Math.min(lebarArea, 178)
+    : (aturRakTumbuhan || aturRakBilanganKomandan) && satuKartu ? Math.min(lebarArea, hp ? 220 : 320)
     : kisiPilahRapat && satuKartu ? Math.min(lebarArea, hp ? 196 : 288)
     : tahapGame && satuKartu ? Math.min(lebarArea, hp ? 240 : 320)
     : tataCarrollKapten && satuKartu ? Math.min(carrollKaptenHp ? 144 : 236, lebarArea)
@@ -430,7 +431,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     : rakDobelHp ? 42 : hewanMakanHp || klasifikasiKomandanHp ? 48 : rakAngkaHp || rakHitungHp ? 54 : paritasLega ? Math.min(176, Math.round(h * 0.19 / sk)) : wadahBergambar ? Math.min(152, Math.round(h * 0.17 / sk))
     : wadahLega ? Math.min(220, Math.round(h * 0.22 / sk)) : piktogramLega ? 190 : piktogram || titikLega ? 112 : titikRapat || piringRingkas ? 58 : rakBahanHp || rakBentukHp ? 44 : baris || carroll ? 52 : 84;
   // Sisakan tinggi rak untuk ronde padat, lalu besarkan huruf yang tersisa.
-  const gambarKartu = aturRakBilanganKomandan ? (hp ? (satuKartu ? 104 : 55) : (satuKartu ? 170 : 124))
+  const gambarKartu = klasifikasiKomandanHp ? (satuKartu ? 74 : 52)
+    : aturRakBilanganKomandan ? (hp ? (satuKartu ? 104 : 55) : (satuKartu ? 170 : 124))
     : aturRakTumbuhan ? (hp ? (satuKartu ? 78 : 48) : (satuKartu ? 136 : 96))
     : kisiPilahRapat ? (satuKartu ? hp ? 112 : 158 : hp ? 52 : 94)
     : rakAritmetikaHp ? (satuKartu ? 52 : 44) : tahapGame ? (hp ? (satuKartu ? 68 : 40) : (satuKartu ? 106 : 82))
@@ -449,7 +451,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     : hurufSimetriLega && !hp ? Math.min(94, lebarIsi / 3 - 18)
     : akhirPilotHp ? 32 : carrollPilotHp ? 28 : rakJamHp || rakMenitKaptenHp ? 32 : piktogramLega ? Math.max(32, Math.min(64 * sk, (h - tinggiBaki - 152 * sk) / items.length - 14))
     : rakAngkaLega ? 88 * sk : paritasLega ? 72 * sk : wadahBergambar ? Math.min(96 * sk, Math.max(42, lebarIsi / 2 - 20))
-      : (piktogram ? 46 : wadahLega ? 96 : titikLega ? 80 : hewanMakanHp || klasifikasiKomandanHp ? 40 : hp ? 52 : 64) * sk;
+      : (piktogram ? 46 : wadahLega ? 96 : titikLega ? 80 : klasifikasiKomandanHp ? 34 : hewanMakanHp ? 40 : hp ? 52 : 64) * sk;
   const urutanIsi = Object.keys(peta);
 
   const gambarWadah = (b: BinPilah) => {
@@ -487,7 +489,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
               <span className="block text-center" style={{ fontFamily: BALOO, fontSize: rakBagiHp || rakAritmetikaHp ? 24 : 30 * Math.min(sk, 1.2), fontWeight: 800, lineHeight: rakBagi || rakAritmetikaHp ? 1 : undefined }}>
                 {t(b.labelKey)}
               </span>
-            ) : <LabelWadah teks={t(b.labelKey)} rata={tahapGameHp || (titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={gambar} />}
+            ) : <LabelWadah teks={t(b.labelKey)} rata={tahapGameHp || klasifikasiKomandanHp || (titikRapat && lebarBin >= 96) || (baris && lebarArea >= 360 && t(b.labelKey).length <= 18) ? "kiri" : "tengah"} gambar={gambar} />}
           </button>
         }
       >
@@ -506,10 +508,10 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             className={`shrink-0 ${salah(i) ? "akademi-shake" : ""}`}
             style={{
               width: aturRakBilanganKomandan ? "100%" : carrollKaptenTablet ? Math.min(56, (lebarIsi - 18) / 4) : rakAritmetika ? Math.min(lebarIsi, 128) : rakBagi ? Math.min(lebarIsi, rakBagiLega ? 100 : 76) : rakPecahan ? Math.min(lebarIsi, hp ? 94 : 100) : rakJamHp || akhirPilotHp ? 44 : rakDobelHp ? "100%" : rakNilaiTempat ? lebarIsi : undefined,
-              minHeight: rakBilanganKomandanHp || rakTumbuhanHp || tataCarrollKapten || rakJamHp || akhirPilotHp || rakDobelHp || rakSetengahHp || rakAritmetikaHp ? 44 : 46 * sk,
+              minHeight: rakBilanganKomandanHp || rakTumbuhanHp || tataCarrollKapten || rakJamHp || akhirPilotHp || rakDobelHp || rakSetengahHp || rakAritmetikaHp || klasifikasiKomandanHp ? 44 : 46 * sk,
               minWidth: carrollKaptenTablet ? 0 : rakJamHp || akhirPilotHp ? 44 : Math.min(lebarIsi, 46 * sk),
               maxWidth: "100%",
-              padding: rakBilanganKomandanHp ? 3 : carrollKaptenTablet ? 4 : carrollKaptenHp ? 2 : rakJamHp || akhirPilotHp || rakSetengahHp ? 0 : rakDobelHp || rakAritmetikaHp ? 2 : piktogram || rakAngkaHp || hewanMakanHp ? 4 : undefined,
+              padding: rakBilanganKomandanHp ? 3 : carrollKaptenTablet ? 4 : carrollKaptenHp ? 2 : rakJamHp || akhirPilotHp || rakSetengahHp ? 0 : rakDobelHp || rakAritmetikaHp ? 2 : piktogram || rakAngkaHp || hewanMakanHp || klasifikasiKomandanHp ? 4 : undefined,
               paddingBlock: pelengkapPadat && h < 650 ? 4 : undefined,
               pointerEvents: kunci ? "none" : undefined,
             }}
