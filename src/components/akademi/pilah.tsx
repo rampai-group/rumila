@@ -157,7 +157,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const pilahPilotLega = !hp && h >= 680 && paket.competencyIds.some(id =>
     ["SAINS.SD1.GAYA.02", "MAT.SD1.BANGUN.01", "MAT.SD1.BANGUN.02", "SAINS.SD1.BUNYI.01"].includes(id));
   const pilahAdegan = [
-    "sd3-kode-butuh-internet", "sd4-sains-tulang-di-tempatnya", "sd6-sains-didih-uap-pantai",
+    "sd2-mat-pilah-segi-banyak", "sd3-kode-butuh-internet", "sd4-sains-tulang-di-tempatnya", "sd6-sains-didih-uap-pantai",
   ].includes(paket.id);
   const pilahAdeganLega = pilahAdegan && lebarArea >= 620 && h >= 680;
   const pilahAdeganPadatLega = pilahAdeganLega && items.length > 8;
@@ -619,7 +619,8 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const lebarArea = Math.min(w || 390, 920) - 4;
   const lebar = lebarArea >= 600;
   const bagiHitung = paket.id === "sd2-mat-bagi-tangkapan-laut";
-  const bahanTugasHp = paket.id === "sd2-sains-bahan-untuk-tugasnya" && !lebar;
+  const pilihanDuaKolom = (paket.id === "sd2-sains-bahan-untuk-tugasnya" && !lebar) ||
+    (paket.id === "sd2-mat-cari-segi-banyak-lab" && (!lebar || h >= 680));
   const bagiBertumpuk = bagiHitung && (!lebar || h >= lebarArea);
   const bakiBertumpuk = !!soalKue && !lebar && h >= 530;
   const adeganLega = paket.level === "PAUD" && !!ronde.adegan && lebarArea >= 620 && h >= 680;
@@ -630,9 +631,9 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
   const gridGambar = !tulisLabel && !ronde.adegan && (!ronde.bacaPilihan || potAudioLega) &&
     (n === 3 || n === 4) && choices.every(visualBergambar);
   // Dua kolom menjaga lebar gambar tetap sama ketika satu pilihan hilang di layar potret.
-  const gridPotret = (gridGambar || bahanTugasHp) && h >= lebarArea;
+  const gridPotret = (gridGambar || pilihanDuaKolom) && h >= lebarArea;
   const tigaLanskap = gridGambar && !gridPotret && n === 3 && lebar && gambarLega;
-  const ukurKepala = gridGambar || potAudioLega || !!soalKue || bagiHitung || bahanTugasHp || soalJam;
+  const ukurKepala = gridGambar || potAudioLega || !!soalKue || bagiHitung || pilihanDuaKolom || soalJam;
   useLayoutEffect(() => {
     const kepala = kepalaSoal.current;
     if (!ukurKepala || !kepala) return;
@@ -692,7 +693,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
 
   return (
     <div
-      data-pilah-tengah={stokPiktogram || potAudioLega || bagiHitung || (gambarLega && n <= 3 && !adeganLega && !gridGambar && !modelBolaDunia && !bahanTugasHp) ? "" : undefined}
+      data-pilah-tengah={stokPiktogram || potAudioLega || bagiHitung || (gambarLega && n <= 3 && !adeganLega && !gridGambar && !modelBolaDunia && !pilihanDuaKolom) ? "" : undefined}
       className={`mx-auto flex w-full min-w-0 max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${adeganLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: adeganLega ? Math.min(620, Math.round(h * 0.66)) : undefined }}
     >
@@ -743,7 +744,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
           const sendiri = gridPotret && n === 3 && i === n - 1;
           const nama = namaPilihan(c, choices, t, lang === "en-US");
           // Kartu yang mencapai tepi panel tetap diam agar tepinya terlihat saat umpan balik.
-          const animasi = bagiHitung || bahanTugasHp || soalJam ? "" : salah ? "akademi-shake" : benar ? "akademi-pop" : "";
+          const animasi = bagiHitung || pilihanDuaKolom || soalJam ? "" : salah ? "akademi-shake" : benar ? "akademi-pop" : "";
           const kartu = (
             <KartuBenda
               penuh
