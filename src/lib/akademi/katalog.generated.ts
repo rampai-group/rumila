@@ -309337,7 +309337,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-pola-lengan-robot",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD2",
     "mechanic": "pola",
     "competencyIds": [
@@ -309410,7 +309410,10 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "cat",
         "labelKey": "cat",
-        "emoji": "🎨"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-robot-semprot-cat"
+        }
       }
     ],
     "patterns": [
