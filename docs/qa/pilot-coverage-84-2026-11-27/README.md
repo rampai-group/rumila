@@ -17,7 +17,7 @@ Ukuran: HP 390×844, iPad 820×1180, dan iPad pendek 820×1067. Jawaban diberika
 
 Seluruh 12 instruksi cocok dengan entri manifest; MP3 ada, dapat didekode, dan benar-benar memicu `playing` di ketiga ukuran (36 pemeriksaan). [Berkas audio](audio.json), [pemutaran browser](audio-browser.json). Pemeriksaan ini tidak menyatakan transkripsi ulang dengan mendengarkan seluruh rekaman.
 
-Validasi skema: **810 paket**, Vitest **885/885**, TypeScript dan ESLint berkas perubahan lulus. Satu percobaan suite mengalami tiga timeout saat banyak proses QA berjalan; pengulangan lengkap dengan `--maxWorkers=2` lulus tanpa mengubah tes. Pengujian lengkap pada basis `dbf4ea2d` (PR #259), lalu sinkronisasi `6a7fab22` (PR #260) mempertahankan perbaikan sesi lain; perubahan terakhir khusus urutan dan ilustrasi SD2/SD3. Commit rilis dicatat pada PR.
+Validasi skema: **810 paket**, Vitest **885/885**, TypeScript dan ESLint berkas perubahan lulus. Satu percobaan suite mengalami tiga timeout saat banyak proses QA berjalan; pengulangan lengkap dengan `--maxWorkers=2` lulus tanpa mengubah tes. Pengujian lengkap pada basis `dbf4ea2d` (PR #259), lalu sinkronisasi `6a7fab22` (PR #260) mempertahankan perbaikan sesi lain; kemudian `4b8fd042` (PR #261) membawa bukti QA M41–42 terbaru. Perubahan terakhir tidak mengubah mekanik 12 paket yang diuji ulang di sini. Commit rilis dicatat pada PR.
 
 ## Status setiap paket
 
@@ -105,10 +105,10 @@ Validasi skema: **810 paket**, Vitest **885/885**, TypeScript dan ESLint berkas 
 | 39 | Kabel atau Sinyal? (`sd1-kode-sambungan-perangkat`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #240](https://github.com/rampai-group/rumila/pull/240) |
 | 40 | Mana yang Robot? (`sd1-kode-cari-robot-pabrik`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #240](https://github.com/rampai-group/rumila/pull/240) |
 | 40 | Robot atau Bukan? (`sd1-kode-robot-atau-bukan`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #240](https://github.com/rampai-group/rumila/pull/240) |
-| 41 | Ukur Temuan Kebun dengan Jengkal (`sd1-sains-ukur-jengkal-temuan-kebun`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #240](https://github.com/rampai-group/rumila/pull/240) |
-| 41 | Ukur Temuan di Kebun (`sd1-sains-ukur-kubus-temuan-kebun`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #240](https://github.com/rampai-group/rumila/pull/240) |
-| 42 | Siapa Mampir ke Kebun? (`sd1-sains-turus-pengunjung-kebun`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #240](https://github.com/rampai-group/rumila/pull/240) |
-| 42 | Siapa Mampir ke Kolam? (`sd1-sains-turus-pengunjung-kolam`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #240](https://github.com/rampai-group/rumila/pull/240) |
+| 41 | Ukur Temuan Kebun dengan Jengkal (`sd1-sains-ukur-jengkal-temuan-kebun`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #261](https://github.com/rampai-group/rumila/pull/261) |
+| 41 | Ukur Temuan di Kebun (`sd1-sains-ukur-kubus-temuan-kebun`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #261](https://github.com/rampai-group/rumila/pull/261) |
+| 42 | Siapa Mampir ke Kebun? (`sd1-sains-turus-pengunjung-kebun`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #261](https://github.com/rampai-group/rumila/pull/261) |
+| 42 | Siapa Mampir ke Kolam? (`sd1-sains-turus-pengunjung-kolam`) | Lulus (riwayat) | Lulus (riwayat) | Lulus (riwayat) | [PR #261](https://github.com/rampai-group/rumila/pull/261) |
 
 Catatan bukti lama: M21 HP dan M41 memakai gulir internal yang dilaporkan dalam PR masing-masing. Rekap ini tidak mengubah catatan tersebut. Verifikasi produksi mencakup `/api/versi` dan rute paket; permainan sampai hasil dilakukan di lokal.
 

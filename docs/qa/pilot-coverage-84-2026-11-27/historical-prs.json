@@ -108,5 +108,15 @@
     "number": 244,
     "title": "QA Pilot M31–35: jam berangka dan tata letak kartu",
     "url": "https://github.com/rampai-group/rumila/pull/244"
+  },
+  {
+    "body": "## Perubahan\n\nPada Pilot SD1 M41, emoji benda kebun tidak selalu sesuai nama dan gambar kubus hanya mengisi bagian tengah bentang ukur. Tambahkan 18 ilustrasi horizontal untuk 22 item dan samakan ujung SVG dengan garis ukur, tanpa mengubah kunci jawaban. Pada M42, gunakan latar air untuk kolam dan perbesar baris turus HP dan iPad agar ruang kosong berkurang; tiga jenis tetap muat dengan tombol selesai terlihat.\n\nWorktree terpisah dari main a3304f1e, disinkronkan ke dbf4ea2d dan 6a7fab22. Perbaikan sesi lain dipertahankan. Ruang lingkup hanya empat paket M41–42 dari peta gabungan MAT, KODE, SAINS.\n\n## Validasi\n\n- 12 sesi WebKit sentuh / 120 ronde: empat paket sampai hasil 10/10 pada 390×844, 820×1180, dan 820×1067.\n- Posisi jengkal dan SVG, bentang kubus, pengunjung identik berurutan, tombol mulai/selesai, koreksi turus sampai nol, teks dan geometri diperiksa melalui UI.\n- 885 tes lulus; 810 paket valid; TypeScript, lint komponen perubahan, dan diff check lulus.\n- Empat audio instruksi dan 22 audio soal dapat dimuat/didekode. Bukan pengujian perangkat fisik atau penilaian pelafalan.\n- [Laporan, status per paket, dan screenshot](https://github.com/rampai-group/rumila/blob/codex/qa-pilot-m41-42/docs/qa/pilot-m41-42/README.md).\n",
+    "mergeCommit": {
+      "oid": "4b8fd0426045dccb1fcd4b158549400e9ae704bb"
+    },
+    "mergedAt": "2026-11-27T01:43:33Z",
+    "number": 261,
+    "title": "QA Pilot SD1 M41–42: gambar pengukuran dan tata letak turus",
+    "url": "https://github.com/rampai-group/rumila/pull/261"
   }
 ]
