@@ -378,7 +378,10 @@ function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh, hitungKo
   const terpakai = (nilai: number) => dipakai.filter((x) => x === nilai).length;
   const { skala: sk, h } = usePanggung();
   // banyak pecahan di layar miring pendek: kartu uang dirapatkan (tetap ≥ 56 px) supaya tombol jawab kelihatan
-  const padat = kelompok.length >= 6 && h > 0 && h < 580;
+  const banyakPecahan = kelompok.length >= 6;
+  const padat = banyakPecahan && h > 0 && h < 580;
+  const ukuranPecahan = Math.round((padat ? 26 : besar ? banyakPecahan ? 52 : 64 : 44) * sk);
+  const lebarPecahan = (padat ? 64 : besar ? banyakPecahan ? 82 : 100 : 72) * sk;
   return (
     // laci kasir: badan kayu/warna wadah dunia, sekat-sekat pecahan di dalam, gagang di depan
     <div className={`relative flex flex-col rounded-[20px] bg-white ${penuh ? "flex-1" : "shrink-0"}`} style={{ boxShadow: bayangKartu(), padding: 10 * sk }}>
@@ -395,7 +398,7 @@ function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh, hitungKo
             <KartuBenda
               key={nilai}
               v={v}
-              size={Math.round((padat ? 26 : besar ? 64 : 44) * sk)}
+              size={ukuranPecahan}
               label={v.label}
               ariaLabel={hitungKoin ? (bahasa === "en" ? "Add one coin" : "Ambil satu koin") : labelAmbilUang(nilai, bahasa)}
               labelSize={Math.round((besar ? 16 : 13) * sk)}
@@ -404,7 +407,7 @@ function Laci({ laci, dipakai, onAmbil, bahasa, sorot, disabled, penuh, hitungKo
               disabled={disabled || sisa <= 0}
               onClick={() => onAmbil(nilai)}
               className={`relative ${padat ? "min-h-14 min-w-[64px] !p-1" : "min-h-16 min-w-[72px]"} ${sorot === nilai ? "akademi-bounce" : ""}`}
-              style={{ minHeight: (padat ? 56 : besar ? 96 : 64) * sk, minWidth: (padat ? 64 : besar ? 100 : 72) * sk, background: `linear-gradient(180deg,#fff,${v.color}33)`, ...(disabled || sisa <= 0 ? { pointerEvents: "none" } : {}) }}
+              style={{ minHeight: (padat ? 56 : besar ? 96 : 64) * sk, minWidth: lebarPecahan, background: `linear-gradient(180deg,#fff,${v.color}33)`, ...(disabled || sisa <= 0 ? { pointerEvents: "none" } : {}) }}
             />
           );
         })}
@@ -763,6 +766,10 @@ function useNampan(batas?: number) {
   return { uang, ambil, kembalikan, total };
 }
 
+function transaksiKaptenTablet(paket: PaketDagang, w: number, h: number): boolean {
+  return w >= 620 && h >= 680 && paket.competencyIds.some(id => id === "MAT.SD2.UANG.01" || id === "MAT.SD2.UANG.02");
+}
+
 function ModeBayar(c: Ctx) {
   const { ronde, onJawab, hasil, terkunci, nama, visual, wajah } = c;
   const { uang, ambil, kembalikan, total } = useNampan();
@@ -776,20 +783,22 @@ function ModeBayar(c: Ctx) {
   const sorot = hint ? pecahanBerikut(ronde.laci, uang, ronde.harga - total) : null;
   const sk = useSk();
   const meja = useSkMeja();
-  const { w } = usePanggung();
+  const { w, h } = usePanggung();
+  const tabletPadat = transaksiKaptenTablet(c.paket, w, h);
   // Satu lembar dan sembilan koin harus terlihat bersama laci pada layar sempit.
   const rapat = c.paket.id === "sd1-mat-bayar-puluhan-satuan" && w > 0 && w < 620;
+  const ukuranBarang = Math.round(tabletPadat ? 96 * Math.min(sk, 1.2) : (rapat ? 40 : 52) * meja);
 
   return (
-    <Kunci terkunci={terkunci} kiri={<>
+    <Kunci terkunci={terkunci} tengah={tabletPadat} kiri={<>
       <Pembeli wajah={wajah} kecil={rapat} teksUcap={teks} potongan={ucapan.potongan} hasil={hasil} balon={<div className="flex flex-col gap-1"><Tanya>{rincian ? "Berapa totalnya? Bayar pas." : "Bayar pas seharga ini:"}</Tanya>{rincian
         ? <RincianHarga baris={rincian} nama={nama} visual={visual} total={ronde.harga} buka={hint || !!hasil} />
         : <Harga harga={ronde.harga} priceLabel={ronde.priceLabel} barang={barang.map((p) => ({ ...visual(p.goodId), count: p.qty }))} />}</div>} jawabanBenar={ronde.priceLabel === "koin" ? `${Math.round(ronde.harga / KOIN)} koin` : rupiah(ronde.harga)} />
-      <Lapak padat={rapat}><div className="flex flex-wrap justify-center" style={{ gap: 8 * sk }}>{barang.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={Math.round((rapat ? 40 : 52) * meja)} label={nama(p.goodId)} labelSize={Math.round(14 * sk)} className="min-h-14 min-w-14" />)}</div></Lapak>
+      <Lapak padat={rapat || tabletPadat}><div className="flex flex-wrap justify-center" style={{ gap: 8 * sk }}>{barang.map((p) => <KartuBenda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={ukuranBarang} label={nama(p.goodId)} labelSize={Math.round((tabletPadat ? 16 : 14) * sk)} className="min-h-14 min-w-14" />)}</div></Lapak>
     </>} kanan={<>
-      <Nampan uang={uang} onAmbil={kembalikan} bahasa={c.bahasa} disabled={terkunci} judul="Nampan bayar" rapat={rapat} sorot={hint && total === ronde.harga} />
-      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={sorot} disabled={terkunci} />
-      <AksiBawah>
+      <Nampan uang={uang} onAmbil={kembalikan} bahasa={c.bahasa} disabled={terkunci} judul="Nampan bayar" padat={tabletPadat} rapat={rapat} sorot={hint && total === ronde.harga} />
+      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={sorot} disabled={terkunci} besar={tabletPadat} />
+      <AksiBawah aktif={!tabletPadat}>
         <div className="flex shrink-0 gap-2">
           <TombolBantu onClick={bantu} disabled={terkunci} />
           <TombolBesar onClick={() => { sfx.tap(); onJawab({ uang }); }} disabled={terkunci || uang.length === 0}>{c.bahasa === "en" ? "Pay" : "Bayar"}</TombolBesar>
@@ -815,7 +824,8 @@ function ModeKembalian(c: Ctx) {
   const langkah = useMemo(() => { const out: number[] = []; for (let v = ronde.harga; v <= ronde.dibayar; v += KOIN) out.push(v); return out.length <= 12 ? out : []; }, [ronde.harga, ronde.dibayar]);
   const { skala: sk, w, h } = usePanggung();
   const meja = useSkMeja();
-  const tabletPadat = c.paket.level === "TKB" && w >= 620 && h >= (lebar ? 500 : 680);
+  const tabletKapten = transaksiKaptenTablet(c.paket, w, h);
+  const tabletPadat = tabletKapten || (c.paket.level === "TKB" && w >= 620 && h >= (lebar ? 500 : 680));
   const ukuranBarang = Math.round(tabletPadat ? 96 * Math.min(sk, 1.2) : 48 * meja);
   const ukuranBayar = Math.round(tabletPadat ? 72 * Math.min(sk, 1.2) : 48 * meja);
 
@@ -858,7 +868,7 @@ function ModeKembalian(c: Ctx) {
       </Lapak>
     </>} kanan={<>
       <Nampan uang={uang} onAmbil={kembalikan} bahasa={c.bahasa} disabled={terkunci} judul="Kembalian" padat={tabletPadat} sorot={hint && total === kembalian} />
-      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={sorot} disabled={terkunci} />
+      <Laci laci={ronde.laci} dipakai={uang} onAmbil={ambil} bahasa={c.bahasa} sorot={sorot} disabled={terkunci} besar={tabletKapten} />
       <AksiBawah aktif={!lebar && !tabletPadat}>
       <div className="flex shrink-0 gap-2">
         <TombolBantu onClick={bantu} disabled={terkunci} />
