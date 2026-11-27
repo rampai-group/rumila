@@ -4,6 +4,7 @@ import { ILUSTRASI_BENTUK_PILOT } from "./ilustrasi-pilot-bentuk";
 import { ILUSTRASI_MATAHARI_PILOT } from "./ilustrasi-pilot-matahari";
 import { ILUSTRASI_UKUR_PILOT } from "./ilustrasi-pilot-ukur";
 import { ILUSTRASI_GERAK_PILOT } from "./ilustrasi-pilot-gerak";
+import { ILUSTRASI_GAYA_SD2 } from "./ilustrasi-sd2-gaya";
 import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
@@ -451,6 +452,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_HABITAT,
   ...ILUSTRASI_BENTUK_PILOT,
   ...ILUSTRASI_GERAK_PILOT,
+  ...ILUSTRASI_GAYA_SD2,
   ...ILUSTRASI_UKUR_PILOT,
   ...ILUSTRASI_MATAHARI_PILOT,
   ...ILUSTRASI_LISTRIK_LUAR_SD2,
