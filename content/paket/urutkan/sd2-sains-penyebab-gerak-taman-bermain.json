@@ -99,12 +99,20 @@
         {
           "id": "awal",
           "labelKey": "kincir-awal",
-          "emoji": "🌬️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-kincir-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "kincir-akhir",
-          "emoji": "🌀"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-kincir-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -115,12 +123,20 @@
         {
           "id": "awal",
           "labelKey": "kaleng-awal",
-          "emoji": "🦶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-kaleng-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "kaleng-akhir",
-          "emoji": "🥫"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-kaleng-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -131,12 +147,20 @@
         {
           "id": "awal",
           "labelKey": "jaring-awal",
-          "emoji": "🥅"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-jaring-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "jaring-akhir",
-          "emoji": "⏹️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-jaring-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -147,12 +171,20 @@
         {
           "id": "awal",
           "labelKey": "kasti-awal",
-          "emoji": "🏏"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-kasti-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "kasti-akhir",
-          "emoji": "↩️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-kasti-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -163,12 +195,20 @@
         {
           "id": "awal",
           "labelKey": "pasir-awal",
-          "emoji": "🏖️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-pasir-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "pasir-akhir",
-          "emoji": "🚙"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-pasir-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -179,12 +219,20 @@
         {
           "id": "awal",
           "labelKey": "daun-awal",
-          "emoji": "🌊"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-daun-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "daun-akhir",
-          "emoji": "🍃"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-daun-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -195,12 +243,20 @@
         {
           "id": "awal",
           "labelKey": "pedal-awal",
-          "emoji": "🦵"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-pedal-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "pedal-akhir",
-          "emoji": "🚲"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-pedal-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -211,12 +267,20 @@
         {
           "id": "awal",
           "labelKey": "setang-awal",
-          "emoji": "↪️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-setang-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "setang-akhir",
-          "emoji": "🚲"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-setang-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -227,12 +291,20 @@
         {
           "id": "awal",
           "labelKey": "pintu-awal",
-          "emoji": "✋"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-pintu-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "pintu-akhir",
-          "emoji": "🚪"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-pintu-akhir",
+            "t": 0
+          }
         }
       ]
     },
@@ -243,12 +315,20 @@
         {
           "id": "awal",
           "labelKey": "gelinding-awal",
-          "emoji": "🤲"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-gelinding-awal",
+            "t": 0
+          }
         },
         {
           "id": "akhir",
           "labelKey": "gelinding-akhir",
-          "emoji": "🟤"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-gerak-gelinding-akhir",
+            "t": 0
+          }
         }
       ]
     }

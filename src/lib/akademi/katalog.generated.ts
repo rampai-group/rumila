@@ -337167,12 +337167,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "kincir-awal",
-            "emoji": "🌬️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-kincir-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "kincir-akhir",
-            "emoji": "🌀"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-kincir-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337183,12 +337191,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "kaleng-awal",
-            "emoji": "🦶"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-kaleng-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "kaleng-akhir",
-            "emoji": "🥫"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-kaleng-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337199,12 +337215,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "jaring-awal",
-            "emoji": "🥅"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-jaring-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "jaring-akhir",
-            "emoji": "⏹️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-jaring-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337215,12 +337239,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "kasti-awal",
-            "emoji": "🏏"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-kasti-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "kasti-akhir",
-            "emoji": "↩️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-kasti-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337231,12 +337263,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "pasir-awal",
-            "emoji": "🏖️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-pasir-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "pasir-akhir",
-            "emoji": "🚙"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-pasir-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337247,12 +337287,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "daun-awal",
-            "emoji": "🌊"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-daun-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "daun-akhir",
-            "emoji": "🍃"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-daun-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337263,12 +337311,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "pedal-awal",
-            "emoji": "🦵"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-pedal-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "pedal-akhir",
-            "emoji": "🚲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-pedal-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337279,12 +337335,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "setang-awal",
-            "emoji": "↪️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-setang-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "setang-akhir",
-            "emoji": "🚲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-setang-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337295,12 +337359,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "pintu-awal",
-            "emoji": "✋"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-pintu-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "pintu-akhir",
-            "emoji": "🚪"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-pintu-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337311,12 +337383,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "gelinding-awal",
-            "emoji": "🤲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-gelinding-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "gelinding-akhir",
-            "emoji": "🟤"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-gelinding-akhir",
+              "t": 0
+            }
           }
         ]
       }
@@ -337423,12 +337503,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "tendang-awal",
-            "emoji": "🦶"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-pilot-tendang-bola",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "tendang-akhir",
-            "emoji": "⚽"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-tendang-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337439,12 +337527,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "tembok-awal",
-            "emoji": "🧱"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-tembok-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "tembok-akhir",
-            "emoji": "↩️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-tembok-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337455,13 +337551,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "ayunan-awal",
-            "emoji": "🤲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-ayunan-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "ayunan-akhir",
-            "shape": "rect",
-            "color": "#ffb74d"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-ayunan-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337496,12 +337599,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "rem-awal",
-            "emoji": "✊"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-rem-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "rem-akhir",
-            "emoji": "🚲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-rem-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337512,12 +337623,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "tangkap-awal",
-            "emoji": "🧤"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-tangkap-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "tangkap-akhir",
-            "emoji": "⏹️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-tangkap-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337528,12 +337647,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "tali-awal",
-            "emoji": "🪢"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-tali-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "tali-akhir",
-            "emoji": "🚙"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-tali-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337544,12 +337671,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "magnet-awal",
-            "emoji": "🧲"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-magnet-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "magnet-akhir",
-            "emoji": "🔩"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-magnet-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337560,12 +337695,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "angin-awal",
-            "emoji": "🌬️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-angin-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "angin-akhir",
-            "emoji": "⛵"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-angin-akhir",
+              "t": 0
+            }
           }
         ]
       },
@@ -337576,12 +337719,20 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "awal",
             "labelKey": "dayung-awal",
-            "emoji": "🛶"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-dayung-awal",
+              "t": 0
+            }
           },
           {
             "id": "akhir",
             "labelKey": "dayung-akhir",
-            "emoji": "↪️"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-gerak-dayung-akhir",
+              "t": 0
+            }
           }
         ]
       }
