@@ -729,6 +729,8 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
           const salah = !!hasil && dipilih === c.id && c.id !== correct;
           const sendiri = gridPotret && n === 3 && i === n - 1;
           const nama = namaPilihan(c, choices, t, lang === "en-US");
+          // Kartu jawaban selebar panel tetap diam agar tepinya terlihat saat umpan balik.
+          const animasi = bagiHitung ? "" : salah ? "akademi-shake" : benar ? "akademi-pop" : "";
           const kartu = (
             <KartuBenda
               penuh
@@ -744,7 +746,7 @@ function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde">
               labelSize={Math.round(Math.max(14 * sk, Math.min(24, Math.max(ukuran * 0.15, Math.min(lebarKartu, 480) * 0.06))))}
               onClick={() => pilih(c.id)}
               disabled={kunci}
-              className={`min-w-0 ${ronde.bacaPilihan ? "w-full flex-1" : ""} ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
+              className={`min-w-0 ${ronde.bacaPilihan ? "w-full flex-1" : ""} ${animasi}`}
               style={{
                 minHeight: tinggiKartu,
                 background: benar ? "#8fe6b6" : salah ? "#ffc08a" : pilihanTulisan ? WARNA_PILIHAN[i % WARNA_PILIHAN.length] : undefined,
