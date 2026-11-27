@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-jam-dinding-kelas",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -302,7 +302,11 @@
         "m7",
         "m30"
       ],
-      "correct": "m35"
+      "correct": "m35",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-7"
+      }
     },
     {
       "id": "r-angka-3",
@@ -312,7 +316,11 @@
         "m3",
         "m20"
       ],
-      "correct": "m15"
+      "correct": "m15",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-3"
+      }
     },
     {
       "id": "r-angka-9",
@@ -322,7 +330,11 @@
         "m9",
         "m40"
       ],
-      "correct": "m45"
+      "correct": "m45",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-9"
+      }
     },
     {
       "id": "r-angka-11",
@@ -332,7 +344,11 @@
         "m11",
         "m50"
       ],
-      "correct": "m55"
+      "correct": "m55",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-11"
+      }
     },
     {
       "id": "r-angka-5",
@@ -342,7 +358,11 @@
         "m5",
         "m30"
       ],
-      "correct": "m25"
+      "correct": "m25",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-5"
+      }
     },
     {
       "id": "r-angka-8",
@@ -352,7 +372,11 @@
         "m8",
         "m45"
       ],
-      "correct": "m40"
+      "correct": "m40",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-8"
+      }
     },
     {
       "id": "r-angka-2",
@@ -362,7 +386,11 @@
         "m2",
         "m15"
       ],
-      "correct": "m10"
+      "correct": "m10",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-2"
+      }
     },
     {
       "id": "r-angka-6",
@@ -372,7 +400,11 @@
         "m6",
         "m35"
       ],
-      "correct": "m30"
+      "correct": "m30",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-6"
+      }
     },
     {
       "id": "r-angka-10",
@@ -382,7 +414,11 @@
         "m10",
         "m45"
       ],
-      "correct": "m50"
+      "correct": "m50",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-10"
+      }
     },
     {
       "id": "r-angka-4",
@@ -392,7 +428,11 @@
         "m4",
         "m25"
       ],
-      "correct": "m20"
+      "correct": "m20",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-ke-4"
+      }
     },
     {
       "id": "r-menit-25",
@@ -402,7 +442,11 @@
         "a4",
         "a6"
       ],
-      "correct": "a5"
+      "correct": "a5",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+      }
     },
     {
       "id": "r-menit-40",
@@ -412,7 +456,11 @@
         "a7",
         "a9"
       ],
-      "correct": "a8"
+      "correct": "a8",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+      }
     },
     {
       "id": "r-menit-15",
@@ -422,7 +470,11 @@
         "a2",
         "a4"
       ],
-      "correct": "a3"
+      "correct": "a3",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+      }
     },
     {
       "id": "r-menit-50",
@@ -432,7 +484,11 @@
         "a9",
         "a11"
       ],
-      "correct": "a10"
+      "correct": "a10",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+      }
     }
   ]
 }
