@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-gaya-ubah-gerak-atau-bentuk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,74 +78,110 @@
       "id": "tendang",
       "labelKey": "i-tendang",
       "bin": "gerak",
-      "emoji": "⚽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-tendang"
+      }
     },
     {
       "id": "tangkap",
       "labelKey": "i-tangkap",
       "bin": "gerak",
-      "emoji": "🧤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-tangkap"
+      }
     },
     {
       "id": "rem",
       "labelKey": "i-rem",
       "bin": "gerak",
-      "emoji": "🚲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-rem"
+      }
     },
     {
       "id": "kok",
       "labelKey": "i-kok",
       "bin": "gerak",
-      "emoji": "🏸"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-kok"
+      }
     },
     {
       "id": "perahu",
       "labelKey": "i-perahu",
       "bin": "gerak",
-      "emoji": "⛵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-perahu"
+      }
     },
     {
       "id": "troli",
       "labelKey": "i-troli",
       "bin": "gerak",
-      "emoji": "🛒"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-troli"
+      }
     },
     {
       "id": "remas",
       "labelKey": "i-remas",
       "bin": "bentuk",
-      "emoji": "📄"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-remas"
+      }
     },
     {
       "id": "plastisin",
       "labelKey": "i-plastisin",
       "bin": "bentuk",
-      "emoji": "🟣",
-      "color": "#ba68c8"
+      "color": "#ba68c8",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-plastisin"
+      }
     },
     {
       "id": "kaleng",
       "labelKey": "i-kaleng",
       "bin": "bentuk",
-      "emoji": "🥫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-kaleng"
+      }
     },
     {
       "id": "adonan",
       "labelKey": "i-adonan",
       "bin": "bentuk",
-      "emoji": "🫓"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-adonan"
+      }
     },
     {
       "id": "balon",
       "labelKey": "i-balon",
       "bin": "bentuk",
-      "emoji": "🎈"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-balon"
+      }
     },
     {
       "id": "spons",
       "labelKey": "i-spons",
       "bin": "bentuk",
-      "emoji": "🧽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd2-gaya-spons"
+      }
     }
   ],
   "pilihan": []

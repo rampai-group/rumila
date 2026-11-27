@@ -219174,7 +219174,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-gaya-di-lapangan-olahraga",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -219248,69 +219248,99 @@ export const PAKET_RAW: unknown[] = [
         "id": "sundul",
         "labelKey": "i-sundul",
         "bin": "gerak",
-        "emoji": "⚽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-sundul"
+        }
       },
       {
         "id": "kasti",
         "labelKey": "i-kasti",
         "bin": "gerak",
-        "emoji": "🏏"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-kasti"
+        }
       },
       {
         "id": "tahan",
         "labelKey": "i-tahan",
         "bin": "gerak",
-        "emoji": "🏀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-tahan"
+        }
       },
       {
         "id": "gawang",
         "labelKey": "i-gawang",
         "bin": "gerak",
-        "emoji": "↪️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-gawang"
+        }
       },
       {
         "id": "dayung",
         "labelKey": "i-dayung",
         "bin": "gerak",
-        "emoji": "🛶"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-dayung"
+        }
       },
       {
         "id": "bolastres",
         "labelKey": "i-bolastres",
         "bin": "bentuk",
-        "emoji": "🔴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-bolastres"
+        }
       },
       {
         "id": "kardus",
         "labelKey": "i-kardus",
         "bin": "bentuk",
-        "emoji": "📦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-kardus"
+        }
       },
       {
         "id": "sedotan",
         "labelKey": "i-sedotan",
         "bin": "bentuk",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-sedotan"
+        }
       },
       {
         "id": "pasir",
         "labelKey": "i-pasir",
         "bin": "bentuk",
-        "emoji": "🏖️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-pasir"
+        }
       },
       {
         "id": "matras",
         "labelKey": "i-matras",
         "bin": "bentuk",
-        "emoji": "🟦",
-        "color": "#90caf9"
+        "color": "#90caf9",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-matras"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd2-sains-gaya-ubah-gerak-atau-bentuk",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -219388,74 +219418,110 @@ export const PAKET_RAW: unknown[] = [
         "id": "tendang",
         "labelKey": "i-tendang",
         "bin": "gerak",
-        "emoji": "⚽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-tendang"
+        }
       },
       {
         "id": "tangkap",
         "labelKey": "i-tangkap",
         "bin": "gerak",
-        "emoji": "🧤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-tangkap"
+        }
       },
       {
         "id": "rem",
         "labelKey": "i-rem",
         "bin": "gerak",
-        "emoji": "🚲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-rem"
+        }
       },
       {
         "id": "kok",
         "labelKey": "i-kok",
         "bin": "gerak",
-        "emoji": "🏸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-kok"
+        }
       },
       {
         "id": "perahu",
         "labelKey": "i-perahu",
         "bin": "gerak",
-        "emoji": "⛵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-perahu"
+        }
       },
       {
         "id": "troli",
         "labelKey": "i-troli",
         "bin": "gerak",
-        "emoji": "🛒"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-troli"
+        }
       },
       {
         "id": "remas",
         "labelKey": "i-remas",
         "bin": "bentuk",
-        "emoji": "📄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-remas"
+        }
       },
       {
         "id": "plastisin",
         "labelKey": "i-plastisin",
         "bin": "bentuk",
-        "emoji": "🟣",
-        "color": "#ba68c8"
+        "color": "#ba68c8",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-plastisin"
+        }
       },
       {
         "id": "kaleng",
         "labelKey": "i-kaleng",
         "bin": "bentuk",
-        "emoji": "🥫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-kaleng"
+        }
       },
       {
         "id": "adonan",
         "labelKey": "i-adonan",
         "bin": "bentuk",
-        "emoji": "🫓"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-adonan"
+        }
       },
       {
         "id": "balon",
         "labelKey": "i-balon",
         "bin": "bentuk",
-        "emoji": "🎈"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-balon"
+        }
       },
       {
         "id": "spons",
         "labelKey": "i-spons",
         "bin": "bentuk",
-        "emoji": "🧽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-gaya-spons"
+        }
       }
     ],
     "pilihan": []
