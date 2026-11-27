@@ -212741,7 +212741,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-mat-jam-dinding-kelas",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -213043,7 +213043,11 @@ export const PAKET_RAW: unknown[] = [
           "m7",
           "m30"
         ],
-        "correct": "m35"
+        "correct": "m35",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-7"
+        }
       },
       {
         "id": "r-angka-3",
@@ -213053,7 +213057,11 @@ export const PAKET_RAW: unknown[] = [
           "m3",
           "m20"
         ],
-        "correct": "m15"
+        "correct": "m15",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-3"
+        }
       },
       {
         "id": "r-angka-9",
@@ -213063,7 +213071,11 @@ export const PAKET_RAW: unknown[] = [
           "m9",
           "m40"
         ],
-        "correct": "m45"
+        "correct": "m45",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-9"
+        }
       },
       {
         "id": "r-angka-11",
@@ -213073,7 +213085,11 @@ export const PAKET_RAW: unknown[] = [
           "m11",
           "m50"
         ],
-        "correct": "m55"
+        "correct": "m55",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-11"
+        }
       },
       {
         "id": "r-angka-5",
@@ -213083,7 +213099,11 @@ export const PAKET_RAW: unknown[] = [
           "m5",
           "m30"
         ],
-        "correct": "m25"
+        "correct": "m25",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-5"
+        }
       },
       {
         "id": "r-angka-8",
@@ -213093,7 +213113,11 @@ export const PAKET_RAW: unknown[] = [
           "m8",
           "m45"
         ],
-        "correct": "m40"
+        "correct": "m40",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-8"
+        }
       },
       {
         "id": "r-angka-2",
@@ -213103,7 +213127,11 @@ export const PAKET_RAW: unknown[] = [
           "m2",
           "m15"
         ],
-        "correct": "m10"
+        "correct": "m10",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-2"
+        }
       },
       {
         "id": "r-angka-6",
@@ -213113,7 +213141,11 @@ export const PAKET_RAW: unknown[] = [
           "m6",
           "m35"
         ],
-        "correct": "m30"
+        "correct": "m30",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-6"
+        }
       },
       {
         "id": "r-angka-10",
@@ -213123,7 +213155,11 @@ export const PAKET_RAW: unknown[] = [
           "m10",
           "m45"
         ],
-        "correct": "m50"
+        "correct": "m50",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-10"
+        }
       },
       {
         "id": "r-angka-4",
@@ -213133,7 +213169,11 @@ export const PAKET_RAW: unknown[] = [
           "m4",
           "m25"
         ],
-        "correct": "m20"
+        "correct": "m20",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-4"
+        }
       },
       {
         "id": "r-menit-25",
@@ -213143,7 +213183,11 @@ export const PAKET_RAW: unknown[] = [
           "a4",
           "a6"
         ],
-        "correct": "a5"
+        "correct": "a5",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+        }
       },
       {
         "id": "r-menit-40",
@@ -213153,7 +213197,11 @@ export const PAKET_RAW: unknown[] = [
           "a7",
           "a9"
         ],
-        "correct": "a8"
+        "correct": "a8",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+        }
       },
       {
         "id": "r-menit-15",
@@ -213163,7 +213211,11 @@ export const PAKET_RAW: unknown[] = [
           "a2",
           "a4"
         ],
-        "correct": "a3"
+        "correct": "a3",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+        }
       },
       {
         "id": "r-menit-50",
@@ -213173,7 +213225,11 @@ export const PAKET_RAW: unknown[] = [
           "a9",
           "a11"
         ],
-        "correct": "a10"
+        "correct": "a10",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-tanpa-jarum"
+        }
       }
     ]
   },
@@ -214181,7 +214237,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-mat-menit-loncat-lima",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -214191,7 +214247,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Menit Loncat Lima",
-        "instruksi": "Kartu →4 artinya jarum panjang menunjuk angka 4. Tiap angka bernilai lima menit. Taruh di rak menitnya.",
+        "instruksi": "Pada jam berjarum, hitung lima-lima dari angka 12 sampai ke jarum panjang. Pada jam digital, baca dua angka setelah titik. Taruh kartu di rak menit yang cocok.",
         "b-5-menit": "5 menit",
         "b-10-menit": "10 menit",
         "b-15-menit": "15 menit",
@@ -214202,40 +214258,40 @@ export const PAKET_RAW: unknown[] = [
         "b-40-menit": "40 menit",
         "b-45-menit": "45 menit",
         "b-50-menit": "50 menit",
-        "i-ke1": "→1",
+        "i-ke1": "Jarum ke 1",
         "i-04t05": "04.05",
         "i-10t05": "10.05",
-        "i-ke2": "→2",
+        "i-ke2": "Jarum ke 2",
         "i-09t10": "09.10",
         "i-03t10": "03.10",
-        "i-ke3": "→3",
+        "i-ke3": "Jarum ke 3",
         "i-06t15": "06.15",
         "i-10t15": "10.15",
-        "i-ke4": "→4",
+        "i-ke4": "Jarum ke 4",
         "i-08t20": "08.20",
         "i-10t20": "10.20",
-        "i-ke5": "→5",
+        "i-ke5": "Jarum ke 5",
         "i-02t25": "02.25",
         "i-10t25": "10.25",
-        "i-ke6": "→6",
+        "i-ke6": "Jarum ke 6",
         "i-01t30": "01.30",
         "i-08t30": "08.30",
-        "i-ke7": "→7",
+        "i-ke7": "Jarum ke 7",
         "i-05t35": "05.35",
         "i-09t35": "09.35",
-        "i-ke8": "→8",
+        "i-ke8": "Jarum ke 8",
         "i-04t40": "04.40",
         "i-11t40": "11.40",
-        "i-ke9": "→9",
+        "i-ke9": "Jarum ke 9",
         "i-08t45": "08.45",
         "i-09t45": "09.45",
-        "i-ke10": "→10",
+        "i-ke10": "Jarum ke 10",
         "i-09t50": "09.50",
         "i-08t50": "08.50"
       },
       "en": {
         "judul": "Minutes in Fives",
-        "instruksi": "A →4 card means the long hand points to 4. Each number is worth five minutes. Put it on its minutes shelf.",
+        "instruksi": "On a clock face, count in fives from 12 to the long hand. On a digital clock, read the last two digits. Put the card on the matching minutes shelf.",
         "b-5-menit": "5 minutes",
         "b-10-menit": "10 minutes",
         "b-15-menit": "15 minutes",
@@ -214246,34 +214302,34 @@ export const PAKET_RAW: unknown[] = [
         "b-40-menit": "40 minutes",
         "b-45-menit": "45 minutes",
         "b-50-menit": "50 minutes",
-        "i-ke1": "→1",
+        "i-ke1": "Hand at 1",
         "i-04t05": "04:05",
         "i-10t05": "10:05",
-        "i-ke2": "→2",
+        "i-ke2": "Hand at 2",
         "i-09t10": "09:10",
         "i-03t10": "03:10",
-        "i-ke3": "→3",
+        "i-ke3": "Hand at 3",
         "i-06t15": "06:15",
         "i-10t15": "10:15",
-        "i-ke4": "→4",
+        "i-ke4": "Hand at 4",
         "i-08t20": "08:20",
         "i-10t20": "10:20",
-        "i-ke5": "→5",
+        "i-ke5": "Hand at 5",
         "i-02t25": "02:25",
         "i-10t25": "10:25",
-        "i-ke6": "→6",
+        "i-ke6": "Hand at 6",
         "i-01t30": "01:30",
         "i-08t30": "08:30",
-        "i-ke7": "→7",
+        "i-ke7": "Hand at 7",
         "i-05t35": "05:35",
         "i-09t35": "09:35",
-        "i-ke8": "→8",
+        "i-ke8": "Hand at 8",
         "i-04t40": "04:40",
         "i-11t40": "11:40",
-        "i-ke9": "→9",
+        "i-ke9": "Hand at 9",
         "i-08t45": "08:45",
         "i-09t45": "09:45",
-        "i-ke10": "→10",
+        "i-ke10": "Hand at 10",
         "i-09t50": "09:50",
         "i-08t50": "08:50"
       }
@@ -214347,7 +214403,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-1",
         "labelKey": "i-ke1",
         "bin": "m5",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-1"
+        }
       },
       {
         "id": "digital-4-5",
@@ -214365,7 +214425,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-2",
         "labelKey": "i-ke2",
         "bin": "m10",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-2"
+        }
       },
       {
         "id": "digital-9-10",
@@ -214383,7 +214447,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-3",
         "labelKey": "i-ke3",
         "bin": "m15",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-3"
+        }
       },
       {
         "id": "digital-6-15",
@@ -214401,7 +214469,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-4",
         "labelKey": "i-ke4",
         "bin": "m20",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-4"
+        }
       },
       {
         "id": "digital-8-20",
@@ -214419,7 +214491,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-5",
         "labelKey": "i-ke5",
         "bin": "m25",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-5"
+        }
       },
       {
         "id": "digital-2-25",
@@ -214437,7 +214513,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-6",
         "labelKey": "i-ke6",
         "bin": "m30",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-6"
+        }
       },
       {
         "id": "digital-1-30",
@@ -214455,7 +214535,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-7",
         "labelKey": "i-ke7",
         "bin": "m35",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-7"
+        }
       },
       {
         "id": "digital-5-35",
@@ -214473,7 +214557,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-8",
         "labelKey": "i-ke8",
         "bin": "m40",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-8"
+        }
       },
       {
         "id": "digital-4-40",
@@ -214491,7 +214579,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-9",
         "labelKey": "i-ke9",
         "bin": "m45",
-        "scale": 1
+        "scale": 1,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-9"
+        }
       },
       {
         "id": "digital-8-45",
@@ -214509,7 +214601,11 @@ export const PAKET_RAW: unknown[] = [
         "id": "jarum-10",
         "labelKey": "i-ke10",
         "bin": "m50",
-        "scale": 0.85
+        "scale": 0.85,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-jam-menit-ke-10"
+        }
       },
       {
         "id": "digital-9-50",

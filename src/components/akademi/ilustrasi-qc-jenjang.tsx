@@ -15,6 +15,7 @@ import { ILUSTRASI_TUMBUH_TERNAK_SD2 } from "./ilustrasi-sd2-tumbuh-hewan-ternak
 import { ILUSTRASI_DIDIH_UAP_SD6 } from "./ilustrasi-sd6-didih-uap";
 import { ILUSTRASI_KONDISI_TEMPAT_SD2 } from "./ilustrasi-sd2-kondisi-tempat";
 import { ILUSTRASI_BAHAN_SD2 } from "./ilustrasi-sd2-bahan";
+import { ILUSTRASI_JARUM_MENIT_SD2 } from "./ilustrasi-sd2-jarum-menit";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -445,6 +446,7 @@ const GERAK_APUNG: Record<string, ReactNode> = {
 };
 
 const objectArt: Record<string, ReactNode> = {
+  ...ILUSTRASI_JARUM_MENIT_SD2,
   ...ILUSTRASI_BAHAN_SD2,
   ...PAKAN,
   ...KEGIATAN,
