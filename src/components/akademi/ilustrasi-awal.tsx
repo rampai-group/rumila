@@ -15,6 +15,7 @@ import { ILUSTRASI_KEADAAN_BENDA_IDS, IlustrasiKeadaanBenda } from "./ilustrasi-
 import { ILUSTRASI_QC_SD_AWAL_IDS, IlustrasiQcSdAwal } from "./ilustrasi-qc-sd-awal";
 import { ILUSTRASI_QC_SD4_SD6_IDS, IlustrasiQcSd4Sd6 } from "./ilustrasi-qc-sd4-sd6";
 import { ILUSTRASI_QC_TUNAS_IDS, IlustrasiQcTunas } from "./ilustrasi-qc-tunas";
+import { ILUSTRASI_SIKLUS_HEWAN_IDS, IlustrasiSiklusHewan } from "./ilustrasi-siklus-hewan";
 import { GambarIlustrasiTk } from "./ilustrasi-tk";
 import { ILUSTRASI_TUMBUHAN_PERBAIKI_IDS, IlustrasiTumbuhanPerbaiki } from "./ilustrasi-tumbuhan-perbaiki";
 import { ILUSTRASI_TUMBUHAN_SUSUN_IDS, IlustrasiTumbuhanSusun } from "./ilustrasi-tumbuhan-susun";
@@ -46,6 +47,7 @@ export const ILUSTRASI_AWAL_IDS = [
   ILUSTRASI_PERTUMBUHAN_TANAMAN_IDS,
   ILUSTRASI_KEADAAN_BENDA_IDS,
   ILUSTRASI_QC_SD_AWAL_IDS,
+  ILUSTRASI_SIKLUS_HEWAN_IDS,
   ILUSTRASI_QC_SD4_SD6_IDS,
   ILUSTRASI_WARNA_PAUD_IDS,
   ILUSTRASI_JENGKAL_SAYUR_IDS,
@@ -211,6 +213,7 @@ export function GambarIlustrasiAwal({ gambar, s, style, className }: { gambar: s
   else if (ILUSTRASI_PERTUMBUHAN_TANAMAN_IDS.includes(gambar)) art = <IlustrasiPertumbuhanTanaman id={gambar} />;
   else if (ILUSTRASI_KEADAAN_BENDA_IDS.includes(gambar)) art = <IlustrasiKeadaanBenda id={gambar} />;
   else if (ILUSTRASI_QC_SD_AWAL_IDS.includes(gambar)) art = <IlustrasiQcSdAwal id={gambar} />;
+  else if (ILUSTRASI_SIKLUS_HEWAN_IDS.includes(gambar)) art = <IlustrasiSiklusHewan id={gambar} />;
   else if (ILUSTRASI_QC_SD4_SD6_IDS.includes(gambar)) art = <IlustrasiQcSd4Sd6 id={gambar} />;
   else if (ILUSTRASI_WARNA_PAUD_IDS.includes(gambar)) art = <IlustrasiWarnaPaud id={gambar} />;
   else if (ILUSTRASI_JENGKAL_SAYUR_IDS.includes(gambar)) art = <IlustrasiJengkalSayur id={gambar} />;
