@@ -335960,7 +335960,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-hewan-tumbuh-besar",
-    "version": "1.1.7",
+    "version": "1.1.8",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -336100,25 +336100,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "kucing-bayi",
             "emoji": "🐱",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "kucing-kecil",
             "emoji": "🐱",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "kucing-muda",
             "emoji": "🐈",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "kucing-dewasa",
             "emoji": "🐈",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-4"
+            }
           }
         ]
       },
@@ -336130,25 +336142,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "ayam-bayi",
             "emoji": "🐥",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "ayam-kecil",
             "emoji": "🐤",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "ayam-muda",
             "emoji": "🐔",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "ayam-dewasa",
             "emoji": "🐓",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-4"
+            }
           }
         ]
       },
@@ -336160,25 +336184,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "kambing-bayi",
             "emoji": "🐐",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "kambing-kecil",
             "emoji": "🐐",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "kambing-muda",
             "emoji": "🐐",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "kambing-dewasa",
             "emoji": "🐐",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-4"
+            }
           }
         ]
       },
@@ -336191,26 +336227,35 @@ export const PAKET_RAW: unknown[] = [
             "labelKey": "bebek-bayi",
             "adegan": {
               "jenis": "ilustrasi",
-              "varian": "tk-anak-bebek"
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-1"
             }
           },
           {
             "id": "kecil",
             "labelKey": "bebek-kecil",
             "emoji": "🦆",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "bebek-muda",
             "emoji": "🦆",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "bebek-dewasa",
             "emoji": "🦆",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-4"
+            }
           }
         ]
       },
@@ -336222,25 +336267,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "anjing-bayi",
             "emoji": "🐶",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "anjing-kecil",
             "emoji": "🐶",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "anjing-muda",
             "emoji": "🐕",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "anjing-dewasa",
             "emoji": "🐕",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-4"
+            }
           }
         ]
       },
@@ -336252,25 +336309,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "sapi-bayi",
             "emoji": "🐮",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "sapi-kecil",
             "emoji": "🐮",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "sapi-muda",
             "emoji": "🐄",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "sapi-dewasa",
             "emoji": "🐄",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-4"
+            }
           }
         ]
       },
@@ -336282,25 +336351,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "kuda-1",
             "labelKey": "kuda-1",
             "emoji": "🐴",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-1"
+            }
           },
           {
             "id": "kuda-2",
             "labelKey": "kuda-2",
             "emoji": "🐴",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-2"
+            }
           },
           {
             "id": "kuda-3",
             "labelKey": "kuda-3",
             "emoji": "🐎",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-3"
+            }
           },
           {
             "id": "kuda-4",
             "labelKey": "kuda-4",
             "emoji": "🐎",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-4"
+            }
           }
         ]
       },
@@ -336354,25 +336435,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "domba-1",
             "labelKey": "domba-1",
             "emoji": "🐑",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-1"
+            }
           },
           {
             "id": "domba-2",
             "labelKey": "domba-2",
             "emoji": "🐑",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-2"
+            }
           },
           {
             "id": "domba-3",
             "labelKey": "domba-3",
             "emoji": "🐑",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-3"
+            }
           },
           {
             "id": "domba-4",
             "labelKey": "domba-4",
             "emoji": "🐑",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-4"
+            }
           }
         ]
       },
@@ -336384,25 +336477,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "gajah-1",
             "labelKey": "gajah-1",
             "emoji": "🐘",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-1"
+            }
           },
           {
             "id": "gajah-2",
             "labelKey": "gajah-2",
             "emoji": "🐘",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-2"
+            }
           },
           {
             "id": "gajah-3",
             "labelKey": "gajah-3",
             "emoji": "🐘",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-3"
+            }
           },
           {
             "id": "gajah-4",
             "labelKey": "gajah-4",
             "emoji": "🐘",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-4"
+            }
           }
         ]
       }
@@ -337232,7 +337337,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -337372,25 +337477,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "kucing-bayi",
             "emoji": "🐱",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "kucing-kecil",
             "emoji": "🐱",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "kucing-muda",
             "emoji": "🐈",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "kucing-dewasa",
             "emoji": "🐈",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kucing-4"
+            }
           }
         ]
       },
@@ -337402,25 +337519,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "ayam-bayi",
             "emoji": "🐥",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "ayam-kecil",
             "emoji": "🐤",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "ayam-muda",
             "emoji": "🐔",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "ayam-dewasa",
             "emoji": "🐓",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-ayam-4"
+            }
           }
         ]
       },
@@ -337432,25 +337561,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "kambing-bayi",
             "emoji": "🐐",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "kambing-kecil",
             "emoji": "🐐",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "kambing-muda",
             "emoji": "🐐",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "kambing-dewasa",
             "emoji": "🐐",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kambing-4"
+            }
           }
         ]
       },
@@ -337463,26 +337604,35 @@ export const PAKET_RAW: unknown[] = [
             "labelKey": "bebek-bayi",
             "adegan": {
               "jenis": "ilustrasi",
-              "varian": "tk-anak-bebek"
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-1"
             }
           },
           {
             "id": "kecil",
             "labelKey": "bebek-kecil",
             "emoji": "🦆",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "bebek-muda",
             "emoji": "🦆",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "bebek-dewasa",
             "emoji": "🦆",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-bebek-4"
+            }
           }
         ]
       },
@@ -337494,25 +337644,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "anjing-bayi",
             "emoji": "🐶",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "anjing-kecil",
             "emoji": "🐶",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "anjing-muda",
             "emoji": "🐕",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "anjing-dewasa",
             "emoji": "🐕",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-anjing-4"
+            }
           }
         ]
       },
@@ -337524,25 +337686,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "bayi",
             "labelKey": "sapi-bayi",
             "emoji": "🐮",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-1"
+            }
           },
           {
             "id": "kecil",
             "labelKey": "sapi-kecil",
             "emoji": "🐮",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-2"
+            }
           },
           {
             "id": "muda",
             "labelKey": "sapi-muda",
             "emoji": "🐄",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-3"
+            }
           },
           {
             "id": "dewasa",
             "labelKey": "sapi-dewasa",
             "emoji": "🐄",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-sapi-4"
+            }
           }
         ]
       },
@@ -337554,25 +337728,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "kuda-1",
             "labelKey": "kuda-1",
             "emoji": "🐴",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-1"
+            }
           },
           {
             "id": "kuda-2",
             "labelKey": "kuda-2",
             "emoji": "🐴",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-2"
+            }
           },
           {
             "id": "kuda-3",
             "labelKey": "kuda-3",
             "emoji": "🐎",
-            "scale": 0.95
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-3"
+            }
           },
           {
             "id": "kuda-4",
             "labelKey": "kuda-4",
             "emoji": "🐎",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-kuda-4"
+            }
           }
         ]
       },
@@ -337626,25 +337812,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "domba-1",
             "labelKey": "domba-1",
             "emoji": "🐑",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-1"
+            }
           },
           {
             "id": "domba-2",
             "labelKey": "domba-2",
             "emoji": "🐑",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-2"
+            }
           },
           {
             "id": "domba-3",
             "labelKey": "domba-3",
             "emoji": "🐑",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-3"
+            }
           },
           {
             "id": "domba-4",
             "labelKey": "domba-4",
             "emoji": "🐑",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-domba-4"
+            }
           }
         ]
       },
@@ -337656,25 +337854,37 @@ export const PAKET_RAW: unknown[] = [
             "id": "gajah-1",
             "labelKey": "gajah-1",
             "emoji": "🐘",
-            "scale": 0.6
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-1"
+            }
           },
           {
             "id": "gajah-2",
             "labelKey": "gajah-2",
             "emoji": "🐘",
-            "scale": 0.8
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-2"
+            }
           },
           {
             "id": "gajah-3",
             "labelKey": "gajah-3",
             "emoji": "🐘",
-            "scale": 1.05
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-3"
+            }
           },
           {
             "id": "gajah-4",
             "labelKey": "gajah-4",
             "emoji": "🐘",
-            "scale": 1.3
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-sd2-tumbuh-gajah-4"
+            }
           }
         ]
       }
