@@ -58,6 +58,10 @@ function TelurBelalang() {
 
 function Belalang({ sayap }: { sayap: "belum" | "bakal" | "penuh" }) {
   return <g transform={sayap === "belum" ? "translate(13 11) scale(.83)" : undefined} stroke="#3e6744" strokeWidth="2.9" strokeLinecap="round" strokeLinejoin="round">
+    {sayap === "penuh" && <>
+      <path d="M53 47Q57 29 79 18Q95 10 111 17Q116 23 104 32Q86 45 60 51Z" fill="#d7e5a3" />
+      <path d="M57 47Q78 28 104 20M69 39L89 34M76 32L85 23" fill="none" stroke="#7a944e" strokeWidth="1.9" />
+    </>}
     <path d="M54 53L46 69L31 73M62 54L60 70L49 78M72 58L92 44L106 73L117 76" fill="none" stroke="#819769" strokeWidth="3.4" />
     <path d="M42 49Q51 41 77 48Q91 53 109 55Q107 63 89 68Q74 71 53 64Z" fill="#8bad59" />
     <path d="M82 53L84 66M91 55L93 64M100 55L101 61" fill="none" stroke="#597943" strokeWidth="1.8" />
