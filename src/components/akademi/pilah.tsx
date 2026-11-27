@@ -297,7 +297,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   const lepasDiAtas = items.filter((i) => !peta[i.id]);
   const satuKartu = lepasDiAtas.length === 1;
   const adeganKaptenAkhirHp = lepasDiAtas.length <= 1 && hp && h >= 550 &&
-    paket.competencyIds.some((id) => id === "SAINS.SD2.GAYA.01" || id === "SAINS.SD2.CAHAYA.01");
+    paket.competencyIds.some((id) => id === "SAINS.SD2.GAYA.01" || id === "SAINS.SD2.CAHAYA.01" || id === "SAINS.SD2.LISTRIK.01");
   const adeganBesarHp = (paket.id === "sd2-sains-aman-listrik-di-luar" || pilahAdegan) && h >= 550;
   const satuKartuBesarHp = satuKartu && hp && (adeganKaptenAkhirHp || kelompokBahan || adeganBesarHp || ((ubahBentuk || dorongTarik) && bins.length === 2));
   const kartuTerakhirLega = satuKartuBesarHp || (satuKartu && (piktogramLega || rakAngkaLega || rakBahanLega || rakPecahanLega));
