@@ -12,6 +12,7 @@ import { ILUSTRASI_LISTRIK_RUMAH_SD2 } from "./ilustrasi-sd2-listrik-rumah";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
 import { ILUSTRASI_PERANGKAT_SD2 } from "./ilustrasi-sd2-perangkat";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
+import { ILUSTRASI_TAHAP_GAME_SD2 } from "./ilustrasi-sd2-tahap-game";
 import { ILUSTRASI_TULANG_SD4 } from "./ilustrasi-sd4-tulang";
 import { ILUSTRASI_TUMBUH_KELINCI_SD2 } from "./ilustrasi-sd2-pertumbuhan-kelinci";
 import { ILUSTRASI_TUMBUH_SAPI_KAMBING_GAJAH_SD2 } from "./ilustrasi-sd2-tumbuh-sapi-kambing-gajah";
@@ -23,7 +24,7 @@ import { ILUSTRASI_KONDISI_TEMPAT_SD2 } from "./ilustrasi-sd2-kondisi-tempat";
 import { ILUSTRASI_BAHAN_SD2 } from "./ilustrasi-sd2-bahan";
 import { ILUSTRASI_SUMBER_CAHAYA_SD2 } from "./ilustrasi-sd2-sumber-cahaya";
 import { ILUSTRASI_JARUM_MENIT_SD2 } from "./ilustrasi-sd2-jarum-menit";
-import { ILUSTRASI_TAHAP_GAME_SD2 } from "./ilustrasi-sd2-tahap-game";
+import { ILUSTRASI_LINGKUNGAN_SD2 } from "./ilustrasi-sd2-lingkungan";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -455,6 +456,7 @@ const GERAK_APUNG: Record<string, ReactNode> = {
 
 const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_PERANGKAT_SD2,
+  ...ILUSTRASI_LINGKUNGAN_SD2,
   ...ILUSTRASI_JARUM_MENIT_SD2,
   ...ILUSTRASI_BAHAN_SD2,
   ...ILUSTRASI_SUMBER_CAHAYA_SD2,

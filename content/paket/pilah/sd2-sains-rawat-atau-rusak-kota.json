@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-rawat-atau-rusak-kota",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -63,14 +63,20 @@
     {
       "id": "rawat",
       "labelKey": "b-rawat",
-      "emoji": "🌱",
-      "color": "#e8f5e9"
+      "color": "#e8f5e9",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-rawat"
+      }
     },
     {
       "id": "rusak",
       "labelKey": "b-rusak",
-      "emoji": "🗑️",
-      "color": "#ffebee"
+      "color": "#ffebee",
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-rusak"
+      }
     }
   ],
   "items": [
@@ -78,73 +84,109 @@
       "id": "tanam",
       "labelKey": "i-tanam",
       "bin": "rawat",
-      "emoji": "🌳"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-tanam-pohon"
+      }
     },
     {
       "id": "tempatsampah",
       "labelKey": "i-tempatsampah",
       "bin": "rawat",
-      "emoji": "🚮"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-buang-ke-tempatnya"
+      }
     },
     {
       "id": "botol",
       "labelKey": "i-botol",
       "bin": "rawat",
-      "emoji": "🧴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-botol-sendiri"
+      }
     },
     {
       "id": "sepeda",
       "labelKey": "i-sepeda",
       "bin": "rawat",
-      "emoji": "🚲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-sepeda-sekolah"
+      }
     },
     {
       "id": "matikan",
       "labelKey": "i-matikan",
       "bin": "rawat",
-      "emoji": "💡"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-matikan-lampu"
+      }
     },
     {
       "id": "pilah",
       "labelKey": "i-pilah",
       "bin": "rawat",
-      "emoji": "♻️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-pilah-sampah"
+      }
     },
     {
       "id": "bakar",
       "labelKey": "i-bakar",
       "bin": "rusak",
-      "emoji": "🔥"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-bakar-plastik"
+      }
     },
     {
       "id": "petik",
       "labelKey": "i-petik",
       "bin": "rusak",
-      "emoji": "🌷"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-petik-bunga"
+      }
     },
     {
       "id": "buangjalan",
       "labelKey": "i-buangjalan",
       "bin": "rusak",
-      "emoji": "🍬"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-bungkus-di-jalan"
+      }
     },
     {
       "id": "keran",
       "labelKey": "i-keran",
       "bin": "rusak",
-      "emoji": "🚰"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-keran-mengalir"
+      }
     },
     {
       "id": "tebang",
       "labelKey": "i-tebang",
       "bin": "rusak",
-      "emoji": "🪓"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-tebang"
+      }
     },
     {
       "id": "asap",
       "labelKey": "i-asap",
       "bin": "rusak",
-      "emoji": "🚗"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-lingkungan-mobil-berasap"
+      }
     }
   ],
   "pilihan": []

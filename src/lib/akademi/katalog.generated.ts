@@ -221327,7 +221327,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-rawat-atau-rusak-kota",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221390,14 +221390,20 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "rawat",
         "labelKey": "b-rawat",
-        "emoji": "🌱",
-        "color": "#e8f5e9"
+        "color": "#e8f5e9",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-rawat"
+        }
       },
       {
         "id": "rusak",
         "labelKey": "b-rusak",
-        "emoji": "🗑️",
-        "color": "#ffebee"
+        "color": "#ffebee",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-rusak"
+        }
       }
     ],
     "items": [
@@ -221405,80 +221411,116 @@ export const PAKET_RAW: unknown[] = [
         "id": "tanam",
         "labelKey": "i-tanam",
         "bin": "rawat",
-        "emoji": "🌳"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-tanam-pohon"
+        }
       },
       {
         "id": "tempatsampah",
         "labelKey": "i-tempatsampah",
         "bin": "rawat",
-        "emoji": "🚮"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-buang-ke-tempatnya"
+        }
       },
       {
         "id": "botol",
         "labelKey": "i-botol",
         "bin": "rawat",
-        "emoji": "🧴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-botol-sendiri"
+        }
       },
       {
         "id": "sepeda",
         "labelKey": "i-sepeda",
         "bin": "rawat",
-        "emoji": "🚲"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-sepeda-sekolah"
+        }
       },
       {
         "id": "matikan",
         "labelKey": "i-matikan",
         "bin": "rawat",
-        "emoji": "💡"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-matikan-lampu"
+        }
       },
       {
         "id": "pilah",
         "labelKey": "i-pilah",
         "bin": "rawat",
-        "emoji": "♻️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-pilah-sampah"
+        }
       },
       {
         "id": "bakar",
         "labelKey": "i-bakar",
         "bin": "rusak",
-        "emoji": "🔥"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-bakar-plastik"
+        }
       },
       {
         "id": "petik",
         "labelKey": "i-petik",
         "bin": "rusak",
-        "emoji": "🌷"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-petik-bunga"
+        }
       },
       {
         "id": "buangjalan",
         "labelKey": "i-buangjalan",
         "bin": "rusak",
-        "emoji": "🍬"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-bungkus-di-jalan"
+        }
       },
       {
         "id": "keran",
         "labelKey": "i-keran",
         "bin": "rusak",
-        "emoji": "🚰"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-keran-mengalir"
+        }
       },
       {
         "id": "tebang",
         "labelKey": "i-tebang",
         "bin": "rusak",
-        "emoji": "🪓"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-tebang"
+        }
       },
       {
         "id": "asap",
         "labelKey": "i-asap",
         "bin": "rusak",
-        "emoji": "🚗"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-mobil-berasap"
+        }
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd2-sains-rawat-atau-rusak-sungai-pantai",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221537,14 +221579,20 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "rawat",
         "labelKey": "b-rawat",
-        "emoji": "💚",
-        "color": "#e8f5e9"
+        "color": "#e8f5e9",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-rawat"
+        }
       },
       {
         "id": "rusak",
         "labelKey": "b-rusak",
-        "emoji": "💔",
-        "color": "#ffebee"
+        "color": "#ffebee",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-rusak"
+        }
       }
     ],
     "items": [
@@ -221552,37 +221600,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "mangrove",
         "labelKey": "i-mangrove",
         "bin": "rawat",
-        "emoji": "🌱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-tanam-bakau"
+        }
       },
       {
         "id": "pungut",
         "labelKey": "i-pungut",
         "bin": "rawat",
-        "emoji": "🧤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-pungut-pantai"
+        }
       },
       {
         "id": "tukik",
         "labelKey": "i-tukik",
         "bin": "rawat",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-tukik-ke-laut"
+        }
       },
       {
         "id": "jaring",
         "labelKey": "i-jaring",
         "bin": "rawat",
-        "emoji": "🎣"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-ikan-secukupnya"
+        }
       },
       {
         "id": "bersihsungai",
         "labelKey": "i-bersihsungai",
         "bin": "rawat",
-        "emoji": "🧹"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-bersihkan-sungai"
+        }
       },
       {
         "id": "sampahsungai",
         "labelKey": "i-sampahsungai",
         "bin": "rusak",
-        "emoji": "🗑️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-sampah-ke-sungai"
+        }
       },
       {
         "id": "karang",
@@ -221597,20 +221663,29 @@ export const PAKET_RAW: unknown[] = [
         "id": "limbah",
         "labelKey": "i-limbah",
         "bin": "rusak",
-        "emoji": "🧼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-air-sabun"
+        }
       },
       {
         "id": "kantong",
         "labelKey": "i-kantong",
         "bin": "rusak",
-        "emoji": "🛍️",
-        "color": "#ef9a9a"
+        "color": "#ef9a9a",
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-kantong-di-pasir"
+        }
       },
       {
         "id": "bom",
         "labelKey": "i-bom",
         "bin": "rusak",
-        "emoji": "☠️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-lingkungan-racun-ikan"
+        }
       }
     ],
     "pilihan": []
