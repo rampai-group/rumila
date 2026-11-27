@@ -26,6 +26,7 @@ import { ILUSTRASI_PENYEBAB_GERAK_SD2 } from "./ilustrasi-sd2-penyebab-gerak";
 import { ILUSTRASI_DIDIH_UAP_SD6 } from "./ilustrasi-sd6-didih-uap";
 import { ILUSTRASI_KONDISI_TEMPAT_SD2 } from "./ilustrasi-sd2-kondisi-tempat";
 import { ILUSTRASI_BAHAN_SD2 } from "./ilustrasi-sd2-bahan";
+import { ILUSTRASI_BAHAN_SD3 } from "./ilustrasi-sd3-bahan";
 import { ILUSTRASI_SUMBER_CAHAYA_SD2 } from "./ilustrasi-sd2-sumber-cahaya";
 import { ILUSTRASI_JARUM_MENIT_SD2 } from "./ilustrasi-sd2-jarum-menit";
 import { ILUSTRASI_PENGAMATAN_SD2 } from "./ilustrasi-sd2-pengamatan";
@@ -465,6 +466,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_LINGKUNGAN_SD2,
   ...ILUSTRASI_JARUM_MENIT_SD2,
   ...ILUSTRASI_BAHAN_SD2,
+  ...ILUSTRASI_BAHAN_SD3,
   ...ILUSTRASI_SUMBER_CAHAYA_SD2,
   ...PAKAN,
   ...KEGIATAN,

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-alat-pemisah",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,7 @@
       "i-serbuk": "pasir + serbuk besi seukuran",
       "i-pasirair": "air + pasir halus",
       "i-teh": "air teh + ampas halus",
-      "i-lumpur": "air + butiran tanah halus",
+      "i-lumpur": "santan + ampas kelapa halus",
       "i-kopi": "air + ampas kopi halus"
     },
     "en": {
@@ -41,7 +41,7 @@
       "i-serbuk": "sand grains + iron filings of similar size",
       "i-pasirair": "water + fine sand",
       "i-teh": "tea + fine tea bits",
-      "i-lumpur": "water + fine soil grains",
+      "i-lumpur": "coconut milk + fine coconut pulp",
       "i-kopi": "water + fine coffee grounds"
     }
   },
@@ -70,7 +70,10 @@
     {
       "id": "ayakan",
       "labelKey": "b-ayakan",
-      "adegan": { "jenis": "ilustrasi", "varian": "qc-ayakan-kasar" }
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-ayakan-kasar"
+      }
     },
     {
       "id": "magnet",
@@ -81,7 +84,10 @@
     {
       "id": "saring",
       "labelKey": "b-saring",
-      "adegan": { "jenis": "ilustrasi", "varian": "qc-kain-saring-halus" }
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-kain-saring-halus"
+      }
     }
   ],
   "items": [
@@ -89,67 +95,100 @@
       "id": "kerikil",
       "labelKey": "i-kerikil",
       "bin": "ayakan",
-      "emoji": "🪨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-pasir-kerikil"
+      }
     },
     {
       "id": "kacang",
       "labelKey": "i-kacang",
       "bin": "ayakan",
-      "emoji": "🥜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-beras-kacang"
+      }
     },
     {
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "ayakan",
-      "emoji": "🔵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-tepung-kelereng"
+      }
     },
     {
       "id": "batu",
       "labelKey": "i-batu",
       "bin": "ayakan",
-      "adegan": { "jenis": "ilustrasi", "varian": "qc-pasir-halus-batu-kecil" }
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-pasir-halus-batu-kecil"
+      }
     },
     {
       "id": "paku",
       "labelKey": "i-paku",
       "bin": "magnet",
-      "emoji": "🔩"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-manik-mur"
+      }
     },
     {
       "id": "klip",
       "labelKey": "i-klip",
       "bin": "magnet",
-      "emoji": "📎"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kancing-klip"
+      }
     },
     {
       "id": "serbuk",
       "labelKey": "i-serbuk",
       "bin": "magnet",
-      "emoji": "⚫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-pasir-besi"
+      }
     },
     {
       "id": "pasirair",
       "labelKey": "i-pasirair",
       "bin": "saring",
-      "emoji": "💧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-air-pasir"
+      }
     },
     {
       "id": "teh",
       "labelKey": "i-teh",
       "bin": "saring",
-      "emoji": "🍵"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-teh-ampas"
+      }
     },
     {
       "id": "lumpur",
       "labelKey": "i-lumpur",
       "bin": "saring",
-      "emoji": "🟤"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-santan-ampas"
+      }
     },
     {
       "id": "kopi",
       "labelKey": "i-kopi",
       "bin": "saring",
-      "emoji": "☕"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kopi-ampas"
+      }
     }
   ],
   "pilihan": []

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-padat-cair-gas-halaman",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -97,7 +97,10 @@
       "id": "pasir",
       "labelKey": "i-pasir",
       "bin": "padat",
-      "emoji": "🏖️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-pasir"
+      }
     },
     {
       "id": "bola",
@@ -121,31 +124,46 @@
       "id": "jus",
       "labelKey": "i-jus",
       "bin": "cair",
-      "emoji": "🧃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-jus-jeruk"
+      }
     },
     {
       "id": "airkolam",
       "labelKey": "i-airkolam",
       "bin": "cair",
-      "emoji": "💦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kolam-renang"
+      }
     },
     {
       "id": "cat",
       "labelKey": "i-cat",
       "bin": "cair",
-      "emoji": "🎨"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-cat-basah"
+      }
     },
     {
       "id": "ban",
       "labelKey": "i-ban",
       "bin": "gas",
-      "emoji": "🚲"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-ban-sepeda"
+      }
     },
     {
       "id": "gelembungsabun",
       "labelKey": "i-gelembungsabun",
       "bin": "gas",
-      "emoji": "🧼"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-gelembung-sabun"
+      }
     },
     {
       "id": "angin",
