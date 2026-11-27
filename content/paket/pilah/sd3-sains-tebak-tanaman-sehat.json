@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tebak-tanaman-sehat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,7 @@
       "i-lemari": "pot di dalam lemari gelap",
       "i-kering": "pot di jendela, tidak pernah disiram",
       "i-kulkas": "pot di dalam kulkas",
-      "i-kompor": "pot di samping kompor panas",
+      "i-kompor": "pot di samping kompor yang terus menyala",
       "i-rendam": "pot terendam air terus-menerus",
       "i-kardus": "pot ditutup kardus berhari-hari"
     },
@@ -38,7 +38,7 @@
       "i-lemari": "pot inside a dark cupboard",
       "i-kering": "pot by the window, never watered",
       "i-kulkas": "pot inside the fridge",
-      "i-kompor": "pot next to a hot stove",
+      "i-kompor": "pot next to a stove that stays lit",
       "i-rendam": "pot always sitting in water",
       "i-kardus": "pot covered by a box for days"
     }
@@ -76,67 +76,100 @@
       "id": "jendela",
       "labelKey": "i-jendela",
       "bin": "sehat",
-      "emoji": "🪴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-jendela-pot"
+      }
     },
     {
       "id": "teras",
       "labelKey": "i-teras",
       "bin": "sehat",
-      "emoji": "🪴"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-teras"
+      }
     },
     {
       "id": "taman",
       "labelKey": "i-taman",
       "bin": "sehat",
-      "emoji": "🌱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-taman-pagi"
+      }
     },
     {
       "id": "kelas",
       "labelKey": "i-kelas",
       "bin": "sehat",
-      "emoji": "🌱"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-kelas-sejuk"
+      }
     },
     {
       "id": "hujan",
       "labelKey": "i-hujan",
       "bin": "sehat",
-      "emoji": "🌧️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-halaman-setelah-hujan"
+      }
     },
     {
       "id": "lemari",
       "labelKey": "i-lemari",
       "bin": "layu",
-      "emoji": "🚪"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-lemari-gelap"
+      }
     },
     {
       "id": "kering",
       "labelKey": "i-kering",
       "bin": "layu",
-      "emoji": "🏜️"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-jendela-kering"
+      }
     },
     {
       "id": "kulkas",
       "labelKey": "i-kulkas",
       "bin": "layu",
-      "emoji": "🧊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-kulkas"
+      }
     },
     {
       "id": "kompor",
       "labelKey": "i-kompor",
       "bin": "layu",
-      "emoji": "🔥"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-kompor-menyala"
+      }
     },
     {
       "id": "rendam",
       "labelKey": "i-rendam",
       "bin": "layu",
-      "emoji": "🌊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-pot-terendam"
+      }
     },
     {
       "id": "kardus",
       "labelKey": "i-kardus",
       "bin": "layu",
-      "emoji": "📦"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-bibit-pot-tertutup-kardus"
+      }
     }
   ],
   "pilihan": []
