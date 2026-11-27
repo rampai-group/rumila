@@ -21,6 +21,7 @@ import { ILUSTRASI_KONDISI_TEMPAT_SD2 } from "./ilustrasi-sd2-kondisi-tempat";
 import { ILUSTRASI_BAHAN_SD2 } from "./ilustrasi-sd2-bahan";
 import { ILUSTRASI_SUMBER_CAHAYA_SD2 } from "./ilustrasi-sd2-sumber-cahaya";
 import { ILUSTRASI_JARUM_MENIT_SD2 } from "./ilustrasi-sd2-jarum-menit";
+import { ILUSTRASI_TAHAP_GAME_SD2 } from "./ilustrasi-sd2-tahap-game";
 
 const INK = "#203649";
 const RINGKAS = { stroke: INK, strokeWidth: 2.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
@@ -476,6 +477,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_PENYEBAB_GERAK_SD2,
   ...ILUSTRASI_DIDIH_UAP_SD6,
   ...ILUSTRASI_KONDISI_TEMPAT_SD2,
+  ...ILUSTRASI_TAHAP_GAME_SD2,
   "plastik-pembungkus": <g {...RINGKAS}>
     <path d="M32 56L85 54 116 72 70 89Z" fill="#d9f3f7" stroke="#6ea4ad" />
     <path d="M51 62L92 61M65 72L103 69M76 80L111 74" fill="none" stroke="#9ecbd2" strokeWidth="1.5" />

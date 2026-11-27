@@ -209390,7 +209390,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-tahap-game-buah",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209548,13 +209548,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "b-jatuh",
         "labelKey": "i-b-jatuh",
         "bin": "buat",
-        "emoji": "🧱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-blok-jatuh"
+        }
       },
       {
         "id": "b-tombol",
         "labelKey": "i-b-tombol",
         "bin": "buat",
-        "emoji": "⌨️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-tombol-arah"
+        }
       },
       {
         "id": "b-skor",
@@ -209596,7 +209602,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "u-skor",
         "labelKey": "i-u-skor",
         "bin": "uji",
-        "emoji": "👀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-cek-skor"
+        }
       },
       {
         "id": "u-catat",
@@ -209608,7 +209617,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "u-tablet",
         "labelKey": "i-u-tablet",
         "bin": "uji",
-        "emoji": "📱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-uji-tablet"
+        }
       },
       {
         "id": "u-tombol",
@@ -209620,13 +209632,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "p-pelan",
         "labelKey": "i-p-pelan",
         "bin": "perbaiki",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-perlambat-buah"
+        }
       },
       {
         "id": "p-tembus",
         "labelKey": "i-p-tembus",
         "bin": "perbaiki",
-        "emoji": "🚧"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-batas-keranjang"
+        }
       },
       {
         "id": "p-tulisan",
@@ -209650,13 +209668,16 @@ export const PAKET_RAW: unknown[] = [
         "id": "p-dobel",
         "labelKey": "i-p-dobel",
         "bin": "perbaiki",
-        "emoji": "🗑️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-hapus-buah-ganda"
+        }
       }
     ]
   },
   {
     "id": "sd2-kode-tahap-game-mini",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -209796,7 +209817,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "snap-blocks-so-the-character-moves",
         "labelKey": "i-snap-blocks-so-the-character-moves",
         "bin": "buat",
-        "emoji": "🧱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-blok-gerak"
+        }
       },
       {
         "id": "add-a-jump-sound",
@@ -209820,13 +209844,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "change-the-wrong-block",
         "labelKey": "i-change-the-wrong-block",
         "bin": "perbaiki",
-        "emoji": "🛠️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-ganti-blok"
+        }
       },
       {
         "id": "slow-down-a-character-that-is-too-fast",
         "labelKey": "i-slow-down-a-character-that-is-too-fast",
         "bin": "perbaiki",
-        "emoji": "🐢"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-perlambat-tokoh"
+        }
       },
       {
         "id": "list-the-characters-needed",
@@ -209838,7 +209868,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "draw-a-map-of-the-level",
         "labelKey": "i-draw-a-map-of-the-level",
         "bin": "rancang",
-        "emoji": "🗺️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-peta-level"
+        }
       },
       {
         "id": "decide-which-enemy-to-avoid",
@@ -209868,7 +209901,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "set-arrow-keys-to-move",
         "labelKey": "i-set-arrow-keys-to-move",
         "bin": "buat",
-        "emoji": "⌨️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-tombol-arah"
+        }
       },
       {
         "id": "press-every-button",
@@ -209880,7 +209916,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "check-the-coins-can-be-taken",
         "labelKey": "i-check-the-coins-can-be-taken",
         "bin": "uji",
-        "emoji": "👀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-uji-koin"
+        }
       },
       {
         "id": "time-one-level",
@@ -209910,13 +209949,19 @@ export const PAKET_RAW: unknown[] = [
         "id": "delete-extra-blocks",
         "labelKey": "i-delete-extra-blocks",
         "bin": "perbaiki",
-        "emoji": "🗑️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-hapus-blok"
+        }
       },
       {
         "id": "speed-up-a-character-that-is-too-slow",
         "labelKey": "i-speed-up-a-character-that-is-too-slow",
         "bin": "perbaiki",
-        "emoji": "🐇"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-tahap-game-percepat-tokoh"
+        }
       }
     ]
   },
