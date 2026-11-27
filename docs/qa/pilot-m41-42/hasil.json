@@ -1,0 +1,257 @@
+[
+  {
+    "paket": "sd1-sains-ukur-jengkal-temuan-kebun",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 20548
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 7,
+    "kepadatan": 6,
+    "knobs": {
+      "maxSpans": 7,
+      "snap": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": false
+  },
+  {
+    "paket": "sd1-sains-ukur-kubus-temuan-kebun",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18713
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 7,
+    "kepadatan": 10,
+    "knobs": {
+      "offset": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": false
+  },
+  {
+    "paket": "sd1-sains-turus-pengunjung-kebun",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217382
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "knobs": {
+      "kinds": 3,
+      "count": 8,
+      "gapMs": 2000
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": true
+  },
+  {
+    "paket": "sd1-sains-turus-pengunjung-kolam",
+    "ukuran": "hp",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217256
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000000",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "knobs": {
+      "kinds": 3,
+      "count": 8,
+      "gapMs": 2000
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": true
+  },
+  {
+    "paket": "sd1-sains-ukur-jengkal-temuan-kebun",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 20663
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 7,
+    "knobs": {
+      "maxSpans": 7,
+      "snap": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": false
+  },
+  {
+    "paket": "sd1-sains-ukur-kubus-temuan-kebun",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18693
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 5,
+    "kepadatan": 10,
+    "knobs": {
+      "offset": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": false
+  },
+  {
+    "paket": "sd1-sains-turus-pengunjung-kebun",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217504
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "knobs": {
+      "kinds": 3,
+      "count": 8,
+      "gapMs": 2000
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": true
+  },
+  {
+    "paket": "sd1-sains-turus-pengunjung-kolam",
+    "ukuran": "ipad",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217531
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000914",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "knobs": {
+      "kinds": 3,
+      "count": 8,
+      "gapMs": 2000
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": true
+  },
+  {
+    "paket": "sd1-sains-ukur-jengkal-temuan-kebun",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 20673
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 5,
+    "kepadatan": 7,
+    "knobs": {
+      "maxSpans": 7,
+      "snap": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": false
+  },
+  {
+    "paket": "sd1-sains-ukur-kubus-temuan-kebun",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 18821
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 9,
+    "kepadatan": 10,
+    "knobs": {
+      "offset": 1
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": false
+  },
+  {
+    "paket": "sd1-sains-turus-pengunjung-kebun",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217415
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "knobs": {
+      "kinds": 3,
+      "count": 8,
+      "gapMs": 2000
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": true
+  },
+  {
+    "paket": "sd1-sains-turus-pengunjung-kolam",
+    "ukuran": "ipad-pendek",
+    "hasil": {
+      "outcome": "selesai",
+      "successCount": 10,
+      "failCount": 0,
+      "hintCount": 0,
+      "durationMs": 217437
+    },
+    "seed": "3a03bd4e-8dde-4e9d-ad01-000000000913",
+    "rondePadat": 10,
+    "kepadatan": 8,
+    "knobs": {
+      "kinds": 3,
+      "count": 8,
+      "gapMs": 2000
+    },
+    "clippedText": 0,
+    "scrollMaks": 0,
+    "pengunjungBerurutanSama": true
+  }
+]
