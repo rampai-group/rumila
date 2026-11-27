@@ -218655,7 +218655,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-aman-dengan-listrik",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -218733,73 +218733,109 @@ export const PAKET_RAW: unknown[] = [
         "id": "dewasa",
         "labelKey": "i-dewasa",
         "bin": "aman",
-        "emoji": "🧑"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-dewasa"
+        }
       },
       {
         "id": "keringkan",
         "labelKey": "i-keringkan",
         "bin": "aman",
-        "emoji": "🙌"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-keringkan"
+        }
       },
       {
         "id": "jauhikabel",
         "labelKey": "i-jauhikabel",
         "bin": "aman",
-        "emoji": "↩️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-jauhikabel"
+        }
       },
       {
         "id": "layanglapang",
         "labelKey": "i-layanglapang",
         "bin": "aman",
-        "emoji": "🪁"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-layanglapang"
+        }
       },
       {
         "id": "tombol",
         "labelKey": "i-tombol",
         "bin": "aman",
-        "emoji": "📺"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-tombol"
+        }
       },
       {
         "id": "lapor",
         "labelKey": "i-lapor",
         "bin": "aman",
-        "emoji": "🗣️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-lapor"
+        }
       },
       {
         "id": "jari",
         "labelKey": "i-jari",
         "bin": "bahaya",
-        "emoji": "🔌"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-jari"
+        }
       },
       {
         "id": "basah",
         "labelKey": "i-basah",
         "bin": "bahaya",
-        "emoji": "💦"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-basah"
+        }
       },
       {
         "id": "layangkabel",
         "labelKey": "i-layangkabel",
         "bin": "bahaya",
-        "emoji": "⚡"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-layangkabel"
+        }
       },
       {
         "id": "panjat",
         "labelKey": "i-panjat",
         "bin": "bahaya",
-        "emoji": "🗼"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-panjat"
+        }
       },
       {
         "id": "sentak",
         "labelKey": "i-sentak",
         "bin": "bahaya",
-        "emoji": "🔌"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-sentak"
+        }
       },
       {
         "id": "airdekat",
         "labelKey": "i-airdekat",
         "bin": "bahaya",
-        "emoji": "🥤"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-listrik-rumah-airdekat"
+        }
       }
     ],
     "pilihan": []
