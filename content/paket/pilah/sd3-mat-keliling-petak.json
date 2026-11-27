@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-keliling-petak",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -118,127 +118,163 @@
       "id": "k8-biru",
       "labelKey": "i-petak-biru-2x2",
       "bin": "k8",
-      "emoji": "🟦",
-      "count": 4
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-biru-2x2"
+      }
     },
     {
       "id": "k8-hijau",
       "labelKey": "i-petak-hijau-2x2",
       "bin": "k8",
-      "emoji": "🟩",
-      "count": 4
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-hijau-2x2"
+      }
     },
     {
       "id": "k8-kuning",
       "labelKey": "i-petak-kuning-2x2",
       "bin": "k8",
-      "emoji": "🟨",
-      "count": 4
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-kuning-2x2"
+      }
     },
     {
       "id": "k10-biru",
       "labelKey": "i-petak-biru-2x3",
       "bin": "k10",
-      "emoji": "🟦",
-      "count": 6
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-biru-2x3"
+      }
     },
     {
       "id": "k10-hijau",
       "labelKey": "i-petak-hijau-2x3",
       "bin": "k10",
-      "emoji": "🟩",
-      "count": 6
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-hijau-2x3"
+      }
     },
     {
       "id": "k10-kuning",
       "labelKey": "i-petak-kuning-2x3",
       "bin": "k10",
-      "emoji": "🟨",
-      "count": 6
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-kuning-2x3"
+      }
     },
     {
       "id": "k12-biru",
       "labelKey": "i-petak-biru-3x3",
       "bin": "k12",
-      "emoji": "🟦",
-      "count": 9
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-biru-3x3"
+      }
     },
     {
       "id": "k12-hijau",
       "labelKey": "i-petak-hijau-3x3",
       "bin": "k12",
-      "emoji": "🟩",
-      "count": 9
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-hijau-3x3"
+      }
     },
     {
       "id": "k12-kuning",
       "labelKey": "i-petak-kuning-3x3",
       "bin": "k12",
-      "emoji": "🟨",
-      "count": 9
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-kuning-3x3"
+      }
     },
     {
       "id": "k14-biru",
       "labelKey": "i-petak-biru-3x4",
       "bin": "k14",
-      "emoji": "🟦",
-      "count": 12
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-biru-3x4"
+      }
     },
     {
       "id": "k14-hijau",
       "labelKey": "i-petak-hijau-3x4",
       "bin": "k14",
-      "emoji": "🟩",
-      "count": 12
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-hijau-3x4"
+      }
     },
     {
       "id": "k14-kuning",
       "labelKey": "i-petak-kuning-3x4",
       "bin": "k14",
-      "emoji": "🟨",
-      "count": 12
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-kuning-3x4"
+      }
     },
     {
       "id": "k16-biru",
       "labelKey": "i-petak-biru-4x4",
       "bin": "k16",
-      "emoji": "🟦",
-      "count": 16
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-biru-4x4"
+      }
     },
     {
       "id": "k16-hijau",
       "labelKey": "i-petak-hijau-4x4",
       "bin": "k16",
-      "emoji": "🟩",
-      "count": 16
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-hijau-4x4"
+      }
     },
     {
       "id": "k16-kuning",
       "labelKey": "i-petak-kuning-4x4",
       "bin": "k16",
-      "emoji": "🟨",
-      "count": 16
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-kuning-4x4"
+      }
     },
     {
       "id": "k18-biru",
       "labelKey": "i-petak-biru-4x5",
       "bin": "k18",
-      "emoji": "🟦",
-      "count": 20
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-biru-4x5"
+      }
     },
     {
       "id": "k18-hijau",
       "labelKey": "i-petak-hijau-4x5",
       "bin": "k18",
-      "emoji": "🟩",
-      "count": 20
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-hijau-4x5"
+      }
     },
     {
       "id": "k18-kuning",
       "labelKey": "i-petak-kuning-4x5",
       "bin": "k18",
-      "emoji": "🟨",
-      "count": 20
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-petak-kuning-4x5"
+      }
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-pilih-satuan-ukur",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,19 +23,19 @@
       "i-panjang-ponsel": "panjang ponsel",
       "i-panjang-pisang": "panjang pisang",
       "i-tinggi-jerapah": "tinggi jerapah",
-      "i-tinggi-pohon": "tinggi pohon",
+      "i-tinggi-pohon": "tinggi pohon dewasa",
       "i-panjang-bus": "panjang bus",
       "i-jarak-terbang-antarkota": "jarak terbang antarkota",
       "i-perjalanan-kereta-antarkota": "perjalanan kereta antarkota",
-      "i-jalan-mendaki-gunung": "jarak jalan kaki ke puncak gunung",
+      "i-jalan-mendaki-gunung": "jarak kaki gunung ke puncak",
       "i-berat-koin": "berat koin",
       "i-berat-telur": "berat telur",
       "i-berat-surat": "berat surat",
       "i-berat-anjing": "berat anjing",
-      "i-berat-labu": "berat kelapa",
+      "i-berat-labu": "berat sekarung kelapa",
       "i-berat-koper": "berat koper",
       "i-isi-tabung-kecil": "isi tabung kecil",
-      "i-setetes-air": "setetes air",
+      "i-setetes-air": "isi gelas kecil sirup",
       "i-secangkir-kopi": "secangkir kopi",
       "i-air-bak-mandi": "air bak mandi",
       "i-air-galon": "air galon",
@@ -56,23 +56,23 @@
       "i-panjang-ponsel": "length of a phone",
       "i-panjang-pisang": "length of a banana",
       "i-tinggi-jerapah": "height of a giraffe",
-      "i-tinggi-pohon": "height of a tree",
+      "i-tinggi-pohon": "height of a grown tree",
       "i-panjang-bus": "length of a bus",
       "i-jarak-terbang-antarkota": "flight between cities",
       "i-perjalanan-kereta-antarkota": "train trip between cities",
-      "i-jalan-mendaki-gunung": "walking distance to a mountain top",
+      "i-jalan-mendaki-gunung": "distance from a mountain base to its summit",
       "i-berat-koin": "mass of a coin",
       "i-berat-telur": "mass of an egg",
       "i-berat-surat": "mass of a letter",
       "i-berat-anjing": "mass of a dog",
-      "i-berat-labu": "mass of a coconut",
+      "i-berat-labu": "mass of a sack of coconuts",
       "i-berat-koper": "mass of a suitcase",
       "i-isi-tabung-kecil": "a small test tube",
-      "i-setetes-air": "a drop of water",
+      "i-setetes-air": "volume of a small glass of syrup",
       "i-secangkir-kopi": "a cup of coffee",
       "i-air-bak-mandi": "water in a bathtub",
-      "i-air-galon": "water cooler bottle",
-      "i-air-akuarium": "water in a fish tank"
+      "i-air-galon": "water in a large jug",
+      "i-air-akuarium": "water in an aquarium"
     }
   },
   "knobs": {
@@ -223,7 +223,10 @@
       "id": "labu",
       "labelKey": "i-berat-labu",
       "bin": "kg",
-      "emoji": "🥥"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-karung-kelapa"
+      }
     },
     {
       "id": "koper",
@@ -241,7 +244,10 @@
       "id": "tetes",
       "labelKey": "i-setetes-air",
       "bin": "ml",
-      "emoji": "💧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-gelas-kecil-sirup"
+      }
     },
     {
       "id": "kopi",
@@ -259,13 +265,19 @@
       "id": "galon",
       "labelKey": "i-air-galon",
       "bin": "l",
-      "emoji": "🚰"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-galon-air"
+      }
     },
     {
       "id": "akuarium",
       "labelKey": "i-air-akuarium",
       "bin": "l",
-      "emoji": "🐠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-air-akuarium"
+      }
     }
   ]
 }

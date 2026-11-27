@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tembus-pandang-cahaya-tidak",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,11 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Tembus Pandang, Tembus Cahaya, atau Tidak?",
+      "judul": "Tembus Pandang, Buram, atau Terhalang?",
       "instruksi": "Bayangkan menyinari tiap benda dengan senter. Seberapa jelas benda di baliknya terlihat? Taruh ke rak yang cocok.",
       "b-pandang": "tembus pandang (terlihat jelas)",
       "b-tidak": "tidak tembus cahaya (gelap)",
-      "b-cahaya": "tembus cahaya (buram)",
+      "b-cahaya": "buram (cahaya tembus)",
       "i-kaca": "kaca jendela",
       "i-plastik": "plastik bening",
       "i-air": "air jernih di gelas",
@@ -97,7 +97,10 @@
       "id": "kaca",
       "labelKey": "i-kaca",
       "bin": "pandang",
-      "emoji": "🪟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kaca-bening"
+      }
     },
     {
       "id": "plastik",
@@ -157,32 +160,46 @@
       "id": "kertasminyak",
       "labelKey": "i-kertasminyak",
       "bin": "cahaya",
-      "emoji": "📃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kertas-minyak"
+      }
     },
     {
       "id": "kacaburam",
       "labelKey": "i-kacaburam",
       "bin": "cahaya",
-      "emoji": "🚿"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kaca-buram"
+      }
     },
     {
       "id": "gorden",
       "labelKey": "i-gorden",
       "bin": "cahaya",
-      "color": "#f8bbd0",
-      "shape": "rect"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "awal-tirai-tipis"
+      }
     },
     {
       "id": "botolsusu",
       "labelKey": "i-botolsusu",
       "bin": "cahaya",
-      "emoji": "🍼"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-botol-putih-susu"
+      }
     },
     {
       "id": "es",
       "labelKey": "i-es",
       "bin": "cahaya",
-      "emoji": "🧊"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-es-keruh"
+      }
     }
   ],
   "pilihan": []

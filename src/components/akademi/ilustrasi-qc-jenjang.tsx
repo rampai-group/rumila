@@ -13,6 +13,10 @@ import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
 import { ILUSTRASI_ASAL_MAKHLUK_SD3 } from "./ilustrasi-sd3-asal-makhluk";
 import { ILUSTRASI_BENDA_LOGAM_SD3 } from "./ilustrasi-sd3-benda-logam";
 import { ILUSTRASI_RANTAI_MAKANAN_SD3 } from "./ilustrasi-sd3-rantai-makanan";
+import { ILUSTRASI_CAHAYA_SD3 } from "./ilustrasi-sd3-cahaya";
+import { ILUSTRASI_PERANGKAT_SD3 } from "./ilustrasi-sd3-perangkat";
+import { ILUSTRASI_PERMUKAAN_SD3 } from "./ilustrasi-sd3-permukaan";
+import { ILUSTRASI_UKUR_SD3 } from "./ilustrasi-sd3-ukur";
 import { ILUSTRASI_PERANGKAT_SD2 } from "./ilustrasi-sd2-perangkat";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
 import { ILUSTRASI_TAHAP_GAME_SD2 } from "./ilustrasi-sd2-tahap-game";
@@ -487,6 +491,10 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_ASAL_MAKHLUK_SD3,
   ...ILUSTRASI_BENDA_LOGAM_SD3,
   ...ILUSTRASI_RANTAI_MAKANAN_SD3,
+  ...ILUSTRASI_CAHAYA_SD3,
+  ...ILUSTRASI_PERANGKAT_SD3,
+  ...ILUSTRASI_PERMUKAAN_SD3,
+  ...ILUSTRASI_UKUR_SD3,
   ...ILUSTRASI_TULANG_SD4,
   ...ILUSTRASI_BIBIT_TOMAT_SD3,
   ...ILUSTRASI_TUGAS_TUMBUHAN_SD3,

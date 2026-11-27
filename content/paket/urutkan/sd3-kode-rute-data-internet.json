@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-rute-data-internet",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -203,17 +203,26 @@
         {
           "id": "seluler-3",
           "labelKey": "seluler-3",
-          "emoji": "📡"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-menara"
+          }
         },
         {
           "id": "seluler-4",
           "labelKey": "seluler-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-menara-server"
+          }
         },
         {
           "id": "seluler-5",
           "labelKey": "seluler-5",
-          "emoji": "📱"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-perangkat"
+          }
         },
         {
           "id": "seluler-6",
@@ -239,12 +248,18 @@
         {
           "id": "unggah-tugas-3",
           "labelKey": "unggah-tugas-3",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "unggah-tugas-4",
           "labelKey": "unggah-tugas-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-router-server"
+          }
         },
         {
           "id": "unggah-tugas-5",
@@ -275,12 +290,18 @@
         {
           "id": "kantor-3",
           "labelKey": "kantor-3",
-          "emoji": "🔌"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-kabel-router"
+          }
         },
         {
           "id": "kantor-4",
           "labelKey": "kantor-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "kantor-5",
@@ -306,17 +327,26 @@
         {
           "id": "game-2",
           "labelKey": "game-2",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "game-3",
           "labelKey": "game-3",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-router-server"
+          }
         },
         {
           "id": "game-4",
           "labelKey": "game-4",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-tablet"
+          }
         },
         {
           "id": "game-5",
@@ -342,17 +372,26 @@
         {
           "id": "cctv-2",
           "labelKey": "cctv-2",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "cctv-3",
           "labelKey": "cctv-3",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-router-server"
+          }
         },
         {
           "id": "cctv-4",
           "labelKey": "cctv-4",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-perangkat"
+          }
         },
         {
           "id": "cctv-5",
@@ -383,17 +422,26 @@
         {
           "id": "lokasi-3",
           "labelKey": "lokasi-3",
-          "emoji": "📡"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-menara"
+          }
         },
         {
           "id": "lokasi-4",
           "labelKey": "lokasi-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "lokasi-5",
           "labelKey": "lokasi-5",
-          "emoji": "📱"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-perangkat"
+          }
         },
         {
           "id": "lokasi-6",
@@ -419,12 +467,18 @@
         {
           "id": "cuaca-3",
           "labelKey": "cuaca-3",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "cuaca-4",
           "labelKey": "cuaca-4",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-perangkat"
+          }
         },
         {
           "id": "cuaca-5",
@@ -455,7 +509,10 @@
         {
           "id": "ojek-3",
           "labelKey": "ojek-3",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "ojek-4",
@@ -491,22 +548,34 @@
         {
           "id": "buku-3",
           "labelKey": "buku-3",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "buku-4",
           "labelKey": "buku-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "buku-5",
           "labelKey": "buku-5",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-tablet"
+          }
         },
         {
           "id": "buku-6",
           "labelKey": "buku-6",
-          "emoji": "📖"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-internet-buku-tersimpan"
+          }
         }
       ]
     },
@@ -527,12 +596,18 @@
         {
           "id": "nilai-3",
           "labelKey": "nilai-3",
-          "emoji": "🔌"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-kabel-router"
+          }
         },
         {
           "id": "nilai-4",
           "labelKey": "nilai-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "nilai-5",
@@ -563,12 +638,18 @@
         {
           "id": "lagu-kakek-3",
           "labelKey": "lagu-kakek-3",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "lagu-kakek-4",
           "labelKey": "lagu-kakek-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "lagu-kakek-5",

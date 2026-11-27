@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-tembus-cahaya-di-sekolah",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,7 +13,7 @@
       "instruksi": "Bayangkan menyinari benda-benda di sekolah dengan senter. Cahayanya tembus jelas, tembus buram, atau tidak tembus? Taruh ke raknya.",
       "b-pandang": "tembus pandang (terlihat jelas)",
       "b-tidak": "tidak tembus cahaya (gelap)",
-      "b-cahaya": "tembus cahaya (buram)",
+      "b-cahaya": "buram (cahaya tembus)",
       "i-penggaris": "penggaris plastik bening",
       "i-etalase": "kaca etalase kantin",
       "i-kotakpensil": "kotak pensil plastik bening",
@@ -24,7 +24,7 @@
       "i-kotaklogam": "kotak pensil logam",
       "i-kalkir": "kertas kalkir",
       "i-map": "map plastik buram",
-      "i-lampion": "lampion kertas",
+      "i-lampion": "lampion kertas tipis",
       "i-tirai": "tirai jendela tipis"
     },
     "en": {
@@ -43,7 +43,7 @@
       "i-kotaklogam": "metal pencil tin",
       "i-kalkir": "tracing paper",
       "i-map": "frosted plastic folder",
-      "i-lampion": "paper lantern",
+      "i-lampion": "thin paper lantern",
       "i-tirai": "thin window blind"
     }
   },
@@ -93,14 +93,19 @@
       "id": "penggaris",
       "labelKey": "i-penggaris",
       "bin": "pandang",
-      "emoji": "📏",
-      "color": "#e1f5fe"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-penggaris-bening"
+      }
     },
     {
       "id": "etalase",
       "labelKey": "i-etalase",
       "bin": "pandang",
-      "emoji": "🪟"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kaca-bening"
+      }
     },
     {
       "id": "kotakpensil",
@@ -115,13 +120,19 @@
       "id": "airbotol",
       "labelKey": "i-airbotol",
       "bin": "pandang",
-      "emoji": "💧"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-air-botol-bening"
+      }
     },
     {
       "id": "papantulis",
       "labelKey": "i-papantulis",
       "bin": "tidak",
-      "emoji": "⬜"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-papan-tulis"
+      }
     },
     {
       "id": "ransel",
@@ -148,19 +159,28 @@
       "id": "kalkir",
       "labelKey": "i-kalkir",
       "bin": "cahaya",
-      "emoji": "📃"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kertas-kalkir"
+      }
     },
     {
       "id": "map",
       "labelKey": "i-map",
       "bin": "cahaya",
-      "emoji": "📁"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-map-buram"
+      }
     },
     {
       "id": "lampion",
       "labelKey": "i-lampion",
       "bin": "cahaya",
-      "emoji": "🏮"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-lampion-kertas"
+      }
     },
     {
       "id": "tirai",

@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-perjalanan-pesan",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -175,17 +175,26 @@
         {
           "id": "pesan-3",
           "labelKey": "pesan-3",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "pesan-4",
           "labelKey": "pesan-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "pesan-5",
           "labelKey": "pesan-5",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-perangkat"
+          }
         },
         {
           "id": "pesan-6",
@@ -216,7 +225,10 @@
         {
           "id": "foto-4",
           "labelKey": "foto-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "foto-5",
@@ -247,12 +259,18 @@
         {
           "id": "video-3",
           "labelKey": "video-3",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "video-4",
           "labelKey": "video-4",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-tablet"
+          }
         },
         {
           "id": "video-5",
@@ -319,12 +337,18 @@
         {
           "id": "surel-3",
           "labelKey": "surel-3",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "surel-4",
           "labelKey": "surel-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "surel-5",
@@ -355,12 +379,18 @@
         {
           "id": "lagu-3",
           "labelKey": "lagu-3",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "lagu-4",
           "labelKey": "lagu-4",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-perangkat"
+          }
         },
         {
           "id": "lagu-5",
@@ -396,7 +426,10 @@
         {
           "id": "pesan-suara-4",
           "labelKey": "pesan-suara-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "pesan-suara-5",
@@ -427,17 +460,26 @@
         {
           "id": "situs-3",
           "labelKey": "situs-3",
-          "emoji": "📶"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-wifi-router"
+          }
         },
         {
           "id": "situs-4",
           "labelKey": "situs-4",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "situs-5",
           "labelKey": "situs-5",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-laptop"
+          }
         },
         {
           "id": "situs-6",
@@ -463,12 +505,18 @@
         {
           "id": "stiker-3",
           "labelKey": "stiker-3",
-          "emoji": "🌐"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-internet-server"
+          }
         },
         {
           "id": "stiker-4",
           "labelKey": "stiker-4",
-          "emoji": "🗄️"
+          "adegan": {
+            "jenis": "ilustrasi",
+            "varian": "qc-jenjang-sd3-jaringan-server-ke-perangkat"
+          }
         },
         {
           "id": "stiker-5",

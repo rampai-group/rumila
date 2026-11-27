@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-butuh-internet",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -14,15 +14,15 @@
       "bin-butuh": "butuh internet",
       "bin-tanpa": "bisa tanpa internet",
       "i-video-call-with-grandma": "panggilan video dengan nenek",
-      "i-send-a-message-to-a-friend": "kirim pesan lewat aplikasi obrolan daring",
+      "i-send-a-message-to-a-friend": "kirim pesan lewat chat daring",
       "i-watch-a-video-from-the-internet": "nonton video dari internet",
       "i-find-the-way-on-an-online-map": "cari jalan di peta daring",
-      "i-send-a-photo-to-uncle": "kirim foto lewat aplikasi daring ke paman di kota lain",
-      "i-work-it-out-on-the-calculator": "berhitung dengan kalkulator bawaan tablet",
+      "i-send-a-photo-to-uncle": "kirim foto ke paman lewat chat daring",
+      "i-work-it-out-on-the-calculator": "hitung dengan kalkulator bawaan",
       "i-take-a-photo-of-a-flower": "memotret bunga",
-      "i-draw-in-a-drawing-app": "menggambar di aplikasi gambar bawaan tablet",
+      "i-draw-in-a-drawing-app": "gambar di aplikasi bawaan",
       "i-set-an-alarm": "menyalakan alarm",
-      "i-look-at-photos-in-the-gallery": "melihat foto yang tersimpan di galeri tablet"
+      "i-look-at-photos-in-the-gallery": "buka foto tersimpan di galeri"
     },
     "en": {
       "judul": "Internet or Not?",
@@ -30,15 +30,15 @@
       "bin-butuh": "needs the internet",
       "bin-tanpa": "works without it",
       "i-video-call-with-grandma": "video call with grandma",
-      "i-send-a-message-to-a-friend": "send a message in an online chat app",
+      "i-send-a-message-to-a-friend": "send a message using online chat",
       "i-watch-a-video-from-the-internet": "watch a video from the internet",
       "i-find-the-way-on-an-online-map": "find the way on an online map",
-      "i-send-a-photo-to-uncle": "send a photo through an online app to uncle in another town",
-      "i-work-it-out-on-the-calculator": "do a calculation with the tablet’s built-in calculator",
+      "i-send-a-photo-to-uncle": "send a photo to Uncle in online chat",
+      "i-work-it-out-on-the-calculator": "calculate with the built-in calculator",
       "i-take-a-photo-of-a-flower": "take a photo of a flower",
-      "i-draw-in-a-drawing-app": "draw in the tablet’s built-in drawing app",
+      "i-draw-in-a-drawing-app": "draw in the built-in drawing app",
       "i-set-an-alarm": "set an alarm",
-      "i-look-at-photos-in-the-gallery": "look at photos saved in the tablet’s gallery"
+      "i-look-at-photos-in-the-gallery": "open a saved photo in the gallery"
     }
   },
   "knobs": {

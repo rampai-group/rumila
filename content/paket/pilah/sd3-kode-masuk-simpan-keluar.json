@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-masuk-simpan-keluar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -109,27 +109,37 @@
       "id": "laptop-camera",
       "labelKey": "i-laptop-camera",
       "bin": "masuk",
-      "emoji": "📷"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-kamera-laptop"
+      }
     },
     {
       "id": "usb-flash-drive",
       "labelKey": "i-usb-flash-drive",
       "bin": "simpan",
-      "shape": "rect",
-      "color": "#2563eb"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-flashdisk"
+      }
     },
     {
       "id": "memory-card",
       "labelKey": "i-memory-card",
       "bin": "simpan",
-      "shape": "square",
-      "color": "#f59e0b"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-kartu-memori"
+      }
     },
     {
       "id": "hard-disk",
       "labelKey": "i-hard-disk",
       "bin": "simpan",
-      "emoji": "💽"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-sd3-hard-disk"
+      }
     },
     {
       "id": "cd",
