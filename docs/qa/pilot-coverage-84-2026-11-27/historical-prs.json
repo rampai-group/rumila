@@ -1,0 +1,122 @@
+[
+  {
+    "body": "## Perbaikan\n\n- Judul sembilan soal maju sekarang menyebut arah secara eksplisit dalam bahasa Indonesia dan Inggris. Sembilan rekaman bahasa Indonesia mengikuti judul barunya.\n- Slot dan kartu angka tetap sejajar dari kiri ke kanan. Pada iPad pendek, tinggi slot, tinggi kartu, dan jarak antarbaris berkurang dari 350/310/45 px menjadi 200/200/20 px. Di HP tinggi 390 × 844, lima kartu setinggi 92 px dan panel tetap seimbang saat tersisa satu kartu.\n- Kunci jawaban, jumlah ronde, dan enam soal mundur tetap mengikuti materi yang sudah ada.\n\n## Verifikasi\n\n- Mainkan kedua varian Misi 1 Pilot hingga hasil pada 390 × 844, 820 × 1067, dan 820 × 1180. Seluruh 12 sesi uji selesai 10/10. Keenam soal mundur dan sembilan soal maju muncul dalam sesi peramban. Periksa ronde dengan tiga, empat, lima, dan satu kartu tersisa tanpa bagian terpotong.\n- Periksa semua 15 judul dan langkah aritmetika untuk kedua bahasa, serta sembilan rekaman baru.\n- Jalankan 845 tes, validasi 810 paket, TypeScript dan ESLint untuk komponen yang berubah.\n",
+    "mergeCommit": {
+      "oid": "a596fc05fc2cfebba77e3f233dfe47afe1f06752"
+    },
+    "mergedAt": "2026-11-26T00:45:49Z",
+    "number": 226,
+    "title": "Perjelas arah dan rapikan kartu Loncat Sepuluh Pilot",
+    "url": "https://github.com/rampai-group/rumila/pull/226"
+  },
+  {
+    "body": "## Perbaikan\n\n- Rak Sepuluh dan Satuan memakai susunan rak bernomor yang ringkas di HP dan papan yang rata tengah di iPad. Kartu dan rak terbaca saat ronde menampilkan 11 kartu sekaligus dan ketika tinggal satu kartu.\n- Bayar Belasan Ribu menampilkan lembar Rp10.000, sembilan koin, laci, dan tombol Bayar bersama di layar HP.\n- Genap atau Ganjil dan Hewan Berpasangan di Kandang memakai ikon dua benda sejenis untuk genap, serta satu pasangan dengan satu benda terpisah untuk ganjil. Papan dan kartu yang tersisa mendapat ruang yang seimbang di iPad.\n\n## Verifikasi\n\n- Enam paket Misi 2–4 diuji sampai hasil 10/10 di WebKit 390×844, 820×1067, dan 820×1180. Total 180 ronde, termasuk penempatan terakhir, ronde 11 kartu dan 10 rak, serta pembayaran Rp19.000.\n- Periksa 39 kartu nilai tempat, 47 kartu genap/ganjil beserta jumlah gambar, dan 26 urutan bilangan langsung dari data soal.\n- TypeScript, 845 tes Vitest, dan validasi 810 paket lulus.\n",
+    "mergeCommit": {
+      "oid": "b9f74c153e44490f71ac2a8248aedb6b13d97c44"
+    },
+    "mergedAt": "2026-11-26T00:52:13Z",
+    "number": 227,
+    "title": "Rapikan Rak Nilai Tempat dan papan Genap Ganjil Pilot",
+    "url": "https://github.com/rampai-group/rumila/pull/227"
+  },
+  {
+    "body": "## Perbaikan Misi 3 Pilot\n\n- **Gerbong Kereta Tertukar** menampilkan tiga hingga lima gerbong dalam satu baris. Roda, sambungan, dan rel menunjukkan bahwa urutannya dibaca dari kiri ke kanan.\n- Pembaca layar menyebut nomor dan posisi setiap gerbong. Instruksi pada papan memakai istilah yang sama dengan narasi.\n- **Antrean Kartu 0–20** memakai tata letak angka yang sudah dipakai Loncat Sepuluh. Slot dan kartu tersisa tetap terbaca di HP dan iPad.\n- Isi soal, penilaian, dan berkas narasi tetap mengikuti bank yang sudah ada.\n\n## Verifikasi\n\n- Selesaikan kedua varian dengan ketukan di 390 × 844, 820 × 1067, dan 820 × 1180. Cek urutan 3–5 kartu, satu kartu tersisa, penukaran satu langkah, adaptasi setelah jawaban salah, dan layar hasil.\n- Validasi 810 paket, jalankan tes serta periksa TypeScript, ESLint dan diff.\n",
+    "mergeCommit": {
+      "oid": "20861e79c4b0968db8b2f2dc7e2f6b2f01aa0dab"
+    },
+    "mergedAt": "2026-11-26T00:59:33Z",
+    "number": 228,
+    "title": "Rapikan Gerbong Kereta dan Antrean Kartu Misi 3 Pilot",
+    "url": "https://github.com/rampai-group/rumila/pull/228"
+  },
+  {
+    "body": "## Perbaikan\n\n- Misi 14 menampilkan tujuh rak dan delapan kartu sekaligus di HP 390×844. Di iPad, rak terbagi ke beberapa baris dan kartu terakhir tetap besar.\n- Misi 15 membedakan benda jadi dari bahan pembuatnya melalui contoh yang konkret. Tujuh kartu dan kedua rak muat di iPad, dan kartu terakhir diperbesar di HP.\n- Misi 14–16 memakai gambar yang sesuai untuk ulekan, toples, sedotan, taplak, rak buku, selang, balok kayu, kelereng, piring, handuk, dan kapas. Label rak sejajar, termasuk saat gambar memakai format berbeda.\n\n## QA\n\n- Delapan paket Misi 13–16, 240 ronde sampai hasil di WebKit 390×844, 820×1067, dan 820×1180. Semua paket 10/10 di tiap ukuran.\n- Uji model 24.336 ronde mencakup setiap pola dan kartu yang disiapkan dalam katalog. Penilai menerima jawaban benar dan menolak jawaban salah.\n- Vitest 845 tes lulus. Validasi 810 paket, TypeScript, ESLint, dan pemeriksaan diff lulus.\n",
+    "mergeCommit": {
+      "oid": "04f0a71f779e1830436b6d977d44d809240e2539"
+    },
+    "mergedAt": "2026-11-26T01:50:57Z",
+    "number": 229,
+    "title": "Perjelas soal bahan dan tata rak Pilot",
+    "url": "https://github.com/rampai-group/rumila/pull/229"
+  },
+  {
+    "body": "## Perbaikan\n\n- Misi 5 dan 6 memakai ilustrasi yang sesuai dengan langkah, seperti rem sepeda, ritsleting tas, keran terbuka dan tertutup, oven, wajan, dan penanak nasi. Kartu algoritma enam langkah diringkas di HP.\n- Soal akuarium meminta orang dewasa memastikan air aman sebelum ikan dimasukkan. Kartu Indonesia dan Inggris menyebut bantuan orang dewasa. [RSPCA mengenai keamanan air akuarium](https://kb.rspca.org.au/categories/companion-animals/fish/why-is-water-quality-important-when-setting-up-a-fish-aquarium)\n- Misi 7 membedakan penyu laut, burung camar, rumput laut, bola pantai, dan mobil mainan. Misi 8 memperjelas bentuk biji, rumput, jerami, pelet, dan daun pakan.\n- Empat rak makanan hewan terlihat bersama di HP. Di iPad kartunya tetap dekat dengan rak, termasuk saat tersisa satu kartu.\n\n## Pengujian\n\n- Delapan paket Misi 5–8 selesai 10/10 di 390×844, 820×1067, dan 820×1180. Total 240 ronde melalui ActivityRunner.\n- Uji 294 skenario mencakup semua 42 urutan dengan panjang yang didukung dan setiap kartu klasifikasi serta makanan. Uji tambahan memastikan gambar akuarium tanpa ikan terlihat pada langkah mengisi air.\n- TypeScript, 845 tes Vitest, dan validasi 810 paket lulus. Pemeriksaan audio mengonfirmasi semua rekaman paket tersedia.\n",
+    "mergeCommit": {
+      "oid": "561f308c87ab1d7f3d04fecf2be272f7b370afa4"
+    },
+    "mergedAt": "2026-11-26T02:00:01Z",
+    "number": 230,
+    "title": "Perjelas gambar, urutan, dan tampilan Pilot Misi 5–8",
+    "url": "https://github.com/rampai-group/rumila/pull/230"
+  },
+  {
+    "body": "## Perbaikan\n\n- Misi 17 memperlihatkan bentuk benda setelah diregangkan, ditekan, ditekuk, atau dipuntir. Contohnya pegas yang memanjang, adonan mi, kaleng penyok, dan handuk yang diperas.\n- Misi 20 menampilkan aksi dorong atau tarik secara langsung. Kereta bayi, gerobak pasir, saklar lampu, dan kotak tisu digambar sesuai soal.\n- Empat rak Misi 17 langsung terlihat di HP 390×844. Kartu terakhir diperbesar sesuai ukuran HP dan iPad agar posisi gambar dan rak tetap proporsional.\n\n## QA\n\n- Empat paket, masing-masing 10/10 hingga hasil di WebKit 390×844, 820×1067, dan 820×1180.\n- Sapuan penilai meliputi 44 kartu dan 8.736 ronde. Jawaban benar diterima dan penempatan salah ditolak.\n- Vitest 845 tes lulus. Validasi 810 paket, TypeScript, ESLint, dan pemeriksaan diff lulus.\n",
+    "mergeCommit": {
+      "oid": "3baf06442953fc701e5587ab7bf07e747de5b05a"
+    },
+    "mergedAt": "2026-11-26T02:06:33Z",
+    "number": 234,
+    "title": "Perjelas gambar perubahan bentuk dan gerakan Pilot",
+    "url": "https://github.com/rampai-group/rumila/pull/234"
+  },
+  {
+    "body": "Enam ilustrasi M21/M25 sebelumnya tidak cocok dengan konteks label (ban, perosotan, sepeda terbalik, kipas, mangkuk dipukul, bantal). SVG baru memperjelas bendanya. Kartu/rak tablet M21–23/M25 diperbesar untuk mengurangi ruang kosong; ronde tujuh–delapan kartu memakai empat kolom supaya tetap muat pada 820×1067.\n\nQA selesai: **10 paket × 3 ukuran × 10 ronde = 300 ronde**, semua sesi mencapai hasil **10/10**, tanpa bantuan/kegagalan. Ukuran: HP 390×844, iPad 820×1180 dan 820×1067. M24 berhasil diisi Kalau dalam Ulangi melalui UI dan mencapai tujuan pada tiga jalur setiap ronde. Tidak ada teks kartu terpotong; seluruh sesi iPad tanpa gulir vertikal. HP M21 tetap memakai gulir internal berindikator pada ronde tiga rak.\n\n[Laporan per paket, hasil terstruktur, audio, dan 60 screenshot](https://github.com/rampai-group/rumila/blob/main/docs/qa/pilot-m21-25/README.md).\n\nValidasi setelah sinkronisasi main 13557511: 845 tes lulus (99 berkas), 810 paket valid, TypeScript dan lint komponen perubahan lulus. Sepuluh audio instruksi HTTP 200 dan berhasil didekode; pelafalan tidak dinilai melalui pendengaran. Pengujian browser adalah emulasi WebKit dengan touch, bukan perangkat fisik.\n\nPerubahan sesi lain dipertahankan. Verifikasi produksi dilakukan setelah merge melalui /api/versi dan sepuluh rute paket.\n\nRilis terverifikasi: `/api/versi` dan bundle klien memuat `6044a55cf4c41a47bc4396a92d259fad05f6c2a2`. Sepuluh rute `/akademi/main/<paket>` HTTP 200; bundle rute memuat keenam SVG baru. Sepuluh audio instruksi produksi HTTP 200. Pemeriksaan produksi merupakan smoke HTTP/bundle; gameplay penuh dilakukan lokal.\n",
+    "mergeCommit": {
+      "oid": "6044a55cf4c41a47bc4396a92d259fad05f6c2a2"
+    },
+    "mergedAt": "2026-11-26T05:37:44Z",
+    "number": 239,
+    "title": "QA Pilot M21–25: perjelas enam gambar dan ruang tablet",
+    "url": "https://github.com/rampai-group/rumila/pull/239"
+  },
+  {
+    "body": "Menuntaskan QA 12 paket utama enam misi terakhir peta gabungan MAT, KODE, SAINS pada SD1. Semua dimainkan sampai hasil pada 390×844, 820×1180 dan 820×1067: **36 permainan / 360 ronde, seluruhnya 10/10 tanpa bantuan**.\n\nPerbaikan:\n- M38: palet memperhitungkan skala gambar dan label agar pola tetap muat.\n- M39–40: ilustrasi perangkat menunjukkan kabel/sinyal; robot menunjukkan bentuk/tugas sebenarnya; kartu dan rak muat di tablet pendek.\n- M41: pusat garis awal jengkal sejajar batas satuan. Perbaikan kubus sesi sebelumnya dipertahankan.\n- M42: mekanik sebelumnya lulus kesiapan sebelum mulai, pencatatan satu per satu (52 ronde berisi jenis beruntun), serta jalur/tabel/tombol terlihat bersama.\n\nSinkron dengan main 262c4255, mempertahankan PR #238, #239, dan #241. Konflik aturan kolom, ukuran gambar dan label diselesaikan dengan mempertahankan aturan masing-masing kompetensi. M39–40 dites ulang setelah sinkronisasi awal; M39 pada ketiga ukuran dites ulang lagi setelah sinkronisasi #241, beserta regresi Carroll HP dan klasifikasi iPad pendek dari sesi tersebut.\n\nValidasi: 851 tes dalam 100 berkas, 810 paket valid, TypeScript, lint berkas berubah, dan build produksi berhasil. Satu warning hook lama di sheets.tsx. [Laporan, hasil per ronde, dan screenshot](https://github.com/rampai-group/rumila/blob/codex/qa-pilot-m37-42/docs/qa/pilot-m37-42-2026-11-26/README.md). Runner: scripts/qa/pilot-m37-42.mjs. Jengkal panjang di HP memakai gulir horizontal bawaan; kedua ujung diverifikasi.\n\nRilis terverifikasi 26 November 2026, 12:57 WIB: PR di-merge setelah kedua cek hijau, commit **816e40491fe0632b4ea60fe62bc941733428d4dd**. Deployment produksi Vercel sukses; `/api/versi` mengembalikan commit tersebut dengan `Cache-Control: no-store, max-age=0`. Seluruh **12 rute `/akademi/main/<paket>` HTTP 200**. Bundle produksi memuat ilustrasi kabel/robot pengecat, kedua penanda batas jengkal, serta “Mulai hitung”. Verifikasi produksi mencakup HTTP dan bundle anonim; permainan lengkap dilakukan lokal.\n\nRegresi setelah sinkronisasi #241: M39 kedua paket × tiga ukuran lulus 10/10; kedua paket Carroll M35 di HP dan klasifikasi M36 di iPad pendek juga lulus 10/10. Perbaikan sesi lain dipertahankan.\n",
+    "mergeCommit": {
+      "oid": "816e40491fe0632b4ea60fe62bc941733428d4dd"
+    },
+    "mergedAt": "2026-11-26T05:54:16Z",
+    "number": 240,
+    "title": "QA Pilot M37–42: perjelas perangkat, rapikan pola/rak, sejajarkan jengkal",
+    "url": "https://github.com/rampai-group/rumila/pull/240"
+  },
+  {
+    "body": "Misi 32–36 Pilot kini dapat dimainkan dengan semua tujuan kartu tetap terjangkau: tambahkan seret hari/bulan ke slot, padatkan Carroll di HP, dan gunakan dua baris untuk tujuh kartu klasifikasi roda di iPad. Ganti ilustrasi air/daratan yang sebelumnya memakai perahu, tetes air, ikan, paus, atau batu dengan gambar tempat yang sesuai; kano memakai SVG yang konsisten.\n\nQA: 10 paket utama dari peta gabungan MAT/KODE/SAINS, masing-masing 10 ronde sampai hasil di WebKit 390×844, 820×1180, dan 820×1067. Seluruh 300 ronde mendapat 10/10 per sesi. Tujuan diuji lewat ketuk dan seret; keadaan terpadat dan satu kartu tersisa diperiksa. Semua kunci kalender, perbaikan program, Carroll, dan ya/tidak divalidasi.\n\nValidasi lokal: 851 tes / 100 berkas lulus, 810 paket valid, TypeScript dan lint perubahan lulus, build produksi berhasil (satu peringatan hook lama di sheets.tsx). Sudah menggabungkan main 6044a55c dan mempertahankan perbaikan PR #238/#239; konflik kisi kartu digabung untuk kedua cakupan.\n\n[Laporan 10 paket, 43 screenshot, dan temuan](https://github.com/rampai-group/rumila/blob/main/docs/qa/pilot-m32-36/README.md). [Ringkasan hasil](https://github.com/rampai-group/rumila/blob/main/docs/qa/pilot-m32-36/hasil.json). Skrip QA ulang tersedia di scripts/qa/pilot-m32-36.mjs.\n\nRilis terverifikasi 26 November 2026 pukul 12.52 WIB: PR merged setelah Vercel hijau, commit `262c4255f1612d985f75c3e5ae7c1de996f35318`. `/api/versi` pada kampus.pulaurinoya.com mengembalikan SHA tersebut dengan `Cache-Control: no-store, max-age=0`. Seluruh 10 rute `/akademi/main/<paket>` mengembalikan HTTP 200; 26 chunk JavaScript berhasil diambil dan memuat penanda ilustrasi baru serta seret kalender. Verifikasi produksi ini berupa pemeriksaan HTTP/bundle; permainan lengkap dilakukan lokal dengan emulasi WebKit.\n",
+    "mergeCommit": {
+      "oid": "262c4255f1612d985f75c3e5ae7c1de996f35318"
+    },
+    "mergedAt": "2026-11-26T05:50:06Z",
+    "number": 241,
+    "title": "Perbaiki seret kartu, Carroll, dan ilustrasi Pilot Misi 32–36",
+    "url": "https://github.com/rampai-group/rumila/pull/241"
+  },
+  {
+    "body": "QA Pilot SD1 M26–30 menemukan ruang slot yang berlebihan, gambar sumber bunyi yang tidak sesuai, dan ilustrasi alat/wadah yang membingungkan. Perubahan ini merapikan slot dan kartu M26–28 serta memperjelas ilustrasi M26–28/M30. Kedua varian M29 tidak membutuhkan perubahan mekanik.\n\nSudah disinkronkan dengan main db33e758, termasuk PR #242: batang berat/kapasitas, kunci, instruksi/audio terbaru, serta ilustrasi kipas/kulkas dipertahankan. Perbaikan sesi lain ikut dipertahankan.\n\nValidasi akhir: 30 sesi UI / 300 ronde mencapai hasil 10/10 pada WebKit emulasi sentuh 390×844, 820×1180, dan 820×1067. Seluruh 52 program M29 mencapai tujuan pada tes bank peta. 863 tes dalam 102 berkas lulus; 810 paket valid; TypeScript, lint perubahan, dan diff check lulus. Sepuluh tombol audio memuat berkas HTTP 200 yang dapat didekode; bukan evaluasi pelafalan melalui pendengaran.\n\n[Status tiap paket, temuan, dan 60 screenshot](https://github.com/rampai-group/rumila/blob/main/docs/qa/pilot-m26-30/README.md). Skrip browser disertakan untuk pengujian ulang.\n\nVerifikasi pascamerge: produksi `/api/versi` menunjukkan `ed896088344602baff365fbc798ceb6339aa7da6`. Semua 10 rute paket dan 10 berkas audio HTTP 200; tujuh ilustrasi baru serta SHA rilis ditemukan di bundle produksi. Gameplay lengkap diuji lokal.\n",
+    "mergeCommit": {
+      "oid": "ed896088344602baff365fbc798ceb6339aa7da6"
+    },
+    "mergedAt": "2026-11-26T06:07:54Z",
+    "number": 243,
+    "title": "QA Pilot M26–30: perjelas gambar dan proporsi pilihan",
+    "url": "https://github.com/rampai-group/rumila/pull/243"
+  },
+  {
+    "body": "Jam M31 memakai emoji kecil tanpa angka dan menyisakan hingga 44% layar HP / 55% iPad kosong pada ronde awal. Jam kini memakai SVG berangka dengan dua jarum yang tepat untuk setiap waktu, dan ukuran kartu/rak menyesuaikan kepadatan. Tata letak M34 HP serta kartu M35 juga diperbesar, termasuk saat tinggal satu kartu. Semua tujuan tetap terjangkau pada ronde padat.\n\nQA mencakup tepat M31–35 dari peta gabungan MAT/KODE/SAINS: 10 paket, 30 sesi akhir, 300 ronde, seluruhnya hasil 10/10 pada 390×844, 820×1180, dan 820×1067. Putaran akhir mencakup seret kalender dan kartu pilah; ketuk/keyboard juga ditamatkan sebelumnya. M32 dan M33 tidak membutuhkan perubahan mekanik; seluruh 48 program debugging dapat diperbaiki dengan satu perubahan. Perbaikan sesi sebelumnya dipertahankan, dari main ed896088.\n\nValidasi: 865 tes / 103 berkas lulus; 810 paket valid; TypeScript, lint berkas perubahan, dan diff check lulus. Sepuluh audio instruksi HTTP 200 dan dapat didekode; belum evaluasi pelafalan melalui pendengaran. Browser memakai WebKit emulasi, bukan perangkat fisik.\n\n[Status tiap paket, temuan, data hasil, dan 100 screenshot](https://github.com/rampai-group/rumila/blob/main/docs/qa/pilot-m31-35/README.md). Skrip browser pengulangan disertakan.\n\nVerifikasi pascamerge: `/api/versi` produksi menunjukkan `10610e4375224b73c43a613d522220d71ee462a5`; seluruh 10 rute paket dan 10 audio HTTP 200. Renderer jam SVG, data waktu kedua varian, serta SHA rilis ditemukan di bundle produksi. Deployment main sukses.\n",
+    "mergeCommit": {
+      "oid": "10610e4375224b73c43a613d522220d71ee462a5"
+    },
+    "mergedAt": "2026-11-26T10:39:58Z",
+    "number": 244,
+    "title": "QA Pilot M31–35: jam berangka dan tata letak kartu",
+    "url": "https://github.com/rampai-group/rumila/pull/244"
+  },
+  {
+    "body": "## Perubahan\n\nPada Pilot SD1 M41, emoji benda kebun tidak selalu sesuai nama dan gambar kubus hanya mengisi bagian tengah bentang ukur. Tambahkan 18 ilustrasi horizontal untuk 22 item dan samakan ujung SVG dengan garis ukur, tanpa mengubah kunci jawaban. Pada M42, gunakan latar air untuk kolam dan perbesar baris turus HP dan iPad agar ruang kosong berkurang; tiga jenis tetap muat dengan tombol selesai terlihat.\n\nWorktree terpisah dari main a3304f1e, disinkronkan ke dbf4ea2d dan 6a7fab22. Perbaikan sesi lain dipertahankan. Ruang lingkup hanya empat paket M41–42 dari peta gabungan MAT, KODE, SAINS.\n\n## Validasi\n\n- 12 sesi WebKit sentuh / 120 ronde: empat paket sampai hasil 10/10 pada 390×844, 820×1180, dan 820×1067.\n- Posisi jengkal dan SVG, bentang kubus, pengunjung identik berurutan, tombol mulai/selesai, koreksi turus sampai nol, teks dan geometri diperiksa melalui UI.\n- 885 tes lulus; 810 paket valid; TypeScript, lint komponen perubahan, dan diff check lulus.\n- Empat audio instruksi dan 22 audio soal dapat dimuat/didekode. Bukan pengujian perangkat fisik atau penilaian pelafalan.\n- [Laporan, status per paket, dan screenshot](https://github.com/rampai-group/rumila/blob/codex/qa-pilot-m41-42/docs/qa/pilot-m41-42/README.md).\n",
+    "mergeCommit": {
+      "oid": "4b8fd0426045dccb1fcd4b158549400e9ae704bb"
+    },
+    "mergedAt": "2026-11-27T01:43:33Z",
+    "number": 261,
+    "title": "QA Pilot SD1 M41–42: gambar pengukuran dan tata letak turus",
+    "url": "https://github.com/rampai-group/rumila/pull/261"
+  }
+]

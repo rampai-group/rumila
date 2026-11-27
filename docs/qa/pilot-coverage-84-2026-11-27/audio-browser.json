@@ -1,0 +1,553 @@
+[
+  {
+    "device": "hp",
+    "id": "sd1-mat-genap-sepuluh-koin",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/51ced56a99ca.mp3",
+        "duration": 5.537959183673469
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/51ced56a99ca.mp3",
+        "duration": 5.537959183673469
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-rak-kurang-berapa-sepuluh",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/615bce1719e2.mp3",
+        "duration": 5.746938775510204
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/615bce1719e2.mp3",
+        "duration": 5.746938775510204
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-gabung-harta-pantai",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/bde96b02e829.mp3",
+        "duration": 8.333061224489796
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/bde96b02e829.mp3",
+        "duration": 8.333061224489796
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-gabung-keranjang-20",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/278ef5e5a359.mp3",
+        "duration": 8.594285714285714
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/278ef5e5a359.mp3",
+        "duration": 8.594285714285714
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-panen-sisa-kebun",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9c217265038b.mp3",
+        "duration": 7.288163265306123
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9c217265038b.mp3",
+        "duration": 7.288163265306123
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-sisa-kelereng-20",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/1aa660ad24d0.mp3",
+        "duration": 6.844081632653062
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/1aa660ad24d0.mp3",
+        "duration": 6.844081632653062
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-dobel-etalase-kue",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9770ea4dcce1.mp3",
+        "duration": 6.164897959183674
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9770ea4dcce1.mp3",
+        "duration": 6.164897959183674
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-rak-dobel",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/2443d0ff5f62.mp3",
+        "duration": 7.131428571428572
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-bagi-dua-piknik",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/5adf6e5198fc.mp3",
+        "duration": 7.39265306122449
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-mat-rak-setengah-piring",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f8c613fd9f6a.mp3",
+        "duration": 4.937142857142857
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-kode-ulangi-belok-kota",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f7e5cd69ad2c.mp3",
+        "duration": 7.157551020408163
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f7e5cd69ad2c.mp3",
+        "duration": 7.157551020408163
+      }
+    ]
+  },
+  {
+    "device": "hp",
+    "id": "sd1-kode-ulangi-dua-bagian",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/4572ec8349f8.mp3",
+        "duration": 5.459591836734694
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/4572ec8349f8.mp3",
+        "duration": 5.459591836734694
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-genap-sepuluh-koin",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/51ced56a99ca.mp3",
+        "duration": 5.537959183673469
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/51ced56a99ca.mp3",
+        "duration": 5.537959183673469
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-rak-kurang-berapa-sepuluh",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/615bce1719e2.mp3",
+        "duration": 5.746938775510204
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/615bce1719e2.mp3",
+        "duration": 5.746938775510204
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-gabung-harta-pantai",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/bde96b02e829.mp3",
+        "duration": 8.333061224489796
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/bde96b02e829.mp3",
+        "duration": 8.333061224489796
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-gabung-keranjang-20",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/278ef5e5a359.mp3",
+        "duration": 8.594285714285714
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/278ef5e5a359.mp3",
+        "duration": 8.594285714285714
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-panen-sisa-kebun",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9c217265038b.mp3",
+        "duration": 7.288163265306123
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-sisa-kelereng-20",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/1aa660ad24d0.mp3",
+        "duration": 6.844081632653062
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-dobel-etalase-kue",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9770ea4dcce1.mp3",
+        "duration": 6.164897959183674
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9770ea4dcce1.mp3",
+        "duration": 6.164897959183674
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-rak-dobel",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/2443d0ff5f62.mp3",
+        "duration": 7.131428571428572
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/2443d0ff5f62.mp3",
+        "duration": 7.131428571428572
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-bagi-dua-piknik",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/5adf6e5198fc.mp3",
+        "duration": 7.39265306122449
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/5adf6e5198fc.mp3",
+        "duration": 7.39265306122449
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-mat-rak-setengah-piring",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f8c613fd9f6a.mp3",
+        "duration": 4.937142857142857
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f8c613fd9f6a.mp3",
+        "duration": 4.937142857142857
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-kode-ulangi-belok-kota",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f7e5cd69ad2c.mp3",
+        "duration": 7.157551020408163
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f7e5cd69ad2c.mp3",
+        "duration": 7.157551020408163
+      }
+    ]
+  },
+  {
+    "device": "ipad",
+    "id": "sd1-kode-ulangi-dua-bagian",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/4572ec8349f8.mp3",
+        "duration": 5.459591836734694
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/4572ec8349f8.mp3",
+        "duration": 5.459591836734694
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-genap-sepuluh-koin",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/51ced56a99ca.mp3",
+        "duration": 5.537959183673469
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/51ced56a99ca.mp3",
+        "duration": 5.537959183673469
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-rak-kurang-berapa-sepuluh",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/615bce1719e2.mp3",
+        "duration": 5.746938775510204
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/615bce1719e2.mp3",
+        "duration": 5.746938775510204
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-gabung-harta-pantai",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/bde96b02e829.mp3",
+        "duration": 8.333061224489796
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/bde96b02e829.mp3",
+        "duration": 8.333061224489796
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-gabung-keranjang-20",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/278ef5e5a359.mp3",
+        "duration": 8.594285714285714
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/278ef5e5a359.mp3",
+        "duration": 8.594285714285714
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-panen-sisa-kebun",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9c217265038b.mp3",
+        "duration": 7.288163265306123
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9c217265038b.mp3",
+        "duration": 7.288163265306123
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-sisa-kelereng-20",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/1aa660ad24d0.mp3",
+        "duration": 6.844081632653062
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/1aa660ad24d0.mp3",
+        "duration": 6.844081632653062
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-dobel-etalase-kue",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9770ea4dcce1.mp3",
+        "duration": 6.164897959183674
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/9770ea4dcce1.mp3",
+        "duration": 6.164897959183674
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-rak-dobel",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/2443d0ff5f62.mp3",
+        "duration": 7.131428571428572
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/2443d0ff5f62.mp3",
+        "duration": 7.131428571428572
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-bagi-dua-piknik",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/5adf6e5198fc.mp3",
+        "duration": 7.39265306122449
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/5adf6e5198fc.mp3",
+        "duration": 7.39265306122449
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-mat-rak-setengah-piring",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f8c613fd9f6a.mp3",
+        "duration": 4.937142857142857
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f8c613fd9f6a.mp3",
+        "duration": 4.937142857142857
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-kode-ulangi-belok-kota",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f7e5cd69ad2c.mp3",
+        "duration": 7.157551020408163
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/f7e5cd69ad2c.mp3",
+        "duration": 7.157551020408163
+      }
+    ]
+  },
+  {
+    "device": "ipad-pendek",
+    "id": "sd1-kode-ulangi-dua-bagian",
+    "events": [
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/4572ec8349f8.mp3",
+        "duration": 5.459591836734694
+      },
+      {
+        "type": "playing",
+        "src": "http://127.0.0.1:3896/akademi/suara/4572ec8349f8.mp3",
+        "duration": 5.459591836734694
+      }
+    ]
+  }
+]

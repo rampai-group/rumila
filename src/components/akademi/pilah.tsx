@@ -377,8 +377,8 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
         ref={(el) => { binRefs.current[b.id] = el; }}
         onClick={() => ketukBin(b.id)}
         arah={piktogram ? "piktogram" : baris ? "baris" : "kolom"}
-        className={carrollPilotHp ? "[&>div]:px-0.5 [&>div]:py-0 [&>div:last-child]:h-[72px] [&>div:last-child]:max-h-[72px] [&>div:last-child]:overflow-y-auto" : rakJamHp || rakSetengahHp ? "[&>div]:px-0.5 [&>div]:py-0" : undefined}
-        style={carrollPilotHp ? { padding: 4, gap: 4 } : rakJamHp || rakSetengahHp ? { padding: 4, gap: 2 } : piringRingkas || rakPecahanLega ? { width: lebarBin } : rakKisiHp ? { padding: 4 * sk, gap: 4 * sk } : undefined}
+        className={carrollPilotHp ? "[&>div]:px-0.5 [&>div]:py-0 [&>div:last-child]:h-[72px] [&>div:last-child]:max-h-[72px] [&>div:last-child]:overflow-y-auto" : rakJamHp || rakSetengahHp || rakDobelHp ? "[&>div]:px-0.5 [&>div]:py-0" : undefined}
+        style={carrollPilotHp ? { padding: 4, gap: 4 } : rakJamHp || rakSetengahHp || rakDobelHp ? { padding: 4, gap: 2 } : piringRingkas || rakPecahanLega ? { width: lebarBin } : rakKisiHp ? { padding: 4 * sk, gap: 4 * sk } : undefined}
         isiDariAtas={!baris && !tataLega}
         minIsi={tinggiIsi}
         ring={ring}

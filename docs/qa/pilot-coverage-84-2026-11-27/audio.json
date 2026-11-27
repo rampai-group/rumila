@@ -1,0 +1,98 @@
+[
+  {
+    "mission": 9,
+    "id": "sd1-mat-genap-sepuluh-koin",
+    "text": "Pembeli menunjukkan koinnya sebentar. Harganya sepuluh koin: taruh koin yang masih kurang.",
+    "url": "/akademi/suara/51ced56a99ca.mp3",
+    "bytes": 89068,
+    "seconds": 5.51
+  },
+  {
+    "mission": 9,
+    "id": "sd1-mat-rak-kurang-berapa-sepuluh",
+    "text": "Supaya jadi 10, kurang berapa lagi? Taruh tiap kartu di rak 'kurang' yang benar.",
+    "url": "/akademi/suara/615bce1719e2.mp3",
+    "bytes": 92412,
+    "seconds": 5.702018
+  },
+  {
+    "mission": 10,
+    "id": "sd1-mat-gabung-harta-pantai",
+    "text": "Gabungkan dua tumpukan. Hitung maju dari yang lebih banyak. Kalau sama, mulai dari mana saja. Ketuk hasilnya.",
+    "url": "/akademi/suara/bde96b02e829.mp3",
+    "bytes": 133790,
+    "seconds": 8.286939
+  },
+  {
+    "mission": 10,
+    "id": "sd1-mat-gabung-keranjang-20",
+    "text": "Gabungkan isi dua keranjang. Hitung maju dari yang lebih banyak. Kalau sama, mulai dari mana saja. Ketuk hasilnya.",
+    "url": "/akademi/suara/278ef5e5a359.mp3",
+    "bytes": 137969,
+    "seconds": 8.543107
+  },
+  {
+    "mission": 11,
+    "id": "sd1-mat-panen-sisa-kebun",
+    "text": "Ada sayur di bedeng. Sebagian dipetik lalu bedeng ditutup daun. Taruh sayur sebanyak yang masih tertinggal.",
+    "url": "/akademi/suara/9c217265038b.mp3",
+    "bytes": 117071,
+    "seconds": 7.25
+  },
+  {
+    "mission": 11,
+    "id": "sd1-mat-sisa-kelereng-20",
+    "text": "Beberapa kelereng biru diambil lalu kotak ditutup. Taruh kelereng kuning sebanyak kelereng biru yang masih tersisa.",
+    "url": "/akademi/suara/1aa660ad24d0.mp3",
+    "bytes": 109966,
+    "seconds": 6.81
+  },
+  {
+    "mission": 12,
+    "id": "sd1-mat-dobel-etalase-kue",
+    "text": "Gabungkan dua baki kue. Pakai dobel atau dobel tambah satu untuk memilih jawaban.",
+    "url": "/akademi/suara/9770ea4dcce1.mp3",
+    "bytes": 99099,
+    "seconds": 6.115873
+  },
+  {
+    "mission": 12,
+    "id": "sd1-mat-rak-dobel",
+    "text": "Pakai dobel: 7 + 8 itu dobel 7 tambah satu. Taruh kartu di rak hasilnya.",
+    "url": "/akademi/suara/2443d0ff5f62.mp3",
+    "bytes": 114563,
+    "seconds": 7.09
+  },
+  {
+    "mission": 18,
+    "id": "sd1-mat-bagi-dua-piknik",
+    "text": "Bekal piknik dibagi untuk dua sahabat. Bagi ke dua tikar sampai sama banyak. Isi satu tikar itulah setengahnya.",
+    "url": "/akademi/suara/5adf6e5198fc.mp3",
+    "bytes": 118743,
+    "seconds": 7.36102
+  },
+  {
+    "mission": 18,
+    "id": "sd1-mat-rak-setengah-piring",
+    "text": "Isi piring dibagi dua sama banyak. Taruh tiap piring di rak angka setengahnya.",
+    "url": "/akademi/suara/f8c613fd9f6a.mp3",
+    "bytes": 79455,
+    "seconds": 4.91
+  },
+  {
+    "mission": 19,
+    "id": "sd1-kode-ulangi-belok-kota",
+    "text": "Jalan di antara gedung ini berbelok sekali dan rak hanya muat lima blok. Pakai ulangi sebelum dan sesudah belok.",
+    "url": "/akademi/suara/f7e5cd69ad2c.mp3",
+    "bytes": 114981,
+    "seconds": 7.13
+  },
+  {
+    "mission": 19,
+    "id": "sd1-kode-ulangi-dua-bagian",
+    "text": "Rak cuma muat lima blok: pakai satu ulangi sebelum belok dan satu ulangi sesudahnya.",
+    "url": "/akademi/suara/4572ec8349f8.mp3",
+    "bytes": 87814,
+    "seconds": 5.41
+  }
+]
