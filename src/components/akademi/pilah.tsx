@@ -295,9 +295,10 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
 
   const lepasDiAtas = items.filter((i) => !peta[i.id]);
   const satuKartu = lepasDiAtas.length === 1;
-  const gayaKaptenAkhirHp = lepasDiAtas.length <= 1 && hp && h >= 550 && paket.competencyIds.includes("SAINS.SD2.GAYA.01");
+  const adeganKaptenAkhirHp = lepasDiAtas.length <= 1 && hp && h >= 550 &&
+    paket.competencyIds.some((id) => id === "SAINS.SD2.GAYA.01" || id === "SAINS.SD2.CAHAYA.01");
   const adeganBesarHp = (paket.id === "sd2-sains-aman-listrik-di-luar" || pilahAdegan) && h >= 550;
-  const satuKartuBesarHp = satuKartu && hp && (gayaKaptenAkhirHp || kelompokBahan || adeganBesarHp || ((ubahBentuk || dorongTarik) && bins.length === 2));
+  const satuKartuBesarHp = satuKartu && hp && (adeganKaptenAkhirHp || kelompokBahan || adeganBesarHp || ((ubahBentuk || dorongTarik) && bins.length === 2));
   const kartuTerakhirLega = satuKartuBesarHp || (satuKartu && (piktogramLega || rakAngkaLega || rakBahanLega || rakPecahanLega));
   const salah = (i: ItemPilah) => kunci && peta[i.id] !== i.bin;
   const benarBin = (b: BinPilah) => kunci && items.some((i) => peta[i.id] === b.id) && items.filter((i) => peta[i.id] === b.id).every((i) => i.bin === b.id);
@@ -358,7 +359,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
     : rakBagi ? tinggiBakiBagi : akhirPilotHp && satuKartu ? Math.min(260, h * 0.36) : bumiPilotHp ? Math.min(satuKartu ? 240 : 140, h * (satuKartu ? 0.34 : 0.2)) : carrollPilot ? (satuKartu ? (hp ? 180 : 210) : hp ? 88 : 150) : rakJam ? gambarJam + 38 : perangkatLega ? Math.min(satuKartu ? 220 : 170, Math.round(h * 0.18)) : wadahBergambar ? Math.min(satuKartu ? 320 : 204, Math.round(h * (satuKartu ? 0.32 : 0.205)))
     : paritasLega ? Math.min(satuKartu ? 205 : 174, Math.round(h * (satuKartu ? 0.27 : 0.2)))
       : wadahLega || (rakBahanLega && satuKartu) ? Math.min(224, Math.round(h * 0.23))
-        : rakPecahanLega ? (satuKartu ? 156 : 96) : satuKartuBesarHp || gayaKaptenAkhirHp ? 152 : piktogramLega ? 172 : rakAngkaLega ? 188 : 84 * sk;
+        : rakPecahanLega ? (satuKartu ? 156 : 96) : satuKartuBesarHp || adeganKaptenAkhirHp ? 152 : piktogramLega ? 172 : rakAngkaLega ? 188 : 84 * sk;
   const tinggiIsi = sifatBahanLega ? Math.min(182, Math.round(h * 0.2 / sk))
     : rakBagi ? tinggiIsiBagi / sk : rakPecahanLega ? 82 / sk : klasifikasiPilot && hp ? 120 / sk : bumiPilotHp ? Math.min(180, h * 0.25) / sk : rakJam && !hp ? 112 / sk : carrollPilotHp ? 72 / sk : rakJamHp ? 40 / sk : rakSetengahHp ? 48 / sk : rakAngkaLega ? (n > kapasitasKolom ? Math.min(118, Math.round(h * 0.14 / sk)) : 176)
     : rakDobelHp ? 42 : hewanMakanHp ? 48 : rakAngkaHp || rakHitungHp ? 54 : paritasLega ? Math.min(176, Math.round(h * 0.19 / sk)) : wadahBergambar ? Math.min(152, Math.round(h * 0.17 / sk))
@@ -442,7 +443,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
   return (
     <div
       lang={rakJam ? lang : undefined}
-      data-pilah-tengah={piktogramLega || rakAngkaLega || paritasLega || hewanMakanLega || rakPecahanLega || rakBagi || gayaKaptenAkhirHp || (penyebaranBijiTablet && h >= 650) || (rakHitungPilot && !hp && h >= 650) ? "" : undefined}
+      data-pilah-tengah={piktogramLega || rakAngkaLega || paritasLega || hewanMakanLega || rakPecahanLega || rakBagi || adeganKaptenAkhirHp || (penyebaranBijiTablet && h >= 650) || (rakHitungPilot && !hp && h >= 650) ? "" : undefined}
       className={`mx-auto flex w-full max-w-[920px] flex-1 flex-col gap-3 px-0.5 pb-2 pt-0.5 ${tataLega && !sifatBahanLega ? "justify-center" : ""}`}
       style={{ color: INK, minHeight: wadahBergambar && !sifatBahanLega ? Math.min(780, Math.round(h * 0.78)) : wadahLega ? Math.min(680, Math.round(h * 0.72)) : undefined }}
     >
@@ -489,7 +490,7 @@ function Kelompok({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "rond
             );
           })}
           {lepasDiAtas.length === 0 && (
-            <div className="col-span-full flex w-full items-center justify-center" style={{ height: tataLega || piktogramLega || rakAngkaLega || rakBagi || gayaKaptenAkhirHp ? tinggiBaki : 76, fontFamily: BALOO, fontSize: 20, fontWeight: 800, opacity: 0.6 }}>
+            <div className="col-span-full flex w-full items-center justify-center" style={{ height: tataLega || piktogramLega || rakAngkaLega || rakBagi || adeganKaptenAkhirHp ? tinggiBaki : 76, fontFamily: BALOO, fontSize: 20, fontWeight: 800, opacity: 0.6 }}>
               Semua sudah dipilah
             </div>
           )}
