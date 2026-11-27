@@ -220264,7 +220264,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-panas-kering-sejuk-lembap",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -220338,7 +220338,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "aspal",
         "labelKey": "i-aspal",
         "bin": "panas",
-        "emoji": "🛣️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-aspal"
+        }
       },
       {
         "id": "pasir",
@@ -220353,51 +220356,73 @@ export const PAKET_RAW: unknown[] = [
         "id": "atap",
         "labelKey": "i-atap",
         "bin": "panas",
-        "emoji": "🏠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-atap-seng"
+        }
       },
       {
         "id": "lapangan",
         "labelKey": "i-lapangan",
         "bin": "panas",
-        "emoji": "🏟️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-lapangan"
+        }
       },
       {
         "id": "batuterjemur",
         "labelKey": "i-batuterjemur",
         "bin": "panas",
-        "emoji": "🪨",
-        "color": "#ffcc80"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-batu-terjemur"
+        }
       },
       {
         "id": "bawahbatu",
         "labelKey": "i-bawahbatu",
         "bin": "lembap",
-        "emoji": "🟫",
-        "color": "#6d4c41"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-tanah-bawah-batu"
+        }
       },
       {
         "id": "bawahpohon",
         "labelKey": "i-bawahpohon",
         "bin": "lembap",
-        "emoji": "🌳"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-tanah-bawah-pohon"
+        }
       },
       {
         "id": "tepikolam",
         "labelKey": "i-tepikolam",
         "bin": "lembap",
-        "emoji": "💧"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-tepi-kolam"
+        }
       },
       {
         "id": "daun",
         "labelKey": "i-daun",
         "bin": "lembap",
-        "emoji": "🍂"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-daun-basah"
+        }
       },
       {
         "id": "pot",
         "labelKey": "i-pot",
         "bin": "lembap",
-        "emoji": "🪴"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-pot-teduh"
+        }
       }
     ],
     "pilihan": []
@@ -221530,7 +221555,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-tempat-panas-sejuk-bukit",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -221615,37 +221640,55 @@ export const PAKET_RAW: unknown[] = [
         "id": "kapmobil",
         "labelKey": "i-kapmobil",
         "bin": "panas",
-        "emoji": "🚗"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-kap-mobil"
+        }
       },
       {
         "id": "tembok",
         "labelKey": "i-tembok",
         "bin": "panas",
-        "emoji": "🧱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-tembok-bata"
+        }
       },
       {
         "id": "ladang",
         "labelKey": "i-ladang",
         "bin": "panas",
-        "emoji": "🌾"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-rumput-kemarau"
+        }
       },
       {
         "id": "lapbasket",
         "labelKey": "i-lapbasket",
         "bin": "panas",
-        "emoji": "🏀"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-lapangan-basket"
+        }
       },
       {
         "id": "gundul",
         "labelKey": "i-gundul",
         "bin": "panas",
-        "emoji": "⛰️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-bukit-gundul"
+        }
       },
       {
         "id": "hutan",
         "labelKey": "i-hutan",
         "bin": "lembap",
-        "emoji": "🌳"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-lantai-hutan"
+        }
       },
       {
         "id": "kamarmandi",
@@ -221660,25 +221703,37 @@ export const PAKET_RAW: unknown[] = [
         "id": "kayulapuk",
         "labelKey": "i-kayulapuk",
         "bin": "lembap",
-        "emoji": "🪵"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-kayu-lapuk"
+        }
       },
       {
         "id": "tepisungai",
         "labelKey": "i-tepisungai",
         "bin": "lembap",
-        "emoji": "🏞️"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-tepi-sungai"
+        }
       },
       {
         "id": "lumut",
         "labelKey": "i-lumut",
         "bin": "lembap",
-        "emoji": "🌿"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-tembok-lumut"
+        }
       },
       {
         "id": "jamur",
         "labelKey": "i-jamur",
         "bin": "lembap",
-        "emoji": "🍄"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-sd2-habitat-tanah-berjamur"
+        }
       }
     ],
     "pilihan": []
