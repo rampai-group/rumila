@@ -11,6 +11,7 @@ import { ILUSTRASI_LISTRIK_LUAR_SD2 } from "./ilustrasi-sd2-listrik-luar";
 import { ILUSTRASI_LISTRIK_RUMAH_SD2 } from "./ilustrasi-sd2-listrik-rumah";
 import { ILUSTRASI_INTERNET_SD3 } from "./ilustrasi-sd3-internet";
 import { ILUSTRASI_ASAL_MAKHLUK_SD3 } from "./ilustrasi-sd3-asal-makhluk";
+import { ILUSTRASI_BENDA_LOGAM_SD3 } from "./ilustrasi-sd3-benda-logam";
 import { ILUSTRASI_RANTAI_MAKANAN_SD3 } from "./ilustrasi-sd3-rantai-makanan";
 import { ILUSTRASI_PERANGKAT_SD2 } from "./ilustrasi-sd2-perangkat";
 import { ILUSTRASI_KARTU_LANGKAH_SD2 } from "./ilustrasi-sd2-kartu-langkah";
@@ -483,6 +484,7 @@ const objectArt: Record<string, ReactNode> = {
   ...ILUSTRASI_LISTRIK_RUMAH_SD2,
   ...ILUSTRASI_INTERNET_SD3,
   ...ILUSTRASI_ASAL_MAKHLUK_SD3,
+  ...ILUSTRASI_BENDA_LOGAM_SD3,
   ...ILUSTRASI_RANTAI_MAKANAN_SD3,
   ...ILUSTRASI_TULANG_SD4,
   ...ILUSTRASI_BIBIT_TOMAT_SD3,

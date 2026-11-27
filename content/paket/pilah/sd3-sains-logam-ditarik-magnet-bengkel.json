@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-logam-ditarik-magnet-bengkel",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -31,7 +31,7 @@
       "b-tarik": "pulled by a magnet",
       "b-tidak": "not pulled",
       "i-obeng": "steel screwdriver tip",
-      "i-kaleng": "steel food tin",
+      "i-kaleng": "steel milk tin",
       "i-binder": "steel bulldog clip",
       "i-kuncipas": "steel spanner",
       "i-gunting": "steel scissor blade",
@@ -82,7 +82,10 @@
       "id": "kaleng",
       "labelKey": "i-kaleng",
       "bin": "tarik",
-      "emoji": "🥫"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-logam-kaleng-susu"
+      }
     },
     {
       "id": "binder",
@@ -106,23 +109,32 @@
       "id": "panci",
       "labelKey": "i-panci",
       "bin": "tidak",
-      "emoji": "🍳",
       "color": "#cfd8dc",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-logam-wajan-aluminium"
+      }
     },
     {
       "id": "pipa",
       "labelKey": "i-pipa",
       "bin": "tidak",
-      "emoji": "🟠"
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-sd5-pipa-tembaga"
+      }
     },
     {
       "id": "gelang",
       "labelKey": "i-gelang",
       "bin": "tidak",
-      "emoji": "⭕",
       "color": "#e0e0e0",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-logam-gelang-perak"
+      }
     },
     {
       "id": "lonceng",
@@ -134,9 +146,12 @@
       "id": "sendokplastik",
       "labelKey": "i-sendokplastik",
       "bin": "tidak",
-      "emoji": "🥄",
       "color": "#ffcc80",
-      "latar": true
+      "latar": true,
+      "adegan": {
+        "jenis": "ilustrasi",
+        "varian": "qc-jenjang-logam-sendok-plastik"
+      }
     },
     {
       "id": "uangkertas",

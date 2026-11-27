@@ -235849,7 +235849,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-logam-ditarik-magnet-bengkel",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -235880,7 +235880,7 @@ export const PAKET_RAW: unknown[] = [
         "b-tarik": "pulled by a magnet",
         "b-tidak": "not pulled",
         "i-obeng": "steel screwdriver tip",
-        "i-kaleng": "steel food tin",
+        "i-kaleng": "steel milk tin",
         "i-binder": "steel bulldog clip",
         "i-kuncipas": "steel spanner",
         "i-gunting": "steel scissor blade",
@@ -235931,7 +235931,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "kaleng",
         "labelKey": "i-kaleng",
         "bin": "tarik",
-        "emoji": "🥫"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-kaleng-susu"
+        }
       },
       {
         "id": "binder",
@@ -235955,23 +235958,32 @@ export const PAKET_RAW: unknown[] = [
         "id": "panci",
         "labelKey": "i-panci",
         "bin": "tidak",
-        "emoji": "🍳",
         "color": "#cfd8dc",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-wajan-aluminium"
+        }
       },
       {
         "id": "pipa",
         "labelKey": "i-pipa",
         "bin": "tidak",
-        "emoji": "🟠"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-sd5-pipa-tembaga"
+        }
       },
       {
         "id": "gelang",
         "labelKey": "i-gelang",
         "bin": "tidak",
-        "emoji": "⭕",
         "color": "#e0e0e0",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-gelang-perak"
+        }
       },
       {
         "id": "lonceng",
@@ -235983,9 +235995,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "sendokplastik",
         "labelKey": "i-sendokplastik",
         "bin": "tidak",
-        "emoji": "🥄",
         "color": "#ffcc80",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-sendok-plastik"
+        }
       },
       {
         "id": "uangkertas",
@@ -235998,7 +236013,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-logam-ditarik-magnet",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -236076,7 +236091,10 @@ export const PAKET_RAW: unknown[] = [
         "id": "paku",
         "labelKey": "i-paku",
         "bin": "tarik",
-        "emoji": "🔩"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-baut"
+        }
       },
       {
         "id": "klip",
@@ -236103,25 +236121,34 @@ export const PAKET_RAW: unknown[] = [
         "id": "sekrup",
         "labelKey": "i-sekrup",
         "bin": "tarik",
-        "emoji": "🔩",
         "color": "#78909c",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-sekrup"
+        }
       },
       {
         "id": "bautbesi",
         "labelKey": "i-bautbesi",
         "bin": "tarik",
-        "emoji": "⚙️",
         "color": "#90a4ae",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-mur"
+        }
       },
       {
         "id": "kalengalu",
         "labelKey": "i-kalengalu",
         "bin": "tidak",
-        "emoji": "🥫",
         "color": "#cfd8dc",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-kaleng-minuman"
+        }
       },
       {
         "id": "foil",
@@ -236134,9 +236161,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "kabel",
         "labelKey": "i-kabel",
         "bin": "tidak",
-        "emoji": "🪢",
         "color": "#d84315",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-kawat-tembaga"
+        }
       },
       {
         "id": "cincin",
@@ -236156,9 +236186,12 @@ export const PAKET_RAW: unknown[] = [
         "id": "kayu",
         "labelKey": "i-kayu",
         "bin": "tidak",
-        "emoji": "🥄",
         "color": "#a1887f",
-        "latar": true
+        "latar": true,
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-logam-sendok-kayu"
+        }
       }
     ],
     "pilihan": []
