@@ -658,6 +658,15 @@ const objectArt: Record<string, ReactNode> = {
   "kunang-kunang": <KunangKunang />,
   "televisi-menyala": <Televisi nyala />,
   "televisi-mati": <Televisi nyala={false} />,
+  "robot-semprot-cat": <g {...RINGKAS}>
+    <path d="M36 9H60L55 25H41Z" fill="#eca7cd" />
+    <path d="M34 9H62" fill="none" stroke="#873765" strokeWidth="4" />
+    <path d="M15 25H56Q65 25 68 34L74 46 67 57H37L29 79H16L23 56H15Z" fill="#9fb4cb" />
+    <path d="M68 38H85V50H70Z" fill="#536b83" />
+    <path d="M90 41L111 33M91 45H116M90 49L111 58" fill="none" stroke="#b94787" strokeWidth="5" />
+    <path d="M21 33H52M38 50H61" fill="none" stroke="#eef6fc" />
+    <path d="M21 82Q15 87 8 88" fill="none" stroke="#526a82" strokeWidth="4" />
+  </g>,
 };
 
 const PREFIX = "qc-jenjang-";
