@@ -236876,7 +236876,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-produsen-atau-konsumen",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -236886,9 +236886,9 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Produsen atau Konsumen?",
-        "instruksi": "Membuat makanan sendiri atau makan makhluk lain? Taruh ke raknya.",
-        "b-produsen": "produsen (membuat makanan sendiri)",
-        "b-konsumen": "konsumen (makan makhluk lain)",
+        "instruksi": "Taruh ke raknya. Produsen membuat makanan sendiri. Konsumen mendapat makanan dari makhluk lain.",
+        "b-produsen": "produsen",
+        "b-konsumen": "konsumen",
         "i-rumput": "rumput",
         "i-padi": "padi",
         "i-pohon": "pohon mangga",
@@ -236904,9 +236904,9 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Producer or Consumer?",
-        "instruksi": "Makes its own food or eats other living things? Put it on its shelf.",
-        "b-produsen": "producer (makes its own food)",
-        "b-konsumen": "consumer (eats other living things)",
+        "instruksi": "Put each on its shelf. Producers make their own food. Consumers get food from other living things.",
+        "b-produsen": "producer",
+        "b-konsumen": "consumer",
         "i-rumput": "grass",
         "i-padi": "rice plant",
         "i-pohon": "mango tree",
@@ -236966,20 +236966,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "pohon",
         "labelKey": "i-pohon",
         "bin": "produsen",
-        "emoji": "🌳"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rantai-pohon-mangga"
+        }
       },
       {
         "id": "ganggang",
         "labelKey": "i-ganggang",
         "bin": "produsen",
-        "emoji": "🌿",
-        "color": "#26a69a"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rantai-alga-laut"
+        }
       },
       {
         "id": "kangkung",
         "labelKey": "i-kangkung",
         "bin": "produsen",
-        "emoji": "🥬"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "panen-kangkung"
+        }
       },
       {
         "id": "kaktus",
@@ -237028,7 +237036,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-produsen-konsumen-sawah-laut",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -237037,10 +237045,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Produsen atau Konsumen di Sawah dan Laut",
-        "instruksi": "Di sawah dan di laut, siapa membuat makanan sendiri dan siapa makan makhluk lain? Taruh ke raknya.",
-        "b-produsen": "produsen (membuat makanan sendiri)",
-        "b-konsumen": "konsumen (makan makhluk lain)",
+        "judul": "Produsen dan Konsumen di Sawah, Kolam, dan Laut",
+        "instruksi": "Taruh ke raknya. Produsen membuat makanan sendiri. Konsumen mendapat makanan dari makhluk lain.",
+        "b-produsen": "produsen",
+        "b-konsumen": "konsumen",
         "i-padi": "padi",
         "i-jagung": "tanaman jagung",
         "i-eceng": "teratai",
@@ -237054,13 +237062,13 @@ export const PAKET_RAW: unknown[] = [
         "i-kerbau": "kerbau"
       },
       "en": {
-        "judul": "Producer or Consumer in Rice Field and Sea",
-        "instruksi": "In the rice field and the sea, who makes its own food and who eats other living things? Put each on its shelf.",
-        "b-produsen": "producer (makes its own food)",
-        "b-konsumen": "consumer (eats other living things)",
+        "judul": "Producers and Consumers in the Rice Field, Pond, and Sea",
+        "instruksi": "Put each on its shelf. Producers make their own food. Consumers get food from other living things.",
+        "b-produsen": "producer",
+        "b-konsumen": "consumer",
         "i-padi": "rice plant",
         "i-jagung": "corn plant",
-        "i-eceng": "lotus",
+        "i-eceng": "water lily",
         "i-lamun": "seagrass",
         "i-kelapa": "coconut tree",
         "i-tikus": "rice-field rat",
@@ -237110,19 +237118,28 @@ export const PAKET_RAW: unknown[] = [
         "id": "jagung",
         "labelKey": "i-jagung",
         "bin": "produsen",
-        "emoji": "🌽"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-pengamatan-jagung-4"
+        }
       },
       {
         "id": "eceng",
         "labelKey": "i-eceng",
         "bin": "produsen",
-        "emoji": "🌸"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "tumbuhan-susun-bunga-teratai"
+        }
       },
       {
         "id": "lamun",
         "labelKey": "i-lamun",
         "bin": "produsen",
-        "emoji": "🌱"
+        "adegan": {
+          "jenis": "ilustrasi",
+          "varian": "qc-jenjang-rantai-lamun"
+        }
       },
       {
         "id": "kelapa",
@@ -349379,7 +349396,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-rantai-makanan",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -349415,7 +349432,7 @@ export const PAKET_RAW: unknown[] = [
         "sabana-zebra": "zebra",
         "sabana-singa": "singa",
         "s-kolam": "Rantai makanan di kolam",
-        "kolam-lumut": "lumut air",
+        "kolam-lumut": "alga kolam",
         "kolam-siput": "siput air",
         "kolam-ikan": "ikan",
         "kolam-bangau": "elang",
@@ -349604,8 +349621,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "ganggang",
             "labelKey": "laut-ganggang",
-            "emoji": "🌿",
-            "color": "#26a69a"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-laut"
+            }
           },
           {
             "id": "udang",
@@ -349652,12 +349671,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lumut",
             "labelKey": "kolam-lumut",
-            "emoji": "🟢"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-kolam"
+            }
           },
           {
             "id": "siput",
             "labelKey": "kolam-siput",
-            "emoji": "🐌"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-siput-air"
+            }
           },
           {
             "id": "ikan",
@@ -349757,8 +349782,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "rumputlaut",
             "labelKey": "lautlepas-rumputlaut",
-            "emoji": "🌿",
-            "color": "#26a69a"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-laut"
+            }
           },
           {
             "id": "ikan",
@@ -349784,8 +349811,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "ganggang",
             "labelKey": "karang-ganggang",
-            "emoji": "🌿",
-            "color": "#26a69a"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-karang"
+            }
           },
           {
             "id": "kepiting",
@@ -351270,7 +351299,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-susun-rantai-makanan",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -351280,7 +351309,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Siapa Makan Siapa?",
-        "instruksi": "Susun dari tumbuhan sampai pemakan terakhir.",
+        "instruksi": "Mulai dari produsen. Setelah itu, susun berdasarkan siapa yang memakannya.",
         "s-sawah": "Rantai makanan di sawah",
         "sawah-padi": "padi",
         "sawah-tikus": "tikus",
@@ -351306,7 +351335,7 @@ export const PAKET_RAW: unknown[] = [
         "sabana-zebra": "zebra",
         "sabana-singa": "singa",
         "s-kolam": "Rantai makanan di kolam",
-        "kolam-lumut": "lumut air",
+        "kolam-lumut": "alga kolam",
         "kolam-siput": "siput air",
         "kolam-ikan": "ikan",
         "kolam-bangau": "elang",
@@ -351338,7 +351367,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Who Eats Whom?",
-        "instruksi": "Put them in order from the plant to the last eater.",
+        "instruksi": "Start with the producer. Then put each card after the living thing it eats.",
         "s-sawah": "A rice field food chain",
         "sawah-padi": "rice plant",
         "sawah-tikus": "rat",
@@ -351495,8 +351524,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "ganggang",
             "labelKey": "laut-ganggang",
-            "emoji": "🌿",
-            "color": "#26a69a"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-laut"
+            }
           },
           {
             "id": "udang",
@@ -351543,12 +351574,18 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "lumut",
             "labelKey": "kolam-lumut",
-            "emoji": "🟢"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-kolam"
+            }
           },
           {
             "id": "siput",
             "labelKey": "kolam-siput",
-            "emoji": "🐌"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-siput-air"
+            }
           },
           {
             "id": "ikan",
@@ -351648,8 +351685,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "rumputlaut",
             "labelKey": "lautlepas-rumputlaut",
-            "emoji": "🌿",
-            "color": "#26a69a"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-laut"
+            }
           },
           {
             "id": "ikan",
@@ -351675,8 +351714,10 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "ganggang",
             "labelKey": "karang-ganggang",
-            "emoji": "🌿",
-            "color": "#26a69a"
+            "adegan": {
+              "jenis": "ilustrasi",
+              "varian": "qc-jenjang-rantai-alga-karang"
+            }
           },
           {
             "id": "kepiting",
