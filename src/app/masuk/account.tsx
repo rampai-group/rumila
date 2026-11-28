@@ -5,12 +5,15 @@
 import Image from "next/image";
 import {
   useEffect,
+  useMemo,
+  useRef,
   useState,
   type CSSProperties,
   type FormEvent,
   type ReactNode,
 } from "react";
 import { BALOO } from "@/components/launcher";
+import { LatarKampus } from "./latar-kampus";
 import { Icon } from "@/components/ui";
 import { CAT, MEMBER_COLORS, PLAY, type ColorKey } from "@/lib/catalog";
 import { friendlyError, supabase } from "@/lib/supabase/client";
@@ -143,6 +146,9 @@ export function AccountStage({ theme }: { theme: Theme }) {
   const [err, setErr] = useState("");
   const [sent, setSent] = useState<"" | "email" | "username" | "reset">("");
   const [lihatSandi, setLihatSandi] = useState(false);
+  const ruangKampusHp = useRef<HTMLDivElement>(null);
+  const ruangKampusTablet = useRef<HTMLDivElement>(null);
+  const ruangKampus = useMemo(() => [ruangKampusHp, ruangKampusTablet], []);
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
@@ -210,26 +216,11 @@ export function AccountStage({ theme }: { theme: Theme }) {
 
   return (
     <div className="fixed inset-0 z-30 flex flex-col overflow-y-auto bg-[#0b2545] md:items-center md:justify-center md:p-8">
-      {/* Gambar kampus: di HP jadi kepala layar, di tablet jadi latar penuh. */}
-      <div className="relative h-[34svh] min-h-[210px] w-full shrink-0 overflow-hidden md:fixed md:inset-0 md:h-auto">
-        <Image
-          src="/kampus/sedang.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[50%_40%] md:object-[50%_45%]"
-        />
+      {/* Kampus 3D hidup jadi latar penuh; di HP gedungnya utuh di ruang atas, di tablet di seluruh layar. */}
+      <LatarKampus ruang={ruangKampus} />
+      <div ref={ruangKampusHp} className="relative min-h-[34svh] w-full flex-1 md:hidden">
         <div
-          aria-hidden
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(11,37,69,.55) 0%, rgba(11,37,69,0) 38%, rgba(11,37,69,0) 70%, rgba(11,37,69,.35) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-x-0 flex justify-center md:hidden"
+          className="absolute inset-x-0 flex justify-center"
           style={{ top: "calc(env(safe-area-inset-top) + 14px)" }}
         >
           <span className="rounded-full bg-white/95 px-4 py-2 text-[13px] font-extrabold tracking-wide text-[#0b2545] shadow-[0_4px_14px_rgba(11,37,69,.25)]">
@@ -237,10 +228,11 @@ export function AccountStage({ theme }: { theme: Theme }) {
           </span>
         </div>
       </div>
+      <div ref={ruangKampusTablet} aria-hidden className="pointer-events-none fixed inset-0 hidden md:block" />
 
       {/* Lembar isi: menempel ke bawah di HP, kartu melayang di tablet. */}
       <div
-        className="anim-sheet relative -mt-7 flex flex-1 rounded-t-[32px] flex-col bg-white px-6 pt-3 md:mt-0 md:w-full md:max-w-[440px] md:flex-none md:rounded-[36px] md:px-8 md:pt-6 md:pb-7 md:shadow-[0_10px_0_rgba(11,37,69,.12),0_40px_80px_rgba(11,37,69,.35)]"
+        className="anim-sheet relative -mt-7 flex shrink-0 rounded-t-[32px] flex-col bg-white px-6 pt-3 md:mt-0 md:w-full md:max-w-[440px] md:flex-none md:rounded-[36px] md:px-8 md:pt-6 md:pb-7 md:shadow-[0_10px_0_rgba(11,37,69,.12),0_40px_80px_rgba(11,37,69,.35)]"
         style={{
           paddingBottom: "calc(env(safe-area-inset-bottom) + 20px)",
         }}
