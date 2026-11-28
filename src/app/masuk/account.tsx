@@ -215,10 +215,10 @@ export function AccountStage({ theme }: { theme: Theme }) {
   };
 
   return (
-    <div className="fixed inset-0 z-30 flex flex-col overflow-y-auto bg-[#0b2545] md:items-center md:justify-center md:p-8">
+    <div className="fixed inset-0 z-30 flex flex-col overflow-y-auto bg-[#0b2545] min-[600px]:items-center min-[600px]:justify-center min-[600px]:p-8">
       {/* Kampus 3D hidup jadi latar penuh; di HP gedungnya utuh di ruang atas, di tablet di seluruh layar. */}
       <LatarKampus ruang={ruangKampus} />
-      <div ref={ruangKampusHp} className="relative min-h-[34svh] w-full flex-1 md:hidden">
+      <div ref={ruangKampusHp} className="relative min-h-[34svh] w-full flex-1 min-[600px]:hidden">
         <div
           className="absolute inset-x-0 flex justify-center"
           style={{ top: "calc(env(safe-area-inset-top) + 14px)" }}
@@ -228,18 +228,18 @@ export function AccountStage({ theme }: { theme: Theme }) {
           </span>
         </div>
       </div>
-      <div ref={ruangKampusTablet} aria-hidden className="pointer-events-none fixed inset-0 hidden md:block" />
+      <div ref={ruangKampusTablet} aria-hidden className="pointer-events-none fixed inset-0 hidden min-[600px]:block" />
 
       {/* Lembar isi: menempel ke bawah di HP, kartu melayang di tablet. */}
       <div
-        className="anim-sheet relative -mt-7 flex shrink-0 rounded-t-[32px] flex-col bg-white px-6 pt-3 md:mt-0 md:w-full md:max-w-[440px] md:flex-none md:rounded-[36px] md:px-8 md:pt-6 md:pb-7 md:shadow-[0_10px_0_rgba(11,37,69,.12),0_40px_80px_rgba(11,37,69,.35)]"
+        className="anim-sheet relative -mt-7 flex shrink-0 rounded-t-[32px] flex-col bg-white px-6 pt-3 min-[600px]:mt-0 min-[600px]:w-full min-[600px]:max-w-[440px] min-[600px]:flex-none min-[600px]:rounded-[36px] min-[600px]:px-8 min-[600px]:pt-6 min-[600px]:pb-7 min-[600px]:shadow-[0_10px_0_rgba(11,37,69,.12),0_40px_80px_rgba(11,37,69,.35)]"
         style={{
           paddingBottom: "calc(env(safe-area-inset-bottom) + 20px)",
         }}
       >
         <span
           aria-hidden
-          className="mx-auto mb-3 h-1.5 w-11 rounded-full bg-[#e3e8f0] md:hidden"
+          className="mx-auto mb-3 h-1.5 w-11 rounded-full bg-[#e3e8f0] min-[600px]:hidden"
         />
         <div className="flex flex-col items-center gap-1">
           <Image
@@ -248,7 +248,7 @@ export function AccountStage({ theme }: { theme: Theme }) {
             width={1137}
             height={800}
             priority
-            className="h-auto w-[118px] md:w-[150px]"
+            className="h-auto w-[118px] min-[600px]:w-[150px]"
           />
         </div>
 
